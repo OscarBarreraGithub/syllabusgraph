@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="syllabusgraph-token" content="__SESSION_TOKEN__" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <title>SyllabusGraph</title>
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="SyllabusGraph home"
+        ><img src="/icon.svg" width="30" height="30" alt="" />Syllabus<span
+          >Graph</span
+        ></a
+      >
+      <span class="local-badge"><i></i>Local workspace</span>
+      <span class="top-spacer"></span>
+      <span id="save-state" class="muted" role="status">Loading project…</span>
+      <button id="save" class="button primary" disabled>Save course</button>
+    </header>
+    <main>
+      <section class="heading">
+        <div>
+          <p class="eyebrow">A COURSE WITH A REASON FOR EVERY TOPIC</p>
+          <h1 id="project-title">Your teaching, connected.</h1>
+          <p id="project-description" class="intro"></p>
+        </div>
+        <label class="plan-picker"
+          >Course plan<select id="plan-select" aria-label="Course plan"></select
+        ></label>
+      </section>
+      <div class="tabbar">
+        <nav aria-label="Workspace views" role="tablist">
+          <button
+            class="tab active"
+            data-view="course"
+            role="tab"
+            aria-selected="true"
+          >
+            Course design
+          </button>
+          <button
+            class="tab"
+            data-view="graph"
+            role="tab"
+            aria-selected="false"
+          >
+            Concept map
+          </button>
+          <button
+            class="tab"
+            data-view="sources"
+            role="tab"
+            aria-selected="false"
+          >
+            References <span id="source-count"></span>
+          </button>
+          <button
+            class="tab"
+            data-view="workflow"
+            role="tab"
+            aria-selected="false"
+          >
+            Source workflow
+          </button>
+        </nav>
+        <div class="export-actions">
+          <select id="export-format" aria-label="Export format">
+            <option value="syllabus">Syllabus · Markdown</option>
+            <option value="notes">Preparation notes · Markdown</option>
+            <option value="json">Course data · JSON</option>
+            <option value="mermaid">Concept map · Mermaid</option></select
+          ><button id="export" class="button" disabled>Export ↗</button>
+        </div>
+      </div>
+      <div id="global-error" class="error-box" role="alert" hidden></div>
+      <section id="view-course" class="view">
+        <div class="workspace">
+          <aside class="library panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">01 / CHOOSE</p>
+                <h2>Learning goals</h2>
+              </div>
+              <span id="concept-count" class="count"></span>
+            </div>
+            <p class="panel-copy">
+              Choose what students should reach. Supporting concepts follow.
+            </p>
+            <input
+              id="search"
+              class="search"
+              type="search"
+              placeholder="Find a concept…"
+              aria-label="Find a concept"
+            />
+            <div class="filter-row">
+              <button id="filter-all" class="chip active">All concepts</button
+              ><button id="filter-picked" class="chip">Your goals</button>
+            </div>
+            <div id="concept-list" class="concept-list"></div>
+            <button id="background-open" class="button full">
+              Set student background
+            </button>
+          </aside>
+          <section class="course-panel">
+            <div class="course-toolbar">
+              <div>
+                <p class="eyebrow">02 / SHAPE</p>
+                <h2 id="course-title">Course sequence</h2>
+              </div>
+              <div class="schedule">
+                <label
+                  >Sessions<input
+                    id="sessions"
+                    type="number"
+                    min="1"
+                    max="100"
+                    value="12" /></label
+                ><label
+                  >Minutes each<input
+                    id="minutes"
+                    type="number"
+                    min="5"
+                    max="480"
+                    value="60"
+                /></label>
+              </div>
+            </div>
+            <div id="stats" class="stats"></div>
+            <div class="sequence-label">
+              <span>THE TEACHING SEQUENCE</span
+              ><span class="legend"
+                ><i class="target-dot"></i>Goal
+                <i class="support-dot"></i>Supporting</span
+              >
+            </div>
+            <div
+              id="sessions-list"
+              class="sessions-list"
+              aria-live="polite"
+            ></div>
+            <div id="issues" class="issues"></div>
+          </section>
+          <aside id="detail" class="detail panel">
+            <p class="eyebrow">03 / UNDERSTAND</p>
+            <h2>Every topic earns its place.</h2>
+            <p class="panel-copy">
+              Select a concept to see its source evidence, prerequisites, and
+              treatment depth.
+            </p>
+            <div class="detail-illustration" aria-hidden="true">
+              <span>Evidence</span><i>↓</i
+              ><span class="illustration-main">Concept</span><i>↓</i
+              ><span>Learning outcome</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section id="view-graph" class="view" hidden>
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">STRUCTURE, MADE VISIBLE</p>
+            <h2>How the course connects</h2>
+            <p class="muted">
+              Left to right follows prerequisite depth. Session order is shown
+              in Course design.
+            </p>
+          </div>
+          <span class="legend"
+            ><i class="target-dot"></i>Goal
+            <i class="support-dot"></i>Supporting</span
+          >
+        </div>
+        <div id="graph-container" class="graph-container">
+          <svg
+            id="graph"
+            role="img"
+            aria-label="Course prerequisite graph"
+          ></svg>
+        </div>
+        <p id="graph-caption" class="muted"></p>
+      </section>
+      <section id="view-sources" class="view" hidden>
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">THE GROUNDING FOR YOUR COURSE</p>
+            <h2>Your reference shelf</h2>
+            <p class="muted">
+              Attach your sources locally. Reviewed concepts retain citations;
+              original material stays in this workspace.
+            </p>
+          </div>
+          <button id="add-reference" class="button primary">
+            Add reference
+          </button>
+        </div>
+        <div id="source-list" class="source-grid"></div>
+      </section>
+      <section id="view-workflow" class="view" hidden>
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">FROM SOURCES TO A REVIEWED KNOWLEDGE BASE</p>
+            <h2>Build in small, inspectable steps.</h2>
+            <p class="muted">
+              Each page range becomes a saved work unit. A proposal enters your
+              course library after evidence checks and review.
+            </p>
+          </div>
+          <button id="prepare-open" class="button primary">
+            Prepare a page range
+          </button>
+        </div>
+        <ol class="pipeline">
+          <li>
+            <b>1</b><strong>Prepare</strong
+            ><span>Choose a source and scope</span>
+          </li>
+          <li>
+            <b>2</b><strong>Extract</strong
+            ><span>Propose concepts and evidence</span>
+          </li>
+          <li>
+            <b>3</b><strong>Check</strong
+            ><span>Verify structure and quotations</span>
+          </li>
+          <li>
+            <b>4</b><strong>Review</strong><span>Assess the actual claims</span>
+          </li>
+          <li>
+            <b>5</b><strong>Promote</strong
+            ><span>Update the knowledge base</span>
+          </li>
+        </ol>
+        <div id="unit-list"></div>
+        <div class="workflow-help">
+          <h3>Use your preferred extraction tool</h3>
+          <p>
+            Prepared packets contain source pages, the existing concept space,
+            and the response format. Use the command-line workflow to run an
+            extraction tool or import a proposal, record a review, and promote
+            accepted work.
+          </p>
+          <a
+            href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/source-workflow.md"
+            target="_blank"
+            rel="noreferrer"
+            >Read the source workflow guide ↗</a
+          >
+        </div>
+      </section>
+      <footer>
+        <span>SyllabusGraph · A clear path from evidence to teaching.</span
+        ><span id="content-version"></span>
+      </footer>
+    </main>
+    <div id="toast" role="status" hidden></div>
+    <dialog id="background-dialog">
+      <form id="background-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">START WHERE YOUR STUDENTS ARE</p>
+            <h2>Assumed background</h2>
+          </div>
+          <button
+            type="button"
+            class="icon-button"
+            data-close="background-dialog"
+            aria-label="Close background settings"
+          >
+            ×
+          </button>
+        </div>
+        <p class="muted">
+          An assumption only satisfies prerequisites at or below the selected
+          level. Explicit learning goals remain in the course.
+        </p>
+        <div id="background-list" class="background-list"></div>
+        <div class="dialog-footer">
+          <button type="button" class="button" data-close="background-dialog">
+            Cancel</button
+          ><button class="button primary" type="submit">
+            Apply background
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="source-dialog">
+      <form id="source-form">
+        <div class="dialog-heading">
+          <h2>Add a reference</h2>
+          <button
+            type="button"
+            class="icon-button"
+            data-close="source-dialog"
+            aria-label="Close reference form"
+          >
+            ×
+          </button>
+        </div>
+        <label
+          >Short identifier<input
+            name="id"
+            required
+            pattern="[a-z][a-z0-9_.-]*"
+            placeholder="textbook-one" /></label
+        ><label
+          >Title<input
+            name="title"
+            required
+            placeholder="Reference title" /></label
+        ><label
+          >Authors<input
+            name="authors"
+            placeholder="Separate authors with commas" /></label
+        ><label
+          >Edition or version<input
+            name="edition"
+            placeholder="Specify the version you will use"
+        /></label>
+        <div class="dialog-footer">
+          <button class="button primary" type="submit">Add reference</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="upload-dialog">
+      <form id="upload-form">
+        <div class="dialog-heading">
+          <h2>Attach source material</h2>
+          <button
+            type="button"
+            class="icon-button"
+            data-close="upload-dialog"
+            aria-label="Close upload form"
+          >
+            ×
+          </button>
+        </div>
+        <p id="upload-source-title" class="muted"></p>
+        <label
+          >Local file<input
+            name="file"
+            type="file"
+            accept=".pdf,.txt,.md"
+            required /></label
+        ><label
+          >Page offset<input name="offset" type="number" value="0" required
+        /></label>
+        <p class="muted small">
+          PDF page = printed page + offset. For example, if printed page 1 is
+          PDF page 13, enter 12. Text files can separate pages with form-feed
+          characters.
+        </p>
+        <div class="dialog-footer">
+          <button id="upload-submit" class="button primary" type="submit">
+            Attach locally
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="prepare-dialog">
+      <form id="prepare-form">
+        <div class="dialog-heading">
+          <h2>Prepare a source unit</h2>
+          <button
+            type="button"
+            class="icon-button"
+            data-close="prepare-dialog"
+            aria-label="Close preparation form"
+          >
+            ×
+          </button>
+        </div>
+        <label
+          >Reference<select name="source" id="prepare-source"></select></label
+        ><label
+          >Unit identifier<input
+            name="unit"
+            required
+            pattern="[a-z][a-z0-9_.-]*"
+            placeholder="chapter-01"
+        /></label>
+        <div class="form-row">
+          <label
+            >First printed page<input
+              type="number"
+              name="first"
+              min="1"
+              value="1"
+              required /></label
+          ><label
+            >Last printed page<input
+              type="number"
+              name="last"
+              min="1"
+              value="5"
+              required
+          /></label>
+        </div>
+        <label
+          >What should this unit cover?<textarea
+            name="scope"
+            required
+            placeholder="Describe the concepts and intended depth to look for."
+          ></textarea>
+        </label>
+        <div class="dialog-footer">
+          <button class="button primary" type="submit">Prepare packet</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

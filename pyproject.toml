@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "syllabusgraph"
+version = "0.1.0"
+description = "Build evidence-backed knowledge graphs and turn them into teachable courses."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "SyllabusGraph contributors"}]
+dependencies = ["PyYAML>=6.0.2,<7", "jsonschema>=4.23,<5", "pypdf>=6.1,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "build>=1.2,<2", "ruff>=0.12,<1"]
+browser = ["playwright>=1.50,<2"]
+
+[project.scripts]
+syllabusgraph = "syllabusgraph.cli:main"
+
+[project.urls]
+Repository = "https://github.com/OscarBarreraGithub/syllabusgraph"
+Issues = "https://github.com/OscarBarreraGithub/syllabusgraph/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/syllabusgraph"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"examples/sampling/project.yaml" = "syllabusgraph/examples/sampling/project.yaml"
+"examples/sampling/knowledge/graph.yaml" = "syllabusgraph/examples/sampling/knowledge/graph.yaml"
+"examples/sampling/plans/foundations.yaml" = "syllabusgraph/examples/sampling/plans/foundations.yaml"
+"examples/sampling/plans/simulation-lab.yaml" = "syllabusgraph/examples/sampling/plans/simulation-lab.yaml"
+"examples/sampling/sources/primer.txt" = "syllabusgraph/examples/sampling/sources/primer.txt"
+"examples/qft/project.yaml" = "syllabusgraph/examples/qft/project.yaml"
+"examples/qft/knowledge/graph.yaml" = "syllabusgraph/examples/qft/knowledge/graph.yaml"
+"examples/qft/plans/qft-i.yaml" = "syllabusgraph/examples/qft/plans/qft-i.yaml"
+"examples/qft/plans/qft-ii.yaml" = "syllabusgraph/examples/qft/plans/qft-ii.yaml"
+"templates/new-course/project.yaml" = "syllabusgraph/templates/new-course/project.yaml"
+"templates/new-course/knowledge/graph.yaml" = "syllabusgraph/templates/new-course/knowledge/graph.yaml"
+"templates/new-course/plans/course.yaml" = "syllabusgraph/templates/new-course/plans/course.yaml"
+"workflows" = "syllabusgraph/workflows"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

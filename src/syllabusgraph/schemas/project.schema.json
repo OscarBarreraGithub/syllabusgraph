@@ -1,0 +1,655 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/OscarBarreraGithub/syllabusgraph/schemas/v1",
+  "title": "SyllabusGraph project formats",
+  "$ref": "#/$defs/project",
+  "$defs": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mastery_levels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "maxItems": 10
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "minItems": 0
+        },
+        "knowledge": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plans_dir": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "id",
+        "title",
+        "description",
+        "mastery_levels",
+        "sources",
+        "knowledge",
+        "plans_dir"
+      ]
+    },
+    "knowledge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          },
+          "minItems": 0
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edge"
+          },
+          "minItems": 0
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "question": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "title"
+            ]
+          },
+          "minItems": 0
+        },
+        "motivations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$"
+              },
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_.-]*$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "id",
+              "nodes",
+              "summary",
+              "evidence"
+            ]
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "nodes",
+        "edges",
+        "groups",
+        "motivations"
+      ]
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "ready"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sessions": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "minutes_per_session": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 480
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "node": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$"
+              },
+              "level": {
+                "type": "string",
+                "minLength": 1
+              },
+              "assessment": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "node",
+              "level",
+              "assessment"
+            ]
+          },
+          "minItems": 0
+        },
+        "background": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "prior_plans": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "include": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "treatments": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "omit": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "group_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "necessity": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "necessary",
+              "typical",
+              "helpful"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "unknown": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "status",
+        "audience",
+        "sessions",
+        "minutes_per_session",
+        "outcomes",
+        "background"
+      ]
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "concept",
+            "method",
+            "result",
+            "assumption",
+            "representation"
+          ]
+        },
+        "group": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        },
+        "estimates": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/estimate"
+          }
+        },
+        "notation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$"
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source",
+              "note"
+            ]
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "summary",
+        "kind",
+        "evidence"
+      ]
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "from": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "relation": {
+          "type": "string",
+          "enum": [
+            "prerequisite",
+            "alternative",
+            "evidence",
+            "pedagogical"
+          ]
+        },
+        "source_level": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_level": {
+          "type": "string",
+          "minLength": 1
+        },
+        "necessity": {
+          "type": "string",
+          "enum": [
+            "necessary",
+            "typical",
+            "helpful"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "failure_mode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "from",
+        "to",
+        "relation",
+        "source_level",
+        "target_level",
+        "necessity",
+        "rationale",
+        "failure_mode",
+        "evidence"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source",
+        "section",
+        "pages"
+      ]
+    },
+    "estimate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "min",
+        "max",
+        "basis"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "volume": {
+          "type": "string",
+          "minLength": 1
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "expected",
+            "available"
+          ]
+        },
+        "public_file": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "authors",
+        "status"
+      ]
+    },
+    "proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "packet_digest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "graph": {
+          "$ref": "#/$defs/knowledge"
+        },
+        "pages_read": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "quote_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$"
+              },
+              "page": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "source",
+              "page",
+              "quote"
+            ]
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "packet_digest",
+        "graph",
+        "pages_read",
+        "unresolved",
+        "quote_checks"
+      ]
+    }
+  }
+}
