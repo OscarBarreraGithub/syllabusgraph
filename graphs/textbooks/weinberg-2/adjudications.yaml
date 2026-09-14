@@ -203,3 +203,168 @@ units:
       pages:
       - 227
     affected_records: []
+- id: full-007
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Outside-packet inputs and unresolved gate
+    alternatives:
+    - Import Chapter 12 power counting conditionally and omit the unsupported Compton-dependent
+      exercise.
+    - Defer the whole unit until packets containing both Chapter 12 and Chapter 8
+      inputs are available.
+    resolution: Import power counting conditionally and omit the Compton-dependent
+      exercise pending its supplemental packet.
+    rationale: Pages 257 and 288-289 state and apply the power-counting formulas while
+      explicitly attributing the theorem to Chapter 12.1, so an imported assumption
+      supports the conditional in-packet routes without pretending that proof was
+      read. Problem 3 only names the Chapter 8.7 formulas and does not reproduce them,
+      so its use-level inputs cannot be represented honestly here. The node and edge
+      are omitted from this scoped proposal and remain explicit unconstructed content
+      in the preserved follow-up for a new source-backed supplemental packet.
+    evidence:
+    - source: weinberg-2
+      section: '20.2'
+      pages:
+      - 257
+    - source: weinberg-2
+      section: Appendix Momentum Flow
+      pages:
+      - 288
+      - 289
+    - source: weinberg-2
+      section: Problems 3
+      pages:
+      - 293
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.imported-chapter12-power-counting-theorem
+    - kind: nodes
+      id: weinberg-2.scalar-hard-flow-power-counting
+    - kind: nodes
+      id: weinberg-2.general-hard-flow-ope-power-counting
+    - kind: nodes
+      id: weinberg-2.problem-derive-parton-dis-cross-section
+    - kind: edges
+      id: weinberg-2.imported-power-counting-to-scalar-hard-flow
+    - kind: edges
+      id: weinberg-2.imported-power-counting-to-general-hard-flow
+    - kind: edges
+      id: weinberg-2.parton-model-to-dis-cross-section-problem
+  - finding: 1
+    issue: Residual private witness entailment gaps
+    alternatives:
+    - Add exact claim-specific witnesses for every retained residual clause and task.
+    - Remove or narrow each clause and task that lacks an operative exact witness.
+    resolution: Add exact claim-specific witnesses for every retained residual clause
+      and task.
+    rationale: The added witnesses cover the path-integral qualification, scalar normalization,
+      ordered RG solution, weak-coupling and eigenvector qualifications, Goldstone
+      pole, spectral thresholds, anomaly caveat, DIS and evolution conclusions, appendix
+      limit, remaining exercise statements, and the new motivation's applications.
+      Each witness is retained only in private witness records; graph and decision
+      text remain paraphrases.
+    evidence:
+    - source: weinberg-2
+      section: Chapter 20 introduction
+      pages:
+      - 252
+    - source: weinberg-2
+      section: '20.2'
+      pages:
+      - 260
+    - source: weinberg-2
+      section: '20.3'
+      pages:
+      - 264
+      - 265
+    - source: weinberg-2
+      section: '20.4'
+      pages:
+      - 265
+      - 266
+    - source: weinberg-2
+      section: '20.5'
+      pages:
+      - 268
+      - 269
+    - source: weinberg-2
+      section: '20.6'
+      pages:
+      - 273
+      - 281
+      - 282
+      - 283
+    - source: weinberg-2
+      section: Problems
+      pages:
+      - 292
+      - 293
+    affected_records: []
+  - finding: 2
+    issue: Quantitative Borel witnesses and equation range
+    alternatives:
+    - Retain the quantitative formulas with exact adjacent witnesses and cite through
+      Eq. (20.7.22).
+    - Remove the exact locations and retain only the source-supported signs and ambiguity
+      conclusions.
+    resolution: Retain both locations, add private witnesses, and correct the infrared-renormalon
+      evidence through Eq. (20.7.22).
+    rationale: The rendered equations establish the scalar pole at negative sixteen
+      pi squared and the dimension-dependent positive QCD location. Because formula
+      OCR is corrupt, the private witnesses use unchanged adjacent source text that
+      identifies the pole-position calculation and the dimension-dependent singularity
+      statement; the graph gives an own-word transcription and the evidence range
+      now includes Eq. (20.7.22).
+    evidence:
+    - source: weinberg-2
+      section: '20.7'
+      pages:
+      - 286
+      - 288
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.infrared-renormalons-from-ope-power-corrections
+  - finding: 3
+    issue: Scalar hard-flow fixed-line case distinction
+    alternatives:
+    - State the n=0, n=2, and n>=4 regions explicitly in the existing power-counting
+      result.
+    - Split the vacuum, four-point, and higher-point hard regions into separate result
+      nodes.
+    resolution: State all three cases explicitly in the existing scalar hard-flow
+      result.
+    rationale: Page 257 distinguishes the vacuum whole-graph term, the n=2 case where
+      the whole graph and two-line bridges both contribute, and n>=4 where only two-line
+      bridges dominate. One result remains a useful teachable unit while preserving
+      every distinct region and the k-power, symmetry, and connectedness qualifications.
+    evidence:
+    - source: weinberg-2
+      section: '20.2'
+      pages:
+      - 257
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.scalar-hard-flow-power-counting
+  - finding: 4
+    issue: Bjorken-scaling law removed during correction
+    alternatives:
+    - Restore the W1 and nu-W2 limits in the existing DIS representation node.
+    - Add a separate result node for the Bjorken limits and connect it to the DIS
+      representation.
+    resolution: Restore both Bjorken limits in the existing DIS node while retaining
+      its parity qualification.
+    rationale: The source defines the fixed-omega limit by W1 approaching F1 and nu
+      W2 approaching F2. Keeping those limits in the existing node matches its label
+      and supplies the target that the following parton-model and QCD-correction records
+      explain, while the electron-only parity qualification remains explicit.
+    evidence:
+    - source: weinberg-2
+      section: '20.6'
+      pages:
+      - 273
+      - 274
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.dis-structure-functions-and-bjorken-limit
