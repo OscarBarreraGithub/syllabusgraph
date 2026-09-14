@@ -4,8 +4,9 @@ This project uses the same structure and workflow as every SyllabusGraph course.
 The default project starts with an empty bibliography and knowledge base.
 The optional sampling template supplies a self-contained example.
 
-Record your audience, goals, scope, and source priorities in
-**[COURSE_GUIDANCE.md](COURSE_GUIDANCE.md)** before extraction. This is a private
+Record source scope and priorities in
+**[COURSE_GUIDANCE.md](COURSE_GUIDANCE.md)** before extraction. Audience, goals,
+and schedules can wait until you turn the graph into a course. This is a private
 brief for the person or agent doing the work; the engine does not parse it.
 
 ## Where to put your references

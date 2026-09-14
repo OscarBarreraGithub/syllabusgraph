@@ -31,6 +31,12 @@ For a course you already initialized, start from the generated `AGENTS.md` and
 human-readable input; it does not override the workflow or grant authority to
 extract or publish.
 
+For graph construction, establish source scope and granularity; collect
+audience, course goals, and timetable later. Tool selection is case-specific:
+the [PDF reading guide](pdf-reading.md) documents today's supported path and
+optional tools without requiring a fixed reader or OCR stack. Preserve the
+evidence and review contract when using another suitable tool.
+
 In a new Codex project, trust the project and restart before relying on its
 `.codex/agents/` profiles. Custom profiles load at session start and are not
 guaranteed to be discovered immediately. If a profile is unavailable or was
@@ -108,7 +114,7 @@ and reasonable planning tradeoffs are not grounds for blocking approval. See
 [orchestration](../workflows/orchestrate.md),
 [extraction](../workflows/extract.md), and [review](../workflows/review.md).
 Do not stop for human approval between normal units; seek direction only when
-course guidance or required native access is actually missing.
+required task scope or native access is actually missing.
 
 In `end` mode, record a final human check with `syllabusgraph agent audit
 --reviewer NAME --notes TEXT`. `trust` mode keeps the critic mandatory but makes

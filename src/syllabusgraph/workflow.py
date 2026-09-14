@@ -150,22 +150,29 @@ def _ensure_packet(project: Project, directory: Path) -> dict:
     stored = packet["packet_digest"]
     if digest({k: v for k, v in packet.items() if k != "packet_digest"}) != stored:
         raise ProjectError("The work packet changed after preparation. Prepare a new unit.")
-    source, _ = source_pages(project, packet["source"]["id"])
+    source, current_pages = source_pages(project, packet["source"]["id"])
     if (
         source["sha256"] != packet["source_sha256"]
         or source["page_offset"] != packet["page_offset"]
     ):
         raise ProjectError("The registered source changed after preparation. Prepare a new unit.")
+    for page in packet["pages"]:
+        physical = page["pdf_page"]
+        if not 1 <= physical <= len(current_pages) or current_pages[physical - 1] != page["text"]:
+            raise ProjectError("The registered page text changed after preparation. Prepare a new unit.")
     checked = {}
     for page in packet.get("context_pages", []):
         if page["source"] not in checked:
-            checked[page["source"]] = source_pages(project, page["source"])[0]
-        binding = checked[page["source"]]
+            checked[page["source"]] = source_pages(project, page["source"])
+        binding, current_pages = checked[page["source"]]
         if (
             binding["sha256"] != page["source_sha256"]
             or binding["page_offset"] != page["page_offset"]
         ):
             raise ProjectError("A context source changed after preparation. Prepare a new unit.")
+        physical = page["pdf_page"]
+        if not 1 <= physical <= len(current_pages) or current_pages[physical - 1] != page["text"]:
+            raise ProjectError("Context page text changed after preparation. Prepare a new unit.")
     return packet
 
 

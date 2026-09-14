@@ -32,6 +32,7 @@ jobs:
       - run: uv sync --locked --all-extras --python '${{ matrix.python }}'
       - run: uv run --no-sync python -m pytest -q
       - run: uv run --no-sync ruff check .
+      - run: uv run --no-sync python scripts/check_graph_bank.py
       - run: uv run --no-sync syllabusgraph validate -p examples/sampling
       - run: uv run --no-sync syllabusgraph build -p examples/sampling --strict
   browser-and-package:

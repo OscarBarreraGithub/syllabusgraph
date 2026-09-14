@@ -348,6 +348,22 @@
           "minLength": 1,
           "pattern": "^[a-z][a-z0-9_.-]*$"
         },
+        "origins": {
+          "description": "Reviewed links to book-specific nodes; the note states the scope of the correspondence, not automatic equivalence.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "project": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
+              "node": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
+              "note": {"type": "string", "minLength": 1}
+            },
+            "required": ["project", "node", "note"]
+          }
+        },
         "evidence": {
           "type": "array",
           "items": {

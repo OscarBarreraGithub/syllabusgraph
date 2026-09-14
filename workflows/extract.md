@@ -8,6 +8,14 @@ other-source:10:12` adds one bounded context range; the primary and all context
 ranges share the 80-page packet limit. Do not use quotes or evidence from any
 source/page outside the primary or context ranges recorded in the packet.
 
+The registered page text is a working reader output, not authority to guess at
+an unclear source. Use a suitable currently available local reader, renderer,
+vision, or OCR approach only as needed to resolve ambiguous pages; tool choice
+is case-specific and may change. Keep the packet scope immutable, report any
+unresolved text or notation, and preserve the configured privacy and selected
+model/reviewer policy. See [PDF reading](../docs/pdf-reading.md) for setup and
+cache-replacement rules.
+
 You are an extraction worker, not the workflow controller. The orchestrator
 creates the dispatch and later records your completion against its exact packet.
 Do not delegate, select a replacement model, promote records, edit canonical

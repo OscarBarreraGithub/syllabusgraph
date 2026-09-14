@@ -136,6 +136,33 @@ def test_pdf_import_preserves_printed_page_mapping(blank, tmp_path):
         workflow.prepare(blank, "outside", "pdf-primer", 2, 2, scope="Beyond the source.")
 
 
+@pytest.mark.parametrize("changed_page,context,stale", [(0, False, True), (1, True, True), (1, False, False)])
+def test_new_reader_output_for_same_file_invalidates_only_affected_packets(
+    unit, monkeypatch, changed_page, context, stale
+):
+    from syllabusgraph import sources
+
+    project, _, proposal = unit
+    packet = workflow.prepare(
+        project, "reader-change", "primer", 1, 1, scope="Same original file, changed reader.",
+        context=[{"source": "primer", "first": 2, "last": 2}] if context else [],
+    )
+    proposal["packet_digest"] = packet["packet_digest"]
+    workflow.import_proposal(project, "reader-change", proposal)
+    entry, old_pages = source_pages(project, "primer")
+    new_pages = list(old_pages)
+    new_pages[changed_page] += " Additional text recovered by another reader."
+    monkeypatch.setattr(sources, "extract_pages", lambda path: new_pages)
+    replacement = register(project, "primer", project.root / entry["file"], replace=True)
+    assert replacement["sha256"] == entry["sha256"]
+    assert replacement["text_digest"] != entry["text_digest"]
+    if stale:
+        with pytest.raises(ProjectError, match="page text changed"):
+            workflow.check(project, "reader-change")
+    else:
+        assert workflow.check(project, "reader-change")["ok"]
+
+
 def test_successful_retry_clears_failure_status(unit):
     project, _, proposal = unit
     directory = workflow.unit_dir(project, "unit-one")

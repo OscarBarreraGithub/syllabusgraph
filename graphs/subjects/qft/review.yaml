@@ -1,0 +1,47 @@
+schema_version: 1
+status: partial-model-reviewed
+complete_subject: false
+human_audit: pending
+graph_digest: sha256:c904908808d88628990b7a4c3ba6b3dddc28a9fae2da9bb00febea4e6736ca2f
+extraction:
+  model: gpt-5.6-terra
+  effort: high
+required_critic:
+  model: gpt-5.6-sol
+  effort: high
+book_inputs:
+- project: peskin-schroeder
+  graph_digest: sha256:a132244fe39b5bd00d78833c9139dc9bef2c2e02cfd072356e3f453b23310158
+- project: schwartz
+  graph_digest: sha256:4a67f495ca20dc0452cd3f9b91f974a8b18761b13852847fcc3bab7bee91b04d
+- project: weinberg-1
+  graph_digest: sha256:ac3dda5a6a540e382668a7e98c0434d754d459efebe203f52081138cae53e2a5
+- project: weinberg-2
+  graph_digest: sha256:013c10c719e9d456cafd717c8746353b6ec1baa1f97c910079868e39e959d989
+units:
+- id: pilot-01
+  scope: Align the independently reviewed textbook pilot graphs, preserving source-specific
+    treatments and source citations.
+  source_ranges:
+  - source: peskin-schroeder
+    first: 13
+    last: 20
+  - source: schwartz
+    first: 21
+    last: 26
+  - source: weinberg-1
+    first: 201
+    last: 206
+  - source: weinberg-2
+    first: 2
+    last: 7
+  nodes: 37
+  edges: 36
+  input_book_nodes: 36
+  mapped_book_nodes: 36
+  acceptance: independent-critic
+omissions:
+- Only the listed textbook ranges have been extracted and aligned.
+- Zero overlap in this pilot is not evidence that two textbooks lack common content.
+- Earlier supporting concepts outside these ranges may still be absent.
+- No course plans, teaching-time estimates, or classroom evaluation.

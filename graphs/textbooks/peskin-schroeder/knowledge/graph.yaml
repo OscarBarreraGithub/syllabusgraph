@@ -1,0 +1,318 @@
+nodes:
+- id: peskin-schroeder.canonical-field-momentum-hamiltonian
+  label: Canonical momentum and Hamiltonian for a field
+  summary: The conjugate momentum density is pi(x) = partial L / partial phidot(x),
+    and the Hamiltonian is H = integral d^3x [pi phidot - L]. This is the continuum
+    Legendre construction used for the field.
+  kind: method
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: pi(x) denotes momentum density, whereas the physical momentum associated
+      with translations is treated separately later.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    note: The text obtains the momentum density by a discretization argument and then
+      passes to the continuum Hamiltonian density.
+- id: peskin-schroeder.canonical-quantization-real-field
+  label: Canonical quantization of the real field
+  summary: The opening quantization prescription promotes the classical variables
+    phi and pi to operators. At equal time their commutator is [phi(x), pi(y)] = i
+    delta^(3)(x-y), while field-field and momentum-momentum commutators vanish.
+  kind: method
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The equal-time relations are introduced in the Schroedinger picture; the
+      book says they also hold at a common time after switching to the Heisenberg
+      picture.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 19
+    - 20
+    note: The text first states promotion of phi and pi, then gives the continuous-system
+      equal-time commutation relations.
+- id: peskin-schroeder.field-euler-lagrange-equation
+  label: Field Euler-Lagrange equation
+  summary: Varying a local field action with boundary-vanishing variations yields
+    partial_mu[partial L / partial(partial_mu phi)] - partial L / partial phi = 0;
+    one equation occurs for each field.
+  kind: result
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: This is Eq. (2.3), with partial_mu acting on the derivative of the Lagrangian
+      density with respect to partial_mu phi.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory'
+    pages:
+    - 16
+    note: The derivation removes the surface term by boundary conditions and uses
+      arbitrary variations to obtain the local equation of motion.
+- id: peskin-schroeder.klein-gordon-canonical-hamiltonian
+  label: Klein-Gordon canonical Hamiltonian
+  summary: For the real Klein-Gordon field, pi = phidot and H = integral d^3x [1/2
+    pi^2 + 1/2 (grad phi)^2 + 1/2 m^2 phi^2]. The terms are identified as temporal-motion,
+    spatial-gradient, and field-amplitude energy costs.
+  kind: result
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: This is Eq. (2.8), constructed from the Lagrangian of Eq. (2.6).
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 17
+    note: The book states the conjugate momentum and the resulting Hamiltonian for
+      the real scalar field.
+- id: peskin-schroeder.klein-gordon-classical-equation
+  label: Classical Klein-Gordon equation
+  summary: The real Klein-Gordon Lagrangian gives (partial_t^2 - grad^2 + m^2) phi
+    = 0, equivalently (partial_mu partial^mu + m^2) phi = 0. In this treatment it
+    is a classical field equation rather than a one-particle wave equation.
+  kind: result
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The two displayed forms are Eq. (2.7); the sign convention is the one implicit
+      in Eq. (2.6).
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 17
+    note: The text applies the usual variational procedure to Eq. (2.6) and explicitly
+      distinguishes the result from a quantum-mechanical wave equation.
+- id: peskin-schroeder.klein-gordon-fourier-oscillator-modes
+  label: Klein-Gordon Fourier modes as harmonic oscillators
+  summary: Expanding the real classical field in spatial Fourier modes gives, for
+    each momentum p, [d_t^2 + |p|^2 + m^2] phi(p,t) = 0. Each mode therefore has the
+    simple-harmonic-oscillator frequency omega_p = sqrt(|p|^2 + m^2).
+  kind: representation
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The expansion is phi(x,t) = integral d^3p/(2pi)^3 exp(i p dot x) phi(p,t),
+      with phi*(p) = phi(-p) for a real field.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    note: Equations (2.21) and (2.22) identify the Fourier-space equation and oscillator
+      frequency.
+- id: peskin-schroeder.local-field-action
+  label: Local field action
+  summary: For fields phi(x), the action is the spacetime integral of a local Lagrangian
+    density L(phi, partial_mu phi); stationary variations are taken with fixed boundary
+    field configurations.
+  kind: method
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The book calls the Lagrangian density script L simply the Lagrangian, and
+      writes S = integral d^4x L(phi, partial_mu phi).
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory'
+    pages:
+    - 15
+    - 16
+    note: The action is expressed through a local density depending on fields and
+      their derivatives; the boundary conditions used to eliminate the surface term
+      span pp. 15-16.
+- id: peskin-schroeder.real-klein-gordon-lagrangian
+  label: Real Klein-Gordon Lagrangian
+  summary: The real scalar field is governed classically by L = 1/2 phidot^2 - 1/2
+    (grad phi)^2 - 1/2 m^2 phi^2, equivalently 1/2 (partial_mu phi)^2 - 1/2 m^2 phi^2
+    in the book's notation.
+  kind: representation
+  group: peskin-schroeder.free-scalar-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The field phi is real-valued here; m is initially a parameter and is later
+      interpreted as mass.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    note: Equation (2.6) defines the single-field classical Lagrangian used in the
+      subsequent Klein-Gordon discussion.
+- id: peskin-schroeder.relativistic-field-viewpoint
+  label: Relativistic field viewpoint
+  summary: A relativistic quantum description must accommodate variable particle number
+    and preserve causal observables; the text motivates a multiparticle field theory
+    through pair creation, virtual multiparticle states, and the spacelike propagation
+    problem of a one-particle amplitude.
+  kind: concept
+  group: peskin-schroeder.free-scalar-foundations
+  evidence:
+  - source: peskin-schroeder
+    section: 2.1 The Necessity of the Field Viewpoint
+    pages:
+    - 13
+    - 14
+    note: The discussion gives variable particle number and a nonzero spacelike single-particle
+      propagation amplitude as motivations for a multiparticle field theory.
+edges:
+- id: peskin-schroeder.canonical-formalism-to-kg-hamiltonian
+  from: peskin-schroeder.canonical-field-momentum-hamiltonian
+  to: peskin-schroeder.klein-gordon-canonical-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Klein-Gordon Hamiltonian is obtained by using the conjugate momentum
+    and continuum Legendre construction for the real-scalar Lagrangian.
+  failure_mode: Without the canonical momentum and Hamiltonian construction, one cannot
+    transform the Lagrangian into the displayed three-term Hamiltonian.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    - 17
+    note: Equations (2.4)-(2.5) define the momentum density and continuum Hamiltonian,
+      and p. 17 applies them to obtain Eq. (2.8).
+- id: peskin-schroeder.canonical-formalism-to-quantization
+  from: peskin-schroeder.canonical-field-momentum-hamiltonian
+  to: peskin-schroeder.canonical-quantization-real-field
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The quantization prescription specifically promotes the canonical pair
+    phi and pi and uses its commutation structure.
+  failure_mode: Without knowing pi as the field's conjugate momentum density, the
+    operator pair and its delta-function commutator lack their stated canonical role.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 19
+    - 20
+    note: The book promotes phi and pi and explains that the continuous momentum density
+      leads to a Dirac delta in the commutator.
+- id: peskin-schroeder.field-euler-lagrange-to-kg-equation
+  from: peskin-schroeder.field-euler-lagrange-equation
+  to: peskin-schroeder.klein-gordon-classical-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated Klein-Gordon equation follows by applying the field Euler-Lagrange
+    equation to the real-scalar Lagrangian.
+  failure_mode: Without using the Euler-Lagrange equation, the variational calculation
+    from the displayed Lagrangian to the Klein-Gordon equation cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory; Hamiltonian
+      Field Theory'
+    pages:
+    - 16
+    - 17
+    note: Equation (2.3) supplies the field variational equation, and the text then
+      states that the usual procedure applied to Eq. (2.6) gives Eq. (2.7).
+- id: peskin-schroeder.kg-equation-to-fourier-modes
+  from: peskin-schroeder.klein-gordon-classical-equation
+  to: peskin-schroeder.klein-gordon-fourier-oscillator-modes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mode equation and omega_p follow by substituting the Fourier expansion
+    into the Klein-Gordon equation.
+  failure_mode: Without the Klein-Gordon equation, the Fourier calculation has no
+    field equation from which to obtain the mode frequency.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    note: The text explicitly writes the Klein-Gordon equation in Fourier space and
+      identifies it with a simple harmonic oscillator equation.
+- id: peskin-schroeder.kg-lagrangian-to-kg-equation
+  from: peskin-schroeder.real-klein-gordon-lagrangian
+  to: peskin-schroeder.klein-gordon-classical-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The text derives the Klein-Gordon equation by applying the variational
+    procedure to the displayed real-scalar Lagrangian.
+  failure_mode: Without the Lagrangian, one cannot carry out the source's derivation
+    or identify the mass and gradient terms in the equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    - 17
+    note: Equation (2.6) is followed by the statement that the usual procedure gives
+      Eq. (2.7).
+- id: peskin-schroeder.kg-lagrangian-to-kg-hamiltonian
+  from: peskin-schroeder.real-klein-gordon-lagrangian
+  to: peskin-schroeder.klein-gordon-canonical-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Klein-Gordon Hamiltonian is constructed from the real-scalar Lagrangian
+    and its conjugate momentum.
+  failure_mode: Without the starting Lagrangian, the Legendre construction cannot
+    reproduce the three terms of the displayed Hamiltonian.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    - 17
+    note: The example Lagrangian is introduced on p. 16 and its canonical momentum
+      and Hamiltonian are given on p. 17.
+- id: peskin-schroeder.local-action-to-field-euler-lagrange
+  from: peskin-schroeder.local-field-action
+  to: peskin-schroeder.field-euler-lagrange-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Euler-Lagrange equation is obtained by varying the local action and
+    applying its boundary conditions.
+  failure_mode: Without the action and allowed variations, the field equation would
+    be an asserted formula rather than the result of the stated variational calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory'
+    pages:
+    - 15
+    - 16
+    note: The derivation begins with stationarity of S and arrives at the local equation
+      after removing the surface term.
+groups:
+- id: peskin-schroeder.free-scalar-foundations
+  title: Free real scalar-field foundations
+  question: How does the real Klein-Gordon field acquire its classical dynamics, canonical
+    variables, and oscillator-mode description?
+motivations:
+- id: peskin-schroeder.why-relativistic-fields
+  nodes:
+  - peskin-schroeder.relativistic-field-viewpoint
+  summary: The text asks why relativistic particles cannot simply be quantized as
+    nonrelativistic particles, then points to particle creation, multiparticle intermediate
+    states, and causality as problems requiring a field-theoretic treatment.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.1 The Necessity of the Field Viewpoint
+    pages:
+    - 13
+    - 14
+    note: The opening questions the single-particle approach and discusses both variable
+      particle number and spacelike propagation.

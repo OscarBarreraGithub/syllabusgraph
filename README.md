@@ -12,7 +12,7 @@ agent instructions, and tell me the next steps for my course project.
 ```
 
 The agent explains where to drop your references, offers to copy files from a
-path you provide, confirms the model settings, and asks for your course goals.
+path you provide, confirms the model settings, and establishes the source scope.
 Then it coordinates extraction and review. Textbooks and working extracts stay
 local; reviewed graphs and course plans can be shared.
 
@@ -33,8 +33,13 @@ use, or derive; supply their background; then inspect a proposed sequence,
 preparation notes, and the assumptions behind it.
 
 The engine is independent of subject matter. Each project holds a reviewed
-knowledge base and one or more course plans. Sources, topic groupings,
+knowledge base and optional course plans. Sources, topic groupings,
 narrative choices, and schedules live in project data.
+
+Start with the graph if that is your aim. Audience, goals, and teaching time
+come later when making a course. The public [graph bank](graphs/README.md)
+keeps individual textbook graphs and shared subject graphs, with reviewed
+correspondences for examining overlap. Contributions are welcome.
 
 <details>
 <summary>See the course designer in action</summary>
@@ -147,15 +152,19 @@ edit course outcomes and assumptions using the [project format](docs/project-for
 ## From your sources to reviewed knowledge
 
 The local app, PDF text reader, review workflow, planner, and exports are ready.
-A new knowledge base still requires the materials, source review, and course
-design decisions. Proposals can be authored manually or with an external AI
+A new knowledge base still requires the materials and source review. Course
+design adds goals, background, and teaching constraints later. Proposals can be authored manually or with an external AI
 tool and imported as drafts. **Your Codex or Claude session launches the native
 workers; no separate API adapter is needed for that path.** Custom command
 adapters are also supported. Image-only PDFs need OCR before
 import, and mathematical notation needs inspection against the original pages.
+The [PDF reading guide](docs/pdf-reading.md) explains included dependencies,
+optional capabilities, and efficient checks. Agents choose suitable current
+tools for the material; the evidence requirements stay the same.
 
-Record your audience, intended outcomes, course boundaries, and reference
-priorities in the generated **`COURSE_GUIDANCE.md`**. It is a private planning
+Record source scope and reference priorities in the generated
+**`COURSE_GUIDANCE.md`**. Add audience, intended outcomes, and course boundaries
+when course design begins. It is a private planning
 brief for you or your agent; it is not parsed by the engine. Choose an initial
 scope before preparing source pages.
 

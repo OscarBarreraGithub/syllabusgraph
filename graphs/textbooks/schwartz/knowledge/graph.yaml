@@ -1,0 +1,291 @@
+nodes:
+- id: schwartz.equal-time-scalar-field-commutation-relations
+  label: Equal-time scalar-field commutation relations
+  summary: At equal time, the free field satisfies [φ(x⃗),φ(y⃗)]=0. Defining the canonical
+    conjugate π(x⃗)=∂_tφ(x)|_{t=0} gives [φ(x⃗),π(y⃗)]=iδ³(x⃗−y⃗). The source also
+    states that, at any fixed time in an interacting theory, the corresponding field
+    and conjugate momentum obey these relations and [π(x⃗),π(y⃗)]=0 because their
+    creation-annihilation algebra is the same.
+  kind: result
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: Derives the field commutator from the mode algebra, defines the conjugate
+      momentum, and gives the canonical equal-time commutator.
+  notation:
+  - source: schwartz
+    note: The source explicitly limits the derivation to equal time and says the different-time
+      calculation is more subtle.
+- id: schwartz.fock-space-particle-sectors
+  label: Fock space and physical particle sectors
+  summary: For one particle type, the Fock space is organized into Hilbert spaces
+    H_n of physical n-particle states. A state in H_n has on-shell momenta p_i with
+    p_i^0>0; for several particle types, the Fock space is the direct sum of their
+    associated Hilbert spaces. The source emphasizes that this is not a sum over arbitrary
+    four-vectors, because energy is fixed by three-momentum and mass.
+  kind: representation
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3 Second quantization
+    pages:
+    - 21
+    note: Defines the physical n-particle sectors and their on-shell momentum labels.
+  notation:
+  - source: schwartz
+    note: The source writes |p⃗⟩, |p^μ⟩, and |p⟩ interchangeably for physical momentum
+      states, with p_i^0=√(p⃗_i²+m_i²).
+- id: schwartz.free-scalar-field-mode-expansion
+  label: Free scalar field as a momentum-mode expansion
+  summary: The free scalar field operator is defined by φ_0(x⃗)=∫d^3p/(2π)^3[2ω_p]^−1/2(a_p
+    e^{ip⃗·x⃗}+a†_p e^−ip⃗·x⃗). This resembles a classical mode expansion, but the
+    coefficients are operators; the source treats the quantum formula itself as the
+    definition rather than as a consequence of the classical expression.
+  kind: representation
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    - 22
+    note: Defines φ_0 from the momentum-mode operators and states the limited role
+      of the classical analogy.
+  notation:
+  - source: schwartz
+    note: The subscript 0 denotes a free field. The spatial phases on these pages
+      use p⃗·x⃗.
+- id: schwartz.heisenberg-free-field-time-evolution
+  label: Heisenberg evolution of a free scalar field
+  summary: In the Heisenberg picture, free momentum-mode operators evolve as a_p(t)=e^−iω_pta_p
+    and a†_p(t)=e^iω_pta†_p, giving φ_0(x)=∫d^3p/(2π)^3[2ω_p]^−1/2(a_p e^−ipx+a†_p
+    e^ipx), with p^μ=(ω_p,p⃗). For a massive scalar, ω_p=√(p⃗²+m²) and the expansion
+    satisfies (□+m²)φ(x)=0. Its free-Hamiltonian commutator realizes i∂_tφ=[φ,H_0].
+  kind: method
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 22
+    - 23
+    note: Introduces Heisenberg time dependence, the spacetime mode expansion, the
+      massive dispersion relation, and its Hamiltonian consistency check.
+  notation:
+  - source: schwartz
+    note: On page 22 the displayed field is massless with ω_p=|p⃗|; page 23 gives
+      the massive replacement ω_p=√(p⃗²+m²).
+- id: schwartz.momentum-mode-creation-annihilation-algebra
+  label: Momentum-mode creation and annihilation algebra
+  summary: Free-field momentum modes use operators satisfying [a_k,a†_p]=(2π)^3δ^3(p⃗−k⃗).
+    The creation operator creates a one-particle momentum state according to a†_p|0⟩=(2ω_p)^−1/2|p⃗⟩.
+    With this normalization, the one-particle identity is ∫d^3p/((2π)^3 2ω_p) |p⃗⟩⟨p⃗|.
+  kind: representation
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    note: Gives the continuum commutator, vacuum-to-one-particle convention, normalization,
+      and identity resolution.
+  notation:
+  - source: schwartz
+    note: The factors of 2π and √(2ω_p) are stated to be conventions; ω_p is the mode
+      energy.
+- id: schwartz.one-particle-nonrelativistic-wavefunction-limit
+  label: One-particle wavefunction and nonrelativistic limit
+  summary: Restricting the second-quantized theory to one-particle states gives ⟨x|=⟨0|φ(x)
+    and ψ(x)=⟨x|ψ⟩. For a massive free field, this wavefunction obeys i∂_tψ=√(m²−∇⃗²)ψ.
+    Expanding at low energy and removing the rest-energy contribution gives i∂_tψ=−∇⃗²ψ/(2m),
+    the free nonrelativistic Schrödinger equation.
+  kind: result
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 23
+    - 24
+    note: Defines the one-particle wavefunction and derives its massive free-field
+      and low-energy forms.
+  notation:
+  - source: schwartz
+    note: The source calls the final expansion a low-energy (large-mass) expansion
+      and obtains the nonrelativistic equation after subtracting the mc² energy contribution.
+- id: schwartz.one-particle-position-state-from-field
+  label: One-particle position state from a field operator
+  summary: Projecting the field-created vacuum state onto a momentum state gives ⟨p⃗|φ_0(x⃗)|0⟩=e^−ip⃗·x⃗.
+    Hence |x⃗⟩≡φ_0(x⃗)|0⟩ is the unique one-particle state with that momentum-space
+    overlap. Other Fock-space states can share the overlap if they include additional
+    zero- or two-particle components, so the uniqueness claim is specifically within
+    the one-particle sector.
+  kind: result
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 22
+    note: Computes the momentum projection and states the one-particle-sector qualification
+      on the position state.
+  notation:
+  - source: schwartz
+    note: The source uses |x⃗⟩ for φ_0(x⃗)|0⟩ and distinguishes it from arbitrary
+      Fock-space states with the same one-particle projection.
+edges:
+- id: schwartz.field-expansion-to-equal-time-commutators
+  from: schwartz.free-scalar-field-mode-expansion
+  to: schwartz.equal-time-scalar-field-commutation-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source derives the equal-time commutators by inserting the mode expansion
+    for the field and its time derivative.
+  failure_mode: There would be no operator expression to expand when evaluating [φ(x⃗),φ(y⃗)]
+    or [φ(x⃗),π(y⃗)].
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: The displayed calculations substitute the field expansion and the definition
+      of π into both commutators.
+- id: schwartz.field-expansion-to-position-state
+  from: schwartz.free-scalar-field-mode-expansion
+  to: schwartz.one-particle-position-state-from-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The position-state result is obtained by applying the defined field operator
+    to the vacuum and projecting onto momentum.
+  failure_mode: Without the field expansion, there is no displayed operator-state
+    expression from which to compute the position-state overlap.
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 22
+    note: The page applies φ_0(x⃗) to |0⟩ and identifies the resulting one-particle
+      position state.
+- id: schwartz.free-time-evolution-to-one-particle-limit
+  from: schwartz.heisenberg-free-field-time-evolution
+  to: schwartz.one-particle-nonrelativistic-wavefunction-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source differentiates the field-defined one-particle wavefunction
+    and uses the massive free-field time evolution to obtain its relativistic and
+    low-energy equations.
+  failure_mode: The derivation would not supply the time derivative or the massive
+    dispersion relation needed for √(m²−∇⃗²).
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 23
+    - 24
+    note: The one-particle restriction is introduced on page 23 and differentiated
+      with the massive free-field relation on page 24.
+- id: schwartz.mode-algebra-to-equal-time-commutators
+  from: schwartz.momentum-mode-creation-annihilation-algebra
+  to: schwartz.equal-time-scalar-field-commutation-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equal-time field commutators are explicitly evaluated by substituting
+    the momentum-mode algebra into products of fields.
+  failure_mode: The delta function that collapses the momentum integrals, and therefore
+    the vanishing field commutator and canonical delta function, would be unavailable.
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: The calculation starts from the field expansion and invokes [a_k,a†_p]=(2π)^3δ³(p⃗−k⃗).
+- id: schwartz.mode-algebra-to-free-time-evolution
+  from: schwartz.momentum-mode-creation-annihilation-algebra
+  to: schwartz.heisenberg-free-field-time-evolution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source checks free-field time evolution by commuting the field with
+    H_0, which uses the creation-annihilation operator algebra.
+  failure_mode: The Hamiltonian commutator check cannot be carried out from the time-dependent
+    phases alone.
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 23
+    note: The displayed calculation of [H_0,φ_0] uses mode-operator commutation and
+      obtains −i∂_tφ_0.
+- id: schwartz.momentum-algebra-to-field-expansion
+  from: schwartz.momentum-mode-creation-annihilation-algebra
+  to: schwartz.free-scalar-field-mode-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The field is defined as an integral of the momentum-mode creation and
+    annihilation operators, with the stated normalization convention.
+  failure_mode: Without the mode operators and their normalization, the terms in the
+    field expansion cannot be interpreted as particle-annihilating and particle-creating
+    contributions.
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    note: The page gives the mode algebra and immediately defines the field as an
+      integral over those operators.
+- id: schwartz.momentum-algebra-to-position-state
+  from: schwartz.momentum-mode-creation-annihilation-algebra
+  to: schwartz.one-particle-position-state-from-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The momentum projection of φ_0(x⃗)|0⟩ is evaluated using the vacuum,
+    creation-operator normalization, and continuum commutator.
+  failure_mode: The derivation of the phase e^−ip⃗·x⃗ would lack the operator contraction
+    that selects the momentum component.
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    - 22
+    note: The operator normalization on page 21 and the projected matrix-element calculation
+      on page 22 are both used.
+groups:
+- id: schwartz.free-scalar-quantization
+  title: Free scalar-field quantization
+  question: How do momentum-mode operators define a free scalar field and its equal-time
+    quantum structure?
+motivations:
+- id: schwartz.dynamical-background-context
+  nodes:
+  - schwartz.free-scalar-field-mode-expansion
+  summary: 'The closing application frames the reason to describe the electromagnetic
+    system by a quantum field: a system treated as a background in single-particle
+    quantum mechanics becomes dynamical, allowing transition amplitudes to depend
+    on photon occupation through field operators.'
+  evidence:
+  - source: schwartz
+    section: 2.3.4 Einstein coefficients revisited
+    pages:
+    - 26
+    note: Uses a field-containing interaction in an atom-photon transition calculation
+      as context for a dynamical electromagnetic system.

@@ -9,12 +9,23 @@ choice, or reduced review.
 On first startup, welcome the user and explain this project's instructions:
 put reference files in `materials/`, or supply a path so you can copy them there
 without moving or overwriting originals. Show the host's model defaults and
-end-audit policy, and ask for course goals, audience, scope, and reference
-priorities before extraction. Ask once whether those settings are suitable;
+end-audit policy, and establish source scope and reference priorities before
+extraction. For graph construction alone, audience, course goals, and timetable
+are not required: collect those later when designing a course. Keep textbook
+graphs independent of student background, with a separate shared graph when
+combining books. Ask once whether the model settings are suitable;
 use choices already given in the session without asking again. Inspect
 `syllabusgraph agent policy` first and preserve an existing accepted policy.
 Do not configure over an existing policy merely because this file lists defaults.
 Only record a human audit after an actual human supplies their review.
+
+Tool recommendations are examples, not permanent requirements. Choose PDF
+readers, OCR, renderers, and other utilities for the actual files and currently
+available capabilities. Sample first, reuse private caches, and check current
+primary documentation before installing an optional dependency. Keep evidence,
+page identity, private storage, immutable packets, and configured model/reviewer
+requirements intact. Consult the repository's `docs/pdf-reading.md` (or its
+online version) for the current PDF setup; a newer suitable tool may be better.
 
 Use the native agent workflow when it is configured. Choose the provider your
 native host actually runs; run one of these commands:
@@ -107,5 +118,6 @@ history as well as the final audit.
 
 Manual imports remain drafts. They cannot promote until extraction and critic
 dispatches have been recorded. Keep sources, quotes, packets, logs, credentials,
-and policy files local. Review the resulting graph and course plan before
+and policy files local. Save temporary source-page renders and screenshots in
+ignored `.syllabusgraph/` too. Review the resulting graph and course plan before
 sharing either.

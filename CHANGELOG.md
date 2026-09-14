@@ -6,6 +6,23 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Publish a first QFT graph pilot: 36 concepts across four textbook graphs and
+  a 37-node shared synthesis over 26 printed pages. Terra/high extraction and
+  Sol/high review preserve distinct derivation routes, citations, and origins.
+  Include diagrams and explicit partial coverage; the end human audit is pending.
+
+- Add a public graph bank for separate textbook graphs and shared subject
+  graphs without course plans. Shared concepts can carry reviewed `origins`;
+  a bank check resolves those links and lists bounded overlap counts.
+- Separate graph scope from later audience, objectives, and timetable choices.
+  Record graph-to-course elicitation as a follow-up task.
+- Document efficient PDF setup, optional capabilities, and evidence checks;
+  leave reader/OCR and other tool choices adaptable to the material and current
+  tools rather than fixing a permanent processing stack.
+- Reject stale public graph-review summaries and invalid bank correspondences.
+  Reject reuse of a source packet when a replacement reader changes its selected
+  page text, including context pages, even if the original PDF hash is unchanged.
+
 - Make review finite: one extractor correction by default, then final Sol/Opus
   adjudication. Remove the review-after-adjudication requirement. Final acceptance
   still requires passing evidence and graph checks.

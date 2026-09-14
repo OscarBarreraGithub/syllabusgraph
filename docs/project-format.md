@@ -6,6 +6,10 @@ escape it. Duplicate YAML keys, unknown fields, missing references, duplicate
 IDs, invalid timing ranges, and prerequisite cycles are rejected. The executable
 contract is [project.schema.json](../src/syllabusgraph/schemas/project.schema.json).
 
+A textbook or shared subject project can have zero course plans. Keep
+`plans_dir: plans`; the directory can be absent. Its graph requires no audience,
+schedule, or instructional time estimates. Those choices belong to later plans.
+
 `syllabusgraph init` also creates a getting-started `README.md` and a
 `materials/` directory for locally supplied references, and a private
 `COURSE_GUIDANCE.md` brief. `materials/`, the brief, and `.syllabusgraph/`
@@ -63,6 +67,20 @@ A node has `id`, `label`, `summary`, `kind`, and evidence. Kinds are concept,
 method, result, assumption, or representation. Optional fields are `group`,
 source-specific `notation` records, and timing `estimates` keyed by mastery.
 
+Shared nodes may also have `origins`, linking to nodes in other graph projects:
+
+```yaml
+origins:
+  - project: reference-one
+    node: reference-one.topic
+    note: The same concept within the stated assumptions; notation differs.
+```
+
+An origin is a reviewed correspondence, not a prerequisite or an automatic
+equivalence assertion. Explain differences in its note and retain source
+citations on the shared node. `validate` checks the field shape without needing
+the other project. The graph bank check also resolves project and node IDs.
+
 ```yaml
 estimates:
   use:
@@ -79,6 +97,11 @@ An edge has an ID, `from`, `to`, `relation`, `source_level`, `target_level`,
 typical, or helpful. Relations are prerequisite, alternative, evidence, or
 pedagogical. Only prerequisites drive closure/order. Do not promote a mere
 textbook presentation sequence into a compulsory dependency.
+
+An `alternative` edge records an available route; the current planner does not
+automatically choose a route or enforce its requirements. Preserve within-route
+prerequisites explicitly in the graph. Route selection belongs to later course
+design and must not silently require all of the source books' derivations.
 
 Groups have ID/title and optionally an organizing question. Motivations have
 ID, concept IDs in `nodes`, an original source-backed `summary`, and evidence.

@@ -1,0 +1,1588 @@
+nodes:
+- id: qft.adjoint-representation
+  label: Adjoint representation from structure constants
+  summary: For structure constants satisfying the displayed antisymmetry and Jacobi
+    relation, matrices (t^A_α)^β{}_γ=−i C^β_{γα} furnish the adjoint (regular) representation
+    of the Lie algebra.
+  kind: representation
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+    note: Equations (15.1.6)–(15.1.7) construct and name the adjoint representation.
+  notation:
+  - source: weinberg-2
+    note: A superscript A on t denotes the adjoint representation in this treatment.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.adjoint-representation
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.canonical-field-momentum-hamiltonian
+  label: Canonical momentum and Hamiltonian for a field
+  summary: The conjugate momentum density is pi(x) = partial L / partial phidot(x),
+    and the Hamiltonian is H = integral d^3x [pi phidot - L]. This is the continuum
+    Legendre construction used for the field.
+  kind: method
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: pi(x) denotes momentum density, whereas the physical momentum associated
+      with translations is treated separately later.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    note: The text obtains the momentum density by a discretization argument and then
+      passes to the continuum Hamiltonian density.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.canonical-field-momentum-hamiltonian
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.charge-conjugation-time-reversal-phase-constraints
+  label: Charge-conjugation and time-reversal phase constraints
+  summary: For the causal scalar field to transform proportionally under charge conjugation,
+    the one-particle phases obey ξᶜ = ξ*. Time reversal is antiunitary; requiring
+    a simple relation to the field at the time-reversed point instead gives ζᶜ = ζ*.
+    In the self-conjugate case the charge-conjugation phase is real and equals ±1.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 206
+    note: Equations (5.2.20)–(5.2.31) derive the charge-conjugation and time-reversal
+      phase conditions for the scalar field.
+  notation:
+  - source: weinberg-1
+    note: ξ and ζ are the one-particle phases for charge conjugation and time reversal,
+      respectively.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.charge-conjugation-time-reversal-phase-constraints
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.charge-conservation-obstruction
+  label: Charge-conservation obstruction for a self-adjoint field
+  summary: If the particle carries a conserved charge, charge-preserving interaction
+    terms need equal numbers of a(p) and a†(p). This cannot be achieved by a polynomial
+    solely in the self-adjoint neutral-field combination, which lacks a simple commutator
+    with the charge operator.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 203
+    note: The source contrasts the simple charge commutators of φ⁺ and its adjoint
+      with the self-adjoint field.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.charge-conservation-obstruction
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.complex-causal-scalar-field
+  label: Complex causal scalar field from particle and antiparticle
+  summary: For spinless bosons of equal mass and opposite charges, combining a particle
+    annihilation field with an antiparticle creation field gives φ(x) = φ⁺(x) + φ⁺c†(x).
+    The field has [Q, φ(x)] = −qφ(x) and is the essentially unique causal scalar field
+    in this construction; it covers self-conjugate neutral particles as the special
+    case aᶜ(p) = a(p).
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 203
+    - 204
+    note: The source introduces opposite-charge equal-mass bosons, forms the charge-eigenfield,
+      and gives its normalized mode expansion in equation (5.2.11).
+  notation:
+  - source: weinberg-1
+    note: Superscript c labels the charge-conjugate particle; φ⁺c† is the adjoint
+      of its annihilation field.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.complex-causal-scalar-field
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.covariant-derivative
+  label: Covariant derivative of matter fields
+  summary: The operator (D_μψ)_l=∂_μψ_l−iA^β_μ(t_β)_l{}^mψ_m is constructed so that
+    D_μψ transforms in the same representation as ψ under the local transformation.
+    This records the endpoint of the source's cancellation argument through equation
+    (15.1.11).
+  kind: method
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: Equations (15.1.10)–(15.1.11) define D_μ and show its homogeneous transformation.
+  notation:
+  - source: weinberg-2
+    note: D_μ acts on matter components through the representation matrices t_β.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.covariant-derivative
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.equal-time-scalar-field-commutators
+  label: Equal-time canonical commutators of a scalar field
+  summary: At a common time, a scalar field and its conjugate momentum satisfy [phi(x),
+    pi(y)] = i delta^(3)(x-y), while the field-field and momentum-momentum commutators
+    vanish. Peskin and Schroeder state this as the canonical quantization prescription
+    for a real field; Schwartz derives the same equal-time algebra from momentum modes
+    and notes its fixed-time interacting-theory extension. Neither treatment here
+    supplies an unequal-time relation.
+  kind: result
+  group: qft.scalar-field-foundations
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.canonical-quantization-real-field
+    note: Corresponds to the real-field canonical prescription, including promotion
+      of phi and pi to operators; the source presents it first in the Schroedinger
+      picture and then at common Heisenberg time.
+  - project: schwartz
+    node: schwartz.equal-time-scalar-field-commutation-relations
+    note: Corresponds to the equal-time scalar algebra derived from the free mode
+      expansion; the source also states the same fixed-time relations for interacting
+      fields.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 19
+    - 20
+    note: The text first states promotion of phi and pi, then gives the continuous-system
+      equal-time commutation relations.
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: Derives the field commutator from the mode algebra, defines the conjugate
+      momentum, and gives the canonical equal-time commutator.
+  notation:
+  - source: peskin-schroeder
+    note: The equal-time relations are introduced in the Schroedinger picture; the
+      book says they also hold at a common time after switching to the Heisenberg
+      picture.
+  - source: schwartz
+    note: The source explicitly limits the derivation to equal time and says the different-time
+      calculation is more subtle.
+- id: qft.field-euler-lagrange-equation
+  label: Field Euler-Lagrange equation
+  summary: Varying a local field action with boundary-vanishing variations yields
+    partial_mu[partial L / partial(partial_mu phi)] - partial L / partial phi = 0;
+    one equation occurs for each field.
+  kind: result
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: This is Eq. (2.3), with partial_mu acting on the derivative of the Lagrangian
+      density with respect to partial_mu phi.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory'
+    pages:
+    - 16
+    note: The derivation removes the surface term by boundary conditions and uses
+      arbitrary variations to obtain the local equation of motion.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.field-euler-lagrange-equation
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.finite-gauge-transformations
+  label: Finite gauge transformations
+  summary: A finite transformation acts on matter through exp(i t_αΛ^α(x)); requiring
+    the covariant derivative to transform in the same way fixes the corresponding
+    finite transformation law for the gauge field. Its infinitesimal limit recovers
+    the earlier local rules.
+  kind: method
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+    note: Equations (15.1.15)–(15.1.17) give the finite matter and gauge-field transformations
+      and relate them to the infinitesimal rules.
+  notation:
+  - source: weinberg-2
+    note: Λ^α(x) parameterizes the finite group element, while ε^α(x) denotes its
+      infinitesimal limit.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.finite-gauge-transformations
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.fock-space-particle-sectors
+  label: Fock space and physical particle sectors
+  summary: For one particle type, the Fock space is organized into Hilbert spaces
+    H_n of physical n-particle states. A state in H_n has on-shell momenta p_i with
+    p_i^0>0; for several particle types, the Fock space is the direct sum of their
+    associated Hilbert spaces. The source emphasizes that this is not a sum over arbitrary
+    four-vectors, because energy is fixed by three-momentum and mass.
+  kind: representation
+  group: qft.second-quantized-scalar-field
+  evidence:
+  - source: schwartz
+    section: 2.3 Second quantization
+    pages:
+    - 21
+    note: Defines the physical n-particle sectors and their on-shell momentum labels.
+  notation:
+  - source: schwartz
+    note: The source writes |p⃗⟩, |p^μ⟩, and |p⟩ interchangeably for physical momentum
+      states, with p_i^0=√(p⃗_i²+m_i²).
+  origins:
+  - project: schwartz
+    node: schwartz.fock-space-particle-sectors
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.free-scalar-field-mode-expansion
+  label: Free scalar field as a momentum-mode expansion
+  summary: The free scalar field operator is defined by φ_0(x⃗)=∫d^3p/(2π)^3[2ω_p]^−1/2(a_p
+    e^{ip⃗·x⃗}+a†_p e^−ip⃗·x⃗). This resembles a classical mode expansion, but the
+    coefficients are operators; the source treats the quantum formula itself as the
+    definition rather than as a consequence of the classical expression.
+  kind: representation
+  group: qft.second-quantized-scalar-field
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    - 22
+    note: Defines φ_0 from the momentum-mode operators and states the limited role
+      of the classical analogy.
+  notation:
+  - source: schwartz
+    note: The subscript 0 denotes a free field. The spatial phases on these pages
+      use p⃗·x⃗.
+  origins:
+  - project: schwartz
+    node: schwartz.free-scalar-field-mode-expansion
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.gauge-field-lagrangian-restrictions
+  label: Gauge-field terms and mass restriction
+  summary: Within this construction, the gauge field may occur only through field
+    strengths and covariant derivatives; a direct quadratic mass term is excluded.
+    For a parity-conserving Lorentz-invariant gauge-field term, the source gives −¼
+    g_{αβ}F^α_{μν}F^{βμν} with constant g_{αβ}. If parity (or CP or T) conservation
+    is not assumed, it may also include L′_A=−½ θ_{αβ}ε^{μνρσ}F^α_{μν}F^β_{ρσ}, with
+    constant θ_{αβ}; the source describes this term as a derivative that does not
+    affect the field equations or Feynman rules.
+  kind: result
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: The opening page of Section 15.2 excludes direct gauge-field dependence
+      and the mass term, then gives the parity-conserving quadratic field-strength
+      term in equation (15.2.3).
+  notation:
+  - source: weinberg-2
+    note: g_{αβ} is a constant matrix in the displayed quadratic gauge-field Lagrangian
+      term.
+  - source: weinberg-2
+    note: θ_{αβ} is the other constant matrix in the displayed parity-odd term; ε^{μνρσ}
+      is the spacetime antisymmetric tensor used there.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-field-lagrangian-restrictions
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.gauge-field-transformation
+  label: Inhomogeneous gauge-field transformation
+  summary: Gauge fields A^α_μ transform as δA^β_μ=∂_μ ε^β+C^β_{γα}ε^α A^γ_μ. The derivative
+    of the local parameter supplies the compensating term missing from the derivative
+    of a matter field.
+  kind: concept
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: Equations (15.1.8)–(15.1.9) derive the need for and give the gauge-field
+      transformation.
+  notation:
+  - source: weinberg-2
+    note: The book includes coupling factors in t_α, and consequently in the structure
+      constants, rather than displaying a separate coupling in D_μ.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-field-transformation
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.gauge-invariant-lagrangian-ingredients
+  label: Gauge-covariant ingredients for a Lagrangian
+  summary: A Lagrangian built from matter fields, their gauge-covariant derivatives,
+    field strengths, and covariant derivatives of field strengths is gauge invariant
+    when it is invariant under the corresponding global transformations, because these
+    ingredients transform without derivatives of the local parameters.
+  kind: concept
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: The opening of Section 15.2 gives the sufficient construction criterion
+      and lists the allowed covariant ingredients in equation (15.2.1).
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-invariant-lagrangian-ingredients
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.heisenberg-free-field-time-evolution
+  label: Heisenberg evolution of a free scalar field
+  summary: In the Heisenberg picture, free momentum-mode operators evolve as a_p(t)=e^−iω_pta_p
+    and a†_p(t)=e^iω_pta†_p, giving φ_0(x)=∫d^3p/(2π)^3[2ω_p]^−1/2(a_p e^−ipx+a†_p
+    e^ipx), with p^μ=(ω_p,p⃗). For a massive scalar, ω_p=√(p⃗²+m²) and the expansion
+    satisfies (□+m²)φ(x)=0. Its free-Hamiltonian commutator realizes i∂_tφ=[φ,H_0].
+  kind: method
+  group: qft.second-quantized-scalar-field
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 22
+    - 23
+    note: Introduces Heisenberg time dependence, the spacetime mode expansion, the
+      massive dispersion relation, and its Hamiltonian consistency check.
+  notation:
+  - source: schwartz
+    note: On page 22 the displayed field is massless with ω_p=|p⃗|; page 23 gives
+      the massive replacement ω_p=√(p⃗²+m²).
+  origins:
+  - project: schwartz
+    node: schwartz.heisenberg-free-field-time-evolution
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.hermitian-local-interaction-condition
+  label: Hermiticity and spacelike commutation for scalar interactions
+  summary: For a Lorentz-scalar interaction density built from scalar-field pieces,
+    hermiticity brings in both annihilation and creation pieces, while Lorentz invariance
+    of the S-matrix also requires interaction densities to commute at spacelike separation.
+  kind: assumption
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 201
+    note: The source states the scalar transformation condition and the additional
+      spacelike-commutation condition, then identifies hermiticity as requiring the
+      adjoint piece.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.hermitian-local-interaction-condition
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.klein-gordon-canonical-hamiltonian
+  label: Klein-Gordon canonical Hamiltonian
+  summary: For the real Klein-Gordon field, pi = phidot and H = integral d^3x [1/2
+    pi^2 + 1/2 (grad phi)^2 + 1/2 m^2 phi^2]. The terms are identified as temporal-motion,
+    spatial-gradient, and field-amplitude energy costs.
+  kind: result
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: This is Eq. (2.8), constructed from the Lagrangian of Eq. (2.6).
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 17
+    note: The book states the conjugate momentum and the resulting Hamiltonian for
+      the real scalar field.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.klein-gordon-canonical-hamiltonian
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.klein-gordon-classical-equation
+  label: Classical Klein-Gordon equation
+  summary: The real Klein-Gordon Lagrangian gives (partial_t^2 - grad^2 + m^2) phi
+    = 0, equivalently (partial_mu partial^mu + m^2) phi = 0. In this treatment it
+    is a classical field equation rather than a one-particle wave equation.
+  kind: result
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The two displayed forms are Eq. (2.7); the sign convention is the one implicit
+      in Eq. (2.6).
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 17
+    note: The text applies the usual variational procedure to Eq. (2.6) and explicitly
+      distinguishes the result from a quantum-mechanical wave equation.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.klein-gordon-classical-equation
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.klein-gordon-fourier-oscillator-modes
+  label: Klein-Gordon Fourier modes as harmonic oscillators
+  summary: Expanding the real classical field in spatial Fourier modes gives, for
+    each momentum p, [d_t^2 + |p|^2 + m^2] phi(p,t) = 0. Each mode therefore has the
+    simple-harmonic-oscillator frequency omega_p = sqrt(|p|^2 + m^2).
+  kind: representation
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The expansion is phi(x,t) = integral d^3p/(2pi)^3 exp(i p dot x) phi(p,t),
+      with phi*(p) = phi(-p) for a real field.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    note: Equations (2.21) and (2.22) identify the Fourier-space equation and oscillator
+      frequency.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.klein-gordon-fourier-oscillator-modes
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.lie-algebra-structure-constants
+  label: Lie-algebra generators and structure constants
+  summary: The generators obey [t_α,t_β]=i C^γ_{αβ}t_γ. The real structure constants
+    are antisymmetric in α and β and obey the Jacobi constraint inherited from the
+    generator commutator.
+  kind: representation
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 2
+    - 3
+    note: Equations (15.1.2)–(15.1.5) give the commutator, antisymmetry, and Jacobi
+      constraint.
+  notation:
+  - source: weinberg-2
+    note: The book writes the structure constants as C^γ_{αβ}; their placement should
+      not be silently replaced by another convention.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.lie-algebra-structure-constants
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.local-field-action
+  label: Local field action
+  summary: For fields phi(x), the action is the spacetime integral of a local Lagrangian
+    density L(phi, partial_mu phi); stationary variations are taken with fixed boundary
+    field configurations.
+  kind: method
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The book calls the Lagrangian density script L simply the Lagrangian, and
+      writes S = integral d^4x L(phi, partial_mu phi).
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory'
+    pages:
+    - 15
+    - 16
+    note: The action is expressed through a local density depending on fields and
+      their derivatives; the boundary conditions used to eliminate the surface term
+      span pp. 15-16.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.local-field-action
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.local-matter-gauge-transformations
+  label: Local infinitesimal transformations of matter fields
+  summary: Matter components transform infinitesimally as δψ_l(x)=i ε^α(x)(t_α)_l{}^m
+    ψ_m(x), with real spacetime-dependent parameters and constant generator matrices.
+  kind: concept
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 2
+    note: Equation (15.1.1) states the local matter-field transformation and identifies
+      the parameters and generators.
+  notation:
+  - source: weinberg-2
+    note: Weinberg uses Greek generator labels α, β, … and spacetime indices μ, ν,
+      …; matter components are ψ_l.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.local-matter-gauge-transformations
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.momentum-mode-creation-annihilation-algebra
+  label: Momentum-mode creation and annihilation algebra
+  summary: Free-field momentum modes use operators satisfying [a_k,a†_p]=(2π)^3δ^3(p⃗−k⃗).
+    The creation operator creates a one-particle momentum state according to a†_p|0⟩=(2ω_p)^−1/2|p⃗⟩.
+    With this normalization, the one-particle identity is ∫d^3p/((2π)^3 2ω_p) |p⃗⟩⟨p⃗|.
+  kind: representation
+  group: qft.second-quantized-scalar-field
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    note: Gives the continuum commutator, vacuum-to-one-particle convention, normalization,
+      and identity resolution.
+  notation:
+  - source: schwartz
+    note: The factors of 2π and √(2ω_p) are stated to be conventions; ω_p is the mode
+      energy.
+  origins:
+  - project: schwartz
+    node: schwartz.momentum-mode-creation-annihilation-algebra
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.nonabelian-field-strength
+  label: Non-Abelian field strength from covariant-derivative commutators
+  summary: The commutator [D_ν,D_μ] acting on matter defines F^γ_{νμ}; explicitly
+    F^γ_{νμ}=∂_νA^γ_μ−∂_μA^γ_ν+C^γ_{αβ}A^α_νA^β_μ. It transforms homogeneously in
+    the adjoint representation. The source identifies this as a commutator construction
+    and leaves a direct transformation-law check to the reader.
+  kind: result
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+    note: Equations (15.1.12)–(15.1.14) define the field strength through the commutator
+      and give its transformation law.
+  notation:
+  - source: weinberg-2
+    note: The source orders the spacetime indices as F^γ_{νμ}; the displayed nonlinear
+      term uses A^α_νA^β_μ.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.nonabelian-field-strength
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.nonzero-spacelike-mixed-commutator
+  label: Nonzero spacelike mixed commutator
+  summary: The mixed bracket of the annihilation and creation scalar-field pieces
+    is Δ₊(x − y). Although Δ₊ is Lorentz invariant and even for spacelike arguments,
+    it does not vanish there, so an annihilation piece alone cannot supply a hermitian
+    local interaction.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 202
+    note: Equations (5.2.6)–(5.2.9) define Δ₊ and evaluate it for spacelike separation
+      before establishing that it is nonzero.
+  notation:
+  - source: weinberg-1
+    note: Δ₊(x) denotes the positive-frequency integral in equation (5.2.7).
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.nonzero-spacelike-mixed-commutator
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.one-particle-nonrelativistic-wavefunction-limit
+  label: One-particle wavefunction and nonrelativistic limit
+  summary: Restricting the second-quantized theory to one-particle states gives ⟨x|=⟨0|φ(x)
+    and ψ(x)=⟨x|ψ⟩. For a massive free field, this wavefunction obeys i∂_tψ=√(m²−∇⃗²)ψ.
+    Expanding at low energy and removing the rest-energy contribution gives i∂_tψ=−∇⃗²ψ/(2m),
+    the free nonrelativistic Schrödinger equation.
+  kind: result
+  group: qft.second-quantized-scalar-field
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 23
+    - 24
+    note: Defines the one-particle wavefunction and derives its massive free-field
+      and low-energy forms.
+  notation:
+  - source: schwartz
+    note: The source calls the final expansion a low-energy (large-mass) expansion
+      and obtains the nonrelativistic equation after subtracting the mc² energy contribution.
+  origins:
+  - project: schwartz
+    node: schwartz.one-particle-nonrelativistic-wavefunction-limit
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.one-particle-position-state-from-field
+  label: One-particle position state from a field operator
+  summary: Projecting the field-created vacuum state onto a momentum state gives ⟨p⃗|φ_0(x⃗)|0⟩=e^−ip⃗·x⃗.
+    Hence |x⃗⟩≡φ_0(x⃗)|0⟩ is the unique one-particle state with that momentum-space
+    overlap. Other Fock-space states can share the overlap if they include additional
+    zero- or two-particle components, so the uniqueness claim is specifically within
+    the one-particle sector.
+  kind: result
+  group: qft.second-quantized-scalar-field
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 22
+    note: Computes the momentum projection and states the one-particle-sector qualification
+      on the position state.
+  notation:
+  - source: schwartz
+    note: The source uses |x⃗⟩ for φ_0(x⃗)|0⟩ and distinguishes it from arbitrary
+      Fock-space states with the same one-particle projection.
+  origins:
+  - project: schwartz
+    node: schwartz.one-particle-position-state-from-field
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.parity-covariance-constraint
+  label: Parity covariance constrains intrinsic parities
+  summary: Requiring the parity-transformed causal scalar field to remain proportional
+    to the field that can coexist with it forces ηᶜ = η*. Thus a spinless particle-antiparticle
+    pair has even intrinsic parity; for a self-conjugate spinless particle, η is real
+    and equals ±1.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 205
+    - 206
+    note: Equations (5.2.18)–(5.2.19) derive the particle-antiparticle parity relation,
+      and the next page gives its self-conjugate consequence.
+  notation:
+  - source: weinberg-1
+    note: η and ηᶜ are the intrinsic parities of particle and antiparticle, and ℘x
+      = (−x, x⁰).
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.parity-covariance-constraint
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.pauli-jordan-commutator
+  label: Complex scalar-field commutator
+  summary: The complex scalar field satisfies [φ(x), φ†(y)] = Δ(x − y), where Δ is
+    the difference Δ₊(x − y) − Δ₊(y − x).
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 205
+    note: Equations (5.2.12) and (5.2.13) state the field commutator and define Δ.
+  notation:
+  - source: weinberg-1
+    note: The source denotes this commutator kernel by Δ, defined as an antisymmetrized
+      Δ₊.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.pauli-jordan-commutator
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.peskin-canonical-quantization-prescription
+  label: Peskin-Schroeder canonical quantization prescription for a real field
+  summary: In the Peskin-Schroeder real-field route, canonical quantization promotes
+    phi and its conjugate momentum density pi to operators and stipulates their equal-time
+    commutators. This is the source-specific prescription route to the shared equal-time
+    algebra, rather than a prerequisite for the separate Schwartz mode derivation.
+  kind: method
+  group: qft.scalar-field-foundations
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.canonical-quantization-real-field
+    note: Preserves the full canonical-quantization prescription in this source-specific
+      route; its stipulated equal-time algebra is represented by the shared result
+      separately.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 19
+    - 20
+    note: The text first states promotion of phi and pi, then gives the continuous-system
+      equal-time commutation relations.
+  notation:
+  - source: peskin-schroeder
+    note: The equal-time relations are introduced in the Schroedinger picture; the
+      book says they also hold at a common time after switching to the Heisenberg
+      picture.
+- id: qft.pure-gauge-flatness
+  label: Pure gauge and the flatness criterion
+  summary: A gauge field is pure gauge when a gauge transformation can make it vanish
+    everywhere. In a simply connected region, vanishing field strength is stated to
+    be both necessary and sufficient for this condition.
+  kind: result
+  group: qft.nonabelian-gauge-invariance
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 6
+    note: The text defines a pure gauge field and states the necessary-and-sufficient
+      condition in a simply connected region.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pure-gauge-flatness
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.real-causal-scalar-field
+  label: Self-adjoint causal scalar field
+  summary: 'For one neutral spinless species, cancellation of the spacelike brackets
+    requires Bose statistics and equal magnitudes of the annihilation and creation
+    coefficients. A state-phase redefinition and field rescaling give φ(x) = φ⁺(x)
+    + φ⁺†(x), a self-adjoint field whose normal-ordered polynomial interactions commute
+    at spacelike separation. Once that relative-phase convention is chosen, every
+    scalar field for the particle in the interaction density must use it: separately
+    causal fields with different relative phases generally fail to commute with one
+    another at spacelike separation.'
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 202
+    - 203
+    note: The source derives the coefficient condition from the spacelike brackets
+      and gives the normalized self-adjoint field in equation (5.2.10).
+  notation:
+  - source: weinberg-1
+    note: The source uses κ and λ for the coefficients in φ(x) = κφ⁺(x) + λφ⁻(x).
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.real-causal-scalar-field
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.real-klein-gordon-lagrangian
+  label: Real Klein-Gordon Lagrangian
+  summary: The real scalar field is governed classically by L = 1/2 phidot^2 - 1/2
+    (grad phi)^2 - 1/2 m^2 phi^2, equivalently 1/2 (partial_mu phi)^2 - 1/2 m^2 phi^2
+    in the book's notation.
+  kind: representation
+  group: qft.scalar-field-foundations
+  notation:
+  - source: peskin-schroeder
+    note: The field phi is real-valued here; m is initially a parameter and is later
+      interpreted as mass.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    note: Equation (2.6) defines the single-field classical Lagrangian used in the
+      subsequent Klein-Gordon discussion.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.real-klein-gordon-lagrangian
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.relativistic-field-viewpoint
+  label: Relativistic field viewpoint
+  summary: A relativistic quantum description must accommodate variable particle number
+    and preserve causal observables; the text motivates a multiparticle field theory
+    through pair creation, virtual multiparticle states, and the spacelike propagation
+    problem of a one-particle amplitude.
+  kind: concept
+  group: qft.scalar-field-foundations
+  evidence:
+  - source: peskin-schroeder
+    section: 2.1 The Necessity of the Field Viewpoint
+    pages:
+    - 13
+    - 14
+    note: The discussion gives variable particle number and a nonzero spacelike single-particle
+      propagation amplitude as motivations for a multiparticle field theory.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.relativistic-field-viewpoint
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.scalar-lorentz-representation
+  label: Scalar Lorentz representation and zero spin
+  summary: A one-component field in the scalar Lorentz representation, D(Λ) = 1, has
+    only the j = 0 rotational solution; in this construction it describes spin-zero
+    particles.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 201
+    note: The scalar Lorentz representation is reduced to rotations and identified
+      with j = 0.
+  notation:
+  - source: weinberg-1
+    note: The source writes the scalar representation as D(Λ) = 1.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.scalar-lorentz-representation
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+- id: qft.schwartz-equal-time-commutator-derivation
+  label: Schwartz mode derivation of equal-time scalar-field commutators
+  summary: In the Schwartz free-field route, the field mode expansion, its canonical
+    momentum, and the creation-annihilation algebra are inserted into the field commutators
+    to derive the equal-time scalar algebra. The source then states the same fixed-time
+    relations for an interacting theory; this derivation route is separate from the
+    Peskin-Schroeder prescription.
+  kind: method
+  group: qft.second-quantized-scalar-field
+  origins:
+  - project: schwartz
+    node: schwartz.equal-time-scalar-field-commutation-relations
+    note: Preserves the source’s derivation of its equal-time result from free momentum
+      modes, including its stated fixed-time interacting extension; it is a route-specific
+      method record.
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: Derives the field commutator from the mode algebra, defines the conjugate
+      momentum, and gives the canonical equal-time commutator.
+  notation:
+  - source: schwartz
+    note: The source explicitly limits the derivation to equal time and says the different-time
+      calculation is more subtle.
+- id: qft.spinless-boson-and-mass-constraint
+  label: Bosonic statistics and particle-antiparticle mass equality
+  summary: The complex scalar construction has nontrivial spacelike commutation only
+    for Bose statistics. Its causality condition also requires particle and antiparticle
+    masses to be equal, so that the relevant positive-frequency functions coincide.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 204
+    note: The source rules out Fermi statistics for a nonzero spinless field and states
+      equal mass as necessary and sufficient together with equal coefficient magnitudes.
+  group: qft.causal-scalar-fields
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.spinless-boson-and-mass-constraint
+    note: The shared record preserves this book-specific treatment without asserting
+      equivalence beyond the stated concept.
+edges:
+- id: qft.peskin-canonical-prescription-route-to-equal-time-commutators
+  from: qft.peskin-canonical-quantization-prescription
+  to: qft.equal-time-scalar-field-commutators
+  relation: alternative
+  source_level: use
+  target_level: recognize
+  necessity: necessary
+  rationale: This source-qualified alternative records the Peskin-Schroeder canonical
+    prescription as one route to the shared equal-time algebra. Its canonical-formalism
+    requirement is preserved on the incoming prerequisite edge for this route only.
+  failure_mode: Within the Peskin-Schroeder route, omitting the canonical pair obscures
+    the stipulated operator roles and delta-function commutator; this does not make
+    that route a prerequisite of the Schwartz derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 19
+    - 20
+    note: The text first states promotion of phi and pi, then gives the continuous-system
+      equal-time commutation relations.
+- id: qft.peskin-schroeder.canonical-formalism-to-kg-hamiltonian
+  from: qft.canonical-field-momentum-hamiltonian
+  to: qft.klein-gordon-canonical-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Klein-Gordon Hamiltonian is obtained by using the conjugate momentum
+    and continuum Legendre construction for the real-scalar Lagrangian.
+  failure_mode: Without the canonical momentum and Hamiltonian construction, one cannot
+    transform the Lagrangian into the displayed three-term Hamiltonian.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    - 17
+    note: Equations (2.4)-(2.5) define the momentum density and continuum Hamiltonian,
+      and p. 17 applies them to obtain Eq. (2.8).
+- id: qft.peskin-schroeder.canonical-formalism-to-quantization
+  from: qft.canonical-field-momentum-hamiltonian
+  to: qft.peskin-canonical-quantization-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The quantization prescription specifically promotes the canonical pair
+    phi and pi and uses its commutation structure.
+  failure_mode: Without knowing pi as the field's conjugate momentum density, the
+    operator pair and its delta-function commutator lack their stated canonical role.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 19
+    - 20
+    note: The book promotes phi and pi and explains that the continuous momentum density
+      leads to a Dirac delta in the commutator.
+- id: qft.peskin-schroeder.field-euler-lagrange-to-kg-equation
+  from: qft.field-euler-lagrange-equation
+  to: qft.klein-gordon-classical-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated Klein-Gordon equation follows by applying the field Euler-Lagrange
+    equation to the real-scalar Lagrangian.
+  failure_mode: Without using the Euler-Lagrange equation, the variational calculation
+    from the displayed Lagrangian to the Klein-Gordon equation cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory; Hamiltonian
+      Field Theory'
+    pages:
+    - 16
+    - 17
+    note: Equation (2.3) supplies the field variational equation, and the text then
+      states that the usual procedure applied to Eq. (2.6) gives Eq. (2.7).
+- id: qft.peskin-schroeder.kg-equation-to-fourier-modes
+  from: qft.klein-gordon-classical-equation
+  to: qft.klein-gordon-fourier-oscillator-modes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mode equation and omega_p follow by substituting the Fourier expansion
+    into the Klein-Gordon equation.
+  failure_mode: Without the Klein-Gordon equation, the Fourier calculation has no
+    field equation from which to obtain the mode frequency.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    note: The text explicitly writes the Klein-Gordon equation in Fourier space and
+      identifies it with a simple harmonic oscillator equation.
+- id: qft.peskin-schroeder.kg-lagrangian-to-kg-equation
+  from: qft.real-klein-gordon-lagrangian
+  to: qft.klein-gordon-classical-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The text derives the Klein-Gordon equation by applying the variational
+    procedure to the displayed real-scalar Lagrangian.
+  failure_mode: Without the Lagrangian, one cannot carry out the source's derivation
+    or identify the mass and gradient terms in the equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    - 17
+    note: Equation (2.6) is followed by the statement that the usual procedure gives
+      Eq. (2.7).
+- id: qft.peskin-schroeder.kg-lagrangian-to-kg-hamiltonian
+  from: qft.real-klein-gordon-lagrangian
+  to: qft.klein-gordon-canonical-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Klein-Gordon Hamiltonian is constructed from the real-scalar Lagrangian
+    and its conjugate momentum.
+  failure_mode: Without the starting Lagrangian, the Legendre construction cannot
+    reproduce the three terms of the displayed Hamiltonian.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Hamiltonian Field Theory'
+    pages:
+    - 16
+    - 17
+    note: The example Lagrangian is introduced on p. 16 and its canonical momentum
+      and Hamiltonian are given on p. 17.
+- id: qft.peskin-schroeder.local-action-to-field-euler-lagrange
+  from: qft.local-field-action
+  to: qft.field-euler-lagrange-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Euler-Lagrange equation is obtained by varying the local action and
+    applying its boundary conditions.
+  failure_mode: Without the action and allowed variations, the field equation would
+    be an asserted formula rather than the result of the stated variational calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Lagrangian Field Theory'
+    pages:
+    - 15
+    - 16
+    note: The derivation begins with stationarity of S and arrives at the local equation
+      after removing the surface term.
+- id: qft.schwartz-mode-derivation-route-to-equal-time-commutators
+  from: qft.schwartz-equal-time-commutator-derivation
+  to: qft.equal-time-scalar-field-commutators
+  relation: alternative
+  source_level: derive
+  target_level: recognize
+  necessity: necessary
+  rationale: This source-qualified alternative records the Schwartz free-mode derivation
+    as one route to the shared equal-time algebra. Its field-expansion and mode-algebra
+    requirements are preserved on its incoming prerequisite edges only.
+  failure_mode: Within the Schwartz route, omitting either the operator expansion
+    or the mode algebra prevents the displayed commutator derivation; this does not
+    make that route a prerequisite of the Peskin-Schroeder prescription.
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: Derives the field commutator from the mode algebra, defines the conjugate
+      momentum, and gives the canonical equal-time commutator.
+- id: qft.schwartz.field-expansion-to-equal-time-commutators
+  from: qft.free-scalar-field-mode-expansion
+  to: qft.schwartz-equal-time-commutator-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source derives the equal-time commutators by inserting the mode expansion
+    for the field and its time derivative.
+  failure_mode: There would be no operator expression to expand when evaluating [φ(x⃗),φ(y⃗)]
+    or [φ(x⃗),π(y⃗)].
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: The displayed calculations substitute the field expansion and the definition
+      of π into both commutators.
+- id: qft.schwartz.field-expansion-to-position-state
+  from: qft.free-scalar-field-mode-expansion
+  to: qft.one-particle-position-state-from-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The position-state result is obtained by applying the defined field operator
+    to the vacuum and projecting onto momentum.
+  failure_mode: Without the field expansion, there is no displayed operator-state
+    expression from which to compute the position-state overlap.
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 22
+    note: The page applies φ_0(x⃗) to |0⟩ and identifies the resulting one-particle
+      position state.
+- id: qft.schwartz.free-time-evolution-to-one-particle-limit
+  from: qft.heisenberg-free-field-time-evolution
+  to: qft.one-particle-nonrelativistic-wavefunction-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source differentiates the field-defined one-particle wavefunction
+    and uses the massive free-field time evolution to obtain its relativistic and
+    low-energy equations.
+  failure_mode: The derivation would not supply the time derivative or the massive
+    dispersion relation needed for √(m²−∇⃗²).
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 23
+    - 24
+    note: The one-particle restriction is introduced on page 23 and differentiated
+      with the massive free-field relation on page 24.
+- id: qft.schwartz.mode-algebra-to-equal-time-commutators
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.schwartz-equal-time-commutator-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equal-time field commutators are explicitly evaluated by substituting
+    the momentum-mode algebra into products of fields.
+  failure_mode: The delta function that collapses the momentum integrals, and therefore
+    the vanishing field commutator and canonical delta function, would be unavailable.
+  evidence:
+  - source: schwartz
+    section: 2.3.3 Commutation relations
+    pages:
+    - 24
+    - 25
+    note: The calculation starts from the field expansion and invokes [a_k,a†_p]=(2π)^3δ³(p⃗−k⃗).
+- id: qft.schwartz.mode-algebra-to-free-time-evolution
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.heisenberg-free-field-time-evolution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source checks free-field time evolution by commuting the field with
+    H_0, which uses the creation-annihilation operator algebra.
+  failure_mode: The Hamiltonian commutator check cannot be carried out from the time-dependent
+    phases alone.
+  evidence:
+  - source: schwartz
+    section: 2.3.2 Time dependence
+    pages:
+    - 23
+    note: The displayed calculation of [H_0,φ_0] uses mode-operator commutation and
+      obtains −i∂_tφ_0.
+- id: qft.schwartz.momentum-algebra-to-field-expansion
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.free-scalar-field-mode-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The field is defined as an integral of the momentum-mode creation and
+    annihilation operators, with the stated normalization convention.
+  failure_mode: Without the mode operators and their normalization, the terms in the
+    field expansion cannot be interpreted as particle-annihilating and particle-creating
+    contributions.
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    note: The page gives the mode algebra and immediately defines the field as an
+      integral over those operators.
+- id: qft.schwartz.momentum-algebra-to-position-state
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.one-particle-position-state-from-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The momentum projection of φ_0(x⃗)|0⟩ is evaluated using the vacuum,
+    creation-operator normalization, and continuum commutator.
+  failure_mode: The derivation of the phase e^−ip⃗·x⃗ would lack the operator contraction
+    that selects the momentum component.
+  evidence:
+  - source: schwartz
+    section: 2.3.1 Field expansion
+    pages:
+    - 21
+    - 22
+    note: The operator normalization on page 21 and the projected matrix-element calculation
+      on page 22 are both used.
+- id: qft.weinberg-1.charge-obstruction-to-complex-field
+  from: qft.charge-conservation-obstruction
+  to: qft.complex-causal-scalar-field
+  relation: pedagogical
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: 'The source uses the charge-conservation obstruction to motivate why
+    the particle-antiparticle field combination is useful: it retains a simple charge
+    commutator while meeting the spacelike-causality condition.'
+  failure_mode: Without this motivation, the introduction of a distinct antiparticle
+    can appear arbitrary and the charge-eigenfield role is less well motivated, though
+    the causal mode combination can be derived by another route.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 203
+    - 204
+    note: The source says it must suppose two opposite-charge bosons, then defines
+      a field with the same Q commutator as the annihilation field.
+- id: qft.weinberg-1.complex-field-to-c-t-constraints
+  from: qft.complex-causal-scalar-field
+  to: qft.charge-conjugation-time-reversal-phase-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charge-conjugation and time-reversal derivations transform the particle
+    and antiparticle pieces of the complex causal scalar field.
+  failure_mode: Without its particle-antiparticle composition, the phase constraints
+    are reduced to unexplained one-particle-state conventions.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 206
+    note: The source transforms the annihilation and charge-conjugate creation pieces
+      and imposes proportionality of the resulting field.
+- id: qft.weinberg-1.complex-field-to-commutator
+  from: qft.complex-causal-scalar-field
+  to: qft.pauli-jordan-commutator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The later commutator statement is explicitly for the complex scalar field
+    and defines its kernel from the particle-antiparticle mode expansion.
+  failure_mode: Without the field definition, Δ can be confused with the earlier positive-frequency
+    mixed bracket Δ₊.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 204
+    - 205
+    note: Equation (5.2.11) gives the complex field, and equations (5.2.12)–(5.2.13)
+      state its commutator.
+- id: qft.weinberg-1.complex-field-to-parity-constraint
+  from: qft.complex-causal-scalar-field
+  to: qft.parity-covariance-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity argument tests whether the transformed particle-antiparticle
+    scalar field is proportional to the original field that can coexist with it in
+    an interaction.
+  failure_mode: Without the two-term causal field, the relation between particle and
+    antiparticle intrinsic parities has no stated field-theoretic basis.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 205
+    - 206
+    note: The source applies parity to the two constituent fields, requires proportionality,
+      and then gives the self-conjugate consequence.
+- id: qft.weinberg-1.locality-condition-to-mixed-bracket
+  from: qft.hermitian-local-interaction-condition
+  to: qft.nonzero-spacelike-mixed-commutator
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The mixed bracket is calculated because hermiticity requires both field
+    pieces while the interaction must satisfy spacelike commutation.
+  failure_mode: Without the two requirements, the nonzero mixed bracket is an isolated
+    calculation rather than the obstruction it establishes.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 201
+    - 202
+    note: The text poses the hermiticity/locality problem and immediately evaluates
+      the mixed bracket as Δ₊.
+- id: qft.weinberg-1.mixed-bracket-to-real-field
+  from: qft.nonzero-spacelike-mixed-commutator
+  to: qft.real-causal-scalar-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The even, nonzero spacelike Δ₊ term is the quantity whose cancellation
+    fixes Bose statistics and the relative coefficient magnitudes.
+  failure_mode: A learner cannot justify the coefficient condition or the exclusion
+    of Fermi statistics without the form and spacelike behavior of the mixed bracket.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 202
+    - 203
+    note: The spacelike bracket expressions on page 202 are followed by the vanishing
+      condition on page 203.
+- id: qft.weinberg-1.mixed-bracket-to-statistics-mass-constraint
+  from: qft.nonzero-spacelike-mixed-commutator
+  to: qft.spinless-boson-and-mass-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The complex-field spacelike bracket is expressed through the same Δ₊
+    function calculated for the mixed annihilation-creation bracket; its cancellation
+    yields the Bose-statistics and equal-mass conditions.
+  failure_mode: Without the Δ₊ mixed-bracket calculation, the equal-mass requirement
+    and the exclusion of nonzero Fermi scalar fields cannot be derived from the spacelike
+    bracket.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 202
+    - 203
+    - 204
+    note: Pages 202–203 derive the Δ₊ mixed-bracket behavior; page 204 reuses Δ₊ in
+      the complex-field bracket and states the Bose-statistics and equal-mass conditions.
+- id: qft.weinberg-1.real-field-to-charge-obstruction
+  from: qft.real-causal-scalar-field
+  to: qft.charge-conservation-obstruction
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The obstruction is specifically the inability of a polynomial in the
+    self-adjoint field to enforce the operator balance required by conserved charge.
+  failure_mode: Without the self-adjoint field’s composition, the charge-conservation
+    failure is misstated as a generic limitation of scalar fields.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 203
+    note: The source explicitly contrasts a polynomial in equation (5.2.10) with charge-conserving
+      terms.
+- id: qft.weinberg-1.scalar-representation-to-real-field
+  from: qft.scalar-lorentz-representation
+  to: qft.real-causal-scalar-field
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The field construction is specialized to the one-component scalar representation
+    and its spin-zero content.
+  failure_mode: Treating the construction as a result for an unspecified Lorentz representation
+    obscures why no spin labels occur and overextends the derivation.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 201
+    note: The section first fixes the scalar representation and then writes the scalar
+      annihilation and creation fields.
+- id: qft.weinberg-1.statistics-mass-to-complex-field
+  from: qft.spinless-boson-and-mass-constraint
+  to: qft.complex-causal-scalar-field
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The equal-mass and Bose-statistics conditions are the stated necessary
+    and sufficient conditions for the nonzero complex field to commute with its adjoint
+    at spacelike separation.
+  failure_mode: Omitting these conditions makes the displayed complex field look causal
+    for unequal masses or fermionic statistics.
+  evidence:
+  - source: weinberg-1
+    section: '5.2'
+    pages:
+    - 204
+    note: The source identifies these conditions immediately before normalizing the
+      complex field.
+- id: qft.weinberg-2.adjoint-representation-prerequisite-gauge-field
+  from: qft.adjoint-representation
+  to: qft.gauge-field-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source introduces the homogeneous part of the gauge-field transformation
+    by replacing the matter generators with the adjoint-representation matrices before
+    rewriting the result with structure constants.
+  failure_mode: The origin and index structure of the homogeneous gauge-field transformation
+    cannot be derived without applying the adjoint matrices.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: The paragraph preceding equation (15.1.9) explicitly replaces t_α with the
+      adjoint representation matrices of equation (15.1.6).
+- id: qft.weinberg-2.covariant-derivative-prerequisite-field-strength
+  from: qft.covariant-derivative
+  to: qft.nonabelian-field-strength
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source constructs the covariant curl by evaluating the commutator
+    of two covariant derivatives on a matter field.
+  failure_mode: The commutator definition of F^γ_{νμ} cannot be formed without D_μ.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+    note: Equation (15.1.12) defines field strength through [D_ν,D_μ].
+- id: qft.weinberg-2.covariant-derivative-prerequisite-lagrangian-ingredients
+  from: qft.covariant-derivative
+  to: qft.gauge-invariant-lagrangian-ingredients
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The sufficient construction criterion explicitly includes gauge-covariant
+    derivatives among the ingredients whose transformations lack derivatives of the
+    local parameters.
+  failure_mode: A proposed matter-derivative term cannot be assessed by the stated
+    construction criterion without D_μψ.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: The opening paragraph of Section 15.2 names matter fields and their gauge-covariant
+      derivatives as ingredients.
+- id: qft.weinberg-2.field-strength-prerequisite-lagrangian-ingredients
+  from: qft.nonabelian-field-strength
+  to: qft.gauge-invariant-lagrangian-ingredients
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The sufficient construction criterion explicitly includes F^α_{μν} and
+    its gauge-covariant derivatives.
+  failure_mode: The gauge-field sector of the listed construction cannot be formed
+    without the field-strength tensor.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: Equation (15.2.1) includes F^α_{μν} and D_ρF^α_{μν}.
+- id: qft.weinberg-2.field-strength-prerequisite-pure-gauge
+  from: qft.nonabelian-field-strength
+  to: qft.pure-gauge-flatness
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The pure-gauge criterion is stated in terms of whether the field-strength
+    tensor vanishes throughout a simply connected region.
+  failure_mode: The flatness criterion cannot be applied without identifying F^α_{μν}.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 6
+    note: The page states that vanishing field strength is necessary and sufficient
+      for a pure gauge in a simply connected region.
+- id: qft.weinberg-2.gauge-field-prerequisite-covariant-derivative
+  from: qft.gauge-field-transformation
+  to: qft.covariant-derivative
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The inhomogeneous part of the gauge-field transformation cancels the
+    derivative-of-parameter contribution in the proposed covariant derivative.
+  failure_mode: Without this transformation law, the cancellation establishing homogeneous
+    transformation of D_μψ cannot be checked.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: The text immediately after equation (15.1.10) identifies the cancellation
+      and reaches equation (15.1.11).
+- id: qft.weinberg-2.lagrangian-ingredients-prerequisite-gauge-field-restrictions
+  from: qft.gauge-invariant-lagrangian-ingredients
+  to: qft.gauge-field-lagrangian-restrictions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The restriction on direct gauge-field dependence and the field-strength
+    quadratic term are drawn within the stated gauge-invariant Lagrangian construction.
+  failure_mode: The exclusion of a direct mass term is detached from the source's
+    stated condition on allowable gauge-field dependence.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: After equation (15.2.1), the text states the restriction and then presents
+      equation (15.2.3).
+- id: qft.weinberg-2.local-transformations-prerequisite-gauge-field
+  from: qft.local-matter-gauge-transformations
+  to: qft.gauge-field-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge-field transformation is introduced to cancel the derivative-of-parameter
+    term produced by differentiating the local matter transformation.
+  failure_mode: The compensating inhomogeneous term has no stated problem to solve
+    if the local derivative transformation is not known.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: Equation (15.1.8) exposes the extra derivative term, followed by the stated
+      need for A^α_μ.
+- id: qft.weinberg-2.local-transformations-require-lie-algebra
+  from: qft.local-matter-gauge-transformations
+  to: qft.lie-algebra-structure-constants
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: necessary
+  rationale: The source assumes the local transformations are infinitesimal Lie-group
+    transformations and then requires the generators to obey the stated commutator.
+  failure_mode: Without the Lie-algebra relation, the constants controlling non-Abelian
+    generator composition are unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 2
+    note: The text directly connects the Lie-group assumption to the generator commutation
+      relations.
+- id: qft.weinberg-2.structure-constants-prerequisite-adjoint
+  from: qft.lie-algebra-structure-constants
+  to: qft.adjoint-representation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The adjoint matrices are constructed directly from the structure constants,
+    using their antisymmetry and Jacobi constraint.
+  failure_mode: A learner cannot construct or verify the adjoint generators without
+    the structure constants and their identities.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+    note: Equations (15.1.3), (15.1.5), and (15.1.6) state this construction.
+groups:
+- id: qft.causal-scalar-fields
+  title: Causal scalar fields and discrete symmetries
+- id: qft.nonabelian-gauge-invariance
+  title: Non-Abelian gauge invariance
+- id: qft.scalar-field-foundations
+  title: Classical and canonical scalar-field foundations
+- id: qft.second-quantized-scalar-field
+  title: Second-quantized scalar-field construction
+motivations:
+- id: qft.schwartz-dynamical-background-context
+  nodes:
+  - qft.free-scalar-field-mode-expansion
+  summary: 'The closing application frames the reason to describe the electromagnetic
+    system by a quantum field: a system treated as a background in single-particle
+    quantum mechanics becomes dynamical, allowing transition amplitudes to depend
+    on photon occupation through field operators.'
+  evidence:
+  - source: schwartz
+    section: 2.3.4 Einstein coefficients revisited
+    pages:
+    - 26
+    note: Uses a field-containing interaction in an atom-photon transition calculation
+      as context for a dynamical electromagnetic system.

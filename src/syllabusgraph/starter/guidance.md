@@ -1,7 +1,8 @@
 # Course guidance
 
-Use this private brief to record what the course should accomplish before
-source extraction begins. It is ignored by Git. These are planning notes for
+Use this private brief to record source scope before extraction, and course
+choices when course design begins. For graph-only work, leave the audience,
+learning goals, and teaching constraints for later. It is ignored by Git. These are planning notes for
 the person or agent doing the work; the engine does not parse or enforce them.
 Translate agreed choices into project data and work-unit scopes as work proceeds.
 
@@ -33,7 +34,7 @@ Translate agreed choices into project data and work-unit scopes as work proceeds
 
 ## First extraction unit
 
-- One coherent outcome to start with:
+- One coherent source topic to start with:
 - Relevant source sections or page ranges:
 - Review criteria before expanding to the rest of the course:
 

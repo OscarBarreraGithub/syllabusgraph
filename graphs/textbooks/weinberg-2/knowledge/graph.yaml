@@ -1,0 +1,382 @@
+nodes:
+- id: weinberg-2.adjoint-representation
+  label: Adjoint representation from structure constants
+  summary: For structure constants satisfying the displayed antisymmetry and Jacobi
+    relation, matrices (t^A_α)^β{}_γ=−i C^β_{γα} furnish the adjoint (regular) representation
+    of the Lie algebra.
+  kind: representation
+  group: weinberg-2.gauge-construction
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+    note: Equations (15.1.6)–(15.1.7) construct and name the adjoint representation.
+  notation:
+  - source: weinberg-2
+    note: A superscript A on t denotes the adjoint representation in this treatment.
+- id: weinberg-2.covariant-derivative
+  label: Covariant derivative of matter fields
+  summary: The operator (D_μψ)_l=∂_μψ_l−iA^β_μ(t_β)_l{}^mψ_m is constructed so that
+    D_μψ transforms in the same representation as ψ under the local transformation.
+    This records the endpoint of the source's cancellation argument through equation
+    (15.1.11).
+  kind: method
+  group: weinberg-2.connection-and-curvature
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: Equations (15.1.10)–(15.1.11) define D_μ and show its homogeneous transformation.
+  notation:
+  - source: weinberg-2
+    note: D_μ acts on matter components through the representation matrices t_β.
+- id: weinberg-2.finite-gauge-transformations
+  label: Finite gauge transformations
+  summary: A finite transformation acts on matter through exp(i t_αΛ^α(x)); requiring
+    the covariant derivative to transform in the same way fixes the corresponding
+    finite transformation law for the gauge field. Its infinitesimal limit recovers
+    the earlier local rules.
+  kind: method
+  group: weinberg-2.connection-and-curvature
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+    note: Equations (15.1.15)–(15.1.17) give the finite matter and gauge-field transformations
+      and relate them to the infinitesimal rules.
+  notation:
+  - source: weinberg-2
+    note: Λ^α(x) parameterizes the finite group element, while ε^α(x) denotes its
+      infinitesimal limit.
+- id: weinberg-2.gauge-field-lagrangian-restrictions
+  label: Gauge-field terms and mass restriction
+  summary: Within this construction, the gauge field may occur only through field
+    strengths and covariant derivatives; a direct quadratic mass term is excluded.
+    For a parity-conserving Lorentz-invariant gauge-field term, the source gives −¼
+    g_{αβ}F^α_{μν}F^{βμν} with constant g_{αβ}. If parity (or CP or T) conservation
+    is not assumed, it may also include L′_A=−½ θ_{αβ}ε^{μνρσ}F^α_{μν}F^β_{ρσ}, with
+    constant θ_{αβ}; the source describes this term as a derivative that does not
+    affect the field equations or Feynman rules.
+  kind: result
+  group: weinberg-2.lagrangian-ingredients
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: The opening page of Section 15.2 excludes direct gauge-field dependence
+      and the mass term, then gives the parity-conserving quadratic field-strength
+      term in equation (15.2.3).
+  notation:
+  - source: weinberg-2
+    note: g_{αβ} is a constant matrix in the displayed quadratic gauge-field Lagrangian
+      term.
+  - source: weinberg-2
+    note: θ_{αβ} is the other constant matrix in the displayed parity-odd term; ε^{μνρσ}
+      is the spacetime antisymmetric tensor used there.
+- id: weinberg-2.gauge-field-transformation
+  label: Inhomogeneous gauge-field transformation
+  summary: Gauge fields A^α_μ transform as δA^β_μ=∂_μ ε^β+C^β_{γα}ε^α A^γ_μ. The derivative
+    of the local parameter supplies the compensating term missing from the derivative
+    of a matter field.
+  kind: concept
+  group: weinberg-2.connection-and-curvature
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: Equations (15.1.8)–(15.1.9) derive the need for and give the gauge-field
+      transformation.
+  notation:
+  - source: weinberg-2
+    note: The book includes coupling factors in t_α, and consequently in the structure
+      constants, rather than displaying a separate coupling in D_μ.
+- id: weinberg-2.gauge-invariant-lagrangian-ingredients
+  label: Gauge-covariant ingredients for a Lagrangian
+  summary: A Lagrangian built from matter fields, their gauge-covariant derivatives,
+    field strengths, and covariant derivatives of field strengths is gauge invariant
+    when it is invariant under the corresponding global transformations, because these
+    ingredients transform without derivatives of the local parameters.
+  kind: concept
+  group: weinberg-2.lagrangian-ingredients
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: The opening of Section 15.2 gives the sufficient construction criterion
+      and lists the allowed covariant ingredients in equation (15.2.1).
+- id: weinberg-2.lie-algebra-structure-constants
+  label: Lie-algebra generators and structure constants
+  summary: The generators obey [t_α,t_β]=i C^γ_{αβ}t_γ. The real structure constants
+    are antisymmetric in α and β and obey the Jacobi constraint inherited from the
+    generator commutator.
+  kind: representation
+  group: weinberg-2.gauge-construction
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 2
+    - 3
+    note: Equations (15.1.2)–(15.1.5) give the commutator, antisymmetry, and Jacobi
+      constraint.
+  notation:
+  - source: weinberg-2
+    note: The book writes the structure constants as C^γ_{αβ}; their placement should
+      not be silently replaced by another convention.
+- id: weinberg-2.local-matter-gauge-transformations
+  label: Local infinitesimal transformations of matter fields
+  summary: Matter components transform infinitesimally as δψ_l(x)=i ε^α(x)(t_α)_l{}^m
+    ψ_m(x), with real spacetime-dependent parameters and constant generator matrices.
+  kind: concept
+  group: weinberg-2.gauge-construction
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 2
+    note: Equation (15.1.1) states the local matter-field transformation and identifies
+      the parameters and generators.
+  notation:
+  - source: weinberg-2
+    note: Weinberg uses Greek generator labels α, β, … and spacetime indices μ, ν,
+      …; matter components are ψ_l.
+- id: weinberg-2.nonabelian-field-strength
+  label: Non-Abelian field strength from covariant-derivative commutators
+  summary: The commutator [D_ν,D_μ] acting on matter defines F^γ_{νμ}; explicitly
+    F^γ_{νμ}=∂_νA^γ_μ−∂_μA^γ_ν+C^γ_{αβ}A^α_νA^β_μ. It transforms homogeneously in
+    the adjoint representation. The source identifies this as a commutator construction
+    and leaves a direct transformation-law check to the reader.
+  kind: result
+  group: weinberg-2.connection-and-curvature
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+    note: Equations (15.1.12)–(15.1.14) define the field strength through the commutator
+      and give its transformation law.
+  notation:
+  - source: weinberg-2
+    note: The source orders the spacetime indices as F^γ_{νμ}; the displayed nonlinear
+      term uses A^α_νA^β_μ.
+- id: weinberg-2.pure-gauge-flatness
+  label: Pure gauge and the flatness criterion
+  summary: A gauge field is pure gauge when a gauge transformation can make it vanish
+    everywhere. In a simply connected region, vanishing field strength is stated to
+    be both necessary and sufficient for this condition.
+  kind: result
+  group: weinberg-2.connection-and-curvature
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 6
+    note: The text defines a pure gauge field and states the necessary-and-sufficient
+      condition in a simply connected region.
+edges:
+- id: weinberg-2.adjoint-representation-prerequisite-gauge-field
+  from: weinberg-2.adjoint-representation
+  to: weinberg-2.gauge-field-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source introduces the homogeneous part of the gauge-field transformation
+    by replacing the matter generators with the adjoint-representation matrices before
+    rewriting the result with structure constants.
+  failure_mode: The origin and index structure of the homogeneous gauge-field transformation
+    cannot be derived without applying the adjoint matrices.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: The paragraph preceding equation (15.1.9) explicitly replaces t_α with the
+      adjoint representation matrices of equation (15.1.6).
+- id: weinberg-2.covariant-derivative-prerequisite-field-strength
+  from: weinberg-2.covariant-derivative
+  to: weinberg-2.nonabelian-field-strength
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source constructs the covariant curl by evaluating the commutator
+    of two covariant derivatives on a matter field.
+  failure_mode: The commutator definition of F^γ_{νμ} cannot be formed without D_μ.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+    note: Equation (15.1.12) defines field strength through [D_ν,D_μ].
+- id: weinberg-2.covariant-derivative-prerequisite-lagrangian-ingredients
+  from: weinberg-2.covariant-derivative
+  to: weinberg-2.gauge-invariant-lagrangian-ingredients
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The sufficient construction criterion explicitly includes gauge-covariant
+    derivatives among the ingredients whose transformations lack derivatives of the
+    local parameters.
+  failure_mode: A proposed matter-derivative term cannot be assessed by the stated
+    construction criterion without D_μψ.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: The opening paragraph of Section 15.2 names matter fields and their gauge-covariant
+      derivatives as ingredients.
+- id: weinberg-2.field-strength-prerequisite-lagrangian-ingredients
+  from: weinberg-2.nonabelian-field-strength
+  to: weinberg-2.gauge-invariant-lagrangian-ingredients
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The sufficient construction criterion explicitly includes F^α_{μν} and
+    its gauge-covariant derivatives.
+  failure_mode: The gauge-field sector of the listed construction cannot be formed
+    without the field-strength tensor.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: Equation (15.2.1) includes F^α_{μν} and D_ρF^α_{μν}.
+- id: weinberg-2.field-strength-prerequisite-pure-gauge
+  from: weinberg-2.nonabelian-field-strength
+  to: weinberg-2.pure-gauge-flatness
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The pure-gauge criterion is stated in terms of whether the field-strength
+    tensor vanishes throughout a simply connected region.
+  failure_mode: The flatness criterion cannot be applied without identifying F^α_{μν}.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 6
+    note: The page states that vanishing field strength is necessary and sufficient
+      for a pure gauge in a simply connected region.
+- id: weinberg-2.gauge-field-prerequisite-covariant-derivative
+  from: weinberg-2.gauge-field-transformation
+  to: weinberg-2.covariant-derivative
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The inhomogeneous part of the gauge-field transformation cancels the
+    derivative-of-parameter contribution in the proposed covariant derivative.
+  failure_mode: Without this transformation law, the cancellation establishing homogeneous
+    transformation of D_μψ cannot be checked.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: The text immediately after equation (15.1.10) identifies the cancellation
+      and reaches equation (15.1.11).
+- id: weinberg-2.lagrangian-ingredients-prerequisite-gauge-field-restrictions
+  from: weinberg-2.gauge-invariant-lagrangian-ingredients
+  to: weinberg-2.gauge-field-lagrangian-restrictions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The restriction on direct gauge-field dependence and the field-strength
+    quadratic term are drawn within the stated gauge-invariant Lagrangian construction.
+  failure_mode: The exclusion of a direct mass term is detached from the source's
+    stated condition on allowable gauge-field dependence.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 7
+    note: After equation (15.2.1), the text states the restriction and then presents
+      equation (15.2.3).
+- id: weinberg-2.local-transformations-prerequisite-gauge-field
+  from: weinberg-2.local-matter-gauge-transformations
+  to: weinberg-2.gauge-field-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge-field transformation is introduced to cancel the derivative-of-parameter
+    term produced by differentiating the local matter transformation.
+  failure_mode: The compensating inhomogeneous term has no stated problem to solve
+    if the local derivative transformation is not known.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: Equation (15.1.8) exposes the extra derivative term, followed by the stated
+      need for A^α_μ.
+- id: weinberg-2.local-transformations-require-lie-algebra
+  from: weinberg-2.local-matter-gauge-transformations
+  to: weinberg-2.lie-algebra-structure-constants
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: necessary
+  rationale: The source assumes the local transformations are infinitesimal Lie-group
+    transformations and then requires the generators to obey the stated commutator.
+  failure_mode: Without the Lie-algebra relation, the constants controlling non-Abelian
+    generator composition are unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 2
+    note: The text directly connects the Lie-group assumption to the generator commutation
+      relations.
+- id: weinberg-2.structure-constants-prerequisite-adjoint
+  from: weinberg-2.lie-algebra-structure-constants
+  to: weinberg-2.adjoint-representation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The adjoint matrices are constructed directly from the structure constants,
+    using their antisymmetry and Jacobi constraint.
+  failure_mode: A learner cannot construct or verify the adjoint generators without
+    the structure constants and their identities.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+    note: Equations (15.1.3), (15.1.5), and (15.1.6) state this construction.
+groups:
+- id: weinberg-2.connection-and-curvature
+  title: Gauge connection, curvature, and finite transformations
+- id: weinberg-2.gauge-construction
+  title: Local symmetry and Lie algebra
+- id: weinberg-2.lagrangian-ingredients
+  title: Opening gauge-theory Lagrangian ingredients
+motivations:
+- id: weinberg-2.locality-requires-compensation
+  nodes:
+  - weinberg-2.local-matter-gauge-transformations
+  - weinberg-2.gauge-field-transformation
+  - weinberg-2.covariant-derivative
+  summary: Position dependence spoils the simple transformation of ordinary matter-field
+    derivatives; the gauge field is introduced to compensate for that obstruction.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 4
+    note: The page explains that derivatives of the local parameters prevent ordinary
+      derivatives from transforming like the fields and motivates the compensating
+      field.

@@ -13,6 +13,13 @@ alternative derivation was incorrectly made compulsory. Read the cited passages:
 the mechanical report confirms quote location, not entailment. Inspect equations
 and notation in the original rendered source when extracted text is ambiguous.
 
+Select a local reader, renderer, vision, or OCR check for the source and the
+uncertain page; no particular optional tool is required for every review. Those
+tools can clarify evidence but cannot expand the immutable packet, replace
+faithful source evidence, or change privacy or the configured model/reviewer
+policy. Flag ambiguity when it remains. See [PDF reading](../docs/pdf-reading.md)
+for practical setup and immutable-cache rules.
+
 Check coverage of the assigned scope, unsupported motivation, duplicates,
 overstated necessity, and ungrounded time estimates. Note gaps explicitly.
 Accept a sound, usable proposal. Reserve `revise` or `reject` for material errors,
