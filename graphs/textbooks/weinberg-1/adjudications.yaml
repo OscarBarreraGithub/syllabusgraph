@@ -321,3 +321,121 @@ units:
       id: weinberg-1.cluster-route-to-normal-ordering
     - kind: edges
       id: weinberg-1.causal-field-to-normal-ordering
+- id: full-006
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The general propagator route lacks its defining pairing input and its momentum-rule
+      application.
+    alternatives:
+    - Add the two missing prerequisite edges around the general propagator node.
+    - Leave the pairing and general momentum-rule dependencies implicit in neighboring
+      nodes.
+    resolution: Add pairing-to-propagator and propagator-to-momentum-rule prerequisites.
+    rationale: The general numerator is obtained by evaluating the internal time-ordered
+      pairing, and the general momentum-space internal-line rule then uses that numerator.
+      Both links are necessary uses of established constructions and do not require
+      reproducing their derivations.
+    evidence:
+    - source: weinberg-1
+      section: '6.2'
+      pages:
+      - 274
+    - source: weinberg-1
+      section: '6.3'
+      pages:
+      - 282
+    affected_records:
+    - kind: edges
+      id: weinberg-1.coordinate-pairing-to-general-propagator
+    - kind: edges
+      id: weinberg-1.general-propagator-to-momentum-rules
+  - finding: 1
+    issue: The split Dirac-bracket nodes omit inputs to the reduced result and links
+      from the restricted proofs.
+    alternatives:
+    - Add prescription and canonical inputs to the reduced result plus qualified Appendix
+      evidence edges.
+    - Keep the split nodes disconnected and rely on their summaries to imply the missing
+      relationships.
+    resolution: Add the reduced-result inputs and two restricted Appendix evidence
+      edges.
+    rationale: The reduced-bracket theorem becomes a quantum commutator statement
+      only after adopting canonical brackets for the reduced variables and the stated
+      prescription. The appendices independently justify that prescription for two
+      explicitly limited classes, so evidence edges preserve those routes without
+      making either a universal proof.
+    evidence:
+    - source: weinberg-1
+      section: '7.6'
+      pages:
+      - 329
+      - 330
+    - source: weinberg-1
+      section: Appendix
+      pages:
+      - 334
+      - 336
+    affected_records:
+    - kind: edges
+      id: weinberg-1.dirac-prescription-to-reduced-result
+    - kind: edges
+      id: weinberg-1.canonical-variables-to-reduced-dirac-result
+    - kind: edges
+      id: weinberg-1.appendix-a-evidence-for-dirac-prescription
+    - kind: edges
+      id: weinberg-1.appendix-b-evidence-for-dirac-prescription
+  - finding: 2
+    issue: The Belinfante derivation omits the separate Lorentz-scalar Lagrangian-density
+      hypothesis.
+    alternatives:
+    - Add the Lorentz-scalar hypothesis as a necessary input to the Belinfante derivation.
+    - Treat Lorentz invariance as implicit in the Belinfante node and leave the hypothesis
+      isolated.
+    resolution: Connect the Lorentz-scalar hypothesis to the Belinfante derivation.
+    rationale: The improvement identity and symmetry of the tensor are derived from
+      invariance of the Lagrangian density under the Lorentz transformations of fields
+      and derivatives. This input is distinct from the reality condition and belongs
+      only on the covariance route.
+    evidence:
+    - source: weinberg-1
+      section: '7.4'
+      pages:
+      - 315
+      - 316
+    affected_records:
+    - kind: edges
+      id: weinberg-1.lorentz-scalar-hypothesis-to-belinfante
+  - finding: 3
+    issue: Several private witnesses locate pages but do not entail the operative
+      claims they support.
+    alternatives:
+    - Add operative witnesses and move the Dyson proof citation to the page where
+      the expansion is stated.
+    - Retain the existing locator fragments because they pass substring matching.
+    resolution: Repair the private witnesses and retarget the Dyson proof evidence
+      to page 288.
+    rationale: The revised witnesses now identify the differentiated Dyson expansion,
+      the separate correlator problem, the scalar and Proca interaction terms and
+      cancellation, and the Type B appendix conclusion. Retargeting the Dyson edge
+      removes an irrelevant page while preserving its source-backed proof route.
+    evidence:
+    - source: weinberg-1
+      section: '6.4'
+      pages:
+      - 288
+      - 291
+    - source: weinberg-1
+      section: '7.5'
+      pages:
+      - 319
+      - 321
+      - 323
+    - source: weinberg-1
+      section: Appendix
+      pages:
+      - 337
+    affected_records:
+    - kind: edges
+      id: weinberg-1.dyson-to-source-functional
