@@ -10,6 +10,10 @@ imply a package has been published to a package index.
   batches. Record current counts, exact accepted scopes, and nonconceptual
   exclusions alongside each graph. Full-book extraction and shared alignment
   remain in progress.
+- Add reviewed source inventories and remaining section scopes to the QFT bank.
+  Optional coverage ledgers must match their project and current graph digest.
+  Clarify joint prerequisites within alternative derivations and complete-word
+  quote witnesses in the reusable extraction guidance.
 
 - Publish a first QFT graph pilot: 36 concepts across four textbook graphs and
   a 37-node shared synthesis over 26 printed pages. Terra/high extraction and

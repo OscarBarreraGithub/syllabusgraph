@@ -17,6 +17,7 @@ graphs/
     project.yaml          Bibliography and graph settings
     knowledge/graph.yaml  Reviewed concepts, dependencies, and citations
     review.yaml           Bounded coverage, review status, and omissions
+    coverage.yaml         Optional whole-book inventory and remaining page scopes
     README.md             Scope and reading guide
   subjects/<subject-id>/  Shared graph with the same project format
 ```
@@ -34,6 +35,8 @@ It rejects stale public review digests, course plans, `public_file` attachments,
 origins that do not connect a shared subject graph to a reviewed textbook graph.
 Review summaries are contributor declarations tied to graph content; the check
 cannot establish that scientific review actually occurred.
+When `coverage.yaml` is present, the check also verifies its project identity
+and graph digest. It does not authenticate the inventory or prove completeness.
 It does not scan arbitrary files for textbook content; inspect files before
 committing and run the separate [publication audit](../docs/releasing.md).
 Its overlap table counts shared concepts with reviewed origins in each pair of
@@ -60,6 +63,16 @@ alongside it. Source-file checksums, packet/proposal fingerprints, and full
 processing records stay local. A populated bank graph needs a current review
 summary; changing both graph and digest is a contributor attestation, not a
 substitute for the required review.
+
+For whole-book work, inventory sections, appendices, projects, and substantive
+problems before claiming completeness. Record page coordinates, justified
+nonconceptual exclusions, retained notation conventions, accepted unit scopes,
+and remaining ranges in `coverage.yaml`. Pages shared by problems and references
+retain their substantive material. A reviewed page range alone does not prove
+that all its concepts were captured, especially for a narrow pilot.
+The [QFT collection](subjects/qft/README.md) includes a reviewed inventory with
+conservative progress records and a public final-decision log. These are source
+coordinates and review conclusions; textbook text stays private.
 
 Put your own PDFs in the project's ignored `materials/` directory, or register
 them from another local location. `.syllabusgraph/` holds private source copies,

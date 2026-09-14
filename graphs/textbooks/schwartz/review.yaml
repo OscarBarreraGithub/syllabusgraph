@@ -2,7 +2,7 @@ schema_version: 1
 status: partial-model-reviewed
 complete_textbook: false
 human_audit: pending
-graph_digest: sha256:4a67f495ca20dc0452cd3f9b91f974a8b18761b13852847fcc3bab7bee91b04d
+graph_digest: sha256:e4fbecd75d077eb98272b9e71e5bcd1b547f3532ecabb98fc84a4ad3a34aecc4
 extraction:
   model: gpt-5.6-terra
   effort: high
@@ -10,6 +10,16 @@ required_critic:
   model: gpt-5.6-sol
   effort: high
 units:
+- id: full-001
+  printed_pages:
+    first: 3
+    last: 45
+  scope: Complete opening chapters and substantive problems on radiation, Lorentz
+    symmetry, second quantization, classical field theory and introductory field-theory
+    methods. Reuses the narrow initial pilot and fills its unassigned topics.
+  nodes: 55
+  edges: 25
+  acceptance: independent-critic
 - id: pilot-01
   printed_pages:
     first: 21
@@ -23,7 +33,9 @@ units:
   edges: 7
   acceptance: independent-critic
 omissions:
-- All portions outside the listed printed-page scope remain unextracted.
-- This bounded graph may have dependencies whose earlier supporting sections are not
-  yet represented.
+- Substantive content outside the accepted unit scopes remains unextracted.
+- Pilot scopes are narrow and may leave unassigned topics on the same pages; full
+  extraction revisits them.
+- Cross-unit dependency reconciliation remains in progress.
 - No claim of whole-book completeness or classroom evaluation.
+reviewed_printed_pages: 43

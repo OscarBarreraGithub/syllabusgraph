@@ -56,6 +56,14 @@ syllabusgraph agent fail chapter-01 DISPATCH_ID --reason "Native runtime unavail
 
 ## Run a unit through the host-native agent
 
+For whole-book construction, first inventory chapters, subsections, appendices,
+projects, substantive problems, nonconceptual exclusions, and notation needed
+to interpret claims. Verify source boundaries, including mixed problem/reference
+pages and separate frontmatter numbering. Review this as source evidence;
+do not turn it into repeated plan approval or hold up independent bounded units.
+Keep full-book completion pending until the section coverage and the graph's
+concepts, dependencies, and cross-unit consistency have all been reviewed.
+
 Prepare the bounded packet with `syllabusgraph prepare` first. The orchestrator
 then asks SyllabusGraph to create a dispatch, passes the resulting immutable
 request JSON to the selected Codex or Claude native agent, and binds its JSON

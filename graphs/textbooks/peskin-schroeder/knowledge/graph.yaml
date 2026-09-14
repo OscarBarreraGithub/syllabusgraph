@@ -1,4 +1,19 @@
 nodes:
+- id: peskin-schroeder.antiparticle-causality-cancellation
+  label: Antiparticles in the complex-scalar causality cancellation
+  summary: For a complex scalar, phi creates positive charge and destroys negative
+    charge, while phi-dagger reverses the roles. The two charged contributions cancel
+    at spacelike separation only with equal-mass opposite-charge antiparticles; the
+    real scalar is its own antiparticle.
+  kind: result
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Causality'
+    pages:
+    - 29
+    note: The source connects complex-field charged excitations to the two cancelling
+      propagation terms and draws the equal-mass antiparticle conclusion.
 - id: peskin-schroeder.canonical-field-momentum-hamiltonian
   label: Canonical momentum and Hamiltonian for a field
   summary: The conjugate momentum density is pi(x) = partial L / partial phidot(x),
@@ -37,6 +52,113 @@ nodes:
     - 20
     note: The text first states promotion of phi and pi, then gives the continuous-system
       equal-time commutation relations.
+- id: peskin-schroeder.classical-source-on-shell-particle-creation
+  label: Particle creation by a finite-time classical source
+  summary: For (partial-squared+m-squared)phi=j(x) with a source active for a finite
+    interval, retarded propagation shifts the free-field ladder operators. The Fourier
+    component j(p) creates quanta in mode p with probability density proportional
+    to |j(p)|-squared/(2E_p); only on-shell p-squared=m-squared components are effective.
+  kind: result
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Particle Creation by a Classical
+      Source'
+    pages:
+    - 32
+    - 33
+    note: The source gives the source equation and retarded solution, then interprets
+      on-shell Fourier components as particle-creation probability density.
+  notation:
+  - source: peskin-schroeder
+    note: j(x) is an external classical function rather than a dynamical quantum field.
+- id: peskin-schroeder.cm-high-energy-muon-pair-setup
+  label: High-energy center-of-mass muon-pair setup
+  summary: The introductory e+e- to mu+mu- calculation takes p'=-p and k'=-k in the
+    CM frame and neglects electron and muon masses by assuming E is much larger than
+    both. It averages unobserved initial spins and sums unobserved final spins.
+  kind: assumption
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1, The Simplest Situation
+    pages:
+    - 4
+    note: The source explicitly states the CM relations, high-energy massless approximation,
+      and spin convention.
+  notation:
+  - source: peskin-schroeder
+    note: Bold symbols are 3-vectors and italic symbols 4-vectors; theta is the scattering
+      angle.
+- id: peskin-schroeder.coherent-sum-of-diagram-amplitudes
+  label: Coherent addition of allowed diagram amplitudes
+  summary: When more than one diagram contributes, add the amplitudes before squaring.
+    The source illustrates this with Bhabha scattering, which has a second lowest-order
+    diagram.
+  kind: result
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 10
+    note: The Bhabha example explicitly says the two diagram amplitudes must first
+      be added, then squared.
+- id: peskin-schroeder.complex-scalar-canonical-particles-and-charge
+  label: 'Complex scalar quantization: two charged particle species'
+  summary: Problem 2.2 treats phi and phi-star as independent dynamical variables.
+    Parts (b)-(c) ask the reader to diagonalize the stated Hamiltonian, show that
+    two mass-m particle species occur, and determine each species' charge by rewriting
+    the supplied conserved U(1) charge in ladder operators.
+  kind: method
+  group: peskin-schroeder.quantized-scalar-particles
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.2(a)-(c)
+    pages:
+    - 34
+    note: The page supplies the Hamiltonian and charge and asks the reader for diagonalization,
+      the two-species result, and the charges; it does not present those derivations.
+  notation:
+  - source: peskin-schroeder
+    note: H=integral d^3x [pi-star pi + grad phi-star dot grad phi + m^2 phi-star
+      phi].
+- id: peskin-schroeder.complex-scalar-u1-current
+  label: Complex scalar U(1) current
+  summary: The complex Klein-Gordon Lagrangian is invariant under the global phase
+    rotation phi to exp(i alpha)phi. Treating phi and phi-star as independent fields
+    gives j^mu=i[(partial^mu phi-star)phi-phi-star(partial^mu phi)], whose charge
+    later has an electromagnetic interpretation after coupling.
+  kind: result
+  group: peskin-schroeder.field-symmetry-and-charge
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether''s Theorem'
+    pages:
+    - 18
+    note: Equations (2.14)-(2.16) specify the phase symmetry, current, and later electromagnetic-current
+      interpretation.
+  notation:
+  - source: peskin-schroeder
+    note: The source chooses the current's overall normalization arbitrarily.
+- id: peskin-schroeder.feynman-scalar-propagator
+  label: Feynman scalar propagator and time ordering
+  summary: The i epsilon prescription gives D_F(x-y)=integral d^4p/(2 pi)^4 i exp[-ip
+    dot (x-y)]/(p-squared-m-squared+i epsilon). It is the vacuum expectation value
+    of T phi(x)phi(y), a Klein-Gordon Green's function, and the factor attached to
+    an internal scalar line in later Feynman rules.
+  kind: result
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
+    pages:
+    - 31
+    note: The source gives the i epsilon form, defines time ordering, calls D_F the
+      Feynman propagator, and states its internal-line role.
+  notation:
+  - source: peskin-schroeder
+    note: T places the later operator left; i epsilon specifies displaced poles.
 - id: peskin-schroeder.field-euler-lagrange-equation
   label: Field Euler-Lagrange equation
   summary: Varying a local field action with boundary-vanishing variations yields
@@ -55,6 +177,134 @@ nodes:
     - 16
     note: The derivation removes the surface term by boundary conditions and uses
       arbitrary variations to obtain the local equation of motion.
+- id: peskin-schroeder.free-field-perturbative-foundation
+  label: Free field as the basis of perturbation theory
+  summary: The free Klein-Gordon theory has a linear equation and no interparticle
+    interactions, so it cannot itself describe scattering observations. Its oscillator
+    and propagator formalism supplies the basis for perturbative calculations in an
+    interacting theory.
+  kind: assumption
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: 2.4 The Klein-Gordon Field in Space-Time
+    pages:
+    - 31
+    note: The source contrasts isolated free modes with scattering and identifies
+      the free theory as the perturbative basis.
+- id: peskin-schroeder.heisenberg-klein-gordon-field
+  label: Heisenberg evolution of the free Klein-Gordon field
+  summary: In the Heisenberg picture, phi(x,t)=exp(iHt)phi(x)exp(-iHt), and the Hamiltonian
+    plus canonical commutators reproduce the Klein-Gordon equation as an operator
+    equation. Positive-frequency coefficients annihilate particles and negative-frequency
+    Hermitian-conjugate coefficients create them, while excitation energies remain
+    positive.
+  kind: representation
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: 2.4 The Klein-Gordon Field in Space-Time
+    pages:
+    - 25
+    - 26
+    note: p. 25 gives the Heisenberg definition and operator equation; p. 26 explains
+      the frequency signs and creation/annihilation roles.
+  notation:
+  - source: peskin-schroeder
+    note: Positive and negative frequency describe exponential time dependence, not
+      excitation-energy signs.
+- id: peskin-schroeder.helicity-angular-momentum-selection
+  label: Helicity and angular-momentum selection in pair annihilation
+  summary: In the massless CM treatment, helicities determine which e+e- to mu+mu-
+    amplitudes can be nonzero. Angular-momentum matching gives factors proportional
+    to 1 plus or minus cos(theta), while vector coupling vanishes when either end
+    has zero total angular momentum.
+  kind: result
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 7
+    - 8
+    note: The source derives a polarization-overlap amplitude, explains the vanishing
+      RR coupling, and lists the remaining nonzero helicity amplitudes.
+  notation:
+  - source: peskin-schroeder
+    note: R and L label spin parallel and antiparallel to momentum in this high-energy
+      discussion.
+- id: peskin-schroeder.identical-complex-scalars-internal-symmetry
+  label: Internal symmetry of identical complex scalar fields
+  summary: For two equal-mass complex Klein-Gordon fields, Problem 2.2(d) gives the
+    candidate U(1) and three Pauli-matrix charges and asks the reader to prove that
+    the latter obey SU(2) angular-momentum commutators and to generalize them to n
+    fields. Its footnote states that with additional work there are n(2n-1) conserved
+    charges and qualifies that extra symmetries often fail after nonlinear interactions
+    are added.
+  kind: concept
+  group: peskin-schroeder.field-symmetry-and-charge
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.2(d)
+    pages:
+    - 34
+    note: The page gives candidate charges and prompts the SU(2) proof and n-field
+      generalization; the footnote, rather than a derivation, states the n(2n-1) count
+      and nonlinear-interaction qualification.
+  notation:
+  - source: peskin-schroeder
+    note: Labels a=1,2 are mixed by Pauli matrices sigma^i; this is an internal symmetry
+      among equal-mass fields.
+- id: peskin-schroeder.improved-electromagnetic-stress-energy
+  label: Improved electromagnetic stress-energy tensor
+  summary: The canonical electromagnetic stress-energy tensor can be changed by the
+    divergence of a tensor antisymmetric in its first two indices without changing
+    global conserved energy or momentum. Problem 2.1(b) asks the reader to show that
+    the supplied improvement is symmetric and yields the standard energy density one-half(E-squared+B-squared)
+    and momentum density E cross B.
+  kind: method
+  group: peskin-schroeder.field-symmetry-and-charge
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.1(b)
+    pages:
+    - 33
+    note: The page supplies the divergenceless improvement construction and asks the
+      reader to show symmetry and the stated standard densities; it does not present
+      that derivation.
+- id: peskin-schroeder.infrared-inclusive-final-states
+  label: Infrared-inclusive final-state requirement
+  summary: At the next order, a muon-pair observable must include final states with
+    an extremely low-energy photon if a detector cannot distinguish them. The qualification
+    is tied to the detector-insensitive observable.
+  kind: assumption
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 11
+    note: The source says the extra-photon diagrams are necessary because no detector
+      can notice sufficiently low-energy photons.
+- id: peskin-schroeder.kg-ladder-mode-expansion
+  label: Klein-Gordon ladder-operator mode expansion
+  summary: The real Klein-Gordon field and canonical momentum are expanded over Fourier
+    modes with a_p and a_p-dagger. Canonical equal-time commutation implies [a_p,a_p'-dagger]=(2
+    pi)^3 delta^(3)(p-p'), so every momentum mode is an oscillator with E_p=sqrt(p-squared+m-squared).
+  kind: representation
+  group: peskin-schroeder.quantized-scalar-particles
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    - 21
+    note: The source identifies the Fourier oscillator frequency, gives the mode expansion,
+      and derives the ladder commutator.
+  notation:
+  - source: peskin-schroeder
+    note: For a real field phi-star(p)=phi(-p); a_p and a_p-dagger are Schrödinger-picture
+      operators.
 - id: peskin-schroeder.klein-gordon-canonical-hamiltonian
   label: Klein-Gordon canonical Hamiltonian
   summary: For the real Klein-Gordon field, pi = phidot and H = integral d^3x [1/2
@@ -128,6 +378,162 @@ nodes:
     note: The action is expressed through a local density depending on fields and
       their derivatives; the boundary conditions used to eliminate the surface term
       span pp. 15-16.
+- id: peskin-schroeder.local-field-particle-creation
+  label: Field operator creates a localized one-particle superposition
+  summary: phi(x)|0> is a superposition of one-particle momentum states. In the free-field
+    interpretation, phi(x) creates a particle at x, and its vacuum-to-one-particle
+    matrix element is that state's position-space wavefunction.
+  kind: representation
+  group: peskin-schroeder.quantized-scalar-particles
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 24
+    note: The source interprets phi(x)|0> as a one-particle superposition and confirms
+      it with the matrix element against |p>.
+- id: peskin-schroeder.loop-momentum-integration-and-divergence
+  label: Loop momentum integration and ultraviolet divergence
+  summary: A virtual momentum not fixed at vertices is summed by integrating over
+    all values. The displayed higher-order examples contain naively infinite loop
+    integrals, motivating later finite-result methods and a physical account of the
+    divergences.
+  kind: concept
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 12
+    note: The source identifies undetermined virtual momentum, its required integration,
+      and naive infinities in loop integrals.
+- id: peskin-schroeder.lorentz-invariant-one-particle-normalization
+  label: Lorentz-invariant one-particle normalization
+  summary: Defining |p>=sqrt(2E_p)a_p-dagger|0> gives (p|q)=2E_p(2 pi)^3 delta^(3)(p-q),
+    invariant under boosts. It provides the invariant one-particle measure d^3p/[(2
+    pi)^3 2E_p], an integral over the positive-energy mass shell.
+  kind: representation
+  group: peskin-schroeder.quantized-scalar-particles
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 23
+    - 24
+    note: The source derives boost-invariant normalization and identifies the measure
+      with p^2=m^2, p^0>0.
+  notation:
+  - source: peskin-schroeder
+    note: The factor of 2 is conventional; U(Lambda) implements Lorentz transformations
+      on Hilbert space.
+- id: peskin-schroeder.maxwell-variational-field-equations
+  label: Maxwell equations from the electromagnetic action
+  summary: Problem 2.1 asks for source-free Maxwell equations by treating A_mu(x)
+    as dynamical fields in the electromagnetic action and applying field Euler-Lagrange
+    equations, identifying E and B from F_mu_nu.
+  kind: method
+  group: peskin-schroeder.field-symmetry-and-charge
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.1(a)
+    pages:
+    - 33
+    note: The problem explicitly specifies the Euler-Lagrange derivation using A_mu
+      and E/B identifications.
+  notation:
+  - source: peskin-schroeder
+    note: The requested identifications are E^i=-F^{0i} and epsilon^{ijk}B^k=-F^{ij}.
+- id: peskin-schroeder.microcausality-field-commutator
+  label: Microcausality from the spacelike field commutator
+  summary: Causal separation is tested by [phi(x),phi(y)], not by a one-particle propagation
+    amplitude. For spacelike x-y, Lorentz invariance makes the two Wightman terms
+    equal and they cancel, so no Klein-Gordon measurement can affect another outside
+    the light cone.
+  kind: result
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Causality'
+    pages:
+    - 28
+    - 29
+    note: The source sets the measurement criterion, performs the spacelike Lorentz
+      argument, and states the no-influence conclusion.
+- id: peskin-schroeder.noether-current-and-charge
+  label: Noether current and conserved charge
+  summary: For an infinitesimal continuous field transformation whose Lagrangian changes
+    at most by a four-divergence, the on-shell Noether current obeys partial_mu j^mu=0.
+    Its spatial integral Q=integral j^0 d^3x is time independent; the local equation
+    is the direct field-theory result.
+  kind: result
+  group: peskin-schroeder.field-symmetry-and-charge
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether''s Theorem'
+    pages:
+    - 17
+    - 18
+    note: The source gives the allowed-divergence condition, derives conservation,
+      and distinguishes local conservation from the integrated charge.
+  notation:
+  - source: peskin-schroeder
+    note: For multiple fields, sum the canonical term over fields; J^mu records the
+      Lagrangian surface term.
+- id: peskin-schroeder.photon-mediated-second-order-amplitude
+  label: Photon-mediated second-order amplitude
+  summary: Because electromagnetism couples electrons and muons through the photon
+    field rather than directly, the first-order e+e- to mu+mu- transition vanishes.
+    The leading contribution has two vertices and a sum over photon vector intermediate
+    states; it is Lorentz scalar when its halves are 4-vectors.
+  kind: result
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 6
+    note: Equation (1.3) and its explanation identify the vertices, photon projector,
+      component sum, and scalar condition.
+- id: peskin-schroeder.qed-diagrammatic-calculation
+  label: Feynman diagrams as a calculational prescription
+  summary: 'For a QED process, a Feynman diagram encodes a perturbative contribution
+    to its quantum-mechanical amplitude: assign the prescribed algebraic factor to
+    external lines, internal lines, and vertices, then multiply the factors.'
+  kind: method
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 3
+    - 5
+    note: The chapter presents diagrams as a calculation method and says their element
+      factors multiply to give a perturbative term.
+  notation:
+  - source: peskin-schroeder
+    note: The book denotes the dimensionless process amplitude by M; arrows on fermion
+      lines show negative-charge flow rather than momentum.
+- id: peskin-schroeder.qed-tree-amplitude-rule
+  label: QED tree amplitude from propagator, vertices, and spinors
+  summary: For one-photon annihilation, the QED rules attach -i g_mu_nu/q-squared
+    to the internal photon, -i e gamma-mu to each vertex, and Dirac spinors to external
+    fermion lines. Contracting the factors gives the tree amplitude, with q fixed
+    by momentum conservation.
+  kind: method
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 8
+    - 9
+    - 10
+    note: These pages identify each diagrammatic factor and write the amplitude directly
+      from the diagram.
+  notation:
+  - source: peskin-schroeder
+    note: gamma^mu are four constant 4-by-4 matrices; u,v are column and u-bar,v-bar
+      row spinors.
 - id: peskin-schroeder.real-klein-gordon-lagrangian
   label: Real Klein-Gordon Lagrangian
   summary: The real scalar field is governed classically by L = 1/2 phidot^2 - 1/2
@@ -162,6 +568,123 @@ nodes:
     - 14
     note: The discussion gives variable particle number and a nonzero spacelike single-particle
       propagation amplitude as motivations for a multiparticle field theory.
+- id: peskin-schroeder.retarded-klein-gordon-green-function
+  label: Retarded Klein-Gordon Green's function
+  summary: D_R(x-y)=theta(x^0-y^0)<0|[phi(x),phi(y)]|0> vanishes when x^0<y^0 and
+    obeys (partial-squared+m-squared)D_R=-i delta^(4)(x-y). Its momentum-space contour
+    is the retarded prescription.
+  kind: result
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
+    pages:
+    - 30
+    note: Equations (2.55)-(2.58) define D_R, prove its Green-function equation, and
+      state its retarded support.
+- id: peskin-schroeder.scalar-bose-einstein-statistics
+  label: Bose-Einstein statistics of Klein-Gordon quanta
+  summary: Commuting scalar creation operators make a two-particle state unchanged
+    under exchange, and a single momentum mode admits arbitrarily many quanta. Klein-Gordon
+    particles therefore obey Bose-Einstein statistics.
+  kind: result
+  group: peskin-schroeder.quantized-scalar-particles
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 22
+    note: The source directly connects commuting creation operators and unlimited
+      occupation to Bose-Einstein statistics.
+- id: peskin-schroeder.scalar-fock-spectrum
+  label: Scalar Fock spectrum and positive-energy quanta
+  summary: Dropping the infinite state-independent zero-point term, the state annihilated
+    by every a_p is the vacuum and creation operators generate the free-field spectrum.
+    A created excitation has momentum p and positive E_p; multi-operator states carry
+    sums of momenta and energies.
+  kind: result
+  group: peskin-schroeder.quantized-scalar-particles
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 21
+    - 22
+    note: The source identifies the zero-point term, permits dropping it because experiments
+      measure energy differences, then defines the vacuum and particles.
+- id: peskin-schroeder.spacelike-wightman-amplitude
+  label: Nonzero spacelike free-field propagation amplitude
+  summary: D(x-y)=<0|phi(x)phi(y)|0> is Lorentz invariant and, for spacelike separation,
+    exponentially suppressed at large distance but nonzero. Its nonvanishing alone
+    is not the criterion for causal influence. Problem 2.3 separately asks for its
+    exact spacelike evaluation in terms of Bessel functions, beyond the preceding
+    asymptotic contour result.
+  kind: result
+  group: peskin-schroeder.scalar-spacetime-propagation
+  evidence:
+  - source: peskin-schroeder
+    section: 2.4 The Klein-Gordon Field in Space-Time
+    pages:
+    - 27
+    - 28
+    note: The source evaluates D over temporal and spatial intervals and states that
+      the spacelike amplitude is exponentially vanishing but nonzero.
+  - source: peskin-schroeder
+    section: Problem 2.3
+    pages:
+    - 34
+    note: The problem asks the reader for an exact Bessel-function evaluation at spacelike
+      separation; it does not present that derivation on this page.
+- id: peskin-schroeder.translation-stress-energy-tensor
+  label: Translation symmetry and stress-energy tensor
+  summary: Noether’s theorem applied to spacetime translations gives four separately
+    conserved currents T^{mu nu}, one for each translation direction nu. Their charges
+    are the Hamiltonian for time translation and the three components of physical
+    field momentum for spatial translations, distinct from canonical momentum density.
+  kind: result
+  group: peskin-schroeder.field-symmetry-and-charge
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether''s Theorem'
+    pages:
+    - 18
+    - 19
+    note: The translation transformation is set up on p. 18; p. 19 identifies the
+      resulting four currents as the stress-energy tensor and identifies the energy
+      and momentum charges.
+- id: peskin-schroeder.tree-level-muon-pair-cross-section
+  label: Leading muon-pair angular distribution and energy scaling
+  summary: After initial-spin averaging and final-spin summation, the leading e+e-
+    to mu+mu- distribution is proportional to alpha-squared times (1+cos-squared theta)/E_cm-squared;
+    the total cross section falls as 1/E_cm-squared. This is a high-energy CM result
+    with higher-order corrections.
+  kind: result
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 8
+    note: Equations (1.8) and (1.9) follow the spin average and sum and are described
+      as angularly dependent with sharp energy decrease.
+  notation:
+  - source: peskin-schroeder
+    note: alpha=e^2/(4 pi) in the book's units.
+- id: peskin-schroeder.unpolarized-trace-technology
+  label: Trace technology for unpolarized cross sections
+  summary: Products of gamma matrices and spinors in an unpolarized cross section
+    can be reduced with trace identities, avoiding explicit gamma-matrix and spinor
+    representations. The source says this method also readily restores the final-state
+    mass omitted in the high-energy example.
+  kind: method
+  group: peskin-schroeder.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 10
+    note: The chapter names Feynman trace technology and describes both its trace
+      calculation and mass restoration.
 edges:
 - id: peskin-schroeder.canonical-formalism-to-kg-hamiltonian
   from: peskin-schroeder.canonical-field-momentum-hamiltonian
@@ -201,6 +724,79 @@ edges:
     - 20
     note: The book promotes phi and pi and explains that the continuous momentum density
       leads to a Dirac delta in the commutator.
+- id: peskin-schroeder.canonical-quantization-to-ladder
+  from: peskin-schroeder.canonical-quantization-real-field
+  to: peskin-schroeder.kg-ladder-mode-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The ladder commutator is fixed by reproducing the canonical equal-time
+    field commutator.
+  failure_mode: Without the canonical relation, the normalization of the ladder algebra
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    - 21
+    note: The source gives the canonical field commutator and verifies that the ladder
+      relation reproduces it.
+- id: peskin-schroeder.diagrams-to-coherent-sum
+  from: peskin-schroeder.qed-diagrammatic-calculation
+  to: peskin-schroeder.coherent-sum-of-diagram-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: One must obtain each diagram contribution before summing the process
+    amplitude.
+  failure_mode: Without individual contributions, the coherent total cannot be formed
+    before squaring.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 10
+    note: The Bhabha discussion identifies a second allowed diagram and requires amplitude
+      addition before squaring.
+- id: peskin-schroeder.euler-lagrange-to-maxwell
+  from: peskin-schroeder.field-euler-lagrange-equation
+  to: peskin-schroeder.maxwell-variational-field-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 2.1 specifies Maxwell equations as Euler-Lagrange equations for
+    A_mu.
+  failure_mode: Without the field variational equation, the requested derivation has
+    no equation-of-motion procedure.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.1(a)
+    pages:
+    - 33
+    note: The problem asks to derive Maxwell's equations as Euler-Lagrange equations
+      treating A_mu as dynamical variables.
+- id: peskin-schroeder.euler-lagrange-to-noether
+  from: peskin-schroeder.field-euler-lagrange-equation
+  to: peskin-schroeder.noether-current-and-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Noether derivation removes a term using the field Euler-Lagrange
+    equation.
+  failure_mode: Without equations of motion, the variation does not reduce to the
+    stated conserved-current identity.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether''s Theorem'
+    pages:
+    - 18
+    note: The derivation says the second term vanishes by Eq. (2.3) before obtaining
+      current conservation.
 - id: peskin-schroeder.field-euler-lagrange-to-kg-equation
   from: peskin-schroeder.field-euler-lagrange-equation
   to: peskin-schroeder.klein-gordon-classical-equation
@@ -221,6 +817,81 @@ edges:
     - 17
     note: Equation (2.3) supplies the field variational equation, and the text then
       states that the usual procedure applied to Eq. (2.6) gives Eq. (2.7).
+- id: peskin-schroeder.fock-to-bose
+  from: peskin-schroeder.scalar-fock-spectrum
+  to: peskin-schroeder.scalar-bose-einstein-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The statistics conclusion uses multiparticle creation-operator states
+    and their commuting algebra.
+  failure_mode: Without Fock states, exchange symmetry and unlimited occupation cannot
+    be properties of the scalar quanta.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 22
+    note: The source examines the two-particle state and mode occupation to conclude
+      Bose-Einstein statistics.
+- id: peskin-schroeder.fourier-to-ladder
+  from: peskin-schroeder.klein-gordon-fourier-oscillator-modes
+  to: peskin-schroeder.kg-ladder-mode-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The expansion assigns an oscillator pair to each Fourier mode at its
+    identified frequency.
+  failure_mode: Without the Fourier oscillator decomposition, momentum-labelled ladders
+    lack their source-derived oscillator interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 20
+    - 21
+    note: The source first identifies omega_p then treats each Fourier mode as an
+      independent oscillator.
+- id: peskin-schroeder.heisenberg-to-microcausality
+  from: peskin-schroeder.heisenberg-klein-gordon-field
+  to: peskin-schroeder.microcausality-field-commutator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spacetime commutator is evaluated from Heisenberg fields at x and
+    y.
+  failure_mode: Without time-dependent field operators, the spacelike commutator criterion
+    cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Causality'
+    pages:
+    - 27
+    - 28
+    note: The source defines the two-point amplitude with Heisenberg fields before
+      evaluating their commutator.
+- id: peskin-schroeder.helicity-to-cross-section
+  from: peskin-schroeder.helicity-angular-momentum-selection
+  to: peskin-schroeder.tree-level-muon-pair-cross-section
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The source derives this cross section by inserting the helicity amplitudes
+    and averaging and summing their spins, while later giving a trace-based route
+    to the same result.
+  failure_mode: Without these amplitudes, the source's angular-momentum route cannot
+    perform its spin sum, though trace technology provides another route.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 8
+    note: The page lists the amplitudes and immediately inserts them into the spin
+      average and sum.
 - id: peskin-schroeder.kg-equation-to-fourier-modes
   from: peskin-schroeder.klein-gordon-classical-equation
   to: peskin-schroeder.klein-gordon-fourier-oscillator-modes
@@ -277,6 +948,75 @@ edges:
     - 17
     note: The example Lagrangian is introduced on p. 16 and its canonical momentum
       and Hamiltonian are given on p. 17.
+- id: peskin-schroeder.ladder-to-fock
+  from: peskin-schroeder.kg-ladder-mode-expansion
+  to: peskin-schroeder.scalar-fock-spectrum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spectrum is found by rewriting the Hamiltonian in the ladder operators.
+  failure_mode: Without the ladder decomposition, the source's creation-operator construction
+    of the spectrum cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 21
+    - 22
+    note: The source expresses the Hamiltonian in ladder operators and builds all
+      eigenstates from the vacuum.
+- id: peskin-schroeder.ladder-to-heisenberg
+  from: peskin-schroeder.kg-ladder-mode-expansion
+  to: peskin-schroeder.heisenberg-klein-gordon-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spacetime expansion evolves the earlier Schrödinger-picture ladder
+    operators.
+  failure_mode: Without the mode form, the link between frequency signs and creation/annihilation
+    coefficients cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.4 The Klein-Gordon Field in Space-Time
+    pages:
+    - 25
+    - 26
+    note: The source applies ladder-operator time-evolution identities to Eq. (2.25).
+- id: peskin-schroeder.ladder-to-local-creation
+  from: peskin-schroeder.kg-ladder-mode-expansion
+  to: peskin-schroeder.local-field-particle-creation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vacuum interpretation follows by inserting the ladder-operator field
+    expansion.
+  failure_mode: Without the expansion, phi(x)|0> cannot be shown to be a momentum-state
+    superposition.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 24
+    note: The source begins the interpretation from Eq. (2.25).
+- id: peskin-schroeder.ladder-to-lorentz-normalization
+  from: peskin-schroeder.kg-ladder-mode-expansion
+  to: peskin-schroeder.lorentz-invariant-one-particle-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The normalized one-particle state is defined from a momentum-mode creation
+    operator.
+  failure_mode: Without a_p-dagger, the normalization convention cannot be formulated.
+  evidence:
+  - source: peskin-schroeder
+    section: 2.3 The Klein-Gordon Field as Harmonic Oscillators
+    pages:
+    - 23
+    note: The source defines |p> directly from a_p-dagger|0>.
 - id: peskin-schroeder.local-action-to-field-euler-lagrange
   from: peskin-schroeder.local-field-action
   to: peskin-schroeder.field-euler-lagrange-equation
@@ -296,12 +1036,239 @@ edges:
     - 16
     note: The derivation begins with stationarity of S and arrives at the local equation
       after removing the surface term.
+- id: peskin-schroeder.microcausality-to-antiparticles
+  from: peskin-schroeder.microcausality-field-commutator
+  to: peskin-schroeder.antiparticle-causality-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The antiparticle claim explains how the charged terms required for spacelike
+    commutator cancellation arise.
+  failure_mode: Without the commutator cancellation as the causal requirement, the
+    need for paired charged propagation terms is unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Causality'
+    pages:
+    - 29
+    note: The source says both charged terms must be present to cancel outside the
+      light cone.
+- id: peskin-schroeder.microcausality-to-retarded
+  from: peskin-schroeder.microcausality-field-commutator
+  to: peskin-schroeder.retarded-klein-gordon-green-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: D_R is defined from the commutator multiplied by a theta function.
+  failure_mode: Without the commutator, the definition and source calculation of D_R
+    cannot be made.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
+    pages:
+    - 29
+    - 30
+    note: The source studies the commutator further, then defines D_R and derives
+      its Green-function equation.
+- id: peskin-schroeder.noether-to-stress-energy
+  from: peskin-schroeder.noether-current-and-charge
+  to: peskin-schroeder.translation-stress-energy-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor follows by applying Noether’s theorem to translations, including
+    the Lagrangian surface term.
+  failure_mode: Without Noether's construction, translation charges cannot be derived
+    from field and Lagrangian transformations.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether''s Theorem'
+    pages:
+    - 18
+    - 19
+    note: The source applies the theorem after comparing translation with the allowed-divergence
+      form and identifies the tensor.
+- id: peskin-schroeder.noether-to-u1
+  from: peskin-schroeder.noether-current-and-charge
+  to: peskin-schroeder.complex-scalar-u1-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phase current applies the general Noether construction to the complex
+    scalar's global phase transformation.
+  failure_mode: Without the continuous-symmetry current construction, the displayed
+    U(1) current is unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether''s Theorem'
+    pages:
+    - 18
+    note: The source calls the complex scalar a Noether example and derives its current
+      from phase symmetry.
+- id: peskin-schroeder.retarded-to-source
+  from: peskin-schroeder.retarded-klein-gordon-green-function
+  to: peskin-schroeder.classical-source-on-shell-particle-creation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source-driven solution is constructed by convolving the classical
+    source with D_R.
+  failure_mode: Without D_R, the causal source solution and ladder shift do not follow
+    by the stated method.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Particle Creation by a Classical
+      Source'
+    pages:
+    - 32
+    note: The source explicitly constructs the source solution using the retarded
+      Green's function.
+- id: peskin-schroeder.second-order-to-diagrams
+  from: peskin-schroeder.photon-mediated-second-order-amplitude
+  to: peskin-schroeder.qed-diagrammatic-calculation
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The source explains its intermediate-state expression by mapping its
+    factors to diagram components.
+  failure_mode: Without the mapping, this introductory route leaves the diagram rule
+    detached from the perturbative amplitude it organizes.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 6
+    note: The text maps external states, interaction Hamiltonians, and the photon
+      projector to diagram components.
+- id: peskin-schroeder.trace-to-cross-section
+  from: peskin-schroeder.unpolarized-trace-technology
+  to: peskin-schroeder.tree-level-muon-pair-cross-section
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The source presents trace technology as a second route from the diagrammatic
+    amplitude to the same unpolarized result (1.8).
+  failure_mode: Without trace manipulation, this source route cannot reduce the gamma-matrix
+    expression without explicit spinors, though the helicity route remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 10
+    note: The text says trace technology obtains Eq. (1.8) without explicit gamma-matrix
+      or spinor expressions.
+- id: peskin-schroeder.translation-to-em-improvement
+  from: peskin-schroeder.translation-stress-energy-tensor
+  to: peskin-schroeder.improved-electromagnetic-stress-energy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The improvement preserves global translation charges while changing the
+    local energy-momentum tensor.
+  failure_mode: Without the stress-energy tensor's translation-current role, the significance
+    of preserving energy and momentum is unclear.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.1(b)
+    pages:
+    - 33
+    note: The problem describes an equally good tensor with the same globally conserved
+      energy and momentum.
+- id: peskin-schroeder.tree-rule-to-traces
+  from: peskin-schroeder.qed-tree-amplitude-rule
+  to: peskin-schroeder.unpolarized-trace-technology
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The source applies trace technology to the gamma-matrix and spinor expression
+    read from this QED diagram; that is a typical application route, not a universal
+    prerequisite for trace identities.
+  failure_mode: Without this amplitude expression, this particular source application
+    has no gamma-matrix product to reduce, though trace identities can be learned
+    or used in other contexts.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 10
+    note: The source introduces trace technology for expressions like Eq. (1.10).
+- id: peskin-schroeder.u1-to-complex-charge
+  from: peskin-schroeder.complex-scalar-u1-current
+  to: peskin-schroeder.complex-scalar-canonical-particles-and-charge
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The prior U(1) current gives conceptual provenance for the charge exercise,
+    but Problem 2.2(c) supplies Q explicitly and so does not require this route.
+  failure_mode: Without the prior U(1) discussion, the exercise can still use its
+    supplied Q, but its symmetry origin is less motivated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 2.2(c)
+    pages:
+    - 34
+    note: The problem supplies Q and asks for the charge of each particle type.
 groups:
+- id: peskin-schroeder.field-symmetry-and-charge
+  title: Field symmetries, currents, and stress-energy
+  question: How do continuous field and spacetime symmetries produce currents, charges,
+    and energy-momentum tensors?
 - id: peskin-schroeder.free-scalar-foundations
   title: Free real scalar-field foundations
   question: How does the real Klein-Gordon field acquire its classical dynamics, canonical
     variables, and oscillator-mode description?
+- id: peskin-schroeder.qed-scattering
+  title: QED scattering and diagrammatics
+  question: How does introductory e+e- to mu+mu- connect amplitudes, spin selection,
+    diagrams, and cross sections?
+- id: peskin-schroeder.quantized-scalar-particles
+  title: Quantized scalar modes and particles
+  question: How do canonical scalar-field modes become particles with relativistic
+    normalization and statistics?
+- id: peskin-schroeder.scalar-spacetime-propagation
+  title: Scalar fields in spacetime, causality, and propagation
+  question: How do Heisenberg fields, commutators, propagators, and sources describe
+    causal scalar dynamics?
 motivations:
+- id: peskin-schroeder.why-commutators-test-causality
+  nodes:
+  - peskin-schroeder.spacelike-wightman-amplitude
+  - peskin-schroeder.microcausality-field-commutator
+  - peskin-schroeder.antiparticle-causality-cancellation
+  summary: The causality discussion reframes a nonzero spacelike amplitude into whether
+    a measurement at one point can affect another, leading to the commutator test
+    and particle-antiparticle interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '2.4 The Klein-Gordon Field in Space-Time: Causality'
+    pages:
+    - 28
+    - 29
+    note: The text asks about measurement effects and explains complex-field cancellation
+      in terms of opposite charges.
+- id: peskin-schroeder.why-diagrammatic-qed
+  nodes:
+  - peskin-schroeder.qed-diagrammatic-calculation
+  - peskin-schroeder.qed-tree-amplitude-rule
+  summary: The opening chapter asks how to calculate an observable QED process and
+    uses pair annihilation as an intuitive preview before the full rules are derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 3
+    note: The chapter discusses a simple QED process in advance to address where the
+      formal development is going.
 - id: peskin-schroeder.why-relativistic-fields
   nodes:
   - peskin-schroeder.relativistic-field-viewpoint

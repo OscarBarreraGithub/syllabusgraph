@@ -2,7 +2,7 @@ schema_version: 1
 status: partial-model-reviewed
 complete_textbook: false
 human_audit: pending
-graph_digest: sha256:a132244fe39b5bd00d78833c9139dc9bef2c2e02cfd072356e3f453b23310158
+graph_digest: sha256:df05b54ea6785011e607b4911b2a13c07189ff67cd36b5e1202c3ab4dad9ff90
 extraction:
   model: gpt-5.6-terra
   effort: high
@@ -10,6 +10,17 @@ required_critic:
   model: gpt-5.6-sol
   effort: high
 units:
+- id: full-001
+  printed_pages:
+    first: 3
+    last: 34
+  scope: 'Complete chapters 1–2 and their substantive problems: experimental motivation,
+    classical fields and conserved quantities, canonical scalar quantization, particle
+    states and spacetime propagation. Reuses the narrow initial pilot and fills its
+    unassigned topics.'
+  nodes: 30
+  edges: 22
+  acceptance: independent-critic
 - id: pilot-01
   printed_pages:
     first: 13
@@ -23,7 +34,9 @@ units:
   edges: 7
   acceptance: independent-critic
 omissions:
-- All portions outside the listed printed-page scope remain unextracted.
-- This bounded graph may have dependencies whose earlier supporting sections are not
-  yet represented.
+- Substantive content outside the accepted unit scopes remains unextracted.
+- Pilot scopes are narrow and may leave unassigned topics on the same pages; full
+  extraction revisits them.
+- Cross-unit dependency reconciliation remains in progress.
 - No claim of whole-book completeness or classroom evaluation.
+reviewed_printed_pages: 32

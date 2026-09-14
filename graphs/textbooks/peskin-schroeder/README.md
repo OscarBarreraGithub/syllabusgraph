@@ -1,12 +1,12 @@
 # An Introduction to Quantum Field Theory
 
-**Partial, model-reviewed graph:** 9 concepts and 7 relationships. Accepted units cover printed pages 13–20; exact topic scopes and exclusions are in [review.yaml](review.yaml).
+**Partial, model-reviewed graph:** 39 concepts and 29 relationships. Accepted units cover printed pages 3–34; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
 Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. Full-book construction and cross-unit dependency reconciliation are in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
 
 This graph describes the book independently of any audience, course, or schedule. Textbooks, extracted passages, source-page renderings, and processing records remain private.
 
-[Read the graph](knowledge/graph.yaml) · [Shared QFT graph](../../subjects/qft/README.md) · [Graph bank instructions](../../README.md)
+[Read the graph](knowledge/graph.yaml) · [Coverage inventory](coverage.yaml) · [Shared QFT graph](../../subjects/qft/README.md) · [Graph bank instructions](../../README.md)
 
 The following diagram is a small excerpt from the initial accepted batch. The linked YAML contains the current complete set of accepted records.
 

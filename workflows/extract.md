@@ -42,6 +42,13 @@ Specify necessity, a concrete failure mode, a rationale, and page/section
 evidence. Sequence in a textbook alone does not establish a prerequisite.
 Record notation differences rather than silently harmonizing them.
 
+When the source gives several routes to the same result, preserve the inputs
+needed jointly within each route. Do not make every route's inputs compulsory
+for the common result, or label one incomplete input as an alternative method.
+One option is a method node with its own prerequisites and an `alternative`
+edge to the result; an equivalent representation is fine if it preserves the
+same distinction. This applies within a single book as well as across books.
+
 Motivation summaries should identify real questions, puzzles, or interpretations
 found in the source. An empty motivation list is acceptable. Do not invent an
 author's excitement or silently supply missing scientific claims.
@@ -57,6 +64,8 @@ Every cited page of every new record must have at least one short verbatim
 are not promoted into the public graph. A witness must actually support the
 associated claim; matching text alone does not establish scientific validity.
 Keep the public graph's summaries and notes in your own words.
+Use complete-word witnesses: matching collapses whitespace and normalizes
+Unicode, but rejects a quotation that truncates a word at either boundary.
 
 Leave time estimates absent unless a concrete teaching estimate and its basis
 are available. Do not convert concept counts into claimed instructional time.

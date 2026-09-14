@@ -1,4 +1,267 @@
 nodes:
+- id: schwartz.action-variation-and-boundary-assumption
+  label: Action variation and the asymptotic-boundary assumption
+  summary: For ℒ[φ,∂φ], varying the action and integrating by parts separates a bulk
+    variation from a total derivative. The source assumes fields vanish at spatial
+    and temporal asymptotic boundaries, permitting total derivatives in the Lagrangian
+    to be dropped for this derivation.
+  kind: assumption
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.2 The Euler–Lagrange equations
+    pages:
+    - 31
+    note: States the boundary assumption behind integration by parts.
+- id: schwartz.atom-photon-interaction-hamiltonian
+  label: Atom-photon interaction Hamiltonian
+  summary: For the Einstein-coefficient application, split H=H_0+H_int with H_0=H_atom+H_photon
+    and treat the remaining interaction perturbatively. A semiclassical form H_int=φH_I
+    makes the photon field dynamical and its ladder-operator matrix elements produce
+    the √n and √(n+1) factors.
+  kind: method
+  group: schwartz.free-scalar-quantization
+  evidence:
+  - source: schwartz
+    section: 2.3.4 Einstein coefficients revisited
+    pages:
+    - 26
+    note: Recasts the atomic transition calculation with a quantum photon field.
+- id: schwartz.blackbody-cavity-modes-and-classical-spectrum
+  label: Blackbody cavity modes and the classical spectrum
+  summary: A thermal blackbody can be idealized as a periodic box of electromagnetic
+    standing-wave modes. Classical equipartition assigns equal thermal energy to modes,
+    so their growing phase-space density gives an intensity proportional to ω²kBT
+    (with c restored as c⁻³).
+  kind: representation
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 3
+    note: Defines the cavity modes and obtains the equipartition spectrum.
+- id: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
+  label: Bosonic spontaneous and stimulated emission factor
+  summary: For atomic de-excitation into a photon mode already occupied by n_ω photons,
+    the squared amplitude is proportional to n_ω+1; excitation is proportional to
+    n_ω. The additive one is the spontaneous contribution and the occupation term
+    is stimulated emission or absorption.
+  kind: result
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 9
+    note: Obtains the nω+1 and nω transition factors.
+- id: schwartz.canonical-and-path-integral-quantization-routes
+  label: Canonical and path-integral quantization routes
+  summary: The source identifies canonical quantization and the Feynman path integral
+    as two common approaches to field theory. Canonical quantization supplies physical
+    operator insight and is needed for some results such as LSZ, while path integrals
+    are more concise and support applications such as nonperturbative QCD.
+  kind: method
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: Chapter 2 introduction
+    pages:
+    - 10
+    note: Contrasts the two approaches and gives source-specific examples.
+- id: schwartz.canonical-quantum-harmonic-oscillator
+  label: Canonical quantum harmonic oscillator
+  summary: Quantizing a linear oscillator promotes x and p to [x,p]=i; the combinations
+    a and a† obey [a,a†]=1 and put H=ω(a†a+1/2). In the Heisenberg picture the annihilation
+    operator evolves as a(t)=e^(−iωt)a(0).
+  kind: method
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.2.1 Simple harmonic oscillator
+    pages:
+    - 18
+    note: Reviews canonical oscillator quantization and time evolution.
+- id: schwartz.canonical-scalar-field-energy-density
+  label: Canonical scalar-field energy density
+  summary: For ℒ=1/2(∂_μφ)(∂^μφ)−V[φ], the conjugate momentum is π=φ̇ and ℋ=1/2π²+1/2(∇φ)²+V[φ].
+    This illustrates H=K+V and L=K−V, while the source notes that Hamiltonians are
+    not Lorentz scalars and Lagrangians are preferred in relativistic field theory.
+  kind: representation
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.1 Hamiltonians and Lagrangians
+    pages:
+    - 30
+    note: Works the scalar Legendre transform and explains Lorentz status.
+- id: schwartz.classical-feynman-diagrams-and-rules
+  label: Classical Feynman diagrams and rules
+  summary: 'The iterative Green-function solution can be represented by diagrams:
+    propagator lines connect the observation point, source insertions, and nonlinear
+    branching vertices weighted by λ, with internal points integrated. The source
+    calls these Feynman diagrams and distinguishes the quantum extension by the possibility
+    of loops when ℏ is nonzero. Problem 3.4 asks for the next-order diagrams, their
+    integral expressions, and a Green-function check of the result.'
+  kind: representation
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.5 Green's functions
+    pages:
+    - 42
+    note: States the classical diagram rules and their physical gravity example.
+  - source: schwartz
+    section: Problem 3.4
+    pages:
+    - 43
+    note: Extends the diagram expansion and checks it against Green functions.
+- id: schwartz.classical-field-hamiltonian-lagrangian-legendre-transform
+  label: Field Hamiltonians, Lagrangians, and Legendre transforms
+  summary: A classical field theory has continuous degrees of freedom and may be formulated
+    through H=∫d³x ℋ or L=∫d³x ℒ. At each spatial point, ℒ[φ,φ̇]=πφ̇−ℋ after solving
+    π from ∂ℋ/∂π=φ̇, with the inverse Legendre transform when it exists.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.1 Hamiltonians and Lagrangians
+    pages:
+    - 29
+    note: Defines field densities and the Legendre transform.
+- id: schwartz.classical-spontaneous-symmetry-breaking
+  label: Classical spontaneous symmetry breaking
+  summary: For a real scalar with a negative mass term and stabilizing quartic interaction,
+    constant solutions of the field equation include ground states that need not respect
+    the Lagrangian's φ→−φ symmetry. Expanding φ=c+π about a selected vacuum gives
+    a fluctuation theory and illustrates spontaneous breaking of a discrete Z₂ symmetry.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.5 Spontaneous symmetry breaking
+    pages:
+    - 43
+    note: Specifies the classical symmetry-breaking construction.
+- id: schwartz.coherent-states-of-the-oscillator
+  label: Coherent states of the harmonic oscillator
+  summary: The problem defines |z⟩=e^(za†)|0⟩, asks to show it is an eigenstate of
+    a, and studies its occupation amplitudes and minimum uncertainty ΔpΔx=1/2. It
+    also asks why a† cannot have an eigenstate.
+  kind: representation
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: Problem 2.7 Coherent states of the simple harmonic oscillator
+    pages:
+    - 28
+    note: Specifies the coherent-state construction and properties.
+- id: schwartz.complex-scalar-global-u1-symmetry
+  label: Complex scalar global U(1) symmetry
+  summary: The complex scalar Lagrangian ℒ=|∂_μφ|²−m²|φ|² is invariant under the continuous
+    global phase rotation φ→e^(−iα)φ and φ*→e^(iα)φ*. The complex field can be represented
+    by two real degrees of freedom or by φ and φ*.
+  kind: concept
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.3 Noether's theorem
+    pages:
+    - 33
+    note: Gives the complex-scalar symmetry example.
+- id: schwartz.compton-scattering-as-photon-momentum-application
+  label: Compton scattering as photon momentum application
+  summary: The Compton-scattering problem treats crystal electrons as free for the
+    collision, derives the reflected X-ray frequency versus angle, examines the massless-electron
+    limit, and asks what distribution would be expected without quantized photon momentum.
+  kind: method
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: Problem 2.5 Compton scattering
+    pages:
+    - 27
+    note: Poses the momentum-quantization scattering test.
+- id: schwartz.coulomb-potential-from-field-propagation
+  label: Coulomb potential from field propagation
+  summary: For a static point source J⁰=eδ³(x⃗), Lorenz-gauge Maxwell theory gives
+    A⁰=−e∆⁻¹δ³(x⃗). Fourier transformation and contour integration yield A⁰(r)=e/(4πr),
+    recovering the Coulomb potential as propagation from the source.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.4.2 Coulomb potential
+    pages:
+    - 39
+    note: Calculates the potential from the point-charge source.
+- id: schwartz.current-roles-and-nondynamical-sources
+  label: Roles of currents and nondynamical sources
+  summary: A current can be a Noether current, an external prescribed charge flow,
+    a source coupled as −A_μJ^μ, or a placeholder for matter terms. In the external-source
+    role it has no kinetic term and is not solved dynamically alongside propagating
+    fields; the notation separates source production from field response.
+  kind: concept
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.3.2 Currents
+    pages:
+    - 36
+    note: Lists current roles and states the nondynamical-source qualification.
+- id: schwartz.discrete-lorentz-transformations-and-causal-type
+  label: Discrete Lorentz transformations and causal type
+  summary: Parity P and time reversal T preserve the Minkowski metric but are not
+    products of rotations and boosts. Lorentz-invariant norms classify vectors as
+    timelike, spacelike, or lightlike; a four-momentum is lightlike exactly when the
+    particle is massless. Problem 2.4 tests whether a single-coordinate reflection
+    is Lorentz and why it is not counted with P and T.
+  kind: concept
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.3 Discrete transformations
+    pages:
+    - 16
+    note: Defines P, T, and the norm-based causal classifications.
+  - source: schwartz
+    section: Problem 2.4
+    pages:
+    - 27
+    note: Applies the definition to an improper single-coordinate reflection.
+- id: schwartz.einstein-emission-and-absorption-coefficients
+  label: Einstein emission and absorption coefficient relations
+  summary: For two atomic levels, the spontaneous-emission coefficient A, stimulated-emission
+    coefficient B, and absorption coefficient B′ satisfy B=B′ and A/B=ℏω³/π². The
+    source develops this common result both through thermal detailed balance and through
+    a field-theoretic transition-rate calculation that does not assume equilibrium.
+  kind: result
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.2 Einstein coefficients
+    pages:
+    - 6
+    note: Obtains the coefficient relations from equilibrium.
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 9
+    note: Obtains the same relations without assuming thermal equilibrium.
+- id: schwartz.energy-momentum-tensor-improvement-ambiguity
+  label: Energy-momentum tensor improvement ambiguity
+  summary: The problem investigates how adding a total derivative ∂_μX^μ to a Lagrangian
+    changes the canonical energy-momentum tensor while leaving the integrated total
+    energy invariant, and asks how to obtain a symmetric tensor for electromagnetism.
+    It identifies that local tensor representatives are not unique.
+  kind: concept
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.3 Ambiguities in the energy-momentum tensor
+    pages:
+    - 43
+    note: States the total-derivative, total-energy, and symmetry questions.
 - id: schwartz.equal-time-scalar-field-commutation-relations
   label: Equal-time scalar-field commutation relations
   summary: At equal time, the free field satisfies [φ(x⃗),φ(y⃗)]=0. Defining the canonical
@@ -20,6 +283,67 @@ nodes:
   - source: schwartz
     note: The source explicitly limits the derivation to equal time and says the different-time
       calculation is more subtle.
+- id: schwartz.equilibration-requires-particle-creation-and-destruction
+  label: Equilibration requires particle creation and destruction
+  summary: For radiation of initially one frequency to thermalize into all frequencies,
+    different particle types must turn into one another. The source uses this need
+    for creation and destruction as a motivation for quantum field theory.
+  kind: concept
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 5
+    note: Explains why equilibration motivates QFT.
+- id: schwartz.euler-lagrange-and-klein-gordon-equations
+  label: Euler–Lagrange and Klein–Gordon equations
+  summary: Stationarity of the action for arbitrary field variations gives ∂ℒ/∂φ−∂_μ[∂ℒ/∂(∂_μφ)]=0.
+    For the scalar Lagrangian with potential V, this is □φ+V′[φ]=0; a quadratic mass
+    potential gives (□+m²)φ=0, the free scalar Klein–Gordon equation. Problem 3.1
+    extends the variational derivation to Lagrangians with second and higher field
+    derivatives.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.2 The Euler–Lagrange equations
+    pages:
+    - 32
+    note: Derives Euler–Lagrange and specializes it to Klein–Gordon.
+  - source: schwartz
+    section: Problem 3.1
+    pages:
+    - 42
+    note: Requests the general higher-derivative Euler–Lagrange equation.
+- id: schwartz.fermi-golden-rule-field-interaction
+  label: Fermi golden rule for a field-creating interaction
+  summary: Using Γ∼|⟨f|H_int|i⟩|²δ(E_f−E_i), a Hermitian interaction that creates
+    or annihilates the photon has form H_I†a†+H_Ia. Its atomic matrix element supplies
+    the transition amplitude while the oscillator operator changes photon occupation.
+  kind: method
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 8
+    note: Applies Fermi's golden rule and the creation-annihilation interaction.
+- id: schwartz.field-theoretic-einstein-coefficient-derivation
+  label: Field-theoretic derivation of Einstein coefficients
+  summary: The field-theoretic route combines the n_ω+1 versus n_ω transition rates
+    from creation and annihilation operators with I(ω)=ℏω³n_ω/π². It thereby reads
+    off B=B′ and A/B=ℏω³/π² without using a thermal-equilibrium distribution.
+  kind: method
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 8
+    - 9
+    note: Calculates occupation-dependent transition amplitudes and converts occupation
+      to intensity.
 - id: schwartz.fock-space-particle-sectors
   label: Fock space and physical particle sectors
   summary: For one particle type, the Fock space is organized into Hilbert spaces
@@ -39,6 +363,19 @@ nodes:
   - source: schwartz
     note: The source writes |p⃗⟩, |p^μ⟩, and |p⟩ interchangeably for physical momentum
       states, with p_i^0=√(p⃗_i²+m_i²).
+- id: schwartz.fourier-transform-derivative-operator-correspondence
+  label: Fourier correspondence for field operators
+  summary: With the source's Fourier conventions, ∇² corresponds to −|k⃗|² and □ corresponds
+    to −k². This diagonalizes differential operators and turns inverse differential
+    operators such as 1/□ into momentum-space factors.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.4.1 Fourier transform interlude
+    pages:
+    - 38
+    note: Derives ∆↔−k⃗² and □↔−k².
 - id: schwartz.free-scalar-field-mode-expansion
   label: Free scalar field as a momentum-mode expansion
   summary: The free scalar field operator is defined by φ_0(x⃗)=∫d^3p/(2π)^3[2ω_p]^−1/2(a_p
@@ -59,6 +396,48 @@ nodes:
   - source: schwartz
     note: The subscript 0 denotes a free field. The spatial phases on these pages
       use p⃗·x⃗.
+- id: schwartz.graviton-polarizations-and-trace-coupling
+  label: Graviton polarizations and trace coupling
+  summary: The graviton-polarization problem treats h_μν as a symmetric tensor coupled
+    to a conserved symmetric T_μν, integrates it out to a T_μν(1/k²)T^μν interaction,
+    then uses conservation and an additional trace term to reduce propagating modes.
+    It frames polarization counting through a sourced tensor theory.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.10 Graviton polarizations
+    pages:
+    - 45
+    note: States the tensor-current and degree-of-freedom tasks.
+- id: schwartz.green-function-propagator-kernel
+  label: Green-function propagator kernel
+  summary: The two-point propagator Π=−1/□ is determined by the kinetic term, not
+    by its source, and solves □_xΠ(x,y)=−δ⁴(x−y). Subject to boundary-condition subtleties,
+    Π(x,y)=∫d⁴k/(2π)⁴ e^{ik(x−y)}/k² and converts the free sourced equation into h_0(x)=−∫d⁴y
+    Π(x,y)J(y).
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.5 Green's functions
+    pages:
+    - 41
+    note: Defines the propagator and integral solution.
+- id: schwartz.gzk-threshold-as-invariant-collision-application
+  label: GZK threshold as an invariant-collision application
+  summary: The GZK problem applies a 2.73 K blackbody photon energy and relativistic
+    collision kinematics to the threshold reaction p+γ→p+π⁰ and the outgoing proton
+    energy. It records a concrete application of invariants to cosmic rays and an
+    observed high-energy bound.
+  kind: method
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: Problem 2.3 The GZK bound
+    pages:
+    - 27
+    note: States the blackbody and pion-production threshold problem.
 - id: schwartz.heisenberg-free-field-time-evolution
   label: Heisenberg evolution of a free scalar field
   summary: In the Heisenberg picture, free momentum-mode operators evolve as a_p(t)=e^−iω_pta_p
@@ -79,6 +458,167 @@ nodes:
   - source: schwartz
     note: On page 22 the displayed field is massless with ω_p=|p⃗|; page 23 gives
       the massive replacement ω_p=√(p⃗²+m²).
+- id: schwartz.higher-derivative-effective-interactions-and-instability
+  label: Higher-derivative terms, effective interactions, and instability
+  summary: Restricting kinetic terms to first derivatives lets initial positions and
+    velocities specify boundary data. Kinetic terms with too many derivatives generally
+    introduce negative-energy or negative-norm states and vacuum decay, whereas multi-derivative
+    interactions occur generically in effective field theories.
+  kind: assumption
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.2 The Euler–Lagrange equations
+    pages:
+    - 32
+    note: Explains the first-derivative restriction and its effective-theory qualification.
+- id: schwartz.intensity-mode-occupation-relation
+  label: Radiation intensity and mode occupation
+  summary: Counting photon modes in phase space, including two polarizations, gives
+    I(ω)=ℏω³n_ω/π². This relation is statistical-mechanical and does not require a
+    temperature or equilibrium assumption, allowing the Einstein relations to follow
+    from the field calculation.
+  kind: method
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 9
+    note: Relates occupation to intensity without thermal equilibrium.
+- id: schwartz.kinetic-terms-interactions-and-dynamical-fields
+  label: Kinetic terms, interactions, and dynamical fields
+  summary: Bilinear kinetic terms determine free behavior; a field is propagating
+    when its kinetic term contains time derivatives. Terms with three or more fields
+    are interactions, and weak coefficients support perturbation theory; a mass term
+    can sometimes be classified either way depending on the calculation.
+  kind: concept
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.1 Hamiltonians and Lagrangians
+    pages:
+    - 31
+    note: Distinguishes kinetic terms, interactions, and dynamical fields.
+- id: schwartz.lorentz-covariant-index-contractions-and-dalembertian
+  label: Lorentz contractions and the d'Alembertian
+  summary: Contracting indices with the Minkowski metric produces Lorentz scalars;
+    index placement may be suppressed in this special-relativistic convention when
+    unambiguous. The contracted derivative □=∂_μ∂^μ=∂_t²−∇² is the simplest Lorentz-invariant
+    differential operator.
+  kind: method
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.2 Lorentz transformations
+    pages:
+    - 15
+    note: Explains contraction conventions, invariant versus covariant objects, and
+      □.
+- id: schwartz.lorentz-invariant-kinematics-method
+  label: Lorentz-invariant kinematics method
+  summary: To relate two frames, calculate a Lorentz invariant such as p_tot² in the
+    known frame, impose the defining information in the desired frame such as total
+    three-momentum zero, and solve for the unknown. This avoids unnecessary explicit
+    boost matrices and scales to multiparticle kinematics. Problem 2.2 applies the
+    center-of-mass frame to convert LHC proton collision energy into velocities relative
+    to light and to the other proton.
+  kind: method
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.4 Solving problems with Lorentz invariance
+    pages:
+    - 17
+    note: Presents the invariant-first center-of-mass strategy.
+  - source: schwartz
+    section: Problem 2.2 Special relativity and colliders
+    pages:
+    - 27
+    note: Applies center-of-mass kinematics to LHC proton velocities.
+- id: schwartz.lorentz-invariant-onshell-phase-space-measure
+  label: Lorentz-invariant on-shell phase-space measure
+  summary: The problem identifies d⁴k as Lorentz invariant and uses δ(k²−m²)θ(k⁰)
+    to put momentum on the positive-energy mass shell, yielding the measure d³k/(2ω_k).
+  kind: method
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: Problem 2.6 Lorentz invariance
+    pages:
+    - 28
+    note: Asks for the derivation of the on-shell invariant measure.
+- id: schwartz.lorentz-metric-and-transformations
+  label: Lorentz metric and transformations
+  summary: Lorentz transformations are 4×4 matrices satisfying ΛᵀgΛ=g for g=diag(1,−1,−1,−1),
+    preserving x²=t²−x²−y²−z². The source uses g_μν (or η_μν outside quantum gravity)
+    as the Minkowski metric.
+  kind: concept
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.2 Lorentz transformations
+    pages:
+    - 12
+    note: Defines the Lorentz group and Minkowski interval.
+- id: schwartz.lorentz-noether-currents-and-boost-charges
+  label: Lorentz Noether currents and boost charges
+  summary: Problem 3.2 derives the currents K^{μνα} associated with global Lorentz
+    transformations from the energy-momentum tensor and checks their on-shell conservation
+    for a scalar field. It asks for the interpretation of boost charges and highlights
+    that conserved boost charges can have explicit time dependence, so they are not
+    invariant generators of the equations of motion in the same sense as internal
+    charges.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.2 Lorentz currents
+    pages:
+    - 42
+    note: Specifies the Lorentz-current, boost-charge, and conservation-versus-invariance
+      analysis.
+- id: schwartz.lorentz-transformation-laws-for-fields
+  label: Lorentz transformation laws for scalar, vector, and tensor fields
+  summary: A scalar field has invariant physical values under Lorentz symmetry; a
+    vector field's components transform as V^μ→Λ^μ_νV^ν; and a rank-two tensor transforms
+    with one Λ per index. These laws separate physical symmetry from mere relabeling
+    of a spacetime point.
+  kind: representation
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.2 Lorentz transformations
+    pages:
+    - 14
+    note: Defines vector and tensor transformation behavior.
+- id: schwartz.massless-field-plane-wave-oscillator-modes
+  label: Massless field plane waves as oscillator modes
+  summary: For □φ=0, Fourier components a_p(t)e^(ip⃗·x⃗) satisfy (∂_t²+|p⃗|²)a_p=0,
+    so each momentum mode is a harmonic oscillator. A real field is decomposed into
+    conjugate plane-wave components with p^μ=(|p⃗|,p⃗) and px=p_μx^μ.
+  kind: representation
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.2.2 Connection to special relativity
+    pages:
+    - 19
+    note: Derives the oscillator equation for plane-wave modes.
+- id: schwartz.maxwell-lorenz-gauge-wave-equation
+  label: Maxwell theory in Lorenz gauge
+  summary: The electromagnetic field strength F_μν=∂_μA_ν−∂_νA_μ obeys the source-free
+    Maxwell equations. Writing F in terms of A and imposing the gauge choice ∂_μA^μ=0
+    reduces them to □A^ν=0, so each component has massless wave solutions; the source
+    temporarily ignores polarizations by using a scalar surrogate.
+  kind: result
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.2.2 Connection to special relativity
+    pages:
+    - 19
+    note: Derives the Lorenz-gauge wave equation.
 - id: schwartz.momentum-mode-creation-annihilation-algebra
   label: Momentum-mode creation and annihilation algebra
   summary: Free-field momentum modes use operators satisfying [a_k,a†_p]=(2π)^3δ^3(p⃗−k⃗).
@@ -97,6 +637,48 @@ nodes:
   - source: schwartz
     note: The factors of 2π and √(2ω_p) are stated to be conventions; ω_p is the mode
       energy.
+- id: schwartz.noether-current-and-conserved-charge
+  label: Noether current and conserved charge
+  summary: For a continuous symmetry, using the equations of motion yields J^μ=Σ_n[∂ℒ/∂(∂_μφ_n)](δφ_n/δα)
+    with ∂_μJ^μ=0. For the complex scalar phase symmetry, the source gives J^μ=−i(φ∂^μφ*−φ*∂^μφ);
+    if the spatial current vanishes at the boundary, Q=∫d³x J⁰ is time independent.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.3 Noether's theorem
+    pages:
+    - 33
+    note: Derives the current and charge for the global phase example.
+- id: schwartz.noether-theorem-scope
+  label: Scope of Noether's theorem
+  summary: A continuous symmetry of a Lagrangian gives an on-shell conserved current.
+    The source emphasizes that the theorem does not apply directly to discrete symmetries
+    and that it applies to global symmetries as well as to global symmetries implied
+    by gauge theories; conservation does not require an associated massless spin-1
+    particle.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Box 3.1 Noether's theorem
+    pages:
+    - 34
+    note: States the theorem and its stated qualifications.
+- id: schwartz.nonlinear-gravity-dimensional-analysis-and-perihelion
+  label: Nonlinear gravity, dimensional analysis, and perihelion shift
+  summary: The nonlinear-gravity problem rescales a schematic gravitational field,
+    solves its point-source equation through second order, and estimates the resulting
+    correction to Mercury's orbital frequency and the competing planetary effect.
+    It applies classical field perturbation theory to a relativistic gravity observable.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.7 Nonlinear gravity as a classical field theory
+    pages:
+    - 44
+    note: Poses the dimensional-analysis and perihelion calculation.
 - id: schwartz.one-particle-nonrelativistic-wavefunction-limit
   label: One-particle wavefunction and nonrelativistic limit
   summary: Restricting the second-quantized theory to one-particle states gives ⟨x|=⟨0|φ(x)
@@ -137,7 +719,322 @@ nodes:
   - source: schwartz
     note: The source uses |x⃗⟩ for φ_0(x⃗)|0⟩ and distinguishes it from arbitrary
       Fock-space states with the same one-particle projection.
+- id: schwartz.perturbative-nonlinear-classical-field-solution
+  label: Perturbative nonlinear classical-field solution
+  summary: For □h−λh²−J=0, expand h=h_0+h_1+… in λ. The leading solution h_0=(1/□)J
+    and first correction h_1=λ(1/□)[(1/□J)(1/□J)] exhibit iterative source propagation
+    and self-interaction.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.5 Green's functions
+    pages:
+    - 40
+    note: Develops the nonlinear scalar-gravity perturbative expansion.
+- id: schwartz.photon-polarizations-current-conservation-and-causality
+  label: Photon polarizations, current conservation, and causality
+  summary: The photon-polarization problem integrates out A_μ to obtain a current-current
+    interaction, uses current conservation to eliminate components for a chosen momentum,
+    and asks which terms are instantaneous and why they do not enable superluminal
+    communication. It connects constrained components to the count of causal propagating
+    degrees of freedom.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.9 Photon polarizations
+    pages:
+    - 44
+    - 45
+    note: Sets up the current-conservation reduction and causality questions.
+- id: schwartz.planck-thermal-radiation-spectrum
+  label: Planck thermal radiation spectrum
+  summary: Integer occupation j of a photon mode with Boltzmann weight gives mean
+    energy ℏω/(e^(βℏω)−1). Taking the continuum limit and two photon polarizations
+    yields I(ω)=ℏω³/[π²(e^(βℏω)−1)], the spectrum that fits blackbody data.
+  kind: result
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 5
+    note: Derives the mean mode energy and continuum intensity.
+- id: schwartz.quantized-massless-photon-modes
+  label: Quantized massless photon modes
+  summary: Planck assigns a cavity mode energy E_n=ℏω_n=|p⃗_n|; Einstein's particle
+    interpretation then gives m²=E²−|p⃗|²=0. The source frames light as a collection
+    of massless photons.
+  kind: result
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 4
+    note: States energy quantization, the momentum relation, and the massless conclusion.
+- id: schwartz.rapidity-parameterization-of-boosts
+  label: Rapidity parameterization of boosts
+  summary: Boosts use hyperbolic angles β_i (rapidities); for one direction coshβ=1/√(1−v²)
+    and sinhβ=v/√(1−v²), so β agrees with velocity to leading small-v order. Rotations
+    and boosts generally do not commute. Problem 2.1 reconstructs the boost perturbatively
+    from a Galilean transformation by preserving t²−x² order by order and matching
+    the full transformation's expansion.
+  kind: representation
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.2 Lorentz transformations
+    pages:
+    - 13
+    note: Gives boost matrices and their velocity relation.
+  - source: schwartz
+    section: Problem 2.1
+    pages:
+    - 27
+    note: Applies invariant-interval preservation to construct boosts perturbatively.
+- id: schwartz.relativistic-energy-allows-particle-production
+  label: Relativistic energy allows particle production
+  summary: When kinetic energy is comparable to rest mass, relativistic corrections
+    and the threshold for producing additional particles are separated only by factors
+    of order one. The source uses this consequence of E=mc² to explain why relativistic
+    quantum theory needs variable particle number.
+  kind: concept
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1 Lorentz invariance
+    pages:
+    - 11
+    note: Connects relativistic kinetic energy to pair-production threshold.
+- id: schwartz.rotations-and-invariant-inner-products
+  label: Rotations and invariant inner products
+  summary: A rotation is an orientation-preserving orthogonal transformation R with
+    RᵀR=1. Its defining preservation of δ_ijx^ix^j illustrates index contraction and
+    supplies the SO(2) and SO(3) template for relativistic symmetry.
+  kind: concept
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.1.1 Rotations
+    pages:
+    - 12
+    note: Defines orthogonality and the rotationally invariant norm.
+- id: schwartz.second-quantization-many-mode-particle-interpretation
+  label: Second quantization as many mode oscillators
+  summary: 'Second quantization assigns a harmonic oscillator to each wavevector and
+    interprets n excitations of that oscillator as n particles. The source cautions
+    that the phrase is historical: discrete classical modes and quantizing their oscillator
+    occupations are logically distinct steps.'
+  kind: concept
+  group: schwartz.lorentz-and-oscillators
+  evidence:
+  - source: schwartz
+    section: 2.3 Second quantization
+    pages:
+    - 20
+    note: Defines the many-mode and particle-number features.
+- id: schwartz.semiclassical-field-matter-consistency-question
+  label: Classical-field and quantum-matter consistency question
+  summary: Problem 3.8 asks whether the blackbody-paradox argument rules out treating
+    the electromagnetic field classically while electrons and atoms are quantum mechanical,
+    and whether the same reasoning bears on classical gravity coupled to quantum electrons.
+    It records the source's semiclassical-consistency question without asserting an
+    answer not supplied on the problem page.
+  kind: concept
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.8
+    pages:
+    - 44
+    note: Poses the electromagnetic and gravity comparison.
+- id: schwartz.single-mode-oscillator-number-algebra
+  label: Single-mode oscillator number algebra
+  summary: 'A photon mode with integer excitations is represented by a harmonic oscillator:
+    [a,a†]=1 and N̂=a†a. Normalization fixes a†|n⟩=√(n+1)|n+1⟩ and a|n⟩=√n|n−1⟩.'
+  kind: representation
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 7
+    note: Builds the oscillator occupation algebra for one photon frequency.
+- id: schwartz.sourced-maxwell-equations-from-action
+  label: Sourced Maxwell equations from the action
+  summary: Varying ℒ=−1/4F_μνF^μν−A_μJ^μ gives ∂_μF^μν=J^ν. In Lorenz gauge this becomes
+    □A^ν=J^ν, formally A^ν=(1/□)J^ν; the inverse wave operator is the propagator that
+    carries source information to the field.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.4 Coulomb's law
+    pages:
+    - 37
+    note: Derives sourced Maxwell equations and the formal inverse-□ solution.
+- id: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
+  label: Translation symmetry and the canonical energy-momentum tensor
+  summary: Global spacetime translations act on fields as δφ/δξ^ν=∂_νφ and change
+    the Lagrangian by a total derivative. Noether's construction gives T^μν=Σ_n[∂ℒ/∂(∂_μφ_n)]∂^νφ_n−g^μνℒ,
+    with ∂_μT^μν=0; its charges are total energy and momentum and T^00 equals the
+    Hamiltonian density.
+  kind: result
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: 3.3.1 Energy-momentum tensor
+    pages:
+    - 35
+    note: Derives the canonical energy-momentum tensor from translations.
+- id: schwartz.two-level-equilibrium-detailed-balance
+  label: Two-level equilibrium detailed balance
+  summary: For atoms with energies E₁ and E₂ separated by ℏω, the population-rate
+    equation includes spontaneous emission A, stimulated emission BI(ω), and absorption
+    B′I(ω). In thermal equilibrium, zero net rate together with n_i proportional to
+    e^(−βE_i) gives I(ω)=A/[B′e^(βℏω)−B].
+  kind: method
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.2 Einstein coefficients
+    pages:
+    - 6
+    note: Sets up the rate balance and thermal populations.
+- id: schwartz.ultraviolet-catastrophe
+  label: Ultraviolet catastrophe
+  summary: The equipartition spectrum rises with frequency, whereas the observed blackbody
+    distribution peaks at finite frequency. This high-frequency disagreement is the
+    ultraviolet catastrophe and shows that classical equipartition cannot describe
+    blackbody radiation.
+  kind: result
+  group: schwartz.radiation-quantization
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 4
+    note: Contrasts the classical spectrum with observation.
+- id: schwartz.yukawa-potential-and-massive-vector-constraint
+  label: Yukawa potential and massive-vector constraint
+  summary: The massive-vector source problem derives the field equation and a constraint
+    on A_μ for conserved J_μ, evaluates the static point-source potential, and recovers
+    Coulomb behavior as m→0. Its finite-mass potential supplies a short-range force
+    model relevant to Yukawa's nuclear-force proposal.
+  kind: method
+  group: schwartz.classical-field-theory
+  evidence:
+  - source: schwartz
+    section: Problem 3.6 Yukawa potential
+    pages:
+    - 43
+    note: States the massive-vector potential, constraint, and m→0 tasks.
 edges:
+- id: schwartz.bosonic-factors-to-field-einstein-route
+  from: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
+  to: schwartz.field-theoretic-einstein-coefficient-derivation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The nω+1 and nω transition-rate factors provide the spontaneous, stimulated-emission,
+    and absorption terms to compare with Einstein's rate equation.
+  failure_mode: Without the occupation-dependent transition rates, this route has
+    no atomic coefficient dependence to translate into A, B, and B′.
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 8
+    - 9
+    note: Computes the ladder-operator transition factors and rate equation.
+- id: schwartz.classical-spectrum-to-ultraviolet-catastrophe
+  from: schwartz.blackbody-cavity-modes-and-classical-spectrum
+  to: schwartz.ultraviolet-catastrophe
+  relation: evidence
+  source_level: use
+  target_level: recognize
+  necessity: necessary
+  rationale: The ultraviolet failure is the observational consequence of the classical
+    mode-counting spectrum.
+  failure_mode: Without the classical prediction, a learner cannot identify what the
+    observed spectrum contradicts.
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 4
+    note: Names the rising classical prediction and its disagreement with observation.
+- id: schwartz.current-roles-to-sourced-maxwell
+  from: schwartz.current-roles-and-nondynamical-sources
+  to: schwartz.sourced-maxwell-equations-from-action
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: typical
+  rationale: The Coulomb calculation treats J as the prescribed external source in
+    −AμJμ.
+  failure_mode: Without the source role, one may mistakenly try to vary or propagate
+    J as a dynamical field.
+  evidence:
+  - source: schwartz
+    section: 3.4 Coulomb's law
+    pages:
+    - 37
+    note: Represents the point charge by an external current.
+- id: schwartz.energy-momentum-conservation-to-graviton-polarizations
+  from: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
+  to: schwartz.graviton-polarizations-and-trace-coupling
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The graviton problem assumes a symmetric tensor source satisfying ∂μTμν=0,
+    precisely the conservation law supplied by translation symmetry.
+  failure_mode: Without conserved Tμν, the problem's elimination of tensor components
+    and polarization count cannot be carried out.
+  evidence:
+  - source: schwartz
+    section: Problem 3.10 Graviton polarizations
+    pages:
+    - 45
+    note: States the required tensor-current conservation law.
+- id: schwartz.equilibrium-route-to-einstein-relations
+  from: schwartz.two-level-equilibrium-detailed-balance
+  to: schwartz.einstein-emission-and-absorption-coefficients
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Thermal detailed balance together with the Planck spectrum supplies one
+    complete source route to the coefficient relations.
+  failure_mode: Without the rate-balance derivation, the equilibrium route cannot
+    connect the spectrum to A, B, and B′.
+  evidence:
+  - source: schwartz
+    section: 1.2 Einstein coefficients
+    pages:
+    - 6
+    note: Derives B=B′ and A/B from the equilibrium calculation.
+- id: schwartz.euler-lagrange-to-sourced-maxwell
+  from: schwartz.euler-lagrange-and-klein-gordon-equations
+  to: schwartz.sourced-maxwell-equations-from-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Maxwell field equation is obtained by varying the sourced vector
+    Lagrangian.
+  failure_mode: Without Euler–Lagrange variation, the source equation would be asserted
+    rather than derived from the action.
+  evidence:
+  - source: schwartz
+    section: 3.4 Coulomb's law
+    pages:
+    - 37
+    note: Applies Euler–Lagrange equations to obtain ∂μFμν=Jν.
 - id: schwartz.field-expansion-to-equal-time-commutators
   from: schwartz.free-scalar-field-mode-expansion
   to: schwartz.equal-time-scalar-field-commutation-relations
@@ -175,6 +1072,40 @@ edges:
     - 22
     note: The page applies φ_0(x⃗) to |0⟩ and identifies the resulting one-particle
       position state.
+- id: schwartz.field-route-to-einstein-relations
+  from: schwartz.field-theoretic-einstein-coefficient-derivation
+  to: schwartz.einstein-emission-and-absorption-coefficients
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The source's complete field-theoretic calculation independently yields
+    the common coefficient relations without thermal equilibrium.
+  failure_mode: Without this complete route, one may wrongly treat equilibrium as
+    compulsory for deriving the relations.
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 9
+    note: States the relations are obtained without assuming thermal equilibrium.
+- id: schwartz.fourier-correspondence-to-coulomb-potential
+  from: schwartz.fourier-transform-derivative-operator-correspondence
+  to: schwartz.coulomb-potential-from-field-propagation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fourier space converts the inverse Laplacian in the point-source solution
+    into 1/k².
+  failure_mode: Without the operator correspondence, the Coulomb integral cannot be
+    constructed by the source's method.
+  evidence:
+  - source: schwartz
+    section: 3.4.2 Coulomb potential
+    pages:
+    - 39
+    note: Solves the static potential in Fourier space.
 - id: schwartz.free-time-evolution-to-one-particle-limit
   from: schwartz.heisenberg-free-field-time-evolution
   to: schwartz.one-particle-nonrelativistic-wavefunction-limit
@@ -195,6 +1126,124 @@ edges:
     - 24
     note: The one-particle restriction is introduced on page 23 and differentiated
       with the massive free-field relation on page 24.
+- id: schwartz.global-u1-to-noether-current
+  from: schwartz.complex-scalar-global-u1-symmetry
+  to: schwartz.noether-current-and-conserved-charge
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed conserved current is computed from the infinitesimal global
+    phase transformation.
+  failure_mode: Without the continuous symmetry variation, the current formula has
+    no concrete transformation to evaluate.
+  evidence:
+  - source: schwartz
+    section: 3.3 Noether's theorem
+    pages:
+    - 33
+    note: Substitutes the U(1) variations into the Noether current.
+- id: schwartz.golden-rule-to-bosonic-enhancement
+  from: schwartz.fermi-golden-rule-field-interaction
+  to: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Squaring the interaction matrix elements under Fermi's golden rule turns
+    the ladder factors into rates.
+  failure_mode: Without the rate rule, amplitudes alone do not establish stimulated
+    and spontaneous rate factors.
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 9
+    note: Squares the amplitudes in the occupation-rate equation.
+- id: schwartz.green-kernel-to-nonlinear-solution
+  from: schwartz.green-function-propagator-kernel
+  to: schwartz.perturbative-nonlinear-classical-field-solution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Each term in the iterative nonlinear solution is produced by applying
+    the inverse wave operator.
+  failure_mode: Without the propagator kernel, the nonlocal integral form of the perturbative
+    solution is unavailable.
+  evidence:
+  - source: schwartz
+    section: 3.5 Green's functions
+    pages:
+    - 41
+    note: Uses the kernel to express the leading and corrected sourced solutions.
+- id: schwartz.intensity-occupation-to-field-einstein-route
+  from: schwartz.intensity-mode-occupation-relation
+  to: schwartz.field-theoretic-einstein-coefficient-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The intensity-to-occupation relation translates the field-theoretic rate
+    equation into the intensity coefficients A, B, and B′.
+  failure_mode: Without this conversion, the field calculation remains in nω and cannot
+    yield Einstein's intensity coefficients.
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 9
+    note: Uses I(ω)=ℏω³nω/π² to read off the relations.
+- id: schwartz.lorentz-contractions-to-kinematics-method
+  from: schwartz.lorentz-covariant-index-contractions-and-dalembertian
+  to: schwartz.lorentz-invariant-kinematics-method
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The method works by computing contractions such as p_tot² that are frame
+    independent.
+  failure_mode: Without invariant contractions, changing frames requires an undirected
+    matrix calculation.
+  evidence:
+  - source: schwartz
+    section: 2.1.4 Solving problems with Lorentz invariance
+    pages:
+    - 17
+    note: Recommends p_tot² as the invariant to calculate first.
+- id: schwartz.lorentz-metric-to-rapidity
+  from: schwartz.lorentz-metric-and-transformations
+  to: schwartz.rapidity-parameterization-of-boosts
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The boost parameterization is defined by preserving the Minkowski interval.
+  failure_mode: Without the metric-preservation condition, rapidity formulas are just
+    disconnected matrices.
+  evidence:
+  - source: schwartz
+    section: 2.1.2 Lorentz transformations
+    pages:
+    - 13
+    note: Introduces boost matrices after defining their invariant form.
+- id: schwartz.lorentz-transformations-to-field-laws
+  from: schwartz.lorentz-metric-and-transformations
+  to: schwartz.lorentz-transformation-laws-for-fields
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Scalar, vector, and tensor fields are classified by their representations
+    of Lorentz transformations.
+  failure_mode: Without the transformation itself, the field labels scalar, vector,
+    and tensor lack operational meaning.
+  evidence:
+  - source: schwartz
+    section: 2.1.2 Lorentz transformations
+    pages:
+    - 14
+    note: Defines a vector by its Lorentz transformation law.
 - id: schwartz.mode-algebra-to-equal-time-commutators
   from: schwartz.momentum-mode-creation-annihilation-algebra
   to: schwartz.equal-time-scalar-field-commutation-relations
@@ -269,12 +1318,227 @@ edges:
     - 22
     note: The operator normalization on page 21 and the projected matrix-element calculation
       on page 22 are both used.
+- id: schwartz.noether-current-conservation-to-photon-polarizations
+  from: schwartz.noether-current-and-conserved-charge
+  to: schwartz.photon-polarizations-current-conservation-and-causality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The conserved-current equation ∂μJμ=0 is the relation the polarization
+    problem uses to eliminate J1.
+  failure_mode: Without a conserved-current condition, the component reduction and
+    causal-mode count cannot be performed.
+  evidence:
+  - source: schwartz
+    section: Problem 3.9 Photon polarizations
+    pages:
+    - 44
+    note: Directs use of current conservation to solve for J1.
+- id: schwartz.noether-current-to-energy-momentum
+  from: schwartz.noether-current-and-conserved-charge
+  to: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Translation symmetry is developed as a special Noether construction with
+    four currents.
+  failure_mode: Without the preceding current construction, the energy-momentum tensor
+    appears as an isolated formula.
+  evidence:
+  - source: schwartz
+    section: 3.3.1 Energy-momentum tensor
+    pages:
+    - 35
+    note: Derives Tμν by proceeding as in the Noether-current case.
+- id: schwartz.nonlinear-solution-to-classical-diagrams
+  from: schwartz.perturbative-nonlinear-classical-field-solution
+  to: schwartz.classical-feynman-diagrams-and-rules
+  relation: pedagogical
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The source presents diagrams as a pictorial organization of the already-derived
+    perturbative integral expansion.
+  failure_mode: Without the algebraic expansion, diagrams can be memorized without
+    knowing their factors or integrations.
+  evidence:
+  - source: schwartz
+    section: 3.5 Green's functions
+    pages:
+    - 42
+    note: Maps the expansion to diagrams and lists diagram rules.
+- id: schwartz.oscillator-algebra-to-bosonic-enhancement
+  from: schwartz.single-mode-oscillator-number-algebra
+  to: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The √n and √(n+1) matrix elements generate the occupation factors in
+    transition rates.
+  failure_mode: Without ladder-operator normalization, the spontaneous additive one
+    cannot be calculated.
+  evidence:
+  - source: schwartz
+    section: 1.3 Quantum field theory
+    pages:
+    - 8
+    note: Uses the creation-operator matrix element in the emission amplitude.
+- id: schwartz.oscillator-quantization-to-plane-wave-modes
+  from: schwartz.canonical-quantum-harmonic-oscillator
+  to: schwartz.massless-field-plane-wave-oscillator-modes
+  relation: evidence
+  source_level: use
+  target_level: recognize
+  necessity: typical
+  rationale: The source identifies each plane-wave mode's equation with the oscillator
+    equation.
+  failure_mode: Without the oscillator analogy, the significance of the mode equation
+    is obscured.
+  evidence:
+  - source: schwartz
+    section: 2.2.2 Connection to special relativity
+    pages:
+    - 19
+    note: States that the plane-wave equation is exactly an oscillator equation.
+- id: schwartz.photon-quantization-to-planck-spectrum
+  from: schwartz.quantized-massless-photon-modes
+  to: schwartz.planck-thermal-radiation-spectrum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The thermal calculation sums integer excitations of energy ℏω.
+  failure_mode: Without quantized mode energies, the Bose-like occupation sum and
+    its spectrum cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 5
+    note: Uses jℏω in the Boltzmann-weight sum.
+- id: schwartz.planck-spectrum-to-equilibrium-einstein-route
+  from: schwartz.planck-thermal-radiation-spectrum
+  to: schwartz.two-level-equilibrium-detailed-balance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equilibrium balance equation is solved by matching its intensity
+    to the Planck spectrum for every temperature.
+  failure_mode: Without the Planck intensity, thermal detailed balance leaves the
+    coefficient relation undetermined.
+  evidence:
+  - source: schwartz
+    section: 1.2 Einstein coefficients
+    pages:
+    - 6
+    note: Equates the equilibrium intensity with the blackbody intensity.
+- id: schwartz.plane-wave-modes-to-second-quantization
+  from: schwartz.massless-field-plane-wave-oscillator-modes
+  to: schwartz.second-quantization-many-mode-particle-interpretation
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Second quantization assigns oscillator operators to the electromagnetic
+    wave modes.
+  failure_mode: Without the classical mode decomposition, there is no identified oscillator
+    for each momentum.
+  evidence:
+  - source: schwartz
+    section: 2.3 Second quantization
+    pages:
+    - 20
+    note: Introduces one oscillator per wavevector because field modes obey oscillator
+      equations.
+- id: schwartz.sourced-maxwell-to-coulomb-potential
+  from: schwartz.sourced-maxwell-equations-from-action
+  to: schwartz.coulomb-potential-from-field-propagation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Coulomb calculation specializes the sourced Maxwell equation to a
+    static point charge.
+  failure_mode: Without the source equation, there is no field equation for the potential
+    to solve.
+  evidence:
+  - source: schwartz
+    section: 3.4 Coulomb's law
+    pages:
+    - 38
+    note: Specializes the source equations to A0 for a point charge.
+- id: schwartz.ultraviolet-catastrophe-to-photon-quantization
+  from: schwartz.ultraviolet-catastrophe
+  to: schwartz.quantized-massless-photon-modes
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: typical
+  rationale: The source presents the experimental incompatibility as leading to Planck's
+    quantized-mode postulate.
+  failure_mode: The postulate can appear unmotivated if the blackbody discrepancy
+    is omitted.
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 4
+    note: Links incompatibility to Planck's postulate.
 groups:
+- id: schwartz.classical-field-theory
+  title: Classical field theory
+  question: How do actions, symmetries, sources, and Green functions organize classical
+    field dynamics?
 - id: schwartz.free-scalar-quantization
   title: Free scalar-field quantization
   question: How do momentum-mode operators define a free scalar field and its equal-time
     quantum structure?
+- id: schwartz.lorentz-and-oscillators
+  title: Lorentz invariance and oscillator modes
+  question: How do relativistic symmetry and harmonic oscillator modes lead to a free-field
+    description?
+- id: schwartz.radiation-quantization
+  title: Radiation and quantization
+  question: Why do the thermal spectrum and atomic emission require quantized radiation
+    and field degrees of freedom?
 motivations:
+- id: schwartz.blackbody-observation-motivation
+  nodes:
+  - schwartz.blackbody-cavity-modes-and-classical-spectrum
+  - schwartz.ultraviolet-catastrophe
+  - schwartz.quantized-massless-photon-modes
+  - schwartz.planck-thermal-radiation-spectrum
+  summary: The observed finite-frequency blackbody peak conflicts with the classical
+    rising spectrum; quantized radiation supplies the source's resolution and a starting
+    motivation for a quantum theory of fields.
+  evidence:
+  - source: schwartz
+    section: 1.1 Blackbody radiation
+    pages:
+    - 4
+    - 5
+    note: Contrasts observation with the classical result and gives the quantized
+      spectrum.
+- id: schwartz.classical-source-propagation-motivation
+  nodes:
+  - schwartz.sourced-maxwell-equations-from-action
+  - schwartz.coulomb-potential-from-field-propagation
+  - schwartz.green-function-propagator-kernel
+  summary: A point charge provides a concrete calculation in which a source generates
+    a field through the inverse wave operator, making the propagator an operational
+    tool rather than only formal notation.
+  evidence:
+  - source: schwartz
+    section: 3.4 Coulomb's law and 3.5 Green's functions
+    pages:
+    - 37
+    - 39
+    - 41
+    note: Derives the source equation, Coulomb solution, and general propagator interpretation.
 - id: schwartz.dynamical-background-context
   nodes:
   - schwartz.free-scalar-field-mode-expansion
@@ -289,3 +1553,19 @@ motivations:
     - 26
     note: Uses a field-containing interaction in an atom-photon transition calculation
       as context for a dynamical electromagnetic system.
+- id: schwartz.spontaneous-emission-motivation
+  nodes:
+  - schwartz.einstein-emission-and-absorption-coefficients
+  - schwartz.bosonic-spontaneous-and-stimulated-emission-factor
+  - schwartz.intensity-mode-occupation-relation
+  summary: The source asks why an isolated atom can emit spontaneously when Einstein's
+    first relation used equilibrium; the creation and annihilation operators of field
+    theory give the later first-principles explanation.
+  evidence:
+  - source: schwartz
+    section: 1.2 Einstein coefficients and 1.3 Quantum field theory
+    pages:
+    - 7
+    - 9
+    note: States the isolated-emission puzzle and resolves the coefficient relation
+      without equilibrium.

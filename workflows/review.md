@@ -13,6 +13,11 @@ alternative derivation was incorrectly made compulsory. Read the cited passages:
 the mechanical report confirms quote location, not entailment. Inspect equations
 and notation in the original rendered source when extracted text is ambiguous.
 
+For multiple routes to the same result, check both that each route contains its
+jointly needed inputs and that those inputs have not become compulsory across
+all routes. An isolated input does not constitute a complete alternative method.
+This check also applies to different derivations within the same source.
+
 Select a local reader, renderer, vision, or OCR check for the source and the
 uncertain page; no particular optional tool is required for every review. Those
 tools can clarify evidence but cannot expand the immutable packet, replace

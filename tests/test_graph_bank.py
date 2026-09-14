@@ -76,6 +76,27 @@ def test_bank_rejects_stale_review(tmp_path, sample):
         inspect_bank(tmp_path)
 
 
+def test_coverage_ledger_must_follow_new_reviewed_graph(tmp_path, sample):
+    project = book_project(tmp_path / 'textbooks/book', sample, 'book')
+    write_yaml(project.root / 'coverage.yaml', {
+        'source': 'book', 'graph_digest': digest(project.knowledge)
+    })
+    assert inspect_bank(tmp_path)['projects']['book']['nodes']
+    project.knowledge['nodes'][0]['summary'] = 'A newly reviewed clarification.'
+    save_reviewed_graph(project)
+    with pytest.raises(ProjectError, match='Stale public coverage'):
+        inspect_bank(tmp_path)
+
+
+def test_coverage_ledger_cannot_be_copied_from_another_project(tmp_path, sample):
+    project = book_project(tmp_path / 'textbooks/book', sample, 'book')
+    write_yaml(project.root / 'coverage.yaml', {
+        'source': 'another-book', 'graph_digest': digest(project.knowledge)
+    })
+    with pytest.raises(ProjectError, match='Coverage ledger names another project'):
+        inspect_bank(tmp_path)
+
+
 @pytest.mark.parametrize('bad_origin_owner', [True, False])
 def test_bank_origins_only_link_subject_to_book(tmp_path, sample, bad_origin_owner):
     book = book_project(tmp_path / 'textbooks/book', sample, 'book')

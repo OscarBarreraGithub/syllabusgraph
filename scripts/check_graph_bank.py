@@ -30,6 +30,13 @@ def inspect_bank(root):
                 reviewed.add(identity)
             elif project.nodes:
                 raise ProjectError(f"Populated bank graph needs a current review summary: {identity}")
+            coverage_path = project.root / "coverage.yaml"
+            if coverage_path.is_file():
+                coverage = read_yaml(coverage_path)
+                if coverage.get("source") != identity:
+                    raise ProjectError(f"Coverage ledger names another project: {identity}")
+                if coverage.get("graph_digest") != digest(project.knowledge):
+                    raise ProjectError(f"Stale public coverage ledger: {identity}")
     overlaps = {}
     for identity, project in projects.items():
         for node in project.nodes.values():
