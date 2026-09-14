@@ -1,6 +1,6 @@
 # Quantum Field Theory and the Standard Model
 
-**Partial, model-reviewed graph:** 654 concepts and 718 relationships. Accepted units cover printed pages 3–105, 109–284, 287–477, 481–615; exact topic scopes and exclusions are in [review.yaml](review.yaml).
+**Partial, model-reviewed graph:** 730 concepts and 824 relationships. Accepted units cover printed pages 3–105, 109–284, 287–477, 481–666; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
 Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. Full-book construction and cross-unit dependency reconciliation are in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
 

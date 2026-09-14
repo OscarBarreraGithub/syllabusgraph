@@ -1,4 +1,17 @@
 nodes:
+- id: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
+  label: Abelian chiral anomaly and one-loop exactness
+  summary: The regulated measure gives partial_mu J5^mu=-e^2 epsilon_mu_nu_alpha_beta
+    F^mu_nu F^alpha_beta/(16 pi^2). The text calls the anomaly one-loop exact; its
+    displayed calculation is one loop and says the satisfying proof uses topological
+    arguments rather than supplying that proof.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.3'
+    pages:
+    - 630
+    - 631
 - id: schwartz.abelian-gauge-orbit-factorization-assumptions
   label: Abelian gauge-orbit factorization assumptions
   summary: The orbit-factorization argument assumes that a longitudinal gauge representative
@@ -184,6 +197,25 @@ nodes:
     pages:
     - 434
     - 435
+- id: schwartz.anomaly-allowed-b-minus-l
+  label: Anomaly-allowed B minus L
+  summary: 'For the fermion content used in Eqs. (30.73)–(30.87), including a right-handed
+    neutrino, the independent anomaly-free U(1) has charge -1 for leptons (including
+    nu_R) and 1/3 for quarks: B-L. It may be gauged, unlike B or L separately. With
+    nu_R omitted, substituting these charges into the displayed grav^2(B-L) and (B-L)^3
+    conditions leaves uncancelled anomalies, so this gauging claim is conditional
+    on that field content.'
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 633
+    - 634
+  - source: schwartz
+    section: 30.5.1
+    pages:
+    - 635
 - id: schwartz.anomaly-coefficient-definition-and-normalization
   label: Anomaly coefficient definition and normalization
   summary: For SU(N), A(R) is fixed by tr[T_R^a{T_R^b,T_R^c}]=(1/2)A(R)d^{abc}=A(R)tr[T^a{T^b,T^c}],
@@ -216,6 +248,35 @@ nodes:
     section: Problem 25.4(b)
     pages:
     - 506
+- id: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
+  label: Anomaly solutions and charge quantization
+  summary: 'The four constraints are U(1)_Y^3: (2Y_L^3-Y_e^3-Y_nu^3)+3(2Y_Q^3-Y_u^3-Y_d^3)=0;
+    SU(3)^2U(1): 2Y_Q-Y_u-Y_d=0; SU(2)^2U(1):Y_L+3Y_Q=0; and grav^2U(1):(2Y_L-Y_e-Y_nu)+3(2Y_Q-Y_u-Y_d)=0.
+    Their two displayed solution families are (30.85): Y_L=-a/2-b, Y_e=-a-b, Y_nu=-b,
+    Y_Q=a/6+b/3, Y_u=2a/3+b/3, Y_d=-a/3+b/3; and (30.86): Y_Q=Y_L=0, Y_u=c, Y_d=-c,
+    Y_e=d, Y_nu=-d. In the first family Y_nu=0 gives b=0 and a rescaling sets a=1;
+    every displayed solution has Y_L+3Y_Q=0, giving equal and opposite proton/electron
+    charge.'
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 633
+    - 634
+- id: schwartz.anomaly-ir-matching-and-trace-scope
+  label: Infrared anomaly matching and trace-anomaly scope
+  summary: Anomalies are infrared effects of massless particles, so anomaly matching
+    constrains the massless spectrum across a phase transition at a finite scale.
+    In massless QCD, classical scale invariance instead has a trace anomaly proportional
+    to the beta function; the chapter limits its treatment to chiral anomalies.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: 30 introduction
+    pages:
+    - 616
+    - 617
 - id: schwartz.anomaly-su4-ten-task
   label: Anomaly SU(4) ten task
   summary: Problem 25.4(d) asks for A(10) in SU(4), using 4 tensor 4=6+10 and the
@@ -291,6 +352,17 @@ nodes:
     pages:
     - 138
     note: Requests the photon propagator in axial gauge.
+- id: schwartz.background-field-axial-anomaly
+  label: Background-field axial anomaly
+  summary: The massive triangle gives <psibar gamma5 psi>_A=i e^2 epsilon F F/(32pi^2m),
+    consistently requiring <partial J5>_A=-e^2 epsilon F F/(16pi^2). The text limits
+    a rigorous derivation of the former to constant F in Chapter 33.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.1.3
+    pages:
+    - 621
 - id: schwartz.bare-spectral-normalization-and-field-strength-limit
   label: Bare spectral normalization and 0≤Z≤1
   summary: For a regulated, finite, or conformal theory, the bare scalar field also
@@ -306,6 +378,18 @@ nodes:
     pages:
     - 470
     - 471
+- id: schwartz.baryon-lepton-anomalies-and-sphaleron-scope
+  label: Baryon/lepton anomalies and sphalerons
+  summary: partial_mu J_B^mu=partial_mu J_L^mu=n_g g^2epsilon W^aW^a/(32pi^2), while
+    B-L is nonanomalous. The total-derivative density has no perturbative effect;
+    topological sphalerons can violate B,L but preserve B-L, and the displayed zero-temperature
+    rate is only rough.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.5.1
+    pages:
+    - 635
 - id: schwartz.baryon-octet-decuplet-quantum-number-diagram
   label: Baryon octet and decuplet quantum-number organization
   summary: The octet and decuplet are displayed by quantum numbers; diagonal lines
@@ -735,6 +819,20 @@ nodes:
     section: '29.1'
     pages:
     - 586
+- id: schwartz.chiral-fermion-vacuum-polarization-integrals
+  label: Chiral fermion vacuum-polarization integrals
+  summary: For Delta=x m2^2+(1-x)m1^2-x(1-x)p^2, Pi_LL=Pi_RR=e^2/(4pi^2){(m1^2+m2^2-2p^2/3)/(2epsilon)-(1/2)
+    integral_0^1 dx [x(1-x)p^2-Delta] ln(tilde-mu^2/Delta)}. The chirality-flipping
+    sum is Pi_LR+Pi_RL=-e^2 m1m2/(4pi^2){1/epsilon+(1/2) integral_0^1 dx ln(tilde-mu^2/Delta)}.
+    For m1=m2=m_e, Pi_VV=Pi_LL+Pi_LR+Pi_RL+Pi_RR=-e^2 p^2/(2pi^2)[1/(3epsilon)+integral_0^1
+    dx x(1-x) ln(tilde-mu^2/(m_e^2-p^2x(1-x)))], checking QED vacuum polarization.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 649
+    - 650
 - id: schwartz.chiral-lagrangian-derivative-expansion
   label: Chiral Lagrangian derivative expansion
   summary: The pion fields are organized in an SU(2)-valued matrix U with pion decay
@@ -886,6 +984,17 @@ nodes:
     section: 29.3.2
     pages:
     - 597
+- id: schwartz.ckm-unitarity-cancels-oblique-divergences
+  label: CKM unitarity cancels oblique divergences
+  summary: Divergent scale-dependent parts cancel using Q_t-Q_b=1 and CKM unitarity.
+    All quark loops remove CKM factors from divergent Pi_WW; light-quark finite masses
+    can be neglected, leaving leading top behavior represented by V_tb=1 t,b.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 651
 - id: schwartz.ckm-unitarity-triangle-construction
   label: CKM unitarity-triangle construction
   summary: Column orthogonality gives VudVub*+VcdVcb*+VtdVtb*=0. Divide by VcdVcb*
@@ -960,6 +1069,17 @@ nodes:
     pages:
     - 43
     note: Specifies the classical symmetry-breaking construction.
+- id: schwartz.classical-vector-axial-currents
+  label: Classical vector and axial currents in QED
+  summary: Massless QED has vector and axial rotations with J^mu=psibar gamma^mu psi
+    and J5^mu=psibar gamma^mu gamma5 psi; classically partial_mu J^mu=0 and partial_mu
+    J5^mu=2im psibar gamma5 psi.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: 30.1.3
+    pages:
+    - 621
 - id: schwartz.cm-two-to-two-cross-section
   label: Center-of-mass 2→2 cross section
   summary: For 2→2 scattering in the center-of-mass frame, integrating two-body LIPS
@@ -987,6 +1107,17 @@ nodes:
     pages:
     - 28
     note: Specifies the coherent-state construction and properties.
+- id: schwartz.color-fierz-reduction-in-weak-matching
+  label: Color/Fierz reduction in matching
+  summary: sum_aT^a_ijT^a_kl=1/2(delta_ildelta_kj-delta_ijdelta_kl/N) plus chiral
+    Fierz identities turns crossed gamma strings into two current contractions; the
+    quoted full-theory graph is IR divergent but UV finite.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 661
 - id: schwartz.color-ordered-general-formula-proof-task
   label: Color-ordered general formula proof task
   summary: Problem 27.3 asks a proof of the general matrix-element formula in color-ordered
@@ -1334,6 +1465,31 @@ nodes:
     pages:
     - 36
     note: Lists current roles and states the nondynamical-source qualification.
+- id: schwartz.custodial-su2-and-rho-tree-relation
+  label: Custodial SU(2) and rho
+  summary: A one-doublet Higgs sector gives m_W^2/m_Z^2=cos^2theta_w and rho=m_W^2/(m_Z^2cos^2theta_w)=1.
+    Its SO(4) Higgs potential breaks to SO(3), leaving custodial SU(2) that protects
+    this equality.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 654
+- id: schwartz.custodial-symmetry-as-current-strength-equality
+  label: Custodial symmetry as current equality
+  summary: The low-energy interaction is L=-8sqrt(2)G_F[|J1_mu+iJ2_mu|^2+rho(J3_mu-s^2J_EM_mu)^2],
+    so rho=1 equates weak neutral- and charged-current strength. The single-doublet
+    Higgs potential has SO(4)→SO(3), a custodial SU(2); massless two-flavor QCD has
+    SU(2)_L×SU(2)_R→SU(2)_V custodial symmetry, whereas Higgs-triplet sectors generally
+    do not.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 654
+    - 655
 - id: schwartz.cutkosky-cutting-rules-and-feynman-tree-theorem
   label: Cutkosky cutting rules for discontinuities
   summary: Imaginary loop contributions arise only when intermediate propagators go
@@ -1380,6 +1536,17 @@ nodes:
     pages:
     - 248
     note: Lists the phase-space, interaction, and diagnosis tasks.
+- id: schwartz.delta-rho-doublet-mass-splitting
+  label: Delta rho from doublet splitting
+  summary: Delta rho=G_F^neutral/G_F^charged-1=Pi_WW(0)/m_W^2-Pi_ZZ(0)/m_Z^2. A doublet
+    contributes Nalpha_e[m1^2+m2^2-2m1^2m2^2ln(m1^2/m2^2)/(m1^2-m2^2)]/(16pis^2c^2m_Z^2),
+    vanishing at equality; m_t much greater than m_b gives 3alpha_em_t^2/(16pis^2c^2m_Z^2).
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 655
 - id: schwartz.derivative-couplings-and-total-derivative-invariance
   label: Derivative couplings and total-derivative invariance
   summary: A derivative acting on a field produces a momentum factor whose sign depends
@@ -1756,6 +1923,15 @@ nodes:
     pages:
     - 27
     note: Applies the definition to an improper single-coordinate reflection.
+- id: schwartz.effective-charge-vacuum-polarization-matching
+  label: Effective charge matching
+  summary: At Q=m_Z, ehat^2=e^2/[1-Pi_gamma gamma(m_Z^2)/m_Z^2]=e^2[1+Pi_gamma gamma(m_Z^2)/m_Z^2+...].
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 646
 - id: schwartz.einstein-emission-and-absorption-coefficients
   label: Einstein emission and absorption coefficient relations
   summary: For two atomic levels, the spontaneous-emission coefficient A, stimulated-emission
@@ -2286,6 +2462,19 @@ nodes:
     - 457
     - 458
     - 459
+- id: schwartz.fiducial-input-scheme-and-tree-level-tension
+  label: Fiducial scheme and tree-level tension
+  summary: Using measured hat-alpha_e(m_Z), hat-G_F and hat-m_Z, the fiducial definition
+    is hat-s^2(1-hat-s^2)=pi hat-alpha_e(m_Z)/(sqrt(2) hat-G_F hat-m_Z^2). The quoted
+    tree values m_W=79.794 GeV and A_e=0.1252 miss the data, so loop corrections and
+    renormalization are required before inferring a Standard-Model contradiction.
+  kind: assumption
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 643
+    - 644
 - id: schwartz.field-configuration-and-momentum-eigenstates
   label: Field-configuration and momentum eigenstates
   summary: The field-theory time-slice basis consists of eigenstates |Φ⟩ of the Schrödinger
@@ -2447,6 +2636,26 @@ nodes:
   - source: schwartz
     note: The source writes |p⃗⟩, |p^μ⟩, and |p⟩ interchangeably for physical momentum
       states, with p_i^0=√(p⃗_i²+m_i²).
+- id: schwartz.four-fermi-eigenoperators-and-leading-log-running
+  label: Eigenoperators and leading-log running
+  summary: O0=(O1+O2)/2 and O3=(O1-O2)/2 have gamma0=alpha_s/pi and gamma3=-2alpha_s/pi.
+    For n_f=5, C0(m_b)=C0(m_W)[alpha_s(m_W)/alpha_s(m_b)]^(6/23), C3(m_b)=C3(m_W)[alpha_s(m_W)/alpha_s(m_b)]^(-12/23).
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+- id: schwartz.four-fermi-operator-mixing-rge
+  label: Four-Fermi operator-mixing RGE
+  summary: mu dC1/dmu=alpha_s(-C1+3C2)/(2pi), mu dC2/dmu=alpha_s(3C1-C2)/(2pi), so
+    gamma=alpha_s[[-1,3],[3,-1]]/(2pi), from O1,O2 counterterms and quark-field renormalization.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 664
 - id: schwartz.four-fermi-operator-rg-toy-scalar-route
   label: Four-Fermi operator renormalization and running
   summary: Below a heavy mediator mass, replace its propagator by a local four-fermion
@@ -2591,6 +2800,17 @@ nodes:
     section: 24.1.5
     pages:
     - 464
+- id: schwartz.fujikawa-measure-jacobian-method
+  label: Fujikawa measure-Jacobian method
+  summary: A local vector change has invariant fermionic measure and yields partial_mu<J^mu
+    O>=0 for gauge-invariant O. For an axial change the Grassmann Jacobian is undefined
+    before regularization, so the measure supplies the anomaly.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: '30.3'
+    pages:
+    - 628
 - id: schwartz.fundamental-antifundamental-transformations
   label: Fundamental and antifundamental transformations
   summary: A fundamental field transforms infinitesimally with T_fund^a, while the
@@ -2722,6 +2942,18 @@ nodes:
     - 268
     - 269
     note: States the cancellation result and its gauge-covariant limitation.
+- id: schwartz.gauge-invariant-fujikawa-regulator
+  label: Gauge-invariant Fujikawa regulator
+  summary: The Fujikawa regulator is exp(-Pi-slash^2/Lambda^2), with Pi-slash=p-slash-eA-slash
+    and Pi-slash^2=Pi^2-e sigma_mu_nu F^mu_nu/2. Its gamma5 trace selects epsilon
+    F F; p-slash^2 or Pi^2 alone do not regulate the stated singularity.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: '30.3'
+    pages:
+    - 629
+    - 630
 - id: schwartz.gauge-parameter-independence-from-transversality
   label: Gauge-parameter independence from transverse contractions
   summary: Because the ξ-dependent photon-propagator term is proportional to p_μp_ν,
@@ -3813,6 +4045,18 @@ nodes:
     section: '25.5'
     pages:
     - 505
+- id: schwartz.leading-top-and-higgs-oblique-dependence
+  label: Leading top/Higgs oblique dependence
+  summary: 'For m_b to zero and m_Z much less than m_t, top corrections scale as m_t^2/m_Z^2.
+    Higgs corrections shift m_W^2 by -5alpha_echat^2m_Zhat^2ln(m_h^2/m_W^2)/[24pi(chat^2-shat^2)]
+    and s_eff^2 by alpha_e(1+9shat^2)ln(m_h^2/m_W^2)/[48pi(chat^2-shat^2)]: leading
+    Higgs dependence is logarithmic.'
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 653
 - id: schwartz.lie-group-generators-bracket-and-jacobi
   label: Lie generators, bracket, and Jacobi identity
   summary: A connected Lie-group element is exp(i theta^a T^a); its generators obey
@@ -3852,6 +4096,17 @@ nodes:
     section: 28.2.1
     pages:
     - 565
+- id: schwartz.linearly-divergent-shift-surface-term
+  label: Linearly divergent shift surface term
+  summary: 'A linearly divergent integral cannot be shifted freely: if F_alpha(k)
+    tends to A k_alpha/k^4, Gauss’s theorem gives integral[F_alpha(k+a)-F_alpha(k)]=i
+    A a_alpha/(32pi^2).'
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.2.2
+    pages:
+    - 625
 - id: schwartz.lippmann-schwinger-scattering-equation
   label: Lippmann–Schwinger scattering equation
   summary: For H=H₀+V with known H₀ eigenstate |φ⟩ of energy E, the full scattering
@@ -4286,6 +4541,17 @@ nodes:
     - 104
     note: States the mass-as-interaction diagram, summation, and classical comparison
       tasks.
+- id: schwartz.massive-pseudoscalar-triangle-amplitude
+  label: Massive-fermion pseudoscalar triangle amplitude
+  summary: For i lambda pi psibar gamma5 psi, the UV-finite on-shell heavy-loop amplitude
+    is M(pi to gamma gamma)=lambda e^2 epsilon_mu_nu_alpha_beta epsilon1*mu epsilon2*nu
+    q1^alpha q2^beta/(4 pi^2 m), after m_pi is much less than loop mass m.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.1.1
+    pages:
+    - 618
 - id: schwartz.massive-spin-three-kinetic-action-problem
   label: Massive spin-3 kinetic-action construction problem
   summary: Problem 8.8 asks for a free massive spin-3 kinetic Lagrangian by embedding
@@ -4491,6 +4757,17 @@ nodes:
     - 137
     note: Builds the nonlinear transformation and identifies the completed matter
       and gravitational actions.
+- id: schwartz.massless-triangle-current-correlator
+  label: Massless triangle as a current correlator
+  summary: Test quantum conservation using the Fourier transform of <J5^alpha J^mu
+    J^nu>; contract the one-loop, superficially linearly divergent triangle with its
+    axial or vector external momentum before integration.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 30.2.1
+    pages:
+    - 622
 - id: schwartz.massless-two-flavor-qcd-chiral-symmetry
   label: Two-flavor QCD chiral symmetry and anomaly qualification
   summary: 'Setting mu=md=0 yields SU(2)L×SU(2)R acting separately on qL and qR, with
@@ -4523,6 +4800,17 @@ nodes:
   - source: schwartz
     note: This is the source's two-component Weyl equation; it cautions that it is
       not the conventional four-component Dirac equation.
+- id: schwartz.matching-ir-cancellation-consistency-test
+  label: IR cancellation consistency test
+  summary: EFT counterterms remove UV poles and its remaining IR poles reproduce full-theory
+    IR poles, leaving IR-finite Wilson coefficients. Failed cancellation after integrating
+    out W would mean the two theories differ in infrared degrees of freedom.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 663
 - id: schwartz.maxwell-energy-positivity-problem
   label: Maxwell energy-positivity derivation problem
   summary: Problem 8.2 asks for the Maxwell energy-momentum tensor and a demonstration
@@ -4704,6 +4992,16 @@ nodes:
     - 254
     - 255
     note: Derives the scalar and matrix Gaussian formulas.
+- id: schwartz.muon-decay-fermi-constant-oblique-matching
+  label: Muon-decay Fermi matching
+  summary: GFhat/sqrt(2)=e^2[1-Pi_WW(0)/m_W^2+...]/(8s^2c^2m_Z^2). At this order MS
+    m_Z, not m_Zhat, appears because Pi_ZZ does not correct muon decay.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 646
 - id: schwartz.muon-decay-rate-and-fermi-constant
   label: Muon decay rate and the Fermi constant
   summary: For mμ≫me, the four-Fermi theory gives Γ(μ→eν̄ν)=GF²mμ⁵/(192π³), so the
@@ -4804,6 +5102,17 @@ nodes:
     pages:
     - 203
     note: States the diagram and lepton-number-flow tasks.
+- id: schwartz.new-fermion-doublet-stu-constraints
+  label: New doublet S,T constraints
+  summary: S=Nsum_i[1-Y_i ln(m1^2/m2^2)]/(6pi) and T=N[m1^2+m2^2-2m1^2m2^2ln(m1^2/m2^2)/(m1^2-m2^2)]/(16pis^2c^2m_Z^2).
+    Splitting breaks custodial isospin through T; a degenerate multiplet can still
+    give excluded S.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
 - id: schwartz.noether-charge-generates-continuous-symmetry
   label: Noether charge generates a continuous symmetry
   summary: For a continuous global symmetry, the conserved operator Q=∫d³x J⁰ obeys
@@ -4844,6 +5153,17 @@ nodes:
     pages:
     - 34
     note: States the theorem and its stated qualifications.
+- id: schwartz.nonabelian-anomaly-coefficient-and-divergence
+  label: Non-Abelian anomaly coefficient
+  summary: d_R^{abc}=2tr[T_R^a{T_R^b,T_R^c}]=A(R)d^{abc}, A(fund)=1. partial_alpha
+    J_a^alpha=(sum_LA(R_L)-sum_RA(R_R))g^2d^{abc}epsilonF_bF_c/(128pi^2); the antisymmetric
+    f^{abc} part is a gauge-invariant renormalization contribution.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 632
 - id: schwartz.nonabelian-charge-universality-slavnov-taylor-relations
   label: Non-Abelian charge universality
   summary: Universal QCD coupling requires equal renormalization ratios Z_1/Z_2=Z_1c/Z_3c=Z_A3/Z_3=sqrt(Z_A4)/sqrt(Z_3),
@@ -5068,6 +5388,41 @@ nodes:
     - 103
     note: Defines normal ordering, states Wick’s theorem, and supplies its induction
       proof.
+- id: schwartz.oblique-corrections-strategy-and-scope
+  label: Oblique-correction strategy
+  summary: Express hatted inputs through MS e,m_Z,s; invert; calculate new observables
+    in MS parameters; substitute. The text retains finite gauge-invariant t,b and
+    Higgs oblique loops as largest.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 644
+- id: schwartz.oblique-inversion-and-mw-prediction
+  label: Oblique inversion and m_W prediction
+  summary: At one loop, e^2=hat-e^2[1-Pi_gammagamma(hat-m_Z^2)/hat-m_Z^2], m_Z^2=hat-m_Z^2[1-Pi_ZZ(hat-m_Z^2)/hat-m_Z^2],
+    Pi_R=-Pi_gammagamma(hat-m_Z^2)/hat-m_Z^2+Pi_ZZ(hat-m_Z^2)/hat-m_Z^2-Pi_WW(0)/hat-m_W^2,
+    and s^2=hat-s^2[1+hat-c^2 Pi_R/(hat-c^2-hat-s^2)]. The resulting prediction is
+    m_W,pole^2=hat-c^2 hat-m_Z^2[1-hat-s^2 Pi_R/(hat-c^2-hat-s^2)-Pi_ZZ(hat-m_Z^2)/hat-m_Z^2+Pi_WW(hat-m_W^2)/(hat-c^2
+    hat-m_Z^2)].
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 648
+- id: schwartz.off-shell-one-loop-matching-ir-artifact
+  label: Off-shell matching IR artifact
+  summary: At order alpha_s match on shell or set all momenta zero in cbar b to ubar
+    d. The latter simplifies dimensional regularization but introduces IR divergences
+    that are artifacts, not Wilson-coefficient dependence.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
 - id: schwartz.offshell-momentum-from-ofpt
   label: Off-shell momentum from summed OFPT orderings
   summary: 'Adding the advanced and retarded OFPT denominators yields a Lorentz-invariant
@@ -5480,6 +5835,18 @@ nodes:
     pages:
     - 40
     note: Develops the nonlinear scalar-gravity perturbative expansion.
+- id: schwartz.peskin-takeuchi-stu-definitions-and-reference
+  label: Peskin–Takeuchi S,T,U
+  summary: T=[Pi_WW^new(0)/m_W^2-Pi_ZZ^new(0)/m_Z^2]/alpha_e=(rho-1)/alpha_e. S=4c^2s^2/alpha_e[(Pi_ZZ^new(m_Z^2)-Pi_ZZ^new(0))/m_Z^2-((c^2-s^2)/(cs))Pi_Zgamma^new(m_Z^2)/m_Z^2-Pi_gammagamma^new(m_Z^2)/m_Z^2].
+    U=4s^2/alpha_e[(Pi_WW^new(m_W^2)-Pi_WW^new(0))/m_W^2-(c/s)Pi_Zgamma^new(m_Z^2)/m_Z^2-Pi_gammagamma^new(m_Z^2)/m_Z^2]-S.
+    “New” subtracts the stated Standard-Model reference, so zero is reference-convention
+    dependent.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
 - id: schwartz.photon-polarizations-current-conservation-and-causality
   label: Photon polarizations, current conservation, and causality
   summary: The photon-polarization problem integrates out A_μ to obtain a current-current
@@ -5510,6 +5877,20 @@ nodes:
     - 239
     - 240
     note: Constructs the reference-vector sum and states when −gμν is valid.
+- id: schwartz.pi0-diphoton-color-measurement
+  label: pi0 diphoton decay measures color
+  summary: The current-algebra matrix element ⟨Ω|J5a_mu(x)|pi^a(p)⟩=i exp(ipx) F_pi
+    p_mu applies for either nucleon or quark isodoublets. In the massless-pion (Goldstone)
+    limit, the pi0→gamma gamma rate is exact at one loop; for u,d loops its factor
+    is N[(2/3)^2-(1/3)^2]=N/3, so agreement yields N=3. Physical quark-mass effects
+    are explicitly glossed over as small corrections.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.1.2
+    pages:
+    - 619
+    - 620
 - id: schwartz.pion-leptonic-decay-measures-fpi
   label: Pion leptonic decay measures Fπ
   summary: Integrating out W gives the V−A four-Fermi interaction; inserting the axial
@@ -5523,6 +5904,37 @@ nodes:
     section: 28.2.2
     pages:
     - 571
+- id: schwartz.pion-nucleon-chiral-coupling-and-width
+  label: Chiral pion–nucleon coupling and pi0 width
+  summary: For U=exp(2i pi^a tau^a/F_pi), the invariant nucleon term yields i(2m_N/F_pi)pi^a
+    psibar gamma5 tau^a psi. tau3=diag(1/2,-1/2) gives the pi0–proton coupling i m_N
+    pi0 psibar_p gamma5 psi_p/F_pi and Gamma(pi0 to gamma gamma)=alpha_e^2m_pi^3/(64pi^3F_pi^2).
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.1.2
+    pages:
+    - 619
+- id: schwartz.pion-wess-zumino-anomaly-matching-term
+  label: Pion anomaly-matching term
+  summary: With the source’s dimensionless pion convention on p.639, the broken U(1)_pi0
+    transformation is pi0→pi0+theta and the unique compensating term is L=N e^2 pi0
+    epsilon_mu_nu_alpha_beta F^mu_nu F^alpha_beta/(16 pi^2). It cancels the spectator
+    rotation, fixes pi0→gamma gamma despite pion compositeness, and carries N from
+    the N spectator fields for N quark colors. This normalization is not silently
+    identified with the accepted dimensionful convention pi0→pi0+F_pi theta.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 638
+    - 639
+  notation:
+  - source: schwartz
+    note: Page 639 explicitly uses the dimensionless shift pi0→pi0+theta and coefficient
+      N e^2 pi0 epsilon FF/(16 pi^2). The packet does not state the field rescaling
+      needed to compare this with the accepted F_pi-normalized pion convention.
 - id: schwartz.planck-thermal-radiation-spectrum
   label: Planck thermal radiation spectrum
   summary: Integer occupation j of a photon mode with Boltzmann weight gives mean
@@ -5560,6 +5972,17 @@ nodes:
     section: Problem 27.1
     pages:
     - 559
+- id: schwartz.pole-mass-self-energy-relation
+  label: Pole mass from transverse self energy
+  summary: For conserved nearly massless external currents, p_mu p_nu propagator terms
+    drop out. m_Z,pole^2=m_Z^2+Re Pi_ZZ(m_Z^2) at one loop; Re is needed because the
+    unstable Z has a width-related imaginary part.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 645
 - id: schwartz.polology-one-particle-pole-factorization
   label: One-particle poles and factorization of Green functions
   summary: If a momentum subset sums to p and the corresponding product of operators
@@ -5622,6 +6045,17 @@ nodes:
     pages:
     - 138
     note: Explicitly requests the positive- or negative-norm proof.
+- id: schwartz.precision-electroweak-input-observables
+  label: Precision electroweak input observables
+  summary: The chapter uses g_e, tau_mu, Z/W pole masses, and polarized-Z A_e. At
+    tree level they depend only on e or alpha_e, v or G_F=1/(sqrt(2)v^2), and s=sin
+    theta_w.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 642
 - id: schwartz.problem-20-1-three-body-phase-space
   label: 'Problem 20.1: derive the three-body phase-space formula'
   summary: Derive the phase-space formula in Eq. (20.42) for the real-emission energy-fraction
@@ -5776,6 +6210,144 @@ nodes:
     section: Problem 22.5
     pages:
     - 416
+- id: schwartz.problem-30-1-nonabelian-baryon-anomaly-diagrams
+  label: 'Problem 30.1: non-Abelian baryon anomaly'
+  summary: 'Task: evaluate the indicated and all same-order diagrams to reproduce
+    the W^3 terms in Eq. (30.88) after contraction with partial_mu.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-30-2-neutrino-mass-bminusl-anomaly
+  label: 'Problem 30.2: neutrino masses and B-L'
+  summary: 'Task: determine for Majorana, Dirac, or both neutrino masses when lepton
+    number and B-L are anomalous.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-30-3-su5-color-anomaly-free-sm
+  label: 'Problem 30.3: SU(5)-color universe'
+  summary: 'Task: find anomaly-free SU(5)xSU(2)_weakxU(1)_Y field assignments under
+    the stated five-color, charge-one-proton assumptions.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-30-4-su4-chiral-matching
+  label: 'Problem 30.4: SU(4) chiral matching'
+  summary: 'Task: decide whether anomaly matching can determine spontaneous SU(4)_LxSU(4)_R
+    breaking in QCD.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-31-1-muon-four-fermi-width
+  label: 'Problem 31.1: muon decay'
+  summary: 'Task: calculate tree muon decay in the four-Fermi theory and verify Eq.
+    (31.3).'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2a-zwidth-tree
+  label: 'Problem 31.2(a): tree Z width'
+  summary: 'Task: evaluate Gamma(Z to e+e-)=v e^3[1/4+(2s^2-1/2)^2]/(96pi s^3c^3),
+    compare with 83.99+/-0.18 MeV, and report the standard-deviation discrepancy.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2b-zwidth-ms
+  label: 'Problem 31.2(b): MS Z width'
+  summary: 'Task: derive one-loop Gamma(Z to e+e-) in MS parameters.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2c-zwidth-vacpol
+  label: 'Problem 31.2(c): Z width from polarizations'
+  summary: 'Task: derive Gamma(Z to e+e-) from vacuum-polarization graphs.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2d-zwidth-numeric
+  label: 'Problem 31.2(d): numerical one-loop Z width'
+  summary: 'Task: evaluate one-loop Gamma(Z to e+e-) and compare it with experiment.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-3-higgs-vacuum-polarizations
+  label: 'Problem 31.3: Higgs polarizations'
+  summary: 'Task: calculate exact Higgs polarization contributions and verify Eqs.
+    (31.68),(31.69).'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4a-bsgamma-rate
+  label: 'Problem 31.4(a): b to s gamma'
+  summary: 'Task: calculate the Standard-Model b to s gamma rate from the full one-loop
+    graphs containing W exchange and photon emission.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4b-bsgamma-match
+  label: 'Problem 31.4(b): b to s gamma matching'
+  summary: 'Task: match the full-theory b to s gamma amplitude onto a local dipole
+    EFT whose tree-level matrix element reproduces the rate, identifying the leading
+    O7gamma coefficient.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4c-bsgamma-qcd
+  label: 'Problem 31.4(c): b to s gamma QCD'
+  summary: 'Task: evaluate the order-alpha_s renormalization and operator mixing in
+    the matched O1-through-O9/O7gamma effective theory.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4d-bsgamma-running
+  label: 'Problem 31.4(d): b to s gamma running'
+  summary: 'Task: obtain the dipole-basis anomalous-dimension evolution from m_W to
+    m_b and determine the size of the QCD correction to b to s gamma.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
 - id: schwartz.problem-bch-pion-transformation-task
   label: 'Task: BCH pion transformations and isospin representation'
   summary: Expand Eq. (28.25) through order π² and θ² with the Baker–Campbell–Hausdorff
@@ -6097,6 +6669,16 @@ nodes:
     - 115
     - 116
     note: Derives the divergence constraint, Proca form, and positive total energy.
+- id: schwartz.pseudoscalar-diphoton-width
+  label: Pseudoscalar diphoton width
+  summary: The heavy-loop result gives Gamma(pi to gamma gamma)=alpha_e^2 lambda^2
+    m_pi^3/(64 pi^3 m^2), with on-shell photons and m_pi much less than m.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.1.1
+    pages:
+    - 619
 - id: schwartz.qcd-asymptotic-freedom-and-lambdaqcd
   label: QCD asymptotic freedom and Lambda_QCD
   summary: For SU(3), alpha_s=g_s^2/(4pi) obeys mu d alpha_s/dmu=-(alpha_s^2/(2pi))beta_0
@@ -6206,6 +6788,20 @@ nodes:
     pages:
     - 521
     - 522
+- id: schwartz.qcd-running-impact-on-vcb
+  label: QCD running impact on Vcb
+  summary: The stated evolution gives C0(m_b)=0.888G and C3(m_b)=1.27G, hence C1(m_b)=1.08G
+    and C2(m_b)=-0.189G, with rms sqrt(C1^2+C2^2)=1.09G. Squaring that coefficient
+    yields about a 19% rate enhancement, so fitting the enhanced rate with the tree
+    coefficient would make |V_cb| about 9% high. Page 665 instead says the extracted
+    value is 18% low; this arithmetic conflicts with its displayed 1.09G result and
+    is retained as a source-specific inconsistency.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
 - id: schwartz.qcd-vacuum-polarization-diagram-set
   label: QCD vacuum-polarization diagram set
   summary: At one loop the gluon two-point function comprises fermion/scalar, two
@@ -6635,6 +7231,18 @@ nodes:
     pages:
     - 4
     note: States energy quantization, the momentum relation, and the massless conclusion.
+- id: schwartz.quantum-anomaly-gauge-versus-global-consistency
+  label: 'Quantum anomaly: gauge versus global consistency'
+  summary: A classical symmetry that fails quantum mechanically is anomalous and its
+    Noether current is not conserved. A gauged anomaly violates the Ward identity,
+    allows unphysical longitudinal massless-vector polarizations, and violates unitarity;
+    global anomalies are not such consistency failures.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: 30 introduction
+    pages:
+    - 616
 - id: schwartz.quantum-mechanical-path-integral-derivation
   label: Quantum-mechanical path-integral derivation
   summary: Time-slicing a position-to-position amplitude, inserting momentum completeness,
@@ -6900,6 +7508,18 @@ nodes:
     pages:
     - 12
     note: Defines orthogonality and the rotationally invariant norm.
+- id: schwartz.routing-choice-preserves-vector-ward-identity
+  label: Routing chooses vector-current conservation
+  summary: Bose-symmetric routing has a finite ambiguity. b1-b2=2 gives q1_mu M5^alpha_mu_nu=0
+    and p_alpha M5^alpha_mu_nu=epsilon_mu_nu_rho_sigma q1^rhoq2^sigma/(2pi^2), preserving
+    the vector Ward identity and locating nonconservation in J5; it agrees with the
+    massive limit.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 30.2.3-30.2.4
+    pages:
+    - 626
 - id: schwartz.rutherford-scattering-cross-section-problem
   label: Rutherford-scattering correspondence problem
   summary: Problems 5.5–5.6 ask the learner to connect classical Rutherford scattering,
@@ -6996,6 +7616,18 @@ nodes:
     - 214
     - 215
     note: The section derives both branches before generalizing their spin dependence.
+- id: schwartz.sakharov-conditions-and-standard-model-baryogenesis-limit
+  label: Sakharov conditions and Standard-Model limit
+  summary: Matter–antimatter asymmetry requires B violation, C and CP violation, and
+    nonequilibrium. The source says all occur in the Standard Model but quantitatively
+    B/CP violation are insufficient and the electroweak transition is too smooth rather
+    than strongly first order.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: 30.5.1
+    pages:
+    - 636
 - id: schwartz.scalar-bubble-cutting-loop-setup
   label: Two-propagator scalar loop setup for contour cutting
   summary: Equation (24.29) supplies the one-loop scalar bubble with loop momenta
@@ -7534,6 +8166,17 @@ nodes:
     pages:
     - 20
     note: Defines the many-mode and particle-number features.
+- id: schwartz.seiberg-duality-anomaly-matching-evidence-limit
+  label: Seiberg-duality matching is evidence
+  summary: For 3N/2>n_f>N, matching global SU(n_f)_LxSU(n_f)_R, U(1)_baryon, and U(1)_R
+    anomalies between N and n_f-N color descriptions is a strong check of the conjectured
+    infrared duality, not a proof.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 640
 - id: schwartz.semiclassical-field-matter-consistency-question
   label: Classical-field and quantum-matter consistency question
   summary: Problem 3.8 asks whether the blackbody-paradox argument rules out treating
@@ -7618,6 +8261,28 @@ nodes:
     pages:
     - 7
     note: Builds the oscillator occupation algebra for one photon frequency.
+- id: schwartz.single-weyl-qed-gauge-anomaly
+  label: Single-Weyl QED gauge anomaly
+  summary: For a Weyl photon coupling, M_L=1/2(M_V-M5); no routing conserves both
+    relevant contractions. A single left- or right-handed Weyl fermion coupled to
+    QED is inconsistent; a left/right pair requires Q_L=Q_R.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.2.4
+    pages:
+    - 627
+- id: schwartz.smeft-oblique-operator-shortcut
+  label: SMEFT shortcut for S,T
+  summary: O_S=H-dagger sigma^iH W^i_mu_nuB^mu_nu and O_T=|H-dagger D_muH|^2 give
+    S=4scv^2C_S/alpha and T=-v^2C_T/(2alpha), so matching new physics before electroweak
+    breaking can replace direct polarization graphs.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
 - id: schwartz.soft-and-final-state-collinear-singularities
   label: Soft and final-state collinear singularities
   summary: The real-emission integral is singular when the emitted photon energy vanishes
@@ -8022,6 +8687,42 @@ nodes:
     pages:
     - 314
     note: States the charged-content Landau-pole task.
+- id: schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
+  label: Standard Model mixed and gravitational cancellation
+  summary: SU(2)^3 vanishes because d^{abc}=0, QCD has no SU(3)^3 anomaly because
+    it is nonchiral, and SU(N)U(1)^2 vanishes by tr T^a=0. The remaining SU(3)^2U(1),
+    SU(2)^2U(1), and grav^2U(1) constraints are satisfied.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 633
+- id: schwartz.standard-model-parameter-count-and-overconstraint
+  label: Dirac-neutrino Standard Model parameter count and testability
+  kind: concept
+  summary: 'Assuming Dirac neutrino masses, the source counts 27 Standard-Model parameters:
+    g,g-prime,g_s; six quark, three charged-lepton, and three neutrino masses; three
+    angles and one phase in each of quark and lepton mixing; m_h, v, bar-theta, and
+    the cosmological constant. Renormalizability makes infinitely many measurements
+    functions of these finite inputs, so the model is overconstrained and precision
+    measurements test it.'
+  evidence:
+  - source: schwartz
+    section: 31 introduction
+    pages:
+    - 641
+- id: schwartz.standard-model-u1-cubed-anomaly-condition
+  label: Standard Model U(1)_Y cubed condition
+  summary: U(1)_Y^3 cancellation requires (2Y_L^3-Y_e^3-Y_nu^3)+3(2Y_Q^3-Y_u^3-Y_d^3)=0.
+    Y_L=-1/2,Y_e=-1,Y_nu=0,Y_Q=1/6,Y_u=2/3,Y_d=-1/3 satisfy it for any generation
+    count, though neither quarks nor leptons alone do.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 631
 - id: schwartz.standard-model-w-w-z-and-w-w-z-z-vertices
   label: Standard Model WWZ and WWZZ vertices
   summary: Read the momentum-space WWZ and WWZZ Feynman rules from the gauge Lagrangian
@@ -8064,6 +8765,25 @@ nodes:
     pages:
     - 296
     note: Applies the Casimir sum to the string spectrum and critical dimension.
+- id: schwartz.strong-cp-anomalous-rotation-relation
+  label: Strong-CP anomalous rotation relation
+  summary: In this chapter’s stated convention, the anomalous chiral rotations generate
+    L=theta_QCD g_s^2 epsilon_mu_nu_alpha_beta F_a^mu_nu F_a^alpha_beta/(32 pi^2)
+    and define bar-theta=theta_QCD+arg det(Y_dY_u), with the neutron-EDM bound bar-theta<10^-10.
+    This sign conflicts with the closed Chapter 29 record’s theta_F definition and
+    is retained only as a source-specific convention discrepancy pending an explicit
+    reconciliation.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.5.2
+    pages:
+    - 636
+  notation:
+  - source: schwartz
+    note: Page 636 writes bar-theta=theta_QCD+arg det(Y_dY_u); the accepted Chapter
+      29 node defines theta_F=arg det(Y_dY_u) and bar-theta=theta_QCD-theta_F. No
+      redefinition linking those signs is supplied in this packet.
 - id: schwartz.strong-cp-bar-theta-basis-invariant-phase
   label: Strong CP ̅θ basis-invariant phase
   summary: Right-handed chiral rotations move phase between θQCD and θF=arg det(YdYu),
@@ -8143,6 +8863,20 @@ nodes:
     section: 28.2.3
     pages:
     - 573
+- id: schwartz.su3-chiral-breaking-from-anomaly-matching
+  label: SU(3) chiral breaking from matching
+  summary: Assuming confinement and the anomaly-matching setup, unbroken SU(3)_L×SU(3)_R
+    would require massless color-singlet baryons with anomaly coefficient 3 to cancel
+    spectators. Since 3⊗3⊗3=10⊕8⊕8⊕1, the real 8 and 1 have A=0 and A(10)=27, no integer
+    decuplet multiplicity cancels -3; the source concludes the symmetry must break.
+    The argument does not apply to SU(2), where d^abc=0.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 639
+    - 640
 - id: schwartz.su3-chiral-pseudo-goldstone-octet
   label: SU(3) chiral pseudo-Goldstone octet
   summary: 'With three light flavors, SU(3)L×SU(3)R→SU(3)V leaves eight pseudo-Goldstones:
@@ -8309,6 +9043,18 @@ nodes:
     section: Box 22.1
     pages:
     - 414
+- id: schwartz.technicolor-s-parameter-constraint
+  label: Technicolor application of the S constraint
+  kind: result
+  summary: For Higgs-replacing QCD-like dynamics that preserves custodial isospin,
+    T can remain acceptable but S generally grows with the number of techniquarks.
+    The source’s one-doublet N_C=4 illustration gives S=4/(3pi)=0.45, described as
+    severely ruled out.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
 - id: schwartz.tensor-polarization-sums-problem
   label: Tensor polarization-sum and degree-counting problem
   summary: Problem 8.6 asks for transverse symmetric tensor polarization counting,
@@ -8351,6 +9097,18 @@ nodes:
     section: 29.5.3
     pages:
     - 612
+- id: schwartz.thooft-anomaly-matching-hypotheses
+  label: t Hooft anomaly-matching hypotheses
+  summary: Weakly gauge global G=SU(3)_LxSU(3)_RxU(1)_V, add anomaly-canceling chiral
+    spectators with arbitrarily small couplings, and assume confinement. Since massless-particle
+    anomaly data cannot change across a finite-scale transition, the infrared must
+    match it.
+  kind: assumption
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 638
 - id: schwartz.three-point-little-group-renormalizability-and-antisymmetry
   label: Three-point amplitude constraints
   summary: Little-group scaling and mass dimension rule out an all-plus renormalizable
@@ -8363,6 +9121,31 @@ nodes:
     section: 27.5.1
     pages:
     - 552
+- id: schwartz.top-bottom-oblique-self-energies
+  label: Top–bottom oblique self energies
+  summary: For one (t,b) doublet, Pi_gammagamma=N sum_i Q_i^2 Pi_VV(Delta_ii); Pi_gammaZ=N/(sc)
+    sum_i[(T_i^3 Q_i/2)-s^2Q_i^2]Pi_VV(Delta_ii); Pi_WW=|V_tb|^2 N Pi_LL(Delta_tb)/(2s^2);
+    and Pi_ZZ=N/(s^2c^2) sum_i[(T_i^3)^2Pi_LL(Delta_ii)-s^2T_i^3Q_i Pi_VV(Delta_ii)+s^4Q_i^2Pi_VV(Delta_ii)].
+    Here N=3, the Pi_WW 1/2 is W-generator normalization, and the vector half in Pi_gammaZ
+    arises from T3–hypercharge mixing.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 650
+    - 651
+- id: schwartz.top-ms-mass-and-one-loop-precision-prediction
+  label: Top MS mass and one-loop predictions
+  summary: The stated three-loop conversion gives m_t(m_t)=163.0 GeV from 173.5 GeV
+    pole mass. With listed historical inputs, one-loop t,b results m_W=80.368 GeV
+    and A_e=.1491 agree with then-quoted data within uncertainty.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 652
 - id: schwartz.transfer-matrix-born-series
   label: Transfer matrix and Born series
   summary: Defining V|ψ⟩=T|φ⟩ gives T=V+V(E−H₀)⁻¹T and its perturbative expansion.
@@ -8405,6 +9188,26 @@ nodes:
     pages:
     - 542
     - 543
+- id: schwartz.tree-level-b-to-cud-four-fermi-matching
+  label: Tree b to c ubar d matching
+  summary: For p^2 much less than m_W^2, -C1O1 has O1=(cbar_L^igamma_mub_L^i)(dbar_L^jgamma_muu_L^j),
+    C1=G=4G_FV_cbV_ud-star/sqrt(2), and G_F/sqrt(2)=e^2/(8m_W^2sin^2theta_w).
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 659
+- id: schwartz.tree-level-electroweak-observable-formulas
+  label: Tree-level electroweak formulas
+  summary: m_Z=ev/(2sc), m_W=ev/(2s), Gamma(mu)=G_F^2m_mu^5[1-8r+8r^3-r^4-12r^2lnr]/(192pi^3),
+    and A_e=[(1/2-s^2)^2-s^4]/[(1/2-s^2)^2+s^4].
+  kind: result
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 642
 - id: schwartz.tree-level-four-fermi-matching
   label: Tree-level four-Fermi matching
   summary: For exchanged momentum p²≪mW², W exchange becomes a local charged-current
@@ -8446,6 +9249,17 @@ nodes:
     pages:
     - 6
     note: Sets up the rate balance and thermal populations.
+- id: schwartz.two-operator-b-to-cud-matching-coefficients
+  label: Two-operator matching coefficients
+  summary: One-loop matching needs O1=(cbar_Lgamma_mub_L)(dbar_Lgamma_muu_L), O2=(cbar_Lgamma_muu_L)(dbar_Lgamma_mub_L),
+    with C1=G[1-alpha_s(ln(mu-tilde^2/m_W^2)/2+3/4)/(2pi)] and C2=3Galpha_s(ln(mu-tilde^2/m_W^2)/2+3/4)/(2pi);
+    choose mu-tilde near m_W.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 663
 - id: schwartz.type-two-vortices-and-cooper-pair-order-parameter
   label: Type-II vortices and Cooper-pair order parameter
   summary: With correlation length ξ=1/m and penetration depth R=1/mA, ξ<R gives type-II
@@ -8458,6 +9272,17 @@ nodes:
     section: 28.3.2
     pages:
     - 578
+- id: schwartz.u1-problem-axial-u1-not-a-symmetry
+  label: 'U(1) problem: axial U(1) is not a symmetry'
+  summary: Three-flavor U(3)_LxU(3)_R breaking would predict nine Goldstones and eta-prime
+    below sqrt(3)m_pi0, contrary to 957 MeV. Diagonal U(1)_A has SU(3)_color^2U(1)_A
+    anomaly, so no symmetry requires its Goldstone.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.5.2
+    pages:
+    - 637
 - id: schwartz.uehling-fourier-transform-problem
   label: Uehling-potential Fourier-transform problem
   summary: Problem 16.2 asks to obtain the Uehling potential by Fourier transforming
@@ -8694,6 +9519,17 @@ nodes:
     pages:
     - 284
     note: States the vacuum-wavefunctional construction tasks.
+- id: schwartz.vcb-hadronic-extraction-and-large-log-problem
+  label: Vcb extraction and large logarithm
+  summary: Bbar0 to D+pi- is b to c ubar d and rate proportional to |V_cb|^2, but
+    nonperturbative matrix elements obstruct prediction. Assuming it known, QCD yields
+    alpha_sln(m_W/m_b), requiring resummation before weak-scale CKM comparison.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: '31.3'
+    pages:
+    - 658
 - id: schwartz.vector-and-axial-currents-under-parity
   label: Vector and axial currents under parity
   summary: Under the stated parity action, ψ̄γμψ transforms as a four-vector and preserves
@@ -8796,6 +9632,34 @@ nodes:
     pages:
     - 105
     note: States the interaction, scaling, lifetime, branching, and measurement tasks.
+- id: schwartz.weak-effective-hamiltonian-standard-basis
+  label: Standard weak effective-Hamiltonian basis
+  summary: For reusable weak-decay calculations, integrate out short-distance physics
+    near m_W, match onto the standard O1-through-O9 operator basis, and use precomputed
+    evolution to the GeV scale. The basis includes the FCNC dipole O7gamma=e m_b sbar_i
+    sigma_mu_nu(1+gamma5)b_i F^mu_nu/(8pi^2), which mediates b to s gamma.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+    - 666
+- id: schwartz.weak-effective-lagrangian-locality-and-power-suppression
+  label: Weak EFT locality and suppression
+  summary: For E much less than m_W,m_Z, L=-F^2/4-(G_a)^2/4+sum_q psibar_q(iD-slash-m_q)psi_q-sum_n
+    C_n O_n reproduces full weak physics up to powers of E/m_W. O_n are local composites
+    of fields, covariant derivatives, and QED/QCD strengths; C_n may depend on mu
+    and constants such as m_W but not external momenta, which instead appear through
+    derivatives. Coefficients are external-state independent, but the source explicitly
+    defers the OPE proof to Chapter 32.
+  kind: assumption
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 658
+    - 659
 - id: schwartz.weak-four-fermi-qed-problem-inputs
   label: Weak four-Fermi QED problem inputs
   summary: Problem 23.2 supplies the left-handed four-Fermi operator of Eq. (23.40)
@@ -9124,6 +9988,20 @@ nodes:
     pages:
     - 449
     - 450
+- id: schwartz.witten-veneziano-topological-susceptibility
+  label: Witten–Veneziano topological susceptibility
+  summary: 'In the large-N approach introduced here, chi_t=F_pi^2(m_eta^2+m_eta-prime^2-2m_K^2)/12
+    links the eta-prime mass to the topological susceptibility and gives chi_t=(171
+    MeV)^4 approximately Lambda_QCD^4. The source presents the eta-prime problem as
+    nonperturbative: lattice obtains it to about 10%, instantons give only an order-of-magnitude
+    estimate, and the relation is introduced as another large-N approach.'
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 30.5.2
+    pages:
+    - 637
+    - 638
 - id: schwartz.wolfenstein-approximation-and-three-generation-cp-condition
   label: Wolfenstein approximation and the three-generation CP condition
   summary: For small angles, λ=sinθ12≈0.22 organizes the Wolfenstein expansion. With
@@ -9291,7 +10169,246 @@ nodes:
     - 52
     - 53
     note: States the vacuum-energy divergence and the energy-difference interpretation.
+- id: schwartz.zgamma-mixing-effective-angle-and-ae
+  label: Z–photon mixing and A_e
+  summary: s_eff^2=s^2-scPi_gamma Z(m_Z^2)/m_Z^2 and A_e=[(1/2-s_eff^2)^2-s_eff^4]/[(1/2-s_eff^2)^2+s_eff^4].
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 647
 edges:
+- id: schwartz.anomaly-coefficient-to-su3-matching
+  from: schwartz.anomaly-coefficient-definition-and-normalization
+  to: schwartz.su3-chiral-breaking-from-anomaly-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The baryon contradiction evaluates A(R) for the SU(3) representations.
+  failure_mode: The required anomaly sum and representation coefficients are undefined.
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 639
+- id: schwartz.axial-anomaly-to-pion-matching-term
+  from: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
+  to: schwartz.pion-wess-zumino-anomaly-matching-term
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The compensating pion term is normalized to cancel the axial spectator
+    anomaly.
+  failure_mode: Anomaly matching alone does not fix the epsilon F F coefficient.
+  evidence:
+  - source: schwartz
+    section: 30.3; 30.6
+    pages:
+    - 630
+    - 639
+- id: schwartz.background-anomaly-alternative
+  from: schwartz.background-field-axial-anomaly
+  to: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The massive background-field calculation supplies the same axial-anomaly
+    divergence through a distinct route.
+  failure_mode: Treating it as a compulsory premise would erase the independent massless
+    and measure derivations.
+  evidence:
+  - source: schwartz
+    section: 30.1.3
+    pages:
+    - 621
+- id: schwartz.baryon-to-sakharov
+  from: schwartz.baryon-lepton-anomalies-and-sphaleron-scope
+  to: schwartz.sakharov-conditions-and-standard-model-baryogenesis-limit
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: B violation is a Sakharov condition.
+  failure_mode: Missing the Standard-Model B source.
+  evidence:
+  - source: schwartz
+    section: 30.5.1
+    pages:
+    - 636
+- id: schwartz.base-fierz-to-weak-chain
+  from: schwartz.sun-fierz-and-trace-reduction
+  to: schwartz.color-fierz-reduction-in-weak-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop weak matching reduces color and spinor structures using
+    the generator identity and Fierz rearrangements.
+  failure_mode: Without those reductions, the two-operator structures cannot be isolated.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 661
+- id: schwartz.base-ms-to-weak-chain
+  from: schwartz.qcd-renormalization-constants-and-ms-uv-trick
+  to: schwartz.off-shell-one-loop-matching-ir-artifact
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The off-shell calculation separates UV and IR poles in dimensional regularization
+    and requires MS counterterms.
+  failure_mode: Without the UV/IR prescription, the scaleless-integral artifact is
+    misread as a physical divergence.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+    - 662
+    - 663
+- id: schwartz.base-pion-chiral-power-to-coupling
+  from: schwartz.chiral-power-counting-and-axial-pion-coupling
+  to: schwartz.pion-nucleon-chiral-coupling-and-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion current normalization and axial coupling identify F_pi and the
+    Goldstone coupling used in the pion construction.
+  failure_mode: Without this normalization, the F_pi-dependent pion coupling and width
+    cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 30.1.2
+    pages:
+    - 619
+    - 620
+- id: schwartz.base-precision-inputs-to-fiducial
+  from: schwartz.precision-electroweak-input-observables
+  to: schwartz.fiducial-input-scheme-and-tree-level-tension
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The fiducial scheme chooses measured electroweak inputs from the listed
+    observables.
+  failure_mode: Without the inputs, the hatted parameter definition has no experimental
+    operands.
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 642
+    - 643
+    - 644
+- id: schwartz.base-qcd-condensate-to-coupling
+  from: schwartz.qcd-chiral-condensate-breaking-pattern
+  to: schwartz.pion-nucleon-chiral-coupling-and-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source starts the pion construction from SU(2)_L×SU(2)_R breaking
+    to isospin.
+  failure_mode: Without the breaking pattern, U and the pion Goldstone interpretation
+    lack their stated basis.
+  evidence:
+  - source: schwartz
+    section: 30.1.2
+    pages:
+    - 619
+- id: schwartz.base-rg-to-weak-chain
+  from: schwartz.rg-large-log-resummation
+  to: schwartz.four-fermi-eigenoperators-and-leading-log-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Diagonalizing and integrating the anomalous-dimension matrix is the RG
+    resummation step.
+  failure_mode: Without RG evolution, the large logarithms are not resummed from m_W
+    to m_b.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 664
+    - 665
+- id: schwartz.base-tree-four-fermi-to-weak-chain
+  from: schwartz.tree-level-four-fermi-matching
+  to: schwartz.tree-level-b-to-cud-four-fermi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter’s b→c ubar d matching instantiates the established low-energy
+    W-exchange replacement.
+  failure_mode: Without the four-Fermi matching limit, the local O1 matching has no
+    stated low-energy justification.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 658
+    - 659
+- id: schwartz.base-u1-to-hypercharge
+  from: schwartz.standard-model-u1-cubed-anomaly-condition
+  to: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The hypercharge solutions solve the cubic U(1) condition jointly with
+    the other anomaly equations.
+  failure_mode: Omitting the cubic condition leaves the claimed solution families
+    underdetermined.
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 633
+    - 634
+- id: schwartz.base-vcb-problem-to-impact
+  from: schwartz.vcb-hadronic-extraction-and-large-log-problem
+  to: schwartz.qcd-running-impact-on-vcb
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The impact is an inference about extracting V_cb from a B→Dpi rate with
+    an assumed hadronic relation.
+  failure_mode: Without that extraction setup, the coefficient shift cannot be interpreted
+    as a V_cb effect.
+  evidence:
+  - source: schwartz
+    section: '31.3'
+    pages:
+    - 657
+    - 658
+    - 665
+- id: schwartz.base-wilson-to-weak-chain
+  from: schwartz.wilson-coefficients-operator-mixing-and-matching
+  to: schwartz.two-operator-b-to-cud-matching-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Matching determines finite local Wilson coefficients for the O1,O2 basis.
+  failure_mode: Without locality and coefficient matching, momentum-dependent full-theory
+    terms could be incorrectly assigned to C_i.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 658
+    - 659
+    - 663
 - id: schwartz.bosonic-factors-to-field-einstein-route
   from: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
   to: schwartz.field-theoretic-einstein-coefficient-derivation
@@ -9310,6 +10427,34 @@ edges:
     - 8
     - 9
     note: Computes the ladder-operator transition factors and rate equation.
+- id: schwartz.charge-to-inversion
+  from: schwartz.effective-charge-vacuum-polarization-matching
+  to: schwartz.oblique-inversion-and-mw-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Inversion starts from ehat.
+  failure_mode: Pi_gammagamma lacks input.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 648
+- id: schwartz.ckm-to-prediction
+  from: schwartz.ckm-unitarity-cancels-oblique-divergences
+  to: schwartz.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Finite loops are needed numerically.
+  failure_mode: Divergent pieces remain.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 652
 - id: schwartz.classical-spectrum-to-ultraviolet-catastrophe
   from: schwartz.blackbody-cavity-modes-and-classical-spectrum
   to: schwartz.ultraviolet-catastrophe
@@ -9327,6 +10472,20 @@ edges:
     pages:
     - 4
     note: Names the rising classical prediction and its disagreement with observation.
+- id: schwartz.correlator-to-routing
+  from: schwartz.massless-triangle-current-correlator
+  to: schwartz.routing-choice-preserves-vector-ward-identity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Routing contracts this correlator.
+  failure_mode: No triangle object to route.
+  evidence:
+  - source: schwartz
+    section: 30.2.3
+    pages:
+    - 626
 - id: schwartz.current-roles-to-sourced-maxwell
   from: schwartz.current-roles-and-nondynamical-sources
   to: schwartz.sourced-maxwell-equations-from-action
@@ -9344,6 +10503,62 @@ edges:
     pages:
     - 37
     note: Represents the point charge by an external current.
+- id: schwartz.currents-to-background-anomaly
+  from: schwartz.classical-vector-axial-currents
+  to: schwartz.background-field-axial-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The result corrects the axial current divergence.
+  failure_mode: No current interpretation.
+  evidence:
+  - source: schwartz
+    section: 30.1.3
+    pages:
+    - 621
+- id: schwartz.currents-to-deltarho
+  from: schwartz.custodial-symmetry-as-current-strength-equality
+  to: schwartz.delta-rho-doublet-mass-splitting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Operational Delta rho compares current strengths.
+  failure_mode: G_F ratio unexplained.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 655
+- id: schwartz.custodial-to-deltarho
+  from: schwartz.custodial-su2-and-rho-tree-relation
+  to: schwartz.delta-rho-doublet-mass-splitting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Delta rho measures protected-rho violation.
+  failure_mode: No custodial baseline.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 655
+- id: schwartz.deltarho-to-stu
+  from: schwartz.delta-rho-doublet-mass-splitting
+  to: schwartz.peskin-takeuchi-stu-definitions-and-reference
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: T is new-physics Delta rho/alpha.
+  failure_mode: T lacks interpretation.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
 - id: schwartz.e-1pi-resummation-from-fermion-renorm
   from: schwartz.fermion-mass-and-field-renormalization
   to: schwartz.fermion-1pi-propagator-resummation
@@ -20581,6 +21796,34 @@ edges:
     section: 20.1.2
     pages:
     - 361
+- id: schwartz.eft-to-tree-match
+  from: schwartz.weak-effective-lagrangian-locality-and-power-suppression
+  to: schwartz.tree-level-b-to-cud-four-fermi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: It justifies local W replacement.
+  failure_mode: Contact operator unjustified.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 659
+- id: schwartz.eigen-to-vcb
+  from: schwartz.four-fermi-eigenoperators-and-leading-log-running
+  to: schwartz.qcd-running-impact-on-vcb
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Bias uses evolved coefficients.
+  failure_mode: No 18% computation.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
 - id: schwartz.energy-momentum-conservation-to-graviton-polarizations
   from: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
   to: schwartz.graviton-polarizations-and-trace-coupling
@@ -20632,6 +21875,23 @@ edges:
     pages:
     - 37
     note: Applies Euler–Lagrange equations to obtain ∂μFμν=Jν.
+- id: schwartz.fiducial-to-top-prediction
+  from: schwartz.fiducial-input-scheme-and-tree-level-tension
+  to: schwartz.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The numerical one-loop prediction uses the hatted electroweak inputs
+    defined by the fiducial scheme.
+  failure_mode: The quoted masses and asymmetry have no measured input values.
+  evidence:
+  - source: schwartz
+    section: 31.1-31.1.2
+    pages:
+    - 643
+    - 644
+    - 652
 - id: schwartz.field-expansion-to-equal-time-commutators
   from: schwartz.free-scalar-field-mode-expansion
   to: schwartz.equal-time-scalar-field-commutation-relations
@@ -20686,6 +21946,20 @@ edges:
     pages:
     - 9
     note: States the relations are obtained without assuming thermal equilibrium.
+- id: schwartz.fierz-to-coeff
+  from: schwartz.color-fierz-reduction-in-weak-matching
+  to: schwartz.two-operator-b-to-cud-matching-coefficients
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: It exposes both contractions.
+  failure_mode: O2 cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 663
 - id: schwartz.fourier-correspondence-to-coulomb-potential
   from: schwartz.fourier-transform-derivative-operator-correspondence
   to: schwartz.coulomb-potential-from-field-propagation
@@ -20723,6 +21997,39 @@ edges:
     - 24
     note: The one-particle restriction is introduced on page 23 and differentiated
       with the massive free-field relation on page 24.
+- id: schwartz.fujikawa-anomaly-alternative
+  from: schwartz.fujikawa-measure-jacobian-method
+  to: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The measure-Jacobian calculation is an independent route to the axial
+    anomaly.
+  failure_mode: Treating the method as a mandatory prerequisite would deny the diagrammatic
+    routes.
+  evidence:
+  - source: schwartz
+    section: '30.3'
+    pages:
+    - 628
+    - 629
+    - 630
+    - 631
+- id: schwartz.gf-to-inversion
+  from: schwartz.muon-decay-fermi-constant-oblique-matching
+  to: schwartz.oblique-inversion-and-mw-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Pi_R includes GF matching.
+  failure_mode: Pi_WW(0) lacks input.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 648
 - id: schwartz.global-u1-to-noether-current
   from: schwartz.complex-scalar-global-u1-symmetry
   to: schwartz.noether-current-and-conserved-charge
@@ -20774,6 +22081,22 @@ edges:
     pages:
     - 41
     note: Uses the kernel to express the leading and corrected sourced solutions.
+- id: schwartz.hypercharge-solutions-to-bminusl
+  from: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
+  to: schwartz.anomaly-allowed-b-minus-l
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: B-L is the second independent solution of the complete anomaly constraints.
+  failure_mode: Mixed-anomaly cancellation alone does not establish the cubic and
+    gravitational conditions.
+  evidence:
+  - source: schwartz
+    section: 30.4-30.5.1
+    pages:
+    - 634
+    - 635
 - id: schwartz.intensity-occupation-to-field-einstein-route
   from: schwartz.intensity-mode-occupation-relation
   to: schwartz.field-theoretic-einstein-coefficient-derivation
@@ -20791,6 +22114,22 @@ edges:
     pages:
     - 9
     note: Uses I(ω)=ℏω³nω/π² to read off the relations.
+- id: schwartz.inversion-to-top-prediction
+  from: schwartz.oblique-inversion-and-mw-prediction
+  to: schwartz.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The top-loop self energies enter observables through the inverted one-loop
+    input relations.
+  failure_mode: Computed self energies are not connected to m_W or A_e.
+  evidence:
+  - source: schwartz
+    section: 31.1.1-31.1.2
+    pages:
+    - 648
+    - 652
 - id: schwartz.lorentz-contractions-to-kinematics-method
   from: schwartz.lorentz-covariant-index-contractions-and-dalembertian
   to: schwartz.lorentz-invariant-kinematics-method
@@ -20841,6 +22180,34 @@ edges:
     pages:
     - 14
     note: Defines a vector by its Lorentz transformation law.
+- id: schwartz.matching-to-breaking
+  from: schwartz.thooft-anomaly-matching-hypotheses
+  to: schwartz.su3-chiral-breaking-from-anomaly-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The baryon contradiction is matching across confinement.
+  failure_mode: No invariant constraint.
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 639
+- id: schwartz.matching-to-pionterm
+  from: schwartz.thooft-anomaly-matching-hypotheses
+  to: schwartz.pion-wess-zumino-anomaly-matching-term
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Spectators define what pion shift cancels.
+  failure_mode: Coefficient has no target.
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 639
 - id: schwartz.mode-algebra-to-equal-time-commutators
   from: schwartz.momentum-mode-creation-annihilation-algebra
   to: schwartz.equal-time-scalar-field-commutation-relations
@@ -20915,6 +22282,20 @@ edges:
     - 22
     note: The operator normalization on page 21 and the projected matrix-element calculation
       on page 22 are both used.
+- id: schwartz.muon-problem-input
+  from: schwartz.tree-level-electroweak-observable-formulas
+  to: schwartz.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Task verifies displayed width.
+  failure_mode: No target.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
 - id: schwartz.noether-current-conservation-to-photon-polarizations
   from: schwartz.noether-current-and-conserved-charge
   to: schwartz.photon-polarizations-current-conservation-and-causality
@@ -20949,6 +22330,20 @@ edges:
     pages:
     - 35
     note: Derives Tμν by proceeding as in the Noether-current case.
+- id: schwartz.nonabelian-to-smcancel
+  from: schwartz.nonabelian-anomaly-coefficient-and-divergence
+  to: schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Mixed and non-Abelian tests use A(R),d.
+  failure_mode: Cannot evaluate them.
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 633
 - id: schwartz.nonlinear-solution-to-classical-diagrams
   from: schwartz.perturbative-nonlinear-classical-field-solution
   to: schwartz.classical-feynman-diagrams-and-rules
@@ -20966,6 +22361,70 @@ edges:
     pages:
     - 42
     note: Maps the expansion to diagrams and lists diagram rules.
+- id: schwartz.offshell-to-ircheck
+  from: schwartz.off-shell-one-loop-matching-ir-artifact
+  to: schwartz.matching-ir-cancellation-consistency-test
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: It explains IR poles.
+  failure_mode: Puzzles are physicalized.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 663
+- id: schwartz.offshell-to-matching-coefficients
+  from: schwartz.off-shell-one-loop-matching-ir-artifact
+  to: schwartz.two-operator-b-to-cud-matching-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coefficients follow by comparing the off-shell full and effective
+    amplitudes after their IR poles match.
+  failure_mode: The color reduction alone does not perform the full/EFT matching.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+    - 662
+    - 663
+- id: schwartz.operator-mixing-to-bsgamma-running
+  from: schwartz.wilson-coefficients-operator-mixing-and-matching
+  to: schwartz.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Wilson-coefficient matrix evolution supplies the general method for the
+    dipole-basis RGE.
+  failure_mode: Independent scalar running cannot represent operator mixing.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 664
+    - 665
+    - 666
+- id: schwartz.operator-mixing-to-rge
+  from: schwartz.wilson-coefficients-operator-mixing-and-matching
+  to: schwartz.four-fermi-operator-mixing-rge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The RGE derives from renormalization of a coupled Wilson-coefficient/operator
+    sum.
+  failure_mode: Without operator mixing, the matrix RGE has no conceptual or algebraic
+    source.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 664
 - id: schwartz.oscillator-algebra-to-bosonic-enhancement
   from: schwartz.single-mode-oscillator-number-algebra
   to: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
@@ -21016,6 +22475,22 @@ edges:
     pages:
     - 5
     note: Uses jℏω in the Boltzmann-weight sum.
+- id: schwartz.pion-current-to-color-route
+  from: schwartz.chiral-power-counting-and-axial-pion-coupling
+  to: schwartz.pi0-diphoton-color-measurement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark/current-algebra route uses the axial-current pion matrix element
+    and isodoublet interpretation, not the nucleon-width result.
+  failure_mode: Without the current relation, the quark-loop normalization behind
+    the N/3 factor is unavailable.
+  evidence:
+  - source: schwartz
+    section: 30.1.2
+    pages:
+    - 620
 - id: schwartz.planck-spectrum-to-equilibrium-einstein-route
   from: schwartz.planck-thermal-radiation-spectrum
   to: schwartz.two-level-equilibrium-detailed-balance
@@ -21051,6 +22526,784 @@ edges:
     - 20
     note: Introduces one oscillator per wavevector because field modes obey oscillator
       equations.
+- id: schwartz.pole-to-inversion
+  from: schwartz.pole-mass-self-energy-relation
+  to: schwartz.oblique-inversion-and-mw-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Input inversion uses the Z pole relation.
+  failure_mode: Pi_ZZ lacks origin.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 648
+- id: schwartz.problem-30-1-baryon-input
+  from: schwartz.baryon-lepton-anomalies-and-sphaleron-scope
+  to: schwartz.problem-30-1-nonabelian-baryon-anomaly-diagrams
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 30.1 asks to reproduce the W^3 terms of the baryon-current anomaly.
+  failure_mode: Without Eq. (30.88) as the target, the requested contraction is unspecified.
+  evidence:
+  - source: schwartz
+    section: 30.5.1; Problems 30.1-30.4
+    pages:
+    - 635
+    - 640
+- id: schwartz.problem-30-1-nonabelian-input
+  from: schwartz.nonabelian-anomaly-coefficient-and-divergence
+  to: schwartz.problem-30-1-nonabelian-baryon-anomaly-diagrams
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested diagrams reproduce the non-Abelian W^3 baryon anomaly after
+    a divergence contraction.
+  failure_mode: Without the anomaly-divergence target, the diagram calculation lacks
+    its required comparison.
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-30-2-bminusl-input
+  from: schwartz.anomaly-allowed-b-minus-l
+  to: schwartz.problem-30-2-neutrino-mass-bminusl-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task tests B-L and lepton-number anomalies under Dirac/Majorana neutrino
+    choices.
+  failure_mode: Without the field-content qualification of B-L cancellation, those
+    cases cannot be distinguished.
+  evidence:
+  - source: schwartz
+    section: 30.4; Problems 30.1-30.4
+    pages:
+    - 634
+    - 640
+- id: schwartz.problem-30-2-dirac-majorana-input
+  from: schwartz.dirac-majorana-neutrino-masses-and-seesaw
+  to: schwartz.problem-30-2-neutrino-mass-bminusl-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task distinguishes which neutrino mass terms preserve or break lepton
+    number.
+  failure_mode: Dirac and Majorana cases cannot be classified.
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-30-2-majorana-charge-input
+  from: schwartz.majorana-charge-conjugacy-and-u1-neutrality
+  to: schwartz.problem-30-2-neutrino-mass-bminusl-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Majorana masses are incompatible with a conserved continuous lepton charge.
+  failure_mode: The U(1) consequence of a Majorana mass is unavailable.
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: schwartz.problem-30-3-hypercharge-input
+  from: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
+  to: schwartz.problem-30-3-su5-color-anomaly-free-sm
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for anomaly-free assignments under altered color and charge
+    assumptions.
+  failure_mode: Without the anomaly equations and charge-quantization method, the
+    assignments cannot be tested.
+  evidence:
+  - source: schwartz
+    section: 30.4; Problems 30.1-30.4
+    pages:
+    - 633
+    - 634
+    - 640
+- id: schwartz.problem-30-4-anomaly-coefficient-input
+  from: schwartz.nonabelian-anomaly-coefficient-and-divergence
+  to: schwartz.problem-30-4-su4-chiral-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Testing SU(4) matching requires its non-Abelian cubic anomaly coefficients.
+  failure_mode: The matching test has no representation anomaly invariant.
+  evidence:
+  - source: schwartz
+    section: 30.4; Problems 30.1-30.4
+    pages:
+    - 632
+    - 640
+- id: schwartz.problem-30-4-matching-input
+  from: schwartz.thooft-anomaly-matching-hypotheses
+  to: schwartz.problem-30-4-su4-chiral-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks whether anomaly matching decides SU(4)_L×SU(4)_R breaking.
+  failure_mode: Without the matching hypotheses, its applicability cannot be assessed.
+  evidence:
+  - source: schwartz
+    section: 30.6; Problems 30.1-30.4
+    pages:
+    - 638
+    - 640
+- id: schwartz.problem-31-1-decay-input
+  from: schwartz.decay-rate-lips-and-time-dilation
+  to: schwartz.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested width requires squaring the amplitude and integrating Lorentz-invariant
+    phase space.
+  failure_mode: The four-Fermi amplitude cannot be converted into a rate.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-1-four-fermi-input
+  from: schwartz.tree-level-four-fermi-matching
+  to: schwartz.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise starts from the low-energy charged-current four-Fermi interaction.
+  failure_mode: The decay operator and normalization are missing.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2a-decay-input
+  from: schwartz.decay-rate-lips-and-time-dilation
+  to: schwartz.problem-31-2a-zwidth-tree
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supplied tree amplitude is evaluated as a two-body decay width.
+  failure_mode: The electroweak coupling cannot be converted into Gamma.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2a-inputs
+  from: schwartz.tree-level-electroweak-observable-formulas
+  to: schwartz.problem-31-2a-zwidth-tree
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) evaluates the supplied tree Z-width expression using electroweak
+    parameters.
+  failure_mode: Without tree-level electroweak relations, the numerical prediction
+    cannot be evaluated consistently.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2b-decay-input
+  from: schwartz.decay-rate-lips-and-time-dilation
+  to: schwartz.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop MS couplings and propagator corrections must be inserted
+    into a decay-rate calculation.
+  failure_mode: No route converts the corrected amplitude into a width.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-2b-inputs
+  from: schwartz.oblique-corrections-strategy-and-scope
+  to: schwartz.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) requests the width in MS Lagrangian parameters, the source’s
+    stated oblique-analysis representation.
+  failure_mode: Without the MS-observable strategy, the requested parameterization
+    has no derivation route.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 644
+    - 666
+- id: schwartz.problem-31-2b-pole-input
+  from: schwartz.pole-mass-self-energy-relation
+  to: schwartz.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The physical Z width is defined at the corrected unstable-particle pole.
+  failure_mode: The MS mass is not related to the pole observable.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 645
+    - 666
+- id: schwartz.problem-31-2b-zmix-input
+  from: schwartz.zgamma-mixing-effective-angle-and-ae
+  to: schwartz.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Z-photon mixing changes the effective chiral electron couplings entering
+    the width.
+  failure_mode: The one-loop electron coupling is incomplete.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 647
+    - 666
+- id: schwartz.problem-31-2c-charge-input
+  from: schwartz.effective-charge-vacuum-polarization-matching
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon polarization converts the measured effective charge to the
+    MS charge.
+  failure_mode: The width retains an unmatched charge parameter.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 646
+    - 666
+- id: schwartz.problem-31-2c-fermi-input
+  from: schwartz.muon-decay-fermi-constant-oblique-matching
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W polarization converts measured G_F into the MS electroweak parameters.
+  failure_mode: The polarization expression omits one fiducial input relation.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 646
+    - 666
+- id: schwartz.problem-31-2c-integrals
+  from: schwartz.chiral-fermion-vacuum-polarization-integrals
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) explicitly requires a vacuum-polarization-graph expression.
+  failure_mode: Without the polarization integrals, the graph-level derivation cannot
+    be carried out.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 649
+    - 650
+    - 666
+- id: schwartz.problem-31-2c-inversion
+  from: schwartz.oblique-inversion-and-mw-prediction
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Observable expressions are obtained by inverting the input relations
+    and inserting self energies.
+  failure_mode: Without inversion, polarization functions are not related to measured
+    inputs.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 648
+    - 666
+- id: schwartz.problem-31-2c-pole-input
+  from: schwartz.pole-mass-self-energy-relation
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Writing the width through polarizations requires the pole/self-energy
+    relation.
+  failure_mode: The Z self energy has no connection to the physical pole.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 645
+    - 666
+- id: schwartz.problem-31-2c-topbottom-input
+  from: schwartz.top-bottom-oblique-self-energies
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter's explicit electroweak loop contribution is the charge-weighted
+    top-bottom self energy.
+  failure_mode: Generic loop integrals alone do not supply the electroweak charge
+    combinations.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 650
+    - 666
+- id: schwartz.problem-31-2c-zmix-input
+  from: schwartz.zgamma-mixing-effective-angle-and-ae
+  to: schwartz.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Z-gamma polarization supplies the one-loop electron-coupling shift.
+  failure_mode: The polarization expression omits mixing in the chiral Z coupling.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 647
+    - 666
+- id: schwartz.problem-31-2d-inputs
+  from: schwartz.precision-electroweak-input-observables
+  to: schwartz.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) asks for a numerical one-loop comparison with the supplied experimental
+    width.
+  failure_mode: Without measured inputs, a numerical prediction and comparison cannot
+    be formed.
+  evidence:
+  - source: schwartz
+    section: 31.1; Problems 31.1-31.4
+    pages:
+    - 642
+    - 666
+- id: schwartz.problem-31-2d-inversion-input
+  from: schwartz.oblique-inversion-and-mw-prediction
+  to: schwartz.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical result must first express MS parameters in measured hatted
+    inputs.
+  failure_mode: The polarization values cannot be turned into a physical prediction.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 648
+    - 666
+- id: schwartz.problem-31-2d-topbottom-input
+  from: schwartz.top-bottom-oblique-self-energies
+  to: schwartz.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical one-loop width uses the explicit top-bottom electroweak
+    polarizations.
+  failure_mode: Generic integrals have no Standard-Model charges or color multiplicity.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 650
+    - 666
+- id: schwartz.problem-31-2d-topmass-input
+  from: schwartz.top-ms-mass-and-one-loop-precision-prediction
+  to: schwartz.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical loop calculation uses the stated MS top mass and historical
+    electroweak inputs.
+  failure_mode: The dominant loop mass and scheme are unspecified.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 652
+    - 666
+- id: schwartz.problem-31-2d-vacpol
+  from: schwartz.chiral-fermion-vacuum-polarization-integrals
+  to: schwartz.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical one-loop width needs the vacuum-polarization contributions
+    requested independently in part (c).
+  failure_mode: Without those loop functions, the one-loop numerical evaluation is
+    unavailable.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 649
+    - 650
+    - 666
+- id: schwartz.problem-31-2d-zmix-input
+  from: schwartz.zgamma-mixing-effective-angle-and-ae
+  to: schwartz.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical chiral electron coupling includes Z-photon mixing.
+  failure_mode: The one-loop electron coupling is incomplete.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 647
+    - 666
+- id: schwartz.problem-31-3-higgs-doublet-input
+  from: schwartz.standard-model-higgs-doublet-and-covariant-derivative
+  to: schwartz.problem-31-3-higgs-vacuum-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Higgs polarization graphs follow from the covariant-derivative gauge
+    vertices.
+  failure_mode: The scalar's electroweak charges and vertices are absent.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 653
+    - 666
+- id: schwartz.problem-31-3-hvv-input
+  from: schwartz.higgs-mass-and-hvv-couplings
+  to: schwartz.problem-31-3-higgs-vacuum-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exact Higgs loops require its mass and couplings to W and Z.
+  failure_mode: The loop numerators and mass dependence cannot be constructed.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 653
+    - 666
+- id: schwartz.problem-31-3-inputs
+  from: schwartz.leading-top-and-higgs-oblique-dependence
+  to: schwartz.problem-31-3-higgs-vacuum-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for exact Higgs polarizations and verification of the stated
+    leading Higgs behavior.
+  failure_mode: Without the target leading behavior, the requested verification has
+    no criterion.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 653
+    - 666
+- id: schwartz.problem-31-4a-ckm-input
+  from: schwartz.ckm-charged-current-mixing-matrix
+  to: schwartz.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The flavor-changing W loop is weighted by charged-current CKM factors.
+  failure_mode: The b-to-s flavor transition has no Standard-Model coupling.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4a-decay-input
+  from: schwartz.decay-rate-lips-and-time-dilation
+  to: schwartz.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The computed b-to-s gamma amplitude must be converted to a decay rate.
+  failure_mode: The loop amplitude is not connected to the requested rate.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4a-electroweak-input
+  from: schwartz.electroweak-gauge-mass-relations-and-self-interactions
+  to: schwartz.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The full-theory loop requires the photon-W interaction and the W mass
+    and coupling.
+  failure_mode: The W-loop amplitude cannot be drawn or normalized.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4a-loop-input
+  from: schwartz.qed-fermion-line-and-loop-evaluation
+  to: schwartz.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The loop includes charged fermion propagation, photon vertices, traces,
+    and momentum integration.
+  failure_mode: The fermionic part of the full one-loop amplitude cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: schwartz.problem-31-4b-locality
+  from: schwartz.weak-effective-lagrangian-locality-and-power-suppression
+  to: schwartz.problem-31-4b-bsgamma-match
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for a tree-level local effective theory reproducing b→s
+    gamma.
+  failure_mode: Without locality and power suppression, the matching target is undefined.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 658
+    - 659
+    - 666
+- id: schwartz.problem-31-4c-mixing
+  from: schwartz.wilson-coefficients-operator-mixing-and-matching
+  to: schwartz.problem-31-4c-bsgamma-qcd
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: QCD corrections in an EFT renormalize and can mix the local operators.
+  failure_mode: Without operator mixing, the requested effective-theory correction
+    is incomplete.
+  evidence:
+  - source: schwartz
+    section: 31.3.2; Problems 31.1-31.4
+    pages:
+    - 663
+    - 666
+- id: schwartz.problem-31-4c-renorm
+  from: schwartz.qcd-renormalization-constants-and-ms-uv-trick
+  to: schwartz.problem-31-4c-bsgamma-qcd
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) requests order-alpha_s effective-theory corrections, which require
+    UV renormalization.
+  failure_mode: Without renormalization constants and the MS pole prescription, the
+    correction is not defined.
+  evidence:
+  - source: schwartz
+    section: 31.3.2; Problems 31.1-31.4
+    pages:
+    - 662
+    - 663
+    - 666
+- id: schwartz.problem-31-4d-rg
+  from: schwartz.rg-large-log-resummation
+  to: schwartz.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) explicitly evolves the operator from m_W to m_b and asks for
+    the QCD radiative effect.
+  failure_mode: Without RG running, that evolution cannot be performed.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 664
+    - 665
+    - 666
+- id: schwartz.pseudoscalar-width-to-pion-width
+  from: schwartz.pseudoscalar-diphoton-width
+  to: schwartz.pion-nucleon-chiral-coupling-and-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion result inserts the chiral pion-nucleon coupling into the generic
+    heavy-loop width.
+  failure_mode: The F_pi-dependent width cannot follow from the chiral coupling alone.
+  evidence:
+  - source: schwartz
+    section: 30.1.1-30.1.2
+    pages:
+    - 619
+- id: schwartz.qcd-renorm-to-bsgamma-running
+  from: schwartz.qcd-renormalization-constants-and-ms-uv-trick
+  to: schwartz.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dipole anomalous dimension is extracted from its MS ultraviolet counterterms.
+  failure_mode: No anomalous dimension can be obtained from the loop poles.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 664
+    - 666
+- id: schwartz.regulator-to-fujikawa
+  from: schwartz.gauge-invariant-fujikawa-regulator
+  to: schwartz.fujikawa-measure-jacobian-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The measure calculation requires a gauge-invariant regulator to define
+    the singular axial Jacobian.
+  failure_mode: Without the regulator, the Jacobian trace is undefined.
+  evidence:
+  - source: schwartz
+    section: '30.3'
+    pages:
+    - 629
+    - 630
+- id: schwartz.rge-to-eigen
+  from: schwartz.four-fermi-operator-mixing-rge
+  to: schwartz.four-fermi-eigenoperators-and-leading-log-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Diagonalize gamma.
+  failure_mode: Exponents unobtainable.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+- id: schwartz.routing-anomaly-alternative
+  from: schwartz.routing-choice-preserves-vector-ward-identity
+  to: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The massless triangle routing that preserves both vector Ward identities
+    locates the same anomaly in the axial current.
+  failure_mode: Treating the routing result as obligatory would make the Fujikawa
+    route falsely dependent on a different derivation.
+  evidence:
+  - source: schwartz
+    section: 30.2.3-30.2.4
+    pages:
+    - 626
+- id: schwartz.routing-to-weyl
+  from: schwartz.routing-choice-preserves-vector-ward-identity
+  to: schwartz.single-weyl-qed-gauge-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Weyl inconsistency uses unavoidable nonconservation.
+  failure_mode: No source of failed Ward identity.
+  evidence:
+  - source: schwartz
+    section: 30.2.4
+    pages:
+    - 627
+- id: schwartz.shift-to-routing
+  from: schwartz.linearly-divergent-shift-surface-term
+  to: schwartz.routing-choice-preserves-vector-ward-identity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Routing dependence is the finite shift term.
+  failure_mode: Shifts would incorrectly vanish.
+  evidence:
+  - source: schwartz
+    section: 30.2.3
+    pages:
+    - 626
+- id: schwartz.smcancel-to-bminusl
+  from: schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
+  to: schwartz.anomaly-allowed-b-minus-l
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: B-L is tested by the same constraints.
+  failure_mode: Gauging claim unsupported.
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 634
+- id: schwartz.smcancel-to-charge
+  from: schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
+  to: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The families solve these constraints.
+  failure_mode: Quantization is unforced.
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 634
 - id: schwartz.sourced-maxwell-to-coulomb-potential
   from: schwartz.sourced-maxwell-equations-from-action
   to: schwartz.coulomb-potential-from-field-propagation
@@ -21068,6 +23321,212 @@ edges:
     pages:
     - 38
     note: Specializes the source equations to A0 for a point charge.
+- id: schwartz.strongcp-to-u1
+  from: schwartz.strong-cp-anomalous-rotation-relation
+  to: schwartz.u1-problem-axial-u1-not-a-symmetry
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Both use the anomalous U(1)_A.
+  failure_mode: Shared origin hidden.
+  evidence:
+  - source: schwartz
+    section: 30.5.2
+    pages:
+    - 637
+- id: schwartz.stu-to-doublet
+  from: schwartz.peskin-takeuchi-stu-definitions-and-reference
+  to: schwartz.new-fermion-doublet-stu-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Expressions are S,T observables.
+  failure_mode: Constraint meaning absent.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
+- id: schwartz.stu-to-smeft
+  from: schwartz.peskin-takeuchi-stu-definitions-and-reference
+  to: schwartz.smeft-oblique-operator-shortcut
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Wilson coefficients map to S,T.
+  failure_mode: No target observables.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
+- id: schwartz.stu-to-technicolor
+  from: schwartz.peskin-takeuchi-stu-definitions-and-reference
+  to: schwartz.technicolor-s-parameter-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The technicolor assessment is stated as an S,T precision constraint.
+  failure_mode: Without the S,T definitions and reference convention, the quoted S
+    value cannot be interpreted.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
+    - 657
+- id: schwartz.topbottom-to-ckm
+  from: schwartz.top-bottom-oblique-self-energies
+  to: schwartz.ckm-unitarity-cancels-oblique-divergences
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Finiteness analyzes their divergent pieces.
+  failure_mode: No loops to cancel.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 651
+- id: schwartz.topbottom-to-deltarho
+  from: schwartz.top-bottom-oblique-self-energies
+  to: schwartz.delta-rho-doublet-mass-splitting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Delta rho is obtained from the zero-momentum W and Z self energies of
+    a split doublet.
+  failure_mode: The doublet formula lacks the self energies from which it is derived.
+  evidence:
+  - source: schwartz
+    section: 31.1.2-31.2
+    pages:
+    - 650
+    - 655
+- id: schwartz.topbottom-to-top-prediction
+  from: schwartz.top-bottom-oblique-self-energies
+  to: schwartz.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical prediction substitutes the top-bottom polarization functions.
+  failure_mode: The one-loop shifts lack their polarization amplitudes.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 650
+    - 652
+- id: schwartz.tree-to-offshell
+  from: schwartz.tree-level-b-to-cud-four-fermi-matching
+  to: schwartz.off-shell-one-loop-matching-ir-artifact
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: One-loop compares this amplitude.
+  failure_mode: Theories unspecified.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+- id: schwartz.tree-to-tension
+  from: schwartz.tree-level-electroweak-observable-formulas
+  to: schwartz.fiducial-input-scheme-and-tree-level-tension
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Predictions insert inputs into tree formulas.
+  failure_mode: Numbers cannot be reproduced.
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 644
+- id: schwartz.triangle-to-background-anomaly
+  from: schwartz.massive-pseudoscalar-triangle-amplitude
+  to: schwartz.background-field-axial-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The background-field matrix element is read from the massive pseudoscalar
+    triangle.
+  failure_mode: The composite pseudoscalar expectation value has no calculated coefficient.
+  evidence:
+  - source: schwartz
+    section: 30.1.1-30.1.3
+    pages:
+    - 618
+    - 621
+- id: schwartz.triangle-to-pion-color
+  from: schwartz.massive-pseudoscalar-triangle-amplitude
+  to: schwartz.pi0-diphoton-color-measurement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark route applies the same fermion triangle with charge, isospin,
+    and color factors.
+  failure_mode: The axial-current normalization alone does not produce the two-photon
+    loop amplitude.
+  evidence:
+  - source: schwartz
+    section: 30.1.1-30.1.2
+    pages:
+    - 618
+    - 620
+- id: schwartz.triangle-to-width
+  from: schwartz.massive-pseudoscalar-triangle-amplitude
+  to: schwartz.pseudoscalar-diphoton-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The width squares the heavy-loop amplitude.
+  failure_mode: No amplitude normalization remains.
+  evidence:
+  - source: schwartz
+    section: 30.1.1
+    pages:
+    - 619
+- id: schwartz.u1-to-smcancel
+  from: schwartz.standard-model-u1-cubed-anomaly-condition
+  to: schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: It supplies the Abelian check.
+  failure_mode: The cancellation inventory is incomplete.
+  evidence:
+  - source: schwartz
+    section: '30.4'
+    pages:
+    - 633
+- id: schwartz.u1-to-wv
+  from: schwartz.u1-problem-axial-u1-not-a-symmetry
+  to: schwartz.witten-veneziano-topological-susceptibility
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The relation quantifies the heavy eta-prime explanation.
+  failure_mode: chi_t lacks role.
+  evidence:
+  - source: schwartz
+    section: 30.5.2
+    pages:
+    - 638
 - id: schwartz.ultraviolet-catastrophe-to-photon-quantization
   from: schwartz.ultraviolet-catastrophe
   to: schwartz.quantized-massless-photon-modes
@@ -21085,6 +23544,70 @@ edges:
     pages:
     - 4
     note: Links incompatibility to Planck's postulate.
+- id: schwartz.vacpol-to-topbottom
+  from: schwartz.chiral-fermion-vacuum-polarization-integrals
+  to: schwartz.top-bottom-oblique-self-energies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Self energies are charged instances.
+  failure_mode: Cannot construct Pi_ij.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 650
+- id: schwartz.weak-basis-to-bsgamma-match
+  from: schwartz.weak-effective-hamiltonian-standard-basis
+  to: schwartz.problem-31-4b-bsgamma-match
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tree-level EFT matrix element uses the local O7gamma dipole that
+    represents the short-distance loop.
+  failure_mode: Four-Fermi contact matching cannot supply the loop-generated dipole
+    coefficient.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 665
+    - 666
+- id: schwartz.weak-basis-to-bsgamma-qcd
+  from: schwartz.weak-effective-hamiltonian-standard-basis
+  to: schwartz.problem-31-4c-bsgamma-qcd
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The order-alpha_s calculation renormalizes and mixes the standard weak
+    operator basis containing O7gamma.
+  failure_mode: A two-current basis omits the dipole and its mixing partners.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 665
+    - 666
+- id: schwartz.weak-basis-to-bsgamma-running
+  from: schwartz.weak-effective-hamiltonian-standard-basis
+  to: schwartz.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested evolution acts on the weak operator basis containing the
+    radiative dipole.
+  failure_mode: The b-to-c two-operator anomalous dimension is not the b-to-s gamma
+    evolution system.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 665
+    - 666
 groups:
 - id: schwartz.classical-field-theory
   title: Classical field theory
@@ -21202,6 +23725,17 @@ groups:
   question: How do non-Abelian gauge structure, quantization, and lattice variables
     arise?
 motivations:
+- id: schwartz.anomaly-consistency-motivation
+  nodes:
+  - schwartz.quantum-anomaly-gauge-versus-global-consistency
+  - schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
+  summary: Gauge anomalies threaten Ward identities and unitarity, making cancellation
+    a consistency condition for chiral gauge theories.
+  evidence:
+  - source: schwartz
+    section: 30 introduction
+    pages:
+    - 616
 - id: schwartz.blackbody-observation-motivation
   nodes:
   - schwartz.blackbody-cavity-modes-and-classical-spectrum
@@ -21411,6 +23945,21 @@ motivations:
     - 252
     note: The introduction poses the classical-fields, noncommutativity, time-ordering,
       and particle questions.
+- id: schwartz.precision-loop-motivation
+  nodes:
+  - schwartz.fiducial-input-scheme-and-tree-level-tension
+  - schwartz.vcb-hadronic-extraction-and-large-log-problem
+  summary: Precision tests need loop effects because tree electroweak fits miss data
+    and QCD logarithms distort low-energy CKM extraction.
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 644
+  - source: schwartz
+    section: '31.3'
+    pages:
+    - 658
 - id: schwartz.spin-statistics-motivation
   nodes:
   - schwartz.spin-statistics-theorem
