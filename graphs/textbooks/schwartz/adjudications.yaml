@@ -1044,3 +1044,347 @@ units:
       id: schwartz.e-partial-wave-bound-to-longitudinal-w
     - kind: edges
       id: schwartz.e-longitudinal-vector-growth-to-w-unitarity
+- id: full-009
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The draft omitted the gg MHV channel derivation and double-line/large-N
+      branch to meet 100 nodes.
+    alternatives:
+    - Defer the unit because restoring both branches as separate nodes would exceed
+      the hard limit.
+    - Restore MHV as a node; integrate double-line color flow with the trace method
+      and merge the R_had calculation with its own factorization qualification.
+    resolution: Restore MHV; integrate double-line flow with color traces and merge
+      the directly attached R_had qualification, retaining 100 nodes.
+    rationale: The direct MHV channel computation is an independently useful multi-page
+      derivation and remains a separate method. Double-line notation is the graphical
+      continuation of the same color-trace/Fierz method on page 544, so integrating
+      it preserves the full branch and its exact large-N qualification. The page 515
+      factorization paragraph directly qualifies the page 514 inclusive R_had calculation;
+      combining those two records removes only artificial fragmentation.
+    evidence:
+    - source: schwartz
+      section: 26.3.1
+      pages:
+      - 514
+      - 515
+    - source: schwartz
+      section: 27.2.1
+      pages:
+      - 544
+    - source: schwartz
+      section: '27.3'
+      pages:
+      - 545
+      - 546
+      - 547
+    affected_records:
+    - kind: nodes
+      id: schwartz.tree-level-rhad-color-and-flavor-count
+    - kind: nodes
+      id: schwartz.inclusive-hadronization-factorization-qualification
+    - kind: nodes
+      id: schwartz.color-trace-reduction-and-photon-decoupling
+    - kind: nodes
+      id: schwartz.gg-to-gg-mhv-channel-derivation
+    - kind: edges
+      id: schwartz.e-polarizations-to-gg-mhv
+    - kind: edges
+      id: schwartz.e-gluon-vertices-to-gg-mhv
+    - kind: edges
+      id: schwartz.e-gg-mhv-to-crosssection
+  - finding: 1
+    issue: The 29 split additions were isolated and did not encode their jointly required
+      inputs.
+    alternatives:
+    - Leave independent records isolated and rely on chapter order.
+    - Add only source-explicit prerequisites and helpful non-ordering relations at
+      minimum mastery, keeping independent evidence routes optional.
+    resolution: Connect all split units to explicit operands, including loop summands,
+      lattice steps, anomaly rules, proof tasks, and Problems 27.1-27.6.
+    rationale: 'Each necessary edge now names an operand actually used by the source:
+      all three loop pieces feed the combined polarization; plaquettes feed the action
+      and the action feeds its two lattice uses; exercises depend on definitions,
+      rules, or imported amplitudes rather than on their answers. The simple-group
+      motivation, theorem companion, and Regge evidence use helpful non-prerequisite
+      relations so they cannot impose chapter order or collapse independent routes.'
+    evidence:
+    - source: schwartz
+      section: 25.1-25.5 and Problems
+      pages:
+      - 483
+      - 485
+      - 488
+      - 505
+      - 506
+      - 507
+    - source: schwartz
+      section: 26.4-26.7 and Problems
+      pages:
+      - 518
+      - 519
+      - 520
+      - 521
+      - 533
+    - source: schwartz
+      section: 27.1-27.4 and Problems
+      pages:
+      - 539
+      - 540
+      - 543
+      - 544
+      - 549
+      - 550
+      - 551
+      - 559
+      - 560
+    affected_records:
+    - kind: edges
+      id: schwartz.e-gluon-bubble-to-complete-vacpol
+    - kind: edges
+      id: schwartz.e-seagull-to-complete-vacpol
+    - kind: edges
+      id: schwartz.e-ghost-bubble-to-complete-vacpol
+    - kind: edges
+      id: schwartz.e-plaquette-to-lattice-action
+    - kind: edges
+      id: schwartz.e-lattice-action-to-correlator
+    - kind: edges
+      id: schwartz.e-lattice-action-to-area-law
+    - kind: edges
+      id: schwartz.e-symmetric-invariant-to-anomaly-definition
+    - kind: edges
+      id: schwartz.e-anomaly-definition-to-conjugate-task
+    - kind: edges
+      id: schwartz.e-anomaly-definition-to-direct-sum-task
+    - kind: edges
+      id: schwartz.e-anomaly-definition-to-product-task
+    - kind: edges
+      id: schwartz.e-anomaly-definition-to-su4-task
+    - kind: edges
+      id: schwartz.e-normalization-to-generator-product-task
+    - kind: edges
+      id: schwartz.e-lie-bracket-to-generator-product-task
+    - kind: edges
+      id: schwartz.e-lie-algebra-to-ym-invariance-task
+    - kind: edges
+      id: schwartz.e-curvature-to-current-conservation-task
+    - kind: edges
+      id: schwartz.e-lie-generators-to-semisimplicity-task
+    - kind: edges
+      id: schwartz.e-simple-definitions-to-lorentz-task
+    - kind: edges
+      id: schwartz.e-lorentz-generators-to-lorentz-task
+    - kind: edges
+      id: schwartz.e-simple-definitions-to-un-task
+    - kind: edges
+      id: schwartz.e-simple-definitions-to-heisenberg-task
+    - kind: edges
+      id: schwartz.e-qcd-rules-to-ghost-counterterm-task
+    - kind: edges
+      id: schwartz.e-renormalization-to-remaining-counterterms-task
+    - kind: edges
+      id: schwartz.e-qcd-rules-to-remaining-counterterms-task
+    - kind: edges
+      id: schwartz.e-polarizations-to-reference-choice-task
+    - kind: edges
+      id: schwartz.e-parke-to-crosssection-task
+    - kind: edges
+      id: schwartz.e-color-traces-to-crosssection-task
+    - kind: edges
+      id: schwartz.e-color-traces-to-color-order-proof-task
+    - kind: edges
+      id: schwartz.e-qed-compton-amplitude-to-helicity-task
+    - kind: edges
+      id: schwartz.e-helicity-spinors-to-compton-task
+    - kind: edges
+      id: schwartz.e-qcd-rules-to-remaining-2to2-task
+    - kind: edges
+      id: schwartz.e-spinor-polarizations-to-remaining-2to2-task
+    - kind: edges
+      id: schwartz.e-color-traces-to-remaining-2to2-task
+    - kind: edges
+      id: schwartz.e-parke-to-five-gluon-task
+    - kind: edges
+      id: schwartz.e-color-ordering-to-five-gluon-task
+    - kind: edges
+      id: schwartz.e-simple-restriction-to-sun-definition
+    - kind: edges
+      id: schwartz.e-simple-definitions-to-group-classification
+    - kind: edges
+      id: schwartz.e-spin-one-to-spin-two-obstruction
+    - kind: edges
+      id: schwartz.e-regge-evidence-to-area-law
+  - finding: 2
+    issue: Two accepted-input edges pointed to structural or unintegrated records
+      rather than the imported calculations.
+    alternatives:
+    - Add intermediate phase-space and form-factor derivation routes before the two
+      QCD targets.
+    - Point directly to the accepted integrated muon cross section and dimensional
+      one-loop vertex pole result at use mastery.
+    resolution: Use the accepted integrated muon cross section for R_had and the dimensional
+      one-loop vertex pole result for the QCD vertex counterterm.
+    rationale: Equation 26.21 is the integrated reference cross section multiplied
+      in the R_had calculation. The quark-gluon vertex calculation explicitly imports
+      the one-loop QED vertex integral, while the former F1/F2 decomposition record
+      supplied only its allowed tensor structure. Both corrected edges require use
+      mastery, the minimum needed to substitute the accepted result.
+    evidence:
+    - source: schwartz
+      section: 26.3.1
+      pages:
+      - 514
+    - source: schwartz
+      section: 26.5.2
+      pages:
+      - 523
+      - 524
+      - 525
+    affected_records:
+    - kind: edges
+      id: schwartz.e-ee-rate-to-rhad
+    - kind: edges
+      id: schwartz.e-qed-vertex-to-quark-vertex-counterterm
+  - finding: 3
+    issue: Private witnesses and public page ranges did not cover complete formulas,
+      qualifications, task statements, and edge rationales.
+    alternatives:
+    - Retain the short phrase witnesses and defer unsupported clauses.
+    - Replace them with overlapping exact source spans and expand public evidence
+      ranges for every multi-page record.
+    resolution: Replace short checks with overlapping operative source spans and expand
+      public evidence ranges for every affected multi-page record.
+    rationale: The revised private witnesses pair complete-page source text with overlapping
+      48-line operative spans, including equation operands, continuations, caveats,
+      and every exercise statement rather than relying on headings or isolated phrases.
+      Public evidence now lists all pages needed by multi-page summaries, including
+      the QCD rules and loops, lattice construction, spinor identities, MHV formulas,
+      factorization, and BCFW derivations.
+    evidence:
+    - source: schwartz
+      section: '25'
+      pages:
+      - 482
+      - 484
+      - 488
+      - 495
+      - 505
+      - 507
+    - source: schwartz
+      section: '26'
+      pages:
+      - 509
+      - 511
+      - 518
+      - 519
+      - 520
+      - 521
+      - 525
+      - 533
+    - source: schwartz
+      section: '27'
+      pages:
+      - 539
+      - 540
+      - 545
+      - 546
+      - 547
+      - 551
+      - 555
+      - 559
+      - 560
+    affected_records:
+    - kind: nodes
+      id: schwartz.simple-and-semisimple-lie-algebras
+    - kind: nodes
+      id: schwartz.casimir-index-and-sun-color-factors
+    - kind: nodes
+      id: schwartz.sun-fierz-and-trace-reduction
+    - kind: nodes
+      id: schwartz.nonabelian-path-ordered-wilson-line
+    - kind: nodes
+      id: schwartz.nonabelian-connection-and-curvature
+    - kind: nodes
+      id: schwartz.faddeev-popov-gauge-orbit-determinant
+    - kind: nodes
+      id: schwartz.lattice-plaquette-continuum-field-strength
+    - kind: nodes
+      id: schwartz.qcd-feynman-rules-with-color-and-ghosts
+    - kind: nodes
+      id: schwartz.qcd-color-channel-potentials
+    - kind: nodes
+      id: schwartz.rhad-nlo-real-virtual-ir-cancellation
+    - kind: nodes
+      id: schwartz.fermion-vacuum-polarization-color-factor
+    - kind: nodes
+      id: schwartz.qcd-renormalization-constants-and-ms-uv-trick
+    - kind: nodes
+      id: schwartz.qcd-one-loop-two-point-counterterms
+    - kind: nodes
+      id: schwartz.qcd-one-loop-quark-gluon-vertex-counterterm
+    - kind: nodes
+      id: schwartz.qcd-beta-function-from-bare-charge
+    - kind: nodes
+      id: schwartz.classical-qcd-current-potential-failure
+    - kind: nodes
+      id: schwartz.spinor-helicity-physical-onshell-amplitude-route
+    - kind: nodes
+      id: schwartz.massless-momentum-spinor-factorization
+    - kind: nodes
+      id: schwartz.spinor-products-momentum-conservation-and-schouten
+    - kind: nodes
+      id: schwartz.helicity-spinor-qed-annihilation-check
+    - kind: nodes
+      id: schwartz.tree-gluon-helicity-vanishing-selection-rules
+    - kind: nodes
+      id: schwartz.gg-to-gg-color-summed-cross-section
+    - kind: nodes
+      id: schwartz.color-ordered-partial-amplitudes
+    - kind: nodes
+      id: schwartz.parke-taylor-mhv-formula
+    - kind: nodes
+      id: schwartz.complex-three-point-kinematics
+    - kind: nodes
+      id: schwartz.four-point-factorization-implies-jacobi
+    - kind: nodes
+      id: schwartz.bcfw-mhv-example-and-parke-taylor-recursion
+    - kind: nodes
+      id: schwartz.amplitude-outlook-gravity-square-and-open-formulation
+  - finding: 4
+    issue: Three Section 26.4 loop units and the Section 26.7 Regge branch were assigned
+      to Yang-Mills foundations.
+    alternatives:
+    - Keep the inherited foundation group because the calculations use Yang-Mills
+      fields.
+    - Move the three QCD loop calculations and QCD confinement evidence to the quantum
+      Yang-Mills group.
+    resolution: Move the three QCD loop calculations and the Regge/flux-tube confinement
+      branch to quantum Yang-Mills.
+    rationale: The loop records are the separate calculations in Section 26.4 that
+      build the one-loop QCD vacuum polarization. The Regge and flux-tube paragraph
+      is part of Section 26.7's QCD confinement discussion. Their group now matches
+      their source role and the surrounding target records.
+    evidence:
+    - source: schwartz
+      section: 26.4.2-26.4.5
+      pages:
+      - 518
+      - 519
+      - 520
+      - 521
+    - source: schwartz
+      section: 26.7.2
+      pages:
+      - 533
+    affected_records:
+    - kind: nodes
+      id: schwartz.gluon-bubble-dimensional-regularization-derivation
+    - kind: nodes
+      id: schwartz.four-gluon-seagull-scaleless-integral-and-d2-cancellation
+    - kind: nodes
+      id: schwartz.ghost-bubble-sign-and-integral
+    - kind: nodes
+      id: schwartz.regge-behavior-and-flux-tube-evidence
