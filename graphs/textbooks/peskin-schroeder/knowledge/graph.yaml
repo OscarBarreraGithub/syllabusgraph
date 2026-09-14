@@ -14,6 +14,24 @@ nodes:
     - 29
     note: The source connects complex-field charged excitations to the two cancelling
       propagation terms and draws the equal-mass antiparticle conclusion.
+- id: peskin-schroeder.canonical-dirac-momentum-and-hamiltonian
+  label: Canonical Dirac momentum and Hamiltonian
+  summary: For L=ψ̄(iγ·∂−m)ψ, the canonical momentum conjugate to ψ is π_ψ=iψ†. The
+    Hamiltonian H=∫d^3x ψ†[−iα·∇+mβ]ψ uses α=γ^0γ and β=γ^0, matching the one-particle
+    Dirac Hamiltonian; this classical/canonical construction precedes and is retained
+    through the failed commutator route.
+  kind: method
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    note: Equations (3.83)–(3.85) derive the conjugate momentum and Hamiltonian before
+      the attempted commutator quantization.
+  notation:
+  - source: peskin-schroeder
+    note: The source uses α=γ^0γ and β=γ^0 in its Weyl gamma-matrix convention.
 - id: peskin-schroeder.canonical-field-momentum-hamiltonian
   label: Canonical momentum and Hamiltonian for a field
   summary: The conjugate momentum density is pi(x) = partial L / partial phidot(x),
@@ -52,6 +70,40 @@ nodes:
     - 20
     note: The text first states promotion of phi and pi, then gives the continuous-system
       equal-time commutation relations.
+- id: peskin-schroeder.charge-conjugation-bilinears-and-cpt
+  label: Charge conjugation, bilinear signs, and CPT
+  summary: Linear unitary charge conjugation exchanges same-spin fermion and antifermion
+    annihilators and maps ψ to −iγ^2ψ*. Accounting for fermion anticommutation gives
+    the C signs of bilinears. The free Dirac Lagrangian is separately C, P, and T
+    invariant. The source then gives an informal CPT-theorem statement; the standard
+    general theorem also requires assumptions such as local/microcausal relativistic
+    quantum fields and the usual spectrum/unitarity conditions, which this chapter
+    does not establish.
+  kind: result
+  group: peskin-schroeder.dirac-discrete-symmetries
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6, Charge Conjugation and Summary of C, P, and T
+    pages:
+    - 70
+    - 71
+    note: The source derives charge conjugation, tabulates bilinears, and states—but
+      does not prove—the CPT conclusion.
+- id: peskin-schroeder.chiral-u1-symmetry-and-handed-currents
+  label: Chiral U(1) symmetry and handed currents
+  summary: The ordinary phase transformation is a symmetry of the full free Dirac
+    Lagrangian, whereas ψ→e^{iαγ^5}ψ preserves only its derivative term when m≠0.
+    At m=0, the combinations (j^μ±j_5^μ)/2 are separately conserved left- and right-handed
+    currents.
+  kind: concept
+  group: peskin-schroeder.dirac-bilinears-and-currents
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 51
+    note: The text relates the two currents to Noether transformations and states
+      the mass qualification.
 - id: peskin-schroeder.classical-source-on-shell-particle-creation
   label: Particle creation by a finite-time classical source
   summary: For (partial-squared+m-squared)phi=j(x) with a source active for a finite
@@ -141,6 +193,248 @@ nodes:
   notation:
   - source: peskin-schroeder
     note: The source chooses the current's overall normalization arbitrarily.
+- id: peskin-schroeder.dirac-adjoint-and-free-lagrangian
+  label: Dirac adjoint and free Dirac Lagrangian
+  summary: Because boosts are not unitary in the spinor representation, ψ†ψ is not
+    a Lorentz scalar. Defining ψ̄=ψ†γ^0 gives scalar ψ̄ψ and vector ψ̄γ^μψ, and L=ψ̄(iγ·∂−m)ψ
+    yields the Dirac equation plus its adjoint equation by independent variations.
+  kind: method
+  group: peskin-schroeder.dirac-lorentz-and-spinors
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    note: Equations (3.32)–(3.35) define the adjoint, scalar, Lagrangian, and conjugate
+      equation.
+- id: peskin-schroeder.dirac-bilinear-lorentz-basis
+  label: Lorentz classification of Dirac bilinears
+  summary: The sixteen Dirac matrices decompose into scalar, vector, antisymmetric
+    tensor, pseudovector, and pseudoscalar Lorentz types. γ^5=iγ^0γ^1γ^2γ^3 is Hermitian,
+    squares to one, anticommutes with γ^μ, and its chiral eigenvalues distinguish
+    the Weyl components.
+  kind: representation
+  group: peskin-schroeder.dirac-bilinears-and-currents
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 49
+    - 50
+    note: The source classifies all sixteen matrices and derives the γ^5 properties.
+- id: peskin-schroeder.dirac-clifford-algebra-generators
+  label: Dirac Clifford algebra and spinor Lorentz generators
+  summary: Matrices γ^μ obeying {γ^μ,γ^ν}=2g^{μν} generate S^{μν}=i[γ^μ,γ^ν]/4, a
+    Lorentz-algebra representation. In four-dimensional Minkowski space the minimal
+    matrices are 4×4; Peskin and Schroeder adopt the Weyl (chiral) representation.
+  kind: representation
+  group: peskin-schroeder.dirac-lorentz-and-spinors
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 40
+    - 41
+    note: Equations (3.22)–(3.27) build the spinor generators and display the chiral
+      realization.
+  notation:
+  - source: peskin-schroeder
+    note: The source uses metric and gamma-matrix signs of its Weyl representation;
+      γ^0 is off diagonal, unlike the diagonal-γ^0 convention used in many texts.
+- id: peskin-schroeder.dirac-local-field-particle-creation
+  label: Local Dirac fields create particle states
+  summary: In the QED interpretation, ψ†_a(x)|0⟩ contains a positron at x with polarization
+    selected by a, while ψ_a(x)|0⟩ contains an electron. This follows from the finalized
+    field expansion and is distinct from deriving the conserved charge operator.
+  kind: result
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 62
+    note: The source explicitly states the local positron and electron interpretations
+      after discussing Q.
+- id: peskin-schroeder.dirac-momentum-space-and-feynman-propagator
+  label: Momentum-space and Feynman Dirac propagator
+  summary: Fourier inversion of the Dirac operator gives the momentum-space numerator
+    (p̸+m)/(p²−m²) with a boundary-condition pole prescription. The Feynman prescription
+    yields the time-ordered fermion propagator, whose definition carries a minus sign
+    when ψ fields are interchanged.
+  kind: method
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, The Dirac Propagator
+    pages:
+    - 63
+    note: Equations (3.119)–(3.121) obtain the Fourier inverse and define the Feynman
+      time-ordered result.
+- id: peskin-schroeder.dirac-noether-angular-momentum-spin
+  label: Noether angular momentum and spin one-half
+  summary: Rotational invariance yields J=∫d^3x ψ†[x×(−i∇)+Σ/2]ψ. On zero-momentum
+    one-fermion states, the spin term gives J_z eigenvalues ±1/2; for antifermions
+    the association of the two-spinor label with spin is reversed.
+  kind: result
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 60
+    - 61
+    note: The source applies Noether's theorem, obtains (3.111), and checks rest fermion
+      and antifermion spin.
+- id: peskin-schroeder.dirac-positive-frequency-spinors
+  label: Positive-frequency free Dirac spinors
+  summary: Positive-frequency plane waves ψ=u(p)e^{−ip·x}, p²=m² and p^0>0 obey (p̸−m)u(p)=0.
+    In the rest frame only two components are free; a normalized two-spinor ξ labels
+    the two spin states before quantization establishes their spin angular momentum.
+  kind: representation
+  group: peskin-schroeder.free-dirac-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 45
+    note: The source obtains the rest-frame u(p_0) solutions and explains their two
+      independent components.
+- id: peskin-schroeder.dirac-retarded-propagator-from-anticommutator
+  label: Dirac retarded propagator from the field anticommutator
+  summary: The quantized-field contractions define S_R(x−y)=θ(x^0−y^0)⟨0|{ψ(x),ψ̄(y)}|0⟩.
+    Using the Klein–Gordon retarded Green function gives S_R=(i∂̸+m)D_R, which inverts
+    i∂̸−m; this is the retarded route.
+  kind: method
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, The Dirac Propagator
+    pages:
+    - 62
+    - 63
+    note: Equations (3.114)–(3.118) compute contractions, define S_R, and relate it
+      to D_R.
+- id: peskin-schroeder.dirac-spin-sum-completeness
+  label: Dirac spin-sum completeness relations
+  summary: Summing the two polarizations gives Σ_s u_s(p)ū_s(p)=p̸+m and Σ_s v_s(p)v̄_s(p)=p̸−m.
+    The source introduces Feynman's slash notation p̸=γ^μp_μ for these ubiquitous
+    combinations.
+  kind: method
+  group: peskin-schroeder.free-dirac-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: 3.3–3.4
+    pages:
+    - 48
+    - 49
+    note: The source evaluates the u and v sums and introduces slash notation.
+- id: peskin-schroeder.dirac-spinor-and-covariant-equation
+  label: Dirac spinor and covariant first-order equation
+  summary: A four-component Dirac spinor transforms by the spinor matrix Λ_{1/2};
+    the relation Λ_{1/2}^{−1}γ^μΛ_{1/2}=Λ^μ{}_νγ^ν makes (iγ^μ∂_μ−m)ψ=0 Lorentz covariant.
+    Multiplying by the conjugate first-order operator yields the Klein–Gordon equation
+    for each component.
+  kind: result
+  group: peskin-schroeder.dirac-lorentz-and-spinors
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 42
+    - 43
+    note: The source proves covariance of (3.31) and then derives (∂²+m²)ψ=0.
+- id: peskin-schroeder.dirac-u-v-normalization
+  label: u and v solution normalization
+  summary: The free Dirac equation has two positive-frequency u_s(p) and two negative-frequency
+    v_s(p) solutions, conventionally with p^0>0 in both labels. Peskin and Schroeder
+    use ū_r u_s=2mδ_rs, v̄_r v_s=−2mδ_rs and corresponding ψ†ψ normalizations; u
+    and v are barred-orthogonal at equal momentum.
+  kind: representation
+  group: peskin-schroeder.free-dirac-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 47
+    - 48
+    note: Equations (3.55)–(3.65) state the Lorentz-scalar normalization, negative-frequency
+      solutions, and orthogonality.
+- id: peskin-schroeder.dirac-u1-charge
+  label: Dirac U(1) charge
+  summary: The conserved vector current gives Q=∫d^3x ψ†ψ. After normal ordering,
+    Q assigns +1 to a† fermions and −1 to b† antifermions; in the QED interpretation
+    these are electrons and positrons, up to the electric-charge normalization.
+  kind: result
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 62
+    note: The source evaluates Q in ladder operators and identifies the charges of
+      fermions and antifermions.
+- id: peskin-schroeder.dirac-vector-and-axial-currents
+  label: Vector and axial Dirac currents
+  summary: For a free Dirac solution, j^μ=ψ̄γ^μψ is conserved. The axial current j_5^μ=ψ̄γ^μγ^5ψ
+    has divergence proportional to the mass, so it is conserved only in the massless
+    free theory.
+  kind: result
+  group: peskin-schroeder.dirac-bilinears-and-currents
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: Equations (3.73)–(3.75) calculate the two divergences from the Dirac equations.
+- id: peskin-schroeder.discrete-lorentz-components-and-cpt-status
+  label: P, T, C, and disconnected Lorentz components
+  summary: Parity and time reversal preserve x² but lie outside the proper orthochronous
+    Lorentz component; charge conjugation independently interchanges particles and
+    antiparticles. The source distinguishes possible L^↑_+ covariance from optional
+    individual C, P, or T invariance and describes empirical CPT status as context
+    rather than a derivation.
+  kind: concept
+  group: peskin-schroeder.dirac-discrete-symmetries
+  evidence:
+  - source: peskin-schroeder
+    section: '3.6'
+    pages:
+    - 64
+    - 65
+    note: The section defines the operations, gives the four Lorentz components, and
+      discusses their physical status.
+- id: peskin-schroeder.fermionic-anticommutator-causality
+  label: Anticommutators from positivity and spacelike causality
+  summary: Positive vacuum norms force the coefficients of positive- and negative-frequency
+    propagation to have the same sign, so a spacelike commutator cannot cancel. Setting
+    their magnitudes equal instead makes Dirac fields anticommute at spacelike separation;
+    even-field observables still commute there.
+  kind: result
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, How Not to Quantize the Dirac Field
+    pages:
+    - 55
+    - 56
+    note: The source derives the sign obstruction and replaces commutation by anticommutation
+      for causal observables.
+- id: peskin-schroeder.fermionic-ladder-operators-and-statistics
+  label: Fermionic ladders and Fermi–Dirac statistics
+  summary: Canonical anticommutators for a and b allow the negative-energy mode to
+    be reinterpreted by exchanging b with b†, producing positive-energy antifermion
+    excitations above the vacuum. Nilpotence of a† and antisymmetry of multiparticle
+    states give Pauli exclusion and Fermi–Dirac statistics for this free Dirac construction.
+  kind: result
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 57
+    note: The source redefines the b mode, obtains a positive Hamiltonian, and derives
+      antisymmetric multiparticle states.
 - id: peskin-schroeder.feynman-scalar-propagator
   label: Feynman scalar propagator and time ordering
   summary: The i epsilon prescription gives D_F(x-y)=integral d^4p/(2 pi)^4 i exp[-ip
@@ -213,6 +507,21 @@ nodes:
   - source: peskin-schroeder
     note: Positive and negative frequency describe exponential time dependence, not
       excitation-energy signs.
+- id: peskin-schroeder.helicity-and-massless-weyl-solutions
+  label: Helicity and the massless Weyl limit
+  summary: Helicity h=(S·p)/|p| labels the high-boost solutions. It is frame dependent
+    for a massive particle but Lorentz invariant for a massless particle; massless
+    left- and right-Weyl solutions have definite left- and right-handed helicity,
+    respectively.
+  kind: result
+  group: peskin-schroeder.free-dirac-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 47
+    note: The source identifies the helicity eigenstates and explains the massive
+      versus massless distinction.
 - id: peskin-schroeder.helicity-angular-momentum-selection
   label: Helicity and angular-momentum selection in pair annihilation
   summary: In the massless CM treatment, helicities determine which e+e- to mu+mu-
@@ -407,6 +716,41 @@ nodes:
     - 12
     note: The source identifies undetermined virtual momentum, its required integration,
       and naive infinities in loop integrals.
+- id: peskin-schroeder.lorentz-action-on-quantized-dirac-field
+  label: Unitary Lorentz action on quantized Dirac states
+  summary: Hilbert-space Lorentz transformations are unitary even though finite-dimensional
+    spinor boosts are not. For a spin-quantization axis parallel to the boost or rotation
+    axis, the source writes the unmixed relation U(Λ)a_s†(p)U(Λ)^{-1}=a_s†(Λp) and
+    uses u_s(Λ^{-1}p)=Λ_{1/2}^{−1}u_s(p) to obtain the general covariant field law
+    U(Λ)ψ(x)U(Λ)^{-1}=Λ_{1/2}^{−1}ψ(Λx). Outside that aligned-axis case, spin labels
+    need not remain unmixed.
+  kind: method
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 59
+    - 60
+    note: The source explicitly qualifies (3.109) by aligned spin and transformation
+      axes, then derives the field transformation and explains its direction.
+- id: peskin-schroeder.lorentz-covariance-field-law
+  label: Lorentz covariance from field transformation laws
+  summary: A relativistically invariant wave equation maps every solution into a solution
+    under a common active Lorentz transformation. Scalars transform by pullback, vectors
+    also carry their Lorentz index, and a scalar Lagrangian makes its Euler–Lagrange
+    equation covariant.
+  kind: concept
+  group: peskin-schroeder.dirac-lorentz-and-spinors
+  evidence:
+  - source: peskin-schroeder
+    section: '3.1'
+    pages:
+    - 35
+    - 36
+    - 37
+    note: The source defines active invariance and verifies scalar and vector transformation
+      laws.
 - id: peskin-schroeder.lorentz-invariant-one-particle-normalization
   label: Lorentz-invariant one-particle normalization
   summary: Defining |p>=sqrt(2E_p)a_p-dagger|0> gives (p|q)=2E_p(2 pi)^3 delta^(3)(p-q),
@@ -426,6 +770,23 @@ nodes:
   - source: peskin-schroeder
     note: The factor of 2 is conventional; U(Lambda) implements Lorentz transformations
       on Hilbert space.
+- id: peskin-schroeder.lorentz-representations-and-generators
+  label: Finite-dimensional Lorentz representations and generators
+  summary: A multiplet transforms as M(Λ)Φ(Λ⁻¹x), where M must preserve Lorentz-group
+    multiplication. For a continuous group, matrices satisfying the Lorentz-generator
+    commutators exponentiate to a representation; J^{μν}=i(x^μ∂^ν−x^ν∂^μ) supplies
+    the differential-operator algebra.
+  kind: representation
+  group: peskin-schroeder.dirac-lorentz-and-spinors
+  evidence:
+  - source: peskin-schroeder
+    section: '3.1'
+    pages:
+    - 38
+    - 39
+    - 40
+    note: The text derives the representation condition and Lorentz algebra before
+      identifying rotations and boosts.
 - id: peskin-schroeder.maxwell-variational-field-equations
   label: Maxwell equations from the electromagnetic action
   summary: Problem 2.1 asks for source-free Maxwell equations by treating A_mu(x)
@@ -459,6 +820,23 @@ nodes:
     - 29
     note: The source sets the measurement criterion, performs the spacelike Lorentz
       argument, and states the no-influence conclusion.
+- id: peskin-schroeder.naive-dirac-commutator-instability
+  label: Failure of commutator quantization for the Dirac field
+  summary: Expanding the Dirac field in the one-particle Hamiltonian eigenbasis with
+    bosonic commutators reproduces the formal equal-time field commutator, but leaves
+    a negative-energy b excitation whose repeated creation lowers H without bound.
+    The source presents this as a deliberately failed route.
+  kind: assumption
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, How Not to Quantize the Dirac Field
+    pages:
+    - 52
+    - 53
+    - 54
+    note: The source postulates commutators, derives the mode expansion, and exposes
+      the negative-energy term.
 - id: peskin-schroeder.noether-current-and-charge
   label: Noether current and conserved charge
   summary: For an infinitesimal continuous field transformation whose Lagrangian changes
@@ -479,6 +857,23 @@ nodes:
   - source: peskin-schroeder
     note: For multiple fields, sum the canonical term over fields; J^mu records the
       Lagrangian surface term.
+- id: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
+  label: Parity of Dirac fields, bilinears, and fermion-antifermion bound states
+  summary: Unitary parity reverses momentum without spin flip and acts as Pψ(t,x)P^{-1}=η_aγ^0ψ(t,−x),
+    requiring opposite intrinsic phases for fermion and antifermion. It gives scalar/vector/pseudoscalar/pseudovector
+    parity laws; the extra pair sign makes S-wave fermion-antifermion bound states
+    odd under parity.
+  kind: result
+  group: peskin-schroeder.dirac-discrete-symmetries
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6, Parity
+    pages:
+    - 65
+    - 66
+    - 67
+    note: The source derives the field transformation, bilinear transformations, and
+      bound-state parity consequence.
 - id: peskin-schroeder.photon-mediated-second-order-amplitude
   label: Photon-mediated second-order amplitude
   summary: Because electromagnetism couples electrons and muons through the photon
@@ -494,6 +889,217 @@ nodes:
     - 6
     note: Equation (1.3) and its explanation identify the vertices, photon projector,
       component sum, and scalar condition.
+- id: peskin-schroeder.problem-complex-scalar-discrete-symmetries
+  label: 'Problem: complex-scalar P, C, T, and CPT exercise'
+  summary: Problem 3.7(b–c) asks the reader to construct unitary P and C and antiunitary
+    T on complex Klein–Gordon particle operators, obtain the field and current transformations,
+    and show CPT=+1 for the stated Hermitian Lorentz-scalar local operators. It is
+    a complex-scalar exercise, not a proof of the general CPT theorem.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.7(b–c)
+    pages:
+    - 75
+    - 76
+    note: The problem gives the field transformations, requests current properties,
+      and separately requests the local-operator CPT result.
+- id: peskin-schroeder.problem-dirac-tensor-discrete-symmetries
+  label: 'Problem: tensor-bilinear P, C, and T transformations'
+  summary: Problem 3.7(a) asks the reader to compute P, C, and T transformation laws
+    for the antisymmetric tensor Dirac bilinear ψ̄σ^{μν}ψ, completing the chapter's
+    bilinear table. This is a requested calculation, not a derivation supplied by
+    the text.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.7(a)
+    pages:
+    - 75
+    note: The problem explicitly requests the tensor-bilinear transformation properties.
+- id: peskin-schroeder.problem-dirac-two-weyl-rewrite
+  label: 'Problem: rewrite a Dirac field as two Weyl fields'
+  summary: Problem 3.4(c) asks the reader to express a four-component Dirac field
+    as two two-component spinors, use the equivalence of the lower representation
+    with the conjugate left-handed representation, and rewrite the Dirac Lagrangian
+    to identify its mass term. This is a requested rewrite, not a supplied derivation.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(c)
+    pages:
+    - 74
+    note: The problem supplies the two-component decomposition and asks for the Lagrangian
+      rewrite.
+- id: peskin-schroeder.problem-free-supersymmetric-multiplet
+  label: 'Problem: free supersymmetric complex boson and Weyl fermion'
+  summary: Problem 3.5(a–b) asks the reader to verify a continuous Grassmann-parameter
+    symmetry relating a free complex scalar, Weyl fermion, and auxiliary scalar F.
+    Adding the given mass interaction and eliminating F is to show equal boson and
+    fermion masses; these are problem tasks, not a proof supplied in the text.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.5(a–b)
+    pages:
+    - 74
+    - 75
+    note: The problem gives the transformations and requests invariance, elimination
+      of F, and mass equality.
+- id: peskin-schroeder.problem-general-dirac-fierz-coefficients
+  label: 'Problem: general four-component Fierz coefficients'
+  summary: Problem 3.6 asks the reader to normalize a complete sixteen-matrix Dirac
+    basis, derive the coefficient formula C_{ABCD}=tr(Γ_CΓ_AΓ_DΓ_B)/16 from completeness,
+    and apply it to scalar and vector bilinear products. It extends, but does not
+    repeat, the Weyl Fierz derivation in the text.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.6
+    pages:
+    - 75
+    note: The problem specifies the basis normalization, coefficient formula, and
+      requested transformations.
+- id: peskin-schroeder.problem-gordon-identity
+  label: 'Problem: Gordon identity for on-shell spinors'
+  summary: Problem 3.2 asks the reader to derive the Gordon decomposition ū(p_f)γ^μu(p)=ū(p_f)[(p_f+p)^μ/(2m)+iσ^{μν}q_ν/(2m)]u(p),
+    q=p_f−p, for later use. It is a supplied target identity rather than a derivation
+    in this chapter.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.2
+    pages:
+    - 72
+    note: The problem states the Gordon identity and defines q.
+- id: peskin-schroeder.problem-grassmann-majorana-action
+  label: 'Problem: Grassmann Majorana action'
+  summary: Problem 3.4(b) introduces anticommuting classical Grassmann fields so the
+    antisymmetric σ^2 mass bilinear need not vanish. It asks the reader to use reversed-order
+    complex conjugation to show the displayed Majorana action is real and that independent
+    variations in χ and χ* yield the Majorana equation.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(b)
+    pages:
+    - 73
+    note: The problem defines Grassmann algebra and asks for reality and variational
+      derivation.
+- id: peskin-schroeder.problem-lorentz-su2-times-su2
+  label: 'Problem: Lorentz algebra as two commuting angular-momentum algebras'
+  summary: Problem 3.1 asks the reader to form L and K from J^{μν}, show that J_+=(L+iK)/2
+    and J_-=(L−iK)/2 commute and each obey angular-momentum commutators, then recover
+    the (1/2,0) and (0,1/2) Weyl transformations and the vector (1/2,1/2) representation.
+    These are requested derivations, not results supplied by the problem.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.1
+    pages:
+    - 71
+    - 72
+    note: The problem explicitly requests the commutators, Weyl laws, and 4-vector
+      construction.
+- id: peskin-schroeder.problem-majorana-current-comparison
+  label: 'Problem: Majorana and Dirac currents and O(N) symmetry'
+  summary: Problem 3.4(d) asks the reader to calculate the divergences of the displayed
+    Majorana and Dirac two-component currents, relate them to their global symmetries,
+    and construct an O(N)-symmetric free massive two-component theory. These are requested
+    current and symmetry applications.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(d)
+    pages:
+    - 74
+    note: The problem specifies both currents, asks for their divergences, and requests
+      the O(N) extension.
+- id: peskin-schroeder.problem-majorana-quantization
+  label: 'Problem: Majorana canonical quantization'
+  summary: Problem 3.4(e) asks the reader to promote χ to a field with its canonical
+    anticommutator, construct a Hermitian Hamiltonian, and diagonalize it with creation
+    and annihilation operators, using the top two components of the quantized Dirac
+    field as a hint. These are requested quantization tasks.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(e)
+    pages:
+    - 74
+    note: The problem explicitly asks for canonical quantization, Hamiltonian construction,
+      and diagonalization.
+- id: peskin-schroeder.problem-majorana-two-component-equation
+  label: 'Problem: two-component Majorana equation and mass'
+  summary: Problem 3.4 asks whether a single left-handed two-component field can obey
+    the Lorentz-invariant massive equation iσ̄·∂χ−imσ^2χ*=0 and imply Klein–Gordon
+    dynamics. It identifies the conjugating mass as a Majorana mass term; the invariance
+    and implication are tasks for the reader.
+  kind: assumption
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(a)
+    pages:
+    - 73
+    note: The problem supplies the equation and asks for invariance and the Klein–Gordon
+      implication.
+- id: peskin-schroeder.problem-massless-spinor-helicity-products
+  label: 'Problem: massless spinor-helicity products'
+  summary: Problem 3.3 defines reference lightlike vectors and left/right massless
+    spinors with fixed phases, then asks for explicit spinors and antisymmetric products
+    s(p_1,p_2), t(p_1,p_2). It asks the reader to show t(p_1,p_2)=s(p_2,p_1)* and
+    |s(p_1,p_2)|²=2p_1·p_2, relating spinor products to square roots of vector products.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.3
+    pages:
+    - 72
+    - 73
+    note: The problem supplies the reference-spinor definitions and requested product
+      identities.
+- id: peskin-schroeder.problem-positronium-cp-selection-rules
+  label: 'Problem: positronium P/C quantum numbers and photon selection rules'
+  summary: Problem 3.8 asks the reader to assign P and C to electron–positron S, P,
+    and D states and use electromagnetic P/C invariance to derive why spin-0 ground-state
+    positronium can decay to two photons while spin-1 ground-state positronium requires
+    three, then extend the selection rules. These are stated targets, not worked derivations.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.8
+    pages:
+    - 76
+    note: The problem supplies the spin-exchange fact and requests bound-state and
+      decay selection rules.
+- id: peskin-schroeder.problem-superpotential-interactions
+  label: 'Problem: supersymmetric superpotential interactions'
+  summary: Problem 3.5(c) asks the reader to verify supersymmetry of a general collection
+    of complex scalars, Weyl fermions, and auxiliary fields governed by an arbitrary
+    superpotential W[φ^i], then derive the n=1 cubic-superpotential field equations
+    after eliminating F.
+  kind: method
+  group: peskin-schroeder.chapter-three-problem-applications
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.5(c)
+    pages:
+    - 75
+    note: The problem states the arbitrary-superpotential theory and requests the
+      cubic example's equations.
 - id: peskin-schroeder.qed-diagrammatic-calculation
   label: Feynman diagrams as a calculational prescription
   summary: 'For a QED process, a Feynman diagram encodes a perturbative contribution
@@ -534,6 +1140,36 @@ nodes:
   - source: peskin-schroeder
     note: gamma^mu are four constant 4-by-4 matrices; u,v are column and u-bar,v-bar
       row spinors.
+- id: peskin-schroeder.quantized-dirac-field-expansion
+  label: Quantized Dirac field, vacuum, and particle-antiparticle modes
+  summary: The finalized field expansion contains a_s(p)u_s(p)e^{−ip·x} and b_s†(p)v_s(p)e^{ip·x};
+    all nonzero ladder anticommutators are canonical. The vacuum is annihilated by
+    a and b, while a† and b† create fermions and antifermions with positive energy
+    and momentum.
+  kind: representation
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, The Quantized Dirac Field
+    pages:
+    - 58
+    - 59
+    note: Equations (3.99)–(3.107) summarize the field, algebra, vacuum, Hamiltonian,
+      momentum, and Lorentz-normalized one-particle states.
+- id: peskin-schroeder.rapidity-boosted-dirac-spinors
+  label: Rapidity boosts and boosted u spinors
+  summary: Rapidity is additive under collinear boosts. Applying the spinor boost
+    to the rest solution gives u(p) in terms of the positive square root of p·σ (and
+    p·σ̄), a form valid for arbitrary momentum direction and verified with (p·σ)(p·σ̄)=m².
+  kind: method
+  group: peskin-schroeder.free-dirac-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 46
+    note: Equations (3.48)–(3.51) introduce rapidity and the matrix-square-root form
+      of u(p).
 - id: peskin-schroeder.real-klein-gordon-lagrangian
   label: Real Klein-Gordon Lagrangian
   summary: The real scalar field is governed classically by L = 1/2 phidot^2 - 1/2
@@ -635,6 +1271,38 @@ nodes:
     - 34
     note: The problem asks the reader for an exact Bessel-function evaluation at spacelike
       separation; it does not present that derivation on this page.
+- id: peskin-schroeder.spin-statistics-theorem-stated-assumptions
+  label: Stated spin-statistics theorem assumptions
+  summary: The source states, without proving the general theorem here, that Lorentz
+    invariance, positive energies, positive norms, and causality together require
+    Bose–Einstein statistics for integer spin and Fermi–Dirac statistics for half-odd-integer
+    spin. This is broader than the chapter's explicit free-Dirac argument.
+  kind: result
+  group: peskin-schroeder.dirac-field-quantization
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 58
+    note: The text attributes the general result to Pauli and lists its assumptions.
+- id: peskin-schroeder.time-reversal-antiunitary-dirac-symmetry
+  label: Antiunitary time reversal for Dirac fermions
+  summary: 'A linear unitary time reversal conflicts with the frequency content required
+    by [T,H]=0, so T must be antilinear/antiunitary: it complex conjugates c-numbers
+    and reverses exponential time evolution. With momentum and spin flipped, it gives
+    a field transformation proportional to γ^1γ^3ψ(−t,x) and the stated bilinear transformation
+    laws.'
+  kind: result
+  group: peskin-schroeder.dirac-discrete-symmetries
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6, Time Reversal
+    pages:
+    - 67
+    - 68
+    - 69
+    note: The source proves the obstruction, introduces antiunitarity, and obtains
+      the fermion-field law.
 - id: peskin-schroeder.translation-stress-energy-tensor
   label: Translation symmetry and stress-energy tensor
   summary: Noether’s theorem applied to spacetime translations gives four separately
@@ -685,6 +1353,41 @@ nodes:
     - 10
     note: The chapter names Feynman trace technology and describes both its trace
       calculation and mass restoration.
+- id: peskin-schroeder.weyl-fierz-rearrangement
+  label: Weyl-spinor Fierz rearrangement
+  summary: The two-component σ-matrix identity produces a nontrivial rearrangement
+    of products of same-chirality vector bilinears, antisymmetric under interchange
+    of the indicated external spinors. Further σ identities reduce longer Weyl-bilinear
+    products; this is an algebraic identity, not a dynamical interaction.
+  kind: method
+  group: peskin-schroeder.dirac-bilinears-and-currents
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 51
+    - 52
+    note: Equations (3.77)–(3.82) derive and apply the Weyl Fierz identity.
+- id: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+  label: Weyl spinors, chirality, and mass mixing
+  summary: In the chiral representation ψ=(ψ_L,ψ_R)^T decomposes into inequivalent
+    two-component Lorentz representations. The mass term couples them; only for m=0
+    do the Weyl equations decouple, with σ^μ=(1,σ) and σ̄^μ=(1,−σ) giving the compact
+    notation.
+  kind: representation
+  group: peskin-schroeder.dirac-lorentz-and-spinors
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    - 44
+    note: The source derives left/right transformations, the coupled equations, and
+      their massless decoupling.
+  notation:
+  - source: peskin-schroeder
+    note: ψ_L has γ^5 eigenvalue −1 and ψ_R eigenvalue +1 in the source's chiral basis;
+      the bar on σ̄ is unrelated to ψ̄.
 edges:
 - id: peskin-schroeder.canonical-formalism-to-kg-hamiltonian
   from: peskin-schroeder.canonical-field-momentum-hamiltonian
@@ -1218,11 +1921,1189 @@ edges:
     pages:
     - 34
     note: The problem supplies Q and asks for the charge of each particle type.
+- id: ps3-adjoint-to-currents
+  from: peskin-schroeder.dirac-adjoint-and-free-lagrangian
+  to: peskin-schroeder.dirac-vector-and-axial-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current divergences cancel only by applying both the Dirac and adjoint
+    equations.
+  failure_mode: The on-shell conservation calculation has no equations for ψ and ψ̄.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: The source computes the divergences assuming ψ satisfies the Dirac equation
+      and its adjoint.
+- id: ps3-anticommutators-to-statistics
+  from: peskin-schroeder.fermionic-anticommutator-causality
+  to: peskin-schroeder.fermionic-ladder-operators-and-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical anticommutators both permit the b↔b† reinterpretation and
+    make exchanged multiparticle states antisymmetric.
+  failure_mode: Positive-energy antifermion redefinition and exclusion statistics
+    would not follow.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 56
+    - 57
+    note: The field anticommutators lead to ladder anticommutators, mode redefinition,
+      and Fermi–Dirac statistics.
+- id: ps3-bilinear-basis-to-general-fierz
+  from: peskin-schroeder.dirac-bilinear-lorentz-basis
+  to: peskin-schroeder.problem-general-dirac-fierz-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3.6 derives its coefficients from completeness of the sixteen
+    Dirac matrices.
+  failure_mode: The complete matrix basis and trace normalization needed for the coefficient
+    formula are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.6
+    pages:
+    - 75
+    note: The problem asks to normalize all sixteen Γ^A and use their completeness
+      to derive C_{ABCD}.
+- id: ps3-bilinears-to-currents
+  from: peskin-schroeder.dirac-bilinear-lorentz-basis
+  to: peskin-schroeder.dirac-vector-and-axial-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector and pseudovector bilinears define j^μ and j_5^μ.
+  failure_mode: The Lorentz character of the purported currents is unestablished.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    note: The source forms the currents directly from the vector and pseudovector
+      matrices.
+- id: ps3-bilinears-to-fierz
+  from: peskin-schroeder.dirac-bilinear-lorentz-basis
+  to: peskin-schroeder.weyl-fierz-rearrangement
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The preceding bilinear classification situates the rearrangement among
+    Dirac-field products, but the stated derivation uses the independent two-component
+    sigma identity.
+  failure_mode: Without it, the Fierz identity has less four-component context but
+    can still be derived by the displayed Weyl route.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: The classification precedes the sigma identity; the calculation itself is
+      performed with Weyl components.
+- id: ps3-boost-to-helicity
+  from: peskin-schroeder.rapidity-boosted-dirac-spinors
+  to: peskin-schroeder.helicity-and-massless-weyl-solutions
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The helicity interpretation is read from the large-rapidity boosted spinors.
+  failure_mode: The connection between the boost limit and the simple massless helicity
+    states is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 46
+    - 47
+    note: The explicit boosted spinors are followed by their infinite-rapidity helicity
+      interpretation.
+- id: ps3-boosted-spinors-to-u-v-normalization
+  from: peskin-schroeder.rapidity-boosted-dirac-spinors
+  to: peskin-schroeder.dirac-u-v-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses the boosted explicit spinors to obtain Lorentz-scalar
+    and nonzero-energy normalizations before summarizing u and v bases.
+  failure_mode: The normalization conventions would not be derived from the source's
+    on-shell solutions.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 46
+    - 47
+    - 48
+    note: The boosted solution is followed by its normalization and then the complete
+      u/v solution summary.
+- id: ps3-canonical-field-hamiltonian-to-dirac-hamiltonian
+  from: peskin-schroeder.canonical-field-momentum-hamiltonian
+  to: peskin-schroeder.canonical-dirac-momentum-and-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac construction uses the canonical conjugate momentum and Hamiltonian
+    procedure for a field Lagrangian.
+  failure_mode: The Legendre/canonical interpretation of π_ψ and H is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    note: The source identifies the conjugate momentum and Hamiltonian directly from
+      the Dirac Lagrangian.
+- id: ps3-canonical-hamiltonian-to-naive-quantization
+  from: peskin-schroeder.canonical-dirac-momentum-and-hamiltonian
+  to: peskin-schroeder.naive-dirac-commutator-instability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The attempted mode quantization chooses eigenfunctions that diagonalize
+    the canonical Hamiltonian and exposes its negative-energy term.
+  failure_mode: The instability calculation has no Hamiltonian whose spectrum is to
+    be diagonalized.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    - 53
+    - 54
+    note: The Hamiltonian is derived before the source expands in its eigenfunctions
+      and obtains the unbounded term.
+- id: ps3-charge-conjugation-to-positronium
+  from: peskin-schroeder.charge-conjugation-bilinears-and-cpt
+  to: peskin-schroeder.problem-positronium-cp-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3.8 asks for C quantum numbers and uses electromagnetic C invariance
+    in its photon-selection-rule argument.
+  failure_mode: The C-parity assignment and C selection rule cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.8
+    pages:
+    - 76
+    note: The problem explicitly asks for P and C quantum numbers and invokes electromagnetic
+      P/C invariance.
+- id: ps3-charge-conjugation-to-tensor-problem
+  from: peskin-schroeder.charge-conjugation-bilinears-and-cpt
+  to: peskin-schroeder.problem-dirac-tensor-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) asks for the tensor bilinear's C transformation, requiring the
+    charge-conjugation method and fermion signs.
+  failure_mode: The C transformation of the tensor bilinear cannot be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.7(a)
+    pages:
+    - 75
+    note: The problem explicitly includes C among the required tensor transformations.
+- id: ps3-clifford-to-bilinears
+  from: peskin-schroeder.dirac-clifford-algebra-generators
+  to: peskin-schroeder.dirac-bilinear-lorentz-basis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bilinear basis is made from antisymmetrized gamma products and γ^5.
+  failure_mode: Their Lorentz transformation classes cannot be defined without the
+    gamma algebra.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 49
+    - 50
+    note: The source forms the sixteen matrices from gamma products and defines γ^5.
+- id: ps3-clifford-to-dirac-equation
+  from: peskin-schroeder.dirac-clifford-algebra-generators
+  to: peskin-schroeder.dirac-spinor-and-covariant-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covariance proof uses the simultaneous vector-spinor transformation
+    property of γ^μ.
+  failure_mode: The Lorentz invariance of γ·∂ would be unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 42
+    note: The source invokes equation (3.29) to form the invariant differential operator
+      and prove the equation's covariance.
+- id: ps3-clifford-to-weyl
+  from: peskin-schroeder.dirac-clifford-algebra-generators
+  to: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The block form of the chiral gamma matrices makes the reducible Dirac
+    representation and its Weyl blocks visible.
+  failure_mode: The source's split into left and right transformation laws would have
+    no specified representation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 41
+    - 43
+    - 44
+    note: The chiral gamma representation precedes the reducibility and Weyl-equation
+      discussion.
+- id: ps3-complex-scalar-to-scalar-discrete-problem
+  from: peskin-schroeder.complex-scalar-canonical-particles-and-charge
+  to: peskin-schroeder.problem-complex-scalar-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) defines P, C, and T through their actions on complex Klein–Gordon
+    particle and antiparticle annihilation operators.
+  failure_mode: The a_p and b_p particle content and charge-conjugation target are
+    unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.7(b)
+    pages:
+    - 75
+    - 76
+    note: The problem asks for operators defined by their actions on Klein–Gordon
+      particle and antiparticle annihilators.
+- id: ps3-covariance-to-representations
+  from: peskin-schroeder.lorentz-covariance-field-law
+  to: peskin-schroeder.lorentz-representations-and-generators
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The covariance question motivates why the source introduces multiplet
+    representations, but the generator algebra can be developed independently once
+    the group is specified.
+  failure_mode: Without this framing, the algebra loses its physical motivation; its
+    derivation remains possible.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.1'
+    pages:
+    - 37
+    - 38
+    note: The source moves from tensor laws to the general multiplet law and its group
+      condition.
+- id: ps3-currents-to-chiral
+  from: peskin-schroeder.dirac-vector-and-axial-currents
+  to: peskin-schroeder.chiral-u1-symmetry-and-handed-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Separate handed currents are linear combinations of the vector and axial
+    currents, with their mass-dependent divergences.
+  failure_mode: Their conservation condition cannot be inferred without both constituent
+    currents.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 51
+    note: Equation (3.76) forms the combinations after the divergences are calculated.
+- id: ps3-dirac-equation-to-momentum-propagator
+  from: peskin-schroeder.dirac-spinor-and-covariant-equation
+  to: peskin-schroeder.dirac-momentum-space-and-feynman-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fourier inversion begins by acting with the Dirac differential operator
+    and algebraically inverting p̸−m.
+  failure_mode: The momentum-space Green-function numerator and denominator cannot
+    be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 63
+    note: Equations (3.119)–(3.120) Fourier transform and invert the Dirac operator.
+- id: ps3-dirac-to-adjoint-lagrangian
+  from: peskin-schroeder.dirac-spinor-and-covariant-equation
+  to: peskin-schroeder.dirac-adjoint-and-free-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Lagrangian is constructed to yield the established first-order Dirac
+    equation.
+  failure_mode: The target Euler–Lagrange equation and its conjugate would be unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    note: The source defines the adjoint and immediately writes the Lagrangian whose
+      variation yields (3.31).
+- id: ps3-dirac-to-free-solutions
+  from: peskin-schroeder.dirac-spinor-and-covariant-equation
+  to: peskin-schroeder.dirac-positive-frequency-spinors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Plane-wave substitution into the Dirac equation gives the on-shell spinor
+    constraint.
+  failure_mode: The rest-frame u(p) solution cannot be selected without (p̸−m)u=0.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 45
+    note: The source inserts the plane wave into the Dirac equation to obtain (3.46).
+- id: ps3-dirac-to-weyl-equations
+  from: peskin-schroeder.dirac-spinor-and-covariant-equation
+  to: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coupled two-component equations are the block form of the massive
+    Dirac equation.
+  failure_mode: The mass mixing and its massless decoupling cannot be derived without
+    the underlying four-component equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    - 44
+    note: The source writes the Dirac equation in left/right blocks and then sets
+      m=0 to decouple them.
+- id: ps3-dirac-weyl-to-current-comparison
+  from: peskin-schroeder.problem-dirac-two-weyl-rewrite
+  to: peskin-schroeder.problem-majorana-current-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) compares with the two-Weyl Dirac theory rewritten in part (c).
+  failure_mode: The second current's field content and mass term are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(c–d)
+    pages:
+    - 74
+    note: The current comparison immediately follows the two-Weyl rewrite.
+- id: ps3-discrete-to-charge-conjugation
+  from: peskin-schroeder.discrete-lorentz-components-and-cpt-status
+  to: peskin-schroeder.charge-conjugation-bilinears-and-cpt
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Charge conjugation is introduced as the particle-antiparticle discrete
+    operation before its field and bilinear actions are derived.
+  failure_mode: The mode exchange lacks the source's symmetry interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.6'
+    pages:
+    - 64
+    - 70
+    note: Charge conjugation is named in the setup and implemented on annihilation
+      operators later in the section.
+- id: ps3-discrete-to-parity
+  from: peskin-schroeder.discrete-lorentz-components-and-cpt-status
+  to: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parity is one of the discrete spacetime operations whose field implementation
+    is then derived.
+  failure_mode: The reason to impose the momentum-reflecting operator and its spacetime
+    action is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.6'
+    pages:
+    - 64
+    - 65
+    note: The general discrete-symmetry setup is followed by the parity construction.
+- id: ps3-discrete-to-time-reversal
+  from: peskin-schroeder.discrete-lorentz-components-and-cpt-status
+  to: peskin-schroeder.time-reversal-antiunitary-dirac-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Time reversal is introduced as the second discrete spacetime operation
+    before its antiunitary implementation is derived.
+  failure_mode: The relation between the frequency obstruction and the required time-reflection
+    symmetry is obscured.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.6'
+    pages:
+    - 64
+    - 67
+    note: The section defines time reversal before the later proof that its operator
+      cannot be linear unitary.
+- id: ps3-fermion-statistics-evidence-general-theorem
+  from: peskin-schroeder.fermionic-ladder-operators-and-statistics
+  to: peskin-schroeder.spin-statistics-theorem-stated-assumptions
+  relation: evidence
+  source_level: derive
+  target_level: recognize
+  necessity: helpful
+  rationale: The free-Dirac construction illustrates the fermionic side of the broader
+    result, while the source separately states the general theorem and its assumptions.
+  failure_mode: Without the example, the statement has less in-chapter illustration;
+    it is not a proof of the theorem.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 57
+    - 58
+    note: The source first derives Fermi–Dirac statistics for the Dirac field and
+      then states the broader Pauli result.
+- id: ps3-free-lagrangian-to-dirac-hamiltonian
+  from: peskin-schroeder.dirac-adjoint-and-free-lagrangian
+  to: peskin-schroeder.canonical-dirac-momentum-and-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical momentum and Hamiltonian are obtained from the free Dirac
+    Lagrangian.
+  failure_mode: The derivative term and mass term producing the Hamiltonian are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    note: Equation (3.83) is used to read off π_ψ and H in (3.84).
+- id: ps3-free-lagrangian-to-dirac-weyl-problem
+  from: peskin-schroeder.dirac-adjoint-and-free-lagrangian
+  to: peskin-schroeder.problem-dirac-two-weyl-rewrite
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3.4(c) asks to rewrite the free Dirac Lagrangian in two-component
+    fields.
+  failure_mode: The Lagrangian and its mass term are not available for the requested
+    rewrite.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(c)
+    pages:
+    - 74
+    note: The problem explicitly asks to rewrite the Dirac Lagrangian after displaying
+      the two-Weyl decomposition.
+- id: ps3-free-spinors-to-gordon
+  from: peskin-schroeder.dirac-positive-frequency-spinors
+  to: peskin-schroeder.problem-gordon-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Gordon identity is a relation between on-shell u spinors at two momenta.
+  failure_mode: Neither the external spinors nor their Dirac equations are specified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.2
+    pages:
+    - 72
+    note: The requested identity is explicitly written in terms of u(p_f), u(p), and
+      q.
+- id: ps3-free-susy-to-superpotential
+  from: peskin-schroeder.problem-free-supersymmetric-multiplet
+  to: peskin-schroeder.problem-superpotential-interactions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The interacting problem extends the same scalar–Weyl–auxiliary-field
+    supersymmetry construction.
+  failure_mode: The role of F and the basic supersymmetry transformation are unmotivated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.5(b–c)
+    pages:
+    - 75
+    note: Part (c) follows the mass interaction and generalizes to fields (φ_i,χ_i,F_i).
+- id: ps3-helicity-to-spinor-products
+  from: peskin-schroeder.helicity-and-massless-weyl-solutions
+  to: peskin-schroeder.problem-massless-spinor-helicity-products
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3.3 fixes phases of the left- and right-handed massless spinors
+    whose products it asks to evaluate.
+  failure_mode: The chirality and massless on-shell constraints of the spinor products
+    are unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.3
+    pages:
+    - 72
+    - 73
+    note: The problem defines u_L and u_R for lightlike p and then forms s and t.
+- id: ps3-kg-retarded-to-dirac-retarded
+  from: peskin-schroeder.retarded-klein-gordon-green-function
+  to: peskin-schroeder.dirac-retarded-propagator-from-anticommutator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source's differential-operator route constructs S_R by applying i∂̸+m
+    to D_R.
+  failure_mode: The stated relation S_R=(i∂̸+m)D_R cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 63
+    note: Equation (3.117) explicitly expresses S_R in terms of D_R.
+- id: ps3-lorentz-to-problem-su2
+  from: peskin-schroeder.lorentz-representations-and-generators
+  to: peskin-schroeder.problem-lorentz-su2-times-su2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3.1 begins from the Lorentz commutators and generator definitions
+    developed in Section 3.1.
+  failure_mode: The requested J_± decomposition has no supplied algebra to manipulate.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.1
+    pages:
+    - 71
+    - 72
+    note: The problem recalls equation (3.17) and defines L and K before requesting
+      the decomposition.
+- id: ps3-majorana-action-to-current-comparison
+  from: peskin-schroeder.problem-grassmann-majorana-action
+  to: peskin-schroeder.problem-majorana-current-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) asks for the Majorana current divergence in the theory defined
+    by part (b).
+  failure_mode: The first current's dynamics and symmetry are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(b,d)
+    pages:
+    - 73
+    - 74
+    note: Part (b) defines the Majorana action; part (d) asks for the current divergence
+      in that theory.
+- id: ps3-majorana-action-to-majorana-quantization
+  from: peskin-schroeder.problem-grassmann-majorana-action
+  to: peskin-schroeder.problem-majorana-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The target is the canonical quantization of the Majorana theory defined
+    in parts (a) and (b).
+  failure_mode: There is no Majorana action or field equation to quantize.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(e)
+    pages:
+    - 74
+    note: Part (e) explicitly says to quantize the Majorana theory of parts (a) and
+      (b).
+- id: ps3-majorana-equation-to-grassmann-action
+  from: peskin-schroeder.problem-majorana-two-component-equation
+  to: peskin-schroeder.problem-grassmann-majorana-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Grassmann action is proposed specifically as a Lagrangian realization
+    of the Majorana equation.
+  failure_mode: The target variational equation and reason for the antisymmetric mass
+    bilinear are lost.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(b)
+    pages:
+    - 73
+    note: The problem asks whether the equation in part (a) follows from a Lagrangian
+      and then gives the Grassmann construction.
+- id: ps3-naive-to-anticommutators
+  from: peskin-schroeder.naive-dirac-commutator-instability
+  to: peskin-schroeder.fermionic-anticommutator-causality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The positivity and causal-cancellation failure of the commutator attempt
+    motivates the anticommutator relation.
+  failure_mode: The change of quantization algebra loses the source's sign and stability
+    rationale.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 54
+    - 55
+    - 56
+    note: The failed negative-energy construction is reconsidered through the two
+      propagation amplitudes before anticommutation is imposed.
+- id: ps3-noether-to-angular-momentum
+  from: peskin-schroeder.noether-current-and-charge
+  to: peskin-schroeder.dirac-noether-angular-momentum-spin
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The angular-momentum operator is derived as the Noether charge for rotational
+    invariance.
+  failure_mode: The conserved rotation charge has no theorem connecting the field
+    variation to J.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 60
+    note: The source recalls finding momentum by Noether's theorem and applies the
+      same method to rotations.
+- id: ps3-noether-to-majorana-current-comparison
+  from: peskin-schroeder.noether-current-and-charge
+  to: peskin-schroeder.problem-majorana-current-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Relating the requested current divergences to global symmetries uses
+    the Noether current construction.
+  failure_mode: The connection between a symmetry and its current is ungrounded.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(d)
+    pages:
+    - 74
+    note: The problem explicitly asks to relate current divergences to the symmetries
+      of the theories.
+- id: ps3-one-particle-normalization-to-lorentz-action
+  from: peskin-schroeder.lorentz-invariant-one-particle-normalization
+  to: peskin-schroeder.lorentz-action-on-quantized-dirac-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unitary state transformation is inferred from the Lorentz-invariant
+    normalization of one-particle states.
+  failure_mode: The stated unitarity of the Hilbert-space representation lacks the
+    normalization property used by the source.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 59
+    note: The source states the one-particle inner product is Lorentz invariant immediately
+      before inferring unitary U(Λ).
+- id: ps3-parity-to-positronium
+  from: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
+  to: peskin-schroeder.problem-positronium-cp-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bound-state exercise applies the fermion-antifermion parity rule
+    to positronium spatial states.
+  failure_mode: The P quantum-number assignment and photon-parity selection rules
+    have no derived pair-parity input.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6 and Problem 3.8
+    pages:
+    - 67
+    - 76
+    note: The text flags positronium selection rules after deriving bound-state parity;
+      the problem then requests them.
+- id: ps3-parity-to-tensor-problem
+  from: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
+  to: peskin-schroeder.problem-dirac-tensor-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) extends the displayed parity bilinear table to the omitted tensor
+    bilinear.
+  failure_mode: The parity transformation method for fermion bilinears is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.7(a)
+    pages:
+    - 75
+    note: The problem asks to complete the end-of-chapter bilinear transformation
+      table.
+- id: ps3-quantized-dirac-to-majorana-quantization
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.problem-majorana-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supplied hint asks to compare χ with the top two components of the
+    quantized Dirac field.
+  failure_mode: The source-specified comparison route for Hamiltonian diagonalization
+    is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(e)
+    pages:
+    - 74
+    note: The problem's hint explicitly directs the reader to the quantized Dirac
+      field.
+- id: ps3-quantized-to-angular-momentum
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.dirac-noether-angular-momentum-spin
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin proof acts with the Noether charge on ladder-created rest states.
+  failure_mode: There are no Hilbert-space states whose J_z eigenvalues could establish
+    spin one-half.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 60
+    - 61
+    note: The source derives J then evaluates its commutator with a† on the vacuum.
+- id: ps3-quantized-to-charge
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.dirac-u1-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Evaluating Q as particle and antiparticle number operators inserts the
+    quantized field expansion into the charge integral.
+  failure_mode: The ladder-operator charge assignment cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 62
+    note: The source evaluates the current charge in a and b operators.
+- id: ps3-quantized-to-charge-conjugation
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.charge-conjugation-bilinears-and-cpt
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The C field transformation follows by exchanging a and b in the quantized
+    expansion and relating u and v spinors.
+  failure_mode: The mode-exchange derivation of CψC^{-1} cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6, Charge Conjugation
+    pages:
+    - 70
+    note: The source transforms annihilation operators and substitutes the result
+      into the field expansion.
+- id: ps3-quantized-to-discrete
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.discrete-lorentz-components-and-cpt-status
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The preceding quantized-field discussion provides context for later operator
+    implementations, but identifying disconnected Lorentz components and defining
+    C, P, and T does not depend on it.
+  failure_mode: Without it, the transition to Hilbert-space implementations is less
+    motivated; the definitions remain available.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.6'
+    pages:
+    - 64
+    - 65
+    note: The section follows the Hilbert-space Lorentz discussion before introducing
+      the discrete operations.
+- id: ps3-quantized-to-feynman-propagator
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.dirac-momentum-space-and-feynman-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-ordered Feynman interpretation is expressed through quantized-field
+    vacuum contractions and fermionic interchange signs.
+  failure_mode: The time-ordered vacuum-matrix-element form of S_F cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 63
+    note: The source writes the Feynman result as time-ordered ψ and ψ̄ vacuum expectation
+      values.
+- id: ps3-quantized-to-local-creation
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.dirac-local-field-particle-creation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local one-particle interpretation follows by acting with the finalized
+    field operators on the vacuum.
+  failure_mode: The electron and positron components of ψ and ψ† cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 62
+    note: The source states the local particle interpretation after its field-operator
+      expansion.
+- id: ps3-quantized-to-lorentz-action
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.lorentz-action-on-quantized-dirac-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The consistency check transforms the finalized field expansion and its
+    ladder operators.
+  failure_mode: There is no field/operator representation on which U(Λ) can be checked.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 59
+    note: The source starts the consistency check from the final field expansion and
+      one-particle state transformation.
+- id: ps3-quantized-to-parity
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity field law is derived by transforming the fermion and antifermion
+    operators in the field expansion.
+  failure_mode: The phase relation and resulting ψ transformation cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6, Parity
+    pages:
+    - 65
+    - 66
+    note: The source applies P to the field expansion and compares it to ψ(t,−x).
+- id: ps3-quantized-to-retarded-propagator
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.dirac-retarded-propagator-from-anticommutator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Vacuum contractions and the field anticommutator define the retarded
+    propagator.
+  failure_mode: The anticommutator Green function cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 62
+    note: The source first calculates field propagation amplitudes then defines S_R
+      from their anticommutator.
+- id: ps3-quantized-to-time-reversal
+  from: peskin-schroeder.quantized-dirac-field-expansion
+  to: peskin-schroeder.time-reversal-antiunitary-dirac-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The frequency obstruction and final T field law are evaluated using the
+    Heisenberg field and fermion mode expansion.
+  failure_mode: The failure of linear unitary T and the spin-flipped operator action
+    cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.6, Time Reversal
+    pages:
+    - 67
+    - 69
+    note: The source compares field frequency components and then applies T to annihilation
+      operators in the expansion.
+- id: ps3-representations-to-clifford
+  from: peskin-schroeder.lorentz-representations-and-generators
+  to: peskin-schroeder.dirac-clifford-algebra-generators
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gamma commutator construction is checked against the Lorentz generator
+    algebra.
+  failure_mode: Without the target commutators, S^{μν} cannot be established as a
+    Lorentz representation.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.1–3.2
+    pages:
+    - 39
+    - 40
+    note: The Lorentz commutators are stated before the Dirac-algebra construction
+      is verified against them.
+- id: ps3-rest-to-boosted-spinors
+  from: peskin-schroeder.dirac-positive-frequency-spinors
+  to: peskin-schroeder.rapidity-boosted-dirac-spinors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general solution is obtained by boosting the rest-frame spinor.
+  failure_mode: There is no reference solution for the boost calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 45
+    - 46
+    note: The source says the general solution follows by boosting u(p_0), then performs
+      the boost.
+- id: ps3-spin-sums-to-naive-quantization
+  from: peskin-schroeder.dirac-spin-sum-completeness
+  to: peskin-schroeder.naive-dirac-commutator-instability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equation (3.89) verifies the proposed equal-time field commutator by
+    using the u and v spin-sum completeness relations.
+  failure_mode: The stated check that the mode algebra reproduces the field commutator
+    cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 53
+    note: The source explicitly cites equations (3.66) and (3.67) in the equal-time
+      commutator calculation.
+- id: ps3-statistics-to-quantized-field
+  from: peskin-schroeder.fermionic-ladder-operators-and-statistics
+  to: peskin-schroeder.quantized-dirac-field-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The final field summary incorporates the anticommuting ladder algebra
+    and positive-energy particle interpretation.
+  failure_mode: The listed b† antifermion modes and vacuum definition have no established
+    algebraic basis.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 57
+    - 58
+    note: After completing the statistics argument, the source summarizes the corrected
+      field operators and algebra.
+- id: ps3-time-reversal-to-tensor-problem
+  from: peskin-schroeder.time-reversal-antiunitary-dirac-symmetry
+  to: peskin-schroeder.problem-dirac-tensor-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) asks for the tensor bilinear's T transformation, requiring the
+    antiunitary T action.
+  failure_mode: The complex-conjugation and spinor transformation needed for the tensor
+    T law are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.7(a)
+    pages:
+    - 75
+    note: The problem explicitly includes T among the required tensor transformations.
+- id: ps3-u-v-to-naive-quantization
+  from: peskin-schroeder.dirac-u-v-normalization
+  to: peskin-schroeder.naive-dirac-commutator-instability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The attempted canonical expansion uses the complete positive- and negative-energy
+    u/v eigenfunction basis.
+  failure_mode: The mode expansion and its energy signs cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    - 53
+    note: The source explicitly reuses the Section 3.3 eigenfunctions in the attempted
+      quantization.
+- id: ps3-u-v-to-spin-sums
+  from: peskin-schroeder.dirac-u-v-normalization
+  to: peskin-schroeder.dirac-spin-sum-completeness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Completeness sums use the normalized two-spinor bases for both u and
+    v solutions.
+  failure_mode: The polarization sums cannot be normalized or evaluated from unspecified
+    solution bases.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 48
+    - 49
+    note: The source introduces the u/v bases and then sums their polarizations.
+- id: ps3-vector-current-to-charge
+  from: peskin-schroeder.dirac-vector-and-axial-currents
+  to: peskin-schroeder.dirac-u1-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charge is the spatial integral of the previously established conserved
+    vector current.
+  failure_mode: The operator Q has no conservation-law origin.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.4–3.5
+    pages:
+    - 51
+    - 62
+    note: The conserved current is derived in Section 3.4 and used to define Q in
+      Section 3.5.
+- id: ps3-weyl-fierz-to-general-fierz
+  from: peskin-schroeder.weyl-fierz-rearrangement
+  to: peskin-schroeder.problem-general-dirac-fierz-coefficients
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The preceding Weyl identities motivate the generalization, but the problem
+    provides an independent sixteen-matrix completeness derivation.
+  failure_mode: Without it, the exercise's connection to the earlier example is less
+    clear; the requested coefficient derivation remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.6
+    pages:
+    - 75
+    note: The problem recalls (3.78) and (3.79) while prescribing a separate completeness
+      calculation.
+- id: ps3-weyl-to-fierz
+  from: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+  to: peskin-schroeder.weyl-fierz-rearrangement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equations (3.77)–(3.79) use the two-component σ matrices and left/right
+    Weyl spinors.
+  failure_mode: The indices and same-chirality bilinears being rearranged are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.2–3.4
+    pages:
+    - 44
+    - 51
+    note: The Weyl notation is established before the source sandwiches the sigma
+      identity between Weyl-spinor components.
+- id: ps3-weyl-to-majorana-equation
+  from: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+  to: peskin-schroeder.problem-majorana-two-component-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Majorana exercise starts from the upper two-component massless Dirac
+    representation and modifies its mass coupling.
+  failure_mode: The Lorentz transformation law for χ and the novelty of its conjugating
+    mass are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.4(a)
+    pages:
+    - 73
+    note: The problem explicitly recalls equation (3.40) before defining χ.
+- id: ps3-weyl-to-susy
+  from: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+  to: peskin-schroeder.problem-free-supersymmetric-multiplet
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supersymmetry problem uses a Weyl fermion and Grassmann spinor parameter
+    in its transformation law.
+  failure_mode: The two-component fermionic variable in the proposed multiplet lacks
+    its Lorentz representation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.5(a)
+    pages:
+    - 74
+    note: The problem specifies a free complex boson and free Weyl fermion and gives
+      a two-component transformation.
 groups:
+- id: peskin-schroeder.chapter-three-problem-applications
+  title: Chapter 3 problem applications
+  question: Which further representation, spinor, Majorana, supersymmetry, Fierz,
+    and bound-state calculations are posed for the reader?
+- id: peskin-schroeder.dirac-bilinears-and-currents
+  title: Dirac bilinears, currents, and rearrangements
+  question: Which Lorentz objects can be made from Dirac fields, and what conservation
+    or algebraic identities do they obey?
+- id: peskin-schroeder.dirac-discrete-symmetries
+  title: Discrete symmetries of the Dirac theory
+  question: How are P, T, and C implemented on fermion fields and bilinears, and what
+    does their combined CPT property imply?
+- id: peskin-schroeder.dirac-field-quantization
+  title: Quantized Dirac field, statistics, and propagation
+  question: Why does causal positive-energy quantization require fermionic anticommutators,
+    and what particle and propagator structure results?
+- id: peskin-schroeder.dirac-lorentz-and-spinors
+  title: Lorentz covariance, spinors, and the Dirac equation
+  question: How do Lorentz representations and the Clifford algebra produce a covariant
+    spin-one-half field equation?
 - id: peskin-schroeder.field-symmetry-and-charge
   title: Field symmetries, currents, and stress-energy
   question: How do continuous field and spacetime symmetries produce currents, charges,
     and energy-momentum tensors?
+- id: peskin-schroeder.free-dirac-solutions
+  title: Free Dirac solutions and spin sums
+  question: How do on-shell u and v spinors encode boosts, helicity, normalization,
+    and polarization completeness?
 - id: peskin-schroeder.free-scalar-foundations
   title: Free real scalar-field foundations
   question: How does the real Klein-Gordon field acquire its classical dynamics, canonical
@@ -1269,6 +3150,42 @@ motivations:
     - 3
     note: The chapter discusses a simple QED process in advance to address where the
       formal development is going.
+- id: peskin-schroeder.why-fermion-anticommutators
+  nodes:
+  - peskin-schroeder.naive-dirac-commutator-instability
+  - peskin-schroeder.fermionic-anticommutator-causality
+  - peskin-schroeder.fermionic-ladder-operators-and-statistics
+  summary: The deliberately failed commutator construction is microcausal, but only
+    because positive- and negative-energy propagation in the same direction cancels
+    outside the light cone, while its Hamiltonian is unbounded below. Requiring positive
+    energy and positive norm makes a spacelike commutator cancellation impossible;
+    equal weights instead give spacelike anticommutation and positive-energy fermions.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, How Not to Quantize the Dirac Field
+    pages:
+    - 54
+    - 55
+    - 56
+    - 57
+    note: The source first finds the commutator vanishes outside the light cone, then
+      imposes positive-energy/norm conditions and derives anticommutation.
+- id: peskin-schroeder.why-first-order-spinor-field
+  nodes:
+  - peskin-schroeder.dirac-clifford-algebra-generators
+  - peskin-schroeder.dirac-spinor-and-covariant-equation
+  - peskin-schroeder.dirac-adjoint-and-free-lagrangian
+  summary: The chapter asks how to construct a classical relativistic field equation
+    for spin one-half that is stronger than Klein–Gordon dynamics and makes Lorentz
+    invariance explicit.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 3 and 3.2
+    pages:
+    - 35
+    - 42
+    note: The opening states the chapter's classical-field and invariance viewpoint;
+      Section 3.2 contrasts Klein–Gordon with the stronger first-order equation.
 - id: peskin-schroeder.why-relativistic-fields
   nodes:
   - peskin-schroeder.relativistic-field-viewpoint
