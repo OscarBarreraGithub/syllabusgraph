@@ -28,7 +28,9 @@ imply a package has been published to a package index.
 - Clarify semantic section reconciliation across shared boundary pages, where
   page-range matching alone can omit concepts from their actual sections.
 - Clarify that supported amendments can proceed from the required critic to
-  final adjudication without an unnecessary extractor correction pass.
+  final adjudication without an unnecessary extractor correction pass. Record
+  the remaining authority requirement as a specific critic finding so an
+  ordinary acceptance does not bypass the accepted-record guard.
 - Publish whole-book semantic reconciliation reports with audited snapshots,
   section-to-record mappings, proof limits, and explicit amendment outcomes.
 - Explain separate frontmatter citation mappings and the inspection of empty

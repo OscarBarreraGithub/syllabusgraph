@@ -1806,3 +1806,47 @@ units:
       id: schwartz.problem-gluon-splitting-from-collinear-gg-scattering
     - kind: edges
       id: schwartz.edge-gg-cross-section-to-gg-splitting-task
+- id: full-013
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Problem 34.2 transposes the degree-count indices.
+    alternatives:
+    - Correct the task formula to n_d^i, matching the printed source and reusable
+      result node.
+    - Omit the displayed species formula from the task summary and refer to the reusable
+      general-species node.
+    resolution: Use n_d^i in the Problem 34.2 summary.
+    rationale: The p. 759 formula places species i as the superscript and the degree-count
+      label d as the subscript. Correcting the single occurrence preserves the complete
+      exercise while making it consistent with the source and the corrected general-species
+      result.
+    evidence:
+    - source: schwartz
+      section: Problem 34.2
+      pages:
+      - 759
+    affected_records:
+    - kind: nodes
+      id: schwartz.problem-34-2-general-one-loop-scalar-potential
+  - finding: 1
+    issue: Two proposed edges encode the same Higgs-task prerequisite.
+    alternatives:
+    - Keep schwartz.higgs-result-to-problem34-5 and omit schwartz.problem34-5-to-higgs.
+    - Keep schwartz.problem34-5-to-higgs and omit schwartz.higgs-result-to-problem34-5.
+    resolution: Keep schwartz.higgs-result-to-problem34-5 and omit the duplicate edge.
+    rationale: Both edges have identical endpoints, relation, mastery levels, and
+      necessity. The kept edge has the clearer directionally accurate ID and cites
+      both the baseline Higgs analysis and Problem 34.5, so it preserves the supported
+      prerequisite once without duplicate graph semantics.
+    evidence:
+    - source: schwartz
+      section: 34.2.3; Problem 34.5
+      pages:
+      - 749
+      - 750
+      - 759
+    affected_records:
+    - kind: edges
+      id: schwartz.problem34-5-to-higgs

@@ -1,4 +1,18 @@
 nodes:
+- id: schwartz.1pi-action-vacuum-minimum-and-inverse-two-point-function
+  label: 1PI action minimum and inverse two-point function
+  summary: At zero current, Γ′[φ₀]=0 has φ₀=⟨φ⟩ in the true vacuum. For a free scalar
+    the Legendre transform returns the classical action up to a constant; in an interacting
+    theory Γ″ evaluated at φ₀ equals i times the inverse full two-point function,
+    as required for its 1PI vertices.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.1.3
+    pages:
+    - 740
+    - 741
 - id: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
   label: Abelian chiral anomaly and one-loop exactness
   summary: The regulated measure gives partial_mu J5^mu=-e^2 epsilon_mu_nu_alpha_beta
@@ -352,6 +366,21 @@ nodes:
     pages:
     - 138
     note: Requests the photon propagator in axial gauge.
+- id: schwartz.background-effective-action-gauge-dependence-onshell-equivalence
+  label: Gauge-dependent background effective action and on-shell equivalence
+  summary: A non-background-covariant gauge can give a divergent Γ with separate F-tilde²
+    and gf^{abc}F-tilde^a Ã^bÃ^c terms. For on-shell S-matrix use, the source applies
+    an identity, drops a total derivative and a D_μF^{μν}=0 term, and recovers the
+    background-gauge result. This supports gauge independence of physical predictions
+    while leaving the off-shell effective action gauge dependent.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.3.3
+    pages:
+    - 757
+    - 758
 - id: schwartz.background-field-axial-anomaly
   label: Background-field axial anomaly
   summary: The massive triangle gives <psibar gamma5 psi>_A=i e^2 epsilon F F/(32pi^2m),
@@ -363,6 +392,87 @@ nodes:
     section: 30.1.3
     pages:
     - 621
+- id: schwartz.background-field-identity-and-tadpole-subtraction
+  label: Background-field identity and tadpole subtraction
+  summary: For non-dynamical φ_b and quantum fluctuation φ, the Legendre construction
+    gives Γ_b[φ_b,φ]=Γ[φ_b+φ], hence Γ[φ_b]=Γ_b[φ_b,0]. Computing it uses 1PI graphs
+    from S[φ_b+φ]; subtracting S′[φ_b]φ is optional but removes tadpoles so fluctuations
+    are integrated about the current-compensated stationary configuration. The restricted
+    path-integral shorthand must restrict to configurations producing the effective
+    action.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.1.4–34.1.5
+    pages:
+    - 741
+    - 742
+    - 743
+- id: schwartz.background-field-qcd-one-loop-beta-graph-result
+  label: Background-field one-loop QCD beta function from ghost and gluon loops
+  summary: The background-field Feynman rules modify the background-gluon vertices.
+    At one loop, ghost plus seagull graphs yield the transverse 2C_A/(3ε) contribution
+    and gluon graphs yield 10C_A/(3ε), with quadratic and ξ-tilde-dependent pieces
+    cancelling. Their sum gives δ-tilde_3=g²C_A 22/(48π²ε) and β(g)=−11C_A g³/(48π²),
+    agreeing with the ordinary QCD calculation.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.3.2
+    pages:
+    - 754
+    - 755
+    - 756
+    - 757
+- id: schwartz.background-field-renormalization-and-beta-extraction
+  label: Background-field renormalization and beta extraction
+  summary: Background gauge invariance constrains one-loop divergences to the gauge-invariant
+    (F-tilde^a_{μν})² form, enforcing Z-tilde_A3=Z-tilde_3 and Z-tilde_A4=Z-tilde_3.
+    Thus the QCD beta function can be extracted from the background gluon two-point
+    renormalization alone, with the source expecting a ξ-tilde-independent Z-tilde_3
+    coefficient 22C_A/3.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.3.1
+    pages:
+    - 753
+    - 754
+- id: schwartz.background-field-scalar-and-spinor-proper-time-propagators
+  label: Background-field scalar and spinor proper-time propagators
+  summary: In scalar QED with fixed Aμ, G_A(x,y)=⟨y|i/[(p̂−eA(x̂))²−m²+iε]|x⟩ uses
+    Ĥ=−(p̂−eA(x̂))². For a spinor, squaring the Dirac operator adds −eF_{μν}σ^{μν}/2
+    to the denominator, hence Ĥ=−(p̂−eA(x̂))²+eF_{μν}(x̂)σ^{μν}/2; its propagator
+    remains a spinor-space matrix, so no Dirac trace is taken there.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.2.1
+    pages:
+    - 707
+    - 708
+- id: schwartz.background-scalar-pseudoscalar-currents-and-decays
+  label: Scalar and pseudoscalar background currents and two-photon decays
+  summary: With λφ psibar psi and igπ psibar γ5 psi couplings, the integrated-fermion
+    action uses J_φ=⟨psibar psi⟩ and J_π=⟨psibar γ5 psi⟩. For constant fields at low
+    order, J_φ=−αF²/(6πm)+… after its required counterterm. Printed Eq. (33.112) gives
+    J_π=−iαF F-tilde/(4πm); the same page displays φF² and πF F-tilde operators and
+    Γ(φ→γγ)=α²λ²m_φ³/(144π³m²), Γ(π→γγ)=α²g²m_π³/(64π³m²). The next page restates
+    J_π with the opposite sign; this printed discrepancy is preserved rather than
+    silently reconciled.
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.5–33.5.1
+    pages:
+    - 722
+    - 723
+    - 724
 - id: schwartz.bare-spectral-normalization-and-field-strength-limit
   label: Bare spectral normalization and 0≤Z≤1
   summary: For a regulated, finite, or conformal theory, the bare scalar field also
@@ -1110,6 +1220,23 @@ nodes:
     section: 30.1.3
     pages:
     - 621
+- id: schwartz.closed-proper-time-loops-and-vacuum-energy
+  label: Closed proper-time loops and regulated vacuum energy
+  summary: The coincident kernel ⟨x|e^(−iĤs)|x⟩ is the amplitude for a particle to
+    return to x in proper time s, so the effective action sums one closed matter loop
+    with any number of external photons. Its s→0 divergence can be regulated by s>s₀
+    in a Lorentz- and gauge-invariant way; for A=0 the cutoff-dependent constant is
+    removed by a vacuum-energy counterterm, while the remaining mode sum supplies
+    the vacuum energy. A complex scalar, Dirac fermion, and matched-mass Weyl-fermion/complex-scalar
+    pair have the stated relative factors and cancellation.
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.2.3
+    pages:
+    - 710
+    - 711
 - id: schwartz.cm-two-to-two-cross-section
   label: Center-of-mass 2→2 cross section
   summary: For 2→2 scattering in the center-of-mass frame, integrating two-body LIPS
@@ -1137,6 +1264,36 @@ nodes:
     pages:
     - 28
     note: Specifies the coherent-state construction and properties.
+- id: schwartz.coleman-weinberg-leading-log-resummation
+  label: Coleman–Weinberg leading-log resummation
+  summary: Summing the constant-background loop insertions before integration cures
+    their separate infrared divergences. Matching the logarithmic potential to the
+    four-point amplitude and running λ with β(λ)=3λ²/(16π²)+O(λ³) gives V_eff(φ)=φ⁴λ(φ)/4!
+    at leading-log order. Higher accuracy generally also requires field running through
+    γ.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.2.2
+    pages:
+    - 746
+    - 747
+    - 748
+- id: schwartz.coleman-weinberg-potential-and-large-log-limit
+  label: Coleman–Weinberg potential and its large-log limit
+  summary: In massless λφ⁴ theory, conditions V_eff(0)=V_eff″(0)=0 and V_eff⁗(φ_R)=λ_R
+    give V_eff=φ⁴{λ_R+[3λ_R²/(32π²)][ln(φ²/φ_R²)−25/6]}/4!. The apparent nonzero minimum
+    has a logarithm too large for fixed one-loop perturbation theory, so it cannot
+    by itself establish symmetry breaking.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.2.1
+    pages:
+    - 745
+    - 746
 - id: schwartz.collinear-splitting-universality
   label: Universal quark–gluon collinear splitting
   summary: 'For a nearly collinear emitted gluon, the singular residue is universal:
@@ -2096,6 +2253,19 @@ nodes:
     pages:
     - 27
     note: Applies the definition to an improper single-coordinate reflection.
+- id: schwartz.effective-action-definition-and-scope
+  label: 'Effective action: matching observables with changed degrees of freedom'
+  summary: An effective action Γ=∫d4x L_eff reproduces the Green functions and S-matrix
+    of a full action S in a stated regime while generally using fewer fields, being
+    nonrenormalizable, and having limited validity; an omitted full-theory field has
+    been integrated out.
+  kind: concept
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33 introduction
+    pages:
+    - 703
 - id: schwartz.effective-charge-vacuum-polarization-matching
   label: Effective charge matching
   summary: At Q=m_Z, ehat^2=e^2/[1-Pi_gamma gamma(m_Z^2)/m_Z^2]=e^2[1+Pi_gamma gamma(m_Z^2)/m_Z^2+...].
@@ -2350,6 +2520,64 @@ nodes:
     pages:
     - 5
     note: Explains why equilibration motivates QFT.
+- id: schwartz.euler-heisenberg-constant-field-action
+  label: Euler–Heisenberg action from constant electromagnetic fields
+  summary: For constant F_{μν}, the spinor proper-time trace can be evaluated through
+    Landau levels. With B along z, the transverse motion is a harmonic oscillator
+    with E_{n,p_t,p_z,λ}=−p_t²+p_z²+eB(2n+1)−2eBλ. Summing levels yields the constant-field
+    Euler–Heisenberg effective Lagrangian, whose Lorentz-invariant form depends on
+    X²=F²/2−iF F-tilde/2=(B+iE)².
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: '33.4'
+    pages:
+    - 713
+    - 714
+    - 715
+- id: schwartz.euler-heisenberg-low-energy-light-by-light-scattering
+  label: Low-energy light-by-light scattering from Euler–Heisenberg terms
+  summary: For real photons with ω≪m, the order-e⁴ Euler–Heisenberg operators α²[(F²)²+7(F
+    F-tilde)²/4]/(90m⁴) generate light-by-light scattering at tree level in the effective
+    theory. The source reports σ_total=973 α⁴ω⁶/(10125πm⁸), the low-energy limit of
+    the full one-loop result; constant-F validity restricts this to leading p²/m².
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.4.2
+    pages:
+    - 717
+    - 718
+- id: schwartz.euler-heisenberg-qed-beta-function
+  label: One-loop QED beta function from Euler–Heisenberg vacuum polarization
+  summary: Before the F² counterterm, the small-proper-time F² term is the UV-divergent
+    vacuum polarization. Its logarithm gives β(e)=e³/(12π²) at one loop, agreeing
+    with the earlier direct QED calculation.
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.4.1
+    pages:
+    - 716
+    - 717
+- id: schwartz.euler-heisenberg-renormalization-and-nonperturbative-scope
+  label: Renormalized Euler–Heisenberg Lagrangian and its scope
+  summary: For a massive fermion and constant F_{μν}, minimal subtraction gives L_EH=−F²/4+[e²/(32π²)]∫₀∞(ds/s)e^(isε−sm²){[Re
+    cosh(esX)/Im cosh(esX)]F_{μν}F-tilde^{μν}+4/(e²s²)+2F²/3}, with X²=F²/2−iF F-tilde/2.
+    The subtractions remove the small-s constant and F² divergences. This action is
+    nonperturbative in e and represents infinitely many one-loop external-photon diagrams,
+    but its constant-F form omits derivative terms and is not the unknown exact Γ[A].
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.4; 33.4.4
+    pages:
+    - 715
+    - 722
 - id: schwartz.euler-lagrange-and-klein-gordon-equations
   label: Euler–Lagrange and Klein–Gordon equations
   summary: Stationarity of the action for arbitrary field variations gives ∂ℒ/∂φ−∂_μ[∂ℒ/∂(∂_μφ)]=0.
@@ -2370,6 +2598,23 @@ nodes:
     pages:
     - 42
     note: Requests the general higher-derivative Euler–Lagrange equation.
+- id: schwartz.exact-matter-effective-action-and-effective-vertex-sewing
+  label: Exact matter effective action and sewing of effective vertices
+  summary: Integrating a quadratic fermion exactly produces only one closed fermion
+    loop while photons remain backgrounds. Full-theory graphs containing photon propagators
+    are reproduced only after sewing the induced effective vertices with photon propagators
+    inside the effective theory. The constant-field Euler–Heisenberg action cannot
+    reproduce all such physics because it lacks ∂F terms and higher-α corrections;
+    the exact Γ[A] is stated to be unknown.
+  kind: concept
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.4.4
+    pages:
+    - 720
+    - 721
+    - 722
 - id: schwartz.exchange-path-spin-statistics-route
   label: Exchange-path route to spin–statistics
   summary: For identical particles in 3+1 dimensions, the allowed exchange phase and
@@ -2662,6 +2907,20 @@ nodes:
     - 256
     - 257
     note: Defines the field and momentum eigenstates and their overlap.
+- id: schwartz.field-dependent-current-effective-action
+  label: Field-dependent currents from proper time
+  summary: In a fixed electromagnetic background, integrating out a fermion replaces
+    the coupled current by J_A^μ=⟨A|psibar γ^μ psi|A⟩=−Tr⟨x|Ĝ_Aγ^μ|x⟩. Since this
+    current is an Aμ variation, integrating it gives L_eff=−F²/4+(i/2)∫₀∞ds e^(−sε−ism²)Tr⟨x|e^(−iĤs)|x⟩/s;
+    the complex-scalar counterpart has −i and no Dirac trace.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.2.2
+    pages:
+    - 708
+    - 709
 - id: schwartz.field-eigenstate-measure-problem
   label: Field-eigenstate measure construction problem
   summary: Problem 14.4 asks for position eigenstates of one oscillator, their field-theory
@@ -2984,6 +3243,23 @@ nodes:
     section: '30.3'
     pages:
     - 628
+- id: schwartz.functional-determinants-from-integrating-out-matter
+  label: Functional determinants for integrated scalar and fermion fields
+  summary: A quadratic complex scalar path integral gives det(−D²−m²)⁻¹, whereas the
+    Grassmann fermion integral gives det(i Dslash−m). Taking log determinants as traces
+    and differentiating with respect to m² converts both forms to the appropriate
+    proper-time kernel, including the scalar/fermion sign and spin trace. This is
+    an independent construction of the matter effective action from the field-dependent-current
+    construction.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.3–33.3.1
+    pages:
+    - 711
+    - 712
+    - 713
 - id: schwartz.fundamental-antifundamental-transformations
   label: Fundamental and antifundamental transformations
   summary: A fundamental field transforms infinitesimally with T_fund^a, while the
@@ -3244,6 +3520,21 @@ nodes:
     pages:
     - 202
     note: States the general local-term CPT exercise.
+- id: schwartz.general-one-loop-species-effective-potential
+  label: General one-loop species contribution to an effective potential
+  summary: For species i with spin s_i, real on-shell degree count n_d^i, and φ-dependent
+    mass m_{i,eff}(φ), the source gives V_eff(φ)=V(φ)+Σ_i(−1)^(2s_i)n_d^i m_{i,eff}^4(φ)
+    ln[m_{i,eff}²(φ)/φ_R²]/(64π²). The sign is − for fermions and + for bosons; examples
+    are n_d^i=12 for a colored Dirac spinor and 1 for a neutral scalar, m_{i,eff}=Yφ
+    for a fermion, and m_{i,eff}²=V″(φ) for the scalar.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.2.3; Problem 34.2
+    pages:
+    - 749
+    - 759
 - id: schwartz.general-operator-creation-annihilation-expansion-problem
   label: General-operator creation/annihilation expansion problem
   summary: Problem 6.3 asks for a proof that any operator can be written in the creation/annihilation
@@ -3695,6 +3986,20 @@ nodes:
     - 93
     note: Builds the Dyson series, normalized correlator, contractions, bubble cancellation,
       and identical rules.
+- id: schwartz.heavy-particle-semiclassical-source-limit
+  label: Heavy-particle semiclassical classical-source limit
+  summary: 'After rescaling proper time, m→∞ makes the worldline integral stationary
+    at the free straight path z^μ=x^μ+v^μτ. The remaining A coupling is that of a
+    classical current J_c^μ=v^μδ(x−vτ): a heavy particle can be treated as a classical
+    source while radiation remains quantum.'
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.6.1
+    pages:
+    - 726
+    - 727
 - id: schwartz.heisenberg-algebra-matrix-and-classification-task
   label: Heisenberg algebra matrix and classification task
   summary: Problem 25.3(d) asks for a three-dimensional matrix representation of [x,p]=i
@@ -3762,6 +4067,25 @@ nodes:
     pages:
     - 541
     - 542
+- id: schwartz.higgs-effective-potential-stability-source-era-analysis
+  label: Higgs effective potential and source-era stability analysis
+  summary: For the Higgs and top, the one-loop potential combines m_h,eff²=−m²+3λh²
+    with the 12-degree-of-freedom top term. At h≫v it has [9λ²/(64π²)−3Y_t⁴/(64π²)]h⁴
+    ln(h²/v²) beyond λh⁴/4. Fixed one-loop positivity gives the source’s m_h>247.7
+    GeV for all h and m_h>221 GeV only through M_Pl≈10¹⁹ GeV, but the source then
+    says neither is trustworthy because ln(M_Pl²/v²)/(64π²)=0.12 is comparable to
+    λ/4≈0.10. It next reports the source-era full-SM two-loop-potential, three-loop-resummation
+    bound m_h>129.4 GeV±1.8 GeV, plus a Hubble-time rather than absolute-stability
+    qualification; these are reported 2012 values, not updates.
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.2.3
+    pages:
+    - 748
+    - 749
+    - 750
 - id: schwartz.higgs-exchange-unitarizes-longitudinal-scattering
   label: Higgs exchange unitarizes longitudinal scattering
   summary: The h-exchange graph cancels the remaining energy-growing WLZL amplitude,
@@ -4263,6 +4587,22 @@ nodes:
     section: 31.1.2
     pages:
     - 653
+- id: schwartz.legendre-transform-connected-functional-and-1pi-action
+  label: Legendre transform of W[J] as the 1PI action
+  summary: With W[J]=−iℏ ln Z[J], its functional derivatives generate connected correlators
+    in the J background. Define Γ[φ]=W[J_φ]−∫J_φφ with δW/δJ|_{J_φ}=φ; then δΓ/δφ=−J_φ
+    and the inverse transform follows. The ℏ→0 saddle of a Γ path integral shows this
+    Legendre Γ is the 1PI effective action.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.1.2
+    pages:
+    - 737
+    - 738
+    - 739
+    - 740
 - id: schwartz.lie-group-generators-bracket-and-jacobi
   label: Lie generators, bracket, and Jacobi identity
   summary: A connected Lie-group element is exp(i theta^a T^a); its generators obey
@@ -5021,6 +5361,25 @@ nodes:
   - source: schwartz
     note: This is the source's two-component Weyl equation; it cautions that it is
       not the conventional four-component Dirac equation.
+- id: schwartz.matching-heavy-scalar-local-operator-expansion
+  label: Heavy-scalar matching and local derivative expansion
+  summary: For L_Y=i psibar ∂slash psi−φ(□+m²)φ/2+λφ psibar psi at typical E≪m, the
+    leading steepest-descent solution φ=λ(□+m²)⁻¹ psibar psi gives L_eff=i psibar
+    ∂slash psi+λ²(psibar psi)(□+m²)⁻¹(psibar psi)/2. Expanding it gives λ²(psibar
+    psi)²/(2m²)−λ²(psibar psi)□(psibar psi)/(2m⁴)+…, with successive effects suppressed
+    at low energy.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: '33.1'
+    pages:
+    - 704
+    - 705
+  notation:
+  - source: schwartz
+    note: The source uses □ with the displayed sign convention and describes the classical-field
+      step as steepest descent.
 - id: schwartz.matching-ir-cancellation-consistency-test
   label: IR cancellation consistency test
   summary: EFT counterterms remove UV poles and its remaining IR poles reproduce full-theory
@@ -5385,6 +5744,20 @@ nodes:
     section: '30.4'
     pages:
     - 632
+- id: schwartz.nonabelian-background-field-gauge-construction
+  label: Non-Abelian background-field gauge construction
+  summary: Split A^a_μ into fixed Ã^a_μ plus quantum A^a_μ so F^a_{μν}=F-tilde^a_{μν}+D-tilde_μA^a_ν−D-tilde_νA^a_μ+gf^{abc}A^b_μA^c_ν.
+    Gauge fixing D-tilde_μA^{aμ}=0 with corresponding adjoint ghosts breaks the quantum
+    gauge symmetry while preserving exact background gauge invariance; the background
+    field is not propagated or gauge-fixed.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: '34.3'
+    pages:
+    - 752
+    - 753
 - id: schwartz.nonabelian-charge-universality-slavnov-taylor-relations
   label: Non-Abelian charge universality
   summary: Universal QCD coupling requires equal renormalization ratios Z_1/Z_2=Z_1c/Z_3c=Z_A3/Z_3=sqrt(Z_A4)/sqrt(Z_3),
@@ -5547,6 +5920,19 @@ nodes:
     - 181
     - 182
     note: States the staged Hamiltonian, expansion, symmetry, and scaling tasks.
+- id: schwartz.nonrelativistic-quantum-mechanics-worldline-limit
+  label: Nonrelativistic quantum mechanics from the worldline limit
+  summary: For Δt≫|Δx|, the stationary proper-time region has s≈Δt/(2m). Changing
+    τ=t/(2m) reduces the charged-scalar worldline form to the first-quantized nonrelativistic
+    path integral with kinetic term ż-vector²/(2m), rest-energy term −m, and electromagnetic
+    line coupling.
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.6.2
+    pages:
+    - 727
 - id: schwartz.nonrelativistic-spin-flip-and-measurement-problem
   label: Nonrelativistic spin-flip and measurement problem
   summary: Problem 11.6(c,e) asks learners to use nonrelativistic electromagnetic
@@ -5718,6 +6104,41 @@ nodes:
     - 317
     - 318
     note: Connects the Pauli term to g and derives the two-form-factor vertex decomposition.
+- id: schwartz.one-loop-constant-background-scalar-effective-potential
+  label: One-loop scalar effective potential from a constant background
+  summary: For L=−φ□φ/2−V[φ], shift φ→φ_b+φ and retain the quadratic fluctuation operator
+    □+V″(φ_b). At one loop its Minkowski determinant relation is iΔΓ[φ_b]=−tr ln(□+V″(φ_b))/2+const.
+    For constant φ_b, m_eff²(φ_b)=V″(φ_b), Γ=−VT V_eff, and the cutoff result contains
+    regulator-dependent constant and m_eff² pieces plus m_eff⁴ ln(m_eff²/c₃)/(64π²),
+    to be renormalized.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.2.1
+    pages:
+    - 743
+    - 744
+    - 745
+- id: schwartz.one-particle-irreducible-effective-action
+  label: 1PI effective action and tree-level reconstruction
+  summary: A 1PI effective action integrates out quantum fluctuations of all fields
+    and is defined so that its classical tree graphs reproduce full quantum Green
+    functions. Its vertices are sums of full-theory 1PI n-point contributions; connected
+    full Green functions are built by sewing them at tree level, while disconnected
+    pieces do not enter S-matrix elements. In general Γ is highly nonlocal, though
+    a low-energy expansion can be local and symmetry-organized.
+  kind: concept
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34 introduction; 34.1.1
+    pages:
+    - 733
+    - 734
+    - 735
+    - 736
+    - 737
 - id: schwartz.one-particle-nonrelativistic-wavefunction-limit
   label: One-particle wavefunction and nonrelativistic limit
   summary: Restricting the second-quantized theory to one-particle states gives ⟨x|=⟨0|φ(x)
@@ -6671,6 +7092,151 @@ nodes:
     section: Problems 31.1-31.4
     pages:
     - 666
+- id: schwartz.problem-33-1-general-field-euler-heisenberg
+  label: 'Problem 33.1: general-field Euler–Heisenberg Landau-level derivation'
+  summary: Derive the Euler–Heisenberg result for arbitrary F_{μν} using Landau levels,
+    justify B→iE for an electric field, and recover the stated general constant-field
+    expression.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: Problem 33.1
+    pages:
+    - 732
+- id: schwartz.problem-33-2-light-by-light-helicity-calculation
+  label: 'Problem 33.2: helicity-spinor light-by-light calculation'
+  summary: Calculate light-by-light scattering using helicity spinors.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: Problem 33.2
+    pages:
+    - 732
+- id: schwartz.problem-33-3-pair-production-contour-integral
+  label: 'Problem 33.3: contour derivation of pair production'
+  summary: Derive the pair-production rate from the proper-time pole sum by extending
+    the integral to the full real axis and deforming the contour to collect poles.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: Problem 33.3
+    pages:
+    - 732
+- id: schwartz.problem-33-4-fermion-semiclassical-spin-limit
+  label: 'Problem 33.4: fermion semiclassical and nonrelativistic limit'
+  summary: Repeat the semiclassical analysis for a fermion and show that spin is irrelevant
+    in the nonrelativistic limit.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: Problem 33.4
+    pages:
+    - 732
+- id: schwartz.problem-33-5-field-strength-eigenvalues
+  label: 'Problem 33.5: constant field-strength eigenvalues'
+  summary: Show that the eigenvalues of F_{μν} have the stated invariant form used
+    in the Schwinger-kernel determinant.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: Problem 33.5
+    pages:
+    - 732
+- id: schwartz.problem-34-1-connected-generating-functional
+  label: 'Problem 34.1: connected correlators from W[J]'
+  summary: Take the third variational derivative of W[J] and then prove generally
+    that W[J] generates only connected contributions to every n-point function.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.1
+    pages:
+    - 758
+- id: schwartz.problem-34-2-general-one-loop-scalar-potential
+  label: 'Problem 34.2: general one-loop scalar effective potential'
+  summary: Compute a fermion’s contribution for L=−φ□φ/2−V(φ)+i psibar∂slash psi−Yφ
+    psibar psi, then establish V_eff=V+Σ_i(−1)^(2s_i)n_d^i m_i(φ)^4 ln[m_i(φ)²/φ_R²]/(64π²).
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.2
+    pages:
+    - 759
+- id: schwartz.problem-34-3-scalar-qed-coleman-weinberg
+  label: 'Problem 34.3: scalar-QED Coleman–Weinberg potential'
+  summary: Calculate the scalar-QED Coleman–Weinberg potential and verify the source’s
+    Eq. (34.71).
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.3
+    pages:
+    - 759
+- id: schwartz.problem-34-4-gauge-boson-higgs-potential
+  label: 'Problem 34.4: W and Z contributions to the Higgs potential'
+  summary: Calculate the W- and Z-boson contributions to the Higgs effective potential.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.4
+    pages:
+    - 759
+- id: schwartz.problem-34-5-rg-improved-higgs-stability
+  label: 'Problem 34.5: RG-improved Higgs stability bound'
+  summary: Include SU(2)×U(1) gauge fields so the h⁴ln(h²/v²) coefficient is 9λ²/(64π²)−3Y_t⁴/(64π²)+3g⁴/8+3(g²+g′²)²/16;
+    evaluate the lower mass bound, derive β_λ=μ(dλ/dμ) and γ_2=μ(dh/dμ) with top and
+    Higgs corrections, solve the RGEs for an RG-improved potential, and determine
+    the requested absolute-stability lower bound.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.5
+    pages:
+    - 759
+- id: schwartz.problem-34-6-background-field-a4-vertex
+  label: 'Problem 34.6: background-field A⁴ 1PI vertex'
+  summary: Calculate the coefficient of the A⁴ vertex in the 1PI effective action
+    using the background-field method.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.6
+    pages:
+    - 759
+- id: schwartz.problem-34-7-background-field-fermion-qcd-beta
+  label: 'Problem 34.7: fermion contribution to the QCD beta function'
+  summary: Calculate fermion contributions to the QCD beta function using the background-field
+    method.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.7
+    pages:
+    - 759
+- id: schwartz.problem-34-8-background-field-finite-gauge-dependence
+  label: 'Problem 34.8: finite gauge dependence in the background effective action'
+  summary: Calculate finite background-field vacuum-polarization parts, identify the
+    ξ-tilde² contribution, and explain why finite terms may be ξ-tilde dependent whereas
+    divergent terms may not.
+  kind: method
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: Problem 34.8
+    pages:
+    - 759
 - id: schwartz.problem-bch-pion-transformation-task
   label: 'Task: BCH pion transformations and isospin representation'
   summary: Expand Eq. (28.25) through order π² and θ² with the Baker–Campbell–Hausdorff
@@ -7118,6 +7684,36 @@ nodes:
     - 115
     - 116
     note: Derives the divergence constraint, Proca form, and positive total energy.
+- id: schwartz.proper-time-background-axial-anomaly-route
+  label: Proper-time background axial-anomaly sign discrepancy
+  summary: The source’s p. 725 restatement J_π=+iαF F-tilde/(4πm), when inserted into
+    ∂_μJ_5^μ=2im psibar γ5 psi, yields its reported ⟨A|∂_μJ_5^μ|A⟩=−αF F-tilde/(2π).
+    This conflicts with the minus sign printed for J_π in Eq. (33.112) on p. 724,
+    so these pages do not furnish an unqualified sign-consistent derivation route;
+    they record a printed discrepancy while the reported anomaly agrees with the accepted
+    result.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.5.2
+    pages:
+    - 724
+    - 725
+- id: schwartz.proper-time-feynman-parameter-composition
+  label: Proper-time composition and Feynman parameters
+  summary: For two denominators, separate proper times s,t can be changed to total
+    time τ=s+t and x=s/(s+t), yielding 1/(AB)=∫₀¹dx/[Ax+B(1−x)]² (with the displayed
+    iε prescription implicit). Thus a Feynman parameter records the fraction of the
+    loop proper time associated with one propagator.
+  kind: representation
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: '33.2'
+    pages:
+    - 706
+    - 707
 - id: schwartz.proton-elastic-form-factors-and-rosenbluth-cross-section
   label: Proton elastic form factors and the Rosenbluth cross section
   summary: For on-shell proton spinors, the electromagnetic vertex is Γμ(q)=F1(q²)γμ+iσμνqνF2(q²)/(2mp).
@@ -8399,6 +8995,22 @@ nodes:
     - 212
     - 213
     note: Constructs the scalar propagator and contrasts the wrong-statistics expression.
+- id: schwartz.scalar-qed-coleman-weinberg-gauge-dependence-and-mass-ratio
+  label: Scalar-QED effective-potential gauge dependence and physical mass ratio
+  summary: The source’s one-loop scalar-QED potential is V_eff=φ⁴{λ_R+[5λ_R²/6+9e_R⁴−ξe_R²λ_R][ln(φ²/φ_R²)−25/6]/(8π²)}/4!,
+    so it is gauge dependent because it contains only 1PI graphs and its off-vacuum
+    Legendre source is not gauge invariant. In the self-consistent e_R⁴≈λ_R≪1 regime
+    with λ_R=33e_R⁴/(8π²), it gives m_S²/m_V²=3e_R²/(8π²) at leading order and the
+    explicitly gauge-independent two-loop result 3e_R²/(8π²)−61e_R⁴/(768π²).
+  kind: result
+  group: schwartz.background-fields-effective-action
+  evidence:
+  - source: schwartz
+    section: 34.2.4
+    pages:
+    - 750
+    - 751
+    - 752
 - id: schwartz.scalar-qed-compton-scattering-problem
   label: Scalar-QED Compton scattering problem
   summary: Problem 9.1 requests tree-level γφ→γφ amplitudes and a Ward-identity check,
@@ -8630,6 +9242,26 @@ nodes:
     - 319
     - 320
     note: Selects the vertex graph, derives the Pauli coefficient, and evaluates F2(0).
+- id: schwartz.schwinger-constant-field-kernel-method
+  label: Schwinger constant-field kernel from Heisenberg evolution
+  summary: For constant F_{μν}, the appendix solves Heisenberg proper-time equations
+    for Π and x, rewrites H in endpoint operators, and solves the kernel differential
+    equation. The normalized kernel includes its gauge line factor, endpoint quadratic
+    form with coth(esF), spin factor, and det-like sinh(esF)/(esF) factor; it reduces
+    to the free propagator as A→0 and supplies the Euler–Heisenberg trace at x=y.
+    Evaluating that trace uses the invariant-defined eigenvalues of σF and of the
+    constant field-strength matrix F.
+  kind: method
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.A.1–33.A.2
+    pages:
+    - 728
+    - 729
+    - 730
+    - 731
+    - 732
 - id: schwartz.schwinger-dyson-contact-equations
   label: Schwinger–Dyson contact equations
   summary: Differentiating time-ordered correlators generates delta-function contact
@@ -8674,6 +9306,35 @@ nodes:
     pages:
     - 276
     note: States uniqueness with appropriate boundary conditions as the defining condition.
+- id: schwartz.schwinger-pair-production-rate-and-limit
+  label: Schwinger pair production from the effective-action imaginary part
+  summary: For a constant electric field, poles at s_n=nπ/(eE) in the Euler–Heisenberg
+    integrand give a nonzero Im L_eff. The no-pair probability is exp[−2VT Im L_eff],
+    and the source reports Γ(E→e⁺e⁻)=αE² Li₂(exp[−πm²/(eE)])/π². This is nonperturbative
+    in e and negligible until E is of order m²/e; the source’s historical nonobservation
+    statement and Z≈1/α estimate are source-era qualifications.
+  kind: result
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: 33.4.3–33.4.4
+    pages:
+    - 718
+    - 719
+    - 720
+- id: schwartz.schwinger-proper-time-propagator-representation
+  label: Schwinger proper-time representation of a propagator
+  summary: 'For real A and ε>0, i/(A+iε)=∫₀∞ds exp[is(A+iε)]. It gives the scalar
+    Feynman propagator as a proper-time integral and, with Ĥ=−p̂², as ∫₀∞ds e^(−sε−ism²)⟨y|e^(−iĤs)|x⟩:
+    an amplitude to go from x to y in proper time s, integrated over s.'
+  kind: representation
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: '33.2'
+    pages:
+    - 705
+    - 706
 - id: schwartz.second-quantization-many-mode-particle-interpretation
   label: Second quantization as many mode oscillators
   summary: 'Second quantization assigns a harmonic oscillator to each wavevector and
@@ -10536,6 +11197,19 @@ nodes:
     section: 29.3.2
     pages:
     - 598
+- id: schwartz.worldline-path-integral-for-background-propagation
+  label: Worldline path integral for a charged scalar propagator
+  summary: The scalar background propagator has the exact formal worldline representation
+    ∫₀∞ds e^(−ism²)∫Dz exp{−i∫₀ˢdτ (ż/2)²−ie∫A_μ(z)dz^μ}, with endpoints fixed at
+    x and y. Its usefulness is limited by the ability to solve the path integral.
+  kind: representation
+  group: schwartz.effective-actions-proper-time
+  evidence:
+  - source: schwartz
+    section: '33.6'
+    pages:
+    - 725
+    - 726
 - id: schwartz.yang-mills-gauge-invariance-task
   label: Yang–Mills gauge-invariance task
   summary: Problem 25.1 asks direct verification that Eq. 25.6 is gauge invariant
@@ -10701,6 +11375,23 @@ nodes:
     pages:
     - 647
 edges:
+- id: schwartz.1pi-to-legendre
+  from: schwartz.one-particle-irreducible-effective-action
+  to: schwartz.legendre-transform-connected-functional-and-1pi-action
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The source presents the Legendre transform as another construction of
+    the same 1PI effective action alongside direct matching.
+  failure_mode: Labeling it necessary would conflate two independently sufficient
+    constructions.
+  evidence:
+  - source: schwartz
+    section: 34.1.1–34.1.2
+    pages:
+    - 735
+    - 737
 - id: schwartz.anomaly-coefficient-to-su3-matching
   from: schwartz.anomaly-coefficient-definition-and-normalization
   to: schwartz.su3-chiral-breaking-from-anomaly-matching
@@ -10731,6 +11422,23 @@ edges:
     pages:
     - 630
     - 639
+- id: schwartz.axial-route-evidence-existing-anomaly
+  from: schwartz.proper-time-background-axial-anomaly-route
+  to: schwartz.background-field-axial-anomaly
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The source’s p. 725 reported divergence agrees with the accepted anomaly
+    result, while the preceding sign discrepancy prevents this from being a clean
+    alternative derivation route.
+  failure_mode: Calling the printed sequence an alternative derivation would hide
+    its internal sign conflict.
+  evidence:
+  - source: schwartz
+    section: 33.5.2
+    pages:
+    - 725
 - id: schwartz.background-anomaly-alternative
   from: schwartz.background-field-axial-anomaly
   to: schwartz.abelian-chiral-anomaly-and-one-loop-exactness
@@ -10747,6 +11455,55 @@ edges:
     section: 30.1.3
     pages:
     - 621
+- id: schwartz.background-identity-to-nonabelian-bfg
+  from: schwartz.background-field-identity-and-tadpole-subtraction
+  to: schwartz.nonabelian-background-field-gauge-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The non-Abelian construction applies the background-plus-fluctuation
+    split to gauge fields.
+  failure_mode: The role of fixed background versus quantum field is unspecified.
+  evidence:
+  - source: schwartz
+    section: 34.1.4; 34.3
+    pages:
+    - 741
+    - 752
+- id: schwartz.background-identity-to-scalar-potential
+  from: schwartz.background-field-identity-and-tadpole-subtraction
+  to: schwartz.one-loop-constant-background-scalar-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar calculation shifts to a background and integrates its quantum
+    fluctuation around the tadpole-compensated configuration.
+  failure_mode: The determinant calculation would not have the source’s 1PI background
+    interpretation.
+  evidence:
+  - source: schwartz
+    section: 34.1.4; 34.2.1
+    pages:
+    - 742
+    - 744
+- id: schwartz.background-propagator-to-current-action
+  from: schwartz.background-field-scalar-and-spinor-proper-time-propagators
+  to: schwartz.field-dependent-current-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current is the coincident background propagator and is then integrated
+    with respect to A.
+  failure_mode: The current formula and its effective-action integral are unavailable.
+  evidence:
+  - source: schwartz
+    section: 33.2.1–33.2.2
+    pages:
+    - 708
+    - 709
 - id: schwartz.baryon-to-sakharov
   from: schwartz.baryon-lepton-anomalies-and-sphaleron-scope
   to: schwartz.sakharov-conditions-and-standard-model-baryogenesis-limit
@@ -10931,6 +11688,38 @@ edges:
     - 658
     - 659
     - 663
+- id: schwartz.bfg-renormalization-to-beta-graphs
+  from: schwartz.background-field-renormalization-and-beta-extraction
+  to: schwartz.background-field-qcd-one-loop-beta-graph-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The graph computation uses the background-field relation to obtain β
+    from the two-point divergence.
+  failure_mode: The calculated δ-tilde_3 would not be connected to the beta function.
+  evidence:
+  - source: schwartz
+    section: 34.3.1–34.3.2
+    pages:
+    - 754
+    - 757
+- id: schwartz.bfg-to-onshell-gauge-equivalence
+  from: schwartz.nonabelian-background-field-gauge-construction
+  to: schwartz.background-effective-action-gauge-dependence-onshell-equivalence
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The noncovariant-gauge calculation is compared with, rather than derived
+    as a required stage of, the manifest-background-gauge route.
+  failure_mode: Making this comparison compulsory would erase the independently usable
+    background-gauge calculation.
+  evidence:
+  - source: schwartz
+    section: 34.3.3
+    pages:
+    - 758
 - id: schwartz.bosonic-factors-to-field-einstein-route
   from: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
   to: schwartz.field-theoretic-einstein-coefficient-derivation
@@ -10949,6 +11738,21 @@ edges:
     - 8
     - 9
     note: Computes the ladder-operator transition factors and rate equation.
+- id: schwartz.callan-symanzik-to-problem34-5
+  from: schwartz.callan-symanzik-green-function-rge
+  to: schwartz.problem-34-5-rg-improved-higgs-stability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (c) and (d) ask for beta and gamma_2 equations and their RGE improvement.
+  failure_mode: The requested RGE solution lacks the governing beta/anomalous-dimension
+    framework.
+  evidence:
+  - source: schwartz
+    section: Problem 34.5
+    pages:
+    - 759
 - id: schwartz.charge-to-inversion
   from: schwartz.effective-charge-vacuum-polarization-matching
   to: schwartz.oblique-inversion-and-mw-prediction
@@ -10994,6 +11798,22 @@ edges:
     pages:
     - 4
     note: Names the rising classical prediction and its disagreement with observation.
+- id: schwartz.constant-field-invariants-to-problem33-5
+  from: schwartz.euler-heisenberg-constant-field-action
+  to: schwartz.problem-33-5-field-strength-eigenvalues
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives the constant-F matrix eigenvalues expressed through
+    the invariants used by the Euler–Heisenberg action.
+  failure_mode: The required invariant target has no physical matrix context.
+  evidence:
+  - source: schwartz
+    section: 33.4; Problem 33.5
+    pages:
+    - 715
+    - 732
 - id: schwartz.correlator-to-routing
   from: schwartz.massless-triangle-current-correlator
   to: schwartz.routing-choice-preserves-vector-ward-identity
@@ -11008,6 +11828,23 @@ edges:
     section: 30.2.3
     pages:
     - 626
+- id: schwartz.current-action-to-euler-heisenberg
+  from: schwartz.field-dependent-current-effective-action
+  to: schwartz.euler-heisenberg-constant-field-action
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The field-dependent-current construction is one source route to the constant-field
+    matter effective action; the determinant route is separately sufficient.
+  failure_mode: Treating this route as compulsory would incorrectly require it in
+    addition to the determinant construction.
+  evidence:
+  - source: schwartz
+    section: 33.2.2; 33.4
+    pages:
+    - 709
+    - 713
 - id: schwartz.current-roles-to-sourced-maxwell
   from: schwartz.current-roles-and-nondynamical-sources
   to: schwartz.sourced-maxwell-equations-from-action
@@ -11067,6 +11904,22 @@ edges:
     section: '31.2'
     pages:
     - 655
+- id: schwartz.cw-to-resummation
+  from: schwartz.coleman-weinberg-potential-and-large-log-limit
+  to: schwartz.coleman-weinberg-leading-log-resummation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The resummation is required precisely because the fixed-order stationary-point
+    logarithm is large.
+  failure_mode: There is no diagnostic condition motivating the RG improvement.
+  evidence:
+  - source: schwartz
+    section: 34.2.1–34.2.2
+    pages:
+    - 746
+    - 748
 - id: schwartz.deltarho-to-stu
   from: schwartz.delta-rho-doublet-mass-splitting
   to: schwartz.peskin-takeuchi-stu-definitions-and-reference
@@ -11081,6 +11934,23 @@ edges:
     section: '31.2'
     pages:
     - 656
+- id: schwartz.determinant-to-euler-heisenberg
+  from: schwartz.functional-determinants-from-integrating-out-matter
+  to: schwartz.euler-heisenberg-constant-field-action
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The path-integral determinant construction gives the same proper-time
+    effective Lagrangian as the independently developed field-dependent-current route.
+  failure_mode: Treating both constructions as required would force an unnecessary
+    second derivation of the same action.
+  evidence:
+  - source: schwartz
+    section: 33.3.1; 33.4
+    pages:
+    - 713
+    - 715
 - id: schwartz.e-1pi-resummation-from-fermion-renorm
   from: schwartz.fermion-mass-and-field-renormalization
   to: schwartz.fermion-1pi-propagator-resummation
@@ -22826,6 +23696,23 @@ edges:
     section: Chapter 32
     pages:
     - 697
+- id: schwartz.effective-action-to-heavy-matching
+  from: schwartz.effective-action-definition-and-scope
+  to: schwartz.matching-heavy-scalar-local-operator-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matching derivation specializes the definition of an effective action
+    to removal of a heavy scalar.
+  failure_mode: Without the full-versus-effective matching criterion, the substituted
+    classical solution lacks its stated target.
+  evidence:
+  - source: schwartz
+    section: 33 introduction; 33.1
+    pages:
+    - 703
+    - 704
 - id: schwartz.eft-to-tree-match
   from: schwartz.weak-effective-lagrangian-locality-and-power-suppression
   to: schwartz.tree-level-b-to-cud-four-fermi-matching
@@ -22840,6 +23727,21 @@ edges:
     section: 31.3.1
     pages:
     - 659
+- id: schwartz.eh-to-scalar-pseudoscalar-currents
+  from: schwartz.euler-heisenberg-renormalization-and-nonperturbative-scope
+  to: schwartz.background-scalar-pseudoscalar-currents-and-decays
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar background current is obtained by differentiating the Euler–Heisenberg
+    action with respect to m.
+  failure_mode: The source’s low-energy scalar-current coefficient cannot be obtained.
+  evidence:
+  - source: schwartz
+    section: 33.5.1
+    pages:
+    - 723
 - id: schwartz.eigen-to-vcb
   from: schwartz.four-fermi-eigenoperators-and-leading-log-running
   to: schwartz.qcd-running-impact-on-vcb
@@ -22854,6 +23756,37 @@ edges:
     section: 31.3.3
     pages:
     - 665
+- id: schwartz.electroweak-masses-to-problem34-4
+  from: schwartz.electroweak-gauge-mass-relations-and-self-interactions
+  to: schwartz.problem-34-4-gauge-boson-higgs-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W and Z contributions require their Higgs-background masses and gauge
+    couplings.
+  failure_mode: The field-dependent masses inserted into the species formula are unspecified.
+  evidence:
+  - source: schwartz
+    section: Problem 34.4
+    pages:
+    - 759
+- id: schwartz.electroweak-masses-to-problem34-5
+  from: schwartz.electroweak-gauge-mass-relations-and-self-interactions
+  to: schwartz.problem-34-5-rg-improved-higgs-stability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) adds SU(2)×U(1) gauge contributions, which require the electroweak
+    mass and coupling relations.
+  failure_mode: The g and g′ terms in the requested potential have no mass-spectrum
+    input.
+  evidence:
+  - source: schwartz
+    section: Problem 34.5
+    pages:
+    - 759
 - id: schwartz.energy-momentum-conservation-to-graviton-polarizations
   from: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
   to: schwartz.graviton-polarizations-and-trace-coupling
@@ -22905,6 +23838,70 @@ edges:
     pages:
     - 37
     note: Applies Euler–Lagrange equations to obtain ∂μFμν=Jν.
+- id: schwartz.euler-small-s-to-qed-beta
+  from: schwartz.euler-heisenberg-renormalization-and-nonperturbative-scope
+  to: schwartz.euler-heisenberg-qed-beta-function
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The beta-function result reads the logarithmic small-proper-time F² divergence
+    from the Euler–Heisenberg expansion.
+  failure_mode: The stated beta coefficient is disconnected from its source expansion.
+  evidence:
+  - source: schwartz
+    section: 33.4–33.4.1
+    pages:
+    - 715
+    - 716
+    - 717
+- id: schwartz.euler-to-light-by-light
+  from: schwartz.euler-heisenberg-renormalization-and-nonperturbative-scope
+  to: schwartz.euler-heisenberg-low-energy-light-by-light-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scattering amplitude is read from the renormalized order-e⁴ effective
+    operators.
+  failure_mode: The claimed contact interaction has no source action.
+  evidence:
+  - source: schwartz
+    section: 33.4.2
+    pages:
+    - 717
+- id: schwartz.euler-to-pair-production
+  from: schwartz.euler-heisenberg-renormalization-and-nonperturbative-scope
+  to: schwartz.schwinger-pair-production-rate-and-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Pair production is extracted from the constant-electric-field effective
+    Lagrangian’s imaginary part.
+  failure_mode: The pole and optical-theorem interpretation lack their effective action.
+  evidence:
+  - source: schwartz
+    section: 33.4.3
+    pages:
+    - 718
+    - 719
+- id: schwartz.euler-to-renormalized-euler
+  from: schwartz.euler-heisenberg-constant-field-action
+  to: schwartz.euler-heisenberg-renormalization-and-nonperturbative-scope
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Renormalization subtracts the explicit small-s expansion of the constant-field
+    result.
+  failure_mode: The subtractions and stated scope have no unrenormalized expression
+    to qualify.
+  evidence:
+  - source: schwartz
+    section: '33.4'
+    pages:
+    - 715
 - id: schwartz.fiducial-to-top-prediction
   from: schwartz.fiducial-input-scheme-and-tree-level-tension
   to: schwartz.top-ms-mass-and-one-loop-precision-prediction
@@ -23046,6 +24043,38 @@ edges:
     - 629
     - 630
     - 631
+- id: schwartz.general-species-to-problem34-2
+  from: schwartz.general-one-loop-species-effective-potential
+  to: schwartz.problem-34-2-general-one-loop-scalar-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) explicitly asks to prove the general species formula printed
+    in the main text.
+  failure_mode: The requested target formula and its degree-count interpretation are
+    missing.
+  evidence:
+  - source: schwartz
+    section: Problem 34.2
+    pages:
+    - 759
+- id: schwartz.general-species-to-problem34-4
+  from: schwartz.general-one-loop-species-effective-potential
+  to: schwartz.problem-34-4-gauge-boson-higgs-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task applies the general species contribution to W and Z fields in
+    the Higgs background.
+  failure_mode: The W/Z loop contribution lacks its spin and degree-count formula.
+  evidence:
+  - source: schwartz
+    section: 34.2.3; Problem 34.4
+    pages:
+    - 749
+    - 759
 - id: schwartz.gf-to-inversion
   from: schwartz.muon-decay-fermi-constant-oblique-matching
   to: schwartz.oblique-inversion-and-mw-prediction
@@ -23111,6 +24140,39 @@ edges:
     pages:
     - 41
     note: Uses the kernel to express the leading and corrected sourced solutions.
+- id: schwartz.helicity-input-to-problem33-2
+  from: schwartz.helicity-spinor-brackets-and-sigma-identities
+  to: schwartz.problem-33-2-light-by-light-helicity-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly requires helicity spinors, including their bracket
+    and sigma identities.
+  failure_mode: The requested helicity representation is unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 33.2
+    pages:
+    - 732
+- id: schwartz.higgs-result-to-problem34-5
+  from: schwartz.higgs-effective-potential-stability-source-era-analysis
+  to: schwartz.problem-34-5-rg-improved-higgs-stability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem refines the preceding top-and-Higgs stability potential by
+    adding gauge fields and RG improvement.
+  failure_mode: The requested stability bound has no baseline potential or approximation
+    limitation to improve.
+  evidence:
+  - source: schwartz
+    section: 34.2.3; Problem 34.5
+    pages:
+    - 749
+    - 750
+    - 759
 - id: schwartz.hypercharge-solutions-to-bminusl
   from: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
   to: schwartz.anomaly-allowed-b-minus-l
@@ -23160,6 +24222,91 @@ edges:
     pages:
     - 648
     - 652
+- id: schwartz.kernel-alternative-euler
+  from: schwartz.schwinger-constant-field-kernel-method
+  to: schwartz.euler-heisenberg-constant-field-action
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The appendix explicitly derives the same constant-field Euler–Heisenberg
+    action by a different method than Landau levels.
+  failure_mode: Calling it a prerequisite would incorrectly make both derivations
+    compulsory.
+  evidence:
+  - source: schwartz
+    section: 33.A.2
+    pages:
+    - 731
+    - 732
+- id: schwartz.kernel-eigenvalues-to-problem33-5
+  from: schwartz.schwinger-constant-field-kernel-method
+  to: schwartz.problem-33-5-field-strength-eigenvalues
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The appendix’s kernel trace requires the constant field-strength matrix
+    eigenvalues whose derivation the problem requests.
+  failure_mode: The requested eigenvalue calculation is detached from the determinant
+    it is meant to evaluate.
+  evidence:
+  - source: schwartz
+    section: 33.A.2; Problem 33.5
+    pages:
+    - 731
+    - 732
+- id: schwartz.legendre-to-background-identity
+  from: schwartz.legendre-transform-connected-functional-and-1pi-action
+  to: schwartz.background-field-identity-and-tadpole-subtraction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The background-field equivalence is proven by applying the Legendre construction
+    to W_b.
+  failure_mode: The background-field identity would be an unsupported shift assertion.
+  evidence:
+  - source: schwartz
+    section: 34.1.4
+    pages:
+    - 741
+    - 742
+- id: schwartz.legendre-to-vacuum-minimum
+  from: schwartz.legendre-transform-connected-functional-and-1pi-action
+  to: schwartz.1pi-action-vacuum-minimum-and-inverse-two-point-function
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The minimum and inverse-propagator checks differentiate the Legendre
+    identities.
+  failure_mode: The physical meaning of the stationary field and inverse two-point
+    relation is ungrounded.
+  evidence:
+  - source: schwartz
+    section: 34.1.2–34.1.3
+    pages:
+    - 739
+    - 740
+- id: schwartz.light-by-light-to-problem33-2
+  from: schwartz.euler-heisenberg-low-energy-light-by-light-scattering
+  to: schwartz.problem-33-2-light-by-light-helicity-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task recomputes the section’s light-by-light process with helicity
+    spinors, so it needs the effective four-photon interaction and its low-energy
+    scope.
+  failure_mode: The helicity calculation has no specified effective interaction or
+    approximation regime.
+  evidence:
+  - source: schwartz
+    section: 33.4.2; Problem 33.2
+    pages:
+    - 717
+    - 732
 - id: schwartz.lorentz-contractions-to-kinematics-method
   from: schwartz.lorentz-covariant-index-contractions-and-dalembertian
   to: schwartz.lorentz-invariant-kinematics-method
@@ -23360,6 +24507,23 @@ edges:
     pages:
     - 35
     note: Derives Tμν by proceeding as in the Noether-current case.
+- id: schwartz.nonabelian-bfg-to-renormalization
+  from: schwartz.nonabelian-background-field-gauge-construction
+  to: schwartz.background-field-renormalization-and-beta-extraction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The renormalization identities follow from the manifest background gauge
+    invariance preserved by this gauge fixing.
+  failure_mode: The equality of renormalization factors would be asserted without
+    its symmetry rationale.
+  evidence:
+  - source: schwartz
+    section: 34.3–34.3.1
+    pages:
+    - 753
+    - 754
 - id: schwartz.nonabelian-to-smcancel
   from: schwartz.nonabelian-anomaly-coefficient-and-divergence
   to: schwartz.standard-model-mixed-and-gravitational-anomaly-cancellation
@@ -24202,6 +25366,190 @@ edges:
     - 664
     - 665
     - 666
+- id: schwartz.problem33-1-to-euler
+  from: schwartz.euler-heisenberg-constant-field-action
+  to: schwartz.problem-33-1-general-field-euler-heisenberg
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to generalize and verify the section’s Euler–Heisenberg
+    result.
+  failure_mode: The requested target expression and Landau-level context are absent.
+  evidence:
+  - source: schwartz
+    section: Problem 33.1
+    pages:
+    - 732
+- id: schwartz.problem33-3-to-pair-production
+  from: schwartz.schwinger-pair-production-rate-and-limit
+  to: schwartz.problem-33-3-pair-production-contour-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives the reported rate from its preceding pole expression.
+  failure_mode: There is no specified contour target or poles to evaluate.
+  evidence:
+  - source: schwartz
+    section: Problem 33.3
+    pages:
+    - 732
+- id: schwartz.problem34-1-to-connected
+  from: schwartz.legendre-transform-connected-functional-and-1pi-action
+  to: schwartz.problem-34-1-connected-generating-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task directly generalizes W[J]’s connected-correlator property.
+  failure_mode: The requested variational proof has no generating-functional claim
+    to establish.
+  evidence:
+  - source: schwartz
+    section: Problem 34.1
+    pages:
+    - 758
+- id: schwartz.problem34-2-to-scalar-potential
+  from: schwartz.one-loop-constant-background-scalar-effective-potential
+  to: schwartz.problem-34-2-general-one-loop-scalar-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise extends the source’s determinant calculation to fermions
+    and general species.
+  failure_mode: The determinant-to-potential method is missing.
+  evidence:
+  - source: schwartz
+    section: Problem 34.2
+    pages:
+    - 759
+- id: schwartz.problem34-3-to-scalar-qed
+  from: schwartz.scalar-qed-coleman-weinberg-gauge-dependence-and-mass-ratio
+  to: schwartz.problem-34-3-scalar-qed-coleman-weinberg
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to calculate and verify the scalar-QED result in the
+    section.
+  failure_mode: Its referenced equation and setup are unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 34.3
+    pages:
+    - 759
+- id: schwartz.problem34-6-to-bfg
+  from: schwartz.nonabelian-background-field-gauge-construction
+  to: schwartz.problem-34-6-background-field-a4-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requests a 1PI vertex calculation specifically by the background-field
+    method.
+  failure_mode: The required gauge-fixed background formalism is missing.
+  evidence:
+  - source: schwartz
+    section: Problem 34.6
+    pages:
+    - 759
+- id: schwartz.problem34-7-to-beta-graphs
+  from: schwartz.background-field-qcd-one-loop-beta-graph-result
+  to: schwartz.problem-34-7-background-field-fermion-qcd-beta
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem adds fermion loops to the background-field beta-function
+    calculation.
+  failure_mode: The target calculation lacks the existing gauge/ghost-loop framework.
+  evidence:
+  - source: schwartz
+    section: Problem 34.7
+    pages:
+    - 759
+- id: schwartz.problem34-8-to-gauge-dependence
+  from: schwartz.background-effective-action-gauge-dependence-onshell-equivalence
+  to: schwartz.problem-34-8-background-field-finite-gauge-dependence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for the finite ξ-tilde dependence and its consistency with
+    the preceding divergent-term argument.
+  failure_mode: The reason for the requested comparison is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 34.8
+    pages:
+    - 759
+- id: schwartz.proper-time-to-background-propagator
+  from: schwartz.schwinger-proper-time-propagator-representation
+  to: schwartz.background-field-scalar-and-spinor-proper-time-propagators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The background construction applies the proper-time resolvent representation
+    to the covariant kinetic operator.
+  failure_mode: One cannot justify the background Hamiltonian kernel without the proper-time
+    representation.
+  evidence:
+  - source: schwartz
+    section: 33.2–33.2.1
+    pages:
+    - 705
+    - 707
+- id: schwartz.proper-time-to-determinants
+  from: schwartz.schwinger-proper-time-propagator-representation
+  to: schwartz.functional-determinants-from-integrating-out-matter
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant route differentiates with respect to m² and applies the
+    proper-time representation to the resulting inverse operator.
+  failure_mode: The determinant logarithm cannot be converted into the stated proper-time
+    kernel.
+  evidence:
+  - source: schwartz
+    section: 33.3–33.3.1
+    pages:
+    - 712
+    - 713
+- id: schwartz.proper-time-to-schwinger-kernel
+  from: schwartz.background-field-scalar-and-spinor-proper-time-propagators
+  to: schwartz.schwinger-constant-field-kernel-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The appendix begins with the spinor background proper-time Hamiltonian.
+  failure_mode: The endpoint-kernel derivation lacks its operator starting point.
+  evidence:
+  - source: schwartz
+    section: 33.A
+    pages:
+    - 728
+- id: schwartz.pseudoscalar-to-axial-anomaly-route
+  from: schwartz.background-scalar-pseudoscalar-currents-and-decays
+  to: schwartz.proper-time-background-axial-anomaly-route
+  relation: evidence
+  source_level: use
+  target_level: recognize
+  necessity: helpful
+  rationale: The consecutive pages supply the conflicting printed J_pi signs that
+    delimit the claimed proper-time anomaly route.
+  failure_mode: Using the p. 724 sign as an unqualified derivational input contradicts
+    the p. 725 sign used to report the anomaly.
+  evidence:
+  - source: schwartz
+    section: 33.5.1–33.5.2
+    pages:
+    - 724
+    - 725
 - id: schwartz.pseudoscalar-width-to-pion-width
   from: schwartz.pseudoscalar-diphoton-width
   to: schwartz.pion-nucleon-chiral-coupling-and-width
@@ -24248,6 +25596,22 @@ edges:
     pages:
     - 629
     - 630
+- id: schwartz.resummation-to-higgs-stability
+  from: schwartz.coleman-weinberg-leading-log-resummation
+  to: schwartz.higgs-effective-potential-stability-source-era-analysis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Higgs discussion explicitly says its large logarithms require resummation
+    before a reliable bound.
+  failure_mode: A fixed-order bound would be reported without its source-stated limitation.
+  evidence:
+  - source: schwartz
+    section: 34.2.2–34.2.3
+    pages:
+    - 748
+    - 750
 - id: schwartz.rge-to-eigen
   from: schwartz.four-fermi-operator-mixing-rge
   to: schwartz.four-fermi-eigenoperators-and-leading-log-running
@@ -24292,6 +25656,57 @@ edges:
     section: 30.2.4
     pages:
     - 627
+- id: schwartz.scalar-potential-to-coleman-weinberg
+  from: schwartz.one-loop-constant-background-scalar-effective-potential
+  to: schwartz.coleman-weinberg-potential-and-large-log-limit
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Coleman–Weinberg result fixes renormalization conditions in the general
+    one-loop scalar potential.
+  failure_mode: The specified potential and its renormalization conditions cannot
+    be reconstructed.
+  evidence:
+  - source: schwartz
+    section: 34.2.1
+    pages:
+    - 745
+    - 746
+- id: schwartz.scalar-potential-to-general-species
+  from: schwartz.one-loop-constant-background-scalar-effective-potential
+  to: schwartz.general-one-loop-species-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general species expression extends the one-loop background determinant
+    calculation to fields with spin, multiplicity, and field-dependent masses.
+  failure_mode: The species sum would be a formula without the underlying one-loop
+    effective-potential method.
+  evidence:
+  - source: schwartz
+    section: 34.2.1; 34.2.3
+    pages:
+    - 745
+    - 749
+- id: schwartz.scalar-potential-to-scalar-qed
+  from: schwartz.one-loop-constant-background-scalar-effective-potential
+  to: schwartz.scalar-qed-coleman-weinberg-gauge-dependence-and-mass-ratio
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Scalar QED is the gauge-field extension of the constant-background effective-potential
+    method.
+  failure_mode: Its determinant and off-vacuum interpretation lack the scalar background
+    framework.
+  evidence:
+  - source: schwartz
+    section: 34.2.1; 34.2.4
+    pages:
+    - 744
+    - 750
 - id: schwartz.shift-to-routing
   from: schwartz.linearly-divergent-shift-surface-term
   to: schwartz.routing-choice-preserves-vector-ward-identity
@@ -24351,6 +25766,40 @@ edges:
     pages:
     - 38
     note: Specializes the source equations to A0 for a point charge.
+- id: schwartz.spinor-proper-time-input-to-problem33-4
+  from: schwartz.background-field-scalar-and-spinor-proper-time-propagators
+  to: schwartz.problem-33-4-fermion-semiclassical-spin-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The fermion extension requires the spinor proper-time Hamiltonian and
+    its σF term before taking the nonrelativistic limit.
+  failure_mode: The claim that spin becomes irrelevant has no spin-dependent starting
+    Hamiltonian to reduce.
+  evidence:
+  - source: schwartz
+    section: 33.2.1; Problem 33.4
+    pages:
+    - 707
+    - 708
+    - 732
+- id: schwartz.stationary-phase-to-nonrelativistic
+  from: schwartz.heavy-particle-semiclassical-source-limit
+  to: schwartz.nonrelativistic-quantum-mechanics-worldline-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonrelativistic derivation selects the same stationary proper-time
+    and time-coordinate region established in the semiclassical analysis.
+  failure_mode: The leading stationary configuration and scaling s≈Δt/(2m) are unexplained.
+  evidence:
+  - source: schwartz
+    section: 33.6.1–33.6.2
+    pages:
+    - 726
+    - 727
 - id: schwartz.strongcp-to-u1
   from: schwartz.strong-cp-anomalous-rotation-relation
   to: schwartz.u1-problem-axial-u1-not-a-symmetry
@@ -24638,11 +26087,65 @@ edges:
     pages:
     - 665
     - 666
+- id: schwartz.worldline-input-to-problem33-4
+  from: schwartz.worldline-path-integral-for-background-propagation
+  to: schwartz.problem-33-4-fermion-semiclassical-spin-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task repeats the semiclassical worldline analysis for a fermion.
+  failure_mode: The scalar route being generalized is missing.
+  evidence:
+  - source: schwartz
+    section: 33.6; Problem 33.4
+    pages:
+    - 725
+    - 726
+    - 732
+- id: schwartz.worldline-to-heavy-source
+  from: schwartz.worldline-path-integral-for-background-propagation
+  to: schwartz.heavy-particle-semiclassical-source-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The heavy-mass stationary-phase result is taken from the worldline action.
+  failure_mode: There is no path-integral object on which to perform stationary phase.
+  evidence:
+  - source: schwartz
+    section: 33.6–33.6.1
+    pages:
+    - 725
+    - 726
+- id: schwartz.worldline-to-nonrelativistic
+  from: schwartz.worldline-path-integral-for-background-propagation
+  to: schwartz.nonrelativistic-quantum-mechanics-worldline-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonrelativistic limit is a stationary-region rewrite of the same
+    worldline expression.
+  failure_mode: The resulting first-quantized path integral has no derivation route.
+  evidence:
+  - source: schwartz
+    section: 33.6.2
+    pages:
+    - 727
 groups:
+- id: schwartz.background-fields-effective-action
+  title: Background fields and 1PI effective actions
+  question: How do 1PI and background-field actions encode quantum corrections while
+    retaining usable symmetries?
 - id: schwartz.classical-field-theory
   title: Classical field theory
   question: How do actions, symmetries, sources, and Green functions organize classical
     field dynamics?
+- id: schwartz.effective-actions-proper-time
+  title: Effective actions and Schwinger proper time
+  question: How can integrating out quantum fields encode low-energy and background-field
+    physics?
 - id: schwartz.eft-examples
   title: Examples of effective quantum field theories
   question: How do Schrödinger, Fermi, chiral, and gravitational theories encode low-energy
@@ -24832,6 +26335,20 @@ motivations:
     - 26
     note: Uses a field-containing interaction in an atom-photon transition calculation
       as context for a dynamical electromagnetic system.
+- id: schwartz.effective-action-reuse-motivation
+  nodes:
+  - schwartz.effective-action-definition-and-scope
+  - schwartz.euler-heisenberg-constant-field-action
+  - schwartz.one-particle-irreducible-effective-action
+  summary: 'An effective action moves difficult quantum calculations into a reusable
+    functional: once it is known, the source obtains low-energy scattering, pair production,
+    anomaly, and vacuum-structure predictions from it.'
+  evidence:
+  - source: schwartz
+    section: 33 introduction; 34 introduction
+    pages:
+    - 703
+    - 733
 - id: schwartz.eft-predictivity-motivation
   nodes:
   - schwartz.nonrenormalizable-eft-low-energy-predictivity

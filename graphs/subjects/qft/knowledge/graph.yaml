@@ -1,4 +1,51 @@
 nodes:
+- id: qft.abelian-higgs-gauge-shift-and-degree-count
+  label: Abelian Higgs gauge shift and degree count
+  summary: The Abelian Higgs gauge transformation A_mu to A_mu+(partial_mu alpha)/e
+    and pi to pi−F_pi alpha removes pi in unitary gauge, while Lorenz gauge leaves
+    a massless pi with two constrained-vector modes. These three degrees of freedom
+    equal those of an unconstrained massive vector, expressing that the vector eats
+    the Goldstone.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.abelian-higgs-gauge-shift-and-degree-count
+    note: Retains both gauge descriptions, their degree count, and the source's physical-spectrum
+      caution.
+  evidence:
+  - source: schwartz
+    section: 28.3.1
+    pages:
+    - 576
+  notation:
+  - source: schwartz
+    note: The transformation law is a gauge transformation, not the law of a scalar
+      in a linear representation.
+- id: qft.abelian-higgs-model-and-vector-mass
+  label: Abelian Higgs model and vector mass before gauge fixing
+  summary: Gauging the broken U(1) and substituting phi=(v+sigma)/sqrt(2) exp(i pi/F_pi)
+    gives a vector mass term one-half e-squared v-squared A_mu-squared, hence m_A=e
+    v, before resolving scalar-vector mixing. In this gauged convention, after radial
+    decoupling, canonical pi normalization requires F_pi=v, unlike the ungauged linear-sigma
+    convention.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.abelian-higgs-model-and-vector-mass
+    note: Retains the displayed mass term, m_A=e v conclusion, mixing qualification,
+      and source-specific gauged F_pi normalization.
+  evidence:
+  - source: schwartz
+    section: 28.3.1
+    pages:
+    - 575
+    - 576
+  notation:
+  - source: schwartz
+    note: F_pi=v is fixed in the decoupled gauged Lagrangian; F_pi=sqrt(2)v belongs
+      to the earlier ungauged parametrization.
 - id: qft.adjoint-representation
   label: Adjoint representation from structure constants
   summary: For structure constants satisfying the displayed antisymmetry and Jacobi
@@ -75,6 +122,27 @@ nodes:
     - 26
     note: Recasts the atomic transition calculation with a quantum photon field.
   notation: []
+- id: qft.baryon-octet-decuplet-quantum-number-diagram
+  label: Baryon octet and decuplet quantum-number organization
+  summary: The baryon octet and decuplet diagram organizes states by charge and strangeness.
+    Its diagonal lines have common charge and its horizontal lines common strangeness,
+    retaining this as a representation-level diagram rather than an inferred dynamical
+    statement.
+  kind: representation
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.baryon-octet-decuplet-quantum-number-diagram
+    note: Retains the diagram's stated quantum-number organization only.
+  evidence:
+  - source: schwartz
+    section: Figure 28.2
+    pages:
+    - 574
+  notation:
+  - source: schwartz
+    note: Strangeness is the number of strange quarks minus strange antiquarks in
+      the hadron.
 - id: qft.blackbody-cavity-modes-and-classical-spectrum
   label: Blackbody cavity modes and the classical spectrum
   summary: A thermal blackbody can be idealized as a periodic box of electromagnetic
@@ -473,6 +541,30 @@ nodes:
     - 43
     note: Extends the diagram expansion and checks it against Green functions.
   notation: []
+- id: qft.classical-goldstone-theorem-potential-hessian-route
+  label: Classical Goldstone theorem from the potential Hessian
+  summary: For a scalar potential invariant under a continuous infinitesimal transformation,
+    differentiating the invariance identity at a constant minimum makes every broken
+    transformation direction a zero eigenvector of the potential Hessian. Since its
+    eigenvalues are the scalar mass-squared values, each broken continuous direction
+    yields a massless scalar in this classical route.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.classical-goldstone-theorem
+    note: Retains the classical scalar-potential proof, including its broken-direction
+      condition A_a(phi_0) not equal to zero.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 351
+    - 352
+  notation:
+  - source: peskin-schroeder
+    note: The source writes the infinitesimal transformation as phi_a to phi_a + alpha
+      A_a(phi).
 - id: qft.classical-spontaneous-symmetry-breaking
   label: Classical spontaneous symmetry breaking
   summary: For a real scalar with a negative mass term and stabilizing quartic interaction,
@@ -486,12 +578,21 @@ nodes:
     node: schwartz.classical-spontaneous-symmetry-breaking
     note: Preserves this reviewed source treatment and its stated assumptions, notation,
       and derivation scope without asserting more than the shared concept.
+  - project: peskin-schroeder
+    node: peskin-schroeder.discrete-symmetry-breaking-scalar-shift
+    note: Matches the discrete phi→−phi broken-vacuum shift, including the two minima
+      and symmetry-linked shifted coefficients.
   evidence:
   - source: schwartz
     section: Problem 3.5 Spontaneous symmetry breaking
     pages:
     - 43
     note: Specifies the classical symmetry-breaking construction.
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 348
+    note: Gives the two discrete minima and the shifted broken-vacuum Lagrangian.
   notation: []
 - id: qft.cm-high-energy-muon-pair-setup
   label: High-energy center-of-mass muon-pair setup
@@ -752,6 +853,24 @@ nodes:
     pages:
     - 36
     - 37
+  notation: []
+- id: qft.discrete-global-and-gauged-breaking-outcomes
+  label: Distinct outcomes of discrete, global, and gauged breaking
+  summary: 'Spontaneous breaking has different physical consequences by symmetry type:
+    a broken discrete symmetry resembles explicit breaking, a broken continuous global
+    symmetry gives long-range correlations and massless Goldstone particles, and a
+    broken gauge symmetry gives a massive gauge boson.'
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.discrete-global-gauged-breaking-outcomes
+    note: Retains the three-way distinction made in the chapter introduction.
+  evidence:
+  - source: schwartz
+    section: 28 introduction
+    pages:
+    - 561
   notation: []
 - id: qft.discrete-lorentz-transformations-and-causal-type
   label: Discrete Lorentz transformations and causal type
@@ -1413,6 +1532,164 @@ nodes:
     pages:
     - 27
   notation: []
+- id: qft.global-goldstone-theorem
+  label: Goldstone theorem for broken continuous global symmetry
+  summary: 'An exact continuous global symmetry whose stable vacuum is not invariant
+    has massless Goldstone particles, one for each independent broken direction under
+    the stated relativistic assumptions. This conclusion is not a result for local
+    gauge symmetry: the current-theorem assumptions fail there, and the Abelian Higgs
+    construction instead has a massive vector with no physical Goldstone scalar.'
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.goldstone-boson-theorem-for-broken-global-symmetry
+    note: Retains the positive-state/current-argument assumptions, independent-generator
+      count, and local-symmetry exception.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 167
+    - 172
+  notation: []
+- id: qft.goldstone-coset-transformations-and-order-parameter
+  label: Goldstone coset transformations and order parameter
+  summary: For G spontaneously broken to H, Goldstones transform linearly under unbroken
+    H and nonlinearly under G/H. The broken transformation relates vacua and their
+    excitations rather than acting through a conserved charge within one vacuum sector;
+    at a smooth second-order transition the unique massless linear G multiplet containing
+    the Goldstones defines the order parameter.
+  kind: concept
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.goldstone-coset-transformations-and-order-parameter
+    note: Retains the G/H transformation distinction, the vacuum-sector qualification,
+      and the smooth-transition order-parameter statement.
+  evidence:
+  - source: schwartz
+    section: 28.2.4
+    pages:
+    - 574
+    - 575
+  notation:
+  - source: schwartz
+    note: G/H denotes the coset of broken transformations; it is explicitly not a
+      subgroup.
+- id: qft.goldstone-current-matrices-and-decay-constant
+  label: Goldstone current matrices and symmetry-breaking scale
+  summary: Matrix elements of broken currents and scalar fields define F_ab and Z_an,
+    whose Ward identity ties them to the vacuum order parameter. In Weinberg's O(N)
+    example, canonical field normalization gives F=v, and 1/F controls the low-energy
+    Goldstone interaction strength.
+  kind: representation
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.goldstone-current-matrix-elements-and-decay-constant
+    note: Retains the F_ab/Z_an matrix definitions, their Ward identity, and the O(N)
+      canonical-normalization specialization.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 173
+  notation:
+  - source: weinberg-2
+    note: F_ab and Z_an are matrices; F=v is the O(N), Z=1 specialization rather than
+      a universal field convention.
+- id: qft.goldstone-current-matrix-element-normalization
+  label: Goldstone current matrix-element normalization
+  summary: For a Goldstone state, relativistic one-particle normalization gives the
+    current matrix element <pi(q)|J_mu(y)|Omega>=i q_mu F exp(i q dot y). It provides
+    a spectral identification of the Goldstone mode and defines F as a mass-dimension-one
+    normalization scale in this convention.
+  kind: representation
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.goldstone-current-matrix-element-normalization
+    note: Retains the source's one-particle normalization and Lorentz-covariant current
+      matrix element.
+  evidence:
+  - source: schwartz
+    section: '28.2'
+    pages:
+    - 564
+  notation:
+  - source: schwartz
+    note: The source's displayed matrix element is bra Goldstone, ket vacuum; its
+      conjugate convention is used later for the pion field.
+- id: qft.goldstone-shift-symmetry-decoupling-and-current
+  label: Goldstone shift symmetry, radial decoupling, and pion current
+  summary: The broken global U(1) acts as pi to pi+F_pi theta while sigma is invariant,
+    forbidding a pion mass. Taking m and lambda to infinity with F_pi=2m/sqrt(lambda)
+    fixed decouples sigma and leaves the nonlinear sigma model with J_mu=F_pi partial_mu
+    pi and <Omega|J_mu(x)|pi(p)>=i p_mu F_pi exp(−i p dot x).
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.goldstone-shift-symmetry-and-decoupling
+    note: Retains the nonlinear shift, fixed-F_pi decoupling limit, and the explicit
+      pion-current calculation.
+  evidence:
+  - source: schwartz
+    section: 28.2.1
+    pages:
+    - 565
+    - 566
+  notation:
+  - source: schwartz
+    note: The fixed-F_pi limit here is the global linear-sigma-model convention, not
+      the gauged Abelian-Higgs convention.
+- id: qft.goldstone-theorem-charge-degeneracy-route
+  label: Goldstone theorem from charged-vacuum degeneracy
+  summary: For a continuous global symmetry with conserved charge Q, a stable vacuum
+    with Q|Omega> nonzero has a degenerate Q|Omega> state because [H,Q]=0. Momentum
+    states constructed from J^0 then have energy approaching the vacuum energy as
+    momentum approaches zero, giving the massless Goldstone conclusion.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.goldstone-theorem-degeneracy-proof
+    note: Retains the conserved-charge degeneracy proof and its J^0 momentum-state
+      construction.
+  evidence:
+  - source: schwartz
+    section: Box 28.1
+    pages:
+    - 564
+  notation:
+  - source: schwartz
+    note: The source defines |pi(p)> from the spatial Fourier transform of J^0 acting
+      on |Omega>, with normalization scale F.
+- id: qft.goldstone-theorem-current-spectral-route
+  label: Goldstone theorem from current spectral functions
+  summary: The current-spectral route combines current conservation, locality, Lorentz
+    invariance, and a nonzero broken-charge commutator with a scalar field. The required
+    delta function at zero invariant mass in the spectral density can arise only from
+    a massless spin-zero one-particle state with the current's allowed parity and
+    unbroken internal quantum numbers.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.goldstone-boson-theorem-current-spectral-route
+    note: Retains the independently complete conserved-current spectral route, including
+      its locality, Lorentz, and quantum-number reasoning.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 171
+    - 172
+    - 170
+  notation:
+  - source: weinberg-2
+    note: The spectral coefficient rho_n(mu^2) contains the forced delta(mu^2) term.
 - id: qft.graviton-polarizations-and-trace-coupling
   label: Graviton polarizations and trace coupling
   summary: The graviton-polarization problem treats h_μν as a symmetric tensor coupled
@@ -1543,6 +1820,28 @@ nodes:
     node: weinberg-1.hermitian-local-interaction-condition
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.higgs-mechanism-and-abelian-higgs-lagrangian
+  label: Higgs mechanism and Abelian Higgs Lagrangian
+  summary: When the broken continuous symmetry is gauged, the physical Goldstone disappears
+    from the spectrum and the gauge boson becomes massive. The Abelian realization
+    gauges the U(1) linear sigma model with the Maxwell term and covariant scalar
+    kinetic term.
+  kind: concept
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.higgs-mechanism-and-abelian-higgs-lagrangian
+    note: Retains the local-symmetry contrast and the displayed Abelian-Higgs starting
+      Lagrangian.
+  evidence:
+  - source: schwartz
+    section: 28.3.1
+    pages:
+    - 575
+  notation:
+  - source: schwartz
+    note: The gauged model uses D_mu phi=(partial_mu+i e A_mu)phi in the displayed
+      product form.
 - id: qft.higher-derivative-effective-interactions-and-instability
   label: Higher-derivative terms, effective interactions, and instability
   summary: Restricting kinetic terms to first derivatives lets initial positions and
@@ -1751,6 +2050,26 @@ nodes:
     node: weinberg-2.lie-algebra-structure-constants
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.linear-sigma-model-polar-fields
+  label: Linear sigma model polar fields and massless pion
+  summary: For the broken complex global U(1) scalar, choosing a real vacuum and writing
+    phi=(v+sigma/sqrt(2)) exp(i pi/F_pi) isolates a massive radial sigma and a massless
+    pion. In this ungauged convention canonical pion normalization fixes F_pi=sqrt(2)v.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.linear-sigma-model-polar-fields
+    note: Retains the polar parametrization, its ungauged canonical normalization,
+      and the radial/massless spectrum.
+  evidence:
+  - source: schwartz
+    section: 28.2.1
+    pages:
+    - 565
+  notation:
+  - source: schwartz
+    note: The source's ungauged polar convention has F_pi=2m/sqrt(lambda)=sqrt(2)v.
 - id: qft.local-field-action
   label: Local field action
   summary: For fields phi(x), the action is the spacetime integral of a local Lagrangian
@@ -2022,6 +2341,27 @@ nodes:
     node: schwartz.momentum-mode-creation-annihilation-algebra
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.noether-charge-generates-continuous-symmetry
+  label: Noether charge generates a continuous symmetry
+  summary: For a continuous global symmetry, the conserved charge Q=integral d^3x
+    J^0 generates the field transformation through its equal-time commutator with
+    the field, and charge conservation gives [H,Q]=0. This charge-generator statement
+    is kept distinct from the general on-shell Noether-current theorem.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.noether-charge-generates-continuous-symmetry
+    note: Retains the canonical-commutator construction of Q as generator and the
+      [H,Q]=0 consequence.
+  evidence:
+  - source: schwartz
+    section: '28.2'
+    pages:
+    - 564
+  notation:
+  - source: schwartz
+    note: The source writes [Q,phi_n(y)]=−i delta phi_n(y)/delta alpha.
 - id: qft.noether-current-and-conserved-charge
   label: Noether current and conserved charge
   summary: For a continuous field transformation whose Lagrangian changes by at most
@@ -2162,6 +2502,42 @@ nodes:
     node: weinberg-1.nonzero-spacelike-mixed-commutator
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.on-linear-sigma-model-broken-vacuum
+  label: O(N) linear sigma model broken vacuum and Goldstone count
+  summary: For the O(N)-invariant scalar model with a broken vacuum of fixed length,
+    choosing a vacuum direction leaves O(N−1), gives one massive radial mode and N−1
+    massless transverse modes, and realizes one Goldstone direction per broken generator.
+    Weinberg additionally relates the canonically normalized current coefficient to
+    the vacuum magnitude in its O(N) convention.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-linear-sigma-model-broken-vacuum
+    note: Corresponds to the shifted fields phi=(pi_k,v+sigma), with the radial/tangential
+      interpretation and residual O(N−1).
+  - project: weinberg-2
+    node: weinberg-2.on-model-goldstone-mode-counting
+    note: Corresponds to the O(N) tree mass-matrix and group-dimension count; its
+      F=v normalization is retained as a source-specific qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 349
+    - 350
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 169
+    - 173
+  notation:
+  - source: peskin-schroeder
+    note: The chosen vacuum is phi=(0,...,0,v), with pi_k for k=1,...,N−1 and sigma
+      radial.
+  - source: weinberg-2
+    note: The book writes the current normalization in terms of F and Z; F=v follows
+      after its canonical Z=1 prescription.
 - id: qft.one-particle-nonrelativistic-wavefunction-limit
   label: One-particle wavefunction and nonrelativistic limit
   summary: Restricting the second-quantized theory to one-particle states gives ⟨x|=⟨0|φ(x)
@@ -2520,6 +2896,39 @@ nodes:
     - 4
     note: States energy quantization, the momentum relation, and the massless conclusion.
   notation: []
+- id: qft.quantum-effective-action-goldstone-route
+  label: Goldstone theorem from the effective action
+  summary: For a translationally invariant vacuum and a linearly realized exact continuous
+    symmetry, the effective-potential invariance identity at a symmetry-breaking minimum
+    makes each independent broken-generator direction a zero mode of the inverse propagator
+    at zero momentum. This gives a massless scalar pole; Peskin and Schroeder state
+    the corresponding effective-action argument as valid to all quantum orders.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.quantum-goldstone-theorem
+    note: Preserves the all-orders effective-potential/Hessian route and its inverse-propagator
+      interpretation.
+  - project: weinberg-2
+    node: weinberg-2.goldstone-boson-theorem-effective-action-route
+    note: Preserves the linearly realized, translationally invariant effective-action
+      route and its independent broken-generator count.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 388
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 168
+  notation:
+  - source: peskin-schroeder
+    note: V_eff is obtained from Gamma for constant classical fields.
+  - source: weinberg-2
+    note: The source denotes the full propagator by Delta and its inverse at zero
+      momentum by Delta inverse(0).
 - id: qft.rapidity-parameterization-of-boosts
   label: Rapidity parameterization of boosts
   summary: Boosts use hyperbolic angles β_i (rapidities); for one direction coshβ=1/√(1−v²)
@@ -2826,6 +3235,31 @@ nodes:
     - 7
     note: Builds the oscillator occupation algebra for one photon frequency.
   notation: []
+- id: qft.soft-goldstone-external-line-theorem
+  label: Soft Goldstone emission from external-line poles
+  summary: Current conservation separates a Goldstone pole from the non-pole current
+    matrix element. If the non-pole term is nonsingular, soft emission has an Adler
+    zero; if external hard-particle lines give 1/|q| poles, their finite direction-dependent
+    contributions determine the very-soft Goldstone amplitude, while internal attachments
+    vanish in the limit.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.soft-goldstone-external-line-theorem
+    note: Retains the conditional Adler-zero statement and the separate external-line-pole
+      calculation rule.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 175
+    - 176
+    - 174
+  notation:
+  - source: weinberg-2
+    note: q is the emitted Goldstone momentum; N_mu is the non-pole current matrix
+      element.
 - id: qft.sourced-maxwell-equations-from-action
   label: Sourced Maxwell equations from the action
   summary: Varying ℒ=−1/4F_μνF^μν−A_μJ^μ gives ∂_μF^μν=J^ν. In Lorenz gauge this becomes
@@ -2864,6 +3298,42 @@ nodes:
     node: weinberg-1.spinless-boson-and-mass-constraint
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.spontaneous-symmetry-breaking-as-renormalization-question
+  label: Spontaneous symmetry breaking as a renormalization question
+  summary: A directional vacuum field value can fail to respect a symmetry of the
+    Lagrangian. In a quantum field theory with such hidden symmetry, ultraviolet divergences
+    raise the separate question whether renormalization preserves the underlying symmetry.
+  kind: concept
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.spontaneous-symmetry-breaking-question
+    note: Retains the chapter's framing of hidden symmetry and its ultraviolet-renormalization
+      question.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 11
+    pages:
+    - 347
+  notation: []
+- id: qft.spontaneous-versus-explicit-symmetry-breaking
+  label: Spontaneous versus explicit symmetry breaking
+  summary: A symmetry is spontaneously broken when the Lagrangian is invariant but
+    the ground state is not; explicit breaking has no exact symmetry in the Lagrangian.
+    The ferromagnet supplies the order-parameter example, with a nonzero vacuum magnetization
+    and spin-wave excitations below the Curie temperature.
+  kind: concept
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.spontaneous-versus-explicit-breaking
+    note: Retains the exact distinction and the ferromagnetic order-parameter example.
+  evidence:
+  - source: schwartz
+    section: 28 introduction
+    pages:
+    - 561
+  notation: []
 - id: qft.translation-symmetry-and-energy-momentum-tensor
   label: Translation symmetry and energy-momentum tensor
   summary: Applying Noether’s construction to spacetime translations gives a conserved
@@ -3026,6 +3496,30 @@ nodes:
     - 43
     note: States the massive-vector potential, constraint, and m→0 tasks.
   notation: []
+- id: qft.zero-momentum-goldstone-effective-vertices
+  label: Zero-momentum Goldstone effective-vertex constraints
+  summary: Differentiated effective-potential symmetry identities make vacuum tadpoles
+    and zero-momentum transitions from a Goldstone boson to other scalars vanish.
+    A further identity makes the three-Goldstone zero-momentum vertex vanish, so leading
+    low-energy Goldstone emission does not come from external low-energy Goldstone
+    lines.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.zero-momentum-goldstone-effective-vertices
+    note: Retains the zero-four-momentum effective-vertex conditions and their leading-soft
+      external-Goldstone consequence.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 176
+    - 177
+  notation:
+  - source: weinberg-2
+    note: The constraints concern zero external four-momentum and leading order in
+      small Goldstone energies.
 edges:
 - id: full-align-002-adjoint-to-su2-example
   from: qft.adjoint-representation
@@ -3612,6 +4106,22 @@ edges:
     pages:
     - 36
     - 41
+- id: qft.abelian-higgs-model-to-gauge-shift
+  from: qft.abelian-higgs-model-and-vector-mass
+  to: qft.abelian-higgs-gauge-shift-and-degree-count
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gauged polar Lagrangian supplies the vector-pion mixing and gauge
+    transformation whose resolution gives the degree count.
+  failure_mode: Without the Abelian Higgs system, the gauge choices have no specified
+    scalar-vector content to compare.
+  evidence:
+  - source: schwartz
+    section: 28.3.1
+    pages:
+    - 576
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -3630,6 +4140,57 @@ edges:
     - 8
     - 9
     note: Computes the ladder-operator transition factors and rate equation.
+- id: qft.charge-degeneracy-route-to-global-theorem
+  from: qft.goldstone-theorem-charge-degeneracy-route
+  to: qft.global-goldstone-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The conserved-charge degeneracy construction independently establishes
+    the global Goldstone conclusion.
+  failure_mode: Treating it as the theorem statement would require its particular
+    momentum-state construction for all uses of the theorem.
+  evidence:
+  - source: schwartz
+    section: Box 28.1
+    pages:
+    - 564
+- id: qft.charge-degeneracy-to-goldstone-current-normalization
+  from: qft.goldstone-theorem-charge-degeneracy-route
+  to: qft.goldstone-current-matrix-element-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source derives the one-particle current matrix element by multiplying
+    the momentum states that establish the Goldstone dispersion relation.
+  failure_mode: Without the established Goldstone momentum states, the current matrix
+    element would not be identified and normalized as Goldstone data.
+  evidence:
+  - source: schwartz
+    section: '28.2'
+    pages:
+    - 564
+- id: qft.classical-route-to-global-theorem
+  from: qft.classical-goldstone-theorem-potential-hessian-route
+  to: qft.global-goldstone-theorem
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The classical scalar-potential Hessian argument realizes the massless
+    broken-direction pattern but does not establish the quantum global theorem; the
+    effective-action, charge-degeneracy, and current-spectral routes remain independent
+    quantum routes.
+  failure_mode: Treating this classical result as a complete alternative would incorrectly
+    extend its scalar-potential proof beyond its stated classical scope.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 351
+    - 352
 - id: qft.classical-spectrum-to-ultraviolet-catastrophe
   from: qft.blackbody-cavity-modes-and-classical-spectrum
   to: qft.ultraviolet-catastrophe
@@ -3684,6 +4245,40 @@ edges:
     pages:
     - 37
     note: Represents the point charge by an external current.
+- id: qft.current-spectral-route-to-global-theorem
+  from: qft.goldstone-theorem-current-spectral-route
+  to: qft.global-goldstone-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The conserved-current spectral argument is an independent complete route
+    to the global theorem's massless-state conclusion.
+  failure_mode: Treating spectral analysis as compulsory would erase the independence
+    of the effective-action and charge-degeneracy routes.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 171
+    - 172
+- id: qft.current-spectral-route-to-goldstone-current-matrices
+  from: qft.goldstone-theorem-current-spectral-route
+  to: qft.goldstone-current-matrices-and-decay-constant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The F and Z matrix definitions apply the massless one-particle Goldstone
+    state established by the spectral route.
+  failure_mode: Without that one-particle state, the current and scalar matrix elements
+    lack the source's spectral-pole normalization role.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 172
+    - 173
 - id: qft.diagrams-to-coherent-sum
   from: qft.qed-diagrammatic-calculation
   to: qft.coherent-sum-of-diagram-amplitudes
@@ -3719,6 +4314,22 @@ edges:
     pages:
     - 45
     note: States the required tensor-current conservation law.
+- id: qft.equal-time-commutators-to-noether-charge-generator
+  from: qft.equal-time-scalar-field-commutators
+  to: qft.noether-charge-generates-continuous-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source evaluates the charge action on the scalar field with canonical
+    equal-time commutators.
+  failure_mode: Without the equal-time algebra, the displayed commutator showing that
+    Q generates the field transformation cannot be derived.
+  evidence:
+  - source: schwartz
+    section: '28.2'
+    pages:
+    - 564
 - id: qft.equilibrium-route-to-einstein-relations
   from: qft.two-level-equilibrium-detailed-balance
   to: qft.einstein-emission-and-absorption-coefficients
@@ -3826,6 +4437,26 @@ edges:
     - 20
     note: The source identifies a mode for each momentum and then quantizes those
       modes.
+- id: qft.global-theorem-to-higgs-contrast
+  from: qft.global-goldstone-theorem
+  to: qft.higgs-mechanism-and-abelian-higgs-lagrangian
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The Higgs discussion is the local-symmetry contrast to the physical Goldstone
+    result for global breaking.
+  failure_mode: Without the contrast, a learner may incorrectly infer a physical massless
+    scalar from broken gauge symmetry.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 172
+  - source: schwartz
+    section: '28.3'
+    pages:
+    - 575
 - id: qft.golden-rule-to-bosonic-enhancement
   from: qft.fermi-golden-rule-field-interaction
   to: qft.bosonic-spontaneous-and-stimulated-emission-factor
@@ -3843,6 +4474,39 @@ edges:
     pages:
     - 9
     note: Squares the amplitudes in the occupation-rate equation.
+- id: qft.goldstone-current-to-soft-theorem
+  from: qft.goldstone-current-matrices-and-decay-constant
+  to: qft.soft-goldstone-external-line-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current pole residue and F normalization translate current conservation
+    into the soft-emission amplitude.
+  failure_mode: Without that normalization, the source's current-pole argument cannot
+    determine the emitted-boson amplitude coefficient.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 173
+    - 174
+- id: qft.goldstone-current-to-zero-momentum-vertices
+  from: qft.goldstone-current-matrices-and-decay-constant
+  to: qft.zero-momentum-goldstone-effective-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The F and Z relation converts the broken directions in the effective-potential
+    identities to canonically normalized Goldstone fields.
+  failure_mode: Without this normalization, the effective interaction cannot be interpreted
+    as a Goldstone amplitude.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 176
 - id: qft.green-kernel-to-nonlinear-solution
   from: qft.green-function-propagator-kernel
   to: qft.perturbative-nonlinear-classical-field-solution
@@ -3896,6 +4560,23 @@ edges:
     pages:
     - 9
     note: Uses I(ω)=ℏω³nω/π² to read off the relations.
+- id: qft.linear-sigma-to-shift-decoupling
+  from: qft.linear-sigma-model-polar-fields
+  to: qft.goldstone-shift-symmetry-decoupling-and-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The polar fields and their canonical global normalization define the
+    shift, radial-decoupling limit, and pion current calculation.
+  failure_mode: Without the polar parametrization, the source's pi shift and fixed-F_pi
+    decoupling construction are undefined.
+  evidence:
+  - source: schwartz
+    section: 28.2.1
+    pages:
+    - 565
+    - 566
 - id: qft.lorentz-contractions-to-kinematics-method
   from: qft.lorentz-covariant-index-contractions-and-dalembertian
   to: qft.lorentz-invariant-kinematics-method
@@ -3946,6 +4627,21 @@ edges:
     pages:
     - 14
     note: Defines a vector by its Lorentz transformation law.
+- id: qft.noether-charge-to-charge-degeneracy
+  from: qft.noether-charge-generates-continuous-symmetry
+  to: qft.goldstone-theorem-charge-degeneracy-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The degeneracy proof uses both Q as the symmetry charge and [H,Q]=0.
+  failure_mode: Without the generator and conservation facts, Q|Omega> cannot be shown
+    to be a degenerate symmetry-produced state.
+  evidence:
+  - source: schwartz
+    section: '28.2'
+    pages:
+    - 564
 - id: qft.noether-current-conservation-to-photon-polarizations
   from: qft.noether-current-and-conserved-charge
   to: qft.photon-polarizations-current-conservation-and-causality
@@ -3963,6 +4659,22 @@ edges:
     pages:
     - 44
     note: Directs use of current conservation to solve for J1.
+- id: qft.noether-current-to-noether-charge-generator
+  from: qft.noether-current-and-conserved-charge
+  to: qft.noether-charge-generates-continuous-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The generator construction begins from the conserved Noether current
+    and its spatially integrated charge.
+  failure_mode: Without the conserved current and its charge, Q and [H,Q]=0 would
+    be only asserted.
+  evidence:
+  - source: schwartz
+    section: '28.2'
+    pages:
+    - 564
 - id: qft.noether-current-to-translation-energy-momentum
   from: qft.noether-current-and-conserved-charge
   to: qft.translation-symmetry-and-energy-momentum-tensor
@@ -4022,6 +4734,23 @@ edges:
     pages:
     - 42
     note: Maps the expansion to diagrams and lists diagram rules.
+- id: qft.on-model-to-classical-goldstone
+  from: qft.on-linear-sigma-model-broken-vacuum
+  to: qft.classical-goldstone-theorem-potential-hessian-route
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The O(N) model displays the broken directions and their massless transverse
+    modes that the classical proof generalizes.
+  failure_mode: Without the model, the general proof remains valid but loses its concrete
+    mode-counting realization.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 350
+    - 351
 - id: qft.oscillator-algebra-to-bosonic-enhancement
   from: qft.single-mode-oscillator-number-algebra
   to: qft.bosonic-spontaneous-and-stimulated-emission-factor
@@ -4265,6 +4994,39 @@ edges:
     - 10
     note: The chapter gives the diagrammatic factors and writes the one-photon amplitude
       from the diagram.
+- id: qft.quantum-effective-route-to-global-theorem
+  from: qft.quantum-effective-action-goldstone-route
+  to: qft.global-goldstone-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The effective-action zero-mode argument is a complete route to the massless
+    broken-global-symmetry conclusion.
+  failure_mode: Making this 1PI route cumulative would impose effective-action formalism
+    on the independent current proofs.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 168
+- id: qft.quantum-effective-route-to-zero-momentum-vertices
+  from: qft.quantum-effective-action-goldstone-route
+  to: qft.zero-momentum-goldstone-effective-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The zero-momentum cancellations come from further differentiating the
+    same effective-potential symmetry identity used by the effective-action route.
+  failure_mode: Without the symmetry identity, the effective-vertex cancellations
+    have no source derivation.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 176
+    - 177
 - id: qft.schwartz-mode-derivation-route-to-equal-time-commutators
   from: qft.schwartz-equal-time-commutator-derivation
   to: qft.equal-time-scalar-field-commutators
@@ -4934,6 +5696,10 @@ groups:
   title: Classical and canonical scalar-field foundations
 - id: qft.second-quantized-scalar-field
   title: Second-quantized scalar-field construction
+- id: qft.spontaneously-broken-symmetries
+  title: Spontaneously broken symmetries
+  question: How do vacuum symmetry breaking, Goldstone routes, current constraints,
+    and gauging differ?
 motivations:
 - id: qft.schwartz-dynamical-background-context
   nodes:

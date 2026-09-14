@@ -1199,3 +1199,93 @@ units:
       id: peskin-schroeder.e-ps013-interference-z-peak
     - kind: edges
       id: peskin-schroeder.e-ps013-mass-basis-2hdm
+- id: full-014
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Eq. (21.157) second weak-angle shift has the wrong sign
+    alternatives:
+    - Correct the second shift to the negative sign shown in the original.
+    - Retain the proposal and companion note's positive-sign transcription.
+    resolution: Use the source's negative sign for the second heavy-top weak-angle
+      shift.
+    rationale: The original render clearly places a minus sign before the second coefficient.
+      Both heavy-top shifts in Eq. (21.157) are negative in the source; the limits
+      and unenhanced remainder are already correct.
+    evidence:
+    - source: peskin-schroeder
+      section: '21.3'
+      pages:
+      - 771
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+  - finding: 1
+    issue: Problem 21.1 transcribes the Z-loop contribution with incorrect signs
+    alternatives:
+    - Use the original factored expression with an overall minus and bracket signs
+      plus, plus, minus.
+    - Retain the proposal and companion note's alternate sign pattern.
+    resolution: Replace the Z contribution with the sign pattern shown in the original.
+    rationale: The original render shows an overall minus multiplying 4/3 plus the
+      sin-squared term minus the sin-to-the-fourth term. The W-neutrino coefficient
+      10/3 is independently legible and remains unchanged.
+    evidence:
+    - source: peskin-schroeder
+      section: Problem 21.1
+      pages:
+      - 773
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.problem-21-1-weak-muon-anomalous-moment
+  - finding: 2
+    issue: The Abelian tree cancellation is made compulsory for the independent cut
+      route
+    alternatives:
+    - Remove the Abelian-to-cut relationship.
+    - Retain it as a noncompulsory helpful evidence relationship.
+    resolution: Retain the source-backed analogy as helpful evidence rather than a
+      prerequisite.
+    rationale: The cut derivation has its own necessary inputs in longitudinal kinematics
+      and Cutkosky unitarity. The earlier Abelian cancellation usefully illustrates
+      the same removal of unphysical vector and Goldstone contributions without becoming
+      compulsory.
+    evidence:
+    - source: peskin-schroeder
+      section: '21.1'
+      pages:
+      - 735
+      - 736
+      - 737
+    - source: peskin-schroeder
+      section: '21.2'
+      pages:
+      - 746
+      - 747
+    affected_records:
+    - kind: edges
+      id: peskin-schroeder.e-ps014-42
+  - finding: 3
+    issue: Two edges duplicate the same GWS gauge-fixed prerequisite for project part
+      (f)
+    alternatives:
+    - Keep e-ps014-34 and omit e-ps014-59.
+    - Keep e-ps014-59 and omit e-ps014-34.
+    resolution: Keep e-ps014-34 and omit the redundant proposed edge e-ps014-59.
+    rationale: One necessary minimum-use edge fully records the GWS Feynman-t Hooft
+      input required to assemble the gauge-invariant W-loop diagram set. The second
+      edge adds no distinct source, mastery, necessity, or route.
+    evidence:
+    - source: peskin-schroeder
+      section: '21.1'
+      pages:
+      - 742
+      - 743
+    - source: peskin-schroeder
+      section: Final Project (f)
+      pages:
+      - 777
+    affected_records:
+    - kind: edges
+      id: peskin-schroeder.e-ps014-59

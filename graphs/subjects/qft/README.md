@@ -1,17 +1,17 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2176 reviewed concepts. The shared graph contains 131 concepts and 105 relationships, mapping 146 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2259 reviewed concepts. The shared graph contains 152 concepts and 121 relationships, mapping 170 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. These are **partial graphs**, with an end human audit pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Full-book coverage, global reconciliation, and that alignment must finish before calling this collection complete.
 
 | Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
-| [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–263, 265–345, 347–391, 393–471, 473–649, 651–730 | 565 | 770 |
-| [Schwartz](../../textbooks/schwartz/README.md) | 3–105, 109–284, 287–477, 481–699 | 769 | 856 |
+| [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–263, 265–345, 347–391, 393–471, 473–649, 651–777, 779 | 601 | 831 |
+| [Schwartz](../../textbooks/schwartz/README.md) | 3–105, 109–284, 287–477, 481–699, 703–759 | 816 | 907 |
 | [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–189, 191–595 | 483 | 631 |
 | [Weinberg II](../../textbooks/weinberg-2/README.md) | 1–59, 63–247, 252–474 | 359 | 410 |
 
-The reviewed inventories account for 2,646 substantive numbered pages and 605 section entries. Accepted full extraction scopes currently cover 2439 of those pages; narrow pilots are excluded from that measure. Each book README links its complete inventory and remaining ranges. These counts track progress; the final conceptual-coverage and dependency audit is still pending. [Read the final inventory decision](review-decisions.yaml).
+The reviewed inventories account for 2,646 substantive numbered pages and 605 section entries. Accepted full extraction scopes currently cover 2544 of those pages; narrow pilots are excluded from that measure. Each book README links its complete inventory and remaining ranges. These counts track progress; the final conceptual-coverage and dependency audit is still pending. [Read the final inventory decision](review-decisions.yaml).
 
 [Read the shared graph](knowledge/graph.yaml) · [Coverage and review record](review.yaml) · [Final scientific decisions](adjudications.yaml) · [Graph bank instructions](../../README.md)
 
@@ -21,9 +21,9 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 14 |
+| Peskin–Schroeder / Schwartz | 15 |
 | Peskin–Schroeder / Weinberg I | 0 |
-| Peskin–Schroeder / Weinberg II | 4 |
+| Peskin–Schroeder / Weinberg II | 6 |
 | Schwartz / Weinberg I | 0 |
 | Schwartz / Weinberg II | 3 |
 | Weinberg I / Weinberg II | 0 |
@@ -37,6 +37,7 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | BRST auxiliary-field transformations and nilpotence (`qft.brst-auxiliary-field-transformations-and-nilpotence`) | Peskin–Schroeder: `peskin-schroeder.brst-auxiliary-field-symmetry-and-nilpotence`; Weinberg II: `weinberg-2.brst-field-transformations`; Weinberg II: `weinberg-2.brst-nilpotence` |
 | BRST cohomology and physical-state qualification (`qft.brst-cohomology-and-physical-state-qualification`) | Schwartz: `schwartz.brst-cohomological-physical-state-qualification`; Weinberg II: `weinberg-2.brst-cohomology-of-physical-states` |
 | Canonical momentum and Hamiltonian for a field (`qft.canonical-field-momentum-hamiltonian`) | Peskin–Schroeder: `peskin-schroeder.canonical-field-momentum-hamiltonian`; Schwartz: `schwartz.classical-field-hamiltonian-lagrangian-legendre-transform`; Schwartz: `schwartz.canonical-scalar-field-energy-density` |
+| Classical spontaneous symmetry breaking (`qft.classical-spontaneous-symmetry-breaking`) | Schwartz: `schwartz.classical-spontaneous-symmetry-breaking`; Peskin–Schroeder: `peskin-schroeder.discrete-symmetry-breaking-scalar-shift` |
 | Complex scalar U(1) current (`qft.complex-scalar-u1-current`) | Peskin–Schroeder: `peskin-schroeder.complex-scalar-u1-current`; Schwartz: `schwartz.noether-current-and-conserved-charge`; Schwartz: `schwartz.complex-scalar-global-u1-symmetry` |
 | Covariant Faddeev–Popov ghost propagator and vertex rules (`qft.covariant-faddeev-popov-ghost-rules`) | Peskin–Schroeder: `peskin-schroeder.faddeev-popov-ghost-lagrangian-and-rules`; Schwartz: `schwartz.rxi-faddeev-popov-lagrangian-and-propagators`; Weinberg II: `weinberg-2.covariant-gauge-ghost-propagator-and-vertex` |
 | Equal-time canonical commutators of a scalar field (`qft.equal-time-scalar-field-commutators`) | Peskin–Schroeder: `peskin-schroeder.canonical-quantization-real-field`; Schwartz: `schwartz.equal-time-scalar-field-commutation-relations` |
@@ -45,7 +46,6 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Ghost-loop compensation of unphysical gauge modes (`qft.ghost-loop-compensation-of-unphysical-gauge-modes`) | Peskin–Schroeder: `peskin-schroeder.ghost-cancellation-of-unphysical-cut-states`; Weinberg II: `weinberg-2.ghost-loop-compensation-and-power-counting` |
 | Klein-Gordon canonical Hamiltonian (`qft.klein-gordon-canonical-hamiltonian`) | Peskin–Schroeder: `peskin-schroeder.klein-gordon-canonical-hamiltonian`; Schwartz: `schwartz.canonical-scalar-field-energy-density` |
 | Classical Klein-Gordon equation (`qft.klein-gordon-classical-equation`) | Peskin–Schroeder: `peskin-schroeder.klein-gordon-classical-equation`; Schwartz: `schwartz.euler-lagrange-and-klein-gordon-equations` |
-| Klein-Gordon Fourier modes as harmonic oscillators (`qft.klein-gordon-fourier-oscillator-modes`) | Peskin–Schroeder: `peskin-schroeder.klein-gordon-fourier-oscillator-modes`; Schwartz: `schwartz.massless-field-plane-wave-oscillator-modes` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 

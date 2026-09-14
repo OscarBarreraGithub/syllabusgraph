@@ -506,6 +506,28 @@ nodes:
     note: The frontmatter explicitly declares the chiral gamma-matrix basis and relativistic
       spinor normalization, referring readers to Sections 3.2, 3.3, and the Appendix
       for their details.
+- id: peskin-schroeder.chiral-fermion-vacuum-polarization-route
+  label: Chiral fermion vacuum-polarization calculation
+  summary: For two fermion propagators of masses m_1 and m_2 linked by chiral currents,
+    reduce all current combinations to LL and LR amplitudes, use anticommuting gamma_5
+    in dimensional regularization, combine denominators with a Feynman parameter,
+    and integrate. The source gives LL=RR and LR=RL form factors, then defines b_0,
+    b_1, and b_2 parameter integrals to separate the pole E from finite mass- and
+    momentum-dependent terms.
+  kind: method
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 766
+    - 767
+    - 768
+    - 769
+  notation:
+  - source: peskin-schroeder
+    note: E denotes the dimensional-regularization pole combination after introducing
+      the subtraction scale M; b_i are the source's finite parameter integrals.
 - id: peskin-schroeder.chiral-gauge-gamma5-calculation-prescription
   label: Bounded gamma-five prescription for chiral gauge calculations
   summary: After imposing anomaly cancellation, the source says the t Hooft-Veltman
@@ -1519,6 +1541,55 @@ nodes:
     section: '11.1'
     pages:
     - 348
+- id: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+  label: Left-handed e-plus e-minus to longitudinal W-pair cancellation
+  summary: For a left-handed electron, add neutrino t-channel exchange to the photon
+    and Z s-channel diagrams. Its Ward-identity manipulation cancels the dangerous
+    high-energy longitudinal contribution. Keeping the O(m_W^2/s) correction to the
+    polarization approximation is necessary to recover the scalar-reference amplitude,
+    so merely cancelling the leading growth is insufficient.
+  kind: method
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 755
+    - 756
+    - 757
+- id: peskin-schroeder.eeww-right-handed-longitudinal-cancellation
+  label: Right-handed e-plus e-minus to longitudinal W-pair limit
+  summary: For a right-handed initial electron, only the photon and Z s-channel W-pair
+    diagrams contribute. Their leading longitudinal-vector terms combine, using m_W=m_Z
+    cos(theta_W), into the same high-energy amplitude as charged-Goldstone production;
+    this is an explicit equivalence-theorem check.
+  kind: result
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 754
+    - 755
+- id: peskin-schroeder.eeww-scalar-reference-amplitudes
+  label: Scalar reference amplitudes for e-plus e-minus to phi-plus phi-minus
+  summary: Compute charged-Goldstone pair production through photon and Z exchange
+    using the electron chirality charges and the scalar gauge vertices. At high energy
+    the right-handed amplitude reduces to hypercharge exchange because e_R has no
+    direct SU(2) coupling; the left-handed result is the coherent U(1) and SU(2) contribution.
+    These scalar amplitudes fall as 1/s in cross section and are the equivalence-theorem
+    reference for longitudinal W-pair production.
+  kind: method
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 750
+    - 751
+    - 752
+    - 753
+    - 754
 - id: peskin-schroeder.effective-action-1pi-generating-functional
   label: Effective action generates one-particle-irreducible amplitudes
   summary: E[J]=−i log Z[J] generates connected correlators. The second derivative
@@ -1659,6 +1730,26 @@ nodes:
     - 702
     - 703
     - 704
+- id: peskin-schroeder.electroweak-natural-relations-from-observables
+  label: Electroweak natural relations and observable weak angles
+  summary: With underlying g, g-prime, and v, the tree-level quantities m_W, m_Z,
+    e, and G_F obey parameter-independent natural relations. The chapter contrasts
+    sin-squared(theta_W) defined by 1-m_W^2/m_Z^2 with an observable reference angle
+    theta_0 defined from alpha-star at Q^2=m_Z^2, G_F, and m_Z; a natural relation
+    is finite after one-loop correction because counterterms only shift existing parameters.
+  kind: method
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 758
+    - 759
+    - 760
+  notation:
+  - source: peskin-schroeder
+    note: alpha-star is the running QED coupling evaluated at the Z scale in the source
+      convention.
 - id: peskin-schroeder.electroweak-precision-observables-and-radiative-corrections
   label: Electroweak precision relations and radiative corrections
   summary: Tree-level relations among alpha, G_F, m_Z, m_W, and sin^2 theta_W permit
@@ -2417,6 +2508,20 @@ nodes:
     pages:
     - 724
     - 725
+- id: peskin-schroeder.gluon-fusion-higgs-production-project-task
+  label: 'Final project (d): gluon-fusion Higgs production from the decay width'
+  summary: 'Use the inverse g+g to h process and the parton model to derive the relation
+    between Gamma(h to g g) and the inclusive pp to h+X cross section. For the specified
+    30 GeV Higgs and 1--40 TeV pp energy range, make the problem''s stated approximations:
+    ignore Q-squared dependence, use f_g(x)=8(1-x)^7/x, and set the loop form factor
+    to one with its stated roughly 10 percent qualification.'
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 777
 - id: peskin-schroeder.gluon-jet-project-inclusive-ir-cancellation
   label: 'Project: inclusive quark-pair plus gluon cross section'
   summary: Final-project parts (d–f) integrate the regulated real-emission distribution,
@@ -2520,6 +2625,53 @@ nodes:
     pages:
     - 671
     - 672
+- id: peskin-schroeder.goldstone-equivalence-cut-cancellation-route
+  label: Cut-state cancellation route to equivalence
+  summary: In Feynman-'t Hooft gauge, decompose the -g_mu_nu propagator numerator
+    into three physical massive-vector polarizations and one timelike contribution.
+    Cutkosky unitarity requires the timelike cut to cancel the Goldstone cut; applying
+    the high-energy longitudinal replacement turns that cancellation into the squared
+    equivalence relation. The chapter presents this as a tree-level, single-emission
+    illustration rather than a general proof.
+  kind: method
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: peskin-schroeder.goldstone-equivalence-theorem
+  label: Goldstone-boson equivalence theorem
+  summary: At energies large compared with a massive gauge boson's mass, an amplitude
+    with an external longitudinal vector equals the amplitude with the Goldstone boson
+    eaten by that vector, up to corrections of order m^2/E^2 in the displayed single-emission
+    argument. The statement concerns high-energy longitudinal external states; it
+    does not identify Goldstones as physical asymptotic particles.
+  kind: result
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 743
+    - 744
+    - 746
+- id: peskin-schroeder.goldstone-equivalence-ward-route
+  label: Single-emission Ward-identity route to equivalence
+  summary: In Lorentz gauge, decompose a gauge-current matrix element into a one-particle-irreducible
+    vector vertex Gamma_mu and a current-created Goldstone pole attached to a scalar
+    vertex T. Current conservation and m=gF imply k_mu Gamma^mu=m T; substituting
+    the high-energy longitudinal polarization proves epsilon_L dot Gamma=T for single
+    emission or absorption.
+  kind: method
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
 - id: peskin-schroeder.grassmann-algebra-and-shift-invariant-integration
   label: Grassmann algebra and shift-invariant integration
   summary: Grassmann numbers anticommute and square to zero. Shift invariance fixes
@@ -2567,6 +2719,22 @@ nodes:
     note: The page fixes the electromagnetic unit convention, Coulomb potential, fine-structure
       constant, sign of e, covariant Maxwell equations, potential and field-strength
       definitions, and current normalization.
+- id: peskin-schroeder.heavy-doublet-oblique-approximation
+  label: Heavy-doublet oblique approximation
+  summary: For the (t,b) doublet and light external fermions, heavy quarks enter the
+    selected weak observables only through gauge-boson propagator corrections, a separately
+    gauge-invariant class. The extension to light-quark external processes additionally
+    neglects CKM angles mixing t and b with other species. The analogous Higgs-sector
+    simplification applies when its direct coupling to a light external fermion is
+    neglected; such indirect propagator effects are called oblique corrections.
+  kind: method
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 761
 - id: peskin-schroeder.heavy-w-local-operator-motivation
   label: Heavy-W exchange motivates local operators
   summary: At momentum transfers far below the W mass, W exchange is represented by
@@ -2652,6 +2820,33 @@ nodes:
     - 143
     note: The section introduces helicity as the basis and derives selected-polarization
       traces with gamma5 projectors.
+- id: peskin-schroeder.higgs-decay-branching-fraction-synthesis-task
+  label: 'Final project (h): Higgs branching-fraction synthesis'
+  summary: 'Combine the calculated partial widths to obtain branching fractions into
+    b anti-b, tau-plus tau-minus, g g, W-plus W-minus, and Z Z across 50--500 GeV
+    Higgs masses. This is a synthesis task: it uses the independently calculated partial
+    widths and does not make any one unsolved channel result a prerequisite of another
+    channel''s derivation.'
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: peskin-schroeder.higgs-decay-form-factors-numerical-project-task
+  label: 'Final project (g): numerical Higgs-decay form factors'
+  summary: Reduce I(x) to a one-parameter integral, evaluate it numerically, plot
+    I(m_h^2/m_q^2) for 50 GeV less than m_h less than 500 GeV, and compute the h to
+    g g width in keV over that range. Numerically compute the additional form factor
+    introduced by the W-loop calculation in the same way.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 777
 - id: peskin-schroeder.higgs-decay-phenomenology-and-mass-bounds
   label: General Higgs-sector requirements and custodial relation
   summary: Pages 717-719 do not derive decay widths. They state that a Higgs sector
@@ -2668,6 +2863,21 @@ nodes:
     - 717
     - 718
     - 719
+- id: peskin-schroeder.higgs-decay-project-model-and-source-era-inputs
+  label: 'Final project: Higgs-decay model and numerical inputs'
+  summary: Within the minimal one-doublet GWS model, treat m_h as a free parameter
+    and use the source-era suggested inputs m_b=5 GeV, m_t=175 GeV, m_W=80 GeV, m_Z=91
+    GeV, sin-squared(theta_W)=0.23, and alpha_s(m_Z)=0.12. The project asks for decay
+    amplitudes to quark, lepton, and gauge-boson pairs and notes that different modes
+    dominate in different m_h ranges.
+  kind: assumption
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project, Decays of the Higgs Boson
+    pages:
+    - 775
+    - 776
 - id: peskin-schroeder.higgs-electron-scalar-coupling-assumption
   label: Stated scalar Higgs-electron coupling
   summary: Problem 6.3 supplies a scalar Higgs field h with an electron coupling parameterized
@@ -2693,6 +2903,76 @@ nodes:
     section: '20.1'
     pages:
     - 692
+- id: peskin-schroeder.higgs-to-diphoton-fermion-loop-task
+  label: 'Final project (e): fermion-loop h to two photons'
+  summary: Express the quark and lepton loop contribution to h to two photons using
+    the same I(m_h^2/m_f^2) form factor derived for h to two gluons.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 777
+- id: peskin-schroeder.higgs-to-diphoton-w-loop-task
+  label: 'Final project (f): W-loop h to two photons'
+  summary: In Feynman-'t Hooft gauge, compute the W-loop contribution to h0 to two
+    photons together with the additional diagrams required for a gauge-invariant amplitude,
+    then add very-heavy charged-fermion loops. In the m_h much less than m_W limit,
+    the displayed result is Gamma(h0 to 2gamma)=[alpha m_h/(8 sin-squared(theta_W))][m_h-squared/m_W-squared][alpha-squared/(18
+    pi-squared)] times absolute-value-squared(sum over f of Q_f-squared N_c(f)-21/4),
+    where the sum is over very heavy quarks and leptons of charge Q_f.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 777
+- id: peskin-schroeder.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  label: 'Final project (a): h to fermion pairs and leading-log QCD'
+  summary: Derive Gamma(h0 to f f-bar)=[alpha m_h/(8 sin-squared(theta_W))][m_f-squared/m_W-squared](1-4m_f-squared/m_h-squared)^(3/2)
+    N_c(f), where N_c=1 for leptons and 3 for quarks. For a quark and m_h much greater
+    than m_q, optionally improve it by leading-log QCD corrections, with m_q determined
+    at threshold M-squared approximately m_q-squared.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (a)
+    pages:
+    - 776
+- id: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  label: 'Final project (c): h to two gluons from quark loops'
+  summary: Compute the finite quark-loop h0 to g g amplitude with dimensional regularization,
+    resolve its apparently regulator-dependent subtle term by checking gauge invariance,
+    square it, and form the rate. The displayed result is Gamma(h0 to 2g)=[alpha m_h/(8
+    sin-squared(theta_W))][m_h-squared/m_W-squared][alpha_s-squared/(9 pi-squared)]
+    times absolute-value-squared(sum over q of I(m_h-squared/m_q-squared)). Leave
+    I as a Feynman-parameter integral at this stage; I(x) tends to 1 as x tends to
+    0 and to 0 as x tends to infinity, so heavy quarks dominate.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 776
+    - 777
+- id: peskin-schroeder.higgs-to-vector-pairs-goldstone-check-task
+  label: 'Final project (b): h to W-pair and Z-pair Goldstone check'
+  summary: For m_h above the W-pair threshold, and then the Z-pair threshold, calculate
+    the h to W-plus W-minus and h to Z Z widths. In the m_h much greater than m_W
+    regime, explain and explicitly verify their dominant longitudinal contributions
+    by comparing with h decay to the corresponding charged or neutral Goldstones in
+    the ungauged Higgs theory.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (b)
+    pages:
+    - 776
 - id: peskin-schroeder.higgs-transverse-polarization-and-unitarity-gauge
   label: Goldstone pole, transversality, and unitarity gauge
   summary: The gauge--Goldstone derivative mixing and the local mass insertion combine
@@ -3208,6 +3488,20 @@ nodes:
     pages:
     - 485
     - 486
+- id: peskin-schroeder.longitudinal-vector-polarization-kinematics
+  label: High-energy longitudinal-vector polarization
+  summary: A massive vector boosted along its momentum has a longitudinal polarization
+    vector that remains normalized and orthogonal to k_mu, while componentwise epsilon_L^mu(k)=k^mu/m+O(m/E)
+    at large energy. This replacement is valid for the one-particle-irreducible vector
+    vertex used in the theorem, not automatically for every term containing k_mu.
+  kind: representation
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
 - id: peskin-schroeder.loop-momentum-integration-and-divergence
   label: Loop momentum integration and ultraviolet divergence
   summary: A virtual momentum not fixed at vertices is summed by integrating over
@@ -3421,6 +3715,20 @@ nodes:
     - 138
     note: The text sets up the massive calculation, obtains its CM cross section,
       discusses threshold, and lists the general procedure.
+- id: peskin-schroeder.massive-vector-high-energy-consistency
+  label: Gauge origin of good high-energy massive-vector behavior
+  summary: The gauge-theory Ward identities make the tree diagrams for longitudinal
+    W-pair production cancel to a weakly coupled high-energy result. In the chapter's
+    stated converse, massive-vector theories without violent high-energy behavior
+    arise from spontaneously broken gauge theories.
+  kind: result
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 757
+    - 758
 - id: peskin-schroeder.massless-dim-reg-subtraction-prescription
   label: Massless dimensional-regularization subtraction prescription
   summary: For massless scalar theories in dimensional regularization, analytically
@@ -3673,6 +3981,42 @@ nodes:
     pages:
     - 492
     - 493
+- id: peskin-schroeder.nonabelian-rxi-gauge-fixing-matrices
+  label: Non-Abelian R-xi gauge fixing from the F matrix
+  summary: For real scalar fluctuations x_i about phi_0, define F_ai=-T^a_ij phi_0j.
+    The vectors T^a phi_0 span the Goldstone subspace, and the gauge mass matrix is
+    g^2 F F^T. Choosing G^a=(partial_mu A^{a mu}-xi g F_ai x_i)/sqrt(xi) cancels gauge--Goldstone
+    mixing and gives unphysical vector and Goldstone mass matrices xi g^2 F F^T and
+    xi g^2 F^T F, whose nonzero eigenvalues correspond one to one.
+  kind: method
+  group: peskin-schroeder.ch21-rxi
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 739
+    - 740
+    - 741
+  notation:
+  - source: peskin-schroeder
+    note: 'F is generally rectangular: rows label gauge generators and columns scalar
+      components.'
+- id: peskin-schroeder.nonabelian-rxi-ghosts-and-gws-specialization
+  label: Non-Abelian R-xi ghosts and GWS mass eigenstates
+  summary: The Faddeev-Popov variation of the non-Abelian R-xi condition yields ghosts
+    with the same unphysical mass matrix as the timelike gauge components, plus both
+    gauge-field and physical-Higgs interactions. In the GWS mass basis, the charged
+    Goldstones have mass squared xi m_W^2, the neutral Goldstone has xi m_Z^2, and
+    the corresponding ghosts carry the same respective masses; the physical h propagates
+    independently of xi.
+  kind: result
+  group: peskin-schroeder.ch21-rxi
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 742
+    - 743
 - id: peskin-schroeder.nonabelian-ward-cancellations-and-optical-theorem-paradox
   label: Non-Abelian Ward cancellations and the unitarity paradox
   summary: For fermion-antifermion annihilation into two gauge bosons, summing the
@@ -4974,6 +5318,66 @@ nodes:
     section: Problem 20.5(d)
     pages:
     - 730
+- id: peskin-schroeder.problem-21-1-weak-muon-anomalous-moment
+  label: 'Problem 21.1: weak contribution to the muon anomalous moment'
+  summary: Compute the W-neutrino and associated Goldstone diagrams for the muon electromagnetic
+    vertex in Feynman-'t Hooft gauge in the m_mu much less than m_W limit, then repeat
+    in general R-xi gauge and explicitly show xi independence. The displayed W-neutrino
+    result is a_mu(nu)=G_F m_mu^2/(8 pi^2 sqrt(2)) times 10/3. Compute separately
+    the Z-muon plus Goldstone contribution; the displayed result is a_mu(Z)=-G_F m_mu^2/(8
+    pi^2 sqrt(2)) times [4/3+(8/3)sin-squared(theta_W)-(16/3)sin-to-the-fourth(theta_W)].
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.1
+    pages:
+    - 773
+- id: peskin-schroeder.problem-21-2-ww-helicity-amplitudes
+  label: 'Problem 21.2: complete W-pair helicity analysis'
+  summary: Using explicit polarization vectors, derive e-plus e-minus to W-plus W-minus
+    helicity amplitudes for left- and right-handed electrons. Check the specified
+    high-energy and full longitudinal results, show that one-longitudinal-one-transverse
+    individual diagrams grow as square-root(s) while complete amplitudes fall as 1/square-root(s),
+    and turn the amplitudes into the requested differential cross sections. Part (b)
+    states that the right-handed-electron W-pair differential cross section is about
+    thirty times smaller than the left-handed case.
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+- id: peskin-schroeder.problem-21-3-dubar-to-wgamma-radiation-zero
+  label: 'Problem 21.3: d anti-u to W-minus photon radiation zero'
+  summary: For massless quarks, calculate d anti-u to W-minus photon helicity amplitudes,
+    identify the sole nonzero initial annihilation channel in that approximation,
+    prove the common zero at cos(theta)=-1/3 for every final-helicity scattering amplitude,
+    and compute d-sigma/d-cos(theta).
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: peskin-schroeder.problem-21-4-higgs-mass-oblique-corrections
+  label: 'Problem 21.4: Higgs-mass dependence of radiative corrections'
+  summary: Neglect light-fermion-mass terms to show that physical-Higgs one-loop contributions
+    to the Section 21.3 processes enter only through vacuum polarization and that
+    the Higgs-mass-dependent parts are gauge invariant. Draw the Feynman-'t Hooft-gauge
+    Higgs diagrams and compute their mass dependence. For m_h much greater than m_W,
+    part (c) gives s-star-squared-s_0-squared=alpha(1+9 sin-squared(theta_W)) log(m_h-squared/m_W-squared)/[48
+    pi(cos-squared(theta_W)-sin-squared(theta_W))] and s_W-squared-s-star-squared=5
+    alpha log(m_h-squared/m_W-squared)/(24 pi).
+  kind: method
+  group: peskin-schroeder.ch21-problems
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
 - id: peskin-schroeder.problem-arnowitt-fickler-gauge-quantization
   label: 'Problem: Arnowitt-Fickler gauge quantization'
   summary: Perform Faddeev-Popov quantization of Yang-Mills theory in A_3^a=0, write
@@ -7072,6 +7476,81 @@ nodes:
     section: '12.1'
     pages:
     - 402
+- id: peskin-schroeder.rxi-abelian-gauge-fixing
+  label: Abelian R-xi gauge fixing after symmetry breaking
+  summary: For the broken Abelian scalar theory written as phi_1=v+h and phi_2=varphi,
+    choose G=(partial_mu A^mu-xi e v varphi)/sqrt(xi) in the Faddeev-Popov functional
+    integral. The cross term cancels A--varphi quadratic mixing, while varphi receives
+    the gauge-dependent mass squared xi m_A^2.
+  kind: method
+  group: peskin-schroeder.ch21-rxi
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 732
+    - 733
+  notation:
+  - source: peskin-schroeder
+    note: The book denotes the gauge parameter by xi (rendered as a Greek xi); h is
+      the physical scalar and varphi the Goldstone coordinate.
+- id: peskin-schroeder.rxi-abelian-propagators-and-ghost
+  label: Abelian R-xi spectrum, propagators, and ghost coupling
+  summary: The broken Abelian R-xi rules give a massive vector propagator whose physical
+    transverse pole is m_A and whose unphysical pole is xi m_A^2. The Goldstone and
+    ghost share the latter mass; unlike QED, the Abelian ghost couples to the physical
+    Higgs h even though it does not directly couple to A_mu.
+  kind: result
+  group: peskin-schroeder.ch21-rxi
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 733
+    - 734
+    - 735
+  notation:
+  - source: peskin-schroeder
+    note: m_A=e v; the scalar Goldstone mass is m_varphi^2=xi m_A^2.
+- id: peskin-schroeder.rxi-gauge-limits-and-proof-boundary
+  label: R-xi gauge choices, renormalizability, and unitarity-gauge limit
+  summary: At xi=0 the Goldstone is massless and the vector propagator is transverse;
+    at xi=1 the simple Feynman-'t Hooft vector propagator must be accompanied by a
+    Goldstone of mass m_A. Any finite xi has 1/k^2 falloff and supports a finite counterterm
+    set by power counting. To establish physical renormalizability one must additionally
+    preserve local gauge invariance and xi independence of S-matrix elements and gauge-invariant
+    operators; the source cites all-orders BRST/gauge-theory arguments for that statement.
+    Xi to infinity gives unitary gauge with only physical poles but individual loops
+    that can diverge with xi, so the displayed tree cancellation is an illustration,
+    not an all-orders proof in unitary gauge.
+  kind: method
+  group: peskin-schroeder.ch21-rxi
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 734
+    - 737
+    - 738
+    - 739
+- id: peskin-schroeder.rxi-tree-gauge-parameter-cancellation
+  label: Tree-level xi cancellation in chiral fermion scattering
+  summary: 'In the deliberately stripped-down broken Abelian chiral fermion model,
+    include both vector and Goldstone exchange. Rewrite the vector propagator into
+    a xi-independent physical-polarization term plus a longitudinal xi-dependent term;
+    the on-shell nonconservation of the massive chiral current converts the latter
+    into exactly the Goldstone-exchange contribution with opposite sign. The source
+    explicitly limits this anomalous axial-vector model to tree diagrams: its axial-vector
+    anomaly would make loop calculations inconsistent.'
+  kind: method
+  group: peskin-schroeder.ch21-rxi
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 735
+    - 736
+    - 737
 - id: peskin-schroeder.s-t-u-channel-classification
   label: s-, t-, and u-channel propagator classification
   summary: For a two-to-two diagram with one virtual particle, identify its channel
@@ -7360,6 +7839,21 @@ nodes:
     pages:
     - 206
     - 207
+- id: peskin-schroeder.source-era-top-mass-precision-comparison
+  label: Source-era precision top-mass comparison
+  summary: The source's plotted one-loop comparison holds alpha, G_F, and m_Z fixed
+    and varies Higgs masses 100, 300, and 1000 GeV. It quotes a then-current neutral-current
+    fit m_t=169 plus-or-minus 24 GeV and the 1995 CDF/D0 kinematic result m_t=180
+    plus-or-minus 13 GeV. These values are historical source-era numerical evidence,
+    not current measurements.
+  kind: result
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 771
+    - 772
 - id: peskin-schroeder.spacelike-wightman-amplitude
   label: Nonzero spacelike free-field propagation amplitude
   summary: D(x-y)=<0|phi(x)phi(y)|0> is Lorentz invariant and, for spacelike separation,
@@ -7741,6 +8235,55 @@ nodes:
     pages:
     - 278
     - 279
+- id: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+  label: Top-bottom divergence check and heavy-top precision effect
+  summary: Assemble the t,b current correlators from the chiral building blocks. Their
+    divergent pieces obey the symmetry pattern required for finite weak-angle differences.
+    For m_t much greater than m_b and m_Z, Eq. (21.157) gives s-star-squared-sin-squared(theta_0)=-[3
+    alpha/(16 pi (cos-squared(theta_W)-sin-squared(theta_W)))] m_t-squared/m_Z-squared
+    plus omitted order-alpha terms without enhancement, and s_W-squared-s-star-squared=-[3
+    alpha/(16 pi sin-squared(theta_W))] m_t-squared/m_Z-squared plus such terms. The
+    enhancement reflects the top Yukawa coupling rather than only the weak gauge coupling.
+  kind: result
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 770
+    - 771
+- id: peskin-schroeder.top-to-goldstone-b-route
+  label: Goldstone route for the heavy-top decay limit
+  summary: Expand the Higgs doublet into charged Goldstone fields and use the top
+    Yukawa interaction to compute t to phi-plus b. For a massless Goldstone, equivalently
+    m_t much greater than m_W, Eq. (21.83) gives Gamma(t to phi-plus b)=lambda_t^2
+    m_t/(32 pi)=g^2 m_t^3/(64 pi m_W^2), agreeing with the leading longitudinal-W
+    term.
+  kind: method
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+    - 750
+- id: peskin-schroeder.top-to-wb-width-and-longitudinal-enhancement
+  label: Top decay t to W b and longitudinal enhancement
+  summary: With the relevant CKM factor set to one and m_b=0, calculate t to W-plus
+    b using the charged-current vertex, the physical massive-vector polarization sum,
+    spin sums, and two-body phase space. Eq. (21.76) is Gamma(t to W-plus b)=g^2 m_t^3/(64
+    pi m_W^2) (1-m_W^2/m_t^2)^2 (1+2m_W^2/m_t^2). It is enhanced relative to a naive
+    g^2 m_t estimate by (m_t/m_W)^2, carried by longitudinal W production.
+  kind: result
+  group: peskin-schroeder.ch21-equivalence
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 747
+    - 748
+    - 749
 - id: peskin-schroeder.trace-anomaly-beta-function
   label: Trace anomaly governed by the beta function
   summary: Renormalization introduces a scale even when the classical massless gauge
@@ -8106,6 +8649,26 @@ nodes:
     pages:
     - 243
     - 244
+- id: peskin-schroeder.weak-angle-scheme-differences-and-finiteness
+  label: Weak-angle scheme differences as finite predictions
+  summary: The asymmetry angle s-star-squared, the mass-ratio angle s_W-squared, and
+    the alpha-star--G_F--m_Z reference angle s_0-squared coincide at tree level but
+    receive different oblique corrections. The value inferred from Z asymmetries has
+    small species-dependent vertex corrections; subtracting them systematically defines
+    a universal s-star-squared. After separating self-energies by SU(2) and electric-charge
+    currents, symmetry fixes their ultraviolet-divergence pattern; differences of
+    the natural relations are ultraviolet finite even though each individual angle
+    formula is divergent.
+  kind: result
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 764
+    - 765
+    - 766
 - id: peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
   label: Cabibbo-rotated weak effective vertices
   summary: For scales well above 1 GeV, neglect quark masses and write weak fields
@@ -8123,6 +8686,22 @@ nodes:
     - 606
     note: States the massless-left-handed approximation, Cabibbo rotation, and nonleptonic/semileptonic
       channels.
+- id: peskin-schroeder.weak-vacuum-polarization-observable-map
+  label: Vacuum-polarization map for weak observables
+  summary: Decompose a gauge-boson two-point function as Pi_IJ(q^2) g_mu_nu minus
+    A(q^2) q_mu q_nu. For light conserved external currents the A term drops out.
+    Pole self-energies shift m_Z and m_W, Pi-gamma-gamma prime at zero shifts alpha,
+    Pi_WW(0) shifts G_F, and gamma-Z mixing at m_Z shifts the Z asymmetry weak angle
+    s-star-squared. Photon Ward identities impose Pi-gamma-gamma(0)=Pi-gamma-Z(0)=0.
+  kind: representation
+  group: peskin-schroeder.ch21-precision
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 761
+    - 762
+    - 763
 - id: peskin-schroeder.weyl-fierz-rearrangement
   label: Weyl-spinor Fierz rearrangement
   summary: The two-component σ-matrix identity produces a nontrivial rearrangement
@@ -10729,6 +11308,1020 @@ edges:
     section: Problem 20.3
     pages:
     - 729
+- id: peskin-schroeder.e-ps014-01
+  from: peskin-schroeder.abelian-higgs-mechanism
+  to: peskin-schroeder.rxi-abelian-gauge-fixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge-fixing construction shifts the broken complex scalar about
+    its vacuum and identifies its Goldstone coordinate.
+  failure_mode: Without the broken-field decomposition, the mixing term selected for
+    cancellation and the Goldstone field are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 732
+    - 733
+- id: peskin-schroeder.e-ps014-02
+  from: peskin-schroeder.faddeev-popov-gauge-fixing-abelian
+  to: peskin-schroeder.rxi-abelian-gauge-fixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The R-xi construction inserts a Faddeev-Popov gauge condition and determinant
+    into the functional integral.
+  failure_mode: Without the Faddeev-Popov construction, G and its determinant have
+    no derivational role.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 733
+- id: peskin-schroeder.e-ps014-03
+  from: peskin-schroeder.rxi-abelian-gauge-fixing
+  to: peskin-schroeder.rxi-abelian-propagators-and-ghost
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The quadratic gauge-fixed Lagrangian and Faddeev-Popov variation determine
+    all stated masses and propagators.
+  failure_mode: Without it, the shared xi-dependent unphysical poles cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 733
+    - 734
+- id: peskin-schroeder.e-ps014-04
+  from: peskin-schroeder.rxi-abelian-propagators-and-ghost
+  to: peskin-schroeder.rxi-tree-gauge-parameter-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation compares the xi-dependent vector and Goldstone propagator
+    pieces.
+  failure_mode: Without their poles and couplings, the canceling terms cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 735
+    - 736
+- id: peskin-schroeder.e-ps014-05
+  from: peskin-schroeder.rxi-tree-gauge-parameter-cancellation
+  to: peskin-schroeder.rxi-gauge-limits-and-proof-boundary
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The explicit tree cancellation illustrates the gauge-parameter independence
+    used in discussing finite-xi and unitary-gauge limits.
+  failure_mode: Without this example the general limit discussion remains unillustrated,
+    though it can be taught from the stated propagator behavior.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 736
+    - 738
+- id: peskin-schroeder.e-ps014-06
+  from: peskin-schroeder.nonabelian-higgs-mass-matrix
+  to: peskin-schroeder.nonabelian-rxi-gauge-fixing-matrices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The R-xi matrix construction starts from the broken non-Abelian scalar
+    representation and its gauge-boson mass matrix.
+  failure_mode: Without that input, F and the relation m_A-squared=g-squared F F-transpose
+    lack their physical definition.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 739
+    - 740
+- id: peskin-schroeder.e-ps014-07
+  from: peskin-schroeder.nonabelian-rxi-gauge-fixing-matrices
+  to: peskin-schroeder.nonabelian-rxi-ghosts-and-gws-specialization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The ghost action and the GWS unphysical masses come from varying the
+    matrix-valued R-xi condition.
+  failure_mode: Without the F-matrix gauge condition, the matching ghost and Goldstone
+    mass matrices cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 741
+    - 742
+    - 743
+- id: peskin-schroeder.e-ps014-08
+  from: peskin-schroeder.longitudinal-vector-polarization-kinematics
+  to: peskin-schroeder.goldstone-equivalence-ward-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward route replaces k/m by epsilon_L only after establishing its
+    high-energy kinematics.
+  failure_mode: Without that relation, k dot Gamma=mT does not yield a longitudinal-vector
+    amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
+- id: peskin-schroeder.e-ps014-09
+  from: peskin-schroeder.goldstone-equivalence-ward-route
+  to: peskin-schroeder.goldstone-equivalence-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is the current-conservation derivation for the single-emission form
+    of the theorem.
+  failure_mode: Without it, that formal route is unavailable, while the cut-cancellation
+    route remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 744
+    - 745
+    - 746
+- id: peskin-schroeder.e-ps014-10
+  from: peskin-schroeder.goldstone-equivalence-cut-cancellation-route
+  to: peskin-schroeder.goldstone-equivalence-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Cutkosky-state cancellation supplies an independent tree-level route
+    to the same relation.
+  failure_mode: Without it, the unitarity-based route is unavailable, while the Ward
+    route remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: peskin-schroeder.e-ps014-11
+  from: peskin-schroeder.electroweak-charged-neutral-current-couplings
+  to: peskin-schroeder.top-to-wb-width-and-longitudinal-enhancement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The decay amplitude is read from the charged-current t-b-W vertex.
+  failure_mode: Without that vertex, neither the spin-summed amplitude nor width is
+    fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 747
+- id: peskin-schroeder.e-ps014-12
+  from: peskin-schroeder.goldstone-equivalence-theorem
+  to: peskin-schroeder.top-to-goldstone-b-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task computes the Goldstone process specifically to match the longitudinal-W
+    high-energy limit.
+  failure_mode: Without the theorem, the comparison has no stated physical target.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+- id: peskin-schroeder.e-ps014-13
+  from: peskin-schroeder.standard-model-yukawa-masses-and-higgs-couplings
+  to: peskin-schroeder.top-to-goldstone-b-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charged-Goldstone t-b interaction is obtained by expanding the top
+    Yukawa coupling.
+  failure_mode: Without the Yukawa interaction, the Goldstone decay amplitude and
+    its mass enhancement cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+- id: peskin-schroeder.e-ps014-14
+  from: peskin-schroeder.goldstone-equivalence-theorem
+  to: peskin-schroeder.eeww-scalar-reference-amplitudes
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The theorem explains why the scalar calculation is the required high-energy
+    reference for longitudinal W pairs.
+  failure_mode: Without it, the scalar amplitudes can still be derived but their comparison
+    purpose is lost.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 751
+    - 752
+    - 753
+- id: peskin-schroeder.e-ps014-15
+  from: peskin-schroeder.electroweak-su2-u1-hypercharge-assignments
+  to: peskin-schroeder.eeww-scalar-reference-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon/Z scalar amplitudes use the electron and charged-Goldstone
+    SU(2) and hypercharge assignments.
+  failure_mode: Without them, the chirality-dependent exchange coefficients cannot
+    be determined.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: peskin-schroeder.e-ps014-16
+  from: peskin-schroeder.eeww-scalar-reference-amplitudes
+  to: peskin-schroeder.eeww-right-handed-longitudinal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The right-handed vector calculation is verified by equality to its scalar
+    reference amplitude.
+  failure_mode: Without the reference result, the high-energy equivalence check cannot
+    be completed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 754
+    - 755
+- id: peskin-schroeder.e-ps014-17
+  from: peskin-schroeder.eeww-scalar-reference-amplitudes
+  to: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: After diagrammatic cancellation, the left-handed amplitude must be matched
+    to the left-handed scalar reference.
+  failure_mode: Without that target, retaining the subleading polarization correction
+    cannot be checked.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 755
+    - 756
+- id: peskin-schroeder.e-ps014-18
+  from: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+  to: peskin-schroeder.massive-vector-high-energy-consistency
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The left-handed W-pair calculation is the chapter's detailed evidence
+    for the general high-energy conclusion.
+  failure_mode: Without it, the conclusion remains stated but lacks its principal
+    explicit cancellation example.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 757
+    - 758
+- id: peskin-schroeder.e-ps014-19
+  from: peskin-schroeder.zeroth-order-natural-relations
+  to: peskin-schroeder.electroweak-natural-relations-from-observables
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The weak calculation specializes the existing natural-relation principle
+    to electroweak observables.
+  failure_mode: Without that principle, finiteness of the corrected observable relations
+    is not justified.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 758
+    - 759
+- id: peskin-schroeder.e-ps014-20
+  from: peskin-schroeder.electroweak-natural-relations-from-observables
+  to: peskin-schroeder.weak-angle-scheme-differences-and-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finite quantities are the differences among the observable weak-angle
+    definitions and their natural relations.
+  failure_mode: Without the definitions, the corrected differences have no specified
+    observables.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 759
+    - 764
+    - 765
+- id: peskin-schroeder.e-ps014-21
+  from: peskin-schroeder.heavy-doublet-oblique-approximation
+  to: peskin-schroeder.weak-vacuum-polarization-observable-map
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The observable map is used after restricting the heavy-doublet contribution
+    to propagator insertions.
+  failure_mode: Without the approximation, vertex, box, and real-emission corrections
+    cannot be excluded from the calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 761
+    - 762
+- id: peskin-schroeder.e-ps014-22
+  from: peskin-schroeder.weak-vacuum-polarization-observable-map
+  to: peskin-schroeder.weak-angle-scheme-differences-and-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The angle shifts and finite differences are expressed in terms of the
+    mapped self-energies.
+  failure_mode: Without the observable-to-self-energy relations, the one-loop angle
+    corrections cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 762
+    - 763
+    - 764
+- id: peskin-schroeder.e-ps014-23
+  from: peskin-schroeder.chiral-fermion-vacuum-polarization-route
+  to: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The top-bottom current correlators and their finite leading heavy-top
+    term are assembled from the general chiral loop form factors.
+  failure_mode: Without those building blocks, the divergence check and m_t-squared
+    enhancement cannot be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 767
+    - 768
+    - 769
+    - 770
+- id: peskin-schroeder.e-ps014-24
+  from: peskin-schroeder.weak-angle-scheme-differences-and-finiteness
+  to: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The t,b correlators are inserted into the finite differences of weak-angle
+    definitions.
+  failure_mode: Without those target relations, there is no specified precision quantity
+    for the loop calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 765
+    - 766
+    - 770
+    - 771
+- id: peskin-schroeder.e-ps014-25
+  from: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+  to: peskin-schroeder.source-era-top-mass-precision-comparison
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The historical graph compares the one-loop top-mass correction with precision
+    observables.
+  failure_mode: Without the correction, the numerical comparison has no stated theoretical
+    dependence.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 771
+    - 772
+- id: peskin-schroeder.e-ps014-26
+  from: peskin-schroeder.nonabelian-rxi-ghosts-and-gws-specialization
+  to: peskin-schroeder.problem-21-1-weak-muon-anomalous-moment
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 21.1 uses GWS W, Z, Goldstone, and R-xi rules, supplied by the
+    non-Abelian GWS specialization.
+  failure_mode: Without the GWS gauge-fixed rules, the required W/Z and Goldstone
+    diagrams and their xi cancellation are not defined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.1
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-27
+  from: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+  to: peskin-schroeder.problem-21-2-ww-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to verify the chapter's right- and left-handed longitudinal
+    amplitudes and extend them to all helicities.
+  failure_mode: Without the demonstrated cancellation structure, the specified checks
+    cannot be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-28
+  from: peskin-schroeder.heavy-doublet-oblique-approximation
+  to: peskin-schroeder.problem-21-4-higgs-mass-oblique-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 21.4 applies the stated light-fermion approximation to isolate
+    Higgs-sector vacuum polarization.
+  failure_mode: Without it, the assertion that only propagator diagrams contribute
+    is unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
+- id: peskin-schroeder.e-ps014-29
+  from: peskin-schroeder.standard-model-yukawa-masses-and-higgs-couplings
+  to: peskin-schroeder.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The h-f-f coupling sets the tree-level fermion-pair amplitude.
+  failure_mode: Without it, the partial width and its mass dependence cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (a)
+    pages:
+    - 775
+    - 776
+- id: peskin-schroeder.e-ps014-30
+  from: peskin-schroeder.goldstone-equivalence-theorem
+  to: peskin-schroeder.higgs-to-vector-pairs-goldstone-check-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for the high-mass longitudinal-vector result to be checked
+    against ungauged Goldstones.
+  failure_mode: Without the equivalence principle, the requested comparison cannot
+    be justified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (b)
+    pages:
+    - 776
+- id: peskin-schroeder.e-ps014-31
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) explicitly requires dimensional regularization for the quark-loop
+    amplitude.
+  failure_mode: Without the regulated loop method, the finite amplitude and regulator
+    subtlety cannot be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 776
+- id: peskin-schroeder.e-ps014-32
+  from: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  to: peskin-schroeder.gluon-fusion-higgs-production-project-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) derives production from the partial width calculated in part
+    (c).
+  failure_mode: Without Gamma(h to gg), the requested production relation has no input
+    width.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-33
+  from: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  to: peskin-schroeder.higgs-to-diphoton-fermion-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (e) explicitly reuses the form factor derived in part (c).
+  failure_mode: Without I(m_h-squared/m_f-squared), the fermion-loop diphoton expression
+    cannot be written as requested.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-34
+  from: peskin-schroeder.nonabelian-rxi-ghosts-and-gws-specialization
+  to: peskin-schroeder.higgs-to-diphoton-w-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) requires Feynman-'t Hooft rules for the broken non-Abelian GWS
+    theory.
+  failure_mode: Without the GWS R-xi rules, the required gauge-invariant W-loop diagram
+    set cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-35
+  from: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  to: peskin-schroeder.higgs-decay-form-factors-numerical-project-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (g) numerically evaluates the parameter-integral form factor introduced
+    in part (c).
+  failure_mode: Without its integral expression, there is no function to reduce, plot,
+    or use in the width.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-36
+  from: peskin-schroeder.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  to: peskin-schroeder.higgs-decay-branching-fraction-synthesis-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The final branching fractions require the fermion partial widths as one
+    independent input class.
+  failure_mode: Without them, b-anti-b and tau-pair fractions and the total width
+    are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-37
+  from: peskin-schroeder.higgs-to-vector-pairs-goldstone-check-task
+  to: peskin-schroeder.higgs-decay-branching-fraction-synthesis-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The final fractions require the independently calculated W-pair and Z-pair
+    widths.
+  failure_mode: Without them, the vector-boson channels and total width are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-38
+  from: peskin-schroeder.higgs-decay-form-factors-numerical-project-task
+  to: peskin-schroeder.higgs-decay-branching-fraction-synthesis-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The final fractions require the numerically evaluated gluon-pair width
+    across the requested mass range.
+  failure_mode: Without it, the gg branch and total width are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-39
+  from: peskin-schroeder.rxi-abelian-propagators-and-ghost
+  to: peskin-schroeder.rxi-gauge-limits-and-proof-boundary
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finite-xi and xi-to-infinity comparison uses the gauge, Goldstone,
+    and ghost propagator poles.
+  failure_mode: Without those propagators, neither the ultraviolet falloff nor the
+    unitary-gauge limiting spectrum can be assessed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 737
+    - 738
+- id: peskin-schroeder.e-ps014-40
+  from: peskin-schroeder.longitudinal-vector-polarization-kinematics
+  to: peskin-schroeder.goldstone-equivalence-cut-cancellation-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cut route turns the timelike/Goldstone cancellation into the squared
+    high-energy longitudinal relation.
+  failure_mode: Without epsilon_L approximately k/m at high energy, the cut cancellation
+    cannot be related to the longitudinal amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: peskin-schroeder.e-ps014-41
+  from: peskin-schroeder.cutkosky-cutting-rules
+  to: peskin-schroeder.goldstone-equivalence-cut-cancellation-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The route explicitly invokes a Cutkosky cut through vector and Goldstone
+    lines.
+  failure_mode: Without the cutting rules, the stated unitarity cancellation has no
+    calculational meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: peskin-schroeder.e-ps014-42
+  from: peskin-schroeder.rxi-tree-gauge-parameter-cancellation
+  to: peskin-schroeder.goldstone-equivalence-cut-cancellation-route
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The earlier explicit vector--Goldstone cancellation illustrates the analogous
+    removal of unphysical cut states in the unitarity route.
+  failure_mode: Without the earlier example, the cut route remains derivable from
+    longitudinal kinematics and Cutkosky rules but loses a useful analogy.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.1 and 21.2
+    pages:
+    - 736
+    - 737
+    - 746
+- id: peskin-schroeder.e-ps014-43
+  from: peskin-schroeder.top-to-wb-width-and-longitudinal-enhancement
+  to: peskin-schroeder.top-to-goldstone-b-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Goldstone calculation is checked by equality with the leading longitudinal
+    term of the independently derived W width.
+  failure_mode: Without the W result, the claimed leading-term agreement cannot be
+    verified.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+- id: peskin-schroeder.e-ps014-44
+  from: peskin-schroeder.electroweak-charged-neutral-current-couplings
+  to: peskin-schroeder.eeww-right-handed-longitudinal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The s-channel electron and W couplings enter the cancellation amplitude.
+  failure_mode: Without the charged and neutral current couplings, the diagram coefficients
+    cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: peskin-schroeder.e-ps014-45
+  from: peskin-schroeder.yang-mills-feynman-rules-and-universal-coupling
+  to: peskin-schroeder.eeww-right-handed-longitudinal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon/Z to W-plus-W-minus vertex is a Yang-Mills three-boson rule
+    used in the s-channel diagrams.
+  failure_mode: Without that vertex, the s-channel amplitude and its cancellation
+    are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: peskin-schroeder.e-ps014-46
+  from: peskin-schroeder.electroweak-charged-neutral-current-couplings
+  to: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The s-channel electron and W couplings enter the cancellation amplitude.
+  failure_mode: Without the charged and neutral current couplings, the diagram coefficients
+    cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: peskin-schroeder.e-ps014-47
+  from: peskin-schroeder.yang-mills-feynman-rules-and-universal-coupling
+  to: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon/Z to W-plus-W-minus vertex is a Yang-Mills three-boson rule
+    used in the s-channel diagrams.
+  failure_mode: Without that vertex, the s-channel amplitude and its cancellation
+    are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: peskin-schroeder.e-ps014-48
+  from: peskin-schroeder.eeww-right-handed-longitudinal-cancellation
+  to: peskin-schroeder.problem-21-2-ww-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly asks to verify the right-handed high-energy longitudinal
+    result.
+  failure_mode: Without that result, one requested helicity-sector check is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-49
+  from: peskin-schroeder.electroweak-charged-neutral-current-couplings
+  to: peskin-schroeder.problem-21-3-dubar-to-wgamma-radiation-zero
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The d anti-u charged-current annihilation amplitude uses the electroweak
+    charged-current coupling.
+  failure_mode: Without it, the nonzero initial channel and its amplitude are not
+    fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-50
+  from: peskin-schroeder.yang-mills-feynman-rules-and-universal-coupling
+  to: peskin-schroeder.problem-21-3-dubar-to-wgamma-radiation-zero
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W-W-photon interaction is required among the diagrams whose helicity
+    amplitudes cancel at the radiation zero.
+  failure_mode: Without it, the complete scattering amplitude and common zero are
+    incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-51
+  from: peskin-schroeder.explicit-helicity-spinor-amplitude-method
+  to: peskin-schroeder.problem-21-3-dubar-to-wgamma-radiation-zero
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests all initial and final helicity amplitudes.
+  failure_mode: Without a helicity-amplitude method, the all-helicity radiation-zero
+    proof cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-52
+  from: peskin-schroeder.weak-angle-scheme-differences-and-finiteness
+  to: peskin-schroeder.problem-21-4-higgs-mass-oblique-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) computes corrections to the Section 21.3 natural weak-angle
+    relations.
+  failure_mode: Without those relations, the displayed Higgs-mass shifts have no defined
+    targets.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
+- id: peskin-schroeder.e-ps014-53
+  from: peskin-schroeder.higgs-decay-project-model-and-source-era-inputs
+  to: peskin-schroeder.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The project fixes the one-doublet GWS model, m_h treatment, and stated
+    source-era numerical inputs for this independent partial-width branch.
+  failure_mode: Without that project model, the branch coupling conventions and requested
+    numerical assumptions are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 775
+    - 776
+- id: peskin-schroeder.e-ps014-54
+  from: peskin-schroeder.higgs-decay-project-model-and-source-era-inputs
+  to: peskin-schroeder.higgs-to-vector-pairs-goldstone-check-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The project fixes the one-doublet GWS model, m_h treatment, and stated
+    source-era numerical inputs for this independent partial-width branch.
+  failure_mode: Without that project model, the branch coupling conventions and requested
+    numerical assumptions are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 775
+    - 776
+- id: peskin-schroeder.e-ps014-55
+  from: peskin-schroeder.higgs-decay-project-model-and-source-era-inputs
+  to: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The project fixes the one-doublet GWS model, m_h treatment, and stated
+    source-era numerical inputs for this independent partial-width branch.
+  failure_mode: Without that project model, the branch coupling conventions and requested
+    numerical assumptions are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 775
+    - 776
+- id: peskin-schroeder.e-ps014-56
+  from: peskin-schroeder.standard-model-yukawa-masses-and-higgs-couplings
+  to: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark-loop h0-to-gg amplitude uses the Higgs-quark Yukawa coupling.
+  failure_mode: Without it, the loop amplitude normalization and quark-mass dependence
+    cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 776
+- id: peskin-schroeder.e-ps014-57
+  from: peskin-schroeder.qcd-hadron-collision-factorization
+  to: peskin-schroeder.gluon-fusion-higgs-production-project-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) convolves a short-distance gg-to-h process with proton gluon
+    distributions.
+  failure_mode: Without hadron-collision factorization, the pp cross section cannot
+    be related to the partonic process.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-58
+  from: peskin-schroeder.higgs-to-diphoton-fermion-loop-task
+  to: peskin-schroeder.higgs-to-diphoton-w-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) adds the W-loop contribution to the fermion-loop amplitude of
+    part (e).
+  failure_mode: Without the fermion-loop contribution, the requested combined diphoton
+    expression is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-60
+  from: peskin-schroeder.higgs-to-diphoton-w-loop-task
+  to: peskin-schroeder.higgs-decay-form-factors-numerical-project-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (g) numerically computes the additional form factor introduced in
+    part (f).
+  failure_mode: Without the W-loop form factor, the second requested numerical form-factor
+    calculation has no definition.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 777
+- id: peskin-schroeder.e-ps014-61
+  from: peskin-schroeder.one-loop-vertex-reduction-to-form-factors
+  to: peskin-schroeder.problem-21-1-weak-muon-anomalous-moment
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The anomalous moment is extracted from the loop-corrected electromagnetic
+    vertex form factor.
+  failure_mode: Without vertex form-factor reduction, the requested a_mu contributions
+    cannot be isolated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.1
+    pages:
+    - 773
+- id: peskin-schroeder.e-ps014-62
+  from: peskin-schroeder.explicit-helicity-spinor-amplitude-method
+  to: peskin-schroeder.problem-21-2-ww-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requires amplitudes with definite initial electron and final
+    W helicities.
+  failure_mode: Without a helicity-amplitude method, the requested all-helicity calculation
+    cannot be executed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
 - id: peskin-schroeder.e-qed-rules-to-compton
   from: peskin-schroeder.qed-tree-amplitude-rule
   to: peskin-schroeder.compton-two-diagram-amplitude
@@ -20889,6 +22482,21 @@ groups:
   title: Gauge theories with spontaneous symmetry breaking
   question: How do broken gauge symmetry, electroweak representations, and Yukawa
     couplings determine physical particles and interactions?
+- id: peskin-schroeder.ch21-equivalence
+  title: Goldstone-boson equivalence
+  question: Why do high-energy longitudinal vector amplitudes track the eaten Goldstone
+    modes?
+- id: peskin-schroeder.ch21-precision
+  title: Weak one-loop corrections
+  question: Which finite electroweak predictions follow from oblique vacuum polarization?
+- id: peskin-schroeder.ch21-problems
+  title: Chapter 21 problems and Higgs-decay project
+  question: How are the chapter's gauge-theory and Higgs-decay calculations carried
+    out?
+- id: peskin-schroeder.ch21-rxi
+  title: R-xi gauges in broken gauge theories
+  question: How does gauge fixing retain calculable propagators while separating physical
+    from unphysical states?
 - id: peskin-schroeder.ch5-crossing-and-compton
   title: Crossing, channels, and Compton scattering
   question: How do crossing variables, gauge-current constraints, and kinematics organize
@@ -21007,6 +22615,18 @@ motivations:
     section: Chapter 19
     pages:
     - 651
+- id: peskin-schroeder.ch21-quantization-motivation
+  nodes:
+  - peskin-schroeder.rxi-abelian-gauge-fixing
+  - peskin-schroeder.goldstone-equivalence-theorem
+  summary: Unitary gauge hides the absorbed Goldstone fields and gives unclear perturbative
+    rules; the chapter seeks a gauge-fixed quantization that retains them and exposes
+    the cancellations maintaining unitarity.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 21 introduction
+    pages:
+    - 731
 - id: peskin-schroeder.ch5-inverse-compton-use
   nodes:
   - peskin-schroeder.high-energy-compton-helicity-endpoint

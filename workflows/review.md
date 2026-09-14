@@ -46,6 +46,12 @@ the later adjudicator must resolve it by its zero-based index in `notes`. Do not
 put acknowledgements, vague reservations, or unrelated commentary in an adverse
 verdict's notes.
 
+If the science is supported but an existing-record amendment still needs final
+authority, return `revise` with that amendment as the specific remaining finding.
+An ordinary `accept` cannot clear an unresolved amendment or authorize a change
+to an accepted record. This finding can go directly to final adjudication; it
+does not require another extractor correction or scientific review.
+
 Return one JSON object:
 ```
 {
