@@ -5590,6 +5590,660 @@ nodes:
     note: Retains the reviewed weinberg-2 treatment with its source-specific conditions,
       normalizations, notation, and stated proof or task boundary; this source-scoped
       alignment does not assert a broader equivalence.
+- id: qft.align014.callan-symanzik-massless-green-functions
+  label: Callan–Symanzik equation for massless scalar Green functions
+  summary: Holding bare massless scalar Green functions fixed while changing the arbitrary
+    subtraction scale gives a differential equation involving the running quartic
+    coupling and field anomalous dimension. It is the source's subtraction-scale equation,
+    distinct from loss of Wilsonian degrees of freedom.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.callan-symanzik-equation
+    note: This preserves the source's massless scalar Green-function convention and
+      its beta and gamma definitions.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 410
+    - 411
+- id: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  label: Continuum epsilon-expansion Wilson–Fisher beta and stability route
+  summary: For the Z2-symmetric scalar effective theory in d=4-epsilon, the continuum
+    beta function and stability matrix give a small nonzero fixed point, one relevant
+    mass direction, and the approximate correlation-length exponent. This route is
+    independent of cutoff-shell integration and is controlled only for small epsilon.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.wilson-fisher-epsilon-expansion
+    note: Retains the Z2 scalar effective theory, d equals four minus epsilon, continuum
+      beta-function and stability calculation, and approximate-exponent scope.
+  evidence:
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 147
+    - 148
+- id: qft.align014.correlation-length-exponent-from-relevant-flow
+  label: Correlation-length exponent from relevant flow
+  summary: Near a fixed point with one relevant perturbation, the correlation length
+    diverges with exponent nu. In Weinberg's infrared convention the unique relevant
+    eigenvalue lambda_0 is negative and nu=-1/lambda_0 (equivalently, the inverse
+    positive growth exponent). Peskin and Schroeder express the same result through
+    their mass-operator anomalous-dimension convention; the equality is used only
+    under each source's stated fixed-point assumptions.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.correlation-length-exponent-from-mass-flow
+    note: The correspondence retains the mass perturbation becoming order one and
+      the source's mass-operator anomalous-dimension convention.
+  - project: weinberg-2
+    node: weinberg-2.correlation-length-critical-exponent-from-rg
+    note: The correspondence retains Weinberg's one-relevant-direction stability-eigenvalue
+      derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 436
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 146
+    - 147
+- id: qft.align014.coupling-redefinition-third-beta-coefficient-task
+  label: Coupling-redefinition third-beta-coefficient task
+  summary: Show that a coupling redefinition can set the third coefficient of a beta
+    function beginning with squared and cubed coupling terms to an arbitrary value.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-coupling-redefinition-third-beta-coefficient
+    note: This remains Weinberg's requested coupling-coordinate calculation.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 159
+- id: qft.align014.critical-exponent-definitions
+  label: Critical correlation-exponent definitions
+  summary: For a continuous transition, the reduced temperature and the exponents
+    alpha, beta, gamma, delta, nu, and eta parameterize singular thermodynamic, magnetization,
+    susceptibility, correlation-length, and correlation-function behavior. The record
+    defines this representation rather than deriving scaling relations.
+  kind: representation
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.critical-correlation-exponents-definition
+    note: Retains the source's magnet language and the collection of exponent definitions.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 439
+    - 440
+    - 441
+- id: qft.align014.critical-two-point-scaling-and-eta
+  label: Critical two-point scaling and eta
+  summary: At the critical fixed point, the source's coordinate-space spin correlation
+    has power d minus two plus eta, with eta twice its field anomalous dimension;
+    a relevant perturbation produces correlation-length-controlled exponential decay
+    away from criticality.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.critical-two-point-scaling-anomalous-dimension
+    note: The eta-to-field-anomalous-dimension factor is retained in Peskin and Schroeder's
+      convention only.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 443
+    - 444
+- id: qft.align014.effective-charge-at-100-gev-task
+  label: Effective electric charge at 100 GeV task
+  summary: Calculate the effective QED charge for a 100 GeV process after including
+    charged quarks and leptons whose masses lie below that scale.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-effective-charge-at-100-gev
+    note: Retains the 100 GeV threshold content and task status.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 159
+- id: qft.align014.electron-propagator-asymptotics-task
+  label: Electron-propagator asymptotics task
+  summary: Calculate the large-four-momentum QED electron-propagator asymptotic form,
+    using the separately calculated one-loop field-renormalization constant if desired.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-electron-propagator-asymptotics
+    note: Retains both the large-four-momentum target and the optional one-loop input.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 159
+- id: qft.align014.fixed-point-operator-correction-task
+  label: Fixed-point operator-correction task
+  summary: For a positive coupling whose beta function has the stated local form beta(g)
+    tending to a(g-star minus g), with a>0, at a simple zero g-star, find the asymptotic
+    correction to the leading fixed-point power in an operator-normalization factor.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-fixed-point-operator-correction
+    note: Retains the stated local simple-zero form beta(g) tending to a(g-star minus
+      g) with a>0, and leaves the requested correction as a task.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 159
+- id: qft.align014.fixed-point-relevant-eigendirection
+  label: Fixed-point relevant eigendirection and critical surface
+  summary: Linearize the flow in eigenoperator coordinates near a fixed point. The
+    source treatments identify relevance by the low-scale eigenvalue convention and,
+    for one relevant direction, a codimension-one critical surface; this does not
+    transfer free-theory dimensional labels unchanged to an interacting fixed point.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.fixed-point-eigenoperator-scaling
+    note: Peskin and Schroeder retain the d less than four Wilson–Fisher scaling window,
+      one small mass/temperature perturbation, and neglected irrelevant couplings.
+  - project: weinberg-2
+    node: weinberg-2.ir-relevant-marginal-irrelevant-directions
+    note: Weinberg supplies the infrared-sign convention for stability eigenvalues
+      and the codimension-one surface statement.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 442
+    - 443
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 145
+    - 146
+- id: qft.align014.free-fixed-point-effective-lagrangian
+  label: Free fixed point and long-distance effective Lagrangian
+  summary: For weak couplings near the free fixed point, irrelevant interactions fade
+    at low energy, leaving a renormalizable long-distance effective Lagrangian; the
+    source qualifies this simple scaling account when interactions become strong.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.free-fixed-point-effective-lagrangian
+    note: This preserves the source's weak-coupling, near-free-fixed-point scope and
+      its strong-interaction qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 403
+    - 404
+- id: qft.align014.massless-dim-reg-subtraction-prescription
+  label: Massless dimensional-regularization subtraction prescription
+  summary: For the source's massless scalar setup, remove the momentum-independent
+    quadratic divergence with the mass counterterm before continuing the propagator
+    correction; the remaining logarithmic momentum-squared divergence fixes field-strength
+    renormalization. This prescription is not identified with a cutoff subtraction.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.massless-dim-reg-subtraction-prescription
+    note: Retains the massless scalar and dimensional-regularization conditions and
+      the cutoff-scheme distinction.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 409
+- id: qft.align014.massless-spacelike-renormalization-conditions
+  label: Massless spacelike renormalization conditions
+  summary: At the massless critical point, define scalar two- and four-point functions
+    at spacelike invariants of order minus M squared so massless on-shell singularities
+    are avoided and field normalization is fixed at the subtraction point.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.massless-spacelike-renormalization-conditions
+    note: This is the source's massless scalar subtraction-point prescription, not
+      a physical pole-residue normalization.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 408
+- id: qft.align014.minimal-subtraction-beta-from-simple-poles
+  label: Minimal-subtraction beta functions from simple poles
+  summary: In dimensional regularization with pole subtraction, scale independence
+    of bare couplings makes beta functions depend on simple-pole residues, while higher
+    poles are recursively constrained. This is a mass-independent subtraction construction,
+    not a physical-cutoff flow.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.minimal-subtraction-beta-from-simple-poles
+    note: Retains Weinberg's simple-pole and higher-pole-recursion distinction.
+  evidence:
+  - source: weinberg-2
+    section: '18.6'
+    pages:
+    - 149
+    - 150
+- id: qft.align014.modified-minimal-subtraction-dimensional-selection
+  label: Modified minimal subtraction and dimensional selection
+  summary: Modified minimal subtraction absorbs the standard dimensional-regularization
+    constants. With no ultraviolet cutoff, the residue and beta-function monomials
+    obey dimensional selection. The source’s protection of renormalizable beta functions
+    from nonrenormalizable interactions requires a theory with no superrenormalizable
+    couplings; massless QED with no scalars is its example.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.modified-minimal-subtraction-and-dimensional-selection
+    note: The dimension-selection statement retains the source’s no-superrenormalizable-couplings
+      condition for the beta-function protection claim.
+  evidence:
+  - source: weinberg-2
+    section: '18.6'
+    pages:
+    - 151
+- id: qft.align014.on-epsilon-critical-exponent-task
+  label: O(N) epsilon-expansion critical-exponent task
+  summary: Calculate the first-order epsilon-expansion correlation-length exponent
+    for the stated O(N)-invariant scalar theory with quartic invariant interaction.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-on-epsilon-critical-exponent
+    note: Retains the O(N), quartic-invariant, and first-order-epsilon task scope.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 159
+- id: qft.align014.qcd-confinement-hypothesis-from-infrared-growth
+  label: QCD confinement hypothesis from infrared growth
+  summary: Because the asymptotically free strong coupling grows at long distance,
+    the source presents color-neutral isolated states as a confinement hypothesis
+    rather than a proved consequence, motivated by the absence of observed free quarks
+    and massless gluons.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-confinement-hypothesis-from-infrared-growth
+    note: The hypothesis status and observational motivation are retained explicitly.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 153
+    - 154
+- id: qft.align014.qcd-dimensional-transmutation-and-threshold-matching
+  label: QCD dimensional transmutation and threshold matching
+  summary: Solving the running QCD coupling exchanges a dimensionless coupling for
+    a dimensional integration constant. Across quark thresholds, descriptions with
+    different active-flavor counts use distinct constants matched by continuity.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-dimensional-transmutation-and-threshold-matching
+    note: Retains the integration-constant interpretation and threshold continuity
+      matching.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 156
+    - 157
+- id: qft.align014.qcd-infrared-safe-inclusive-and-jet-rates
+  label: QCD infrared-safe inclusive and jet rates
+  summary: At high energy, inclusive hadron production and suitably defined jet rates
+    are perturbatively computable when infrared safe, while a specified quark-gluon
+    final-state rate or intrajet momentum distribution is not.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-infrared-safe-inclusive-and-jet-rates
+    note: Retains the source's distinction between safe inclusive or jet observables
+      and unsafe exclusive partonic specifications.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 153
+    - 154
+- id: qft.align014.qcd-one-loop-beta-and-active-flavors
+  label: QCD one-loop beta function and active flavors
+  summary: For SU(3) QCD, gauge and quark group factors give a negative one-loop beta
+    function when no more than sixteen quark flavors are light relative to the scale,
+    yielding asymptotic freedom under that active-flavor condition.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-one-loop-beta-and-active-flavors
+    note: Retains the one-loop, SU(3), and light-active-flavor qualification.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 152
+    - 153
+- id: qft.align014.qcd-renormalizable-lagrangian-and-effective-symmetry-qualification
+  label: QCD renormalizable Lagrangian and effective-symmetry qualification
+  summary: The renormalizable quark-gluon Lagrangian has accidental charge-conjugation
+    and flavor-number symmetries; heavier physics gives suppressed nonrenormalizable
+    violations, while the source separately notes nonperturbative QCD parity violation.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-renormalizable-lagrangian-and-effective-symmetry-qualification
+    note: Retains both the effective-interaction qualification and the separate nonperturbative-parity
+      caveat.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 155
+    - 156
+- id: qft.align014.qcd-su3-quark-color-representation
+  label: QCD SU(3) quark color representation
+  summary: QCD is an SU(3) non-Abelian gauge theory with each quark flavor in the
+    defining three-color representation. In the source's stated approximation, baryons
+    and mesons are color-neutral three-quark and quark-antiquark bound states.
+  kind: representation
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-su3-quark-color-representation
+    note: Retains the defining-representation statement and its stated color-neutral
+      bound-state approximation.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 152
+- id: qft.align014.rg-leading-log-prediction-from-lower-orders
+  label: RG prediction of leading logarithms from lower orders
+  summary: Scale independence of the renormalized QED photon propagator constrains
+    the perturbative logarithmic pattern, allowing lower-order beta coefficients to
+    determine selected higher-order leading logarithms.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.rg-leading-log-prediction-from-lower-orders
+    note: Retains the QED photon-propagator setup and the limited selected-leading-log
+      conclusion.
+  evidence:
+  - source: weinberg-2
+    section: '18.8'
+    pages:
+    - 157
+    - 158
+- id: qft.align014.scalar-mass-relevance-and-fine-tuning
+  label: Scalar mass relevance and Wilsonian fine tuning
+  summary: A relevant scalar mass requires adjustment of short-distance data to keep
+    a small low-energy mass. In the mixed-operator Wilsonian account, irrelevant coefficients
+    lose high-scale sensitivity while the scalar mass remains UV sensitive; this is
+    a sensitivity statement, not a proof of a unique naturalness criterion.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.scalar-mass-naturalness-problem
+    note: Peskin and Schroeder contrast additive scalar-mass renormalization with
+      fermion masses proportional to the bare mass.
+  - project: schwartz
+    node: schwartz.wilsonian-operator-mixing-irrelevance-and-fine-tuning
+    note: Schwartz supplies the fixed-point mixing calculation and the stated high-to-low-scale
+      sensitivity comparison.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 406
+  - source: schwartz
+    section: 23.6.1–23.6.2
+    pages:
+    - 446
+    - 447
+    - 448
+    - 449
+    - 450
+- id: qft.align014.sun-scalar-loop-gauge-beta-task
+  label: SU(N) scalar-loop gauge-beta task
+  summary: Calculate the one-loop gauge beta function for an SU(N) theory with a defining-representation
+    scalar, including the scalar loop; the source recommends a constant-background-field
+    gauge method.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-sun-scalar-loop-gauge-beta
+    note: Retains the SU(N), defining-scalar, scalar-loop, and recommended-method
+      conditions as a task.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 158
+    - 159
+- id: qft.align014.universality-class-from-long-wavelength-content
+  label: Universality class from long-wavelength content
+  summary: Systems with the same long-wavelength critical fields share critical exponents
+    despite microscopic differences. Peskin and Schroeder's O(N) magnet comparison
+    is retained as a family-specific illustration rather than a claim that component
+    count alone classifies every system.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-critical-exponent-universality
+    note: Retains the O(N) magnet model and its distinct exponent by N.
+  - project: weinberg-2
+    node: weinberg-2.universality-class-from-long-wavelength-content
+    note: Retains the long-wavelength-field criterion for second-order transitions.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 437
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 148
+- id: qft.align014.wilson-fisher-scheme-independence-task
+  label: Wilson–Fisher regulator and scheme-independence task
+  summary: As a one-loop task, derive hard-cutoff and shell-integration flows, compare
+    fixed-point coordinates and flow plots, and show that nu is regulator- and subtraction-scheme
+    independent at that order although lambda-star and m-star move with the scheme.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-wilson-fisher-scheme-independence
+    note: This remains the assigned one-loop problem with hard-cutoff and shell-integration
+      deliverables; the requested nu independence is not asserted beyond that order.
+  evidence:
+  - source: schwartz
+    section: Problem 23.6
+    pages:
+    - 451
+- id: qft.align014.wilson-fisher-two-loop-exponent-task
+  label: Wilson–Fisher two-loop critical-exponent task
+  summary: Calculate the N equals one Wilson–Fisher correlation-length exponent through
+    order epsilon squared. This is a task and does not state its requested answer
+    as an accepted result.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-wilson-fisher-two-loop-critical-exponent
+    note: Preserves Schwartz's N equals one and order-epsilon-squared task scope.
+  evidence:
+  - source: schwartz
+    section: Problem 23.5
+    pages:
+    - 451
+- id: qft.align014.wilson-polchinski-exact-rg-construction
+  label: Wilson–Polchinski exact RG construction
+  summary: Hold the cutoff scalar generating functional fixed while varying Lambda
+    and changing the interaction. With the source's smooth Euclidean scalar regulator,
+    the Lambda derivative is concentrated near the cutoff and yields a functional
+    exact RG equation; this scope excludes a general Minkowski or gauge-theory claim.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.wilson-polchinski-exact-rg-construction
+    note: Retains the source's smooth Euclidean scalar regulator and its explicit
+      scope limit.
+  evidence:
+  - source: schwartz
+    section: 23.6.1
+    pages:
+    - 444
+    - 445
+- id: qft.align014.wilson-polchinski-functional-rge-task
+  label: Wilson–Polchinski functional-RGE derivation task
+  summary: Derive the displayed Lambda derivative of the interaction in terms of first
+    and second functional derivatives, identifying the first contribution with an
+    integrated-out tree diagram and the second with loops.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-wilson-polchinski-functional-rge
+    note: The record remains the specific requested derivation, including its tree-versus-loop
+      identification.
+  evidence:
+  - source: schwartz
+    section: Problem 23.7
+    pages:
+    - 451
+- id: qft.align014.wilsonian-power-terms-continuum-logs-and-eigenoperators
+  label: Wilsonian power terms, continuum logarithms, and eigenoperators
+  summary: Finite-cutoff Wilsonian flows retain cutoff-power dependence, whereas continuum
+    counterterms remove power divergences and retain logarithmic UV effects. Relevance
+    applies to eigenoperators after mixing is diagonalized, and a cutoff-removal definition
+    fixes only the finite low-scale data needed to keep the flow finite.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.wilsonian-power-terms-continuum-logs-and-eigenoperators
+    note: Preserves the source's finite-cutoff versus continuum distinction and its
+      eigenoperator qualification.
+  evidence:
+  - source: schwartz
+    section: 23.6.2
+    pages:
+    - 449
+    - 450
+- id: qft.align014.wilsonian-scalar-mass-sensitivity-task
+  label: Wilsonian scalar-mass sensitivity task
+  summary: Analyze coupled Wilsonian equations for a dimension-two mass parameter
+    and dimensionless coupling, choose a high-scale boundary value for a stated low-scale
+    mass, quantify the stated one-part-in-ten-to-the-twenty response, and sketch the
+    flow.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-wilsonian-scalar-mass-sensitivity
+    note: This retains every requested boundary-value, sensitivity, and flow-sketch
+      deliverable as a task.
+  evidence:
+  - source: schwartz
+    section: Problem 23.8
+    pages:
+    - 451
+- id: qft.align014.wilsonian-shell-rescaling-and-relevance
+  label: Wilsonian shell rescaling and relevance
+  summary: Integrating out a physical momentum shell and rescaling restores the cutoff-form
+    action while changing its couplings. Near the specified fixed point, the flow
+    classifies perturbations as relevant, marginal, or irrelevant; the classification
+    is local to that fixed point and regulator account.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.wilson-rescaling-transformation
+    note: Peskin and Schroeder supply the shell integration followed by coordinate
+      and field rescaling that restores the free action.
+  - project: peskin-schroeder
+    node: peskin-schroeder.rg-operator-relevance-classification
+    note: Their labels are the near-free-scalar classification, including the stated
+      mass and phi-four examples.
+  - project: schwartz
+    node: schwartz.wilsonian-cutoff-flow-and-operator-relevance
+    note: Schwartz keeps a physical high cutoff distinct from a measured momentum
+      and states the dimension-r qualification at a lower cutoff.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 400
+    - 402
+  - source: schwartz
+    section: '23.6'
+    pages:
+    - 442
+    - 443
+    - 444
+- id: qft.align014.wilsonian-shell-wilson-fisher-route
+  label: Wilsonian cutoff-shell Wilson–Fisher route
+  summary: For scalar phi-four theory below four dimensions, cutoff-shell integration
+    and rescaling make the canonical growth of the quartic coupling compete with its
+    nonlinear decrease. In the weak-coupling window this balance yields the nonzero
+    Wilson–Fisher fixed-point conclusion; this is a physical-cutoff shell route, not
+    the continuum beta-function stability calculation.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.wilson-fisher-fixed-point-from-shell-flow
+    note: Retains the physical cutoff-shell recursion and its d less than four weak-coupling
+      balance.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 405
 - id: qft.align015.antiparticle-causality-cancellation
   label: Antiparticles in the complex-scalar causality cancellation
   summary: For a complex scalar, phi creates positive charge and destroys negative
@@ -10078,19 +10732,25 @@ nodes:
     Peskin and Schroeder retain infrared and ultraviolet fixed-point behavior and
     the convention-invariant existence, slope, and anomalous-dimension data at a fixed
     point. Weinberg supplies the four-case classification and its inverse-beta-flow
-    distinctions. The statements keep source-specific coupling conventions and weak-
-    or strong-coupling qualifications explicit.
+    distinctions; Schwartz supplies weak-single-coupling infrared-free and asymptotically-free
+    signs and the possible-interacting-fixed-point qualification. The statements keep
+    source-specific coupling conventions and weak- or strong-coupling qualifications
+    explicit.
   kind: concept
   group: qft.renormalization-group
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.beta-function-flow-classes
-    note: Retains Peskin and Schroeder's infrared/ultraviolet flow and fixed-point
+    note: Retains Peskin and Schroeder’s infrared/ultraviolet flow and fixed-point
       invariant data.
   - project: weinberg-2
     node: weinberg-2.single-coupling-asymptotic-flow-types
-    note: Adds Weinberg's finite-scale divergence, infinite-scale growth, finite fixed-point,
-      and asymptotic-freedom distinctions with their stated flow conditions.
+    note: Retains Weinberg’s finite-scale divergence, infinite-scale growth, finite
+      fixed-point, and asymptotic-freedom distinctions with their stated flow conditions.
+  - project: schwartz
+    node: schwartz.rg-asymptotic-behavior-classification
+    note: Adds Schwartz’s weak-single-coupling signs and possible-interacting-fixed-point
+      qualification.
   evidence:
   - source: peskin-schroeder
     section: '12.3'
@@ -10099,8 +10759,8 @@ nodes:
     - 426
     - 427
     - 428
-    note: The expanded packet supplies the original one-coupling flow classes, ultraviolet/infrared
-      fixed points, and convention-invariant fixed-point data.
+    note: Retains the accepted one-coupling flow classes, ultraviolet/infrared fixed
+      points, and convention-invariant fixed-point data.
   - source: weinberg-2
     section: '18.3'
     pages:
@@ -10110,8 +10770,14 @@ nodes:
     - 133
     - 134
     - 135
-    note: Classifies the four asymptotic beta-flow shapes and their distinct limiting
+    note: Retains the accepted four beta-function shapes and their distinct limiting
       behavior.
+  - source: schwartz
+    section: 23.5.3
+    pages:
+    - 442
+    note: Adds the assigned weak-coupling sign classification and possible nonperturbative
+      fixed point.
 - id: qft.peskin-brst-restricted-unitarity-and-transverse-cuts
   label: Peskin–Schroeder BRST restricted unitarity and transverse cuts
   summary: After the auxiliary-field BRST state-space construction, the full unitary
@@ -10162,22 +10828,47 @@ nodes:
       book says they also hold at a common time after switching to the Heisenberg
       picture.
 - id: qft.peskin-epsilon-wilson-fisher-beta
-  label: Epsilon-expanded Wilson–Fisher beta function
-  summary: Near four dimensions beta(lambda)=-(4-d)lambda+3 lambda-squared/(16 pi-squared)+higher
-    terms. For d below four the terms balance at a small nonzero Wilson–Fisher fixed
-    point; for d above four the coupling flows to zero at large distance.
+  label: Epsilon-expanded Wilson–Fisher nonzero fixed-point conclusion
+  summary: For scalar theory near four dimensions, the Wilson–Fisher beta function
+    has a perturbatively small nonzero fixed point below four dimensions. Peskin and
+    Schroeder independently give both the physical cutoff-shell canonical-growth versus
+    nonlinear-correction balance and the continuum epsilon-expanded beta function;
+    Weinberg gives the continuum beta-function and stability-eigenvalue calculation.
+    The conclusion, including its relevant mass direction and approximate critical-exponent
+    use, is restricted to the small-epsilon weak-coupling regime and does not identify
+    the cutoff-shell and continuum derivations as one method.
   kind: result
   group: qft.renormalization-group
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.epsilon-expanded-wilson-fisher-beta
-    note: The result retains the epsilon expansion and its perturbatively small fixed-point
-      condition.
+    note: Retains the accepted continuum epsilon expansion and its perturbatively
+      small fixed-point condition.
+  - project: peskin-schroeder
+    node: peskin-schroeder.wilson-fisher-fixed-point-from-shell-flow
+    note: Adds the independent physical cutoff-shell balance at d less than four.
+  - project: weinberg-2
+    node: weinberg-2.wilson-fisher-epsilon-expansion
+    note: Adds the independent continuum Z2 scalar beta-function and stability calculation,
+      including approximate-exponent scope.
   evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 405
+    note: The shell recursion balances canonical growth against nonlinear decrease.
   - source: peskin-schroeder
     section: '12.5'
     pages:
     - 435
+    note: Retains the accepted continuum epsilon-expanded beta-function result.
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 147
+    - 148
+    note: The scalar effective theory, fixed point, stability eigenvalues, and approximate
+      exponent are displayed here.
 - id: qft.peskin-general-perturbation-rg-flow
   label: General perturbation RG flow
   summary: For a mass-independent scheme, adding coefficients C_i O_i to a massless
@@ -18753,6 +19444,520 @@ edges:
     - 279
     note: The source normalizes the operators of (20.6.23)–(20.6.24) using free-quark
       matrix elements.
+- id: qft.align014.conditions-to-cs
+  from: qft.align014.massless-spacelike-renormalization-conditions
+  to: qft.align014.callan-symanzik-massless-green-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equation is formulated for Green functions normalized at the stated
+    subtraction point.
+  failure_mode: Using an on-shell normalization introduces the massless singularity
+    that the conditions avoid.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 408
+    - 410
+- id: qft.align014.continuum-rg-to-effective-charge-task
+  from: qft.continuum-rg-running-coupling-large-log-method
+  to: qft.align014.effective-charge-at-100-gev-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task evaluates a sliding QED coupling at a process scale after accounting
+    for charged thresholds.
+  failure_mode: Without the continuum running-coupling method, there is no source-defined
+    scale evolution to evaluate at 100 GeV.
+  evidence:
+  - source: weinberg-2
+    section: 18.8; Problems
+    pages:
+    - 157
+    - 159
+- id: qft.align014.continuum-rg-to-leading-logs
+  from: qft.continuum-rg-running-coupling-large-log-method
+  to: qft.align014.rg-leading-log-prediction-from-lower-orders
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED photon-propagator example expands the running electric charge
+    and its beta coefficients to infer the logarithmic series.
+  failure_mode: Without the continuum QED running-coupling method, scale independence
+    cannot determine the displayed leading-log pattern.
+  evidence:
+  - source: weinberg-2
+    section: '18.8'
+    pages:
+    - 157
+    - 158
+- id: qft.align014.continuum-route-to-common-wilson-fisher-conclusion
+  from: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  to: qft.peskin-epsilon-wilson-fisher-beta
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This continuum beta-function and stability derivation independently reaches
+    the shared small-epsilon nonzero fixed-point conclusion.
+  failure_mode: Treating it as an input to the cutoff-shell route would collapse independent
+    regulator-qualified derivations.
+  evidence:
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 147
+    - 148
+- id: qft.align014.continuum-wilson-fisher-to-on-epsilon-task
+  from: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  to: qft.align014.on-epsilon-critical-exponent-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The O(N) task generalizes the displayed one-component continuum epsilon-expansion
+    calculation.
+  failure_mode: Without the scalar epsilon-expansion route, the requested O(N) first-order
+    exponent calculation has no source-developed perturbative template.
+  evidence:
+  - source: weinberg-2
+    section: 18.5; Problems
+    pages:
+    - 147
+    - 148
+    - 159
+- id: qft.align014.continuum-wilson-fisher-to-two-loop-task
+  from: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  to: qft.align014.wilson-fisher-two-loop-exponent-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task extends the continuum epsilon-expansion critical-exponent calculation
+    to order epsilon squared.
+  failure_mode: Without the baseline continuum epsilon expansion, the requested two-loop
+    exponent lacks its expansion point and one-loop result.
+  evidence:
+  - source: weinberg-2
+    section: 18.5; Problems
+    pages:
+    - 147
+    - 148
+    - 159
+- id: qft.align014.continuum-wilson-fisher-to-universality
+  from: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  to: qft.align014.universality-class-from-long-wavelength-content
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The scalar calculation is the chapter’s worked illustration of common
+    exponents for systems with the same long-wavelength content.
+  failure_mode: Without the illustration, the universality classification remains
+    usable but lacks this displayed perturbative support.
+  evidence:
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 147
+    - 148
+- id: qft.align014.correlation-to-continuum-wilson-fisher-route
+  from: qft.align014.correlation-length-exponent-from-relevant-flow
+  to: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general critical-scaling relation nu=-1/lambda_0 is applied to the
+    calculated mass-direction eigenvalue.
+  failure_mode: Without the correlation-length scaling relation, the stability eigenvalue
+    cannot yield the stated critical exponent.
+  evidence:
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 146
+    - 147
+    - 148
+- id: qft.align014.eigendirection-to-continuum-wilson-fisher-route
+  from: qft.align014.fixed-point-relevant-eigendirection
+  to: qft.align014.continuum-epsilon-wilson-fisher-beta-stability-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The continuum calculation interprets the stability-matrix eigenvalues
+    as relevant and irrelevant directions.
+  failure_mode: Without the fixed-point eigendirection framework, the stability calculation
+    does not identify the unique relevant direction.
+  evidence:
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 145
+    - 147
+    - 148
+- id: qft.align014.eigendirection-to-correlation
+  from: qft.align014.fixed-point-relevant-eigendirection
+  to: qft.align014.correlation-length-exponent-from-relevant-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correlation-length exponent is the inverse relevant stability exponent
+    in this route.
+  failure_mode: Without the relevant eigenvalue, nu has no flow-derived exponent.
+  evidence:
+  - source: weinberg-2
+    section: '18.5'
+    pages:
+    - 146
+    - 147
+- id: qft.align014.eigendirection-to-critical-two-point
+  from: qft.align014.fixed-point-relevant-eigendirection
+  to: qft.align014.critical-two-point-scaling-and-eta
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The critical fixed-point two-point form is obtained after tuning onto
+    the critical surface and following its fixed-point scaling.
+  failure_mode: Without the fixed-point eigendirection and tuning condition, the critical
+    scaling regime is not identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 442
+    - 443
+    - 444
+- id: qft.align014.exact-rg-to-functional-task
+  from: qft.align014.wilson-polchinski-exact-rg-construction
+  to: qft.align014.wilson-polchinski-functional-rge-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to derive the functional equation constructed with this
+    regulated generating functional.
+  failure_mode: Without the regulator and fixed-Z setup, the two functional-derivative
+    terms have no defined target.
+  evidence:
+  - source: schwartz
+    section: Problem 23.7
+    pages:
+    - 451
+- id: qft.align014.external-source-to-exact-rg
+  from: qft.align011.external-source-generating-functional
+  to: qft.align014.wilson-polchinski-exact-rg-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Holding the source generating functional fixed while the cutoff varies
+    requires the established sourced-functional construction.
+  failure_mode: Without the fixed source-functional object, the exact-RG invariance
+    condition is undefined.
+  evidence:
+  - source: schwartz
+    section: 23.6.1
+    pages:
+    - 444
+    - 445
+- id: qft.align014.fixed-point-power-to-correction-task
+  from: qft.weinberg2-fixed-point-anomalous-power
+  to: qft.align014.fixed-point-operator-correction-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for the subleading correction to the fixed-point operator
+    factor derived in the text.
+  failure_mode: Without the fixed-point operator-scaling result, there is no leading
+    term or correction structure to expand.
+  evidence:
+  - source: weinberg-2
+    section: 18.3; Problems
+    pages:
+    - 133
+    - 159
+- id: qft.align014.mass-operator-to-correlation
+  from: qft.peskin-phi2-anomalous-dimension
+  to: qft.align014.correlation-length-exponent-from-relevant-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Peskin and Schroeder's correlation-length route uses the fixed-point
+    mass-operator anomalous dimension.
+  failure_mode: Without that anomalous-dimension input, this source-specific expression
+    for nu cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 436
+- id: qft.align014.ms-to-modified-ms
+  from: qft.align014.minimal-subtraction-beta-from-simple-poles
+  to: qft.align014.modified-minimal-subtraction-dimensional-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Modified minimal subtraction refines the dimensional-regularization pole-subtraction
+    setup.
+  failure_mode: Without pole-residue beta functions, the effect of the modified convention
+    is undefined.
+  evidence:
+  - source: weinberg-2
+    section: '18.6'
+    pages:
+    - 149
+    - 150
+    - 151
+- id: qft.align014.ms-to-qcd-beta
+  from: qft.align014.minimal-subtraction-beta-from-simple-poles
+  to: qft.align014.qcd-one-loop-beta-and-active-flavors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD beta-function is obtained by inserting the gauge-coupling simple-pole
+    residue into the minimal-subtraction beta formula.
+  failure_mode: Without the simple-pole relation, the QCD bare-coupling residue cannot
+    be converted into the beta function.
+  evidence:
+  - source: weinberg-2
+    section: 18.6; 18.7
+    pages:
+    - 150
+    - 152
+- id: qft.align014.ms-to-sun-scalar-task
+  from: qft.align014.minimal-subtraction-beta-from-simple-poles
+  to: qft.align014.sun-scalar-loop-gauge-beta-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s scalar-loop divergence must be converted into the requested
+    beta function using the simple-pole formula.
+  failure_mode: Without the simple-pole beta relation, the loop divergence cannot
+    yield the requested running-coupling result.
+  evidence:
+  - source: weinberg-2
+    section: 18.6; Problems
+    pages:
+    - 149
+    - 150
+    - 158
+    - 159
+- id: qft.align014.qcd-beta-to-confinement
+  from: qft.align014.qcd-one-loop-beta-and-active-flavors
+  to: qft.align014.qcd-confinement-hypothesis-from-infrared-growth
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The source motivates its confinement hypothesis from infrared growth
+    implied by asymptotic freedom.
+  failure_mode: Without the running direction, the stated motivation for the hypothesis
+    is absent.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 153
+    - 154
+- id: qft.align014.qcd-beta-to-safe-rates
+  from: qft.align014.qcd-one-loop-beta-and-active-flavors
+  to: qft.align014.qcd-infrared-safe-inclusive-and-jet-rates
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The high-energy perturbative QCD premise uses asymptotic freedom.
+  failure_mode: Without it, the claimed high-energy perturbative regime is unsupported.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 153
+    - 154
+- id: qft.align014.qcd-beta-to-threshold
+  from: qft.align014.qcd-one-loop-beta-and-active-flavors
+  to: qft.align014.qcd-dimensional-transmutation-and-threshold-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Dimensional transmutation and flavor-threshold matching solve the QCD
+    running equation.
+  failure_mode: Without the beta function and active flavors, there is no running
+    solution to match across thresholds.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 156
+    - 157
+- id: qft.align014.qcd-color-to-beta
+  from: qft.align014.qcd-su3-quark-color-representation
+  to: qft.align014.qcd-one-loop-beta-and-active-flavors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop QCD group factors use the SU(3) gauge theory and quark representation.
+  failure_mode: Without the representation data, the quoted active-flavor beta coefficient
+    has no group-theory content.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 152
+    - 153
+- id: qft.align014.qcd-color-to-lagrangian
+  from: qft.align014.qcd-su3-quark-color-representation
+  to: qft.align014.qcd-renormalizable-lagrangian-and-effective-symmetry-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The displayed quark-gluon Lagrangian uses SU(3) color gauge fields and
+    quarks in the defining representation.
+  failure_mode: Without the color representation data, the generators and suppressed
+    color indices in the Lagrangian cannot be interpreted.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 152
+    - 155
+- id: qft.align014.renormalizable-yang-mills-to-qcd-lagrangian
+  from: qft.renormalizable-yang-mills-lagrangian-truncation
+  to: qft.align014.qcd-renormalizable-lagrangian-and-effective-symmetry-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The QCD result uses the renormalizable gauge-plus-matter truncation to
+    identify its accidental symmetries and distinguish suppressed higher-dimensional
+    interactions.
+  failure_mode: Without the truncation, neither the allowed quark-gluon terms nor
+    the effective-theory qualification follows.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 155
+    - 156
+- id: qft.align014.scalar-mass-to-sensitivity-task
+  from: qft.align014.scalar-mass-relevance-and-fine-tuning
+  to: qft.align014.wilsonian-scalar-mass-sensitivity-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for the high-to-low-scale scalar-mass sensitivity that
+    the mixed-operator discussion establishes.
+  failure_mode: Without the scalar-mass sensitivity result, the requested boundary-value
+    comparison and flow sketch lack their source-developed interpretation.
+  evidence:
+  - source: schwartz
+    section: 23.6.1–23.6.2; Problem 23.8
+    pages:
+    - 448
+    - 449
+    - 450
+    - 451
+- id: qft.align014.shell-route-to-common-wilson-fisher-conclusion
+  from: qft.align014.wilsonian-shell-wilson-fisher-route
+  to: qft.peskin-epsilon-wilson-fisher-beta
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is the physical-cutoff shell derivation of the shared small-epsilon
+    nonzero fixed-point conclusion.
+  failure_mode: Treating it as a compulsory input to the continuum derivation would
+    erase the independent route.
+  evidence:
+  - source: peskin-schroeder
+    section: 12.1; 12.5
+    pages:
+    - 405
+    - 435
+- id: qft.align014.shell-to-fine-tuning
+  from: qft.align014.wilsonian-shell-rescaling-and-relevance
+  to: qft.align014.scalar-mass-relevance-and-fine-tuning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The fine-tuning comparison follows a Wilsonian flow and relevance analysis.
+  failure_mode: Without the cutoff-flow and relevance account, sensitivity to high-scale
+    boundary data is only a slogan.
+  evidence:
+  - source: schwartz
+    section: 23.6.1
+    pages:
+    - 446
+    - 447
+- id: qft.align014.shell-to-wilson-fisher-shell-route
+  from: qft.align014.wilsonian-shell-rescaling-and-relevance
+  to: qft.align014.wilsonian-shell-wilson-fisher-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cutoff-shell fixed-point balance uses the shell integration and rescaling
+    transformation.
+  failure_mode: Without the shell transformation, the source-specific recursion whose
+    terms balance is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 400
+    - 405
+- id: qft.align014.sliding-operator-to-electron-task
+  from: qft.weinberg2-sliding-operator-anomalous-dimension
+  to: qft.align014.electron-propagator-asymptotics-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator asymptotics apply scale-dependent elementary-field normalization;
+    the problem permits a separately calculated one-loop field-normalization input.
+  failure_mode: Without field-normalization running, a value of Z2 cannot be turned
+    into the requested RG asymptotics.
+  evidence:
+  - source: weinberg-2
+    section: 18.2; Problems
+    pages:
+    - 159
+- id: qft.align014.wilsonian-power-to-scheme-task
+  from: qft.align014.wilsonian-power-terms-continuum-logs-and-eigenoperators
+  to: qft.align014.wilson-fisher-scheme-independence-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task compares a finite-cutoff shell calculation with continuum behavior,
+    so it needs the source’s cutoff-power versus continuum-log and eigenoperator distinction.
+  failure_mode: Without that distinction, moving fixed-point coordinates between the
+    two descriptions can be misread as a change in the physical exponent.
+  evidence:
+  - source: schwartz
+    section: 23.6.2; Problem 23.6
+    pages:
+    - 449
+    - 450
+    - 451
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
