@@ -1328,12 +1328,11 @@ nodes:
   notation: []
 - id: qft.align006.strong-cp-anomalous-rotation-relation
   label: Strong-CP anomalous rotation relation
-  summary: In this chapter’s stated convention, the anomalous chiral rotations generate
-    L=theta_QCD g_s^2 epsilon_mu_nu_alpha_beta F_a^mu_nu F_a^alpha_beta/(32 pi^2)
-    and define bar-theta=theta_QCD+arg det(Y_dY_u), with the neutron-EDM bound bar-theta<10^-10.
-    This sign conflicts with the closed Chapter 29 record’s theta_F definition and
-    is retained only as a source-specific convention discrepancy pending an explicit
-    reconciliation.
+  summary: Schwartz Chapter 29 defines theta_F=arg det(Y_dY_u) and bar-theta=theta_QCD-theta_F
+    after its right-handed rotations; Chapter 30 writes bar-theta=theta_QCD+arg det(Y_dY_u).
+    Both source-specific conventions are retained explicitly. This packet supplies
+    no stated redefinition that harmonizes their signs, so the record records the
+    discrepancy rather than equating the formulae.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -1341,16 +1340,40 @@ nodes:
     node: schwartz.strong-cp-anomalous-rotation-relation
     note: Retains this reviewed book-specific treatment, including its stated conditions,
       conventions, and proof or task boundary.
+  - project: schwartz
+    node: schwartz.anomalous-chiral-rotations-and-theta-terms
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.electroweak-theta-unphysical-and-qcd-total-derivative-limit
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.strong-cp-bar-theta-basis-invariant-phase
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
   evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 609
+    - 610
+    - 611
+    note: Chapter 29 derives its theta_F and minus-sign convention, including its
+      scope.
   - source: schwartz
     section: 30.5.2
     pages:
     - 636
+    note: Chapter 30 states the retained plus-sign convention and EDM bound.
   notation:
   - source: schwartz
-    note: Page 636 writes bar-theta=theta_QCD+arg det(Y_dY_u); the accepted Chapter
-      29 node defines theta_F=arg det(Y_dY_u) and bar-theta=theta_QCD-theta_F. No
-      redefinition linking those signs is supplied in this packet.
+    note: 'Chapter 29: theta_F=arg det(Y_dY_u) and bar-theta=theta_QCD-theta_F. Chapter
+      30: bar-theta=theta_QCD+arg det(Y_dY_u). The packet provides no redefinition
+      connecting these signs.'
 - id: qft.align006.su2-no-local-cubic-anomaly
   label: Absence of local cubic SU(2) anomaly
   summary: For SU(2), the symmetric invariant d^{abc} vanishes, so its local triangle
@@ -7924,6 +7947,2348 @@ nodes:
   - source: weinberg-1
     note: Weinberg writes S_beta_alpha=delta(beta-alpha)-2 pi i delta(E_beta-E_alpha)T-plus_beta_alpha;
       this convention is retained separately from Peskin–Schroeder’s S=1+iT notation.
+- id: qft.align017.anomaly-matching-goldstone-effective-action
+  label: Anomaly-matched Goldstone effective action
+  summary: For a broken global G realized by confined massless fermions, introduce
+    weak fictitious gauge fields and spectators to make the microscopic theory anomaly-free.
+    In the low-energy theory, the Goldstone effective action must transform with the
+    underlying trapped-fermion anomaly so as to cancel the spectator anomaly. If unbroken
+    subgroup H currents are anomaly-free, a local solution is obtained by integrating
+    the anomaly along the gauge transformation that removes the Goldstone coordinates,
+    and solutions differ by anomaly-free functionals.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.anomaly-matching-goldstone-effective-action
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 408
+    - 409
+    - 410
+    - 411
+    note: The source gives the matching argument, the H-anomaly hypothesis, and verifies
+      the transformation of the integrated solution.
+- id: qft.align017.brst-cohomology-classification-of-local-anomalies
+  label: BRST cohomology classification of local anomalies
+  summary: 'With a fermionic ghost and nilpotent BRST differential, the Wess-Zumino
+    condition is exactly sG[ω,A]=0 for the ghost-linear anomaly functional. An anomaly
+    of the form sF[A] for a local ghost-number-zero functional can be removed by a
+    local action counterterm. Thus candidate anomalies are H¹(s|d): local ghost-number-one
+    functions closed modulo a derivative, modulo BRST-exact local terms and derivatives.'
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.brst-cohomology-classification-of-local-anomalies
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 398
+    - 399
+    note: The source proves BRST equivalence and defines the local cohomology quotient.
+- id: qft.align017.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+  label: BV antibracket anomaly cohomology and all-orders removal
+  summary: With antifields, a one-loop anomaly obeys (S,Γ₁)=G₁, so a local ghost-number-one
+    G₁ is a candidate only if it is antibracket-closed and not (S,F₁) for a local
+    ghost-number-zero F₁. If this local ghost-number-one cohomology is empty, the
+    chapter’s inductive Jacobi-identity argument cancels master-equation anomalies
+    order by order. The further four-dimensional semisimple Yang-Mills classification
+    as a linear combination of standard anomaly forms is an external Barnich–Brandt–Henneaux
+    theorem reported by the source; with identically vanishing traces it implies no
+    perturbative anomaly at any order.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 405
+    - 406
+    - 407
+    note: The source gives the BV cohomology criterion, all-orders induction, and
+      semisimple Yang-Mills qualification.
+- id: qft.align017.chiral-lagrangian-theta-vacuum-energy
+  label: Chiral-Lagrangian theta vacuum energy
+  summary: Moving ̅θ into complex quark masses in the two-flavor chiral Lagrangian
+    yields E(̅θ)=−Fπ²mπ²cos̅θ. The text also presents an instanton/theta-vacuum interpretation
+    as a different explanatory route.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.chiral-lagrangian-theta-vacuum-energy
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 611
+- id: qft.align017.classical-scale-current-and-improved-stress-tensor
+  label: Scale current and stated stress-tensor qualification
+  summary: The source states, without deriving it, that the canonical energy-momentum
+    tensor need not be symmetric or gauge invariant. Adding partial_lambda X^{lambda
+    mu nu}, with X antisymmetric in lambda,mu, yields a symmetric gauge-invariant
+    tensor while leaving conservation and the global four-momentum unchanged. For
+    a scale transformation the dilatation current is D^mu=x_nu theta^{mu nu} and partial_mu
+    D^mu=theta^mu_mu. The detailed proof is explicitly referred to Callan, Coleman,
+    and Jackiw; no massless-scalar improvement theorem is asserted here.
+  kind: representation
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.classical-scale-current-and-improved-stress-tensor
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.5'
+    pages:
+    - 682
+    - 683
+- id: qft.align017.differential-form-consistency-derivation-of-symmetric-anomaly
+  label: Differential-form derivation of the symmetric anomaly
+  summary: Write A=iA^a_μT_a dx^μ and ω=iω^aT_a, with d²=0 and ds+sd=0. At fixed dimension
+    four, apply sA=−dω+{A,ω} and sω=ω² to the most general quadratic-through-quartic
+    local form. Requiring sG to be a total derivative forces c₄=0 and c₁=−c₂=c₃=−1/2,
+    reproducing the previously quoted symmetric anomaly; its representative is not
+    unique.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 400
+    - 401
+    - 402
+    note: The source sets the dimensional ansatz, derives the coefficient conditions,
+      and notes non-uniqueness.
+- id: qft.align017.gauge-invariant-point-split-axial-current
+  label: Gauge-invariant point splitting of a composite axial current
+  summary: In the two-dimensional construction, define the local axial current by
+    symmetrically separating psi-bar(x+epsilon/2) and psi(x-epsilon/2) and inserting
+    the straight Wilson line exp[-ie integral A dot dz]. The Wilson line is required
+    for local gauge invariance and the symmetric limit preserves Lorentz transformation
+    properties; the singular fermion contraction converts an O(epsilon) term into
+    the QED2 anomaly operator equation. This record is a QED2 route, not an unsupported
+    four-dimensional continuation.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gauge-invariant-point-split-axial-current
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 655
+    - 656
+- id: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
+  label: GIM cancellation of flavor-changing neutral currents
+  summary: With two up-type quarks, the d–s cross terms in J3 cancel between doublets,
+    leaving a flavor-diagonal neutral current. Without charm, a cosθC sinθC d̄γμs
+    term would permit FCNC processes; this is the GIM mechanism.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.gim-cancellation-of-flavor-changing-neutral-currents
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 605
+- id: qft.align017.h-anomaly-free-counterterm-goldstone-action
+  label: Counterterm construction for G→H with anomaly-free H
+  summary: For G→H with D=0 on H, define B[A]=[1/(48π²)]ε_{μνρσ}∫d⁴x Tr{[A_h^μ,A^ν](F^{ρσ}+F_h^{ρσ})+A_h^μA_h^νA_h^ρA_h^σ−A_h^μA^νA^ρA^σ+(1/2)A_h^μA^νA_h^ρA^σ},
+    where A_h and F_h are the H-algebra components. Then G′_β=G_β+𝒯_βB has G′_i=0
+    and Γ′[ζ,A]=Γ[ζ,A]−B[A_{−ζ}]+B[A]. At A=0, A_{−ζ,μ}=−i(∂_μV)V⁻¹ with V=exp(−iX_aζ_a);
+    the resulting action is not unique, and parity-conserving theories may add local
+    terms cancelling its parity-odd pieces.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.h-anomaly-free-counterterm-goldstone-action
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 415
+    - 416
+    note: Rendered Eqs. (22.7.34)–(22.7.38) fix B[A], all coefficients and H projections,
+      G′, Γ′, the pure-gauge field, and the parity qualification.
+- id: qft.align017.kaon-cp-violation-observables
+  label: Indirect, direct, and interference CP violation in kaons
+  summary: CP violation mixes the kaon CP eigenstates into K_S and K_L with the small
+    parameter epsilon, producing indirect CP violation. In K to pi-pi decays, epsilon-prime
+    parameterizes direct violation and eta_+- and eta_00 separate it from mixing;
+    Im epsilon represents mixing--decay interference. The source keeps the nonperturbative-QCD
+    limit on direct calculation explicit.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.kaon-mixing-indirect-cp-violation
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.direct-and-interference-cp-violation-in-kaons
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.2
+    pages:
+    - 608
+  - source: schwartz
+    section: 29.5.2
+    pages:
+    - 609
+- id: qft.align017.n2-anomaly-matching-example-and-n3-obstruction
+  label: n=2 matching example and n=3 obstruction
+  summary: For n=2, the cubic SU(2) equation vanishes and the remaining equation admits
+    ℓ=1 for the defining left representation, trivial right representation, k=1, with
+    all other nontrivial-left ℓ zero; infinitely many alternatives remain. For the
+    listed three-fermion representations and n>2, Eqs. (22.5.7)–(22.5.8) are ½(n+3)(n+6)ℓ_a+½(n−3)(n−6)ℓ_b+(n²−9)ℓ_c+n(n+4)ℓ_d+n(n−4)ℓ_e+½n²(n+1)ℓ_f+½n²(n−1)ℓ_g=3
+    and ½(n+2)(n+3)ℓ_a+½(n−2)(n−3)ℓ_b+(n²−3)ℓ_c+n(n+2)ℓ_d+n(n−2)ℓ_e+½n(n+1)ℓ_f+½n(n−1)ℓ_g=1.
+    At n=3 every term in the second left side is divisible by three, so three-flavor
+    QCD must break SU(3)_L×SU(3)_R×U(1)_V; the conclusion is not limited to the displayed
+    representations.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.n2-anomaly-matching-example-and-n3-obstruction
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 393
+    - 394
+    note: Rendered pp. 393–394 give the n=2 example, both polynomial matching equations,
+      the divisibility proof, and its representation-independent scope.
+- id: qft.align017.peccei-quinn-axion-relaxation-and-quality-limit
+  label: Peccei–Quinn axion relaxation and quality limit
+  summary: Schwartz Eq. (29.107) gives E(bar-theta)=-F_pi^2 m_pi^2 cos(bar-theta).
+    The next page prints E(bar-theta,a)=+F_pi^2 m_pi^2 cos(bar-theta-a/f_a) but immediately
+    states <a>=f_a bar-theta and a ground state with no effective bar-theta. This
+    record preserves that source-qualified periodic-relaxation presentation without
+    asserting a sign-harmonized potential. The source gives m_a=m_pi F_pi/f_a, its
+    approximate f_a and m_a window with model-building qualifications, and requires
+    dangerous dimension-n PQ-breaking operators with n>10 to be forbidden or exponentially
+    suppressed.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.peccei-quinn-axion-relaxation-and-quality-limit
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 612
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 613
+- id: qft.align017.problem-19-1a-global-eb-anomaly
+  label: 'Problem 19.1(a): global E-parallel-B anomaly law'
+  summary: 'Derive the global right-minus-left fermion-number change from the ABJ
+    equation in a background A_mu=(0,0,Bx^1,A(t)), with B constant and A spatially
+    constant and adiabatic: Delta N_R-Delta N_L=-(e^2/(2pi^2)) integral d^4x E dot
+    B in the book convention.'
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-1a-global-eb-anomaly
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1(a)
+    pages:
+    - 686
+- id: qft.align017.problem-19-1b-weyl-hamiltonian
+  label: 'Problem 19.1(b): Weyl Hamiltonian in parallel fields'
+  summary: Starting with the stated chiral-component Hamiltonian H=integral d^3x [psi_R-dagger(-i
+    sigma dot D)psi_R+psi_L-dagger(i sigma dot D)psi_L], set up the right-handed eigenvalue
+    problem -i sigma dot D psi_R=E psi_R.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-1b-weyl-hamiltonian
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1(b)
+    pages:
+    - 686
+- id: qft.align017.problem-19-1c-landau-level-spectrum
+  label: 'Problem 19.1(c): Landau-level reduction of a Weyl fermion'
+  summary: Use the plane-wave ansatz in x^2,x^3, eliminate one two-component wavefunction
+    entry, reduce the other to a harmonic-oscillator equation, and obtain the right-handed
+    single-particle spectrum in the parallel B and adiabatic-A background.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-1c-landau-level-spectrum
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1(c)
+    pages:
+    - 686
+- id: qft.align017.problem-19-1d-landau-degeneracy
+  label: 'Problem 19.1(d): finite-box Landau degeneracy'
+  summary: With periodic box length L, combine the k_2 quantization and the condition
+    that the harmonic-oscillator center lies inside the box to derive the degeneracy
+    eL^2B/(2pi) for each level.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-1d-landau-degeneracy
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1(d)
+    pages:
+    - 687
+- id: qft.align017.problem-19-1e-spectral-flow-check
+  label: 'Problem 19.1(e): spectral-flow check of the E dot B law'
+  summary: Adiabatically change A by the specified Wilson-loop period, count the lost
+    right-handed and gained left-handed vacuum levels including their Landau degeneracy,
+    and verify the global anomaly law from part (a).
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-1e-spectral-flow-check
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1(e)
+    pages:
+    - 687
+- id: qft.align017.problem-19-2a-pion-weak-amplitude
+  label: 'Problem 19.2(a): pion weak-decay amplitude'
+  summary: Relate the u-bar_L gamma^mu d_L current to isospin vector and axial currents,
+    insert the pion axial-current matrix element, and derive iM=G_F f_pi u-bar(q)
+    gamma^mu(1-gamma_5)v(k) p_mu for pi+ -> ell+ nu.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-2a-pion-weak-amplitude
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.2(a)
+    pages:
+    - 687
+- id: qft.align017.problem-19-2b-pion-helicity-suppression
+  label: 'Problem 19.2(b): pion helicity suppression and rate ratio'
+  summary: Compute the pion leptonic decay rate from the amplitude, show it vanishes
+    for zero charged-lepton mass, derive the stated electron-to-muon rate ratio including
+    phase space, and use the pion lifetime to determine f_pi.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-2b-pion-helicity-suppression
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.2(b)
+    pages:
+    - 687
+- id: qft.align017.problem-19-3a-product-anomaly-coefficients
+  label: 'Problem 19.3(a): product-representation anomaly identity'
+  summary: For r_1 tensor-product r_2 decomposed into irreducibles r_i, use the explicit
+    product generators to show d_1 A(r_2)+d_2 A(r_1)=sum_i A(r_i).
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-3a-product-anomaly-coefficients
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.3(a)
+    pages:
+    - 687
+- id: qft.align017.problem-19-3bc-sun-tensor-anomalies
+  label: 'Problem 19.3(b,c): symmetric and antisymmetric SU(n) tensor anomalies'
+  summary: Use SU(3) decomposition and the unique SU(n) symmetric invariant to compute
+    the anomaly coefficients of two-index symmetric and antisymmetric tensors, extend
+    to the j-index antisymmetric tensor, and explain its vanishing at 2j=n.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-3bc-sun-tensor-anomalies
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.3(b,c)
+    pages:
+    - 688
+- id: qft.align017.problem-19-4ab-heavy-mass-anomaly-limits
+  label: 'Problem 19.4(a,b): heavy-fermion anomaly limits'
+  summary: In Pauli--Villars regularization, show that the M->infinity two-photon
+    matrix elements of 2iM psi-bar gamma_5 psi and of the trace insertion reproduce
+    respectively the ABJ and one-loop trace anomalies.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-4ab-heavy-mass-anomaly-limits
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.4(a,b)
+    pages:
+    - 688
+- id: qft.align017.problem-19-4cd-heavy-mass-loop-checks
+  label: 'Problem 19.4(c,d): finite heavy-fermion loop checks'
+  summary: Show ultraviolet finiteness of the pseudoscalar two-photon matrix element
+    before its heavy-mass limit; for the trace insertion isolate the ultraviolet-finite
+    coefficient of (p dot epsilon*(k))(k dot epsilon*(p)), use gauge invariance for
+    the remaining tensor structure, and verify both limits by dimensional regularization.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-19-4cd-heavy-mass-loop-checks
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.4(c,d)
+    pages:
+    - 688
+- id: qft.align017.problem-chiral-su3-anomaly-with-symmetric-tensors
+  label: 'Problem: chiral SU(3) anomaly with symmetric tensors'
+  summary: 'Task: evaluate the SU(3) anomaly when N fermion-number-conserving fields
+    have left-handed parts in defining 3 representations and right-handed singlets;
+    then evaluate it after adding M fields with left-handed singlets and right-handed
+    symmetric traceless rank-two SU(3) tensors.'
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-chiral-su3-anomaly-with-symmetric-tensors
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 2 states both independent matter-content branches.
+- id: qft.align017.problem-ckm-fit-constraint-curves-task
+  label: 'Task: CKM-fit constraint curves'
+  summary: Determine the CKM-element combination controlling εK curve shapes in the
+    unitarity-triangle fit and specify measurements that would produce Δmd or |Vub|
+    constraints.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-ckm-fit-constraint-curves-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.5
+    pages:
+    - 615
+- id: qft.align017.problem-ee-hadrons-photon-z-interference-task
+  label: 'Task: e+e−→hadrons through photon/Z including interference'
+  summary: Compute tree and one-loop total e+e−→hadrons cross sections including photon,
+    Z, and interference; plot each contribution and the no-interference sum versus
+    center-of-mass energy, and identify when interference may be ignored.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-ee-hadrons-photon-z-interference-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.2
+    pages:
+    - 614
+- id: qft.align017.problem-eta-to-two-photons-leading-ms
+  label: 'Problem: η → γγ at leading order in m_s'
+  summary: 'Task: calculate the η→γ+γ decay rate to leading order in m_s, taking m_u=m_d=0.'
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-eta-to-two-photons-leading-ms
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 1 states the full decay-rate task and its quark-mass conditions.
+- id: qft.align017.problem-higgs-decay-rates-and-branching-plots-task
+  label: 'Task: Higgs decay rates and branching-ratio plots'
+  summary: Calculate H→bb̄, H→gg through the top triangle, and H→γγ through top and
+    W loops, then plot their branching ratios against Higgs mass.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-higgs-decay-rates-and-branching-plots-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.3
+    pages:
+    - 614
+- id: qft.align017.problem-integrating-out-right-handed-neutrinos-task
+  label: 'Task: integrate out right-handed neutrinos'
+  summary: Integrate out the right-handed neutrinos of Eq. (29.63) to derive the dimension-five
+    operator of Eq. (29.65), including the exact Mij–M̃ij relationship.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-integrating-out-right-handed-neutrinos-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.8
+    pages:
+    - 615
+- id: qft.align017.problem-lep-higgsstrahlung-cross-section-task
+  label: 'Task: LEP Higgsstrahlung cross section and event yield'
+  summary: Calculate the tree-level Standard-Model total cross section e+e−→ZH and
+    use it to estimate the number of 100 GeV Higgs bosons at LEP √s=206 GeV.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-lep-higgsstrahlung-cross-section-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.1
+    pages:
+    - 614
+- id: qft.align017.problem-longitudinal-ww-partial-wave-unitarity-task
+  label: 'Task: longitudinal WW partial-wave unitarity'
+  summary: Calculate WL+WL−→WL+WL− in the Standard Model, reproduce its high-energy
+    behavior using Goldstone equivalence, and compare its unitarity constraint with
+    WL+ZL→WL+ZL.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-longitudinal-ww-partial-wave-unitarity-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.4
+    pages:
+    - 615
+- id: qft.align017.problem-multigeneration-chiral-theta-shift-task
+  label: 'Task: multigeneration chiral theta shift'
+  summary: Show that a multiple-generation chiral rotation shifts θ by arg det(R†L).
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-multigeneration-chiral-theta-shift-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.9
+    pages:
+    - 615
+- id: qft.align017.problem-neutrino-oscillation-probability-and-baseline-task
+  label: 'Task: solar/reaction neutrino oscillation probability and baseline'
+  summary: Find solar-neutrino momentum from p+p+e−→d+νe; derive two-flavor P(νe→νe)=1−sin²(2θ)sin²[(E2−E1)T/2],
+    then its high-energy Δm²L/(4E) form and the baseline maximizing the reactor effect
+    for 4 MeV and Δm²=7.5×10−5 eV².
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-neutrino-oscillation-probability-and-baseline-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.7
+    pages:
+    - 615
+- id: qft.align017.problem-pmns-dirac-majorana-phase-count-task
+  label: 'Task: PMNS phase counting for Dirac and Majorana masses'
+  summary: Show that general Dirac-plus-Majorana masses leave three PMNS phases, pure
+    Dirac masses leave one, and determine the pure-Majorana phase count.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: schwartz
+    node: schwartz.problem-pmns-dirac-majorana-phase-count-task
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 29.6
+    pages:
+    - 615
+- id: qft.align017.pure-gauge-goldstone-wess-zumino-functional
+  label: Pure-gauge Goldstone Wess-Zumino functional
+  summary: The anomaly-matched solution vanishing at ζ=0 is unique. At A=0 it evaluates
+    the anomaly on the pure-gauge field generated by ζ and yields a G-invariant local
+    Goldstone functional. For a completely broken group, its leading derivative structure
+    cannot be the spacetime integral of a G-invariant local scalar made only from
+    covariant derivatives of the Goldstone fields.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pure-gauge-goldstone-wess-zumino-functional
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 412
+    - 413
+    note: The source proves the uniqueness-at-zero statement and the pure-gauge/non-invariant-density
+      qualification.
+- id: qft.align017.qcd-wess-zumino-witten-action-and-color-coefficient
+  label: QCD Wess-Zumino-Witten action fixes its color coefficient
+  summary: For massless three-flavor QCD broken to diagonal SU(3), take t_a=λ_a/2
+    and U(tζ)=exp(2it t_aζ_a). With vector-conserving Bardeen routing and no external
+    field, Γ[ζ,0]=−[n/(24π²)]ε^{μνρσ}∫₀¹dt∫d⁴x Tr{ζ_at_aU⁻¹∂_μU U⁻¹∂_νU U⁻¹∂_ρU U⁻¹∂_σU}.
+    Extending into a five-ball gives Γ[ζ,0]=−[in/(240π²)]ε^{ijklm}∫d⁵z Tr{U⁻¹∂_iU
+    U⁻¹∂_jU U⁻¹∂_kU U⁻¹∂_lU U⁻¹∂_mU}. The integer n is the number of colors, and the
+    action depends only on the boundary field, not the chosen extension.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.qcd-wess-zumino-witten-action-and-color-coefficient
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 413
+    - 414
+    - 415
+    note: Rendered Eqs. (22.7.27)–(22.7.33) fix t_a, U, both numerical prefactors,
+      the five factors, the color identification, and extension independence.
+- id: qft.align017.qed2-chiral-anomaly-and-spectral-flow
+  label: 'Two-dimensional chiral anomaly: current definition, gauge tradeoff, and
+    spectral flow'
+  summary: In massless QED in 1+1 dimensions, j_5^mu=epsilon^{mu nu}j_nu with epsilon^{01}=+1.
+    Preserving the vector Ward identity and local gauge invariance gives partial_mu
+    j_5^mu=(e/(2 pi))epsilon^{mu nu}F_{mu nu}; preserving axial conservation instead
+    makes the vector current gauge dependent. On a spatial circle, k_n=2 pi n/L and
+    an adiabatic Delta A_1=2 pi/(eL) returns the spectrum while fixed occupations
+    shift the filled right- and left-moving levels; the integrated law Delta(N_R-N_L)=integral
+    d^2x (e/(2 pi))epsilon^{mu nu}F_{mu nu}=-2 realizes the same anomaly.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.two-dimensional-chiral-qed-representation
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: peskin-schroeder
+    node: peskin-schroeder.two-dimensional-axial-anomaly-gauge-choice
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: peskin-schroeder
+    node: peskin-schroeder.two-dimensional-anomaly-spectral-flow
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 652
+    - 653
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 654
+    - 655
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 657
+    - 658
+- id: qft.align017.quantum-anomaly-consistency-and-ir-scope
+  label: 'Quantum anomalies: gauge consistency and infrared matching scope'
+  summary: A quantum anomaly is failure of a classical symmetry and of its Noether-current
+    conservation. A gauged anomaly violates the Ward identity and unitarity through
+    unphysical longitudinal massless-vector polarizations, unlike a global anomaly.
+    The source also states that anomalies are infrared effects of massless particles,
+    so matching constrains massless spectra across a finite-scale phase transition;
+    it distinguishes this from the beta-function trace anomaly and limits the chapter's
+    detailed treatment to chiral anomalies.
+  kind: concept
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.quantum-anomaly-gauge-versus-global-consistency
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.anomaly-ir-matching-and-trace-scope
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 30 introduction
+    pages:
+    - 616
+  - source: schwartz
+    section: 30 introduction
+    pages:
+    - 616
+    - 617
+- id: qft.align017.quantum-master-equation-measure-anomaly-repair
+  label: Quantum master equation repairs a non-invariant measure
+  summary: The usual Slavnov-Taylor to Zinn-Justin derivation assumes an invariant
+    functional measure, equivalently ΔS=0. When ΔS≠0, local quantum corrections that
+    violate the classical master equation can cancel the measure variation precisely
+    when the quantum master equation holds; empty local (S₀,·) cohomology again permits
+    a local correction to all orders.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.quantum-master-equation-measure-anomaly-repair
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 407
+    note: The source explicitly identifies the failed measure assumption and the quantum-master-equation
+      repair.
+- id: qft.align017.schwinger-model-photon-mass
+  label: Schwinger-model vacuum polarization and photon mass
+  summary: 'The massless two-dimensional QED vacuum polarization is finite and transverse:
+    Pi^{mu nu}(q)=(e^2/pi)(g^{mu nu}-q^mu q^nu/q^2) in the stated trace convention
+    tr(1)=2. Its infrared q^2=0 pole permits a gauge-invariant photon mass m_gamma^2=e^2/pi;
+    the text attributes the exact free massive-boson result to Schwinger.'
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.schwinger-model-photon-mass
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 653
+    - 654
+- id: qft.align017.spontaneous-cp-breaking-strong-cp-proposal
+  label: Spontaneous CP breaking as a strong-CP proposal
+  summary: A proposed solution imposes exact CP at a high scale, forbidding theta,
+    then breaks CP spontaneously. The resulting weak and strong phases are tied to
+    masses and mixing angles; the text reports no compelling model.
+  kind: concept
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.spontaneous-cp-breaking-strong-cp-proposal
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 613
+- id: qft.align017.standard-model-cp-summary-and-baryogenesis-limit
+  label: Standard Model CP summary and baryogenesis limit
+  summary: Only weak CP violation has been observed. The source states that current
+    bounds force |bar-theta| to be at most about 10^-10, and it notes that Standard-Model
+    CP violation is insufficient to explain the matter-antimatter abundance.
+  kind: assumption
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.standard-model-cp-summary-and-baryogenesis-limit
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.4
+    pages:
+    - 614
+- id: qft.align017.stora-zumino-descent-and-schwinger-term-cohomology
+  label: Stora-Zumino descent and Schwinger-term candidates
+  summary: In 2n dimensions, Tr F^{n+1} is closed and, on a simply connected extension,
+    exact as dQ_{2n+1}. BRST descent gives dQ^1_{2n}=sQ_{2n+1} and sQ^1_{2n}=dQ^2_{2n−1};
+    integrating Q^1 gives an anomaly candidate, while integrating Q^2 gives a ghost-number-two
+    BRST-invariant candidate for a nonremovable Schwinger term in equal-time current
+    commutators.
+  kind: method
+  group: qft.align017.source-specific-methods
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.stora-zumino-descent-and-schwinger-term-cohomology
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 402
+    - 403
+    - 404
+    note: The source gives the descent equations and identifies the ghost-number-two
+      Schwinger-term cohomology.
+- id: qft.align017.t-hooft-decoupling-and-persistent-mass-qualifications
+  label: Decoupling and persistent-mass qualifications
+  summary: For the listed SU(3)-color three-fermion states, decoupling one heavy flavor
+    requires ℓ′_v=ℓ_a+ℓ_c+ℓ_d=0, ℓ′_w=ℓ_b+ℓ_c+ℓ_e=0, ℓ′_x=ℓ_f+ℓ_g+ℓ_d+ℓ_e=0, ℓ′_y=ℓ_f+ℓ_h+ℓ_j=0,
+    and ℓ′_z=ℓ_g+ℓ_i+ℓ_j=0. This decoupling condition can fail across phase transitions.
+    The stronger persistent-mass condition imposes the same constraints for any constituent
+    mass but is conjectural and fails in nonrealistic models with composite Goldstone
+    bosons from massive fermions.
+  kind: assumption
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.t-hooft-decoupling-and-persistent-mass-qualifications
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 394
+    - 395
+    - 396
+    note: Rendered Eqs. (22.5.9) and surrounding text give all five multiplicity constraints,
+      the phase-transition objection, and the persistent-mass qualification.
+- id: qft.align017.theta-induced-pion-nucleon-coupling-and-neutron-edm
+  label: Theta-induced pion–nucleon coupling and neutron EDM
+  summary: 'A CP-odd piNN coupling proportional to bar-theta enters pion loops. The
+    source sketches the calculation: the pion loop is UV divergent, and cutting it
+    off at m_N gives d_N approximately (5.2 times 10^-16 e cm) bar-theta. Thus this
+    is a cutoff-dependent estimate, not a regulator-independent prediction; the quoted
+    neutron-EDM bound implies bar-theta<10^-10 and motivates the strong-CP problem.'
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.theta-induced-pion-nucleon-coupling-and-neutron-edm
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 612
+- id: qft.align017.trace-anomaly-beta-function-and-regulator-routes
+  label: Trace anomaly, beta function, and regulator routes
+  summary: Classically scale-invariant massless gauge theory acquires a trace anomaly
+    proportional, up to equation-of-motion terms, to beta(g) F^a_mu_nu F^{a mu nu}/(2g).
+    Dimensional regularization exposes it through an evanescent factor times a divergent
+    loop, while Pauli--Villars gives a finite large-regulator-mass insertion. These
+    are regulator-specific derivations of the same nonconservation law, not ways to
+    remove it.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.trace-anomaly-beta-function
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: peskin-schroeder
+    node: peskin-schroeder.trace-anomaly-regulator-limit
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.5'
+    pages:
+    - 683
+    - 684
+    - 685
+  - source: peskin-schroeder
+    section: '19.5'
+    pages:
+    - 685
+    - 686
+- id: qft.align017.weak-and-strong-cp-violation-distinction
+  label: Weak and strong CP violation distinction
+  summary: Weak CP violation occurs in rare hadronic processes of the weak sector;
+    a distinct strong CP-violating possibility is expected from QCD but unobserved,
+    creating the strong CP problem.
+  kind: concept
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.weak-and-strong-cp-violation-distinction
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: '29.5'
+    pages:
+    - 605
+- id: qft.align017.weak-cp-diagnostics-and-physical-condition
+  label: Weak-CP diagnostics and the physical CKM condition
+  summary: A charged-current mixing term is CP invariant in the displayed mass basis
+    when its CKM matrix is real. Real Yukawa coefficients give a basis-dependent bilinear
+    test; after allowed right-handed rotations, -iC=[Y_u,Y_d] defines a traceless
+    Hermitian matrix that transforms as a matrix under basis changes, while det C
+    (equivalently the stated Im det[Y_u,Y_d] diagnostic) is basis invariant. Its factorization
+    shows that observable Standard-Model weak CP violation requires nonzero Jarlskog
+    invariant and nondegenerate up- and down-type masses.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: schwartz
+    node: schwartz.ckm-phase-cp-violation-condition
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.yukawa-coefficient-reality-cp-test
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.yukawa-commutator-basis-invariant-cp-diagnostic
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.jarlskog-invariant-iff-cp-violation
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 29.5.1
+    pages:
+    - 606
+  - source: schwartz
+    section: 29.5.1
+    pages:
+    - 606
+  - source: schwartz
+    section: 29.5.1
+    pages:
+    - 607
+  - source: schwartz
+    section: 29.5.1
+    pages:
+    - 607
+  - source: schwartz
+    section: 29.5.1
+    pages:
+    - 608
+- id: qft.align017.wess-zumino-consistency-condition-for-anomalies
+  label: Wess-Zumino consistency condition
+  summary: Couple symmetry currents to background gauge fields and let the local gauge
+    generators obey the gauge algebra. If their action on the effective action is
+    the anomaly G_a[x;A], their commutator forces the Wess-Zumino condition relating
+    the variations of G_a and G_β to C_{aβγ}δ⁴(x−y)G_γ. Global-current results follow
+    by taking the corresponding gauge couplings infinitesimal.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.wess-zumino-consistency-condition-for-anomalies
+    note: This origin retains the source-specific statement, normalization, hypotheses,
+      and proof or task boundary; correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 396
+    - 397
+    note: The source constructs the background-field generators and derives the local
+      consistency condition.
+- id: qft.align018.charged-w-bosons-and-electromagnetic-coupling
+  label: Charged W bosons and electromagnetic coupling
+  summary: The unbroken electromagnetic coupling is e=g sinθW=g′cosθW. With τ±=(τ1±iτ2)/√2,
+    W±=(W1∓iW2)/√2 have charges ±1 in units of e.
+  kind: result
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.charged-w-bosons-and-electromagnetic-coupling
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 586
+  notation: []
+- id: qft.align018.chiral-nucleon-redefinition-and-general-leading-lagrangian
+  label: Chiral nucleon redefinition and general leading pion-nucleon Lagrangian
+  summary: Rotating the nucleon doublet along with the nonlinear pion variables removes
+    nonderivative pion couplings and yields a field-dependent chiral covariant derivative.
+    Chiral invariance then permits the leading bilinear nucleon Lagrangian built from
+    N, its covariant derivative, the pion axial vector, and an independent axial coefficient
+    gA; symmetry alone therefore does not set gA to one.
+  kind: method
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.chiral-nucleon-redefinition-and-general-leading-lagrangian
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 202
+    - 203
+    - 204
+    note: Equations (19.5.42)–(19.5.49) construct the rotated nucleon variables, covariant
+      derivative, and general leading Lagrangian; the following discussion excludes
+      a symmetry-only prediction for gA.
+  notation: []
+- id: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  label: Chiral pion EFT derivative expansion and power counting
+  summary: A symmetry-respecting nonlinear pion Lagrangian is organized by derivatives
+    and explicit quark-mass insertions, so low-energy amplitudes admit an order-by-order
+    expansion. Schwartz identifies the two-derivative leading operators and higher-derivative
+    suppression by E/Fπ; Weinberg supplies the connected-graph Q-counting formula,
+    Q⁴ loop/tree corrections, and m_q counted as Q². These are complementary routes,
+    with their stated Fπ conventions retained.
+  kind: method
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.chiral-lagrangian-derivative-operators
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  - project: schwartz
+    node: schwartz.chiral-power-counting-and-axial-pion-coupling
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  - project: weinberg-2
+    node: weinberg-2.chiral-pion-effective-field-theory-power-counting
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 569
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 570
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 197
+    - 198
+    - 200
+    note: Equations (19.5.19)–(19.5.22) derive derivative counting; Eq. (19.5.33)
+      incorporates quark-mass insertions.
+  notation: []
+- id: qft.align018.coleman-weinberg-model-assumptions
+  label: Coleman-Weinberg scalar QED project setup
+  summary: The final project studies four-dimensional scalar QED with complex phi,
+    small scalar mass, and D-mu phi=(partial-mu+i e A-mu)phi. It generally uses starred
+    Sections 11.3, 11.4, and 13.2, while parts (a) and (e) require only unstarred
+    Part II material.
+  kind: assumption
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.coleman-weinberg-model-assumptions
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 469
+  notation: []
+- id: qft.align018.current-algebra-and-effective-lagrangian-for-multigoldstone-processes
+  label: Current algebra and symmetry-respecting effective Lagrangians for multi-Goldstone
+    processes
+  summary: For two or more Goldstone bosons, derivatives of time-ordered current products
+    produce equal-time current commutators, making amplitudes sensitive to the broken
+    group algebra. Current algebra can determine the soft limits, while a Lagrangian
+    with the same symmetry and correct one-particle current matrix elements provides
+    an equivalent and more practical calculation route.
+  kind: method
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.current-algebra-and-effective-lagrangian-for-multigoldstone-processes
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 192
+    - 193
+    note: The opening of Section 19.5 contrasts current algebra with the effective-Lagrangian
+      calculation method.
+  notation: []
+- id: qft.align018.electroweak-gauge-mass-relations-and-self-interactions
+  label: Electroweak gauge mass relations and self-interactions
+  summary: The gauge Lagrangian fixes triple and quartic A, Z, W interactions and
+    predicts mW=gv/2 and mZ=mW/cosθW, hence mW<mZ for the positive-angle convention.
+  kind: result
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.electroweak-gauge-mass-relations-and-self-interactions
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 586
+  notation: []
+- id: qft.align018.electroweak-high-energy-and-low-energy-scope
+  label: Electroweak high- and low-energy descriptions
+  summary: Weak interactions are massive-vector mediated at low energy, where the
+    4-Fermi theory captures radioactive decay. At high energy the electroweak force
+    is spontaneously broken SU(2)×U(1)Y→U(1)EM; a nonlinear massive-vector theory
+    alone becomes nonperturbative near 1 TeV.
+  kind: concept
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.electroweak-high-energy-and-low-energy-scope
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 29 introduction
+    pages:
+    - 584
+  notation: []
+- id: qft.align018.electroweak-parameter-inputs-and-renormalization-condition-qualification
+  label: Electroweak parameter inputs and renormalization-condition qualification
+  summary: The four Lagrangian parameters m,λ,g,g′ can be traded for e, θW, mh,mW.
+    Numerical v inferred from mW/g depends on input renormalization conditions; defining
+    v from muon decay instead gives the quoted 247 GeV.
+  kind: assumption
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.electroweak-parameter-inputs-and-renormalization-condition-qualification
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 588
+  notation: []
+- id: qft.align018.electroweak-vev-photon-z-mixing
+  label: Electroweak vev, photon–Z mixing, and normalization
+  summary: With H=exp(2iπaτa/v)(0,(v+h)/√2)ᵀ and v=m/√λ, define Z=cosθW W3−sinθW B
+    and A=sinθW W3+cosθW B with tanθW=g′/g. The vev leaves A massless and gives mZ=gv/(2cosθW).
+  kind: result
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.electroweak-vev-photon-z-mixing
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 585
+  notation: []
+- id: qft.align018.gauge-diagram-cancellation-in-wz-scattering
+  label: Gauge-diagram cancellation in WZ scattering
+  summary: For WL+ZL→WL+ZL, s-channel W, u-channel W, and four-vector diagrams cancel
+    the E⁴ growth by gauge-invariance relations, leaving M=t/v²+O(1), which still
+    grows with energy.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-diagram-cancellation-in-wz-scattering
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 589
+  notation: []
+- id: qft.align018.goldberger-treiman-relation
+  label: Goldberger–Treiman relation
+  summary: 'In the exact chiral limit, axial-current conservation and a massless pion
+    pole in the nucleon axial form factor relate the pion-nucleon pseudoscalar coupling
+    to the nucleon mass, axial charge, and pion decay constant: GπN=2mN gA/Fπ in the
+    source’s normalization. The same relation follows from the soft-pion external-line
+    interaction.'
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.goldberger-treiman-relation
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 186
+    - 187
+    note: Equations (19.4.27)–(19.4.33) compare the axial form factor with the one-pion
+      pole.
+  notation: []
+- id: qft.align018.goldstone-boson-equivalence-theorem
+  label: Goldstone boson equivalence theorem
+  summary: In the high-energy limit, scattering longitudinal gauge bosons gives the
+    same result as scattering their Goldstone bosons; εL→p/m is the matching high-energy
+    replacement. The explicit scalar calculation is on 591 and supplies the leading
+    result, without asserting an unsourced rate for corrections.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.goldstone-boson-equivalence-theorem
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 29.2.1
+    pages:
+    - 592
+  - source: schwartz
+    section: 29.2.1
+    pages:
+    - 591
+  notation: []
+- id: qft.align018.goldstone-equivalence-explicit-linear-sigma-calculation
+  label: Goldstone equivalence explicit linear-sigma calculation
+  summary: Take g,mW→0 at fixed v to isolate longitudinal/Goldstone dynamics, expand
+    H in w±,z,h, and compute w+z→w+z. The contact term gives t/v² and the t-channel
+    Higgs exchange reproduces the direct WLZL high-energy amplitude.
+  kind: method
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.goldstone-equivalence-explicit-linear-sigma-calculation
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 29.2.1
+    pages:
+    - 591
+  notation: []
+- id: qft.align018.higgs-exchange-unitarizes-longitudinal-scattering
+  label: Higgs exchange unitarizes longitudinal scattering
+  summary: The h-exchange graph cancels the remaining energy-growing WLZL amplitude,
+    leaving a constant high-energy limit controlled by mh and v. The cancellation
+    depends on the hVV coupling fixed by the Higgs mechanism.
+  kind: result
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.higgs-exchange-unitarizes-longitudinal-scattering
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 590
+  notation: []
+- id: qft.align018.higgs-mass-and-hvv-couplings
+  label: Higgs mass and hVV couplings
+  summary: The physical h remains after unitary gauge. Its mass is mh²=2λv² and its
+    hWW and hZZ couplings are proportional to mW²/v and mZ²/v; mh is independent of
+    e, sin²θW, and mW.
+  kind: result
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.higgs-mass-and-hvv-couplings
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 587
+  notation: []
+- id: qft.align018.large-n-sigma-phase-transition-above-two
+  label: Large-N sigma-model phase transition above two dimensions
+  summary: For d>2 the large-N gap equation has a massive symmetric solution only
+    above a critical bare coupling; below it the effective action is lowered by an
+    order parameter with massless remaining components. In 2<d<4 the mass scaling
+    gives the non-mean-field nu and matches both epsilon expansions.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.large-n-sigma-phase-transition-above-two
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 465
+    - 466
+  notation: []
+- id: qft.align018.leading-pion-pion-scattering-and-scattering-lengths
+  label: Leading pion-pion scattering amplitude and scattering lengths
+  summary: The leading nonlinear chiral EFT tree graphs give the isospin-indexed pion-pion
+    amplitude. Including the unique leading quark-mass interaction yields the threshold
+    isospin-0 and isospin-2 amplitudes and the corresponding leading scattering lengths
+    a0=7mπ/(8πFπ²) and a2=−mπ/(4πFπ²) in the source’s Fπ≈184 MeV convention.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.leading-pion-pion-scattering-and-scattering-lengths
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 198
+    - 201
+    - 202
+    note: Equations (19.5.25) and (19.5.35)–(19.5.38) give the amplitudes; the following
+      displayed scattering-length equation gives a0 and a2.
+  notation: []
+- id: qft.align018.longitudinal-vector-high-energy-growth
+  label: Longitudinal vector high-energy growth
+  summary: For on-shell longitudinal W and Z scattering, εL approaches p/m at high
+    energy, producing potentially dangerous E²/m² factors. Exact transversality requires
+    retaining subleading pieces in εL.
+  kind: concept
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.longitudinal-vector-high-energy-growth
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 588
+  notation: []
+- id: qft.align018.mermin-wagner-spin-wave-obstruction
+  label: Mermin-Wagner obstruction from sigma-model fluctuations
+  summary: For N>2, the sigma-model flow gives a strong-coupling loss of long-distance
+    order. More generally, the Mermin-Wagner theorem forbids continuous-symmetry order
+    in two dimensions for N>=2, including the N=2 model whose perturbative beta function
+    vanishes.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.mermin-wagner-spin-wave-obstruction
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 460
+  notation: []
+- id: qft.align018.nonlinear-goldstone-coordinate-realizations
+  label: Nonlinear Goldstone coordinates and derivative interactions
+  summary: A nonlinear coordinate choice isolates Goldstone fields after radial modes
+    decouple and makes their leading interactions derivative. Peskin–Schroeder uses
+    a constrained O(N) unit vector n with n²=1; Schwartz uses U=exp(2iπᵃτᵃ/Fπ) for
+    SU(2)L×SU(2)R. These are compatible nonlinear realizations, not a claim that their
+    target manifolds or normalizations are identical.
+  kind: representation
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-model-constraint-and-goldstone-coordinates
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  - project: schwartz
+    node: schwartz.su2-chiral-sigma-field-and-nonlinear-pions
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 454
+    - 455
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 569
+  notation: []
+- id: qft.align018.nonlinear-sigma-asymptotic-freedom-and-n2-exception
+  label: Nonlinear sigma-model asymptotic freedom and N=2 exception
+  summary: For N>2 the negative nonlinear-sigma beta function makes g weak at short
+    distances and strong at large distances. For N=2, n=(sin theta,cos theta) reduces
+    the model to a free scalar theta, so its beta function vanishes exactly; the source
+    explains the opposite sign by spin-wave averaging.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-asymptotic-freedom-and-n2-exception
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 458
+  notation: []
+- id: qft.align018.nonlinear-sigma-large-n-saddle
+  label: Large-N nonlinear sigma-model saddle
+  summary: Enforce n-squared=1 by a Lagrange multiplier, integrate the now-quadratic
+    n fields, and at N infinity with g-squared N fixed solve the stationary gap equation
+    for a constant imaginary multiplier i m-squared.
+  kind: method
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-large-n-saddle
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 463
+  notation: []
+- id: qft.align018.nonlinear-sigma-near-two-eta
+  label: Nonlinear sigma-model eta near two dimensions
+  summary: At the ultraviolet fixed point in d=2+epsilon, eta=epsilon/(N-2) at leading
+    order, requiring N greater than two.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-near-two-eta
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 461
+    - 462
+  notation: []
+- id: qft.align018.nonlinear-sigma-near-two-nu
+  label: Nonlinear sigma-model nu near two dimensions
+  summary: For N at least three, the leading 2+epsilon sigma-model calculation gives
+    nu=1/epsilon. Its direct d=3 extrapolation is explicitly only weakly successful.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-near-two-nu
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 462
+  notation: []
+- id: qft.align018.nonlinear-sigma-one-loop-cs-functions
+  label: Nonlinear sigma-model one-loop CS functions
+  summary: One-loop one- and two-point functions in the nonlinear sigma model give
+    gamma(g)=(N-1)g-squared/(4 pi)+higher terms and beta(g)=-(N-2)g-cubed/(4 pi)+higher
+    terms in two dimensions.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-one-loop-cs-functions
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 456
+    - 457
+  notation: []
+- id: qft.align018.nonlinear-sigma-renormalizability-and-symmetry-counterterms
+  label: Two-dimensional nonlinear sigma-model renormalizability
+  summary: Although Goldstone coordinates have infinitely many vertices, the two-dimensional
+    nonlinear sigma model is renormalizable because O(N) symmetry relates the counterterms
+    for all 2n-pion vertices.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-renormalizability-and-symmetry-counterterms
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 455
+    - 456
+  notation: []
+- id: qft.align018.nonlinear-sigma-temperature-fixed-point
+  label: Nonlinear sigma-model temperature fixed point
+  summary: For N>2, with T=g-squared M^(d-2), beta(T)=(d-2)T+2g beta(g). The leading
+    d=2+epsilon calculation has a small ultraviolet-stable nonzero fixed point; infrared
+    flows leave it toward ordered or disordered phases and Tc tends to zero as d approaches
+    two.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-temperature-fixed-point
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 461
+    - 462
+  notation: []
+- id: qft.align018.nonlinear-sigma-wilson-shell-derivation
+  label: Nonlinear sigma-model shell derivation
+  summary: Split the nonlinear-sigma field into slow n and fast tangent fluctuations,
+    integrate the shell, and use moving-frame identities to show that averaging short
+    wavelengths reduces the effective stiffness. The resulting running coupling reproduces
+    the negative beta function.
+  kind: method
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonlinear-sigma-wilson-shell-derivation
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 459
+    - 460
+  notation: []
+- id: qft.align018.partial-wave-unitarity-higgs-mass-constraint
+  label: Partial-wave unitarity and Higgs-mass constraint
+  summary: For WLZL scattering, a0=ECM²/(32πv²), a1=ECM²/(96πv²), and aj=0 for j>1.
+    Single-channel unitarity gives √(32π)v≈2.5 TeV; coupled channels tighten perturbative
+    breakdown to about 800 GeV. The Higgs bound is mh≤√(16π/3)v≈1 TeV.
+  kind: result
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.partial-wave-unitarity-higgs-mass-constraint
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 590
+  notation: []
+- id: qft.align018.pcac-pion-pole-qualification
+  label: PCAC as pion-pole dominance of an otherwise small axial divergence
+  summary: For nonzero pion mass, the axial divergence is of order mπ² except where
+    the pion pole compensates that smallness. This gives a precise content to partial
+    conservation of the axial current and extends the pion-pole argument for Goldberger–Treiman
+    to momentum transfers of order mπ².
+  kind: concept
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pcac-pion-pole-qualification
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 189
+    - 190
+    - 191
+    note: The source derives the divergence, states pion-pole dominance at small momentum
+      transfer, and later explains why a bare PCAC statement is insufficient.
+  notation: []
+- id: qft.align018.pion-decay-constant-from-axial-current
+  label: Pion decay constant from the axial current
+  summary: The charged axial-current matrix element between the vacuum and a one-pion
+    state defines Fπ in this convention. Beta transitions fix the weak coefficient
+    multiplying vector and axial currents, while pion decay fixes Fπ; the source notes
+    that other fπ conventions differ by normalization factors.
+  kind: representation
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pion-decay-constant-from-axial-current
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 185
+    - 186
+    note: Equations (19.4.22)–(19.4.26) introduce the weak-current normalization and
+      extract Fπ from pion decay.
+  notation: []
+- id: qft.align018.pion-leptonic-decay-measures-fpi
+  label: Pion leptonic decay measures Fπ
+  summary: Integrating out W gives the V−A four-Fermi interaction; inserting the axial
+    pion current gives π+→μ+νμ and Γ=GF²Fπ²mπmμ²(1−mμ²/mπ²)²/(4π), allowing Fπ=92
+    MeV to be extracted from the lifetime. The alternate convention is fπ=√2Fπ=130
+    MeV.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.pion-leptonic-decay-measures-fpi
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 571
+  notation: []
+- id: qft.align018.pion-nucleon-chiral-power-counting
+  label: Pion-nucleon chiral power counting
+  summary: With soft pion momenta Q but on-shell nucleons of mass scale mN, an internal
+    near-on-shell nucleon propagator scales as 1/Q. Combining this with graph topology
+    gives the pion-nucleon chiral order and shows that leading low-energy graphs are
+    trees using vertices whose d+2m+n/2−2 index vanishes, including possible four-nucleon
+    contacts for multinucleon processes.
+  kind: method
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pion-nucleon-chiral-power-counting
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 205
+    - 206
+    note: Equations (19.5.51)–(19.5.56) derive the nucleon propagator scaling and
+      graph-order formula.
+  notation: []
+- id: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  label: Pion pseudo-Goldstone mass from explicit chiral breaking
+  summary: Small quark-mass terms explicitly break the two-flavor chiral symmetry
+    and give the pion a pseudo-Goldstone mass. Schwartz states the Gell-Mann–Oakes–Renner
+    relation in its V³/Fπ² convention, while Weinberg derives a two-flavor pion formula
+    with an aligned vacuum. The shared statement preserves these distinct normalizations.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.gell-mann-oakes-renner-relation
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  - project: weinberg-2
+    node: weinberg-2.pion-mass-from-quark-mass-breaking
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 572
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 188
+    - 189
+    note: Equations (19.4.34)–(19.4.46) identify the breaking operators, align the
+      vacuum, and derive the pion mass matrix.
+  notation: []
+- id: qft.align018.problem-bch-pion-transformation-task
+  label: 'Task: BCH pion transformations and isospin representation'
+  summary: Expand Eq. (28.25) through order π² and θ² with the Baker–Campbell–Hausdorff
+    formula, then demonstrate that pions transform in the adjoint under isospin.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: schwartz
+    node: schwartz.problem-bch-pion-transformation-task
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: Problem 28.2
+    pages:
+    - 583
+  notation: []
+- id: qft.align018.problem-coleman-weinberg-beta-flow
+  label: 'Problem: Coleman-Weinberg beta functions and flow'
+  summary: Compute beta(e) and beta(lambda), sketch flows, and show trajectories pass
+    through the radiative-breaking region; this part uses only unstarred Part II material.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-coleman-weinberg-beta-flow
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 469
+    - 470
+  notation: []
+- id: qft.align018.problem-coleman-weinberg-higgs-expansion
+  label: 'Problem: Coleman-Weinberg Higgs expansion'
+  summary: For negative scalar mass-squared, expand the supplied scalar-QED Lagrangian
+    around the broken state and show gauge-field mass generation.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-coleman-weinberg-higgs-expansion
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (a)
+    pages:
+    - 469
+    - 470
+  notation: []
+- id: qft.align018.problem-correction-to-scaling-exponent
+  label: 'Problem: correction-to-scaling exponent'
+  summary: For 4-epsilon critical phenomena, derive the leading nonuniversal Gibbs-free-energy
+    correction caused by a small deviation of the bare quartic coupling from its fixed-point
+    value, and identify the correction-to-scaling exponent from beta-prime at the
+    fixed point.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-correction-to-scaling-exponent
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.1
+    pages:
+    - 466
+  notation: []
+- id: qft.align018.problem-cpn-emergent-photon
+  label: 'Problem: CP-N emergent photon'
+  summary: 'Task: expand the large-N CP-N exponent about zero vector multiplier, evaluate
+    the massive-scalar vacuum polarization by dimensional regularization, and show
+    that the induced term is a standard kinetic term for A-mu, yielding an emergent
+    massless photon.'
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-cpn-emergent-photon
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(d)
+    pages:
+    - 468
+  notation: []
+- id: qft.align018.problem-cpn-lagrange-multiplier-representation
+  label: 'Problem: CP-N Lagrange-multiplier representation'
+  summary: Introduce scalar and vector multipliers, then show integrating them yields
+    the CP-N Lagrangian with covariant derivative.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-cpn-lagrange-multiplier-representation
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(b)
+    pages:
+    - 467
+  notation: []
+- id: qft.align018.problem-cpn-large-n-saddle
+  label: 'Problem: CP-N large-N saddle'
+  summary: Integrate z fields at N infinity with g-squared N fixed and analyze stationary
+    multiplier conditions, including A-mu=0 and positive mass.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-cpn-large-n-saddle
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(c)
+    pages:
+    - 467
+  notation: []
+- id: qft.align018.problem-cpn-local-symmetry-and-sigma-map
+  label: 'Problem: CP-N local symmetry and sigma-model map'
+  summary: For normalized complex z coordinates identified under local phase rotations,
+    prove the supplied CP-N Lagrangian is invariant using the constraint, and show
+    the N=3 nonlinear sigma model maps to CP-1 through Pauli matrices.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-cpn-local-symmetry-and-sigma-map
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(a)
+    pages:
+    - 467
+  notation: []
+- id: qft.align018.problem-eta-two-loop-on-model
+  label: 'Problem: eta from two-loop O(N) renormalization'
+  summary: Use the earlier two-loop scalar result and a suitable subtraction prescription
+    to obtain the leading gamma(lambda) in phi-four theory, generalize it to O(N),
+    and compute the leading epsilon-squared contribution to eta.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-eta-two-loop-on-model
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.2
+    pages:
+    - 466
+  notation: []
+- id: qft.align018.problem-gauged-nonlinear-sigma-cubic-task
+  label: 'Task: cubic interactions in the gauged nonlinear sigma model'
+  summary: Derive all interaction terms of order π³ from the gauged nonlinear sigma
+    model of Eq. (28.59).
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: schwartz
+    node: schwartz.problem-gauged-nonlinear-sigma-cubic-task
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: Problem 28.3
+    pages:
+    - 583
+  notation: []
+- id: qft.align018.problem-linear-sigma-mass-matrix-task
+  label: 'Task: diagonalize the linear-sigma mass matrix'
+  summary: Starting from φ=√(2m²/λ)+φ̃, show the real-field mass matrix has a zero
+    eigenvalue and choose a diagonalizing combination that reproduces the Eq. (28.12)
+    expansion.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: schwartz
+    node: schwartz.problem-linear-sigma-mass-matrix-task
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: Problem 28.1
+    pages:
+    - 583
+  notation: []
+- id: qft.align018.problem-on-scalar-vacua-and-goldstones-task
+  label: 'Task: O(n) scalar symmetries, vacua, and Goldstones'
+  summary: For n real scalars with L=−½φi(□−m²)φi−λ(φiφi)²/4, determine global symmetries
+    and all vacua/equivalence, then expand about a vacuum and count Goldstones.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: schwartz
+    node: schwartz.problem-on-scalar-vacua-and-goldstones-task
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: Problem 28.4
+    pages:
+    - 583
+  notation: []
+- id: qft.align018.problem-su5-adjoint-potential-task
+  label: 'Task: SU(5) adjoint potential extrema and spectra'
+  summary: For V=−m²trΦ²+atrΦ⁴+b[trΦ²]² with traceless diagonal vev, determine parameter
+    conditions and stability for diag(2,2,2,−3,−3), all minima, and the massive-vector
+    spectrum and unbroken group for diag(1,1,1,1,−4).
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: schwartz
+    node: schwartz.problem-su5-adjoint-potential-task
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: Problem 28.5
+    pages:
+    - 583
+  notation: []
+- id: qft.align018.pseudo-goldstone-mass-double-commutator
+  label: Pseudo-Goldstone mass from the explicit-breaking double commutator
+  summary: To first order in explicit symmetry breaking, the pseudo-Goldstone mass
+    matrix is the aligned-vacuum expectation value of a double commutator of broken
+    charges with the perturbing Hamiltonian, divided by the current-normalization
+    factors. Vacuum alignment makes the matrix symmetric and its orbit-minimum form
+    makes it positive.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pseudo-goldstone-mass-double-commutator
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.3'
+    pages:
+    - 181
+    - 182
+    note: Equations (19.3.19)–(19.3.20) express the mass matrix in double-commutator
+      form and explain its properties.
+  notation: []
+- id: qft.align018.q4-pion-eft-renormalization-and-fpi-matching
+  label: Q⁴ pion EFT renormalization and F=Fπ matching
+  summary: At next order, pion scattering receives both one-loop contributions built
+    from two-derivative vertices and tree contributions from four-derivative vertices.
+    Redefining the two four-derivative couplings removes cutoff dependence; each further
+    order introduces only finitely many new couplings, and the Q⁴-to-leading ratio
+    is of order Q²/(8π²F²). The axial-current calculation identifies F=Fπ at lowest
+    order and makes that equality exact in the massless-pion limit.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.q4-pion-eft-renormalization-and-fpi-matching
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 198
+    - 199
+    - 200
+    note: The source identifies the Q⁴ loop and tree terms, renormalizes their couplings,
+      states the expansion ratio, and matches F to Fπ in the chiral limit.
+  notation: []
+- id: qft.align018.qcd-chiral-breaking-and-pion-identification
+  label: QCD chiral breaking, isospin, and pion identification
+  summary: A two-flavor chiral condensate or the observed absence of parity doubling
+    supports spontaneous breaking to vector isospin, whose three light pseudo-Goldstone
+    modes have pion quantum numbers. Schwartz states the condensate as a phenomenological
+    effective-theory input; Weinberg’s spectrum argument and approximate-symmetry
+    discussion retain that distinct evidential role.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.qcd-chiral-condensate-breaking-pattern
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  - project: weinberg-2
+    node: weinberg-2.chiral-breaking-to-isospin-and-pion-identification
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 568
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 184
+    - 185
+    note: The source uses the missing parity doubling and the pion quantum numbers
+      to state the breaking pattern and identification.
+  notation: []
+- id: qft.align018.quark-mass-pion-nucleon-contact-corrections
+  label: Quark-mass pion-nucleon contact corrections
+  summary: The allowed bilinear nucleon operators with the transformation properties
+    of the two quark-mass terms split into isospin-conserving and isospin-violating
+    classes. Their coefficients enter nucleon mass shifts and low-energy pion-nucleon
+    scattering; the sigma term is the isospin-conserving contribution, while the isospin-violating
+    correction appears only in neutral-pion charge exchange and is controlled by mu−md.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.quark-mass-pion-nucleon-contact-corrections
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 208
+    - 209
+    note: Equations (19.5.61)–(19.5.66) classify the operators and give their scattering
+      contribution.
+  notation: []
+- id: qft.align018.scalar-field-dimensional-rg-regimes
+  label: Scalar-field dimensional RG regimes
+  summary: Scalar interactions are irrelevant above four dimensions, marginal with
+    logarithmic flow at four, and controlled by Wilson-Fisher for 2<d<4; for N>2 the
+    d-to-2 limit approaches the nonlinear sigma model.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.scalar-field-dimensional-rg-regimes
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 466
+  notation: []
+- id: qft.align018.soft-forward-pion-nucleon-amplitude
+  label: Soft forward pion-nucleon amplitude
+  summary: In the chiral and massless-pion approximation, the leading forward pion-nucleon
+    amplitude follows by combining the contact and nucleon-pole diagrams, using on-shell
+    spinor identities and the isospin commutator. The result is proportional to (1−gA²)
+    times the antisymmetric isospin structure and supplies the low-energy input for
+    the ensuing dispersion-relation sum rule.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.soft-forward-pion-nucleon-amplitude
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 210
+    note: Equations (19.5.67)–(19.5.69) reduce the diagrams to the forward soft-pion
+      amplitude.
+  notation: []
+- id: qft.align018.standard-model-chiral-fermion-representations
+  label: Standard Model chiral fermion representations
+  summary: 'Quark and lepton left-handed fields occur in SU(2) doublets while right-handed
+    fields are singlets, with hypercharges fixed by electromagnetic charges. νR is
+    explicitly included as an unobserved optional field: Table 29.1 makes it an SU(3)
+    and SU(2) singlet with Y=0.'
+  kind: representation
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.standard-model-chiral-fermion-representations
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.3'
+    pages:
+    - 592
+  - source: schwartz
+    section: '29.3'
+    pages:
+    - 593
+  notation: []
+- id: qft.align018.standard-model-higgs-doublet-and-covariant-derivative
+  label: Standard Model Higgs doublet and covariant derivative
+  summary: The gauge sector uses a complex SU(2) Higgs doublet H of hypercharge 1/2,
+    with L including −¼(Waμν)²−¼Bμν²+(DμH)†DμH+m²H†H−λ(H†H)². Its derivative is DμH=∂μH−igWaμτaH−ig′BμH/2.
+  kind: representation
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.standard-model-higgs-doublet-and-covariant-derivative
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 584
+  notation: []
+- id: qft.align018.standard-model-w-w-z-and-w-w-z-z-vertices
+  label: Standard Model WWZ and WWZZ vertices
+  summary: Read the momentum-space WWZ and WWZZ Feynman rules from the gauge Lagrangian
+    using all-incoming momenta and the stated W particle-flow convention.
+  kind: method
+  group: qft.align018.electroweak-symmetry-breaking
+  origins:
+  - project: schwartz
+    node: schwartz.standard-model-w-w-z-and-w-w-z-z-vertices
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 586
+  notation: []
+- id: qft.align018.su3-baryon-multiplets-and-eightfold-way
+  label: SU(3) baryon multiplets and the eightfold way
+  summary: Three quark triplets decompose as 3⊗3⊗3=10⊕8⊕8⊕1; the nucleons occupy an
+    octet. This representation structure supports the octet/decuplet organization
+    and the historical Ω− prediction.
+  kind: representation
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.su3-baryon-multiplets-and-eightfold-way
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.3
+    pages:
+    - 573
+  notation: []
+- id: qft.align018.su3-chiral-pseudo-goldstone-octet
+  label: SU(3) chiral pseudo-Goldstone octet
+  summary: 'With three light flavors, SU(3)L×SU(3)R→SU(3)V leaves eight pseudo-Goldstones:
+    three pions, four kaons, and eta, embedded in U=exp(2iπaTa/Fπ).'
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.su3-chiral-pseudo-goldstone-octet
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.3
+    pages:
+    - 573
+  notation: []
+- id: qft.align018.threshold-pion-nucleon-scattering-lengths
+  label: Leading threshold pion-nucleon scattering lengths
+  summary: At pion-nucleon threshold, the chiral contact graph is leading because
+    the Born graphs acquire an additional mπ/mN suppression. The resulting isospin-channel
+    invariant amplitudes give leading scattering lengths a1/2=mπ/[πFπ²(1+mπ/mN)] and
+    a3/2=−mπ/[2πFπ²(1+mπ/mN)], with the stated comparison to experiment.
+  kind: result
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.threshold-pion-nucleon-scattering-lengths
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 206
+    - 207
+    note: Figure 19.3 and Equations (19.5.57)–(19.5.60) identify the threshold suppression
+      and scattering lengths.
+  notation: []
+- id: qft.align018.two-dimensional-nonlinear-sigma-mass-gap
+  label: Two-dimensional nonlinear sigma-model mass gap
+  summary: In the large-N two-dimensional sigma model, renormalizing the logarithmic
+    gap equation yields m=M exp[-2 pi/(g-squared N)]. The O(N)-invariant mass gap
+    leaves <n>=0 for every coupling, and its scale equation makes the large-N beta
+    function exact to leading order in N.
+  kind: result
+  group: qft.align018.nonlinear-sigma-and-criticality
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.two-dimensional-nonlinear-sigma-mass-gap
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 464
+  notation: []
+- id: qft.align018.two-flavor-qcd-chiral-symmetry
+  label: Massless two-flavor QCD chiral symmetry and currents
+  summary: With massless u and d quarks, independent SU(2)L and SU(2)R transformations
+    give the equivalent vector-and-axial description of two-flavor chiral symmetry.
+    Schwartz explicitly excludes the anomalous singlet axial symmetry; Weinberg writes
+    the isospin and axial generators and their current algebra. The shared core does
+    not extend either book’s anomaly qualification.
+  kind: representation
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.massless-two-flavor-qcd-chiral-symmetry
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  - project: weinberg-2
+    node: weinberg-2.chiral-su2-times-su2-qcd-symmetry
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 567
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 182
+    - 183
+    note: Equations (19.4.1)–(19.4.19) construct the chiral algebra, currents, and
+      charges.
+  notation: []
+- id: qft.align018.weyl-chirality-and-broken-phase-dirac-notation
+  label: Weyl chirality and broken-phase Dirac notation
+  summary: The Standard-Model fields in the charge table are left- or right-handed
+    Weyl spinors. In the broken phase they are commonly written in Dirac notation,
+    with L and R retained as implicit chirality projectors; this is a notation choice,
+    not a change of field content.
+  kind: representation
+  group: qft.align018.chiral-pion-effective-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.weyl-chirality-and-broken-phase-dirac-notation
+    note: Retains the source-specific result, normalization, conditions, and task
+      or proof boundary within this shared core.
+  evidence:
+  - source: schwartz
+    section: '29.3'
+    pages:
+    - 593
+  notation: []
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -10223,16 +12588,30 @@ nodes:
     node: schwartz.goldstone-coset-transformations-and-order-parameter
     note: Retains the G/H transformation distinction, the vacuum-sector qualification,
       and the smooth-transition order-parameter statement.
+  - project: weinberg-2
+    node: weinberg-2.nonlinear-chiral-realization-and-pion-covariant-derivative
+    note: Adds only the compatible nonlinear broken-versus-unbroken transformation
+      distinction; it does not attribute Schwartz’s smooth-transition order-parameter
+      statement to Weinberg.
   evidence:
   - source: schwartz
     section: 28.2.4
     pages:
     - 574
     - 575
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 193
+    - 194
+    - 195
   notation:
   - source: schwartz
     note: G/H denotes the coset of broken transformations; it is explicitly not a
       subgroup.
+  - source: weinberg-2
+    note: The source uses stereographic pion coordinates ζ and a field-dependent isospin
+      rotation for nonlinear transformations.
 - id: qft.goldstone-current-matrices-and-decay-constant
   label: Goldstone current matrices and symmetry-breaking scale
   summary: Matrix elements of broken currents and scalar fields define F_ab and Z_an,
@@ -22073,6 +24452,1857 @@ edges:
     - 111
     note: Wave packets are required for localization, and page 111 qualifies the Ω
       limit to smooth superpositions.
+- id: qft.align017.peskin-schroeder-e-ps013-abj-heavy-task
+  from: qft.align006.abj-anomaly-operator-equation
+  to: qft.align017.problem-19-4ab-heavy-mass-anomaly-limits
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) asks for the heavy-mass matrix-element form equivalent to the
+    ABJ equation.
+  failure_mode: Without the target anomaly relation, its claimed equivalence cannot
+    be checked.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.4
+    pages:
+    - 688
+- id: qft.align017.peskin-schroeder-e-ps013-abj-parallel-eb
+  from: qft.align006.abj-anomaly-operator-equation
+  to: qft.align017.problem-19-1a-global-eb-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly integrates the ABJ anomaly in parallel electric and
+    magnetic fields.
+  failure_mode: Without the anomaly equation, the global number-change law cannot
+    be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1
+    pages:
+    - 686
+- id: qft.align017.peskin-schroeder-e-ps013-anomaly-product-task
+  from: qft.align006.gauge-anomaly-group-coefficient
+  to: qft.align017.problem-19-3a-product-anomaly-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) manipulates the representation anomaly coefficient.
+  failure_mode: Without its definition, the tensor-product identity has no quantity
+    to establish.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.3
+    pages:
+    - 687
+- id: qft.align017.peskin-schroeder-e-ps013-flow-global-check
+  from: qft.align017.problem-19-1d-landau-degeneracy
+  to: qft.align017.problem-19-1e-spectral-flow-check
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The final spectral-flow count includes the finite-box degeneracy.
+  failure_mode: Without it, the number change cannot be compared with the global law.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1
+    pages:
+    - 687
+- id: qft.align017.peskin-schroeder-e-ps013-fujikawa-qed2-route
+  from: qft.align006.fujikawa-even-dimensional-anomaly
+  to: qft.align017.qed2-chiral-anomaly-and-spectral-flow
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The even-dimensional functional-measure formula specializes at d=2 to
+    the QED2 anomaly equation.
+  failure_mode: Treating the functional-measure route as compulsory would erase the
+    independent point-splitting derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.2'
+    pages:
+    - 667
+    note: The source explicitly says the functional derivation leads in two dimensions
+      to Eq. (19.18).
+- id: qft.align017.peskin-schroeder-e-ps013-global-law-flow-check
+  from: qft.align017.problem-19-1a-global-eb-anomaly
+  to: qft.align017.problem-19-1e-spectral-flow-check
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (e) compares the spectral-flow count with the global nonconservation
+    law derived in part (a).
+  failure_mode: Without the global law, the final count has no anomaly normalization
+    against which it can be checked.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1
+    pages:
+    - 687
+- id: qft.align017.peskin-schroeder-e-ps013-group-coefficient-to-su3-task
+  from: qft.align006.gauge-anomaly-group-coefficient
+  to: qft.align017.problem-chiral-su3-anomaly-with-symmetric-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two task branches require the chiral sign and representation coefficient
+    used to sum their gauge anomalies.
+  failure_mode: Without the group coefficient and right-handed-to-left-handed sign,
+    the requested anomalies cannot be evaluated.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.4'
+    pages:
+    - 677
+    - 678
+    - 679
+    note: The source develops the chiral rewriting and anomaly coefficient before
+      the representation exercises.
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 2 states both chiral matter-content branches.
+- id: qft.align017.peskin-schroeder-e-ps013-heavy-finiteness-task
+  from: qft.align017.problem-19-4ab-heavy-mass-anomaly-limits
+  to: qft.align017.problem-19-4cd-heavy-mass-loop-checks
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (c,d) explicitly evaluate and verify the two limits stated in parts
+    (a,b).
+  failure_mode: Without the target limits, the loop checks cannot verify their result.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.4
+    pages:
+    - 688
+- id: qft.align017.peskin-schroeder-e-ps013-landau-degeneracy-flow
+  from: qft.align017.problem-19-1c-landau-level-spectrum
+  to: qft.align017.problem-19-1d-landau-degeneracy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The degeneracy is counted for the levels obtained in part (c).
+  failure_mode: Without the level wavefunctions, the oscillator-center condition cannot
+    be applied.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1
+    pages:
+    - 687
+- id: qft.align017.peskin-schroeder-e-ps013-pion-amplitude-rate
+  from: qft.align017.problem-19-2a-pion-weak-amplitude
+  to: qft.align017.problem-19-2b-pion-helicity-suppression
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rate task squares the amplitude obtained in part (a).
+  failure_mode: Without the amplitude, the helicity suppression and rate ratio cannot
+    be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.2
+    pages:
+    - 687
+- id: qft.align017.peskin-schroeder-e-ps013-pion-pole-pion-task
+  from: qft.align006.pion-decay-constant-axial-current-pole
+  to: qft.align017.problem-19-2a-pion-weak-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The amplitude uses the cited pion axial-current matrix element.
+  failure_mode: Without its f_pi residue, the decay amplitude cannot be reduced.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.2
+    pages:
+    - 687
+- id: qft.align017.peskin-schroeder-e-ps013-point-split-qed2-route
+  from: qft.align017.gauge-invariant-point-split-axial-current
+  to: qft.align017.qed2-chiral-anomaly-and-spectral-flow
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Gauge-invariant point splitting is a two-dimensional operator derivation
+    of the QED2 anomaly equation.
+  failure_mode: Treating this derivation as compulsory would exclude the distinct
+    Fujikawa route.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 655
+    - 656
+    note: The source defines the gauge-invariant point split current and derives the
+      QED2 operator equation.
+- id: qft.align017.peskin-schroeder-e-ps013-product-tensor-task
+  from: qft.align017.problem-19-3a-product-anomaly-coefficients
+  to: qft.align017.problem-19-3bc-sun-tensor-anomalies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (b,c) explicitly apply the identity proved in part (a).
+  failure_mode: Without it, the stated tensor-coefficient route is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.3
+    pages:
+    - 688
+- id: qft.align017.peskin-schroeder-e-ps013-sun-tests-to-su3-task
+  from: qft.align006.sun-anomaly-representation-tests
+  to: qft.align017.problem-chiral-su3-anomaly-with-symmetric-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task specifically changes SU(3) defining and symmetric-tensor representations,
+    whose anomaly coefficients are the needed representation input.
+  failure_mode: Without the SU(n) coefficient and tensor-representation rules, the
+    symmetric-tensor branch has no evaluation method.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.4'
+    pages:
+    - 680
+    - 681
+    note: The source gives the SU(n) coefficient framework and the symmetric two-index
+      coefficient.
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 2 asks for the defining and symmetric-traceless SU(3) cases.
+- id: qft.align017.peskin-schroeder-e-ps013-trace-heavy-task
+  from: qft.align017.trace-anomaly-beta-function-and-regulator-routes
+  to: qft.align017.problem-19-4ab-heavy-mass-anomaly-limits
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for the corresponding trace-anomaly limit.
+  failure_mode: Without the trace relation, the heavy-mass limit has no stated target.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.4
+    pages:
+    - 688
+- id: qft.align017.peskin-schroeder-e-ps013-weyl-hamiltonian-landau
+  from: qft.align017.problem-19-1b-weyl-hamiltonian
+  to: qft.align017.problem-19-1c-landau-level-spectrum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) solves the right-handed Hamiltonian eigenvalue equation set
+    up in part (b).
+  failure_mode: Without that operator, the oscillator reduction has no eigenvalue
+    problem.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.1
+    pages:
+    - 686
+- id: qft.align017.peskin-schroeder-e-ps013-wilson-line-point-split
+  from: qft.abelian-curvature-from-holonomy
+  to: qft.align017.gauge-invariant-point-split-axial-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The point-split composite is made locally gauge invariant by a Wilson
+    line.
+  failure_mode: Without the Wilson line, the separated bilinear is not gauge invariant.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 655
+- id: qft.align017.schwartz-e-chiral-energy-to-pq-relaxation
+  from: qft.align017.chiral-lagrangian-theta-vacuum-energy
+  to: qft.align017.peccei-quinn-axion-relaxation-and-quality-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The axion discussion explicitly modifies the preceding theta-dependent
+    chiral vacuum energy.
+  failure_mode: Without that energy, the periodic axion-energy construction and its
+    stated relaxation target are undefined.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 611
+    - 612
+    note: Eq. (29.113) is introduced as a modification of Eq. (29.107).
+- id: qft.align017.schwartz-e-physical-theta-to-chiral-energy
+  from: qft.align006.strong-cp-anomalous-rotation-relation
+  to: qft.align017.chiral-lagrangian-theta-vacuum-energy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chiral-Lagrangian calculation first moves the physical strong phase
+    into the complex quark masses.
+  failure_mode: Without the physical strong phase, the theta-dependent mass term and
+    vacuum energy have no identified input.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 610
+    - 611
+    note: The source defines the Chapter 29 phase and then places it in the mass matrix
+      before deriving the energy.
+- id: qft.align017.schwartz-e-physical-theta-to-spontaneous-cp
+  from: qft.align006.strong-cp-anomalous-rotation-relation
+  to: qft.align017.spontaneous-cp-breaking-strong-cp-proposal
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The proposal is presented as a solution to the strong-CP problem and
+    therefore presupposes the physical strong phase it seeks to control.
+  failure_mode: Without the strong-CP problem, the role of exact and spontaneously
+    broken CP in the proposal is not identified.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 612
+    - 613
+    note: The source introduces possible solutions after the EDM bound and describes
+      spontaneous CP breaking as one of them.
+- id: qft.align017.schwartz-e-theta-to-edm
+  from: qft.align006.strong-cp-anomalous-rotation-relation
+  to: qft.align017.theta-induced-pion-nucleon-coupling-and-neutron-edm
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The EDM calculation uses the physical strong phase.
+  failure_mode: The CP-odd pion coupling would not have a physical source.
+  evidence:
+  - source: schwartz
+    section: 29.5.3
+    pages:
+    - 612
+- id: qft.align017.schwartz-e-theta-to-p299
+  from: qft.align006.strong-cp-anomalous-rotation-relation
+  to: qft.align017.problem-multigeneration-chiral-theta-shift-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task proves the multigeneration shift of the physical theta phase.
+  failure_mode: The target phase transformation would not be identified.
+  evidence:
+  - source: schwartz
+    section: Problem 29.9
+    pages:
+    - 615
+- id: qft.align017.weinberg-2-abelian-anomaly-to-eta-problem
+  from: qft.align006.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  to: qft.align017.problem-eta-to-two-photons-leading-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for an anomalous two-photon pseudoscalar decay, whose leading
+    coupling is supplied by the Abelian anomaly calculation.
+  failure_mode: Without that anomalous coupling method, the requested decay-rate calculation
+    lacks its source mechanism.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 1 requests the two-photon pseudoscalar decay rate under stated quark-mass
+      conditions.
+- id: qft.align017.weinberg-2-anomaly-matching-to-goldstone-action
+  from: qft.align006.t-hooft-anomaly-matching-massless-bound-states
+  to: qft.align017.anomaly-matching-goldstone-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Goldstone action argument explicitly applies the anomaly-matching
+    construction to the confined low-energy theory.
+  failure_mode: Without matching, there is no reason that Goldstone interactions must
+    carry the trapped-fermion anomaly.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 408
+    note: The source explicitly says it is helpful to apply the anomaly-matching argument
+      developed by ’t Hooft.
+- id: qft.align017.weinberg-2-brst-cohomology-to-form-derivation
+  from: qft.align017.brst-cohomology-classification-of-local-anomalies
+  to: qft.align017.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The differential-form ansatz is constrained by the BRST-invariance criterion.
+  failure_mode: Without sG=0 modulo a derivative, the coefficient constraints have
+    no governing condition.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 400
+    note: The source introduces the differential-form calculation explicitly to implement
+      the consistency condition.
+- id: qft.align017.weinberg-2-brst-nilpotence-to-anomaly-cohomology
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.align017.brst-cohomology-classification-of-local-anomalies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Nilpotence makes s-exact anomalies s-closed and makes the ghost-number-one
+    quotient a cohomology.
+  failure_mode: Without s²=0, the closed/exact classification is not defined.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 398
+    - 399
+    note: Nilpotence makes s-exact anomalies s-closed and makes the ghost-number-one
+      quotient a cohomology.
+- id: qft.align017.weinberg-2-brst-nilpotence-to-descent
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.align017.stora-zumino-descent-and-schwinger-term-cohomology
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The descent equations use s²=0 and sd+ds=0 to establish closed forms.
+  failure_mode: Without nilpotence, the descent closure steps fail.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 402
+    - 403
+    note: The source explicitly invokes nilpotence in the descent.
+- id: qft.align017.weinberg-2-brst-nilpotence-to-form-derivation
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.align017.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The differential-form consistency calculation uses the nilpotent BRST
+    differential and its anticommutation with d.
+  failure_mode: Without nilpotence, sG=0 modulo a derivative is not a consistency
+    condition.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 400
+    - 401
+    note: The differential-form consistency calculation uses the nilpotent BRST differential
+      and its anticommutation with d.
+- id: qft.align017.weinberg-2-bv-antifields-to-anomaly-cohomology
+  from: qft.bv-antifields-and-classical-master-action
+  to: qft.align017.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter extends anomalies beyond one loop by including antifields
+    in local functionals.
+  failure_mode: Without antifields, the stated antibracket cohomology domain is incomplete.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 405
+    note: The source says beyond one loop functionals of antifields must be considered.
+- id: qft.align017.weinberg-2-bv-master-to-anomaly-cohomology
+  from: qft.bv-antibracket-classical-master-equation
+  to: qft.align017.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The closure argument starts from (S,S)=0.
+  failure_mode: Without the classical master equation, the antibracket nilpotence
+    used in the anomaly argument is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 405
+    note: The source explicitly assumes the classical master equation before deriving
+      (S,G1)=0.
+- id: qft.align017.weinberg-2-finite-gauge-to-goldstone-action
+  from: qft.finite-gauge-transformations
+  to: qft.align017.anomaly-matching-goldstone-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction integrates the anomaly along a finite gauge transformation
+    that removes Goldstone coordinates.
+  failure_mode: Without finite gauge transformations, A−tζ is undefined.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 410
+    - 411
+    note: The source defines the transformed gauge field and verifies the integrated
+      action.
+- id: qft.align017.weinberg-2-goldstone-action-to-h-counterterm-action
+  from: qft.align017.anomaly-matching-goldstone-effective-action
+  to: qft.align017.h-anomaly-free-counterterm-goldstone-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The H-anomaly-free action substitutes the counterterm-shifted anomaly
+    back into the general Goldstone action.
+  failure_mode: Without the general action, the counterterm substitution has no action
+    to modify.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 415
+    - 416
+    note: The source gives the shifted anomaly and then inserts it in Eq. (22.7.7).
+- id: qft.align017.weinberg-2-goldstone-action-to-pure-gauge-functional
+  from: qft.align017.anomaly-matching-goldstone-effective-action
+  to: qft.align017.pure-gauge-goldstone-wess-zumino-functional
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The pure-gauge functional is obtained by setting A=0 in the general anomaly-matched
+    Goldstone action.
+  failure_mode: Without the general action, there is no construction to specialize
+    to the pure-gauge field.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 412
+    note: The source applies Eqs. (22.7.7) and (22.7.8) at A=0.
+- id: qft.align017.weinberg-2-goldstone-action-to-wzw-qcd
+  from: qft.align017.anomaly-matching-goldstone-effective-action
+  to: qft.align017.qcd-wess-zumino-witten-action-and-color-coefficient
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD WZW functional is the chiral-SU(3) specialization of the integrated
+    anomalous Goldstone action.
+  failure_mode: Without the general construction, the QCD functional lacks its anomaly-matching
+    derivation.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 414
+    note: The source says it uses the results of the section to obtain the chiral-SU(3)
+      action.
+- id: qft.align017.weinberg-2-matching-equations-to-special-cases
+  from: qft.align006.t-hooft-matching-equations-and-three-flavor-qcd-breaking
+  to: qft.align017.n2-anomaly-matching-example-and-n3-obstruction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The n=2 solution and n=3 divisibility obstruction are evaluations of
+    the general matching equations.
+  failure_mode: Without the matching equations and multiplicity convention, neither
+    special-case conclusion can be checked.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 392
+    - 393
+    - 394
+    note: The n=2 solution and n=3 divisibility obstruction are evaluations of the
+      general matching equations.
+- id: qft.align017.weinberg-2-measure-assumption-to-qme-repair
+  from: qft.gauge-invariant-functional-measure-assumption
+  to: qft.align017.quantum-master-equation-measure-anomaly-repair
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The repair begins by identifying where the invariant-measure assumption
+    fails when ΔS≠0.
+  failure_mode: Without that assumption, the extra measure term and the need for a
+    repair are not identified.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 407
+    note: The repair begins by identifying where the invariant-measure assumption
+      fails when ΔS≠0.
+- id: qft.align017.weinberg-2-qme-to-measure-anomaly-repair
+  from: qft.bv-quantum-master-equation
+  to: qft.align017.quantum-master-equation-measure-anomaly-repair
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation condition for the non-invariant measure is the accepted
+    quantum master equation.
+  failure_mode: Without the QME, the required balance between antibracket and measure
+    terms is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 407
+    note: The cancellation condition for the non-invariant measure is the accepted
+      quantum master equation.
+- id: qft.align017.weinberg-2-routing-completion-to-form-derivation
+  from: qft.align006.avv-aaa-routing-and-gauge-invariant-completion
+  to: qft.align017.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The consistency calculation starts from the quadratic symmetric anomaly
+    fixed by the routed triangle calculation.
+  failure_mode: Without the quadratic coefficient, consistency leaves the overall
+    anomaly normalization undetermined.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 380
+    - 398
+    - 400
+    note: The consistency calculation starts from the quadratic symmetric anomaly
+      fixed by the routed triangle calculation.
+- id: qft.align017.weinberg-2-routing-completion-to-qcd-wzw
+  from: qft.align006.avv-aaa-routing-and-gauge-invariant-completion
+  to: qft.align017.qcd-wess-zumino-witten-action-and-color-coefficient
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD Goldstone action inserts the vector-conserving Bardeen anomaly
+    into the Goldstone construction.
+  failure_mode: Without that routing and anomaly normalization, the QCD WZW color
+    coefficient is not fixed.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 380
+    - 413
+    - 414
+    note: The QCD Goldstone action inserts the vector-conserving Bardeen anomaly into
+      the Goldstone construction.
+- id: qft.align017.weinberg-2-triangle-to-su3-problem
+  from: qft.align006.general-left-handed-triangle-anomaly-setup
+  to: qft.align017.problem-chiral-su3-anomaly-with-symmetric-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task changes chiral matter representations and asks for their SU(3)
+    anomaly, which is evaluated by the general triangle representation trace.
+  failure_mode: Without the left-handed triangle framework, the two requested matter-content
+    anomaly calculations have no method.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 2 explicitly asks for anomalies of two specified chiral SU(3) matter
+      contents.
+- id: qft.align017.weinberg-2-wz-to-brst-cohomology
+  from: qft.align017.wess-zumino-consistency-condition-for-anomalies
+  to: qft.align017.brst-cohomology-classification-of-local-anomalies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The BRST formulation translates the Wess-Zumino condition into sG=0.
+  failure_mode: Without the consistency condition, BRST invariance would not be tied
+    to anomaly consistency.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 398
+    note: The source proves that the consistency condition holds if and only if the
+      anomaly functional is BRST-invariant.
+- id: qft.align017.weinberg-2-zinn-justin-to-measure-anomaly-repair
+  from: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  to: qft.align017.quantum-master-equation-measure-anomaly-repair
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The section identifies how the usual invariant-measure derivation of
+    the Zinn-Justin equation breaks down and is restored.
+  failure_mode: Without the target identity, the consequence of satisfying the quantum
+    master equation cannot be stated.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 407
+    note: The section identifies how the usual invariant-measure derivation of the
+      Zinn-Justin equation breaks down and is restored.
+- id: qft.align018.global-goldstone-theorem-to-qcd-chiral-breaking-and-pion-identification
+  from: qft.global-goldstone-theorem
+  to: qft.align018.qcd-chiral-breaking-and-pion-identification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion identification uses the Goldstone theorem to supply one massless
+    mode for each broken axial direction before explicit quark masses make the triplet
+    pseudo-Goldstone.
+  failure_mode: Without the broken-symmetry mode count, the three pion modes cannot
+    be inferred from the stated chiral-breaking pattern.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 184
+    - 185
+- id: qft.align018.peskin-epsilon-wilson-fisher-beta-to-problem-correction-to-scaling-exponent
+  from: qft.peskin-epsilon-wilson-fisher-beta
+  to: qft.align018.problem-correction-to-scaling-exponent
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task identifies its correction-to-scaling exponent from beta-prime
+    at the fixed point, so the epsilon-expanded Wilson-Fisher beta function is required
+    to form that derivative.
+  failure_mode: Without the epsilon-expanded beta function and its fixed point, the
+    requested exponent cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.1
+    pages:
+    - 466
+- id: qft.align018.peskin-schroeder.counterterm-rg-prereq-cw-beta
+  from: qft.align012.counterterms-determine-leading-cs-functions
+  to: qft.align018.problem-coleman-weinberg-beta-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (e) converts scalar-QED counterterms into beta functions and a flow
+    portrait.
+  failure_mode: The scale derivatives of the counterterms are not related to running
+    couplings.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 412
+    - 470
+- id: qft.align018.peskin-schroeder.cpn-large-n-prereq-photon
+  from: qft.align018.problem-cpn-large-n-saddle
+  to: qft.align018.problem-cpn-emergent-photon
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) expands the large-N exponent derived in part (c).
+  failure_mode: There is no effective exponent to expand for vacuum polarization.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(c-d)
+    pages:
+    - 467
+    - 468
+- id: qft.align018.peskin-schroeder.cpn-representation-prereq-large-n
+  from: qft.align018.problem-cpn-lagrange-multiplier-representation
+  to: qft.align018.problem-cpn-large-n-saddle
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) integrates the z fields in the multiplier representation constructed
+    in part (b).
+  failure_mode: There is no quadratic covariant z action whose determinant can be
+    evaluated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(c)
+    pages:
+    - 467
+- id: qft.align018.peskin-schroeder.cw-beta-prereq-improved
+  from: qft.align018.problem-coleman-weinberg-beta-flow
+  to: qft.align012.problem-coleman-weinberg-rg-improved-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) explicitly applies the beta functions calculated in part (e).
+  failure_mode: The requested RG-improved potential has no running input.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e-f)
+    pages:
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-beta-flow
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align018.problem-coleman-weinberg-beta-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-higgs-expansion
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align018.problem-coleman-weinberg-higgs-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (a)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-mass-endpoint
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align012.problem-coleman-weinberg-nonzero-mass-endpoint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-mass-squared-scan
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align012.problem-coleman-weinberg-mass-squared-scan
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-one-loop-potential
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align012.problem-coleman-weinberg-one-loop-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (b)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-radiative-minimum
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align012.problem-coleman-weinberg-radiative-minimum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-rg-improved
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align012.problem-coleman-weinberg-rg-improved-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.cw-setup-prereq-superconductor
+  from: qft.align018.coleman-weinberg-model-assumptions
+  to: qft.align012.problem-coleman-weinberg-superconductor-epsilon-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This branch applies the supplied scalar-QED model, conventions, and coupling
+    regime.
+  failure_mode: The fields, covariant derivative, and parameters for the requested
+    calculation are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 469
+    - 470
+- id: qft.align018.peskin-schroeder.sigma-beta-prereq-af
+  from: qft.align018.nonlinear-sigma-one-loop-cs-functions
+  to: qft.align018.nonlinear-sigma-asymptotic-freedom-and-n2-exception
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The asymptotic-freedom conclusion reads the sign of the one-loop beta
+    function.
+  failure_mode: The claimed direction of coupling flow is ungrounded.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 457
+    - 458
+- id: qft.align018.peskin-schroeder.sigma-beta-prereq-temperature-fixed-point
+  from: qft.align018.nonlinear-sigma-one-loop-cs-functions
+  to: qft.align018.nonlinear-sigma-temperature-fixed-point
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dimensionally continued temperature beta function uses the two-dimensional
+    beta(g) result.
+  failure_mode: Without beta(g), the quantum contribution to beta(T) and its fixed
+    point cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 457
+    - 461
+- id: qft.align018.peskin-schroeder.sigma-constraint-prereq-one-loop
+  from: qft.align018.nonlinear-goldstone-coordinate-realizations
+  to: qft.align018.nonlinear-sigma-one-loop-cs-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop graphs and their Feynman rules come from the constrained
+    Goldstone-coordinate Lagrangian.
+  failure_mode: Without the parametrized constrained action, the stated vertices and
+    Green functions are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 455
+    - 456
+    - 457
+- id: qft.align018.peskin-schroeder.sigma-coordinates-prereq-shell
+  from: qft.align018.nonlinear-goldstone-coordinate-realizations
+  to: qft.align018.nonlinear-sigma-wilson-shell-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shell calculation expands tangent fast fluctuations around constrained
+    coordinates.
+  failure_mode: The fast-field action and moving-frame identities are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 455
+    - 459
+- id: qft.align018.peskin-schroeder.sigma-fixed-prereq-near-two-eta
+  from: qft.align018.nonlinear-sigma-temperature-fixed-point
+  to: qft.align018.nonlinear-sigma-near-two-eta
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Eta is obtained by evaluating the sigma-model anomalous dimension at
+    the nonzero fixed point.
+  failure_mode: There is no fixed-point coupling at which to evaluate the anomalous
+    dimension.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 461
+    - 462
+- id: qft.align018.peskin-schroeder.sigma-fixed-prereq-near-two-nu
+  from: qft.align018.nonlinear-sigma-temperature-fixed-point
+  to: qft.align018.nonlinear-sigma-near-two-nu
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Nu follows by linearizing the temperature beta function around its nonzero
+    fixed point.
+  failure_mode: The relevant temperature eigenvalue and correlation-length power cannot
+    be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 461
+    - 462
+- id: qft.align018.peskin-schroeder.sigma-gamma-prereq-near-two-eta
+  from: qft.align018.nonlinear-sigma-one-loop-cs-functions
+  to: qft.align018.nonlinear-sigma-near-two-eta
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The leading eta value uses the one-loop sigma-model field anomalous dimension.
+  failure_mode: The fixed point alone does not determine the field scaling exponent.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 457
+    - 461
+    - 462
+- id: qft.align018.peskin-schroeder.sigma-large-n-prereq-gap
+  from: qft.align018.nonlinear-sigma-large-n-saddle
+  to: qft.align018.two-dimensional-nonlinear-sigma-mass-gap
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The d=2 mass gap is the renormalized solution of the large-N saddle gap
+    equation.
+  failure_mode: Without the saddle equation, there is no equation to renormalize or
+    solve for m.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 463
+    - 464
+- id: qft.align018.peskin-schroeder.sigma-large-n-prereq-phase-transition
+  from: qft.align018.nonlinear-sigma-large-n-saddle
+  to: qft.align018.large-n-sigma-phase-transition-above-two
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The d>2 phase criterion follows by analyzing the same saddle gap equation
+    in changed dimension.
+  failure_mode: Without the large-N gap equation, neither the critical coupling nor
+    the phases follow by this route.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 463
+    - 465
+- id: qft.align018.peskin-schroeder.sigma-shell-prereq-mermin
+  from: qft.align018.nonlinear-sigma-wilson-shell-derivation
+  to: qft.align018.mermin-wagner-spin-wave-obstruction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Short- and long-wavelength fluctuation averaging supplies the spin-wave
+    loss of ordered direction.
+  failure_mode: The fluctuation mechanism behind the no-order conclusion is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.3'
+    pages:
+    - 460
+- id: qft.align018.schwartz.e-accepted-vector-polarizations-to-longitudinal
+  from: qft.align010.schwartz.massive-vector-polarization-basis
+  to: qft.align018.longitudinal-vector-high-energy-growth
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy εL expansion starts from the massive-vector polarization
+    basis.
+  failure_mode: The energy-growing external-state factor would be unexplained.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 588
+- id: qft.align018.schwartz.e-ccwz-to-p283
+  from: qft.gauged-nonlinear-sigma-model-and-unitary-gauge-propagator
+  to: qft.align018.problem-gauged-nonlinear-sigma-cubic-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly uses the gauged nonlinear sigma model of Eq. (28.59).
+  failure_mode: The requested cubic interactions would have no Lagrangian.
+  evidence:
+  - source: schwartz
+    section: Problem 28.3
+    pages:
+    - 583
+- id: qft.align018.schwartz.e-chiral-power-to-pion-decay
+  from: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  to: qft.align018.pion-leptonic-decay-measures-fpi
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The axial pion-current normalization supplies the hadronic matrix element.
+  failure_mode: Fπ in the decay rate would be undefined.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 571
+- id: qft.align018.schwartz.e-chiral-to-gmor
+  from: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  to: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: GMOR adds the mass spurion to the chiral EFT.
+  failure_mode: The pion-mass relation would lack the invariant low-energy framework.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 572
+- id: qft.align018.schwartz.e-ew-lagrangian-to-ew-mixing
+  from: qft.align018.standard-model-higgs-doublet-and-covariant-derivative
+  to: qft.align018.electroweak-vev-photon-z-mixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Higgs covariant derivative and vev generate the neutral mass matrix.
+  failure_mode: Photon–Z definitions would be an unexplained rotation.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 585
+- id: qft.align018.schwartz.e-ew-masses-to-higgs-couplings
+  from: qft.align018.electroweak-gauge-mass-relations-and-self-interactions
+  to: qft.align018.higgs-mass-and-hvv-couplings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Expanding the same vev-generated mass terms in h fixes hVV couplings.
+  failure_mode: Unitarization couplings would not be tied to gauge masses.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 587
+- id: qft.align018.schwartz.e-ew-mixing-to-charged
+  from: qft.align018.electroweak-vev-photon-z-mixing
+  to: qft.align018.charged-w-bosons-and-electromagnetic-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mixing angle fixes e and identifies the unbroken photon direction.
+  failure_mode: W charges would lack their electromagnetic normalization.
+  evidence:
+  - source: schwartz
+    section: '29.1'
+    pages:
+    - 586
+- id: qft.align018.schwartz.e-gauge-cancel-to-higgs-unitarity
+  from: qft.align018.gauge-diagram-cancellation-in-wz-scattering
+  to: qft.align018.higgs-exchange-unitarizes-longitudinal-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Higgs exchange cancels the remaining t/v² growth after gauge cancellations.
+  failure_mode: The target cancellation would be stated against the wrong residual
+    amplitude.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 590
+- id: qft.align018.schwartz.e-goldstone-proof-to-p284
+  from: qft.goldstone-theorem-charge-degeneracy-route
+  to: qft.align018.problem-on-scalar-vacua-and-goldstones-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for the Goldstone count after expanding about the vacua.
+  failure_mode: The requested massless-mode criterion would be unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 28.4
+    pages:
+    - 583
+- id: qft.align018.schwartz.e-higgs-couplings-to-higgs-unitarity
+  from: qft.align018.higgs-mass-and-hvv-couplings
+  to: qft.align018.higgs-exchange-unitarizes-longitudinal-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The hVV vertex supplies the cancellation diagram.
+  failure_mode: The cancellation would be numerically unconstrained.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 590
+- id: qft.align018.schwartz.e-linear-sigma-to-p281
+  from: qft.linear-sigma-model-polar-fields
+  to: qft.align018.problem-linear-sigma-mass-matrix-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task starts from the linear-sigma broken-vacuum expansion.
+  failure_mode: The mass matrix to diagonalize would not be specified.
+  evidence:
+  - source: schwartz
+    section: Problem 28.1
+    pages:
+    - 583
+- id: qft.align018.schwartz.e-longitudinal-to-gauge-cancel
+  from: qft.align018.longitudinal-vector-high-energy-growth
+  to: qft.align018.gauge-diagram-cancellation-in-wz-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation uses the longitudinal polarization expansion.
+  failure_mode: The origin of the energy behavior would be missing.
+  evidence:
+  - source: schwartz
+    section: '29.2'
+    pages:
+    - 589
+- id: qft.align018.schwartz.e-qcd-condensate-to-sigma
+  from: qft.align018.qcd-chiral-breaking-and-pion-identification
+  to: qft.align018.nonlinear-goldstone-coordinate-realizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonlinear pion field realizes the stated SU(2)L×SU(2)R to SU(2) pattern.
+  failure_mode: The EFT transformation law would be disconnected from its breaking
+    pattern.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 568
+- id: qft.align018.schwartz.e-sigma-to-chiral-lagrangian
+  from: qft.align018.nonlinear-goldstone-coordinate-realizations
+  to: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: U transformation properties constrain invariant operators.
+  failure_mode: Derivative operators could not be classified by the full chiral symmetry.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 569
+- id: qft.align018.schwartz.e-sigma-to-p282
+  from: qft.align018.nonlinear-goldstone-coordinate-realizations
+  to: qft.align018.problem-bch-pion-transformation-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task expands the nonlinear chiral transformation law.
+  failure_mode: There would be no BCH transformation to calculate.
+  evidence:
+  - source: schwartz
+    section: Problem 28.2
+    pages:
+    - 583
+- id: qft.align018.schwartz.e-su5-to-p285
+  from: qft.su5-adjoint-breaking-to-standard-model-gauge-group
+  to: qft.align018.problem-su5-adjoint-potential-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task analyzes the adjoint-breaking potential and its unbroken subgroup.
+  failure_mode: The requested vector spectrum would lack the group-theory route.
+  evidence:
+  - source: schwartz
+    section: Problem 28.5
+    pages:
+    - 583
+- id: qft.align018.weinberg-2.chiral-algebra-to-chiral-breaking
+  from: qft.align018.two-flavor-qcd-chiral-symmetry
+  to: qft.align018.qcd-chiral-breaking-and-pion-identification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spectrum argument concerns the specific vector and axial generators
+    of two-flavor chiral SU(2) × SU(2).
+  failure_mode: Without the chiral algebra and its currents, parity doubling cannot
+    be tied to the proposed breaking pattern.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 184
+    note: The source applies the chiral charge X to a one-hadron state when explaining
+      the parity-doubling consequence.
+- id: qft.align018.weinberg-2.chiral-algebra-to-pion-decay-constant
+  from: qft.align018.two-flavor-qcd-chiral-symmetry
+  to: qft.align018.pion-decay-constant-from-axial-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fπ is defined from the axial member of the chiral-current triplet.
+  failure_mode: Without the axial-current identification, the pion matrix element
+    cannot be assigned its chiral-symmetry role.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 185
+    note: The source relates the pion decay matrix element to the axial current introduced
+      for chiral symmetry.
+- id: qft.align018.weinberg-2.current-algebra-to-nonlinear-realization
+  from: qft.align018.current-algebra-and-effective-lagrangian-for-multigoldstone-processes
+  to: qft.goldstone-coset-transformations-and-order-parameter
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The nonlinear variables give a symmetry-respecting effective Lagrangian
+    that reproduces the soft amplitudes motivated by current algebra.
+  failure_mode: Without the current-algebra target, the physical reason for choosing
+    the nonlinear low-energy variables is missing.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 193
+    - 196
+    note: The source motivates symmetry-respecting effective Lagrangians from current
+      algebra and then constructs the nonlinear pion form.
+- id: qft.align018.weinberg-2.goldstone-soft-theorem-to-current-algebra
+  from: qft.soft-goldstone-external-line-theorem
+  to: qft.align018.current-algebra-and-effective-lagrangian-for-multigoldstone-processes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The multi-Goldstone discussion extends the current-conservation logic
+    from one insertion to time-ordered products of two currents.
+  failure_mode: Without the one-Goldstone current-insertion method, the purpose of
+    adding equal-time current commutators is obscured.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 192
+    note: The section explicitly contrasts its earlier single-Goldstone current-conservation
+      result with the two-current problem.
+- id: qft.align018.weinberg-2.nonlinear-realization-to-nucleon-lagrangian
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align018.chiral-nucleon-redefinition-and-general-leading-lagrangian
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The nucleon rotation and covariant derivative use the same nonlinear
+    pion coordinates and field-dependent isospin transformation.
+  failure_mode: Without the pion nonlinear realization, the rotated nucleon transformation
+    and chiral covariant derivative cannot be constructed.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 202
+    - 203
+    note: The source rotates N with the same SO(4) construction and uses the resulting
+      chiral covariant derivative.
+- id: qft.align018.weinberg-2.nonlinear-realization-to-pion-power-counting
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Derivative-only Goldstone interactions produced by the nonlinear realization
+    make the low-Q counting nonnegative and ordered.
+  failure_mode: Without derivative couplings, the claimed suppression of higher-order
+    low-energy pion interactions does not follow.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 195
+    - 198
+    note: The source first shows that pion interactions carry derivatives and then
+      uses this fact in the graph-order argument.
+- id: qft.align018.weinberg-2.nucleon-lagrangian-to-nucleon-power-counting
+  from: qft.align018.chiral-nucleon-redefinition-and-general-leading-lagrangian
+  to: qft.align018.pion-nucleon-chiral-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The allowed leading pion-nucleon vertices set the nonnegative index used
+    in the graph-order formula.
+  failure_mode: Without the leading Lagrangian, there is no basis for determining
+    which pion-nucleon vertices contribute at lowest order.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 205
+    - 206
+    note: The source checks the vertex-index condition against the explicit leading
+      pion-nucleon Lagrangian.
+- id: qft.align018.weinberg-2.nucleon-lagrangian-to-quark-mass-nucleon-corrections
+  from: qft.align018.chiral-nucleon-redefinition-and-general-leading-lagrangian
+  to: qft.align018.quark-mass-pion-nucleon-contact-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correction classification is performed for bilinears in the rotated
+    nucleon field that carries the nonlinear chiral transformation.
+  failure_mode: Without the rotated-nucleon representation, the permitted scalar and
+    pseudoscalar bilinear classes cannot be distinguished as in the construction.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 208
+    note: The source classifies the quark-mass operators as bilinears in N after the
+      nonlinear construction.
+- id: qft.align018.weinberg-2.nucleon-lagrangian-to-soft-forward-pion-nucleon
+  from: qft.align018.chiral-nucleon-redefinition-and-general-leading-lagrangian
+  to: qft.align018.soft-forward-pion-nucleon-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed forward amplitude needs both the gA pion-nucleon vertices
+    and the seagull contact vertex in the leading chiral nucleon Lagrangian.
+  failure_mode: Without those jointly required vertices, the contact-plus-pole cancellation
+    that produces the (1−gA²) result cannot be formed.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 203
+    - 210
+    note: The leading Lagrangian supplies the interaction structures reused in the
+      Figure 19.3 forward-scattering calculation.
+- id: qft.align018.weinberg-2.nucleon-power-counting-to-soft-forward-pion-nucleon
+  from: qft.align018.pion-nucleon-chiral-power-counting
+  to: qft.align018.soft-forward-pion-nucleon-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The forward theorem retains the same leading contact and nucleon-pole
+    structures whose low-energy relevance is organized by pion-nucleon EFT counting.
+  failure_mode: Without the leading-graph organization, it is unclear why the displayed
+    diagram set supplies the low-energy amplitude.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 206
+    - 210
+    note: The source first identifies the leading pion-nucleon diagrams and later
+      reuses Figure 19.3 for forward scattering.
+- id: qft.align018.weinberg-2.nucleon-power-counting-to-threshold-scattering
+  from: qft.align018.pion-nucleon-chiral-power-counting
+  to: qft.align018.threshold-pion-nucleon-scattering-lengths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The threshold calculation uses the counting result and then identifies
+    an additional threshold suppression of the Born terms.
+  failure_mode: Without power counting, selecting the contact graph and qualifying
+    the Born contributions is unjustified.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 206
+    note: The source introduces pion-nucleon scattering by identifying the leading
+      diagrams and their threshold hierarchy.
+- id: qft.align018.weinberg-2.pion-decay-constant-to-goldberger-treiman
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align018.goldberger-treiman-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion-pole residue in the nucleon axial form factor is normalized
+    by Fπ.
+  failure_mode: Without Fπ's current matrix element, comparison of the pion pole with
+    the nucleon form factor cannot fix GπN.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 187
+    note: The derivation uses the pion axial-current matrix element to obtain the
+      one-pion pole contribution.
+- id: qft.align018.weinberg-2.pion-decay-constant-to-nucleon-lagrangian
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align018.chiral-nucleon-redefinition-and-general-leading-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Expressing the leading pion-nucleon interactions in the source's physical
+    normalization uses the established F=Fπ match.
+  failure_mode: Without that normalization, the coefficients of the displayed pion-nucleon
+    vertices cannot be related to the source's Fπ convention.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 200
+    - 202
+    - 203
+    note: The source first identifies F with Fπ and then writes the rotated-nucleon
+      interactions in terms of the canonically normalized pion field.
+- id: qft.align018.weinberg-2.pion-decay-constant-to-pion-eft-power-counting
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The physical EFT expansion scale is written in the source's Fπ normalization
+    after matching F to the pion decay amplitude.
+  failure_mode: Without the Fπ normalization, the quoted low-energy scale and amplitudes
+    retain an uncalibrated F parameter.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 199
+    - 200
+    note: The source uses the axial-current matching to identify F with Fπ and estimate
+      the range of the pion expansion.
+- id: qft.align018.weinberg-2.pion-decay-constant-to-pion-scattering
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align018.leading-pion-pion-scattering-and-scattering-lengths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scattering-length formulas are expressed in the source's Fπ convention,
+    obtained by matching the EFT F parameter to pion decay.
+  failure_mode: Without that matching, the numerical convention in the scattering
+    lengths is ambiguous by normalization factors.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 200
+    - 202
+    note: The source identifies F=Fπ before presenting the pion scattering lengths.
+- id: qft.align018.weinberg-2.pion-decay-constant-to-q4-pion-eft-matching
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align018.q4-pion-eft-renormalization-and-fpi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matching argument identifies the EFT parameter F by comparing its
+    axial-current matrix element with the definition of Fπ.
+  failure_mode: Without the decay-constant definition, F=Fπ is only an unnamed parameter
+    identification rather than a physical normalization match.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 199
+    - 200
+    note: The source relates F to the measured pion-decay amplitude through the axial
+      current.
+- id: qft.align018.weinberg-2.pion-identification-to-goldberger-treiman
+  from: qft.align018.qcd-chiral-breaking-and-pion-identification
+  to: qft.align018.goldberger-treiman-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The relation's pole argument requires the massless pion as the Goldstone
+    boson of the broken axial symmetry.
+  failure_mode: Without that pion pole, axial-current conservation would instead force
+    an unphysical vanishing mass or axial charge.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 186
+    - 187
+    note: The source explains that a massless pion pole resolves the form-factor conservation
+      constraint.
+- id: qft.align018.weinberg-2.pion-mass-to-pcac
+  from: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  to: qft.align018.pcac-pion-pole-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: PCAC is formulated as an axial divergence of order mπ², which is supplied
+    by explicit quark-mass breaking.
+  failure_mode: Without the pion-mass scale, the claimed smallness and range of the
+    divergence approximation are undefined.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 189
+    - 190
+    note: The source derives the axial divergence and then treats it as small of order
+      the pion mass squared.
+- id: qft.align018.weinberg-2.pion-mass-to-pion-scattering
+  from: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  to: qft.align018.leading-pion-pion-scattering-and-scattering-lengths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Threshold amplitudes and scattering lengths require the finite pion mass
+    and its leading symmetry-breaking interaction.
+  failure_mode: Without mπ, the threshold kinematics and the mass-dependent leading
+    amplitude cannot be formed.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 200
+    - 201
+    note: The source counts the pion mass as Q and constructs the unique leading quark-mass
+      interaction before evaluating the massive amplitude.
+- id: qft.align018.weinberg-2.pion-mass-to-quark-mass-nucleon-corrections
+  from: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  to: qft.align018.quark-mass-pion-nucleon-contact-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The operator classification uses the chiral-four-vector spurions and
+    aligned isospin-preserving vacuum established for the quark-mass perturbation.
+  failure_mode: Without those spurion transformation properties and alignment, the
+    isospin-conserving and violating operator classes cannot be selected.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 208
+    note: The source explicitly requires the transformation properties of the quark-mass
+      operators introduced in Eq. (19.4.34).
+- id: qft.align018.weinberg-2.pion-power-counting-to-nucleon-power-counting
+  from: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  to: qft.align018.pion-nucleon-chiral-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nucleon counting proof invokes the established pure-pion condition
+    d+2m≥2 when checking nonnegative vertex indices.
+  failure_mode: Without the pure-pion inequality, the claimed nonnegativity of the
+    pion-nucleon graph index is incomplete.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 205
+    note: The source explicitly recalls the pure-pion inequality while deriving the
+      pion-nucleon counting rule.
+- id: qft.align018.weinberg-2.pion-power-counting-to-pion-scattering
+  from: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  to: qft.align018.leading-pion-pion-scattering-and-scattering-lengths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scattering calculation selects its leading tree graphs and next-order
+    corrections by the chiral power-counting formula.
+  failure_mode: Without the order assignment, the retained amplitude and scattering
+    lengths have no stated accuracy or justification for omitted graphs.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 198
+    - 201
+    note: The source identifies the leading pion amplitude from the Q counting and
+      later includes the leading mass insertion.
+- id: qft.align018.weinberg-2.pion-power-counting-to-q4-renormalization
+  from: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  to: qft.align018.q4-pion-eft-renormalization-and-fpi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The next-order calculation uses the established derivative and loop counting
+    to select the one-loop two-derivative and tree four-derivative contributions.
+  failure_mode: Without the power-counting result, the displayed Q4 graph classes
+    and the finite set of counterterm couplings are not justified.
+  evidence:
+  - source: weinberg-2
+    section: '19.5'
+    pages:
+    - 198
+    - 199
+    note: The source first identifies the two next-order graph classes and then absorbs
+      their cutoff dependence into the four-derivative couplings.
+- id: qft.align018.weinberg-2.pseudo-goldstone-mass-to-pion-identification
+  from: qft.align018.pseudo-goldstone-mass-double-commutator
+  to: qft.align018.qcd-chiral-breaking-and-pion-identification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The identification invokes the approximate-symmetry result that explicit
+    breaking turns massless Goldstone bosons into low-mass pseudoscalars.
+  failure_mode: Without pseudo-Goldstone reasoning, the light but nonzero pion mass
+    would contradict a literal Goldstone identification.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 185
+    note: The source identifies the pion after describing the small nonzero pion mass
+      expected for broken approximate chiral symmetry.
+- id: qft.align018.weinberg-2.qcd-lagrangian-to-chiral-algebra
+  from: qft.align014.qcd-renormalizable-lagrangian-and-effective-symmetry-qualification
+  to: qft.align018.two-flavor-qcd-chiral-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chiral construction specializes the accepted QCD quark–gluon Lagrangian
+    to its massless u,d terms.
+  failure_mode: Without the QCD Lagrangian and its symmetry qualification, the displayed
+    two-flavor chiral transformation is ungrounded.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 182
+    note: The source explicitly starts from the massless u,d terms of the QCD Lagrangian
+      before deriving the chiral algebra.
+- id: qft.align018.weinberg-2.vacuum-alignment-to-pion-mass
+  from: qft.align011.vacuum-alignment-for-approximate-symmetry
+  to: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark-mass calculation uses alignment to keep ordinary isospin unbroken
+    and identify the relevant condensate direction.
+  failure_mode: Without alignment, the assumed residual isospin subgroup and mass
+    matrix reduction are not justified.
+  evidence:
+  - source: weinberg-2
+    section: '19.4'
+    pages:
+    - 188
+    - 189
+    note: The source applies the vacuum-alignment conditions to the quark-mass perturbation
+      before evaluating the pion mass.
+- id: qft.align018.weinberg-2.vacuum-alignment-to-pseudo-goldstone-mass
+  from: qft.align011.vacuum-alignment-for-approximate-symmetry
+  to: qft.align018.pseudo-goldstone-mass-double-commutator
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation uses the aligned-vacuum commutator condition to obtain
+    a symmetric positive mass matrix.
+  failure_mode: Without alignment, the first-order expansion has tadpoles and the
+    double-commutator formula lacks its stated symmetry and positivity argument.
+  evidence:
+  - source: weinberg-2
+    section: '19.3'
+    pages:
+    - 181
+    note: The source rewrites the alignment condition as a charge-commutator expectation
+      value before deriving the mass matrix.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -23991,6 +28221,17 @@ groups:
   title: Scattering operators, channels, and unitarity
 - id: qft.align016.symmetries
   title: S-matrix covariance and discrete symmetries
+- id: qft.align017.source-specific-methods
+  title: Source-specific anomaly, CP, matching, and application methods
+  question: Which derivations and tasks retain source-defined inputs and proof limits?
+- id: qft.align018.chiral-pion-effective-field-theory
+  title: Chiral symmetry, pions, and low-energy effective field theory
+- id: qft.align018.electroweak-symmetry-breaking
+  title: Electroweak symmetry breaking and longitudinal-vector scattering
+- id: qft.align018.nonlinear-sigma-and-criticality
+  title: Nonlinear sigma models, large N, and critical flow
+- id: qft.align018.source-backed-tasks
+  title: Source-backed derivation tasks
 - id: qft.anomaly-regularization-and-matching
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,
