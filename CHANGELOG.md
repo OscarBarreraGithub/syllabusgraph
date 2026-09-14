@@ -20,6 +20,8 @@ imply a package has been published to a package index.
   each claim and independent task, beyond finding matching text on a cited page.
 - Clarify derivation versus use requirements and independent exercise routes
   so analogous examples and unrelated tasks do not become compulsory inputs.
+- Clarify semantic section reconciliation across shared boundary pages, where
+  page-range matching alone can omit concepts from their actual sections.
 - Explain separate frontmatter citation mappings and the inspection of empty
   text layers before OCR or a documented nonconceptual exclusion.
 - Publish bounded scientific adjudication decisions with alternatives, reasons,

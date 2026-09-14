@@ -33,29 +33,33 @@ def request(base, path, data=None, headers=None):
         data=json.dumps(data).encode() if data is not None else None,
         headers={"Content-Type": "application/json", **(headers or {})},
     )
-    return urlopen(req, timeout=5)
+    try:
+        return urlopen(req, timeout=5)
+    except HTTPError as error:
+        error.close()
+        raise
 
 
 def test_api_roundtrip_draft_export_and_stale_write(sample):
     with serving(sample) as (server, base):
-        payload = json.load(request(base, "/api/project"))
+        with request(base, "/api/project") as response:
+            payload = json.load(response)
         plan = deepcopy(payload["plans"]["foundations"])
         plan["sessions"] = 2
         headers = {"X-SyllabusGraph-Token": server.token, "Origin": base}
-        preview = json.load(request(base, "/api/preview", {"plan": plan}, headers))
+        with request(base, "/api/preview", {"plan": plan}, headers) as response:
+            preview = json.load(response)
         assert len(preview["sessions"]) == 2
-        text = (
-            request(base, "/api/export", {"plan": plan, "format": "syllabus"}, headers)
-            .read()
-            .decode()
-        )
+        with request(
+            base, "/api/export", {"plan": plan, "format": "syllabus"}, headers
+        ) as response:
+            text = response.read().decode()
         assert "Schedule: 2 sessions" in text
         assert load_project(sample.root).plans["foundations"]["sessions"] == 4
-        saved = json.load(
-            request(
-                base, "/api/save", {"plan": plan, "expected_digest": payload["digest"]}, headers
-            )
-        )
+        with request(
+            base, "/api/save", {"plan": plan, "expected_digest": payload["digest"]}, headers
+        ) as response:
+            saved = json.load(response)
         assert saved["digest"] != payload["digest"]
         assert load_project(sample.root).plans["foundations"]["sessions"] == 2
         with pytest.raises(HTTPError) as exc:
@@ -97,12 +101,13 @@ def test_write_token_origin_and_host_are_enforced(sample):
 
 def test_index_has_local_assets_and_no_remote_requests(sample):
     with serving(sample) as (server, base):
-        response = request(base, "/")
-        html = response.read().decode()
-        assert server.token in html
-        assert "frame-ancestors 'none'" in response.headers["Content-Security-Policy"]
+        with request(base, "/") as response:
+            html = response.read().decode()
+            assert server.token in html
+            assert "frame-ancestors 'none'" in response.headers["Content-Security-Policy"]
         for path in ["/app.js", "/style.css", "/icon.svg"]:
-            assert request(base, path).status == 200
+            with request(base, path) as response:
+                assert response.status == 200
         assert '<script src="http' not in html
 
 

@@ -64,6 +64,12 @@ do not turn it into repeated plan approval or hold up independent bounded units.
 Keep full-book completion pending until the section coverage and the graph's
 concepts, dependencies, and cross-unit consistency have all been reviewed.
 
+Reconcile sections using the accepted records' section evidence and actual
+content. One page can finish a section and begin another, so nonoverlapping
+inventory page ranges cannot determine a concept's section assignment. Retain
+shared boundary-page content in each applicable section and check that the
+coverage assessment describes the records actually assigned to it.
+
 Prepare the bounded packet with `syllabusgraph prepare` first. The orchestrator
 then asks SyllabusGraph to create a dispatch, passes the resulting immutable
 request JSON to the selected Codex or Claude native agent, and binds its JSON
