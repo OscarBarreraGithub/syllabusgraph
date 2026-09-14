@@ -603,3 +603,134 @@ units:
       id: weinberg-2.brst-transformations-to-form-derivation
     - kind: edges
       id: weinberg-2.brst-nilpotence-to-form-derivation
+- id: full-010
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Appendix B omitted reported table entries and values.
+    alternatives:
+    - Expand the existing reference node with the complete reported table.
+    - Split the table into several granular reference nodes.
+    resolution: Expand the existing node with every table entry, condition, value,
+      and product rule.
+    rationale: One catalog node remains usable at this size and now records every
+      sphere, Lie-group, unstable, stable-range, and coset entry without implying
+      proofs that the appendix does not give.
+    evidence:
+    - source: weinberg-2
+      section: Appendix B
+      pages:
+      - 472
+      - 473
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.homotopy-reference-table-and-coset-kernel
+  - finding: 1
+    issue: Problem 5 lacked a three-flavor quark-mass EFT input.
+    alternatives:
+    - Add the accepted leading SU(3) pseudoscalar-mass record and correct the U-field
+      edge.
+    - Use the accepted SU(3) spurion-construction record as the mass-EFT input.
+    resolution: Add the leading SU(3) mass record and limit the U-field edge to representation
+      content.
+    rationale: The constrained U field and leading u,d,s mass matrix are jointly needed
+      with the already-added PQ direction. The two-flavor calculation remains helpful
+      evidence rather than a purported alternative solution.
+    evidence:
+    - source: weinberg-2
+      section: Problems
+      pages:
+      - 474
+    affected_records:
+    - kind: edges
+      id: weinberg-2.edge-threeflavor-to-problem5
+    - kind: edges
+      id: weinberg-2.edge-su3-mass-eft-to-problem5
+  - finding: 2
+    issue: Imported anomaly and QCD-running inputs were incomplete.
+    alternatives:
+    - Add the precise regulated-anomaly, QCD beta, and transmutation inputs and retain
+      generic context as helpful.
+    - Remove the normalized anomaly and small-instanton power-law derivations.
+    resolution: Add the precise joint inputs and downgrade the generic asymptotic-flow
+      edge to helpful evidence.
+    rationale: The normalized Fujikawa result completes the measure route, while the
+      QCD one-loop coefficient and dimensional-transmutation scale jointly support
+      the RΛ power. Removing these source-developed formulas would under-extract the
+      chapter.
+    evidence:
+    - source: weinberg-2
+      section: '23.5'
+      pages:
+      - 453
+      - 454
+    - source: weinberg-2
+      section: '23.6'
+      pages:
+      - 457
+    affected_records:
+    - kind: edges
+      id: weinberg-2.edge-running-to-instanton-small-r
+    - kind: edges
+      id: weinberg-2.edge-regulated-anomaly-to-instanton-anomaly
+    - kind: edges
+      id: weinberg-2.edge-regulated-anomaly-to-theta-rephasing
+    - kind: edges
+      id: weinberg-2.edge-qcd-beta-to-instanton-small-r
+    - kind: edges
+      id: weinberg-2.edge-qcd-transmutation-to-instanton-small-r
+  - finding: 3
+    issue: Private witnesses did not contain the operative formulas and conditions.
+    alternatives:
+    - Use complete immutable packet pages as private witnesses and inspect rendered
+      equations where OCR drops glyphs.
+    - Use shorter formula-level witnesses where OCR is faithful and defer every OCR-missing
+      formula.
+    resolution: Use complete packet-page witnesses, backed by rendered-page checks
+      for OCR-missing mathematics.
+    rationale: Full pages remain private, match the immutable source cache, and retain
+      all available surrounding operands, hypotheses, and complete problem text. Render
+      inspection fixes mathematical fidelity without inventing public quotations.
+    evidence:
+    - source: weinberg-2
+      section: 23.3–Appendix B and Problems
+      pages:
+      - 437
+      - 441
+      - 446
+      - 453
+      - 457
+      - 461
+      - 463
+      - 466
+      - 468
+      - 471
+      - 472
+      - 473
+      - 474
+    affected_records: []
+  - finding: 4
+    issue: Correction dropped the bubble mechanism and bound provenance.
+    alternatives:
+    - Restore both source-backed qualifications in their existing nodes.
+    - Split each qualification into a separate concept node.
+    resolution: Restore both qualifications in the existing bounce and axion nodes.
+    rationale: 'The existing nodes are the natural granularity: the bubble mechanism
+      explains the rate per volume, and the observation-specific labels state what
+      each historical axion bound represents.'
+    evidence:
+    - source: weinberg-2
+      section: '23.6'
+      pages:
+      - 461
+    - source: weinberg-2
+      section: '23.8'
+      pages:
+      - 467
+      - 468
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.bounce-negative-mode-rate-and-exponentiation
+    - kind: nodes
+      id: weinberg-2.axion-pion-effective-lagrangian-and-mass
