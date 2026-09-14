@@ -40,7 +40,7 @@ def inspect_bank(root):
     overlaps, imports = {}, []
     for identity, project in projects.items():
         for node in project.nodes.values():
-            seen = set()
+            seen, direct_books = set(), set()
             for origin in node.get("origins", []):
                 key = (origin["project"], origin["node"])
                 if key in seen:
@@ -57,8 +57,10 @@ def inspect_bank(root):
                     if origin["project"] == identity:
                         raise ProjectError(f"Textbook import must name another textbook: {key}")
                     imports.append({"book": identity, "node": node["id"], "origin": dict(origin)})
+                elif not target.nodes[origin["node"]].get("origins"):
+                    direct_books.add(origin["project"])
             if kinds[identity] == "subjects":
-                for pair in combinations(sorted({p for p, _ in seen}), 2):
+                for pair in combinations(sorted(direct_books), 2):
                     overlaps.setdefault((identity, *pair), []).append(node["id"])
     return {
         "projects": {identity: {"nodes": len(p.nodes), "edges": len(p.knowledge["edges"]),

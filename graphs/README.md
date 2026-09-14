@@ -45,8 +45,9 @@ and graph digest. It does not authenticate the inventory or prove completeness.
 It does not scan arbitrary files for textbook content; inspect files before
 committing and run the separate [publication audit](../docs/releasing.md).
 Its overlap table counts shared concepts with reviewed origins in each pair of
-book graphs; textbook imports do not contribute to that table. It describes
-only the extracted portions, not total textbook
+book graphs. Origins pointing to imported textbook nodes remain valid links,
+but do not count as an independent treatment by the importing book in that table.
+It describes only the extracted portions, not total textbook
 overlap; zero can simply mean the relevant section has not been extracted.
 The correspondence notes explain narrower scopes and alternative treatments.
 This is a data bank and a command-line check; a dedicated comparison UI is

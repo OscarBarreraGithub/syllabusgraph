@@ -17,7 +17,7 @@ The reviewed inventories account for 2,646 substantive numbered pages and 605 se
 
 ## Correspondences in reviewed portions
 
-A shared node's `origins` identify the book concepts it represents and explain the scope of the match. Related treatments can remain distinct: these counts measure explicit shared-node correspondences, not every conceptual similarity.
+A shared node's `origins` identify the book concepts it represents and explain the scope of the match. Related treatments can remain distinct: these counts measure explicit shared-node correspondences, not every conceptual similarity. Imported textbook inputs remain traceable in origins but do not count as independent treatments by the importing book.
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|

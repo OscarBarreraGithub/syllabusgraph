@@ -127,6 +127,18 @@ def test_reviewed_book_imports_do_not_count_as_shared_overlap(tmp_path, sample):
         {'book': 'book', 'node': node['id'], 'origin': origin}
         for origin in node['origins']
     ]
+    subject = book_project(tmp_path / 'subjects/topic', sample, 'topic')
+    subject.knowledge['nodes'][0]['origins'] = [
+        {'project': p.config['id'], 'node': next(iter(p.nodes)),
+         'note': 'Preserves the direct treatment or explicitly imported input.'}
+        for p in (book, other, third)
+    ]
+    save_reviewed_graph(subject)
+    aligned = inspect_bank(tmp_path)
+    assert aligned['imports'] == report['imports']
+    assert [(row['books'], row['count']) for row in aligned['overlap']] == [
+        (['other', 'third'], 1)
+    ]
 
 
 @pytest.mark.parametrize('invalid', ['self', 'missing-node', 'duplicate'])
