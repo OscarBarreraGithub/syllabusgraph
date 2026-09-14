@@ -12,4 +12,9 @@ SyllabusGraph separates its engine, subject knowledge, and course plans.
 - Changes to planning or workflow semantics need invariant tests. Run
   `python -m pytest` and `ruff check .` before committing.
 - Do not label course structures or timing as validated by teaching unless an
-  actual evaluation is recorded. The QFT project awaits source processing.
+  actual evaluation is recorded.
+- Public templates, documentation, and tests must be independent of private
+  course projects. Use the blank project or self-authored sampling example.
+- Keep `docs/capabilities.md` and `CHANGELOG.md` current when user-visible
+  functionality changes. Record limitations and verification alongside status;
+  proposed features belong in `docs/roadmap.md`.

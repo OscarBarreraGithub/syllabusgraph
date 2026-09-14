@@ -77,6 +77,7 @@ folder for your reference files**. The same layout applies to every subject:
 local-courses/my-course/
   README.md             Start here
   materials/            Put your PDFs, text files, and Markdown notes here
+  COURSE_GUIDANCE.md    Private goals, scope, and extraction directions
   project.yaml          Project settings and reference bibliography
   knowledge/graph.yaml  Reviewed concepts and relationships
   plans/                Course goals, background, and schedules
@@ -88,7 +89,8 @@ and confirm its page offset. You can also select a file anywhere on your compute
 
 Copying a file into `materials/` does not register or extract it. Attachment
 links it to a reference and saves a working copy under `.syllabusgraph/sources/`.
-Both directories are ignored by Git, including text and Markdown material.
+Both directories and `COURSE_GUIDANCE.md` are ignored by Git, including text
+and Markdown material.
 You can create projects anywhere; `local-courses/` is a convenient directory
 inside a checkout that also keeps your course drafts out of the tool's repository.
 
@@ -115,32 +117,32 @@ page range, run your preferred extraction tool or import a manually prepared
 proposal, check its evidence, review it, and promote accepted records. Then
 edit course outcomes and assumptions using the [project format](docs/project-format.md).
 
-## The QFT project
-
-```bash
-syllabusgraph init local-courses/qft --template qft
-syllabusgraph serve -p local-courses/qft --open
-```
-
-Put the books in **`local-courses/qft/materials/`** and attach them through
-**References**, using the same workflow as any other course. `examples/qft/`
-contains the reusable template; the directory passed to `init` is your working
-project. QFT has no special source-file location or processing path.
-
-This creates a **preparation scaffold** for QFT I and QFT II with source entries
-for Weinberg volumes I and II, Peskin–Schroeder, and Schwartz. **Its knowledge
-base is intentionally empty:** no textbook extraction, scientific review, or
-finished QFT curriculum is claimed. Attach the materials, confirm editions,
-specify the audience and semester boundary, and begin with one coherent unit.
-See [preparing QFT](docs/qft-preparation.md).
+## From your sources to reviewed knowledge
 
 The local app, PDF text reader, review workflow, planner, and exports are ready.
-Building the QFT graph still requires the materials, source review, and course
+A new knowledge base still requires the materials, source review, and course
 design decisions. Proposals can be authored manually or with an external AI
 tool and imported. **Automatic AI extraction requires a separately configured
-command adapter; no model client is bundled.** Scanned PDFs need OCR before
-import. Ordinary text PDFs can be processed with the included reader, though
-mathematical notation still needs inspection against the original pages.
+command adapter; no model client is bundled.** Image-only PDFs need OCR before
+import, and mathematical notation needs inspection against the original pages.
+
+Record your audience, intended outcomes, course boundaries, and reference
+priorities in the generated **`COURSE_GUIDANCE.md`**. It is a private planning
+brief for you or your agent; it is not parsed by the engine. Choose an initial
+scope before preparing source pages.
+
+## Documentation and functionality
+
+Start with the [documentation index](docs/README.md). The
+[capability register](docs/capabilities.md) records what works, how it is used,
+what verifies it, and its limits. The [roadmap](docs/roadmap.md) keeps proposed
+work separate, and the [changelog](CHANGELOG.md) records changes to behavior.
+These files are maintained with the code and can support a published docs site
+or wiki later.
+
+The [file-location guide](docs/file-locations.md) explains where all inputs and
+outputs go. The [sharing guide](docs/sharing.md) explains how to publish reviewed
+graphs and course plans while keeping textbooks and private processing files local.
 
 ## Reproduce a build
 

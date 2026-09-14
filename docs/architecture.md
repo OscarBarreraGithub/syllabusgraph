@@ -11,7 +11,7 @@ SyllabusGraph has three boundaries:
 The core package does not enumerate textbooks, subject namespaces, instructors,
 or semesters. `Project` resolves explicit project paths. A knowledge base can
 have zero concepts, and a course can start without outcomes or a comparison
-corpus. The bundled sampling example and QFT scaffold use the same APIs.
+corpus. The blank project and bundled sampling example use the same APIs.
 
 ## Planning
 

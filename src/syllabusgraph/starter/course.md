@@ -1,7 +1,12 @@
 # Your course workspace
 
 This project uses the same structure and workflow as every SyllabusGraph course.
-The chosen template supplies initial reference entries, knowledge, and plans.
+The default project starts with an empty bibliography and knowledge base.
+The optional sampling template supplies a self-contained example.
+
+Record your audience, goals, scope, and source priorities in
+**[COURSE_GUIDANCE.md](COURSE_GUIDANCE.md)** before extraction. This is a private
+brief for the person or agent doing the work; the engine does not parse it.
 
 ## Where to put your references
 
@@ -28,6 +33,8 @@ keeps its own working copy under `.syllabusgraph/sources/`.
 
 ```text
 materials/             Your local reference files; ignored by Git
+materials/prior-work/  Optional existing notes or graphs to inspect as candidates
+COURSE_GUIDANCE.md     Your private course brief; ignored by Git
 project.yaml           Project settings and reference bibliography
 knowledge/graph.yaml   Reviewed concepts, relationships, and evidence
 plans/                 Course goals, student background, and schedules
@@ -36,6 +43,11 @@ plans/                 Course goals, student background, and schedules
 
 You can keep this project anywhere. `local-courses/my-course` is a convenient
 location inside a SyllabusGraph checkout, not a required path.
+
+Your filenames can be descriptive; no subject-specific naming scheme is needed.
+Keep an optional inventory in `materials/README.md`. It is local too. Existing
+graphs are candidates to review against sources, not automatically accepted
+knowledge.
 
 ## Continue from sources to a course
 
@@ -48,3 +60,8 @@ is bundled. Image-only PDFs need OCR before attachment.
 Once concepts are reviewed, select learning goals in **Course design**, specify
 student background, inspect the sequence, and export your plan. Source files
 and extraction runs remain local. Inspect reviewed project data before sharing it.
+
+See the [file-location guide](https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/file-locations.md)
+for where each kind of input and output belongs, and the
+[sharing guide](https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/sharing.md)
+for publishing reviewed results without source books or private work files.

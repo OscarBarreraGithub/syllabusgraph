@@ -12,3 +12,9 @@ Source material, extracted quotations, model logs, credentials, and private
 course decisions must remain outside commits. The included examples should
 remain usable without model accounts or external documents. Do not label a
 proposed graph or timing estimate as verified teaching evidence.
+
+Keep the [capability register](docs/capabilities.md) current when functionality
+changes: record its status, interface, verification, and limitations. Add
+user-visible changes to [the changelog](CHANGELOG.md). Proposed work belongs in
+the [roadmap](docs/roadmap.md). Update guides in this repository so a future docs
+site or wiki can use the same maintained source.

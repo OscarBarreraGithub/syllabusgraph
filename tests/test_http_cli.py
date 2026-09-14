@@ -127,10 +127,13 @@ def test_cli_blank_init_and_sample_rebuild(tmp_path):
     assert cli("init", blank, "--title", "A different subject").returncode == 0
     assert cli("build", "-p", blank).returncode == 0
     assert cli("init", blank).returncode == 2
-    qft = tmp_path / "qft"
-    assert cli("init", qft, "--template", "qft").returncode == 0
-    assert cli("validate", "-p", qft).returncode == 0
-    assert cli("plan", "-p", qft, "--plan", "qft-ii", "--strict").returncode == 2
+    from syllabusgraph.io import write_yaml
+
+    next_plan = deepcopy(load_project(blank).plans["course"])
+    next_plan.update(id="next-course", title="Next course", prior_plans=["course"])
+    write_yaml(blank / "plans/next-course.yaml", next_plan)
+    assert cli("validate", "-p", blank).returncode == 0
+    assert cli("plan", "-p", blank, "--plan", "next-course", "--strict").returncode == 2
 
 
 def test_notation_and_non_json_input_rejected(sample):

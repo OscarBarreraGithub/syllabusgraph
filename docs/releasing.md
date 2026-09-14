@@ -20,7 +20,7 @@ python scripts/audit_public.py
 
 Inspect the resulting wheel and source archive, then install the wheel in a
 new virtual environment outside this checkout. Initialize the sampling
-example, blank project, and QFT scaffold there. Validate/build the example and
+example and blank project there. Validate/build the example and
 verify the included UI and exports. Test the documented locked installation
 path from a fresh checkout as well.
 

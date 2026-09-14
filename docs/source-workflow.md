@@ -11,6 +11,11 @@ project contains a `materials/` folder and a local `README.md` explaining the
 workflow. Put the course's PDFs, text files, and Markdown notes in
 `local-courses/my-course/materials/`.
 
+Record audience, outcomes, source priorities, and extraction scope in the
+generated `COURSE_GUIDANCE.md` before starting. It is a private brief for the
+operator or agent, not an automatically enforced engine configuration. See
+[file locations](file-locations.md) for prior work and other inputs.
+
 Open **References** in the app. Add a reference entry if it is not already
 listed, then choose **Attach file** on its card and pick the corresponding file.
 You can select a file from any local directory. Copying it into `materials/`

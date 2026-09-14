@@ -1,6 +1,7 @@
 """Real-browser checks on disposable projects. Optional: install the browser extra."""
 
 from contextlib import contextmanager
+from copy import deepcopy
 from pathlib import Path
 import tempfile
 import threading
@@ -8,6 +9,7 @@ import threading
 from playwright.sync_api import expect, sync_playwright
 
 from syllabusgraph.cli import initialize
+from syllabusgraph.io import write_yaml
 from syllabusgraph.server import CourseServer
 
 
@@ -30,7 +32,15 @@ def main():
     with tempfile.TemporaryDirectory() as temporary, sync_playwright() as playwright:
         root = Path(temporary)
         initialize(root / "sample", "sampling")
-        initialize(root / "qft", "qft")
+        empty = initialize(root / "blank", "blank", title="A new course")
+        empty.config["sources"] = [
+            {"id": f"reference-{i}", "title": f"Reference {i}", "authors": [], "status": "expected"}
+            for i in range(1, 5)
+        ]
+        write_yaml(empty.root / "project.yaml", empty.config)
+        next_plan = deepcopy(empty.plans["course"])
+        next_plan.update(id="next-course", title="Next course", prior_plans=["course"])
+        write_yaml(empty.root / "plans/next-course.yaml", next_plan)
         browser = playwright.chromium.launch()
         context = browser.new_context(
             viewport={"width": 1440, "height": 1000}, reduced_motion="reduce"
@@ -119,25 +129,23 @@ def main():
             page.screenshot(path=str(screenshots / "mobile.png"), full_page=True)
             assert not errors, errors
             assert not external, external
-        with server_for(root / "qft") as base:
+        with server_for(root / "blank") as base:
             page.set_viewport_size({"width": 1440, "height": 1000})
             page.goto(base)
-            expect(
-                page.get_by_role("heading", name="Quantum field theory", exact=True)
-            ).to_be_visible()
+            expect(page.get_by_role("heading", name="A new course", exact=True)).to_be_visible()
             expect(
                 page.get_by_role("button", name="Attach your references", exact=True)
             ).to_be_visible()
-            page.get_by_label("Course plan", exact=True).select_option("qft-ii")
+            page.get_by_label("Course plan", exact=True).select_option("next-course")
             expect(page.locator(".issue.error")).to_contain_text("Prior course")
             page.get_by_role("tab", name="References", exact=False).click()
             expect(page.locator(".source-card")).to_have_count(4)
             expect(page.get_by_role("button", name="Attach file", exact=True)).to_have_count(4)
-            page.screenshot(path=str(screenshots / "qft.png"), full_page=True)
+            page.screenshot(path=str(screenshots / "blank.png"), full_page=True)
             assert not errors, errors
         browser.close()
     print(
-        "Browser checks passed: editing, persistence, draft export, graph, uploads, preparation, mobile, and QFT scaffold."
+        "Browser checks passed: editing, persistence, draft export, graph, uploads, preparation, mobile, and an empty course with draft inheritance."
     )
     print(f"Screenshots: {screenshots}")
 

@@ -3,6 +3,11 @@
 This is the standard place for this course's PDFs, UTF-8 text files, and Markdown
 notes. All files in this directory are ignored by Git, including nested folders.
 
+You can list the files and their intended use below. Put any existing graphs or
+notes you want to compare in `prior-work/`. They need source review before being
+used as knowledge. Course goals and extraction directions belong in
+[COURSE_GUIDANCE.md](../COURSE_GUIDANCE.md).
+
 After copying a file here, open the app's **References** tab. Add its reference
 entry if needed, then choose **Attach file** on that entry and select the file.
 Confirm the page offset before attaching.
@@ -13,3 +18,8 @@ ignored `.syllabusgraph/sources/` directory. You may also attach files from
 anywhere on your computer without copying them here first.
 
 The [project guide](../README.md) explains the next steps.
+
+## Local inventory
+
+| File | Intended use | Edition or mapping to confirm |
+|---|---|---|

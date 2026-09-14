@@ -23,7 +23,16 @@ def create_workspace_guides(destination: Path):
     """Add the shared source-file convention without replacing existing project guides."""
     ignore_path = destination / ".gitignore"
     ignored = ignore_path.read_text(encoding="utf-8") if ignore_path.exists() else ""
-    rules = [".syllabusgraph/", "materials/", ".env", ".env.*", "*.pdf", "*.epub", "__pycache__/"]
+    rules = [
+        ".syllabusgraph/",
+        "materials/",
+        "/COURSE_GUIDANCE.md",
+        ".env",
+        ".env.*",
+        "*.pdf",
+        "*.epub",
+        "__pycache__/",
+    ]
     missing = [rule for rule in rules if rule not in ignored.splitlines()]
     if missing:
         write_text(
@@ -31,13 +40,19 @@ def create_workspace_guides(destination: Path):
             ignored.rstrip("\n") + ("\n" if ignored else "") + "\n".join(missing) + "\n",
         )
     (destination / "materials").mkdir(exist_ok=True)
-    for source, target in [("course.md", "README.md"), ("materials.md", "materials/README.md")]:
+    for source, target in [
+        ("course.md", "README.md"),
+        ("materials.md", "materials/README.md"),
+        ("guidance.md", "COURSE_GUIDANCE.md"),
+    ]:
         path = destination / target
         if not path.exists():
             write_text(path, (bundled("starter") / source).read_text(encoding="utf-8"))
 
 
 def initialize(destination: Path, template: str, *, title: str | None = None):
+    if template not in {"blank", "sampling"}:
+        raise ProjectError("Choose a blank project or the included sampling example.")
     if destination.exists() and any(destination.iterdir()):
         raise ProjectError("Choose a new or empty directory for the course project.")
     source = (
@@ -49,7 +64,9 @@ def initialize(destination: Path, template: str, *, title: str | None = None):
         source,
         destination,
         dirs_exist_ok=True,
-        ignore=shutil.ignore_patterns(".syllabusgraph", "materials", "__pycache__"),
+        ignore=shutil.ignore_patterns(
+            ".syllabusgraph", "materials", "COURSE_GUIDANCE.md", "__pycache__"
+        ),
     )
     if title:
         config = read_yaml(destination / "project.yaml")
@@ -75,7 +92,7 @@ def parser() -> argparse.ArgumentParser:
 
     p = commands.add_parser("init", help="Create a new course project.")
     p.add_argument("destination", type=Path)
-    p.add_argument("--template", choices=["blank", "sampling", "qft"], default="blank")
+    p.add_argument("--template", choices=["blank", "sampling"], default="blank")
     p.add_argument("--title")
     p = commands.add_parser("demo", help="Create or resume the included example and open it.")
     p.add_argument("--destination", type=Path, default=Path("sampling-course"))
@@ -180,6 +197,7 @@ def execute(args) -> int:
         project = initialize(args.destination, args.template, title=args.title)
         print(f"Created {project.config['title']} in {args.destination}")
         print(f"Reference files: {args.destination / 'materials'}")
+        print(f"Course brief: {args.destination / 'COURSE_GUIDANCE.md'}")
         print("Open the app's References tab to add a reference and attach its file.")
         print(f"Getting started: {args.destination / 'README.md'}")
         return 0
