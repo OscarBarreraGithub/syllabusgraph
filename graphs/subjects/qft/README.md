@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2331 reviewed concepts. The shared graph contains 152 concepts and 121 relationships, mapping 170 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2331 reviewed concepts. The shared graph contains 181 concepts and 134 relationships, mapping 200 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. These are **partial graphs**, with an end human audit pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Full-book coverage, global reconciliation, and that alignment must finish before calling this collection complete.
 
@@ -25,7 +25,7 @@ A shared node's `origins` identify the book concepts it represents and explain t
 | Peskin–Schroeder / Weinberg I | 0 |
 | Peskin–Schroeder / Weinberg II | 6 |
 | Schwartz / Weinberg I | 0 |
-| Schwartz / Weinberg II | 3 |
+| Schwartz / Weinberg II | 4 |
 | Weinberg I / Weinberg II | 0 |
 
 **These numbers are not whole-book overlap estimates.** The reviewed inputs cover different portions of the subject. A zero means no shared-node mapping in the aligned inputs; it does not mean either book omits the topic.
@@ -39,13 +39,13 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Canonical momentum and Hamiltonian for a field (`qft.canonical-field-momentum-hamiltonian`) | Peskin–Schroeder: `peskin-schroeder.canonical-field-momentum-hamiltonian`; Schwartz: `schwartz.classical-field-hamiltonian-lagrangian-legendre-transform`; Schwartz: `schwartz.canonical-scalar-field-energy-density` |
 | Classical spontaneous symmetry breaking (`qft.classical-spontaneous-symmetry-breaking`) | Schwartz: `schwartz.classical-spontaneous-symmetry-breaking`; Peskin–Schroeder: `peskin-schroeder.discrete-symmetry-breaking-scalar-shift` |
 | Complex scalar U(1) current (`qft.complex-scalar-u1-current`) | Peskin–Schroeder: `peskin-schroeder.complex-scalar-u1-current`; Schwartz: `schwartz.noether-current-and-conserved-charge`; Schwartz: `schwartz.complex-scalar-global-u1-symmetry` |
+| Continuum running-coupling method for large logarithms (`qft.continuum-rg-running-coupling-large-log-method`) | Schwartz: `schwartz.rg-large-log-resummation`; Weinberg II: `weinberg-2.sliding-scale-coupling-callan-symanzik-method` |
 | Covariant Faddeev–Popov ghost propagator and vertex rules (`qft.covariant-faddeev-popov-ghost-rules`) | Peskin–Schroeder: `peskin-schroeder.faddeev-popov-ghost-lagrangian-and-rules`; Schwartz: `schwartz.rxi-faddeev-popov-lagrangian-and-propagators`; Weinberg II: `weinberg-2.covariant-gauge-ghost-propagator-and-vertex` |
 | Equal-time canonical commutators of a scalar field (`qft.equal-time-scalar-field-commutators`) | Peskin–Schroeder: `peskin-schroeder.canonical-quantization-real-field`; Schwartz: `schwartz.equal-time-scalar-field-commutation-relations` |
 | Faddeev–Popov gauge-orbit functional integral (`qft.faddeev-popov-gauge-orbit-functional-integral`) | Peskin–Schroeder: `peskin-schroeder.nonabelian-faddeev-popov-determinant-and-gauge-fixing`; Schwartz: `schwartz.faddeev-popov-gauge-orbit-determinant`; Weinberg II: `weinberg-2.faddeev-popov-gauge-fixed-functional-integral` |
 | Field Euler-Lagrange equation (`qft.field-euler-lagrange-equation`) | Peskin–Schroeder: `peskin-schroeder.field-euler-lagrange-equation`; Schwartz: `schwartz.euler-lagrange-and-klein-gordon-equations` |
 | Ghost-loop compensation of unphysical gauge modes (`qft.ghost-loop-compensation-of-unphysical-gauge-modes`) | Peskin–Schroeder: `peskin-schroeder.ghost-cancellation-of-unphysical-cut-states`; Weinberg II: `weinberg-2.ghost-loop-compensation-and-power-counting` |
 | Klein-Gordon canonical Hamiltonian (`qft.klein-gordon-canonical-hamiltonian`) | Peskin–Schroeder: `peskin-schroeder.klein-gordon-canonical-hamiltonian`; Schwartz: `schwartz.canonical-scalar-field-energy-density` |
-| Classical Klein-Gordon equation (`qft.klein-gordon-classical-equation`) | Peskin–Schroeder: `peskin-schroeder.klein-gordon-classical-equation`; Schwartz: `schwartz.euler-lagrange-and-klein-gordon-equations` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 

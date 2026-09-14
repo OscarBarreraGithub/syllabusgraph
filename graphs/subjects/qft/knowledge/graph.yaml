@@ -741,6 +741,41 @@ nodes:
     - 27
     note: Poses the momentum-quantization scattering test.
   notation: []
+- id: qft.continuum-rg-running-coupling-large-log-method
+  label: Continuum running-coupling method for large logarithms
+  summary: In the continuum RG, define a scale-dependent coupling, impose renormalization-scale
+    independence, and integrate its beta function to control large logarithms. Schwartz
+    gives the QED effective-charge leading-log route. Weinberg defines a coupling
+    at a sliding scale matched where perturbation theory applies; its integral solution
+    requires the running coupling stay small and beta not vanish between the reference
+    and target couplings. This continuum method remains distinct from Wilsonian cutoff-shell
+    integration and from changing the physical cutoff.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.rg-large-log-resummation
+    note: Schwartz’s continuum-QED effective-charge route resums the leading-log series
+      from reference-scale independence.
+  - project: weinberg-2
+    node: weinberg-2.sliding-scale-coupling-callan-symanzik-method
+    note: Weinberg’s sliding-scale route includes perturbative matching, small-running-coupling,
+      and no-intervening-beta-zero conditions.
+  evidence:
+  - source: schwartz
+    section: 23.1.1
+    pages:
+    - 419
+    - 420
+    - 421
+  - source: weinberg-2
+    section: '18.2'
+    pages:
+    - 119
+    - 120
+    - 121
+    - 122
+    - 123
 - id: qft.coulomb-potential-from-field-propagation
   label: Coulomb potential from field propagation
   summary: For a static point source J⁰=eδ³(x⃗), Lorenz-gauge Maxwell theory gives
@@ -2671,6 +2706,27 @@ nodes:
     - 40
     note: Develops the nonlinear scalar-gravity perturbative expansion.
   notation: []
+- id: qft.peskin-beta-flow-classes
+  label: Beta-function flow classes and fixed-point data
+  summary: A beta function can approach zero in the infrared, zero in the ultraviolet,
+    or a nonzero fixed point. The zero’s slope determines stability, and the fixed-point
+    existence, slope, and anomalous dimension are convention-independent even when
+    the coupling coordinate is not.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.beta-function-flow-classes
+    note: This retains Peskin and Schroeder’s one-coupling classification and its
+      scheme qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 425
+    - 426
+    - 427
+    - 428
 - id: qft.peskin-brst-restricted-unitarity-and-transverse-cuts
   label: Peskin–Schroeder BRST restricted unitarity and transverse cuts
   summary: After the auxiliary-field BRST state-space construction, the full unitary
@@ -2720,6 +2776,163 @@ nodes:
     note: The equal-time relations are introduced in the Schroedinger picture; the
       book says they also hold at a common time after switching to the Heisenberg
       picture.
+- id: qft.peskin-epsilon-wilson-fisher-beta
+  label: Epsilon-expanded Wilson–Fisher beta function
+  summary: Near four dimensions beta(lambda)=-(4-d)lambda+3 lambda-squared/(16 pi-squared)+higher
+    terms. For d below four the terms balance at a small nonzero Wilson–Fisher fixed
+    point; for d above four the coupling flows to zero at large distance.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.epsilon-expanded-wilson-fisher-beta
+    note: The result retains the epsilon expansion and its perturbatively small fixed-point
+      condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 435
+- id: qft.peskin-general-perturbation-rg-flow
+  label: General perturbation RG flow
+  summary: For a mass-independent scheme, adding coefficients C_i O_i to a massless
+    theory gives a multidimensional Callan–Symanzik flow for dimensionless perturbations
+    rho_i; canonical dimensions and operator anomalous dimensions both enter beta_i.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.general-perturbation-rg-flow
+    note: The statement preserves the source’s mass-independent scheme and C_i=rho_i
+      M^(4-d_i) normalization.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 433
+- id: qft.peskin-local-operator-heavy-w-motivation
+  label: Heavy-W exchange motivates a local operator
+  summary: At momentum transfer far below the W mass, W exchange is represented by
+    a local four-fermion interaction; renormalizing this short-distance effective
+    operator motivates local-operator matrix elements.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.heavy-w-local-operator-motivation
+    note: This is the Peskin–Schroeder heavy-W low-momentum motivation, not an all-scale
+      equality of the theories.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.4'
+    pages:
+    - 429
+- id: qft.peskin-local-operator-insertion-renormalization
+  label: Renormalization of local-operator insertions
+  summary: A composite local operator requires its own normalization in insertion
+    Green functions, whose anomalous dimension enters the Callan–Symanzik equation.
+    Equal-quantum-number operators can mix; conserved currents and the energy-momentum
+    tensor are protected cases.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalization-of-local-operator-insertions
+    note: This is the insertion-Green-function method with its source-specific mixing
+      and protection qualifications.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.4'
+    pages:
+    - 429
+    - 430
+- id: qft.peskin-massless-phi4-one-loop-beta
+  label: Massless phi-four one-loop beta function
+  summary: In Peskin and Schroeder’s lambda phi-four convention, one-loop vertex subtraction
+    gives beta(lambda)=3 lambda-squared/(16 pi-squared)+O(lambda-cubed), while the
+    field anomalous dimension starts at order lambda-squared.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.massless-phi4-one-loop-beta
+    note: The coefficient and normalization are retained in the source’s massless
+      phi-four convention.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 413
+- id: qft.peskin-operator-dimension-ir-relevance
+  label: Operator dimension and infrared relevance
+  summary: Near the free four-dimensional scalar theory, a perturbation’s scaling
+    power is set by its operator dimension. Operators of dimension greater than four
+    become less important at low momentum, giving Wilson’s irrelevant-operator classification.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.operator-dimension-ir-relevance
+    note: This is a near-free, small-coupling infrared classification, rather than
+      a blanket statement about all fixed points.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 434
+- id: qft.peskin-phi2-anomalous-dimension
+  label: Phi-squared mass-operator anomalous dimension
+  summary: Define phi-squared in massless phi-four theory through a nonzero-momentum
+    insertion and subtract its 1PI correction. Its leading anomalous dimension is
+    lambda/(16 pi-squared), distinct from additive renormalization of the mass held
+    at zero.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.mass-operator-anomalous-dimension
+    note: The result is specific to the source’s phi-squared insertion normalization
+      and massless-theory setup.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.4'
+    pages:
+    - 431
+    - 432
+- id: qft.peskin-renormalized-fixed-point-trajectory
+  label: Renormalized theory as a fixed-point trajectory
+  summary: In the Wilsonian account, sending the cutoff arbitrarily high selects trajectories
+    that pass arbitrarily close to a fixed point; irrelevant perturbations die away
+    while relevant and marginal parameters remain as renormalized couplings.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalized-theory-fixed-point-trajectory
+    note: This is the source’s Wilsonian cutoff-limit trajectory statement, not a
+      claim that every RG construction is a cutoff flow.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 407
+- id: qft.peskin-rg-noninvertible-flow
+  label: Wilsonian RG flow and noninvertibility
+  summary: Infinitesimal momentum-shell integrations generate a continuous trajectory
+    in Lagrangian space; this Wilsonian operation is not invertible, so the historical
+    name ‘group’ is formal rather than literal.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.rg-flow-not-invertible-group
+    note: Peskin and Schroeder’s shell-integration construction; it is retained apart
+      from continuum renormalization-scale flow.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 401
 - id: qft.photon-mediated-second-order-amplitude
   label: Photon-mediated second-order amplitude
   summary: Because electromagnetism couples electrons and muons through the photon
@@ -3149,6 +3362,82 @@ nodes:
     node: weinberg-1.scalar-lorentz-representation
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.schwartz-conserved-current-zero-anomalous-dimension
+  label: Conserved vector current has zero anomalous dimension
+  summary: For the external QED current, the insertion counterterm gives Z_J=Z_2 at
+    one loop and the bare-current relation yields zero running. The Ward–Takahashi
+    identity extends gamma_J=0 to all orders, with the stated charge-counting interpretation.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.conserved-current-zero-anomalous-dimension
+    note: The all-orders extension rests on the Ward–Takahashi identity, beyond the
+      displayed one-loop equality.
+  evidence:
+  - source: schwartz
+    section: 23.4.1
+    pages:
+    - 431
+    - 432
+- id: qft.schwartz-continuum-wilsonian-rg-distinction
+  label: Continuum and Wilsonian renormalization groups
+  summary: The Wilsonian RG changes a physical UV cutoff while compensating couplings
+    to preserve low-energy observables. Continuum RG expresses independence of renormalization
+    conditions after removing the cutoff; in dimensional regularization its arbitrary
+    scale is mu. Similar equations do not identify the procedures.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.continuum-and-wilsonian-rg-distinction
+    note: This explicit distinction prevents collapsing physical cutoff variation
+      with continuum renormalization-scale variation.
+  evidence:
+  - source: schwartz
+    section: 23 introduction
+    pages:
+    - 417
+    - 418
+- id: qft.schwartz-counterterm-rg-functions
+  label: Beta and mass anomalous dimensions from counterterms
+  summary: In d=4-epsilon QED, dimensionless renormalized parameters and bare-parameter
+    mu independence determine RG functions from Z factors. The source’s MS conventions
+    give beta through charge renormalization and gamma_m through Z_m; these are off-shell
+    scheme parameters, not pole masses.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+    note: This retains Schwartz’s dimensional-regularization and MS/off-shell qualification.
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 423
+    - 424
+    - 425
+    - 426
+- id: qft.schwartz-cs-green-function-rge
+  label: Callan–Symanzik equation for Green functions
+  summary: A mu-independent bare QED Green function is related by field Z factors
+    to a finite renormalized Green function. Differentiation gives explicit mu, beta,
+    mass-running, and external-field anomalous-dimension terms; an inserted operator
+    adds its anomalous dimension. Scheme names vary.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.callan-symanzik-green-function-rge
+    note: This is the Green-function equation in the source’s QED and scheme-variant
+      context.
+  evidence:
+  - source: schwartz
+    section: 23.4.3
+    pages:
+    - 433
+    - 434
 - id: qft.schwartz-equal-time-commutator-derivation
   label: Schwartz mode derivation of equal-time scalar-field commutators
   summary: In the Schwartz free-field route, the field mode expansion, its canonical
@@ -3176,6 +3465,117 @@ nodes:
   - source: schwartz
     note: The source explicitly limits the derivation to equal time and says the different-time
       calculation is more subtle.
+- id: qft.schwartz-external-lagrangian-operator-rg
+  label: External versus Lagrangian operator running
+  summary: External operators may carry momentum and need not be Lorentz scalars;
+    Lagrangian operators are Lorentz invariant, inserted at zero momentum, and commonly
+    described through Wilson-coefficient running. Their scale dependences cancel in
+    C_j O_j.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.external-operator-and-lagrangian-operator-rg
+    note: The correspondence preserves the external-versus-Lagrangian distinction
+      rather than treating their labels as identical objects.
+  evidence:
+  - source: schwartz
+    section: 23.4.2
+    pages:
+    - 432
+    - 433
+- id: qft.schwartz-four-fermi-toy-scalar-rg
+  label: Four-Fermi operator renormalization and running
+  summary: Below a heavy mediator, a local four-fermion coefficient is matched at
+    the heavy scale. In Schwartz’s neutral-scalar toy interaction, its one-loop UV
+    pole gives an anomalous dimension and evolution between matching and decay scales;
+    the actual left-handed weak operator has zero QED anomalous dimension in this
+    example.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.four-fermi-operator-rg-toy-scalar-route
+    note: The nonzero running is the neutral-scalar toy route and is not transferred
+      to the actual weak four-Fermi operator.
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 426
+    - 427
+    - 428
+    - 429
+- id: qft.schwartz-multiplicative-coefficient-solution
+  label: General solution for a multiplicatively running coefficient
+  summary: For mu dC/dmu=gamma(alpha) C and mu dalpha/dmu=beta(alpha), C evolves by
+    the exponential of the integral gamma(alpha)/beta(alpha) between the two coupling
+    values. This is the source’s general solution before its mass specialization.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.multiplicative-rg-coefficient-general-solution
+    note: The solution assumes multiplicative running of one coefficient; it does
+      not represent operator mixing.
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 429
+- id: qft.schwartz-qed-dimensional-transmutation
+  label: QED dimensional transmutation and Landau scale
+  summary: Integrating the leading QED beta function trades a dimensionless alpha
+    boundary value for Lambda_QED. The formal divergence at mu=Lambda_QED is the Landau
+    pole; physically the source qualifies QED by a scale ratio such as m_e/Lambda_QED.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.qed-dimensional-transmutation-and-landau-scale
+    note: This is the source’s leading-QED solution and its scale-ratio qualification.
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 425
+- id: qft.schwartz-unphysical-scale-logarithm-qualification
+  label: Unphysical scales and RG logarithms
+  summary: A logarithm of a physical scale is paired with a cutoff, subtraction point,
+    or mu. In dimensional regularization, the UV pole and ln mu-squared occur together;
+    mu is not a UV cutoff, and physical observables cancel its dependence between
+    loops and running parameters.
+  kind: assumption
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.rg-unphysical-scale-logarithm-qualification
+    note: The distinction between mu and a cutoff is retained as a scope condition
+      on the continuum-RG statements.
+  evidence:
+  - source: schwartz
+    section: 23.1.2–23.2
+    pages:
+    - 422
+    - 423
+- id: qft.schwartz-wilson-coefficients-matching-mixing
+  label: Wilson coefficients, matching, and mixing
+  summary: An effective Lagrangian contains local composite operators and finite Wilson
+    coefficients C_j. Set coefficients by matching or measurement at mu_0, then evolve
+    the mu-independent sum C_j O_j; mixing can require an RGE for the full sum rather
+    than independent coefficients.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.wilson-coefficients-operator-mixing-and-matching
+    note: The record retains finite-coefficient convention and the possibility of
+      operator and Lagrangian-term mixing.
+  evidence:
+  - source: schwartz
+    section: '23.4'
+    pages:
+    - 430
 - id: qft.second-quantization-many-mode-particle-interpretation
   label: Second quantization as many mode oscillators
   summary: 'Second quantization assigns a harmonic oscillator to each wavevector and
@@ -3456,6 +3856,152 @@ nodes:
     note: The chapter names Feynman trace technology and describes both its trace
       calculation and mass restoration.
   notation: []
+- id: qft.weinberg1-renormalizable-critical-surface
+  label: Renormalizable critical surface as a stable manifold
+  summary: 'Weinberg gives a small-coupling argument: for Lambda much less than Lambda_0,
+    deviations from an N-dimensional surface decay as positive powers while N_nm is
+    positive-definite. Nonrenormalizable couplings then become functions of N renormalizable
+    ones, but the conclusion is limited when that positivity fails.'
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.renormalizable-critical-surface
+    note: This is a conditional stable-surface result, not a generic fixed-point theorem.
+  evidence:
+  - source: weinberg-1
+    section: '12.4'
+    pages:
+    - 526
+    - 527
+    - 528
+- id: qft.weinberg1-wilson-conventional-tradeoffs
+  label: Wilson and conventional renormalization tradeoffs
+  summary: Wilson’s cutoff approach changes mathematical bookkeeping and can obscure
+    manifest symmetries or the simplicity of renormalizable QED while producing an
+    infinite cutoff-dependent EFT. At low energy its dominant couplings remain renormalizable;
+    after expression in observable masses and charges, its physical answers agree
+    with conventional renormalization.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.wilson-conventional-equivalence-and-tradeoffs
+    note: The source’s equivalence is physical-answer equivalence after observable
+      parametrization, not identity of intermediate couplings or conveniences.
+  evidence:
+  - source: weinberg-1
+    section: '12.4'
+    pages:
+    - 528
+- id: qft.weinberg2-fixed-point-anomalous-power
+  label: Fixed-point anomalous power scaling
+  summary: With Weinberg’s convention mu dN_mu/dmu=gamma(g_mu) N_mu, an operator contributes
+    E^(-gamma(g_*)) near a finite ultraviolet fixed point. Thus its matrix-element
+    power is D_*=D-gamma(g_*) for each operator, with gamma evaluated at the fixed
+    point.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.fixed-point-anomalous-power-scaling
+    note: This is restricted to the source’s finite ultraviolet fixed-point limit.
+  evidence:
+  - source: weinberg-2
+    section: 18.3(c)
+    pages:
+    - 133
+- id: qft.weinberg2-fixed-point-eigenvalue-invariance
+  label: Coordinate invariance of fixed-point stability eigenvalues
+  summary: A nonsingular redefinition of coupling coordinates relates fixed-point
+    stability matrices by similarity, so their eigenvalues are independent of the
+    coupling definition.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.fixed-point-eigenvalue-coordinate-invariance
+    note: The invariance is for stability eigenvalues under nonsingular coordinate
+      changes, not for all matrix entries.
+  evidence:
+  - source: weinberg-2
+    section: '18.4'
+    pages:
+    - 141
+- id: qft.weinberg2-high-energy-mode-elimination
+  label: RG as high-energy mode elimination
+  summary: Changing a sliding renormalization scale changes which virtual high-energy
+    degrees of freedom are represented explicitly; choosing the scale near the process
+    scale avoids large logarithms.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.rg-high-energy-mode-elimination
+    note: This is Weinberg’s continuum renormalized-fields interpretation of effective
+      virtual-mode scope and is retained separately from literal Wilsonian cutoff
+      integration.
+  evidence:
+  - source: weinberg-2
+    section: 18; 18.1
+    pages:
+    - 111
+    - 112
+- id: qft.weinberg2-mass-independent-rg-mass-flow
+  label: Mass-independent RG parameters and mass flow
+  summary: A scheme defined at zero bare masses treats masses as dimensionless running
+    parameters; their beta functions are proportional to the masses and include anomalous
+    dimensions of mass operators.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.mass-independent-renormalization-group-parameters
+    note: This preserves the source’s zero-bare-mass, mass-independent scheme condition.
+  evidence:
+  - source: weinberg-2
+    section: '18.4'
+    pages:
+    - 143
+    - 144
+- id: qft.weinberg2-nonrenormalizable-flow-asymptotic-safety
+  label: Nonrenormalizable flow and asymptotic safety
+  summary: Including every symmetry-allowed interaction gives an infinite-dimensional
+    coupling flow. A fixed point with finitely many attractive directions can leave
+    a critical surface with only finitely many free parameters.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.nonrenormalizable-flow-and-asymptotic-safety
+    note: This is the finite-attractive-direction fixed-point condition in the enlarged
+      coupling space, not a demonstration that a particular theory has such a point.
+  evidence:
+  - source: weinberg-2
+    section: '18.4'
+    pages:
+    - 142
+    - 143
+- id: qft.weinberg2-sliding-operator-anomalous-dimension
+  label: Sliding operator renormalization and anomalous dimensions
+  summary: For an off-shell operator, a finite scale-dependent normalization has its
+    own flow function. Integrating it supplies the anomalous scaling factor in a matrix
+    element.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.sliding-operator-renormalization-and-anomalous-dimension
+    note: The claim is about the source’s off-shell finite normalization, not a universal
+      normalization convention.
+  evidence:
+  - source: weinberg-2
+    section: '18.2'
+    pages:
+    - 123
+    - 124
+    - 125
+    - 126
 - id: qft.yang-mills-three-and-four-vector-vertices
   label: Three- and four-vector Yang–Mills vertices
   summary: Cubic and quartic terms of the non-Abelian field-strength Lagrangian give
@@ -4807,6 +5353,73 @@ edges:
     - 20
     note: The text first states promotion of phi and pi, then gives the continuous-system
       equal-time commutation relations.
+- id: qft.peskin-general-flow-to-epsilon-beta
+  from: qft.peskin-general-perturbation-rg-flow
+  to: qft.peskin-epsilon-wilson-fisher-beta
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Dimensional continuation of the general flow supplies the linear epsilon
+    contribution.
+  failure_mode: The fixed-point beta function lacks its canonical-dimension term.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 434
+    - 435
+- id: qft.peskin-general-flow-to-ir-relevance
+  from: qft.peskin-general-perturbation-rg-flow
+  to: qft.peskin-operator-dimension-ir-relevance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The operator-dimension classification is the small-coupling solution
+    of the general perturbation flow.
+  failure_mode: No scaling exponent identifies the irrelevant operators.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.5'
+    pages:
+    - 433
+    - 434
+- id: qft.peskin-insertion-to-phi2-anomalous-dimension
+  from: qft.peskin-local-operator-insertion-renormalization
+  to: qft.peskin-phi2-anomalous-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phi-squared calculation applies the local-insertion normalization
+    and anomalous-dimension framework.
+  failure_mode: The extra operator normalization and its anomalous dimension would
+    have no derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.4'
+    pages:
+    - 430
+    - 431
+    - 432
+- id: qft.peskin-phi4-beta-to-epsilon-beta
+  from: qft.peskin-massless-phi4-one-loop-beta
+  to: qft.peskin-epsilon-wilson-fisher-beta
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The epsilon-expanded flow retains the four-dimensional quadratic beta
+    contribution.
+  failure_mode: Only the canonical epsilon term remains, so the interacting fixed
+    point cannot be found.
+  evidence:
+  - source: peskin-schroeder
+    section: 12.2; 12.5
+    pages:
+    - 413
+    - 435
 - id: qft.peskin-schroeder.canonical-formalism-to-kg-hamiltonian
   from: qft.canonical-field-momentum-hamiltonian
   to: qft.klein-gordon-canonical-hamiltonian
@@ -5027,6 +5640,74 @@ edges:
     pages:
     - 176
     - 177
+- id: qft.schwartz-counterterms-to-cs-green-function
+  from: qft.schwartz-counterterm-rg-functions
+  to: qft.schwartz-cs-green-function-rge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Green-function equation uses beta, mass-running, and field anomalous-dimension
+    terms constructed from Z factors.
+  failure_mode: Its RG differential terms lack defined quantities.
+  evidence:
+  - source: schwartz
+    section: 23.2; 23.4.3
+    pages:
+    - 423
+    - 424
+    - 433
+    - 434
+- id: qft.schwartz-counterterms-to-dimensional-transmutation
+  from: qft.schwartz-counterterm-rg-functions
+  to: qft.schwartz-qed-dimensional-transmutation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The integration scale and Landau singularity follow by integrating the
+    leading beta function.
+  failure_mode: There is no running equation from which the integration scale can
+    arise.
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 425
+- id: qft.schwartz-counterterms-to-four-fermi-route
+  from: qft.schwartz-counterterm-rg-functions
+  to: qft.schwartz-four-fermi-toy-scalar-rg
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The toy four-Fermi calculation applies bare-coefficient independence
+    and counterterm RG to a new local coefficient.
+  failure_mode: Its UV pole cannot be converted into an anomalous dimension and running
+    G.
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 428
+    - 429
+- id: qft.schwartz-counterterms-to-multiplicative-solution
+  from: qft.schwartz-counterterm-rg-functions
+  to: qft.schwartz-multiplicative-coefficient-solution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Changing variables from scale to coupling uses the beta and anomalous-dimension
+    definitions.
+  failure_mode: The gamma-over-beta evolution cannot be formed.
+  evidence:
+  - source: schwartz
+    section: 23.2–23.3
+    pages:
+    - 425
+    - 426
+    - 429
 - id: qft.schwartz-mode-derivation-route-to-equal-time-commutators
   from: qft.schwartz-equal-time-commutator-derivation
   to: qft.equal-time-scalar-field-commutators
@@ -5048,6 +5729,23 @@ edges:
     - 25
     note: Derives the field commutator from the mode algebra, defines the conjugate
       momentum, and gives the canonical equal-time commutator.
+- id: qft.schwartz-wilson-coefficients-to-external-operator
+  from: qft.schwartz-wilson-coefficients-matching-mixing
+  to: qft.schwartz-external-lagrangian-operator-rg
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The comparison relies on mu d(C_j O_j)/dmu=0 and locates scale dependence
+    on the coefficient or insertion.
+  failure_mode: The shared RG information of the two operator roles cannot be established.
+  evidence:
+  - source: schwartz
+    section: '23.4'
+    pages:
+    - 430
+    - 432
+    - 433
 - id: qft.schwartz.field-expansion-to-equal-time-commutators
   from: qft.free-scalar-field-mode-expansion
   to: qft.schwartz-equal-time-commutator-derivation
@@ -5657,6 +6355,72 @@ edges:
     pages:
     - 3
     note: Equations (15.1.3), (15.1.5), and (15.1.6) state this construction.
+- id: qft.weinberg2-mode-elimination-to-sliding-coupling
+  from: qft.weinberg2-high-energy-mode-elimination
+  to: qft.continuum-rg-running-coupling-large-log-method
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The sliding-scale construction addresses logarithms arising when virtual-mode
+    scope is poorly matched to the process scale.
+  failure_mode: Choosing and evolving a sliding scale has no source-defined purpose.
+  evidence:
+  - source: weinberg-2
+    section: 18; 18.2
+    pages:
+    - 111
+    - 112
+    - 119
+    - 120
+- id: qft.weinberg2-operator-flow-to-fixed-point-power
+  from: qft.weinberg2-sliding-operator-anomalous-dimension
+  to: qft.weinberg2-fixed-point-anomalous-power
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fixed-point anomalous power applies the integrated operator normalization
+    as the coupling approaches the fixed point.
+  failure_mode: The shift of dimensional power cannot be derived from operator flow.
+  evidence:
+  - source: weinberg-2
+    section: 18.2; 18.3(c)
+    pages:
+    - 124
+    - 133
+- id: qft.weinberg2-operator-flow-to-mass-flow
+  from: qft.weinberg2-sliding-operator-anomalous-dimension
+  to: qft.weinberg2-mass-independent-rg-mass-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass beta functions use anomalous dimensions of their mass operators.
+  failure_mode: The anomalous-dimension terms in the running masses are unavailable.
+  evidence:
+  - source: weinberg-2
+    section: 18.2; 18.4
+    pages:
+    - 124
+    - 143
+    - 144
+- id: qft.weinberg2-sliding-coupling-to-operator-flow
+  from: qft.continuum-rg-running-coupling-large-log-method
+  to: qft.weinberg2-sliding-operator-anomalous-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The operator normalization flow is evaluated along the same running-coupling
+    trajectory.
+  failure_mode: The anomalous-dimension scale dependence cannot be evaluated.
+  evidence:
+  - source: weinberg-2
+    section: '18.2'
+    pages:
+    - 123
+    - 124
 groups:
 - id: qft.brst-and-physical-states
   title: BRST symmetry and physical states
@@ -5692,6 +6456,8 @@ groups:
   title: Radiation and quantization
   question: Why do the thermal spectrum and atomic emission require quantized radiation
     and field degrees of freedom?
+- id: qft.renormalization-group
+  title: Renormalization-group methods
 - id: qft.scalar-field-foundations
   title: Classical and canonical scalar-field foundations
 - id: qft.second-quantized-scalar-field

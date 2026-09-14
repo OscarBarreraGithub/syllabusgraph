@@ -54,6 +54,12 @@ checks out; primary and explicit context pages together are capped at 80 pages.
 Workers and reviewers may use only the packet pages, and reviewers should check
 the original rendered page when the text is ambiguous.
 
+Before reporting a registered original as missing, check its path in the
+project's `.syllabusgraph/sources/index.json`; stored paths are relative to that
+project. Ordinary repository searches can hide ignored source files. Inspect
+the registered path directly, or include ignored files in a search limited to
+that private source directory. This does not expand the packet's reading scope.
+
 Rendered source pages and screenshots are private source material too. Save
 inspection images under the project's ignored `.syllabusgraph/`, including
 temporary renders, rather than an unignored top-level temporary directory.

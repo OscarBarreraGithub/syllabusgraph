@@ -6,6 +6,8 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Explain how to locate registered originals when repository searches hide
+  ignored source files, while retaining the packet's reading scope.
 - Clarify primary-only `pages_read`, separately recorded context coverage, and
   private visual equation checks when the registered text omits symbols.
 - Support explicit removal of an accepted edge through final adjudication.
