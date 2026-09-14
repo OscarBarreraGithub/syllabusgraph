@@ -143,3 +143,63 @@ units:
       - 202
       - 210
     affected_records: []
+- id: full-006
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Page-238 witness boundary and cross-page qualification
+    alternatives:
+    - Use verified witnesses and cite both pages in the existing assumption node.
+    - Split the cross-page qualification into a second assumption node with separate
+      evidence.
+    resolution: Use verified page-238 and page-239 witnesses and cite both pages.
+    rationale: The footnote marker is joined to the condition name in extracted text,
+      so a quote ending there cannot pass the whole-word guard. The next page completes
+      the massive-constituent qualification. Keeping one assumption node with evidence
+      on both pages is accurate and avoids an artificial split.
+    evidence:
+    - source: weinberg-2
+      section: '19.9'
+      pages:
+      - 238
+      - 239
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.persistent-mass-condition-conjecture
+  - finding: 1
+    issue: Missing mass-ratio input for the numerical nucleon estimate
+    alternatives:
+    - Add one prerequisite edge scoped to the numerical estimate.
+    - Split the numerical estimate into a separate result node with its own mass-ratio
+      edge.
+    resolution: Add a prerequisite edge used only to derive the -2.5 MeV estimate.
+    rationale: The symbolic mass relation is derived independently from the first-order
+      shift and SU(3) matrix-element reduction. The source then combines that relation
+      with earlier light-quark mass ratios to obtain the numerical estimate. A narrowly
+      worded edge records that additional input without making it part of the relation
+      proof or the exercise.
+    evidence:
+    - source: weinberg-2
+      section: '19.7'
+      pages:
+      - 233
+    affected_records:
+    - kind: edges
+      id: weinberg-2.su3-pseudoscalar-mass-ratios-to-nucleon-estimate
+  - finding: 2
+    issue: Page-227 witness is an incomplete equation opening
+    alternatives:
+    - Use the complete derivational sentence preceding Eq. (19.7.8).
+    - Use the full normalized OCR rendering of Eq. (19.7.8).
+    resolution: Replace it with the complete derivational sentence for Eq. (19.7.8).
+    rationale: The sentence identifies the algebraic operation that yields the U transformation
+      law and matches the normalized page text at whole-word boundaries. It is an
+      operative source witness and avoids preserving a corrupted OCR equation as public-facing
+      evidence.
+    evidence:
+    - source: weinberg-2
+      section: '19.7'
+      pages:
+      - 227
+    affected_records: []
