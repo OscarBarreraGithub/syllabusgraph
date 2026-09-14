@@ -1061,3 +1061,141 @@ units:
       - 648
       - 649
     affected_records: []
+- id: full-013
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: ABJ alternative edges still carried compulsory necessity.
+    alternatives:
+    - Keep one shared ABJ target and mark all three route edges typical.
+    - Create three route-specific target nodes with necessary edges and then join
+      their conclusions.
+    resolution: Keep the shared ABJ result and mark each independent route edge typical.
+    rationale: Pages 659-667 give point-split, triangle, and functional-measure derivations
+      of the same anomaly. Each route is complete without the other two, so typical
+      alternative edges preserve all methods without imposing all three.
+    evidence:
+    - source: peskin-schroeder
+      section: '19.2'
+      pages:
+      - 659
+      - 661
+      - 664
+      - 667
+    affected_records:
+    - kind: edges
+      id: peskin-schroeder.e-ps013-abj-point-split-route
+    - kind: edges
+      id: peskin-schroeder.e-ps013-abj-triangle-route
+    - kind: edges
+      id: peskin-schroeder.e-ps013-abj-measure-route
+  - finding: 1
+    issue: Eq. (19.80) lacked its coefficient, and the bounded chiral-gauge regulator
+      prescription was absent.
+    alternatives:
+    - Record the exact coefficient and add the separate bounded regulator method.
+    - Omit the even-dimensional result and chiral-gauge prescription as unresolved
+      source material.
+    resolution: Record exact Eq. (19.80) and add the bounded chiral-gauge gamma-five
+      prescription.
+    rationale: The rendered equation fixes the sign and normalization for d=2n. Pages
+      681-682 separately limit the formal anticommuting-gamma-five prescription by
+      tensor structure and loop order and state the counterterm fallback.
+    evidence:
+    - source: peskin-schroeder
+      section: '19.2'
+      pages:
+      - 667
+    - source: peskin-schroeder
+      section: '19.4'
+      pages:
+      - 681
+      - 682
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.fujikawa-even-dimensional-anomaly
+    - kind: nodes
+      id: peskin-schroeder.chiral-gauge-gamma5-calculation-prescription
+  - finding: 2
+    issue: The current-algebra Higgs record used a later multi-coupling formula without
+      citing that specialization.
+    alternatives:
+    - Restore the common-coupling formula proved on page 700.
+    - Retain g_a g_b and add page 718 with an explicit electroweak-specialization
+      qualification.
+    resolution: Restore the common-coupling mass formula proved in the cited current-algebra
+      construction.
+    rationale: Equation (20.56) gives (m squared)_ab=g squared F_aj F_bj for one gauged
+      group G. Keeping that convention makes the record exact; the distinct SU(2)-U(1)
+      couplings remain in the later Higgs-sector treatment.
+    evidence:
+    - source: peskin-schroeder
+      section: '20.1'
+      pages:
+      - 698
+      - 699
+      - 700
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.current-algebra-higgs-mass-construction
+  - finding: 3
+    issue: Corrected results and dependent problem branches still lacked seven jointly
+      used inputs.
+    alternatives:
+    - Add seven explicit necessary use-level edges to the existing records.
+    - Merge each dependent result or problem branch into its input node and remove
+      its independent identity.
+    resolution: Add seven necessary use-level edges while retaining the independently
+      useful records and problem branches.
+    rationale: Each added edge corresponds to an equation, method, or earlier problem
+      result explicitly used by the target. The source material is applied rather
+      than rederived, so use is the minimum sufficient mastery; no example is made
+      an alternative route.
+    evidence:
+    - source: peskin-schroeder
+      section: 19.2-19.3
+      pages:
+      - 664
+      - 665
+      - 666
+      - 667
+      - 669
+      - 670
+      - 671
+    - source: peskin-schroeder
+      section: 20.1-20.3
+      pages:
+      - 693
+      - 694
+      - 697
+      - 702
+      - 703
+      - 704
+      - 710
+      - 711
+      - 722
+      - 723
+    - source: peskin-schroeder
+      section: Problems 19.1, 20.3, and 20.5
+      pages:
+      - 686
+      - 687
+      - 728
+      - 729
+      - 730
+    affected_records:
+    - kind: edges
+      id: peskin-schroeder.e-ps013-fujikawa-even-d
+    - kind: edges
+      id: peskin-schroeder.e-ps013-pion-pole-pseudo-mass
+    - kind: edges
+      id: peskin-schroeder.e-ps013-nonabelian-su3-exact
+    - kind: edges
+      id: peskin-schroeder.e-ps013-ew-current-z-polarization
+    - kind: edges
+      id: peskin-schroeder.e-ps013-global-law-flow-check
+    - kind: edges
+      id: peskin-schroeder.e-ps013-interference-z-peak
+    - kind: edges
+      id: peskin-schroeder.e-ps013-mass-basis-2hdm
