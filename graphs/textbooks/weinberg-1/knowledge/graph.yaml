@@ -620,6 +620,23 @@ nodes:
   - source: weinberg-1
     note: Superscript c labels the charge-conjugate particle; φ⁺c† is the adjoint
       of its annihilation field.
+- id: weinberg-1.compton-tree-amplitude-and-laboratory-kinematics
+  label: Tree-level Compton amplitude and laboratory kinematics
+  summary: Spinor-QED rules give two lowest-order electron-exchange diagrams for γ(k,e)+e(p,σ)→γ(k′,e′)+e(p′,σ′).
+    In the laboratory frame p=(m,0), the phase-space delta function fixes the scattered
+    photon energy ω′=mω/[m+ω(1−cosθ)] and produces the laboratory differential-cross-section
+    factor multiplying |M|².
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 362
+    - 363
+    - 364
+    note: The section constructs the two-diagram amplitude, defines M and flux, then
+      specializes to a rest initial electron and derives the energy relation and cross-section
+      measure.
 - id: weinberg-1.connected-amplitude-separation-and-single-delta-condition
   label: Connected amplitudes, separation, and the single-delta condition
   summary: 'Cluster decomposition is equivalent to a connected S-matrix element vanishing
@@ -808,6 +825,64 @@ nodes:
     - 261
     note: The text identifies the surviving delta-function pairings after the vacuum
       terms vanish.
+- id: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
+  label: Coulomb-gauge reduction of the auxiliary potential
+  summary: Choose Coulomb gauge ∇·A=0 by solving ∇²λ=−∇·A. For matter Lagrangians
+    with no derivatives of Aμ, Gauss's law then solves the auxiliary A⁰ from J⁰, leaving
+    transverse spatial A fields as the electromagnetic degrees of freedom.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 346
+    note: The source gives the gauge-fixing Poisson equation, the stated class of
+      matter Lagrangians, and the explicit conclusion that A⁰ is auxiliary.
+- id: weinberg-1.coulomb-gauge-constraint-structure
+  label: First-class electromagnetic constraints and gauge fixing
+  summary: Because A⁰ has no time derivative, Π⁰=0 is a primary constraint, and its
+    field equation gives Gauss's-law secondary constraint ∂iΠi+J⁰=0. Their vanishing
+    Poisson brackets make them first class, so A⁰ is not solved as an ordinary dynamical
+    variable and a gauge condition is required.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 344
+    - 345
+    note: The source identifies the primary and secondary constraints and explains
+      why the vanishing constraint brackets make them first class.
+- id: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
+  label: Coulomb-gauge Hamiltonian with instantaneous Coulomb energy
+  summary: Use the transverse momentum Π⊥=Π−∇A⁰, which commutes with matter variables,
+    to Legendre-transform the constrained theory. For a current Jμ independent of
+    Aμ, the Hamiltonian contains free transverse-field energy, −J·A, matter energy,
+    and the J⁰A⁰ term, which is the Coulomb energy.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.3'
+    pages:
+    - 349
+    - 350
+    note: The source introduces Π⊥ to avoid matter brackets and derives the Hamiltonian,
+      identifying the J⁰A⁰ contribution as Coulomb energy.
+- id: weinberg-1.coulomb-gauge-transverse-dirac-commutators
+  label: Coulomb-gauge transverse Dirac commutators
+  summary: After eliminating A⁰, the Coulomb condition and Gauss constraint form a
+    nonsingular second-class pair. Quantizing with i times their Dirac brackets gives
+    the transverse equal-time A–Π commutator and zero A–A and Π–Π commutators, consistent
+    with both constraints.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.3'
+    pages:
+    - 347
+    - 348
+    note: The text identifies the non-singular constraint matrix, invokes the Dirac-bracket
+      prescription, and states that the resulting commutators are constraint-consistent.
 - id: weinberg-1.covariant-propagator-local-contact-compensation
   label: Massive-particle covariant propagators with local contact compensation
   summary: For massive particles, an off-shell covariant extension of a spin numerator
@@ -1245,6 +1320,36 @@ nodes:
     - 225
     note: Equations (5.5.42)–(5.5.43) derive the free Dirac equation and explain its
       relation to the parity-completed representation.
+- id: weinberg-1.dirac-gamma-even-trace-pairing-formula
+  label: Even Dirac-gamma trace pairing formula
+  summary: The trace of 2N Dirac gamma matrices is four times the signed sum over
+    all pairings of their spacetime indices, with (2N−1)!! distinct pairings. Odd
+    gamma traces vanish.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 372
+    - 373
+    note: The appendix gives the general pairing formula with its factor four, counts
+      the pairings, supplies examples, and states the odd-trace result.
+- id: weinberg-1.dirac-gamma-trace-induction-proof
+  label: Inductive proof of the gamma-trace pairing formula
+  summary: Use the Clifford anticommutation relation to commute the first matrix through
+    the trace, and use cyclicity so the leftover commutator term is the original trace.
+    The two-gamma trace is the base case; the resulting recurrence proves the signed
+    pairing formula by induction.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    - 374
+    note: The source supplies the two-matrix base case, the commutator/cyclicity recurrence,
+      the induction statement, and the similarity-transformation argument for odd
+      traces.
 - id: weinberg-1.dirac-hole-theory
   label: Dirac hole theory
   summary: Filling the negative-energy electron states blocks downward transitions
@@ -1633,6 +1738,20 @@ nodes:
     - 328
     note: The source defines both classes and evaluates the massive-vector constraint
       matrix.
+- id: weinberg-1.four-dimensional-p-form-field-content
+  label: Four-dimensional p-form gauge-field content
+  summary: 'In four dimensions the nontrivial cases are p=0,1,2: a zero-form with
+    shift symmetry is a massless scalar with derivative interactions, a one-form is
+    electrodynamics with a conserved vector current, and a two-form is dual to the
+    zero-form and hence to that derivatively coupled scalar.'
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 372
+    note: The source explicitly enumerates p=0,1,2 in four dimensions and identifies
+      each theory.
 - id: weinberg-1.fourier-energy-denominator-dyson-route
   label: Fourier energy-denominator route to the Dyson series
   summary: Representing each old-fashioned energy denominator by its convergent time
@@ -1718,6 +1837,52 @@ nodes:
     pages:
     - 62
     note: Takes the low-velocity limit and discusses its phase and enlarged algebra.
+- id: weinberg-1.gamma-trace-cyclicity
+  label: Cyclicity and commutator invariance of Dirac traces
+  summary: Trace cyclicity makes the trace of a commutator vanish. In the appendix
+    proof this identifies the final commutator term with the original trace after
+    it has been moved around the product.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The proof explicitly says all commutators have zero trace and uses this
+      to equate the remaining term to the left-hand side.
+- id: weinberg-1.gamma5-trace-identities
+  label: Gamma-five trace identities
+  summary: Traces containing γ⁵ vanish for an odd number of other gamma matrices and
+    for zero or two such matrices. The four-gamma γ⁵ trace is proportional to the
+    totally antisymmetric tensor, with Weinberg's convention giving Tr(γ⁵γμγνγργσ)=4iεμνρσ;
+    longer cases reduce by the same methods as ordinary traces.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 374
+    note: The appendix states the vanishing cases, antisymmetry argument, epsilon
+      convention, four-gamma result, and reduction of longer traces.
+  notation:
+  - source: weinberg-1
+    note: The displayed sign is tied to the source convention ε0123=−1.
+- id: weinberg-1.gauge-invariant-maxwell-action-and-equations
+  label: Gauge-invariant Maxwell action and equations
+  summary: The photon action −¼∫FμνFμν is, up to normalization, the unique gauge-invariant
+    functional quadratic in Fμν without higher derivatives. Together with the matter
+    current it yields the inhomogeneous Maxwell equations, while F=dA gives the homogeneous
+    equations; a Proca mass term violates the local gauge invariance.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.1'
+    pages:
+    - 342
+    - 343
+    note: The text states the uniqueness qualification and identifies the inhomogeneous
+      and homogeneous Maxwell equations; it then notes that a mass term violates gauge
+      invariance.
 - id: weinberg-1.general-causal-field-clebsch-gordan-construction
   label: General causal field from Clebsch-Gordan coefficients
   summary: For a massive field of type (A,B), the rest-frame coefficients are the
@@ -2398,6 +2563,29 @@ nodes:
     - 313
     - 314
     note: Equations (7.3.49)–(7.3.52) give the local current commutators.
+- id: weinberg-1.local-gauge-invariance-and-minimal-coupling
+  label: Local U(1) gauge invariance from minimal coupling
+  summary: For charge-eigenfields, promoting a global phase symmetry to an arbitrary
+    spacetime-dependent phase requires a vector potential transforming by a derivative
+    and the covariant derivative DμΨ. A matter Lagrangian built from Ψ and DμΨ is
+    locally invariant, and its variation with respect to Aμ is the conserved electric
+    current. Current conservation fixes charge ratios, while the absolute charge scale
+    also depends on the normalization of Aμ.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.1'
+    pages:
+    - 341
+    - 342
+    - 343
+    note: The section derives the conserved current from the global symmetry, states
+      the joint local transformations, constructs the covariant derivative, and qualifies
+      charge normalization.
+  notation:
+  - source: weinberg-1
+    note: The interacting potential and field strength are Aμ and Fμν; Ψ denotes a
+      Heisenberg-picture matter field of charge qι.
 - id: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
   label: Local scalar interaction and microcausal Lorentz invariance
   summary: Writing V(t)=∫d³x H_int(x,t) with H_int a scalar turns the Dyson terms
@@ -3101,6 +3289,51 @@ nodes:
     - 149
     note: The source applies the optical theorem to bound ΔΩ and names the narrowing
       forward feature a diffraction peak.
+- id: weinberg-1.p-form-exterior-derivative-and-local-exactness
+  label: Exterior derivative, closed forms, and local exactness
+  summary: A p-form is an antisymmetric covariant rank-p tensor; its antisymmetrized
+    derivative d produces a (p+1)-form and satisfies d²=0. Thus exact forms are closed,
+    and on a smoothly contractible region Poincaré's theorem makes every closed form
+    exact; on multiply connected spaces this global implication can fail.
+  kind: concept
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 369
+    - 370
+    note: The source defines p-forms and d²=0, states Poincaré's theorem with its
+      contractible-region qualification, and gives the multiply-connected caveat.
+- id: weinberg-1.p-form-gauge-action-and-conserved-current
+  label: p-form gauge action, field strength, and current conservation
+  summary: A massless p-form gauge potential has δA=dQ and gauge-invariant field strength
+    F=dA. The Maxwell-like action couples A to an antisymmetric p-form current J;
+    gauge invariance requires the stated divergence-free current condition, and its
+    Euler–Lagrange equation is the p-form Maxwell equation.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    - 371
+    note: The source writes the p-form gauge transformation, field strength, action,
+      current-conservation condition, and Euler–Lagrange equation.
+- id: weinberg-1.p-form-gauge-duality
+  label: Duality of p-form gauge fields
+  summary: In D dimensions, dualize the (p+1)-form field strength and p-form current.
+    Subject to local exactness, the p-form equations imply a dual (D−p−2)-form gauge
+    field φ with its own gauge transformation; p=D−1 is the no-degree-of-freedom exception.
+    Thus the nontrivial p-form cases p≤D−2 are equivalent to their dual-form theories.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 371
+    - 372
+    note: The source carries out the dual-current and dual-field argument, states
+      the p=D−1 exception, and concludes the p↔D−p−2 equivalence.
 - id: weinberg-1.parity-angular-momentum-inference-and-weak-violation
   label: Parity inference from angular momentum and weak-interaction violation
   summary: Parity covariance makes an amplitude even or odd under simultaneous momentum
@@ -3319,6 +3552,44 @@ nodes:
     - 188
     note: The packet states the result, derives its perturbative connected contribution
       count, and qualifies the nonperturbative status.
+- id: weinberg-1.photon-polarization-density-matrix-and-spin-averaging
+  label: Photon polarization mixtures and unobserved-spin sums
+  summary: A photon state may be circular, linear, or elliptical through a normalized
+    helicity superposition. A statistical mixture is represented by a positive unit-trace
+    transverse density matrix and is equivalent to two orthonormal polarization eigenvectors
+    with probabilities; unpolarized initial photons are averaged over either orthonormal
+    pair, while unobserved final polarizations and fermion spins are summed.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 359
+    - 360
+    - 361
+    note: The source defines helicity superpositions and polarization types, diagonalizes
+      the polarization density matrix, and gives the unpolarized and unobserved-spin
+      prescriptions.
+- id: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  label: Covariant photon propagator after Coulomb-contact cancellation
+  summary: The transverse Coulomb-gauge photon propagator differs from the covariant
+    −iημν/[(2π)⁴(q²−iε)] by terms longitudinal in q and a time-local term. Weinberg's
+    in-scope current-conservation argument removes the longitudinal terms and identifies
+    a local term that cancels the instantaneous Coulomb interaction; he explicitly
+    calls that argument heuristic, with a detailed diagrammatic justification and
+    path-integral treatment deferred outside the packet. The resulting momentum-space
+    rules use the covariant propagator and omit the Coulomb term.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 353
+    - 354
+    - 355
+    note: The source constructs the Coulomb-gauge propagator, calls the conservation
+      argument hand-waving, and states the effective covariant rule and dropping of
+      Coulomb interaction.
 - id: weinberg-1.pion-muon-resolution-yukawa-meson
   label: Pion-muon distinction resolves the Yukawa-meson identification
   summary: 'The mesons prevalent in low-altitude cosmic rays interact too weakly with
@@ -3427,6 +3698,24 @@ nodes:
     - 327
     note: The source lists the defining algebraic relations for the Poisson bracket
       before introducing constraints.
+- id: weinberg-1.polarized-klein-nishina-cross-section
+  label: Polarized Klein–Nishina Compton cross-section
+  summary: Average over unobserved initial and final electron spins using Dirac spin
+    sums, choose the stated transverse laboratory gauge, and reduce the amplitude
+    square to gamma traces. For linear photon polarizations this yields Weinberg's
+    polarized laboratory Klein–Nishina differential cross-section, including its dependence
+    on e·e′ and the scattering geometry.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 365
+    - 366
+    - 367
+    - 368
+    note: The source specifies the spin average, gauge and trace reduction, evaluates
+      the linear-polarization traces, and combines the result into Eq. (8.7.39).
 - id: weinberg-1.positron-antiparticle-evidence
   label: Positron evidence for an oppositely charged equal-mass antiparticle
   summary: The cosmic-ray track interpreted as a positron had the curvature of a positive
@@ -3579,6 +3868,32 @@ nodes:
   notation:
   - source: weinberg-1
     note: The coherent state is Φ_λ and its annihilation eigenvalues are λ(q).
+- id: weinberg-1.problem-charged-massive-vector-gauge-lagrangian
+  label: 'Problem: gauge-invariant charged massive-vector Lagrangian'
+  summary: Write a gauge-invariant Lagrangian for a charged massive vector field interacting
+    with the electromagnetic field.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 4 states this construction task.
+- id: weinberg-1.problem-charged-scalar-coulomb-quantization
+  label: 'Problem: charged-scalar electrodynamics in Coulomb gauge'
+  summary: Canonically quantize a charged scalar interacting with electromagnetism
+    in Coulomb gauge; express the Hamiltonian using A, Φ, Φ† and their canonical conjugates,
+    then evaluate the interaction-picture V(t) in terms of interaction-picture fields
+    and derivatives.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    - 375
+    note: Problem 2 specifies the charged scalar Lagrangian and Coulomb gauge on p.
+      374 and completes its Hamiltonian and interaction-picture request on p. 375.
 - id: weinberg-1.problem-connected-s-matrix-generating-functionals
   label: 'Problem: relate full and connected S-matrix generating functionals'
   summary: Define bosonic generating functionals from full S-matrix elements and from
@@ -3650,6 +3965,30 @@ nodes:
     pages:
     - 166
     note: Problem 4 explicitly asks for the derivation of (3.5.8) from (3.5.3).
+- id: weinberg-1.problem-electron-electron-scattering-cross-section
+  label: 'Problem: electron–electron scattering cross-section'
+  summary: Calculate the lowest-order-in-e differential cross-section for electron–electron
+    scattering when neither the initial nor final spins are measured.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 gives the process, order, observable, and spin condition.
+- id: weinberg-1.problem-electron-muon-annihilation-cross-sections
+  label: 'Problem: e⁺e⁻→μ⁺μ⁻ cross-sections'
+  summary: Calculate the lowest-order-in-e differential and total cross-sections for
+    e⁺e⁻→μ⁺μ⁻ using the simplest electron–muon electrodynamics Lagrangian, with neither
+    electron nor muon spins observed.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    note: Problem 1 gives the process, perturbative order, unobserved-spin condition,
+      and Lagrangian qualification.
 - id: weinberg-1.problem-galilean-central-charges
   label: 'Problem: derive Galilean algebra and irreducible central charges'
   summary: Problem asks for a direct derivation of Galilean-generator commutators
@@ -3862,6 +4201,19 @@ nodes:
     - 166
     note: Problem 2 separately requests the total peak cross-section after asking
       for the branching ratio.
+- id: weinberg-1.problem-scalar-compton-cross-sections
+  label: 'Problem: scalar Compton cross-sections'
+  summary: Using the results of the charged-scalar Coulomb-gauge quantization problem,
+    calculate the lowest-order-in-e differential and total cross-sections for photon
+    scattering by a massive charged scalar particle.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 3 explicitly calls for the preceding problem's results and states
+      the scalar target and order.
 - id: weinberg-1.problem-scalar-vector-canonical-quantization
   label: 'Problem: scalar-vector canonical quantization'
   summary: Canonically quantize a complex scalar coupled by a covariant derivative
@@ -4101,6 +4453,20 @@ nodes:
     - 131
     note: The source writes the PT consequence for nuclear beta decay and states its
       contradiction with the polarized Co60 observation.
+- id: weinberg-1.qed-loop-expansion-parameter
+  label: QED loop expansion parameter
+  summary: For a connected trivalent QED diagram, loop and line counting together
+    with vertex, propagator, and Euclidean loop-measure factors identifies e²/(16π²)=α/(4π)
+    as the numerical suppression factor for each additional loop, apart from fixed-external-line
+    factors.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 358
+    note: The source states L=I−V+1 and 2I+E=3V, counts the factors, and identifies
+      the loop expansion parameter.
 - id: weinberg-1.quantum-spontaneous-emission
   label: Quantum-field derivation of spontaneous and induced emission
   summary: Quantizing radiation makes an emission matrix element carry sqrt(n_k+1),
@@ -4547,6 +4913,42 @@ nodes:
     - 204
     note: The source rules out Fermi statistics for a nonzero spinless field and states
       equal mass as necessary and sufficient together with equal coefficient magnitudes.
+- id: weinberg-1.spinor-qed-lagrangian-current
+  label: Minimal spinor QED Lagrangian and current
+  summary: For one charge −e spin-½ species of mass m, the simplest Lorentz- and gauge-invariant
+    Lagrangian gives electromagnetic current Jμ=−ie ψ̄γμψ. Its interaction-picture
+    Hamiltonian coupling is +ie∫d³x ψ̄γμψ aμ, and the formulation also applies to
+    muons and other such fermions.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 355
+    - 356
+    note: The text fixes the field content, charge, and mass, states the simplest
+      invariant Lagrangian and current, and writes the interaction-picture coupling.
+  notation:
+  - source: weinberg-1
+    note: Weinberg uses a metric/sign convention in which the fermion propagator denominator
+      is k²+m²−iε and slash notation is γμvμ.
+- id: weinberg-1.spinor-qed-momentum-space-rules
+  label: Momentum-space Feynman rules for spinor QED
+  summary: For each connected spinor-QED diagram, attach a momentum-conserving eγμ
+    vertex factor, the appropriate electron, positron, and photon external spinors
+    or polarization vectors, Dirac and photon internal propagators, integrate internal
+    four-momenta, sum indices, and include the established combinatoric and fermionic
+    signs before summing diagrams.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 356
+    - 357
+    - 358
+    note: The source gives the diagrams, vertex factor, all external and internal
+      line factors, integration/summation, and sign qualification.
 - id: weinberg-1.ss-dagger-unitarity-identity
   label: SS† unitarity identity for reverse inclusive transitions
   summary: Applying SS†=1 to the interacting S-matrix yields a forward-amplitude identity
@@ -4708,6 +5110,27 @@ nodes:
     - 306
     note: The text analyzes the momentum shift and concludes that partial-integration-related
       densities are quantum equivalent.
+- id: weinberg-1.transverse-free-photon-interaction-picture
+  label: Transverse free-photon interaction-picture field
+  summary: Split the Coulomb-gauge Hamiltonian into H₀ and V, retaining transverse
+    A and Π. In the interaction picture a⁰=0, ∇·a=0, and □a=0; its two transverse
+    polarization modes have p⁰=|p| and bosonic operator brackets that reproduce the
+    constrained equal-time commutators.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '8.4'
+    pages:
+    - 350
+    - 351
+    - 352
+    - 353
+    note: These pages make the H₀/V split, derive the transverse wave equation, give
+      the mode expansion and brackets, and state the interaction-picture interaction.
+  notation:
+  - source: weinberg-1
+    note: The interaction-picture electromagnetic field is aμ=(0,a); the polarization
+      index has two values and p⁰=|p|.
 - id: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
   label: Two-body angular-momentum-coupled partial-wave basis
   summary: For two nonidentical massive particles, Clebsch–Gordan coefficients first
@@ -4771,6 +5194,21 @@ nodes:
     - 151
     note: The text derives the H-theorem from the other unitarity relation and explicitly
       excludes Born and time-reversal assumptions.
+- id: weinberg-1.unpolarized-klein-nishina-and-thomson-limit
+  label: Unpolarized Klein–Nishina formula and Thomson limit
+  summary: Averaging the incident photon polarization and summing the final polarization
+    gives the unpolarized Klein–Nishina cross-section. In the nonrelativistic regime
+    ω≪m, it reduces to the angular Thomson formula and total cross-section 8πr₀²/3,
+    where r₀=e²/(4πm).
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 368
+    - 369
+    note: The source gives the polarization average and sum, then derives the low-energy
+      angular and total Thomson results.
 - id: weinberg-1.unresolved-resonance-integrated-cross-section
   label: Unresolved-resonance integrated cross-section
   summary: When experimental energy resolution cannot resolve a resonance width, integrating
@@ -5158,6 +5596,25 @@ edges:
     pages:
     - 319
     note: The source explicitly applies the Section 7.2 transition procedure.
+- id: weinberg-1.auxiliary-route-to-scalar-quantization-problem
+  from: weinberg-1.auxiliary-field-constraint-interaction-picture-route
+  to: weinberg-1.problem-charged-scalar-coulomb-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general auxiliary-field route handles a matter Lagrangian with A-dependent
+    current, constructs the canonical Hamiltonian, and then forms V(t).
+  failure_mode: Using the A-independent-current Hamiltonian would omit scalar-electrodynamics
+    terms that the source says make spinless electrodynamics more complicated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    - 375
+    note: Problem 2 asks for canonical quantization, a Hamiltonian, and interaction-picture
+      V(t) for charged scalar electrodynamics.
 - id: weinberg-1.auxiliary-route-to-sigma-problem
   from: weinberg-1.auxiliary-field-constraint-interaction-picture-route
   to: weinberg-1.problem-nonlinear-sigma-canonical-quantization
@@ -5363,6 +5820,24 @@ edges:
     - 163
     note: The source gives the peak form then integrates the total cross-section for
       insufficient energy resolution.
+- id: weinberg-1.canonical-action-to-constraint-structure
+  from: weinberg-1.canonical-field-action-formalism
+  to: weinberg-1.coulomb-gauge-constraint-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The primary constraint is obtained by taking canonical derivatives of
+    the electromagnetic Lagrangian.
+  failure_mode: Without canonical momenta, Π⁰=0 and its incompatibility with unconstrained
+    brackets cannot be formulated.
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 344
+    note: The source defines canonical conjugates to Aμ and derives Π⁰=0 from the
+      absence of A⁰ time derivatives.
 - id: weinberg-1.canonical-action-to-scalar-antiparticles
   from: weinberg-1.canonical-field-action-formalism
   to: weinberg-1.scalar-field-particle-antiparticle-operators
@@ -5773,6 +6248,24 @@ edges:
     pages:
     - 328
     note: The source introduces the Dirac bracket after establishing nonsingularity.
+- id: weinberg-1.clifford-to-induction-proof
+  from: weinberg-1.dirac-linearization-clifford-algebra
+  to: weinberg-1.dirac-gamma-trace-induction-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof repeatedly anticommutes gamma matrices to reduce the trace
+    to shorter products.
+  failure_mode: Without the Clifford anticommutation relation, the recurrence that
+    generates the signed pairings cannot be obtained.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The proof starts from the two-gamma anticommutation step and then commutes
+      the first gamma through the general trace.
 - id: weinberg-1.cluster-factorization-to-connected-separation
   from: weinberg-1.cluster-decomposition-s-matrix-factorization
   to: weinberg-1.connected-amplitude-separation-and-single-delta-condition
@@ -5938,6 +6431,44 @@ edges:
     - 206
     note: The source applies parity to the two constituent fields, requires proportionality,
       and then gives the self-conjugate consequence.
+- id: weinberg-1.complex-vector-to-massive-vector-problem
+  from: weinberg-1.causal-massive-vector-field
+  to: weinberg-1.problem-charged-massive-vector-gauge-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Electric charge requires the complex particle–antiparticle vector-field
+    representation rather than a real neutral vector alone.
+  failure_mode: Without the complex vector representation, the field cannot carry
+    the requested electromagnetic charge.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 4 specifies a charged massive vector field interacting with electromagnetism.
+- id: weinberg-1.compton-kinematics-to-polarized-klein-nishina
+  from: weinberg-1.compton-tree-amplitude-and-laboratory-kinematics
+  to: weinberg-1.polarized-klein-nishina-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The polarized result combines the amplitude-square evaluation with the
+    laboratory cross-section factor and energy relation.
+  failure_mode: Without the tree amplitude and kinematic measure, the trace algebra
+    does not yield a differential cross-section.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 365
+    - 366
+    - 367
+    - 368
+    note: The section starts from the amplitude, evaluates its spin average through
+      traces, and combines it with Eq. (8.7.17).
 - id: weinberg-1.connected-delta-counting-to-loop-count
   from: weinberg-1.connected-graph-delta-counting
   to: weinberg-1.graph-loop-number-and-tree-integrals
@@ -6102,6 +6633,44 @@ edges:
     - 187
     note: The packet states the connected one-delta requirement before proving it
       perturbatively from the Hamiltonian structure.
+- id: weinberg-1.constraint-classification-to-coulomb-reduction
+  from: weinberg-1.first-and-second-class-constraint-classification
+  to: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The procedure depends on recognizing the electromagnetic constraints
+    as first class and therefore choosing a gauge rather than Dirac-bracket inversion
+    at that stage.
+  failure_mode: Treating them as second class would incorrectly seek an inverse constraint
+    matrix before gauge fixing.
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 345
+    - 346
+    note: The source says the original constraints are first class and then selects
+      Coulomb gauge.
+- id: weinberg-1.constraint-structure-to-coulomb-reduction
+  from: weinberg-1.coulomb-gauge-constraint-structure
+  to: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauss's law and gauge freedom jointly permit solving A⁰ after imposing
+    ∇·A=0.
+  failure_mode: Without those two constraints, the stated auxiliary-field elimination
+    is not justified.
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 346
+    note: The source combines Coulomb gauge with the constraint equation to solve
+      for A⁰.
 - id: weinberg-1.constraints-to-scalar-vector-problem
   from: weinberg-1.primary-and-secondary-constraints
   to: weinberg-1.problem-scalar-vector-canonical-quantization
@@ -6227,6 +6796,62 @@ edges:
     pages:
     - 266
     note: The source discusses the factors as additions to the just-stated rules.
+- id: weinberg-1.coulomb-hamiltonian-to-free-photon
+  from: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
+  to: weinberg-1.transverse-free-photon-interaction-picture
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The interaction-picture construction begins by splitting this constrained
+    Hamiltonian into free and interaction terms.
+  failure_mode: Without the Coulomb-gauge H₀ and V, the stated interaction-picture
+    free field cannot be defined.
+  evidence:
+  - source: weinberg-1
+    section: '8.4'
+    pages:
+    - 350
+    - 351
+    note: The source explicitly breaks the preceding Hamiltonian into H₀+V and transforms
+      with H₀.
+- id: weinberg-1.coulomb-reduction-to-scalar-quantization-problem
+  from: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
+  to: weinberg-1.problem-charged-scalar-coulomb-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly requests canonical quantization in Coulomb gauge
+    and therefore needs the gauge fixing and auxiliary A⁰ treatment.
+  failure_mode: Without the reduction, the scalar Hamiltonian retains an unsolved
+    constrained A⁰ field.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    - 375
+    note: Problem 2 explicitly specifies Coulomb gauge and requests the Hamiltonian
+      and interaction-picture V(t).
+- id: weinberg-1.coulomb-reduction-to-transverse-commutators
+  from: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
+  to: weinberg-1.coulomb-gauge-transverse-dirac-commutators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Eliminating A⁰ leaves exactly the Coulomb and Gauss constraints on spatial
+    A and Π whose Dirac brackets are evaluated.
+  failure_mode: Without the reduced variables, the second-class pair and transverse
+    projector are not the relevant system.
+  evidence:
+  - source: weinberg-1
+    section: '8.3'
+    pages:
+    - 347
+    note: The section starts after use of the A⁰ solution and identifies the two remaining
+      constraints.
 - id: weinberg-1.coupled-amplitude-to-problem-pion-proton
   from: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
   to: weinberg-1.problem-pion-proton-phase-shift-cross-sections
@@ -6284,6 +6909,25 @@ edges:
     - 166
     note: The basis normalization is stated on page 153 and Problem 7 asks to prove
       it.
+- id: weinberg-1.covariant-propagator-to-qed-rules
+  from: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  to: weinberg-1.spinor-qed-momentum-space-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The QED internal photon-line factor is the covariant propagator after
+    the Coulomb cancellation.
+  failure_mode: Without it, the internal photon factor and removal of the separate
+    Coulomb vertex are inconsistent.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 356
+    - 358
+    note: The source notes that the Coulomb term cancels the noncovariant local propagator
+      part and lists the internal photon factor.
 - id: weinberg-1.cp-cpt-to-neutral-kaon-application
   from: weinberg-1.charge-conjugation-cp-cpt-process-relations
   to: weinberg-1.neutral-kaon-cp-eigenstates-violation-and-t-inference
@@ -6356,6 +7000,25 @@ edges:
     - 245
     - 246
     note: The tensor and bilinear argument yields equation (5.8.7).
+- id: weinberg-1.cross-section-to-compton-kinematics
+  from: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+  to: weinberg-1.compton-tree-amplitude-and-laboratory-kinematics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The laboratory calculation converts the amplitude to a differential cross-section
+    through flux and phase space.
+  failure_mode: Without the cross-section relation, the kinematic delta-function calculation
+    stops at M.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 363
+    - 364
+    note: The source gives the differential-cross-section formula, flux, and laboratory
+      phase-space reduction.
 - id: weinberg-1.cross-section-to-cubic-problem
   from: weinberg-1.two-body-phase-space-and-cross-section
   to: weinberg-1.problem-cubic-scalar-scattering-cross-section
@@ -6373,6 +7036,40 @@ edges:
     pages:
     - 290
     note: Problem 1 expressly asks for the differential cross-section from the result.
+- id: weinberg-1.cross-section-to-electron-electron-problem
+  from: weinberg-1.two-body-phase-space-and-cross-section
+  to: weinberg-1.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested differential observable requires the two-body amplitude-to-cross-section
+    relation.
+  failure_mode: Without phase space and flux, the task does not yield a differential
+    cross-section.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 explicitly requests a differential cross-section.
+- id: weinberg-1.cross-section-to-electron-muon-problem
+  from: weinberg-1.two-body-phase-space-and-cross-section
+  to: weinberg-1.problem-electron-muon-annihilation-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for both differential and total two-body cross-sections,
+    requiring amplitude-to-phase-space conversion and angular integration.
+  failure_mode: Without the cross-section method, the calculation cannot reach either
+    requested observable.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    note: Problem 1 explicitly requests differential and total cross-sections.
 - id: weinberg-1.cross-section-to-problem-lab
   from: weinberg-1.cross-section-flux-and-invariant-relative-velocity
   to: weinberg-1.problem-laboratory-frame-two-body-cross-section
@@ -6409,6 +7106,23 @@ edges:
     pages:
     - 290
     note: Problem 3 requests the differential cross-section after the order-g S-matrix.
+- id: weinberg-1.cross-section-to-scalar-compton-problem
+  from: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+  to: weinberg-1.problem-scalar-compton-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for differential and total cross-sections after obtaining
+    the scalar scattering amplitude.
+  failure_mode: Without the cross-section conversion, the result remains an amplitude
+    rather than the requested observables.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 3 explicitly requests differential and total cross-sections.
 - id: weinberg-1.cross-section-to-two-body-phase-space
   from: weinberg-1.cross-section-flux-and-invariant-relative-velocity
   to: weinberg-1.two-body-phase-space-and-cross-section
@@ -6449,6 +7163,25 @@ edges:
     - 174
     note: The source adopts a sign convention across species and then states the corresponding
       bracket rule for their creation and annihilation operators.
+- id: weinberg-1.current-conservation-to-propagator-cancellation
+  from: weinberg-1.noether-current-and-conserved-charge
+  to: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Current conservation removes the qμ and qν propagator terms when they
+    act as current derivatives.
+  failure_mode: Without conserved currents, the longitudinal propagator terms do contribute
+    and the covariant replacement fails.
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 354
+    - 355
+    note: The text says the q factors do not contribute because the coupled currents
+      satisfy the conservation condition, then identifies the cancellation.
 - id: weinberg-1.decay-rate-to-time-dilation
   from: weinberg-1.decay-rate-and-narrow-width-validity
   to: weinberg-1.decay-rate-lorentz-time-dilation
@@ -6644,6 +7377,25 @@ edges:
     - 329
     - 330
     note: The source starts the Maskawa–Nakajima discussion from the Dirac bracket.
+- id: weinberg-1.dirac-bracket-to-transverse-commutators
+  from: weinberg-1.dirac-bracket-quantization-method
+  to: weinberg-1.coulomb-gauge-transverse-dirac-commutators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The constrained commutators are obtained by applying the established
+    i-times-Dirac-bracket prescription.
+  failure_mode: Without that prescription, the nonsingular constraint matrix does
+    not determine quantum brackets.
+  evidence:
+  - source: weinberg-1
+    section: '8.3'
+    pages:
+    - 347
+    - 348
+    note: The source invokes the Section 7.6 universal prescription and uses it to
+      state the equal-time commutators.
 - id: weinberg-1.dirac-charge-conjugation-to-positronium
   from: weinberg-1.dirac-antiparticle-parity-majorana-reality
   to: weinberg-1.positronium-charge-conjugation-selection
@@ -6828,6 +7580,25 @@ edges:
     - 228
     note: Without those identities, the transformed spinors cannot be reduced to the
       stated causal-field law.
+- id: weinberg-1.dirac-linearization-to-even-traces
+  from: weinberg-1.dirac-linearization-clifford-algebra
+  to: weinberg-1.dirac-gamma-even-trace-pairing-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pairing formula is generated by repeated use of the gamma anticommutation
+    relation.
+  failure_mode: Without the Clifford algebra, the signed metric-pairing reduction
+    has no algebraic basis.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 372
+    - 373
+    note: The appendix states the formula and derives its base case by anticommuting
+      two gamma matrices.
 - id: weinberg-1.dirac-matrices-to-transpose-identities
   from: weinberg-1.dirac-matrix-tensor-basis-and-pseudounitarity
   to: weinberg-1.dirac-transpose-and-conjugation-identities
@@ -8041,6 +8812,24 @@ edges:
     - 95
     - 96
     note: Makes the global choice and derives each operator type.
+- id: weinberg-1.even-traces-to-gamma5
+  from: weinberg-1.dirac-gamma-even-trace-pairing-formula
+  to: weinberg-1.gamma5-trace-identities
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The γ⁵ vanishing and epsilon result use γ⁵=γ⁰γ¹γ²γ³ together with index
+    pairings and gamma anticommutation.
+  failure_mode: Without the ordinary trace pairing structure, the stated zero and
+    two-gamma vanishings are not justified.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 374
+    note: The source recalls the γ⁵ product and argues from the absence of possible
+      index pairings.
 - id: weinberg-1.exclusion-to-hole-theory
   from: weinberg-1.pauli-exclusion-and-statistics
   to: weinberg-1.dirac-hole-theory
@@ -8060,6 +8849,25 @@ edges:
     - 12
     note: The chapter introduces the exclusion principle immediately before stating
       the filled-sea mechanism.
+- id: weinberg-1.exterior-derivative-to-p-form-action
+  from: weinberg-1.p-form-exterior-derivative-and-local-exactness
+  to: weinberg-1.p-form-gauge-action-and-conserved-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge invariance of F=dA and the Bianchi identity depend directly on
+    d²=0.
+  failure_mode: Without exterior-derivative nilpotence, neither F's invariance under
+    δA=dQ nor the form of the field strength follows.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 369
+    - 370
+    note: The source uses d²=0 to establish both exact-implies-closed and electromagnetic
+      gauge invariance before generalizing to p forms.
 - id: weinberg-1.fermion-anticomm-to-spin-statistics
   from: weinberg-1.fermionic-anticommutation-occupancy
   to: weinberg-1.spin-statistics-connection
@@ -8079,6 +8887,24 @@ edges:
     - 20
     note: The source introduces the electron anticommutators and then states the spin
       rule.
+- id: weinberg-1.fermion-signs-to-electron-electron-problem
+  from: weinberg-1.fermion-exchange-and-loop-signs
+  to: weinberg-1.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two electron-exchange diagrams require their relative fermionic exchange
+    sign.
+  failure_mode: Without the exchange-sign rule, the identical-fermion amplitude has
+    the wrong interference term.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 asks for electron–electron scattering, which has identical external
+      fermions.
 - id: weinberg-1.fermion-signs-to-yukawa-problem
   from: weinberg-1.fermion-exchange-and-loop-signs
   to: weinberg-1.problem-yukawa-diagram-amplitudes
@@ -8413,6 +9239,24 @@ edges:
     - 143
     note: The source explicitly says the series can also be derived directly from
       old-fashioned perturbation theory.
+- id: weinberg-1.free-dirac-to-spinor-qed
+  from: weinberg-1.dirac-canonical-lagrangian-hamiltonian-method
+  to: weinberg-1.spinor-qed-lagrangian-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spinor-QED Lagrangian combines the established free Dirac action
+    with electromagnetic coupling.
+  failure_mode: Without the free Dirac Lagrangian, the full spinor-QED Lagrangian
+    lacks its fermionic kinetic and mass terms.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 355
+    note: The source specifies a spin-½ species of mass m and then gives its simplest
+      full invariant Lagrangian.
 - id: weinberg-1.free-fields-to-canonical-identification
   from: weinberg-1.canonical-fock-commutation-relations
   to: weinberg-1.free-field-canonical-variable-identification
@@ -8484,6 +9328,44 @@ edges:
     - 302
     note: The source says this calculation is a check against the Hamiltonian already
       derived for free particles.
+- id: weinberg-1.free-photon-to-propagator-cancellation
+  from: weinberg-1.transverse-free-photon-interaction-picture
+  to: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon propagator is computed by inserting the transverse interaction-picture
+    mode expansion in the time-ordered correlator.
+  failure_mode: Without the aμ field expansion, the Coulomb-gauge propagator and its
+    noncovariant pieces cannot be displayed.
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 353
+    - 354
+    note: The source inserts Eq. (8.4.15) into the time-ordered photon propagator
+      before rewriting it.
+- id: weinberg-1.gamma-traces-to-polarized-klein-nishina
+  from: weinberg-1.dirac-gamma-even-trace-pairing-formula
+  to: weinberg-1.polarized-klein-nishina-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-summed amplitude square is evaluated as traces of up to eight
+    gamma matrices using the appendix formula.
+  failure_mode: Without the trace rule, the scalar-product reduction of the squared
+    amplitude cannot be completed.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 366
+    - 367
+    note: The source points to the appendix for the trace calculation and applies
+      the formula to the Compton traces.
 - id: weinberg-1.gauge-potential-to-field-strength
   from: weinberg-1.massless-vector-potential-gauge-transformation
   to: weinberg-1.massless-helicity-one-field-strength-and-maxwell-equations
@@ -8665,6 +9547,26 @@ edges:
     - 255
     - 256
     note: Problem 2 explicitly requests the inversion transformations.
+- id: weinberg-1.general-momentum-rules-to-qed-rules
+  from: weinberg-1.momentum-space-feynman-rules
+  to: weinberg-1.spinor-qed-momentum-space-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter specializes the established momentum-space diagram prescription
+    to QED vertices, spinor lines, and photon lines.
+  failure_mode: Without the general rule structure, the specialized list lacks its
+    prescription for line factors, integrations, and summation.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 356
+    - 357
+    - 358
+    note: The source introduces the QED rule list by following the general Section
+      6.3 results.
 - id: weinberg-1.general-parity-to-cpt-general-route
   from: weinberg-1.general-particle-antiparticle-parity-relation
   to: weinberg-1.cpt-proof-general-ab-scalar-route
@@ -8947,6 +9849,23 @@ edges:
     - 14
     note: The discussion moves from the hole proposal to its immediate and general
       objections.
+- id: weinberg-1.identical-state-counting-to-electron-electron-problem
+  from: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  to: weinberg-1.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cross-section must use the identical-particle state normalization
+    and avoid double-counting exchanged final-electron labels.
+  failure_mode: Without that normalization/counting rule, the differential rate can
+    overcount identical final states.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 concerns two identical final electrons.
 - id: weinberg-1.impact-disk-to-boundary-layer
   from: weinberg-1.high-energy-impact-parameter-disk-and-log-squared-growth
   to: weinberg-1.high-energy-boundary-layer-forward-amplitude
@@ -9003,6 +9922,24 @@ edges:
     - 8
     note: The source attributes the indefinite density to the second-order time equation
       and frames first-order evolution as the remedy.
+- id: weinberg-1.induction-proof-to-even-traces
+  from: weinberg-1.dirac-gamma-trace-induction-proof
+  to: weinberg-1.dirac-gamma-even-trace-pairing-formula
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The method proves the general pairing formula from the two-gamma base
+    case and recurrence.
+  failure_mode: Without the proof route, deriving the formula's factor and signed
+    pairings is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The source states that the recurrence shows the formula for 2N gamma matrices
+      from the formula for 2N−2.
 - id: weinberg-1.interacting-boost-to-lorentz-covariance
   from: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
   to: weinberg-1.lorentz-generators-and-s-matrix-covariance
@@ -9267,6 +10204,25 @@ edges:
     - 38
     note: The source describes the measurement's impact, subsequent renormalized calculations,
       and the confidence shift at Shelter Island.
+- id: weinberg-1.legendre-to-coulomb-hamiltonian
+  from: weinberg-1.hamiltonian-legendre-transform-equations
+  to: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Coulomb-gauge Hamiltonian is formed by the constrained Legendre relation
+    between the Lagrangian and Hamiltonian.
+  failure_mode: Without the Legendre construction, the displayed H and its Coulomb-energy
+    term cannot be derived from the Lagrangian.
+  evidence:
+  - source: weinberg-1
+    section: '8.3'
+    pages:
+    - 349
+    - 350
+    note: The source invokes the Chapter 7 Hamiltonian–Lagrangian relation for constrained
+      variables and derives H.
 - id: weinberg-1.linearization-to-positive-current
   from: weinberg-1.dirac-linearization-clifford-algebra
   to: weinberg-1.dirac-positive-probability-current
@@ -9485,6 +10441,78 @@ edges:
     pages:
     - 320
     note: The source identifies the extra term with the Chapter 6 cancellation.
+- id: weinberg-1.local-exactness-to-p-form-duality
+  from: weinberg-1.p-form-exterior-derivative-and-local-exactness
+  to: weinberg-1.p-form-gauge-duality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The duality derivation invokes Poincaré's theorem to write closed dual
+    currents and field differences as exterior derivatives.
+  failure_mode: Without local exactness, the dual potential φ cannot be introduced
+    from the closed forms.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 371
+    note: The source says the closed dual current may be written as d𝒮 and then applies
+      Poincaré's theorem to the closed difference.
+- id: weinberg-1.local-gauge-to-massive-vector-problem
+  from: weinberg-1.local-gauge-invariance-and-minimal-coupling
+  to: weinberg-1.problem-charged-massive-vector-gauge-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Writing the requested interaction Lagrangian requires the local gauge
+    transformation and covariant coupling construction.
+  failure_mode: Without local gauge invariance, there is no criterion for the requested
+    Lagrangian.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 4 explicitly asks for a gauge-invariant Lagrangian.
+- id: weinberg-1.local-gauge-to-maxwell
+  from: weinberg-1.local-gauge-invariance-and-minimal-coupling
+  to: weinberg-1.gauge-invariant-maxwell-action-and-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge invariance selects Fμν and excludes the vector mass term, which
+    are the properties used to identify the photon action.
+  failure_mode: Without local gauge invariance, neither the action's uniqueness qualification
+    nor masslessness follows.
+  evidence:
+  - source: weinberg-1
+    section: '8.1'
+    pages:
+    - 342
+    - 343
+    note: The source gives the gauge-invariant quadratic action and then derives the
+      same local construction from global symmetry.
+- id: weinberg-1.local-gauge-to-spinor-qed
+  from: weinberg-1.local-gauge-invariance-and-minimal-coupling
+  to: weinberg-1.spinor-qed-lagrangian-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spinor theory is selected by the requirement of the simplest gauge-
+    and Lorentz-invariant Lagrangian.
+  failure_mode: Without the local symmetry criterion, the minimal current coupling
+    is not fixed by the chapter's construction.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 355
+    note: The source explicitly introduces the simplest gauge- and Lorentz-invariant
+      spinor Lagrangian and its current.
 - id: weinberg-1.local-microcausality-to-boost-specialization
   from: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
   to: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
@@ -9896,6 +10924,25 @@ edges:
     - 128
     note: The source gives the massive formula and states that massless modifications
       are required.
+- id: weinberg-1.massless-vector-to-local-gauge
+  from: weinberg-1.massless-vector-potential-gauge-transformation
+  to: weinberg-1.local-gauge-invariance-and-minimal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local matter transformation is introduced to make the gauge derivative
+    in the helicity-one potential transformation physically harmless.
+  failure_mode: Without the gauge-shifting potential, the local compensation problem
+    has no electromagnetic field to solve it.
+  evidence:
+  - source: weinberg-1
+    section: '8.1'
+    pages:
+    - 339
+    - 340
+    note: The chapter begins from the massless helicity-one potential and requires
+      matter-action invariance under its gauge transformation.
 - id: weinberg-1.master-rate-to-kinetic-equation
   from: weinberg-1.box-normalization-and-connected-transition-element
   to: weinberg-1.kinetic-equation-and-probability-conservation
@@ -9972,6 +11019,41 @@ edges:
     - 4
     note: Page 3 gives K=p/h and nu=E/h; page 4 makes the corresponding derivative
       replacements.
+- id: weinberg-1.maxwell-action-to-p-form-action
+  from: weinberg-1.gauge-invariant-maxwell-action-and-equations
+  to: weinberg-1.p-form-gauge-action-and-conserved-current
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The source presents the p-form action explicitly by analogy with electrodynamics.
+  failure_mode: Without this analogy, the general action is still definable but loses
+    the stated motivation for its Maxwell-like form.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    note: The source says, “By analogy with electrodynamics”, before proposing the
+      p-form Lagrangian density.
+- id: weinberg-1.maxwell-action-to-spinor-qed
+  from: weinberg-1.gauge-invariant-maxwell-action-and-equations
+  to: weinberg-1.spinor-qed-lagrangian-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The full QED Lagrangian includes the established gauge-field kinetic
+    action together with the spinor sector.
+  failure_mode: Without the Maxwell action, the displayed QED Lagrangian has no photon
+    kinetic term.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 355
+    note: The source presents the full simplest gauge- and Lorentz-invariant Lagrangian
+      for electron electrodynamics.
 - id: weinberg-1.metric-convention-to-microcausality
   from: weinberg-1.poincare-group-and-lorentz-interval
   to: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
@@ -10293,6 +11375,24 @@ edges:
     pages:
     - 337
     note: Problem 3 requests the current associated with its stated global symmetry.
+- id: weinberg-1.noether-to-local-gauge
+  from: weinberg-1.noether-current-and-conserved-charge
+  to: weinberg-1.local-gauge-invariance-and-minimal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation identifies the locally coupled current by promoting the
+    internal symmetry parameter and using the on-shell Noether result.
+  failure_mode: Without the current construction, the coupling condition δIM/δAμ=Jμ
+    is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '8.1'
+    pages:
+    - 341
+    note: The text explicitly recalls that infinitesimal internal symmetries imply
+      conserved currents and uses this to couple Aμ.
 - id: weinberg-1.noether-to-scalar-vector-current-problem
   from: weinberg-1.noether-current-and-conserved-charge
   to: weinberg-1.problem-scalar-vector-conserved-current
@@ -10745,6 +11845,42 @@ edges:
     - 114
     note: The source gives the overlap-completeness derivation before its algebraic
       alternative.
+- id: weinberg-1.p-form-action-to-duality
+  from: weinberg-1.p-form-gauge-action-and-conserved-current
+  to: weinberg-1.p-form-gauge-duality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Duality starts from the p-form Euler–Lagrange equation and conserved-current
+    condition.
+  failure_mode: Without those equations, there is no dual field/current system to
+    transform.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    - 371
+    note: The source rewrites Eqs. (8.8.7) and (8.8.8) in dual variables before deriving
+      φ.
+- id: weinberg-1.p-form-duality-to-four-dimensional-content
+  from: weinberg-1.p-form-gauge-duality
+  to: weinberg-1.four-dimensional-p-form-field-content
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The four-dimensional classification uses the general p↔D−p−2 equivalence
+    to identify the two-form with a scalar.
+  failure_mode: Without duality, the two-form's reduction to a derivatively coupled
+    scalar is not established.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 372
+    note: The source applies the quoted general result to p=2 in four dimensions.
 - id: weinberg-1.parity-antiunitarity-input-to-discrete-relations
   from: weinberg-1.parity-unitary-time-reversal-antiunitary
   to: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
@@ -11083,6 +12219,59 @@ edges:
     - 337
     note: Problem 7 requests a proof of Dirac-bracket independence from the chosen
       constraint functions.
+- id: weinberg-1.polarization-mixtures-to-electron-electron-problem
+  from: weinberg-1.photon-polarization-density-matrix-and-spin-averaging
+  to: weinberg-1.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated initial and final unobserved spins require averaging and summing
+    over electron spin states.
+  failure_mode: Without the spin prescription, the answer remains spin-resolved rather
+    than the requested cross-section.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 says that final and initial spins are not measured.
+- id: weinberg-1.polarization-mixtures-to-electron-muon-problem
+  from: weinberg-1.photon-polarization-density-matrix-and-spin-averaging
+  to: weinberg-1.problem-electron-muon-annihilation-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Unobserved initial electron and final muon spins require the spin averaging
+    and summing prescription.
+  failure_mode: Without it, the requested unobserved-spin cross-sections retain spin-labeled
+    rates.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    note: Problem 1 specifies that electron and muon spins are not observed.
+- id: weinberg-1.polarization-mixtures-to-polarized-klein-nishina
+  from: weinberg-1.photon-polarization-density-matrix-and-spin-averaging
+  to: weinberg-1.polarized-klein-nishina-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation requires the stated electron spin average and chosen
+    physical photon polarizations.
+  failure_mode: Without the averaging prescription, the result does not correspond
+    to the specified unobserved electron spins.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 365
+    - 366
+    note: The source explicitly invokes the spin sum/average and specializes to linear
+      photon polarization.
 - id: weinberg-1.polarization-sum-to-current-conservation
   from: weinberg-1.massive-spin-one-polarization-coefficients
   to: weinberg-1.conserved-current-for-smooth-massless-vector-limit
@@ -11102,6 +12291,25 @@ edges:
     - 212
     note: The transverse projector supplies the longitudinal pμpν/m² term used in
       the massless-limit argument.
+- id: weinberg-1.polarized-to-unpolarized-klein-nishina
+  from: weinberg-1.polarized-klein-nishina-cross-section
+  to: weinberg-1.unpolarized-klein-nishina-and-thomson-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unpolarized formula is obtained by averaging the incident and summing
+    the final polarization in the polarized cross-section.
+  failure_mode: Without the polarized starting formula, the stated polarization operations
+    have no expression to act on.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 368
+    - 369
+    note: The source averages Eq. (8.7.39), sums the final polarization, and then
+      takes the low-energy limit.
 - id: weinberg-1.primary-secondary-to-appendix-a
   from: weinberg-1.primary-and-secondary-constraints
   to: weinberg-1.appendix-dirac-brackets-type-a-proof
@@ -11209,6 +12417,23 @@ edges:
     - 321
     note: The source solves the Proca constraint and explicitly splits the Hamiltonian
       into free and interaction terms.
+- id: weinberg-1.proca-to-massive-vector-problem
+  from: weinberg-1.proca-lagrangian-spin-one-selection
+  to: weinberg-1.problem-charged-massive-vector-gauge-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task needs the massive spin-one kinetic and mass structure that excludes
+    an unwanted propagating scalar before it is charged and coupled.
+  failure_mode: Without the Proca selection, a proposed vector Lagrangian need not
+    describe the requested massive spin-one field.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 4 specifically asks for a charged massive vector-field Lagrangian.
 - id: weinberg-1.propagator-correlator-to-derivative-problem
   from: weinberg-1.feynman-propagator-time-ordered-correlator
   to: weinberg-1.problem-derivative-dirac-contraction
@@ -11279,6 +12504,77 @@ edges:
     - 218
     - 223
     note: The Dirac calculation invokes pseudounitarity to evaluate the spin sums.
+- id: weinberg-1.qed-rules-to-compton-kinematics
+  from: weinberg-1.spinor-qed-momentum-space-rules
+  to: weinberg-1.compton-tree-amplitude-and-laboratory-kinematics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two electron-exchange amplitudes are calculated by applying the stated
+    QED Feynman rules.
+  failure_mode: Without the vertex, propagator, and external factors, the tree amplitude
+    cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 362
+    - 363
+    note: The source labels the two lowest-order diagrams and says it uses the preceding
+      rules for their S-matrix element.
+- id: weinberg-1.qed-rules-to-electron-electron-problem
+  from: weinberg-1.spinor-qed-momentum-space-rules
+  to: weinberg-1.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The lowest-order electron–electron amplitude, including its fermionic
+    diagram structure, follows from the QED rules.
+  failure_mode: Without the rules, no tree scattering amplitude is available for the
+    cross-section.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 requests lowest-order electron–electron scattering.
+- id: weinberg-1.qed-rules-to-electron-muon-problem
+  from: weinberg-1.spinor-qed-momentum-space-rules
+  to: weinberg-1.problem-electron-muon-annihilation-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested lowest-order annihilation amplitude is constructed with
+    the spinor-QED diagram rules.
+  failure_mode: Without the rules, the tree amplitude and its spinor factors cannot
+    be calculated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    note: Problem 1 requests a lowest-order electron–muon electrodynamics cross-section
+      calculation.
+- id: weinberg-1.qed-rules-to-loop-parameter
+  from: weinberg-1.spinor-qed-momentum-space-rules
+  to: weinberg-1.qed-loop-expansion-parameter
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical estimate counts the vertex, propagator, and loop-integration
+    factors in the stated rules.
+  failure_mode: Without those factors, the loop suppression estimate has no diagrammatic
+    input.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 358
+    note: The source counts the factors just assigned by the Feynman rules.
 - id: weinberg-1.real-field-to-charge-obstruction
   from: weinberg-1.real-causal-scalar-field
   to: weinberg-1.charge-conservation-obstruction
@@ -11832,6 +13128,23 @@ edges:
     - 213
     note: The vector calculation parallels the earlier scalar case but derives its
       phase relations from vector-field formulas.
+- id: weinberg-1.scalar-quantization-to-scalar-compton-problem
+  from: weinberg-1.problem-charged-scalar-coulomb-quantization
+  to: weinberg-1.problem-scalar-compton-cross-sections
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 explicitly directs the reader to use the results of Problem
+    2.
+  failure_mode: Without the scalar interaction and quantization result, the scalar
+    photon-scattering amplitude is not supplied by the stated route.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 3 begins, “Use the results of Problem 2”.
 - id: weinberg-1.scalar-representation-to-real-field
   from: weinberg-1.scalar-lorentz-representation
   to: weinberg-1.real-causal-scalar-field
@@ -12032,6 +13345,25 @@ edges:
     - 28
     note: Page 13 rejects the inference that spin-zero relativistic wave equations
       are invalid; pages 27–28 explain that quantum fields are not probability amplitudes.
+- id: weinberg-1.spinor-qed-to-qed-rules
+  from: weinberg-1.spinor-qed-lagrangian-current
+  to: weinberg-1.spinor-qed-momentum-space-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vertex and line factors specialize the QED interaction and fields
+    of the spinor Lagrangian.
+  failure_mode: Without the interaction and current, there is no vertex factor or
+    species-specific rule set.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 356
+    - 357
+    note: The text writes the interaction then immediately lists the associated QED
+      diagram and vertex/external-line rules.
 - id: weinberg-1.spinor-to-dirac-em-coupling
   from: weinberg-1.dirac-spinor-lorentz-covariance
   to: weinberg-1.dirac-electromagnetic-coupling-spin
@@ -12212,6 +13544,24 @@ edges:
     - 290
     note: Problem 3 requests the complete order-g² correction, including all diagram
       contributions.
+- id: weinberg-1.time-ordered-propagator-to-photon-cancellation
+  from: weinberg-1.feynman-propagator-time-ordered-correlator
+  to: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation starts from the photon propagator as a time-ordered vacuum
+    correlator.
+  failure_mode: Without the time-ordered-correlator definition, the field-mode insertion
+    has no propagator object to evaluate.
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 353
+    note: The source defines the internal photon-line factor as a vacuum expectation
+      value of a time-ordered product.
 - id: weinberg-1.time-reversal-to-pt-beta-decay-constraint
   from: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
   to: weinberg-1.pt-invariance-polarized-beta-decay-constraint
@@ -12248,6 +13598,43 @@ edges:
     - 130
     note: The source derives the complete-set relation from time reversal and then
       names the eigenstate phase result Watson’s theorem.
+- id: weinberg-1.trace-cyclicity-to-induction-proof
+  from: weinberg-1.gamma-trace-cyclicity
+  to: weinberg-1.dirac-gamma-trace-induction-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Cyclicity is used to identify the final commutator term with the original
+    trace and isolate the recurrence.
+  failure_mode: Without this trace property, the left-hand trace cannot be moved to
+    the other side of the induction relation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The source says that commutators have zero trace, so the final subtracted
+      term is the same as the left-hand side.
+- id: weinberg-1.transverse-commutators-to-coulomb-hamiltonian
+  from: weinberg-1.coulomb-gauge-transverse-dirac-commutators
+  to: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The transverse momentum is selected so that it has the constrained commutators
+    needed for the Hamiltonian and matter-field evolution.
+  failure_mode: Using Π without its matter brackets gives an interaction Hamiltonian
+    with unspecified operator algebra.
+  evidence:
+  - source: weinberg-1
+    section: '8.3'
+    pages:
+    - 349
+    - 350
+    note: The source introduces Π⊥ for its vanishing matter brackets and then constructs
+      H with A and Π⊥.
 - id: weinberg-1.two-body-phase-space-to-breit-wigner
   from: weinberg-1.two-body-phase-space-and-cross-section
   to: weinberg-1.breit-wigner-cross-section-and-partial-widths
