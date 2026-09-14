@@ -1216,3 +1216,72 @@ units:
       id: qft.align015.fermion-antiparticle-operator-reinterpretation
     - kind: nodes
       id: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+- id: full-align-021-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Duplicate compulsory Peskin-Schroeder vacuum-correlator route
+    alternatives:
+    - Omit the duplicate necessary edge and retain the explicit alternative route.
+    - Retag the older edge as alternative and omit the newer duplicate edge.
+    resolution: Omit the duplicate necessary edge; retain the explicit Peskin-Schroeder
+      alternative.
+    rationale: Both draft edges had identical endpoints, but only the explicit alternative
+      edge preserves the independent Peskin-Schroeder and Schwartz derivations. Omitting
+      the stale draft edge removes the cumulative requirement without deleting any
+      accepted canonical record.
+    evidence:
+    - source: peskin-schroeder
+      section: '9.2'
+      pages:
+      - 284
+    affected_records:
+    - kind: edges
+      id: qft.align021.e-real-scalar-to-vacuum-correlators
+  - finding: 1
+    issue: Functional Wick and phi-four derivations were made compulsory
+    alternatives:
+    - Restore both method-to-result edges as alternative and typical.
+    - Omit both cross-links and retain the route distinctions only in node descriptions.
+    resolution: Restore both edges to alternative/typical and describe their independent
+      derivation roles.
+    rationale: The functional Gaussian calculation on page 288 reproduces the Wick
+      pairing result, and the functional interaction expansion on page 289 reproduces
+      the familiar phi-four rules. Alternative/typical preserves these useful correspondences
+      without making either route a prerequisite for its accepted result.
+    evidence:
+    - source: peskin-schroeder
+      section: '9.3'
+      pages:
+      - 288
+    - source: peskin-schroeder
+      section: '9.3'
+      pages:
+      - 289
+    affected_records:
+    - kind: edges
+      id: qft.align021.e-wick-alternative
+    - kind: edges
+      id: qft.align021.e-phi4-rules
+  - finding: 2
+    issue: Current fermionic-statistics mapping was left as a future gap
+    alternatives:
+    - Add the mapped statistics residual as a present prerequisite and update the
+      private companion.
+    - Record the mapping only in the private companion without a shared prerequisite
+      edge.
+    resolution: Add the present statistics prerequisite and record the mapped disposition
+      in the private companion.
+    rationale: The current graph now has an exact statistics-focused mapping for the
+      boundary origin, and page 313 asks the learner to reproduce the partition function
+      of a state with Fermi statistics. The present edge supplies that comparison
+      target; later Grassmann integration and determinant methods remain future boundaries.
+    evidence:
+    - source: peskin-schroeder
+      section: Problem 9.2(d)
+      pages:
+      - 313
+    affected_records:
+    - kind: edges
+      id: qft.align021.e-fermionic-statistics-to-thermal-fermion-task

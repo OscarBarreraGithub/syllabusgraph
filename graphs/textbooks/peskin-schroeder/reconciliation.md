@@ -10,7 +10,13 @@ The end human audit is **pending**. Shared-graph alignment and cross-volume foll
 
 ## Findings and source-backed amendments
 
-No graph amendment remains from this accepted whole-book audit.
+### citation-precision-problem-9-2a
+
+The existing Problem 9.2(a) summary describes a thermal trace whose opening is on page 312; its citation previously named only the continuation on page 313. This later alignment finding concerns citation coordinates, not a missing scientific treatment.
+
+**Resolved by accepted unit `citation-precision-001`.** Added page 312 while retaining page 313. The label, summary, task status, group, and all other scientific fields remain exactly unchanged. Terra/high extracted the focused amendment and Sol/high independently checked and finally authorized it. The original accepted whole-book audit remains the historical baseline.
+
+Source context: peskin-schroeder pp. 312–313.
 
 ## Audit decisions
 

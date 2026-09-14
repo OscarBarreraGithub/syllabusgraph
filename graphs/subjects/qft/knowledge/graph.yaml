@@ -12449,6 +12449,545 @@ nodes:
   - source: schwartz
     note: Uses the source's Weyl-basis gamma matrices and anti-linear action on scalar
       factors.
+- id: qft.align021.abelian-gauge-orbit-factorization
+  label: Abelian gauge-orbit factorization by field redefinition
+  summary: For gauge-invariant correlators, introduce the orbit functional, shift
+    it by the longitudinal component, and use the Stueckelberg-type field redefinition
+    so the common orbit factor cancels.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.path-integral-gauge-orbit-factorization
+    note: Retains the source-specific Abelian field-redefinition route.
+  evidence:
+  - source: schwartz
+    section: '14.5'
+    pages:
+    - 267
+    - 268
+    - 269
+- id: qft.align021.abelian-gauge-orbit-factorization-assumptions
+  label: Abelian gauge-orbit factorization assumptions
+  summary: The Abelian orbit argument assumes a selectable longitudinal representative,
+    a shift-invariant functional measure, and invariance of the action and inserted
+    operator under the accompanying gauge transformation.
+  kind: assumption
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.abelian-gauge-orbit-factorization-assumptions
+    note: Retains all stated factorization assumptions.
+  evidence:
+  - source: schwartz
+    section: '14.5'
+    pages:
+    - 268
+- id: qft.align021.bosonic-functional-determinant
+  label: Bosonic functional determinant
+  summary: A quadratic scalar functional integral formally gives the inverse square
+    root determinant of the Klein–Gordon operator. Such normalization determinants
+    cancel in normalized correlators but can have physical meaning elsewhere.
+  kind: result
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.bosonic-functional-determinant
+    note: Retains the inverse-square-root power and normalization qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 287
+- id: qft.align021.classical-stationary-phase-limit
+  label: Classical stationary-phase limit
+  summary: Restoring hbar shows that nonstationary configurations cancel by rapid
+    phase variation as hbar tends to zero, leaving extrema of the action and therefore
+    the classical Euler–Lagrange solutions.
+  kind: result
+  group: qft.classical-field-theory
+  origins:
+  - project: schwartz
+    node: schwartz.path-integral-classical-stationary-phase-limit
+    note: Retains the hbar-to-zero and action-extremum argument.
+  evidence:
+  - source: schwartz
+    section: 14.2.4
+    pages:
+    - 259
+- id: qft.align021.feynman-path-integral-historical-validation
+  label: Historical validation of Feynman path-integral rules
+  summary: This historical claim is limited to the stated checks against tree-level
+    QED, Lorentz covariance, later radiative data, and Dyson's equivalence demonstration;
+    it is not a derivation of the formalism.
+  kind: concept
+  group: qft.radiation-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.feynman-path-integral-historical-validation
+    note: Retained as a historical, rather than methodological, claim.
+  evidence:
+  - source: schwartz
+    section: '14.1'
+    pages:
+    - 253
+    - 254
+- id: qft.align021.field-configuration-and-momentum-eigenstates
+  label: Field-configuration and momentum eigenstates
+  summary: The time-slice basis uses field eigenstates and conjugate momentum-field
+    eigenstates, whose functional Fourier overlap gives functional-delta orthogonality.
+  kind: representation
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.field-configuration-and-momentum-eigenstates
+    note: Retains the field/momentum basis and functional Fourier overlap.
+  evidence:
+  - source: schwartz
+    section: 14.2.3
+    pages:
+    - 256
+    - 257
+- id: qft.align021.field-theory-path-integral-from-hamiltonian
+  label: Field-theory path integral from the Hamiltonian
+  summary: For the stated scalar Hamiltonian, inserting the field and momentum bases
+    on each time slice and Gaussian-integrating the momentum gives the configuration
+    functional integral and Lagrangian.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.field-theory-path-integral-from-hamiltonian
+    note: Retains the scalar-Hamiltonian and Gaussian-momentum assumptions.
+  evidence:
+  - source: schwartz
+    section: 14.2.3
+    pages:
+    - 257
+    - 258
+- id: qft.align021.free-four-point-pairing-derivation
+  label: Free four-point pairing derivation
+  summary: Four source derivatives of the free Gaussian functional give exactly the
+    three pairwise propagator contractions; this is the generating-functional pairing
+    derivation.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.free-four-point-pairing-derivation
+    note: Retains the four-derivative, three-pairing derivation.
+  evidence:
+  - source: schwartz
+    section: 14.3.2
+    pages:
+    - 263
+- id: qft.align021.free-scalar-generating-functional
+  label: Free scalar generating functional
+  summary: For a real free scalar, the source-dependent quadratic functional integral
+    is solved by the Gaussian formula. The inverse Klein–Gordon kernel is the propagator
+    subject to boundary conditions.
+  kind: result
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.free-scalar-generating-functional
+    note: Retains the source kernel, propagator, and boundary-condition qualification.
+  evidence:
+  - source: schwartz
+    section: 14.3.1
+    pages:
+    - 262
+    - 263
+- id: qft.align021.gauge-invariant-correlator-xi-independence
+  label: Xi independence of gauge-invariant correlators
+  summary: Under the stated Abelian assumptions, gauge-invariant operator correlators
+    computed with the covariant gauge-fixing term are xi independent. Gauge-covariant
+    field correlators, including the photon propagator, need not be xi independent.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-invariant-correlator-xi-independence
+    note: Retains the gauge-covariant-correlator exception.
+  evidence:
+  - source: schwartz
+    section: '14.5'
+    pages:
+    - 268
+    - 269
+- id: qft.align021.gaussian-functional-wick-contractions
+  label: Gaussian functional Wick contractions
+  summary: The direct Fourier/Gaussian scalar calculation has vanishing odd correlators
+    and even correlators given by complete pairings; it reproduces the Feynman propagator
+    and Wick expansion.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gaussian-functional-wick-contractions
+    note: Retains the direct Fourier/Gaussian Wick route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 287
+    - 288
+- id: qft.align021.grassmann-algebra-and-grading
+  label: Grassmann algebra and grading
+  summary: Grassmann generators anticommute and square to zero. Their even products
+    form a commuting sector and their odd products the fermionic sector; classical
+    fermion fields are modeled by infinitely many generators.
+  kind: representation
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.grassmann-algebra-and-grading
+    note: Retains anticommutation, nilpotence, and even/odd grading.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 269
+    - 270
+- id: qft.align021.interacting-path-integral-existence-qualification
+  label: Interacting path-integral existence qualification
+  summary: Formal path-integral manipulations do not establish a mathematically precise
+    interacting QFT in four dimensions. The stated rigorous cases are free theories
+    and phi-four theory in two or three dimensions, while the cited four-dimensional
+    examples remain unresolved.
+  kind: result
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.interacting-path-integral-existence-status
+    note: Retains the source's dimensional and theory-specific existence limits.
+  evidence:
+  - source: schwartz
+    section: 14.4.2
+    pages:
+    - 267
+- id: qft.align021.lagrangian-functional-definition-and-manifest-symmetries
+  label: Lagrangian functional definition and manifest symmetries
+  summary: The Lagrangian functional-integral formulation is manifestly Lorentz invariant
+    and explicitly displays Lagrangian symmetries; its use as a definition is distinct
+    from the canonical reconstruction claim.
+  kind: representation
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.lagrangian-functional-definition-and-manifest-symmetries
+    note: Retains the definition/recovery and manifest-symmetry qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 283
+- id: qft.align021.multivariable-gaussian-integral-method
+  label: Multivariable Gaussian integral method
+  summary: Completing the square and diagonalizing the quadratic matrix gives the
+    determinant normalization and quadratic source term used in the stated finite-dimensional
+    Gaussian integral.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.multivariable-gaussian-integral-method
+    note: Retains the finite-dimensional Gaussian method.
+  evidence:
+  - source: schwartz
+    section: 14.2.1
+    pages:
+    - 254
+    - 255
+- id: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  label: Normalized vacuum correlators from path integrals
+  summary: A normalized path integral with field insertions represents vacuum time-ordered
+    correlators. The Peskin–Schroeder route projects the interacting vacuum by complex
+    large-time limits and cancels overlap and phase factors by the zero-insertion
+    denominator.
+  kind: representation
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.vacuum-correlators-from-scalar-path-integral
+    note: Retains the vacuum-projection and normalization qualification.
+  - project: schwartz
+    node: schwartz.path-integral-correlator-representation
+    note: Shares the normalized time-ordered correlator representation.
+  - project: schwartz
+    node: schwartz.path-integral-time-ordering-result
+    note: Retains the time-slice insertion route to ordering.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 284
+  - source: schwartz
+    section: 14.1, 14.2.5
+    pages:
+    - 251
+    - 259
+    - 260
+    - 261
+- id: qft.align021.path-integral-intuition-and-formulation-tradeoffs
+  label: Path-integral intuition and formulation tradeoffs
+  summary: A path integral sums classical configurations with action phases. It makes
+    Lorentz covariance and nonperturbative configurations accessible, while canonical
+    quantization keeps Hamiltonian, Hilbert-space, and unitarity structure more transparent.
+  kind: concept
+  group: qft.radiation-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.sum-over-histories-and-huygens-intuition
+    note: Retains the slit/Huygens intuition and its classical-limit scope.
+  - project: schwartz
+    node: schwartz.path-integral-canonical-formulation-tradeoffs
+    note: Retains the stated comparison with canonical formulation.
+  evidence:
+  - source: schwartz
+    section: '14.1'
+    pages:
+    - 251
+    - 252
+- id: qft.align021.peskin-functional-phi4-expansion
+  label: Peskin–Schroeder functional phi-four expansion
+  summary: Expand the phi-four functional integral directly in its interaction. The
+    nonlinear Lagrangian coefficient supplies the vertex and disconnected vacuum bubbles
+    exponentiate and cancel against the normalized denominator.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.functional-phi4-vertices-and-vacuum-cancellation
+    note: Retains the direct normalized phi-four expansion.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 289
+- id: qft.align021.phase-space-path-integral-weyl-ordering
+  label: Phase-space path integral and Weyl-ordering qualification
+  summary: The phase-space route integrates unconstrained momenta and endpoint-fixed
+    coordinates with p dot qdot minus H in the exponent. For mixed momentum-coordinate
+    operators, H must be represented in Weyl order, including commutator corrections.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phase-space-path-integral-and-weyl-ordering
+    note: The Weyl-ordering correction is specific to this phase-space construction.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.1'
+    pages:
+    - 281
+- id: qft.align021.real-scalar-configuration-functional-integral
+  label: Real-scalar configuration functional integral
+  summary: For a real scalar, integrating the canonical momentum in the phase-space
+    field integral gives the endpoint-fixed configuration functional integral weighted
+    by exp(i integral L).
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.real-scalar-field-path-integral
+    note: Retains the real-scalar phase-space-to-configuration derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 282
+- id: qft.align021.reflection-positivity-and-iepsilon-qualification
+  label: Reflection positivity and i-epsilon qualification
+  summary: Reflection positivity supplies a positive-energy condition whose Euclidean-to-Minkowski
+    continuation supports the Feynman prescription. Both signs can define deformed
+    path integrals, but only plus-i-epsilon gives causal scattering; this does not
+    make the general interacting path integral rigorous.
+  kind: assumption
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.reflection-positivity-for-iepsilon
+    note: Retains the positive-energy, continuation, and anti-time-ordering qualification.
+  evidence:
+  - source: schwartz
+    section: 14.4.2
+    pages:
+    - 266
+    - 267
+- id: qft.align021.s-matrix-boundary-origin-of-iepsilon
+  label: S-matrix boundary origin of the i-epsilon prescription
+  summary: For S-matrix amplitudes, fields match free states at temporal infinity.
+    The vacuum wavefunctional boundary factors can be rewritten as infinitesimal bulk
+    damping, yielding the plus-i-epsilon Feynman propagator.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.s-matrix-boundary-origin-of-iepsilon
+    note: Retains the free-state boundary condition and wavefunctional route.
+  evidence:
+  - source: schwartz
+    section: 14.4.1
+    pages:
+    - 265
+    - 266
+- id: qft.align021.scalar-functional-integral-lattice-and-iepsilon
+  label: Scalar functional-integral lattice definition and i-epsilon
+  summary: A scalar functional measure may be defined as a finite lattice limit and
+    Fourier-mode product. Tilting the time contour gives k-squared minus m-squared
+    plus i-epsilon, providing convergence and choosing analytic continuation.
+  kind: assumption
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.scalar-functional-integral-lattice-and-ie
+    note: Retains both the lattice definition and the contour-derived prescription.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 286
+- id: qft.align021.schwartz-interacting-path-integral-series
+  label: Schwartz interacting path-integral perturbation series
+  summary: Expanding the stated interaction in Z[J] turns each term into free-theory
+    source derivatives. Normalized derivatives reproduce the canonical Feynman-rule
+    perturbation series.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.interacting-path-integral-perturbation-series
+    note: Retains the Z0[J]-derivative expansion.
+  evidence:
+  - source: schwartz
+    section: 14.3.3
+    pages:
+    - 264
+- id: qft.align021.source-generating-functional-and-functional-derivatives
+  label: Source generating functional and functional derivatives
+  summary: Adding a classical scalar source J times phi defines Z[J]. Functional differentiation
+    inserts fields, and division by Z[0] gives vacuum time-ordered Green functions;
+    the functional-derivative definition fixes the delta-function convention.
+  kind: method
+  group: qft.free-scalar-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.functional-derivative-and-scalar-source
+    note: Retains the derivative axiom and scalar-source convention.
+  - project: schwartz
+    node: schwartz.source-generating-functional-method
+    note: Shares the source-to-insertions route for arbitrary time-ordered correlators.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.4'
+    pages:
+    - 290
+  - source: schwartz
+    section: '14.3'
+    pages:
+    - 261
+    - 262
+- id: qft.align021.task-thermal-fermion-antiperiodic-boundary
+  label: 'Task: thermal fermion antiperiodic boundary conditions'
+  summary: The assigned problem asks the learner to evaluate the stated two-level
+    Grassmann oscillator with antiperiodic boundary conditions and compare it with
+    the Fermi-statistics partition function. It is retained as a task, not its answer.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-thermal-fermion-antiperiodic-boundary
+    note: Retained as Problem 9.2(d), with its task status.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(d)
+    pages:
+    - 313
+- id: qft.align021.task-thermal-free-scalar-determinant
+  label: 'Task: thermal free-scalar determinant'
+  summary: The assigned problem asks the learner to generalize the periodic Euclidean
+    construction to a free scalar, obtain the stated inverse-square-root determinant,
+    and check its mass-squared dependence. It is retained as a task, not its result.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-thermal-free-scalar-determinant
+    note: Retained as Problem 9.2(c), with its task status.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(c)
+    pages:
+    - 313
+- id: qft.align021.task-thermal-harmonic-oscillator-determinant
+  label: 'Task: thermal harmonic-oscillator determinant'
+  summary: The assigned problem asks the learner to Fourier-decompose the periodic
+    Euclidean oscillator, track the omega-dependent normalization, and recover its
+    partition function through the sinh product. It is retained as a task, not its
+    solution.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-thermal-harmonic-oscillator-determinant
+    note: Retained as Problem 9.2(b), with its task status.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(b)
+    pages:
+    - 313
+- id: qft.align021.task-thermal-trace-periodic-euclidean-path-integral
+  label: 'Task: thermal trace as a periodic Euclidean path integral'
+  summary: The assigned problem asks the learner to start from Z = Tr exp(-beta H),
+    derive the beta-periodic Euclidean functional-integral construction, and retain
+    the Euclidean Lagrangian in its weight. It does not assert the requested derivation
+    as already completed.
+  kind: method
+  group: qft.align018.source-backed-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-bosonic-thermal-path-integral
+    note: Retained as Problem 9.2(a), with its task status.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(a)
+    pages:
+    - 312
+    - 313
+- id: qft.align021.time-sliced-quantum-mechanical-path-integral
+  label: Time-sliced quantum-mechanical path integral
+  summary: Insert intermediate position and momentum resolutions and use the short-time
+    Gaussian integral to obtain an endpoint-fixed sum over paths weighted by exp(iS/hbar).
+    Time slicing supplies the definition and normalization; stationary phase identifies
+    the classical limit.
+  kind: method
+  group: qft.radiation-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.configuration-space-path-integral
+    note: Shares the endpoint-fixed configuration-path construction and stationary-phase
+      scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.time-sliced-path-integral-normalization
+    note: Retains the discrete normalization and Schrodinger/delta initial-condition
+      check.
+  - project: schwartz
+    node: schwartz.quantum-mechanical-path-integral-derivation
+    note: Shares the position/momentum time-slicing and Gaussian route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.1'
+    pages:
+    - 276
+    - 277
+    - 278
+    - 279
+  - source: schwartz
+    section: 14.2.2
+    pages:
+    - 255
+    - 256
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -30479,6 +31018,576 @@ edges:
     pages:
     - 193
     - 194
+- id: qft.align021.e-adiabatic-to-normal
+  from: qft.align016.adiabatic-interacting-vacuum-projection
+  to: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 284
+- id: qft.align021.e-assumptions-to-abelian-factorization
+  from: qft.align021.abelian-gauge-orbit-factorization-assumptions
+  to: qft.align021.abelian-gauge-orbit-factorization
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The shift and invariance assumptions license the factorization argument.
+  failure_mode: The cancellation is overgeneralized beyond its stated assumptions.
+  evidence:
+  - source: schwartz
+    section: '14.5'
+    pages:
+    - 268
+- id: qft.align021.e-boundary-to-reflection
+  from: qft.align021.s-matrix-boundary-origin-of-iepsilon
+  to: qft.align021.reflection-positivity-and-iepsilon-qualification
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: typical
+  rationale: The boundary-state derivation and reflection-positivity discussion are
+    distinct source routes for understanding the prescription.
+  failure_mode: Treating either argument as a compulsory step would erase the independent
+    route.
+  evidence:
+  - source: schwartz
+    section: 14.4.1, 14.4.2
+    pages:
+    - 265
+    - 266
+    - 267
+- id: qft.align021.e-canonical-field-to-real
+  from: qft.canonical-field-momentum-hamiltonian
+  to: qft.align021.real-scalar-configuration-functional-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 282
+- id: qft.align021.e-canonical-routes-to-normal
+  from: qft.canonical-and-path-integral-quantization-routes
+  to: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: schwartz
+    section: '14.1'
+    pages:
+    - 251
+- id: qft.align021.e-determinant-to-thermal-scalar
+  from: qft.align021.bosonic-functional-determinant
+  to: qft.align021.task-thermal-free-scalar-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for the inverse-square-root scalar determinant.
+  failure_mode: The requested determinant form lacks its direct input.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(c)
+    pages:
+    - 313
+- id: qft.align021.e-equal-time-to-field-basis
+  from: qft.equal-time-scalar-field-commutators
+  to: qft.align021.field-configuration-and-momentum-eigenstates
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: schwartz
+    section: 14.2.3
+    pages:
+    - 256
+    - 257
+- id: qft.align021.e-euler-to-stationary
+  from: qft.field-euler-lagrange-equation
+  to: qft.align021.classical-stationary-phase-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: schwartz
+    section: 14.2.4
+    pages:
+    - 259
+- id: qft.align021.e-factorization-to-xi-independence
+  from: qft.align021.abelian-gauge-orbit-factorization
+  to: qft.align021.gauge-invariant-correlator-xi-independence
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Cancellation of the common orbit factor establishes the stated xi independence.
+  failure_mode: The result would omit its derivation and gauge-invariant-operator
+    scope.
+  evidence:
+  - source: schwartz
+    section: '14.5'
+    pages:
+    - 268
+    - 269
+- id: qft.align021.e-fermionic-statistics-to-thermal-fermion-task
+  from: qft.align020.fermionic-ladder-statistics-residual
+  to: qft.align021.task-thermal-fermion-antiperiodic-boundary
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task compares the Grassmann-oscillator partition function with the
+    two-state Fermi-statistics result.
+  failure_mode: Without the fermionic occupation rule, the requested statistical comparison
+    has no target.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(d)
+    pages:
+    - 313
+- id: qft.align021.e-field-basis-to-field-path
+  from: qft.align021.field-configuration-and-momentum-eigenstates
+  to: qft.align021.field-theory-path-integral-from-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Hamiltonian construction inserts these field and momentum bases.
+  failure_mode: The time-sliced construction has no functional completeness input.
+  evidence:
+  - source: schwartz
+    section: 14.2.3
+    pages:
+    - 256
+    - 257
+- id: qft.align021.e-field-basis-to-s-matrix-boundary
+  from: qft.align021.field-configuration-and-momentum-eigenstates
+  to: qft.align021.s-matrix-boundary-origin-of-iepsilon
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The boundary derivation uses field-configuration eigenstates at temporal
+    infinity.
+  failure_mode: The boundary wavefunctional condition lacks its state representation.
+  evidence:
+  - source: schwartz
+    section: 14.4.1
+    pages:
+    - 265
+- id: qft.align021.e-field-path-to-stationary-phase
+  from: qft.align021.field-theory-path-integral-from-hamiltonian
+  to: qft.align021.classical-stationary-phase-limit
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The stationary-phase argument is applied to the derived field functional
+    integral.
+  failure_mode: The limit lacks its functional-integral object.
+  evidence:
+  - source: schwartz
+    section: 14.2.3, 14.2.4
+    pages:
+    - 258
+    - 259
+- id: qft.align021.e-free-functional-to-four-point
+  from: qft.align021.free-scalar-generating-functional
+  to: qft.align021.free-four-point-pairing-derivation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The four-point calculation differentiates the solved free functional.
+  failure_mode: The derivative pairing calculation has no generating functional to
+    differentiate.
+  evidence:
+  - source: schwartz
+    section: 14.3.2
+    pages:
+    - 263
+- id: qft.align021.e-free-functional-to-schwartz-interactions
+  from: qft.align021.free-scalar-generating-functional
+  to: qft.align021.schwartz-interacting-path-integral-series
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Each interacting term is written as a derivative of Z0[J].
+  failure_mode: The Schwartz interaction series loses its free-functional route.
+  evidence:
+  - source: schwartz
+    section: 14.3.3
+    pages:
+    - 264
+- id: qft.align021.e-free-mode-to-field-basis
+  from: qft.free-scalar-field-mode-expansion
+  to: qft.align021.field-configuration-and-momentum-eigenstates
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: schwartz
+    section: 14.2.3
+    pages:
+    - 256
+    - 257
+- id: qft.align021.e-gaussian-to-qm
+  from: qft.align021.multivariable-gaussian-integral-method
+  to: qft.align021.time-sliced-quantum-mechanical-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-sliced momentum integral is evaluated as a Gaussian.
+  failure_mode: The configuration form cannot be derived from the momentum slices.
+  evidence:
+  - source: schwartz
+    section: 14.2.2
+    pages:
+    - 255
+    - 256
+- id: qft.align021.e-gaussian-wick-to-peskin-phi4
+  from: qft.align021.gaussian-functional-wick-contractions
+  to: qft.align021.peskin-functional-phi4-expansion
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The direct expansion reduces its terms to free scalar correlations and
+    their contractions.
+  failure_mode: The direct numerator/denominator expansion cannot evaluate its free
+    terms.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 288
+    - 289
+- id: qft.align021.e-grassmann-to-thermal-fermion
+  from: qft.align021.grassmann-algebra-and-grading
+  to: qft.align021.task-thermal-fermion-antiperiodic-boundary
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task is explicitly a Grassmann-oscillator functional integral.
+  failure_mode: The anticommuting variables and boundary condition have no algebraic
+    setting.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2
+    pages:
+    - 313
+- id: qft.align021.e-green-to-free
+  from: qft.green-function-propagator-kernel
+  to: qft.align021.free-scalar-generating-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: schwartz
+    section: 14.3.1
+    pages:
+    - 262
+- id: qft.align021.e-kg-hamiltonian-to-real
+  from: qft.klein-gordon-canonical-hamiltonian
+  to: qft.align021.real-scalar-configuration-functional-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 282
+- id: qft.align021.e-local-action-to-stationary
+  from: qft.local-field-action
+  to: qft.align021.classical-stationary-phase-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: schwartz
+    section: 14.2.4
+    pages:
+    - 259
+- id: qft.align021.e-normalized-correlator-to-gauge-factorization
+  from: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  to: qft.align021.abelian-gauge-orbit-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge-orbit calculation begins with normalized gauge-invariant correlators.
+  failure_mode: The factorization target lacks the correlator quotient to which it
+    applies.
+  evidence:
+  - source: schwartz
+    section: '14.5'
+    pages:
+    - 267
+    - 268
+- id: qft.align021.e-normalized-correlator-to-source
+  from: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  to: qft.align021.source-generating-functional-and-functional-derivatives
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source method generates the normalized time-ordered correlators it
+    differentiates.
+  failure_mode: The source route loses its correlation-function target.
+  evidence:
+  - source: schwartz
+    section: '14.3'
+    pages:
+    - 261
+    - 262
+- id: qft.align021.e-phase-space-to-real-scalar
+  from: qft.align021.phase-space-path-integral-weyl-ordering
+  to: qft.align021.real-scalar-configuration-functional-integral
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The real-scalar configuration formula follows by Gaussian integration
+    of the phase-space momentum variable.
+  failure_mode: The configuration integral would be asserted without the stated phase-space
+    derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 282
+- id: qft.align021.e-phi4-rules
+  from: qft.align021.peskin-functional-phi4-expansion
+  to: qft.align016.phi4-momentum-space-feynman-rules
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The functional perturbation expansion is an alternative derivation of
+    the accepted momentum-space phi-four rules.
+  failure_mode: Treating the functional expansion as compulsory would erase the independent
+    route already represented by the accepted rules.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 289
+- id: qft.align021.e-propagator-to-wick
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align021.gaussian-functional-wick-contractions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 287
+    - 288
+- id: qft.align021.e-ps-vacuum-route-to-normalized-correlator
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: This is the Peskin–Schroeder vacuum-projection route.
+  failure_mode: Making it compulsory would exclude the independent Schwartz route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 284
+- id: qft.align021.e-real-kg-to-real
+  from: qft.real-klein-gordon-lagrangian
+  to: qft.align021.real-scalar-configuration-functional-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 282
+- id: qft.align021.e-real-scalar-to-lagrangian-definition
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align021.lagrangian-functional-definition-and-manifest-symmetries
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: typical
+  rationale: The source presents this configuration formula as the Lagrangian functional
+    definition.
+  failure_mode: A compulsory ordering would erase its representational role.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.2'
+    pages:
+    - 282
+    - 283
+- id: qft.align021.e-real-scalar-to-lattice-iepsilon
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align021.scalar-functional-integral-lattice-and-iepsilon
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The lattice definition regulates the scalar configuration integral.
+  failure_mode: The regulated object is disconnected from the scalar functional integral.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 286
+- id: qft.align021.e-schwartz-field-route-to-normalized-correlator
+  from: qft.align021.field-theory-path-integral-from-hamiltonian
+  to: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is the independent Schwartz time-slicing/insertion route.
+  failure_mode: Making it compulsory would exclude the Peskin–Schroeder route.
+  evidence:
+  - source: schwartz
+    section: 14.2.5
+    pages:
+    - 259
+    - 260
+    - 261
+- id: qft.align021.e-source-to-free-functional
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align021.free-scalar-generating-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Schwartz free calculation is a source-dependent quadratic functional
+    integral.
+  failure_mode: Its derivatives and source kernel lack their defining object.
+  evidence:
+  - source: schwartz
+    section: 14.3.1
+    pages:
+    - 262
+- id: qft.align021.e-source-to-schwartz-interactions
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align021.schwartz-interacting-path-integral-series
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The interaction fields are represented by functional source derivatives.
+  failure_mode: The source-derivative expansion cannot be written.
+  evidence:
+  - source: schwartz
+    section: 14.3.3
+    pages:
+    - 264
+- id: qft.align021.e-thermal-periodic-to-oscillator
+  from: qft.align021.task-thermal-trace-periodic-euclidean-path-integral
+  to: qft.align021.task-thermal-harmonic-oscillator-determinant
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The oscillator task uses the periodic Euclidean construction requested
+    in part (a).
+  failure_mode: The periodic domain used in the oscillator task is unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2
+    pages:
+    - 313
+- id: qft.align021.e-timeslice-to-phase-space
+  from: qft.align021.time-sliced-quantum-mechanical-path-integral
+  to: qft.align021.phase-space-path-integral-weyl-ordering
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The phase-space construction refines the time-sliced coordinate construction
+    by inserting momentum completeness.
+  failure_mode: The phase-space time slicing has no construction basis.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.1'
+    pages:
+    - 281
+- id: qft.align021.e-vacuum-to-phi4
+  from: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  to: qft.align021.peskin-functional-phi4-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Packet evidence supports this retained mapped input.
+  failure_mode: The source-supported input is absent from the merged route.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 289
+- id: qft.align021.e-wick-alternative
+  from: qft.align021.gaussian-functional-wick-contractions
+  to: qft.align016.scalar-wick-theorem
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The direct functional Gaussian calculation reproduces the same pairing
+    structure as the operator Wick-theorem derivation.
+  failure_mode: Treating either derivation as compulsory would erase the source-supported
+    independent routes to the pairing result.
+  evidence:
+  - source: peskin-schroeder
+    section: '9.3'
+    pages:
+    - 288
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation

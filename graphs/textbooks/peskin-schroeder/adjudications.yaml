@@ -6,6 +6,32 @@ deciding_model: gpt-5.6-sol
 effort: high
 human_audit: pending
 units:
+- id: citation-precision-001
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The accepted node omits the opening source page for Problem 9.2(a).
+    alternatives:
+    - Keep the accepted evidence citation limited to printed page 313.
+    - Replace the accepted node with an otherwise identical record citing printed
+      pages 312 and 313.
+    resolution: Cite printed pages 312 and 313 in the otherwise unchanged accepted
+      node.
+    rationale: Printed page 312 begins Problem 9.2(a) and supplies its thermal-trace
+      starting point. Printed page 313 continues the same task with the temperature
+      definition, the Section 9.1 method, and the periodic Euclidean-time construction.
+      Citing both pages therefore captures the complete support for the retained summary
+      while preserving every other node field.
+    evidence:
+    - source: peskin-schroeder
+      section: Problem 9.2(a)
+      pages:
+      - 312
+      - 313
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.problem-bosonic-thermal-path-integral
 - id: full-003
   model_verdict: accept
   outcome: promoted
