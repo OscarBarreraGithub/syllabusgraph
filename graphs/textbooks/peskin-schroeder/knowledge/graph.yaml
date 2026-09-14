@@ -70,6 +70,27 @@ nodes:
     - 29
     note: The source connects complex-field charged excitations to the two cancelling
       propagation terms and draws the equal-mass antiparticle conclusion.
+- id: peskin-schroeder.ap-moment-anomalous-dimension-equivalence
+  label: Altarelli-Parisi moments equal twist-two anomalous dimensions
+  summary: 'Taking Mellin moments of the Altarelli-Parisi convolutions converts them
+    into ordinary scale equations because the integral factorizes. The text explicitly
+    computes the non-singlet f_f^-=f_f-f_fbar: d M_f^(n)/d log Q^2=[alpha_s(Q^2)/(2
+    pi)](integral_0^1 dz z^(n-1) P_q<-q(z))M_f^(n), with splitting-kernel moment a_ff^(n)/4.
+    It then states that the full singlet-quark/gluon coupled-kernel check can be done
+    similarly and has coefficients a_ff,a_fg,a_gf,a_gg. Thus parton splitting and
+    local-operator rescaling give the same Q^2 dependence: progressively finer hard
+    probes resolve a quark into quarks, antiquarks, and gluons and shift distributions
+    to smaller x, subject to charge and momentum conservation.'
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 644
+    - 645
+    - 646
+    note: Derives Mellin factorization, matches its coefficients to the operator matrix,
+      and states the common physical interpretation.
 - id: peskin-schroeder.asymptotic-freedom-scaling-violations-and-hard-jets
   label: Asymptotic freedom predicts logarithmic scaling violations
   summary: A non-Abelian gauge theory with gluons explains approximate free partons
@@ -882,6 +903,25 @@ nodes:
     - 234
     - 235
     - 236
+- id: peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  label: Isospin eigenoperators and hard-QCD Delta-I enhancement
+  summary: 'Diagonalizing the supplied O_1,O_2 mixing matrix gives O^(1/2)=(O_1-O_2)/2
+    and O^(3/2)=(O_1+O_2)/2, with gamma_(1/2)=-8g^2/(4 pi)^2 and gamma_(3/2)=+4g^2/(4
+    pi)^2. Hence [O_1]_{m_W}=[log(m_W^2/Lambda^2)/log(m_K^2/Lambda^2)]^(4/b_0)[O^(1/2)]_{m_K}+[log(m_W^2/Lambda^2)/log(m_K^2/Lambda^2)]^(-2/b_0)[O^(3/2)]_{m_K}.
+    For n_f=4 and Lambda=150 MeV the text finds 2.1 O^(1/2)+0.7 O^(3/2): hard logarithms
+    give about a factor-three relative enhancement, but the observed Delta I=1/2 rule
+    needs about twenty, with the remainder expected partly from nonperturbative hadronic
+    matrix elements. The source attributes this hard-QCD result to Gaillard-Lee and
+    Altarelli-Maiani.'
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 611
+    - 612
+    note: Gives the eigenoperators, anomalous dimensions, rescaling, numerical illustration,
+      and its limitation.
 - id: peskin-schroeder.dim-reg-loop-integral-method
   label: Dimensional regularization for symmetry-preserving loop integrals
   summary: Continue loop integrals and Dirac algebra to d spacetime dimensions, Wick
@@ -1168,6 +1208,133 @@ nodes:
     note: The book calls the parton's longitudinal momentum fraction xi and identifies
       it with Bjorken x only under the stated elastic, high-energy and negligible-mass
       assumptions.
+- id: peskin-schroeder.dis-current-conservation-form-factors-and-parton-callan-gross
+  label: DIS form factors and the parton-model Callan-Gross relation
+  summary: 'Current conservation leaves two scalar form factors in W_mu_nu(P,q): W_1
+    and W_2 multiplying the transverse tensors built from P and q. For a free struck
+    massless parton with p=xi P, Im[-1/(2xi P dot q-Q^2+i epsilon)]=pi delta(xi-x)/(ys);
+    the crossed diagram has no physical-region imaginary part. Consequently Im W_1=pi
+    sum_f Q_f^2 f_f(x), Im W_2=(4 pi/(ys))sum_f Q_f^2 x f_f(x), so Im W_1=ys Im W_2/(4x),
+    the Callan-Gross relation, and d^2sigma/(dx dy) has [1+(1-y)^2] free-fermion dependence.'
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 625
+    - 626
+    - 627
+    note: Derives the two-form-factor decomposition and evaluates it in the parton
+      model.
+- id: peskin-schroeder.dis-dispersion-moment-sum-rules
+  label: DIS dispersion relation and moment sum rules
+  summary: At fixed Q^2, W_2(v,Q^2), v=2P dot q, has an OPE series about v=0 but physical
+    DIS cuts for |v| at least Q^2; W_2(-v,Q^2)=W_2(v,Q^2). A contour around v=0, deformed
+    onto both cuts, equates OPE coefficients with moments. For even n, integral_0^1
+    dx x^(n-1) f_f^+(x,Q^2)=A_f^(n). A parity-violating neutrino form factor similarly
+    gives, for odd n, integral_0^1 dx x^(n-1) f_f^-(x,Q^2)=A_f^(n), where f_f^-=f_f-f_fbar.
+    The n=1 sum gives net flavor N_f and n=2 gives the quark-plus-antiquark momentum
+    fraction.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 633
+    - 634
+    - 635
+    note: Uses the v-plane analytic structure to derive even and odd flavor moment
+      sum rules and their normalizations.
+- id: peskin-schroeder.dis-forward-compton-optical-theorem
+  label: DIS hadronic tensor from forward Compton scattering
+  summary: For e p to e X, square the current matrix element and sum over X with the
+    optical theorem. The required spin-averaged forward Compton amplitude is W_mu_nu(P,q)=i
+    integral d^4x exp(iq dot x)<P|T J_mu(x)J_nu(0)|P>; its discontinuity is the inclusive
+    hadronic sum. At q^2=0 with physical polarizations it is forward photon-proton
+    Compton scattering, but the analysis retains general spacelike q and polarizations.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 623
+    - 624
+    note: Introduces W_mu_nu and uses the optical theorem to replace the final-state
+      sum.
+- id: peskin-schroeder.dis-n2-energy-momentum-conservation-and-asymptotic-fractions
+  label: n-equals-two conservation eigenvector and asymptotic momentum fractions
+  summary: At n=2 the zero-anomalous-dimension left eigenvector is the total QCD energy-momentum
+    tensor T_mu_nu=sum_f O_f^(2)+O_g^(2). Its proton matrix element implies sum_f
+    A_f^(2)+A_g^(2)=1, the momentum sum rule. Other n=2 components decay logarithmically.
+    In the Q^2 to infinity limit, integral_0^1 dx x f_f^+(x,Q^2) tends to 3/(16+3n_f)
+    for each flavor and integral_0^1 dx x f_g(x,Q^2) tends to 16/(16+3n_f); for n_f=4
+    these are 3/28 and 4/7, approached slowly from physical PDFs.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 642
+    - 643
+    - 644
+    note: Identifies the conserved stress tensor eigenvector, momentum sum rule, and
+      asymptotic fractions.
+- id: peskin-schroeder.dis-ope-pdf-definition-and-leading-callan-gross
+  label: OPE definition of leading DIS parton distributions
+  summary: At leading twist define x f_f^+(x,Q^2)=(ys/(4 pi)) Im W_{2f}(x,Q^2), neglecting
+    power-suppressed terms. In the parton model f_f^+=f_f+f_fbar. The leading-twist
+    OPE series itself satisfies the Callan-Gross relation, so the definition enters
+    the electron DIS cross section correctly without separately assuming the parton
+    model; alpha_s corrections to coefficient functions modify that relation.
+  kind: representation
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 632
+    note: Defines f_f^+ from the flavor-resolved form factor and records the leading-order
+      qualification.
+- id: peskin-schroeder.dis-twist-power-counting-and-flavor-separation
+  label: Twist power counting and leading flavor separation in DIS
+  summary: For a spin-s operator of dimension d, its DIS contribution scales by its
+    twist t=d-s, rather than dimension alone. The spin-n quark operators have t=2,
+    the least nontrivial QCD twist. Their proton matrix elements are <P|O_f^(n)|P>_spin-av=2
+    A_f^(n)P^{mu_1}...P^{mu_n}-traces; A_f^(1)=N_f is the conserved net flavor charge
+    and A_f^(2) is that flavor's momentum fraction. Trace terms are suppressed by
+    m_p^2/Q^2 at fixed x. Different-flavor current products begin at twist greater
+    than four, hence are at least 1/Q^2 suppressed, so leading W_mu_nu separates as
+    sum_f Q_f^2 W_f_mu_nu.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 630
+    - 631
+    - 632
+    note: Relates matrix elements to flavor/momentum and establishes twist and different-flavor
+      suppression.
+- id: peskin-schroeder.dis-twist-two-quark-ope
+  label: Twist-two quark operators in the DIS current OPE
+  summary: At x separation of order 1/Q, asymptotic freedom permits perturbative current-OPE
+    coefficients at alpha_s(Q^2). Contract same-flavor quarks, expand in external
+    covariant derivatives, and retain all powers of 2 i q dot D/Q^2 because their
+    parton-model matrix elements are unsuppressed. The leading operators are O_f^{(n)
+    mu_1...mu_n}=qbar_f gamma^{mu_1}(iD^{mu_2})...(iD^{mu_n})q_f with indices totally
+    symmetrized and traces removed. The two-current OPE keeps even n; replacing partial
+    by D restores color-gauge invariance without changing the leading coefficient
+    derivation.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 627
+    - 628
+    - 629
+    - 630
+    note: Constructs the singular current OPE and the symmetrized traceless gauge-invariant
+      quark operators.
 - id: peskin-schroeder.discrete-lorentz-components-and-cpt-status
   label: P, T, C, and disconnected Lorentz components
   summary: Parity and time reversal preserve x² but lie outside the proper orthochronous
@@ -1339,6 +1506,40 @@ nodes:
     - 341
     - 342
     - 343
+- id: peskin-schroeder.eplus-eminus-hadrons-optical-current-correlator
+  label: e-plus-e-minus hadron rate from the current correlator
+  summary: 'Use the optical theorem on forward e+e- scattering to express the inclusive
+    hadronic rate through the imaginary part of the transverse hadronic vacuum polarization:
+    sigma(e+e- to hadrons)=(4 pi alpha/s) Im Pi_h(s). Here i Pi_h^{mu nu}(q)=-e^2
+    integral d^4x exp(iq dot x)<0|T J^mu(x)J^nu(0)|0>, so Pi_h already contains both
+    electromagnetic couplings; J_mu is the electromagnetic quark current. At leading
+    order the usual color-three, charge-squared quark sum follows.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 616
+    - 617
+    note: Relates the inclusive rate to a current-current correlator and checks the
+      leading result.
+- id: peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+  label: OPE power corrections to the inclusive hadronic rate
+  summary: 'In the vacuum current OPE retain gauge-invariant Lorentz scalars: 1, m
+    qbar q, (F^a_mu_nu)^2, and higher operators. Their short-distance coefficients
+    scale as x^-6, m x^-2, and x^-2 respectively; after Fourier transform c_1~(q^2)^0
+    while both dimension-four terms obey c_qbarq~(q^2)^-2 and c_F2~(q^2)^-2. Thus
+    soft condensate matrix elements are power suppressed at large timelike q^2. This
+    is a formal short-distance result, not yet a valid direct calculation at timelike
+    q^2.'
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 617
+    - 618
+    note: Builds the scalar vacuum OPE and identifies its power-suppressed soft terms.
 - id: peskin-schroeder.epsilon-expanded-wilson-fisher-beta
   label: Epsilon-expanded Wilson-Fisher beta function
   summary: Near four dimensions, beta(lambda)=-(4-d)lambda+3 lambda-squared/(16 pi-squared)+higher
@@ -1986,6 +2187,21 @@ nodes:
     section: Final Project part (a)
     pages:
     - 260
+- id: peskin-schroeder.gluon-twist-two-operators-odd-n-total-derivative
+  label: Gluon twist-two operators and the odd-n exclusion
+  summary: The gluon twist-two operators O_g^(n) are symmetrized, traceless operators
+    made from F^{mu alpha}, covariant derivatives, and F_alpha^nu; they have dimension
+    n+2, spin n, and twist two. Transferring covariant derivatives between the field
+    strengths gives O_g^(n)=(-1)^n O_g^(n)+a total derivative. For odd n it is therefore
+    a total derivative; at zero momentum injection its proton matrix element vanishes,
+    so it cannot affect the DIS cross section. For even n it mixes with O_f^(n).
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 639
+    note: Defines gluon twist-two operators and proves the total-derivative restriction.
 - id: peskin-schroeder.grassmann-algebra-and-shift-invariant-integration
   label: Grassmann algebra and shift-invariant integration
   summary: Grassmann numbers anticommute and square to zero. Shift invariance fixes
@@ -2283,6 +2499,28 @@ nodes:
     pages:
     - 84
     - 85
+- id: peskin-schroeder.itep-dispersion-sum-rules-and-local-duality-limit
+  label: ITEP dispersion sum rules and their limitation
+  summary: 'The short-distance OPE controls Pi_h at large spacelike q^2=-Q_0^2, while
+    the e+e- cross section needs timelike q^2. A Kallen-Lehmann representation makes
+    Pi_h analytic except for its positive-axis cut; for n>1, a weighted contour integral
+    can be evaluated at the spacelike pole by OPE derivatives or deformed onto the
+    cut to give an integral of sigma(s)/(s+Q_0^2)^(n+1), because only then the contour
+    at infinity vanishes. These ITEP sum rules, first constructed by Novikov, Shifman,
+    Voloshin, Vainshtein, and Zakharov, connect perturbative coefficients and condensates
+    to smeared data. They cannot generally be inverted pointwise: increasing derivatives
+    emphasize rapid variations, so resonance oscillations can dominate locally at
+    low s even while low-n averages agree.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 619
+    - 620
+    - 621
+    note: Explains why spacelike OPE needs dispersion relations and records the nonuniform-in-n
+      qualification.
 - id: peskin-schroeder.kallen-lehmann-spectral-representation
   label: Kallen-Lehmann spectral representation
   summary: Insert a complete set of exact energy-momentum eigenstates into a scalar
@@ -3064,6 +3302,26 @@ nodes:
     - 510
     - 511
     - 512
+- id: peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  label: Nonleptonic weak-operator mixing below the W scale
+  summary: At order alpha_s, cross-current gluon diagrams mix O_1=(dbar_L gamma_mu
+    u_L)(ubar_L gamma^mu s_L) with O_2=(ubar_L gamma_mu u_L)(dbar_L gamma^mu s_L);
+    the single-current corrections cancel the four external field renormalizations.
+    Fierz rearrangement and (t^a)_ij(t^a)_kl=(1/2)(delta_il delta_kj-(1/3)delta_ij
+    delta_kl) expose the second color-singlet current pairing. The local-W approximation
+    is valid only for k^2 much less than m_W^2, so its ultraviolet logarithm is physically
+    cut off at m_W and its lower scale is set by the external hadronic momentum; the
+    one-loop correction both rescales O_1 and introduces O_2.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 607
+    - 608
+    - 609
+    - 610
+    note: Derives color/Fierz mixing and interprets the local-vertex ultraviolet logarithm.
 - id: peskin-schroeder.nonlinear-sigma-asymptotic-freedom-and-n2-exception
   label: Nonlinear sigma-model asymptotic freedom and N=2 exception
   summary: For N>2 the negative nonlinear-sigma beta function makes g weak at short
@@ -3420,6 +3678,50 @@ nodes:
     note: The page states the one-particle operators, plane-wave momentum check, h.c.
       meaning, Pauli algebra and ladder combinations, and definitions of theta and
       delta.
+- id: peskin-schroeder.ope-local-expansion-and-universality
+  label: Wilson operator product expansion
+  summary: For time-ordered O_1(x)O_2(0) with x small while the remaining fields or
+    external states stay far away, replace the product by sum_n C_12n(x) O_n(0). The
+    local basis is restricted by the product's global symmetry quantum numbers; C_12n
+    are c-number functions that may be singular as x tends to zero. The same coefficients
+    apply to every external matrix element, so G_12(x;y_i)=sum_n C_12n(x)G_n(y_i).
+    The text attributes this proposal to Wilson.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 612
+    - 613
+    note: Defines the small-separation expansion and its external-state independence.
+- id: peskin-schroeder.ope-operator-mixing-matrix-equation
+  label: Matrix RG equation for mixed OPE operators
+  summary: 'When operators mix, anomalous dimensions are matrices: the two factors
+    in the original product act on the OPE coefficient from the left and the final
+    operator matrix acts from the right. For a product of conserved currents the two
+    left matrices vanish, leaving (M partial_M+beta partial_g)C_12n-C_12k gamma_kn=0.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 615
+    note: States the matrix generalization required in the subsequent DIS analysis.
+- id: peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  label: RG equation and scaling of OPE coefficients
+  summary: With all operators normalized at M, the coefficient obeys (M partial_M+beta
+    partial_g+gamma_1+gamma_2-gamma_n)C_12n=0. Dimensional analysis gives C_12n=x^(-(d_1+d_2-d_n))
+    C(xM); at a fixed point its exponent uses the true dimension d'_j=d_j+gamma_j(g_*).
+    In an asymptotically free theory the leading form carries the additional factor
+    [log(1/(x^2 Lambda^2))/log(M^2/Lambda^2)]^((a_n-a_1-a_2)/(2b_0)).
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 614
+    note: Derives the OPE Callan-Symanzik equation, dimension rule, and fixed-point/asymptotically-free
+      solutions.
 - id: peskin-schroeder.operator-dimension-ir-relevance
   label: Operator dimension and infrared relevance
   summary: Near the free four-dimensional scalar theory, a dimensionless perturbation
@@ -3896,6 +4198,72 @@ nodes:
     section: Problem 17.6(d)
     pages:
     - 598
+- id: peskin-schroeder.problem-18-1-proton-decay-operator-running
+  label: 'Problem 18.1: proton-decay lifetime and QCD enhancement'
+  summary: Given Delta L=(2/m_X^2) epsilon_abc epsilon^{alpha beta} epsilon^{gamma
+    delta} e_{R alpha} u_{R a beta} u_{L b gamma} d_{L c delta} from an X boson of
+    typical mass m_X=10^16 GeV, estimate the proton lifetime by order of magnitude.
+    Then show that the three-quark operator has gamma=-4g^2/(4 pi)^2 and estimate
+    the leading-QCD enhancement of the decay rate. These are requested derivations,
+    not results established in the chapter text.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.1
+    pages:
+    - 647
+    note: Records both requested parts and the stated heavy-mediator scale.
+- id: peskin-schroeder.problem-18-2-parity-violating-dis-form-factor
+  label: 'Problem 18.2: parity-violating DIS and odd moments'
+  summary: 'Analyze neutrino-proton DIS through a left-handed charged-current forward
+    tensor: derive its cross section, remove q_mu/q_nu terms, decompose it into W_1,
+    W_2, and the antisymmetric epsilon^{mu nu alpha beta}P_alpha q_beta W_3 form factor,
+    and evaluate these in the parton model. Then define the single-flavor left-current
+    tensor, derive its twist-two OPE, define f_f^-(x,Q^2)=(ys/(4 pi))Im W_3fL, and
+    prove the odd-n moment sum rule. These are exercise tasks, including the route
+    to the odd-n result used in the text.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.2
+    pages:
+    - 647
+    - 648
+    - 649
+    note: States the staged parity-violating tensor, parton-model, OPE, and sum-rule
+      tasks.
+- id: peskin-schroeder.problem-18-3-gluon-twist-two-counterterms
+  label: 'Problem 18.3: gluon twist-two anomalous-dimension calculation'
+  summary: Compute the divergent Figure 18.14 graphs to derive the quark-to-gluon
+    mixing coefficient, verify that the two diagrams cancel for odd n, then compute
+    the Figure 18.15 divergences to derive the remaining gluon-to-quark and gluon-diagonal
+    entries of the twist-two anomalous-dimension matrix. These are requested proofs,
+    not premises of the matrix result quoted earlier.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.3
+    pages:
+    - 649
+    note: Separately specifies the even-n mixing calculation and the remaining matrix
+      entries.
+- id: peskin-schroeder.problem-18-4-photon-dis-structure-functions
+  label: 'Problem 18.4: photon structure functions from QED and QCD evolution'
+  summary: For DIS from a photon measured through e+e- to e+e-+X with a forward positron
+    emitting a collinear photon, use the stated photon-PDF boundary condition f_gamma/gamma(x,Q^2)=delta(x-1)
+    at Q^2=(1 GeV)^2, Lambda=150 MeV, and four massless u,d,c,s flavors. The problem
+    is at leading order in QED and leading-log order in QCD; only part (a) asks for
+    quark/antiquark photon PDFs and photon survival at zeroth order in QCD. Parts
+    (b)-(d) formulate the moment problem as operator mixing, compute n=2 moments,
+    and describe x,Q^2 evolution. These are requested tasks, not asserted solutions.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.4
+    pages:
+    - 649
+    note: Preserves the experimental setup, boundary condition, parameters, and four
+      requested tasks.
 - id: peskin-schroeder.problem-arnowitt-fickler-gauge-quantization
   label: 'Problem: Arnowitt-Fickler gauge quantization'
   summary: Perform Faddeev-Popov quantization of Yang-Mills theory in A_3^a=0, write
@@ -5059,6 +5427,20 @@ nodes:
     - 564
     - 565
     - 566
+- id: peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  label: Leading-log rescaling of a gauge-invariant QCD operator
+  summary: For a gauge-invariant operator O containing n quark/antiquark and k gluon
+    fields, its normalization counterterm and external-field counterterms determine
+    gamma_O=-a_O g^2/(4 pi)^2 at one loop. Matrix elements acquire alpha_s log(M^2/Q^2)
+    terms; resumming them with the QCD beta function gives a power of log(M^2/Lambda^2)/log(Q^2/Lambda^2),
+    with small-Q enhancement when a_O>0.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 604
+    note: Generalizes the mass-operator calculation to any gauge-invariant QCD operator.
 - id: peskin-schroeder.qcd-gluon-splitting-kernel-result
   label: QCD gluon-to-gluon splitting kernel
   summary: The full leading kernel requested in Problem 17.4 is P_g←g(z)=6[(1-z)/z+z/(1-z)_++z(1-z)]+[(11/2)-(n_f/3)]delta(1-z).
@@ -5234,6 +5616,40 @@ nodes:
     pages:
     - 545
     - 546
+- id: peskin-schroeder.qcd-quark-mass-effective-running
+  label: Effective running quark mass
+  summary: With one quark flavor and terms only to leading order in a small renormalized
+    mass, add Delta L_m=-m(qbar q)_M. Define mbar(Q) by d mbar/d log(Q/M)=gamma_qbarq(gbar)mbar
+    and mbar(M)=m. The one-loop result gamma_qbarq=-8g^2/(4 pi)^2=-2 alpha_s/pi, together
+    with b_0=11-(2/3)n_f, gives mbar(Q)=[log(M^2/Lambda^2)/log(Q^2/Lambda^2)]^(4/b_0)m=[alpha_s(Q^2)/alpha_s(M^2)]^(4/b_0)m.
+    Thus a light-quark mass increases toward lower Q; the displayed n_f=4, Lambda=150
+    MeV example rises about twofold from 100 GeV to 1 GeV.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 600
+    - 602
+    - 603
+    note: Defines the mass insertion, obtains its one-loop value, and solves the leading
+      QCD RG equation.
+- id: peskin-schroeder.qcd-quark-mass-operator-renormalization
+  label: Quark mass-operator renormalization and current check
+  summary: Normalize the qbar q insertion between renormalized quarks at p^2=q^2=(p+q)^2=-M^2.
+    Its one-loop anomalous dimension is gamma_qbarq=M partial_M(-delta_qbarq+delta_2)=-8g^2/(4
+    pi)^2 after the gauge-dependent insertion and quark-field counterterms cancel.
+    Replacing the scalar insertion by the quark-number current produces gamma_j=0,
+    as required because the conserved charge fixes its normalization.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 601
+    - 602
+    note: Sets the subtraction condition, derives the insertion counterterm relation,
+      and verifies conserved-current protection.
 - id: peskin-schroeder.qcd-running-coupling-and-lambda
   label: Running alpha_s and the QCD scale Lambda
   summary: Because on-shell quarks are unsuitable renormalization states, define alpha_s
@@ -5642,6 +6058,24 @@ nodes:
     - 140
     note: The source gives the charge, color, and high-energy strong-interaction qualifications
       behind R.
+- id: peskin-schroeder.quark-twist-two-anomalous-dimension
+  label: Quark twist-two anomalous dimensions suppress higher moments
+  summary: Compute the counterterms for O_f^(n) with zero momentum injected at the
+    insertion, symmetrize all indices, and subtract traces. Besides the vertex graph,
+    explicit gauge fields in iD_mu=i partial_mu-g A_mu^a t^a generate two external-leg
+    contraction diagrams. The resulting one-loop gamma_f^(n) vanishes at n=1, protecting
+    flavor number; for n>1 it is positive (equivalently its a_f^(n) coefficient is
+    negative in the chapter convention), so higher quark-distribution moments decrease
+    as Q^2 grows.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 636
+    - 637
+    - 638
+    note: Derives the quark twist-two rescaling calculation and its conservation consequence.
 - id: peskin-schroeder.radiative-correction-heavy-target-scope
   label: Heavy-target radiative-correction setup
   summary: For electron scattering from a much heavier particle, the order-alpha correction
@@ -6043,6 +6477,20 @@ nodes:
     - 220
     - 221
     - 222
+- id: peskin-schroeder.semileptonic-weak-current-qcd-protection
+  label: QCD protection of a semileptonic weak current
+  summary: QCD acts only on the quark bilinear in a semileptonic weak operator. That
+    bilinear is a current with gamma=0; its vertex logarithm cancels its quark field-strength
+    logarithm, and the left-handed projector does not alter the cancellation. Consequently
+    the cited neutrino-DIS semileptonic normalization receives no QCD logarithmic
+    renormalization.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+    note: Contrasts the protected semileptonic current with the nonleptonic case.
 - id: peskin-schroeder.shell-induced-effective-interactions
   label: Shell integration induces an effective local action
   summary: Contracting shell fields corrects the mass and quartic terms, and retaining
@@ -6445,6 +6893,24 @@ nodes:
   notation:
   - source: peskin-schroeder
     note: alpha=e^2/(4 pi) in the book's units.
+- id: peskin-schroeder.twist-two-quark-gluon-mixing-matrix
+  label: Twist-two quark-gluon anomalous-dimension mixing
+  summary: For one flavor, (O_f^(n),O_g^(n)) mix under a nonsymmetric 2 by 2 anomalous-dimension
+    matrix gamma=-(g^2/(4 pi)^2)[[a_ff,a_fg],[a_gf,a_gg]], where a_ff=-(8/3)[1+4 sum_{j=2}^n(1/j)-2/(n(n+1))],
+    a_fg=4(n^2+n+2)/(n(n+1)(n+2)), a_gf=(16/3)(n^2+n+2)/(n(n^2-1)), and a_gg=-6[1/3+(2/9)n_f+4
+    sum_{j=2}^n(1/j)-4/(n(n-1))-4/((n+1)(n+2))]. Pages 639-640 quote the mixing and
+    remaining entries but assign their diagrammatic calculation to Problem 18.3. With
+    n_f flavors, gluons mix only with sum_f O_f^(n); flavor-orthogonal combinations
+    rescale with a_ff.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 640
+    - 641
+    note: Supplies the matrix, its nonsymmetry, and the multiflavor singlet/non-singlet
+      decomposition.
 - id: peskin-schroeder.two-dimensional-nonlinear-sigma-mass-gap
   label: Two-dimensional nonlinear sigma-model mass gap
   summary: In the large-N two-dimensional sigma model, renormalizing the logarithmic
@@ -6638,6 +7104,23 @@ nodes:
     pages:
     - 243
     - 244
+- id: peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  label: Cabibbo-rotated weak effective vertices
+  summary: For scales well above 1 GeV, neglect quark masses and write weak fields
+    as left handed. The unitary Cabibbo rotation couples u to cos theta_C d+sin theta_C
+    s (with the stated small b admixture omitted). W exchange then gives a nonleptonic
+    Delta S=1 operator (dbar_L gamma_mu u_L)(ubar_L gamma^mu s_L), which permits s
+    to u ubar d, and a semileptonic operator proportional to (lbar_L gamma_mu nu_L)(ubar_L
+    gamma^mu s_L), which permits s to u nubar ell.
+  kind: representation
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 605
+    - 606
+    note: States the massless-left-handed approximation, Cabibbo rotation, and nonleptonic/semileptonic
+      channels.
 - id: peskin-schroeder.weyl-fierz-rearrangement
   label: Weyl-spinor Fierz rearrangement
   summary: The two-component σ-matrix identity produces a nontrivial rearrangement
@@ -8709,6 +9192,645 @@ edges:
     - 152
     note: The source compares the displayed matrix elements and then says the relation
       is independent of their details.
+- id: peskin-schroeder.e18-ap-to-equivalence
+  from: peskin-schroeder.qcd-altarelli-parisi-evolution
+  to: peskin-schroeder.ap-moment-anomalous-dimension-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation takes Mellin moments of the prior Altarelli-Parisi convolution
+    equations and their kernels.
+  failure_mode: There is no evolution equation to moment-transform and compare.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 644
+    - 645
+- id: peskin-schroeder.e18-ap-to-problem184
+  from: peskin-schroeder.qcd-altarelli-parisi-evolution
+  to: peskin-schroeder.problem-18-4-photon-dis-structure-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The leading-log QCD parts require QCD PDF evolution beyond part (a)'s
+    zeroth-QCD approximation.
+  failure_mode: The QCD scale dependence and x evolution cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.4
+    pages:
+    - 649
+- id: peskin-schroeder.e18-cabibbo-to-nonleptonic
+  from: peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  to: peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mixing calculation starts from the Cabibbo-induced nonleptonic four-quark
+    vertex.
+  failure_mode: The operators and their flavor structure are absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+    - 607
+- id: peskin-schroeder.e18-cabibbo-to-semileptonic
+  from: peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  to: peskin-schroeder.semileptonic-weak-current-qcd-protection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The protected operator is the Cabibbo-rotated semileptonic vertex under
+    QCD analysis.
+  failure_mode: There is no identified quark-current factor whose protection can be
+    shown.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+- id: peskin-schroeder.e18-cs-to-quark-mass
+  from: peskin-schroeder.callan-symanzik-equation
+  to: peskin-schroeder.qcd-quark-mass-effective-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The running-mass equation is obtained by applying the Callan-Symanzik
+    construction to a dimensionful mass coupling.
+  failure_mode: Without the RG equation, the logarithmic mass formula has no derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 600
+- id: peskin-schroeder.e18-current-to-semileptonic
+  from: peskin-schroeder.qcd-quark-mass-operator-renormalization
+  to: peskin-schroeder.semileptonic-weak-current-qcd-protection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The semileptonic conclusion uses the conserved-current zero-anomalous-dimension
+    check from the qbar q calculation.
+  failure_mode: The cancellation of QCD logarithms would be asserted without its protected-current
+    reason.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+- id: peskin-schroeder.e18-dis-forward-to-formfactors
+  from: peskin-schroeder.dis-forward-compton-optical-theorem
+  to: peskin-schroeder.dis-current-conservation-form-factors-and-parton-callan-gross
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: W_1 and W_2 decompose the forward tensor whose discontinuity enters the
+    cross section.
+  failure_mode: The form factors would have no defined tensor or cross-section role.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 625
+- id: peskin-schroeder.e18-disform-to-problem182
+  from: peskin-schroeder.dis-current-conservation-form-factors-and-parton-callan-gross
+  to: peskin-schroeder.problem-18-2-parity-violating-dis-form-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task extends the DIS tensor decomposition and parton evaluation by
+    adding W_3.
+  failure_mode: The parity-violating cross section lacks its baseline W_1,W_2 tensor
+    method.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.2
+    pages:
+    - 647
+    - 648
+- id: peskin-schroeder.e18-ee-ope-to-power
+  from: peskin-schroeder.ope-local-expansion-and-universality
+  to: peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vacuum-scalar expansion is a direct specialization of the OPE.
+  failure_mode: The coefficient hierarchy and condensate corrections cannot be organized
+    locally.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 617
+- id: peskin-schroeder.e18-ee-to-itep
+  from: peskin-schroeder.eplus-eminus-hadrons-optical-current-correlator
+  to: peskin-schroeder.itep-dispersion-sum-rules-and-local-duality-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dispersion argument needs the correlator's cut discontinuity to be
+    the e+e- hadronic rate.
+  failure_mode: The contour integral would have no observable spectral quantity.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 619
+    - 620
+- id: peskin-schroeder.e18-evenmoments-to-problem182
+  from: peskin-schroeder.dis-dispersion-moment-sum-rules
+  to: peskin-schroeder.problem-18-2-parity-violating-dis-form-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) adapts the established moment-sum-rule contour route to odd
+    n.
+  failure_mode: The requested odd-moment conclusion lacks its dispersion-method template.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.2
+    pages:
+    - 649
+- id: peskin-schroeder.e18-fierz-to-weak-mixing
+  from: peskin-schroeder.weyl-fierz-rearrangement
+  to: peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fierz transformations are used to recast the cross-current diagrams into
+    the O_1,O_2 basis.
+  failure_mode: The new operator structure and mixing matrix cannot be obtained from
+    the diagram algebra.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 607
+    - 608
+- id: peskin-schroeder.e18-formfactors-to-pdfdefinition
+  from: peskin-schroeder.dis-current-conservation-form-factors-and-parton-callan-gross
+  to: peskin-schroeder.dis-ope-pdf-definition-and-leading-callan-gross
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The OPE PDF definition is explicitly made from the flavor-resolved W_2
+    form factor and inherits its cross-section normalization.
+  failure_mode: The definition would lack its normalization and observable meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 632
+- id: peskin-schroeder.e18-general-rescaling-to-delta-i
+  from: peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  to: peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The diagonal weak eigenoperators are evolved with the general gauge-invariant
+    operator rescaling factor.
+  failure_mode: The logarithmic powers in the two isospin channels cannot be evolved.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 611
+- id: peskin-schroeder.e18-generalrescale-to-problem181
+  from: peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  to: peskin-schroeder.problem-18-1-proton-decay-operator-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rate enhancement is requested from the leading QCD evolution of the
+    local baryon-violating operator.
+  failure_mode: An anomalous dimension cannot be converted into the requested scale
+    enhancement.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.1
+    pages:
+    - 647
+- id: peskin-schroeder.e18-gluon-to-mixingmatrix
+  from: peskin-schroeder.gluon-twist-two-operators-odd-n-total-derivative
+  to: peskin-schroeder.twist-two-quark-gluon-mixing-matrix
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matrix includes O_g^(n) only for the even-n operators that survive
+    the forward matrix element.
+  failure_mode: The parity restriction and gluon row/column have no operator basis.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 639
+    - 640
+- id: peskin-schroeder.e18-gluonbasis-to-problem183
+  from: peskin-schroeder.gluon-twist-two-operators-odd-n-total-derivative
+  to: peskin-schroeder.problem-18-3-gluon-twist-two-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task is to calculate anomalous dimensions for the defined even-n
+    gluon operator basis.
+  failure_mode: The diagrams lack the operator insertion and their odd-n cancellation
+    condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.3
+    pages:
+    - 649
+- id: peskin-schroeder.e18-heavy-w-to-cabibbo
+  from: peskin-schroeder.heavy-w-local-operator-motivation
+  to: peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The vertices are the local low-momentum W-exchange interaction whose
+    Cabibbo structure is then specified.
+  failure_mode: The effective four-fermion interaction has no heavy-W origin or scale
+    regime.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 605
+- id: peskin-schroeder.e18-insertion-to-quark-mass
+  from: peskin-schroeder.renormalization-of-local-operator-insertions
+  to: peskin-schroeder.qcd-quark-mass-operator-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation normalizes a local qbar q insertion and combines its
+    counterterm with field renormalization.
+  failure_mode: One cannot identify gamma_qbarq or its gauge cancellation without
+    insertion renormalization.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 601
+- id: peskin-schroeder.e18-localrenorm-to-problem181
+  from: peskin-schroeder.renormalization-of-local-operator-insertions
+  to: peskin-schroeder.problem-18-1-proton-decay-operator-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for the anomalous dimension of a local three-quark operator.
+  failure_mode: The requested QCD correction cannot be formulated as an operator-renormalization
+    problem.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.1
+    pages:
+    - 647
+- id: peskin-schroeder.e18-mass-log-to-general-operator-log
+  from: peskin-schroeder.qcd-quark-mass-effective-running
+  to: peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The text explicitly recapitulates the mass calculation as the prototype
+    for general gauge-invariant operators.
+  failure_mode: The general result would lose its concrete example, though it can
+    be derived directly.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 604
+- id: peskin-schroeder.e18-mixing-to-equivalence
+  from: peskin-schroeder.twist-two-quark-gluon-mixing-matrix
+  to: peskin-schroeder.ap-moment-anomalous-dimension-equivalence
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated full-kernel comparison uses the supplied local-operator matrix
+    entries.
+  failure_mode: The claimed equivalence would lack the local-operator side to compare.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 646
+- id: peskin-schroeder.e18-mixing-to-isospin
+  from: peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  to: peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Diagonalizing the supplied O_1,O_2 anomalous-dimension matrix produces
+    the isospin eigenoperators and their scale factors.
+  failure_mode: There is no matrix to diagonalize or basis whose coefficients can
+    be evolved.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 610
+    - 611
+- id: peskin-schroeder.e18-mixing-to-problem184
+  from: peskin-schroeder.twist-two-quark-gluon-mixing-matrix
+  to: peskin-schroeder.problem-18-4-photon-dis-structure-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) explicitly asks to formulate photon moments as operator mixing.
+  failure_mode: The requested anomalous-dimension matrix cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.4
+    pages:
+    - 649
+- id: peskin-schroeder.e18-mixingmatrix-to-momentum
+  from: peskin-schroeder.twist-two-quark-gluon-mixing-matrix
+  to: peskin-schroeder.dis-n2-energy-momentum-conservation-and-asymptotic-fractions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The n=2 conserved stress-tensor combination is a left eigenvector of
+    the supplied mixing matrix.
+  failure_mode: The zero eigenvalue and asymptotic eigencomponent cannot be found.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 641
+    - 642
+- id: peskin-schroeder.e18-moments-to-problem184
+  from: peskin-schroeder.dis-dispersion-moment-sum-rules
+  to: peskin-schroeder.problem-18-4-photon-dis-structure-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) asks for n=2 moments of the photon structure functions.
+  failure_mode: The requested quantity has no moment/form-factor interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.4
+    pages:
+    - 649
+- id: peskin-schroeder.e18-ope-rg-to-matrix
+  from: peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  to: peskin-schroeder.ope-operator-mixing-matrix-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matrix equation is the mixed-operator generalization of the supplied
+    scalar OPE coefficient equation.
+  failure_mode: The placement of left and right anomalous-dimension actions is unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 615
+- id: peskin-schroeder.e18-ope-to-ope-rg
+  from: peskin-schroeder.ope-local-expansion-and-universality
+  to: peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coefficient RG equation acts on the OPE expansion and its separately
+    normalized operators.
+  failure_mode: There is no C_12n object to constrain by Callan-Symanzik evolution.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 613
+    - 614
+- id: peskin-schroeder.e18-ope-to-twistquark
+  from: peskin-schroeder.ope-local-expansion-and-universality
+  to: peskin-schroeder.dis-twist-two-quark-ope
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The DIS construction specializes the OPE to two electromagnetic currents
+    at short distance.
+  failure_mode: The twist-two operators would not be tied to the current product.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 627
+- id: peskin-schroeder.e18-optical-to-dis
+  from: peskin-schroeder.optical-theorem-unitarity-relation
+  to: peskin-schroeder.dis-forward-compton-optical-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The DIS final-state sum is replaced by the discontinuity of the forward
+    proton current product.
+  failure_mode: The inclusive DIS tensor cannot be reduced to W_mu_nu.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 623
+    - 624
+- id: peskin-schroeder.e18-optical-to-ee
+  from: peskin-schroeder.optical-theorem-unitarity-relation
+  to: peskin-schroeder.eplus-eminus-hadrons-optical-current-correlator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The total e+e- hadronic rate is converted to the imaginary part of a
+    forward amplitude by the optical theorem.
+  failure_mode: The current correlator would not be connected to an inclusive cross
+    section.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 616
+- id: peskin-schroeder.e18-pdf-to-moments
+  from: peskin-schroeder.dis-ope-pdf-definition-and-leading-callan-gross
+  to: peskin-schroeder.dis-dispersion-moment-sum-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The contour relation is expressed as moments of the OPE-defined flavor
+    PDFs.
+  failure_mode: The dispersion coefficients cannot be read as PDF moments.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 632
+    - 634
+- id: peskin-schroeder.e18-qedevolution-to-problem184
+  from: peskin-schroeder.qed-strong-ordering-and-gribov-lipatov-evolution
+  to: peskin-schroeder.problem-18-4-photon-dis-structure-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) evolves quark and antiquark distributions sourced by a photon
+    at leading QED order.
+  failure_mode: The photon boundary condition cannot be evolved into quark distributions.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.4
+    pages:
+    - 649
+- id: peskin-schroeder.e18-quarkgamma-to-mixingmatrix
+  from: peskin-schroeder.quark-twist-two-anomalous-dimension
+  to: peskin-schroeder.twist-two-quark-gluon-mixing-matrix
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark diagonal element is an input to the displayed mixed anomalous-dimension
+    matrix.
+  failure_mode: The matrix lacks its quark rescaling entry and conservation check.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 638
+    - 640
+- id: peskin-schroeder.e18-quarkgamma-to-problem183
+  from: peskin-schroeder.quark-twist-two-anomalous-dimension
+  to: peskin-schroeder.problem-18-3-gluon-twist-two-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise computes analogous counterterms and must distinguish the
+    already-calculated quark insertion method from its new gluon entries.
+  failure_mode: The requested divergent-part calculation has no counterterm method
+    to apply.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.3
+    pages:
+    - 649
+- id: peskin-schroeder.e18-twistflavor-to-pdf
+  from: peskin-schroeder.dis-twist-power-counting-and-flavor-separation
+  to: peskin-schroeder.dis-ope-pdf-definition-and-leading-callan-gross
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The definition resolves the leading, flavor-separated W_2f contribution
+    identified by twist counting.
+  failure_mode: It has no leading-twist or flavor-resolved object to define.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 631
+    - 632
+- id: peskin-schroeder.e18-twistope-to-problem182
+  from: peskin-schroeder.dis-twist-two-quark-ope
+  to: peskin-schroeder.problem-18-2-parity-violating-dis-form-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (e) asks for the left-current OPE terms involving twist-two operators.
+  failure_mode: The requested OPE route to W_3 cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.2
+    pages:
+    - 648
+- id: peskin-schroeder.e18-twistpower-to-moments
+  from: peskin-schroeder.dis-twist-power-counting-and-flavor-separation
+  to: peskin-schroeder.dis-dispersion-moment-sum-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The contour coefficients are the proton matrix elements A_f^(n) of the
+    leading twist operators.
+  failure_mode: The dispersion relation cannot be identified with PDF moments.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 633
+    - 634
+- id: peskin-schroeder.e18-twistquark-to-anomalous
+  from: peskin-schroeder.dis-twist-two-quark-ope
+  to: peskin-schroeder.quark-twist-two-anomalous-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The diagrams renormalize the specific symmetric traceless O_f^(n) insertion.
+  failure_mode: No operator normalization structure is available to calculate.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 636
+- id: peskin-schroeder.e18-twistquark-to-powercounting
+  from: peskin-schroeder.dis-twist-two-quark-ope
+  to: peskin-schroeder.dis-twist-power-counting-and-flavor-separation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The power count evaluates the dimensions and spins of the constructed
+    quark operators and their proton matrix elements.
+  failure_mode: There is no operator family whose twist or moments can be classified.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 630
+    - 631
+- id: peskin-schroeder.e18-vacuum-ope-to-itep
+  from: peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+  to: peskin-schroeder.itep-dispersion-sum-rules-and-local-duality-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The contour's spacelike pole is evaluated from the vacuum OPE coefficient
+    and condensate expansion.
+  failure_mode: The sum rule loses its OPE side and power corrections.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 618
+    - 620
 - id: peskin-schroeder.edge-1pi-to-quantum-goldstone
   from: peskin-schroeder.effective-action-1pi-generating-functional
   to: peskin-schroeder.quantum-goldstone-theorem
@@ -18087,6 +19209,44 @@ motivations:
     section: Chapter 8, Formal and Physical Cutoffs
     pages:
     - 266
+- id: peskin-schroeder.e18-delta-i-half-motivation
+  nodes:
+  - peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  summary: Hard QCD distinguishes the two isospin channels in K decay, inviting comparison
+    with the much larger empirical Delta I=1/2 enhancement and isolating the unresolved
+    soft-QCD contribution.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 611
+    - 612
+- id: peskin-schroeder.e18-dispersive-hard-process-motivation
+  nodes:
+  - peskin-schroeder.itep-dispersion-sum-rules-and-local-duality-limit
+  - peskin-schroeder.dis-dispersion-moment-sum-rules
+  - peskin-schroeder.ap-moment-anomalous-dimension-equivalence
+  summary: The OPE is short-distance and spacelike, whereas inclusive hard processes
+    are measured in physical regions; dispersion relations and moment evolution bridge
+    that gap and show how hadron constituents are resolved at increasing momentum
+    transfer.
+  evidence:
+  - source: peskin-schroeder
+    section: 18.4–18.5
+    pages:
+    - 620
+    - 646
+- id: peskin-schroeder.e18-hard-qcd-log-motivation
+  nodes:
+  - peskin-schroeder.qcd-quark-mass-effective-running
+  - peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  summary: The chapter asks how asymptotic freedom and the Callan-Symanzik equation
+    modify hard strong-interaction processes through anomalous logarithmic powers.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 18 introduction
+    pages:
+    - 599
 - id: peskin-schroeder.functional-representation-question
   nodes:
   - peskin-schroeder.real-scalar-field-path-integral
