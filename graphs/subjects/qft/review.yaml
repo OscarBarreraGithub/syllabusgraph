@@ -2,23 +2,52 @@ schema_version: 1
 status: partial-model-reviewed
 complete_subject: false
 human_audit: pending
-graph_digest: sha256:c904908808d88628990b7a4c3ba6b3dddc28a9fae2da9bb00febea4e6736ca2f
+graph_digest: sha256:828b3660313acd740817f5929c1d6b7627fdb142edfa277a934d652a6960124b
 extraction:
   model: gpt-5.6-terra
   effort: high
 required_critic:
   model: gpt-5.6-sol
   effort: high
-book_inputs:
-- project: peskin-schroeder
-  graph_digest: sha256:a132244fe39b5bd00d78833c9139dc9bef2c2e02cfd072356e3f453b23310158
-- project: schwartz
-  graph_digest: sha256:4a67f495ca20dc0452cd3f9b91f974a8b18761b13852847fcc3bab7bee91b04d
-- project: weinberg-1
-  graph_digest: sha256:ac3dda5a6a540e382668a7e98c0434d754d459efebe203f52081138cae53e2a5
-- project: weinberg-2
-  graph_digest: sha256:013c10c719e9d456cafd717c8746353b6ec1baa1f97c910079868e39e959d989
 units:
+- id: full-align-001
+  source: peskin-schroeder
+  printed_pages:
+    first: 3
+    last: 20
+  scope: Align 104 reviewed book concepts from Peskin–Schroeder pp. 3–20, Schwartz
+    pp. 3–45, and the Weinberg I/II pilot scopes, preserving existing correspondences,
+    source-specific assumptions and independent derivation routes. These are bounded
+    graph inputs, not whole-book coverage.
+  nodes: 68
+  edges: 34
+  acceptance: final-adjudication
+  source_ranges:
+  - source: peskin-schroeder
+    first: 3
+    last: 20
+  - source: schwartz
+    first: 3
+    last: 45
+  - source: weinberg-1
+    first: 201
+    last: 206
+  - source: weinberg-2
+    first: 2
+    last: 7
+  book_inputs:
+  - project: peskin-schroeder
+    graph_digest: sha256:05306802da7c80651b61a32b755f53221c9bdbf4da42f5e687c514486e938775
+  - project: schwartz
+    graph_digest: sha256:e4fbecd75d077eb98272b9e71e5bcd1b547f3532ecabb98fc84a4ad3a34aecc4
+  - project: weinberg-1
+    graph_digest: sha256:92d0d7d91fc8348966f65def176796931d5951a0540adfca9780f1903d13d999
+  - project: weinberg-2
+    graph_digest: sha256:dcc61f2d2be90a6c8416bc2fcb8155b845ef5b302c49ca7e3cf0c2e40eff8a4b
+  input_book_nodes: 104
+  mapped_book_nodes: 104
+  new_nodes: 60
+  replaced_nodes: 8
 - id: pilot-01
   scope: Align the independently reviewed textbook pilot graphs, preserving source-specific
     treatments and source citations.
@@ -40,8 +69,22 @@ units:
   input_book_nodes: 36
   mapped_book_nodes: 36
   acceptance: independent-critic
+  book_inputs:
+  - project: peskin-schroeder
+    graph_digest: sha256:a132244fe39b5bd00d78833c9139dc9bef2c2e02cfd072356e3f453b23310158
+  - project: schwartz
+    graph_digest: sha256:4a67f495ca20dc0452cd3f9b91f974a8b18761b13852847fcc3bab7bee91b04d
+  - project: weinberg-1
+    graph_digest: sha256:ac3dda5a6a540e382668a7e98c0434d754d459efebe203f52081138cae53e2a5
+  - project: weinberg-2
+    graph_digest: sha256:013c10c719e9d456cafd717c8746353b6ec1baa1f97c910079868e39e959d989
+  source: peskin-schroeder
+  printed_pages:
+    first: 13
+    last: 20
 omissions:
-- Only the listed textbook ranges have been extracted and aligned.
-- Zero overlap in this pilot is not evidence that two textbooks lack common content.
-- Earlier supporting concepts outside these ranges may still be absent.
-- No course plans, teaching-time estimates, or classroom evaluation.
+- Shared alignment covers only the bounded reviewed book inputs listed in each unit.
+- Book concepts outside those inputs remain to be aligned; absence of a mapping is
+  not evidence that a textbook omits a topic.
+- Whole-book coverage, global dependency reconciliation and the end human audit remain
+  pending.

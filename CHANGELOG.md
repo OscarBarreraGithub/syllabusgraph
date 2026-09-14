@@ -14,6 +14,8 @@ imply a package has been published to a package index.
   Optional coverage ledgers must match their project and current graph digest.
   Clarify joint prerequisites within alternative derivations and complete-word
   quote witnesses in the reusable extraction guidance.
+- Clarify derivation versus use requirements and independent exercise routes
+  so analogous examples and unrelated tasks do not become compulsory inputs.
 - Explain separate frontmatter citation mappings and the inspection of empty
   text layers before OCR or a documented nonconceptual exclusion.
 - Publish bounded scientific adjudication decisions with alternatives, reasons,

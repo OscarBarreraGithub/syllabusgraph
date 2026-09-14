@@ -1,0 +1,99 @@
+schema_version: 1
+project: qft-shared
+scope: Historical final scientific decisions, with alternatives and source citations.
+  Private proposals, witnesses and runtime records remain local.
+deciding_model: gpt-5.6-sol
+effort: high
+human_audit: pending
+units:
+- id: full-align-001
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Authorize eight source-supported shared-node amendments.
+    alternatives:
+    - Authorize the eight replacements with corrected source metadata and qualifications.
+    - Defer all eight replacements and omit the recovered cross-book correspondences.
+    resolution: Authorize all eight corrected replacement nodes and clear their amendment
+      questions.
+    rationale: The replacements preserve each existing shared concept while adding
+      exact reviewed-book origins, evidence, and narrower-treatment qualifications
+      supported by the frozen pages. Correcting Schwartz's section labels, boundary
+      assumption, and Klein-Gordon specialization makes the public metadata faithful
+      to the source. Authorization is preferable to deferral because it captures demonstrated
+      overlap without introducing duplicate concepts.
+    evidence:
+    - source: peskin-schroeder
+      section: 2.1 The Necessity of the Field Viewpoint
+      pages:
+      - 13
+      - 14
+    - source: peskin-schroeder
+      section: 2.2 Elements of Classical Field Theory
+      pages:
+      - 15
+      - 16
+      - 17
+      - 20
+    - source: schwartz
+      section: 2.1 Lorentz invariance
+      pages:
+      - 11
+    - source: schwartz
+      section: 2.2 Classical plane waves as oscillators
+      pages:
+      - 19
+    - source: schwartz
+      section: 3.1 Hamiltonians and Lagrangians
+      pages:
+      - 29
+      - 30
+    - source: schwartz
+      section: 3.2 The Euler-Lagrange equations
+      pages:
+      - 31
+      - 32
+    - source: schwartz
+      section: Problem 3.1
+      pages:
+      - 42
+    affected_records:
+    - kind: nodes
+      id: qft.local-field-action
+    - kind: nodes
+      id: qft.canonical-field-momentum-hamiltonian
+    - kind: nodes
+      id: qft.klein-gordon-canonical-hamiltonian
+    - kind: nodes
+      id: qft.field-euler-lagrange-equation
+    - kind: nodes
+      id: qft.real-klein-gordon-lagrangian
+    - kind: nodes
+      id: qft.klein-gordon-classical-equation
+    - kind: nodes
+      id: qft.klein-gordon-fourier-oscillator-modes
+    - kind: nodes
+      id: qft.relativistic-field-viewpoint
+  - finding: 1
+    issue: Correct the trace-route origin.
+    alternatives:
+    - Use the cross-section result as the route node's origin and keep inputs on prerequisite
+      edges.
+    - Remove the route node and encode its joint inputs directly on the target result.
+    resolution: Use the tree-level cross-section result as the trace-route origin.
+    rationale: The route node represents an alternative trace-based derivation of
+      the reviewed cross-section result. The amplitude rule and trace technology are
+      jointly necessary inputs already carried by incoming edges, so treating the
+      result as the origin preserves the source method without confusing a prerequisite
+      with the result whose route is represented.
+    evidence:
+    - source: peskin-schroeder
+      section: Chapter 1
+      pages:
+      - 8
+      - 9
+      - 10
+    affected_records:
+    - kind: nodes
+      id: qft.qed-trace-cross-section-route
