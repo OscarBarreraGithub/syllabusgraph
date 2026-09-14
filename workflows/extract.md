@@ -108,3 +108,11 @@ are available. Do not convert concept counts into claimed instructional time.
 Report unreadable text, uncertain equations, ambiguous concepts, and evidence
 gaps in `unresolved`. A source packet with unresolved claims is revised before
 acceptance. Never claim checks you did not perform.
+
+Keep future work distinct from uncertainty in the current proposal. If a needed
+connection belongs to a later source packet and is not asserted by this draft,
+record its concept IDs, source context, and reason in an ignored follow-up note
+for the orchestrator. A reminder about that later work does not itself belong
+in `unresolved`; an unsupported claim in this proposal does. The orchestrator
+must carry those follow-ups into the remaining-coverage audit until they are
+resolved or explicitly excluded with a reviewed reason.

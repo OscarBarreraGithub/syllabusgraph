@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 414 concepts and 348 relationships, mapping 465 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 533 concepts and 484 relationships, mapping 607 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -21,11 +21,11 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 28 |
-| Peskin–Schroeder / Weinberg I | 0 |
-| Peskin–Schroeder / Weinberg II | 14 |
-| Schwartz / Weinberg I | 2 |
-| Schwartz / Weinberg II | 7 |
+| Peskin–Schroeder / Schwartz | 40 |
+| Peskin–Schroeder / Weinberg I | 2 |
+| Peskin–Schroeder / Weinberg II | 22 |
+| Schwartz / Weinberg I | 4 |
+| Schwartz / Weinberg II | 15 |
 | Weinberg I / Weinberg II | 0 |
 
 **These numbers are not whole-book overlap estimates.** The reviewed inputs cover different portions of the subject. A zero means no shared-node mapping in the aligned inputs; it does not mean either book omits the topic.
@@ -43,9 +43,9 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Exact effective-potential convexity and the mixed-state region (`qft.align011.exact-effective-potential-convexity-and-mixed-state-region`) | Weinberg II: `weinberg-2.exact-effective-potential-convexity-and-mixed-state-region`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
 | Full two-point function as inverse 1PI kernel (`qft.align011.full-two-point-function-is-inverse-1pi-kernel`) | Weinberg II: `weinberg-2.full-two-point-function-is-inverse-1pi-kernel`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
 | Quantum effective action as a functional Legendre transform (`qft.align011.legendre-quantum-effective-action`) | Peskin–Schroeder: `peskin-schroeder.effective-action-legendre-transform`; Weinberg II: `weinberg-2.legendre-quantum-effective-action` |
-| BRST auxiliary-field transformations and nilpotence (`qft.brst-auxiliary-field-transformations-and-nilpotence`) | Peskin–Schroeder: `peskin-schroeder.brst-auxiliary-field-symmetry-and-nilpotence`; Weinberg II: `weinberg-2.brst-field-transformations`; Weinberg II: `weinberg-2.brst-nilpotence` |
-| BRST cohomology and physical-state qualification (`qft.brst-cohomology-and-physical-state-qualification`) | Schwartz: `schwartz.brst-cohomological-physical-state-qualification`; Weinberg II: `weinberg-2.brst-cohomology-of-physical-states` |
-| Canonical momentum and Hamiltonian for a field (`qft.canonical-field-momentum-hamiltonian`) | Peskin–Schroeder: `peskin-schroeder.canonical-field-momentum-hamiltonian`; Schwartz: `schwartz.classical-field-hamiltonian-lagrangian-legendre-transform`; Schwartz: `schwartz.canonical-scalar-field-energy-density` |
+| QED one-loop running charge (`qft.align012.qed-running-charge-one-loop-flow`) | Schwartz: `schwartz.qed-running-charge-beta-function`; Weinberg II: `weinberg-2.qed-running-charge-at-sliding-scale` |
+| DIS analytic dispersion route to OPE moments (`qft.align013.shared.dis-analytic-dispersion-and-moment-route`) | Peskin–Schroeder: `peskin-schroeder.dis-dispersion-moment-sum-rules`; Schwartz: `schwartz.dis-analytic-contour-moment-route`; Weinberg II: `weinberg-2.dis-ope-dispersion-connection` |
+| Inclusive DIS from the forward Compton discontinuity (`qft.align013.shared.dis-forward-compton-optical-theorem`) | Peskin–Schroeder: `peskin-schroeder.dis-forward-compton-optical-theorem`; Schwartz: `schwartz.dis-current-product-and-forward-compton-amplitude` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 

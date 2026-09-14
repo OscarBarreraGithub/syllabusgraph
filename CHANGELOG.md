@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Clarify that future source dependencies belong in retained follow-up notes;
+  current unsupported claims still block acceptance. Keep those follow-ups in
+  the remaining-coverage audit until resolved or explicitly reviewed as excluded.
 - Add a metadata-only usage report for recorded model calls, confirmed worker
   sessions, failures, and optional host token/time counters. Document incomplete
   accounting and billing limits, and retain aggregate QFT measurements.
