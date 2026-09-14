@@ -24,6 +24,22 @@ nodes:
     - 33
     note: The source describes eliminating the field in favor of direct interaction
       at a distance and its retarded/advanced-potential result.
+- id: weinberg-1.angular-momentum-coupling-orthogonality
+  label: Angular-momentum coupling and spherical-harmonic orthogonality
+  summary: The two-body coupled basis is built from Clebsch–Gordan coefficients and
+    spherical harmonics. Their orthogonality and the adopted momentum-state normalization
+    are the inputs that produce the stated scalar products of the coupled partial-wave
+    states.
+  kind: method
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 152
+    - 153
+    note: The source defines the basis with Clebsch–Gordan coefficients and Y_l^m
+      and gives its target normalization, which Problem 7 asks to prove.
 - id: weinberg-1.anomalous-magnetic-moment-radiative-correction
   label: Anomalous magnetic moment as a radiative correction
   summary: Precision measurements found the electron magnetic moment slightly above
@@ -39,6 +55,75 @@ nodes:
     - 36
     note: The source gives the measured deviation, the radiative-correction interpretation,
       and agreement with observation.
+- id: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+  label: Antiunitary time reversal and S-matrix reciprocity
+  summary: Time reversal is antiunitary, reverses momenta and spin components, and
+    interchanges in with out states. If its free-state action commutes with V, antiunitarity
+    reverses the iε prescription and yields a relation between a process and the reversed
+    inverse process, rather than a generic equality of the two directly reversed rates.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 127
+    - 128
+    - 129
+    note: The source states the in/out interchange, antiunitary scalar-product rule,
+      interaction criterion, and its Lippmann–Schwinger justification.
+- id: weinberg-1.asymptotic-completeness-assumption
+  label: Asymptotic completeness assumption
+  summary: The unitarity proof treats the in and out scattering states as complete
+    orthonormal sets spanning the same Hilbert space. This is an assumption about
+    the asymptotic scattering description, beyond normalization alone.
+  kind: assumption
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source says the in/out states inhabit one Hilbert space and uses completeness
+      of each set to establish both unitarity relations.
+- id: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  label: Asymptotic multiparticle state labels and normalization
+  summary: A noninteracting multiparticle state transforms as a direct product of
+    one-particle states. Its labels collect each momentum, spin component or massless
+    helicity, and species; the normalization includes exchange terms for identical
+    species, while the abbreviated label α and integration dα avoid counting identical-particle
+    exchanges twice.
+  kind: representation
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The text defines the direct-product asymptotic states, their labels, permutation
+      normalization, abbreviated label, integration, and completeness convention.
+  notation:
+  - source: weinberg-1
+    note: α abbreviates the full collection of individual momenta, spin components
+      or helicities, and particle-type labels; δ(β−α) includes momentum delta functions
+      and Kronecker deltas with allowed identical-particle permutations.
+- id: weinberg-1.asymptotic-overlap-unitarity-proof
+  label: Asymptotic overlap proof of S unitarity
+  summary: With asymptotic completeness and the equal in/out normalization, insert
+    the out or in completeness relation between scattering-state overlaps. The two
+    insertions give S†S=1 and SS†=1 as a direct proof of S unitarity.
+  kind: method
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source defines the overlap and derives both completeness-based unitarity
+      identities.
 - id: weinberg-1.born-rule-complete-orthogonal-rays
   label: Born rule for a complete orthogonal set of rays
   summary: For tests that distinguish mutually orthogonal rays, the transition probability
@@ -66,6 +151,45 @@ nodes:
     - 17
     note: The source interprets the ladder matrices, identifies the vacuum, and reads
       the energy spectrum from equation (1.2.14).
+- id: weinberg-1.box-normalization-and-connected-transition-element
+  label: Box normalization and connected transition element
+  summary: A finite spatial box discretizes momenta and a finite time interval regulates
+    energy conservation, turning squared delta functions into volume and time factors.
+    For final states with no unchanged proper subset of the initial particles, the
+    connected transition defines a delta-function-free Mβα and yields the differential
+    master transition-rate formula in the large-box limit.
+  kind: method
+  group: weinberg-1.rates-and-phase-space
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 134
+    - 135
+    - 136
+    note: The text introduces spatial and time boxes, restricts to the connected part,
+      and derives equations (3.4.10)–(3.4.12).
+  notation:
+  - source: weinberg-1
+    note: The source’s connected restriction excludes a final state having an unchanged
+      proper subset with the same four-momentum as a corresponding initial subset.
+- id: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  label: Breit–Wigner cross-section and partial widths
+  summary: For a two-body resonance without background, the unitarity decomposition
+    gives the Breit–Wigner total and channel cross-sections. The channel quantities
+    Γ_n sum, including higher-multiplicity channels, to Γ and are the decay partial
+    widths; the peak’s full width at half maximum is Γ and its total cross-section
+    is bounded at order one squared wavelength.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 162
+    - 163
+    note: Equations (3.8.16)–(3.8.19) identify the Breit–Wigner form, partial widths,
+      peak width, bound, and unresolved-width integral.
 - id: weinberg-1.canonical-field-action-formalism
   label: Canonical field theory from a local action
   summary: In the canonical field formalism, a Lagrangian is the spatial integral
@@ -125,6 +249,46 @@ nodes:
     - 28
     note: The source interprets the signed number operators and derives the opposite-charge
       conclusion.
+- id: weinberg-1.charge-conjugation-cp-cpt-process-relations
+  label: C, CP, and CPT process relations
+  summary: Charge conjugation is a unitary particle–antiparticle interchange whose
+    phases, like intrinsic parity phases, are conventional except for neutral self-conjugate
+    particles. C and P fail in weak interactions, CP also fails weakly, while the
+    text identifies CPT as exact in quantum field theory and states that its antiunitarity
+    relates a process to the inverse antiparticle process with reversed spin components.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 131
+    - 132
+    - 133
+    - 134
+    note: The source defines C, discusses CP eigenstates and violation, states the
+      CPT qualification, and connects observed CP violation to T violation assuming
+      CPT.
+  notation:
+  - source: weinberg-1
+    note: The CPT statement is explicitly qualified in the text as applying in quantum
+      field theory; it is not a consequence of proper-orthochronous Lorentz covariance
+      alone.
+- id: weinberg-1.charge-conjugation-neutral-pion-decay-selection
+  label: Charge-conjugation selection in neutral-pion decays
+  summary: For completely neutral self-conjugate particles, C conservation equates
+    the products of charge-conjugation parities. With the photon’s stated C parity
+    and observed π0→2γ decay, the neutral pion has C=+1 and π0→3γ is forbidden.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 131
+    - 132
+    note: The source applies C conservation to neutral particles and gives the π0
+      two- and three-photon consequences.
 - id: weinberg-1.charge-conjugation-time-reversal-phase-constraints
   label: Charge-conjugation and time-reversal phase constraints
   summary: For the causal scalar field to transform proportionally under charge conjugation,
@@ -203,6 +367,22 @@ nodes:
     pages:
     - 51
     note: Uses continuity from the identity to select the unitary-linear branch.
+- id: weinberg-1.contour-proof-in-out-lippmann-schwinger-boundary-condition
+  label: Contour proof of Lippmann–Schwinger in/out boundary conditions
+  summary: For smooth wave packets and energy-dependent amplitudes whose non-prescription
+    singularities are damped in the relevant half-plane, contour closure shows the
+    +iε solution approaches the free packet at t→−∞ and the −iε solution approaches
+    it at t→+∞. The opposite prescription pole is the surviving asymptotic contribution
+    in each case.
+  kind: method
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 112
+    note: The source closes energy contours, states the wave-packet and collision-duration
+      damping conditions, and obtains the in/out limits.
 - id: weinberg-1.cpt-and-unconventional-inversion-actions
   label: CPT, CP, and unconventional inversion multiplets
   summary: The stated quantum-field-theory CPT action maps a particle to its antiparticle
@@ -219,6 +399,59 @@ nodes:
     - 103
     - 104
     note: Relates the general multiplet analysis to CPT, CP, and C.
+- id: weinberg-1.cpt-total-rate-equality-and-antiparticle-lifetime
+  label: CPT equality of total rates and antiparticle lifetimes
+  summary: CPT invariance relates an amplitude to the inverse process with antiparticles
+    and reversed spin components, rather than generally to the same-direction antiparticle
+    process. In forward scattering the phases cancel, so the generalized optical theorem
+    gives equal total reaction rates for particle and corresponding antiparticle initial
+    sets; rotational invariance then yields equal unstable-particle and antiparticle
+    lifetimes.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 149
+    - 150
+    note: Equations (3.6.12)–(3.6.15) give the CPT amplitude relation, total-rate
+      equality, and lifetime consequence.
+- id: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+  label: Cross-section, flux, and invariant relative velocity
+  summary: For two incoming particles, the cross-section is the transition rate divided
+    by flux uα/V. Requiring the spin-summed cross-section to be Lorentz invariant
+    fixes uα so that uαE₁E₂ is scalar; its invariant expression reduces to the other
+    particle’s velocity when one is at rest, although its center-of-mass value need
+    not be a physical velocity.
+  kind: result
+  group: weinberg-1.rates-and-phase-space
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+    - 139
+    note: The source defines flux and cross-section, derives the invariant spin sum
+      and relative-velocity expression, and qualifies its center-of-mass interpretation.
+- id: weinberg-1.dalitz-plot-three-body-dynamics-diagnostic
+  label: Dalitz plot as a three-body dynamics diagnostic
+  summary: For a three-body final state, the center-of-mass phase-space measure can
+    be written in two final energies and angular variables. If the spin-summed invariant
+    matrix-element factor is approximately constant, events are uniform in the final-energy
+    plane; departures diagnose dynamics such as centrifugal barriers or resonant intermediate
+    states.
+  kind: result
+  group: weinberg-1.rates-and-phase-space
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 140
+    - 141
+    note: The source derives the three-body measure and identifies uniformity and
+      deviations in the Dalitz plot.
 - id: weinberg-1.de-broglie-matter-waves
   label: de Broglie relations and matter-wave group velocity
   summary: Lorentz invariance of a material-particle wave phase motivates K=p/h and
@@ -233,6 +466,38 @@ nodes:
     - 3
     note: Equation (1.1.1) and the surrounding argument connect Lorentz-invariant
       phase, energy-momentum, and group velocity.
+- id: weinberg-1.decay-rate-and-narrow-width-validity
+  label: Decay rate and narrow-width validity
+  summary: For one initial particle, the master formula gives dΓ=2π|Mβα|²δ⁴(pβ−pα)dβ.
+    Its time-box derivation is useful only when the decay rate is much smaller than
+    characteristic process energies, because a finite lifetime leaves an irreducible
+    energy width.
+  kind: result
+  group: weinberg-1.rates-and-phase-space
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    note: Equations (3.4.13) and the following paragraph give the decay formula and
+      its lifetime/energy qualification.
+- id: weinberg-1.decay-rate-lorentz-time-dilation
+  label: Lorentz time dilation of decay rates
+  summary: After summing spins, the single-particle decay rate transforms as 1/Eα
+    because the remaining momentum-space measure, delta function, and spin-summed
+    amplitude factor are Lorentz invariant. This is the time-dilation law for unstable
+    particles.
+  kind: result
+  group: weinberg-1.rates-and-phase-space
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+    note: The source identifies the invariant factors in the decay formula and concludes
+      that the rate has the transformation property of 1/Eα.
 - id: weinberg-1.degenerate-multiplet-parity-and-joint-inversion-degeneracy
   label: Parity diagonalization and joint parity–time-reversal degeneracy
   summary: On a degenerate multiplet parity is represented by a unitary matrix that
@@ -277,6 +542,21 @@ nodes:
     - 84
     - 96
     note: States the theorem and introduces its appendix proof.
+- id: weinberg-1.diagonal-partial-wave-phase-shifts
+  label: Diagonal partial-wave phase shifts
+  summary: When a two-body channel is isolated and diagonal, unitarity writes each
+    S partial wave as exp(2iδ) with real phase shift δ. This relativistic result relies
+    only on unitarity and invariance, while open inelastic channels require a positive
+    imaginary part in the corresponding complex phase shift.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 155
+    note: The source gives the diagonal S form, the inelastic qualification, and the
+      symmetry-and-unitarity basis of the result.
 - id: weinberg-1.dirac-electromagnetic-coupling-spin
   label: Dirac electromagnetic coupling predicts spin and magnetic moment
   summary: Minimal electromagnetic coupling in the Dirac equation yields a conserved
@@ -353,6 +633,22 @@ nodes:
     - 9
     note: Equations (1.1.19)–(1.1.21) and the following paragraph state the gamma-matrix
       and spinor transformation argument.
+- id: weinberg-1.distorted-wave-born-approximation
+  label: Distorted-wave Born approximation
+  summary: For V=V_s+V_w with V_s strong and V_w weak, first solve the in/out states
+    for V_s exactly. If V_s alone cannot produce the selected process, replacing the
+    full initial state by its strong-interaction state gives T⁺βα≈⟨Ψ^s_β−,V_wΨ^s_α+⟩,
+    first order in V_w but all orders in V_s.
+  kind: method
+  group: weinberg-1.perturbation-and-locality
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 146
+    - 147
+    note: Equations (3.5.19)–(3.5.24) state the strong/weak split, forbidden-strong-process
+      condition, and approximation order.
 - id: weinberg-1.dyson-renormalizability-criterion
   label: Dyson equivalence and renormalizability criterion
   summary: Dyson showed that the Schwinger and Tomonaga operator approaches yield
@@ -368,6 +664,21 @@ nodes:
     - 37
     note: The source states the formalism equivalence, finite-parameter absorption
       criterion, and the Pauli-term consequence.
+- id: weinberg-1.dyson-time-ordered-series-result
+  label: Dyson time-ordered series
+  summary: The S-operator has the time-ordered series expansion in integrals of interaction-picture
+    V(t), conventionally written as a time-ordered exponential with the qualification
+    that the perturbative series may be asymptotic rather than convergent.
+  kind: result
+  group: weinberg-1.perturbation-and-locality
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 143
+    - 144
+    note: The source defines time ordering, writes the series, and qualifies the general
+      exponential notation.
 - id: weinberg-1.effective-field-theory-low-energy-form
   label: Field theories as low-energy effective descriptions
   summary: 'The chapter presents quantum electrodynamics and related field theories
@@ -476,6 +787,38 @@ nodes:
     - 29
     note: The source lists representative lowest-order reactions and characterizes
       their finite, experimentally reasonable results.
+- id: weinberg-1.fourier-energy-denominator-dyson-route
+  label: Fourier energy-denominator route to the Dyson series
+  summary: Representing each old-fashioned energy denominator by its convergent time
+    integral converts the complete intermediate-state expansion into the ordered time
+    integrals of the Dyson series. This is an independent derivation route from differentiating
+    the interaction-picture evolution operator.
+  kind: method
+  group: weinberg-1.perturbation-and-locality
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 142
+    - 143
+    note: The source gives the Fourier representation with convergence factor and
+      says it directly derives the time-ordered expansion from old-fashioned perturbation
+      theory.
+- id: weinberg-1.free-hamiltonian-physical-spectrum-assumption
+  label: Free Hamiltonian with physical spectrum
+  summary: The scattering split H=H₀+V assumes H₀ has free-particle eigenstates with
+    the same spectrum as H. Therefore H₀ uses measured physical masses, places bare-versus-physical
+    mass differences in V, and includes relevant bound states as elementary particles
+    for this purpose.
+  kind: assumption
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    note: The source states the equal-spectrum assumption and its physical-mass and
+      bound-state consequences.
 - id: weinberg-1.fundamental-length-nonlocal-cutoff
   label: Fundamental length and nonlocal ultraviolet cutoff proposals
   summary: One proposed cure for ultraviolet divergences introduces a fundamental
@@ -503,6 +846,53 @@ nodes:
     pages:
     - 62
     note: Takes the low-velocity limit and discusses its phase and enlarged algebra.
+- id: weinberg-1.generalized-optical-theorem-from-s-unitarity
+  label: Generalized optical theorem from S unitarity
+  summary: Expanding S†S=1 with S=1−2πiδ⁴M relates the imaginary part of a forward
+    amplitude to the on-shell sum of squared transition amplitudes into all final
+    states. Inserting the master rate formula converts this relation into the total
+    reaction rate, and for two particles into a relation with the total cross-section.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 147
+    - 148
+    note: Equations (3.6.1)–(3.6.10) derive the forward-amplitude relation and name
+      its two-body form the optical theorem.
+- id: weinberg-1.generalized-partial-wave-discrete-basis
+  label: Generalized partial-wave discrete basis
+  summary: At fixed total momentum and energy, an n-particle momentum configuration
+    space is compact, so its remaining degrees of freedom admit a discrete generalized-partial-wave
+    expansion. In this basis S is an ordinary unitary matrix in the discrete labels,
+    while the T-matrix is represented by M_N′N(E,p).
+  kind: representation
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 151
+    - 152
+    note: The source establishes compactness at fixed E,p, defines the basis normalization,
+      and writes S and M in that basis.
+- id: weinberg-1.generator-commutator-criterion-s-matrix-covariance
+  label: Generator commutator criterion for S-matrix covariance
+  summary: On free states, S-matrix covariance is equivalent to [H₀,S]=[P₀,S]=[J₀,S]=[K₀,S]=0.
+    With H=H₀+V and interaction-independent momentum and angular momentum, [V,P₀]=[V,J₀]=0
+    supplies the translation and rotation part, while boosts need an interaction correction.
+  kind: method
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 118
+    - 119
+    note: Equations (3.3.3), (3.3.18), and (3.3.19) state the generator criterion
+      and the interaction conditions.
 - id: weinberg-1.group-operator-path-construction
   label: Path construction of finite group operators
   summary: Appendix B constructs a finite group operator by integrating a differential
@@ -520,6 +910,20 @@ nodes:
     - 98
     note: Sets up the path-ordered construction and proves its local path-variation
       property.
+- id: weinberg-1.h-theorem-equilibrium-stationarity-condition
+  label: H-theorem equilibrium stationarity condition
+  summary: Entropy increase stops when Pα/cα is a function only of conserved quantities
+    such as total energy and charge. Conservation laws then restrict allowed transitions
+    to equal ratios, and the reciprocity relation shows Pα is time independent.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 151
+    note: The final paragraph gives the conserved-quantity form of equilibrium and
+      uses (3.6.18) to show stationarity.
 - id: weinberg-1.hermitian-local-interaction-condition
   label: Hermiticity and spacelike commutation for scalar interactions
   summary: For a Lorentz-scalar interaction density built from scalar-field pieces,
@@ -547,6 +951,40 @@ nodes:
     - 50
     note: States the Hermitian-operator representation, eigenvalue criterion, and
       orthogonality consequence.
+- id: weinberg-1.high-energy-boundary-layer-forward-amplitude
+  label: High-energy boundary-layer bound on the forward real amplitude
+  summary: In addition to opaque-disk partial waves, suppose the relevant S-matrix
+    element is complex only in an impact-parameter boundary layer of width Δ_n<R_n
+    around ℓ/k=R_n. Then |Re f(n;E)|≤2kR_nΔ_n≪|Im f(n;E)|, explaining the small forward
+    real part under this extra boundary-layer assumption.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 158
+    - 159
+    note: Equation (3.7.25) follows after the source states the boundary-layer complexity
+      assumption and uses the stated inequality.
+- id: weinberg-1.high-energy-impact-parameter-disk-and-log-squared-growth
+  label: High-energy opaque disk and log-squared growth
+  summary: With partial waves below ℓ≈kR_n strongly scattered, the source obtains
+    σ_total→2πR_n², σ_elastic→πR_n², and σ_inelastic→πR_n². Opaque-disk absorption
+    accounts for the inelastic term, while diffraction by the disk accounts for the
+    elastic term. A Yukawa-scale estimate R_n∼log E motivates log²E growth, consistent
+    with the stated general upper bound.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 158
+    - 159
+    note: The rendered equations (3.7.23)–(3.7.24) give the 2π, π, π allocation; the
+      following text identifies opaque-disk absorption and diffraction and states
+      log-squared growth.
 - id: weinberg-1.hilbert-space-rays
   label: Physical states as Hilbert-space rays
   summary: 'Physical states are rays of normalized vectors in a complex Hilbert space:
@@ -598,6 +1036,23 @@ nodes:
     - 99
     - 100
     note: Concludes the theorem and identifies the fundamental-group classification.
+- id: weinberg-1.in-out-states-heisenberg-asymptotic-definition
+  label: In and out states as asymptotic particle content
+  summary: In the Heisenberg picture, an in or out state is a time-independent vector
+    describing the full history, labeled by particle content observed respectively
+    at t→−∞ or t→+∞. Time localization requires smooth energy wave packets rather
+    than a single energy eigenstate, and the two signs in the asymptotic condition
+    select the incoming and outgoing limits.
+  kind: representation
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 109
+    - 110
+    note: The source contrasts Heisenberg and Schrödinger descriptions, defines the
+      asymptotic labels, and requires finite-energy-range wave packets.
 - id: weinberg-1.indefinite-metric-state-cancellation
   label: Indefinite-metric states proposed to cancel infinities
   summary: Another radical proposal permits negative-probability states so that contributions
@@ -644,6 +1099,41 @@ nodes:
     pages:
     - 33
     note: The source states the cancellation condition for infrared infinities.
+- id: weinberg-1.integrated-transition-reciprocity
+  label: Integrated transition reciprocity from the two unitarity identities
+  summary: Combining the S†S and SS† forward identities equates the phase-space-integrated
+    squared amplitudes for α→β and β→α, with the box-state factor cα=[V/(2π)^3]^{Nα}
+    entering the equivalent transition-rate form.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 147
+    - 150
+    note: The source combines (3.6.2) and (3.6.16) into reciprocity (3.6.17)–(3.6.18).
+- id: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
+  label: Interacting boost and smoothness sufficient condition
+  summary: Because an interaction changes H, the exact boost must be K=K₀+W. The commutator
+    [K₀,V]=−[W,H], together with smooth energy dependence of W matrix elements so
+    that asymptotic W(t) vanishes on wave packets, is sufficient to prove [K₀,S]=0
+    and hence Lorentz covariance of S.
+  kind: result
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 119
+    - 120
+    - 121
+    note: The source derives the W correction, the asymptotic commutator formula,
+      its smoothness condition, and the resulting similarity maps for exact generators.
+  notation:
+  - source: weinberg-1
+    note: The sufficient condition is stated for the proper orthochronous Lorentz
+      transformations considered in this subsection.
 - id: weinberg-1.interaction-hamiltonian-perturbation-theory
   label: Interaction Hamiltonians and time-dependent perturbation theory
   summary: In field theory, interaction terms are third or higher order in field variables,
@@ -657,6 +1147,86 @@ nodes:
     pages:
     - 29
     note: The source states the interaction-order structure and rate-calculation method.
+- id: weinberg-1.interaction-picture-dyson-series
+  label: Interaction-picture route to the Dyson series
+  summary: Differentiating the asymptotic evolution operator yields an interaction-picture
+    equation with V(t)=exp(iH₀t)Vexp(−iH₀t). Iterating its integral equation produces
+    ordered time integrals and hence the time-ordered Dyson series; the formal time-ordered
+    exponential need only be asymptotic when the series does not converge.
+  kind: method
+  group: weinberg-1.perturbation-and-locality
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 142
+    - 143
+    - 144
+    note: Equations (3.5.4)–(3.5.10) define the interaction picture, ordered integrals,
+      time ordering, and Dyson series qualification.
+- id: weinberg-1.internal-symmetry-s-matrix-selection-rules
+  label: Internal symmetry and S-matrix selection rules
+  summary: A frame-independent internal symmetry acts unitarily on particle-species
+    indices and constrains the S-matrix when the same action holds on in and out states.
+    It is ensured by a free-state operator commuting with H₀ and V; for a one-parameter
+    Abelian group, the species charges are conserved in every nonzero S-matrix element.
+  kind: result
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 121
+    - 122
+    note: The text gives the species representation, the commutation conditions on
+      U₀, and the charge-conservation consequence.
+- id: weinberg-1.isospin-partial-wave-phase-shifts
+  label: Isospin-resolved partial-wave phase shifts
+  summary: If isospin symmetry and diagonality in orbital and spin labels hold, the
+    two-body S-matrix separates into total-isospin channels with a real phase shift
+    independent of the isospin third component by the Wigner–Eckart theorem. The resulting
+    cross-section is a Clebsch–Gordan-weighted sum over total isospin and total angular
+    momentum.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 155
+    - 156
+    note: The source states the isospin-channel diagonal form and its phase-shift
+      cross-section.
+- id: weinberg-1.isospin-reduced-s-matrix-amplitudes
+  label: Isospin reduced S-matrix amplitudes
+  summary: For an isospin-invariant two-body reaction, Clebsch–Gordan coefficients
+    combine external isospins while a reduced S-matrix is independent of their third
+    components. This consequence is approximate because electromagnetic and other
+    interactions break isospin symmetry.
+  kind: representation
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 123
+    - 124
+    note: The source introduces non-Abelian isospin multiplets and gives the Clebsch–Gordan
+      reduced-amplitude form with its limitation.
+- id: weinberg-1.kinetic-equation-and-probability-conservation
+  label: Kinetic equation and probability conservation
+  summary: For a probability density Pα on multiparticle-state space, loss by transitions
+    out of α and gain by transitions into α give a kinetic equation. Interchanging
+    integration labels shows the total probability is constant.
+  kind: method
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 150
+    note: The source defines gain and loss terms, writes the kinetic equation, and
+      shows ∫Pαdα is time independent.
 - id: weinberg-1.klein-gordon-indefinite-density
   label: Indefinite conserved density of the Klein-Gordon equation
   summary: The conserved density constructed from a relativistic scalar wave function
@@ -731,6 +1301,62 @@ nodes:
     - 32
     note: The source introduces the low-frequency effective Lagrangian and reports
       the conclusion that its apparent infinities are spurious.
+- id: weinberg-1.lippmann-schwinger-orthonormality-and-s-unitarity-route
+  label: Algebraic Lippmann–Schwinger route to orthonormality
+  summary: An identity between T-matrix elements derived by applying the Lippmann–Schwinger
+    equation on either side proves the in and out sets orthonormal and proves S unitarity
+    without taking explicit t→±∞ limits.
+  kind: method
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: Equations (3.2.9) and the following discussion derive orthonormality and
+      unitarity algebraically.
+- id: weinberg-1.lippmann-schwinger-scattering-state-equations
+  label: Lippmann–Schwinger scattering-state equations
+  summary: The formal solutions of the full energy eigenvalue equation are free states
+    plus the resolvent (Eα−H₀±iε)⁻¹V acting on the scattering state. The positive
+    or negative infinitesimal gives the in or out boundary condition and yields a
+    free-state expansion with T-matrix elements.
+  kind: method
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 111
+    - 112
+    note: The source introduces the ±iε resolvent equations, names them, and verifies
+      their asymptotic conditions by contour closure.
+  notation:
+  - source: weinberg-1
+    note: 'The book’s ± labels are traditional: the +iε equation is the in-state boundary
+      condition and the −iε equation is the out-state boundary condition.'
+- id: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  label: Local scalar interaction and microcausal Lorentz invariance
+  summary: Writing V(t)=∫d³x H_int(x,t) with H_int a scalar turns the Dyson terms
+    into spacetime integrals. Their time ordering is Lorentz invariant when spacelike
+    or lightlike separated interaction densities commute; this microcausality condition
+    also supplies a nonperturbative sufficient route through the interacting-boost
+    commutator.
+  kind: assumption
+  group: weinberg-1.perturbation-and-locality
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 144
+    - 145
+    note: The source gives the scalar-density ansatz, spacelike commutation condition,
+      and its connection to the boost sufficient condition.
+  notation:
+  - source: weinberg-1
+    note: The book writes the causal condition for (x−x′)²≥0 in its metric convention
+      and notes possible coincident-point singularities later.
 - id: weinberg-1.lorentz-invariant-one-particle-normalization
   label: Invariant mass-shell delta and adopted momentum-state normalization
   summary: On a positive-energy mass shell, the Lorentz-invariant delta function is
@@ -946,6 +1572,21 @@ nodes:
     - 3
     note: The source describes the closed-orbit quantization argument and the electron-crystal
       interference test.
+- id: weinberg-1.moller-operators-asymptotic-state-map
+  label: Møller operators as asymptotic state maps
+  summary: The formal operator Ω(T)=exp(iHT)exp(−iH₀T) maps free states to in or out
+    scattering states in the corresponding asymptotic limit. Its limit is meaningful
+    only on smooth superpositions of energy eigenstates, and unitarity of time evolution
+    gives in/out states the free-state normalization.
+  kind: method
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    - 111
+    note: Equations (3.1.13)–(3.1.15) define Ω and infer asymptotic-state normalization.
 - id: weinberg-1.negative-energy-instability
   label: Negative-energy instability in relativistic particle mechanics
   summary: Both Dirac and Klein-Gordon equations retain negative-energy plane-wave
@@ -961,6 +1602,23 @@ nodes:
     - 11
     note: The source contrasts the classical energy gap with radiative transitions
       to negative-energy states in relativistic quantum mechanics.
+- id: weinberg-1.neutral-kaon-cp-eigenstates-violation-and-t-inference
+  label: Neutral-kaon CP eigenstates, CP violation, and T inference
+  summary: Under CP conservation, K0±K̄0 form CP eigenstates, and the two-pion decay
+    channel selects the CP-even state, leaving the CP-odd state long lived. The observed
+    long-lived neutral-kaon decay into two pions establishes weak CP violation; with
+    CPT invariance, this implies weak T violation.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 132
+    - 133
+    - 134
+    note: The source constructs the neutral-kaon CP eigenstates, gives the two-pion
+      selection argument and observed violation, then states the CPT-based T inference.
 - id: weinberg-1.nitrogen-14-statistics-and-neutron-model
   label: Nitrogen-14 statistics contradiction and proton-neutron nuclear model
   summary: A proton-electron composition of nitrogen-14 would make it a fermion, contrary
@@ -1022,6 +1680,21 @@ nodes:
     - 38
     note: The source states the equivalence condition and identifies the methods used
       in post-Bethe Lamb-shift calculations.
+- id: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
+  label: Old-fashioned perturbation theory and energy denominators
+  summary: Iterating the Lippmann–Schwinger T-matrix equation expands T in powers
+    of V with sums over intermediate free states and energy denominators. This route
+    makes intermediate-state singularities transparent but obscures Lorentz invariance.
+  kind: method
+  group: weinberg-1.perturbation-and-locality
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 141
+    - 142
+    note: The source derives the iterated T expansion, names old-fashioned perturbation
+      theory, and states its advantage and drawback.
 - id: weinberg-1.one-particle-irreducible-poincare-states
   label: One-particle states as irreducible Poincaré representations
   summary: A one-particle state is labeled by a four-momentum eigenvalue plus only
@@ -1035,6 +1708,40 @@ nodes:
     pages:
     - 63
     note: Defines the one-particle restriction and irreducibility criterion.
+- id: weinberg-1.optical-theorem-diffraction-peak-bound
+  label: Optical-theorem diffraction-peak bound
+  summary: If the scattering amplitude is smooth in angle near forward scattering,
+    the optical theorem bounds the solid angle over which the differential cross-section
+    remains comparable to its forward value. For slowly growing or constant high-energy
+    total cross-section, that angular region shrinks at least as 1/k², producing a
+    diffraction peak.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 148
+    - 149
+    note: The source applies the optical theorem to bound ΔΩ and names the narrowing
+      forward feature a diffraction peak.
+- id: weinberg-1.parity-angular-momentum-inference-and-weak-violation
+  label: Parity inference from angular momentum and weak-interaction violation
+  summary: Parity covariance makes an amplitude even or odd under simultaneous momentum
+    reversal according to the intrinsic-parity product. Angular momentum and identical-neutron
+    antisymmetry in pion absorption therefore imply negative pion parity; the τ–θ
+    puzzle and polarized beta-decay asymmetries show that parity is not conserved
+    by the weak interaction.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 126
+    - 127
+    note: The text infers pion parity from the allowed final partial wave and describes
+      the τ–θ and polarized-decay evidence for weak parity violation.
 - id: weinberg-1.parity-covariance-constraint
   label: Parity covariance constrains intrinsic parities
   summary: Requiring the parity-transformed causal scalar field to remain proportional
@@ -1054,6 +1761,24 @@ nodes:
   - source: weinberg-1
     note: η and ηᶜ are the intrinsic parities of particle and antiparticle, and ℘x
       = (−x, x⁰).
+- id: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  label: Parity covariance and intrinsic-parity phase freedom
+  summary: If parity is conserved, a unitary parity operator reverses spatial momenta
+    of in and out multiparticle states and multiplies their intrinsic parity phases.
+    Multiplication of parity by conserved internal phase transformations changes these
+    phases, so individual intrinsic parities are generally conventional; if the relevant
+    square root exists in a continuous phase group, parity can be redefined to square
+    to one.
+  kind: representation
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 125
+    note: The source gives parity covariance and explains its redefinition by B, L,
+      and Q phase transformations.
 - id: weinberg-1.parity-unitary-time-reversal-antiunitary
   label: Parity is unitary and time reversal antiunitary
   summary: Assuming the discrete inversion symmetries are conserved is only an approximation
@@ -1070,6 +1795,46 @@ nodes:
     - 76
     note: States the approximation and uses the energy-spectrum argument to select
       the operator types.
+- id: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  label: Partial-wave cross-sections and multiparticle inelasticity
+  summary: The partial-wave amplitude gives spin-averaged two-body channel cross-sections
+    in terms of the discrete S-matrix. If only two-body channels are open, unitarity
+    makes the relevant S submatrix unitary and the optical and channel sums agree;
+    any positive difference when higher-multiplicity channels are open is the cross-section
+    for producing extra particles.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 153
+    - 154
+    - 155
+    note: Equations (3.7.8)–(3.7.14) expand the amplitude, give channel and total
+      cross-sections, and identify multiparticle production.
+- id: weinberg-1.partial-wave-threshold-laws-and-scattering-length
+  label: Partial-wave threshold laws and scattering length
+  summary: Assuming momentum-space analyticity near threshold apart from exceptional
+    long-range singularities, partial-wave coefficients vanish with powers fixed by
+    initial and final orbital angular momenta. Exothermic cross-sections commonly
+    scale as 1/k, endothermic ones rise with the outgoing momentum, and elastic s-wave
+    scattering approaches a constant amplitude set by a scattering length.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 156
+    - 157
+    - 158
+    note: The source derives the analytic power counting and gives the exothermic,
+      endothermic, and elastic threshold cases and scattering length.
+  notation:
+  - source: weinberg-1
+    note: The analyticity premise excludes special momentum-space singularities such
+      as those from long-distance Coulomb forces.
 - id: weinberg-1.particle-representations-logical-start
   label: Particles as the logical starting point
   summary: 'The book distinguishes its logical route from the historical route: quantum
@@ -1311,6 +2076,18 @@ nodes:
     pages:
     - 105
     note: Problem 6.
+- id: weinberg-1.problem-dyson-series-from-old-fashioned-perturbation
+  label: 'Problem: Dyson expansion from old-fashioned perturbation theory'
+  summary: 'Exercise request: derive the time-dependent perturbation expansion directly
+    from the old-fashioned energy-denominator expansion.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 4
+    pages:
+    - 166
+    note: Problem 4 explicitly asks for the derivation of (3.5.8) from (3.5.3).
 - id: weinberg-1.problem-galilean-central-charges
   label: 'Problem: derive Galilean algebra and irreducible central charges'
   summary: Problem asks for a direct derivation of Galilean-generator commutators
@@ -1324,6 +2101,44 @@ nodes:
     pages:
     - 105
     note: Problem 3.
+- id: weinberg-1.problem-k-matrix-s-relation
+  label: 'Problem: S-matrix in terms of the K-matrix'
+  summary: 'Exercise request: after defining the standing-wave K-matrix and establishing
+    its Hermiticity, express the S-matrix in terms of K.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 5
+    pages:
+    - 166
+    note: Problem 5 separately requests the S–K expression after the Hermiticity task.
+- id: weinberg-1.problem-laboratory-frame-two-body-cross-section
+  label: 'Problem: laboratory-frame two-body cross-section'
+  summary: 'Exercise request: derive the differential two-body scattering cross-section
+    directly in a laboratory frame with one incoming particle initially at rest, using
+    kinematic variables and Mβα rather than the chapter’s center-of-mass result.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 3
+    pages:
+    - 166
+    note: Problem 3 explicitly requests the laboratory-frame derivation without using
+      the center-of-mass formula.
+- id: weinberg-1.problem-pion-proton-phase-shift-cross-sections
+  label: 'Problem: pion–proton phase-shift cross-sections'
+  summary: 'Exercise request: express elastic charged-pion–proton differential cross-sections
+    in terms of phase shifts labeled by total angular momentum, parity, and isospin.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 6
+    pages:
+    - 166
+    note: Problem 6 explicitly asks for the charged-pion–proton phase-shift cross-sections.
 - id: weinberg-1.problem-poincare-casimirs
   label: 'Problem: Poincaré Casimirs from Pauli–Lubanski vector'
   summary: Problem asks to show that PμPμ and WμWμ commute with every Poincaré transformation,
@@ -1335,6 +2150,60 @@ nodes:
     pages:
     - 105
     note: Problem 4.
+- id: weinberg-1.problem-resonance-branching-ratio-and-peak-cross-section
+  label: 'Problem: resonance branching ratio'
+  summary: 'Exercise request: infer the e⁺e⁻ branching ratio for the specified spin-one
+    resonance from its elastic peak cross-section, neglecting nonresonant background.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 165
+    - 166
+    note: Problem 2 gives the elastic peak cross-section and requests the e⁺e⁻ branching
+      ratio under the no-background assumption.
+- id: weinberg-1.problem-resonance-total-peak-cross-section
+  label: 'Problem: resonance total peak cross-section'
+  summary: 'Exercise request: infer the total e⁺e⁻ scattering cross-section at the
+    resonance peak for the specified spin-one resonance, neglecting nonresonant background.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 165
+    - 166
+    note: Problem 2 separately requests the total peak cross-section after asking
+      for the branching ratio.
+- id: weinberg-1.problem-separable-interaction-lippmann-schwinger
+  label: 'Problem: separable interaction scattering solution'
+  summary: 'Exercise request: use the Lippmann–Schwinger equation for a real-coupling
+    separable interaction to find explicit in and out states and the S-matrix.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 1
+    pages:
+    - 165
+    note: Problem 1 explicitly requests the scattering-state and S-matrix solution
+      for the separable interaction.
+- id: weinberg-1.problem-standing-wave-k-matrix
+  label: 'Problem: standing-wave K-matrix Hermiticity'
+  summary: 'Exercise request: define standing-wave states by the modified Lippmann–Schwinger
+    equation and prove the on-shell K-matrix Hermitian.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 5
+    pages:
+    - 166
+    note: Problem 5 requests the standing-wave construction and K-matrix Hermiticity
+      proof.
 - id: weinberg-1.problem-transverse-boost-massive-spin-state
   label: 'Problem: transverse boost of a massive spin-one state'
   summary: Problem asks for the second observer's description of a massive W-boson
@@ -1360,6 +2229,19 @@ nodes:
     pages:
     - 105
     note: Problem 2.
+- id: weinberg-1.problem-two-body-partial-wave-normalization
+  label: 'Problem: two-body partial-wave normalization'
+  summary: 'Exercise request: prove that the two-body angular-momentum-coupled states
+    defined earlier have the stated scalar-product normalization.'
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 7
+    pages:
+    - 166
+    note: Problem 7 asks to show the states of (3.7.5) have the scalar products of
+      (3.7.6).
 - id: weinberg-1.projective-cocycles
   label: Projective cocycles and phase redefinitions
   summary: Associativity constrains the phase in a projective multiplication law to
@@ -1400,6 +2282,42 @@ nodes:
     pages:
     - 58
     note: Classifies Lorentz components and isolates ℘ and 𝒯.
+- id: weinberg-1.proper-orthochronous-s-matrix-covariance-and-conservation
+  label: Proper-orthochronous S-matrix covariance and four-momentum conservation
+  summary: Lorentz invariance means one unitary proper-orthochronous Poincaré action
+    transforms both in and out states. Translation covariance forces the interacting
+    S-matrix element to vanish unless total four-momentum is conserved, allowing its
+    coefficient to be defined as Mβα through Sβα=δ(β−α)−2πiδ⁴(pβ−pα)Mβα.
+  kind: result
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 116
+    - 117
+    note: The source defines Lorentz covariance for common in/out transformations
+      and obtains the momentum-conserving form (3.3.2).
+  notation:
+  - source: weinberg-1
+    note: This statement concerns proper orthochronous transformations; parity and
+      time reversal are treated separately as discrete symmetries.
+- id: weinberg-1.pt-invariance-polarized-beta-decay-constraint
+  label: PT constraint excluded by polarized beta decay
+  summary: If PT were conserved, its antiunitary relation would forbid a preference
+    for beta-decay electrons to be emitted parallel or antiparallel to the polarized
+    parent spin, under the stated neglect of final-state Coulomb interaction. The
+    observed asymmetry therefore excludes PT invariance in this weak decay context.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 130
+    - 131
+    note: The source writes the PT consequence for nuclear beta decay and states its
+      contradiction with the polarized Co60 observation.
 - id: weinberg-1.quantum-spontaneous-emission
   label: Quantum-field derivation of spontaneous and induced emission
   summary: Quantizing radiation makes an emission matrix element carry sqrt(n_k+1),
@@ -1451,6 +2369,21 @@ nodes:
   notation:
   - source: weinberg-1
     note: The source uses κ and λ for the coefficients in φ(x) = κφ⁺(x) + λφ⁻(x).
+- id: weinberg-1.rearrangement-collision-channel-dependent-hamiltonian-splits
+  label: Channel-dependent H₀/V splits for rearrangement collisions
+  summary: For rearrangement collisions in which a bound state occurs only in the
+    initial or only in the final channel, the source requires different H=H₀+V decompositions
+    for the initial and final states. This is a qualification to the convenient single
+    free-Hamiltonian construction.
+  kind: assumption
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    note: The footnote explicitly gives rearrangement collisions as the case requiring
+      different initial and final splits.
 - id: weinberg-1.renormalization-physical-parameters
   label: Renormalization of mass and charge
   summary: Renormalization absorbs divergent self-energy and vacuum-polarization contributions
@@ -1466,6 +2399,106 @@ nodes:
     - 34
     note: The source explains mass redefinition, charge renormalization, and the question
       whether all divergences can be handled this way.
+- id: weinberg-1.resolvent-principal-value-and-delta-decomposition
+  label: Resolvent principal-value and delta decomposition
+  summary: The ε→0 resolvent separates into a principal-value contribution and an
+    on-shell delta-function contribution. This distributional identity makes the energy-shell
+    part of the scattering-state and S-matrix relations explicit.
+  kind: representation
+  group: weinberg-1.asymptotic-scattering
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 112
+    - 113
+    note: The text introduces regulated functions that tend to the principal value
+      and delta function, then writes the limiting reciprocal.
+- id: weinberg-1.resonance-isospin-eigenphase-and-background-interference
+  label: Resonance isospin, eigenphase jumps, and background interference
+  summary: Isospin-respecting resonances inherit Clebsch–Gordan dependence of their
+    partial widths. Each resonant eigenphase advances by π across an interval of order
+    Γ; for an isolated channel, adding a diagonal background produces the same π jump
+    in the total phase shift, giving a peak near π/2 but a Ramsauer–Townsend dip when
+    the background phase is already near π/2.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 163
+    - 164
+    - 165
+    note: The source gives isospin coupling, eigenphase behavior, isolated-channel
+      background result, and the peak-versus-dip interpretation.
+- id: weinberg-1.resonance-long-lived-intermediate-state-mechanisms
+  label: Resonances from long-lived intermediate states
+  summary: A resonance is a rapid, usually peaked cross-section variation when a collision
+    can form a single unstable intermediate state with total decay rate small compared
+    with its energy. The text distinguishes weakly opened decay, quantum barrier penetration,
+    and statistical concentration of energy as physically different mechanisms that
+    can nevertheless produce such a state.
+  kind: concept
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 159
+    - 160
+    note: The source defines a resonance and lists the weak-interaction, barrier,
+      and statistical mechanisms.
+- id: weinberg-1.resonance-pole-energy-and-decay-width
+  label: Resonance pole energy and decay width
+  summary: A lower-half complex energy pole E_R−iΓ/2 in the T-matrix contributes an
+    amplitude decaying as exp(−iE_Rt−Γt/2), hence a probability decaying as exp(−Γt).
+    Near a narrow resonance the T-matrix therefore contains a term proportional to
+    (E−E_R+iΓ/2)⁻¹ plus a smooth background.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 160
+    - 161
+    note: The source connects the lower-half-plane pole to amplitude and probability
+      decay and states the resonant denominator.
+- id: weinberg-1.resonance-unitarity-projector-decomposition
+  label: Resonance unitarity projector decomposition
+  summary: In a discrete fixed-energy basis, unitarity of a background plus simple-pole
+    S-matrix makes the nonresonant background unitary and turns the pole residue,
+    after factoring that background, into a Hermitian idempotent projection matrix.
+    Its orthonormal dyad decomposition separates degenerate resonant states carrying
+    the same E_R and Γ.
+  kind: method
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 161
+    - 162
+    note: Equations (3.8.3)–(3.8.12) impose unitarity, identify the projection matrix,
+      and expand it in orthonormal resonant vectors.
+- id: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  label: S-matrix from in–out overlaps and completeness
+  summary: The transition amplitude Sβα is the overlap of an out state with an in
+    state. Given asymptotic completeness, the two labels describe complete orthonormal
+    sets in one Hilbert space, so completeness on either side gives S†S=SS†=1; the
+    S-operator is the free-state operator with these matrix elements and formally
+    equals the asymptotic evolution operator.
+  kind: result
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: Equations (3.2.1)–(3.2.6) define the overlap, establish both unitarity relations,
+      and define the operator S.
 - id: weinberg-1.s-matrix-observable-formalism
   label: S-matrix as an observable scattering formalism
   summary: The S-matrix describes amplitudes for scattering processes and was explored
@@ -1589,6 +2622,35 @@ nodes:
     - 204
     note: The source rules out Fermi statistics for a nonzero spinless field and states
       equal mass as necessary and sufficient together with equal coefficient magnitudes.
+- id: weinberg-1.ss-dagger-unitarity-identity
+  label: SS† unitarity identity for reverse inclusive transitions
+  summary: Applying SS†=1 to the interacting S-matrix yields a forward-amplitude identity
+    whose squared-amplitude integral has initial and final labels interchanged relative
+    to the S†S optical-theorem identity.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 150
+    note: The source explicitly applies the other unitarity relation SS†=1 and gives
+      equation (3.6.16).
+- id: weinberg-1.strangeness-associated-production-and-weak-decay
+  label: Strangeness selection in strong production and weak decay
+  summary: Approximate strangeness conservation explains associated production of
+    strange particles in strong reactions, while their comparatively slow decay into
+    nonstrange particles shows that interactions violating strangeness are weak.
+  kind: result
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 122
+    - 123
+    note: The source introduces strangeness as an approximate conserved charge and
+      contrasts associated production with slow nonstrange decays.
 - id: weinberg-1.symmetry-as-transition-probability-invariance
   label: Symmetry as preservation of transition probabilities
   summary: A symmetry changes the observer's ray assignment while leaving probabilities
@@ -1614,6 +2676,21 @@ nodes:
     pages:
     - 52
     note: Expands a near-identity unitary symmetry and identifies its Hermitian generator.
+- id: weinberg-1.t-matrix-onshell-s-matrix-relation-and-born-approximation
+  label: On-shell T-matrix relation and Born approximation
+  summary: The interacting part of S is −2πi times an energy-conserving delta function
+    times T⁺βα. Replacing the in state in T⁺βα by its free state at weak V gives the
+    first Born approximation, with matrix element ⟨Φβ,VΦα⟩.
+  kind: method
+  group: weinberg-1.s-matrix-and-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 114
+    - 115
+    note: The contour argument gives equation (3.2.7), followed by the weak-interaction
+      Born approximation (3.2.8).
 - id: weinberg-1.time-reversal-forbids-static-dipoles
   label: Time-reversal invariance forbids static electric or gravitational dipoles
   summary: A static electric or gravitational field would remove the spin degeneracy
@@ -1657,6 +2734,39 @@ nodes:
     - 89
     - 90
     note: Applies topology to massless helicity and explains the universal-cover alternative.
+- id: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
+  label: Two-body angular-momentum-coupled partial-wave basis
+  summary: For two nonidentical massive particles, Clebsch–Gordan coefficients first
+    couple individual spins to s and then couple s with orbital angular momentum ℓ
+    to total j. Rotational invariance makes a momentum-conserving operator diagonal
+    in j and its component; identical particles require integration over half the
+    two-particle momentum space and an extra √2 normalization factor.
+  kind: representation
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 152
+    - 153
+    note: The source defines the coupled basis, gives its normalization including
+      the identical-particle qualification, and applies the Wigner–Eckart form.
+- id: weinberg-1.two-body-phase-space-and-cross-section
+  label: Two-body center-of-mass phase space and cross-section
+  summary: In the center-of-mass frame, four-momentum conservation removes one final
+    momentum integral and the remaining energy delta function fixes the magnitude
+    of either final momentum. The resulting two-body phase-space factor converts the
+    master formula into the differential two-body decay rate and scattering cross-section.
+  kind: method
+  group: weinberg-1.rates-and-phase-space
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 139
+    - 140
+    note: Equations (3.4.20)–(3.4.30) reduce the phase space and state the two-body
+      rate and cross-section formulas.
 - id: weinberg-1.unconventional-time-reversal-degeneracy
   label: Unconventional time reversal can require extra degeneracy
   summary: For a nontrivial paired time-reversal block, no linear combination is merely
@@ -1672,6 +2782,36 @@ nodes:
     - 102
     - 103
     note: Derives the extra degeneracy and states the internal-symmetry qualification.
+- id: weinberg-1.unitarity-reciprocity-and-boltzmann-h-theorem
+  label: Boltzmann H-theorem from unitarity
+  summary: The kinetic equation and the integrated reciprocity relation following
+    from SS†=1, together with a positivity inequality, make −∫dα Pα ln(Pα/cα) nondecreasing.
+    Neither Born symmetry nor time-reversal invariance is required.
+  kind: result
+  group: weinberg-1.unitarity-consequences
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 150
+    - 151
+    note: The text derives the H-theorem from the other unitarity relation and explicitly
+      excludes Born and time-reversal assumptions.
+- id: weinberg-1.unresolved-resonance-integrated-cross-section
+  label: Unresolved-resonance integrated cross-section
+  summary: When experimental energy resolution cannot resolve a resonance width, integrating
+    the Breit–Wigner total cross-section over the peak determines the partial width
+    into the entrance channel, but does not determine the total width or branching
+    ratios.
+  kind: result
+  group: weinberg-1.partial-waves-and-resonances
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 163
+    note: The source gives the integrated peak formula and states exactly which resonance
+      information such an experiment can reveal.
 - id: weinberg-1.uv-self-energy-divergence
   label: Ultraviolet self-energy divergence
   summary: Pointlike fields that create or destroy particles at spacetime points produce
@@ -1717,6 +2857,23 @@ nodes:
     - 27
     note: The source uses vacuum expectation values of the commutator to rule out
       the wrong assignment and infer the operator roles.
+- id: weinberg-1.watson-theorem-final-state-phase
+  label: Watson theorem for final-state phases
+  summary: For a weak transition on top of a unitary strong background, time-reversal
+    invariance relates amplitudes after summing over sets complete under the strong
+    S-matrix. When initial and final states are individual strong-interaction eigenvectors,
+    the transition amplitude carries the sum of their real phase shifts; this is Watson’s
+    theorem.
+  kind: result
+  group: weinberg-1.discrete-symmetries
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 129
+    - 130
+    note: The source derives the first-order unitarity relation and identifies the
+      single-eigenstate phase result as Watson’s theorem.
 - id: weinberg-1.wigner-symmetry-representation-theorem
   label: Wigner representation of ray symmetries
   summary: An invertible ray transformation preserving transition probabilities is
@@ -1790,6 +2947,235 @@ nodes:
     note: Equation (1.2.74) and the following discussion connect the potential range
       to the mass of the quantized scalar particle.
 edges:
+- id: weinberg-1.abelian-exponentiation-to-charge-selection
+  from: weinberg-1.abelian-symmetry-exponentiation
+  to: weinberg-1.internal-symmetry-s-matrix-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-parameter internal-symmetry selection rule uses exponential unitary
+    generators and species charges.
+  failure_mode: Without exponentiation, the conservation equation for the q_n labels
+    has no stated group-theoretic source.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 122
+    note: The source writes U(T(θ))=exp(iQθ) and derives conservation of the species
+      q values.
+- id: weinberg-1.accepted-local-interaction-to-microcausality
+  from: weinberg-1.hermitian-local-interaction-condition
+  to: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter’s scalar-density and spacelike-commutation condition is the
+    scattering-theory specialization of the accepted local-interaction condition.
+  failure_mode: Without this reuse, the new locality record duplicates rather than
+    builds on the established hermiticity/locality input.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 144
+    - 145
+    note: The source assumes a scalar interaction density and imposes spacelike commutation.
+- id: weinberg-1.algebraic-route-to-s-unitarity
+  from: weinberg-1.lippmann-schwinger-orthonormality-and-s-unitarity-route
+  to: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The T-matrix identity supplies a second complete proof of orthonormality
+    and S unitarity without asymptotic limits.
+  failure_mode: Leaving the algebraic derivation unconnected would conceal that it
+    establishes the same unitarity result.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: The source states that the algebraic derivation proves orthonormality and
+      unitarity.
+- id: weinberg-1.angular-orthogonality-to-problem-partial-wave-normalization
+  from: weinberg-1.angular-momentum-coupling-orthogonality
+  to: weinberg-1.problem-two-body-partial-wave-normalization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Orthogonality of Clebsch–Gordan coefficients and spherical harmonics
+    performs the angular and spin sums in the normalization proof.
+  failure_mode: Without these orthogonality identities, the coupled-state overlaps
+    cannot collapse to the required delta labels.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; Problems 7
+    pages:
+    - 152
+    - 153
+    - 166
+    note: The basis is defined with these angular functions and the exercise requests
+      its normalization.
+- id: weinberg-1.antiunitarity-to-time-reversal-reciprocity
+  from: weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The S-matrix reciprocity derivation uses the accepted result that time
+    reversal is antiunitary, including its conjugation of i.
+  failure_mode: Treating time reversal as unitary would not reverse the iε prescription
+    or produce the stated reciprocity relation.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 128
+    - 129
+- id: weinberg-1.asymptotic-labels-to-in-out-definition
+  from: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  to: weinberg-1.in-out-states-heisenberg-asymptotic-definition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: In and out labels designate the asymptotically noninteracting particle
+    configurations defined by the multiparticle basis.
+  failure_mode: Without asymptotic particle labels, the content specified at early
+    and late times cannot be stated.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 108
+    - 109
+    note: The transformation rule applies to noninteracting multiparticle states and
+      then defines the two asymptotic state sets.
+- id: weinberg-1.box-normalization-to-cross-section
+  from: weinberg-1.box-normalization-and-connected-transition-element
+  to: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The two-particle rate’s 1/V dependence is divided by flux to define the
+    cross-section.
+  failure_mode: Without the volume dependence from the master formula, neither the
+    flux normalization nor the cross-section definition follows.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    note: The text obtains the Nα=2 rate from the master formula and uses its 1/V
+      dependence to define flux and cross-section.
+- id: weinberg-1.box-normalization-to-dalitz
+  from: weinberg-1.box-normalization-and-connected-transition-element
+  to: weinberg-1.dalitz-plot-three-body-dynamics-diagnostic
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dalitz distribution interprets the three-body specialization of the
+    master phase-space factor and invariant matrix element.
+  failure_mode: Without the master rate’s phase-space factor, uniformity in the energy
+    plane has no event-density interpretation.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 140
+    - 141
+    note: The master formula supplies the phase-space factor that is reduced to the
+      three-body Dalitz measure.
+- id: weinberg-1.box-normalization-to-decay-rate
+  from: weinberg-1.box-normalization-and-connected-transition-element
+  to: weinberg-1.decay-rate-and-narrow-width-validity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The one-particle decay formula is the Nα=1 specialization of the master
+    rate derived by box normalization.
+  failure_mode: Without the master rate and its delta-function interpretation, the
+    decay formula’s normalization and lifetime qualification lack their derivation.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    note: The source calls (3.4.11) the master formula then specializes it to one
+      initial particle.
+- id: weinberg-1.breit-wigner-to-problem-peak
+  from: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  to: weinberg-1.problem-resonance-branching-ratio-and-peak-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested entrance-channel branching ratio is obtained from the background-free
+    Breit–Wigner peak and partial-width relations.
+  failure_mode: Without the resonant peak and partial-width relations, this numerical
+    exercise part has no source-defined calculation route.
+  evidence:
+  - source: weinberg-1
+    section: 3.8; Problems 2
+    pages:
+    - 162
+    - 163
+    - 165
+    - 166
+    note: The formulas identify peak and partial widths; Problem 2 requests the branching
+      ratio with no background.
+- id: weinberg-1.breit-wigner-to-problem-total-peak
+  from: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  to: weinberg-1.problem-resonance-total-peak-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The total peak cross-section is a separate requested application of the
+    background-free Breit–Wigner result.
+  failure_mode: Without the peak formula, the total-cross-section part of Problem
+    2 cannot be computed.
+  evidence:
+  - source: weinberg-1
+    section: 3.8; Problems 2
+    pages:
+    - 162
+    - 163
+    - 165
+    - 166
+    note: The source derives the resonance peak cross-sections and Problem 2 requests
+      the total one.
+- id: weinberg-1.breit-wigner-to-unresolved-integral
+  from: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  to: weinberg-1.unresolved-resonance-integrated-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The unresolved measurement integrates the Breit–Wigner peak over energy.
+  failure_mode: Without the peak line shape, the entrance-channel partial-width inference
+    cannot be made.
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 162
+    - 163
+    note: The source gives the peak form then integrates the total cross-section for
+      insufficient energy resolution.
 - id: weinberg-1.canonical-action-to-scalar-antiparticles
   from: weinberg-1.canonical-field-action-formalism
   to: weinberg-1.scalar-field-particle-antiparticle-operators
@@ -1830,6 +3216,23 @@ edges:
     - 17
     note: The source first gives the ladder matrices and then interprets their action
       and Hamiltonian spectrum.
+- id: weinberg-1.charge-conjugation-to-neutral-pion-selection
+  from: weinberg-1.charge-conjugation-cp-cpt-process-relations
+  to: weinberg-1.charge-conjugation-neutral-pion-decay-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The neutral-pion decay prohibition is a direct application of the charge-conjugation
+    S-matrix selection rule for self-conjugate neutral particles.
+  failure_mode: Without C covariance and the multiplicative C parities, the two- versus
+    three-photon selection rule does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 131
+    - 132
 - id: weinberg-1.charge-obstruction-to-complex-field
   from: weinberg-1.charge-conservation-obstruction
   to: weinberg-1.complex-causal-scalar-field
@@ -1851,6 +3254,22 @@ edges:
     - 204
     note: The source says it must suppose two opposite-charge bosons, then defines
       a field with the same Q commutator as the annihilation field.
+- id: weinberg-1.completeness-to-overlap-unitarity-route
+  from: weinberg-1.asymptotic-completeness-assumption
+  to: weinberg-1.asymptotic-overlap-unitarity-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The overlap proof inserts a complete in or out resolution of identity.
+  failure_mode: Without completeness, the overlap sums cannot be reduced to identity.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source inserts the completeness relations to derive both unitarity equations.
 - id: weinberg-1.complex-field-to-c-t-constraints
   from: weinberg-1.complex-causal-scalar-field
   to: weinberg-1.charge-conjugation-time-reversal-phase-constraints
@@ -1908,6 +3327,254 @@ edges:
     - 206
     note: The source applies parity to the two constituent fields, requires proportionality,
       and then gives the self-conjugate consequence.
+- id: weinberg-1.continuous-unitary-symmetry-to-internal-selection
+  from: weinberg-1.continuous-symmetries-unitary
+  to: weinberg-1.internal-symmetry-s-matrix-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The internal-symmetry construction assumes a unitary action on physical
+    states.
+  failure_mode: Without a unitary symmetry action, preservation of scalar products
+    and the S-matrix constraint cannot be obtained.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 121
+    - 122
+    note: The source defines internal transformations by a unitary operator and derives
+      the corresponding S condition.
+- id: weinberg-1.coupled-amplitude-to-problem-pion-proton
+  from: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
+  to: weinberg-1.problem-pion-proton-phase-shift-cross-sections
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The pion–proton differential cross-sections require the coupled partial-wave
+    amplitude before inserting isospin phase shifts.
+  failure_mode: Without the differential angular-momentum amplitude, phase shifts
+    alone give only integrated channel information.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; Problems 6
+    pages:
+    - 153
+    - 166
+    note: The coupled amplitude is derived before the exercise requesting differential
+      pion–proton cross-sections.
+- id: weinberg-1.coupled-basis-to-partial-cross-sections
+  from: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
+  to: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The cross-section sums use the coupled-basis amplitude expansion and
+    its Clebsch–Gordan normalization.
+  failure_mode: Without the angular-momentum-coupled basis, the discrete partial-wave
+    channel amplitudes entering the cross-section formulas are undefined.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 153
+    - 154
+    note: The coupled basis gives the amplitude expansion, which is integrated and
+      spin summed to get the channel cross-sections.
+- id: weinberg-1.coupled-basis-to-problem-normalization
+  from: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
+  to: weinberg-1.problem-two-body-partial-wave-normalization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise is the proof request for the normalization of the coupled
+    basis defined in equation (3.7.5).
+  failure_mode: Without the coupled-state definition, there is no scalar product whose
+    normalization can be checked.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; Problems 7
+    pages:
+    - 153
+    - 166
+    note: The basis normalization is stated on page 153 and Problem 7 asks to prove
+      it.
+- id: weinberg-1.cp-cpt-to-neutral-kaon-application
+  from: weinberg-1.charge-conjugation-cp-cpt-process-relations
+  to: weinberg-1.neutral-kaon-cp-eigenstates-violation-and-t-inference
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The kaon application uses CP eigenstates and then combines observed CP
+    violation with CPT invariance to infer T violation.
+  failure_mode: Without the CP and CPT process relations, the decay-mode classification
+    and T-violation inference are unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 132
+    - 133
+    - 134
+- id: weinberg-1.cpt-process-relations-to-total-rates
+  from: weinberg-1.charge-conjugation-cp-cpt-process-relations
+  to: weinberg-1.cpt-total-rate-equality-and-antiparticle-lifetime
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The total-rate result uses the CPT amplitude relation before setting
+    initial and final states equal in the generalized optical theorem.
+  failure_mode: Without the inverse antiparticle-process relation, there is no source-backed
+    link from a particle forward amplitude to its antiparticle counterpart.
+  evidence:
+  - source: weinberg-1
+    section: 3.3; 3.6
+    pages:
+    - 133
+    - 149
+    - 150
+    note: The CPT process qualification is stated in section 3.3 and applied to forward
+      amplitudes and total rates in section 3.6.
+- id: weinberg-1.cross-section-to-problem-lab
+  from: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+  to: weinberg-1.problem-laboratory-frame-two-body-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The laboratory derivation still starts from the general flux-normalized
+    differential cross-section.
+  failure_mode: Without the general flux definition, a laboratory expression cannot
+    be normalized as a cross-section.
+  evidence:
+  - source: weinberg-1
+    section: 3.4; Problems 3
+    pages:
+    - 137
+    - 166
+    note: Section 3.4 defines cross-section by flux; Problem 3 asks for its laboratory-frame
+      form.
+- id: weinberg-1.cross-section-to-two-body-phase-space
+  from: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+  to: weinberg-1.two-body-phase-space-and-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The center-of-mass two-body cross-section is obtained by inserting the
+    reduced phase-space measure into the general cross-section formula.
+  failure_mode: Without the flux-normalized cross-section, the phase-space reduction
+    produces a rate measure rather than the requested scattering observable.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 139
+    - 140
+    note: The general cross-section precedes the center-of-mass phase-space reduction
+      and equation (3.4.30).
+- id: weinberg-1.decay-rate-to-time-dilation
+  from: weinberg-1.decay-rate-and-narrow-width-validity
+  to: weinberg-1.decay-rate-lorentz-time-dilation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-dilation result analyzes the Lorentz transformation of the previously
+    derived one-particle decay-rate formula.
+  failure_mode: Without the decay-rate formula, there is no rate whose residual 1/E
+    transformation can be identified.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+- id: weinberg-1.decay-rate-to-two-body-phase-space
+  from: weinberg-1.decay-rate-and-narrow-width-validity
+  to: weinberg-1.two-body-phase-space-and-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The two-body decay specialization inserts the reduced two-body phase-space
+    measure into the already-derived general one-particle decay rate.
+  failure_mode: Reversing this edge makes the general arbitrary-multiplicity decay
+    formula depend on its later two-body specialization.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    - 139
+    - 140
+- id: weinberg-1.diagonal-phase-shift-to-resonance-eigenphase
+  from: weinberg-1.diagonal-partial-wave-phase-shifts
+  to: weinberg-1.resonance-isospin-eigenphase-and-background-interference
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The isolated-channel peak/dip interpretation is stated in terms of the
+    diagonal phase shift and its background.
+  failure_mode: Without the diagonal phase-shift representation, the π jump and Ramsauer–Townsend
+    interference cannot be read as cross-section behavior.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; 3.8
+    pages:
+    - 155
+    - 164
+    - 165
+    note: The source first defines diagonal phase shifts and later gives their resonant
+      jump and background interference.
+- id: weinberg-1.distorted-born-to-watson
+  from: weinberg-1.distorted-wave-born-approximation
+  to: weinberg-1.watson-theorem-final-state-phase
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The weak-on-strong split used in Watson’s theorem is concretely realized
+    by the distorted-wave Born construction for processes absent in the strong interaction
+    alone.
+  failure_mode: Without the weak/strong decomposition, the source’s first-order S(1)
+    setting for the theorem is ungrounded.
+  evidence:
+  - source: weinberg-1
+    section: 3.3; 3.5
+    pages:
+    - 129
+    - 146
+    note: The time-reversal discussion cites distorted-wave Born for this type of
+      weak process; section 3.5 gives the construction.
+- id: weinberg-1.dyson-to-local-microcausality
+  from: weinberg-1.interaction-picture-dyson-series
+  to: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The locality argument analyzes the time ordering in each term of the
+    Dyson expansion after rewriting V(t) as a spatial integral.
+  failure_mode: Without the time-ordered operator products, there is no frame-dependence
+    issue for spacelike separated insertions to resolve.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 144
+    - 145
+    note: The source writes the Dyson terms as spacetime integrals and then analyzes
+      their time ordering.
 - id: weinberg-1.edge-algebra-conservation
   from: weinberg-1.poincare-lie-algebra
   to: weinberg-1.conserved-poincare-generators
@@ -2899,6 +4566,63 @@ edges:
     - 19
     note: The radiation occupation formalism is applied to the electromagnetic interaction
       and emission rate.
+- id: weinberg-1.fourier-route-to-dyson-result
+  from: weinberg-1.fourier-energy-denominator-dyson-route
+  to: weinberg-1.dyson-time-ordered-series-result
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Fourier transforming the complete old-fashioned series is the second
+    complete derivation of the same Dyson result.
+  failure_mode: Adding the interaction-picture evolution as a prerequisite would make
+    the independent Fourier route inherit another route’s input.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 142
+    - 143
+    note: The source explicitly says the series can also be derived directly from
+      old-fashioned perturbation theory.
+- id: weinberg-1.generalized-partial-waves-to-two-body-coupled-basis
+  from: weinberg-1.generalized-partial-wave-discrete-basis
+  to: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coupled two-body states instantiate the general discrete partial-wave
+    basis for the two-particle case.
+  failure_mode: Without the fixed-energy discrete-basis construction, the coupled
+    labels lack their S-matrix basis role.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 152
+    - 153
+    note: The general basis is introduced and immediately specialized to two massive
+      particles and coupled angular momenta.
+- id: weinberg-1.generator-criterion-to-boost-sufficiency
+  from: weinberg-1.generator-commutator-criterion-s-matrix-covariance
+  to: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: After H₀, P₀, and J₀ commutators are secured, the remaining K₀ commutator
+    is precisely what the W smoothness argument proves.
+  failure_mode: Without identifying boosts as the remaining covariance condition,
+    the role of W and its asymptotic smoothness is unmotivated.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 119
+    - 120
+    note: The source isolates K₀ as the remaining generator and proves its commutator
+      with S vanishes.
 - id: weinberg-1.hole-limitations-to-scalar-antiparticles
   from: weinberg-1.hole-theory-limitations
   to: weinberg-1.scalar-field-particle-antiparticle-operators
@@ -2939,6 +4663,43 @@ edges:
     - 14
     note: The discussion moves from the hole proposal to its immediate and general
       objections.
+- id: weinberg-1.impact-disk-to-boundary-layer
+  from: weinberg-1.high-energy-impact-parameter-disk-and-log-squared-growth
+  to: weinberg-1.high-energy-boundary-layer-forward-amplitude
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The boundary-layer estimate adds a restriction to the opaque-disk impact-parameter
+    picture.
+  failure_mode: Without the disk partial-wave setting, the width Δ_n around its edge
+    has no defined role.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 158
+    note: The source states the extra complexity assumption after the opaque-disk
+      cross-section discussion.
+- id: weinberg-1.in-out-normalization-to-overlap-unitarity-route
+  from: weinberg-1.moller-operators-asymptotic-state-map
+  to: weinberg-1.asymptotic-overlap-unitarity-proof
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The overlap proof needs the equal in/out normalization produced by asymptotic
+    unitary evolution.
+  failure_mode: Without orthonormal asymptotic states, their overlap matrix need not
+    be unitary.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.2
+    pages:
+    - 111
+    - 113
+    - 114
+    note: Page 111 establishes normalization; pages 113–114 use it with completeness.
 - id: weinberg-1.indefinite-density-to-dirac-linearization
   from: weinberg-1.klein-gordon-indefinite-density
   to: weinberg-1.dirac-linearization-clifford-algebra
@@ -2996,6 +4757,121 @@ edges:
     - 30
     note: The source states the general interaction-Hamiltonian framework before discussing
       Yukawa's scalar nuclear-force model.
+- id: weinberg-1.interaction-picture-to-dyson-result
+  from: weinberg-1.interaction-picture-dyson-series
+  to: weinberg-1.dyson-time-ordered-series-result
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Iterating interaction-picture evolution is one complete derivation of
+    the Dyson series.
+  failure_mode: Treating it as an input to the Fourier derivation would erase the
+    independent direct route.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 142
+    - 143
+    - 144
+    note: The source derives the ordered series by iteration of the interaction-picture
+      integral equation.
+- id: weinberg-1.internal-selection-to-strangeness-application
+  from: weinberg-1.internal-symmetry-s-matrix-selection-rules
+  to: weinberg-1.strangeness-associated-production-and-weak-decay
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The strangeness example applies the internal-symmetry selection rule
+    to distinguish strong associated production from weak symmetry-violating decay.
+  failure_mode: Without the internal selection rule, the production and decay pattern
+    is only an empirical list rather than the stated symmetry application.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 122
+    - 123
+- id: weinberg-1.internal-symmetry-to-isospin-reduced-amplitudes
+  from: weinberg-1.internal-symmetry-s-matrix-selection-rules
+  to: weinberg-1.isospin-reduced-s-matrix-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The isospin form is an application of the general non-Abelian internal-symmetry
+    constraint on S.
+  failure_mode: Without the internal-symmetry action, the Clebsch–Gordan factorization
+    would be a basis choice rather than a reaction selection rule.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 121
+    - 123
+    - 124
+    note: The general internal-symmetry result precedes the isospin multiplet and
+      reduced-S application.
+- id: weinberg-1.isospin-phase-shifts-to-problem-pion-proton
+  from: weinberg-1.isospin-partial-wave-phase-shifts
+  to: weinberg-1.problem-pion-proton-phase-shift-cross-sections
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested pion–proton formulas resolve channels by the same total
+    angular momentum, parity, and isospin labels.
+  failure_mode: Without the isospin-resolved partial-wave decomposition, the specified
+    phase-shift labels cannot organize the cross-sections.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; Problems 6
+    pages:
+    - 156
+    - 166
+    note: Section 3.7 gives isospin phase shifts; Problem 6 requests the pion–proton
+      cross-sections in these labels.
+- id: weinberg-1.isospin-reduced-to-isospin-phase-shifts
+  from: weinberg-1.isospin-reduced-s-matrix-amplitudes
+  to: weinberg-1.isospin-partial-wave-phase-shifts
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The isospin partial-wave form applies the earlier reduced-amplitude symmetry
+    to the discrete angular-momentum basis.
+  failure_mode: Without isospin invariance, total-isospin phase shifts and Clebsch–Gordan
+    channel weights are not symmetry-protected.
+  evidence:
+  - source: weinberg-1
+    section: 3.3; 3.7
+    pages:
+    - 124
+    - 155
+    - 156
+    note: The earlier reduced isospin S form is specialized to partial waves and total-isospin
+      phase shifts.
+- id: weinberg-1.isospin-reduced-to-resonance-eigenphase
+  from: weinberg-1.isospin-reduced-s-matrix-amplitudes
+  to: weinberg-1.resonance-isospin-eigenphase-and-background-interference
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The isospin dependence of resonant partial widths follows from the reduced
+    isospin amplitudes and Clebsch–Gordan factors.
+  failure_mode: Without isospin reduction, the stated channel dependence of Γ_n is
+    not derived.
+  evidence:
+  - source: weinberg-1
+    section: 3.3; 3.8
+    pages:
+    - 124
+    - 163
+    - 164
+    note: The source applies isospin coupling factors to resonant channels.
 - id: weinberg-1.kg-to-spin-fine-structure
   from: weinberg-1.klein-gordon-minimal-substitution
   to: weinberg-1.spin-orbit-fine-structure
@@ -3015,6 +4891,24 @@ edges:
     - 6
     note: The source compares the equation's fine splitting to experiment before identifying
       spin-orbit and Thomas-precession effects.
+- id: weinberg-1.kinetic-equation-to-h-theorem
+  from: weinberg-1.kinetic-equation-and-probability-conservation
+  to: weinberg-1.unitarity-reciprocity-and-boltzmann-h-theorem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The H-theorem differentiates the entropy using the kinetic equation’s
+    gain and loss terms.
+  failure_mode: Without the kinetic equation, there is no source-defined time derivative
+    of the probability entropy.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 150
+    - 151
+    note: The entropy derivative is computed from the preceding kinetic equation.
 - id: weinberg-1.lamb-shift-motivates-renormalized-calculation
   from: weinberg-1.lamb-shift-experimental-test
   to: weinberg-1.renormalization-physical-parameters
@@ -3074,6 +4968,153 @@ edges:
     - 9
     note: The matrix conditions are derived on page 8 and recast as gamma-matrix Lorentz-invariant
       relations on page 9.
+- id: weinberg-1.lippmann-schwinger-to-algebraic-unitarity
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.lippmann-schwinger-orthonormality-and-s-unitarity-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: This independent proof starts by applying the Lippmann–Schwinger equation
+    on both sides of a matrix element.
+  failure_mode: Without the equation’s two boundary prescriptions, the T-matrix identity
+    used to prove orthonormality cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: The source explicitly begins the algebraic proof by using (3.1.16) on either
+      side.
+- id: weinberg-1.lippmann-schwinger-to-contour-boundary-proof
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.contour-proof-in-out-lippmann-schwinger-boundary-condition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The contour calculation analyzes the ±iε Lippmann–Schwinger expansion.
+  failure_mode: Without the prescribed resolvent poles, contour closure cannot select
+    in/out limits.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 111
+    - 112
+    note: The source substitutes (3.1.17) into wave packets before contour closure.
+- id: weinberg-1.lippmann-schwinger-to-old-fashioned-perturbation
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Old-fashioned perturbation theory is generated by iterating the T-matrix
+    integral equation obtained from Lippmann–Schwinger.
+  failure_mode: Without that integral equation, the series of intermediate-state energy
+    denominators has no stated origin.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 141
+    - 142
+    note: The source starts from the Lippmann–Schwinger equation, obtains the T integral
+      equation, then iterates it.
+- id: weinberg-1.lippmann-schwinger-to-onshell-t-relation
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.t-matrix-onshell-s-matrix-relation-and-born-approximation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The on-shell S–T relation is extracted by taking the Lippmann–Schwinger
+    in-state expansion to late times.
+  failure_mode: Without the resolvent expansion and its T-matrix element, the interacting
+    coefficient in S cannot be obtained by this route.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.2
+    pages:
+    - 111
+    - 114
+    - 115
+    note: The T element is defined in the Lippmann–Schwinger expansion and used in
+      the late-time contour derivation of (3.2.7).
+- id: weinberg-1.lippmann-schwinger-to-problem-k-matrix
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.problem-standing-wave-k-matrix
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The standing-wave equation is explicitly a modified Lippmann–Schwinger
+    equation.
+  failure_mode: Without the original boundary-value construction, the modification
+    defining the K-matrix is uninterpretable.
+  evidence:
+  - source: weinberg-1
+    section: Problems 5
+    pages:
+    - 166
+    note: Problem 5 defines standing waves through a modified version of the Lippmann–Schwinger
+      equation.
+- id: weinberg-1.lippmann-schwinger-to-problem-separable
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.problem-separable-interaction-lippmann-schwinger
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise explicitly asks to solve the separable interaction with
+    the Lippmann–Schwinger equation.
+  failure_mode: Without that equation, the requested solution method is missing.
+  evidence:
+  - source: weinberg-1
+    section: Problems 1
+    pages:
+    - 165
+    note: Problem 1 directly names the Lippmann–Schwinger equation as its required
+      method.
+- id: weinberg-1.lippmann-schwinger-to-resolvent-decomposition
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.resolvent-principal-value-and-delta-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The distributional decomposition is applied to the ±iε resolvent that
+    appears in the Lippmann–Schwinger expansion.
+  failure_mode: Without the resolvent boundary prescription, the principal-value and
+    on-shell terms have no scattering-state role.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 111
+    - 112
+    - 113
+    note: The ±iε equation is followed by the regulated reciprocal decomposition.
+- id: weinberg-1.local-microcausality-to-boost-specialization
+  from: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  to: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: For the scalar local interaction, the source constructs W and verifies
+    the abstract boost commutator and smoothness conditions.
+  failure_mode: Calling this an alternative would miss that it is a sufficient specialization
+    that supplies the abstract proof’s hypotheses.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 145
+    note: The source derives W, states the smoothness property, and says causality
+      yields the remaining commutator condition.
 - id: weinberg-1.locality-condition-to-mixed-bracket
   from: weinberg-1.hermitian-local-interaction-condition
   to: weinberg-1.nonzero-spacelike-mixed-commutator
@@ -3093,6 +5134,210 @@ edges:
     - 202
     note: The text poses the hermiticity/locality problem and immediately evaluates
       the mixed bracket as Δ₊.
+- id: weinberg-1.lorentz-covariance-to-decay-time-dilation
+  from: weinberg-1.proper-orthochronous-s-matrix-covariance-and-conservation
+  to: weinberg-1.decay-rate-lorentz-time-dilation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: S-matrix covariance makes the spin-summed amplitude factor scalar, leaving
+    only the initial-energy factor in the decay rate.
+  failure_mode: Without Lorentz covariance, the amplitude factor could transform and
+    the 1/E time-dilation conclusion would not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+- id: weinberg-1.lorentz-normalization-to-multiparticle-states
+  from: weinberg-1.lorentz-invariant-one-particle-normalization
+  to: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multiparticle normalization is the product normalization of the one-particle
+    states with identical-particle exchange terms.
+  failure_mode: Without the adopted one-particle mass-shell normalization, the factors
+    in the multiparticle scalar product are not fixed.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source declares the multiparticle states normalized as in the prior
+      one-particle equation and adds permutations.
+- id: weinberg-1.massive-intrinsic-parity-to-parity-covariance
+  from: weinberg-1.massive-intrinsic-parity-and-time-reversal
+  to: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity action on massive external particles includes their intrinsic
+    parity phases.
+  failure_mode: Without the one-particle massive inversion action, the multiparticle
+    phase product is not specified.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 125
+    note: The source writes the direct product of massive-particle parity phases and
+      discusses their redefinitions.
+- id: weinberg-1.massive-time-reversal-to-s-reciprocity
+  from: weinberg-1.massive-intrinsic-parity-and-time-reversal
+  to: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multiparticle time-reversal formula on p. 127 explicitly imports
+    the massive one-particle momentum, spin, and phase action from Section 2.6.
+  failure_mode: Without the accepted massive one-particle action, the reversed external
+    labels and phases in the reciprocity formula are undefined.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 127
+    - 128
+- id: weinberg-1.massive-wigner-rotation-to-multiparticle-states
+  from: weinberg-1.massive-wigner-rotation
+  to: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: For each massive factor, the direct-product transformation uses its Wigner
+    rotation matrix.
+  failure_mode: Without the massive one-particle transformation law, the spin-index
+    transformation in the multiparticle product is unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source writes W(Λ,p) and the massive rotation matrices in the multiparticle
+      transformation rule.
+- id: weinberg-1.massless-helicity-action-to-multiparticle-states
+  from: weinberg-1.massless-helicity-lorentz-action
+  to: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Massless factors replace the massive spin matrix by their helicity phase
+    in the direct product.
+  failure_mode: Without the massless transformation law, the stated massive formula
+    would be applied outside its source qualification.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source explicitly replaces the massive matrix by the massless helicity
+      phase.
+- id: weinberg-1.massless-parity-pairing-to-parity-covariance
+  from: weinberg-1.massless-parity-helicity-pairing
+  to: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The source’s massive parity formula is explicitly qualified as requiring
+    modification for massless particles.
+  failure_mode: Without the helicity-pairing input, the parity relation would be overextended
+    to a massless state with no parity partner.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    note: The source states the displayed parity action is for massive particles and
+      requires modification for massless particles.
+- id: weinberg-1.massless-time-reversal-to-time-reversal-reciprocity
+  from: weinberg-1.massless-time-reversal-preserves-helicity
+  to: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The massive time-reversal formula is explicitly qualified for massless
+    particles, whose helicity behavior is different.
+  failure_mode: Without this qualification, the massive spin-reversal rule would be
+    silently applied to massless helicity labels.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 127
+    - 128
+    note: The source gives the massive formula and states that massless modifications
+      are required.
+- id: weinberg-1.master-rate-to-kinetic-equation
+  from: weinberg-1.box-normalization-and-connected-transition-element
+  to: weinberg-1.kinetic-equation-and-probability-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gain and loss terms use the source’s differential transition rates
+    and state-space measure.
+  failure_mode: Without the master normalization, the kinetic transition terms cannot
+    be expressed as physical rates.
+  evidence:
+  - source: weinberg-1
+    section: 3.4; 3.6
+    pages:
+    - 136
+    - 150
+    note: The master rate supplies dΓ, which page 150 inserts into gain and loss terms.
+- id: weinberg-1.master-rate-to-optical-theorem
+  from: weinberg-1.box-normalization-and-connected-transition-element
+  to: weinberg-1.generalized-optical-theorem-from-s-unitarity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The unitarity sum becomes a total physical rate only after substituting
+    the master transition-rate normalization.
+  failure_mode: Without the rate formula, the squared-amplitude phase-space integral
+    cannot be identified with a measurable total rate or cross-section.
+  evidence:
+  - source: weinberg-1
+    section: 3.4; 3.6
+    pages:
+    - 136
+    - 147
+    - 148
+    note: The master formula is invoked in (3.6.3), then specialized to the two-body
+      total cross-section.
+- id: weinberg-1.master-rate-to-problem-lab-cross-section
+  from: weinberg-1.box-normalization-and-connected-transition-element
+  to: weinberg-1.problem-laboratory-frame-two-body-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise requests a direct laboratory-frame derivation from Mβα,
+    whose normalization and rate meaning come from the master formula.
+  failure_mode: Without the master transition formula, a laboratory-frame expression
+    lacks its source-defined M normalization.
+  evidence:
+  - source: weinberg-1
+    section: 3.4; Problems 3
+    pages:
+    - 136
+    - 166
+    note: Section 3.4 defines the M-based master rate; Problem 3 asks for the direct
+      laboratory-frame result.
 - id: weinberg-1.matter-waves-to-klein-gordon
   from: weinberg-1.de-broglie-matter-waves
   to: weinberg-1.klein-gordon-minimal-substitution
@@ -3112,6 +5357,25 @@ edges:
     - 4
     note: Page 3 gives K=p/h and nu=E/h; page 4 makes the corresponding derivative
       replacements.
+- id: weinberg-1.metric-convention-to-microcausality
+  from: weinberg-1.poincare-group-and-lorentz-interval
+  to: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The spacelike condition (x−x′)^2≥0 is meaningful only with the book’s
+    +++− interval convention.
+  failure_mode: Without the metric convention, the causal inequality can be read with
+    the opposite spacelike/timelike sign.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 144
+    - 145
+    note: The source states the spacelike condition in its interval convention and
+      discusses time ordering.
 - id: weinberg-1.mixed-bracket-to-real-field
   from: weinberg-1.nonzero-spacelike-mixed-commutator
   to: weinberg-1.real-causal-scalar-field
@@ -3153,6 +5417,46 @@ edges:
     - 204
     note: Pages 202–203 derive the Δ₊ mixed-bracket behavior; page 204 reuses Δ₊ in
       the complex-field bracket and states the Bose-statistics and equal-mass conditions.
+- id: weinberg-1.moller-map-to-lippmann-schwinger
+  from: weinberg-1.moller-operators-asymptotic-state-map
+  to: weinberg-1.lippmann-schwinger-scattering-state-equations
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: 'Both constructions define the same in/out boundary conditions: Ω gives
+    the asymptotic map while the resolvent equation supplies a formal explicit solution.'
+  failure_mode: Without preserving the common boundary conditions, the resolvent solution
+    could be mistaken for an arbitrary energy-eigenstate solution.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    - 111
+    note: The source gives Ω as the asymptotic formulation then introduces the formal
+      Lippmann–Schwinger solution satisfying those conditions.
+- id: weinberg-1.multiparticle-transformation-to-s-covariance
+  from: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  to: weinberg-1.proper-orthochronous-s-matrix-covariance-and-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: S covariance compares the common Poincaré transformations of its in and
+    out multiparticle external states.
+  failure_mode: Without the external-state transformation rule, the covariance equation
+    has no defined spin/helicity factors.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.3
+    pages:
+    - 107
+    - 108
+    - 116
+    - 117
+    note: The direct-product state transformation is reused in the S-matrix covariance
+      relation.
 - id: weinberg-1.negative-energy-to-hole-theory
   from: weinberg-1.negative-energy-instability
   to: weinberg-1.dirac-hole-theory
@@ -3210,6 +5514,327 @@ edges:
     - 33
     note: Page 4 identifies the S-matrix as a reappearance of the positivist program;
       page 33 gives its observable scattering formulation.
+- id: weinberg-1.old-fashioned-to-fourier-dyson-route
+  from: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
+  to: weinberg-1.fourier-energy-denominator-dyson-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Fourier route starts from the full old-fashioned intermediate-state
+    expansion.
+  failure_mode: Without the energy-denominator series, there is no denominator to
+    Fourier represent.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 142
+    - 143
+    note: The source says the time-ordered expansion can be derived directly from
+      the old-fashioned series using the Fourier representation.
+- id: weinberg-1.old-fashioned-to-problem-dyson
+  from: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
+  to: weinberg-1.problem-dyson-series-from-old-fashioned-perturbation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise explicitly asks for the old-fashioned expansion as the derivation
+    input.
+  failure_mode: Without the energy-denominator expansion, the requested direct derivation
+    cannot start.
+  evidence:
+  - source: weinberg-1
+    section: Problems 4
+    pages:
+    - 166
+    note: Problem 4 directly names expansion (3.5.3) as the input to derive (3.5.8).
+- id: weinberg-1.one-particle-normalization-to-problem-partial-wave-normalization
+  from: weinberg-1.lorentz-invariant-one-particle-normalization
+  to: weinberg-1.problem-two-body-partial-wave-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The target coupled-state scalar product is built from the adopted normalization
+    of its individual momentum states.
+  failure_mode: Without the one-particle normalization, the normalization factors
+    in the two-body scalar product cannot be recovered.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.7; Problems 7
+    pages:
+    - 108
+    - 152
+    - 153
+    - 166
+    note: The chapter uses the adopted state normalization in constructing the coupled
+      basis and asks to prove its scalar product.
+- id: weinberg-1.one-particle-representations-to-asymptotic-multiparticle-states
+  from: weinberg-1.one-particle-irreducible-poincare-states
+  to: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multiparticle transformation rule is explicitly a direct product
+    of the one-particle transformation rules and labels.
+  failure_mode: Without the one-particle Poincaré state labels, the meaning of each
+    factor in the asymptotic direct product is unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source begins from direct products of the one-particle states discussed
+      previously and spells out their labels and transformations.
+- id: weinberg-1.onshell-t-to-problem-k-s-relation
+  from: weinberg-1.t-matrix-onshell-s-matrix-relation-and-born-approximation
+  to: weinberg-1.problem-k-matrix-s-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Expressing S through K is compared against the source’s on-shell relation
+    between S and the in-state T-matrix.
+  failure_mode: Without the S–T normalization, the requested S–K formula has no fixed
+    on-shell convention.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; Problems 5
+    pages:
+    - 115
+    - 166
+    note: The chapter defines the S–T convention before asking for its standing-wave
+      analogue.
+- id: weinberg-1.optical-theorem-to-cpt-total-rates
+  from: weinberg-1.generalized-optical-theorem-from-s-unitarity
+  to: weinberg-1.cpt-total-rate-equality-and-antiparticle-lifetime
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The equality of total particle and antiparticle rates is obtained by
+    applying the generalized optical theorem after CPT equates their forward amplitudes.
+  failure_mode: Without the inclusive forward-amplitude relation, CPT process reciprocity
+    alone does not yield total-rate equality.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 147
+    - 149
+    - 150
+    note: The source explicitly applies the generalized optical theorem after the
+      CPT forward-amplitude relation.
+- id: weinberg-1.optical-theorem-to-diffraction-bound
+  from: weinberg-1.generalized-optical-theorem-from-s-unitarity
+  to: weinberg-1.optical-theorem-diffraction-peak-bound
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The angular-width bound substitutes the optical-theorem relation between
+    the forward imaginary amplitude and total cross-section.
+  failure_mode: Without that forward relation, smoothness alone cannot produce the
+    stated 1/k² bound.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 148
+    - 149
+    note: The source derives the optical theorem and immediately uses it to obtain
+      the bound on ΔΩ.
+- id: weinberg-1.optical-theorem-to-integrated-reciprocity
+  from: weinberg-1.generalized-optical-theorem-from-s-unitarity
+  to: weinberg-1.integrated-transition-reciprocity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Reciprocity combines the S†S forward identity with its SS† counterpart.
+  failure_mode: Without the first forward identity, the equality of the two opposite-direction
+    integrals is not obtained.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 147
+    - 150
+    note: The source says it puts (3.6.16) together with (3.6.2) to yield reciprocity.
+- id: weinberg-1.overlap-route-to-s-unitarity
+  from: weinberg-1.asymptotic-overlap-unitarity-proof
+  to: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Completeness and normalization provide one complete proof route to the
+    common unitarity result.
+  failure_mode: Making this route jointly necessary with the algebraic route would
+    misrepresent the independent proofs.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source gives the overlap-completeness derivation before its algebraic
+      alternative.
+- id: weinberg-1.parity-antiunitarity-input-to-discrete-relations
+  from: weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity construction relies on its unitary action, distinct from time
+    reversal’s antiunitarity.
+  failure_mode: Without this distinction, phase and scalar-product transformations
+    in the discrete-symmetry relations are misapplied.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 128
+    note: The source treats P as unitary and T as antiunitary in the corresponding
+      S-matrix conditions.
+- id: weinberg-1.parity-covariance-to-parity-inference
+  from: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  to: weinberg-1.parity-angular-momentum-inference-and-weak-violation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion-parity argument uses the parity covariance rule together with
+    the momentum parity of the allowed angular-momentum amplitude.
+  failure_mode: Without the parity transformation rule, odd momentum dependence would
+    not constrain intrinsic-parity products.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 126
+    note: The source first states the parity condition then applies it to pion absorption.
+- id: weinberg-1.parity-to-pt-beta-decay-constraint
+  from: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  to: weinberg-1.pt-invariance-polarized-beta-decay-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The PT constraint combines parity's momentum reversal with time reversal's
+    antiunitary spin reversal.
+  failure_mode: Without the parity action, PT would not preserve momenta while reversing
+    spin as used in the beta-decay argument.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 130
+    - 131
+- id: weinberg-1.partial-cross-sections-to-breit-wigner
+  from: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  to: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The source obtains the Breit–Wigner total and channel formulas by inserting
+    resonant partial-wave S elements into the partial-wave cross-section equations.
+  failure_mode: Without the partial-wave cross-section formulas, the resonant S decomposition
+    does not yield observable peak cross-sections.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; 3.8
+    pages:
+    - 154
+    - 162
+    - 163
+    note: Section 3.8 explicitly uses the earlier partial-wave formulas to derive
+      the resonance expressions.
+- id: weinberg-1.partial-cross-sections-to-impact-disk
+  from: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  to: weinberg-1.high-energy-impact-parameter-disk-and-log-squared-growth
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy disk estimate evaluates the partial-wave total and elastic
+    cross-section sums under an impact-parameter assumption.
+  failure_mode: Without those partial-wave sums, the interaction-radius rule cannot
+    yield πR²-scale cross-sections.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 158
+    - 159
+    note: The source substitutes the impact-parameter S-matrix assumption into the
+      earlier partial-wave cross-section formulas.
+- id: weinberg-1.partial-unitarity-to-diagonal-phase-shifts
+  from: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  to: weinberg-1.diagonal-partial-wave-phase-shifts
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: A diagonal isolated partial wave is a one-dimensional unitary S-matrix
+    element, yielding its exponential phase form.
+  failure_mode: Without the unitary partial-wave setting, δ has no reason to be real
+    for an isolated channel.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 154
+    - 155
+    note: The source moves from the unitary-channel discussion to the diagonal case
+      and derives S=exp(2iδ).
+- id: weinberg-1.partial-wave-amplitude-to-threshold-laws
+  from: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  to: weinberg-1.partial-wave-threshold-laws-and-scattering-length
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Threshold powers are inferred by applying analyticity to the partial-wave
+    expansion and then inserting them into the partial-wave cross-section formulas.
+  failure_mode: Without the partial-wave coefficients and their cross-section role,
+    momentum analyticity cannot be translated into observable threshold laws.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 156
+    - 157
+    - 158
+    note: The source starts from the partial-wave expansion, imposes analyticity,
+      then states the three threshold cross-section cases.
+- id: weinberg-1.partial-wave-basis-to-resonance-projector
+  from: weinberg-1.generalized-partial-wave-discrete-basis
+  to: weinberg-1.resonance-unitarity-projector-decomposition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The resonance unitarity calculation requires the fixed-energy basis where
+    S(E) is an ordinary discrete matrix.
+  failure_mode: Without this basis, the residue cannot be treated as a matrix projection
+    with orthonormal eigenvectors.
+  evidence:
+  - source: weinberg-1
+    section: 3.7; 3.8
+    pages:
+    - 152
+    - 161
+    note: The discrete basis is introduced in section 3.7 and explicitly adopted for
+      the resonance calculation in section 3.8.
 - id: weinberg-1.particle-spectrum-to-framework-limit
   from: weinberg-1.pion-muon-resolution-yukawa-meson
   to: weinberg-1.particle-spectrum-framework-limit
@@ -3267,6 +5892,118 @@ edges:
     - 37
     note: Page 14 introduces the Pauli term; page 37 states that it would spoil QED
       renormalizability.
+- id: weinberg-1.physical-spectrum-to-moller-map
+  from: weinberg-1.free-hamiltonian-physical-spectrum-assumption
+  to: weinberg-1.moller-operators-asymptotic-state-map
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Ω compares full and free evolution only after H₀ has free states matched
+    in energy spectrum to the full scattering states.
+  failure_mode: A mismatched spectrum would make the stated asymptotic matching condition
+    fail for the intended physical particles.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    - 111
+    note: The equal-spectrum assumption precedes the Ω definition and is used in the
+      asymptotic-state construction.
+- id: weinberg-1.poincare-generators-to-generator-criterion
+  from: weinberg-1.poincare-generators
+  to: weinberg-1.generator-commutator-criterion-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The criterion is expressed using free Hamiltonian, momentum, angular-momentum,
+    and boost generators.
+  failure_mode: Without the generator meanings, the commutators are formal symbols
+    rather than the infinitesimal Poincaré covariance condition.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 118
+    note: The source introduces H0, P0, J0, and K0 as the infinitesimal transformation
+      generators.
+- id: weinberg-1.poincare-lie-algebra-to-boost-sufficiency
+  from: weinberg-1.poincare-lie-algebra
+  to: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The boost proof uses the free and exact Poincaré commutators, especially
+    [K0,H0] and [K,H].
+  failure_mode: Without these commutators, the W correction cannot be related to the
+    S-operator boost commutator.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 118
+    - 119
+    - 120
+    note: The source lists the algebra, introduces K=K0+W, and uses the commutators
+      in the proof.
+- id: weinberg-1.principal-value-to-problem-k-hermiticity
+  from: weinberg-1.resolvent-principal-value-and-delta-decomposition
+  to: weinberg-1.problem-standing-wave-k-matrix
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Standing-wave states use the real principal-value version of the resolvent
+    rather than an in/out on-shell prescription.
+  failure_mode: Without the principal-value decomposition, the modified boundary condition
+    defining K is not distinguished from T.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; Problems 5
+    pages:
+    - 113
+    - 166
+    note: The principal-value representation is developed before the problem’s modified
+      Lippmann–Schwinger equation.
+- id: weinberg-1.problem-k-hermiticity-to-s-relation
+  from: weinberg-1.problem-standing-wave-k-matrix
+  to: weinberg-1.problem-k-matrix-s-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise first establishes the Hermitian standing-wave K-matrix before
+    asking for the S–K expression.
+  failure_mode: Without Hermiticity, the requested K representation lacks its stated
+    unitary-scattering property.
+  evidence:
+  - source: weinberg-1
+    section: Problems 5
+    pages:
+    - 166
+    note: Problem 5 orders the Hermiticity proof before the S–K request.
+- id: weinberg-1.proper-orthochronous-representations-to-s-covariance
+  from: weinberg-1.proper-orthochronous-lorentz-component
+  to: weinberg-1.proper-orthochronous-s-matrix-covariance-and-conservation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The covariance definition is restricted to the proper orthochronous transformations
+    represented continuously on the asymptotic states.
+  failure_mode: Conflating this component with discrete inversions would erase the
+    separate parity and time-reversal hypotheses.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 116
+    - 117
+    note: The source explicitly starts the Lorentz discussion with proper orthochronous
+      transformations and treats discrete symmetries later.
 - id: weinberg-1.real-field-to-charge-obstruction
   from: weinberg-1.real-causal-scalar-field
   to: weinberg-1.charge-conservation-obstruction
@@ -3285,6 +6022,253 @@ edges:
     - 203
     note: The source explicitly contrasts a polynomial in equation (5.2.10) with charge-conserving
       terms.
+- id: weinberg-1.reciprocity-to-equilibrium-stationarity
+  from: weinberg-1.integrated-transition-reciprocity
+  to: weinberg-1.h-theorem-equilibrium-stationarity-condition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The equilibrium form is stationary only after applying the reciprocity
+    relation.
+  failure_mode: Without reciprocity, the source’s cancellation showing Pα time independent
+    is unavailable.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 151
+    note: The source explicitly uses (3.6.18) again to show stationarity.
+- id: weinberg-1.reciprocity-to-h-theorem
+  from: weinberg-1.integrated-transition-reciprocity
+  to: weinberg-1.unitarity-reciprocity-and-boltzmann-h-theorem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The entropy inequality reduces to zero by the reciprocity relation.
+  failure_mode: Without reciprocity, the final integral in the entropy argument does
+    not vanish.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 150
+    - 151
+    note: The source invokes (3.6.18) to conclude entropy always increases.
+- id: weinberg-1.resonance-concept-to-pole-width
+  from: weinberg-1.resonance-long-lived-intermediate-state-mechanisms
+  to: weinberg-1.resonance-pole-energy-and-decay-width
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The pole analysis supplies the energy-domain signature of the long-lived
+    intermediate state defined as a resonance.
+  failure_mode: Without the long-lived-state interpretation, the complex pole’s decay
+    rate has no resonance meaning.
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 159
+    - 160
+    - 161
+    note: The resonance definition and mechanisms precede the lower-half-plane pole
+      derivation.
+- id: weinberg-1.resonance-projector-to-breit-wigner
+  from: weinberg-1.resonance-unitarity-projector-decomposition
+  to: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Breit–Wigner formula follows by inserting the resonant S-matrix produced
+    by the projector decomposition into partial-wave cross-sections.
+  failure_mode: Without normalized resonance couplings, the channel numerators cannot
+    be interpreted as partial widths.
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 162
+    - 163
+    note: The source uses the decomposed S elements to derive total and channel cross-sections
+      and identifies Γ_n.
+- id: weinberg-1.resonance-projector-to-eigenphase-interference
+  from: weinberg-1.resonance-unitarity-projector-decomposition
+  to: weinberg-1.resonance-isospin-eigenphase-and-background-interference
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The resonant projection eigenvectors supply the eigenphase jump, and
+    the background matrix supplies the isolated-channel interference behavior.
+  failure_mode: Without the eigenvector and background decomposition, a π phase jump
+    and a resonance dip cannot be derived from the S-matrix form.
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 163
+    - 164
+    - 165
+    note: The source derives eigenphase motion from the resonant S matrix, then includes
+      diagonal background scattering and identifies the dip.
+- id: weinberg-1.s-operator-to-dyson-series
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.interaction-picture-dyson-series
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dyson expansion is derived by differentiating the finite-time evolution
+    operator whose infinite-time limit is S.
+  failure_mode: Without the evolution-operator representation of S, the interaction-picture
+    equation lacks the scattering operator it expands.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.5
+    pages:
+    - 114
+    - 142
+    - 143
+    - 144
+    note: The S evolution representation is introduced in section 3.2 and explicitly
+      reused to derive the perturbation expansion in section 3.5.
+- id: weinberg-1.s-operator-to-generator-criterion
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.generator-commutator-criterion-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The commutator criterion is stated for the S-operator defined by free-state
+    matrix elements.
+  failure_mode: Without the operator S, the generator commutators are not a formulation
+    of the matrix covariance condition.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.3
+    pages:
+    - 114
+    - 117
+    - 118
+    note: The S-operator definition is invoked before equivalence with commutation
+      by the free generators.
+- id: weinberg-1.s-overlap-to-s-covariance
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.proper-orthochronous-s-matrix-covariance-and-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Lorentz covariance is a property of the transition overlap Sβα and its
+    associated S-operator.
+  failure_mode: Without the overlap definition, the transformed quantity is not identified
+    as a scattering amplitude.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.3
+    pages:
+    - 113
+    - 116
+    - 117
+    note: The source defines S as the overlap then applies the common Lorentz transformation
+      to it.
+- id: weinberg-1.s-unitarity-to-optical-theorem
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.generalized-optical-theorem-from-s-unitarity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The generalized optical theorem follows by inserting the interacting
+    S form into S†S=1.
+  failure_mode: Without S unitarity, the forward amplitude has no mandated inclusive
+    sum over reaction amplitudes.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.6
+    pages:
+    - 114
+    - 147
+    note: Section 3.2 proves unitarity, which section 3.6 explicitly applies to the
+      S-matrix form.
+- id: weinberg-1.s-unitarity-to-partial-inelasticity
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.partial-wave-cross-sections-and-multiparticle-inelasticity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The equality of two-body total sums and the positive higher-multiplicity
+    remainder are consequences of S-matrix unitarity in the partial-wave basis.
+  failure_mode: Without unitarity, the difference of the two sums cannot be identified
+    as a nonnegative production cross-section.
+  evidence:
+  - source: weinberg-1
+    section: '3.7'
+    pages:
+    - 154
+    - 155
+    note: The source invokes unitary S submatrices and identifies the positive difference
+      when higher channels open.
+- id: weinberg-1.s-unitarity-to-resonance-projector
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.resonance-unitarity-projector-decomposition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Unitarity imposes the background and residue equations whose solution
+    is the Hermitian idempotent projection matrix.
+  failure_mode: Without unitarity, neither the projection property nor the decomposition
+    into orthonormal resonant vectors follows.
+  evidence:
+  - source: weinberg-1
+    section: '3.8'
+    pages:
+    - 161
+    - 162
+    note: The source explicitly applies S†S=1 to the pole ansatz and derives the projection
+      conditions.
+- id: weinberg-1.s-unitarity-to-ss-dagger-identity
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.ss-dagger-unitarity-identity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reverse inclusive identity is the SS† half of the two S-unitarity
+    relations.
+  failure_mode: Without S unitarity, the SS† identity cannot be invoked.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.6
+    pages:
+    - 114
+    - 150
+    note: The two unitarity orderings are established in section 3.2 and SS† is applied
+      in section 3.6.
+- id: weinberg-1.s-unitarity-to-watson
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.watson-theorem-final-state-phase
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Watson’s phase relation uses unitarity of the strong background S(0)
+    to identify real eigenphase shifts.
+  failure_mode: Without background unitarity, the eigenvalues need not be phases and
+    the amplitude phase constraint fails.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 129
+    - 130
+    note: The source invokes unitarity of S(0) before writing its eigenvalues as exp(2iδ).
 - id: weinberg-1.scalar-antiparticles-to-field-not-probability
   from: weinberg-1.scalar-field-particle-antiparticle-operators
   to: weinberg-1.fields-are-not-probability-amplitudes
@@ -3383,6 +6367,23 @@ edges:
     - 10
     note: The source applies electromagnetic substitutions to the Dirac equation and
       derives its spin and magnetic consequences.
+- id: weinberg-1.ss-dagger-to-integrated-reciprocity
+  from: weinberg-1.ss-dagger-unitarity-identity
+  to: weinberg-1.integrated-transition-reciprocity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The integrated reciprocity equation is obtained by combining the SS†
+    reverse-inclusive identity with the S†S optical-theorem identity.
+  failure_mode: With only S†S, the amplitudes remain ordered as α→β and the equality
+    to the reverse inclusive integral is missing.
+  evidence:
+  - source: weinberg-1
+    section: '3.6'
+    pages:
+    - 147
+    - 150
 - id: weinberg-1.statistics-mass-to-complex-field
   from: weinberg-1.spinless-boson-and-mass-constraint
   to: weinberg-1.complex-causal-scalar-field
@@ -3402,6 +6403,80 @@ edges:
     - 204
     note: The source identifies these conditions immediately before normalizing the
       complex field.
+- id: weinberg-1.strong-wave-states-to-distorted-born
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.distorted-wave-born-approximation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Distorted-wave Born first defines strong-only in/out states by the Lippmann–Schwinger
+    construction.
+  failure_mode: Without the strong-only scattering states, replacing the full state
+    by a distorted state is undefined.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 146
+    note: Equation (3.5.20) is explicitly the Lippmann–Schwinger equation with V_s
+      as the interaction.
+- id: weinberg-1.time-reversal-to-pt-beta-decay-constraint
+  from: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+  to: weinberg-1.pt-invariance-polarized-beta-decay-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The PT beta-decay prediction uses the antiunitary reciprocity reasoning
+    developed for time reversal.
+  failure_mode: Without the time-reversal factor, parity alone predicts simultaneous
+    momentum reversal rather than the spin-only PT test stated here.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 130
+    - 131
+- id: weinberg-1.time-reversal-to-watson
+  from: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+  to: weinberg-1.watson-theorem-final-state-phase
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Watson’s theorem is the special complete-eigenstate consequence of the
+    time-reversal relation with a strong background.
+  failure_mode: Without antiunitary time-reversal reciprocity, the phase-sum constraint
+    on the weak transition amplitude does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 129
+    - 130
+    note: The source derives the complete-set relation from time reversal and then
+      names the eigenstate phase result Watson’s theorem.
+- id: weinberg-1.two-body-phase-space-to-breit-wigner
+  from: weinberg-1.two-body-phase-space-and-cross-section
+  to: weinberg-1.breit-wigner-cross-section-and-partial-widths
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The resonance formulas are total and channel two-body cross-sections
+    evaluated from the partial-wave amplitudes.
+  failure_mode: Without the two-body cross-section normalization, the Breit–Wigner
+    peak and partial-width factors lack their scattering interpretation.
+  evidence:
+  - source: weinberg-1
+    section: 3.4; 3.8
+    pages:
+    - 140
+    - 162
+    - 163
+    note: The chapter’s two-body cross-section normalization is used in the resonance
+      cross-section formulas.
 - id: weinberg-1.uv-to-fundamental-length
   from: weinberg-1.uv-self-energy-divergence
   to: weinberg-1.fundamental-length-nonlocal-cutoff
@@ -3477,6 +6552,45 @@ edges:
     - 32
     - 34
     note: The vacuum-polarization expression precedes the charge-renormalization discussion.
+- id: weinberg-1.wave-packets-to-contour-boundary-proof
+  from: weinberg-1.in-out-states-heisenberg-asymptotic-definition
+  to: weinberg-1.contour-proof-in-out-lippmann-schwinger-boundary-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Smooth packets and their time uncertainty are assumptions used to damp
+    non-prescription singularities in the contour argument.
+  failure_mode: Without these packet conditions, the stated asymptotic contour suppression
+    does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 109
+    - 112
+    note: The source introduces smooth packets and later states their time uncertainty
+      condition in the contour argument.
+- id: weinberg-1.wave-packets-to-moller-map
+  from: weinberg-1.in-out-states-heisenberg-asymptotic-definition
+  to: weinberg-1.moller-operators-asymptotic-state-map
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source restricts Ω(±∞) to smooth energy superpositions, exactly the
+    wave-packet condition required to localize the scattering event.
+  failure_mode: Treating Ω(±∞) on an individual energy eigenstate would give a formal
+    map without the stated physical asymptotic meaning.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 109
+    - 110
+    - 111
+    note: Wave packets are required for localization, and page 111 qualifies the Ω
+      limit to smooth superpositions.
 - id: weinberg-1.yukawa-to-pion-muon-resolution
   from: weinberg-1.yukawa-massive-mediator-potential
   to: weinberg-1.pion-muon-resolution-yukawa-meson
@@ -3496,15 +6610,49 @@ edges:
     note: The source contrasts the weakly interacting cosmic-ray meson with the strongly
       interacting pion that plays Yukawa's role.
 groups:
+- id: weinberg-1.asymptotic-scattering
+  title: Asymptotic scattering states
 - id: weinberg-1.birth-of-qft
   title: Birth of quantum field theory
+- id: weinberg-1.discrete-symmetries
+  title: Discrete symmetry constraints
 - id: weinberg-1.historical-introduction
   title: Logical framing of quantum field theory
+- id: weinberg-1.partial-waves-and-resonances
+  title: Partial waves and resonances
+- id: weinberg-1.perturbation-and-locality
+  title: Perturbation theory and locality
 - id: weinberg-1.problem-of-infinities
   title: The problem of infinities
+- id: weinberg-1.rates-and-phase-space
+  title: Rates, cross-sections, and phase space
 - id: weinberg-1.relativistic-wave-mechanics
   title: Relativistic wave mechanics
+- id: weinberg-1.s-matrix-and-symmetries
+  title: S-matrix and continuous symmetries
+- id: weinberg-1.scattering-theory-problems
+  title: Scattering-theory problems
+- id: weinberg-1.unitarity-consequences
+  title: Consequences of unitarity
 motivations:
+- id: weinberg-1.why-asymptotic-scattering-formalism
+  nodes:
+  - weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  - weinberg-1.in-out-states-heisenberg-asymptotic-definition
+  - weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  summary: Experiments prepare separated particles before a localized interaction
+    and measure separated products afterwards, rather than the detailed microscopic
+    history. The asymptotic-state and S-matrix framework is introduced to calculate
+    the resulting transition probabilities and cross-sections.
+  evidence:
+  - source: weinberg-1
+    section: 3; 3.1; 3.2
+    pages:
+    - 107
+    - 109
+    - 113
+    note: The chapter frames scattering experiments by distant initial and final particles,
+      defines their asymptotic labels, and identifies the transition overlap.
 - id: weinberg-1.why-combine-field-pieces
   nodes:
   - weinberg-1.hermitian-local-interaction-condition
@@ -3539,6 +6687,24 @@ motivations:
     - 28
     note: The chapter states the stability problem, rejects the hole picture as general,
       and supplies the field-theoretic probability interpretation.
+- id: weinberg-1.why-locality-restricts-relativistic-quantum-interactions
+  nodes:
+  - weinberg-1.interaction-picture-dyson-series
+  - weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  - weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
+  summary: Time ordering of spacelike-separated interactions can depend on the inertial
+    frame, so a relativistic S-matrix needs a condition making that ordering harmless.
+    Spacelike commutation is presented as the source of the required Lorentz covariance
+    restriction.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 144
+    - 145
+    note: The source identifies noninvariant time ordering at spacelike separation
+      and explains why the commutation condition makes relativistic quantum mechanics
+      restrictive.
 - id: weinberg-1.why-quantize-fields
   nodes:
   - weinberg-1.radiation-normal-modes

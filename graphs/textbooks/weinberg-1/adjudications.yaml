@@ -1,0 +1,108 @@
+schema_version: 1
+project: weinberg-1
+scope: Historical final scientific decisions, with alternatives and source citations.
+  Private proposals, witnesses and runtime records remain local.
+deciding_model: gpt-5.6-sol
+effort: high
+human_audit: pending
+units:
+- id: full-003
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: New symmetry and decay applications lack prerequisites, and time-reversal
+      reciprocity omits accepted antiunitarity and massive one-particle inputs.
+    alternatives:
+    - Add necessary prerequisite edges from the existing symmetry, decay, covariance,
+      and accepted one-particle time-reversal records to each retained application/result
+      node.
+    - Fold the five application nodes into their parent result summaries and remove
+      the standalone records, while still adding the two accepted time-reversal inputs.
+    resolution: Retain the useful standalone applications and add nine necessary prerequisite
+      edges.
+    rationale: The source presents these as applications of immediately preceding
+      symmetry or rate results, and p. 127 explicitly imports the one-particle time-reversal
+      action from Section 2.6. Edges preserve that proof structure without deleting
+      useful teachable units or changing accepted records.
+    evidence:
+    - source: weinberg-1
+      section: 3.3; 3.4
+      pages:
+      - 122
+      - 123
+      - 127
+      - 128
+      - 130
+      - 131
+      - 132
+      - 133
+      - 134
+      - 137
+      - 138
+    affected_records:
+    - kind: edges
+      id: weinberg-1.internal-selection-to-strangeness-application
+    - kind: edges
+      id: weinberg-1.parity-to-pt-beta-decay-constraint
+    - kind: edges
+      id: weinberg-1.time-reversal-to-pt-beta-decay-constraint
+    - kind: edges
+      id: weinberg-1.charge-conjugation-to-neutral-pion-selection
+    - kind: edges
+      id: weinberg-1.cp-cpt-to-neutral-kaon-application
+    - kind: edges
+      id: weinberg-1.decay-rate-to-time-dilation
+    - kind: edges
+      id: weinberg-1.lorentz-covariance-to-decay-time-dilation
+    - kind: edges
+      id: weinberg-1.antiunitarity-to-time-reversal-reciprocity
+    - kind: edges
+      id: weinberg-1.massive-time-reversal-to-s-reciprocity
+  - finding: 1
+    issue: Integrated transition reciprocity omits its necessary SS† identity input.
+    alternatives:
+    - Add a necessary edge from the retained SS† identity node to the integrated reciprocity
+      node.
+    - Merge the SS† identity into the integrated reciprocity node and remove the separate
+      identity record.
+    resolution: Add the missing necessary SS†-identity prerequisite edge.
+    rationale: Equation (3.6.17) follows only after combining the reverse-inclusive
+      SS† equation (3.6.16) with the S†S equation (3.6.2). Retaining both existing
+      nodes and connecting them is the smallest complete resolution.
+    evidence:
+    - source: weinberg-1
+      section: '3.6'
+      pages:
+      - 147
+      - 150
+    affected_records:
+    - kind: edges
+      id: weinberg-1.ss-dagger-to-integrated-reciprocity
+  - finding: 2
+    issue: The prerequisite edge between the general decay-rate result and two-body
+      phase-space specialization is reversed.
+    alternatives:
+    - Remove the reversed edge and add a necessary edge from the general decay-rate
+      node to the two-body phase-space specialization.
+    - Remove the reversed edge and connect the master transition-rate node directly
+      to the two-body phase-space node for both decay and scattering branches.
+    resolution: Replace the reversed edge with decay-rate → two-body-phase-space as
+      a necessary prerequisite.
+    rationale: The source derives the arbitrary-final-state one-particle rate in Eq.
+      (3.4.13) before reducing phase space; Eq. (3.4.29) is its two-body specialization.
+      The corrected direction parallels the already-correct general-cross-section
+      branch.
+    evidence:
+    - source: weinberg-1
+      section: '3.4'
+      pages:
+      - 136
+      - 137
+      - 139
+      - 140
+    affected_records:
+    - kind: edges
+      id: weinberg-1.two-body-phase-space-to-decay-rate
+    - kind: edges
+      id: weinberg-1.decay-rate-to-two-body-phase-space

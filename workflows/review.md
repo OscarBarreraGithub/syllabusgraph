@@ -64,6 +64,16 @@ including additions, removals, and replacements. Preserve the exact
 base/revision relationship so the workflow can authorize each change. At least
 two genuinely available alternatives must be recorded for each issue.
 
+Keep `issue` and `resolution` to at most 200 characters each. Use `issue` as
+a concise label for the indexed finding; the full critic note is already in
+the immutable request. Put the detailed explanation in `rationale`, which does
+not have that label-length limit. Check these output constraints before returning
+the final decision so a serialization error does not consume a retry.
+
+Graph records and decision explanations are public derivatives: write their
+evidence notes in your own words. Keep exact source witnesses only in the private
+proposal's `quote_checks`, never in a graph record or decision evidence note.
+
 Return one JSON object in this form:
 
 ```json

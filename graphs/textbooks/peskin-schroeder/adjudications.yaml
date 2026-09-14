@@ -1,0 +1,70 @@
+schema_version: 1
+project: peskin-schroeder
+scope: Historical final scientific decisions, with alternatives and source citations.
+  Private proposals, witnesses and runtime records remain local.
+deciding_model: gpt-5.6-sol
+effort: high
+human_audit: pending
+units:
+- id: full-003
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: 'Residual dependency issue: keep the QED direct and Yukawa routes independent,
+      and correct overstated necessities for momentum-space rules, scalar decay, and
+      classical Rutherford scattering.'
+    alternatives:
+    - Use the existing complete method nodes as the two QED alternatives, downgrade
+      nonessential context edges, align the Fourier edge with derive mastery, and
+      replace the phi-four-specific decay dependency with the general Dyson route.
+    - Add explicit direct-QED and general scalar-interaction route nodes, attach each
+      route's jointly necessary inputs there, and converge those new nodes as alternatives;
+      this is source-supported but adds unnecessary records.
+    resolution: Use the existing complete route nodes and make the six minimal edge
+      corrections.
+    rationale: Pages 123-124 present QED both as a continuation of the Yukawa fermion
+      rules and as the photon-specific rule set already used in the accepted QED tree
+      calculation, so those are independent alternatives and the generic diagram prescription
+      is useful context rather than a joint prerequisite. Pages 94-95 require position-space
+      rules to derive, but not merely use, the momentum-space rules. Pages 84-85 and
+      Problem 4.2 support deriving the lowest-order cubic amplitude from one Dyson
+      insertion plus the already retained connected-amputated prescription, whereas
+      phi-four's specific vertex rule does not determine a cubic vertex. Problem 4.4
+      supplies its own classical-field interaction on page 129, so the prior minimal-coupling
+      result is helpful provenance rather than necessary input. This resolves the
+      only disputed finding without changing settled coverage or scientific content.
+    evidence:
+    - source: peskin-schroeder
+      section: 4.2; Problems 4.2
+      pages:
+      - 84
+      - 85
+      - 127
+    - source: peskin-schroeder
+      section: '4.4'
+      pages:
+      - 94
+      - 95
+    - source: peskin-schroeder
+      section: '4.8'
+      pages:
+      - 123
+      - 124
+    - source: peskin-schroeder
+      section: Problems 4.4(a-b)
+      pages:
+      - 129
+    affected_records:
+    - kind: edges
+      id: ps4-qed-diagrams-to-photon-qualification
+    - kind: edges
+      id: ps4-qed-tree-rule-to-photon-qualification
+    - kind: edges
+      id: ps4-position-to-momentum-rules
+    - kind: edges
+      id: ps4-scalar-vertex-to-problem-decay
+    - kind: edges
+      id: ps4-dyson-to-problem-decay
+    - kind: edges
+      id: ps4-qed-minimal-to-rutherford-classical

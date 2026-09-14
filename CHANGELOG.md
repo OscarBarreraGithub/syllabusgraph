@@ -18,6 +18,8 @@ imply a package has been published to a package index.
   text layers before OCR or a documented nonconceptual exclusion.
 - Publish bounded scientific adjudication decisions with alternatives, reasons,
   source citations and outcomes, while keeping full processing records private.
+- Document the existing 200-character limit for adjudication issue and resolution
+  labels; detailed explanations belong in the rationale.
 
 - Publish a first QFT graph pilot: 36 concepts across four textbook graphs and
   a 37-node shared synthesis over 26 printed pages. Terra/high extraction and
