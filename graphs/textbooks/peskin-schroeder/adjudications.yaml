@@ -177,3 +177,171 @@ units:
       id: ps7-lsz-form-factor-to-subtraction-evidence
     - kind: edges
       id: ps7-width-to-breit-wigner-evidence
+- id: full-007
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Independent functional derivations became compulsory, and the mass-renormalization
+      input was omitted.
+    alternatives:
+    - Keep necessary prerequisite edges from accepted results to the new functional
+      methods.
+    - Use helpful alternative edges from each new method to the accepted result and
+      add the mass input.
+    resolution: Use helpful new-method-to-result alternatives and add the measured-mass
+      prerequisite.
+    rationale: Pages 284, 288, 289, and 310 present functional derivations that reproduce
+      earlier operator, Wick, Feynman-rule, and Noether results, so those results
+      are comparisons rather than compulsory inputs. Page 265 explicitly invokes both
+      measured mass and charge, making the accepted mass-renormalization result a
+      genuine use-level input alongside charge renormalization.
+    evidence:
+    - source: peskin-schroeder
+      section: Chapter 8, Invitation
+      pages:
+      - 265
+    - source: peskin-schroeder
+      section: 9.2 Functional Quantization of Scalar Fields
+      pages:
+      - 284
+      - 288
+      - 289
+    - source: peskin-schroeder
+      section: 9.6 Symmetries in the Functional Formalism
+      pages:
+      - 310
+    affected_records:
+    - kind: edges
+      id: peskin-schroeder.interacting-quotient-to-vacuum-correlators
+    - kind: edges
+      id: peskin-schroeder.scalar-wick-to-gaussian-functional
+    - kind: edges
+      id: peskin-schroeder.functional-phi4-to-phi4-rules
+    - kind: edges
+      id: peskin-schroeder.translation-stress-to-functional-translation
+    - kind: edges
+      id: peskin-schroeder.mass-renormalization-to-renormalizable-preview
+  - finding: 1
+    issue: Three thermal subparts and four multi-page derivations had incomplete evidence
+      metadata.
+    alternatives:
+    - Retain compact single-page evidence and the stale thermal subpart labels.
+    - Correct the subpart labels and cite every page that establishes each node's
+      stated result.
+    resolution: Correct the thermal labels and extend the four derivation records
+      to their operative pages.
+    rationale: The rendered source places the oscillator, scalar, and fermion tasks
+      in 9.2(b), (c), and (d). The path-action, normalization proof, Grassmann algebra,
+      and Abelian determinant claims span the adjacent pages now added to their node
+      evidence.
+    evidence:
+    - source: peskin-schroeder
+      section: 9.1 Path Integrals in Quantum Mechanics
+      pages:
+      - 276
+      - 277
+      - 278
+      - 279
+    - source: peskin-schroeder
+      section: 9.4 Quantization of the Electromagnetic Field
+      pages:
+      - 295
+      - 296
+    - source: peskin-schroeder
+      section: 9.5 Functional Quantization of Spinor Fields
+      pages:
+      - 299
+      - 300
+    - source: peskin-schroeder
+      section: Problem 9.2
+      pages:
+      - 313
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.configuration-space-path-integral
+    - kind: nodes
+      id: peskin-schroeder.time-sliced-path-integral-normalization
+    - kind: nodes
+      id: peskin-schroeder.grassmann-algebra-and-shift-invariant-integration
+    - kind: nodes
+      id: peskin-schroeder.faddeev-popov-gauge-fixing-abelian
+    - kind: nodes
+      id: peskin-schroeder.problem-thermal-harmonic-oscillator-determinant
+    - kind: nodes
+      id: peskin-schroeder.problem-thermal-free-scalar-determinant
+    - kind: nodes
+      id: peskin-schroeder.problem-thermal-fermion-antiperiodic-boundary
+  - finding: 2
+    issue: Many private witnesses were headings or fragments rather than the formulas
+      and qualifications cited.
+    alternatives:
+    - Retain one keyword-level witness per page.
+    - Use operative formula, derivation, and qualification excerpts for every cited
+      claim and route.
+    resolution: Replace the fragments with operative witnesses for every listed claim,
+      formula, and route.
+    rationale: The added private excerpts now bind the universality and functional
+      motivations, critical scaling, path and phase-space constructions, scalar and
+      Grassmann Gaussians, photon gauge qualifications, Dirac sources, determinants,
+      and field-shift identities to the actual claims inspected on the cited pages.
+    evidence:
+    - source: peskin-schroeder
+      section: Chapter 8, critical universality
+      pages:
+      - 268
+      - 273
+    - source: peskin-schroeder
+      section: Chapter 9, functional motivation and path integrals
+      pages:
+      - 275
+      - 277
+      - 278
+      - 279
+      - 280
+      - 281
+      - 282
+    - source: peskin-schroeder
+      section: 9.2 Scalar functional methods
+      pages:
+      - 287
+      - 289
+      - 291
+      - 292
+    - source: peskin-schroeder
+      section: 9.4 Gauge-field quantization
+      pages:
+      - 297
+      - 298
+    - source: peskin-schroeder
+      section: 9.5 Spinor functional methods
+      pages:
+      - 301
+      - 302
+      - 304
+      - 305
+    - source: peskin-schroeder
+      section: 9.6 Functional field shifts
+      pages:
+      - 306
+      - 308
+    affected_records: []
+  - finding: 3
+    issue: The oscillator and fermion problem witnesses named objects and conditions
+      but not the requested outcomes.
+    alternatives:
+    - Keep object names and boundary conditions as sufficient exercise witnesses.
+    - Use complete task excerpts that state the calculation and the partition-function
+      result to recover.
+    resolution: Use complete, answer-bearing task witnesses for Problems 9.2(a), (b),
+      (c), and (d).
+    rationale: Page 313 separately asks for the periodic thermal path construction,
+      oscillator evaluation, scalar-field determinant check, and antiperiodic two-level
+      fermion evaluation. The revised private witnesses record each requested calculation
+      and outcome rather than only its subject noun.
+    evidence:
+    - source: peskin-schroeder
+      section: Problem 9.2(a-d)
+      pages:
+      - 313
+    affected_records: []

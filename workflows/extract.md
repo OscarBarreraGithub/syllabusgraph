@@ -81,6 +81,12 @@ Every cited page of every new record must have at least one short verbatim
 `quote_checks` witness on that page. Witnesses live in the local proposal and
 are not promoted into the public graph. A witness must actually support the
 associated claim; matching text alone does not establish scientific validity.
+Check support record by record, including formulas, qualifications, and each
+independent task branch. A heading, transition, or unfinished equation usually
+locates the topic without supporting its content. When a page supplies several
+distinct claims, use enough complete operative witnesses to cover them; one
+witness per page is not a sufficiency rule. This is part of preparing the
+proposal, not an additional review stage.
 Keep the public graph's summaries and notes in your own words.
 Use complete-word witnesses: matching collapses whitespace and normalizes
 Unicode, but rejects a quotation that truncates a word at either boundary.

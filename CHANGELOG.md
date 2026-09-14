@@ -13,7 +13,8 @@ imply a package has been published to a package index.
 - Add reviewed source inventories and remaining section scopes to the QFT bank.
   Optional coverage ledgers must match their project and current graph digest.
   Clarify joint prerequisites within alternative derivations and complete-word
-  quote witnesses in the reusable extraction guidance.
+  quote witnesses in the reusable extraction guidance. Check witness support for
+  each claim and independent task, beyond finding matching text on a cited page.
 - Clarify derivation versus use requirements and independent exercise routes
   so analogous examples and unrelated tasks do not become compulsory inputs.
 - Explain separate frontmatter citation mappings and the inspection of empty
