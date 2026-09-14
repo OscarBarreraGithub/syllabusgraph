@@ -1353,7 +1353,12 @@ nodes:
     after its right-handed rotations; Chapter 30 writes bar-theta=theta_QCD+arg det(Y_dY_u).
     Both source-specific conventions are retained explicitly. This packet supplies
     no stated redefinition that harmonizes their signs, so the record records the
-    discrepancy rather than equating the formulae.
+    discrepancy rather than equating the formulae. Weinberg’s Euclidean convention
+    instead retains exp(−i theta) product_f M_f under anomalous rephasings, while
+    Peskin–Schroeder distinguishes the QCD term capable of inducing a neutron electric
+    dipole moment from the SU(2) and U(1) terms in its treatment. These additions
+    retain their source-specific normalizations and observability qualifications without
+    reconciling either source’s convention with Schwartz’s two printed signs.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -1376,6 +1381,15 @@ nodes:
     note: This origin retains the source-specific statement, normalization, hypotheses,
       and proof or task boundary; correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-2
+    node: weinberg-2.theta-term-chiral-rephasing-invariant
+    note: Retains the Euclidean-to-Minkowski coefficient, exp(−i theta) product_f
+      M_f invariant, zero-mass qualification, and neutron-EDM bound; it does not identify
+      that convention with Schwartz’s signs.
+  - project: peskin-schroeder
+    node: peskin-schroeder.theta-terms-chiral-rotations-and-strong-cp
+    note: Retains the source-specific QCD versus SU(2)/U(1) observability distinction
+      and strong-CP motivation; it does not harmonize the Weinberg or Schwartz conventions.
   evidence:
   - source: schwartz
     section: 29.5.3
@@ -1390,11 +1404,29 @@ nodes:
     pages:
     - 636
     note: Chapter 30 states the retained plus-sign convention and EDM bound.
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 457
+    - 458
+    note: Minkowski theta normalization, trace convention, measure/mass transformations,
+      invariant combination, massless qualification, and EDM bound.
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 720
+    - 726
+    note: Chiral rotations shift P- and T-odd gauge terms; the QCD term is distinguished
+      from unobservable SU(2) and U(1) terms in this account.
   notation:
   - source: schwartz
     note: 'Chapter 29: theta_F=arg det(Y_dY_u) and bar-theta=theta_QCD-theta_F. Chapter
       30: bar-theta=theta_QCD+arg det(Y_dY_u). The packet provides no redefinition
       connecting these signs.'
+  - source: weinberg-2
+    note: Weinberg’s exp(−i theta) product_f M_f invariant and Peskin–Schroeder’s
+      F tilde F framing are retained as source-specific conventions; neither supplies
+      a redefinition reconciling Schwartz’s Chapter 29 and Chapter 30 signs.
 - id: qft.align006.su2-no-local-cubic-anomaly
   label: Absence of local cubic SU(2) anomaly
   summary: For SU(2), the symmetric invariant d^{abc} vanishes, so its local triangle
@@ -8191,7 +8223,11 @@ nodes:
   label: GIM cancellation of flavor-changing neutral currents
   summary: With two up-type quarks, the d–s cross terms in J3 cancel between doublets,
     leaving a flavor-diagonal neutral current. Without charm, a cosθC sinθC d̄γμs
-    term would permit FCNC processes; this is the GIM mechanism.
+    term would permit FCNC processes; this is the GIM mechanism. Peskin–Schroeder’s
+    three-generation mass-basis account says the same unitary rotations cancel from
+    photon and Z currents, leaving no tree-level flavor-changing weak neutral current,
+    while W charged currents change flavor through CKM entries and flavor-changing
+    neutral processes occur through weak loops in that account.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -8200,11 +8236,23 @@ nodes:
     note: This origin retains the source-specific statement, normalization, hypotheses,
       and proof or task boundary; correspondence is only the scope stated by this
       shared record.
+  - project: peskin-schroeder
+    node: peskin-schroeder.gim-neutral-current-flavor-conservation
+    note: Retains the mass-basis cancellation of neutral-current rotations, the W/CKM
+      qualification, and the loop-level flavor-changing qualification; correspondence
+      is only the shared flavor-diagonal-neutral-current core.
   evidence:
   - source: schwartz
     section: '29.4'
     pages:
     - 605
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 724
+    - 725
+    note: Neutral-current rotation cancellation, CKM charged-current flavor change,
+      and loop-suppressed K processes.
 - id: qft.align017.h-anomaly-free-counterterm-goldstone-action
   label: Counterterm construction for G→H with anomaly-free H
   summary: For G→H with D=0 on H, define B[A]=[1/(48π²)]ε_{μνρσ}∫d⁴x Tr{[A_h^μ,A^ν](F^{ρσ}+F_h^{ρσ})+A_h^μA_h^νA_h^ρA_h^σ−A_h^μA^νA^ρA^σ+(1/2)A_h^μA^νA_h^ρA^σ},
@@ -8292,7 +8340,11 @@ nodes:
     asserting a sign-harmonized potential. The source gives m_a=m_pi F_pi/f_a, its
     approximate f_a and m_a window with model-building qualifications, and requires
     dangerous dimension-n PQ-breaking operators with n>10 to be forbidden or exponentially
-    suppressed.
+    suppressed. Weinberg separately gives the anomalous spontaneously broken U(1)
+    construction with observables depending on theta+phi/M, M=F_phi/A, and a P- and
+    CP-conserving stationary point only when all other terms conserve P or CP; it
+    reports weak-CP effects as a slight shift. That conditional mechanism is retained
+    alongside, and does not sign-harmonize, Schwartz’s printed periodic potential.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -8301,6 +8353,11 @@ nodes:
     note: This origin retains the source-specific statement, normalization, hypotheses,
       and proof or task boundary; correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-2
+    node: weinberg-2.peccei-quinn-axion-relaxation
+    note: Retains the anomalous Goldstone EFT, M=F_phi/A, theta+phi/M dependence,
+      P/CP qualification, and weak-CP shift boundary; it does not harmonize the source’s
+      convention with Schwartz’s periodic expression.
   evidence:
   - source: schwartz
     section: 29.5.3
@@ -8310,6 +8367,17 @@ nodes:
     section: 29.5.3
     pages:
     - 613
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 458
+    - 459
+    note: PQ proposal, anomalous Goldstone EFT, theta+phi/M dependence, and the source’s
+      symmetry qualification.
+  notation:
+  - source: weinberg-2
+    note: Weinberg uses phi, F_phi, A, and M=F_phi/A; its stationary-point claim is
+      conditional on all other terms conserving P or CP.
 - id: qft.align017.problem-19-1a-global-eb-anomaly
   label: 'Problem 19.1(a): global E-parallel-B anomaly law'
   summary: 'Derive the global right-minus-left fermion-number change from the ABJ
@@ -9032,7 +9100,11 @@ nodes:
     Hermitian matrix that transforms as a matrix under basis changes, while det C
     (equivalently the stated Im det[Y_u,Y_d] diagnostic) is basis invariant. Its factorization
     shows that observable Standard-Model weak CP violation requires nonzero Jarlskog
-    invariant and nondegenerate up- and down-type masses.
+    invariant and nondegenerate up- and down-type masses. Peskin–Schroeder derives
+    V=U_u-dagger U_d as the residual charged-current rotation, removes all phases
+    for two generations, and leaves three angles and one irreducible phase for three
+    generations; the shared record retains this mass-basis route alongside Schwartz’s
+    basis-invariant diagnostics rather than replacing them.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -9056,6 +9128,10 @@ nodes:
     note: This origin retains the source-specific statement, normalization, hypotheses,
       and proof or task boundary; correspondence is only the scope stated by this
       shared record.
+  - project: peskin-schroeder
+    node: peskin-schroeder.ckm-matrix-and-physical-cp-phase
+    note: Retains V=U_u-dagger U_d, the two-generation rephasing result, and the three-generation
+      one-phase result; correspondence is only the physical charged-current CP core.
   evidence:
   - source: schwartz
     section: 29.5.1
@@ -9077,6 +9153,13 @@ nodes:
     section: 29.5.1
     pages:
     - 608
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 723
+    - 724
+    note: Mass-basis charged current, V=U_u-dagger U_d, two-generation phase removal,
+      and the three-generation physical phase.
 - id: qft.align017.wess-zumino-consistency-condition-for-anomalies
   label: Wess-Zumino consistency condition
   summary: Couple symmetry currents to background gauge fields and let the local gauge
@@ -12988,6 +13071,902 @@ nodes:
     pages:
     - 255
     - 256
+- id: qft.align022.peskin-schroeder.problem-20-5c-charged-higgs-mode
+  label: 'Problem 20.5(c): physical charged Higgs mode'
+  summary: In unitary gauge, identify the uneaten charged scalar phi^+=sin(beta) phi_1^+
+    - cos(beta) phi_2^+ with tan(beta)=v_2/v_1.
+  kind: method
+  group: qft.align022.two-higgs-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-5c-charged-higgs-mode
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5(c)
+    pages:
+    - 730
+  notation: []
+- id: qft.align022.peskin-schroeder.problem-20-5d-charged-higgs-quark-couplings
+  label: 'Problem 20.5(d): charged-Higgs quark couplings'
+  summary: Starting from the supplied two-doublet Yukawa couplings, transform to quark
+    mass eigenstates and express the physical charged-Higgs couplings solely through
+    quark masses, tan(beta), and CKM elements.
+  kind: method
+  group: qft.align022.two-higgs-tasks
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-5d-charged-higgs-quark-couplings
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5(d)
+    pages:
+    - 730
+  notation: []
+- id: qft.align022.peskin-schroeder.sm-discrete-symmetries-and-single-higgs-yukawas
+  label: Discrete symmetries and one-Higgs Yukawa structure
+  summary: The gauge kinetic theory is chiral and violates C and P, while the stated
+    massless-gauge theory respects CP and T. A single Higgs doublet has a P,C,T-invariant
+    scalar potential; general complex quark Yukawa matrices are the additional source
+    from which physical flavor and CP structure can remain after field redefinitions.
+  kind: concept
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.sm-discrete-symmetries-and-single-higgs-yukawas
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 721
+    - 722
+  notation: []
+- id: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  label: Yukawa singular-value diagonalization and the quark mass basis
+  summary: Biunitary decompositions Lambda_u=U_u D_u W_u-dagger and Lambda_d=U_d D_d
+    W_d-dagger, followed by unitary field redefinitions, diagonalize quark masses
+    and neutral Higgs couplings. The diagonal entries satisfy m_{u,d}=vD_{u,d}/sqrt(2);
+    neutral gauge currents remain flavor diagonal in this basis.
+  kind: method
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 722
+    - 723
+  notation: []
+- id: qft.align022.weinberg-2.axion-pion-effective-lagrangian-and-mass
+  label: Axion–pion effective Lagrangian and mass
+  summary: After choosing axial rephasings c_u+c_d=1 to remove θFF, the source derives
+    pion–axion mixing from rotated u,d mass terms and chooses c_u,c_d to eliminate
+    the ∂μφ′∂^μπ⁰ cross term. For M≫F_π, m_a²=F_π²m_um_d m_π²/[M²(m_u+m_d)²], and
+    m_a=13 MeV/M(GeV) for its quark ratio. The axion eigenvector has pion component
+    (m_uc_u−m_dc_d)F_π/[(m_u+m_d)M], so hadron-production amplitudes relative to pion
+    production scale as F_π/M; its two-photon decay-rate ratio is stated as ~(F_π/M)²(m_a/m_π)³.
+    The source reports M>3 TeV from nonobservation in collisions, M>10^7 GeV from
+    red-giant cooling, M>10^10 GeV from SN1987A, and the cosmological upper bound
+    M<10^12 GeV.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.axion-pion-effective-lagrangian-and-mass
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 459
+    - 460
+    - 461
+    note: Field redefinition, mixing choice, mass and eigenvector/amplitude formulas,
+      two-photon scaling, and reported bounds.
+  notation: []
+- id: qft.align022.weinberg-2.bounce-negative-mode-rate-and-exponentiation
+  label: Bounce negative mode, rate prefactor, and multi-bounce exponentiation
+  summary: The x₀,t₀ collective coordinates give volume and Euclidean-time factors;
+    if G→H, orientation collective coordinates add the coset volume G/H to A. The
+    scale variation proves at least one negative eigenvalue; the printed claim that
+    there is “in fact just one” is attributed to ref. 39 rather than proved here,
+    and makes A imaginary. The source does not calculate A and prints A~iM^−4. Summing
+    N well-separated identical bounces with 1/N! exponentiates the contribution; it
+    then prints Γ/V~M^−4e^(−B). Those two printed powers conflict dimensionally, so
+    this record preserves the source rather than silently changing the rate to M^4.
+    The decay occurs through bubbles of true vacuum in a false-vacuum background rather
+    than by changing the scalar field simultaneously everywhere; after barrier penetration,
+    a true-vacuum bubble grows at light speed, collides with other bubbles, and converts
+    space to the lowest-energy state.
+  kind: result
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bounce-negative-mode-rate-and-exponentiation
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 467
+    - 468
+    note: Collective factors including orientation footnote, negative-mode external-proof
+      boundary, printed A/rate powers, and N! exponentiation.
+  notation: []
+- id: qft.align022.weinberg-2.bounce-ode-scaling-positivity
+  label: Bounce O(4) equation and positive action
+  summary: For large T compared with the potential’s characteristic time, O(4) symmetry
+    gives φ″+(3/ρ)φ′=V′(φ), with φ′(0)=0 from analyticity and φ(∞)=0. The mechanical
+    analogy is a unit-mass particle in −V with viscous force −(3/ρ)φ′. Rescaling φ_R(ρ)=φ(ρ/R)
+    and stationarity yields ∫ρ³(φ′)²dρ=−4∫ρ³Vdρ, hence B=(π²/2)∫ρ³(φ′)²dρ>0.
+  kind: method
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bounce-ode-scaling-positivity
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 466
+    note: Large-T and regularity conditions, ODE/analogy, scaling relation, and B
+      positivity.
+  notation: []
+- id: qft.align022.weinberg-2.bps-monopole-radial-solution
+  label: BPS monopole radial solution and restored core
+  summary: For the BPS first-order equations and F,G→1 at infinity, the source gives
+    F=coth p−1/p and G=1−p/sinh p with p=e〈phi〉r. The scalar then vanishes at r→0,
+    explicitly realizing restoration of SU(2) at the monopole center. It calls these
+    BPS monopoles and, for V=lambda(phi_n phi_n−〈phi〉²)², requires the actual scale
+    separation lambda much less than e² so that the potential may be neglected in
+    approaching the Bogomolnyi bound.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bps-monopole-radial-solution
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 441
+    note: First-order radial equations, exact profiles, core behavior, and potential-size
+      qualification.
+  notation: []
+- id: qft.align022.weinberg-2.bpst-instanton-action-and-normalization
+  label: BPST instanton action, winding, and coupling convention
+  summary: The Belavin–Polyakov–Schwarz–Tyupkin solution built from a standard SU(2)
+    subgroup has v=1 and arbitrary scale R; it can also be translated or gauge transformed.
+    In the displayed field normalization S=8π²|v| and ∫εF F=64π²v, whereas the conventional
+    coupling convention yields Euclidean action I=−8π²|v|/g² and ∫εF F=64π²v/g². The
+    source states uniqueness up to those degrees of freedom for v=1.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bpst-instanton-action-and-normalization
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 452
+    - 453
+    note: BPST solution properties, winding/action formulas, and normalization conversion.
+  notation:
+  - source: weinberg-2
+    note: The first S[A] convention omits g from generators; the conventional normalization
+      changes the displayed F components and action as stated.
+- id: qft.align022.weinberg-2.cartan-maurer-form-invariance
+  label: Cartan–Maurer integral invariant
+  summary: For odd-dimensional compact parameter manifold S with coordinates θ¹,…,θ^d
+    and an invertible matrix map g(θ), the source defines J[g]=∫dθ¹…dθ^d ε^{i₁…i_d}Tr{g^−1∂_{i₁}g⋯g^−1∂_{i_d}g};
+    ε^{12…d}=1. The antisymmetry makes J vanish for even d. The text establishes coordinate
+    independence and invariance under small deformations; for S=S^d it therefore depends
+    only on a homotopy class and obeys J(c_a×c_b)=J(c_a)+J(c_b).
+  kind: method
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cartan-maurer-form-invariance
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.4'
+    pages:
+    - 445
+    - 446
+    - 447
+    note: Full traced antisymmetrized definition, odd-d restriction, coordinate/deformation
+      invariance, and homotopy-group representation property.
+  notation: []
+- id: qft.align022.weinberg-2.cartan-maurer-standard-su2-normalization
+  label: Cartan–Maurer winding normalization in standard SU(2)
+  summary: Using g(θ)→1+2iθ^it_i and the standard SU(2) subgroup, the source obtains
+    J(c)=24π² for its unit class and J(c_v)=24π²v. More generally, if [t_i,t_j]=igε_ijkt_k
+    and Tr(t_it_j)=½Ng²δ_ij, then J(c_v)=24π²Nv. Bott’s cited result that S³ maps
+    into a simple G deform into a standard SU(2) is an external result used here,
+    not proved in this packet.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cartan-maurer-standard-su2-normalization
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.4'
+    pages:
+    - 448
+    - 449
+    - 450
+    note: Generator convention, SU(2) calculation, generalized normalization, and
+      explicitly attributed Bott input.
+  notation:
+  - source: weinberg-2
+    note: This normalization has Tr(t_it_j)=δ_ij/2 for the standard SU(2) calculation;
+      N changes with the trace representation.
+- id: qft.align022.weinberg-2.cluster-decomposition-fixes-theta-weights
+  label: Cluster decomposition fixes winding-sector weights
+  summary: 'Splitting a large Euclidean volume into two regions shows that local expectation
+    values respect cluster decomposition only when f(v₁+v₂)=f(v₁)f(v₂), whose allowed
+    form is f(v)=exp(iθv). Thus discarding every v≠0 sector is inconsistent: it would
+    require a distant compensating instanton to evaluate a local observable.'
+  kind: method
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cluster-decomposition-fixes-theta-weights
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 455
+    - 456
+    note: Region factorization argument, functional equation, and nonzero-sector conclusion.
+  notation: []
+- id: qft.align022.weinberg-2.collective-coordinate-semiclassical-expansion
+  label: Collective-coordinate semiclassical expansion
+  summary: For stationary Euclidean configurations φ_{v,u} labeled by topological
+    type v and continuous collective parameters u, the path integral sums ∫du and
+    integrates fluctuations only transverse to u. The quadratic kernel K has zero
+    modes precisely for collective-coordinate variations; excluding them gives the
+    real-boson determinant factor (Det′K)^−1/2. This is a one-loop expansion, not
+    an exact determinant evaluation.
+  kind: method
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.collective-coordinate-semiclassical-expansion
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.7'
+    pages:
+    - 462
+    note: Decomposition, transverse fluctuations, zero-mode determinant, and one-loop
+      setting.
+  notation: []
+- id: qft.align022.weinberg-2.cosmological-monopole-overabundance-report
+  label: Reported cosmological monopole overabundance argument
+  summary: The text reports that GUT monopoles produced near T≈M would have horizon-limited
+    uncorrelated scalar fields and estimates a density-to-photon ratio ~(G_NM²)^(3/2),
+    about 10^−12 for M≈10^15 GeV. If they did not annihilate, the resulting abundance
+    would conflict with observation; this reported historical/cosmological input is
+    one factor leading to inflationary models, whose placement relative to production
+    determines horizon extension or dilution.
+  kind: concept
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cosmological-monopole-overabundance-report
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 443
+    note: Source-reported horizon estimate, observational conflict, and conditional
+      inflation alternatives.
+  notation: []
+- id: qft.align022.weinberg-2.dirac-patch-quantization-for-monopoles
+  label: Dirac patch quantization for monopoles
+  summary: A gauge that makes phi constant is singular on a direction, so northern
+    and southern angular patches use A_phi=g(1−cos theta)/(r sin theta) and A_phi=−g(1+cos
+    theta)/(r sin theta). Their difference is grad(2g phi); a charge-q field transforms
+    by exp(2iqg phi), which is single-valued only if 2qg is an integer. The patch
+    discussion uses the oppositely oriented positive-charge convention |g|=1/e; this
+    does not replace the unit-winding hedgehog convention g_v=−v/e. Georgi–Glashow
+    charges are multiples of e/2.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.dirac-patch-quantization-for-monopoles
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 442
+    note: Two-patch potentials, transition function, quantization condition, and model-specific
+      charge statement.
+  notation: []
+- id: qft.align022.weinberg-2.euclidean-canonical-amplitude-and-ground-state-limit
+  label: Euclidean canonical amplitude and ground-state limit
+  summary: For Hermitian canonical Q_a,P_a with [Q_a,P_b]=iδ_ab and Q eigenstates
+    δ-normalized, F(q′,q;T)=〈q′|e^(−HT)|q〉 tends at T→∞ to 〈q′|0〉〈0|q〉e^(−E₀T), giving
+    E₀=−lim_{T→∞}T^−1ln F(q,q;T). The thermal partition function is Tr e^(−βH)=∫dq
+    F(q,q;β).
+  kind: method
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.euclidean-canonical-amplitude-and-ground-state-limit
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 469
+    note: Canonical setup, ground-state asymptotics/energy extraction, and trace formula.
+  notation: []
+- id: qft.align022.weinberg-2.euclidean-phase-space-path-integral
+  label: Euclidean phase-space path integral and nonunitary eigenstates
+  summary: Euclidean operators Q_a(t)=e^(Ht)Q_ae^(−Ht), P_a(t)=e^(Ht)P_ae^(−Ht) use
+    a nonunitary similarity transformation, so right Q(t) eigenstates are not generally
+    adjoints of the left ones. Time-slicing with Q and P completeness gives F as a
+    phase-space path integral with endpoints q(−T/2)=q and q(T/2)=q′ and exponent
+    ∫dt[i q̇_ap_a−H(q,p)]; the thermal trace imposes q(t+β)=q(t).
+  kind: method
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.euclidean-phase-space-path-integral
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 470
+    - 471
+    note: Nonunitary-state qualification, time slicing phase-space formula, and periodic
+      thermal condition.
+  notation: []
+- id: qft.align022.weinberg-2.extended-configuration-physical-roles
+  label: Physical roles of extended configurations and Euclidean instantons
+  summary: Monopoles and skyrmions can be particle-like, strings line-like, and domain
+    walls sheet-like physical-state components. Instantons are localized in Euclidean
+    space and time, so the sources treat them as event-like quantum processes that
+    can modify the effective Hamiltonian rather than as particle states; bounces instead
+    rely on imposed boundary conditions, while conserved quantum numbers can forbid
+    decay.
+  kind: concept
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.extended-configuration-physical-roles
+    note: Retains the particle/string/wall/instanton roles, boundary-condition stability
+      of bounces, and conserved-quantum-number qualification.
+  - project: peskin-schroeder
+    node: peskin-schroeder.euclidean-instantons-as-quantum-processes
+    note: Retains only the compatible Euclidean-instanton quantum-process interpretation,
+      including the effective-Hamiltonian distinction from spatial solitonic particle
+      states.
+  evidence:
+  - source: weinberg-2
+    section: '23'
+    pages:
+    - 421
+    - 422
+    note: Introductory classification and the stated contrast between event-like instantons,
+      bounces, and charge-stabilized configurations.
+  - source: peskin-schroeder
+    section: '22.3'
+    pages:
+    - 794
+  notation: []
+- id: qft.align022.weinberg-2.false-vacuum-euclidean-bounce-setup
+  label: False-vacuum Euclidean bounce setup
+  summary: For L=−½∂_μφ∂^μφ−V(φ), with false local minimum φ=0 normalized to V(0)=0
+    and true minimum 〈φ〉 with V(〈φ〉)<0, the false-vacuum energy is obtained from a
+    large-T Euclidean functional integral with φ(x,±T/2)=0. Its imaginary part gives
+    the decay rate. Stationary configurations with these boundary conditions are bounces;
+    the O(4)-symmetric ansatz uses ρ=√[(x−x₀)²+(t−t₀)²].
+  kind: method
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.false-vacuum-euclidean-bounce-setup
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 464
+    - 465
+    note: Metastability definition, Lagrangian/potential hypotheses, Euclidean boundary
+      formula, imaginary-part statement, and bounce ansatz.
+  notation: []
+- id: qft.align022.weinberg-2.fermionic-zero-mode-selection
+  label: Fermionic zero-mode saturation selection rule
+  summary: For independent fermions with quadratic kernel M(v,u), Det M vanishes when
+    zero modes occur unless the operator insertion contains one fermion field for
+    each zero mode. The source explains this directly by Grassmann integration and
+    reports that instanton zero-mode counts/chiralities are governed by index theorems
+    such as the Atiyah–Singer theorem derived earlier; it cites ’t Hooft’s conclusion
+    that v=1 electroweak baryon/lepton violation has one of each lepton flavor, rather
+    than deriving the index theorem here.
+  kind: result
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.fermionic-zero-mode-selection
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.7'
+    pages:
+    - 464
+    note: Grassmann zero-mode argument and explicit external-index-theorem/’t Hooft
+      attribution boundary.
+  notation: []
+- id: qft.align022.weinberg-2.homotopy-reference-table-and-coset-kernel
+  label: Reported homotopy table and coset kernel rule
+  summary: 'Appendix B reports rather than derives the following catalog. With Z the
+    additive integers, Z_n the integers modulo n, and 0 the trivial group, π_n(M₁×M₂)=π_n(M₁)×π_n(M₂).
+    For spheres: π_n(S^m)=0 for n<m; π_n(S^n)=Z; π_{n+1}(S^n)=Z₂ except π₂(S¹)=0 and
+    π₃(S²)=Z; π_{n+2}(S^n)=Z₂ except π₃(S¹)=0; π_{n+3}(S^n)=Z₂₄ except π₄(S¹)=0, π₅(S²)=Z₂,
+    π₆(S³)=Z₁₂, and π₇(S⁴)=Z×Z₁₂; and π_n(S¹)=0 except π₁(S¹)=Z. For compact Lie groups:
+    π₁(U(1))=Z, π₁(SO(n))=Z₂ for n≥3, and π₁ is 0 for the other simple compact connected
+    groups; π₂(G)=0 for every compact connected G; and π₃(G)=Z for every compact connected
+    simple G. The reported π₄ values are Z₂×Z₂ for SO(4),Spin(4); Z₂ for USp(2n),SU(2),SO(3),Spin(5),SO(5);
+    and 0 for SU(n) with n≥3, SO(n) with n≥6, G₂,F₄,E_n. Also π_{4n+2}(USp(2n))=Z_{(2n+2)!}
+    for even n and Z_{2(2n+2)!} for odd n, while π_{2n}(SU(n))=Z_{n!}. The Bott stable
+    ranges are: for n≥(k−1)/4 and k≥2, π_k(USp(2n)) is Z at k=3,7 mod 8, Z₂ at k=4,5
+    mod 8, and 0 at k=0,1,2,6 mod 8; for n≥k+2 and k≥2, π_k(SO(n)) is Z at k=3,7 mod
+    8, Z₂ at k=0,1 mod 8, and 0 at k=2,4,5,6 mod 8; for n≥(k+1)/2 and k≥2, π_k(SU(n))
+    is Z for odd k and 0 for even k. Finally π₂(G/H)=ker{π₁(H)→π₁(G)}, specializing
+    to π₂(G/H)=π₁(H) when π₁(G)=0.'
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.homotopy-reference-table-and-coset-kernel
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 472
+    - 473
+    note: Reported sphere/Lie-group tables, all displayed stable-range hypotheses
+      and residues, and the coset-kernel formula.
+  notation: []
+- id: qft.align022.weinberg-2.instanton-anomaly-and-electroweak-selection-rules
+  label: Instanton anomaly effects and electroweak selection rules
+  summary: Although the anomaly density is a total derivative and would integrate
+    to zero for a nonsingular rapidly vanishing gauge field, the 1/r instanton has
+    nonzero integral and violates U(1) chiral symmetry. Standard-model SU(2) instantons
+    also violate baryon and lepton number while conserving B−L and lepton-flavor differences;
+    the source gives exp(−373) for |v|=1 at electroweak parameters and reports the
+    example He³→e⁺+μ⁺+ν̄_τ as allowed while proton/deuteron decay is forbidden.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.instanton-anomaly-and-electroweak-selection-rules
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 454
+    note: Total-derivative qualification, nonzero instanton integral, selection rules,
+      example, and numerical suppression.
+  notation: []
+- id: qft.align022.weinberg-2.instanton-path-integral-suppression
+  label: Instanton path-integral suppression and running-coupling qualification
+  summary: A winding-v sector contributes exp(−8π²|v|/g²), multiplied by a negative
+    power of g from fluctuations; this and all g derivatives vanish at g=0, so it
+    is nonperturbative. In QCD the source uses β₀=11−2n_f/3 and 8π²/g²(μ)=β₀ln(μ/Λ)
+    at large μ, so for small instantons RΛ≪1, exp[−8π²/g²(1/R)]=(RΛ)^β₀. The relevant
+    scale is set by quantum fluctuations near 1/R and size must be integrated; the
+    source says the formula cannot calculate large RΛ>1 instantons, where there is
+    no suppression.
+  kind: result
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.instanton-path-integral-suppression
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 453
+    note: Suppression, β₀/running-coupling formula, small-instanton condition, size
+      integration, and large-instanton limitation.
+  notation: []
+- id: qft.align022.weinberg-2.instanton-self-duality-and-topological-action-bound
+  label: Instanton self-duality and topological action bound
+  summary: For finite-action d=4 pure gauge fields, the asymptotic Cartan–Maurer invariant
+    becomes a bulk Chern–Pontryagin integral. The Bogomol’nyi inequality gives S[A]≥|J[g]|/(3N),
+    with equality exactly for F^a_ij=±½ε_ijklF^a_kl. Thus a self-dual or anti-self-dual
+    first-order solution minimizes S in the unit-winding sector and solves the second-order
+    Yang–Mills equation.
+  kind: method
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.instanton-self-duality-and-topological-action-bound
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 450
+    - 451
+    note: Boundary-to-bulk invariant, inequality, equality condition, and stationary
+      consequence.
+  notation: []
+- id: qft.align022.weinberg-2.instanton-zero-mode-prefactor-counting
+  label: Instanton prefactor from collective zero-mode counting
+  summary: If I[φ,g]=g^−2I₁[φ], nonzero quadratic eigenvalues scale as g^−2; relative
+    to v-independent factors, a topological sector with N(v) collective parameters
+    carries g^−N(v), multiplied by a higher-order power series. For v=1, four translations,
+    one scale, and gauge/rotation orientations give g^−8e^(−8π²/g²) in SU(2), and
+    the source counts N₁=7 to obtain g^−12e^(−8π²/g²) in SU(3).
+  kind: result
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.instanton-zero-mode-prefactor-counting
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.7'
+    pages:
+    - 463
+    note: Coupling scaling, one-loop qualification, and SU(2)/SU(3) zero-mode counts.
+  notation: []
+- id: qft.align022.weinberg-2.monopole-embedding-and-covering-group-qualification
+  label: Monopole classification depends on subgroup embedding
+  summary: 'The source says the monopole menu is unchanged when one replaces a non-simply-connected
+    G by its covering group only because H changes simultaneously: π₂(G/H) selects
+    the loops of H that become trivial in G. It recommends taking the semisimple gauge
+    group simply connected, with connectivity of H fixed by its Lie-algebra embedding.
+    If an electric-charge operator includes a U(1) algebra factor, the covering is
+    noncompact R, there is no minimum covering-group charge, and the source concludes
+    there are no monopoles.'
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.monopole-embedding-and-covering-group-qualification
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 444
+    - 445
+    note: Covering-group/subgroup replacement, embedding dependence, and U(1)-factor
+      no-monopole qualification.
+  notation: []
+- id: qft.align022.weinberg-2.monopole-flux-winding-and-bogomolnyi-bound
+  label: Monopole flux–winding relation and Bogomol’nyi bound
+  summary: The magnetic moment g=(4π)^−1∮B·dA is a topological invariant and is additive
+    under smooth fusion. For the unit-winding hedgehog solution g=−1/e, hence g_v=−v/e
+    in these conventions. Completing ℋ gives E≥4π〈φ〉|g|, saturated only by F^n_ij=±ε_ijkD_kφ_n
+    when the potential is negligible; for general V that first-order condition need
+    not make the energy stationary.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.monopole-flux-winding-and-bogomolnyi-bound
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 438
+    - 440
+    - 441
+    note: Topological/additive flux argument, g_v convention, energy bound, and explicit
+      qualification on the BPS equation.
+  notation:
+  - source: weinberg-2
+    note: The sign g_v=−v/e follows the book's representative orientation; the energy
+      bound uses |g|.
+- id: qft.align022.weinberg-2.problem-four-dimensional-skyrmion-stabilization
+  label: 'Problem: stabilize 4D Euclidean Goldstone topology'
+  summary: Problem 1 asks what term must be added to the Goldstone-boson action in
+    four-dimensional Euclidean spacetime to allow topologically nontrivial stationary
+    configurations. It is posed as a task; the chapter does not supply its worked
+    solution.
+  kind: method
+  group: qft.align022.source-backed-topology-tasks
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-four-dimensional-skyrmion-stabilization
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 473
+    - 474
+    note: Full problem statement spans the page break.
+  notation: []
+- id: qft.align022.weinberg-2.problem-prove-higher-homotopy-abelian
+  label: 'Problem: prove pi_n(M) Abelian for n>=2'
+  summary: The prose states that all pi_n(M) for n>=2 are Abelian, without proving
+    it; Problem 3 asks for that proof using the equivalent range n>1 for arbitrary
+    manifolds M. This record preserves the assigned proof task and does not claim
+    a stronger index range.
+  kind: method
+  group: qft.align022.source-backed-topology-tasks
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-prove-higher-homotopy-abelian
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Full problem statement.
+  notation: []
+- id: qft.align022.weinberg-2.problem-six-space-dimensional-skyrmion-conservation
+  label: 'Problem: six-dimensional SU(2) skyrmion conservation'
+  summary: Problem 2 asks, for SU(2)×SU(2)→SU(2) in six space dimensions with enough
+    higher derivatives to stabilize skyrmions, what conservation law they obey; it
+    explicitly hints that SU(2) is topologically S³. This is a requested inference,
+    not an answer established on the page.
+  kind: method
+  group: qft.align022.source-backed-topology-tasks
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-six-space-dimensional-skyrmion-conservation
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Full problem and hint.
+  notation: []
+- id: qft.align022.weinberg-2.problem-small-three-flavor-axion-mass
+  label: 'Problem: axion mass for small u,d,s masses'
+  summary: Problem 5 asks for an axion-mass formula when m_u, m_d, and m_s are all
+    small. It is a distinct three-flavor derivation task; the preceding two-flavor
+    formula is not silently substituted as its answer.
+  kind: method
+  group: qft.align022.source-backed-topology-tasks
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-small-three-flavor-axion-mass
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Full problem statement.
+  notation: []
+- id: qft.align022.weinberg-2.problem-su4-unit-instanton-coupling
+  label: 'Problem: SU(4) unit-instanton coupling dependence'
+  summary: Problem 4 asks for the coupling-constant dependence of the unit-winding
+    instanton contribution in an SU(4) gauge theory. It is retained as a task whose
+    answer is not printed in this chapter.
+  kind: method
+  group: qft.align022.source-backed-topology-tasks
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-su4-unit-instanton-coupling
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Full problem statement.
+  notation: []
+- id: qft.align022.weinberg-2.problem-tilted-quartic-vacuum-decay
+  label: 'Problem: tilted-quartic false-vacuum suppression'
+  summary: Problem 6 asks for exp(−B) for L=−½∂_μφ∂^μφ+½m²φ²−¼λφ⁴−gφ with m²,λ>0 and
+    very small g, expressed in m², λ, and g. This is an assigned calculation; no closed
+    answer is inserted as a prerequisite.
+  kind: method
+  group: qft.align022.source-backed-topology-tasks
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-tilted-quartic-vacuum-decay
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Full Lagrangian, parameter conditions, and requested suppression factor
+      were checked against the rendered source page.
+  notation: []
+- id: qft.align022.weinberg-2.quadratic-momentum-euclidean-configuration-integral
+  label: Quadratic-momentum Euclidean configuration integral
+  summary: For H(q,p)=½p_aA_ab(q)p_b+B_a(q)p_a+C(q), stationary momentum obeys i q̇_a=∂H/∂p_a
+    and p_a=[A^−1]_ab(iq̇_b−B_b). Integrating p gives (Det[2π𝒜(q)])^−1/2e^(−S[q]),
+    where the functional matrix is 𝒜_{at,bt′}=δ(t′−t)A_ab(q(t)), while A_ab(q) is
+    only the finite coefficient matrix. S=∫dt[½q̇_aA^−1_abq̇_b+iA^−1_abB_aq̇_b−½A^−1_abB_aB_b+C].
+    When B=0, the source says this Euclidean Lagrangian equals the Minkowski Hamiltonian
+    after p is expressed through q and q̇.
+  kind: method
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.quadratic-momentum-euclidean-configuration-integral
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 471
+    - 472
+    note: Quadratic H assumption, stationary p, functional determinant/action distinction,
+      and B=0 qualification.
+  notation:
+  - source: weinberg-2
+    note: 𝒜 is the time-indexed functional matrix, distinct from A_ab(q); the ordering
+      convention places Q left of P.
+- id: qft.align022.weinberg-2.temporal-gauge-instanton-tunneling
+  label: Temporal-gauge instanton as winding-sector tunneling
+  summary: In temporal gauge, pure-gauge limits at x₄→±∞ have integer spatial windings
+    n_±, and the four-dimensional v=n_+−n_−. Therefore exp(−8π²|v|/g²) is interpreted
+    as a tunneling amplitude between inequivalent pure-gauge sectors. The source only
+    suggests fast thermal barrier crossing above about 1 TeV and preserves B−L and
+    flavor-difference selection rules there as well.
+  kind: concept
+  group: qft.anomaly-regularization-and-matching
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.temporal-gauge-instanton-tunneling
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 455
+    note: Temporal-gauge boundary windings, tunneling interpretation, and explicitly
+      qualified thermal statement.
+  notation: []
+- id: qft.align022.weinberg-2.thin-wall-bounce-approximation
+  label: Thin-wall (big-bubble) bounce approximation
+  summary: When V(〈φ〉)=−ε lies only slightly below false-vacuum zero while V is positive
+    and not small between minima, the bounce is near 〈φ〉 inside a four-ball and changes
+    in a shell of thickness L≈M^−1. Thinness is R≫L, with R≈3σ/ε as ε→0. The source
+    gives S(R)≈−½π²R^4ε+2π²R³σ, σ=∫_0^〈φ〉√(2V(φ))dφ, and B≈27π²σ^4/(2ε³). It calls
+    this often “thin wall” but suggests “big bubble,” and restricts usefulness to
+    large B.
+  kind: result
+  group: qft.align022.semiclassical-euclidean
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.thin-wall-bounce-approximation
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 468
+    note: Potential regime, L≈M−1 and large-R condition, action/tension/radius/action
+      formulas, terminology, and suppression qualification.
+  notation: []
+- id: qft.align022.weinberg-2.thooft-polyakov-finite-energy-and-electromagnetic-tensor
+  label: ’t Hooft–Polyakov finite energy and electromagnetic tensor
+  summary: In the SU(2) triplet-scalar model, positivity of ℋ=½F²+½(Dφ)²+V requires
+    each integral to converge. At infinity the unit scalar defines S²→S² winding.
+    The gauge-invariant ’t Hooft tensor ℱ_μν=φ̂_nF^n_μν−e^−1ε_nml φ̂_nD_μφ̂_mD_νφ̂_l
+    reduces in a constant-φ̂ gauge to the unbroken U(1) field strength, giving a gauge-invariant
+    definition of magnetic flux.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.thooft-polyakov-finite-energy-and-electromagnetic-tensor
+    note: Retains the reviewed source-specific statement, coefficients, hypotheses,
+      boundary conditions, conventions, and proof or task limit; correspondence is
+      only the scope stated by this shared record.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 436
+    - 437
+    note: Model, finite-energy map, and definition/reduction of the gauge-invariant
+      electromagnetic tensor.
+  notation:
+  - source: weinberg-2
+    note: e is the SU(2) coupling; φ̂_n=φ_n/√(φ_mφ_m), and ℱ is the source's gauge-invariant
+      electromagnetic tensor.
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -31588,6 +32567,909 @@ edges:
     section: '9.3'
     pages:
     - 288
+- id: qft.align022.edge.peskin-schroeder.e-ps013-07
+  from: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  to: qft.align017.weak-cp-diagnostics-and-physical-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: CKM mixing is the mismatch between the two left-handed mass diagonalizations.
+  failure_mode: Without the mass-basis rotations, V=U_u-dagger U_d has no derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 723
+- id: qft.align022.edge.peskin-schroeder.e-ps013-ckm-2hdm
+  from: qft.align017.weak-cp-diagnostics-and-physical-condition
+  to: qft.align022.peskin-schroeder.problem-20-5d-charged-higgs-quark-couplings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested charged-Higgs couplings explicitly depend on CKM elements.
+  failure_mode: Without the charged-current flavor rotation, that CKM dependence cannot
+    be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5
+    pages:
+    - 730
+- id: qft.align022.edge.peskin-schroeder.e-ps013-mass-basis-2hdm
+  from: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  to: qft.align022.peskin-schroeder.problem-20-5d-charged-higgs-quark-couplings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly transforms the two-doublet Yukawa terms to quark
+    mass eigenstates before extracting charged-Higgs couplings.
+  failure_mode: Generic Yukawa masses and CKM elements do not by themselves supply
+    the required biunitary mass-basis transformation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5
+    pages:
+    - 730
+- id: qft.align022.edge.peskin-schroeder.mass-basis-to-gim
+  from: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  to: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The neutral-current cancellation is obtained after the Yukawa rotations
+    place quarks in the mass basis.
+  failure_mode: Without the mass-basis rotations, the cancellation of the unitary
+    matrices from photon and Z currents cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 723
+    - 724
+- id: qft.align022.edge.peskin-schroeder.weak-cp-to-gim
+  from: qft.align017.weak-cp-diagnostics-and-physical-condition
+  to: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W-loop qualification uses the residual CKM charged-current rotation.
+  failure_mode: Without the CKM charged-current structure, the account cannot distinguish
+    the loop flavor-changing processes from the tree-level neutral-current result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 724
+    - 725
+- id: qft.align022.edge.weinberg-2.bounce-ode-to-rate
+  from: qft.align022.weinberg-2.bounce-ode-scaling-positivity
+  to: qft.align022.weinberg-2.bounce-negative-mode-rate-and-exponentiation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rate analysis uses the bounce solution, action B, and scale variation
+    to identify the negative mode before adding collective-coordinate factors.
+  failure_mode: Without the bounce equation, positive action, and scale variation,
+    the negative-mode and exp(−B) rate argument cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 467
+- id: qft.align022.edge.weinberg-2.bpst-to-prefactor
+  from: qft.align022.weinberg-2.bpst-instanton-action-and-normalization
+  to: qft.align022.weinberg-2.instanton-zero-mode-prefactor-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The zero-mode count and coupling prefactor are calculated around the
+    BPST unit-instanton saddle with its action normalization.
+  failure_mode: Without the unit-instanton saddle and normalization, the semiclassical
+    prefactor cannot be assigned to the stated contribution.
+  evidence:
+  - source: weinberg-2
+    section: '23.7'
+    pages:
+    - 462
+    - 463
+- id: qft.align022.edge.weinberg-2.cartan-normalization-to-tunneling
+  from: qft.align022.weinberg-2.cartan-maurer-standard-su2-normalization
+  to: qft.align022.weinberg-2.temporal-gauge-instanton-tunneling
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The temporal-gauge boundary winding is normalized by the 24 pi-squared
+    spatial Cartan–Maurer integral used to obtain v=n_+−n_-.
+  failure_mode: Without that winding normalization, the two pure-gauge limits cannot
+    be related to the integer instanton number.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 455
+- id: qft.align022.edge.weinberg-2.edge-axion-mass-to-problem5
+  from: qft.align022.weinberg-2.axion-pion-effective-lagrangian-and-mass
+  to: qft.align022.weinberg-2.problem-small-three-flavor-axion-mass
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The two-flavor calculation is a helpful analogy for mixing and mass extraction,
+    not a complete three-flavor route.
+  failure_mode: Calling it an alternative derivation would falsely imply that its
+    two-flavor result can answer the u,d,s task.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 5 explicitly asks the small u,d,s case, distinct from the preceding
+      u,d derivation.
+- id: qft.align022.edge.weinberg-2.edge-bounce-ode-to-thin-wall
+  from: qft.align022.weinberg-2.bounce-ode-scaling-positivity
+  to: qft.align022.weinberg-2.thin-wall-bounce-approximation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The thin-wall action uses the one-dimensional wall tension obtained after
+    the radial friction term becomes negligible near a large radius.
+  failure_mode: Without the radial equation and its friction term, the reduction to
+    the domain-wall tension would be unjustified.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 468
+    note: The source explicitly drops the second term of Eq. (23.8.7) for ρ≈R and
+      imports the wall tension.
+- id: qft.align022.edge.weinberg-2.edge-bpst-to-anomaly
+  from: qft.align022.weinberg-2.bpst-instanton-action-and-normalization
+  to: qft.align022.weinberg-2.instanton-anomaly-and-electroweak-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The anomaly conclusion needs the nonzero Chern–Pontryagin integral of
+    an instanton.
+  failure_mode: Without a finite-action field with nonzero integral, the total-derivative
+    anomaly would integrate to zero under the stated rapid-falloff condition.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 454
+    note: The text makes this contrast explicitly before deriving chiral-symmetry
+      violation.
+- id: qft.align022.edge.weinberg-2.edge-bpst-to-suppression
+  from: qft.align022.weinberg-2.bpst-instanton-action-and-normalization
+  to: qft.align022.weinberg-2.instanton-path-integral-suppression
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exponential suppression is exp(I[A]) using the normalized instanton
+    action.
+  failure_mode: Without the action convention, the exponent would omit or double-count
+    g² and winding magnitude.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 452
+    - 453
+    note: The path-integral factor is stated immediately from the action formula.
+- id: qft.align022.edge.weinberg-2.edge-cartan-form-to-normalization
+  from: qft.align022.weinberg-2.cartan-maurer-form-invariance
+  to: qft.align022.weinberg-2.cartan-maurer-standard-su2-normalization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The normalization evaluates the invariant already shown to depend only
+    on homotopy class.
+  failure_mode: Without the invariant construction, 24π²v would be an unexplained
+    group-dependent number.
+  evidence:
+  - source: weinberg-2
+    section: '23.4'
+    pages:
+    - 447
+    - 448
+    note: The text turns from the invariant’s properties to its calculation in Lie-group
+      coordinates.
+- id: qft.align022.edge.weinberg-2.edge-cartan-to-instanton-bound
+  from: qft.align022.weinberg-2.cartan-maurer-standard-su2-normalization
+  to: qft.align022.weinberg-2.instanton-self-duality-and-topological-action-bound
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The action inequality is expressed through J[g] and its trace normalization.
+  failure_mode: Without the Cartan–Maurer normalization, the bound cannot connect
+    winding to the Chern–Pontryagin integral consistently.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 450
+    - 451
+    note: The instanton section explicitly writes the topological invariant from the
+      asymptotic gauge field before deriving the bound.
+- id: qft.align022.edge.weinberg-2.edge-cluster-to-theta-invariant
+  from: qft.align022.weinberg-2.cluster-decomposition-fixes-theta-weights
+  to: qft.align006.strong-cp-anomalous-rotation-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Minkowski θ term represents the f(v)=e^(iθv) weight fixed by clustering.
+  failure_mode: Without the sector-weight result, θ would be inserted without the
+    local-observable consistency argument.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 456
+    - 457
+    note: The source converts the weight factor to the local theta Lagrangian term.
+- id: qft.align022.edge.weinberg-2.edge-collective-to-bounce-rate
+  from: qft.align022.weinberg-2.collective-coordinate-semiclassical-expansion
+  to: qft.align022.weinberg-2.bounce-negative-mode-rate-and-exponentiation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bounce rate integrates its translation collective coordinates and
+    omits their zero modes from the determinant.
+  failure_mode: Without this formalism, the VT factors and primed determinant in the
+    one-bounce contribution would be unexplained.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 467
+    note: The bounce discussion explicitly invokes the results of Section 23.7 for
+      x₀,t₀.
+- id: qft.align022.edge.weinberg-2.edge-collective-to-prefactor
+  from: qft.align022.weinberg-2.collective-coordinate-semiclassical-expansion
+  to: qft.align022.weinberg-2.instanton-zero-mode-prefactor-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The g-power is counted from the excluded collective-coordinate zero modes
+    in the determinant.
+  failure_mode: Without the collective-coordinate treatment, the finite N(v) subtraction
+    from divergent eigenvalue counts has no basis.
+  evidence:
+  - source: weinberg-2
+    section: '23.7'
+    pages:
+    - 462
+    - 463
+    note: The zero modes are defined as collective-parameter variations before the
+      coupling-counting argument.
+- id: qft.align022.edge.weinberg-2.edge-derrick-to-problem1
+  from: qft.derrick-scaling-and-higher-derivative-balance
+  to: qft.align022.weinberg-2.problem-four-dimensional-skyrmion-stabilization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks the d=4 extension of the scaling balance that identifies
+    stabilization terms.
+  failure_mode: Without the R scalings, there is no criterion for selecting a term
+    that can create a stationary finite-size configuration.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 473
+    - 474
+    note: Problem 1 asks the four-dimensional version after the text's Derrick discussion.
+- id: qft.align022.edge.weinberg-2.edge-euclidean-amplitude-to-false-vacuum
+  from: qft.align022.weinberg-2.euclidean-canonical-amplitude-and-ground-state-limit
+  to: qft.align022.weinberg-2.false-vacuum-euclidean-bounce-setup
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The false-vacuum energy formula invokes the Appendix-A large-T ground-state
+    extraction from a Euclidean configuration amplitude.
+  failure_mode: Without that result, the logarithmic Euclidean functional integral
+    is not justified as the false-vacuum energy whose imaginary part sets decay.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 465
+    note: The bounce setup explicitly cites Eqs. (23.A.6), (23.A.21), and (23.A.23).
+- id: qft.align022.edge.weinberg-2.edge-euclidean-amplitude-to-phase-space
+  from: qft.align022.weinberg-2.euclidean-canonical-amplitude-and-ground-state-limit
+  to: qft.align022.weinberg-2.euclidean-phase-space-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-sliced phase-space integral derives the canonical amplitude
+    F(q′,q;T).
+  failure_mode: Without the amplitude and its endpoint states, the path integral has
+    no defined matrix element or boundary data.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 469
+    - 470
+    note: The appendix rewrites the F definition before time-slicing it.
+- id: qft.align022.edge.weinberg-2.edge-euclidean-configuration-to-false-vacuum
+  from: qft.align022.weinberg-2.quadratic-momentum-euclidean-configuration-integral
+  to: qft.align022.weinberg-2.false-vacuum-euclidean-bounce-setup
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The false-vacuum action used in the functional integral is the configuration-space
+    Euclidean action obtained in Appendix A.
+  failure_mode: Without the configuration-space path-integral result, the functional
+    integration over φ with fixed endpoints lacks its stated Euclidean-action form.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 465
+    note: The false-vacuum formula explicitly invokes Appendix-A Eqs. (23.A.21) and
+      (23.A.23).
+- id: qft.align022.edge.weinberg-2.edge-false-vacuum-to-bounce-ode
+  from: qft.align022.weinberg-2.false-vacuum-euclidean-bounce-setup
+  to: qft.align022.weinberg-2.bounce-ode-scaling-positivity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The O(4) equation and boundary/regularity conditions arise from the false-vacuum
+    Euclidean action and bounce ansatz.
+  failure_mode: Without the false-vacuum boundary conditions, the endpoint φ(∞)=0
+    would be an arbitrary condition rather than the required bounce condition.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 465
+    - 466
+    note: The O(4) ansatz and large-T boundary reduction are introduced from the preceding
+      functional integral.
+- id: qft.align022.edge.weinberg-2.edge-flux-bound-to-bps
+  from: qft.align022.weinberg-2.monopole-flux-winding-and-bogomolnyi-bound
+  to: qft.align022.weinberg-2.bps-monopole-radial-solution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The radial BPS equations are obtained by imposing the bound-saturating
+    first-order condition.
+  failure_mode: Without the Bogomol’nyi condition, the choice of first-order radial
+    equations would be unmotivated.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 440
+    - 441
+    note: The text derives the radial equations from Eq. (23.3.20).
+- id: qft.align022.edge.weinberg-2.edge-fujikawa-to-instanton-anomaly
+  from: qft.align006.fujikawa-fermionic-measure-chiral-variation
+  to: qft.align022.weinberg-2.instanton-anomaly-and-electroweak-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The instanton anomaly argument applies the established fermion-measure
+    Jacobian to a gauge field with nonzero topological integral.
+  failure_mode: Without the measure variation, the nonzero Chern–Pontryagin integral
+    alone does not establish chiral-symmetry violation.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 454
+    note: The text explicitly invokes Eq. (22.2.10) for the quark measure change.
+- id: qft.align022.edge.weinberg-2.edge-fujikawa-to-theta-rephasing
+  from: qft.align006.fujikawa-fermionic-measure-chiral-variation
+  to: qft.align006.strong-cp-anomalous-rotation-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The θ shift under axial rephasing follows from the accepted measure Jacobian
+    and the trace normalization.
+  failure_mode: Without the Jacobian, a change of integration variables would not
+    yield the stated θ transformation.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 457
+    note: The text derives the measure factor from Eqs. (22.2.10) and (22.2.24) before
+      shifting θ.
+- id: qft.align022.edge.weinberg-2.edge-gauge-higgs-to-monopole-tensor
+  from: qft.gauge-higgs-defect-classification-and-restored-cores
+  to: qft.align022.weinberg-2.thooft-polyakov-finite-energy-and-electromagnetic-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The monopole example specializes the G/H finite-energy classification
+    to SU(2)→U(1).
+  failure_mode: Without the G/H map, the scalar sphere at infinity and its winding
+    have no topological interpretation.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 436
+    - 437
+    note: The monopole section explicitly recalls π₂(G/U(1))=Z and then constructs
+      the example.
+- id: qft.align022.edge.weinberg-2.edge-higher-homotopy-to-problem2
+  from: qft.higher-homotopy-products-and-winding-conservation
+  to: qft.align022.weinberg-2.problem-six-space-dimensional-skyrmion-conservation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested conservation law follows from identifying the relevant
+    homotopy group and its group law.
+  failure_mode: Without the winding/fusion interpretation, a topological group label
+    cannot be turned into a conservation law.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 2 explicitly supplies the SU(2)≈S³ hint for this homotopy inference.
+- id: qft.align022.edge.weinberg-2.edge-higher-homotopy-to-problem3
+  from: qft.higher-homotopy-products-and-winding-conservation
+  to: qft.align022.weinberg-2.problem-prove-higher-homotopy-abelian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to prove the commutativity property of the higher-homotopy
+    product.
+  failure_mode: Without the product construction, “Abelian” has no operation whose
+    commutativity can be shown.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 3 states the requested proof.
+- id: qft.align022.edge.weinberg-2.edge-homotopy-table-to-covering
+  from: qft.align022.weinberg-2.homotopy-reference-table-and-coset-kernel
+  to: qft.align022.weinberg-2.monopole-embedding-and-covering-group-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covering-group discussion applies the reported kernel rule for π₂(G/H).
+  failure_mode: Without the kernel rule, replacing G and H together would incorrectly
+    be treated as preserving π₁(H) unchanged.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 444
+    note: The text invokes the Appendix B result to identify the relevant subgroup
+      of π₁(H).
+- id: qft.align022.edge.weinberg-2.edge-instanton-to-cluster-theta
+  from: qft.align022.weinberg-2.bpst-instanton-action-and-normalization
+  to: qft.align022.weinberg-2.cluster-decomposition-fixes-theta-weights
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The θ-weight argument sums the integer winding sectors whose existence
+    has been demonstrated.
+  failure_mode: Without nonzero integer sectors, the arbitrary f(v) and its factorization
+    equation would not address the physical path integral.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 455
+    - 456
+    note: The theta section begins from configurations of arbitrary integer winding
+      number.
+- id: qft.align022.edge.weinberg-2.edge-monopole-tensor-to-flux-bound
+  from: qft.align022.weinberg-2.thooft-polyakov-finite-energy-and-electromagnetic-tensor
+  to: qft.align022.weinberg-2.monopole-flux-winding-and-bogomolnyi-bound
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The magnetic moment and its topological variation are defined with the
+    gauge-invariant tensor.
+  failure_mode: Without that tensor, the flux calculation would depend on a gauge
+    choice and could not establish the stated invariant.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 437
+    - 438
+    note: The flux integral follows the construction of the gauge-invariant electromagnetic
+      field.
+- id: qft.align022.edge.weinberg-2.edge-phase-space-to-configuration
+  from: qft.align022.weinberg-2.euclidean-phase-space-path-integral
+  to: qft.align022.weinberg-2.quadratic-momentum-euclidean-configuration-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The configuration integral is obtained by performing the p integration
+    in the phase-space path integral under a quadratic-H assumption.
+  failure_mode: Without the phase-space exponent and ordering convention, the stationary-p
+    equation and determinant cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 471
+    - 472
+    note: The source says it now performs the p integral in Eq. (23.A.14) for the
+      quadratic class.
+- id: qft.align022.edge.weinberg-2.edge-pq-to-axion-mass
+  from: qft.align017.peccei-quinn-axion-relaxation-and-quality-limit
+  to: qft.align022.weinberg-2.axion-pion-effective-lagrangian-and-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass calculation expands the low-energy φ field about the PQ-relaxed
+    expectation value.
+  failure_mode: Without φ′=φ+Mθ and the anomalous coupling, the pion–axion mixing
+    matrix would not be identified.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 459
+    - 460
+    note: The effective pion–axion Lagrangian defines φ′ as the displacement from
+      the expectation value.
+- id: qft.align022.edge.weinberg-2.edge-pq-to-problem5
+  from: qft.align017.peccei-quinn-axion-relaxation-and-quality-limit
+  to: qft.align022.weinberg-2.problem-small-three-flavor-axion-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The anomalous θ+φ/M shift identifies the axion insertion whose three-flavor
+    mass is to be derived.
+  failure_mode: Without the PQ anomalous shift, the three-flavor chiral potential
+    has no defined axion-dependent direction.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 459
+    note: The preceding axion construction defines the anomalous θ+φ/M direction.
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 5 asks the small-u,d,s axion mass.
+- id: qft.align022.edge.weinberg-2.edge-prefactor-to-problem4
+  from: qft.align022.weinberg-2.instanton-zero-mode-prefactor-counting
+  to: qft.align022.weinberg-2.problem-su4-unit-instanton-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requests the unit-instanton coupling dependence computed by
+    the collective-mode counting method.
+  failure_mode: Without the zero-mode prefactor rule, only the exponential is known
+    and the requested full coupling power is absent.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 4 asks the SU(4) coupling dependence.
+- id: qft.align022.edge.weinberg-2.edge-qcd-beta-to-instanton-small-r
+  from: qft.align014.qcd-one-loop-beta-and-active-flavors
+  to: qft.align022.weinberg-2.instanton-path-integral-suppression
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD one-loop beta function fixes β₀=11−2n_f/3 in the running instanton
+    exponent.
+  failure_mode: Without the QCD coefficient, the power (RΛ)^β₀ and its active-flavor
+    dependence are undetermined.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 453
+    note: The source imports the QCD running formula and displays β₀ before deriving
+      the small-instanton power.
+- id: qft.align022.edge.weinberg-2.edge-qcd-transmutation-to-instanton-small-r
+  from: qft.align014.qcd-dimensional-transmutation-and-threshold-matching
+  to: qft.align022.weinberg-2.instanton-path-integral-suppression
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Dimensional transmutation supplies Λ so the running coupling at μ=1/R
+    can be rewritten as the dimensionless power RΛ.
+  failure_mode: Without Λ, the logarithmic running cannot yield the source's small-instanton
+    factor (RΛ)^β₀.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 453
+    note: The displayed running relation introduces Λ and then evaluates it at the
+      inverse instanton size.
+- id: qft.align022.edge.weinberg-2.edge-regulated-anomaly-to-instanton-anomaly
+  from: qft.align006.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  to: qft.align022.weinberg-2.instanton-anomaly-and-electroweak-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The regulated anomaly formula supplies the normalized Chern–Pontryagin
+    density whose instanton integral violates the chiral U(1).
+  failure_mode: The measure variation alone leaves the anomaly density, sign, and
+    normalization unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 454
+    note: The chapter imports the earlier normalized anomaly function before evaluating
+      it on an instanton.
+- id: qft.align022.edge.weinberg-2.edge-regulated-anomaly-to-theta-rephasing
+  from: qft.align006.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  to: qft.align006.strong-cp-anomalous-rotation-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The normalized anomaly coefficient and trace convention are jointly needed
+    with the measure Jacobian to obtain the exact theta shift.
+  failure_mode: Without the regulated anomaly coefficient, comparing the Jacobian
+    with L_theta cannot fix theta→theta+2Σ_f alpha_f.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 457
+    note: The theta-shift derivation explicitly invokes the earlier anomaly equation
+      and states its trace normalization.
+- id: qft.align022.edge.weinberg-2.edge-running-to-instanton-small-r
+  from: qft.align012.asymptotic-freedom-logarithmic-scaling
+  to: qft.align022.weinberg-2.instanton-path-integral-suppression
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: General asymptotic freedom motivates the running-scale substitution,
+    while the exact QCD coefficient and Λ relation come from the two necessary QCD
+    inputs.
+  failure_mode: Treating qualitative logarithmic flow as the sole necessary input
+    would not supply β₀ or dimensional transmutation.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 453
+    note: The source explicitly imports Eq. (18.7.7) for the running coupling.
+- id: qft.align022.edge.weinberg-2.edge-selfdual-to-bpst
+  from: qft.align022.weinberg-2.instanton-self-duality-and-topological-action-bound
+  to: qft.align022.weinberg-2.bpst-instanton-action-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The BPST configuration is supplied as a solution of the self-duality
+    equation and its action follows by saturation.
+  failure_mode: Without self-duality, the asserted action and minimum property would
+    have no derivation route.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 451
+    - 452
+    note: The solution is introduced as a solution of Eq. (23.5.11), followed by the
+      equality in the bound.
+- id: qft.align022.edge.weinberg-2.edge-suppression-to-tunneling
+  from: qft.align022.weinberg-2.instanton-path-integral-suppression
+  to: qft.align022.weinberg-2.temporal-gauge-instanton-tunneling
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The temporal-gauge argument jointly uses the instanton exponential with
+    the boundary winding calculation to identify the transition amplitude.
+  failure_mode: Without the semiclassical exponential, the winding change alone does
+    not yield the source’s tunneling amplitude interpretation.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 455
+    note: The source explicitly identifies the factor as the transition amplitude.
+- id: qft.align022.edge.weinberg-2.edge-table-to-problem2
+  from: qft.align022.weinberg-2.homotopy-reference-table-and-coset-kernel
+  to: qft.align022.weinberg-2.problem-six-space-dimensional-skyrmion-conservation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Using SU(2)≈S³ in six space dimensions requires the Appendix-B value
+    π₆(S³)=Z₁₂ to identify the conservation law.
+  failure_mode: Without that table value, the hint determines the target sphere but
+    not its finite cyclic topological charge.
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 472
+    note: The rendered Appendix-B sphere table reports π₆(S³)=Z₁₂.
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 2 supplies the SU(2)≈S³ hint.
+- id: qft.align022.edge.weinberg-2.edge-theta-invariant-to-pq
+  from: qft.align006.strong-cp-anomalous-rotation-relation
+  to: qft.align017.peccei-quinn-axion-relaxation-and-quality-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The PQ field dynamically replaces the physical θ combination whose CP
+    consequences were just identified.
+  failure_mode: Without the rephasing-invariant theta dependence, the axion shift
+    and CP-restoring stationary point would lack a target combination.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 458
+    - 459
+    note: The text introduces PQ directly to explain why theta is small and compares
+      θ with φ/M.
+- id: qft.align022.edge.weinberg-2.edge-thin-wall-to-problem6
+  from: qft.align022.weinberg-2.thin-wall-bounce-approximation
+  to: qft.align022.weinberg-2.problem-tilted-quartic-vacuum-decay
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Very small tilt g places the assigned tilted quartic in the large-bubble
+    regime used to derive B.
+  failure_mode: Without the thin-wall formulas, the task lacks the stated route from
+    potential parameters to exp(−B).
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 6 specifies very small g and asks the exponential suppression factor.
+- id: qft.align022.edge.weinberg-2.edge-wall-bound-to-thin-wall
+  from: qft.domain-wall-topological-bound-and-first-order-profile
+  to: qft.align022.weinberg-2.thin-wall-bounce-approximation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The thin-wall surface tension is explicitly imported from the domain-wall
+    bound/profile as its one-dimensional equality case.
+  failure_mode: Without the wall tension integral, S(R) has an unspecified surface
+    coefficient and cannot yield R or B.
+  evidence:
+  - source: weinberg-2
+    section: '23.8'
+    pages:
+    - 468
+    note: The text explicitly takes the surface tension from Eq. (23.1.4).
+- id: qft.align022.edge.weinberg-2.index-to-fermionic-zero-modes
+  from: qft.align006.euclidean-fujikawa-spectrum-and-index-theorem
+  to: qft.align022.weinberg-2.fermionic-zero-mode-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The instanton fermion zero-mode count and chirality application use the
+    index-theorem spectrum relation.
+  failure_mode: Without the spectrum/index input, the required zero modes and their
+    chirality selection cannot be inferred.
+  evidence:
+  - source: weinberg-2
+    section: '23.7'
+    pages:
+    - 464
+- id: qft.align022.edge.weinberg-2.monopole-tensor-to-dirac
+  from: qft.align022.weinberg-2.thooft-polyakov-finite-energy-and-electromagnetic-tensor
+  to: qft.align022.weinberg-2.dirac-patch-quantization-for-monopoles
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The patch potentials are constructed for the gauge-invariant electromagnetic
+    field of the finite-energy monopole.
+  failure_mode: Without that field and its asymptotic flux, the patch construction
+    has no specified monopole connection.
+  evidence:
+  - source: weinberg-2
+    section: '23.3'
+    pages:
+    - 441
+    - 442
+- id: qft.align022.edge.weinberg-2.pion-decay-constant-to-axion-mass
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align022.weinberg-2.axion-pion-effective-lagrangian-and-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion–axion effective Lagrangian imports the pion axial-current normalization
+    F_pi.
+  failure_mode: Without F_pi, the kinetic normalization and stated axion mass formula
+    are not fixed.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 460
+    - 461
+- id: qft.align022.edge.weinberg-2.pion-mass-to-axion-mass
+  from: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  to: qft.align022.weinberg-2.axion-pion-effective-lagrangian-and-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The diagonalization identifies the other eigenvalue with the established
+    pion mass and writes m_a in terms of it.
+  failure_mode: Without the pion pseudo-Goldstone mass input, the source’s axion mass
+    expression lacks its identified physical eigenvalue.
+  evidence:
+  - source: weinberg-2
+    section: '23.6'
+    pages:
+    - 460
+    - 461
+- id: qft.align022.edge.weinberg-2.pure-gauge-to-self-dual
+  from: qft.pure-gauge-asymptotics-and-instanton-dimension
+  to: qft.align022.weinberg-2.instanton-self-duality-and-topological-action-bound
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The action bound is obtained after the finite-action asymptotics convert
+    the surface term into the integer topological invariant.
+  failure_mode: Without the pure-gauge boundary condition and its winding, the bound’s
+    topological action term is not fixed.
+  evidence:
+  - source: weinberg-2
+    section: '23.5'
+    pages:
+    - 450
+    - 451
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -33521,6 +35403,18 @@ groups:
   title: Relativistic fermion structures, bilinears, and discrete symmetries
   question: How do Dirac and Weyl representations, free solutions, currents, Majorana
     structures, and discrete symmetries retain their source-specific conditions?
+- id: qft.align022.semiclassical-euclidean
+  title: Semiclassical Euclidean configurations
+  question: How do Euclidean amplitudes, saddles, determinants, and bounces encode
+    nonperturbative quantum effects?
+- id: qft.align022.source-backed-topology-tasks
+  title: Source-backed topology tasks
+  question: Which topology and semiclassical derivations are posed as distinct exercises
+    rather than established results?
+- id: qft.align022.two-higgs-tasks
+  title: Two-Higgs charged-scalar tasks
+  question: How are the physical charged scalar and its quark couplings obtained after
+    electroweak symmetry breaking?
 - id: qft.anomaly-regularization-and-matching
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,

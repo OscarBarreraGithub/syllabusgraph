@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 836 concepts and 840 relationships, mapping 958 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 873 concepts and 891 relationships, mapping 1001 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -21,11 +21,11 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 58 |
+| Peskin–Schroeder / Schwartz | 61 |
 | Peskin–Schroeder / Weinberg I | 8 |
-| Peskin–Schroeder / Weinberg II | 26 |
+| Peskin–Schroeder / Weinberg II | 28 |
 | Schwartz / Weinberg I | 7 |
-| Schwartz / Weinberg II | 21 |
+| Schwartz / Weinberg II | 23 |
 | Weinberg I / Weinberg II | 0 |
 
 **These numbers are not whole-book overlap estimates.** The reviewed inputs cover different portions of the subject. A zero means no shared-node mapping in the aligned inputs; it does not mean either book omits the topic.
@@ -37,6 +37,7 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Abelian curvature from holonomy and covariant-derivative commutators (`qft.abelian-curvature-from-holonomy`) | Peskin–Schroeder: `peskin-schroeder.abelian-curvature-from-holonomy-and-covariant-commutator`; Schwartz: `schwartz.abelian-wilson-loop-curvature`; Peskin–Schroeder: `peskin-schroeder.abelian-wilson-line-and-loop` |
 | Adjoint representation and covariant derivative (`qft.adjoint-representation-and-covariant-derivative`) | Peskin–Schroeder: `peskin-schroeder.adjoint-representation-covariant-derivative-and-bianchi-input`; Schwartz: `schwartz.adjoint-representation-of-gauge-fields` |
 | Classical vector and axial currents in QED (`qft.align006.classical-vector-axial-currents`) | Schwartz: `schwartz.classical-vector-axial-currents`; Peskin–Schroeder: `peskin-schroeder.dirac-vector-and-axial-currents`; Schwartz: `schwartz.dirac-noether-number-current` |
+| Strong-CP anomalous rotation relation (`qft.align006.strong-cp-anomalous-rotation-relation`) | Schwartz: `schwartz.strong-cp-anomalous-rotation-relation`; Schwartz: `schwartz.anomalous-chiral-rotations-and-theta-terms`; Schwartz: `schwartz.electroweak-theta-unphysical-and-qcd-total-derivative-limit`; Schwartz: `schwartz.strong-cp-bar-theta-basis-invariant-phase`; Weinberg II: `weinberg-2.theta-term-chiral-rephasing-invariant`; Peskin–Schroeder: `peskin-schroeder.theta-terms-chiral-rotations-and-strong-cp` |
 | Little-group induced vector representations (`qft.align010.schwartz.little-group-induced-vector-representations`) | Schwartz: `schwartz.little-group-induced-vector-representations`; Weinberg I: `weinberg-1.induced-representations-and-little-groups` |
 | Particle as an irreducible unitary Poincaré representation (`qft.align010.schwartz.particle-as-unitary-poincare-irrep`) | Schwartz: `schwartz.particle-as-unitary-poincare-irrep`; Weinberg I: `weinberg-1.one-particle-irreducible-poincare-states` |
 | Proper-orthochronous Lorentz topology and representations up to a sign (`qft.align010.weinberg-1.lorentz-topology-sign-projective-representations`) | Weinberg I: `weinberg-1.lorentz-topology-sign-projective-representations`; Schwartz: `schwartz.spinor-two-pi-rotation-and-projective-representations` |
@@ -45,7 +46,6 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Effective potential for a constant background and vacuum candidates (`qft.align011.effective-potential-constant-background`) | Weinberg II: `weinberg-2.effective-potential-constant-background`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
 | Exact effective-potential convexity and the mixed-state region (`qft.align011.exact-effective-potential-convexity-and-mixed-state-region`) | Weinberg II: `weinberg-2.exact-effective-potential-convexity-and-mixed-state-region`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
 | Full two-point function as inverse 1PI kernel (`qft.align011.full-two-point-function-is-inverse-1pi-kernel`) | Weinberg II: `weinberg-2.full-two-point-function-is-inverse-1pi-kernel`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
-| Quantum effective action as a functional Legendre transform (`qft.align011.legendre-quantum-effective-action`) | Peskin–Schroeder: `peskin-schroeder.effective-action-legendre-transform`; Weinberg II: `weinberg-2.legendre-quantum-effective-action` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 
