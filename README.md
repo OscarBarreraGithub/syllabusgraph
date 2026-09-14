@@ -1,5 +1,7 @@
 # SyllabusGraph
 
+![Sources become a reviewed knowledge graph, then different courses shaped by learning goals and student background](docs/overview.svg)
+
 **A clear path from source material to a teachable course.**
 
 SyllabusGraph connects learning goals to the concepts they depend on and the
@@ -11,7 +13,12 @@ The engine is independent of subject matter. Each project holds a reviewed
 knowledge base and one or more course plans. Sources, topic groupings,
 narrative choices, and schedules live in project data.
 
+<details>
+<summary>See the course designer in action</summary>
+
 ![The included sampling course, with goals, prerequisite-aware sessions, and source evidence](docs/preview.png)
+
+</details>
 
 ## Try it
 
@@ -89,6 +96,14 @@ base is intentionally empty:** no textbook extraction, scientific review, or
 finished QFT curriculum is claimed. Attach the materials, confirm editions,
 specify the audience and semester boundary, and begin with one coherent unit.
 See [preparing QFT](docs/qft-preparation.md).
+
+The local app, PDF text reader, review workflow, planner, and exports are ready.
+Building the QFT graph still requires the materials, source review, and course
+design decisions. Proposals can be authored manually or with an external AI
+tool and imported. **Automatic AI extraction requires a separately configured
+command adapter; no model client is bundled.** Scanned PDFs need OCR before
+import. Ordinary text PDFs can be processed with the included reader, though
+mathematical notation still needs inspection against the original pages.
 
 ## Reproduce a build
 
