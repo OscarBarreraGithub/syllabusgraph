@@ -81,6 +81,11 @@ equivalence assertion. Explain differences in its note and retain source
 citations on the shared node. `validate` checks the field shape without needing
 the other project. The graph bank check also resolves project and node IDs.
 
+A textbook node can use the same field to identify an input imported from
+another reviewed textbook. Cite the supporting source and describe the imported
+scope. The bank reports these imports separately and excludes them from counts
+of independent treatments by the importing book.
+
 ```yaml
 estimates:
   use:
