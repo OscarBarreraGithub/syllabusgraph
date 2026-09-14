@@ -72,8 +72,12 @@ found in the source. An empty motivation list is acceptable. Do not invent an
 author's excitement or silently supply missing scientific claims.
 
 Return exactly the JSON object described by `response_schema`, with its exact
-`packet_digest`. List every read printed page in `pages_read`. Stay within the
-concept budget. Include only proposed/new records and any exactly repeated
+`packet_digest`. Set `pages_read` to exactly the primary printed pages in
+`packet.pages`. Read the assigned context too, but do not append its page numbers
+to this primary-only field; context citations and witnesses identify both their
+source and page. The orchestrator records any full extraction of context spans
+separately in the coverage ledger. Stay within the concept budget.
+Include only proposed/new records and any exactly repeated
 existing records needed for clarity. Use only registered sources and configured
 mastery levels.
 
@@ -90,6 +94,14 @@ proposal, not an additional review stage.
 Keep the public graph's summaries and notes in your own words.
 Use complete-word witnesses: matching collapses whitespace and normalizes
 Unicode, but rejects a quotation that truncates a word at either boundary.
+
+If the text layer omits mathematical symbols, inspect the original packet page
+and retain the exact render coordinates and checked transcription in an ignored
+inspection note for the critic. A visual transcription is not a verbatim match
+to the registered text: do not put it in `quote_checks` as if it were one or edit
+the cache to make it match. Keep valid text witnesses and have the critic verify
+the missing content against the original image. If the source remains unclear,
+report that uncertainty rather than completing the formula from memory.
 
 Leave time estimates absent unless a concrete teaching estimate and its basis
 are available. Do not convert concept counts into claimed instructional time.

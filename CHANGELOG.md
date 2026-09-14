@@ -6,6 +6,8 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Clarify primary-only `pages_read`, separately recorded context coverage, and
+  private visual equation checks when the registered text omits symbols.
 - Support explicit removal of an accepted edge through final adjudication.
   Require an affected-record decision and source evidence; retain the removal
   in the audit history and recover interrupted promotion without restoring it.

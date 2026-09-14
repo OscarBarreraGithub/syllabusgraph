@@ -12,6 +12,15 @@ whether every prerequisite has the claimed mastery/necessity, and whether an
 alternative derivation was incorrectly made compulsory. Read the cited passages:
 the mechanical report confirms quote location, not entailment. Inspect equations
 and notation in the original rendered source when extracted text is ambiguous.
+When a worker supplies a private visual transcription, verify it against the
+original packet page; a matching surrounding text witness does not validate
+symbols absent from the text layer. Do not require that transcription to match
+OCR that omitted those symbols or authorize changing the registered cache.
+
+Check `pages_read` against the primary `packet.pages` only. Context is read and
+cited under its own source/page coordinates; even context assigned for full
+extraction is not appended to that primary-only field. Its coverage belongs in
+the orchestrator's separate coverage record.
 
 For multiple routes to the same result, check both that each route contains its
 jointly needed inputs and that those inputs have not become compulsory across

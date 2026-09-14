@@ -58,6 +58,15 @@ Rendered source pages and screenshots are private source material too. Save
 inspection images under the project's ignored `.syllabusgraph/`, including
 temporary renders, rather than an unignored top-level temporary directory.
 
+When a readable equation is missing from the registered text, retain a private
+inspection note with the original page coordinates, relevant render, and checked
+transcription. The critic should verify that transcription against the original
+page. Keep the proposal's text witnesses faithful to the registered text; a
+visually recovered formula must not be presented as a matching text-layer quote.
+Text matching locates evidence, while scientific review checks the actual
+equation. If visual inspection cannot resolve the notation, keep it unresolved
+or prepare a documented replacement source through the process below.
+
 ## Diagnose before adding a tool
 
 Use the first failed or uncertain pages to choose the next tool. Registration
