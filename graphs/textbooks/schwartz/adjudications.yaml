@@ -109,3 +109,197 @@ units:
       id: schwartz.e-complex-scalar-to-stability
     - kind: edges
       id: schwartz.e-complex-scalar-to-quantized-dirac-field
+- id: full-005
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Wrong accepted nodes remained on three QED and Ward prerequisites.
+    alternatives:
+    - Keep the broad scalar and longitudinal-decoupling links as necessary prerequisites.
+    - Use the exact spinor-coupling, little-group Ward, and xi-transversality records.
+    resolution: Use exact accepted records and remove the two overbroad prerequisite
+      edges.
+    rationale: The QED vertex follows from the spinor covariant derivative, the physical
+      polarization replacement uses the Ward contraction, and the loop-set gauge test
+      concerns longitudinal propagator terms. The narrower accepted records state
+      those inputs directly.
+    evidence:
+    - source: schwartz
+      section: '13.1'
+      pages:
+      - 225
+      - 226
+    - source: schwartz
+      section: 13.5.1
+      pages:
+      - 239
+      - 240
+    - source: schwartz
+      section: Problem 13.5
+      pages:
+      - 248
+      - 249
+    affected_records:
+    - kind: edges
+      id: schwartz.e-qed-rules-from-minimal-coupling
+    - kind: edges
+      id: schwartz.e-polarization-sum-from-ward-identity
+    - kind: edges
+      id: schwartz.e-gauge-set-problem-from-longitudinal-decoupling
+    - kind: edges
+      id: schwartz.e-gauge-set-problem-from-xi-transversality
+  - finding: 1
+    issue: Separated problem branches still lacked route-specific inputs.
+    alternatives:
+    - Leave each split task with one representative conceptual input.
+    - Attach every calculation's QED, scalar-QED, charge-conjugation, or canonical
+      inputs to its own branch.
+    resolution: Complete each independent branch and remove two cross-route prerequisites.
+    rationale: The Compton comparisons require the amplitudes and algebra they explicitly
+      evaluate. Scalar and spinor Furry proofs act on different actions, and the canonical
+      Dirac contact proof uses equations, field anticommutators, and fermionic time
+      ordering rather than the path-integral derivation.
+    evidence:
+    - source: schwartz
+      section: Problem 13.7
+      pages:
+      - 250
+    - source: schwartz
+      section: Problem 14.2
+      pages:
+      - 283
+      - 284
+    - source: schwartz
+      section: Problem 14.7
+      pages:
+      - 284
+    affected_records:
+    - kind: edges
+      id: schwartz.e-compton-qed-problem-from-amplitude
+    - kind: edges
+      id: schwartz.e-compton-qed-problem-from-completeness
+    - kind: edges
+      id: schwartz.e-compton-qed-problem-from-traces
+    - kind: edges
+      id: schwartz.e-scalar-compton-problem-from-physical-sum
+    - kind: edges
+      id: schwartz.e-scalar-compton-problem-from-complete-ward-set
+    - kind: edges
+      id: schwartz.e-furry-problem-from-charge-conjugation
+    - kind: edges
+      id: schwartz.e-scalar-furry-from-scalar-qed
+    - kind: edges
+      id: schwartz.e-scalar-furry-from-path-integral
+    - kind: edges
+      id: schwartz.e-spinor-furry-from-charge-conjugation
+    - kind: edges
+      id: schwartz.e-dirac-sd-problem-from-sd
+    - kind: edges
+      id: schwartz.e-dirac-canonical-sd-from-dirac-equation
+    - kind: edges
+      id: schwartz.e-dirac-canonical-sd-from-minimal-coupling
+    - kind: edges
+      id: schwartz.e-dirac-canonical-sd-from-mode-expansion
+    - kind: edges
+      id: schwartz.e-dirac-canonical-sd-from-anticommutators
+    - kind: edges
+      id: schwartz.e-dirac-canonical-sd-from-fermion-time-ordering
+  - finding: 2
+    issue: Three QED applications still lacked the rate or amplitude input they use.
+    alternatives:
+    - Treat the missing rate and interaction structures as implicit within each task.
+    - Connect the target-rest rate, Moller rate, and Compton helicity calculation
+      to their exact inputs.
+    resolution: Add the LIPS, center-of-mass rate, and Compton-amplitude prerequisites.
+    rationale: The target-rest and Moller tasks request cross sections, so their amplitudes
+      must be combined with the relevant rate formula. The helicity result acts on
+      the displayed Compton t-channel numerator, which chirality conventions alone
+      do not provide.
+    evidence:
+    - source: schwartz
+      section: Problems 13.1-13.2
+      pages:
+      - 248
+    - source: schwartz
+      section: 13.5.4
+      pages:
+      - 244
+      - 245
+      - 246
+    affected_records:
+    - kind: edges
+      id: schwartz.e-rutherford-problem-from-lips
+    - kind: edges
+      id: schwartz.e-moller-problem-from-two-body-rate
+    - kind: edges
+      id: schwartz.e-compton-helicity-from-amplitude
+  - finding: 3
+    issue: Three path-integral arguments still omitted an equation, a photon contact
+      relation, or proof assumptions.
+    alternatives:
+    - Leave the missing facts implicit in neighboring method summaries.
+    - Add the exact Euler-Lagrange and QED contact inputs plus an explicit gauge-factorization
+      assumption.
+    resolution: Represent the missing equation and assumptions and use the QED photon
+      contact derivation.
+    rationale: Stationary phase identifies classical dynamics only through the Euler-Lagrange
+      result. The LSZ proof specifically applies the photon Schwinger-Dyson relation,
+      and orbit factorization depends on measure, action, insertion, and gauge-representative
+      hypotheses that the generic correlator formula does not state.
+    evidence:
+    - source: schwartz
+      section: 14.2.4
+      pages:
+      - 259
+    - source: schwartz
+      section: '14.5'
+      pages:
+      - 268
+    - source: schwartz
+      section: 14.8.3
+      pages:
+      - 280
+      - 281
+    affected_records:
+    - kind: nodes
+      id: schwartz.abelian-gauge-orbit-factorization-assumptions
+    - kind: edges
+      id: schwartz.e-classical-limit-from-euler-lagrange
+    - kind: edges
+      id: schwartz.e-lsz-ward-from-sd-contact
+    - kind: edges
+      id: schwartz.e-lsz-ward-from-qed-sd-contact
+    - kind: edges
+      id: schwartz.e-gauge-factorization-from-assumptions
+  - finding: 4
+    issue: Several corrected claims and problem tasks still lacked operative private
+      witnesses.
+    alternatives:
+    - Retain one location-only fragment per page.
+    - Add short claim-specific witnesses while keeping all quotations private.
+    resolution: Add operative witnesses for the specified claims and separate page-284
+      tasks.
+    rationale: The added witnesses now identify the Compton result, QED motivation,
+      formulation tradeoffs, gauge-change assumptions, both Furry branches, and each
+      previously unwitnessed problem task or proof route. They remain only in the
+      private proposal.
+    evidence:
+    - source: schwartz
+      section: 13.5.2
+      pages:
+      - 241
+    - source: schwartz
+      section: '13.6'
+      pages:
+      - 247
+    - source: schwartz
+      section: '14.1'
+      pages:
+      - 252
+    - source: schwartz
+      section: Problems 14.2-14.7
+      pages:
+      - 283
+      - 284
+    affected_records: []
