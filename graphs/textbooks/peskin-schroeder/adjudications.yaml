@@ -68,3 +68,35 @@ units:
       id: ps4-dyson-to-problem-decay
     - kind: edges
       id: ps4-qed-minimal-to-rutherford-classical
+- id: full-005
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Problem 6.2 requires its own part (d) result
+    alternatives:
+    - Remove the separate mass-regulator result and its circular edge, retaining that
+      derivation within the complete Problem 6.2 node.
+    - Split Problem 6.2 into a mass-regulation target followed by a distinct final
+      equivalent-photon-distribution target.
+    resolution: Remove the redundant part (d) result node and its circular prerequisite
+      edge.
+    rationale: The complete Problem 6.2 node already represents the sequential derivation
+      through parts (a)-(e), and its summary retains electron-mass regulation as an
+      internal step. A separate node for the answer to part (d) adds no independent
+      teachable route when it points back into that complete exercise as a prerequisite.
+      Removing that node and edge eliminates the self-answer dependency while preserving
+      the genuine Ward-identity, helicity-current, phase-space, and polarization-assumption
+      inputs. The accepted earlier Weizsaecker-Williams calculation remains helpful
+      evidence for the parallel derivation and does not become compulsory.
+    evidence:
+    - source: peskin-schroeder
+      section: Problem 6.2(d-e)
+      pages:
+      - 209
+      - 210
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.equivalent-photon-collinear-mass-regulator
+    - kind: edges
+      id: ps6-mass-regulator-to-equivalent-photon-problem
