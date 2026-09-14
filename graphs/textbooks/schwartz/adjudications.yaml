@@ -829,3 +829,218 @@ units:
       id: schwartz.e.dimtree-dimreal
     - kind: edges
       id: schwartz.e.dimtree-dimcancel
+- id: full-008
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Wrong page for the eigenoperator witness and no operative Pi/iPi formula
+      witness
+    alternatives:
+    - Move the eigenoperator witness to page 449 and add exact spectral formula operands
+    - Replace the page-450 witness and remove the spectral normalization claim
+    resolution: Correct both witness coordinates and retain the source-accurate spectral
+      formula
+    rationale: The eigenoperator qualification occurs at the end of printed page 449.
+      Printed page 468 defines the time-ordered correlator with an overall i Pi and
+      then defines Pi as the spectral integral without an extra numerator i. Correcting
+      the private checks preserves the already-corrected public node without changing
+      its substance.
+    evidence:
+    - source: schwartz
+      section: 23.6.2
+      pages:
+      - 449
+    - source: schwartz
+      section: 24.2.1
+      pages:
+      - 468
+    affected_records: []
+  - finding: 1
+    issue: Independent problem branches and corrected formulas still lack operative
+      private witnesses
+    alternatives:
+    - Add exact source fragments for every retained subtask, formula, and qualification
+    - Remove every unsupported subtask or qualification from the proposal
+    resolution: Add complete operative witnesses and retain the fully scoped records
+    rationale: The source gives each listed exercise part and each retained mathematical
+      qualification explicitly. Adding bounded witnesses for the missing branches
+      on pages 425, 429, 437, 450-451, 464, 468, and 477 preserves the requested full
+      extraction while avoiding headings or answer fragments as stand-ins.
+    evidence:
+    - source: schwartz
+      section: 23.2-23.6 and Problems 23.1-23.8
+      pages:
+      - 425
+      - 429
+      - 437
+      - 450
+      - 451
+    - source: schwartz
+      section: 24.1.2, 24.1.5, 24.2.1, and Problems 24.1-24.4
+      pages:
+      - 457
+      - 464
+      - 468
+      - 477
+    affected_records: []
+  - finding: 2
+    issue: Two Chapter 23 answers remain prerequisites and Problems 24.1 and 24.3
+      lack their actual givens
+    alternatives:
+    - Replace answer edges with source-given operators, general RG solution, loop
+      setup, and partial-wave representation
+    - Remove the affected exercise branches from the proposal
+    resolution: Preserve every exercise and connect only its actual calculation inputs
+    rationale: Problem 23.2 is to derive the vanishing anomalous dimension, so its
+      inputs are the weak operator, Fierz identity, and QED renormalization method.
+      Problem 23.3 starts from the general gamma-over-beta solution and scalar beta/anomalous
+      dimensions, not Eq. (23.97). Problem 24.1 starts from Eq. (24.29), while Problem
+      24.3 uses the Legendre representation and unitarity/cross-section relations.
+      The revised branches leave each requested answer downstream.
+    evidence:
+    - source: schwartz
+      section: 23.3-23.4 and Problems 23.2-23.3
+      pages:
+      - 427
+      - 430
+      - 450
+    - source: schwartz
+      section: 24.1.2 and Problem 24.1
+      pages:
+      - 457
+      - 477
+    - source: schwartz
+      section: 24.1.5 and Problem 24.3
+      pages:
+      - 464
+      - 477
+    affected_records:
+    - kind: edges
+      id: schwartz.e-four-fermi-to-problem-23-2
+    - kind: edges
+      id: schwartz.e-scalar-rg-to-problem-23-3
+    - kind: edges
+      id: schwartz.e-iepsilon-to-problem-contour
+    - kind: nodes
+      id: schwartz.weak-four-fermi-qed-problem-inputs
+    - kind: nodes
+      id: schwartz.multiplicative-rg-coefficient-general-solution
+    - kind: nodes
+      id: schwartz.scalar-phi4-beta-and-mass-anomalous-dimension
+    - kind: nodes
+      id: schwartz.scalar-bubble-cutting-loop-setup
+    - kind: nodes
+      id: schwartz.scalar-partial-wave-legendre-representation
+    - kind: edges
+      id: schwartz.e-qed-framework-to-problem-23-2
+    - kind: edges
+      id: schwartz.e-weak-four-fermi-inputs-to-problem-23-2
+    - kind: edges
+      id: schwartz.e-composite-operator-rg-to-problem-23-2
+    - kind: edges
+      id: schwartz.e-beta-to-general-multiplicative-rg-solution
+    - kind: edges
+      id: schwartz.e-general-rg-solution-to-problem-23-3
+    - kind: edges
+      id: schwartz.e-scalar-beta-gamma-to-problem-23-3
+    - kind: edges
+      id: schwartz.e-iepsilon-to-scalar-bubble-setup
+    - kind: edges
+      id: schwartz.e-scalar-bubble-setup-to-problem-contour
+    - kind: edges
+      id: schwartz.e-legendre-partial-waves-to-problem-scalar-bound
+  - finding: 3
+    issue: Corrected text methods and alternative routes remain disconnected from
+      accepted joint inputs
+    alternatives:
+    - Add minimum use-to-derive inputs while keeping the scalar routes alternative
+    - Collapse the methods back into broad self-contained records
+    resolution: Add direct method inputs and preserve both scalar counterterm routes
+    rationale: The new results explicitly integrate the beta function, decompose Feynman
+      versus advanced propagators, and renormalize scalar loops, while the Polchinski
+      construction differentiates a source functional. These operations require the
+      listed accepted methods. The two scalar calculations remain alternative edges
+      into the common mass result and scalar anomalous dimension, so neither route
+      becomes compulsory.
+    evidence:
+    - source: schwartz
+      section: '23.2'
+      pages:
+      - 425
+    - source: schwartz
+      section: 23.5.1
+      pages:
+      - 436
+      - 437
+    - source: schwartz
+      section: 23.6.1
+      pages:
+      - 444
+      - 445
+    - source: schwartz
+      section: 24.1.2
+      pages:
+      - 457
+      - 458
+      - 459
+    affected_records:
+    - kind: edges
+      id: schwartz.e-beta-to-dimensional-transmutation
+    - kind: edges
+      id: schwartz.e-iepsilon-to-feynman-tree-theorem
+    - kind: edges
+      id: schwartz.e-scalar-renormalization-to-tadpole-route
+    - kind: edges
+      id: schwartz.e-scalar-renormalization-to-insertion-route
+    - kind: edges
+      id: schwartz.e-source-functional-to-polchinski
+  - finding: 4
+    issue: Froissart, longitudinal-W, mass-scheme, and resonance claims are bundled
+      despite different inputs
+    alternatives:
+    - Split the four claims into focused records with their own inputs
+    - Keep the combined records but add multiple independent input sets and witnesses
+    resolution: Split theorem, application, mass-scheme, and resonance records and
+      wire their inputs
+    rationale: Printed pages 463-466 present two separate unstable-particle topics
+      and two separate unitarity topics. Complex-pole/MS definitions depend on unstable-pole
+      and subtraction-scheme concepts; resonant coupling enhancement depends on the
+      Breit-Wigner width. The W application jointly uses longitudinal polarization
+      growth and the partial-wave bound. The cited Froissart statement is retained
+      as a separately qualified, source-cited result without importing an out-of-scope
+      proof.
+    evidence:
+    - source: schwartz
+      section: 24.1.4
+      pages:
+      - 463
+    - source: schwartz
+      section: 24.1.5
+      pages:
+      - 464
+      - 465
+      - 466
+    affected_records:
+    - kind: nodes
+      id: schwartz.resonance-complex-pole-ms-mass-and-enhancement
+    - kind: nodes
+      id: schwartz.froissart-and-longitudinal-w-perturbative-unitarity-qualifications
+    - kind: nodes
+      id: schwartz.unstable-particle-complex-pole-and-ms-mass-schemes
+    - kind: nodes
+      id: schwartz.narrow-resonance-coupling-enhancement
+    - kind: nodes
+      id: schwartz.froissart-total-cross-section-growth-bound
+    - kind: nodes
+      id: schwartz.longitudinal-w-higgs-perturbative-unitarity
+    - kind: edges
+      id: schwartz.e-unstable-propagator-to-complex-ms-masses
+    - kind: edges
+      id: schwartz.e-ms-mass-to-unstable-mass-schemes
+    - kind: edges
+      id: schwartz.e-unstable-propagator-to-resonance-enhancement
+    - kind: edges
+      id: schwartz.e-partial-wave-bound-to-longitudinal-w
+    - kind: edges
+      id: schwartz.e-longitudinal-vector-growth-to-w-unitarity

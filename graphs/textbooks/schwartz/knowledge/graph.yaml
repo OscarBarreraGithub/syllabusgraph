@@ -55,6 +55,35 @@ nodes:
     - 50
     - 51
     note: Identifies the two intermediate states and adds their contributions.
+- id: schwartz.alternative-physical-notions-of-locality
+  label: Alternative physical notions of locality
+  summary: Alongside the Lagrangian-density definition, locality can be associated
+    with cluster decomposition, requiring the connected S matrix to have no singularities
+    worse than poles or branch cuts, or with spacelike commutators vanishing outside
+    the light cone. These are related physical notions, so Lagrangian locality is
+    a calculational definition rather than the unique observable definition.
+  kind: concept
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: '24.4'
+    pages:
+    - 475
+- id: schwartz.anomalous-dimension-as-quantum-scaling-deviation
+  label: Anomalous dimensions as deviations from classical scaling
+  summary: Classical dimensional analysis fixes a Green function's scaling power.
+    Quantum dependence on the subtraction scale shifts that power, and the corresponding
+    μ derivative is its anomalous dimension; anomalous dimensions therefore measure
+    departures from canonical scaling, rather than introducing a new physical dimension
+    for μ.
+  kind: concept
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.4.4
+    pages:
+    - 434
+    - 435
 - id: schwartz.asymptotic-freedom-assumption-for-lsz
   label: Asymptotic-free-state assumption for LSZ
   summary: The LSZ derivation assumes interactions are negligible at asymptotically
@@ -97,6 +126,21 @@ nodes:
     pages:
     - 138
     note: Requests the photon propagator in axial gauge.
+- id: schwartz.bare-spectral-normalization-and-field-strength-limit
+  label: Bare spectral normalization and 0≤Z≤1
+  summary: For a regulated, finite, or conformal theory, the bare scalar field also
+    has a spectral representation. Its equal-time canonical commutator fixes ∫ρ0(q²)dq²=1.
+    In the on-shell scheme this decomposes into Zδ(q²−mP²) plus a positive continuum
+    and gives 0≤Z≤1, but the source cautions that perturbative QED with an infrared
+    regulator limit cannot be used to compute this unmeasurable Z reliably.
+  kind: result
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: 24.2.2
+    pages:
+    - 470
+    - 471
 - id: schwartz.beta-decay-electron-polarization-problem
   label: Beta-decay electron-polarization problem
   summary: Problem 11.6(f) asks how a cobalt-60 beta-decay experiment could test electron
@@ -167,6 +211,22 @@ nodes:
     pages:
     - 9
     note: Obtains the nω+1 and nω transition factors.
+- id: schwartz.callan-symanzik-green-function-rge
+  label: Callan–Symanzik equation for Green functions
+  summary: A bare QED Green function is μ independent but is related to a finite renormalized
+    Green function by field Z factors. Differentiating yields an RGE containing explicit
+    μ dependence, beta and mass-running derivatives, and one half of each external
+    field anomalous dimension; inserting a general operator adds its anomalous dimension.
+    The source names scheme variants Callan–Symanzik, Gell-Mann–Low, ’t Hooft–Weinberg,
+    and Georgi–Politzer equations.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.4.3
+    pages:
+    - 433
+    - 434
 - id: schwartz.canonical-and-path-integral-quantization-routes
   label: Canonical and path-integral quantization routes
   summary: The source identifies canonical quantization and the Feynman path integral
@@ -662,6 +722,35 @@ nodes:
     - 240
     - 241
     note: Evaluates a high-energy component and states the full summed result.
+- id: schwartz.conserved-current-zero-anomalous-dimension
+  label: Conserved vector current has zero anomalous dimension
+  summary: For the external QED current Jμ=ZJ ψ̄γμψ, the current-insertion counterterm
+    gives ZJ=Z2 at one loop, so its bare-current relation makes μ dJμ/dμ=0. The Ward–Takahashi
+    identity extends γJ=0 to all orders; its physical interpretation is that Q=∫d³x
+    J0 continues to count particles minus antiparticles at every scale.
+  kind: result
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.4.1
+    pages:
+    - 431
+    - 432
+- id: schwartz.continuum-and-wilsonian-rg-distinction
+  label: Continuum and Wilsonian renormalization groups
+  summary: The Wilsonian RG changes a physical UV cutoff while compensating couplings
+    to preserve low-energy observables. The continuum RG instead states independence
+    from renormalization conditions after the cutoff is removed; in dimensional regularization
+    its arbitrary scale is μ. Their equations can look alike but neither taking the
+    Wilsonian cutoff to low physical scales nor μ to infinity is the intended procedure.
+  kind: concept
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23 introduction
+    pages:
+    - 417
+    - 418
 - id: schwartz.cosmological-constant-and-tadpole-vacuum-shift
   label: Cosmological constant and tadpole vacuum shifts
   summary: A constant Lagrangian term is the cosmological constant and, with gravity,
@@ -763,6 +852,25 @@ nodes:
     pages:
     - 36
     note: Lists current roles and states the nondynamical-source qualification.
+- id: schwartz.cutkosky-cutting-rules-and-feynman-tree-theorem
+  label: Cutkosky cutting rules for discontinuities
+  summary: Imaginary loop contributions arise only when intermediate propagators go
+    on shell. For every momentum-conserving cut, replace each cut propagator by −2πiδ(p²−m²)θ(p0),
+    conjugate the right side, and sum to obtain Disc(iM)=−2 Im M. These rules determine
+    the discontinuity, rather than the complete loop amplitude.
+  kind: method
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.2
+    pages:
+    - 456
+    - 457
+    - 458
+    - 459
+  notation:
+  - source: schwartz
+    note: Uses the source's iM convention and directed positive-energy cuts.
 - id: schwartz.decay-rate-lips-and-time-dilation
   label: Decay rate from phase space and time dilation
   summary: Treating decay perturbatively over a finite time gives dΓ=|M|²dΠ_LIPS/(2E₁).
@@ -1335,6 +1443,21 @@ nodes:
     - 211
     note: Defines the path angle, derives the 3+1 restriction and spin sign, then
       contrasts 2+1 anyons.
+- id: schwartz.external-operator-and-lagrangian-operator-rg
+  label: External versus Lagrangian operator running
+  summary: External operators may carry momentum and need not be Lorentz scalars,
+    whereas Lagrangian operators are Lorentz invariant, inserted at zero momentum,
+    and are usually described through their running Wilson coefficients. They encode
+    the same RG information because the coefficient and operator scale dependences
+    cancel in CjOj.
+  kind: concept
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.4.2
+    pages:
+    - 432
+    - 433
 - id: schwartz.external-photon-lsz-polarizations
   label: External photon polarizations in LSZ rules
   summary: For scalar external states LSZ supplies factor one; each external photon
@@ -1506,6 +1629,22 @@ nodes:
     - 75
     note: Computes the free time-ordered two-point function and identifies its two
       pieces.
+- id: schwartz.feynman-tree-theorem-full-loop-decomposition
+  label: Feynman tree theorem full-loop decomposition
+  summary: After replacing every Feynman propagator by an advanced propagator plus
+    its on-shell delta term, the all-advanced term vanishes and remaining terms can
+    be rewritten so each contains at least one delta function. The theorem therefore
+    decomposes the complete loop amplitude into tree-like on-shell contributions,
+    a stronger statement than the Cutkosky discontinuity rule.
+  kind: method
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.2
+    pages:
+    - 457
+    - 458
+    - 459
 - id: schwartz.field-configuration-and-momentum-eigenstates
   label: Field-configuration and momentum eigenstates
   summary: The field-theory time-slice basis consists of eigenstates |Φ⟩ of the Schrödinger
@@ -1621,6 +1760,23 @@ nodes:
     - 166
     note: Shows why real boost parameters obstruct finite-dimensional unitarity and
       points to little groups.
+- id: schwartz.fixed-points-conformal-theory-and-rg-trajectory
+  label: Fixed points, conformal theory, and RG trajectories
+  summary: 'At an RG fixed point the couplings stop running and the theory is scale
+    invariant; the source calls such quantum fixed-point theories conformal field
+    theories and notes they have no massive particle asymptotic states or S-matrix.
+    Rescaling away classical dimensions clarifies trajectories: reaching the nontrivial
+    Wilson–Fisher point requires tuning onto its critical mass trajectory, while nearby
+    trajectories describe differing microscopic systems.'
+  kind: concept
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.2
+    pages:
+    - 440
+    - 441
+    - 442
 - id: schwartz.fock-space-particle-sectors
   label: Fock space and physical particle sectors
   summary: For one particle type, the Fock space is organized into Hilbert spaces
@@ -1640,6 +1796,28 @@ nodes:
   - source: schwartz
     note: The source writes |p⃗⟩, |p^μ⟩, and |p⟩ interchangeably for physical momentum
       states, with p_i^0=√(p⃗_i²+m_i²).
+- id: schwartz.four-fermi-operator-rg-toy-scalar-route
+  label: Four-Fermi operator renormalization and running
+  summary: Below a heavy mediator mass, replace its propagator by a local four-fermion
+    interaction and match its coefficient at the heavy scale. In the source's neutral-scalar
+    toy interaction, the one-loop UV pole renormalizes G and gives its anomalous dimension,
+    whose solution evolves G between the matching and decay scales and resums the
+    large logarithms. The actual left-handed weak four-Fermi operator has zero QED
+    anomalous dimension in this example.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 426
+    - 427
+    - 428
+    - 429
+  notation:
+  - source: schwartz
+    note: The nonzero worked anomalous dimension is for the deliberately substituted
+      neutral-scalar four-Fermi operator, not the Standard Model V−A interaction.
 - id: schwartz.fourier-transform-derivative-operator-correspondence
   label: Fourier correspondence for field operators
   summary: With the source's Fourier conventions, ∇² corresponds to −|k⃗|² and □ corresponds
@@ -1721,6 +1899,19 @@ nodes:
     - 262
     - 263
     note: Solves Z₀[J] and differentiates it to obtain the propagator.
+- id: schwartz.froissart-total-cross-section-growth-bound
+  label: Froissart total-cross-section growth bound
+  summary: The source cites, without deriving its hypotheses, the Froissart result
+    that a total cross section cannot grow faster than the square of the logarithm
+    of center-of-mass energy at high energy. It is a distinct unitarity bound from
+    the partial-wave construction developed next.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 464
 - id: schwartz.gamma-trace-identities
   label: Gamma-matrix trace identities
   summary: Cyclicity, the Clifford algebra, and γ5 anticommutation give vanishing
@@ -1932,6 +2123,20 @@ nodes:
     - 73
     - 74
     note: States the generalized formula, overlap condition, and positronium example.
+- id: schwartz.generalized-optical-theorem
+  label: Generalized optical theorem
+  summary: With S=1+iT, S-matrix unitarity and a complete intermediate-state sum give
+    M(i→f)−M*(f→i)=iΣX∫dΠX(2π)⁴δ⁴(pi−pX)M(i→X)M*(f→X). Order by order, its amplitude
+    products require loop imaginary parts to match tree-level rates; an interacting
+    tree-only quantum theory would fail this condition.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: '24.1'
+    pages:
+    - 453
+    - 454
 - id: schwartz.global-symmetry-ward-contact-method
   label: Global-symmetry Ward contact derivation
   summary: A local change of variables implementing a global U(1) symmetry leaves
@@ -2370,6 +2575,24 @@ nodes:
     - 364
     - 365
     - 366
+- id: schwartz.kallen-lehmann-spectral-representation-and-positivity
+  label: Spectral representation and positive spectral density
+  summary: Insert the complete state basis in an arbitrary scalar two-point function
+    and use translations to express it as an integral of the free positive-energy
+    kernel over a spectral density ρ(q²). The time-ordered correlator is the Fourier
+    integral of iΠ(p²), with Π(p²)=∫dq²ρ(q²)/(p²−q²+iε). In a unitary theory ρ is
+    real and positive, has singularities at physical masses and thresholds, and equals
+    −Im Π/π; it describes composite as well as elementary states.
+  kind: result
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: 24.2–24.2.1
+    pages:
+    - 466
+    - 467
+    - 468
+    - 469
 - id: schwartz.kinetic-terms-interactions-and-dynamical-fields
   label: Kinetic terms, interactions, and dynamical fields
   summary: Bilinear kinetic terms determine free behavior; a field is propagating
@@ -2525,6 +2748,23 @@ nodes:
     - 342
     note: Contrasts ordinary numerical counterterms with a divergence requiring a
       new derivative operator.
+- id: schwartz.locality-integrating-out-and-missing-pole
+  label: Locality, integrating out, and the missing-pole constraint
+  summary: The source defines Lagrangian locality as fields and derivatives evaluated
+    at one spacetime point, while recognizing other observable definitions. Solving
+    a heavy field's classical equation produces a nonlocal inverse operator; its derivative
+    expansion is local only for □≪M². Near the omitted heavy pole, treating that expansion
+    as an all-energy local theory would produce an imaginary part without a corresponding
+    Hilbert-space state and violate the optical theorem, so a higher-energy description
+    restores a field for that state.
+  kind: concept
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: '24.4'
+    pages:
+    - 475
+    - 476
 - id: schwartz.locality-of-divergent-counterterms
   label: Local polynomial form of UV divergences
   summary: Differentiating a divergent integral enough times makes it convergent;
@@ -2554,6 +2794,21 @@ nodes:
     - 133
     - 134
     note: Performs the decomposition, propagator partial fraction, and ghost diagnosis.
+- id: schwartz.longitudinal-w-higgs-perturbative-unitarity
+  label: Longitudinal-W scattering and Higgs restoration of perturbative unitarity
+  summary: Because a longitudinal massive-vector polarization grows with energy over
+    mass, W-boson scattering without the Higgs contribution would cross the perturbative
+    partial-wave bound near 1 TeV. The Higgs contribution restores perturbative unitarity;
+    the bound diagnoses failure of the truncated description rather than loss of exact
+    unitarity.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 465
+    - 466
 - id: schwartz.loop-amplitude-position-momentum-lsz-problem
   label: Loop-amplitude and LSZ translation problem
   summary: Problem 7.1 asks for a φ³ decay tree amplitude, a one-loop amplitude, its
@@ -3183,6 +3438,19 @@ nodes:
     pages:
     - 67
     note: Specifies the supplied matrix element, requested integration, and comparison.
+- id: schwartz.multiplicative-rg-coefficient-general-solution
+  label: General solution for a multiplicatively running coefficient
+  summary: If a coefficient C obeys mu dC/dmu=gamma(alpha)C while mu dalpha/dmu=beta(alpha),
+    its evolution between two scales is C(mu)=C(mu0) exp[integral from alpha(mu0)
+    to alpha(mu) of gamma(alpha)/beta(alpha) d alpha]. This is the general solution
+    used before specializing a running mass.
+  kind: result
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 429
 - id: schwartz.multivariable-gaussian-integral-method
   label: Multivariable Gaussian integral method
   summary: Completing the square and diagonalizing the quadratic matrix gives the
@@ -3197,6 +3465,19 @@ nodes:
     - 254
     - 255
     note: Derives the scalar and matrix Gaussian formulas.
+- id: schwartz.narrow-resonance-coupling-enhancement
+  label: Narrow-resonance coupling enhancement
+  summary: For the displayed Z-mediated process, the off-resonance rate scales as
+    g^4. Near the narrow pole, the width scales as g^2 and cancels one coupling pair
+    in the Breit-Wigner rate, so resonant production scales as g^2; the source uses
+    LEP running at the Z pole as the application.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 463
 - id: schwartz.neutrino-majorana-u1-obstruction-problem
   label: Neutrino Majorana U(1)-obstruction problem
   summary: Problem 11.9(a) asks learners to show that the stated left-handed Majorana
@@ -3293,6 +3574,22 @@ nodes:
     pages:
     - 44
     note: Poses the dimensional-analysis and perihelion calculation.
+- id: schwartz.nonperturbative-lsz-poles-and-interpolating-fields
+  label: Nonperturbative LSZ poles and interpolating fields
+  summary: Specializing the pole-factorization result to renormalized elementary fields
+    with unit one-particle overlap gives external on-shell poles in general Green
+    functions, a nonperturbative basis for LSZ. More generally, any operator product
+    with the necessary overlap interpolates the particle; the source then notes that
+    interacting massless spin-one particles must satisfy the adjoint non-Abelian Jacobi
+    structure to preserve this factorization.
+  kind: result
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: '24.3'
+    pages:
+    - 474
+    - 475
 - id: schwartz.nonrelativistic-born-qft-coulomb-match
   label: Nonrelativistic Born–QFT Coulomb match
   summary: In the proton-rest, elastic nonrelativistic limit, scalar-QED photon exchange
@@ -3513,6 +3810,22 @@ nodes:
     pages:
     - 316
     note: States and applies the on-shell Gordon identity.
+- id: schwartz.optical-theorem-decay-and-forward-cross-section
+  label: Optical theorem for decay widths and forward total cross sections
+  summary: The forward special case of the generalized optical theorem identifies
+    Im M(A→A)=mA Γtot for an on-shell one-particle state and relates the forward imaginary
+    amplitude of a two-particle state to its total cross section with the source's
+    flux factor. In the scalar φ→ππ example, the one-loop branch-cut imaginary part
+    appears exactly above M=2m and equals M times the identical-particle decay rate.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1–24.1.1
+    pages:
+    - 454
+    - 455
+    - 456
 - id: schwartz.parity-intrinsic-phases-and-spinor-chirality-swap
   label: Parity phases and spinor chirality swap
   summary: Parity reverses spatial position and can carry intrinsic field phases fixed
@@ -3549,6 +3862,23 @@ nodes:
     - 250
     note: States the Z energy-scaling, angular-distribution, chiral-coupling, and
       parity tasks.
+- id: schwartz.partial-wave-unitarity-bound-and-perturbative-breakdown
+  label: Partial-wave unitarity bound and perturbative breakdown
+  summary: Expand an elastic 2→2 CM amplitude in Legendre partial waves. In the high-energy
+    elastic approximation, unitarity gives Im aj=|aj|² and hence |aj|≤1, 0≤Im aj≤1,
+    and |Re aj|≤1/2; the more general bounds do not require elastic dominance but
+    need a spin-aware S-matrix argument. A dimension-five scalar interaction yields
+    a0∼s/(16πΛ²), signaling loss of perturbative reliability near Λ, not a literal
+    violation of unitarity above that energy.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 464
+    - 465
+    - 466
 - id: schwartz.particle-as-unitary-poincare-irrep
   label: Particle as an irreducible unitary Poincaré representation
   summary: A particle is a set of states that closes under Poincaré transformations
@@ -3728,6 +4058,24 @@ nodes:
     pages:
     - 5
     note: Derives the mean mode energy and continuum intensity.
+- id: schwartz.polology-one-particle-pole-factorization
+  label: One-particle poles and factorization of Green functions
+  summary: If a momentum subset sums to p and the corresponding product of operators
+    has nonzero vacuum-to-one-particle overlap with a state Ψ of mass m, insert completeness
+    into the selected time ordering and Fourier transform it. The θ-function energy
+    denominator produces a pole at p²=m², and near it the Green function factorizes
+    into the two overlap amplitudes times i/(p²−m²+iε). The proof needs no elementary
+    Lagrangian field for Ψ, so bound and elementary states are treated alike.
+  kind: method
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: '24.3'
+    pages:
+    - 471
+    - 472
+    - 473
+    - 474
 - id: schwartz.position-space-feynman-rules
   label: Position-space Feynman rules
   summary: For a time-ordered correlator, each original field insertion is an external
@@ -3926,6 +4274,153 @@ nodes:
     section: Problem 22.5
     pages:
     - 416
+- id: schwartz.problem-cutting-rules-contour-derivation
+  label: 'Problem: derive cutting rules by contour integration'
+  summary: Problem 24.1 asks for the complex-k0 poles and upward-contour residues
+    of the two-body loop, identification of the residue that cannot contribute to
+    Im M, recovery of the displayed cut formula, and a separate pole-structure and
+    cutting-rule derivation for the pictured 2→3 process.
+  kind: method
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: Problem 24.1
+    pages:
+    - 477
+- id: schwartz.problem-dirac-spectral-representation
+  label: 'Problem: Dirac spinor spectral representation'
+  summary: Problem 24.2 requests a derivation of the spectral representation for a
+    Dirac spinor.
+  kind: method
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: Problem 24.2
+    pages:
+    - 477
+- id: schwartz.problem-ms-lsz-reduction
+  label: 'Problem: LSZ reduction in MS'
+  summary: Problem 24.4 separately requests the relation of the pole-overlap Z to
+    G2 outside on-shell subtraction, its QED MS calculation including counterterms
+    and UV/IR qualifications, the S4-to-G4 relation, an MS-valid amputated Green-function
+    formula, and the resulting changes to the cited e+e− calculation.
+  kind: method
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: Problem 24.4
+    pages:
+    - 477
+- id: schwartz.problem-on-scalar-wilson-fisher-fixed-point
+  label: 'Problem: O(N) scalar Wilson–Fisher analysis'
+  summary: Problem 23.4 asks for the mass anomalous dimension and beta function of
+    the stated O(N)-invariant scalar EFT, its 4−ε Wilson–Fisher point, and the d=3
+    epsilon-expansion critical exponent, with a normalization check at N=1.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: Problem 23.4
+    pages:
+    - 450
+  notation:
+  - source: schwartz
+    note: The problem warns that its O(N) λ normalization differs from the earlier
+      single-scalar normalization.
+- id: schwartz.problem-rg-operator-anomalous-dimension-running
+  label: 'Problem: anomalous dimension and running of a QED composite operator'
+  summary: Problem 23.1 requests the one-loop anomalous dimension of the displayed
+    derivative four-fermion QED operator and its coefficient evolved from 1 TeV to
+    1 GeV.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: Problem 23.1
+    pages:
+    - 450
+- id: schwartz.problem-scalar-mass-rg-small-coupling-solution
+  label: 'Problem: recover the scalar-mass RG solution'
+  summary: Problem 23.3 asks to obtain the stated scalar mass solution as the small-λR
+    limit of the general running-mass solution.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: Problem 23.3
+    pages:
+    - 450
+- id: schwartz.problem-scalar-partial-wave-unitarity
+  label: 'Problem: scalar partial-wave unitarity bound'
+  summary: Problem 24.3 requests a derivation of the elastic partial-wave unitarity
+    bound for a scalar-only theory.
+  kind: method
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: Problem 24.3
+    pages:
+    - 477
+- id: schwartz.problem-weak-four-fermi-qed-nonrunning
+  label: 'Problem: prove the weak four-Fermi QED logarithm vanishes'
+  summary: Problem 23.2 requests a QED anomalous-dimension calculation for the left-handed
+    weak four-Fermi operator, using the supplied Fierz identity as useful intermediate
+    algebra, to show the coefficient A of the claimed large logarithm is zero.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: Problem 23.2
+    pages:
+    - 450
+- id: schwartz.problem-wilson-fisher-scheme-independence
+  label: 'Problem: regulator and scheme dependence at the Wilson–Fisher point'
+  summary: Problem 23.6 asks for hard-cutoff and shell-integration one-loop RGEs,
+    their fixed-point coordinates and flow plots, and a demonstration that ν is regulator
+    and subtraction-scheme independent even though λ* and m* can be moved by a scheme
+    choice.
+  kind: method
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: Problem 23.6
+    pages:
+    - 451
+- id: schwartz.problem-wilson-fisher-two-loop-critical-exponent
+  label: 'Problem: two-loop Wilson–Fisher critical exponent'
+  summary: Problem 23.5 requests ν through order ε² for the N=1 Wilson–Fisher theory.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: Problem 23.5
+    pages:
+    - 451
+- id: schwartz.problem-wilson-polchinski-functional-rge
+  label: 'Problem: derive the Wilson–Polchinski functional RGE'
+  summary: Problem 23.7 requests the displayed Λ derivative of Lint in terms of its
+    first and second functional derivatives, identifying the first contribution with
+    an integrated-out tree diagram and the second with loops.
+  kind: method
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: Problem 23.7
+    pages:
+    - 451
+- id: schwartz.problem-wilsonian-scalar-mass-sensitivity
+  label: 'Problem: Wilsonian scalar-mass sensitivity'
+  summary: Problem 23.8 asks for generic coupled Wilsonian equations for a dimension-two
+    mass parameter and dimensionless coupling, a high-scale boundary value that yields
+    a stated low-scale mass, its response to a one-part-in-10²⁰ change, and the resulting
+    flow sketch.
+  kind: method
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: Problem 23.8
+    pages:
+    - 451
 - id: schwartz.proca-lagrangian-and-spin-one-constraint
   label: Proca Lagrangian and massive spin-1 constraint
   summary: Choosing the unique two-derivative vector kinetic combination with a=−b
@@ -3999,6 +4494,19 @@ nodes:
     - 309
     - 310
     note: Defines eR from the potential and displays the finite subtracted expression.
+- id: schwartz.qed-dimensional-transmutation-and-landau-scale
+  label: Dimensional transmutation of the QED running charge
+  summary: Solving the leading QED beta function trades a dimensionless boundary value
+    of α for the dimensionful integration scale ΛQED. The source calls this dimensional
+    transmutation and identifies the formal divergence at μ=ΛQED as the Landau pole;
+    it qualifies that QED is specified physically by a scale ratio such as me/ΛQED.
+  kind: result
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 425
 - id: schwartz.qed-effective-charge-and-landau-pole
   label: QED effective charge, screening, and Landau pole
   summary: 'For Q≫m, vacuum polarization gives e_eff²(Q)=eR²[1+eR² ln(Q²/m²)/(12π²)]
@@ -4468,6 +4976,74 @@ nodes:
     pages:
     - 202
     note: States the rest-spinor vector-current calculation.
+- id: schwartz.rg-asymptotic-behavior-classification
+  label: Infrared freedom, asymptotic freedom, and possible interacting fixed points
+  summary: For a weak single coupling, a positive beta function makes the coupling
+    decrease at long distance (infrared free), while a negative beta function makes
+    it decrease at short distance (asymptotically free); beta=0 is scale invariance.
+    A nonperturbative beta function changing sign has an intermediate fixed point,
+    and multiple couplings can have more complicated flows. Banks–Zaks is presented
+    as a possible non-Abelian fixed point when leading beta coefficients permit a
+    perturbative cancellation.
+  kind: concept
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.3
+    pages:
+    - 442
+- id: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+  label: Beta functions and mass anomalous dimensions from counterterms
+  summary: Writing dimensionless renormalized QED parameters in d=4−ε dimensions and
+    requiring bare parameters to be μ independent determines their RG equations from
+    Z factors. The source's MS conventions give the QED beta function through charge
+    renormalization and define the running mass anomalous dimension from Zm; these
+    are off-shell scheme parameters rather than physical pole masses.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 423
+    - 424
+    - 425
+    - 426
+  notation:
+  - source: schwartz
+    note: Uses d=4−ε, μ^(4−d)/2 for the charge, Ze rather than the earlier Z1, and
+      γm=μ mR^−1 dmR/dμ.
+- id: schwartz.rg-large-log-resummation
+  label: RG resummation of large logarithms
+  summary: When a scale ratio makes α ln(p²/p₀²) order one, every leading-log power
+    can matter even for small α. Defining the effective QED charge at a reference
+    scale and imposing scale independence gives the one-loop RGE and reproduces the
+    geometric leading-log result, while the RG systematically organizes higher logarithmic
+    accuracy.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.1.1
+    pages:
+    - 419
+    - 420
+    - 421
+- id: schwartz.rg-unphysical-scale-logarithm-qualification
+  label: Unphysical scales, dimensional regularization, and RG logarithms
+  summary: A logarithm of the lone physical scale is paired with a logarithm of an
+    unphysical cutoff, subtraction point, or μ. In dimensional regularization the
+    1/ε ultraviolet pole and ln μ² term arise together; μ makes dimensions correct
+    and is not a UV cutoff, whose removal is ε→0. Physical observables cancel μ dependence
+    between loops and running parameters.
+  kind: assumption
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.1.2–23.2
+    pages:
+    - 422
+    - 423
 - id: schwartz.rotations-and-invariant-inner-products
   label: Rotations and invariant inner products
   summary: A rotation is an orientation-preserving orthogonal transformation R with
@@ -4541,6 +5117,19 @@ nodes:
     - 214
     - 215
     note: The section derives both branches before generalizing their spin dependence.
+- id: schwartz.scalar-bubble-cutting-loop-setup
+  label: Two-propagator scalar loop setup for contour cutting
+  summary: Equation (24.29) supplies the one-loop scalar bubble with loop momenta
+    k and p-k, two Feynman denominators with the positive i-epsilon prescription,
+    and the symmetry factor one half. Problem 24.1 takes this integrand as its contour-analysis
+    starting point.
+  kind: representation
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.2
+    pages:
+    - 457
 - id: schwartz.scalar-bubble-renormalization-condition
   label: One-renormalization-condition-per-parameter rule
   summary: Define the dimensionless scalar φ³ exchange strength at one momentum Q0
@@ -4647,6 +5236,49 @@ nodes:
     - 297
     note: Evaluates the retained s-channel graph and distinguishes it from omitted
       crossed channels.
+- id: schwartz.scalar-mass-counterterm-mass-insertion-route
+  label: Scalar mass counterterm from a mass insertion
+  summary: Alternatively use massless propagators and treat mR²φ² as one insertion.
+    Summing insertions reproduces the massive propagator, while the single insertion
+    in the λ loop is logarithmically divergent and yields the same δm=λR/(16π²ε).
+    This is an independent counterterm-extraction route.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 437
+- id: schwartz.scalar-mass-counterterm-massive-tadpole-route
+  label: Scalar mass counterterm from the massive tadpole
+  summary: For λφ⁴, the one-loop massive scalar self-energy expanded near d=4 gives
+    δφ=0 and δm=λR/(16π²ε). The same integral has a quadratic divergence represented
+    by a pole at d=2, which expansion near d=4 hides; the RG discussion retains its
+    logarithmic divergence.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 436
+- id: schwartz.scalar-mass-rg-yukawa-correlation-length
+  label: Scalar-mass RG, Yukawa potential, and correlation length
+  summary: For λφ⁴ in MS, renormalizing the scalar mass insertion and coupling gives
+    a running mR². Replacing the mass in the static Yukawa potential by its position-scale
+    RG solution changes the correlation-length scaling from the classical inverse-mass
+    form and identifies ν=1/(2−γm) in the displayed approximation. This running parameter
+    is a potential term, distinct from a scale-independent physical pole mass.
+  kind: method
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 435
+    - 436
+    - 437
+    - 438
 - id: schwartz.scalar-microcausality-pauli-jordan-function
   label: Scalar microcausality and the Pauli–Jordan distribution
   summary: With scalar commutators, [φ(x),φ(y)]=iD(x−y), where D solves the homogeneous
@@ -4678,6 +5310,32 @@ nodes:
     - 146
     - 147
     note: Calculates both channels, cancels ξ, and reports the cross section.
+- id: schwartz.scalar-partial-wave-legendre-representation
+  label: Scalar partial-wave Legendre representation
+  summary: For scalar elastic scattering, expand the center-of-mass amplitude as 16
+    pi times the sum of (2j+1) a_j P_j(cos theta). The basis obeys integral from -1
+    to 1 of P_j(x)P_k(x) dx=2 delta_jk/(2j+1). These are the kinematic givens for
+    the scalar unitarity exercise.
+  kind: representation
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 464
+- id: schwartz.scalar-phi4-beta-and-mass-anomalous-dimension
+  label: Scalar phi-four beta function and mass anomalous dimension
+  summary: In the source's d=4-epsilon MS normalization, the one-loop scalar equations
+    are beta(lambdaR)=-epsilon lambdaR+3 lambdaR^2/(16 pi^2) and gamma_m=lambdaR/(16
+    pi^2) for the running mass-squared parameter. These inputs are distinct from the
+    fixed-gamma solution that Problem 23.3 asks to recover.
+  kind: result
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 437
 - id: schwartz.scalar-pole-ms-heavy-threshold-sensitivity
   label: Scalar pole–MS mass sensitivity to heavy particles
   summary: The finite difference between a scalar pole mass and MS mass can grow with
@@ -5178,6 +5836,20 @@ nodes:
     pages:
     - 37
     note: Derives sourced Maxwell equations and the formal inverse-□ solution.
+- id: schwartz.spectral-positivity-propagator-falloff-bound
+  label: Spectral positivity forbids faster-than-1/p² propagators
+  summary: For Euclidean large momentum, positivity of the spectral density bounds
+    the two-point propagator so it cannot decrease faster than 1/p². Therefore a local-looking
+    higher-derivative scalar propagator made ultraviolet softer as 1/p⁴ violates this
+    nonperturbative unitarity constraint; the conclusion depends critically on ρ≥0.
+  kind: result
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: 24.2.1
+    pages:
+    - 469
+    - 470
 - id: schwartz.spin-projection-annihilation-angular-distribution
   label: Spin projections in e⁺e⁻→μ⁺μ⁻
   summary: For massless, linearly polarized e⁺e⁻ and μ⁺μ⁻ states in the CM frame,
@@ -5374,6 +6046,21 @@ nodes:
     - 131
     note: Presents the Stueckelberg action, its gauge fixing, degree count, and nonlocal
       integrated-out form.
+- id: schwartz.stueckelberg-nonlocal-form-and-missing-longitudinal-state
+  label: Stueckelberg nonlocal form signals a missing longitudinal state
+  summary: Starting with a massive three-polarization vector, introduce the Stueckelberg
+    scalar to make gauge invariance manifest, then integrate that scalar out. The
+    resulting gauge-invariant action contains 1/□ and has only two photon polarizations;
+    its nonlocality records the missing on-shell longitudinal degree of freedom rather
+    than removing it from the massive-vector spectrum.
+  kind: representation
+  group: schwartz.spectral-locality
+  evidence:
+  - source: schwartz
+    section: '24.4'
+    pages:
+    - 476
+    - 477
 - id: schwartz.su2-finite-irrep-construction-problem
   label: Finite-dimensional SU(2) irrep construction problem
   summary: Problem 10.2 requests a ladder-operator derivation of the finite-dimensional
@@ -5584,6 +6271,71 @@ nodes:
     pages:
     - 4
     note: Contrasts the classical spectrum with observation.
+- id: schwartz.unitarity-propagator-numerator-and-physical-polarizations
+  label: Unitarity, propagator numerators, and physical polarization sums
+  summary: Applying cuts to spinning particles requires the propagator numerator to
+    equal the sum over physical on-shell spin states. Massive-vector propagators meet
+    this through their three-polarization sum. For a massless spin-one particle the
+    covariant propagator contains nonphysical momentum terms, which cancel from physical
+    rates only through gauge invariance and the Ward identity; the source concludes
+    that unitarity requires gauge invariance in this case.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.3
+    pages:
+    - 459
+    - 460
+    - 461
+- id: schwartz.unitary-hilbert-space-completeness
+  label: Unitary Hilbert space and complete physical states
+  summary: Unitarity expresses probability conservation through a Hermitian Hamiltonian
+    and S†S=1. The source assumes a Lorentz-invariant zero-momentum vacuum and a complete
+    resolution of identity over all independent single- and multiparticle states with
+    Lorentz-invariant phase space; omitting an allowed state breaks the completeness
+    used in the later unitarity relations.
+  kind: assumption
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24 introduction
+    pages:
+    - 452
+    - 453
+- id: schwartz.unstable-particle-breit-wigner-and-narrow-width
+  label: Unstable poles, Breit–Wigner form, and narrow-width approximation
+  summary: For Γtot≪mP, define the real pole mass using Re Σ and use Im Σ(mP²)=mPΓtot
+    to obtain i/[p²−mP²+i mPΓtot]. Its squared resonant form is Breit–Wigner with
+    full width at half maximum 2mPΓtot; as Γtot→0 it becomes a delta function, allowing
+    production and decay factorization and excluding interference at the resonant
+    phase-space point. A broad state with Γtot comparable to mP has no natural particle
+    mass or sharp resonance.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 461
+    - 462
+    - 463
+  notation:
+  - source: schwartz
+    note: The constant-self-energy and narrow-width forms are qualified by Γtot≪mP.
+- id: schwartz.unstable-particle-complex-pole-and-ms-mass-schemes
+  label: Complex-pole and MS mass schemes for unstable states
+  summary: An unstable state may be assigned a complex pole mass by solving the full
+    complex pole equation. The MS mass is instead a subtraction-scheme parameter inferred
+    from processes and is especially useful for confined quarks that do not form asymptotic
+    resonances; neither is the real Breit-Wigner prescription.
+  kind: result
+  group: schwartz.unitarity-consequences
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 463
 - id: schwartz.unstable-particle-width-problem
   label: Unstable-particle width problem
   summary: Problem 7.9 asks the learner to analyze the Breit–Wigner form i/(p²−m²+imΓ),
@@ -5755,6 +6507,19 @@ nodes:
     pages:
     - 105
     note: States the interaction, scaling, lifetime, branching, and measurement tasks.
+- id: schwartz.weak-four-fermi-qed-problem-inputs
+  label: Weak four-Fermi QED problem inputs
+  summary: Problem 23.2 supplies the left-handed four-Fermi operator of Eq. (23.40)
+    and a chiral Fierz identity for the loop algebra. These are givens for calculating
+    its QED anomalous dimension; the vanishing result remains the exercise target.
+  kind: representation
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.3 and Problem 23.2
+    pages:
+    - 427
+    - 450
 - id: schwartz.weyl-index-and-sigma-conventions
   label: Weyl index, epsilon, and sigma-matrix conventions
   summary: The source's two-component notation distinguishes undotted left-handed
@@ -5892,6 +6657,117 @@ nodes:
   - source: schwartz
     note: The gamma-matrix formula depends on the source's Weyl basis; the anti-linear
       i→−i qualification is essential.
+- id: schwartz.wilson-coefficients-operator-mixing-and-matching
+  label: Wilson coefficients, matching, and operator mixing
+  summary: An effective Lagrangian contains local composite operators made from renormalized
+    fields and finite Wilson coefficients Cj. Determine or measure the coefficients
+    at a scale μ₀, then evolve the μ-independent sum CjOj to resum logarithms. Operators
+    can mix with one another and with other Lagrangian terms, so the general RGE acts
+    on the full sum rather than independent coefficients.
+  kind: concept
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: '23.4'
+    pages:
+    - 430
+  notation:
+  - source: schwartz
+    note: This convention places each Zj in Oj, not in Cj.
+- id: schwartz.wilson-fisher-fixed-point-and-universal-critical-exponent
+  label: Wilson–Fisher fixed point and universal critical exponent
+  summary: Modeling a second-order transition by a scalar Ginzburg–Landau EFT makes
+    T−TC the mass-squared control parameter and relates its correlation length to
+    ν. In d=4−ε, the source's MS λφ⁴ equations have the nontrivial Wilson–Fisher fixed
+    point λ*=16π²ε/3 and m*²=0 to this order, giving ν=3/(6−ε). Fixed-point coordinates
+    are scheme dependent, whereas the measurable critical exponent is scheme independent;
+    the ε expansion at ε=1 is presented as an approximation.
+  kind: result
+  group: schwartz.renormalization-group
+  evidence:
+  - source: schwartz
+    section: 23.5.2
+    pages:
+    - 438
+    - 439
+    - 440
+  notation:
+  - source: schwartz
+    note: The quoted λ* and ν use the source's λφ⁴/4! normalization and dimensional-regularization
+      scheme.
+- id: schwartz.wilson-polchinski-exact-rg-construction
+  label: Wilson–Polchinski exact RG construction
+  summary: For a cutoff scalar path integral, hold Z[J] fixed under Λ d/dΛ by allowing
+    the interaction to change. Polchinski's smooth Euclidean scalar regulator suppresses
+    high momenta and makes the Λ derivative supported near p²≈Λ², leading to a local-in-cutoff
+    functional exact RG equation. The source explicitly limits this smooth-regulator
+    presentation to a scalar theory in Euclidean space.
+  kind: method
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: 23.6.1
+    pages:
+    - 444
+    - 445
+  notation:
+  - source: schwartz
+    note: The displayed smooth cutoff uses exp(□/Λ²) and is not asserted as a direct
+      regulator for arbitrary Minkowski gauge theories.
+- id: schwartz.wilsonian-cutoff-flow-and-operator-relevance
+  label: Wilsonian cutoff flow and operator relevance
+  summary: With a physical high cutoff, integrate out a momentum shell while changing
+    couplings so low-energy physics is unchanged. At a lower cutoff still well above
+    physical energies, dimension r>4 operator coefficients become insensitive to high-cutoff
+    boundary values, while r<4 operators require low-energy conditions and r=4 operators
+    are marginal. This explains the Wilsonian names irrelevant, relevant, and marginal
+    without identifying the cutoff with a physical measurement scale.
+  kind: concept
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: '23.6'
+    pages:
+    - 442
+    - 443
+    - 444
+- id: schwartz.wilsonian-operator-mixing-irrelevance-and-fine-tuning
+  label: Operator mixing, irrelevance, and scalar fine tuning
+  summary: 'Linearizing Wilsonian flow around a fixed point and diagonalizing the
+    mixed dimension-four/dimension-six couplings shows that low-energy irrelevant
+    coefficients lose sensitivity to high-scale boundary values and become calculable
+    from more relevant couplings. Reversing the boundary choice fails as the high
+    cutoff goes to infinity. The analogous scalar mass is UV sensitive: holding a
+    low-energy mass while changing a high-scale boundary condition by order ΛL²/ΛH²
+    can make an order-one low-energy change, which is the stated fine-tuning problem.'
+  kind: result
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: 23.6.1–23.6.2
+    pages:
+    - 446
+    - 447
+    - 448
+    - 449
+    - 450
+- id: schwartz.wilsonian-power-terms-continuum-logs-and-eigenoperators
+  label: Wilsonian power terms, continuum logarithms, and RG eigenoperators
+  summary: Finite-cutoff Wilsonian RGEs retain cutoff power dependence, while continuum
+    counterterms remove quadratic and higher power divergences so only logarithmic
+    UV effects are observable there. The cutoff-removal definition of a renormalizable
+    theory fixes a finite low-scale subset while choosing complementary high-scale
+    coefficients to keep every low-scale coefficient finite. Relevance labels apply
+    technically to eigenoperators after diagonalizing mixing, rather than blindly
+    to an arbitrary basis.
+  kind: concept
+  group: schwartz.wilsonian-rg
+  evidence:
+  - source: schwartz
+    section: 23.6.2
+    pages:
+    - 449
+    - 450
 - id: schwartz.yang-theorem-proof-problem
   label: Yang’s theorem proof problem
   summary: Problem 19.3 asks for a general-amplitude proof that a massive vector boson
@@ -6165,6 +7041,23 @@ edges:
     pages:
     - 232
     note: Applies u and v completeness sums to produce traces.
+- id: schwartz.e-anomalous-scaling-to-scalar-critical-exponent
+  from: schwartz.anomalous-dimension-as-quantum-scaling-deviation
+  to: schwartz.scalar-mass-rg-yukawa-correlation-length
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Yukawa-correlation analysis identifies the changed correlation-length
+    exponent from the scalar mass anomalous dimension.
+  failure_mode: ν would be treated as a classical dimensional-analysis exponent instead
+    of a quantum scaling correction.
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 435
+    - 438
 - id: schwartz.e-antiparticles-to-scalar-rules
   from: schwartz.complex-scalar-antiparticle-quantization
   to: schwartz.scalar-qed-propagators-and-derivative-vertices
@@ -6252,6 +7145,54 @@ edges:
     - 249
     - 250
     note: Requests decay lepton handedness and operational left–right comparisons.
+- id: schwartz.e-beta-to-callan-symanzik
+  from: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+  to: schwartz.callan-symanzik-green-function-rge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Green-function RGE uses beta, mass-running, and field anomalous-dimension
+    terms constructed from Z factors.
+  failure_mode: The differential terms in the Callan–Symanzik equation lack their
+    defined RG quantities.
+  evidence:
+  - source: schwartz
+    section: 23.4.3
+    pages:
+    - 433
+    - 434
+- id: schwartz.e-beta-to-dimensional-transmutation
+  from: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+  to: schwartz.qed-dimensional-transmutation-and-landau-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dimensional scale and Landau singularity follow by integrating the
+    leading beta function.
+  failure_mode: There is no running equation from which the integration scale can
+    arise.
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 425
+- id: schwartz.e-beta-to-general-multiplicative-rg-solution
+  from: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+  to: schwartz.multiplicative-rg-coefficient-general-solution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Changing variables from scale to coupling uses the beta and anomalous-dimension
+    definitions.
+  failure_mode: The exponentiated gamma-over-beta evolution cannot be formed.
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 429
 - id: schwartz.e-c-to-cp-that
   from: schwartz.charge-conjugation-spinor-transformation
   to: schwartz.cp-simple-time-reversal-calculation
@@ -6788,6 +7729,25 @@ edges:
     pages:
     - 155
     note: Explicitly requests center-of-mass differential cross sections.
+- id: schwartz.e-completeness-to-polology
+  from: schwartz.unitary-hilbert-space-completeness
+  to: schwartz.polology-one-particle-pole-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factorization proof inserts a complete set and isolates a one-particle
+    state with the stipulated overlap.
+  failure_mode: The intermediate one-particle contribution generating the pole cannot
+    be identified.
+  evidence:
+  - source: schwartz
+    section: '24.3'
+    pages:
+    - 471
+    - 472
+    - 473
+    - 474
 - id: schwartz.e-complex-gaussian-problem-from-gaussian
   from: schwartz.multivariable-gaussian-integral-method
   to: schwartz.complex-scalar-gaussian-functional-problem
@@ -6879,6 +7839,24 @@ edges:
     - 217
     note: Substitutes the complex scalar fields and compares particle and antiparticle
       energy contributions.
+- id: schwartz.e-composite-operator-rg-to-problem-23-2
+  from: schwartz.wilson-coefficients-operator-mixing-and-matching
+  to: schwartz.problem-weak-four-fermi-qed-nonrunning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested anomalous dimension is computed by renormalizing the displayed
+    composite operator and its coefficient.
+  failure_mode: The calculation lacks the composite-operator counterterm and mixing
+    method used to define its running.
+  evidence:
+  - source: schwartz
+    section: 23.3-23.4 and Problem 23.2
+    pages:
+    - 427
+    - 430
+    - 450
 - id: schwartz.e-compton-amplitude-from-qed-rules
   from: schwartz.qed-momentum-space-feynman-rules
   to: schwartz.compton-qed-two-diagram-amplitude
@@ -7078,6 +8056,53 @@ edges:
     - 102
     - 103
     note: Defines normal ordering and proves Wick’s theorem.
+- id: schwartz.e-counterterms-to-four-fermi-running
+  from: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+  to: schwartz.four-fermi-operator-rg-toy-scalar-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The four-Fermi calculation applies the bare-coefficient and counterterm
+    RG method to a new local operator coefficient.
+  failure_mode: The UV pole cannot be converted into an anomalous dimension or scale
+    evolution for G.
+  evidence:
+  - source: schwartz
+    section: '23.3'
+    pages:
+    - 428
+    - 429
+- id: schwartz.e-cross-section-normalization-to-optical
+  from: schwartz.lorentz-invariant-phase-space-cross-section
+  to: schwartz.optical-theorem-decay-and-forward-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-particle optical theorem divides the state sum by the source's
+    flux normalization to obtain σtot.
+  failure_mode: The forward-amplitude relation cannot be expressed as a cross section.
+  evidence:
+  - source: schwartz
+    section: '24.1'
+    pages:
+    - 455
+- id: schwartz.e-cross-section-to-problem-partial-wave
+  from: schwartz.lorentz-invariant-phase-space-cross-section
+  to: schwartz.problem-scalar-partial-wave-unitarity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation starts from the CM elastic cross section before expanding
+    it in partial waves.
+  failure_mode: The cross-section quantity constrained by unitarity is unspecified.
+  evidence:
+  - source: schwartz
+    section: Problem 24.3
+    pages:
+    - 477
 - id: schwartz.e-current-to-seagull
   from: schwartz.gauge-current-minimal-coupling
   to: schwartz.scalar-qed-seagull-contact-vertex
@@ -7095,6 +8120,40 @@ edges:
     - 123
     - 145
     note: Explains the quadratic completion and derives its Feynman rule.
+- id: schwartz.e-cutting-to-spin-polarization-unitarity
+  from: schwartz.cutkosky-cutting-rules-and-feynman-tree-theorem
+  to: schwartz.unitarity-propagator-numerator-and-physical-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Cutting a spinning loop compares its retained propagator numerator directly
+    to the physical spin sum in the corresponding rate.
+  failure_mode: The requirement connecting propagator numerators to physical polarization
+    sums cannot be inferred.
+  evidence:
+  - source: schwartz
+    section: 24.1.2–24.1.3
+    pages:
+    - 458
+    - 459
+    - 460
+    - 461
+- id: schwartz.e-decay-normalization-to-optical
+  from: schwartz.decay-rate-lips-and-time-dilation
+  to: schwartz.optical-theorem-decay-and-forward-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-particle optical-theorem specialization identifies its state
+    sum with the normalized decay rate.
+  failure_mode: The conversion from squared amplitude and phase space to Γ is unspecified.
+  evidence:
+  - source: schwartz
+    section: '24.1'
+    pages:
+    - 454
 - id: schwartz.e-decay-problem-from-decay-rate
   from: schwartz.decay-rate-lips-and-time-dilation
   to: schwartz.decay-spin-parity-diagnosis-problem
@@ -7376,6 +8435,22 @@ edges:
     - 214
     - 215
     note: Shows fermionic time ordering selects anticommutators.
+- id: schwartz.e-dirac-spins-to-unitarity-polarizations
+  from: schwartz.dirac-spinor-normalization-and-completeness
+  to: schwartz.unitarity-propagator-numerator-and-physical-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spinning cut compares the fermion propagator numerator with the physical
+    Dirac spin sum.
+  failure_mode: The fermionic numerator-to-state-sum comparison is unavailable.
+  evidence:
+  - source: schwartz
+    section: 24.1.3
+    pages:
+    - 459
+    - 460
 - id: schwartz.e-discrete-lorentz-to-groups-representations
   from: schwartz.discrete-lorentz-transformations-and-causal-type
   to: schwartz.groups-representations-and-lorentz-components
@@ -7594,6 +8669,22 @@ edges:
     - 276
     - 277
     note: Uses the unique-solution characterization to equate the two generating functionals.
+- id: schwartz.e-et-commutator-to-bare-spectral
+  from: schwartz.equal-time-scalar-field-commutation-relations
+  to: schwartz.bare-spectral-normalization-and-field-strength-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bare spectral normalization follows by differentiating the spectral
+    commutator and applying the equal-time canonical relation.
+  failure_mode: The integral normalization and hence 0≤Z≤1 cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 24.2.2
+    pages:
+    - 470
+    - 471
 - id: schwartz.e-euler-lagrange-to-sd
   from: schwartz.euler-lagrange-and-klein-gordon-equations
   to: schwartz.schwinger-dyson-contact-equations
@@ -8500,6 +9591,39 @@ edges:
     pages:
     - 219
     note: States the all-spin derivative result.
+- id: schwartz.e-general-rg-solution-to-problem-23-3
+  from: schwartz.multiplicative-rg-coefficient-general-solution
+  to: schwartz.problem-scalar-mass-rg-small-coupling-solution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly asks for a small-coupling limit of the general running
+    solution.
+  failure_mode: There is no general expression whose limit can be taken.
+  evidence:
+  - source: schwartz
+    section: Problem 23.3
+    pages:
+    - 450
+- id: schwartz.e-generalized-optical-to-decay-cross-section
+  from: schwartz.generalized-optical-theorem
+  to: schwartz.optical-theorem-decay-and-forward-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The decay-width and total-cross-section relations are the one- and two-particle
+    forward special cases of the generalized theorem.
+  failure_mode: The forward imaginary-part formulas would have no unitarity identity
+    from which to specialize.
+  evidence:
+  - source: schwartz
+    section: 24.1–24.1.1
+    pages:
+    - 454
+    - 455
+    - 456
 - id: schwartz.e-global-u1-to-scalar-qed
   from: schwartz.complex-scalar-global-u1-symmetry
   to: schwartz.scalar-qed-local-u1-lagrangian
@@ -8758,6 +9882,56 @@ edges:
     pages:
     - 265
     note: Uses |φ⟩ projections to impose asymptotic boundary conditions.
+- id: schwartz.e-iepsilon-to-cutting-rules
+  from: schwartz.feynman-propagator-iepsilon-contour
+  to: schwartz.cutkosky-cutting-rules-and-feynman-tree-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cut derivation decomposes Feynman propagators by their iε pole placement
+    and uses the on-shell delta-function discontinuity.
+  failure_mode: The advanced-propagator contour and delta-function replacement have
+    no specified analytic prescription.
+  evidence:
+  - source: schwartz
+    section: 24.1.2
+    pages:
+    - 456
+    - 457
+    - 458
+- id: schwartz.e-iepsilon-to-feynman-tree-theorem
+  from: schwartz.feynman-propagator-iepsilon-contour
+  to: schwartz.feynman-tree-theorem-full-loop-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The full-loop decomposition compares the Feynman pole prescription with
+    the all-advanced prescription.
+  failure_mode: The all-advanced contour cancellation and on-shell remainders cannot
+    be identified.
+  evidence:
+  - source: schwartz
+    section: 24.1.2
+    pages:
+    - 457
+    - 458
+    - 459
+- id: schwartz.e-iepsilon-to-scalar-bubble-setup
+  from: schwartz.feynman-propagator-iepsilon-contour
+  to: schwartz.scalar-bubble-cutting-loop-setup
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two denominators in the loop setup use the Feynman pole prescription.
+  failure_mode: The complex energy poles of the loop integrand are undefined.
+  evidence:
+  - source: schwartz
+    section: 24.1.2
+    pages:
+    - 457
 - id: schwartz.e-iepsilon-to-scalar-propagator
   from: schwartz.feynman-propagator-iepsilon-contour
   to: schwartz.scalar-propagator-requires-bosonic-ordering
@@ -8809,6 +9983,21 @@ edges:
     pages:
     - 264
     note: Expresses the interaction series through derivatives of Z₀[J].
+- id: schwartz.e-ir-regulator-to-problem-ms-lsz
+  from: schwartz.infrared-regulator-versus-observable-cancellation
+  to: schwartz.problem-ms-lsz-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: One branch asks to identify the UV-finite but IR-divergent MS pole-overlap
+    quantity and contrast it with the MS field-strength factor.
+  failure_mode: The required UV/IR distinction is lost.
+  evidence:
+  - source: schwartz
+    section: Problem 24.4
+    pages:
+    - 477
 - id: schwartz.e-irrep-labels-to-weyl-reps
   from: schwartz.lorentz-irrep-labels-and-rotation-content
   to: schwartz.weyl-spinor-lorentz-representations
@@ -8894,6 +10083,22 @@ edges:
     pages:
     - 314
     note: Requests the content-dependent Landau-pole location.
+- id: schwartz.e-legendre-partial-waves-to-problem-scalar-bound
+  from: schwartz.scalar-partial-wave-legendre-representation
+  to: schwartz.problem-scalar-partial-wave-unitarity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar derivation projects the elastic amplitude onto orthogonal
+    angular-momentum modes.
+  failure_mode: The unitarity relation cannot be converted into separate partial-wave
+    bounds.
+  evidence:
+  - source: schwartz
+    section: Problem 24.3
+    pages:
+    - 477
 - id: schwartz.e-lips-to-cm
   from: schwartz.lorentz-invariant-phase-space-cross-section
   to: schwartz.cm-two-to-two-cross-section
@@ -9069,6 +10274,22 @@ edges:
     - 133
     - 139
     note: Derives the higher-derivative ghost diagnostic and assigns the scalar proof.
+- id: schwartz.e-longitudinal-vector-growth-to-w-unitarity
+  from: schwartz.massive-vector-longitudinal-perturbative-breakdown
+  to: schwartz.longitudinal-w-higgs-perturbative-unitarity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The application uses the energy-over-mass growth of longitudinal vector
+    polarization.
+  failure_mode: The source of the high-energy growth in W scattering is unspecified.
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 465
+    - 466
 - id: schwartz.e-loop-proof-from-line-evaluation
   from: schwartz.qed-fermion-line-and-loop-evaluation
   to: schwartz.fermion-loop-sign-proof-problem
@@ -9206,6 +10427,22 @@ edges:
     - 47
     - 48
     note: Introduces the equation then derives T’s expansion from it.
+- id: schwartz.e-lsz-amputation-to-problem-ms-lsz
+  from: schwartz.renormalized-lsz-external-amputation
+  to: schwartz.problem-ms-lsz-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested G4-to-S-matrix and amputated-Green-function relations require
+    external-line LSZ amputation.
+  failure_mode: The external poles and amputation factors cannot be related to the
+    scattering element.
+  evidence:
+  - source: schwartz
+    section: Problem 24.4
+    pages:
+    - 477
 - id: schwartz.e-lsz-boundary-to-lsz-poles
   from: schwartz.lsz-boundary-operator-derivation
   to: schwartz.lsz-reduction-pole-projection
@@ -9680,6 +10917,36 @@ edges:
     pages:
     - 237
     note: Uses dσ/dΩ=|M|²/(64π²E²_CM).
+- id: schwartz.e-ms-mass-to-problem-ms-lsz
+  from: schwartz.minimal-subtraction-mass-and-scale
+  to: schwartz.problem-ms-lsz-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks specifically for MS field and mass quantities outside on-shell
+    subtraction.
+  failure_mode: The subtraction convention to apply in the QED calculation is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 24.4
+    pages:
+    - 477
+- id: schwartz.e-ms-mass-to-unstable-mass-schemes
+  from: schwartz.minimal-subtraction-mass-and-scale
+  to: schwartz.unstable-particle-complex-pole-and-ms-mass-schemes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The comparison uses the MS subtraction definition and its distinction
+    from a pole prescription.
+  failure_mode: The confined-quark mass statement lacks its subtraction-scheme meaning.
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 463
 - id: schwartz.e-noether-charge-to-dirac-current
   from: schwartz.noether-current-and-conserved-charge
   to: schwartz.dirac-noether-number-current
@@ -9840,6 +11107,71 @@ edges:
     - 331
     - 332
     note: Writes GR in terms of ΣR before imposing pole and residue conditions.
+- id: schwartz.e-optical-to-locality-missing-pole
+  from: schwartz.optical-theorem-decay-and-forward-cross-section
+  to: schwartz.locality-integrating-out-and-missing-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The effective-description limitation is diagnosed by an imaginary part
+    without an on-shell state, which violates the optical theorem.
+  failure_mode: The need to restore a field near the heavy pole lacks the stated unitarity
+    criterion.
+  evidence:
+  - source: schwartz
+    section: '24.4'
+    pages:
+    - 475
+    - 476
+- id: schwartz.e-optical-to-partial-wave-bound
+  from: schwartz.optical-theorem-decay-and-forward-cross-section
+  to: schwartz.partial-wave-unitarity-bound-and-perturbative-breakdown
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The partial-wave inequality comes from applying the forward optical theorem
+    to elastic 2→2 scattering.
+  failure_mode: The constraint on Im aj relative to |aj|² cannot be obtained.
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 464
+    - 465
+- id: schwartz.e-optical-to-problem-partial-wave
+  from: schwartz.generalized-optical-theorem
+  to: schwartz.problem-scalar-partial-wave-unitarity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-only task derives the bound from S-matrix unitarity rather
+    than assuming the chapter’s finished bound.
+  failure_mode: The unitarity relation supplying the partial-wave constraint is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 24.3
+    pages:
+    - 477
+- id: schwartz.e-optical-to-unstable-breit-wigner
+  from: schwartz.optical-theorem-decay-and-forward-cross-section
+  to: schwartz.unstable-particle-breit-wigner-and-narrow-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unstable-propagator imaginary self-energy is identified with mPΓtot
+    through the optical theorem.
+  failure_mode: The width term in the Breit–Wigner denominator has no connection to
+    a physical total decay rate.
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 461
+    - 462
 - id: schwartz.e-p-to-cp-that
   from: schwartz.parity-intrinsic-phases-and-spinor-chirality-swap
   to: schwartz.cp-simple-time-reversal-calculation
@@ -9920,6 +11252,23 @@ edges:
     - 197
     - 198
     note: Applies P:ψ→γ0ψ to both bilinears.
+- id: schwartz.e-partial-wave-bound-to-longitudinal-w
+  from: schwartz.partial-wave-unitarity-bound-and-perturbative-breakdown
+  to: schwartz.longitudinal-w-higgs-perturbative-unitarity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W application tests its growing amplitude against the perturbative
+    partial-wave bound.
+  failure_mode: There is no quantitative unitarity criterion for the claimed breakdown
+    scale.
+  evidence:
+  - source: schwartz
+    section: 24.1.5
+    pages:
+    - 465
+    - 466
 - id: schwartz.e-path-route-to-spin-statistics
   from: schwartz.exchange-path-spin-statistics-route
   to: schwartz.spin-statistics-theorem
@@ -10011,6 +11360,23 @@ edges:
     - 173
     - 174
     note: Derives the term then interprets it.
+- id: schwartz.e-photon-polarization-to-unitarity
+  from: schwartz.physical-photon-polarization-sum
+  to: schwartz.unitarity-propagator-numerator-and-physical-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massless case compares the two physical transverse polarizations
+    with the covariant propagator before invoking gauge invariance and Ward identities.
+  failure_mode: The source's massless spin-one discrepancy has no physical polarization
+    reference.
+  evidence:
+  - source: schwartz
+    section: 24.1.3
+    pages:
+    - 460
+    - 461
 - id: schwartz.e-physical-sum-from-little-group-ward
   from: schwartz.massless-little-group-ward-identity
   to: schwartz.physical-photon-polarization-sum
@@ -10113,6 +11479,54 @@ edges:
     - 110
     - 111
     note: Introduces particle representations then states Wigner’s classification.
+- id: schwartz.e-polchinski-to-problem-23-7
+  from: schwartz.wilson-polchinski-exact-rg-construction
+  to: schwartz.problem-wilson-polchinski-functional-rge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem directly asks for the functional equation following from
+    the Wilson–Polchinski setup.
+  failure_mode: The regulated generating-functional construction and Λ derivative
+    are absent.
+  evidence:
+  - source: schwartz
+    section: Problem 23.7
+    pages:
+    - 451
+- id: schwartz.e-polology-to-nonperturbative-lsz
+  from: schwartz.polology-one-particle-pole-factorization
+  to: schwartz.nonperturbative-lsz-poles-and-interpolating-fields
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The LSZ special case follows by imposing the renormalized elementary-field
+    one-particle overlap in the general factorization proof.
+  failure_mode: External elementary-field poles would be asserted without the general
+    nonperturbative pole argument.
+  evidence:
+  - source: schwartz
+    section: '24.3'
+    pages:
+    - 474
+    - 475
+- id: schwartz.e-polology-to-problem-ms-lsz
+  from: schwartz.polology-one-particle-pole-factorization
+  to: schwartz.problem-ms-lsz-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly directs the reader to use the pole-factorization
+    equation to relate G2, G4, and S-matrix elements outside on-shell subtraction.
+  failure_mode: The required MS LSZ relation has no stated starting formula.
+  evidence:
+  - source: schwartz
+    section: Problem 24.4
+    pages:
+    - 477
 - id: schwartz.e-position-to-momentum-rules
   from: schwartz.position-space-feynman-rules
   to: schwartz.momentum-space-feynman-rules
@@ -10216,6 +11630,22 @@ edges:
     - 75
     - 76
     note: Transforms the step-function expression using the contour identity.
+- id: schwartz.e-qed-framework-to-problem-23-2
+  from: schwartz.qed-renormalized-perturbation-lagrangian
+  to: schwartz.problem-weak-four-fermi-qed-nonrunning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation renormalizes a composite weak operator inside the QED
+    counterterm framework.
+  failure_mode: The loop divergence cannot be separated from the QED field and operator
+    counterterms.
+  evidence:
+  - source: schwartz
+    section: Problem 23.2
+    pages:
+    - 450
 - id: schwartz.e-qed-line-method-from-qed-rules
   from: schwartz.qed-momentum-space-feynman-rules
   to: schwartz.qed-fermion-line-and-loop-evaluation
@@ -10267,6 +11697,39 @@ edges:
     - 300
     - 301
     note: Recalls the φ⁴ example before beginning QED.
+- id: schwartz.e-qed-renorm-to-problem-23-1
+  from: schwartz.qed-renormalized-perturbation-lagrangian
+  to: schwartz.problem-rg-operator-anomalous-dimension-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested QED composite-operator anomalous dimension is calculated
+    in the renormalized QED framework.
+  failure_mode: The loop and counterterm convention needed to calculate its running
+    is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 23.1
+    pages:
+    - 450
+- id: schwartz.e-qed-renormalized-lagrangian-to-beta
+  from: schwartz.qed-renormalized-perturbation-lagrangian
+  to: schwartz.rg-beta-and-mass-anomalous-dimensions-from-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The counterterm derivation differentiates the renormalized QED Z-factor
+    parametrization of the bare Lagrangian.
+  failure_mode: The bare-versus-renormalized parameters whose μ independence is differentiated
+    are unspecified.
+  evidence:
+  - source: schwartz
+    section: '23.2'
+    pages:
+    - 424
+    - 425
 - id: schwartz.e-qed-rules-from-covariant-photon-propagator
   from: schwartz.covariant-rxi-photon-propagator
   to: schwartz.qed-momentum-space-feynman-rules
@@ -10332,6 +11795,41 @@ edges:
     - 225
     - 226
     note: Expands the QED Lagrangian and reads off −ieγμ.
+- id: schwartz.e-qed-running-to-rg-resummation
+  from: schwartz.qed-running-charge-beta-function
+  to: schwartz.rg-large-log-resummation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter uses the accepted running-charge construction as the concrete
+    leading-log result that the RGE reproduces and generalizes.
+  failure_mode: Without the effective-charge example, the claimed reproduction of
+    the leading-log result has no specified starting formula.
+  evidence:
+  - source: schwartz
+    section: 23.1.1
+    pages:
+    - 419
+    - 420
+    - 421
+- id: schwartz.e-qed-ward-to-conserved-current-rg
+  from: schwartz.qed-full-vertex-inverse-propagator-ward-identity
+  to: schwartz.conserved-current-zero-anomalous-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The all-orders conclusion that the external current has zero anomalous
+    dimension is the RG expression of the Ward–Takahashi identity.
+  failure_mode: The one-loop equality ZJ=Z2 would be mistaken for an unqualified all-orders
+    result.
+  evidence:
+  - source: schwartz
+    section: 23.4.1
+    pages:
+    - 431
+    - 432
 - id: schwartz.e-qm-path-from-gaussian
   from: schwartz.multivariable-gaussian-integral-method
   to: schwartz.quantum-mechanical-path-integral-derivation
@@ -10834,6 +12332,21 @@ edges:
     pages:
     - 354
     note: Requests the complete one-loop scalar-QED counterterm calculation.
+- id: schwartz.e-scalar-beta-gamma-to-problem-23-3
+  from: schwartz.scalar-phi4-beta-and-mass-anomalous-dimension
+  to: schwartz.problem-scalar-mass-rg-small-coupling-solution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar specialization inserts the source's beta function and mass
+    anomalous dimension into the general solution.
+  failure_mode: The general evolution cannot be specialized to the scalar mass.
+  evidence:
+  - source: schwartz
+    section: Problem 23.3
+    pages:
+    - 450
 - id: schwartz.e-scalar-bubble-condition-from-loop
   from: schwartz.scalar-bubble-scale-separation-method
   to: schwartz.scalar-bubble-renormalization-condition
@@ -10866,6 +12379,21 @@ edges:
     pages:
     - 302
     note: Writes the φ³ loop graph and integral before parameterization.
+- id: schwartz.e-scalar-bubble-setup-to-problem-contour
+  from: schwartz.scalar-bubble-cutting-loop-setup
+  to: schwartz.problem-cutting-rules-contour-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 24.1 explicitly begins from the two-propagator loop integrand
+    of Eq. (24.29).
+  failure_mode: The requested poles and residues have no concrete integrand.
+  evidence:
+  - source: schwartz
+    section: Problem 24.1
+    pages:
+    - 477
 - id: schwartz.e-scalar-compton-problem-from-complete-ward-set
   from: schwartz.scalar-qed-ward-cancellation-complete-diagram-set
   to: schwartz.scalar-qed-polarization-sum-problem
@@ -11035,6 +12563,21 @@ edges:
     - 284
     note: States the scalar-field transformation, path-integral proof, and off-shell-scope
       tasks.
+- id: schwartz.e-scalar-insertion-route-alternative
+  from: schwartz.scalar-mass-counterterm-mass-insertion-route
+  to: schwartz.scalar-mass-rg-yukawa-correlation-length
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The mass-insertion calculation independently yields the counterterm used
+    in the scalar RG calculation.
+  failure_mode: Without this route one may use the massive-tadpole route instead.
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 437
 - id: schwartz.e-scalar-loop-from-feynman-rules
   from: schwartz.momentum-space-feynman-rules
   to: schwartz.scalar-four-point-loop-renormalization
@@ -11052,6 +12595,25 @@ edges:
     - 296
     - 297
     note: Writes the s-channel graph and its loop integral before evaluation.
+- id: schwartz.e-scalar-mass-to-wilson-fisher
+  from: schwartz.scalar-mass-rg-yukawa-correlation-length
+  to: schwartz.wilson-fisher-fixed-point-and-universal-critical-exponent
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The fixed-point calculation inserts the scalar mass and coupling RGEs
+    into the correlation-length critical-exponent relation.
+  failure_mode: The Wilson–Fisher ν calculation lacks its RGE and correlation-length
+    relation.
+  evidence:
+  - source: schwartz
+    section: 23.5.1–23.5.2
+    pages:
+    - 437
+    - 438
+    - 439
+    - 440
 - id: schwartz.e-scalar-microcausality-to-spin-statistics
   from: schwartz.scalar-microcausality-pauli-jordan-function
   to: schwartz.spin-statistics-theorem
@@ -11181,6 +12743,37 @@ edges:
     - 122
     - 123
     note: Expands the Lagrangian, derives Jμ, and gives the generic coupling argument.
+- id: schwartz.e-scalar-renormalization-to-insertion-route
+  from: schwartz.scalar-four-point-counterterm-perturbation
+  to: schwartz.scalar-mass-counterterm-mass-insertion-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The insertion route uses the same renormalized scalar interaction and
+    counterterm convention.
+  failure_mode: The logarithmic insertion divergence has no renormalized parameter
+    to fix.
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 437
+- id: schwartz.e-scalar-renormalization-to-tadpole-route
+  from: schwartz.scalar-four-point-counterterm-perturbation
+  to: schwartz.scalar-mass-counterterm-massive-tadpole-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tadpole route uses the renormalized scalar coupling and counterterm
+    expansion.
+  failure_mode: The divergent self-energy cannot be converted into a scalar mass counterterm.
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 436
 - id: schwartz.e-scalar-rules-to-compton-problem
   from: schwartz.scalar-qed-propagators-and-derivative-vertices
   to: schwartz.scalar-qed-compton-scattering-problem
@@ -11214,6 +12807,21 @@ edges:
     - 146
     - 147
     note: Writes both diagrams directly from the rules.
+- id: schwartz.e-scalar-tadpole-route-alternative
+  from: schwartz.scalar-mass-counterterm-massive-tadpole-route
+  to: schwartz.scalar-mass-rg-yukawa-correlation-length
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The massive tadpole supplies one complete extraction of the mass counterterm
+    used in the scalar RG calculation.
+  failure_mode: Without this route one may use the mass-insertion route instead.
+  evidence:
+  - source: schwartz
+    section: 23.5.1
+    pages:
+    - 436
 - id: schwartz.e-scalar-z1-problem-from-derivative-vertices
   from: schwartz.scalar-qed-propagators-and-derivative-vertices
   to: schwartz.scalar-qed-z1-z2-proof-problem
@@ -11645,6 +13253,22 @@ edges:
     - 261
     - 262
     note: Defines Z[J] and identifies its derivatives with the normalized correlators.
+- id: schwartz.e-source-functional-to-polchinski
+  from: schwartz.source-generating-functional-method
+  to: schwartz.wilson-polchinski-exact-rg-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exact RG construction differentiates a cutoff source generating functional
+    while holding it invariant.
+  failure_mode: The functional being kept fixed and differentiated is unspecified.
+  evidence:
+  - source: schwartz
+    section: 23.6.1
+    pages:
+    - 444
+    - 445
 - id: schwartz.e-sourced-maxwell-to-axial-propagator-problem
   from: schwartz.sourced-maxwell-equations-from-action
   to: schwartz.axial-photon-propagator-problem
@@ -11681,6 +13305,55 @@ edges:
     - 129
     note: Writes the sourced Maxwell equation before adding the Rξ gauge-fixing term
       and inverting.
+- id: schwartz.e-spectral-positivity-to-falloff-bound
+  from: schwartz.kallen-lehmann-spectral-representation-and-positivity
+  to: schwartz.spectral-positivity-propagator-falloff-bound
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The large-Euclidean-momentum inequality uses the positive spectral-density
+    integral.
+  failure_mode: The lower bound excluding faster propagator falloff does not follow.
+  evidence:
+  - source: schwartz
+    section: 24.2.1
+    pages:
+    - 469
+    - 470
+- id: schwartz.e-spectral-to-bare-normalization
+  from: schwartz.kallen-lehmann-spectral-representation-and-positivity
+  to: schwartz.bare-spectral-normalization-and-field-strength-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bare-field result applies the same spectral construction before using
+    the canonical commutator to normalize it.
+  failure_mode: The pole-plus-continuum decomposition and positivity input for 0≤Z≤1
+    are missing.
+  evidence:
+  - source: schwartz
+    section: 24.2.1–24.2.2
+    pages:
+    - 469
+    - 470
+    - 471
+- id: schwartz.e-spectral-to-problem-dirac
+  from: schwartz.kallen-lehmann-spectral-representation-and-positivity
+  to: schwartz.problem-dirac-spectral-representation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested Dirac derivation is the spinor extension of the scalar
+    spectral construction just established.
+  failure_mode: The spectral-density and completeness route to extend is unspecified.
+  evidence:
+  - source: schwartz
+    section: Problem 24.2
+    pages:
+    - 477
 - id: schwartz.e-spin-sums-to-dirac-propagator
   from: schwartz.dirac-spinor-normalization-and-completeness
   to: schwartz.dirac-propagator-requires-fermionic-ordering
@@ -11916,6 +13589,23 @@ edges:
     - 296
     note: Uses the two-polarization massless j=1 excitation to obtain the bosonic
       dimension.
+- id: schwartz.e-stueckelberg-to-nonlocal-missing-mode
+  from: schwartz.stueckelberg-massive-vector-representation
+  to: schwartz.stueckelberg-nonlocal-form-and-missing-longitudinal-state
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The final construction starts from the gauge-invariant Stueckelberg representation
+    and explicitly integrates its scalar back out.
+  failure_mode: The origin of the 1/□ action and the longitudinal degree of freedom
+    is unspecified.
+  evidence:
+  - source: schwartz
+    section: '24.4'
+    pages:
+    - 476
+    - 477
 - id: schwartz.e-su2-factors-to-irrep-labels
   from: schwartz.lorentz-algebra-two-su2-factors
   to: schwartz.lorentz-irrep-labels-and-rotation-content
@@ -12217,6 +13907,75 @@ edges:
     pages:
     - 314
     note: Requests the effective-potential Fourier transform.
+- id: schwartz.e-unitary-completeness-to-generalized-optical
+  from: schwartz.unitary-hilbert-space-completeness
+  to: schwartz.generalized-optical-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation inserts the complete physical-state resolution of identity
+    into S†S=1.
+  failure_mode: The intermediate-state sum on the theorem's right-hand side cannot
+    be formed.
+  evidence:
+  - source: schwartz
+    section: 24 introduction, 24.1
+    pages:
+    - 452
+    - 453
+    - 454
+- id: schwartz.e-unitary-completeness-to-spectral
+  from: schwartz.unitary-hilbert-space-completeness
+  to: schwartz.kallen-lehmann-spectral-representation-and-positivity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spectral representation is built by inserting the complete basis
+    between the two fields.
+  failure_mode: There is no state sum from which to define the spectral density.
+  evidence:
+  - source: schwartz
+    section: 24.2–24.2.1
+    pages:
+    - 466
+    - 467
+    - 468
+- id: schwartz.e-unstable-propagator-to-complex-ms-masses
+  from: schwartz.unstable-particle-breit-wigner-and-narrow-width
+  to: schwartz.unstable-particle-complex-pole-and-ms-mass-schemes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The alternative mass prescriptions are compared with the real unstable-pole
+    construction.
+  failure_mode: The pole equation and the reason an alternative prescription is needed
+    are absent.
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 461
+    - 462
+    - 463
+- id: schwartz.e-unstable-propagator-to-resonance-enhancement
+  from: schwartz.unstable-particle-breit-wigner-and-narrow-width
+  to: schwartz.narrow-resonance-coupling-enhancement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coupling cancellation uses the Breit-Wigner denominator and width
+    scaling near the pole.
+  failure_mode: The change from off-pole g^4 to resonant g^2 has no width denominator.
+  evidence:
+  - source: schwartz
+    section: 24.1.4
+    pages:
+    - 462
+    - 463
 - id: schwartz.e-vacuum-counterterm-from-regulator-independence
   from: schwartz.casimir-regulator-independent-force
   to: schwartz.vacuum-energy-density-counterterm
@@ -12321,6 +14080,21 @@ edges:
     - 112
     - 138
     note: Shows the bad probability behavior then asks for the general proof.
+- id: schwartz.e-vector-polarizations-to-unitarity
+  from: schwartz.massive-vector-polarization-basis
+  to: schwartz.unitarity-propagator-numerator-and-physical-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massive-vector check uses the three-polarization basis and its outer-product
+    sum.
+  failure_mode: The stated massive-vector numerator check cannot be made.
+  evidence:
+  - source: schwartz
+    section: 24.1.3
+    pages:
+    - 460
 - id: schwartz.e-vertex-condition-from-counterterms
   from: schwartz.qed-renormalized-perturbation-lagrangian
   to: schwartz.qed-vertex-charge-renormalization-condition
@@ -12574,6 +14348,22 @@ edges:
     - 130
     note: Connects the identity to gauge shifts and discusses longitudinal propagator
       terms.
+- id: schwartz.e-weak-four-fermi-inputs-to-problem-23-2
+  from: schwartz.weak-four-fermi-qed-problem-inputs
+  to: schwartz.problem-weak-four-fermi-qed-nonrunning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem supplies the left-handed operator and Fierz identity as operands
+    for the requested calculation.
+  failure_mode: The exercise has no specified operator or chiral rearrangement with
+    which to evaluate the anomalous dimension.
+  evidence:
+  - source: schwartz
+    section: Problem 23.2
+    pages:
+    - 450
 - id: schwartz.e-weyl-notation-to-neutrino-seesaw-problem
   from: schwartz.weyl-index-and-sigma-conventions
   to: schwartz.neutrino-mass-eigenstate-and-seesaw-problem
@@ -12936,6 +14726,123 @@ edges:
     - 118
     note: States the count and later notes the Lagrangian calculation need not start
       from spin.
+- id: schwartz.e-wilson-coefficients-to-external-operator-rg
+  from: schwartz.wilson-coefficients-operator-mixing-and-matching
+  to: schwartz.external-operator-and-lagrangian-operator-rg
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The comparison rests on μ d(CjOj)/dμ=0 and interprets the same scale
+    dependence on the coefficient or the inserted operator.
+  failure_mode: The claimed equivalence of the two operator descriptions cannot be
+    established.
+  evidence:
+  - source: schwartz
+    section: 23.4–23.4.2
+    pages:
+    - 430
+    - 432
+    - 433
+- id: schwartz.e-wilson-fisher-to-fixed-point-cft
+  from: schwartz.wilson-fisher-fixed-point-and-universal-critical-exponent
+  to: schwartz.fixed-points-conformal-theory-and-rg-trajectory
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The trajectory and conformal discussion develops the Wilson–Fisher fixed
+    point and its tuned critical path.
+  failure_mode: The physical example for the fixed-point trajectory and its scheme
+    qualifications is absent.
+  evidence:
+  - source: schwartz
+    section: 23.5.2
+    pages:
+    - 440
+    - 441
+    - 442
+- id: schwartz.e-wilson-fisher-to-problem-23-4
+  from: schwartz.wilson-fisher-fixed-point-and-universal-critical-exponent
+  to: schwartz.problem-on-scalar-wilson-fisher-fixed-point
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The O(N) task generalizes the displayed N=1 fixed-point and critical-exponent
+    calculation while warning of a changed normalization.
+  failure_mode: The fixed-point and epsilon-expansion method to generalize is missing.
+  evidence:
+  - source: schwartz
+    section: Problem 23.4
+    pages:
+    - 450
+- id: schwartz.e-wilson-fisher-to-problem-23-5
+  from: schwartz.wilson-fisher-fixed-point-and-universal-critical-exponent
+  to: schwartz.problem-wilson-fisher-two-loop-critical-exponent
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task extends the N=1 Wilson–Fisher critical-exponent expansion by
+    one perturbative order.
+  failure_mode: The stated fixed point and leading epsilon expansion are missing.
+  evidence:
+  - source: schwartz
+    section: Problem 23.5
+    pages:
+    - 451
+- id: schwartz.e-wilsonian-finetuning-to-problem-23-8
+  from: schwartz.wilsonian-operator-mixing-irrelevance-and-fine-tuning
+  to: schwartz.problem-wilsonian-scalar-mass-sensitivity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem instantiates the preceding relevant-mass boundary sensitivity
+    with numerical scales and flow plots.
+  failure_mode: The coupled Wilsonian sensitivity relation to solve is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 23.8
+    pages:
+    - 451
+- id: schwartz.e-wilsonian-power-to-problem-23-6
+  from: schwartz.wilsonian-power-terms-continuum-logs-and-eigenoperators
+  to: schwartz.problem-wilson-fisher-scheme-independence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem compares hard-cutoff, shell, and subtraction schemes and
+    tests universal ν against scheme-dependent fixed-point coordinates.
+  failure_mode: The relevant distinction between cutoff power terms and continuum
+    RG is missing.
+  evidence:
+  - source: schwartz
+    section: Problem 23.6
+    pages:
+    - 451
+- id: schwartz.e-wilsonian-relevance-to-fine-tuning
+  from: schwartz.wilsonian-cutoff-flow-and-operator-relevance
+  to: schwartz.wilsonian-operator-mixing-irrelevance-and-fine-tuning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The linear mixed-coupling calculation gives the explicit UV-insensitivity
+    of irrelevant operators and contrasting relevant scalar sensitivity.
+  failure_mode: The fine-tuning conclusion loses the relevance classification and
+    cutoff-boundary setup it tests.
+  evidence:
+  - source: schwartz
+    section: 23.6.1–23.6.2
+    pages:
+    - 446
+    - 447
+    - 448
+    - 449
+    - 450
 - id: schwartz.e-xi-correlators-from-gauge-factorization
   from: schwartz.path-integral-gauge-orbit-factorization
   to: schwartz.gauge-invariant-correlator-xi-independence
@@ -14600,6 +16507,10 @@ groups:
 - id: schwartz.renormalization
   title: Regularization and renormalization
   question: How do regulator-dependent loop expressions yield finite physical predictions?
+- id: schwartz.renormalization-group
+  title: Renormalization-group evolution
+  question: How does invariance under an arbitrary calculation scale organize logarithms,
+    operator coefficients, and fixed points?
 - id: schwartz.scalar-qed
   title: Scalar quantum electrodynamics
   question: How do local U(1) invariance and quantization determine scalar-QED amplitudes
@@ -14612,6 +16523,10 @@ groups:
   title: Soft emission and integer-spin constraints
   question: What do Lorentz invariance and soft limits require of interactions of
     massless particles?
+- id: schwartz.spectral-locality
+  title: Spectra, poles, and locality
+  question: How do spectral representations and poles constrain fields, effective
+    descriptions, and locality?
 - id: schwartz.spin-and-gauge-invariance
   title: Spin, representations, and gauge invariance
   question: How can Lorentz-covariant fields describe exactly the physical polarizations
@@ -14628,6 +16543,14 @@ groups:
   title: Spinor solutions and discrete symmetries
   question: How do free spinor states and C, P, T act while preserving the stated
     theory?
+- id: schwartz.unitarity-consequences
+  title: Consequences of unitarity
+  question: What do S-matrix unitarity and Hilbert-space completeness require of amplitudes
+    and propagators?
+- id: schwartz.wilsonian-rg
+  title: Wilsonian renormalization group
+  question: How does lowering a physical cutoff classify operators and explain low-energy
+    predictivity?
 motivations:
 - id: schwartz.blackbody-observation-motivation
   nodes:
