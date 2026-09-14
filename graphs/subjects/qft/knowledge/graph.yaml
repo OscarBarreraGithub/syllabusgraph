@@ -6434,6 +6434,10 @@ nodes:
     note: Preserves this reviewed peskin-schroeder treatment at the stated scope;
       it does not import a different derivation, historical framing, or later proof
       beyond this correspondence.
+  - project: schwartz
+    node: schwartz.feynman-propagator-time-ordering
+    note: Adds Schwartz’s free time-ordered two-point derivation while retaining the
+      accepted Peskin–Schroeder i-epsilon, Green-function, and internal-line scope.
   evidence:
   - source: peskin-schroeder
     section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
@@ -6441,9 +6445,19 @@ nodes:
     - 31
     note: The source gives the i epsilon form, defines time ordering, calls D_F the
       Feynman propagator, and states its internal-line role.
+  - source: schwartz
+    section: 6.2 The Feynman propagator
+    pages:
+    - 75
+    note: Derives the free time-ordered two-point function, its two theta-function
+      orderings, and their advanced/retarded pieces.
   notation:
   - source: peskin-schroeder
     note: T places the later operator left; i epsilon specifies displaced poles.
+  - source: schwartz
+    note: The displayed free-field two-point function is time ordered by theta(t1-t2)
+      and theta(t2-t1); it is a derivation of the accepted propagator, not the full
+      Wick theorem.
 - id: qft.align015.field-commutator-lorentz-invariance
   label: Lorentz invariance of field commutators
   summary: Weinberg’s historical account reports that Jordan and Pauli showed in 1928
@@ -6865,6 +6879,1051 @@ nodes:
     - 27
     note: The source uses vacuum expectation values of the commutator to rule out
       the wrong assignment and infer the operator roles.
+- label: Adiabatic projection onto the interacting vacuum
+  summary: Assuming the free vacuum overlaps the interacting ground state, evolve
+    it to large complex time T->infinity(1-i epsilon) to suppress higher-energy states
+    and isolate the interacting vacuum. The construction is formal and carries normalization
+    factors.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 86
+    - 87
+  id: qft.align016.adiabatic-interacting-vacuum-projection
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.adiabatic-interacting-vacuum-projection
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Antiunitary time reversal and S-matrix reciprocity
+  summary: Time reversal is antiunitary, reverses momenta and spin components, and
+    interchanges in with out states. If its free-state action commutes with V, antiunitarity
+    reverses the iε prescription and yields a relation between a process and the reversed
+    inverse process, rather than a generic equality of the two directly reversed rates.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 127
+    - 128
+    - 129
+    note: The source states the in/out interchange, antiunitary scalar-product rule,
+      interaction criterion, and its Lippmann–Schwinger justification.
+  id: qft.align016.antiunitary-time-reversal-s-matrix-reciprocity
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.antiunitary-time-reversal-s-matrix-reciprocity
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Asymptotic completeness assumption
+  summary: The unitarity proof treats the in and out scattering states as complete
+    orthonormal sets spanning the same Hilbert space. This is an assumption about
+    the asymptotic scattering description, beyond normalization alone.
+  kind: assumption
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source says the in/out states inhabit one Hilbert space and uses completeness
+      of each set to establish both unitarity relations.
+  id: qft.align016.asymptotic-completeness-assumption
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.asymptotic-completeness-assumption
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Asymptotic-free-state assumption for LSZ
+  summary: The LSZ derivation assumes interactions are negligible at asymptotically
+    early and late times, so one-particle momentum states can be defined there. The
+    source presents this as a physical working assumption and notes that a rigorous
+    wavepacket construction has an issue for massless particles such as in QED.
+  kind: assumption
+  evidence:
+  - source: schwartz
+    section: Chapter 6 introduction and 6.1
+    pages:
+    - 69
+    - 71
+    note: States why asymptotic freedom is needed and qualifies the assumption.
+  id: qft.align016.asymptotic-freedom-assumption-for-lsz
+  group: qft.align016.asymptotic-lsz
+  origins:
+  - project: schwartz
+    node: schwartz.asymptotic-freedom-assumption-for-lsz
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Asymptotic overlap proof of S unitarity
+  summary: With asymptotic completeness and the equal in/out normalization, insert
+    the out or in completeness relation between scattering-state overlaps. The two
+    insertions give S†S=1 and SS†=1 as a direct proof of S unitarity.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source defines the overlap and derives both completeness-based unitarity
+      identities.
+  id: qft.align016.asymptotic-overlap-unitarity-proof
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.asymptotic-overlap-unitarity-proof
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: C, CP, and CPT process relations
+  summary: Charge conjugation is a unitary particle–antiparticle interchange whose
+    phases, like intrinsic parity phases, are conventional except for neutral self-conjugate
+    particles. C and P fail in weak interactions, CP also fails weakly, while the
+    text identifies CPT as exact in quantum field theory and states that its antiunitarity
+    relates a process to the inverse antiparticle process with reversed spin components.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 131
+    - 132
+    - 133
+    - 134
+    note: The source defines C, discusses CP eigenstates and violation, states the
+      CPT qualification, and connects observed CP violation to T violation assuming
+      CPT.
+  id: qft.align016.charge-conjugation-cp-cpt-process-relations
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.charge-conjugation-cp-cpt-process-relations
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation:
+  - source: weinberg-1
+    note: The CPT statement is explicitly qualified in the text as applying in quantum
+      field theory; it is not a consequence of proper-orthochronous Lorentz covariance
+      alone.
+- label: Charge-conjugation selection in neutral-pion decays
+  summary: For completely neutral self-conjugate particles, C conservation equates
+    the products of charge-conjugation parities. With the photon’s stated C parity
+    and observed π0→2γ decay, the neutral pion has C=+1 and π0→3γ is forbidden.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 131
+    - 132
+    note: The source applies C conservation to neutral particles and gives the π0
+      two- and three-photon consequences.
+  id: qft.align016.charge-conjugation-neutral-pion-decay-selection
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.charge-conjugation-neutral-pion-decay-selection
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- id: qft.align016.conditional-s-matrix-unitarity
+  label: Conditional S-matrix unitarity from complete asymptotic bases
+  summary: 'If in and out scattering states are complete orthonormal bases of the
+    same Hilbert space with equal continuum normalization, their overlap matrix S
+    obeys S-dagger S=1 and S S-dagger=1. Weinberg gives two independent proofs under
+    this stated setting: completeness insertions between overlaps, and an algebraic
+    derivation from the Lippmann–Schwinger equations. This conditional result is the
+    unitarity input to the strong-background phase argument in Watson’s theorem.'
+  kind: result
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.asymptotic-overlap-unitarity-proof
+    note: Retains the completeness-and-normalization overlap proof of both S-dagger
+      S=1 and S S-dagger=1.
+  - project: weinberg-1
+    node: weinberg-1.lippmann-schwinger-orthonormality-and-s-unitarity-route
+    note: Retains the independent algebraic Lippmann–Schwinger proof without explicit
+      asymptotic limits.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: Defines the in/out overlap, states the common-Hilbert-space and completeness
+      setting, and derives both unitarity identities.
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: States the algebraic Lippmann–Schwinger proof of orthonormality and S-matrix
+      unitarity.
+  notation: []
+- label: Contour proof of Lippmann–Schwinger in/out boundary conditions
+  summary: For smooth wave packets and energy-dependent amplitudes whose non-prescription
+    singularities are damped in the relevant half-plane, contour closure shows the
+    +iε solution approaches the free packet at t→−∞ and the −iε solution approaches
+    it at t→+∞. The opposite prescription pole is the surviving asymptotic contribution
+    in each case.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 112
+    note: The source closes energy contours, states the wave-packet and collision-duration
+      damping conditions, and obtains the in/out limits.
+  id: qft.align016.contour-proof-in-out-lippmann-schwinger-boundary-condition
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.contour-proof-in-out-lippmann-schwinger-boundary-condition
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- id: qft.align016.decay-width-and-lorentz-time-dilation
+  label: Decay rates, resonance widths, and Lorentz time dilation
+  summary: A one-particle decay rate is a transition rate with one initial parent;
+    its use of finite-time normalization requires the rate to be small compared with
+    characteristic process energies. Peskin–Schroeder identifies the Breit–Wigner
+    peak width with the rest-frame decay rate and gives the moving-frame factor m/E_p.
+    Weinberg derives the corresponding 1/E transformation after spin summation from
+    Lorentz-invariant remaining factors. The Breit–Wigner statement and the narrow-width
+    qualification are retained as source-specific conditions.
+  kind: result
+  group: qft.align016.observables
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.breit-wigner-resonance-width-and-time-dilation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  - project: weinberg-1
+    node: weinberg-1.decay-rate-and-narrow-width-validity
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  - project: weinberg-1
+    node: weinberg-1.decay-rate-lorentz-time-dilation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 101
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    note: Equations (3.4.13) and the following paragraph give the decay formula and
+      its lifetime/energy qualification.
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+    note: The source identifies the invariant factors in the decay formula and concludes
+      that the rate has the transformation property of 1/Eα.
+  notation: []
+- label: Feynman diagrams as contraction representations
+  summary: Represent a propagator contraction by a line and a spacetime field insertion
+    by a point; in an interacting expression distinguish external points from integrated
+    internal vertices. The diagrams encode the analytic terms, not independent physical
+    histories.
+  kind: representation
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 91
+    - 92
+  id: qft.align016.feynman-diagram-representation
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.feynman-diagram-representation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Free Hamiltonian with physical spectrum
+  summary: The scattering split H=H₀+V assumes H₀ has free-particle eigenstates with
+    the same spectrum as H. Therefore H₀ uses measured physical masses, places bare-versus-physical
+    mass differences in V, and includes relevant bound states as elementary particles
+    for this purpose.
+  kind: assumption
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    note: The source states the equal-spectrum assumption and its physical-mass and
+      bound-state consequences.
+  id: qft.align016.free-hamiltonian-physical-spectrum-assumption
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.free-hamiltonian-physical-spectrum-assumption
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Generalized LSZ with interpolating operators
+  summary: LSZ applies to any operator O(x) with nonzero one-particle overlap ⟨p|O(x)|Ω⟩=We^{ipx},
+    not only to an elementary field in the Lagrangian. This permits correlation functions
+    of composite operators to create or scatter composite asymptotic states such as
+    positronium.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 6.1.2 LSZ for operators
+    pages:
+    - 73
+    - 74
+    note: States the generalized formula, overlap condition, and positronium example.
+  id: qft.align016.generalized-lsz-interpolating-operators
+  group: qft.align016.asymptotic-lsz
+  origins:
+  - project: schwartz
+    node: schwartz.generalized-lsz-interpolating-operators
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Generator commutator criterion for S-matrix covariance
+  summary: On free states, S-matrix covariance is equivalent to [H₀,S]=[P₀,S]=[J₀,S]=[K₀,S]=0.
+    With H=H₀+V and interaction-independent momentum and angular momentum, [V,P₀]=[V,J₀]=0
+    supplies the translation and rotation part, while boosts need an interaction correction.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 118
+    - 119
+    note: Equations (3.3.3), (3.3.18), and (3.3.19) state the generator criterion
+      and the interaction conditions.
+  id: qft.align016.generator-commutator-criterion-s-matrix-covariance
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.generator-commutator-criterion-s-matrix-covariance
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: In and out states as asymptotic particle content
+  summary: In the Heisenberg picture, an in or out state is a time-independent vector
+    describing the full history, labeled by particle content observed respectively
+    at t→−∞ or t→+∞. Time localization requires smooth energy wave packets rather
+    than a single energy eigenstate, and the two signs in the asymptotic condition
+    select the incoming and outgoing limits.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 109
+    - 110
+    note: The source contrasts Heisenberg and Schrödinger descriptions, defines the
+      asymptotic labels, and requires finite-energy-range wave packets.
+  id: qft.align016.in-out-states-heisenberg-asymptotic-definition
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.in-out-states-heisenberg-asymptotic-definition
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Interacting boost and smoothness sufficient condition
+  summary: Because an interaction changes H, the exact boost must be K=K₀+W. The commutator
+    [K₀,V]=−[W,H], together with smooth energy dependence of W matrix elements so
+    that asymptotic W(t) vanishes on wave packets, is sufficient to prove [K₀,S]=0
+    and hence Lorentz covariance of S.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 119
+    - 120
+    - 121
+    note: The source derives the W correction, the asymptotic commutator formula,
+      its smoothness condition, and the resulting similarity maps for exact generators.
+  id: qft.align016.interacting-boost-smoothness-lorentz-sufficiency
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.interacting-boost-smoothness-lorentz-sufficiency
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation:
+  - source: weinberg-1
+    note: The sufficient condition is stated for the proper orthochronous Lorentz
+      transformations considered in this subsection.
+- label: Interacting correlation functions as normalized free-vacuum expressions
+  summary: The interacting time-ordered n-point function is represented by a free-vacuum
+    expectation value with T exp[-i integral H_I] in the numerator divided by its
+    vacuum expectation value. The identity is exact before truncating its perturbative
+    exponential.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 87
+  id: qft.align016.interacting-correlation-function-quotient
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.interacting-correlation-function-quotient
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Internal symmetry and S-matrix selection rules
+  summary: A frame-independent internal symmetry acts unitarily on particle-species
+    indices and constrains the S-matrix when the same action holds on in and out states.
+    It is ensured by a free-state operator commuting with H₀ and V; for a one-parameter
+    Abelian group, the species charges are conserved in every nonzero S-matrix element.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 121
+    - 122
+    note: The text gives the species representation, the commutation conditions on
+      U₀, and the charge-conservation consequence.
+  id: qft.align016.internal-symmetry-s-matrix-selection-rules
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.internal-symmetry-s-matrix-selection-rules
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Isospin reduced S-matrix amplitudes
+  summary: For an isospin-invariant two-body reaction, Clebsch–Gordan coefficients
+    combine external isospins while a reduced S-matrix is independent of their third
+    components. This consequence is approximate because electromagnetic and other
+    interactions break isospin symmetry.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 123
+    - 124
+    note: The source introduces non-Abelian isospin multiplets and gives the Clebsch–Gordan
+      reduced-amplitude form with its limitation.
+  id: qft.align016.isospin-reduced-s-matrix-amplitudes
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.isospin-reduced-s-matrix-amplitudes
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Algebraic Lippmann–Schwinger route to orthonormality
+  summary: An identity between T-matrix elements derived by applying the Lippmann–Schwinger
+    equation on either side proves the in and out sets orthonormal and proves S unitarity
+    without taking explicit t→±∞ limits.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: Equations (3.2.9) and the following discussion derive orthonormality and
+      unitarity algebraically.
+  id: qft.align016.lippmann-schwinger-orthonormality-and-s-unitarity-route
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lippmann-schwinger-orthonormality-and-s-unitarity-route
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Lippmann–Schwinger scattering-state equations
+  summary: The formal solutions of the full energy eigenvalue equation are free states
+    plus the resolvent (Eα−H₀±iε)⁻¹V acting on the scattering state. The positive
+    or negative infinitesimal gives the in or out boundary condition and yields a
+    free-state expansion with T-matrix elements.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 111
+    - 112
+    note: The source introduces the ±iε resolvent equations, names them, and verifies
+      their asymptotic conditions by contour closure.
+  id: qft.align016.lippmann-schwinger-scattering-state-equations
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lippmann-schwinger-scattering-state-equations
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation:
+  - source: weinberg-1
+    note: 'The book’s ± labels are traditional: the +iε equation is the in-state boundary
+      condition and the −iε equation is the out-state boundary condition.'
+- label: Invariant phase space and cross-section formula
+  summary: For narrow initial wavepackets and finite detector resolution, the differential
+    cross section is flux inverse times |M|^2 times Lorentz-invariant n-body phase
+    space. Two-body center-of-mass kinematics gives the familiar angular form; identical
+    final particles require restricting configurations or dividing by n!.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 106
+    - 107
+    - 108
+  id: qft.align016.lorentz-invariant-phase-space-cross-section
+  group: qft.align016.observables
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.lorentz-invariant-phase-space-cross-section
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: LSZ boundary-operator derivation
+  summary: Integration by parts relates ∫d⁴x e^{ipx}(□+m²)φ(x) to √(2ω_p)[a_p(∞)−a_p(−∞)].
+    Time ordering then causes unwanted operators to annihilate the vacuum, yielding
+    the LSZ formula from the asymptotic creation and annihilation operators.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 6.1 The LSZ reduction formula
+    pages:
+    - 71
+    - 72
+    note: Derives the boundary relation and applies time ordering to obtain LSZ.
+  id: qft.align016.lsz-boundary-operator-derivation
+  group: qft.align016.asymptotic-lsz
+  origins:
+  - project: schwartz
+    node: schwartz.lsz-boundary-operator-derivation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: LSZ reduction as one-particle pole projection
+  summary: LSZ obtains an S-matrix element by Fourier transforming a time-ordered
+    interacting-field correlator and applying one (□+m²) factor per external particle.
+    These factors remove terms without the corresponding on-shell propagator pole
+    and extract the residue associated with each desired asymptotic one-particle state.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: Chapter 6 introduction and 6.1.1
+    pages:
+    - 69
+    - 70
+    - 73
+    note: States the formula and explains its pole-projection content.
+  id: qft.align016.lsz-reduction-pole-projection
+  group: qft.align016.asymptotic-lsz
+  origins:
+  - project: schwartz
+    node: schwartz.lsz-reduction-pole-projection
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Møller operators as asymptotic state maps
+  summary: The formal operator Ω(T)=exp(iHT)exp(−iH₀T) maps free states to in or out
+    scattering states in the corresponding asymptotic limit. Its limit is meaningful
+    only on smooth superpositions of energy eigenstates, and unitarity of time evolution
+    gives in/out states the free-state normalization.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    - 111
+    note: Equations (3.1.13)–(3.1.15) define Ω and infer asymptotic-state normalization.
+  id: qft.align016.moller-operators-asymptotic-state-map
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.moller-operators-asymptotic-state-map
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Neutral-kaon CP eigenstates, CP violation, and T inference
+  summary: Under CP conservation, K0±K̄0 form CP eigenstates, and the two-pion decay
+    channel selects the CP-even state, leaving the CP-odd state long lived. The observed
+    long-lived neutral-kaon decay into two pions establishes weak CP violation; with
+    CPT invariance, this implies weak T violation.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 132
+    - 133
+    - 134
+    note: The source constructs the neutral-kaon CP eigenstates, gives the two-pion
+      selection argument and observed violation, then states the CPT-based T inference.
+  id: qft.align016.neutral-kaon-cp-eigenstates-violation-and-t-inference
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.neutral-kaon-cp-eigenstates-violation-and-t-inference
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- id: qft.align016.observable-transition-rates
+  label: Observable transition rates, cross sections, and finite-volume normalization
+  summary: Cross sections normalize event counts by incident densities and geometry,
+    while decay rates count decays per time per parent. Peskin–Schroeder expresses
+    differential scattering in terms of flux, |M| squared, and invariant phase space;
+    Weinberg derives a master connected transition rate by regulating squared delta
+    functions with a finite box and time interval. The common observable role does
+    not identify their normalizations or omit Weinberg's connected-transition restriction.
+  kind: concept
+  group: qft.align016.observables
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.cross-section-and-decay-observables
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  - project: weinberg-1
+    node: weinberg-1.box-normalization-and-connected-transition-element
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 100
+    - 101
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 134
+    - 135
+    - 136
+    note: The text introduces spatial and time boxes, restricts to the connected part,
+      and derives equations (3.4.10)–(3.4.12).
+  notation:
+  - source: weinberg-1
+    note: The connected restriction excludes a final state that retains an unchanged
+      proper subset of initial particles with the same four-momentum.
+- label: Parity inference from angular momentum and weak-interaction violation
+  summary: Parity covariance makes an amplitude even or odd under simultaneous momentum
+    reversal according to the intrinsic-parity product. Angular momentum and identical-neutron
+    antisymmetry in pion absorption therefore imply negative pion parity; the τ–θ
+    puzzle and polarized beta-decay asymmetries show that parity is not conserved
+    by the weak interaction.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 126
+    - 127
+    note: The text infers pion parity from the allowed final partial wave and describes
+      the τ–θ and polarized-decay evidence for weak parity violation.
+  id: qft.align016.parity-angular-momentum-inference-and-weak-violation
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.parity-angular-momentum-inference-and-weak-violation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Parity covariance and intrinsic-parity phase freedom
+  summary: If parity is conserved, a unitary parity operator reverses spatial momenta
+    of in and out multiparticle states and multiplies their intrinsic parity phases.
+    Multiplication of parity by conserved internal phase transformations changes these
+    phases, so individual intrinsic parities are generally conventional; if the relevant
+    square root exists in a continuous phase group, parity can be redefined to square
+    to one.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 125
+    note: The source gives parity covariance and explains its redefinition by B, L,
+      and Q phase transformations.
+  id: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Momentum-space phi-four Feynman rules
+  summary: Fourier transforming each propagator gives i/(p^2-m^2+i epsilon); vertex
+    integrations impose four-momentum conservation, leaving integrations only over
+    undetermined momenta. The Feynman boundary prescription supplies the i epsilon
+    continuation.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 95
+  id: qft.align016.phi4-momentum-space-feynman-rules
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-momentum-space-feynman-rules
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Vanishing odd phi-four correlation functions
+  summary: 'All odd-field correlation functions vanish in phi-four theory: every perturbative
+    term has an odd total number of fields, which cannot be fully paired by Wick contractions.'
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 99
+  id: qft.align016.phi4-odd-correlation-vanishing
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-odd-correlation-vanishing
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Position-space phi-four Feynman rules
+  summary: For a phi-four correlation function assign a Feynman propagator to each
+    line, an integrated -i lambda factor to each vertex, and the appropriate external-point
+    factors, multiply independent factors, and divide by the symmetry factor.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 94
+  id: qft.align016.phi4-position-space-feynman-rules
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-position-space-feynman-rules
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Phi-four diagram symmetry factors
+  summary: For phi-four diagrams, vertex permutations cancel the Taylor-series factorial
+    and the four fields at a generic vertex cancel the coupling's 4!; divide the remaining
+    diagram value by the number of component interchanges that leave it unchanged.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 93
+  id: qft.align016.phi4-symmetry-factors
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-symmetry-factors
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Proper-orthochronous S-matrix covariance and four-momentum conservation
+  summary: Lorentz invariance means one unitary proper-orthochronous Poincaré action
+    transforms both in and out states. Translation covariance forces the interacting
+    S-matrix element to vanish unless total four-momentum is conserved, allowing its
+    coefficient to be defined as Mβα through Sβα=δ(β−α)−2πiδ⁴(pβ−pα)Mβα.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 116
+    - 117
+    note: The source defines Lorentz covariance for common in/out transformations
+      and obtains the momentum-conserving form (3.3.2).
+  id: qft.align016.proper-orthochronous-s-matrix-covariance-and-conservation
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.proper-orthochronous-s-matrix-covariance-and-conservation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation:
+  - source: weinberg-1
+    note: This statement concerns proper orthochronous transformations; parity and
+      time reversal are treated separately as discrete symmetries.
+- label: PT constraint excluded by polarized beta decay
+  summary: If PT were conserved, its antiunitary relation would forbid a preference
+    for beta-decay electrons to be emitted parallel or antiparallel to the polarized
+    parent spin, under the stated neglect of final-state Coulomb interaction. The
+    observed asymmetry therefore excludes PT invariance in this weak decay context.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 130
+    - 131
+    note: The source writes the PT consequence for nuclear beta decay and states its
+      contradiction with the polarized Co60 observation.
+  id: qft.align016.pt-invariance-polarized-beta-decay-constraint
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.pt-invariance-polarized-beta-decay-constraint
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Channel-dependent H₀/V splits for rearrangement collisions
+  summary: For rearrangement collisions in which a bound state occurs only in the
+    initial or only in the final channel, the source requires different H=H₀+V decompositions
+    for the initial and final states. This is a qualification to the convenient single
+    free-Hamiltonian construction.
+  kind: assumption
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    note: The footnote explicitly gives rearrangement collisions as the case requiring
+      different initial and final splits.
+  id: qft.align016.rearrangement-collision-channel-dependent-hamiltonian-splits
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.rearrangement-collision-channel-dependent-hamiltonian-splits
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Resolvent principal-value and delta decomposition
+  summary: The ε→0 resolvent separates into a principal-value contribution and an
+    on-shell delta-function contribution. This distributional identity makes the energy-shell
+    part of the scattering-state and S-matrix relations explicit.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 112
+    - 113
+    note: The text introduces regulated functions that tend to the principal value
+      and delta function, then writes the limiting reciprocal.
+  id: qft.align016.resolvent-principal-value-and-delta-decomposition
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.resolvent-principal-value-and-delta-decomposition
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- id: qft.align016.s-matrix-transition-amplitudes
+  label: S-matrix transition amplitudes and source-specific T conventions
+  summary: Asymptotic in and out states define scattering transition amplitudes, and
+    separating the identity isolates the interaction contribution. Peskin–Schroeder
+    writes S=1+iT and defines the invariant M after factoring four-momentum conservation.
+    Weinberg relates its on-shell coefficient to an energy-conserving delta function
+    and T-plus; that Lippmann–Schwinger route is retained separately so it is not
+    compulsory for the Peskin–Schroeder wavepacket definition or the Schwartz LSZ
+    route.
+  kind: method
+  group: qft.align016.scattering-operators
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.in-out-states-s-t-and-invariant-matrix-element
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  - project: weinberg-1
+    node: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 102
+    - 104
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: Equations (3.2.1)–(3.2.6) define the overlap, establish both unitarity relations,
+      and define the operator S.
+  notation:
+  - source: peskin-schroeder
+    note: Peskin–Schroeder uses S=1+iT and an invariant M after a four-momentum delta
+      function.
+- id: qft.align016.scalar-wick-theorem
+  label: Scalar Wick theorem as a contraction expansion
+  summary: For free interaction-picture scalar fields, time ordering equals normal
+    ordering plus all possible pair contractions. A vacuum expectation value keeps
+    only fully contracted terms. Each contraction has the analytic value of the accepted
+    Feynman scalar propagator; this Wick-expansion method remains distinct from the
+    two-point propagator derivation itself.
+  kind: method
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.scalar-wick-theorem
+    note: Retains Peskin–Schroeder’s free-field normal-ordering and all-pair-contractions
+      theorem, including the fully contracted vacuum-expectation consequence.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.3'
+    pages:
+    - 88
+    - 89
+    note: The source defines contractions as Feynman propagators, states the all-contractions
+      formula, and identifies the surviving fully contracted vacuum terms.
+  notation: []
+- label: Strangeness selection in strong production and weak decay
+  summary: Approximate strangeness conservation explains associated production of
+    strange particles in strong reactions, while their comparatively slow decay into
+    nonstrange particles shows that interactions violating strangeness are weak.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 122
+    - 123
+    note: The source introduces strangeness as an approximate conserved charge and
+      contrasts associated production with slow nonstrange decays.
+  id: qft.align016.strangeness-associated-production-and-weak-decay
+  group: qft.align016.symmetries
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.strangeness-associated-production-and-weak-decay
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Vacuum-bubble exponentiation and cancellation
+  summary: Diagrams disconnected from every external point factor into the exponential
+    of the sum of connected vacuum pieces. The same exponential occurs in the normalized
+    denominator, so vacuum bubbles cancel from correlation functions while encoding
+    a vacuum-energy shift.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 97
+    - 98
+  id: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  group: qft.align016.diagrammatics
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.vacuum-bubble-exponentiation-and-cancellation
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- label: Watson theorem for final-state phases
+  summary: For a weak transition on top of a unitary strong background, time-reversal
+    invariance relates amplitudes after summing over sets complete under the strong
+    S-matrix. When initial and final states are individual strong-interaction eigenvectors,
+    the transition amplitude carries the sum of their real phase shifts; this is Watson’s
+    theorem.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 129
+    - 130
+    note: The source derives the first-order unitarity relation and identifies the
+      single-eigenstate phase result as Watson’s theorem.
+  id: qft.align016.watson-theorem-final-state-phase
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.watson-theorem-final-state-phase
+    note: Preserves this reviewed source treatment, including its stated assumptions,
+      notation, and proof or application scope; this correspondence asserts only the
+      shared core stated here.
+  notation: []
+- id: qft.align016.weinberg-onshell-s-t-relation-and-born-approximation
+  label: Weinberg on-shell S–T relation and Born approximation
+  summary: Taking the Lippmann–Schwinger in-state expansion to late time yields S_beta_alpha=delta(beta-alpha)-2
+    pi i delta(E_alpha-E_beta) T-plus_beta_alpha. Replacing the in state by the free
+    state gives the weak-interaction first Born approximation. This is an independent
+    Weinberg route to transition amplitudes, not a prerequisite of Peskin–Schroeder’s
+    wavepacket definition or Schwartz’s LSZ route.
+  kind: method
+  group: qft.align016.scattering-operators
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.t-matrix-onshell-s-matrix-relation-and-born-approximation
+    note: Retains Weinberg’s late-time contour derivation, its on-shell coefficient
+      convention, and the weak-interaction Born approximation.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 114
+    - 115
+    note: The text obtains the on-shell S–T relation from the late-time limit and
+      then states the weak-interaction Born approximation.
+  notation:
+  - source: weinberg-1
+    note: Weinberg writes S_beta_alpha=delta(beta-alpha)-2 pi i delta(E_beta-E_alpha)T-plus_beta_alpha;
+      this convention is retained separately from Peskin–Schroeder’s S=1+iT notation.
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -19958,6 +21017,1062 @@ edges:
     - 449
     - 450
     - 451
+- id: qft.align016.peskin-schroeder.ps4-correlation-quotient-to-vacuum-cancellation
+  from: qft.align016.interacting-correlation-function-quotient
+  to: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The numerator and denominator are the two factors whose vacuum bubbles
+    cancel.
+  failure_mode: The cancellation lacks its normalized context.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 97
+    - 98
+- id: qft.align016.peskin-schroeder.ps4-cross-observables-to-breit-wigner
+  from: qft.align016.observable-transition-rates
+  to: qft.align016.decay-width-and-lorentz-time-dilation
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The resonance result identifies the peak width with the decay rate defined
+    in the preceding discussion.
+  failure_mode: Gamma has no stated decay-rate interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 101
+- id: qft.align016.peskin-schroeder.ps4-cross-observables-to-phase-space
+  from: qft.align016.observable-transition-rates
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The later formula reconstructs the defined observable from M.
+  failure_mode: The flux and final-state measure lack an observable interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 106
+    - 107
+- id: qft.align016.peskin-schroeder.ps4-diagrams-to-position-rules
+  from: qft.align016.feynman-diagram-representation
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The rules assign factors to the diagram's lines, vertices, and points.
+  failure_mode: No analytic amplitude is assigned to a diagram.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 94
+- id: qft.align016.peskin-schroeder.ps4-diagrams-to-symmetry
+  from: qft.align016.feynman-diagram-representation
+  to: qft.align016.phi4-symmetry-factors
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: A symmetry factor counts component interchanges leaving a drawn diagram
+    unchanged.
+  failure_mode: Combinatorial overcounting remains uncorrected.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 93
+- id: qft.align016.peskin-schroeder.ps4-diagrams-to-vacuum-cancellation
+  from: qft.align016.feynman-diagram-representation
+  to: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation classifies connected and disconnected diagram pieces.
+  failure_mode: The pieces that factor and exponentiate cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 96
+    - 97
+    - 98
+- id: qft.align016.peskin-schroeder.ps4-inout-to-phase-space
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The cross-section formula is expressed in the invariant M defined from
+    T.
+  failure_mode: The amplitude in the formula is undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 106
+    - 107
+    - 108
+- id: qft.align016.peskin-schroeder.ps4-lorentz-normalization-to-inout
+  from: qft.align015.lorentz-invariant-one-particle-normalization
+  to: qft.align016.s-matrix-transition-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The wavepacket and matrix-element construction uses the stated relativistic
+    normalization.
+  failure_mode: Normalization and phase-space factors are inconsistent.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.5'
+    pages:
+    - 102
+    - 104
+- id: qft.align016.peskin-schroeder.ps4-position-to-momentum-rules
+  from: qft.align016.phi4-position-space-feynman-rules
+  to: qft.align016.phi4-momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Deriving the momentum-space rules follows by Fourier transforming the
+    position-space propagator prescription and vertex integrations; the stated momentum
+    rules can be used directly without this derivation.
+  failure_mode: The momentum-space factors and delta functions cannot be derived from
+    the position-space diagram expression.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 94
+    - 95
+- id: qft.align016.peskin-schroeder.ps4-scalar-propagator-to-phi4-position-rules
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Each position-space scalar line is assigned the Feynman propagator.
+  failure_mode: The line factor in the rule set is unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 91
+    - 94
+- id: qft.align016.peskin-schroeder.ps4-scalar-propagator-to-wick
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align016.scalar-wick-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The contraction is identified with the scalar Feynman propagator.
+  failure_mode: Pairings lack their analytic values.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.3'
+    pages:
+    - 88
+    - 89
+- id: qft.align016.peskin-schroeder.ps4-symmetry-to-position-rules
+  from: qft.align016.phi4-symmetry-factors
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The summarized rules explicitly require dividing by the symmetry factor.
+  failure_mode: The diagram normalization is wrong.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 94
+- id: qft.align016.peskin-schroeder.ps4-symmetry-to-vacuum-cancellation
+  from: qft.align016.phi4-symmetry-factors
+  to: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Repeated disconnected pieces contribute the 1/n! symmetry factors required
+    for exponentiation.
+  failure_mode: The exponential combinatorics is not obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 93
+    - 97
+- id: qft.align016.peskin-schroeder.ps4-vacuum-to-correlation-quotient
+  from: qft.align016.adiabatic-interacting-vacuum-projection
+  to: qft.align016.interacting-correlation-function-quotient
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The denominator removes the vacuum overlap factors introduced by the
+    projection.
+  failure_mode: The normalization cancellation is unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 87
+- id: qft.align016.peskin-schroeder.ps4-wick-to-diagrams
+  from: qft.align016.scalar-wick-theorem
+  to: qft.align016.feynman-diagram-representation
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Diagram lines directly represent Wick contractions.
+  failure_mode: The diagram-to-expression correspondence is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 91
+    - 92
+- id: qft.align016.peskin-schroeder.ps4-wick-to-odd-vanishing
+  from: qft.align016.scalar-wick-theorem
+  to: qft.align016.phi4-odd-correlation-vanishing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof uses the impossibility of fully pairing an odd number of fields.
+  failure_mode: The parity selection rule is only asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.4'
+    pages:
+    - 99
+- id: qft.align016.schwartz.e-asymptotic-to-lsz
+  from: qft.align016.asymptotic-freedom-assumption-for-lsz
+  to: qft.align016.lsz-boundary-operator-derivation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The boundary relation replaces fields by free asymptotic creation and
+    annihilation operators.
+  failure_mode: The limits a(±∞) and the boundary integration cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: 6.1 The LSZ reduction formula
+    pages:
+    - 71
+    - 72
+    note: Uses free asymptotic behavior in the boundary calculation.
+- id: qft.align016.schwartz.e-heisenberg-free-to-lsz-boundary
+  from: qft.heisenberg-free-field-time-evolution
+  to: qft.align016.lsz-boundary-operator-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation assumes asymptotic mode operators are time independent
+    while their free phases carry the time evolution.
+  failure_mode: The boundary total derivative cannot be evaluated as a(∞)−a(−∞).
+  evidence:
+  - source: schwartz
+    section: 6.1 The LSZ reduction formula
+    pages:
+    - 71
+    - 72
+    note: Uses time-independent asymptotic operators in the mode-expansion calculation.
+- id: qft.align016.schwartz.e-lsz-boundary-to-lsz-poles
+  from: qft.align016.lsz-boundary-operator-derivation
+  to: qft.align016.lsz-reduction-pole-projection
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The boundary-operator argument establishes the LSZ formula whose action
+    on poles is then interpreted.
+  failure_mode: The pole rule is asserted without its link to asymptotic particle
+    operators.
+  evidence:
+  - source: schwartz
+    section: 6.1–6.1.1
+    pages:
+    - 72
+    - 73
+    note: Derives LSZ then explains its cancellation and projection behavior.
+- id: qft.align016.schwartz.e-mode-algebra-to-lsz-boundary
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.align016.lsz-boundary-operator-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The boundary derivation inserts the mode expansion and uses momentum
+    delta functions to isolate a_p.
+  failure_mode: The spatial integral cannot be reduced to the asymptotic operator
+    difference.
+  evidence:
+  - source: schwartz
+    section: 6.1 The LSZ reduction formula
+    pages:
+    - 71
+    - 72
+    note: Inserts the creation/annihilation expansion and evaluates its spatial integral.
+- id: qft.align016.schwartz.lsz-poles-to-s-amplitudes
+  from: qft.align016.lsz-reduction-pole-projection
+  to: qft.align016.s-matrix-transition-amplitudes
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: LSZ independently obtains specified S-matrix elements from time-ordered
+    correlators by pole projection under its asymptotic-free-state assumption.
+  failure_mode: Without recording this route, the correlator reduction can be mistaken
+    for an additional prerequisite of the wavepacket or Lippmann–Schwinger definitions.
+  evidence:
+  - source: schwartz
+    section: 6 introduction; 6.1.1
+    pages:
+    - 69
+    - 73
+    note: The source states that LSZ relates S-matrix elements to time-ordered fields
+      and explains its projection of the desired asymptotic states.
+- id: qft.align016.weinberg-1.abelian-exponentiation-to-charge-selection
+  from: qft.align010.weinberg-1.abelian-symmetry-exponentiation
+  to: qft.align016.internal-symmetry-s-matrix-selection-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-parameter internal-symmetry selection rule uses exponential unitary
+    generators and species charges.
+  failure_mode: Without exponentiation, the conservation equation for the q_n labels
+    has no stated group-theoretic source.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 122
+    note: The source writes U(T(θ))=exp(iQθ) and derives conservation of the species
+      q values.
+- id: qft.align016.weinberg-1.algebraic-route-to-s-unitarity
+  from: qft.align016.lippmann-schwinger-orthonormality-and-s-unitarity-route
+  to: qft.align016.conditional-s-matrix-unitarity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The T-matrix identity supplies a second complete proof of orthonormality
+    and S unitarity without asymptotic limits.
+  failure_mode: Leaving the algebraic derivation unconnected would conceal that it
+    establishes the same unitarity result.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: The source states that the algebraic derivation proves orthonormality and
+      unitarity.
+- id: qft.align016.weinberg-1.antiunitarity-to-time-reversal-reciprocity
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align016.antiunitary-time-reversal-s-matrix-reciprocity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The S-matrix reciprocity derivation uses the accepted result that time
+    reversal is antiunitary, including its conjugation of i.
+  failure_mode: Treating time reversal as unitary would not reverse the iε prescription
+    or produce the stated reciprocity relation.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 128
+    - 129
+- id: qft.align016.weinberg-1.box-normalization-to-decay-rate
+  from: qft.align016.observable-transition-rates
+  to: qft.align016.decay-width-and-lorentz-time-dilation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The one-particle decay formula is the Nα=1 specialization of the master
+    rate derived by box normalization.
+  failure_mode: Without the master rate and its delta-function interpretation, the
+    decay formula’s normalization and lifetime qualification lack their derivation.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    note: The source calls (3.4.11) the master formula then specializes it to one
+      initial particle.
+- id: qft.align016.weinberg-1.charge-conjugation-to-neutral-pion-selection
+  from: qft.align016.charge-conjugation-cp-cpt-process-relations
+  to: qft.align016.charge-conjugation-neutral-pion-decay-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The neutral-pion decay prohibition is a direct application of the charge-conjugation
+    S-matrix selection rule for self-conjugate neutral particles.
+  failure_mode: Without C covariance and the multiplicative C parities, the two- versus
+    three-photon selection rule does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 131
+    - 132
+- id: qft.align016.weinberg-1.completeness-to-overlap-unitarity-route
+  from: qft.align016.asymptotic-completeness-assumption
+  to: qft.align016.asymptotic-overlap-unitarity-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The overlap proof inserts a complete in or out resolution of identity.
+  failure_mode: Without completeness, the overlap sums cannot be reduced to identity.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source inserts the completeness relations to derive both unitarity equations.
+- id: qft.align016.weinberg-1.cp-cpt-to-neutral-kaon-application
+  from: qft.align016.charge-conjugation-cp-cpt-process-relations
+  to: qft.align016.neutral-kaon-cp-eigenstates-violation-and-t-inference
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The kaon application uses CP eigenstates and then combines observed CP
+    violation with CPT invariance to infer T violation.
+  failure_mode: Without the CP and CPT process relations, the decay-mode classification
+    and T-violation inference are unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 132
+    - 133
+    - 134
+- id: qft.align016.weinberg-1.generator-criterion-to-boost-sufficiency
+  from: qft.align016.generator-commutator-criterion-s-matrix-covariance
+  to: qft.align016.interacting-boost-smoothness-lorentz-sufficiency
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: After H₀, P₀, and J₀ commutators are secured, the remaining K₀ commutator
+    is precisely what the W smoothness argument proves.
+  failure_mode: Without identifying boosts as the remaining covariance condition,
+    the role of W and its asymptotic smoothness is unmotivated.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 119
+    - 120
+    note: The source isolates K₀ as the remaining generator and proves its commutator
+      with S vanishes.
+- id: qft.align016.weinberg-1.in-out-normalization-to-overlap-unitarity-route
+  from: qft.align016.moller-operators-asymptotic-state-map
+  to: qft.align016.asymptotic-overlap-unitarity-proof
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The overlap proof needs the equal in/out normalization produced by asymptotic
+    unitary evolution.
+  failure_mode: Without orthonormal asymptotic states, their overlap matrix need not
+    be unitary.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.2
+    pages:
+    - 111
+    - 113
+    - 114
+    note: Page 111 establishes normalization; pages 113–114 use it with completeness.
+- id: qft.align016.weinberg-1.in-out-states-to-s-amplitudes
+  from: qft.align016.in-out-states-heisenberg-asymptotic-definition
+  to: qft.align016.s-matrix-transition-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The overlap definition of a scattering transition amplitude needs identified
+    asymptotic in and out state labels.
+  failure_mode: The overlap has no specified incoming and outgoing particle content.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.2
+    pages:
+    - 109
+    - 113
+    note: The source defines asymptotic in/out labels and then defines S as their
+      scalar product.
+- id: qft.align016.weinberg-1.internal-selection-to-strangeness-application
+  from: qft.align016.internal-symmetry-s-matrix-selection-rules
+  to: qft.align016.strangeness-associated-production-and-weak-decay
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The strangeness example applies the internal-symmetry selection rule
+    to distinguish strong associated production from weak symmetry-violating decay.
+  failure_mode: Without the internal selection rule, the production and decay pattern
+    is only an empirical list rather than the stated symmetry application.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 122
+    - 123
+- id: qft.align016.weinberg-1.internal-symmetry-to-isospin-reduced-amplitudes
+  from: qft.align016.internal-symmetry-s-matrix-selection-rules
+  to: qft.align016.isospin-reduced-s-matrix-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The isospin form is an application of the general non-Abelian internal-symmetry
+    constraint on S.
+  failure_mode: Without the internal-symmetry action, the Clebsch–Gordan factorization
+    would be a basis choice rather than a reaction selection rule.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 121
+    - 123
+    - 124
+    note: The general internal-symmetry result precedes the isospin multiplet and
+      reduced-S application.
+- id: qft.align016.weinberg-1.lippmann-schwinger-to-algebraic-unitarity
+  from: qft.align016.lippmann-schwinger-scattering-state-equations
+  to: qft.align016.lippmann-schwinger-orthonormality-and-s-unitarity-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: This independent proof starts by applying the Lippmann–Schwinger equation
+    on both sides of a matrix element.
+  failure_mode: Without the equation’s two boundary prescriptions, the T-matrix identity
+    used to prove orthonormality cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 115
+    - 116
+    note: The source explicitly begins the algebraic proof by using (3.1.16) on either
+      side.
+- id: qft.align016.weinberg-1.lippmann-schwinger-to-contour-boundary-proof
+  from: qft.align016.lippmann-schwinger-scattering-state-equations
+  to: qft.align016.contour-proof-in-out-lippmann-schwinger-boundary-condition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The contour calculation analyzes the ±iε Lippmann–Schwinger expansion.
+  failure_mode: Without the prescribed resolvent poles, contour closure cannot select
+    in/out limits.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 111
+    - 112
+    note: The source substitutes (3.1.17) into wave packets before contour closure.
+- id: qft.align016.weinberg-1.lippmann-schwinger-to-onshell-t-relation
+  from: qft.align016.lippmann-schwinger-scattering-state-equations
+  to: qft.align016.weinberg-onshell-s-t-relation-and-born-approximation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The on-shell S–T relation is extracted by taking the Lippmann–Schwinger
+    in-state expansion to late times.
+  failure_mode: Without the resolvent expansion and its T-matrix element, the interacting
+    coefficient in S cannot be obtained by this route.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.2
+    pages:
+    - 111
+    - 114
+    - 115
+    note: The T element is defined in the Lippmann–Schwinger expansion and used in
+      the late-time contour derivation of (3.2.7).
+- id: qft.align016.weinberg-1.lippmann-schwinger-to-resolvent-decomposition
+  from: qft.align016.lippmann-schwinger-scattering-state-equations
+  to: qft.align016.resolvent-principal-value-and-delta-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The distributional decomposition is applied to the ±iε resolvent that
+    appears in the Lippmann–Schwinger expansion.
+  failure_mode: Without the resolvent boundary prescription, the principal-value and
+    on-shell terms have no scattering-state role.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 111
+    - 112
+    - 113
+    note: The ±iε equation is followed by the regulated reciprocal decomposition.
+- id: qft.align016.weinberg-1.lorentz-covariance-to-decay-time-dilation
+  from: qft.align016.proper-orthochronous-s-matrix-covariance-and-conservation
+  to: qft.align016.decay-width-and-lorentz-time-dilation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: S-matrix covariance makes the spin-summed amplitude factor scalar, leaving
+    only the initial-energy factor in the decay rate.
+  failure_mode: Without Lorentz covariance, the amplitude factor could transform and
+    the 1/E time-dilation conclusion would not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+- id: qft.align016.weinberg-1.massive-intrinsic-parity-to-parity-covariance
+  from: qft.align010.weinberg-1.massive-intrinsic-parity-and-time-reversal
+  to: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity action on massive external particles includes their intrinsic
+    parity phases.
+  failure_mode: Without the one-particle massive inversion action, the multiparticle
+    phase product is not specified.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 125
+    note: The source writes the direct product of massive-particle parity phases and
+      discusses their redefinitions.
+- id: qft.align016.weinberg-1.massive-time-reversal-to-s-reciprocity
+  from: qft.align010.weinberg-1.massive-intrinsic-parity-and-time-reversal
+  to: qft.align016.antiunitary-time-reversal-s-matrix-reciprocity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multiparticle time-reversal formula on p. 127 explicitly imports
+    the massive one-particle momentum, spin, and phase action from Section 2.6.
+  failure_mode: Without the accepted massive one-particle action, the reversed external
+    labels and phases in the reciprocity formula are undefined.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 127
+    - 128
+- id: qft.align016.weinberg-1.massless-parity-pairing-to-parity-covariance
+  from: qft.align010.weinberg-1.massless-parity-helicity-pairing
+  to: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The source’s massive parity formula is explicitly qualified as requiring
+    modification for massless particles.
+  failure_mode: Without the helicity-pairing input, the parity relation would be overextended
+    to a massless state with no parity partner.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    note: The source states the displayed parity action is for massive particles and
+      requires modification for massless particles.
+- id: qft.align016.weinberg-1.massless-time-reversal-to-time-reversal-reciprocity
+  from: qft.align010.weinberg-1.massless-time-reversal-preserves-helicity
+  to: qft.align016.antiunitary-time-reversal-s-matrix-reciprocity
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The massive time-reversal formula is explicitly qualified for massless
+    particles, whose helicity behavior is different.
+  failure_mode: Without this qualification, the massive spin-reversal rule would be
+    silently applied to massless helicity labels.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 127
+    - 128
+    note: The source gives the massive formula and states that massless modifications
+      are required.
+- id: qft.align016.weinberg-1.moller-map-to-lippmann-schwinger
+  from: qft.align016.moller-operators-asymptotic-state-map
+  to: qft.align016.lippmann-schwinger-scattering-state-equations
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: 'Both constructions define the same in/out boundary conditions: Ω gives
+    the asymptotic map while the resolvent equation supplies a formal explicit solution.'
+  failure_mode: Without preserving the common boundary conditions, the resolvent solution
+    could be mistaken for an arbitrary energy-eigenstate solution.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    - 111
+    note: The source gives Ω as the asymptotic formulation then introduces the formal
+      Lippmann–Schwinger solution satisfying those conditions.
+- id: qft.align016.weinberg-1.onshell-t-to-s-amplitudes
+  from: qft.align016.weinberg-onshell-s-t-relation-and-born-approximation
+  to: qft.align016.s-matrix-transition-amplitudes
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The late-time Lippmann–Schwinger calculation is an independent route
+    that supplies Weinberg’s on-shell transition-amplitude convention.
+  failure_mode: Treating its Lippmann–Schwinger input as compulsory for every amplitude
+    route would erase the independent Peskin–Schroeder and LSZ constructions.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 114
+    - 115
+    note: The source derives the on-shell relation from the late-time Lippmann–Schwinger
+      expansion.
+- id: qft.align016.weinberg-1.overlap-route-to-s-unitarity
+  from: qft.align016.asymptotic-overlap-unitarity-proof
+  to: qft.align016.conditional-s-matrix-unitarity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Completeness and normalization provide one complete proof route to the
+    common unitarity result.
+  failure_mode: Making this route jointly necessary with the algebraic route would
+    misrepresent the independent proofs.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source gives the overlap-completeness derivation before its algebraic
+      alternative.
+- id: qft.align016.weinberg-1.parity-antiunitarity-input-to-discrete-relations
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity construction relies on its unitary action, distinct from time
+    reversal’s antiunitarity.
+  failure_mode: Without this distinction, phase and scalar-product transformations
+    in the discrete-symmetry relations are misapplied.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 128
+    note: The source treats P as unitary and T as antiunitary in the corresponding
+      S-matrix conditions.
+- id: qft.align016.weinberg-1.parity-covariance-to-parity-inference
+  from: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  to: qft.align016.parity-angular-momentum-inference-and-weak-violation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion-parity argument uses the parity covariance rule together with
+    the momentum parity of the allowed angular-momentum amplitude.
+  failure_mode: Without the parity transformation rule, odd momentum dependence would
+    not constrain intrinsic-parity products.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 124
+    - 126
+    note: The source first states the parity condition then applies it to pion absorption.
+- id: qft.align016.weinberg-1.parity-to-pt-beta-decay-constraint
+  from: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
+  to: qft.align016.pt-invariance-polarized-beta-decay-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The PT constraint combines parity's momentum reversal with time reversal's
+    antiunitary spin reversal.
+  failure_mode: Without the parity action, PT would not preserve momenta while reversing
+    spin as used in the beta-decay argument.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 130
+    - 131
+- id: qft.align016.weinberg-1.physical-spectrum-to-moller-map
+  from: qft.align016.free-hamiltonian-physical-spectrum-assumption
+  to: qft.align016.moller-operators-asymptotic-state-map
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Ω compares full and free evolution only after H₀ has free states matched
+    in energy spectrum to the full scattering states.
+  failure_mode: A mismatched spectrum would make the stated asymptotic matching condition
+    fail for the intended physical particles.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 110
+    - 111
+    note: The equal-spectrum assumption precedes the Ω definition and is used in the
+      asymptotic-state construction.
+- id: qft.align016.weinberg-1.poincare-generators-to-generator-criterion
+  from: qft.align010.weinberg-1.poincare-generators
+  to: qft.align016.generator-commutator-criterion-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The criterion is expressed using free Hamiltonian, momentum, angular-momentum,
+    and boost generators.
+  failure_mode: Without the generator meanings, the commutators are formal symbols
+    rather than the infinitesimal Poincaré covariance condition.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 118
+    note: The source introduces H0, P0, J0, and K0 as the infinitesimal transformation
+      generators.
+- id: qft.align016.weinberg-1.poincare-lie-algebra-to-boost-sufficiency
+  from: qft.align010.weinberg-1.poincare-lie-algebra
+  to: qft.align016.interacting-boost-smoothness-lorentz-sufficiency
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The boost proof uses the free and exact Poincaré commutators, especially
+    [K0,H0] and [K,H].
+  failure_mode: Without these commutators, the W correction cannot be related to the
+    S-operator boost commutator.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 118
+    - 119
+    - 120
+    note: The source lists the algebra, introduces K=K0+W, and uses the commutators
+      in the proof.
+- id: qft.align016.weinberg-1.proper-orthochronous-representations-to-s-covariance
+  from: qft.align010.weinberg-1.proper-orthochronous-lorentz-component
+  to: qft.align016.proper-orthochronous-s-matrix-covariance-and-conservation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The covariance definition is restricted to the proper orthochronous transformations
+    represented continuously on the asymptotic states.
+  failure_mode: Conflating this component with discrete inversions would erase the
+    separate parity and time-reversal hypotheses.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 116
+    - 117
+    note: The source explicitly starts the Lorentz discussion with proper orthochronous
+      transformations and treats discrete symmetries later.
+- id: qft.align016.weinberg-1.s-amplitudes-to-conditional-unitarity
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align016.conditional-s-matrix-unitarity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unitarity statement concerns the S overlap matrix after its in/out
+    transition-amplitude definition is fixed.
+  failure_mode: S-dagger S=SS-dagger=1 is detached from the scattering matrix whose
+    conditions are being proved.
+  evidence:
+  - source: weinberg-1
+    section: '3.2'
+    pages:
+    - 113
+    - 114
+    note: The source defines S as the in/out overlap before deriving both unitarity
+      relations.
+- id: qft.align016.weinberg-1.s-operator-to-generator-criterion
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align016.generator-commutator-criterion-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The commutator criterion is stated for the S-operator defined by free-state
+    matrix elements.
+  failure_mode: Without the operator S, the generator commutators are not a formulation
+    of the matrix covariance condition.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.3
+    pages:
+    - 114
+    - 117
+    - 118
+    note: The S-operator definition is invoked before equivalence with commutation
+      by the free generators.
+- id: qft.align016.weinberg-1.s-overlap-to-s-covariance
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align016.proper-orthochronous-s-matrix-covariance-and-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Lorentz covariance is a property of the transition overlap Sβα and its
+    associated S-operator.
+  failure_mode: Without the overlap definition, the transformed quantity is not identified
+    as a scattering amplitude.
+  evidence:
+  - source: weinberg-1
+    section: 3.2; 3.3
+    pages:
+    - 113
+    - 116
+    - 117
+    note: The source defines S as the overlap then applies the common Lorentz transformation
+      to it.
+- id: qft.align016.weinberg-1.s-unitarity-to-watson
+  from: qft.align016.conditional-s-matrix-unitarity
+  to: qft.align016.watson-theorem-final-state-phase
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Watson’s phase relation uses unitarity of the strong background S(0)
+    to identify real eigenphase shifts.
+  failure_mode: Without background unitarity, the eigenvalues need not be phases and
+    the amplitude phase constraint fails.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 129
+    - 130
+    note: The source invokes unitarity of S(0) before writing its eigenvalues as exp(2iδ).
+- id: qft.align016.weinberg-1.time-reversal-to-pt-beta-decay-constraint
+  from: qft.align016.antiunitary-time-reversal-s-matrix-reciprocity
+  to: qft.align016.pt-invariance-polarized-beta-decay-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The PT beta-decay prediction uses the antiunitary reciprocity reasoning
+    developed for time reversal.
+  failure_mode: Without the time-reversal factor, parity alone predicts simultaneous
+    momentum reversal rather than the spin-only PT test stated here.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 130
+    - 131
+- id: qft.align016.weinberg-1.time-reversal-to-watson
+  from: qft.align016.antiunitary-time-reversal-s-matrix-reciprocity
+  to: qft.align016.watson-theorem-final-state-phase
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Watson’s theorem is the special complete-eigenstate consequence of the
+    time-reversal relation with a strong background.
+  failure_mode: Without antiunitary time-reversal reciprocity, the phase-sum constraint
+    on the weak transition amplitude does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.3'
+    pages:
+    - 129
+    - 130
+    note: The source derives the complete-set relation from time reversal and then
+      names the eigenstate phase result Watson’s theorem.
+- id: qft.align016.weinberg-1.wave-packets-to-contour-boundary-proof
+  from: qft.align016.in-out-states-heisenberg-asymptotic-definition
+  to: qft.align016.contour-proof-in-out-lippmann-schwinger-boundary-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Smooth packets and their time uncertainty are assumptions used to damp
+    non-prescription singularities in the contour argument.
+  failure_mode: Without these packet conditions, the stated asymptotic contour suppression
+    does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 109
+    - 112
+    note: The source introduces smooth packets and later states their time uncertainty
+      condition in the contour argument.
+- id: qft.align016.weinberg-1.wave-packets-to-moller-map
+  from: qft.align016.in-out-states-heisenberg-asymptotic-definition
+  to: qft.align016.moller-operators-asymptotic-state-map
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source restricts Ω(±∞) to smooth energy superpositions, exactly the
+    wave-packet condition required to localize the scattering event.
+  failure_mode: Treating Ω(±∞) on an individual energy eigenstate would give a formal
+    map without the stated physical asymptotic meaning.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 109
+    - 110
+    - 111
+    note: Wave packets are required for localization, and page 111 qualifies the Ω
+      limit to smooth superpositions.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -21866,6 +23981,16 @@ groups:
   title: Weinberg historical canonical quantization and field interpretation
   question: What did historical oscillator and field constructions establish, and
     what limits did they retain?
+- id: qft.align016.asymptotic-lsz
+  title: Asymptotic states and LSZ
+- id: qft.align016.diagrammatics
+  title: Diagrammatic scalar perturbation theory
+- id: qft.align016.observables
+  title: Rates, phase space, and resonance observables
+- id: qft.align016.scattering-operators
+  title: Scattering operators, channels, and unitarity
+- id: qft.align016.symmetries
+  title: S-matrix covariance and discrete symmetries
 - id: qft.anomaly-regularization-and-matching
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,
