@@ -1798,6 +1798,66 @@ nodes:
     - 289
     note: The chapter explicitly imports the earlier theorem before stating and applying
       its scalar and general hard-subgraph dimension formulas.
+- id: weinberg-2.imported-compton-invariant-cross-section-formula
+  label: Imported invariant Compton cross-section formula
+  summary: For the Compton process with photon and spin-1/2-particle external momenta,
+    the invariant differential cross-section is obtained from the squared Feynman
+    amplitude, the relative velocity, the four-momentum-conserving delta function,
+    and the final-state momentum measures. This imports the use-level content of Eq.
+    (8.7.7), which the assigned derivation explicitly cites.
+  kind: method
+  group: weinberg-2.ope-general-and-problems
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.compton-tree-amplitude-and-laboratory-kinematics
+    note: Corresponds to the invariant amplitude-to-cross-section part of the accepted
+      Volume I Compton treatment; the laboratory specialization in that record is
+      not required here.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 363
+    note: Equation (8.7.7) gives the invariant differential cross-section in terms
+      of M, relative velocity, a momentum-conserving delta function, and final-state
+      measures.
+  notation:
+  - source: weinberg-1
+    note: The imported formula uses incoming photon k and target p, outgoing photon
+      k′ and target p′, amplitude M, and relative velocity u.
+- id: weinberg-2.imported-compton-spin-sum-amplitude-square
+  label: Imported raw Compton fermion-spin sum and amplitude square
+  summary: Equation (8.7.38) is a raw sum over the initial and final fermion spin
+    labels of the Compton squared amplitude; it does not include the separate factor
+    1/2 used to average an unmeasured initial fermion spin. The displayed result follows
+    after the stated transverse gauge and a specialization to real linear photon polarizations
+    with the listed normalization conditions, and the source says it applies in any
+    Lorentz frame.
+  kind: result
+  group: weinberg-2.ope-general-and-problems
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.polarized-klein-nishina-cross-section
+    note: Corresponds to the accepted Volume I electron-spin, transverse-gauge, linear-polarization,
+      and amplitude-square calculation through Eq. (8.7.38); this import stops before
+      the laboratory Klein-Nishina cross-section.
+  evidence:
+  - source: weinberg-1
+    section: '8.7'
+    pages:
+    - 365
+    - 366
+    - 367
+    note: Equation (8.7.18) separately defines the half-weighted initial-spin average;
+      Eqs. (8.7.22) and the p. 366 specialization state the gauge and real linear-polarization
+      conditions; Eq. (8.7.38) is the raw sigma,sigma-prime sum and is stated to apply
+      in any Lorentz frame.
+  notation:
+  - source: weinberg-1
+    note: The raw Eq. (8.7.38) sum is over fermion labels σ and σ′. The separate cross-section
+      prescription is (1/2) Σσσ′. Photon polarizations are e and e′; p. 365 imposes
+      e·p=e*·p=e′·p=e′*·p=0, while p. 366 specializes to real linear polarization
+      and records e·e*=e′·e′*=1.
 - id: weinberg-2.infrared-renormalons-from-ope-power-corrections
   label: Infrared renormalons from OPE power corrections
   summary: For QCD current-current vacuum polarization with αs=g²/(4π), a dimension-d
@@ -2337,6 +2397,28 @@ nodes:
   - source: weinberg-2
     note: Here the generator index alpha takes values 1, 2, 3, and epsilon_gamma-alpha-beta
       records the parity of permutations of those labels.
+- id: weinberg-2.parton-dis-compton-polarization-sum-input
+  label: Polarization-sum identity for the parton DIS derivation
+  summary: For the real initial and final photon polarizations used with the Compton
+    formulas, with e²=e′²=1 and e·p=e′·p=e·k=e′·k′=0, the supplied polarization sum
+    is Σe,e′(e·e′)²=2+m⁴(k·k′)²/[(k·p)²(k′·p)²]+2m²(k·k′)/[(k·p)(k′·p)]. The source
+    presents this identity as useful for deriving the parton-model cross section,
+    rather than supplying that derivation.
+  kind: result
+  group: weinberg-2.ope-general-and-problems
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The footnote gives the real-polarization normalization and gauge conditions
+      followed by the polarization-sum identity, calling it useful for the derivation
+      from Eqs. (8.7.7) and (8.7.38).
+  notation:
+  - source: weinberg-2
+    note: Here e and e′ are the initial and final real photon polarization vectors;
+      k and k′ are their momenta, and p and m are the Compton target momentum and
+      mass in the cited general-frame formulas.
 - id: weinberg-2.parton-model-dis-scaling-and-sum-rules
   label: Parton-model DIS scaling and sum rules
   summary: Treat a fast nucleon as partons of type i with momentum fraction x and
@@ -2354,6 +2436,30 @@ nodes:
     - 275
     note: Equations (20.6.6)–(20.6.13) give the parton assumptions, structure functions,
       and their qualifications.
+- id: weinberg-2.parton-model-pre-cross-section-kinematic-inputs
+  label: Parton-model kinematic and charge inputs before the cross-section result
+  summary: In the parton model, a highly relativistic nucleon of momentum p is treated
+    as partons of types i with distribution Fi(x), where Fi(x) dx assigns a parton
+    momentum between xp and (x+dx)p. For elastic electron scattering with the electron
+    mass neglected, the parton momentum xp gives ν=q²/(2mN x). Qi denotes the ith
+    parton's charge in units of e, and the tan²(θ/2) term is qualified as appropriate
+    for a Dirac parton with magnetic moment eQi/(2mN x). This input stops before Eq.
+    (20.6.8).
+  kind: assumption
+  group: weinberg-2.ope-general-and-problems
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The page gives the parton momentum-fraction distribution, the elastic xp
+      kinematic relation with neglected electron mass, and the charge and Dirac-magnetic-moment
+      qualification; this record deliberately excludes the following cross-section
+      equation.
+  notation:
+  - source: weinberg-2
+    note: The source uses p for nucleon momentum, x for the parton's momentum fraction,
+      Fi(x) for its distribution, ν=−q·p/mN, and Qi for charge in units of e.
 - id: weinberg-2.pcac-pion-pole-qualification
   label: PCAC as pion-pole dominance of an otherwise small axial divergence
   summary: For nonzero pion mass, the axial divergence is of order mπ² except where
@@ -2513,6 +2619,20 @@ nodes:
     - 159
     note: The problem asks for the redefinition argument for the coefficient of the
       g-fourth term.
+- id: weinberg-2.problem-derive-parton-dis-cross-section
+  label: 'Problem: derive the parton-model DIS cross section'
+  summary: Problem 3 assigns a derivation of Eq. (20.6.8), the parton-model deep-inelastic
+    cross section, from the specified Compton-scattering formulas (8.7.7) and (8.7.38).
+    The source poses this as a derivation task.
+  kind: method
+  group: weinberg-2.ope-general-and-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 293
+    note: Problem 3 explicitly directs the derivation of Eq. (20.6.8) in the parton
+      model from Eqs. (8.7.7) and (8.7.38).
 - id: weinberg-2.problem-derive-su3-nucleon-mass-relation
   label: 'Problem: derive the SU(3) nucleon mass relation'
   summary: Use the first-order quark-mass perturbation formula and SU(3) symmetry
@@ -6392,6 +6512,58 @@ edges:
     - 2
     note: The source explicitly says that naive Feynman rules require additional ghost
       loops.
+- id: weinberg-2.imported-compton-invariant-cross-section-to-parton-dis-problem
+  from: weinberg-2.imported-compton-invariant-cross-section-formula
+  to: weinberg-2.problem-derive-parton-dis-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The assigned derivation names Eq. (8.7.7) as an input, so its amplitude-to-invariant-cross-section
+    relation must be applied to turn the Compton amplitude factor into the requested
+    differential parton cross section.
+  failure_mode: Without the cross-section measure and its relation to the squared
+    amplitude, the cited Compton result cannot be converted into the requested differential
+    parton cross section.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The footnote says Eq. (20.6.8) may be derived from Eqs. (8.7.7) and (8.7.38)
+      for general-frame Compton scattering.
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 293
+    note: Problem 3 names Eq. (8.7.7) as one of the two formulas from which the derivation
+      is to proceed.
+- id: weinberg-2.imported-compton-spin-sum-to-parton-dis-problem
+  from: weinberg-2.imported-compton-spin-sum-amplitude-square
+  to: weinberg-2.problem-derive-parton-dis-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The assigned derivation names Eq. (8.7.38) as an input, so its raw fermion-spin
+    sum, its separate initial-spin average convention, and its polarization restrictions
+    must be applied without changing the normalization.
+  failure_mode: Without the cited amplitude-square input and its separate averaging
+    convention, the cross-section relation lacks the dynamical factor or acquires
+    an incorrect factor of two.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The footnote says Eq. (20.6.8) may be derived from Eqs. (8.7.7) and (8.7.38)
+      for general-frame Compton scattering.
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 293
+    note: Problem 3 names Eq. (8.7.38) as one of the two formulas from which the derivation
+      is to proceed.
 - id: weinberg-2.imported-power-counting-to-general-hard-flow
   from: weinberg-2.imported-chapter12-power-counting-theorem
   to: weinberg-2.general-hard-flow-ope-power-counting
@@ -7407,6 +7579,49 @@ edges:
     - 2
     note: The source states that gauge-associated spin-one particles may be very heavy
       after spontaneous breakdown of gauge symmetry.
+- id: weinberg-2.parton-dis-polarization-sum-to-cross-section-problem
+  from: weinberg-2.parton-dis-compton-polarization-sum-input
+  to: weinberg-2.problem-derive-parton-dis-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source explicitly supplies the polarization sum, with its gauge and
+    normalization hypotheses, as useful for deriving Eq. (20.6.8) from the Compton
+    formulas.
+  failure_mode: Without this sum, the polarization factor retained in the imported
+    Compton amplitude square cannot be converted to the unpolarized expression required
+    in the assigned derivation.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The footnote gives the polarization sum immediately after stating that it
+      is useful for the derivation from Eqs. (8.7.7) and (8.7.38).
+- id: weinberg-2.parton-model-pre-cross-section-to-dis-cross-section-problem
+  from: weinberg-2.parton-model-pre-cross-section-kinematic-inputs
+  to: weinberg-2.problem-derive-parton-dis-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task is expressly a parton-model derivation, and the pre-result xp
+    kinematics, distribution, charge, and Dirac-parton qualification determine how
+    the cited Compton inputs are applied before the target cross-section expression
+    is obtained.
+  failure_mode: Without the pre-result parton momentum fraction, elastic relation,
+    charge, and Dirac-parton qualification, the Compton formulas do not specify the
+    momentum-fraction dependence or charged parton contribution of the requested model
+    calculation.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The page states the parton-model ingredients immediately before presenting
+      the cross-section to be derived, while this prerequisite record excludes that
+      result.
 - id: weinberg-2.pion-decay-constant-to-goldberger-treiman
   from: weinberg-2.pion-decay-constant-from-axial-current
   to: weinberg-2.goldberger-treiman-relation

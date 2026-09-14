@@ -37,13 +37,11 @@ def inspect_bank(root):
                     raise ProjectError(f"Coverage ledger names another project: {identity}")
                 if coverage.get("graph_digest") != digest(project.knowledge):
                     raise ProjectError(f"Stale public coverage ledger: {identity}")
-    overlaps = {}
+    overlaps, imports = {}, []
     for identity, project in projects.items():
         for node in project.nodes.values():
             seen = set()
             for origin in node.get("origins", []):
-                if kinds[identity] != "subjects":
-                    raise ProjectError(f"Only shared subject graphs have origins in this bank: {identity}")
                 key = (origin["project"], origin["node"])
                 if key in seen:
                     raise ProjectError(f"Duplicate origin on {identity}/{node['id']}: {key}")
@@ -55,8 +53,13 @@ def inspect_bank(root):
                     raise ProjectError(f"Origin must name a textbook graph: {key}")
                 if origin["project"] not in reviewed:
                     raise ProjectError(f"Origin needs a reviewed textbook graph: {key}")
-            for pair in combinations(sorted({p for p, _ in seen}), 2):
-                overlaps.setdefault((identity, *pair), []).append(node["id"])
+                if kinds[identity] == "textbooks":
+                    if origin["project"] == identity:
+                        raise ProjectError(f"Textbook import must name another textbook: {key}")
+                    imports.append({"book": identity, "node": node["id"], "origin": dict(origin)})
+            if kinds[identity] == "subjects":
+                for pair in combinations(sorted({p for p, _ in seen}), 2):
+                    overlaps.setdefault((identity, *pair), []).append(node["id"])
     return {
         "projects": {identity: {"nodes": len(p.nodes), "edges": len(p.knowledge["edges"]),
                                 "plans": len(p.plans), "digest": p.content_digest}
@@ -64,6 +67,8 @@ def inspect_bank(root):
         "overlap": [{"shared_graph": shared, "books": [a, b], "count": len(nodes),
                      "shared_nodes": sorted(nodes)}
                     for (shared, a, b), nodes in sorted(overlaps.items())],
+        "imports": sorted(imports, key=lambda row: (
+            row["book"], row["node"], row["origin"]["project"], row["origin"]["node"])),
         "scope": "Reviewed correspondences in extracted portions only; not full-book overlap.",
     }
 

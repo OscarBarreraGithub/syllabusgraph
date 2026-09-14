@@ -31,9 +31,13 @@ syllabusgraph validate -p graphs/textbooks/peskin-schroeder
 python scripts/check_graph_bank.py
 ```
 
-The second command checks all projects and resolves shared nodes' `origins`.
+The second command checks all projects and resolves nodes' reviewed `origins`.
 It rejects stale public review digests, course plans, `public_file` attachments, and
-origins that do not connect a shared subject graph to a reviewed textbook graph.
+origins that do not resolve to exact nodes in a reviewed textbook graph.
+Textbook nodes may use origins to identify inputs imported from another book;
+their summaries, evidence, and correspondence notes must distinguish using an
+external result from deriving it in the current book. Self-imports are rejected.
+The report lists these references under `imports`, separately from shared overlap.
 Review summaries are contributor declarations tied to graph content; the check
 cannot establish that scientific review actually occurred.
 When `coverage.yaml` is present, the check also verifies its project identity
@@ -41,7 +45,8 @@ and graph digest. It does not authenticate the inventory or prove completeness.
 It does not scan arbitrary files for textbook content; inspect files before
 committing and run the separate [publication audit](../docs/releasing.md).
 Its overlap table counts shared concepts with reviewed origins in each pair of
-book graphs. It describes only the extracted portions, not total textbook
+book graphs; textbook imports do not contribute to that table. It describes
+only the extracted portions, not total textbook
 overlap; zero can simply mean the relevant section has not been extracted.
 The correspondence notes explain narrower scopes and alternative treatments.
 This is a data bank and a command-line check; a dedicated comparison UI is

@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Support reviewed inputs imported from another textbook through exact node
+  origins. Validate those references and report them separately from shared
+  overlap, preserving the distinction between using and deriving a result.
 - Expand the QFT bank beyond its pilot through independently reviewed textbook
   batches. Record current counts, exact accepted scopes, and nonconceptual
   exclusions alongside each graph. Full-book extraction and shared alignment

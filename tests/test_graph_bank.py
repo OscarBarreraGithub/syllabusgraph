@@ -98,7 +98,7 @@ def test_coverage_ledger_cannot_be_copied_from_another_project(tmp_path, sample)
 
 
 @pytest.mark.parametrize('bad_origin_owner', [True, False])
-def test_bank_origins_only_link_subject_to_book(tmp_path, sample, bad_origin_owner):
+def test_bank_origins_must_target_books(tmp_path, sample, bad_origin_owner):
     book = book_project(tmp_path / 'textbooks/book', sample, 'book')
     subject = book_project(tmp_path / 'subjects/topic', sample, 'topic')
     owner, target = (book, subject) if bad_origin_owner else (subject, subject)
@@ -106,7 +106,45 @@ def test_bank_origins_only_link_subject_to_book(tmp_path, sample, bad_origin_own
         'project': target.config['id'], 'node': next(iter(target.nodes)), 'note': 'Invalid role.'
     }]
     save_reviewed_graph(owner)
-    with pytest.raises(ProjectError, match='Only shared|must name a textbook'):
+    with pytest.raises(ProjectError, match='must name a textbook'):
+        inspect_bank(tmp_path)
+
+
+def test_reviewed_book_imports_do_not_count_as_shared_overlap(tmp_path, sample):
+    book = book_project(tmp_path / 'textbooks/book', sample, 'book')
+    other = book_project(tmp_path / 'textbooks/other', sample, 'other')
+    third = book_project(tmp_path / 'textbooks/third', sample, 'third')
+    node = book.knowledge['nodes'][0]
+    node['origins'] = [
+        {'project': p.config['id'], 'node': next(iter(p.nodes)),
+         'note': 'An external result used here; its derivation belongs to the cited book.'}
+        for p in (other, third)
+    ]
+    save_reviewed_graph(book)
+    report = inspect_bank(tmp_path)
+    assert report['overlap'] == []
+    assert report['imports'] == [
+        {'book': 'book', 'node': node['id'], 'origin': origin}
+        for origin in node['origins']
+    ]
+
+
+@pytest.mark.parametrize('invalid', ['self', 'missing-node', 'duplicate'])
+def test_book_imports_reject_invalid_correspondences(tmp_path, sample, invalid):
+    book = book_project(tmp_path / 'textbooks/book', sample, 'book')
+    other = book_project(tmp_path / 'textbooks/other', sample, 'other')
+    node = book.knowledge['nodes'][0]
+    origin = {'project': 'other', 'node': next(iter(other.nodes)), 'note': 'Imported result.'}
+    if invalid == 'self':
+        origin['project'] = 'book'
+    elif invalid == 'missing-node':
+        origin['node'] = 'missing-node'
+    node['origins'] = (
+        [origin, {**origin, 'note': 'A second description of the same origin.'}]
+        if invalid == 'duplicate' else [origin]
+    )
+    save_reviewed_graph(book)
+    with pytest.raises(ProjectError, match='another textbook|Unknown origin|Duplicate origin'):
         inspect_bank(tmp_path)
 
 

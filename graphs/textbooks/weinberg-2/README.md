@@ -1,10 +1,8 @@
 # The Quantum Theory of Fields, Volume II: Modern Applications
 
-**Partial, model-reviewed graph:** 225 concepts and 272 relationships. Accepted units cover printed pages 1–59, 63–247, 252–294; exact topic scopes and exclusions are in [review.yaml](review.yaml).
+**Partial, model-reviewed graph:** 230 concepts and 276 relationships. Accepted units cover printed pages 1–59, 63–247, 252–294; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
 Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. Full-book construction and cross-unit dependency reconciliation are in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
-
-**Pending content:** Chapter 20, Problem 3 (parton deep-inelastic-scattering cross section) is not yet constructed. Final adjudication removed this task pending a new source packet with the required Compton-scattering formulas from Volume I, Section 8.7.
 
 This graph describes the book independently of any audience, course, or schedule. Textbooks, extracted passages, source-page renderings, and processing records remain private.
 
