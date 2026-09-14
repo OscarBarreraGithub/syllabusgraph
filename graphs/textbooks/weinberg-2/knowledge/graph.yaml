@@ -15,6 +15,42 @@ nodes:
   notation:
   - source: weinberg-2
     note: A superscript A on t denotes the adjoint representation in this treatment.
+- id: weinberg-2.anti-brst-ghost-antighost-role-observation
+  label: Anti-BRST observation about ghost and antighost roles
+  summary: The source records that anti-BRST invariance reveals a similarity between
+    the roles of the ghost and antighost despite their asymmetric appearance in the
+    construction, while explicitly saying that this similarity remains mysterious.
+  kind: concept
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+    note: The closing sentence of the section identifies the anti-BRST observation
+      and preserves the source's unresolved qualification.
+- id: weinberg-2.appendix-a-proof-of-compact-algebra-criterion
+  label: Appendix proof of the positive-metric compact-algebra criterion
+  summary: 'Appendix A supplies a proof route for the earlier stated equivalence:
+    a real symmetric positive-definite invariant Lie-algebra metric is equivalent
+    to a basis with totally antisymmetric structure constants and to a direct sum
+    of compact simple and U(1) subalgebras. The route constructs a real inverse square
+    root of the metric to prove total antisymmetry, uses the Hermitian adjoint representation
+    to reduce into simple and Abelian blocks, proves each simple block compact because
+    -C^c_ad C^d_bc is a positive sum of squares whose kernel would define an invariant
+    Abelian subalgebra, and reconstructs an invariant positive metric from compact
+    blocks using the Jacobi identity.'
+  kind: method
+  group: weinberg-2.lie-algebra-appendices
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 51
+    - 52
+    - 53
+    note: The appendix explicitly organizes the proof as a implies b, b implies c,
+      and c implies a.
 - id: weinberg-2.axial-gauge-canonical-reduction
   label: Axial gauge canonical reduction
   summary: Choosing axial gauge A^a_3=0 leaves A^a_i for i=1,2 as canonical gauge
@@ -89,6 +125,22 @@ nodes:
     - 33
     note: Equations (15.7.27)–(15.7.31) connect changes of the gauge-fixing functional
       to Q and derive the cohomological characterization.
+- id: weinberg-2.brst-conditional-ghost-free-gauge-independence
+  label: Conditional ghost-free gauge independence from BRST cohomology
+  summary: 'For gauge-invariant operators between Q-closed physical states, the source
+    derives independence under changing the gauge-fixing functional. It then gives
+    a conditional physical conclusion: if some gauge-fixing functional has decoupled
+    ghosts, the general BRST-invariant action yields a unitary S-matrix with no ghosts
+    in initial or final states even when a different gauge is used for calculation.'
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+    note: Equations (15.8.20)–(15.8.21) state the Q-cohomology condition and the following
+      paragraphs give the conditional ghost-decoupling argument.
 - id: weinberg-2.brst-electrodynamic-polarization-example
   label: BRST cohomology removes unphysical photon and ghost states
   summary: In the free electrodynamic example, Q-closed one-photon states have transverse
@@ -176,6 +228,238 @@ nodes:
     - 36
     note: Equation (15.7.40) and the following discussion state the general action,
       ghost decoupling argument, and qualified BRST-quantization result.
+- id: weinberg-2.bv-antibracket-classical-master-equation
+  label: Antibracket form of the classical master equation
+  summary: The antibracket is defined using left and right functional derivatives
+    with respect to fields and antifields. For the bosonic master action S, its graded
+    signs make the classical master equation equivalent to (S,S)=0; unlike the fermionic
+    self-antibracket case, this is a nontrivial condition.
+  kind: representation
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 45
+    - 46
+    note: Equations (15.9.13)–(15.9.15) define the antibracket, rewrite the master
+      equation, and state its graded symmetry.
+  notation:
+  - source: weinberg-2
+    note: The source retains the distinction between right and left functional differentiation
+      because field and antifield variables may be fermionic.
+- id: weinberg-2.bv-anticanonical-transformations
+  label: BV anticanonical transformations preserve the master structure
+  summary: Because the BV solution is not unique, infinitesimal fermionic ghost-number-minus-one
+    generators can transform a solution into another. The source calls transformations
+    preserving the fundamental field-antifield antibrackets anticanonical transformations;
+    the Jacobi identity shows that they preserve c-number fundamental brackets and
+    hence the master equation.
+  kind: method
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 47
+    - 48
+    note: Equations (15.9.23)–(15.9.27) introduce the solution-changing transformation,
+      define anticanonical transformations, and verify bracket preservation.
+- id: weinberg-2.bv-antifields-and-graded-master-action
+  label: BV antifields and the graded master action
+  summary: For every field x^n, the BV construction introduces an external antifield
+    x*_n with the same Bose/Fermi statistics as the BRST-transformed field s x^n,
+    hence opposite statistics to x^n, and ghost number -gh(x^n)-1. In the closed cases
+    stated by the source, the gauge-invariant action is augmented by antifield couplings
+    to s x^n; the resulting bosonic ghost-number-zero action obeys the classical master
+    equation. Directly setting x*_n equal to a derivative of a fermionic gauge-fixing
+    functional of ghost number -1 reproduces the BRST-exact gauge-fixed action.
+  kind: method
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    note: Equations (15.9.1)–(15.9.6) assign antifield grading, state the master equation,
+      and recover gauge fixing from the fermion Psi.
+  notation:
+  - source: weinberg-2
+    note: Weinberg uses x*_n as an antifield symbol; it is explicitly unrelated to
+      complex or charge conjugation, and the antighost is not the ghost's antifield.
+- id: weinberg-2.bv-formalism-for-open-and-reducible-symmetries
+  label: Batalin-Vilkovisky formalism for open and reducible gauge symmetries
+  summary: The Batalin-Vilkovisky formalism extends the treatment beyond irreducible
+    gauge symmetries with an off-shell closed algebra. It is introduced for theories
+    with open algebras, whose closure holds only on field equations, and for reducible
+    symmetries; the source also identifies its later roles in renormalization and
+    quantum symmetry violations.
+  kind: method
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 42
+    note: The section introduction contrasts closed irreducible algebras with open
+      and reducible cases and lists the formalism's applications.
+- id: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
+  label: BV gauge fixing by a fermion and on-shell BRST closure
+  summary: 'To compute an S-matrix, the BV antifields are directly set to derivatives
+    of a fermionic gauge-fixing functional Psi. The source also gives an equivalent
+    anticanonical interpretation: shift the antifields and set the transformed ones
+    to zero. The resulting gauge-fixed action is invariant under a BRST transformation
+    on fields alone. For a general open algebra this field-only transformation differs
+    from the original BRST transformation and is generally nilpotent only when field
+    equations hold.'
+  kind: method
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    - 48
+    - 49
+    note: Page 43 first obtains gauge fixing by direct antifield substitution; equations
+      (15.9.28)–(15.9.30) give the equivalent shifted-antifield interpretation and
+      state the open-algebra, on-shell qualification.
+- id: weinberg-2.bv-generalized-brst-antibracket-differential
+  label: Generalized BRST differential from the antibracket
+  summary: The BV generalized BRST transformation acts on fields and antifields through
+    the antibracket with S. The antibracket derivative rule extends this action to
+    every functional, while the classical master equation makes S invariant and, through
+    the antibracket Jacobi identity, makes the differential nilpotent.
+  kind: method
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 46
+    - 47
+    note: Equations (15.9.16)–(15.9.22) define the transformation, establish its action
+      on a general functional, and derive nilpotency from the master equation and
+      Jacobi identity.
+- id: weinberg-2.bv-master-equation-open-algebra-consistency-tower
+  label: Master equation as the open-algebra consistency tower
+  summary: Expanding the BV master equation in antifield order yields gauge invariance
+    at zeroth antifield order, on-shell closure and generalized Jacobi consistency
+    at the next orders, and further consistency conditions at higher orders. Terms
+    quadratic or higher in antifields carry the field-equation dependence characteristic
+    of an open algebra, so the single master equation packages the whole hierarchy.
+  kind: result
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    - 45
+    note: The antifield expansion is displayed on p. 44 and p. 45 explains how its
+      master-equation orders encode open-algebra consistency conditions.
+- id: weinberg-2.bv-minimal-and-trivial-pairs
+  label: BV minimal variables and trivial pairs
+  summary: For general theories the master action may be nonlinear in antifields and
+    includes ghosts of ghosts and their antifields when symmetry is reducible. The
+    fields phi, ghosts, and their antifields are minimal variables, while the antighost
+    and auxiliary h field, whose BRST transformations remain linear, and their antifields
+    form trivial pairs that enter bilinearly.
+  kind: representation
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    note: Equation (15.9.7), its discussion, and the footnote distinguish the nonlinear
+      minimal action from the bilinear trivial-pair sector.
+  notation:
+  - source: weinberg-2
+    note: The source assigns ghost numbers -1, -2, and 0 respectively to the antifields
+      of phi, omega, and omega* in the displayed general action.
+- id: weinberg-2.bv-quantum-brst-observable-condition
+  label: Quantum BRST condition for gauge-fixing-independent observables
+  summary: Assuming the quantum master equation, expectation values of generalized-BRST-invariant
+    operators are unchanged under a small change of gauge-fixing fermion. For open
+    gauge theories, the source qualifies that field-only invariant operators are generally
+    only constants and instead gives the nilpotent quantum BRST operator sigma O=(O,S)-i
+    Delta O for observables depending on fields and antifields.
+  kind: result
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 50
+    note: Equation (15.9.36) gives the field-only invariance result, while the footnote
+      supplies the open-algebra quantum-BRST qualification.
+- id: weinberg-2.bv-quantum-master-equation
+  label: Quantum master equation for gauge-fixing independence
+  summary: For functional-integral quantum calculations, gauge-fixing-fermion independence
+    requires the quantum master equation (S,S)-2i Delta S=0 evaluated at the gauge-fixing
+    antifields, rather than the classical master equation alone. In units restoring
+    hbar, the Delta S contribution is weighted by hbar; a failure of a local action
+    to satisfy this equation is deferred to the source's anomaly discussion.
+  kind: result
+  group: weinberg-2.batalin-vilkovisky-formalism
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 49
+    - 50
+    note: Equations (15.9.31)–(15.9.35) derive the quantum master equation from changing
+      Psi, and p. 50 states the anomaly qualification.
+  notation:
+  - source: weinberg-2
+    note: Delta is the field-antifield second-order operator defined in equation (15.9.34);
+      the displayed convention suppresses hbar until the following paragraph.
+- id: weinberg-2.cartan-catalog-compact-classical-families
+  label: Cartan catalog of compact classical families
+  summary: 'The appendix presents compact forms of the classical families: A_n=su(n+1),
+    the traceless Hermitian (n+1)-by-(n+1) matrices, has rank n and d=n(n+2); B_n,
+    imaginary antisymmetric (2n+1)-by-(2n+1) matrices, has rank n and d=n(2n+1); C_n=usp(2n),
+    derived from the symplectic block constraint, has rank n and d=n(2n+1); and D_n,
+    the even-dimensional orthogonal family, has rank n and d=n(2n-1). The source states
+    A_n, B_n, and C_n are simple, while D_1 is Abelian and D_2 is B_1+B_1.'
+  kind: representation
+  group: weinberg-2.lie-algebra-appendices
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 54
+    - 55
+    - 56
+    - 57
+    note: The catalog introduces the compact convention, then describes A_n, B_n,
+      C_n, and D_n by their defining matrix groups, ranks, dimensions, and simplicity
+      qualifications.
+  notation:
+  - source: weinberg-2
+    note: The subscript n denotes rank, not dimension; Appendix B uses compact Hermitian-generator
+      conventions.
+- id: weinberg-2.cartan-exceptional-algebras-and-low-rank-isomorphisms
+  label: Exceptional algebras, low-rank isomorphisms, and covering-group qualification
+  summary: 'Beyond the classical families, the source lists the five exceptional simple
+    algebras G_2, F_4, E_6, E_7, and E_8 with dimensions 14, 52, 78, 133, and 248.
+    Its four low-rank algebra isomorphisms are A_1=B_1, B_1=C_1, C_2=B_2, and A_3=D_3.
+    These do not identify the corresponding groups: SU(2), USp(4), and SU(4) are simply
+    connected covers of the cited orthogonal groups. The source also gives SO(4)=SO(3)xSO(3),
+    hence its double-valued spinor representation from SU(2)xSU(2), and says higher-dimensional
+    SO(d) spinors require other constructions such as Clifford algebras.'
+  kind: result
+  group: weinberg-2.lie-algebra-appendices
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 57
+    - 58
+    note: The final catalog page lists the exceptional algebras; the following page
+      states the four isomorphisms and distinguishes algebra isomorphism from group
+      isomorphism.
 - id: weinberg-2.compact-simple-lie-algebra-classification
   label: Classification consequences for compact simple gauge algebras
   summary: The positive-metric restriction leaves compact simple algebras of limited
@@ -286,6 +570,25 @@ nodes:
   - source: weinberg-2
     note: In this section A labels an independent gauge variation and r labels fields,
       both potentially including spacetime coordinates.
+- id: weinberg-2.dynamical-gauge-fields-give-local-symmetry-physical-content
+  label: Dynamical gauge fields give local symmetry physical content
+  summary: Local gauge invariance or general covariance can be a merely conventional
+    description when the connection or metric is a fixed c-number background. The
+    source distinguishes the physically significant case, in which the corresponding
+    gauge or gravitational field is dynamical and is integrated over in S-matrix calculations.
+  kind: concept
+  group: weinberg-2.gauge-theory-framing
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 1
+    note: The opening and its footnote distinguish a fixed choice of phase or coordinates
+      from a dynamical field integrated over in S-matrix elements.
+  notation:
+  - source: weinberg-2
+    note: The opening compares the electromagnetic A_mu(x) and gravitational g_munu(x)
+      cases before extending locality to non-Abelian transformations.
 - id: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
   label: Faddeev–Popov gauge-fixed functional integral
   summary: The De Witt–Faddeev–Popov setup integrates gauge and matter fields with
@@ -461,6 +764,24 @@ nodes:
     - 40
     note: Equation (15.8.14) states the result and equations (15.8.15)–(15.8.18) begin
       the proof.
+- id: weinberg-2.general-brst-cohomology-proof-completion
+  label: Completion of the general BRST cohomology proof
+  summary: Completing the argument begun on the preceding page, the source uses the
+    Hodge-operator relation to show that every BRST-closed component with nonzero
+    total antighost-plus-auxiliary-field number is BRST-exact. The remaining N=0 component
+    is independent of antighost and h; ghost number zero then makes it independent
+    of ghosts, so the ghost-number-zero cohomology is represented by gauge-invariant
+    functionals of the original fields. This is the completion of the proof, not a
+    modification of the previously accepted stated result.
+  kind: method
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+    note: Equations (15.8.18)–(15.8.19) and the following paragraph complete the N-grading
+      proof of equation (15.8.14).
 - id: weinberg-2.general-faddeev-popov-dewitt-theorem
   label: Faddeev–Popov–De Witt theorem for general local symmetries
   summary: For general local transformations, gauge-fixing functionals f_A must be
@@ -534,6 +855,23 @@ nodes:
     - 27
     note: The page gives the loop interpretation, degree-of-freedom rationale, and
       dimensionality-four-or-less power-counting statement.
+- id: weinberg-2.invariant-metric-block-form-on-simple-factors
+  label: Block form of an invariant metric on simple factors
+  summary: In a basis with totally antisymmetric structure constants, invariance makes
+    the gauge-algebra metric commute with every adjoint generator. After reducing
+    the adjoint representation, the metric is block diagonal and each irreducible
+    block is proportional to the identity, up to a stated basis adjustment for equivalent
+    blocks; this yields one positive constant for each simple or U(1) factor in the
+    appendix's factorized form.
+  kind: result
+  group: weinberg-2.lie-algebra-appendices
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 54
+    note: Equation (15.A.14) and the following reduction argument derive the block
+      form and recover equation (15.A.2).
 - id: weinberg-2.lie-algebra-structure-constants
   label: Lie-algebra generators and structure constants
   summary: The generators obey [t_α,t_β]=i C^γ_{αβ}t_γ. The real structure constants
@@ -641,6 +979,84 @@ nodes:
     note: g_{αβ} is the numerical matrix multiplying F^α_{μν}F^{βμν}; the book permits
       upper/lower generator-index distinction to be dropped only in the special antisymmetric
       basis.
+- id: weinberg-2.problem-brst-and-bv-algebra-exercises
+  label: 'Problem prompt: BRST classification and BV identities'
+  summary: Problems 7 through 9 ask for a classification of dimension-at-most-four
+    BRST-invariant local Lagrangians under the listed Lorentz, ghost-number, global-gauge,
+    and BRST symmetries; a proof of antibracket symmetry and Jacobi identities; and
+    a gauge-fixing-independence proof under a specified relation (O,S)=i Delta S and
+    the quantum master equation. They are exercise prompts, not established derivations
+    in this section.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: The p. 59 problem list explicitly asks these three BRST/BV derivations and
+      states their premises.
+- id: weinberg-2.problem-gauge-fixing-propagator-and-ghost-calculations
+  label: 'Problem prompt: gauge-fixing propagator and ghost calculations'
+  summary: 'Problems 2, 3, and 6 ask for derivations under specified gauge-fixing
+    functionals: generalized-Coulomb non-Abelian and nonlinear electrodynamic ghost
+    Lagrangians and propagators; and, for the non-Abelian f_alpha=n^mu A_alpha_mu
+    choice, the gauge-field propagator as well as ghost Lagrangian, propagator, and
+    interaction vertex. These are assigned derivations, not results proved in the
+    source text.'
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problems 2 and 3 are on p. 58, while problem 6's gauge-field, ghost, and
+      vertex requests are on p. 59.
+- id: weinberg-2.problem-holonomy-curvature-and-local-pure-gauge
+  label: 'Problem prompt: holonomy, curvature, and local pure gauge'
+  summary: Problem 5 asks the reader to solve the parallel-transport equation for
+    a classical representation-valued field around a small closed path, determine
+    the proportionality to the field strength, and use it to show locally that vanishing
+    F^a_munu permits a gauge transformation setting A^a_mu to zero in at least a finite
+    region. This is a problem prompt, not a proof supplied in the source text.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problem 5 begins on p. 58 and completes on p. 59 with the requested local-flatness
+      derivation.
+- id: weinberg-2.problem-no-four-generator-simple-lie-algebra
+  label: 'Problem prompt: exclude a four-generator simple Lie algebra'
+  summary: Problem 4 asks for a proof that no simple Lie algebra has exactly four
+    generators. This is an exercise prompt, distinct from the earlier classification
+    result that reports the absence of simple algebras with four through seven generators.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 4 explicitly asks the reader to show the four-generator exclusion.
+- id: weinberg-2.problem-nonabelian-bianchi-identity
+  label: 'Problem prompt: derive the non-Abelian Bianchi identity'
+  summary: Problem 1 asks the reader to derive the cyclic covariant-derivative identity
+    for the non-Abelian field strength. This is an exercise prompt, not an additional
+    derivation supplied on the problem page.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 1 explicitly requests the derivation of the displayed Bianchi identity.
 - id: weinberg-2.pure-gauge-flatness
   label: Pure gauge and the flatness criterion
   summary: A gauge field is pure gauge when a gauge transformation can make it vanish
@@ -687,6 +1103,21 @@ nodes:
     - 12
     note: The paragraph before equation (15.3.1) specifies the omission of higher-derivative
       and F-dependent matter terms.
+- id: weinberg-2.string-light-cone-and-gravity-brst-limitation
+  label: Light-cone and gravity qualifications for BRST unitarity
+  summary: The source identifies light-cone quantization as the ghost-decoupling counterpart
+    of axial gauge in string theory. It contrasts general relativity, where no coordinate
+    choice decouples ghosts, so the stated BRST-quantization method must instead prove
+    unitarity in a physical ghost-free Hilbert space.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+    note: The final paragraph before the anti-BRST observation distinguishes the string
+      light-cone case from general relativity.
 - id: weinberg-2.theta-term-nonperturbative-effects
   label: Nonperturbative effects of the parity-odd theta term
   summary: The parity-odd gauge-field term described at the end of the preceding context
@@ -762,6 +1193,22 @@ nodes:
     - 15
     note: Equations (15.4.2)–(15.4.3) and the following text identify the constraints
       and their first-class character.
+- id: weinberg-2.yang-mills-original-massless-vector-obstacle
+  label: Historical mass obstacle in the original Yang-Mills interpretation
+  summary: 'The source describes the 1954 Yang-Mills proposal as an SU(2) isotopic-spin
+    gauge theory whose photon-analog vector fields were identified with strongly interacting
+    isovector mesons. It records the immediate phenomenological obstacle: gauge invariance
+    would require them to be massless, so they were expected already to have been
+    detected.'
+  kind: result
+  group: weinberg-2.gauge-theory-framing
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 1
+    note: The opening gives the original SU(2) interpretation and explicitly states
+      the massless-vector obstacle.
 - id: weinberg-2.yang-mills-three-and-four-vector-vertices
   label: Three- and four-vector Yang–Mills vertices
   summary: The cubic and quartic terms in the non-Abelian field-strength Lagrangian
@@ -778,6 +1225,26 @@ nodes:
     note: Equations (15.5.26)–(15.5.27) give the momentum-space vertex factors and
       the text identifies their coupling orders.
 edges:
+- id: weinberg-2.adjoint-prerequisite-appendix-a-proof
+  from: weinberg-2.adjoint-representation
+  to: weinberg-2.appendix-a-proof-of-compact-algebra-criterion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The b-to-c proof identifies the totally antisymmetric structure constants
+    with imaginary antisymmetric Hermitian adjoint matrices, then reduces that representation
+    into blocks.
+  failure_mode: The route from total antisymmetry to simple and Abelian subalgebras
+    lacks the representation whose reducibility is analyzed.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 51
+    - 52
+    note: The appendix constructs the adjoint matrices from structure constants and
+      uses their Hermiticity and reducibility to identify simple blocks.
 - id: weinberg-2.adjoint-representation-prerequisite-gauge-field
   from: weinberg-2.adjoint-representation
   to: weinberg-2.gauge-field-transformation
@@ -797,6 +1264,103 @@ edges:
     - 4
     note: The paragraph preceding equation (15.1.9) explicitly replaces t_α with the
       adjoint representation matrices of equation (15.1.6).
+- id: weinberg-2.antibracket-evidence-bv-problem-prompt
+  from: weinberg-2.bv-antibracket-classical-master-equation
+  to: weinberg-2.problem-brst-and-bv-algebra-exercises
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8 asks for the symmetry and Jacobi properties of the antibracket
+    represented earlier in the section.
+  failure_mode: The exercise prompt is disconnected from the defined bracket whose
+    identities it asks the reader to prove.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: Problem 8 names equations (15.9.15) and (15.9.21), the antibracket identities.
+- id: weinberg-2.antibracket-prerequisite-generalized-brst
+  from: weinberg-2.bv-antibracket-classical-master-equation
+  to: weinberg-2.bv-generalized-brst-antibracket-differential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The generalized transformation is defined as antibracketing with S, and
+    its invariance and nilpotency use the antibracket derivative rule and Jacobi identity.
+  failure_mode: Without the antibracket definition and graded signs, the displayed
+    generalized BRST operation has no defined action or nilpotency argument.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 45
+    - 46
+    - 47
+    note: The antibracket is defined before the generalized transformation and its
+      Jacobi-based nilpotency proof.
+- id: weinberg-2.anticanonical-alternative-bv-gauge-fixing
+  from: weinberg-2.bv-anticanonical-transformations
+  to: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The gauge-fixing prescription has a direct antifield-substitution route;
+    the source gives the anticanonical shift as an equivalent interpretation rather
+    than a compulsory input.
+  failure_mode: Without the anticanonical interpretation, the equivalence with setting
+    transformed antifields to zero is unavailable, but the direct substitution route
+    still defines the gauge-fixed action.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 47
+    - 48
+    note: The antifield shift follows from the anticanonical transformation on p.
+      47 and p. 48 invokes it for gauge fixing.
+- id: weinberg-2.antifields-prerequisite-master-consistency-tower
+  from: weinberg-2.bv-antifields-and-graded-master-action
+  to: weinberg-2.bv-master-equation-open-algebra-consistency-tower
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The antifield expansion of the master action is the object whose successive
+    coefficients produce the open-algebra consistency conditions.
+  failure_mode: Without the graded antifield action, there is no expansion whose orders
+    can be identified with gauge invariance, closure, and higher consistency conditions.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    - 44
+    - 45
+    note: The action and master equation are introduced on p. 43, expanded in antifields
+      on p. 44, and interpreted order by order on p. 45.
+- id: weinberg-2.appendix-proof-evidence-metric-block-form
+  from: weinberg-2.appendix-a-proof-of-compact-algebra-criterion
+  to: weinberg-2.invariant-metric-block-form-on-simple-factors
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The block form follows after the appendix has obtained a totally antisymmetric
+    basis and reduced the adjoint representation into its irreducible blocks.
+  failure_mode: The conclusion that the invariant metric is factorwise scalar lacks
+    the reduced-representation setting used by the source.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 51
+    - 54
+    note: The proof develops the block decomposition on p. 51 and applies it to the
+      commuting metric on p. 54.
 - id: weinberg-2.axial-reduction-prerequisite-covariant-path-integral
   from: weinberg-2.axial-gauge-canonical-reduction
   to: weinberg-2.axial-gauge-path-integral-to-covariant-action
@@ -815,6 +1379,25 @@ edges:
     - 16
     - 17
     note: The argument explicitly uses equations (15.4.7), (15.4.9), and (15.4.13).
+- id: weinberg-2.bianchi-evidence-problem-prompt
+  from: weinberg-2.nonabelian-bianchi-identity
+  to: weinberg-2.problem-nonabelian-bianchi-identity
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for a derivation of the established Bianchi identity;
+    this edge records correspondence without claiming that the problem page supplies
+    the proof.
+  failure_mode: The prompt can be mistaken for a separate proved result rather than
+    an exercise on the chapter's identity.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 1 asks the reader to derive the cyclic identity previously represented
+      as the non-Abelian Bianchi result.
 - id: weinberg-2.brst-cohomology-prerequisite-electrodynamic-example
   from: weinberg-2.brst-cohomology-of-physical-states
   to: weinberg-2.brst-electrodynamic-polarization-example
@@ -870,6 +1453,81 @@ edges:
     - 29
     - 30
     note: The proof begins by acting twice with equations (15.7.7)–(15.7.11).
+- id: weinberg-2.brst-unitarity-evidence-string-gravity-qualification
+  from: weinberg-2.brst-unitarity-and-general-gauge-fixing
+  to: weinberg-2.string-light-cone-and-gravity-brst-limitation
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The string and general-relativity discussion applies the preceding ghost-decoupling
+    and BRST-quantization alternatives to those two classes of theories.
+  failure_mode: The significance of a decoupling gauge versus a separate physical-Hilbert-space
+    unitarity proof is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+    note: The p. 41 discussion explicitly identifies light-cone quantization as the
+      string counterpart and invokes BRST quantization for general relativity.
+- id: weinberg-2.bv-gauge-fixing-prerequisite-quantum-master
+  from: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
+  to: weinberg-2.bv-quantum-master-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quantum master equation is derived by varying the gauge-fixing fermion
+    in the functional integral with antifields fixed by that fermion.
+  failure_mode: The variation whose cancellation defines the quantum master equation
+    is unspecified without the BV gauge-fixing prescription.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 48
+    - 49
+    note: Page 48 fixes antifields via Psi and p. 49 varies Psi in the vacuum functional
+      integral.
+- id: weinberg-2.cartan-classical-evidence-exceptional-covering
+  from: weinberg-2.cartan-catalog-compact-classical-families
+  to: weinberg-2.cartan-exceptional-algebras-and-low-rank-isomorphisms
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The low-rank identities and exceptional list close the catalog introduced
+    by the classical families and use the same compact Lie-algebra convention.
+  failure_mode: The named isomorphisms can be mistaken for arbitrary group identities
+    without the catalog's algebra-level setting.
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 54
+    - 57
+    - 58
+    note: Appendix B establishes the compact catalog convention, completes the classical
+      families, then gives exceptional cases and the low-rank qualification.
+- id: weinberg-2.classification-evidence-four-generator-problem
+  from: weinberg-2.compact-simple-lie-algebra-classification
+  to: weinberg-2.problem-no-four-generator-simple-lie-algebra
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests a proof of the four-generator exclusion that the
+    earlier classification reports as a result.
+  failure_mode: The exercise is conflated with the established classification statement
+    rather than recognized as a separate proof task.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 4 asks for the four-generator proof; the accepted classification
+      record identifies the same exclusion as a chapter result.
 - id: weinberg-2.coupling-normalization-prerequisite-vector-vertices
   from: weinberg-2.yang-mills-coupling-normalization
   to: weinberg-2.yang-mills-three-and-four-vector-vertices
@@ -940,6 +1598,43 @@ edges:
     - 7
     note: The opening paragraph of Section 15.2 names matter fields and their gauge-covariant
       derivatives as ingredients.
+- id: weinberg-2.direct-antifield-substitution-prerequisite-bv-gauge-fixing
+  from: weinberg-2.bv-antifields-and-graded-master-action
+  to: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field-only gauge-fixed action is obtained by the direct prescription
+    x*=delta Psi/delta x introduced before the later anticanonical interpretation.
+  failure_mode: Without the antifield substitution, there is no specified gauge-fixed
+    action on which the field-only BRST transformation acts.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    - 48
+    note: Page 43 defines the direct substitution by the gauge-fixing fermion, and
+      p. 48 returns to it for the S-matrix action.
+- id: weinberg-2.faddeev-popov-evidence-gauge-fixing-problems
+  from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+  to: weinberg-2.problem-gauge-fixing-propagator-and-ghost-calculations
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The three exercise prompts specify gauge-fixing functions and B[f], so
+    they apply the chapter's gauge-fixed functional-integral construction.
+  failure_mode: The specified B[f] inputs and gauge conditions have no stated relation
+    to the functional-integral method used for the requested propagators and ghosts.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problems 2, 3, and 6 supply f and B[f] and ask for propagator or ghost consequences.
 - id: weinberg-2.faddeev-popov-prerequisite-gauge-independence
   from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
   to: weinberg-2.faddeev-popov-gauge-fixing-independence
@@ -996,6 +1691,25 @@ edges:
     - 12
     - 13
     note: The text rewrites equation (15.3.2) into equation (15.3.6).
+- id: weinberg-2.field-strength-evidence-holonomy-problem
+  from: weinberg-2.nonabelian-field-strength
+  to: weinberg-2.problem-holonomy-curvature-and-local-pure-gauge
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5 asks the reader to relate small-loop transport to the field
+    strength before using that relation in the local-flatness argument.
+  failure_mode: The curvature quantity whose small-loop proportionality is requested
+    is not identified.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problem 5 specifies the small closed path and asks for its proportionality
+      to the field strength.
 - id: weinberg-2.field-strength-prerequisite-lagrangian-ingredients
   from: weinberg-2.nonabelian-field-strength
   to: weinberg-2.gauge-invariant-lagrangian-ingredients
@@ -1121,6 +1835,25 @@ edges:
     - 23
     note: The source invokes the theorem before choosing the Gaussian B and Lorentz-invariant
       f^a.
+- id: weinberg-2.general-cohomology-evidence-proof-completion
+  from: weinberg-2.general-brst-cohomology-functional-result
+  to: weinberg-2.general-brst-cohomology-proof-completion
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The new method completes the N-grading proof of the already accepted
+    ghost-number-zero cohomology result.
+  failure_mode: Without the stated cohomology target and the preceding Hodge-operator
+    setup, the p. 41 conclusion lacks its derivation context.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 40
+    - 41
+    note: Page 40 sets up the N-grading and Hodge relation, and p. 41 concludes the
+      exactness and N=0 argument.
 - id: weinberg-2.general-fp-evidence-ghosts-of-ghosts
   from: weinberg-2.general-faddeev-popov-dewitt-theorem
   to: weinberg-2.reducible-gauge-symmetry-and-ghosts-of-ghosts
@@ -1176,6 +1909,45 @@ edges:
     - 39
     note: Equation (15.8.9) is expressed using the general symmetry notation and equation
       (15.8.10).
+- id: weinberg-2.generalized-brst-evidence-anticanonical
+  from: weinberg-2.bv-generalized-brst-antibracket-differential
+  to: weinberg-2.bv-anticanonical-transformations
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The same nilpotency and Jacobi identity used for the generalized BRST
+    differential show why the solution-changing antibracket transformation preserves
+    the master equation.
+  failure_mode: Without that connection, preservation of the master equation by the
+    generator transformation is an unsupported formal assertion.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 47
+    - 48
+    note: The source derives the solution change from (15.9.22) and uses the Jacobi
+      identity to verify anticanonical bracket preservation.
+- id: weinberg-2.generalized-brst-evidence-bv-open-symmetry
+  from: weinberg-2.generalized-brst-slavnov-operator
+  to: weinberg-2.bv-formalism-for-open-and-reducible-symmetries
+  relation: evidence
+  source_level: derive
+  target_level: recognize
+  necessity: necessary
+  rationale: The BV motivation contrasts its open-algebra scope with the earlier generalized
+    BRST setup whose off-shell nilpotence rests on closure and consistency conditions.
+  failure_mode: The reason an open algebra, for which s squared is field-equation
+    dependent, requires an enlarged formalism is obscured.
+  evidence:
+  - source: weinberg-2
+    section: 15.8–15.9
+    pages:
+    - 39
+    - 42
+    note: The generalized closure conditions are given on p. 39, and p. 42 identifies
+      their field-equation failure for open algebras.
 - id: weinberg-2.generalized-brst-prerequisite-general-cohomology
   from: weinberg-2.generalized-brst-slavnov-operator
   to: weinberg-2.general-brst-cohomology-functional-result
@@ -1321,6 +2093,25 @@ edges:
     - 18
     - 19
     note: The measure argument precedes the general functional-integral assumption.
+- id: weinberg-2.minimal-trivial-prerequisite-open-bv
+  from: weinberg-2.bv-minimal-and-trivial-pairs
+  to: weinberg-2.bv-master-equation-open-algebra-consistency-tower
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The open-algebra expansion distinguishes the nonlinear minimal sector
+    from the bilinear trivial pairs that do not introduce the stated complications.
+  failure_mode: Treating antighost and auxiliary trivial pairs as part of the nonlinear
+    open-algebra mechanism obscures which antifield terms encode open closure.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    - 45
+    note: Page 44 separates the sectors and page 45 attributes the field-equation
+      terms to higher antifield powers in the minimal action.
 - id: weinberg-2.nilpotence-prerequisite-brst-cohomology
   from: weinberg-2.brst-nilpotence
   to: weinberg-2.brst-cohomology-of-physical-states
@@ -1375,6 +2166,25 @@ edges:
     - 8
     note: The text identifies the interaction terms as arising from the quadratic
       field-strength term.
+- id: weinberg-2.positive-metric-prerequisite-appendix-proof
+  from: weinberg-2.positive-invariant-lie-algebra-metric
+  to: weinberg-2.appendix-a-proof-of-compact-algebra-criterion
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: Appendix A proves the equivalence whose positive-invariant-metric statement
+    is already established earlier in the chapter.
+  failure_mode: The appendix's three propositions lack their physical and algebraic
+    starting condition if the invariant metric criterion is not known.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 50
+    - 51
+    note: The appendix labels statement a as the positive-definite invariant-metric
+      condition previously identified as equation (15.2.4).
 - id: weinberg-2.positive-metric-prerequisite-compact-classification
   from: weinberg-2.positive-invariant-lie-algebra-metric
   to: weinberg-2.compact-simple-lie-algebra-classification
@@ -1413,6 +2223,82 @@ edges:
     - 11
     - 12
     note: The rescaling begins from the factorized form of the metric.
+- id: weinberg-2.pure-gauge-evidence-holonomy-problem
+  from: weinberg-2.pure-gauge-flatness
+  to: weinberg-2.problem-holonomy-curvature-and-local-pure-gauge
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem's requested consequence is the local pure-gauge direction
+    of the previously established flatness criterion.
+  failure_mode: The final request to gauge A to zero is disconnected from the chapter's
+    pure-gauge notion.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: Problem 5 explicitly asks the reader to use F=0 to gauge the connection
+      to zero in a finite region.
+- id: weinberg-2.quantum-master-evidence-bv-problem-prompt
+  from: weinberg-2.bv-quantum-master-equation
+  to: weinberg-2.problem-brst-and-bv-algebra-exercises
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 9 asks for a gauge-fixing-independence proof under the quantum
+    master equation, while problem 7 poses the preceding BRST-invariant classification
+    task.
+  failure_mode: The premise required for the problem-9 proof is detached from the
+    source result that states it.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: Problem 9 explicitly assumes the quantum master equation and asks for the
+      gauge-fixing-independence conclusion.
+- id: weinberg-2.quantum-master-prerequisite-quantum-observable
+  from: weinberg-2.bv-quantum-master-equation
+  to: weinberg-2.bv-quantum-brst-observable-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source assumes the quantum master equation before deriving gauge-fixing-fermion
+    independence of the stated class of expectation values.
+  failure_mode: The integration-by-parts terms generated by varying the gauge-fixing
+    fermion need not cancel, so the observable-independence claim does not follow.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 49
+    - 50
+    note: The quantum master equation is established at the end of p. 49 and p. 50
+      explicitly begins the expectation-value conclusion under that assumption.
+- id: weinberg-2.reducible-symmetry-evidence-bv-minimal-variables
+  from: weinberg-2.reducible-gauge-symmetry-and-ghosts-of-ghosts
+  to: weinberg-2.bv-minimal-and-trivial-pairs
+  relation: evidence
+  source_level: use
+  target_level: recognize
+  necessity: necessary
+  rationale: The general BV action includes ghosts of ghosts and their antifields
+    precisely when the earlier reducible-symmetry construction requires them.
+  failure_mode: The presence of higher-stage ghosts in the minimal BV sector has no
+    source-specific rationale.
+  evidence:
+  - source: weinberg-2
+    section: 15.8–15.9
+    pages:
+    - 38
+    - 39
+    - 44
+    note: Pages 38–39 explain reducibility and p. 44 states that reducible BV theories
+      include ghosts of ghosts with their antifields.
 - id: weinberg-2.renormalizable-lagrangian-prerequisite-field-equation
   from: weinberg-2.renormalizable-yang-mills-lagrangian-assumption
   to: weinberg-2.yang-mills-field-equations-and-total-current
@@ -1431,6 +2317,24 @@ edges:
     - 12
     note: The source specifies the Lagrangian and immediately derives its gauge-field
       equations.
+- id: weinberg-2.state-cohomology-evidence-conditional-ghost-independence
+  from: weinberg-2.brst-cohomology-of-physical-states
+  to: weinberg-2.brst-conditional-ghost-free-gauge-independence
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The p. 41 matrix-element argument defines physically distinguishable
+    states by Q cohomology before stating gauge-fixing-functional independence.
+  failure_mode: The physical state condition needed to annihilate the BRST variation
+    is absent.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+    note: Equation (15.8.21) and its following sentence identify the Q-cohomology
+      physical-state condition in this argument.
 - id: weinberg-2.state-cohomology-prerequisite-brst-unitarity
   from: weinberg-2.brst-cohomology-of-physical-states
   to: weinberg-2.brst-unitarity-and-general-gauge-fixing
@@ -1487,8 +2391,12 @@ edges:
     note: The Lorentz gauge functional is selected on p. 23 and inserted into the
       ghost operator on p. 26.
 groups:
+- id: weinberg-2.batalin-vilkovisky-formalism
+  title: Batalin-Vilkovisky formalism
 - id: weinberg-2.brst-and-generalizations
   title: BRST symmetry and general local gauge systems
+- id: weinberg-2.chapter-problems
+  title: Chapter problem prompts
 - id: weinberg-2.connection-and-curvature
   title: Gauge connection, curvature, and finite transformations
 - id: weinberg-2.field-equations-and-quantization
@@ -1497,10 +2405,14 @@ groups:
   title: Local symmetry and Lie algebra
 - id: weinberg-2.gauge-fixing-and-ghosts
   title: Faddeev–Popov gauge fixing and ghosts
+- id: weinberg-2.gauge-theory-framing
+  title: Opening framing for non-Abelian gauge theory
 - id: weinberg-2.lagrangian-and-algebra
   title: Gauge Lagrangians, algebra, and coupling conventions
 - id: weinberg-2.lagrangian-ingredients
   title: Opening gauge-theory Lagrangian ingredients
+- id: weinberg-2.lie-algebra-appendices
+  title: Lie-algebra appendices
 motivations:
 - id: weinberg-2.covariant-rules-without-gauge-dependence
   nodes:
@@ -1521,6 +2433,21 @@ motivations:
     - 28
     note: The source states the axial-gauge motivation, the overcounting role of ghosts,
       and the counterterm problem caused by gauge fixing.
+- id: weinberg-2.local-symmetry-needs-dynamical-fields
+  nodes:
+  - weinberg-2.dynamical-gauge-fields-give-local-symmetry-physical-content
+  - weinberg-2.yang-mills-original-massless-vector-obstacle
+  summary: The opening frames non-Abelian gauge theory through the attractive possibility
+    that local symmetry determines dynamical fields and their properties, while recalling
+    that the first Yang-Mills phenomenological interpretation immediately faced a
+    massless-vector obstacle.
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 1
+    note: The opening compares local electromagnetic and gravitational symmetry principles,
+      then recounts the original Yang-Mills interpretation and mass problem.
 - id: weinberg-2.locality-requires-compensation
   nodes:
   - weinberg-2.local-matter-gauge-transformations

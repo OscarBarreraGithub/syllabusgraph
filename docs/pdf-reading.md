@@ -38,6 +38,14 @@ mapping. Sampling plus targeted visual checks of unclear formulas, tables,
 diagrams, or notation often avoids rendering an entire readable book just to
 check a few claims. Expand visual inspection when the source warrants it.
 
+One registration uses one page offset and positive integer citation pages.
+If a source has separate numbering systems, such as roman-numbered notation
+before an arabic-numbered main text, preserve that distinction. One option is
+a private companion PDF or numbered export with its own source ID and mapping.
+Explain the citation labels in its public bibliography description and retain
+the original page correspondence privately. Do not apply the main-text offset
+to frontmatter whose numbering follows a different rule.
+
 Registration copies the source and its page text into the ignored
 `.syllabusgraph/sources/` workspace. Treat both as private: do not commit them,
 paste them into public graph data, or send them to a service that the course's
@@ -58,6 +66,12 @@ not a reason to process a whole book again. `pypdf` explains that it reads PDF
 content streams rather than interpreting page semantics, and that it cannot OCR
 images; tables, positioned text, and mathematical notation can therefore need
 visual comparison. See the [pypdf text-extraction guide](https://pypdf.readthedocs.io/en/stable/user/extract-text.html).
+
+An empty text layer may also belong to a blank page or publisher-only matter.
+Inspect the original before deciding to use OCR or exclude it. Record verified
+nonconceptual exclusions in the coverage ledger; keep mixed problem/reference
+pages in scope. If later inspection changes a reviewed inventory, preserve the
+earlier decision and document the new evidence and correction explicitly.
 
 For a scan or a few unreadable pages, choose a suitable local OCR or native
 PDF-rendering/vision route that suits the file, platform, language, and privacy

@@ -14,6 +14,8 @@ imply a package has been published to a package index.
   Optional coverage ledgers must match their project and current graph digest.
   Clarify joint prerequisites within alternative derivations and complete-word
   quote witnesses in the reusable extraction guidance.
+- Explain separate frontmatter citation mappings and the inspection of empty
+  text layers before OCR or a documented nonconceptual exclusion.
 
 - Publish a first QFT graph pilot: 36 concepts across four textbook graphs and
   a 37-node shared synthesis over 26 printed pages. Terra/high extraction and
