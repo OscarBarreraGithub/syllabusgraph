@@ -35,3 +35,77 @@ units:
     affected_records:
     - kind: edges
       id: schwartz.e-normalization-to-decay
+- id: full-004
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Problem 11.6(b,c,e) still unions unrelated prerequisites.
+    alternatives:
+    - Split part (b) from parts (c,e) and retarget each necessary input.
+    - Split all three parts into separate nodes with individual prerequisite edges.
+    resolution: Split part (b) from parts (c,e) and retarget each necessary input.
+    rationale: Part (b) is an explicit rest-spinor current calculation and needs the
+      free Dirac solutions. Parts (c) and (e) concern magnetic spin flips and slow-spin
+      measurement and use the Schrödinger–Pauli coupling. Two nodes preserve the exercise
+      structure without making either input compulsory for the other route.
+    evidence:
+    - source: schwartz
+      section: 10 introduction; 11.2; Problem 11.6(b,c,e)
+      pages:
+      - 157
+      - 189
+      - 202
+    affected_records:
+    - kind: nodes
+      id: schwartz.nonrelativistic-spin-current-and-measurement-problem
+    - kind: nodes
+      id: schwartz.rest-spinor-current-problem
+    - kind: nodes
+      id: schwartz.nonrelativistic-spin-flip-and-measurement-problem
+    - kind: edges
+      id: schwartz.e-free-solutions-to-nr-spin-problem
+    - kind: edges
+      id: schwartz.e-pauli-dynamics-to-nr-spin-problem
+    - kind: edges
+      id: schwartz.e-free-solutions-to-rest-spin-current-problem
+    - kind: edges
+      id: schwartz.e-pauli-dynamics-to-spin-flip-measurement-problem
+  - finding: 1
+    issue: Complex-scalar derivations use a real-scalar input, and Dirac expansion
+      requires a bosonic algebra.
+    alternatives:
+    - Use the accepted complex-scalar record for the scalar derivations and as a helpful
+      Dirac analogy.
+    - Add a new statistics-neutral particle-antiparticle expansion node and use it
+      for all three targets.
+    resolution: Reuse the complex-scalar record and remove the bosonic prerequisite
+      from the Dirac expansion.
+    rationale: The propagator and stability calculations require independent particle
+      and antiparticle operators, which the accepted complex-scalar record supplies
+      and the real-scalar record does not. The spinor expansion is introduced by analogy
+      with that complex field before the text chooses statistics, so the analogy is
+      helpful while the accepted bosonic commutator algebra is not a prerequisite.
+    evidence:
+    - source: schwartz
+      section: 12.3–12.5.1
+      pages:
+      - 211
+      - 212
+      - 213
+      - 216
+      - 217
+      - 218
+    affected_records:
+    - kind: edges
+      id: schwartz.e-free-scalar-to-scalar-propagator
+    - kind: edges
+      id: schwartz.e-free-scalar-to-stability
+    - kind: edges
+      id: schwartz.e-mode-algebra-to-quantized-dirac-field
+    - kind: edges
+      id: schwartz.e-complex-scalar-to-scalar-propagator
+    - kind: edges
+      id: schwartz.e-complex-scalar-to-stability
+    - kind: edges
+      id: schwartz.e-complex-scalar-to-quantized-dirac-field
