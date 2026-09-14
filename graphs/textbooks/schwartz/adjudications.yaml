@@ -1,0 +1,39 @@
+schema_version: 1
+project: schwartz
+scope: Historical final scientific decisions, with alternatives and source citations.
+  Private proposals, witnesses and runtime records remain local.
+deciding_model: gpt-5.6-sol
+effort: high
+human_audit: pending
+units:
+- id: full-002
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The decay-rate derivation omits the accepted relativistic state-normalization
+      input that produces its 1/(2E₁) factor.
+    alternatives:
+    - Add a direct necessary prerequisite edge from the accepted state-normalization
+      concept to the decay-rate result.
+    - Introduce a separate complete decay-rate derivation method node with S-matrix,
+      state-normalization, and invariant-phase-space prerequisites, then connect that
+      method to the decay-rate result.
+    resolution: Add the direct necessary prerequisite edge schwartz.e-normalization-to-decay.
+    rationale: Pages 61–62 derive decay by repeating the regulated probability calculation
+      for one incoming particle. The accepted normalization node already contains
+      the finite-volume state norms and squared-delta cancellation, while the accepted
+      phase-space node accounts only for the final-state measure. A direct use-to-derive
+      prerequisite therefore supplies the missing 1/(2E₁) input with the smallest
+      source-faithful change.
+    evidence:
+    - source: schwartz
+      section: 5.1.1 Decay rates
+      pages:
+      - 61
+      - 62
+      note: The source defines decay as probability per time, says it follows the
+        same normalization steps as the cross section, and gives dΓ=|M|²dΠ_LIPS/(2E₁).
+    affected_records:
+    - kind: edges
+      id: schwartz.e-normalization-to-decay

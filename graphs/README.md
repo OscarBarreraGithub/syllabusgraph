@@ -18,6 +18,7 @@ graphs/
     knowledge/graph.yaml  Reviewed concepts, dependencies, and citations
     review.yaml           Bounded coverage, review status, and omissions
     coverage.yaml         Optional whole-book inventory and remaining page scopes
+    adjudications.yaml    Optional final scientific decisions and their reasons
     README.md             Scope and reading guide
   subjects/<subject-id>/  Shared graph with the same project format
 ```
@@ -73,6 +74,13 @@ that all its concepts were captured, especially for a narrow pilot.
 The [QFT collection](subjects/qft/README.md) includes a reviewed inventory with
 conservative progress records and a public final-decision log. These are source
 coordinates and review conclusions; textbook text stays private.
+
+When a scientific disagreement reaches final adjudication, a project may publish
+`adjudications.yaml` with the deciding model, alternatives considered, selected
+resolution, affected record IDs, source citations, and promotion or deferral
+outcome. Preserve the decision as history when later evidence extends the graph.
+Full proposals, quotation witnesses, source fingerprints, and runtime records
+remain private. A model decision does not imply that the end human audit occurred.
 
 Put your own PDFs in the project's ignored `materials/` directory, or register
 them from another local location. `.syllabusgraph/` holds private source copies,

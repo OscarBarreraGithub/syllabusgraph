@@ -16,6 +16,8 @@ imply a package has been published to a package index.
   quote witnesses in the reusable extraction guidance.
 - Explain separate frontmatter citation mappings and the inspection of empty
   text layers before OCR or a documented nonconceptual exclusion.
+- Publish bounded scientific adjudication decisions with alternatives, reasons,
+  source citations and outcomes, while keeping full processing records private.
 
 - Publish a first QFT graph pilot: 36 concepts across four textbook graphs and
   a 37-node shared synthesis over 26 printed pages. Terra/high extraction and

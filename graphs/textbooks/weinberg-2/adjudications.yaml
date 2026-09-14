@@ -1,0 +1,35 @@
+schema_version: 1
+project: weinberg-2
+scope: Historical final scientific decisions, with alternatives and source citations.
+  Private proposals, witnesses and runtime records remain local.
+deciding_model: gpt-5.6-sol
+effort: high
+human_audit: pending
+units:
+- id: conventions-001
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The Dirac summary incorrectly lowers gamma indices in gamma_5 and beta;
+      the source uses raised gamma^0 through gamma^3 while retaining lowered gamma_mu
+      in the anticommutator.
+    alternatives:
+    - 'Preserve the source''s displayed index placement: use lowered gamma_mu in the
+      anticommutator, but gamma_5=i gamma^0 gamma^1 gamma^2 gamma^3 and beta=i gamma^0=gamma_4.'
+    - 'Rewrite the two identities entirely with lowered indices and the metric-induced
+      signs: gamma_5=-i gamma_0 gamma_1 gamma_2 gamma_3 and beta=-i gamma_0=gamma_4.'
+    resolution: Preserve the source's displayed index placement in the convention
+      summary.
+    rationale: The rendered notation page explicitly prints lowered gamma_mu in the
+      anticommutator and raised gamma^0 through gamma^3 in gamma_5, with beta=i gamma^0=gamma_4.
+      Keeping those positions reproduces the source directly and avoids silently applying
+      the eta_00=-1 sign conversion.
+    evidence:
+    - source: weinberg-2-notation
+      section: Notation
+      pages:
+      - 20
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.spacetime-index-and-dirac-notation
