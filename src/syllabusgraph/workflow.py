@@ -6,7 +6,7 @@ output are never evaluated as code. All packets and runs stay in local storage.
 
 from __future__ import annotations
 
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from copy import deepcopy
 from datetime import datetime, timezone
 import json
@@ -59,7 +59,15 @@ def read_json(path: Path) -> dict:
 
 
 def prepare(
-    project: Project, unit: str, source: str, first: int, last: int, *, scope: str, budget: int = 15
+    project: Project,
+    unit: str,
+    source: str,
+    first: int,
+    last: int,
+    *,
+    scope: str,
+    budget: int = 15,
+    context: list[dict] | None = None,
 ) -> dict:
     if first < 1 or last < first or last - first >= 80:
         raise ProjectError("Choose an ordered print-page range of 1–80 pages.")
@@ -94,12 +102,34 @@ def prepare(
         "page_offset": entry["page_offset"],
         "mastery_levels": project.config["mastery_levels"],
         "pages": selected,
+        "context_pages": [],
         "base_knowledge_digest": digest(project.knowledge),
         "existing_knowledge": project.knowledge,
         "sources": project.config["sources"],
         "instructions": (bundled("workflows") / "extract.md").read_text(encoding="utf-8"),
         "response_schema": {"$ref": "#/$defs/proposal", "$defs": SCHEMA["$defs"]},
     }
+    for item in context or []:
+        context_source, first_page, last_page = item["source"], item["first"], item["last"]
+        if first_page < 1 or last_page < first_page or last_page - first_page >= 80:
+            raise ProjectError("Context needs an ordered range of 1–80 pages.")
+        binding, text_pages = source_pages(project, context_source)
+        for page in range(first_page, last_page + 1):
+            physical = page + binding["page_offset"]
+            if physical < 1 or physical > len(text_pages) or not text_pages[physical - 1].strip():
+                raise ProjectError("Context page is outside the source or has no extractable text.")
+            packet["context_pages"].append(
+                {
+                    "source": context_source,
+                    "print_page": page,
+                    "pdf_page": physical,
+                    "text": text_pages[physical - 1],
+                    "source_sha256": binding["sha256"],
+                    "page_offset": binding["page_offset"],
+                }
+            )
+    if len(packet["context_pages"]) + len(selected) > 80:
+        raise ProjectError("Primary and context pages together must not exceed 80 pages.")
     packet["packet_digest"] = digest(packet)
     with project_lock(project):
         directory = unit_dir(project, unit)
@@ -126,14 +156,24 @@ def _ensure_packet(project: Project, directory: Path) -> dict:
         or source["page_offset"] != packet["page_offset"]
     ):
         raise ProjectError("The registered source changed after preparation. Prepare a new unit.")
+    checked = {}
+    for page in packet.get("context_pages", []):
+        if page["source"] not in checked:
+            checked[page["source"]] = source_pages(project, page["source"])[0]
+        binding = checked[page["source"]]
+        if (
+            binding["sha256"] != page["source_sha256"]
+            or binding["page_offset"] != page["page_offset"]
+        ):
+            raise ProjectError("A context source changed after preparation. Prepare a new unit.")
     return packet
 
 
 def import_proposal(
-    project: Project, unit: str, value: dict, *, runner: dict | None = None
+    project: Project, unit: str, value: dict, *, runner: dict | None = None, _locked=False
 ) -> dict:
     validate_shape(value, "proposal")
-    with project_lock(project):
+    with nullcontext() if _locked else project_lock(project):
         directory = unit_dir(project, unit)
         packet = _ensure_packet(project, directory)
         state = read_json(directory / "state.json")
@@ -172,9 +212,14 @@ def run(
     model: str,
     timeout: float = 180,
     stage: str = "extract",
+    dispatch_id: str | None = None,
+    agent_id: str | None = None,
+    effort: str | None = None,
 ) -> dict:
     if not command or timeout <= 0:
         raise ProjectError("Supply a runner executable and positive timeout.")
+    if stage == "adjudicate" and not dispatch_id:
+        raise ProjectError("Adjudication requires an orchestrator dispatch.")
     directory = unit_dir(project, unit)
     packet = _ensure_packet(project, directory)
     request = deepcopy(packet)
@@ -184,6 +229,19 @@ def run(
         request["checks"] = check(project, unit)
         request["instructions"] = (bundled("workflows") / "review.md").read_text(encoding="utf-8")
     request["stage"] = stage
+    if dispatch_id:
+        from .agents import _ticket
+
+        _, ticket, request = _ticket(project, directory, dispatch_id)
+        if (
+            stage != ticket["stage"]
+            or model != ticket["model"]
+            or effort != ticket["effort"]
+            or not agent_id
+        ):
+            raise ProjectError(
+                "Runner stage/model/effort and agent identity must match its dispatch."
+            )
     try:
         response = subprocess.run(
             command,
@@ -197,6 +255,12 @@ def run(
             shell=False,
         )
     except (OSError, subprocess.TimeoutExpired) as exc:
+        if dispatch_id:
+            from .agents import fail
+
+            fail(
+                project, unit, dispatch_id, reason="Runner timed out or executable was unavailable."
+            )
         write_json(
             directory / "last_failure.json",
             {
@@ -211,6 +275,15 @@ def run(
             "Runner did not complete. The packet is saved; retry the same unit."
         ) from exc
     if response.returncode != 0:
+        if dispatch_id:
+            from .agents import fail
+
+            fail(
+                project,
+                unit,
+                dispatch_id,
+                reason=f"Runner exited with status {response.returncode}; inspect local diagnostics.",
+            )
         write_json(
             directory / "last_failure.json",
             {
@@ -231,6 +304,12 @@ def run(
         raise ProjectError(
             "Runner must emit exactly one JSON object, without Markdown fences."
         ) from exc
+    if dispatch_id:
+        from .agents import complete
+
+        return complete(
+            project, unit, dispatch_id, value, agent_id=agent_id, model=model, effort=effort
+        )
     if stage == "extract":
         return import_proposal(
             project,
@@ -259,7 +338,7 @@ def run(
     return value
 
 
-def _combine(project: Project, proposed: dict) -> dict:
+def _combine(project: Project, proposed: dict, *, replacements=frozenset()) -> dict:
     combined = deepcopy(project.knowledge)
     for kind in ("nodes", "edges", "groups", "motivations"):
         unique(proposed[kind], kind)
@@ -267,9 +346,12 @@ def _combine(project: Project, proposed: dict) -> dict:
         for row in proposed[kind]:
             if row["id"] in existing:
                 if row != existing[row["id"]]:
-                    raise ProjectError(
-                        f"Conflicting {kind} record {row['id']}; reconcile it explicitly before promotion."
-                    )
+                    if (kind, row["id"]) not in replacements:
+                        raise ProjectError(
+                            f"Conflicting {kind} record {row['id']}; reconcile it explicitly before promotion."
+                        )
+                    combined[kind][combined[kind].index(existing[row["id"]])] = row
+                    existing[row["id"]] = row
             else:
                 combined[kind].append(row)
                 existing[row["id"]] = row
@@ -282,7 +364,9 @@ def _normalize(text: str) -> str:
     return " ".join(unicodedata.normalize("NFKC", text).split())
 
 
-def check(project: Project, unit: str) -> dict:
+def check(project: Project, unit: str, *, _recovering=False) -> dict:
+    from .agents import replacements
+
     directory = unit_dir(project, unit)
     packet = _ensure_packet(project, directory)
     proposal = read_json(directory / "proposal.json")
@@ -300,12 +384,23 @@ def check(project: Project, unit: str) -> dict:
             "Unresolved extraction questions need a revised proposal or explicit removal of the affected claims."
         )
     try:
-        _combine(project, proposal["graph"])
+        _combine(
+            project,
+            proposal["graph"],
+            replacements=replacements(project, unit, proposal, recovering=_recovering),
+        )
     except ProjectError as exc:
         errors.append(str(exc))
     quotes, supported, loaded_sources = [], set(), {}
+    allowed = {(packet["source"]["id"], p["print_page"]) for p in packet["pages"]}
+    allowed.update((p["source"], p["print_page"]) for p in packet.get("context_pages", []))
     for witness in proposal["quote_checks"]:
         source = witness["source"]
+        if (source, witness["page"]) not in allowed:
+            errors.append(
+                "Evidence lies outside the immutable packet; prepare a new unit with explicit context pages."
+            )
+            continue
         try:
             if source not in loaded_sources:
                 loaded_sources[source] = source_pages(project, source)
@@ -355,6 +450,8 @@ def check(project: Project, unit: str) -> dict:
 
 
 def review(project: Project, unit: str, *, decision: str, reviewer: str, notes: list[str]) -> dict:
+    from .agents import require_critic
+
     if (
         decision not in {"accept", "revise", "reject"}
         or not reviewer.strip()
@@ -371,16 +468,8 @@ def review(project: Project, unit: str, *, decision: str, reviewer: str, notes: 
         report = check(project, unit)
         if decision == "accept" and not report["ok"]:
             raise ProjectError("Resolve the source-check failures before accepting this proposal.")
-        critique_path = directory / "critique.json"
-        if decision == "accept" and critique_path.exists():
-            critique = read_json(critique_path)
-            if (
-                critique.get("proposal_digest") == report["proposal_digest"]
-                and critique["verdict"] != "accept"
-            ):
-                raise ProjectError(
-                    "The current critic requested revisions or rejection. Resolve its findings and re-run critique before accepting."
-                )
+        if decision == "accept":
+            require_critic(project, unit, report)
         record = {
             "decision": decision,
             "reviewer": reviewer,
@@ -398,6 +487,8 @@ def review(project: Project, unit: str, *, decision: str, reviewer: str, notes: 
 
 
 def promote(project: Project, unit: str) -> dict:
+    from .agents import accepted_candidate, policy, require_critic
+
     with project_lock(project):
         project = load_project(project.root)
         directory = unit_dir(project, unit)
@@ -408,12 +499,14 @@ def promote(project: Project, unit: str) -> dict:
             raise ProjectError("Promotion requires acceptance of this exact proposal revision.")
         if state["status"] == "merged":
             return read_json(directory / "receipt.json")
-        report = check(project, unit)
-        if not report["ok"]:
-            raise ProjectError("Source checks no longer pass; review again before promotion.")
-        combined = _combine(project, proposal["graph"])
+        combined = accepted_candidate(project, unit, proposal)
         expected = digest(combined)
         current = digest(project.knowledge)
+        recovering = record["knowledge_digest"] != current and expected == current
+        report = check(project, unit, _recovering=recovering)
+        if not report["ok"]:
+            raise ProjectError("Source checks no longer pass; review again before promotion.")
+        critique = require_critic(project, unit, report, recovering=recovering)
         if record["knowledge_digest"] != current and expected != current:
             raise ProjectError(
                 "The knowledge base changed since acceptance. Review against the current base before promotion."
@@ -426,6 +519,8 @@ def promote(project: Project, unit: str) -> dict:
             "knowledge_digest": expected,
             "source_sha256": read_json(directory / "packet.json")["source_sha256"],
             "reviewer": record["reviewer"],
+            "critic": critique["provenance"],
+            "policy_digest": digest(policy(project)),
             "merged_at": timestamp(),
         }
         write_json(directory / "receipt.json", receipt)

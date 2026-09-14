@@ -7,7 +7,7 @@ import pytest
 from syllabusgraph.io import ProjectError, digest, within, write_json, write_yaml
 from syllabusgraph.project import load_project
 from syllabusgraph.sources import register, source_pages
-from syllabusgraph import workflow
+from syllabusgraph import agents, workflow
 
 
 @pytest.fixture
@@ -48,6 +48,36 @@ def unit(blank, tmp_path):
 
 
 def accept(project):
+    directory = workflow.unit_dir(project, "unit-one")
+    proposal = workflow.read_json(directory / "proposal.json")
+    agents.configure(project)
+    task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="test-orchestrator")
+    agents.complete(
+        project,
+        "unit-one",
+        task["id"],
+        proposal,
+        agent_id="test-extractor",
+        model="gpt-5.6-terra",
+        effort="high",
+    )
+    if not (directory / "critique.json").exists():
+        task = agents.dispatch(
+            project, "unit-one", stage="critique", orchestrator="test-orchestrator"
+        )
+        agents.complete(
+            project,
+            "unit-one",
+            task["id"],
+            {
+                "proposal_digest": digest(proposal),
+                "verdict": "accept",
+                "notes": ["Read the source and checked the proposed definition against it."],
+            },
+            agent_id="test-critic",
+            model="gpt-5.6-sol",
+            effort="high",
+        )
     return workflow.review(
         project,
         "unit-one",
@@ -267,3 +297,53 @@ def test_scanned_or_empty_text_needs_attention(blank, tmp_path):
     path.write_text("   ")
     with pytest.raises(ProjectError, match="No extractable"):
         register(blank, "empty", path)
+
+
+def test_witnesses_need_explicit_packet_context(unit):
+    project, _, proposal = unit
+    proposal["quote_checks"].append(
+        {"source": "primer", "page": 2, "quote": "A frequency is a count divided by the total."}
+    )
+    workflow.import_proposal(project, "unit-one", proposal)
+    assert any(
+        "outside the immutable packet" in e for e in workflow.check(project, "unit-one")["errors"]
+    )
+    packet = workflow.prepare(
+        project,
+        "with-context",
+        "primer",
+        1,
+        1,
+        scope="Compare definitions.",
+        context=[{"source": "primer", "first": 2, "last": 2}],
+    )
+    assert packet["context_pages"][0]["print_page"] == 2
+    proposal["packet_digest"] = packet["packet_digest"]
+    workflow.import_proposal(project, "with-context", proposal)
+    assert workflow.check(project, "with-context")["ok"]
+
+
+def test_context_source_changes_invalidate_whole_packet(unit, tmp_path):
+    project, _, _ = unit
+    config = deepcopy(project.config)
+    config["sources"].append(
+        {"id": "second", "title": "Second original primer", "authors": [], "status": "expected"}
+    )
+    write_yaml(project.root / "project.yaml", config)
+    project = load_project(project.root)
+    source = tmp_path / "second.txt"
+    source.write_text("An event can contain multiple outcomes.")
+    register(project, "second", source)
+    workflow.prepare(
+        project,
+        "comparison",
+        "primer",
+        1,
+        1,
+        scope="Compare sources.",
+        context=[{"source": "second", "first": 1, "last": 1}],
+    )
+    source.write_text("An updated comparison source.")
+    register(project, "second", source, replace=True)
+    with pytest.raises(ProjectError, match="context source changed"):
+        workflow._ensure_packet(project, workflow.unit_dir(project, "comparison"))

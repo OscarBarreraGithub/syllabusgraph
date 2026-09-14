@@ -31,6 +31,11 @@ FORBIDDEN = {
     ".venv",
 }
 BINARY_SOURCE = {".pdf", ".epub", ".docx", ".pptx", ".pem", ".key"}
+PUBLIC_AGENT_PROFILES = {
+    f"{provider}/agents/syllabus-{role}.{suffix}"
+    for provider, suffix in ((".claude", "md"), (".codex", "toml"))
+    for role in ("extractor", "critic", "adjudicator", "orchestrator")
+}
 RULES = [
     ("private absolute path", re.compile(r"/(?:Users|home)/[A-Za-z][A-Za-z0-9_.-]+/")),
     ("access token", re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{30,}|sk-[A-Za-z0-9_-]{32,})\b")),
@@ -58,7 +63,21 @@ def main():
         checked += 1
         if check_path:
             path = Path(name)
-            if FORBIDDEN & set(path.parts) or path.suffix.lower() in BINARY_SOURCE:
+            forbidden = FORBIDDEN & set(path.parts)
+            # Only these reviewed native role definitions may be public. Other
+            # provider settings, sessions, memory, and local overrides stay private.
+            agent_parts = next(
+                (i for i, part in enumerate(path.parts) if part in {".claude", ".codex"}), None
+            )
+            if agent_parts is not None:
+                relative = Path(*path.parts[agent_parts:]).as_posix()
+                if relative in PUBLIC_AGENT_PROFILES:
+                    forbidden.discard(".claude")
+                else:
+                    forbidden.add("private agent configuration")
+            if path.name == "CLAUDE.local.md":
+                forbidden.add("private agent memory")
+            if forbidden or path.suffix.lower() in BINARY_SOURCE:
                 findings.append((name, "private/runtime file or source binary"))
         try:
             text = raw.decode("utf-8")

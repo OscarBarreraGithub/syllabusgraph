@@ -1,8 +1,10 @@
 # Source workflow
 
 The app uses reviewed knowledge immediately. Building a new knowledge base is a
-separate, resumable workflow. Extraction produces proposals; the operator reviews
-the actual claims before promotion. No model is required for manual authoring.
+separate, resumable workflow. Extraction produces drafts; a mandatory independent
+critic reviews the claims before the orchestrator promotes them. A human can
+audit the completed run or choose to trust the critic. Manual authoring remains
+possible, but manual imports do not bypass the dispatch and critique gates.
 
 ## 1. Register the reference and attach material
 
@@ -67,6 +69,13 @@ syllabusgraph prepare -p local-courses/my-course \
   --budget 15
 ```
 
+For comparisons with another book or an earlier section, add explicit context:
+`--context reference-two:10:12` (repeat as needed). Primary and context pages
+share the 80-page limit and are included in the immutable request with their
+checksums. Quote witnesses outside those pages are rejected. `pages_read` and
+coverage refer to the primary scope; context supports comparison without claiming
+that a separate extraction of that whole section was completed.
+
 The packet is saved at `.syllabusgraph/runs/chapter-01/packet.json`. It contains
 the selected source text, source identity and checksum, print/PDF page mapping,
 the existing knowledge, configured mastery levels, extraction instructions,
@@ -78,100 +87,131 @@ smaller units make review easier. Empty extracted pages must be addressed
 before preparation. Repeating a prepare command with identical inputs resumes
 the same packet. Changed scope, sources, or base knowledge need a new unit ID.
 
-## 3. Extract a proposal
+## 3. Dispatch extraction through your native agent
 
-Choose either path:
-
-**Manual or external tool:** open the packet with your preferred extraction
-tool, follow its schema, save the returned proposal in local storage, then:
+Accept the setup once, in the course directory:
 
 ```bash
-syllabusgraph import-proposal -p local-courses/my-course \
-  --unit chapter-01 local-courses/my-course/.syllabusgraph/proposal.json
+syllabusgraph agent configure --provider codex --accept-defaults
+syllabusgraph agent dispatch chapter-01 --stage extract --orchestrator SESSION_ID
 ```
 
-The argument above is a file you created. Prefer saving it inside the project's
-ignored `.syllabusgraph/` directory, especially when it includes source quotes.
+Use `--provider claude` for Sonnet/Opus defaults. Codex defaults to Terra high
+for extraction and Sol high for critique/adjudication. See [agent setup](agent-setup.md)
+for custom roles, native profile discovery, and model availability checks.
 
-**Command runner:** supply an executable which reads one JSON packet from stdin
-and writes one JSON response to stdout, both encoded as UTF-8:
+Dispatch writes an immutable request containing the source packet, current
+knowledge, previous findings, role, model, reasoning effort, and response
+contract. The orchestrator launches the requested **separate native agent**,
+then saves its JSON response inside ignored `.syllabusgraph/` storage and records
+the actual runtime identity:
 
 ```bash
-syllabusgraph run -p local-courses/my-course \
-  --unit chapter-01 --model chosen-model-and-version --timeout 300 \
-  -- python /absolute/path/to/your_runner.py
+syllabusgraph agent complete chapter-01 DISPATCH_ID result.json \
+  --agent-id RUNTIME_ID --model gpt-5.6-terra --effort high
 ```
 
-This is the integration boundary, not a built-in model client. The executable
-may wrap your preferred API, local model, or agent tool. It runs with the course
-project as working directory. Configure credentials in its environment; never
-put them in project data or arguments. The tool does not automatically download,
-select, or call a model. Running a network-backed adapter sends the packet to
-the provider you configured.
+SyllabusGraph does not invoke the model itself. The host agent does that using
+its existing account and native delegation tools. Source data is sent to the
+selected provider when the host runs the worker. Availability depends on the
+host/account; never silently substitute another model. Runtime identity is
+attested by the trusted orchestrator, not cryptographically verified by Python.
 
-The packet includes the stage (`extract` or `critique`) and model-independent
-instructions. Standard output must contain only JSON, without Markdown fences;
-diagnostics go to stderr. Timeouts/nonzero exits leave the packet and previous
-valid proposal intact. Model identity is recorded, environment values are not.
+The proposal contains `packet_digest`, `graph` (nodes, edges, groups, motivations),
+`pages_read`, `unresolved`, and `quote_checks`. Follow the exact schema in the
+request. Quote witnesses have `source`, printed `page`, and a short exact `quote`.
+They remain local; promotion carries citations into the graph without quotes.
 
-The proposal contains:
-
-```json
-{
-  "packet_digest": "copy the exact digest from the packet",
-  "graph": {"nodes": [], "edges": [], "groups": [], "motivations": []},
-  "pages_read": [1],
-  "unresolved": [],
-  "quote_checks": []
-}
-```
-
-This illustrates structure only. Actual proposals must report the exact page
-range read and include source witnesses for every cited page of each new
-record. A witness has `source`, printed `page`, and a short exact `quote`.
-Quote witnesses remain local and are not promoted into public graph records.
-Existing concept IDs can be referenced without copying their records.
-
-## 4. Check the evidence and critique the claims
+## 4. Mandatory critique and documented adjudication
 
 ```bash
-syllabusgraph check -p local-courses/my-course --unit chapter-01
-syllabusgraph run -p local-courses/my-course \
-  --unit chapter-01 --stage critique --model reviewer-model-and-version \
-  -- python /absolute/path/to/your_runner.py
+syllabusgraph check --unit chapter-01
+syllabusgraph agent dispatch chapter-01 --stage critique --orchestrator SESSION_ID
 ```
 
-Mechanical checks cover structure, registered sources, printed-page coverage,
-budget, record conflicts, cycle constraints, and quotation location with word
-boundaries. They do **not** determine whether the quoted passage entails a
-scientific claim. The reviewer must check definitions, derivation routes,
-necessity, completeness, notation, and pedagogical usefulness. Human review
-can perform this critique without a model command.
+The orchestrator runs a separate critic with the dispatched model and effort,
+then uses `agent complete` to import its response. Critic output contains the
+exact `proposal_digest`, a `verdict` (`accept`, `revise`, or `reject`), and
+substantive `notes`. Acceptance is recorded automatically if mechanical checks
+also pass. The critic must inspect definitions, derivation routes, necessity,
+notation, completeness within scope, and whether evidence supports each claim.
 
-An automated critic returns the proposal digest, verdict (`accept`, `revise`,
-or `reject`), and concrete notes. A current revise/reject verdict prevents
-acceptance until findings are resolved and critique is run again.
+Mechanical checks cover structure, registered sources, declared page coverage,
+budget, conflicts, cycles, and quote locations. They do not prove scientific
+correctness. An extractor cannot review its own work. Changed proposals, policy,
+or knowledge require a new matching review. Promotion also checks the latest
+critic verdict, so an earlier acceptance cannot override a later rejection.
 
-Revise the proposal and import it again when needed. Previous proposals are
-retained by content hash. An altered proposal does not inherit acceptance from
-its predecessor. Conflicting edits to an existing concept require explicit
-reconciliation; the additive promotion command never silently overwrites them.
-
-## 5. Record review and promote
+Routine revisions return to the extractor. After two adverse critic completions
+by default, or an immediate rejection, extraction cannot continue until the
+configured critic/adjudicator resolves the dispute:
 
 ```bash
-syllabusgraph review -p local-courses/my-course --unit chapter-01 \
-  --decision accept --reviewer "Reviewer identifier" \
-  --note "Describe the source checks and substantive judgments actually made."
-syllabusgraph promote -p local-courses/my-course --unit chapter-01
-syllabusgraph validate -p local-courses/my-course
+syllabusgraph agent dispatch chapter-01 --stage adjudicate --orchestrator SESSION_ID
 ```
 
-Acceptance requires passing checks. Promotion verifies the exact accepted
-proposal and current knowledge base, replaces the graph atomically, and records
-a local receipt. It does not commit to Git or publish anything. If another
-unit has changed the knowledge base since review, review against the current
-base before promoting.
+The adjudicator returns a revised proposal plus a structured decision ledger:
+issue, zero-based critic-note `finding` index, alternatives, resolution, rationale, source citations, and affected
+records. It may replace an existing graph record only through a decision bound
+to the current knowledge and exact proposed replacement. It may defer a claim
+when evidence is insufficient. It cannot override failed evidence or graph
+checks. A fresh independent critic reviews the adjudicated proposal before
+promotion. Full decision history stays available for the final audit.
+
+See [the orchestration contract](../workflows/orchestrate.md) for role behavior
+and [the review contract](../workflows/review.md) for response examples.
+
+## 5. Promote and audit
+
+```bash
+syllabusgraph promote --unit chapter-01
+syllabusgraph validate
+syllabusgraph agent audit
+```
+
+The orchestrator promotes after the configured critic accepts. No per-unit
+human approval is required. Promotion checks current dispatch provenance,
+policy, proposal, source packet, critic verdict, and knowledge base; writes the
+graph atomically; and records a receipt. It does not commit or publish anything.
+
+Default `end` mode marks the final human audit as pending while allowing the
+agent to continue building. At the end, a human may inspect the local audit and
+ask the orchestrator to record their actual review:
+
+```bash
+syllabusgraph agent audit --reviewer "Reviewer identifier" \
+  --notes "Describe the source coverage, decisions, and plans actually checked."
+```
+
+The human record is tied to that project's content and workflow snapshot.
+Changes make it pending again. `--audit-mode trust` in `agent configure` makes
+human review optional; the mandatory critic remains. An audit is not proof that
+all requested material was covered: inspect unfinished units and source coverage.
+
+## External adapters and manual drafts
+
+`import-proposal --unit chapter-01 result.json` remains useful for drafts and
+migration. To promote an imported draft, dispatch an extractor to inspect it and
+return its own proposal, then dispatch the mandatory critic. Old manual review
+records do not satisfy the new gate.
+
+`run` still supports explicit JSON-in/JSON-out executables (UTF-8, no Markdown
+fences, diagnostics on stderr), with a timeout and retained failure diagnostics.
+Without a dispatch it creates a draft or legacy critique that cannot authorize
+promotion. To bind an adapter to an issued native dispatch:
+
+```bash
+syllabusgraph run --unit chapter-01 --stage extract \
+  --dispatch-id DISPATCH_ID --agent-id RUNTIME_ID \
+  --model gpt-5.6-terra --effort high --timeout 300 \
+  -- python /path/to/your_runner.py
+```
+
+The explicit adapter must actually configure and verify its requested model;
+`--model` alone cannot configure an arbitrary executable. No bundled adapter,
+provider API client, or automatic background service is included. Commands run
+with the course project as their working directory. Keep credentials in the
+runner's environment and all output in ignored local storage.
 
 ## 6. Resume and assess coverage
 

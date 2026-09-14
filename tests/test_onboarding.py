@@ -11,6 +11,9 @@ def test_every_project_has_guides_and_ignores_all_materials(tmp_path, template):
     assert (project.root / "README.md").is_file()
     assert (project.root / "materials/README.md").is_file()
     assert (project.root / "COURSE_GUIDANCE.md").is_file()
+    agent_guide = (project.root / "AGENTS.md").read_text()
+    assert "--provider codex" in agent_guide and "--provider claude" in agent_guide
+    assert (project.root / "CLAUDE.md").read_text() == "@AGENTS.md\n"
     files = [
         "materials/handout.txt",
         "materials/chapter.md",
@@ -18,6 +21,8 @@ def test_every_project_has_guides_and_ignores_all_materials(tmp_path, template):
         "materials/nested/data.json",
         ".syllabusgraph/run.json",
         "COURSE_GUIDANCE.md",
+        "CLAUDE.local.md",
+        ".claude/settings.local.json",
     ]
     for name in files:
         path = project.root / name
@@ -50,6 +55,8 @@ def test_guides_preserve_existing_instructions_and_materials(blank):
     material.write_text("Existing local source.\n", encoding="utf-8")
     brief = blank.root / "COURSE_GUIDANCE.md"
     brief.write_text("Existing course decisions.\n", encoding="utf-8")
+    agent_guide = blank.root / "AGENTS.md"
+    agent_guide.write_text("Existing agent instructions.\n", encoding="utf-8")
     ignore = blank.root / ".gitignore"
     ignore.write_text("custom-private/\n", encoding="utf-8")
     cli.create_workspace_guides(blank.root)
@@ -61,6 +68,7 @@ def test_guides_preserve_existing_instructions_and_materials(blank):
     assert guide.read_text(encoding="utf-8") == "Existing course instructions.\n"
     assert material.read_text(encoding="utf-8") == "Existing local source.\n"
     assert brief.read_text(encoding="utf-8") == "Existing course decisions.\n"
+    assert agent_guide.read_text(encoding="utf-8") == "Existing agent instructions.\n"
 
 
 def test_template_local_material_is_not_copied_into_new_courses(tmp_path, monkeypatch):

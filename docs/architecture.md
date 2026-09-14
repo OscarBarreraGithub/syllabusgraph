@@ -64,6 +64,22 @@ same work-unit ID with different inputs is rejected. A changed proposal
 invalidates prior acceptance. A changed knowledge base requires review again,
 apart from recovery after the same atomic graph write already completed.
 
+## Agent review contract
+
+`agents.py` records accepted local role policy and immutable orchestrator
+requests. The native host launches the configured runtime; model identity is a
+trusted runtime report, not cryptographic attestation. Extractors and adjudicators
+produce proposals; independent critics must accept the current producer's exact
+revision, base, and policy before promotion. Adverse findings cannot be rerolled
+unchanged, and cumulative revision limits force documented adjudication.
+
+Decision ledgers authorize exact record replacements and retain source citations,
+alternatives, and rationale. They do not waive graph or evidence checks. Audit
+history includes dispatches, failures, decisions, and snapshot-bound human checks.
+Default end-audit mode allows work to proceed while human review is pending;
+trust mode makes that final review optional. Original sources, quotes, requests,
+and audit logs stay in ignored storage.
+
 ## Storage and local serving
 
 The canonical graph is one file, replaced atomically during promotion.

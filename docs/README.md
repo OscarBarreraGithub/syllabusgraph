@@ -13,6 +13,7 @@ the source for a future documentation site or wiki; no separate wiki is maintain
 | [Source workflow](source-workflow.md) | How to prepare, extract, check, review, promote, and resume |
 | [Project format](project-format.md) | How bibliography, concepts, evidence, and course plans are represented |
 | [Sharing a course](sharing.md) | Which reviewed results can be published and which files stay local |
+| [Native agent setup](agent-setup.md) | Configure and audit bounded Codex or Claude source work |
 
 ## Understand and maintain the tool
 
@@ -32,3 +33,5 @@ text and a runnable graph. [A textbook-based course example](../examples/qft/REA
 is in preparation; its source books are supplied privately, and no extracted
 conclusions or completed course are claimed yet. Examples are separate from
 the blank project created for a new subject.
+
+- [Agent setup](agent-setup.md): clone-first onboarding, configurable native roles, mandatory critique, and final audit.

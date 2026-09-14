@@ -6,6 +6,18 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Add clone-first Codex/Claude instructions and native role profiles. Default to
+  Terra high extraction with mandatory Sol high critique/adjudication, or Sonnet
+  high extraction with Opus high critique/adjudication. Roles are configurable.
+- Add orchestrator dispatch contracts, runtime completion records, bounded
+  revisions, documented adjudication of conflicting graph records, and a fresh
+  independent critic gate. Promotion rejects stale policy/proposal/base reviews
+  and later critic rejection, including after an earlier acceptance.
+- Add a local final audit with complete decision history and snapshot-bound
+  human review, plus an explicit trust-critic mode. No per-unit human approval.
+- Migration: manual imports remain drafts; existing manual acceptances need
+  recorded extraction and configured critic dispatches before new promotion.
+
 - Keep blank-course setup independent of private course examples. The CLI offers
   the blank project and self-authored sampling example; existing course projects
   still load through their project files.

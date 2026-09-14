@@ -4,6 +4,27 @@
 
 **A clear path from source material to a teachable course.**
 
+Use this prompt to start a new Codex or Claude project:
+
+```text
+Clone https://github.com/OscarBarreraGithub/syllabusgraph, read the repository
+agent instructions, and tell me the next steps for my course project.
+```
+
+The agent explains where to drop your references, offers to copy files from a
+path you provide, confirms the model settings, and asks for your course goals.
+Then it coordinates extraction and review. Textbooks and working extracts stay
+local; reviewed graphs and course plans can be shared.
+
+| Host | Extraction | Required critic and dispute decisions |
+|---|---|---|
+| Codex | Terra · high | Sol · high |
+| Claude | Sonnet · high | Opus · high |
+
+All roles are configurable, including the orchestrator. Disputes have a written
+decision trail. Review it at the end, or choose to trust the critic; neither mode
+requires a human approval for each unit.
+
 SyllabusGraph connects learning goals to the concepts they depend on and the
 sources that support them. Choose what students should be able to recognize,
 use, or derive; supply their background; then inspect a proposed sequence,
@@ -58,6 +79,8 @@ time estimates are illustrative and have not been calibrated in a classroom.
 - Export a syllabus, preparation scaffold, JSON plan, or Mermaid diagram.
 - Attach local source files and process them through a resumable
   proposal → check → review → promote workflow.
+- Use the native Codex or Claude workflow for bounded extraction, forced
+  critique, adjudication, and an end-of-run audit.
 
 The app serves a **local workspace**. It has no telemetry, hosted account,
 external font dependency, or automatic model calls. Attached working copies and
@@ -78,6 +101,8 @@ local-courses/my-course/
   README.md             Start here
   materials/            Put your PDFs, text files, and Markdown notes here
   COURSE_GUIDANCE.md    Private goals, scope, and extraction directions
+  AGENTS.md             Native-agent workflow instructions
+  CLAUDE.md             Claude Code entry point for those instructions
   project.yaml          Project settings and reference bibliography
   knowledge/graph.yaml  Reviewed concepts and relationships
   plans/                Course goals, background, and schedules
@@ -122,14 +147,27 @@ edit course outcomes and assumptions using the [project format](docs/project-for
 The local app, PDF text reader, review workflow, planner, and exports are ready.
 A new knowledge base still requires the materials, source review, and course
 design decisions. Proposals can be authored manually or with an external AI
-tool and imported. **Automatic AI extraction requires a separately configured
-command adapter; no model client is bundled.** Image-only PDFs need OCR before
+tool and imported as drafts. **Your Codex or Claude session launches the native
+workers; no separate API adapter is needed for that path.** Custom command
+adapters are also supported. Image-only PDFs need OCR before
 import, and mathematical notation needs inspection against the original pages.
 
 Record your audience, intended outcomes, course boundaries, and reference
 priorities in the generated **`COURSE_GUIDANCE.md`**. It is a private planning
 brief for you or your agent; it is not parsed by the engine. Choose an initial
 scope before preparing source pages.
+
+For the native agent workflow, see [native agent setup](docs/agent-setup.md).
+It uses local policy and immutable request packets; there is no bundled model
+client or automatic background extraction loop. The manual proposal/import path
+remains available when you cannot use a native agent.
+
+In a new Codex project, trust the project and restart before relying on its
+`.codex/agents/` profiles: custom profiles load at session start and are not
+guaranteed to be discovered immediately. If a profile is unavailable or was
+added during the current session, use a trusted restart or have the native host
+spawn a generic agent with the policy's explicit model and effort and follow the
+immutable request contract.
 
 ## Documentation and functionality
 

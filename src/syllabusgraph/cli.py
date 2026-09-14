@@ -16,7 +16,7 @@ from .io import ProjectError, bundled, read_yaml, write_json, write_text, write_
 from .planner import build_plan, compare_plans
 from .project import load_project, validate_shape
 from .server import serve
-from . import sources, workflow
+from . import agents, sources, workflow
 
 
 def create_workspace_guides(destination: Path):
@@ -32,6 +32,8 @@ def create_workspace_guides(destination: Path):
         "*.pdf",
         "*.epub",
         "__pycache__/",
+        "CLAUDE.local.md",
+        ".claude/settings.local.json",
     ]
     missing = [rule for rule in rules if rule not in ignored.splitlines()]
     if missing:
@@ -44,10 +46,13 @@ def create_workspace_guides(destination: Path):
         ("course.md", "README.md"),
         ("materials.md", "materials/README.md"),
         ("guidance.md", "COURSE_GUIDANCE.md"),
+        ("agent.md", "AGENTS.md"),
     ]:
         path = destination / target
         if not path.exists():
             write_text(path, (bundled("starter") / source).read_text(encoding="utf-8"))
+    if not (destination / "CLAUDE.md").exists():
+        write_text(destination / "CLAUDE.md", "@AGENTS.md\n")
 
 
 def initialize(destination: Path, template: str, *, title: str | None = None):
@@ -114,6 +119,42 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--port", type=int, default=8766)
     p.add_argument("--open", action="store_true")
     project_command("status", "Show resumable extraction work units.")
+    p = project_command("agent", "Configure native agents, dispatch work, and inspect the audit.")
+    subs = p.add_subparsers(dest="agent_action", required=True)
+    sub = subs.add_parser("configure")
+    sub.add_argument("--provider", choices=["codex", "claude"], default="codex")
+    sub.add_argument(
+        "--accept-defaults",
+        required=True,
+        action="store_true",
+        help="Accept defaults together with explicit overrides, after the setup discussion.",
+    )
+    for role in ("orchestrator", "extractor", "critic"):
+        sub.add_argument(f"--{role}-model")
+        sub.add_argument(f"--{role}-effort")
+    sub.add_argument("--audit-mode", choices=["end", "trust"])
+    sub.add_argument("--revision-limit", type=int)
+    subs.add_parser("policy")
+    sub = subs.add_parser("dispatch")
+    sub.add_argument("unit")
+    sub.add_argument("--stage", choices=["extract", "critique", "adjudicate"], required=True)
+    sub.add_argument("--orchestrator", required=True)
+    sub.add_argument("--orchestrator-model")
+    sub.add_argument("--orchestrator-effort")
+    sub = subs.add_parser("complete")
+    sub.add_argument("unit")
+    sub.add_argument("dispatch_id")
+    sub.add_argument("file", type=Path)
+    sub.add_argument("--agent-id", required=True)
+    sub.add_argument("--model", required=True)
+    sub.add_argument("--effort", required=True)
+    sub = subs.add_parser("fail")
+    sub.add_argument("unit")
+    sub.add_argument("dispatch_id")
+    sub.add_argument("--reason", required=True)
+    sub = subs.add_parser("audit")
+    sub.add_argument("--reviewer")
+    sub.add_argument("--notes")
     p = project_command("source", "Register source metadata or attach local material.")
     subs = p.add_subparsers(dest="source_action", required=True)
     sub = subs.add_parser("add")
@@ -138,13 +179,24 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--last", type=int, required=True)
     p.add_argument("--scope", required=True)
     p.add_argument("--budget", type=int, default=15)
+    p.add_argument(
+        "--context",
+        action="append",
+        default=[],
+        help="Additional evidence pages, SOURCE:FIRST:LAST; repeat for cross-source comparison. Total packet limit: 80 pages.",
+    )
     p = project_command("run", "Run an explicit JSON-in/JSON-out extraction or critic command.")
     p.add_argument("--unit", required=True)
     p.add_argument(
         "--model", required=True, help="Record the model or tool version used by your runner."
     )
-    p.add_argument("--stage", choices=["extract", "critique"], default="extract")
+    p.add_argument("--stage", choices=["extract", "critique", "adjudicate"], default="extract")
     p.add_argument("--timeout", type=float, default=180)
+    p.add_argument(
+        "--dispatch-id", help="Bind an explicit runner to a previously issued agent dispatch."
+    )
+    p.add_argument("--agent-id")
+    p.add_argument("--effort")
     p.add_argument(
         "runner", nargs=argparse.REMAINDER, help="After --, supply an executable and its arguments."
     )
@@ -261,6 +313,45 @@ def execute(args) -> int:
         result = compare_plans(build_plan(project, args.first), build_plan(project, args.second))
     elif args.action == "status":
         result = workflow.status(project)
+    elif args.action == "agent":
+        if args.agent_action == "configure":
+            overrides = {
+                f"{r}_{f}": getattr(args, f"{r}_{f}")
+                for r in ("orchestrator", "extractor", "critic")
+                for f in ("model", "effort")
+            }
+            result = agents.configure(
+                project,
+                args.provider,
+                **overrides,
+                audit_mode=args.audit_mode,
+                revision_limit=args.revision_limit,
+            )
+        elif args.agent_action == "policy":
+            result = agents.policy(project, required=False)
+        elif args.agent_action == "dispatch":
+            result = agents.dispatch(
+                project,
+                args.unit,
+                stage=args.stage,
+                orchestrator=args.orchestrator,
+                orchestrator_model=args.orchestrator_model,
+                orchestrator_effort=args.orchestrator_effort,
+            )
+        elif args.agent_action == "complete":
+            result = agents.complete(
+                project,
+                args.unit,
+                args.dispatch_id,
+                read_yaml(args.file),
+                agent_id=args.agent_id,
+                model=args.model,
+                effort=args.effort,
+            )
+        elif args.agent_action == "fail":
+            result = agents.fail(project, args.unit, args.dispatch_id, reason=args.reason)
+        else:
+            result = agents.audit(project, reviewer=args.reviewer, notes=args.notes)
     elif args.action == "source":
         if args.source_action == "status":
             result = sources.public_status(project)
@@ -296,6 +387,13 @@ def execute(args) -> int:
                 write_yaml(project.root / "project.yaml", config)
             result = {"added": args.id}
     elif args.action == "prepare":
+        context = []
+        for value in args.context:
+            try:
+                source, first, last = value.split(":")
+                context.append({"source": source, "first": int(first), "last": int(last)})
+            except ValueError as exc:
+                raise ProjectError("Context must use SOURCE:FIRST:LAST.") from exc
         packet = workflow.prepare(
             project,
             args.unit,
@@ -304,6 +402,7 @@ def execute(args) -> int:
             args.last,
             scope=args.scope,
             budget=args.budget,
+            context=context,
         )
         result = {
             "unit": args.unit,
@@ -313,7 +412,15 @@ def execute(args) -> int:
     elif args.action == "run":
         command = args.runner[1:] if args.runner[:1] == ["--"] else args.runner
         result = workflow.run(
-            project, args.unit, command, model=args.model, timeout=args.timeout, stage=args.stage
+            project,
+            args.unit,
+            command,
+            model=args.model,
+            timeout=args.timeout,
+            stage=args.stage,
+            dispatch_id=args.dispatch_id,
+            agent_id=args.agent_id,
+            effort=args.effort,
         )
     elif args.action == "import-proposal":
         result = workflow.import_proposal(project, args.unit, read_yaml(args.file))
