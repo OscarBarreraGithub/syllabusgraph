@@ -15,6 +15,7 @@ the source for a future documentation site or wiki; no separate wiki is maintain
 | [Project format](project-format.md) | How bibliography, concepts, evidence, and course plans are represented |
 | [Sharing a course](sharing.md) | Which reviewed results can be published and which files stay local |
 | [Native agent setup](agent-setup.md) | Configure and audit bounded Codex or Claude source work |
+| [Time and usage](usage-estimates.md) | Record model calls, elapsed time, available token counters, and their measurement limits |
 | [Graph bank](../graphs/README.md) | Reuse or contribute independent textbook graphs and compare reviewed correspondences |
 
 ## Understand and maintain the tool

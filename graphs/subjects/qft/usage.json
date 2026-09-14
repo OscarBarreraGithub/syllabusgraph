@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-14T20:00:02.468245+00:00",
+  "goal_counter": {
+    "reported_tokens": 42910615,
+    "reported_elapsed_seconds": 55610,
+    "started_at": "2026-09-14T04:32:54+00:00",
+    "counter_updated_at": "2026-09-14T19:59:45+00:00",
+    "token_breakdown": null,
+    "billed_cost": null,
+    "child_agent_token_coverage": "not specified by the counter interface"
+  },
+  "dispatch_accounting": {
+    "since": "2026-09-14T04:32:54+00:00",
+    "dispatches_recorded": 342,
+    "native_results_recorded": 333,
+    "dispatches_with_failure_records": 6,
+    "distinct_confirmed_worker_sessions": 158,
+    "source_work_units": 75,
+    "source_work_unit_dispatch_histogram": {
+      "1": 4,
+      "2": 6,
+      "3": 4,
+      "4": 14,
+      "5": 42,
+      "6": 5
+    },
+    "by_model_effort_stage": [
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "high",
+        "stage": "adjudicate",
+        "record_type": "source-workflow",
+        "dispatches_recorded": 55,
+        "native_results_recorded": 51,
+        "dispatches_with_failure_records": 3,
+        "distinct_confirmed_worker_sessions": 51
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "high",
+        "stage": "adjudicate",
+        "record_type": "supplemental-ledger",
+        "dispatches_recorded": 3,
+        "native_results_recorded": 3,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 3
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "high",
+        "stage": "critique",
+        "record_type": "source-workflow",
+        "dispatches_recorded": 134,
+        "native_results_recorded": 130,
+        "dispatches_with_failure_records": 3,
+        "distinct_confirmed_worker_sessions": 70
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "high",
+        "stage": "critique",
+        "record_type": "supplemental-ledger",
+        "dispatches_recorded": 4,
+        "native_results_recorded": 4,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 4
+      },
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "high",
+        "stage": "critique-recheck",
+        "record_type": "supplemental-ledger",
+        "dispatches_recorded": 1,
+        "native_results_recorded": 1,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 1
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "effort": "high",
+        "stage": "extract",
+        "record_type": "source-workflow",
+        "dispatches_recorded": 135,
+        "native_results_recorded": 134,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 75
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "effort": "high",
+        "stage": "extract",
+        "record_type": "supplemental-ledger",
+        "dispatches_recorded": 4,
+        "native_results_recorded": 4,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 4
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "effort": "high",
+        "stage": "extract-correction",
+        "record_type": "supplemental-ledger",
+        "dispatches_recorded": 1,
+        "native_results_recorded": 1,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 1
+      },
+      {
+        "model": "gpt-5.6-terra",
+        "effort": "high",
+        "stage": "scheduling",
+        "record_type": "supplemental-ledger",
+        "dispatches_recorded": 5,
+        "native_results_recorded": 5,
+        "dispatches_with_failure_records": 0,
+        "distinct_confirmed_worker_sessions": 5
+      }
+    ]
+  },
+  "limitations": [
+    "Dispatch counts measure recorded work requests, not tokens or inference time. Failures can also have recorded native results; these columns overlap.",
+    "Distinct worker sessions count only identities confirmed in recorded results. A session can serve multiple calls and stages; row counts must not be summed for a global session count.",
+    "Work without these local ledgers, including orchestration and some setup or support tasks, is absent from dispatch totals. Missing logs are not zero historical usage.",
+    "Goal counters cover their reported goal interval. Input, cached input, output, model-specific tokens and child-agent inclusion are not inferred from an aggregate counter.",
+    "Elapsed goal time is not summed worker compute time. Historical active worker hours and peak concurrency are not reconstructed from file modification times.",
+    "No monetary cost is inferred; use provider usage records with the applicable rates for billing estimates."
+  ],
+  "progress_at_report_generation": {
+    "book_graph_nodes": 2351,
+    "book_graph_edges": 2857,
+    "model_reviewed_complete_books": 4,
+    "shared_graph_nodes": 327,
+    "shared_graph_edges": 235,
+    "book_origins_mapped": 377,
+    "shared_complete": false,
+    "human_audit": "pending"
+  },
+  "current_host_capacity": {
+    "orchestrator_slots": 1,
+    "worker_slots": 3,
+    "historical_peak_measured": false
+  }
+}

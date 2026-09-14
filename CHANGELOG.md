@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Add a metadata-only usage report for recorded model calls, confirmed worker
+  sessions, failures, and optional host token/time counters. Document incomplete
+  accounting and billing limits, and retain aggregate QFT measurements.
 - Explain how to locate registered originals when repository searches hide
   ignored source files, while retaining the packet's reading scope.
 - Clarify primary-only `pages_read`, separately recorded context coverage, and
@@ -19,7 +22,7 @@ imply a package has been published to a package index.
 - Expand the QFT bank beyond its pilot through independently reviewed textbook
   batches. Record current counts, exact accepted scopes, and nonconceptual
   exclusions alongside each graph. Extraction now covers the four inventoried
-  source scopes; whole-book audits and shared alignment remain in progress.
+  source scopes and their whole-book audits; shared alignment remains in progress.
 - Add reviewed source inventories and remaining section scopes to the QFT bank.
   Optional coverage ledgers must match their project and current graph digest.
   Clarify joint prerequisites within alternative derivations and complete-word
