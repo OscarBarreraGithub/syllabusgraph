@@ -115,6 +115,12 @@ agent approval loop. For source units, use the following finite sequence:
    closes the unit without promoting its draft. Failed final validation also
    defers the unit. There is no review after adjudication.
 
+One correction is a maximum, not a required extra pass. If the critic supports
+the proposed science and its only remaining finding is that replacing an
+accepted record requires adjudicator authority, dispatch final adjudication
+directly. Another extractor pass cannot grant that authority. Preserve the
+critic's finding and the adjudicator's decision in the normal audit trail.
+
 An adjudication contains a full proposal, final `verdict` (`accept` or `defer`),
 and one decision for each current finding. Each decision identifies its
 zero-based critic-note index and affected records. An accepted revision may

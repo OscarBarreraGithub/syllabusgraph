@@ -19,6 +19,7 @@ graphs/
     review.yaml           Bounded coverage, review status, and omissions
     coverage.yaml         Optional whole-book inventory and remaining page scopes
     adjudications.yaml    Optional final scientific decisions and their reasons
+    reconciliation.md     Optional whole-book semantic audit and amendment report
     README.md             Scope and reading guide
   subjects/<subject-id>/  Shared graph with the same project format
 ```
@@ -80,6 +81,12 @@ that all its concepts were captured, especially for a narrow pilot.
 The [QFT collection](subjects/qft/README.md) includes a reviewed inventory with
 conservative progress records and a public final-decision log. These are source
 coordinates and review conclusions; textbook text stays private.
+
+A whole-book reconciliation report can map sections to their actual records,
+assess dependencies across extraction units, and explain remaining proof limits.
+Identify the audited graph snapshot and list subsequent accepted amendments.
+Acceptance of a report that identifies a gap does not resolve that gap: retain
+its pending status until a source-backed amendment is reviewed and applied.
 
 When a scientific disagreement reaches final adjudication, a project may publish
 `adjudications.yaml` with the deciding model, alternatives considered, selected

@@ -8,7 +8,7 @@ Terra/high performs extraction and alignment; independent Sol/high review preced
 |---|---|---:|---:|
 | [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–263, 265–345, 347–391, 393–471, 473–649 | 491 | 715 |
 | [Schwartz](../../textbooks/schwartz/README.md) | 3–105, 109–284, 287–477, 481–615 | 654 | 718 |
-| [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–189, 191–595 | 483 | 628 |
+| [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–189, 191–595 | 483 | 631 |
 | [Weinberg II](../../textbooks/weinberg-2/README.md) | 1–59, 63–247, 252–474 | 359 | 411 |
 
 The reviewed inventories account for 2,646 substantive numbered pages and 605 section entries. Accepted full extraction scopes currently cover 2275 of those pages; narrow pilots are excluded from that measure. Each book README links its complete inventory and remaining ranges. These counts track progress; the final conceptual-coverage and dependency audit is still pending. [Read the final inventory decision](review-decisions.yaml).

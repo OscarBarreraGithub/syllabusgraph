@@ -12487,6 +12487,36 @@ edges:
     - 370
     note: The source uses d²=0 to establish both exact-implies-closed and electromagnetic
       gauge invariance before generalizing to p forms.
+- id: weinberg-1.external-determinant-to-euler-heisenberg-one-loop-matching
+  from: weinberg-1.external-dirac-field-determinant-loop-expansion
+  to: weinberg-1.euler-heisenberg-matching-and-light-by-light-eft
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: For the Euler-Heisenberg one-loop route, integrating out the electron
+    requires using the fermionic functional integral as a determinant and expanding
+    its trace logarithm as closed fermion loops. This is jointly required with the
+    spinor-QED operator edge, and applies only to deriving the electron-integrated
+    one-loop matching construction rather than to a supplied EFT result or generic
+    matching prescription.
+  failure_mode: Without the determinant and trace-log loop expansion, the electron
+    functional integral cannot be evaluated into the closed-loop contribution that
+    is matched to the low-energy photon EFT.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    - 413
+    note: The external-field Dirac path integral yields a determinant, whose expansion
+      is interpreted as fermion loops with the loop sign and disconnected-loop exponentiation.
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 524
+    note: The Euler-Heisenberg construction explicitly integrates the electron out
+      in a one-loop functional integral over the QED action.
 - id: weinberg-1.external-field-dirac-mode-completeness-to-central-electrostatic-dirac-radial-decomposition
   from: weinberg-1.external-field-dirac-mode-completeness
   to: weinberg-1.central-electrostatic-dirac-radial-decomposition
@@ -12597,24 +12627,27 @@ edges:
     note: The source names the Section 6.4 theorem as the essential bridge and applies
       it to the Fourier-transformed graph sum.
 - id: weinberg-1.fermion-anticomm-to-spin-statistics
-  from: weinberg-1.fermionic-anticommutation-occupancy
-  to: weinberg-1.spin-statistics-connection
-  relation: prerequisite
-  source_level: use
-  target_level: recognize
-  necessity: necessary
-  rationale: The stated spin-statistics rule explains why the electron occupancy algebra
-    uses anticommutators rather than the oscillator commutators.
-  failure_mode: Without the electron anticommutator construction, the spin-dependent
-    bracket choice remains disconnected from exclusion.
+  from: weinberg-1.spin-statistics-connection
+  to: weinberg-1.fermionic-anticommutation-occupancy
+  relation: evidence
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The stated spin-statistics rule gives explanatory context for the electron
+    anticommutator and zero-or-one occupancy construction. Section 1.2 states the
+    rule after the construction and says that it will be shown in Chapter 5; recognizing
+    the stated rule does not require using the occupancy construction.
+  failure_mode: Without this explanatory evidence edge, the occupancy construction
+    lacks its stated spin-dependent context; retaining the old prerequisite direction
+    falsely makes that construction necessary to recognize the historical rule.
   evidence:
   - source: weinberg-1
     section: '1.2'
     pages:
     - 19
     - 20
-    note: The source introduces the electron anticommutators and then states the spin
-      rule.
+    note: Section 1.2 introduces the exclusion-motivated anticommutators and occupancy
+      interpretation, then states the later Fierz-Pauli spin rule.
 - id: weinberg-1.fermion-grassmann-to-berezin
   from: weinberg-1.fermionic-grassmann-eigenstate-basis
   to: weinberg-1.berezin-integration-completeness-and-inverse-jacobian
@@ -13453,6 +13486,33 @@ edges:
     - 234
     - 255
     note: The general construction supplies the requested tensor coefficient route.
+- id: weinberg-1.general-causal-spin-statistics-to-historical-connection
+  from: weinberg-1.general-causal-fields-spin-statistics-and-phase
+  to: weinberg-1.spin-statistics-connection
+  relation: evidence
+  source_level: derive
+  target_level: recognize
+  necessity: helpful
+  rationale: 'The Chapter 5 locality calculation derives the general spin-statistics
+    rule that Section 1.2 states historically and explicitly says will be shown in
+    Chapter 5. This is evidence for the recognition-level statement, not a prerequisite
+    for it: the Chapter 5 proof is an independent later route.'
+  failure_mode: Without this link, the graph leaves the historical statement disconnected
+    from the later general locality derivation and can be read as if the early occupancy
+    example supplied that proof.
+  evidence:
+  - source: weinberg-1
+    section: '1.2'
+    pages:
+    - 20
+    note: The historical statement gives the integer-spin/commutator and half-integer-spin/anticommutator
+      rule and directs the reader to Chapter 5 for a different proof.
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 238
+    note: The self-field specialization of the locality condition identifies the result
+      as the general relation between spin and statistics.
 - id: weinberg-1.general-ct-to-cpt-general-route
   from: weinberg-1.general-field-charge-and-time-reversal-relations
   to: weinberg-1.cpt-proof-general-ab-scalar-route
@@ -18381,6 +18441,37 @@ edges:
     - 28
     note: Page 13 rejects the inference that spin-zero relativistic wave equations
       are invalid; pages 27–28 explain that quantum fields are not probability amplitudes.
+- id: weinberg-1.spinor-qed-to-euler-heisenberg-one-loop-matching
+  from: weinberg-1.spinor-qed-lagrangian-current
+  to: weinberg-1.euler-heisenberg-matching-and-light-by-light-eft
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: To derive the Euler-Heisenberg one-loop light-by-light matching construction,
+    one must use the charged Dirac operator and electron-photon coupling that define
+    the QED action whose electron field is integrated out. This requirement is limited
+    to that underlying-QED one-loop route; it does not make spinor QED necessary for
+    using a general EFT or for the low-energy symmetry classification when the operators
+    are supplied.
+  failure_mode: Without the electromagnetic Dirac operator and coupling, the functional
+    integral over the electron has no specified QED integrand, so the electron-loop
+    matching calculation cannot be carried out.
+  evidence:
+  - source: weinberg-1
+    section: '8.6'
+    pages:
+    - 355
+    - 356
+    note: Equations (8.6.1) and (8.6.3) specify the minimally coupled spinor-QED Lagrangian
+      and interaction-picture electron-photon coupling.
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 523
+    - 524
+    note: The source limits the Euler-Heisenberg example to low-energy photon-photon
+      scattering and writes its one-loop electron integration using the QED action.
 - id: weinberg-1.spinor-qed-to-qed-counterterms
   from: weinberg-1.spinor-qed-lagrangian-current
   to: weinberg-1.qed-renormalized-lagrangian-counterterms
