@@ -221,6 +221,96 @@ def test_dispatch_staleness_immutable_results_and_retry(unit):
         )
 
 
+def advance_graph(project, node=None):
+    knowledge = deepcopy(project.knowledge)
+    knowledge["nodes"].append(node or {
+        "id": "frequency",
+        "label": "Frequency",
+        "summary": "A count divided by the total.",
+        "kind": "concept",
+        "evidence": [{"source": "primer", "section": "Frequencies", "pages": [2]}],
+    })
+    write_yaml(project.root / project.config["knowledge"], knowledge)
+    return load_project(project.root)
+
+
+def test_extraction_can_finish_after_graph_update_but_needs_current_review(unit):
+    project, packet, proposal = unit
+    agents.configure(project)
+    task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
+    other_packet = wf.prepare(project, "unit-two", "primer", 2, 2, scope="Define frequency.")
+    other = deepcopy(proposal)
+    other.update(packet_digest=other_packet["packet_digest"], pages_read=[2], quote_checks=[{
+        "source": "primer", "page": 2, "quote": "A frequency is a count divided by the total."
+    }])
+    other["graph"]["nodes"] = [{
+        "id": "frequency", "label": "Frequency", "kind": "concept",
+        "summary": "A count divided by the total.",
+        "evidence": [{"source": "primer", "section": "Frequencies", "pages": [2]}],
+    }]
+    for stage, value in [("extract", other), ("critique", {
+        "proposal_digest": digest(other), "verdict": "accept",
+        "notes": ["Checked the frequency definition against page two."],
+    })]:
+        other_task = agents.dispatch(project, "unit-two", stage=stage, orchestrator="host-session")
+        agents.complete(project, "unit-two", other_task["id"], value,
+                        agent_id="other-" + stage, model=other_task["model"],
+                        effort=other_task["effort"])
+    wf.promote(project, "unit-two")
+    fresh = load_project(project.root)
+    agents.complete(project, "unit-one", task["id"], proposal,
+                    agent_id="extractor", model=task["model"], effort=task["effort"])
+    directory = wf.unit_dir(fresh, "unit-one")
+    assert load_project(project.root).knowledge == fresh.knowledge
+    assert wf.read_json(directory / "packet.json") == packet
+    assert wf.read_json(directory / "state.json")["status"] == "proposed"
+    assert not (directory / "review.json").exists()
+    with pytest.raises(ProjectError, match="mandatory critic"):
+        wf.review(fresh, "unit-one", decision="accept", reviewer="operator", notes=["Checked."])
+    task = agents.dispatch(fresh, "unit-one", stage="critique", orchestrator="host-session")
+    request = wf.read_json(directory / "dispatches" / task["id"] / "request.json")
+    assert request["current_knowledge"] == fresh.knowledge
+    assert request["checks"]["warnings"]
+    agents.complete(fresh, "unit-one", task["id"],
+                    {"proposal_digest": digest(proposal), "verdict": "accept",
+                     "notes": ["Checked against the updated graph and source."]},
+                    agent_id="critic", model=task["model"], effort=task["effort"])
+    wf.promote(fresh, "unit-one")
+    assert set(load_project(project.root).nodes) == {"event", "frequency"}
+
+
+def test_stale_extraction_cannot_overwrite_a_concurrently_added_record(unit):
+    project, _, proposal = unit
+    agents.configure(project)
+    task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
+    accepted = deepcopy(proposal["graph"]["nodes"][0])
+    accepted["summary"] = "An accepted, differently scoped event definition."
+    fresh = advance_graph(project, accepted)
+    agents.complete(project, "unit-one", task["id"], proposal,
+                    agent_id="extractor", model=task["model"], effort=task["effort"])
+    assert not wf.check(fresh, "unit-one")["ok"]
+    with pytest.raises(ProjectError, match="source-check failures"):
+        critique(fresh, proposal)
+    assert load_project(project.root).nodes["event"] == accepted
+    assert not (wf.unit_dir(fresh, "unit-one") / "receipt.json").exists()
+
+
+@pytest.mark.parametrize("stage", ["critique", "adjudicate"])
+def test_review_dispatch_still_rejects_graph_changes(unit, stage):
+    project, proposal = extracted(unit)
+    if stage == "adjudicate":
+        critique(project, proposal, "reject")
+    task = agents.dispatch(project, "unit-one", stage=stage, orchestrator="host-session")
+    fresh = advance_graph(project)
+    value = decision(proposal) if stage == "adjudicate" else {
+        "proposal_digest": digest(proposal), "verdict": "accept", "notes": ["Checked."]}
+    with pytest.raises(ProjectError, match="Knowledge changed during dispatch"):
+        agents.complete(fresh, "unit-one", task["id"], value,
+                        agent_id="reviewer", model=task["model"], effort=task["effort"])
+    assert load_project(project.root).knowledge == fresh.knowledge
+    assert not (wf.unit_dir(fresh, "unit-one") / "review.json").exists()
+
+
 def test_revision_limit_forces_documented_adjudication(unit):
     project, proposal = extracted(unit)
     critique(project, proposal, "revise")

@@ -102,6 +102,15 @@ background loop. The host invokes the native agent and passes the result back to
 `complete`. A manual `import-proposal` remains a draft: it cannot promote until
 the corresponding extraction and critic dispatches are recorded.
 
+Extraction drafts may finish after another unit is promoted. Their original
+source packet and runtime response remain immutable; completion records a draft
+without changing the accepted graph. Dispatch its independent critic against
+the current graph, including any conflicts or duplicate concepts introduced
+while extraction ran. A graph change during critique or adjudication still
+invalidates that review, and promotion requires acceptance against the current
+graph. Serialize potentially accepting reviews and promotions; running
+extractors alone do not require a merge to wait.
+
 Keep plans short and start useful work. Course-plan choices do not require an
 agent approval loop. For source units, use the following finite sequence:
 

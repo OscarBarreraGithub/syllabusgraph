@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Allow extraction drafts to finish while other accepted units are promoted.
+  Keep immutable source/runtime contracts and require independent review and
+  promotion against the current graph, including newly introduced conflicts.
 - Clarify that future source dependencies belong in retained follow-up notes;
   current unsupported claims still block acceptance. Keep those follow-ups in
   the remaining-coverage audit until resolved or explicitly reviewed as excluded.

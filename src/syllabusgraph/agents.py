@@ -391,7 +391,9 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
             raise ProjectError(
                 "Dispatch was superseded; only the latest dispatch of this stage may complete."
             )
-        if ticket["knowledge_digest"] != digest(project.knowledge):
+        # Extraction only imports a draft from its immutable packet. A later
+        # independent review must assess that draft against the current graph.
+        if ticket["stage"] != "extract" and ticket["knowledge_digest"] != digest(project.knowledge):
             raise ProjectError(
                 "Knowledge changed during dispatch; review the current base with a new dispatch."
             )
