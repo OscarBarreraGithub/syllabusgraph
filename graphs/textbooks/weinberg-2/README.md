@@ -1,6 +1,6 @@
 # The Quantum Theory of Fields, Volume II: Modern Applications
 
-**Partial, model-reviewed graph:** 279 concepts and 327 relationships. Accepted units cover printed pages 1–59, 63–247, 252–358; exact topic scopes and exclusions are in [review.yaml](review.yaml).
+**Partial, model-reviewed graph:** 315 concepts and 368 relationships. Accepted units cover printed pages 1–59, 63–247, 252–420; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
 Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. Full-book construction and cross-unit dependency reconciliation are in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
 

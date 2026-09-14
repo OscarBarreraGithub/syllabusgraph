@@ -15,6 +15,24 @@ nodes:
   notation:
   - source: weinberg-2
     note: A superscript A on t denotes the adjoint representation in this treatment.
+- id: weinberg-2.adler-bardeen-radiative-and-mass-decoupling-qualification
+  label: Radiative nonrenormalization and symmetry-allowed mass decoupling
+  summary: 'The chapter gives only the gist of the external Adler-Bardeen all-orders
+    analysis: its surface-term power counting says virtual gauge interactions inside
+    the anomalous fermion loop lower its degree enough to remove radiative contributions,
+    while external-field interactions renormalize the local F F operator. Separately,
+    its displayed mass-matrix/Schur-lemma argument shows that fermions with a symmetry-allowed
+    mass contribute zero or cancel in the anomaly.'
+  kind: result
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 381
+    - 382
+    note: The source gives the surface-term argument and the mass-matrix/Schur-lemma
+      cancellation condition.
 - id: weinberg-2.adler-weisberger-sum-rule-exact-chiral-limit
   label: Adler-Weisberger sum rule in the exact chiral limit
   summary: In the exact chiral limit, comparison of the forward pion-proton dispersion
@@ -66,6 +84,43 @@ nodes:
     - 238
     note: The source distinguishes exact four-forms from anomalous forms and identifies
       the cohomology classification and SU(N) example.
+- id: weinberg-2.anomaly-free-gauge-algebras-and-standard-model-risk
+  label: Gauge algebras with automatic local anomaly absence
+  summary: Groups with only real or pseudoreal representations, and certain additional
+    listed algebras with vanishing D-symbols, have no local perturbative gauge anomaly
+    for any fermion representation. Local anomalies can arise with SU(n) factors for
+    n≥3 or U(1) factors; therefore Standard Model SU(3)×SU(2)×U(1) requires cancellations
+    among quarks and leptons.
+  kind: result
+  group: weinberg-2.anomaly-free-gauge-theories
+  evidence:
+  - source: weinberg-2
+    section: '22.4'
+    pages:
+    - 384
+    note: The rendered source lists the automatic cases and states that anomalies
+      can occur for SU(n) with n≥3 and for U(1) factors.
+- id: weinberg-2.anomaly-matching-goldstone-effective-action
+  label: Anomaly-matched Goldstone effective action
+  summary: For a broken global G realized by confined massless fermions, introduce
+    weak fictitious gauge fields and spectators to make the microscopic theory anomaly-free.
+    In the low-energy theory, the Goldstone effective action must transform with the
+    underlying trapped-fermion anomaly so as to cancel the spectator anomaly. If unbroken
+    subgroup H currents are anomaly-free, a local solution is obtained by integrating
+    the anomaly along the gauge transformation that removes the Goldstone coordinates,
+    and solutions differ by anomaly-free functionals.
+  kind: method
+  group: weinberg-2.anomalous-goldstone-actions
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 408
+    - 409
+    - 410
+    - 411
+    note: The source gives the matching argument, the H-anomaly hypothesis, and verifies
+      the transformation of the integrated solution.
 - id: weinberg-2.anti-brst-ghost-antighost-role-observation
   label: Anti-BRST observation about ghost and antighost roles
   summary: The source records that anti-BRST invariance reveals a similarity between
@@ -147,6 +202,45 @@ nodes:
     - 265
     note: Equations (20.3.7)–(20.3.10) give the asymptotically-free coefficient behavior
       and its validity condition.
+- id: weinberg-2.avv-aaa-routing-and-gauge-invariant-completion
+  label: AVV/AAA routing and exact gauge-invariant anomaly completions
+  summary: For one global/axial current and two gauged/vector currents, a=k₁−k₂ preserves
+    both vector currents and gives [∂_μΓ_{αβγ}^{μνρ}]_anom=−D_{αβγ}ε^{κνλρ}∂_{yκ}δ⁴(y−x)∂_{zλ}δ⁴(z−x)/(4π²).
+    For AAA, a=(k₁−k₂)/3 gives one third of AVV. With V_μ=λ_aV_{μa}/2, A_μ=λ_aA_{μa}/2,
+    V_{μν}=∂_μV_ν−∂_νV_μ−i[V_μ,V_ν]−i[A_μ,A_ν], and A_{μν}=∂_μA_ν−∂_νA_μ−i[V_μ,A_ν]−i[A_μ,V_ν],
+    Bardeen's vector-conserving result is 𝒳_aΓ=iε^{μνρσ}Tr{λ_a[V_{μν}V_{ρσ}+A_{μν}A_{ρσ}/3−32A_μA_νA_ρA_σ/3+(8i/3)(A_μA_νV_{ρσ}+A_μV_{ρσ}A_ν+V_{ρσ}A_μA_ν)]}/(32π²).
+    For all currents treated symmetrically, square and pentagon graphs complete the
+    triangle to [D_μJ^μ_α]_anom=−ε^{κνλρ}Tr{T_α[∂_κA_ν∂_λA_ρ−(i/2)∂_κA_νA_λA_ρ+(i/2)A_κ∂_νA_λA_ρ−(i/2)A_κA_ν∂_λA_ρ]}/(24π²).
+  kind: method
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 376
+    - 377
+    - 378
+    - 379
+    - 380
+    note: Rendered Eqs. (22.3.23)–(22.3.38) fix both routings, the 1/(4π²), 1/(32π²),
+      and 1/(24π²) coefficients, field definitions, and all completion terms.
+- id: weinberg-2.axial-anomaly-gauge-chiral-regulator-tradeoff
+  label: Gauge versus chiral invariance in axial-current regularization
+  summary: The anomalous Ward identity can be rewritten with a Chern-Simons current
+    only by using a conserved current that is not gauge invariant. Regulating with
+    the free Dirac operator instead would make the axial anomaly vanish but breaks
+    gauge invariance; no regulator for both propagators and determinants preserves
+    both symmetries.
+  kind: result
+  group: weinberg-2.abelian-anomaly
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 366
+    - 367
+    note: The source gives the Chern-Simons rewrite and the explicit no-simultaneous-invariance
+      conclusion.
 - id: weinberg-2.axial-gauge-canonical-reduction
   label: Axial gauge canonical reduction
   summary: Choosing axial gauge A^a_3=0 leaves A^a_i for i=1,2 as canonical gauge
@@ -345,6 +439,22 @@ nodes:
     - 35
     note: These pages state the power-counting limitation, the nonlinear-BRST limitation,
       and the need for four-ghost counterterms in more general gauges.
+- id: weinberg-2.brst-cohomology-classification-of-local-anomalies
+  label: BRST cohomology classification of local anomalies
+  summary: 'With a fermionic ghost and nilpotent BRST differential, the Wess-Zumino
+    condition is exactly sG[ω,A]=0 for the ghost-linear anomaly functional. An anomaly
+    of the form sF[A] for a local ghost-number-zero functional can be removed by a
+    local action counterterm. Thus candidate anomalies are H¹(s|d): local ghost-number-one
+    functions closed modulo a derivative, modulo BRST-exact local terms and derivatives.'
+  kind: method
+  group: weinberg-2.consistency-and-cohomology
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 398
+    - 399
+    note: The source proves BRST equivalence and defines the local cohomology quotient.
 - id: weinberg-2.brst-cohomology-of-physical-states
   label: Physical states as BRST cohomology
   summary: The conserved BRST charge Q is nilpotent. Gauge-fixing independence of
@@ -464,6 +574,27 @@ nodes:
     - 36
     note: Equation (15.7.40) and the following discussion state the general action,
       ghost decoupling argument, and qualified BRST-quantization result.
+- id: weinberg-2.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+  label: BV antibracket anomaly cohomology and all-orders removal
+  summary: With antifields, a one-loop anomaly obeys (S,Γ₁)=G₁, so a local ghost-number-one
+    G₁ is a candidate only if it is antibracket-closed and not (S,F₁) for a local
+    ghost-number-zero F₁. If this local ghost-number-one cohomology is empty, the
+    chapter’s inductive Jacobi-identity argument cancels master-equation anomalies
+    order by order. The further four-dimensional semisimple Yang-Mills classification
+    as a linear combination of standard anomaly forms is an external Barnich–Brandt–Henneaux
+    theorem reported by the source; with identically vanishing traces it implies no
+    perturbative anomaly at any order.
+  kind: result
+  group: weinberg-2.consistency-and-cohomology
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 405
+    - 406
+    - 407
+    note: The source gives the BV cohomology criterion, all-orders induction, and
+      semisimple Yang-Mills qualification.
 - id: weinberg-2.bv-antibracket-classical-master-equation
   label: Antibracket form of the classical master equation
   summary: The antibracket is defined using left and right functional derivatives
@@ -1116,6 +1247,24 @@ nodes:
   - source: weinberg-2
     note: In this section A labels an independent gauge variation and r labels fields,
       both potentially including spacetime coordinates.
+- id: weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+  label: Differential-form derivation of the symmetric anomaly
+  summary: Write A=iA^a_μT_a dx^μ and ω=iω^aT_a, with d²=0 and ds+sd=0. At fixed dimension
+    four, apply sA=−dω+{A,ω} and sω=ω² to the most general quadratic-through-quartic
+    local form. Requiring sG to be a total derivative forces c₄=0 and c₁=−c₂=c₃=−1/2,
+    reproducing the previously quoted symmetric anomaly; its representative is not
+    unique.
+  kind: method
+  group: weinberg-2.consistency-and-cohomology
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 400
+    - 401
+    - 402
+    note: The source sets the dimensional ansatz, derives the coefficient conditions,
+      and notes non-uniqueness.
 - id: weinberg-2.direct-brst-renormalizability-induction
   label: Direct BRST proof for the displayed simple Yang–Mills fermion sector
   summary: For the displayed simple-group theory with spin-one-half matter, the listed
@@ -1357,6 +1506,23 @@ nodes:
     pages:
     - 305
     - 306
+- id: weinberg-2.euclidean-fujikawa-spectrum-and-index-theorem
+  label: Euclidean spectral derivation and the Dirac index
+  summary: After Wick rotation, the gauge-covariant Euclidean Dirac operator is Hermitian
+    and its regulated eigenfunction sum defines the anomaly. Nonzero eigenvalues pair
+    under γ₅ and cancel; zero modes of γ₅ chirality ±1 remain, so the integral of
+    the Chern-Pontryagin density equals the difference in their numbers (with the
+    book's normalization), the Atiyah-Singer index theorem.
+  kind: method
+  group: weinberg-2.abelian-anomaly
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 369
+    - 370
+    note: The text establishes Hermiticity and the zero-mode pairing before giving
+      the index relation.
 - id: weinberg-2.exact-effective-potential-convexity-and-mixed-state-region
   label: Convexity of the exact effective potential and the mixed-state region
   summary: Positivity of the Euclidean two-point function makes the exact scalar effective
@@ -1524,6 +1690,38 @@ nodes:
     - 141
     note: The source transforms the beta vector and derives the similarity relation
       at the fixed point.
+- id: weinberg-2.fujikawa-fermionic-measure-chiral-variation
+  label: Fujikawa variation of the fermionic measure
+  summary: For massless complex spin-1/2 fields, the Grassmann measure transforms
+    with the inverse determinants. A local non-chiral pseudounitary transformation
+    leaves it invariant, while an infinitesimal local chiral transformation produces
+    an anomaly function from the regulated trace of γ₅t at coincident points.
+  kind: method
+  group: weinberg-2.abelian-anomaly
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 362
+    - 363
+    note: The measure transformation, its non-chiral invariance, and its chiral variation
+      are explicitly derived.
+- id: weinberg-2.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  label: Gauge-invariant Fujikawa regulator and Abelian anomaly
+  summary: Regulate the coincident chiral trace with f(−D²/M²), where f(0)=1, f(∞)=0,
+    and s f′(s)=0 at both endpoints. With ε^{0123}=+1, the M→∞ gamma trace gives 𝒜(x)=−[1/(16π²)]ε_{μνρσ}F_α^{μν}(x)F_β^{ρσ}(x)tr(t_αt_βt),
+    where the final trace is over fermion species. The regulator is gauge invariant
+    and regulates both determinant and propagator.
+  kind: method
+  group: weinberg-2.abelian-anomaly
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 364
+    - 365
+    note: Rendered Eqs. (22.2.13)–(22.2.24) fix the regulator conditions, sign, 1/(16π²),
+      epsilon convention, and trace ordering.
 - id: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
   label: Full two-point function as inverse 1PI kernel
   summary: Differentiating the source and effective-action Legendre relations gives
@@ -1562,6 +1760,22 @@ nodes:
   - source: weinberg-2
     note: The comparison uses A^alpha_mu and F^alpha_munu for the gauge side, and
       Gamma^lambda_munu and R^lambda_munukappa for the affine side.
+- id: weinberg-2.gauge-anomaly-cancellation-d-symbol-condition
+  label: Gauge-anomaly cancellation from D_{aβγ}=0
+  summary: For every gauged current, gauge invariance requires the completely symmetric
+    trace D_{aβγ}=(1/2)tr({T_a,T_β}T_γ) over all left-handed fermions and antifermions
+    to vanish. A representation equivalent to its complex conjugate makes D vanish;
+    real and pseudoreal cases are included.
+  kind: result
+  group: weinberg-2.anomaly-free-gauge-theories
+  evidence:
+  - source: weinberg-2
+    section: '22.4'
+    pages:
+    - 383
+    - 384
+    note: The source states the cancellation condition and proves the conjugate-representation
+      criterion.
 - id: weinberg-2.gauge-charge-includes-gauge-fields
   label: Non-Abelian charge includes the gauge-field contribution
   summary: The ordinarily conserved total current defines time-independent charges
@@ -1833,6 +2047,23 @@ nodes:
     - 291
     note: The footnote explicitly limits the proof claim because of possible divergent
       subintegrations.
+- id: weinberg-2.general-left-handed-triangle-anomaly-setup
+  label: General left-handed triangle-anomaly setup
+  summary: For a general massless chiral gauge theory, collect all left-handed fermions
+    and antifermions into x with Hermitian gauge generators T_a. The one-loop three-current
+    function is represented by the two left-handed triangle graphs; divergent manipulations
+    of its divergence require a momentum-routing choice even though the original three-point
+    function is convergent.
+  kind: method
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 371
+    - 373
+    note: The source defines the left-handed formulation and explains why current-divergence
+      evaluation depends on routing.
 - id: weinberg-2.general-unitarity-gauge-and-universal-vector-mass-formula
   label: General unitarity gauge and universal vector mass formula
   summary: A general unitarity gauge removes the Goldstones corresponding to broken
@@ -2056,6 +2287,23 @@ nodes:
     - 330
     - 331
     - 332
+- id: weinberg-2.h-anomaly-free-counterterm-goldstone-action
+  label: Counterterm construction for G→H with anomaly-free H
+  summary: For G→H with D=0 on H, define B[A]=[1/(48π²)]ε_{μνρσ}∫d⁴x Tr{[A_h^μ,A^ν](F^{ρσ}+F_h^{ρσ})+A_h^μA_h^νA_h^ρA_h^σ−A_h^μA^νA^ρA^σ+(1/2)A_h^μA^νA_h^ρA^σ},
+    where A_h and F_h are the H-algebra components. Then G′_β=G_β+𝒯_βB has G′_i=0
+    and Γ′[ζ,A]=Γ[ζ,A]−B[A_{−ζ}]+B[A]. At A=0, A_{−ζ,μ}=−i(∂_μV)V⁻¹ with V=exp(−iX_aζ_a);
+    the resulting action is not unique, and parity-conserving theories may add local
+    terms cancelling its parity-odd pieces.
+  kind: method
+  group: weinberg-2.anomalous-goldstone-actions
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 415
+    - 416
+    note: Rendered Eqs. (22.7.34)–(22.7.38) fix B[A], all coefficients and H projections,
+      G′, Γ′, the pure-gauge field, and the parity qualification.
 - id: weinberg-2.higgs-mechanism-local-goldstone-modes
   label: 'Higgs mechanism: local Goldstone modes become vector longitudinal states'
   summary: For a spontaneously broken local symmetry, the would-be Goldstone degrees
@@ -2081,6 +2329,24 @@ nodes:
     pages:
     - 345
     - 346
+- id: weinberg-2.hypercharge-anomaly-constraints-and-b-minus-l-extension
+  label: Hypercharge constraints and anomaly-free B−L extension
+  summary: Solving the one-generation gauge and gravitational anomaly equations for
+    arbitrary multiplet charges gives, apart from interchanging u_R and d_R, the observed
+    hypercharge pattern or an excluded alternative U(1)′ pattern; both cannot be gauged
+    together. With otherwise neutral unseen fermions, mixed-anomaly constraints allow
+    an extra U(1) charge that is a linear combination of hypercharge and B−L; a phenomenologically
+    appreciable local B−L must be spontaneously broken above the electroweak scale.
+  kind: result
+  group: weinberg-2.anomaly-free-gauge-theories
+  evidence:
+  - source: weinberg-2
+    section: '22.4'
+    pages:
+    - 387
+    - 388
+    note: The source solves the charge constraints and derives the B−L linear-combination
+      conclusion and scale qualification.
 - id: weinberg-2.imported-chapter12-power-counting-theorem
   label: Imported Chapter 12 power-counting theorem
   summary: The momentum-flow arguments take as an imported input the Chapter 12.1
@@ -2260,6 +2526,21 @@ nodes:
     - 202
     note: Equations (19.5.25) and (19.5.35)–(19.5.38) give the amplitudes; the following
       displayed scattering-length equation gives a0 and a2.
+- id: weinberg-2.left-handed-projector-two-triangle-integral
+  label: Left-handed projector and the two-triangle current integral
+  summary: For x containing all left-handed fermions and antifermions, P_L=(1+γ₅)/2.
+    The correlator is Γ_{αβγ}^{μνρ}(x,y,z)=−iTr[S(x−y)T_βγ^νP_LS(y−z)T_γγ^ρP_LS(z−x)T_αγ^μP_L]−iTr[S(x−z)T_γγ^ρP_LS(z−y)T_βγ^νP_LS(y−x)T_αγ^μP_L].
+    With massless S and Hermitian T_a, Fourier routing vectors a and b enter only
+    when the convergent correlator's divergent current divergence is evaluated.
+  kind: method
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 372
+    note: Rendered Eqs. (22.3.7)–(22.3.10) give both trace orderings, P_L, the massless
+      propagator, and routing operands.
 - id: weinberg-2.legendre-quantum-effective-action
   label: Legendre definition and stationary equation of the quantum effective action
   summary: Inverting the source-to-expectation-value relation and Legendre transforming
@@ -2313,6 +2594,22 @@ nodes:
     - 77
     note: Equations (16.4.1)–(16.4.12) derive the identity, its linear case, and fermionic
       sign form.
+- id: weinberg-2.local-and-global-chiral-determinant-obstructions
+  label: Local and global obstructions to a chiral determinant
+  summary: The gauge-invariant chiral Dirac map has no ordinary determinant because
+    it maps one handedness to the other. Defining its vacuum functional over gauge
+    configurations modulo gauge transformations can face local integrability obstructions
+    (the usual anomalies) and global obstructions from non-simply-connected configuration
+    space, such as SU(2) with an odd number of left-handed doublets.
+  kind: concept
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 383
+    note: The source distinguishes the determinant-map issue, local anomalies, and
+      Witten's global SU(2) anomaly.
 - id: weinberg-2.local-matter-gauge-transformations
   label: Local infinitesimal transformations of matter fields
   summary: Matter components transform infinitesimally as δψ_l(x)=i ε^α(x)(t_α)_l{}^m
@@ -2493,6 +2790,26 @@ nodes:
     - 141
     note: The source defines the coupled flow, its Jacobian, and the eigenvector expansion
       around a fixed point.
+- id: weinberg-2.n2-anomaly-matching-example-and-n3-obstruction
+  label: n=2 matching example and n=3 obstruction
+  summary: For n=2, the cubic SU(2) equation vanishes and the remaining equation admits
+    ℓ=1 for the defining left representation, trivial right representation, k=1, with
+    all other nontrivial-left ℓ zero; infinitely many alternatives remain. For the
+    listed three-fermion representations and n>2, Eqs. (22.5.7)–(22.5.8) are ½(n+3)(n+6)ℓ_a+½(n−3)(n−6)ℓ_b+(n²−9)ℓ_c+n(n+4)ℓ_d+n(n−4)ℓ_e+½n²(n+1)ℓ_f+½n²(n−1)ℓ_g=3
+    and ½(n+2)(n+3)ℓ_a+½(n−2)(n−3)ℓ_b+(n²−3)ℓ_c+n(n+2)ℓ_d+n(n−2)ℓ_e+½n(n+1)ℓ_f+½n(n−1)ℓ_g=1.
+    At n=3 every term in the second left side is divisible by three, so three-flavor
+    QCD must break SU(3)_L×SU(3)_R×U(1)_V; the conclusion is not limited to the displayed
+    representations.
+  kind: result
+  group: weinberg-2.massless-bound-states
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 393
+    - 394
+    note: Rendered pp. 393–394 give the n=2 example, both polynomial matching equations,
+      the divisibility proof, and its representation-independent scope.
 - id: weinberg-2.natural-unit-charge-and-uncertainty-conventions
   label: Natural-unit, charge, and uncertainty conventions
   summary: The companion usually sets hbar=c=1, takes -e to be the rationalized electron
@@ -2833,6 +3150,38 @@ nodes:
     - 239
     note: The conjectural condition and its application to massive-quark composites
       span these two pages.
+- id: weinberg-2.pi0-two-photon-anomaly-color-prediction
+  label: Anomaly prediction for π⁰ → 2γ and N_c
+  summary: For δπ⁰=αF_π with F_π=184 MeV and generator convention γ₅t₃=2γ₅t³, anomaly
+    matching gives g=N_c e²/(48π²F_π) and Γ(π⁰→2γ)=N_c²α²m_π³/(144π³F_π²)=(N_c/3)²1.11×10¹⁶
+    s⁻¹. Agreement with (1.19±0.08)×10¹⁶ s⁻¹ requires N_c=3. The proton-loop comparison
+    uses G=2m_Ng_A/F_π and differs by g_A²=1.56 while sharing tr(q²t₃).
+  kind: result
+  group: weinberg-2.abelian-anomaly
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 368
+    note: Rendered Eqs. (22.2.36)–(22.2.39) and the following paragraph fix Fπ, the
+      generator, coupling, rate, color result, and proton-loop qualification.
+- id: weinberg-2.pi0-two-photon-chiral-suppression-puzzle
+  label: The chiral-suppression puzzle in π⁰ → 2γ
+  summary: With ℒ_πγγ=gπ⁰ε^{μνρσ}F_{μν}F_{ρσ}, Weinberg's normalization gives Γ(π⁰→2γ)=m_π³g²/π.
+    A naive loop estimate is g≈e²/(8π²F_π), but neutral axial symmetry and m_π²∝m_u+m_d
+    give g≈[e²/(8π²F_π)](m_π²/m_N²); the unique two-extra-derivative invariant has
+    the same on-shell factor. Thus the suppressed rate is about 1.9×10¹³ s⁻¹, versus
+    the naive 4.4×10¹⁶ s⁻¹ and observed (1.19±0.08)×10¹⁶ s⁻¹.
+  kind: result
+  group: weinberg-2.anomalies-overview
+  evidence:
+  - source: weinberg-2
+    section: '22.1'
+    pages:
+    - 360
+    - 361
+    note: Rendered Eqs. (22.1.1)–(22.1.9) fix the interaction normalization, suppression
+      factor, and three compared rates.
 - id: weinberg-2.pion-decay-constant-from-axial-current
   label: Pion decay constant from the axial current
   summary: The charged axial-current matrix element between the vacuum and a one-pion
@@ -2945,6 +3294,20 @@ nodes:
     - 59
     note: The p. 59 problem list explicitly asks these three BRST/BV derivations and
       states their premises.
+- id: weinberg-2.problem-chiral-su3-anomaly-with-symmetric-tensors
+  label: 'Problem: chiral SU(3) anomaly with symmetric tensors'
+  summary: 'Task: evaluate the SU(3) anomaly when N fermion-number-conserving fields
+    have left-handed parts in defining 3 representations and right-handed singlets;
+    then evaluate it after adding M fields with left-handed singlets and right-handed
+    symmetric traceless rank-two SU(3) tensors.'
+  kind: method
+  group: weinberg-2.anomalies-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 2 states both independent matter-content branches.
 - id: weinberg-2.problem-coupling-redefinition-third-beta-coefficient
   label: 'Problem: tune the third beta coefficient by a coupling redefinition'
   summary: Show that a coupling redefinition can set the third coefficient in a beta-function
@@ -3024,6 +3387,17 @@ nodes:
     - 159
     note: The problem requests the propagator asymptotics and identifies a one-loop
       Z2 result as an optional supplied input.
+- id: weinberg-2.problem-eta-to-two-photons-leading-ms
+  label: 'Problem: η → γγ at leading order in m_s'
+  summary: 'Task: calculate the η→γ+γ decay rate to leading order in m_s, taking m_u=m_d=0.'
+  kind: method
+  group: weinberg-2.anomalies-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 1 states the full decay-rate task and its quark-mass conditions.
 - id: weinberg-2.problem-exponential-su2-coset-pion-transformations
   label: 'Problem: pion transformations in exponential SU(2) coset coordinates'
   summary: Calculate the SU(2)×SU(2) transformation law of pion coordinates when SU(2)×SU(2)/SU(2)
@@ -3353,6 +3727,18 @@ nodes:
     pages:
     - 247
     note: Problem 2 explicitly asks for both representation cases with vacuum alignment.
+- id: weinberg-2.problem-t-hooft-matching-n4-and-alternate-n2
+  label: 'Problem: ’t Hooft matching solutions for n=4 and n=2'
+  summary: 'Task: find a solution of the ’t Hooft anomaly-matching conditions for
+    n=4 flavors and a solution for n=2 flavors different from the text’s example.'
+  kind: method
+  group: weinberg-2.anomalies-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 3 explicitly requests both flavor-count branches.
 - id: weinberg-2.problem-triplet-higgs-electroweak-breaking
   label: 'Problem: electroweak breaking by a real triplet'
   summary: Determine the effect of replacing the usual complex scalar doublet with
@@ -3379,6 +3765,19 @@ nodes:
     - 292
     note: Problem 1 gives the field content, interactions, OPE, and requested one-loop
       task.
+- id: weinberg-2.problem-zinn-justin-from-quantum-master-equation
+  label: 'Problem: Zinn-Justin equation from the quantum master equation'
+  summary: 'Task: derive the Zinn-Justin equation from the quantum master equation
+    without assuming ΔS=0.'
+  kind: method
+  group: weinberg-2.anomalies-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 4 gives the requested derivation and explicitly forbids the ΔS=0
+      assumption.
 - id: weinberg-2.pseudo-goldstone-mass-double-commutator
   label: Pseudo-Goldstone mass from the explicit-breaking double commutator
   summary: To first order in explicit symmetry breaking, the pseudo-Goldstone mass
@@ -3410,6 +3809,23 @@ nodes:
     - 6
     note: The text defines a pure gauge field and states the necessary-and-sufficient
       condition in a simply connected region.
+- id: weinberg-2.pure-gauge-goldstone-wess-zumino-functional
+  label: Pure-gauge Goldstone Wess-Zumino functional
+  summary: The anomaly-matched solution vanishing at ζ=0 is unique. At A=0 it evaluates
+    the anomaly on the pure-gauge field generated by ζ and yields a G-invariant local
+    Goldstone functional. For a completely broken group, its leading derivative structure
+    cannot be the spacetime integral of a G-invariant local scalar made only from
+    covariant derivatives of the Goldstone fields.
+  kind: result
+  group: weinberg-2.anomalous-goldstone-actions
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 412
+    - 413
+    note: The source proves the uniqueness-at-zero statement and the pure-gauge/non-invariant-density
+      qualification.
 - id: weinberg-2.q4-pion-eft-renormalization-and-fpi-matching
   label: Q⁴ pion EFT renormalization and F=Fπ matching
   summary: At next order, pion scattering receives both one-loop contributions built
@@ -3537,6 +3953,25 @@ nodes:
     - 152
     note: The source introduces QCD, its gauge group, quark flavors, defining color
       representation, and color-neutral hadron framing.
+- id: weinberg-2.qcd-wess-zumino-witten-action-and-color-coefficient
+  label: QCD Wess-Zumino-Witten action fixes its color coefficient
+  summary: For massless three-flavor QCD broken to diagonal SU(3), take t_a=λ_a/2
+    and U(tζ)=exp(2it t_aζ_a). With vector-conserving Bardeen routing and no external
+    field, Γ[ζ,0]=−[n/(24π²)]ε^{μνρσ}∫₀¹dt∫d⁴x Tr{ζ_at_aU⁻¹∂_μU U⁻¹∂_νU U⁻¹∂_ρU U⁻¹∂_σU}.
+    Extending into a five-ball gives Γ[ζ,0]=−[in/(240π²)]ε^{ijklm}∫d⁵z Tr{U⁻¹∂_iU
+    U⁻¹∂_jU U⁻¹∂_kU U⁻¹∂_lU U⁻¹∂_mU}. The integer n is the number of colors, and the
+    action depends only on the boundary field, not the chosen extension.
+  kind: result
+  group: weinberg-2.anomalous-goldstone-actions
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 413
+    - 414
+    - 415
+    note: Rendered Eqs. (22.7.27)–(22.7.33) fix t_a, U, both numerical prefactors,
+      the five factors, the color identification, and extension independence.
 - id: weinberg-2.qed-running-charge-at-sliding-scale
   label: QED running charge at a sliding scale
   summary: In QED the photon-field normalization and charge normalization are linked,
@@ -3553,6 +3988,36 @@ nodes:
     - 127
     note: The source derives the charge definition from the sliding photon normalization
       and states the resulting QED flow and high-energy use.
+- id: weinberg-2.quantum-anomaly-regulator-symmetry-trace
+  label: Regulators can leave a quantum symmetry-breaking trace
+  summary: In quantum field theory a regulator or cut-off may violate a symmetry,
+    and removing it can leave an anomaly. A gauge anomaly makes a gauged theory inconsistent,
+    whereas a global anomaly need not.
+  kind: concept
+  group: weinberg-2.anomalies-overview
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 359
+    note: The chapter distinguishes regulator-induced symmetry traces and the inconsistency
+      of gauge anomalies.
+- id: weinberg-2.quantum-master-equation-measure-anomaly-repair
+  label: Quantum master equation repairs a non-invariant measure
+  summary: The usual Slavnov-Taylor to Zinn-Justin derivation assumes an invariant
+    functional measure, equivalently ΔS=0. When ΔS≠0, local quantum corrections that
+    violate the classical master equation can cancel the measure variation precisely
+    when the quantum master equation holds; empty local (S₀,·) cohomology again permits
+    a local correction to all orders.
+  kind: result
+  group: weinberg-2.consistency-and-cohomology
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 407
+    note: The source explicitly identifies the failed measure assumption and the quantum-master-equation
+      repair.
 - id: weinberg-2.quark-mass-pion-nucleon-contact-corrections
   label: Quark-mass pion-nucleon contact corrections
   summary: The allowed bilinear nucleon operators with the transformation properties
@@ -3938,6 +4403,22 @@ nodes:
     pages:
     - 317
     - 318
+- id: weinberg-2.standard-model-gauge-and-mixed-gravitational-cancellation
+  label: First-generation Standard Model gauge and gravitational cancellation
+  summary: Using the left-handed quark, lepton, and antifermion multiplets and their
+    weak hypercharges, the SU(3)^3, SU(3)^2U(1), SU(2)^3, SU(2)^2U(1), and U(1)^3
+    gauge anomalies cancel. The mixed gravitational condition is tr(T_a)=0; only Abelian
+    generators require checking, and the Standard Model hypercharge sum also vanishes.
+  kind: result
+  group: weinberg-2.anomaly-free-gauge-theories
+  evidence:
+  - source: weinberg-2
+    section: '22.4'
+    pages:
+    - 385
+    - 386
+    note: The table and following calculation establish the Standard Model and mixed
+      gravitational cancellations.
 - id: weinberg-2.standard-model-scalar-doublet-yukawa-breaking
   label: Scalar doublet, Yukawa coupling, and electroweak breaking
   summary: A weakly coupled renormalizable electron-mass mechanism uses a scalar SU(2)L
@@ -3967,6 +4448,24 @@ nodes:
     - 279
     note: Equations (20.6.27)–(20.6.35) normalize the operators and determine the
       tree coefficient factors.
+- id: weinberg-2.stora-zumino-descent-and-schwinger-term-cohomology
+  label: Stora-Zumino descent and Schwinger-term candidates
+  summary: In 2n dimensions, Tr F^{n+1} is closed and, on a simply connected extension,
+    exact as dQ_{2n+1}. BRST descent gives dQ^1_{2n}=sQ_{2n+1} and sQ^1_{2n}=dQ^2_{2n−1};
+    integrating Q^1 gives an anomaly candidate, while integrating Q^2 gives a ghost-number-two
+    BRST-invariant candidate for a nonremovable Schwinger term in equal-time current
+    commutators.
+  kind: method
+  group: weinberg-2.consistency-and-cohomology
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 402
+    - 403
+    - 404
+    note: The source gives the descent equations and identifies the ghost-number-two
+      Schwinger-term cohomology.
 - id: weinberg-2.string-light-cone-and-gravity-brst-limitation
   label: Light-cone and gravity qualifications for BRST unitarity
   summary: The source identifies light-cone quantization as the ghost-decoupling counterpart
@@ -4100,6 +4599,99 @@ nodes:
     pages:
     - 332
     - 333
+- id: weinberg-2.surface-term-evaluation-and-local-counterterm-obstruction
+  label: Surface-term anomaly evaluation and local-counterterm obstruction
+  summary: After Wick rotation, only the first and second momentum derivatives of
+    the shifted integral survive as large-three-sphere surface terms. The nonchiral
+    trace vanishes for b=−a, while tr(γ^κγ^νγ^λγ^ργ₅)=−4iε^{κνλρ} leaves the chiral
+    surface anomaly. For nonzero D_{αβγ}, permutation symmetry forces the hypothetical
+    local pseudotensor coefficients to vanish, contradicting the required divergence;
+    no local interaction counterterm cancels it.
+  kind: method
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 374
+    - 375
+    - 377
+    note: Rendered Eqs. (22.3.15)–(22.3.22) and the p. 377 contradiction supply the
+      surface, gamma-trace, routing, and no-counterterm steps.
+- id: weinberg-2.symmetric-d-symbol-obstruction-to-three-current-conservation
+  label: Symmetric D-symbol obstructs simultaneous current conservation
+  summary: Separate the group traces into an antisymmetric structure-constant part,
+    which reproduces ordinary time-ordering contact terms, and the completely symmetric
+    D_{aβγ}=(1/2)tr({T_a,T_β}T_γ) part. Momentum routing can shift its anomaly among
+    the three currents, but for nonparallel external momenta D≠0 prevents making all
+    three divergences anomaly-free.
+  kind: result
+  group: weinberg-2.general-anomalies
+  evidence:
+  - source: weinberg-2
+    section: '22.3'
+    pages:
+    - 373
+    - 376
+    note: The source defines D and proves that no routing simultaneously removes all
+      three anomalies.
+- id: weinberg-2.t-hooft-anomaly-matching-massless-bound-states
+  label: ’t Hooft matching requires massless bound states
+  summary: 'For global chiral symmetries of a confining theory that are neither broken
+    by anomalies of the trapping gauge interactions nor spontaneously broken, a nonzero
+    microscopic symmetric anomaly trace must be reproduced by massless spin-1/2 bound
+    states. Weak fictitious gauge fields and spectator fermions make the logic explicit:
+    after confinement, low-energy gauge consistency requires the bound-state anomaly
+    to cancel the spectator contribution and equal the trapped-fermion anomaly. The
+    spin exclusions invoke additional arguments stated in the source footnote.'
+  kind: result
+  group: weinberg-2.massless-bound-states
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 389
+    - 390
+    - 391
+    note: The source states the hypotheses and develops the spectator-gauging argument,
+      including its arbitrarily weak-gauge-coupling qualification.
+- id: weinberg-2.t-hooft-decoupling-and-persistent-mass-qualifications
+  label: Decoupling and persistent-mass qualifications
+  summary: For the listed SU(3)-color three-fermion states, decoupling one heavy flavor
+    requires ℓ′_v=ℓ_a+ℓ_c+ℓ_d=0, ℓ′_w=ℓ_b+ℓ_c+ℓ_e=0, ℓ′_x=ℓ_f+ℓ_g+ℓ_d+ℓ_e=0, ℓ′_y=ℓ_f+ℓ_h+ℓ_j=0,
+    and ℓ′_z=ℓ_g+ℓ_i+ℓ_j=0. This decoupling condition can fail across phase transitions.
+    The stronger persistent-mass condition imposes the same constraints for any constituent
+    mass but is conjectural and fails in nonrealistic models with composite Goldstone
+    bosons from massive fermions.
+  kind: assumption
+  group: weinberg-2.massless-bound-states
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 394
+    - 395
+    - 396
+    note: Rendered Eqs. (22.5.9) and surrounding text give all five multiplicity constraints,
+      the phase-transition objection, and the persistent-mass qualification.
+- id: weinberg-2.t-hooft-matching-equations-and-three-flavor-qcd-breaking
+  label: ’t Hooft matching equations for chiral bound states
+  summary: For asymptotically free color SU(N) with odd N and n massless flavors,
+    a color-neutral fermionic bound state has U(1)_V charge kN with odd k. Writing
+    ℓ(r,s,k) as its helicity +1/2 multiplicity minus its conjugate helicity −1/2 multiplicity
+    and summing over k>0, anomaly matching requires Σℓ d_s tr^(r)({𝒯_a,𝒯_b}𝒯_c)=N
+    tr({λ_a,λ_b}λ_c) and Σℓ d_s k tr^(r)({𝒯_a,𝒯_b})=tr({λ_a,λ_b}). The multiplicities
+    are integers; if parity is unbroken, ℓ(r,s,k)=−ℓ(s,r,k).
+  kind: result
+  group: weinberg-2.massless-bound-states
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 391
+    - 392
+    note: Rendered Eqs. (22.5.2)–(22.5.6) fix the color-neutrality, multiplicity,
+      anomaly-trace, and parity conventions.
 - id: weinberg-2.technicolor-dynamical-electroweak-breaking-qualification
   label: Technicolor dynamical electroweak breaking and its qualification
   summary: An asymptotically free technicolor interaction can dynamically break the
@@ -4404,6 +4996,23 @@ nodes:
     section: '21.6'
     pages:
     - 340
+- id: weinberg-2.wess-zumino-consistency-condition-for-anomalies
+  label: Wess-Zumino consistency condition
+  summary: Couple symmetry currents to background gauge fields and let the local gauge
+    generators obey the gauge algebra. If their action on the effective action is
+    the anomaly G_a[x;A], their commutator forces the Wess-Zumino condition relating
+    the variations of G_a and G_β to C_{aβγ}δ⁴(x−y)G_γ. Global-current results follow
+    by taking the corresponding gauge couplings infinitesimal.
+  kind: result
+  group: weinberg-2.consistency-and-cohomology
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 396
+    - 397
+    note: The source constructs the background-field generators and derives the local
+      consistency condition.
 - id: weinberg-2.wess-zumino-witten-term-and-integer-coefficient
   label: Wess-Zumino-Witten action term and integer coefficient
   summary: For SU(3)_L×SU(3)_R/SU(3), trivial π4 permits extending U from compactified
@@ -4613,6 +5222,42 @@ edges:
     - 78
     note: Problem 2 explicitly asks which Feynman diagrams correspond to the formula
       terms.
+- id: weinberg-2.abelian-anomaly-to-eta-problem
+  from: weinberg-2.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  to: weinberg-2.problem-eta-to-two-photons-leading-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for an anomalous two-photon pseudoscalar decay, whose leading
+    coupling is supplied by the Abelian anomaly calculation.
+  failure_mode: Without that anomalous coupling method, the requested decay-rate calculation
+    lacks its source mechanism.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 1 requests the two-photon pseudoscalar decay rate under stated quark-mass
+      conditions.
+- id: weinberg-2.abelian-anomaly-to-pi0-rate
+  from: weinberg-2.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  to: weinberg-2.pi0-two-photon-anomaly-color-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pion amplitude follows by matching the electromagnetic anomaly to
+    the pion effective term.
+  failure_mode: Without the anomaly coefficient, the effective π⁰γγ coupling and its
+    N_c dependence are undetermined.
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 368
+    note: The source directly uses the anomalous transformation to fix the pion effective
+      term and rate.
 - id: weinberg-2.accepted-af-to-af-ope-coefficients
   from: weinberg-2.asymptotic-freedom-logarithmic-scaling
   to: weinberg-2.asymptotically-free-ope-logarithmic-coefficients
@@ -4764,6 +5409,24 @@ edges:
     - 283
     note: The source gives the matrix, diagonalizes its sectors, and draws the scaling
       conclusion.
+- id: weinberg-2.anomaly-matching-to-goldstone-action
+  from: weinberg-2.t-hooft-anomaly-matching-massless-bound-states
+  to: weinberg-2.anomaly-matching-goldstone-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Goldstone action argument explicitly applies the anomaly-matching
+    construction to the confined low-energy theory.
+  failure_mode: Without matching, there is no reason that Goldstone interactions must
+    carry the trapped-fermion anomaly.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 408
+    note: The source explicitly says it is helpful to apply the anomaly-matching argument
+      developed by ’t Hooft.
 - id: weinberg-2.antibracket-evidence-bv-problem-prompt
   from: weinberg-2.bv-antibracket-classical-master-equation
   to: weinberg-2.problem-brst-and-bv-algebra-exercises
@@ -5155,6 +5818,23 @@ edges:
     - 33
     - 34
     note: The example begins by imposing Q|ψ⟩=0 and then identifies Q-exact states.
+- id: weinberg-2.brst-cohomology-to-form-derivation
+  from: weinberg-2.brst-cohomology-classification-of-local-anomalies
+  to: weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The differential-form ansatz is constrained by the BRST-invariance criterion.
+  failure_mode: Without sG=0 modulo a derivative, the coefficient constraints have
+    no governing condition.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 400
+    note: The source introduces the differential-form calculation explicitly to implement
+      the consistency condition.
 - id: weinberg-2.brst-exact-gauge-fixing-prerequisite-state-cohomology
   from: weinberg-2.brst-exact-gauge-fixing
   to: weinberg-2.brst-cohomology-of-physical-states
@@ -5227,6 +5907,59 @@ edges:
     - 81
     note: The source states that because the Aⁿ are BRST-invariant the extended effective
       action obeys the condition.
+- id: weinberg-2.brst-nilpotence-to-anomaly-cohomology
+  from: weinberg-2.brst-nilpotence
+  to: weinberg-2.brst-cohomology-classification-of-local-anomalies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Nilpotence makes s-exact anomalies s-closed and makes the ghost-number-one
+    quotient a cohomology.
+  failure_mode: Without s²=0, the closed/exact classification is not defined.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 398
+    - 399
+    note: Nilpotence makes s-exact anomalies s-closed and makes the ghost-number-one
+      quotient a cohomology.
+- id: weinberg-2.brst-nilpotence-to-descent
+  from: weinberg-2.brst-nilpotence
+  to: weinberg-2.stora-zumino-descent-and-schwinger-term-cohomology
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The descent equations use s²=0 and sd+ds=0 to establish closed forms.
+  failure_mode: Without nilpotence, the descent closure steps fail.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 402
+    - 403
+    note: The source explicitly invokes nilpotence in the descent.
+- id: weinberg-2.brst-nilpotence-to-form-derivation
+  from: weinberg-2.brst-nilpotence
+  to: weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The differential-form consistency calculation uses the nilpotent BRST
+    differential and its anticommutation with d.
+  failure_mode: Without nilpotence, sG=0 modulo a derivative is not a consistency
+    condition.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 400
+    - 401
+    note: The differential-form consistency calculation uses the nilpotent BRST differential
+      and its anticommutation with d.
 - id: weinberg-2.brst-transformations-prerequisite-nilpotence
   from: weinberg-2.brst-field-transformations
   to: weinberg-2.brst-nilpotence
@@ -5244,6 +5977,41 @@ edges:
     - 29
     - 30
     note: The proof begins by acting twice with equations (15.7.7)–(15.7.11).
+- id: weinberg-2.brst-transformations-to-anomaly-cohomology
+  from: weinberg-2.brst-field-transformations
+  to: weinberg-2.brst-cohomology-classification-of-local-anomalies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation rewrites the consistency condition using the BRST transformations
+    of A and the ghost.
+  failure_mode: Without BRST transformations, sG cannot be evaluated.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 398
+    note: The source defines BRST transformations before calculating sG.
+- id: weinberg-2.brst-transformations-to-form-derivation
+  from: weinberg-2.brst-field-transformations
+  to: weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coefficient derivation directly applies sA=−dω+{A,ω} and sω=ω² to
+    the form ansatz.
+  failure_mode: Without the BRST transformations, none of the coefficient constraints
+    can be calculated.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 400
+    - 401
+    note: The coefficient derivation directly applies sA=−dω+{A,ω} and sω=ω² to the
+      form ansatz.
 - id: weinberg-2.brst-unitarity-evidence-string-gravity-qualification
   from: weinberg-2.brst-unitarity-and-general-gauge-fixing
   to: weinberg-2.string-light-cone-and-gravity-brst-limitation
@@ -5298,6 +6066,22 @@ edges:
     - 94
     note: Equations (17.3.6)–(17.3.14) use finite transformations and identify exact
       terms.
+- id: weinberg-2.bv-antifields-to-anomaly-cohomology
+  from: weinberg-2.bv-antifields-and-graded-master-action
+  to: weinberg-2.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter extends anomalies beyond one loop by including antifields
+    in local functionals.
+  failure_mode: Without antifields, the stated antibracket cohomology domain is incomplete.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 405
+    note: The source says beyond one loop functionals of antifields must be considered.
 - id: weinberg-2.bv-gauge-fixing-prerequisite-quantum-master
   from: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
   to: weinberg-2.bv-quantum-master-equation
@@ -5317,6 +6101,23 @@ edges:
     - 49
     note: Page 48 fixes antifields via Psi and p. 49 varies Psi in the vacuum functional
       integral.
+- id: weinberg-2.bv-master-to-anomaly-cohomology
+  from: weinberg-2.bv-antibracket-classical-master-equation
+  to: weinberg-2.bv-antibracket-anomaly-cohomology-and-all-orders-removal
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The closure argument starts from (S,S)=0.
+  failure_mode: Without the classical master equation, the antibracket nilpotence
+    used in the anomaly argument is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 405
+    note: The source explicitly assumes the classical master equation before deriving
+      (S,G1)=0.
 - id: weinberg-2.bv-quantum-master-prerequisite-general-cohomology-renormalization
   from: weinberg-2.bv-quantum-master-equation
   to: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
@@ -5442,6 +6243,23 @@ edges:
     - 185
     note: The source relates the pion decay matrix element to the axial current introduced
       for chiral symmetry.
+- id: weinberg-2.chiral-pion-to-pi0-puzzle
+  from: weinberg-2.chiral-su2-times-su2-qcd-symmetry
+  to: weinberg-2.pi0-two-photon-chiral-suppression-puzzle
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The suppression argument applies the neutral axial subgroup and pion
+    Goldstone identification.
+  failure_mode: Without that chiral transformation, the claimed quark-mass suppression
+    has no symmetry basis.
+  evidence:
+  - source: weinberg-2
+    section: '22.1'
+    pages:
+    - 360
+    note: The source derives suppression from the electrically neutral chiral subgroup.
 - id: weinberg-2.chiral-selection-to-vector-axial-rules
   from: weinberg-2.chiral-current-operator-selection-for-sum-rules
   to: weinberg-2.vector-axial-spectral-sum-rules
@@ -6197,6 +7015,80 @@ edges:
     - 275
     note: The source compares the parton cross section with Eq. (20.6.3) to obtain
       W1 and W2.
+- id: weinberg-2.dsymbol-to-gauge-cancellation
+  from: weinberg-2.symmetric-d-symbol-obstruction-to-three-current-conservation
+  to: weinberg-2.gauge-anomaly-cancellation-d-symbol-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge cancellation requires vanishing of the symmetric tensor identified
+    as the anomaly coefficient.
+  failure_mode: Without D_{aβγ}, the cancellation condition lacks the quantity it
+    constrains.
+  evidence:
+  - source: weinberg-2
+    section: '22.4'
+    pages:
+    - 383
+    note: The source invokes the prior proportionality to D before stating the gauge-current
+      condition.
+- id: weinberg-2.dsymbol-to-routing-completion
+  from: weinberg-2.symmetric-d-symbol-obstruction-to-three-current-conservation
+  to: weinberg-2.avv-aaa-routing-and-gauge-invariant-completion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The AVV and AAA assignments choose how the D-symbol anomaly is distributed
+    while preserving the required currents.
+  failure_mode: Without the D-symbol obstruction, routing would have no anomaly to
+    assign or complete.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 376
+    - 378
+    - 379
+    - 380
+    note: The AVV and AAA assignments choose how the D-symbol anomaly is distributed
+      while preserving the required currents.
+- id: weinberg-2.dsymbol-to-standard-model-cancellation
+  from: weinberg-2.gauge-anomaly-cancellation-d-symbol-condition
+  to: weinberg-2.standard-model-gauge-and-mixed-gravitational-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Standard Model calculation evaluates the required gauge-anomaly traces
+    and the additional gravitational trace.
+  failure_mode: Without the cancellation criterion, the table's trace checks have
+    no defined target.
+  evidence:
+  - source: weinberg-2
+    section: '22.4'
+    pages:
+    - 385
+    note: The source says it is checking whether D vanishes for all Standard Model
+      generators.
+- id: weinberg-2.dsymbol-to-t-hooft-matching
+  from: weinberg-2.symmetric-d-symbol-obstruction-to-three-current-conservation
+  to: weinberg-2.t-hooft-anomaly-matching-massless-bound-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Matching compares the same nonzero symmetric anomaly constant in microscopic
+    and bound-state spectra.
+  failure_mode: Without the anomaly constant, the matching equality cannot be stated.
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 390
+    note: The source states equality of the bound-state and elementary symmetric anomaly
+      constants.
 - id: weinberg-2.edge-ccwz-to-dynamical-covariants
   from: weinberg-2.ccwz-compensator-and-h-covariants
   to: weinberg-2.dynamical-breaking-covariant-building-blocks
@@ -7106,6 +7998,26 @@ edges:
     - 247
     note: Problem 1 requests the vector-transforming Goldstone function and its mass-generating
       addition.
+- id: weinberg-2.explicit-integral-to-surface-term
+  from: weinberg-2.left-handed-projector-two-triangle-integral
+  to: weinberg-2.surface-term-evaluation-and-local-counterterm-obstruction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The surface terms are obtained by differentiating and shifting the explicit
+    routed triangle integral.
+  failure_mode: Without the routed integral, there is no momentum-space object whose
+    boundary terms can be evaluated.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 372
+    - 374
+    - 375
+    note: The surface terms are obtained by differentiating and shifting the explicit
+      routed triangle integral.
 - id: weinberg-2.external-source-prerequisite-finite-symmetry-problem
   from: weinberg-2.external-source-generating-functional
   to: weinberg-2.problem-finite-linear-symmetry-of-effective-action
@@ -7377,6 +8289,24 @@ edges:
     - 24
     note: The page reads the vertices from the trilinear and A^4 terms in the Yang–Mills
       Lagrangian.
+- id: weinberg-2.finite-gauge-to-goldstone-action
+  from: weinberg-2.finite-gauge-transformations
+  to: weinberg-2.anomaly-matching-goldstone-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction integrates the anomaly along a finite gauge transformation
+    that removes Goldstone coordinates.
+  failure_mode: Without finite gauge transformations, A−tζ is undefined.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 410
+    - 411
+    note: The source defines the transformed gauge field and verifies the integrated
+      action.
 - id: weinberg-2.finite-transformations-prerequisite-local-gauge-choices
   from: weinberg-2.finite-gauge-transformations
   to: weinberg-2.local-pointwise-and-component-gauge-choices
@@ -7763,6 +8693,24 @@ edges:
     - 40
     note: Equations (15.8.14)–(15.8.18) state the classification and start from BRST
       invariance.
+- id: weinberg-2.gh-coordinates-to-goldstone-action
+  from: weinberg-2.general-g-to-h-goldstone-coordinate-separation
+  to: weinberg-2.anomaly-matching-goldstone-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction separates broken Xa and unbroken Yi generators and uses
+    one ζa per broken generator.
+  failure_mode: Without G/H coordinates, the gauge transformation that removes ζ cannot
+    be stated.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 409
+    - 410
+    note: The source defines the broken/unbroken generator split and Goldstone fields.
 - id: weinberg-2.ghost-determinant-prerequisite-brst
   from: weinberg-2.faddeev-popov-ghost-determinant
   to: weinberg-2.brst-field-transformations
@@ -7800,6 +8748,41 @@ edges:
     - 26
     note: The determinant representation is followed by the free-plus-interaction
       operator construction.
+- id: weinberg-2.goldberger-treiman-to-pi0-rate
+  from: weinberg-2.goldberger-treiman-relation
+  to: weinberg-2.pi0-two-photon-anomaly-color-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source compares the proton-loop normalization with the anomaly result
+    through Goldberger–Treiman.
+  failure_mode: Without Goldberger–Treiman, the stated gA² qualification of the proton-loop
+    comparison cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 368
+    note: The source explicitly invokes Goldberger–Treiman in the proton-loop comparison.
+- id: weinberg-2.goldstone-action-to-wzw-qcd
+  from: weinberg-2.anomaly-matching-goldstone-effective-action
+  to: weinberg-2.qcd-wess-zumino-witten-action-and-color-coefficient
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD WZW functional is the chiral-SU(3) specialization of the integrated
+    anomalous Goldstone action.
+  failure_mode: Without the general construction, the QCD functional lacks its anomaly-matching
+    derivation.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 414
+    note: The source says it uses the results of the section to obtain the chiral-SU(3)
+      action.
 - id: weinberg-2.goldstone-current-normalization-to-soft-theorem
   from: weinberg-2.goldstone-current-matrix-elements-and-decay-constant
   to: weinberg-2.soft-goldstone-external-line-theorem
@@ -8434,6 +9417,80 @@ edges:
     - 154
     note: The chapter defines infrared-safe rates and later invokes that definition
       for QCD final states.
+- id: weinberg-2.matching-equations-to-matching-problem
+  from: weinberg-2.t-hooft-matching-equations-and-three-flavor-qcd-breaking
+  to: weinberg-2.problem-t-hooft-matching-n4-and-alternate-n2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task directly requests solutions to the displayed ’t Hooft matching
+    conditions for two flavor counts.
+  failure_mode: Without those matching equations, the requested solutions have no
+    specified constraints.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 3 names the ’t Hooft matching conditions and asks for n=4 and alternate
+      n=2 solutions.
+- id: weinberg-2.matching-equations-to-special-cases
+  from: weinberg-2.t-hooft-matching-equations-and-three-flavor-qcd-breaking
+  to: weinberg-2.n2-anomaly-matching-example-and-n3-obstruction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The n=2 solution and n=3 divisibility obstruction are evaluations of
+    the general matching equations.
+  failure_mode: Without the matching equations and multiplicity convention, neither
+    special-case conclusion can be checked.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 392
+    - 393
+    - 394
+    note: The n=2 solution and n=3 divisibility obstruction are evaluations of the
+      general matching equations.
+- id: weinberg-2.matching-example-to-matching-problem
+  from: weinberg-2.n2-anomaly-matching-example-and-n3-obstruction
+  to: weinberg-2.problem-t-hooft-matching-n4-and-alternate-n2
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 asks for an n=2 solution different from the text's displayed
+    example.
+  failure_mode: Without recognizing the displayed n=2 solution, the required alternative
+    cannot be distinguished from it.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 393
+    - 417
+    note: Problem 3 asks for an n=2 solution different from the text's displayed example.
+- id: weinberg-2.matching-to-qcd-breaking
+  from: weinberg-2.t-hooft-anomaly-matching-massless-bound-states
+  to: weinberg-2.t-hooft-matching-equations-and-three-flavor-qcd-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The representation equations implement the matching theorem for the SU(N)
+    flavor example.
+  failure_mode: Without anomaly matching, the multiplicity equations do not constrain
+    the spectrum or force breaking.
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 392
+    note: The source says the matching theorem reads as the displayed representation
+      equations.
 - id: weinberg-2.matching-to-qcd-corrected-scaling
   from: weinberg-2.state-independent-dis-coefficient-matching
   to: weinberg-2.qcd-corrected-scaling-and-callan-gross
@@ -8471,6 +9528,42 @@ edges:
     - 18
     - 19
     note: The measure argument precedes the general functional-integral assumption.
+- id: weinberg-2.measure-assumption-to-qme-repair
+  from: weinberg-2.gauge-invariant-functional-measure-assumption
+  to: weinberg-2.quantum-master-equation-measure-anomaly-repair
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The repair begins by identifying where the invariant-measure assumption
+    fails when ΔS≠0.
+  failure_mode: Without that assumption, the extra measure term and the need for a
+    repair are not identified.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 407
+    note: The repair begins by identifying where the invariant-measure assumption
+      fails when ΔS≠0.
+- id: weinberg-2.measure-to-abelian-anomaly
+  from: weinberg-2.fujikawa-fermionic-measure-chiral-variation
+  to: weinberg-2.fujikawa-gauge-invariant-regulator-abelian-anomaly
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The regulated trace evaluates the anomaly function produced by the measure
+    variation.
+  failure_mode: Without the measure anomaly definition, there is no quantity for the
+    regulator calculation to evaluate.
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 364
+    note: The source says that it remains to calculate the anomaly function after
+      deriving the measure transformation.
 - id: weinberg-2.minimal-subtraction-to-qcd-beta
   from: weinberg-2.minimal-subtraction-beta-from-simple-poles
   to: weinberg-2.qcd-one-loop-beta-and-active-flavors
@@ -9096,6 +10189,24 @@ edges:
     - 203
     note: The source first identifies F with Fπ and then writes the rotated-nucleon
       interactions in terms of the canonically normalized pion field.
+- id: weinberg-2.pion-decay-constant-to-pi0-rate
+  from: weinberg-2.pion-decay-constant-from-axial-current
+  to: weinberg-2.pi0-two-photon-anomaly-color-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The anomaly is matched using δπ⁰=αFπ, so the decay-constant normalization
+    is required.
+  failure_mode: Without Fπ normalization, the effective coupling and rate normalization
+    are undetermined.
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 368
+    note: The source gives the pion transformation with Fπ before fixing the anomalous
+      interaction.
 - id: weinberg-2.pion-decay-constant-to-pion-eft-power-counting
   from: weinberg-2.pion-decay-constant-from-axial-current
   to: weinberg-2.chiral-pion-effective-field-theory-power-counting
@@ -9207,6 +10318,24 @@ edges:
     - 190
     note: The source derives the axial divergence and then treats it as small of order
       the pion mass squared.
+- id: weinberg-2.pion-mass-to-pi0-puzzle
+  from: weinberg-2.pion-mass-from-quark-mass-breaking
+  to: weinberg-2.pi0-two-photon-chiral-suppression-puzzle
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The expected amplitude suppression is expressed through mπ² induced by
+    quark-mass breaking.
+  failure_mode: Without the pion mass/breaking relation, the stated mπ² suppression
+    cannot be interpreted.
+  evidence:
+  - source: weinberg-2
+    section: '22.1'
+    pages:
+    - 360
+    - 361
+    note: The source relates quark-mass breaking and the on-shell mπ² factor.
 - id: weinberg-2.pion-mass-to-pion-scattering
   from: weinberg-2.pion-mass-from-quark-mass-breaking
   to: weinberg-2.leading-pion-pion-scattering-and-scattering-lengths
@@ -9581,6 +10710,39 @@ edges:
     - 159
     note: The text discusses the effective fine-structure constant at high energy
       and the problem requests the corresponding 100 GeV calculation.
+- id: weinberg-2.qme-to-measure-anomaly-repair
+  from: weinberg-2.bv-quantum-master-equation
+  to: weinberg-2.quantum-master-equation-measure-anomaly-repair
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation condition for the non-invariant measure is the accepted
+    quantum master equation.
+  failure_mode: Without the QME, the required balance between antibracket and measure
+    terms is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 407
+    note: The cancellation condition for the non-invariant measure is the accepted
+      quantum master equation.
+- id: weinberg-2.qme-to-zinn-problem
+  from: weinberg-2.bv-quantum-master-equation
+  to: weinberg-2.problem-zinn-justin-from-quantum-master-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4 starts from the quantum master equation.
+  failure_mode: Without that equation, the requested derivation has no starting identity.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 4 explicitly asks for a derivation from the quantum master equation.
 - id: weinberg-2.quantum-master-evidence-bv-problem-prompt
   from: weinberg-2.bv-quantum-master-equation
   to: weinberg-2.problem-brst-and-bv-algebra-exercises
@@ -9805,6 +10967,46 @@ edges:
     - 263
     note: The source derives coefficient scale dependence from renormalization matrix
       factors.
+- id: weinberg-2.routing-completion-to-form-derivation
+  from: weinberg-2.avv-aaa-routing-and-gauge-invariant-completion
+  to: weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The consistency calculation starts from the quadratic symmetric anomaly
+    fixed by the routed triangle calculation.
+  failure_mode: Without the quadratic coefficient, consistency leaves the overall
+    anomaly normalization undetermined.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 380
+    - 398
+    - 400
+    note: The consistency calculation starts from the quadratic symmetric anomaly
+      fixed by the routed triangle calculation.
+- id: weinberg-2.routing-completion-to-qcd-wzw
+  from: weinberg-2.avv-aaa-routing-and-gauge-invariant-completion
+  to: weinberg-2.qcd-wess-zumino-witten-action-and-color-coefficient
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD Goldstone action inserts the vector-conserving Bardeen anomaly
+    into the Goldstone construction.
+  failure_mode: Without that routing and anomaly normalization, the QCD WZW color
+    coefficient is not fixed.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 380
+    - 413
+    - 414
+    note: The QCD Goldstone action inserts the vector-conserving Bardeen anomaly into
+      the Goldstone construction.
 - id: weinberg-2.scalar-hard-flow-to-leading-phi2
   from: weinberg-2.scalar-hard-flow-power-counting
   to: weinberg-2.scalar-hard-subgraph-leading-phi2-ope
@@ -10176,6 +11378,23 @@ edges:
     pages:
     - 247
     note: Problem 6 explicitly requires SU(3) symmetry in addition to Eq. (19.7.31).
+- id: weinberg-2.su3-mesons-to-eta-problem
+  from: weinberg-2.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  to: weinberg-2.problem-eta-to-two-photons-leading-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The η task specifies the leading strange-mass limit, requiring the three-flavor
+    pseudoscalar mass content.
+  failure_mode: Without the SU(3) pseudoscalar mass input, the stated m_s expansion
+    has no meson identification.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 1 asks for η decay to leading order in ms with mu=md=0.
 - id: weinberg-2.su3-pseudoscalar-mass-ratios-to-nucleon-estimate
   from: weinberg-2.su3-pseudoscalar-masses-electromagnetism-and-gmo
   to: weinberg-2.su3-nucleon-quark-mass-splitting-relation
@@ -10212,6 +11431,26 @@ edges:
     - 246
     note: The source compares Eq. (19.10.9) with Eq. (19.7.16) before deriving the
       bound.
+- id: weinberg-2.surface-term-to-dsymbol-obstruction
+  from: weinberg-2.surface-term-evaluation-and-local-counterterm-obstruction
+  to: weinberg-2.symmetric-d-symbol-obstruction-to-three-current-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The nonzero epsilon-tensor surface term supplies the D-symbol obstruction
+    to simultaneous conservation.
+  failure_mode: Without the surface term, D≠0 has not been shown to produce a current
+    anomaly.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 375
+    - 376
+    - 377
+    note: The nonzero epsilon-tensor surface term supplies the D-symbol obstruction
+      to simultaneous conservation.
 - id: weinberg-2.three-flavor-u-to-leading-lagrangian
   from: weinberg-2.three-flavor-chiral-symmetry-and-u-field
   to: weinberg-2.su3-leading-meson-lagrangian-and-fpi-normalization
@@ -10265,6 +11504,43 @@ edges:
     pages:
     - 235
     note: The five-dimensional construction explicitly extends the U of Eq. (19.7.9).
+- id: weinberg-2.triangle-setup-to-explicit-integral
+  from: weinberg-2.general-left-handed-triangle-anomaly-setup
+  to: weinberg-2.left-handed-projector-two-triangle-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The explicit correlator instantiates the general left-handed three-current
+    setup with both triangle orderings.
+  failure_mode: Without the field/current setup, the two trace orderings and generator
+    actions are undefined.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 371
+    - 372
+    note: The explicit correlator instantiates the general left-handed three-current
+      setup with both triangle orderings.
+- id: weinberg-2.triangle-to-su3-problem
+  from: weinberg-2.general-left-handed-triangle-anomaly-setup
+  to: weinberg-2.problem-chiral-su3-anomaly-with-symmetric-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task changes chiral matter representations and asks for their SU(3)
+    anomaly, which is evaluated by the general triangle representation trace.
+  failure_mode: Without the left-handed triangle framework, the two requested matter-content
+    anomaly calculations have no method.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 2 explicitly asks for anomalies of two specified chiral SU(3) matter
+      contents.
 - id: weinberg-2.twist-to-state-independent-matching
   from: weinberg-2.twist-and-leading-qcd-dis-operators
   to: weinberg-2.state-independent-dis-coefficient-matching
@@ -10447,6 +11723,41 @@ edges:
     - 148
     note: The source moves from the scalar calculation to multiple physical systems
       with the same long-wavelength scalar field.
+- id: weinberg-2.wz-to-brst-cohomology
+  from: weinberg-2.wess-zumino-consistency-condition-for-anomalies
+  to: weinberg-2.brst-cohomology-classification-of-local-anomalies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The BRST formulation translates the Wess-Zumino condition into sG=0.
+  failure_mode: Without the consistency condition, BRST invariance would not be tied
+    to anomaly consistency.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 398
+    note: The source proves that the consistency condition holds if and only if the
+      anomaly functional is BRST-invariant.
+- id: weinberg-2.wzw-to-qcd-wzw
+  from: weinberg-2.wess-zumino-witten-term-and-integer-coefficient
+  to: weinberg-2.qcd-wess-zumino-witten-action-and-color-coefficient
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source identifies the resulting five-dimensional functional as the
+    prior Wess-Zumino-Witten action and imports its extension property.
+  failure_mode: Without the accepted WZW construction, the boundary-extension qualification
+    cannot be established.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 415
+    note: The source explicitly identifies Eq. (22.7.33) with the Wess-Zumino-Witten
+      action and invokes the earlier extension result.
 - id: weinberg-2.xi-gauge-prerequisite-covariant-ghost-rules
   from: weinberg-2.generalized-feynman-gauge-propagator
   to: weinberg-2.covariant-gauge-ghost-propagator-and-vertex
@@ -10503,7 +11814,51 @@ edges:
     - 83
     note: Equations (17.2.2)–(17.2.3) derive the N-loop symmetry condition from the
       Zinn–Justin equation.
+- id: weinberg-2.zinn-justin-to-measure-anomaly-repair
+  from: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  to: weinberg-2.quantum-master-equation-measure-anomaly-repair
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The section identifies how the usual invariant-measure derivation of
+    the Zinn-Justin equation breaks down and is restored.
+  failure_mode: Without the target identity, the consequence of satisfying the quantum
+    master equation cannot be stated.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 407
+    note: The section identifies how the usual invariant-measure derivation of the
+      Zinn-Justin equation breaks down and is restored.
+- id: weinberg-2.zinn-justin-to-zinn-problem
+  from: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  to: weinberg-2.problem-zinn-justin-from-quantum-master-equation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The requested result is the Zinn-Justin equation itself.
+  failure_mode: Without identifying the target identity, the derivation cannot be
+    checked.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 4 names the Zinn-Justin equation as its destination.
 groups:
+- id: weinberg-2.abelian-anomaly
+  title: Fujikawa’s Abelian anomaly
+- id: weinberg-2.anomalies-overview
+  title: Anomaly motivation and the pion puzzle
+- id: weinberg-2.anomalies-problems
+  title: Chapter 22 problems
+- id: weinberg-2.anomalous-goldstone-actions
+  title: Anomalies and Goldstone bosons
+- id: weinberg-2.anomaly-free-gauge-theories
+  title: Anomaly-free gauge theories
 - id: weinberg-2.batalin-vilkovisky-formalism
   title: Batalin-Vilkovisky formalism
 - id: weinberg-2.brst-and-generalizations
@@ -10512,6 +11867,8 @@ groups:
   title: Chapter problem prompts
 - id: weinberg-2.connection-and-curvature
   title: Gauge connection, curvature, and finite transformations
+- id: weinberg-2.consistency-and-cohomology
+  title: Consistency conditions and cohomology
 - id: weinberg-2.external-field-methods
   title: External-field and effective-action methods
   question: How do external sources and the effective action reorganize quantum field
@@ -10528,12 +11885,16 @@ groups:
   title: Gauge-theory renormalization
   question: How do BRST/BV identities and background gauge invariance control gauge-theory
     counterterms and coupling renormalization?
+- id: weinberg-2.general-anomalies
+  title: General triangle anomalies
 - id: weinberg-2.lagrangian-and-algebra
   title: Gauge Lagrangians, algebra, and coupling conventions
 - id: weinberg-2.lagrangian-ingredients
   title: Opening gauge-theory Lagrangian ingredients
 - id: weinberg-2.lie-algebra-appendices
   title: Lie-algebra appendices
+- id: weinberg-2.massless-bound-states
+  title: Massless bound states and matching
 - id: weinberg-2.ope-coefficient-functions
   title: Coefficient functions and momentum flow
   question: How are OPE coefficients isolated and evolved?
@@ -10565,6 +11926,32 @@ groups:
   question: How do degenerate vacua and broken global symmetries constrain massless
     modes and organize low-energy pion and pion-nucleon physics?
 motivations:
+- id: weinberg-2.composite-fermion-mass-motivation
+  nodes:
+  - weinberg-2.t-hooft-anomaly-matching-massless-bound-states
+  summary: If quarks and leptons were deeply bound composite particles, their observed
+    masses far below the compositeness scale demand an explanation; unbroken chiral
+    symmetries and anomaly matching constrain one possible explanation.
+  evidence:
+  - source: weinberg-2
+    section: '22.5'
+    pages:
+    - 389
+    - 390
+    note: The source poses the compositeness scale/mass conflict and introduces the
+      anomaly-based answer.
+- id: weinberg-2.consistency-form-motivation
+  nodes:
+  - weinberg-2.wess-zumino-consistency-condition-for-anomalies
+  - weinberg-2.differential-form-consistency-derivation-of-symmetric-anomaly
+  summary: Consistency conditions largely determine anomaly form independently of
+    microscopic details, leaving matter-dependent numerical coefficients to calculation.
+  evidence:
+  - source: weinberg-2
+    section: '22.6'
+    pages:
+    - 396
+    note: The source states this separation of form from matter-dependent coefficient.
 - id: weinberg-2.covariant-rules-without-gauge-dependence
   nodes:
   - weinberg-2.faddeev-popov-gauge-fixing-independence
@@ -10614,6 +12001,33 @@ motivations:
     - 67
     note: The opening states the calculation motivation and the section derives the
       tree/1PI reorganization.
+- id: weinberg-2.gauge-cancellation-motivation
+  nodes:
+  - weinberg-2.quantum-anomaly-regulator-symmetry-trace
+  - weinberg-2.gauge-anomaly-cancellation-d-symbol-condition
+  summary: Because a gauge anomaly makes the theory inconsistent, cancellation constrains
+    admissible gauge-theory matter content.
+  evidence:
+  - source: weinberg-2
+    section: '22'
+    pages:
+    - 359
+    note: The opening paragraph makes the inconsistency-to-constraint motivation explicit.
+- id: weinberg-2.goldstone-anomaly-matching-motivation
+  nodes:
+  - weinberg-2.anomaly-matching-goldstone-effective-action
+  - weinberg-2.qcd-wess-zumino-witten-action-and-color-coefficient
+  summary: Anomaly matching requires anomalous Goldstone interactions; when fictitious
+    gauge fields are identified with real weak gauge fields, the corresponding spectators
+    must be real fermions that cancel trapped-fermion gauge anomalies.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 408
+    - 409
+    note: The source gives both the matching necessity and the real weak-gauge-field
+      qualification.
 - id: weinberg-2.hard-momentum-short-distance-motivation
   nodes:
   - weinberg-2.short-distance-operator-product-expansion
@@ -10660,6 +12074,20 @@ motivations:
     note: The page explains that derivatives of the local parameters prevent ordinary
       derivatives from transforming like the fields and motivates the compensating
       field.
+- id: weinberg-2.pi0-rate-motivation
+  nodes:
+  - weinberg-2.pi0-two-photon-chiral-suppression-puzzle
+  - weinberg-2.pi0-two-photon-anomaly-color-prediction
+  summary: The unexpectedly large neutral-pion two-photon decay rate is the concrete
+    failure that exposes the chiral anomaly and turns it into a color-counting prediction.
+  evidence:
+  - source: weinberg-2
+    section: 22.1–22.2
+    pages:
+    - 361
+    - 368
+    note: The source contrasts the failed suppressed estimate with the anomaly calculation
+      agreeing for three colors.
 - id: weinberg-2.symmetry-controls-counterterms
   nodes:
   - weinberg-2.zinn-justin-equation-for-quantum-effective-action
