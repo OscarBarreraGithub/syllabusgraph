@@ -6,18 +6,37 @@ the actual claims before promotion. No model is required for manual authoring.
 
 ## 1. Register the reference and attach material
 
+Create a project with `syllabusgraph init local-courses/my-course`. Every new
+project contains a `materials/` folder and a local `README.md` explaining the
+workflow. Put the course's PDFs, text files, and Markdown notes in
+`local-courses/my-course/materials/`.
+
+Open **References** in the app. Add a reference entry if it is not already
+listed, then choose **Attach file** on its card and pick the corresponding file.
+You can select a file from any local directory. Copying it into `materials/`
+alone does not register or process it.
+
+The equivalent commands, after placing `material.pdf` in that folder, are:
+
 ```bash
 syllabusgraph source -p local-courses/my-course add reference-one \
   --title "Reference title" --author "Author name" --edition "Chosen edition"
-syllabusgraph source -p local-courses/my-course register reference-one ./material.pdf \
-  --page-offset 12
+syllabusgraph source -p local-courses/my-course register reference-one \
+  local-courses/my-course/materials/material.pdf --page-offset 12
 syllabusgraph source -p local-courses/my-course status
 ```
 
-You can do the first two steps in the References tab. Original files are copied
-to content-addressed local storage; no absolute source path is written into
-tracked metadata. PDF page numbering is one-based. `--page-offset 12` means
+File arguments are relative to your terminal's working directory, or can be
+absolute paths. Attachment copies the original to content-addressed local
+storage under `.syllabusgraph/sources/`; no absolute source path is written into
+tracked metadata. Both `materials/` and `.syllabusgraph/` are ignored by Git.
+PDF page numbering is one-based. `--page-offset 12` means
 printed page 1 is physical PDF page 13. Confirm offsets using your actual file.
+
+For a project created before the materials-folder convention, create
+`materials/` beside `project.yaml` and add `materials/` to that project's
+`.gitignore` before adding reference files. Existing registered sources continue
+to work without moving them. All subjects and templates use the same convention.
 
 Text and Markdown files use form-feed characters (`\f`) as page separators.
 Source registration uses pypdf for PDF text extraction. Image-only pages need

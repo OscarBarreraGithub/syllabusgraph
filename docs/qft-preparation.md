@@ -8,6 +8,17 @@ syllabusgraph init local-courses/qft --template qft
 syllabusgraph serve -p local-courses/qft --open
 ```
 
+Put the books in **`local-courses/qft/materials/`**. In the app's **References**
+tab, choose **Attach file** on the corresponding book's card, select its file,
+and confirm the page offset. You can also attach a file from any other local
+directory. Placing a file in the folder alone does not register or extract it.
+
+This is the same `materials/` convention used by every course. The template adds
+the QFT bibliography and two plan files; the engine and storage rules are shared.
+`examples/qft/` holds the reusable template, while the `init` destination holds
+your working project. Its generated `README.md` explains this workflow and its
+`.gitignore` excludes the materials and processing data.
+
 Its reference shelf contains Weinberg volumes I and II, Peskin–Schroeder, and
 Schwartz. These are expected sources, not bundled files. Confirm the exact
 editions and volumes against the uploaded materials before editing their

@@ -19,7 +19,7 @@ IGNORED = {
     "dist",
     "build",
 }
-FORBIDDEN = {".syllabusgraph", ".env", ".claude", ".wrangler", "__pycache__", ".venv"}
+FORBIDDEN = {".syllabusgraph", "materials", ".env", ".claude", ".wrangler", "__pycache__", ".venv"}
 BINARY_SOURCE = {".pdf", ".epub", ".docx", ".pptx", ".pem", ".key"}
 RULES = [
     ("private absolute path", re.compile(r"/(?:Users|home)/[A-Za-z][A-Za-z0-9_.-]+/")),

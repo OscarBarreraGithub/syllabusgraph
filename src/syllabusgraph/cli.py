@@ -19,6 +19,24 @@ from .server import serve
 from . import sources, workflow
 
 
+def create_workspace_guides(destination: Path):
+    """Add the shared source-file convention without replacing existing project guides."""
+    ignore_path = destination / ".gitignore"
+    ignored = ignore_path.read_text(encoding="utf-8") if ignore_path.exists() else ""
+    rules = [".syllabusgraph/", "materials/", ".env", ".env.*", "*.pdf", "*.epub", "__pycache__/"]
+    missing = [rule for rule in rules if rule not in ignored.splitlines()]
+    if missing:
+        write_text(
+            ignore_path,
+            ignored.rstrip("\n") + ("\n" if ignored else "") + "\n".join(missing) + "\n",
+        )
+    (destination / "materials").mkdir(exist_ok=True)
+    for source, target in [("course.md", "README.md"), ("materials.md", "materials/README.md")]:
+        path = destination / target
+        if not path.exists():
+            write_text(path, (bundled("starter") / source).read_text(encoding="utf-8"))
+
+
 def initialize(destination: Path, template: str, *, title: str | None = None):
     if destination.exists() and any(destination.iterdir()):
         raise ProjectError("Choose a new or empty directory for the course project.")
@@ -31,7 +49,7 @@ def initialize(destination: Path, template: str, *, title: str | None = None):
         source,
         destination,
         dirs_exist_ok=True,
-        ignore=shutil.ignore_patterns(".syllabusgraph", "__pycache__"),
+        ignore=shutil.ignore_patterns(".syllabusgraph", "materials", "__pycache__"),
     )
     if title:
         config = read_yaml(destination / "project.yaml")
@@ -39,9 +57,7 @@ def initialize(destination: Path, template: str, *, title: str | None = None):
         slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
         config["id"] = slug if slug and slug[0].isalpha() else "course-" + (slug or "new")
         write_yaml(destination / "project.yaml", config)
-    write_text(
-        destination / ".gitignore", ".syllabusgraph/\n.env\n.env.*\n*.pdf\n*.epub\n__pycache__/\n"
-    )
+    create_workspace_guides(destination)
     return load_project(destination)
 
 
@@ -163,6 +179,9 @@ def execute(args) -> int:
     if args.action == "init":
         project = initialize(args.destination, args.template, title=args.title)
         print(f"Created {project.config['title']} in {args.destination}")
+        print(f"Reference files: {args.destination / 'materials'}")
+        print("Open the app's References tab to add a reference and attach its file.")
+        print(f"Getting started: {args.destination / 'README.md'}")
         return 0
     if args.action == "demo":
         if not (args.destination / "project.yaml").exists():

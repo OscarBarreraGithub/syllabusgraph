@@ -60,23 +60,55 @@ time estimates are illustrative and have not been calibrated in a classroom.
   proposal → check → review → promote workflow.
 
 The app serves a **local workspace**. It has no telemetry, hosted account,
-external font dependency, or automatic model calls. Original source files and
+external font dependency, or automatic model calls. Attached working copies and
 extraction runs stay under the ignored `.syllabusgraph/` directory.
 
 ## Create your own course
 
 ```bash
 syllabusgraph init local-courses/my-course --title "My course"
-syllabusgraph source -p local-courses/my-course add reference-one \
-  --title "My reference" --author "Author name" --edition "First edition"
-syllabusgraph source -p local-courses/my-course register reference-one /path/to/reference.pdf \
-  --page-offset 12
 syllabusgraph serve -p local-courses/my-course --open
 ```
 
-The source file path is supplied locally. The page mapping above means printed
-page 1 is PDF page 13; confirm the mapping for your own edition. You can also
-add references and attach PDFs, text, or Markdown in the interface.
+Every new project includes a `README.md` with instructions and a **`materials/`
+folder for your reference files**. The same layout applies to every subject:
+
+```text
+local-courses/my-course/
+  README.md             Start here
+  materials/            Put your PDFs, text files, and Markdown notes here
+  project.yaml          Project settings and reference bibliography
+  knowledge/graph.yaml  Reviewed concepts and relationships
+  plans/                Course goals, background, and schedules
+```
+
+In the app, open **References**, use **Add reference** if the book is not already
+listed, then click **Attach file** on its card. Select the file from `materials/`
+and confirm its page offset. You can also select a file anywhere on your computer.
+
+Copying a file into `materials/` does not register or extract it. Attachment
+links it to a reference and saves a working copy under `.syllabusgraph/sources/`.
+Both directories are ignored by Git, including text and Markdown material.
+You can create projects anywhere; `local-courses/` is a convenient directory
+inside a checkout that also keeps your course drafts out of the tool's repository.
+
+<details>
+<summary>Attach a reference from the command line</summary>
+
+After placing `reference.pdf` in the project's `materials/` folder:
+
+```bash
+syllabusgraph source -p local-courses/my-course add reference-one \
+  --title "My reference" --author "Author name" --edition "First edition"
+syllabusgraph source -p local-courses/my-course register reference-one \
+  local-courses/my-course/materials/reference.pdf --page-offset 12
+```
+
+The page mapping above means printed page 1 is PDF page 13; confirm the mapping
+for your own edition. File arguments are relative to your terminal's working
+directory, or can be absolute paths.
+
+</details>
 
 Next, follow the [source workflow](docs/source-workflow.md) to prepare a small
 page range, run your preferred extraction tool or import a manually prepared
@@ -89,6 +121,11 @@ edit course outcomes and assumptions using the [project format](docs/project-for
 syllabusgraph init local-courses/qft --template qft
 syllabusgraph serve -p local-courses/qft --open
 ```
+
+Put the books in **`local-courses/qft/materials/`** and attach them through
+**References**, using the same workflow as any other course. `examples/qft/`
+contains the reusable template; the directory passed to `init` is your working
+project. QFT has no special source-file location or processing path.
 
 This creates a **preparation scaffold** for QFT I and QFT II with source entries
 for Weinberg volumes I and II, Peskin–Schroeder, and Schwartz. **Its knowledge

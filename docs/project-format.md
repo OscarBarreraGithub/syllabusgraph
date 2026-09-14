@@ -6,6 +6,13 @@ escape it. Duplicate YAML keys, unknown fields, missing references, duplicate
 IDs, invalid timing ranges, and prerequisite cycles are rejected. The executable
 contract is [project.schema.json](../src/syllabusgraph/schemas/project.schema.json).
 
+`syllabusgraph init` also creates a getting-started `README.md` and a
+`materials/` directory for locally supplied references. `materials/` and
+`.syllabusgraph/` (attached working copies, text caches, runs, and exports) are
+ignored by Git. The materials folder is an input convention, not an automatic
+import queue: attach each file to its bibliography entry through **References**
+or `source register`. These rules are identical for every template.
+
 ```yaml
 schema_version: 1
 id: my-subject
