@@ -1743,3 +1743,66 @@ units:
       id: schwartz.pion-wess-zumino-anomaly-matching-term
     - kind: nodes
       id: schwartz.qcd-running-impact-on-vcb
+- id: full-012
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The corrected OPE-matching and lightcone-scaling route nodes omit direct
+      prerequisite inputs.
+    alternatives:
+    - Add direct necessary edges from the generic OPE to DIS matching and from the
+      lightcone PDF operator to the scaling route.
+    - Merge each route node into its input record so no separate prerequisite edge
+      is needed.
+    - Leave the route nodes disconnected and rely only on prose and downstream convergence.
+    resolution: Add the two direct use-to-derive necessary prerequisite edges.
+    rationale: 'Pages 686 and 690 make the first dependency explicit: the state-independent
+      OPE defines the local-operator/Wilson-coefficient framework that the forward-Compton
+      expansion then applies. Pages 695 and 697 make the second dependency explicit:
+      the independent lightcone route begins with lightcone-projected proton matrix
+      elements, makes the quark bilinear gauge invariant, and then applies those PDFs
+      in scaling-based factorization formulas. Direct edges complete each route while
+      keeping the OPE and lightcone branches independent of one another.'
+    evidence:
+    - source: schwartz
+      section: 32.4.1 and 32.4.3
+      pages:
+      - 686
+      - 690
+    - source: schwartz
+      section: 32.5 Lightcone coordinates
+      pages:
+      - 695
+      - 697
+    affected_records:
+    - kind: edges
+      id: schwartz.edge-ope-to-dis-matching
+    - kind: edges
+      id: schwartz.edge-lightcone-pdf-to-factorization-scaling-route
+  - finding: 1
+    issue: Problem 32.5 incorrectly makes reuse of the Chapter 27 gg-to-gg cross section
+      compulsory.
+    alternatives:
+    - Mark the accepted cross-section reuse typical and state that the learner may
+      use it.
+    - Keep it necessary but add a complete amplitude-derived alternative route.
+    - Remove the reuse edge and require every learner to rederive the scattering input.
+    resolution: Make the reuse typical, change “using” to “may use,” and record the
+      rederivation fallback.
+    rationale: Problem 32.5 requires taking the collinear limit of gg→gg scattering,
+      but page 698 says the previously calculated Chapter 27 cross section can be
+      used. Thus the scattering input is needed, while reuse of that accepted record
+      is a typical shortcut rather than a universally necessary mastery condition.
+      The revised failure mode preserves the independent option of deriving the cross
+      section from amplitudes before taking the limit.
+    evidence:
+    - source: schwartz
+      section: Problem 32.5
+      pages:
+      - 698
+    affected_records:
+    - kind: nodes
+      id: schwartz.problem-gluon-splitting-from-collinear-gg-scattering
+    - kind: edges
+      id: schwartz.edge-gg-cross-section-to-gg-splitting-task

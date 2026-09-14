@@ -97,3 +97,164 @@ units:
     affected_records:
     - kind: nodes
       id: qft.qed-trace-cross-section-route
+- id: full-align-002
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Weinberg p. 19 witness is a label rather than the operative definition
+    alternatives:
+    - Retain the short matching label and accept only mechanical location evidence
+    - Replace it with the matching sentence that defines the noninvariant gauge-fixing
+      functional
+    resolution: Use the complete matching definition span
+    rationale: The p. 19 sentence defines the non-gauge-invariant gauge-fixing functional
+      and its dependence in the De Witt–Faddeev–Popov integral. It supports the cited
+      node while remaining a private witness.
+    evidence:
+    - source: weinberg-2
+      section: '15.5'
+      pages:
+      - 19
+    affected_records:
+    - kind: nodes
+      id: qft.faddeev-popov-gauge-orbit-functional-integral
+  - finding: 1
+    issue: Later boundary tasks are stored as unresolved current claims
+    alternatives:
+    - Keep the three unresolved markers and defer the otherwise supported proposal
+    - Clear the markers and preserve the exact later boundary needs in the decision
+      ledger
+    resolution: Clear current markers and retain later boundary needs
+    rationale: The current claims are supported. Later work remains for qft.anomaly-su4-ten-calculation-task
+      (anomaly-coefficient definition/normalization), qft.nonabelian-noether-current-conservation-task
+      (connection/curvature derivation), and qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+      (Abelian-Higgs gauge-shift/degree-count context). These needs do not add origins
+      or source authority here.
+    evidence:
+    - source: schwartz
+      section: Problems 25.4(d) and 25.5
+      pages:
+      - 507
+    - source: schwartz
+      section: '28.4'
+      pages:
+      - 581
+    affected_records:
+    - kind: nodes
+      id: qft.anomaly-su4-ten-calculation-task
+    - kind: nodes
+      id: qft.nonabelian-noether-current-conservation-task
+    - kind: nodes
+      id: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  - finding: 2
+    issue: Alternative routes and proof-scope evidence have incorrect necessity or
+      relation metadata
+    alternatives:
+    - Keep helpful alternatives and the derive-level conditional-independence prerequisite
+    - Make each route input necessary within that route and restore source-qualified
+      evidence links
+    resolution: Restore necessary route inputs and evidence semantics
+    rationale: Schwartz and Weinberg give independent routes to the shared cohomology
+      result, so neither route is globally compulsory, but its stated input is necessary
+      when that route is used. Weinberg p. 41 uses cohomology as evidence for the
+      conditional result, and the string/gravity record is a necessary limitation
+      on the Yang–Mills proof scope.
+    evidence:
+    - source: schwartz
+      section: 25.4.2 and Problem 25.7
+      pages:
+      - 500
+      - 501
+      - 507
+    - source: weinberg-2
+      section: '15.7'
+      pages:
+      - 31
+      - 32
+      - 33
+      - 36
+    - source: weinberg-2
+      section: '15.8'
+      pages:
+      - 41
+    affected_records:
+    - kind: edges
+      id: full-align-002-schwartz-route-to-cohomology
+    - kind: edges
+      id: full-align-002-weinberg-brst-exact-route-to-cohomology
+    - kind: edges
+      id: full-align-002-cohomology-to-conditional-independence
+    - kind: edges
+      id: full-align-002-yang-mills-to-gravity-limit
+  - finding: 3
+    issue: Several repaired edges require mastery above the reviewed source minimum
+    alternatives:
+    - Retain derive-heavy mastery on every new prerequisite and evidence connection
+    - Use the reviewed recognize, use, and derive levels for each source-qualified
+      connection
+    resolution: Restore the reviewed minimum mastery values
+    rationale: The cited passages distinguish recognition of notation or analogies,
+      use of established constructions, and derivation of results. Restoring those
+      levels keeps all joint inputs while avoiding extra mastery requirements across
+      the Faddeev–Popov, BRST, representation, and general-cohomology routes.
+    evidence:
+    - source: weinberg-2
+      section: 15.1–15.2
+      pages:
+      - 3
+      - 6
+      - 7
+    - source: weinberg-2
+      section: 15.4–15.7
+      pages:
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 24
+      - 25
+      - 26
+      - 30
+      - 31
+      - 32
+    - source: weinberg-2
+      section: '15.8'
+      pages:
+      - 37
+      - 38
+      - 39
+      - 40
+      - 41
+    affected_records:
+    - kind: edges
+      id: full-align-002-fp-to-ghost-determinant
+    - kind: edges
+      id: full-align-002-determinant-plus-xi-to-ghost-rules
+    - kind: edges
+      id: full-align-002-field-strength-to-vertices
+    - kind: edges
+      id: full-align-002-measure-to-fp
+    - kind: edges
+      id: full-align-002-fp-to-independence
+    - kind: edges
+      id: full-align-002-nilpotence-to-brst-exact
+    - kind: edges
+      id: full-align-002-dewitt-to-general-fp
+    - kind: edges
+      id: full-align-002-slavnov-to-general-result
+    - kind: edges
+      id: full-align-002-general-result-to-proof
+    - kind: edges
+      id: full-align-002-general-fp-to-reducibility
+    - kind: edges
+      id: full-align-002-lie-to-su2-example
+    - kind: edges
+      id: full-align-002-adjoint-to-su2-example
+    - kind: edges
+      id: full-align-002-connection-inputs-to-analogy
+    - kind: edges
+      id: full-align-002-field-strength-to-analogy
+    - kind: edges
+      id: full-align-002-pure-gauge-to-analogy

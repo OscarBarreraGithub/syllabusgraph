@@ -20,6 +20,41 @@ nodes:
     node: weinberg-2.adjoint-representation
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.anomaly-su4-ten-calculation-task
+  label: Anomaly SU(4) ten calculation task
+  summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
+    10 and the reality of the 6 representation. It is retained as a bounded task statement;
+    this packet does not supply its solution.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.anomaly-su4-ten-task
+    note: Retains the exact SU(4) task and its supplied representation fact.
+  evidence:
+  - source: schwartz
+    section: Problem 25.4(d)
+    pages:
+    - 507
+  notation: []
+- id: qft.anti-brst-ghost-antighost-role-observation
+  label: Anti-BRST observation about ghost and antighost roles
+  summary: Anti-BRST invariance reveals a similarity between ghost and antighost roles
+    despite their asymmetric appearance in the construction. The source explicitly
+    calls the similarity mysterious, so this is an observation rather than an explanatory
+    derivation.
+  kind: concept
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.anti-brst-ghost-antighost-role-observation
+    note: Retains the source's unresolved-status qualification.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+  notation: []
 - id: qft.atom-photon-interaction-hamiltonian
   label: Atom-photon interaction Hamiltonian
   summary: For the Einstein-coefficient application, split H=H_0+H_int with H_0=H_atom+H_photon
@@ -79,6 +114,214 @@ nodes:
     pages:
     - 9
     note: Obtains the nω+1 and nω transition factors.
+  notation: []
+- id: qft.brst-auxiliary-field-transformations-and-nilpotence
+  label: BRST auxiliary-field transformations and nilpotence
+  summary: 'An auxiliary commuting field lets the gauge-fixed action carry a constant
+    anticommuting BRST symmetry: matter and gauge fields transform by a ghost-parameter
+    gauge transformation, the antighost maps to the auxiliary field, and the ghost
+    has a quadratic transformation. Anticommutation, the Lie algebra, and the Jacobi
+    identity give a nilpotent differential. This is the Yang–Mills auxiliary-field
+    construction, with source-specific B or h notation.'
+  kind: method
+  group: qft.brst-and-physical-states
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.brst-auxiliary-field-symmetry-and-nilpotence
+    note: Retains the nondynamical B^a rewriting and its all-field nilpotence statement.
+  - project: weinberg-2
+    node: weinberg-2.brst-field-transformations
+    note: Retains the Fourier-introduced h^a formulation and constant anticommuting
+      parameter.
+  - project: weinberg-2
+    node: weinberg-2.brst-nilpotence
+    note: Retains the graded-Leibniz extension of nilpotence to products.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.4 BRST Symmetry
+    pages:
+    - 517
+    - 518
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 28
+    - 29
+    - 30
+    - 31
+  notation:
+  - source: peskin-schroeder
+    note: The auxiliary field is B^a and the BRST parameter is epsilon.
+  - source: weinberg-2
+    note: The auxiliary field is h^a and the BRST parameter theta is a constant anticommuting
+      c-number.
+- id: qft.brst-cohomology-and-physical-state-qualification
+  label: BRST cohomology and physical-state qualification
+  summary: A conserved nilpotent BRST charge defines physical states as Q-closed states
+    modulo Q-exact states. Schwartz states the identification as a formal conclusion,
+    while Weinberg derives it as the condition for gauge-fixing-independent physical
+    matrix elements. Neither source is treated as a general unitarity proof for every
+    local symmetry.
+  kind: result
+  group: qft.brst-and-physical-states
+  origins:
+  - project: schwartz
+    node: schwartz.brst-cohomological-physical-state-qualification
+    note: Retains the qualified Delta-cohomology identification.
+  - project: weinberg-2
+    node: weinberg-2.brst-cohomology-of-physical-states
+    note: Retains Q-closed/Q-exact equivalence and its matrix-element scope.
+  evidence:
+  - source: schwartz
+    section: 25.4.2
+    pages:
+    - 501
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 32
+    - 33
+  notation: []
+- id: qft.brst-conditional-ghost-free-gauge-independence
+  label: Conditional ghost-free gauge independence from BRST cohomology
+  summary: 'For gauge-invariant operators between Q-closed states, changing the gauge-fixing
+    functional leaves physical matrix elements unchanged. The ghost-free conclusion
+    is conditional: it follows for a general BRST-invariant action if there is a gauge-fixing
+    functional in which ghosts decouple; it is not an independent proof that such
+    a gauge exists for every local symmetry.'
+  kind: result
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.brst-conditional-ghost-free-gauge-independence
+    note: Retains the Q-closed-state and existing-decoupling-gauge conditions.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+  notation: []
+- id: qft.brst-exact-gauge-fixing-functional
+  label: BRST-exact gauge-fixing functional
+  summary: In the auxiliary-field formulation, the gauge-fixed action can be written
+    as a gauge-and-matter part plus sPsi, where Psi has ghost number minus one. Nilpotence
+    makes the sPsi term BRST invariant; this statement concerns the action's form,
+    not automatic invariance of arbitrary Green functions or matrix elements.
+  kind: result
+  group: qft.brst-and-physical-states
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.brst-exact-gauge-fixing
+    note: Retains the I_new = integral L + sPsi formulation and its scope.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 31
+    - 32
+  notation: []
+- id: qft.brst-faddeev-popov-transformation-and-nilpotence-task
+  label: BRST transformations and nilpotence task in the Faddeev–Popov form
+  summary: For the gauge-fixed Faddeev–Popov Lagrangian, the gauge and matter variations
+    are ghost-parameter gauge transformations, the ghost transforms quadratically,
+    and the antighost variation cancels gauge-fixing variation. The source assigns
+    verification that the Slavnov operator Delta is nilpotent; it does not supply
+    that exercise's proof on the problem page.
+  kind: method
+  group: qft.brst-and-physical-states
+  origins:
+  - project: schwartz
+    node: schwartz.brst-transformations-and-nilpotency-task
+    note: Retains the Faddeev–Popov-form transformations and the assigned nilpotence
+      verification.
+  evidence:
+  - source: schwartz
+    section: 25.4.2; Problem 25.7
+    pages:
+    - 500
+    - 501
+    - 507
+  notation:
+  - source: schwartz
+    note: Delta is the Slavnov operator defined by the Grassmann-parameter BRST variation.
+- id: qft.brst-free-electrodynamic-polarization-example
+  label: BRST free-electrodynamic polarization example
+  summary: In the free electrodynamic BRST example, Q-closed one-photon states are
+    transverse up to momentum shifts, while ghost and antighost excitations are excluded
+    or Q-exact. This is an illustrative free-field analysis used for the physical-state
+    condition, not a direct proof of non-Abelian interacting unitarity.
+  kind: result
+  group: qft.brst-and-physical-states
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.brst-electrodynamic-polarization-example
+    note: Retains the free-electrodynamic scope and the polarization/cohomology argument.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 33
+    - 34
+  notation: []
+- id: qft.brst-general-action-and-yang-mills-unitarity-result
+  label: General BRST action and Yang–Mills unitarity result
+  summary: Beyond the bilinear Faddeev–Popov action, a ghost-number-zero BRST-invariant
+    local action has a gauge/matter functional plus s applied to a ghost-number-minus-one
+    functional. For Yang–Mills, the source states BRST cohomology is ghost-free, positive
+    definite, and has a unitary S matrix; it separately warns that other local symmetries
+    require their own proofs.
+  kind: result
+  group: qft.brst-and-physical-states
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.brst-unitarity-and-general-gauge-fixing
+    note: Retains the Yang–Mills result and the separate-proof boundary for other
+      local symmetries.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 35
+    - 36
+  notation: []
+- id: qft.brst-light-cone-and-gravity-unitarity-limitation
+  label: Light-cone and gravity limits on BRST ghost-decoupling arguments
+  summary: Light-cone quantization plays the ghost-decoupling role for string theory
+    that axial gauge plays for Yang–Mills. For general relativity, no coordinate choice
+    decouples ghosts, so a physical ghost-free Hilbert space requires a unitarity
+    proof rather than that decoupling argument.
+  kind: result
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.string-light-cone-and-gravity-brst-limitation
+    note: Retains the contrast between string light-cone quantization and gravity.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+  notation: []
+- id: qft.brst-renormalizability-and-nonbilinear-ghost-qualification
+  label: BRST renormalizability and nonbilinear-ghost qualification
+  summary: Power counting alone does not guarantee an available counterterm. Because
+    BRST transformations are nonlinear, action symmetry does not directly imply symmetry
+    of Green functions or matrix elements; gauges beyond bilinear Faddeev–Popov form
+    can require quartic ghost counterterms. The source defers the renormalizability
+    proof to later sections.
+  kind: result
+  group: qft.brst-and-physical-states
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.brst-beyond-power-counting-and-bilinear-faddeev-popov
+    note: Retains the counterterm and deferred-proof qualifications.
+  evidence:
+  - source: weinberg-2
+    section: 15.6–15.7
+    pages:
+    - 27
+    - 32
+    - 35
   notation: []
 - id: qft.canonical-and-path-integral-quantization-routes
   label: Canonical and path-integral quantization routes
@@ -438,6 +681,39 @@ nodes:
     node: weinberg-2.covariant-derivative
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.covariant-faddeev-popov-ghost-rules
+  label: Covariant Faddeev–Popov ghost propagator and vertex rules
+  summary: Given the ghost determinant and a covariant gauge choice, ghosts have an
+    adjoint propagator and a derivative ghost–gauge vertex, occur internally, and
+    compensate unphysical gauge contributions. Source notation and coupling conventions
+    remain distinct.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.faddeev-popov-ghost-lagrangian-and-rules
+    note: Retains c and c-bar rules, oriented ghost number, and coupling equality.
+  - project: schwartz
+    node: schwartz.rxi-faddeev-popov-lagrangian-and-propagators
+    note: Retains the covariant propagator and physical-S-matrix internal-line qualification.
+  - project: weinberg-2
+    node: weinberg-2.covariant-gauge-ghost-propagator-and-vertex
+    note: Retains the generalized-xi-gauge adjoint propagator and one-vector vertex.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.2'
+    pages:
+    - 514
+    - 515
+  - source: schwartz
+    section: 25.4.1
+    pages:
+    - 498
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 26
+  notation: []
 - id: qft.current-roles-and-nondynamical-sources
   label: Roles of currents and nondynamical sources
   summary: A current can be a Noether current, an external prescribed charge flow,
@@ -457,6 +733,25 @@ nodes:
     pages:
     - 36
     note: Lists current roles and states the nondynamical-source qualification.
+  notation: []
+- id: qft.dewitt-notation-and-general-local-symmetry
+  label: De Witt notation for general local symmetries
+  summary: For general local symmetries, De Witt indices include spacetime and discrete
+    labels, with repeated indices standing for sums and integrals. This is notation
+    for extending the setup; it does not itself prove BRST unitarity for gravity or
+    string theory.
+  kind: representation
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.dewitt-notation-general-local-symmetry
+    note: Retains the expanded-index convention and its general-local-symmetry scope.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 36
+    - 37
   notation: []
 - id: qft.discrete-lorentz-transformations-and-causal-type
   label: Discrete Lorentz transformations and causal type
@@ -592,6 +887,88 @@ nodes:
     - 5
     note: Explains why equilibration motivates QFT.
   notation: []
+- id: qft.faddeev-popov-gauge-fixing-independence
+  label: Conditional Faddeev–Popov gauge-fixing independence
+  summary: Under the source's group and Jacobian assumptions, the gauge-fixed functional
+    integral is independent of the gauge-fixing functional and depends on its weight
+    only through normalization. The cancellation of the formally infinite gauge-orbit
+    volume is explicitly qualified, including a finite-lattice regularization discussion.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.faddeev-popov-gauge-fixing-independence
+    note: Preserves the theorem's group, Jacobian, and formal-volume qualifications.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 21
+    - 22
+  notation: []
+- id: qft.faddeev-popov-gauge-orbit-functional-integral
+  label: Faddeev–Popov gauge-orbit functional integral
+  summary: Gauge fixing factors the redundant gauge-orbit integration by a gauge condition
+    and the determinant of its gauge variation. In a non-Abelian theory the determinant
+    is field dependent; the general De Witt formulation also states the gauge-invariant
+    measure, gauge-fixing functional, and weight assumptions. This construction does
+    not by itself establish the later BRST or physical-state conclusions.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonabelian-faddeev-popov-determinant-and-gauge-fixing
+    note: Retains the linear-G(A) adjoint-covariant-operator derivation and gauge-invariant-correlator
+      scope.
+  - project: schwartz
+    node: schwartz.faddeev-popov-gauge-orbit-determinant
+    note: Retains the delta(G[A]) construction and its field-dependent Lorenz-gauge
+      determinant.
+  - project: weinberg-2
+    node: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+    note: Retains the De Witt weighted-functional formulation and axial-gauge special
+      case.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.2 The Faddeev-Popov Lagrangian
+    pages:
+    - 512
+    - 513
+    - 514
+  - source: schwartz
+    section: 25.4.1
+    pages:
+    - 497
+    - 498
+    - 499
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 19
+    - 20
+  notation:
+  - source: peskin-schroeder
+    note: Peskin and Schroeder use G(A) and an adjoint covariant derivative; Weinberg
+      uses f^a and a functional matrix.
+- id: qft.faddeev-popov-ghost-determinant
+  label: Faddeev–Popov determinant as ghost fields
+  summary: A field-dependent Faddeev–Popov determinant is exponentiated with independent
+    anticommuting ghost and antighost variables. Their Fermi statistics give the determinant
+    rather than its inverse, and they carry ghost number without labeling external
+    physical particles.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.faddeev-popov-ghost-determinant
+    note: Retains the determinant representation, independent variables, and ghost-number
+      statement.
+  evidence:
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 25
+  notation: []
 - id: qft.fermi-golden-rule-field-interaction
   label: Fermi golden rule for a field-creating interaction
   summary: Using Γ∼|⟨f|H_int|i⟩|²δ(E_f−E_i), a Hermitian interaction that creates
@@ -696,6 +1073,27 @@ nodes:
     node: weinberg-2.finite-gauge-transformations
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.first-class-electromagnetic-constraints-and-gauge-choice-route
+  label: First-class electromagnetic constraints and the canonical gauge-choice route
+  summary: For electromagnetism, the absence of a time derivative of A0 gives a primary
+    constraint and Gauss's law gives a secondary constraint. Their first-class character
+    prevents direct canonical quantization of all A_mu, so this source follows a gauge-choice
+    route. It merely points forward to Volume II BRST quantization; it does not construct
+    or prove the BRST route.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.coulomb-gauge-constraint-structure
+    note: Preserves the canonical first-class-constraint treatment and its explicit,
+      non-probative forward BRST reference.
+  evidence:
+  - source: weinberg-1
+    section: 8.2 Constraints and Gauge Conditions
+    pages:
+    - 344
+    - 345
+  notation: []
 - id: qft.fock-space-particle-sectors
   label: Fock space and physical particle sectors
   summary: For one particle type, the Fock space is organized into Hilbert spaces
@@ -764,6 +1162,25 @@ nodes:
     node: schwartz.free-scalar-field-mode-expansion
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.gauge-affine-connection-curvature-analogy-limit
+  label: Gauge and affine-connection curvature analogy, with its limit
+  summary: 'Gauge fields and affine connections both construct covariant derivatives,
+    and their derivative commutators yield field strength or curvature. The analogy
+    stops at origin: the affine connection is built from metric derivatives, whereas
+    the gauge field is not expressed through more fundamental fields.'
+  kind: representation
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-and-affine-connection-curvature-analogy
+    note: Retains both the commutator analogy and the source's stated limitation.
+  evidence:
+  - source: weinberg-2
+    section: 15.1–15.2
+    pages:
+    - 6
+    - 7
+  notation: []
 - id: qft.gauge-field-lagrangian-restrictions
   label: Gauge-field terms and mass restriction
   summary: Within this construction, the gauge field may occur only through field
@@ -818,6 +1235,25 @@ nodes:
     node: weinberg-2.gauge-field-transformation
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.gauge-invariant-functional-measure-assumption
+  label: Gauge-invariant functional-measure assumption
+  summary: For infinitesimal gauge transformations, the gauge-field Jacobian is unity
+    to first order because the contracted structure constants vanish. The matter-field
+    measure is assumed gauge invariant; the source flags subtleties and defers their
+    treatment to its anomaly discussion.
+  kind: assumption
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-invariant-functional-measure-assumption
+    note: Retains the first-order gauge-field argument and the explicit matter-measure
+      assumption.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 18
+  notation: []
 - id: qft.gauge-invariant-lagrangian-ingredients
   label: Gauge-covariant ingredients for a Lagrangian
   summary: A Lagrangian built from matter fields, their gauge-covariant derivatives,
@@ -838,6 +1274,145 @@ nodes:
     node: weinberg-2.gauge-invariant-lagrangian-ingredients
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.gauge-theory-ghost-loop-historical-framing
+  label: Gauge-theory and ghost-loop historical framing
+  summary: The opening frames local non-Abelian gauge theories as physically important
+    and warns that naive rules need ghost loops. Its comments about heavy and trapped
+    vector particles are forward references, not a derivation of either mechanism.
+  kind: concept
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-theory-heavy-trapped-and-ghost-loop-framing
+    note: Retains the source's historical framing and its explicit deferral of the
+      mechanisms.
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 2
+  notation: []
+- id: qft.general-brst-cohomology-of-ghost-number-zero-functionals
+  label: General BRST cohomology of ghost-number-zero functionals
+  summary: Within the stated general setup, a BRST-invariant ghost-number-zero functional
+    is a gauge-invariant functional of original fields plus an s-exact functional
+    of ghost number minus one. The result is paired with its proof-completion method
+    below, rather than treating its initial statement as a completed proof.
+  kind: result
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-brst-cohomology-functional-result
+    note: Retains the stated result and records that its proof starts on the cited
+      page.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 40
+  notation: []
+- id: qft.general-brst-cohomology-proof-completion
+  label: General BRST cohomology proof completion
+  summary: The Hodge-operator argument makes each BRST-closed component with nonzero
+    total antighost-plus-auxiliary-field number BRST exact. The remaining ghost-number-zero
+    component is independent of ghosts, antighosts, and auxiliary fields and is represented
+    by a gauge-invariant functional of the original fields.
+  kind: method
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-brst-cohomology-proof-completion
+    note: Retains the completion as a method distinct from the stated cohomology result.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+  notation: []
+- id: qft.general-faddeev-popov-dewitt-theorem
+  label: General Faddeev–Popov–De Witt theorem
+  summary: For general local transformations, gauge-fixing functionals must make the
+    variation matrix nonsingular. Under the stated invariant-functional and measure
+    assumptions, the theorem writes the integral with that determinant and a gauge-fixing
+    weight, whose choice affects only normalization.
+  kind: result
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-faddeev-popov-dewitt-theorem
+    note: Retains the nonzero-determinant condition and normalization qualification.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 37
+    - 38
+  notation: []
+- id: qft.generalized-brst-slavnov-operator-and-closure
+  label: Generalized BRST Slavnov operator and closure condition
+  summary: For general local symmetries, the Slavnov operator acts on fields, ghosts,
+    antighosts, and auxiliary fields with possibly field-dependent variations and
+    structure functions. Nilpotence requires closure plus a generalized consistency
+    condition replacing the ordinary constant-structure Jacobi identity.
+  kind: method
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.generalized-brst-slavnov-operator
+    note: Retains the field-dependent structure-function and left-derivative qualifications.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 39
+    - 40
+  notation:
+  - source: weinberg-2
+    note: A subscript L denotes left differentiation for fermionic variables.
+- id: qft.generalized-xi-gauge-propagator
+  label: Generalized xi-gauge propagator
+  summary: Choosing f^a=partial^mu A^a_mu with a Gaussian xi weight yields a covariant
+    vector propagator whose longitudinal part depends on xi; xi=0 and xi=1 recover
+    Landau and Feynman gauges.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.generalized-feynman-gauge-propagator
+    note: Retains the xi-gauge construction and parameter-dependent propagator.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 23
+  notation: []
+- id: qft.ghost-loop-compensation-of-unphysical-gauge-modes
+  label: Ghost-loop compensation of unphysical gauge modes
+  summary: Anticommuting ghost loops supply a minus sign that compensates unphysical
+    gauge-mode contributions. Peskin and Schroeder demonstrate this in a two-gauge-boson
+    Cutkosky cut; Weinberg gives the covariant-gauge degree-of-freedom interpretation.
+    Neither passage alone is a general proof for every local symmetry.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.ghost-cancellation-of-unphysical-cut-states
+    note: Retains the forward–backward polarization Cutkosky-cut cancellation.
+  - project: weinberg-2
+    node: weinberg-2.ghost-loop-compensation-and-power-counting
+    note: Retains the negative-degree-of-freedom and power-counting framing.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.3 Ghosts and Unitarity
+    pages:
+    - 515
+    - 516
+    - 517
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 27
+  notation: []
 - id: qft.graviton-polarizations-and-trace-coupling
   label: Graviton polarizations and trace coupling
   summary: The graviton-polarization problem treats h_μν as a symmetric tensor coupled
@@ -1235,6 +1810,26 @@ nodes:
     node: weinberg-2.local-matter-gauge-transformations
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.local-pointwise-and-component-gauge-choices
+  label: Pointwise and one-component local gauge choices
+  summary: A finite gauge transformation can set the gauge potential to zero at one
+    chosen point, and can set one chosen spacetime component to zero for all gauge
+    indices in a finite neighborhood by solving first-order equations. This source-specific
+    local construction does not assert removal of all components on a region.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.local-pointwise-and-component-gauge-choices
+    note: Retains only the assigned pointwise and one-component local choices.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+  notation:
+  - source: weinberg-2
+    note: The source writes finite parameters as Lambda^alpha(x).
 - id: qft.loop-momentum-integration-and-divergence
   label: Loop momentum integration and ultraviolet divergence
   summary: A virtual momentum not fixed at vertices is summed by integrating over
@@ -1507,6 +2102,23 @@ nodes:
     node: weinberg-2.nonabelian-field-strength
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.nonabelian-noether-current-conservation-task
+  label: Non-Abelian Noether-current conservation task
+  summary: The assigned task is to check on-shell conservation of J^a_mu = minus psi-bar
+    gamma_mu T^a psi plus f^{abc} A^b_nu F^c_{mu nu}. It is a task prompt, not a completed
+    derivation in this packet.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.nonabelian-noether-current-conservation-task
+    note: Retains the on-shell conservation task and its stated current.
+  evidence:
+  - source: schwartz
+    section: Problem 25.5
+    pages:
+    - 507
+  notation: []
 - id: qft.nonlinear-gravity-dimensional-analysis-and-perihelion
   label: Nonlinear gravity, dimensional analysis, and perihelion shift
   summary: The nonlinear-gravity problem rescales a schematic gravitational field,
@@ -1600,6 +2212,24 @@ nodes:
     node: schwartz.one-particle-position-state-from-field
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.original-yang-mills-su2-representation-example
+  label: Original Yang–Mills SU(2) representation example
+  summary: The original Yang–Mills example uses a proton–neutron doublet, isospin
+    generators, antisymmetric epsilon structure constants, and identifies the matter
+    and adjoint matrices with spin-one-half and spin-one representations of the rotation
+    algebra. It is an example, not an identification with modern observed vector fields.
+  kind: representation
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.original-yang-mills-su2-representation-example
+    note: Preserves the historically specific SU(2) representation example.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+  notation: []
 - id: qft.parity-covariance-constraint
   label: Parity covariance constrains intrinsic parities
   summary: Requiring the parity-transformed causal scalar field to remain proportional
@@ -1664,6 +2294,28 @@ nodes:
     pages:
     - 40
     note: Develops the nonlinear scalar-gravity perturbative expansion.
+  notation: []
+- id: qft.peskin-brst-restricted-unitarity-and-transverse-cuts
+  label: Peskin–Schroeder BRST restricted unitarity and transverse cuts
+  summary: After the auxiliary-field BRST state-space construction, the full unitary
+    S matrix restricts to a unitary S matrix between transverse states, and Cutkosky
+    cuts reduce to transverse intermediate gauge bosons to all orders. This is the
+    Peskin–Schroeder consequence, not an attribution to the Schwartz cohomology observation
+    or Weinberg's gauge-fixing argument.
+  kind: result
+  group: qft.brst-and-physical-states
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.brst-physical-state-space-and-restricted-unitarity
+    note: Retains the H0/H1/H2 state decomposition, restricted-unitarity result, and
+      all-order transverse-cut scope.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.4'
+    pages:
+    - 519
+    - 520
+    - 521
   notation: []
 - id: qft.peskin-canonical-quantization-prescription
   label: Peskin-Schroeder canonical quantization prescription for a real field
@@ -1957,6 +2609,26 @@ nodes:
     node: schwartz.euler-lagrange-and-klein-gordon-equations
     note: Corresponds to the composite presentation’s real-scalar Klein-Gordon Lagrangian
       component.
+- id: qft.reducible-gauge-symmetry-and-ghosts-of-ghosts
+  label: Reducible gauge symmetry and ghosts of ghosts
+  summary: A determinant construction assumes independent gauge transformations. For
+    p-form gauge fields with p at least two, parameter redundancy from d squared equals
+    zero requires ghosts of ghosts, with further generations for higher p. This is
+    a reducibility qualification, not an extra ghost species for ordinary irreducible
+    Yang–Mills theory.
+  kind: result
+  group: qft.general-brst
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.reducible-gauge-symmetry-and-ghosts-of-ghosts
+    note: Retains the p-form and independent-transformation conditions.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 38
+    - 39
+  notation: []
 - id: qft.relativistic-field-viewpoint
   label: Relativistic field viewpoint
   summary: A relativistic quantum description must accommodate variable particle number
@@ -2009,6 +2681,42 @@ nodes:
     pages:
     - 12
     note: Defines orthogonality and the rotationally invariant norm.
+  notation: []
+- id: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  label: Rxi gauge fixing with Faddeev–Popov ghosts
+  summary: For spontaneously broken gauge theory, G[A,pi]=partial dot A minus xi m_A
+    pi removes vector–Goldstone kinetic mixing. In the non-Abelian case its Faddeev–Popov
+    determinant yields ghosts governed by partial_mu D^mu plus xi m_A squared.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.rxi-gauge-fixing-and-faddeev-popov-ghosts
+    note: Retains the broken-gauge-theory mixing-removal purpose and its non-Abelian
+      determinant.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 581
+  notation: []
+- id: qft.rxi-propagators-and-gauge-dependent-unphysical-masses
+  label: Rxi propagators and gauge-dependent unphysical masses
+  summary: In Rxi gauge, the vector propagator has a physical pole at p squared equals
+    m_A squared and a xi-dependent longitudinal pole, while Goldstone and ghost propagators
+    have p squared equals xi m_A squared. These gauge-dependent poles do not state
+    independent physical particle masses.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.rxi-propagators-and-gauge-dependent-unphysical-masses
+    note: Retains the explicit physical-versus-unphysical pole qualification.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 581
   notation: []
 - id: qft.scalar-lorentz-representation
   label: Scalar Lorentz representation and zero spin
@@ -2278,6 +2986,26 @@ nodes:
     note: The chapter names Feynman trace technology and describes both its trace
       calculation and mass restoration.
   notation: []
+- id: qft.yang-mills-three-and-four-vector-vertices
+  label: Three- and four-vector Yang–Mills vertices
+  summary: Cubic and quartic terms of the non-Abelian field-strength Lagrangian give
+    three- and four-vector momentum-space vertices. In the source convention the structure
+    constants include coupling factors, so the two vertices have different coupling
+    orders.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.yang-mills-three-and-four-vector-vertices
+    note: Retains the distinct field-strength vertex result and coupling convention.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 24
+  notation:
+  - source: weinberg-2
+    note: C_{abc} includes coupling factors.
 - id: qft.yukawa-potential-and-massive-vector-constraint
   label: Yukawa potential and massive-vector constraint
   summary: The massive-vector source problem derives the field equation and a constraint
@@ -2299,6 +3027,591 @@ nodes:
     note: States the massive-vector potential, constraint, and m→0 tasks.
   notation: []
 edges:
+- id: full-align-002-adjoint-to-su2-example
+  from: qft.adjoint-representation
+  to: qft.original-yang-mills-su2-representation-example
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The example identifies the adjoint matrices as spin one.
+  failure_mode: The source's representation comparison cannot be made.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+- id: full-align-002-brst-exact-to-general-action
+  from: qft.brst-exact-gauge-fixing-functional
+  to: qft.brst-general-action-and-yang-mills-unitarity-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general action result extends the displayed sPsi organization beyond
+    the bilinear Faddeev–Popov form.
+  failure_mode: The role of the arbitrary ghost-number-minus-one functional is lost.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 31
+    - 32
+    - 35
+    - 36
+- id: full-align-002-canonical-route-alternative-brst
+  from: qft.first-class-electromagnetic-constraints-and-gauge-choice-route
+  to: qft.brst-auxiliary-field-transformations-and-nilpotence
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: Weinberg I identifies canonical gauge choice and the later Lorentz-invariant
+    BRST method as different useful responses to the gauge-redundancy quantization
+    difficulty; Volume II supplies the later BRST construction.
+  failure_mode: Treating the two routes as cumulative prerequisites would wrongly
+    require the Coulomb-gauge constraint derivation for the BRST construction, while
+    treating the forward reference as a proof would overstate Volume I.
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 345
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 28
+    - 29
+    - 30
+    - 31
+- id: full-align-002-cohomology-to-conditional-independence
+  from: qft.brst-cohomology-and-physical-state-qualification
+  to: qft.brst-conditional-ghost-free-gauge-independence
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The conditional gauge-independence argument is between Q-closed physical
+    states.
+  failure_mode: The required physical-state condition is absent.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 41
+- id: full-align-002-cohomology-to-free-example
+  from: qft.brst-cohomology-and-physical-state-qualification
+  to: qft.brst-free-electrodynamic-polarization-example
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free-field example applies Q-closed modulo Q-exact physical-state
+    criteria.
+  failure_mode: Its polarization equivalence has no physicality criterion.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 33
+    - 34
+- id: full-align-002-cohomology-to-yang-mills-unitarity
+  from: qft.brst-cohomology-and-physical-state-qualification
+  to: qft.brst-general-action-and-yang-mills-unitarity-result
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Yang–Mills result defines the physical space by Q cohomology.
+  failure_mode: The space whose positivity and unitarity are stated is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 35
+    - 36
+- id: full-align-002-connection-inputs-to-analogy
+  from: qft.covariant-derivative
+  to: qft.gauge-affine-connection-curvature-analogy-limit
+  relation: prerequisite
+  source_level: recognize
+  target_level: recognize
+  necessity: necessary
+  rationale: The analogy compares covariant derivatives built from gauge and affine
+    connections.
+  failure_mode: Its first comparison term is undefined.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 6
+- id: full-align-002-determinant-plus-xi-to-ghost-rules
+  from: qft.faddeev-popov-ghost-determinant
+  to: qft.covariant-faddeev-popov-ghost-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator and vertex come from the exponentiated determinant after
+    choosing a covariant gauge.
+  failure_mode: The ghost operator has no field representation.
+  evidence:
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 25
+    - 26
+- id: full-align-002-dewitt-to-general-fp
+  from: qft.dewitt-notation-and-general-local-symmetry
+  to: qft.general-faddeev-popov-dewitt-theorem
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The general theorem is stated using the De Witt field and gauge-variation
+    indices.
+  failure_mode: The functional matrix and its nonzero-determinant condition cannot
+    be read.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 37
+    - 38
+- id: full-align-002-dewitt-to-slavnov
+  from: qft.dewitt-notation-and-general-local-symmetry
+  to: qft.generalized-brst-slavnov-operator-and-closure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The generalized operator is written in De Witt field and gauge-variation
+    indices.
+  failure_mode: Its indexed transformations cannot be interpreted.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 37
+    - 39
+- id: full-align-002-field-strength-to-analogy
+  from: qft.nonabelian-field-strength
+  to: qft.gauge-affine-connection-curvature-analogy-limit
+  relation: prerequisite
+  source_level: recognize
+  target_level: recognize
+  necessity: necessary
+  rationale: The analogy compares gauge field strength with curvature.
+  failure_mode: Its commutator/curvature comparison is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 6
+- id: full-align-002-field-strength-to-vertices
+  from: qft.nonabelian-field-strength
+  to: qft.yang-mills-three-and-four-vector-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cubic and quartic vertices are read from the non-Abelian field-strength
+    Lagrangian.
+  failure_mode: Their interaction terms cannot be identified.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 24
+- id: full-align-002-finite-to-local-choice
+  from: qft.finite-gauge-transformations
+  to: qft.local-pointwise-and-component-gauge-choices
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The local choice is implemented by a finite gauge transformation.
+  failure_mode: The transformation used to impose the pointwise or component condition
+    is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 5
+- id: full-align-002-fp-to-brst
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.brst-auxiliary-field-transformations-and-nilpotence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The BRST construction acts on the gauge-fixed Faddeev–Popov field content
+    and action.
+  failure_mode: The action and ghost fields whose BRST symmetry is tested are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.2–16.4
+    pages:
+    - 514
+    - 517
+    - 518
+  - source: weinberg-2
+    section: 15.6–15.7
+    pages:
+    - 27
+    - 28
+    - 29
+- id: full-align-002-fp-to-ghost-determinant
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.faddeev-popov-ghost-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The ghost action exponentiates the field-dependent gauge-variation determinant.
+  failure_mode: There is no determinant to represent.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.2'
+    pages:
+    - 513
+    - 514
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 25
+- id: full-align-002-fp-to-independence
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.faddeev-popov-gauge-fixing-independence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The theorem proves independence for the specified Faddeev–Popov integral.
+  failure_mode: The integral whose gauge choice is varied is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 19
+    - 20
+    - 21
+    - 22
+- id: full-align-002-fp-to-rxi
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The broken-theory Rxi construction applies the Faddeev–Popov determinant
+    to its gauge-fixing functional.
+  failure_mode: The non-Abelian ghost determinant has no derivation.
+  evidence:
+  - source: schwartz
+    section: 25.4.1; 28.4
+    pages:
+    - 497
+    - 498
+    - 581
+- id: full-align-002-general-fp-to-reducibility
+  from: qft.general-faddeev-popov-dewitt-theorem
+  to: qft.reducible-gauge-symmetry-and-ghosts-of-ghosts
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The reducibility qualification identifies when the theorem's independent-transformation
+    ghost count fails.
+  failure_mode: The need for ghosts of ghosts lacks its determinant-counting context.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 37
+    - 38
+    - 39
+- id: full-align-002-general-result-to-proof
+  from: qft.general-brst-cohomology-of-ghost-number-zero-functionals
+  to: qft.general-brst-cohomology-proof-completion
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The following Hodge argument completes the stated cohomology result.
+  failure_mode: The proof target is not specified.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 40
+    - 41
+- id: full-align-002-general-slavnov-to-cohomology-proof
+  from: qft.generalized-brst-slavnov-operator-and-closure
+  to: qft.general-brst-cohomology-proof-completion
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The proof applies BRST closure and the generalized Slavnov setup before
+    using the Hodge relation to classify closed functionals.
+  failure_mode: The differential whose cohomology is being classified is undefined.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 39
+    - 40
+    - 41
+- id: full-align-002-ghost-rules-to-compensation
+  from: qft.covariant-faddeev-popov-ghost-rules
+  to: qft.ghost-loop-compensation-of-unphysical-gauge-modes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The compensating amplitude and fermionic loop sign use the covariant
+    ghost rules.
+  failure_mode: The compensating contribution cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.2–16.3
+    pages:
+    - 514
+    - 516
+    - 517
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 26
+    - 27
+- id: full-align-002-ghost-rules-to-peskin-brst
+  from: qft.covariant-faddeev-popov-ghost-rules
+  to: qft.brst-auxiliary-field-transformations-and-nilpotence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder BRST symmetry acts on the ghost-extended gauge-fixed
+    action.
+  failure_mode: The ghost field content is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.2–16.4
+    pages:
+    - 514
+    - 517
+    - 518
+- id: full-align-002-ghost-rules-to-schwartz-brst
+  from: qft.covariant-faddeev-popov-ghost-rules
+  to: qft.brst-faddeev-popov-transformation-and-nilpotence-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Schwartz's BRST transformations are for the ghost-extended Faddeev–Popov
+    Lagrangian.
+  failure_mode: The c and c-bar terms whose variation is tested are missing.
+  evidence:
+  - source: schwartz
+    section: 25.4.1–25.4.2
+    pages:
+    - 498
+    - 500
+    - 501
+- id: full-align-002-lie-to-brst-nilpotence
+  from: qft.lie-algebra-structure-constants
+  to: qft.brst-auxiliary-field-transformations-and-nilpotence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nilpotence cancellation uses antisymmetry and the Jacobi identity.
+  failure_mode: The quadratic ghost variation cannot be shown nilpotent.
+  evidence:
+  - source: weinberg-2
+    section: 15.1; 15.7
+    pages:
+    - 3
+    - 29
+    - 30
+- id: full-align-002-lie-to-su2-example
+  from: qft.lie-algebra-structure-constants
+  to: qft.original-yang-mills-su2-representation-example
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The example identifies SU(2) structure constants and representations.
+  failure_mode: The representation comparison has no algebraic data.
+  evidence:
+  - source: weinberg-2
+    section: '15.1'
+    pages:
+    - 3
+- id: full-align-002-measure-to-fp
+  from: qft.gauge-invariant-functional-measure-assumption
+  to: qft.faddeev-popov-gauge-orbit-functional-integral
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The De Witt functional-integral setup assumes the gauge-invariant measure.
+  failure_mode: The change-of-variables theorem lacks its measure premise.
+  evidence:
+  - source: weinberg-2
+    section: 15.4–15.5
+    pages:
+    - 18
+    - 19
+    - 20
+- id: full-align-002-nilpotence-to-brst-exact
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.brst-exact-gauge-fixing-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Nilpotence establishes invariance of the sPsi gauge-fixing term.
+  failure_mode: The claimed BRST invariance of sPsi does not follow.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 31
+    - 32
+- id: full-align-002-peskin-brst-to-restricted-unitarity
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.peskin-brst-restricted-unitarity-and-transverse-cuts
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Peskin and Schroeder build the restricted physical-state result from
+    the conserved nilpotent charge.
+  failure_mode: The H0 state space and restricted S matrix cannot be defined.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.4'
+    pages:
+    - 518
+    - 519
+    - 520
+    - 521
+- id: full-align-002-pure-gauge-to-analogy
+  from: qft.pure-gauge-flatness
+  to: qft.gauge-affine-connection-curvature-analogy-limit
+  relation: prerequisite
+  source_level: recognize
+  target_level: recognize
+  necessity: necessary
+  rationale: The analogy compares the flatness criteria for local removal of gauge
+    and affine connections.
+  failure_mode: The local-removal comparison is incomplete.
+  evidence:
+  - source: weinberg-2
+    section: 15.1–15.2
+    pages:
+    - 6
+    - 7
+- id: full-align-002-rxi-fixing-to-rxi-propagators
+  from: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  to: qft.rxi-propagators-and-gauge-dependent-unphysical-masses
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The propagators follow by inverting the kinetic terms after the Rxi gauge-fixing
+    term removes vector–Goldstone mixing.
+  failure_mode: The pole structure and xi-dependent unphysical masses cannot be derived.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 581
+- id: full-align-002-schwartz-route-to-cohomology
+  from: qft.brst-faddeev-popov-transformation-and-nilpotence-task
+  to: qft.brst-cohomology-and-physical-state-qualification
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: Schwartz develops the cohomology observation from the Faddeev–Popov-form
+    Slavnov transformation and separately assigns its nilpotence check.
+  failure_mode: Treating this as a prerequisite from the Peskin auxiliary route would
+    make a distinct source route compulsory.
+  evidence:
+  - source: schwartz
+    section: 25.4.2; Problem 25.7
+    pages:
+    - 500
+    - 501
+    - 507
+- id: full-align-002-slavnov-to-general-result
+  from: qft.generalized-brst-slavnov-operator-and-closure
+  to: qft.general-brst-cohomology-of-ghost-number-zero-functionals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cohomology result concerns the generalized nilpotent BRST differential.
+  failure_mode: The differential being classified is undefined.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 39
+    - 40
+- id: full-align-002-weinberg-brst-exact-route-to-cohomology
+  from: qft.brst-exact-gauge-fixing-functional
+  to: qft.brst-cohomology-and-physical-state-qualification
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg derives the Q-cohomology physical-state condition after the
+    auxiliary-field nilpotence and BRST-exact gauge-fixing construction.
+  failure_mode: Omitting the BRST-exact action route loses Weinberg's additional construction
+    input; making the Schwartz route necessary conflates alternatives.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 31
+    - 32
+    - 33
+- id: full-align-002-xi-to-ghost-rules
+  from: qft.generalized-xi-gauge-propagator
+  to: qft.covariant-faddeev-popov-ghost-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed ghost operator and covariant rules are evaluated in generalized
+    xi gauge.
+  failure_mode: The gauge-specific free and interaction terms are unspecified.
+  evidence:
+  - source: weinberg-2
+    section: 15.5–15.6
+    pages:
+    - 23
+    - 26
+- id: full-align-002-yang-mills-to-gravity-limit
+  from: qft.brst-general-action-and-yang-mills-unitarity-result
+  to: qft.brst-light-cone-and-gravity-unitarity-limitation
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The later limitation contrasts the Yang–Mills decoupling proof with string
+    and gravity cases.
+  failure_mode: The comparison loses its stated reference case.
+  evidence:
+  - source: weinberg-2
+    section: 15.7–15.8
+    pages:
+    - 36
+    - 41
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -3583,6 +4896,8 @@ edges:
     - 3
     note: Equations (15.1.3), (15.1.5), and (15.1.6) state this construction.
 groups:
+- id: qft.brst-and-physical-states
+  title: BRST symmetry and physical states
 - id: qft.causal-scalar-fields
   title: Causal scalar fields and discrete symmetries
 - id: qft.classical-field-theory
@@ -3597,6 +4912,10 @@ groups:
   title: Free scalar-field quantization
   question: How do momentum-mode operators define a free scalar field and its equal-time
     quantum structure?
+- id: qft.gauge-quantization
+  title: Gauge fixing, ghosts, and quantization
+- id: qft.general-brst
+  title: General local symmetries and BRST
 - id: qft.lorentz-and-oscillators
   title: Lorentz invariance and oscillator modes
   question: How do relativistic symmetry and harmonic oscillator modes lead to a free-field
