@@ -2997,6 +2997,571 @@ nodes:
     - 92
     note: Constructs and normalizes the image basis before treating arbitrary rays.
   notation: []
+- id: qft.align011.degenerate-vacua-and-cluster-selection
+  label: Infinite-volume vacuum sectors and cluster selection
+  summary: At finite volume, symmetry eigenstates can be linear combinations of candidate
+    broken vacua because tunnelling gives nonzero off-diagonal Hamiltonian matrix
+    elements. Those elements are exponentially suppressed with spatial volume, so
+    arbitrarily weak local symmetry-breaking perturbations select stable sectors macroscopically;
+    at infinite volume locality and the continuum spectrum make local-operator matrix
+    elements diagonal, and exactly those sector vacua satisfy cluster decomposition
+    rather than arbitrary superpositions.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.degenerate-vacua-and-cluster-selection
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '19.1'
+    pages:
+    - 164
+    - 165
+    - 166
+    - 167
+    note: The source contrasts finite-volume mixing with its volume suppression, then
+      gives the infinite-volume local-operator and cluster-decomposition argument.
+- id: qft.align011.effective-action-1pi-tree-reconstruction
+  label: Effective action as the 1PI generator and tree reconstruction
+  summary: The quantum effective action generates one-particle-irreducible vertices.
+    Connected amplitudes are reconstructed as trees whose vertices are 1PI subgraphs,
+    with the source-specific external-field conventions retained. The Peskin–Schroeder
+    origin also supports the inverse-propagator part of the shared inverse-kernel
+    record below.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.effective-action-1pi-tree-reconstruction
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-1pi-generating-functional
+    note: Preserves the effective action as generator of 1PI correlators and the reconstruction
+      of connected amplitudes from full propagators.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 66
+    - 67
+    - 68
+    note: Equations (16.1.9)–(16.1.21) give the loop rescaling proof, shifted action,
+      and 1PI interpretation.
+  - source: peskin-schroeder
+    section: '11.5'
+    pages:
+    - 379
+    - 380
+    - 381
+    - 382
+    - 383
+    note: Derives the 1PI functional-derivative interpretation and connected-amplitude
+      reconstruction.
+- id: qft.align011.effective-action-background-field-expansion
+  label: Background-field expansion of the effective action
+  summary: Write phi=phi-cl+eta and choose the leading source so the eta-linear term
+    vanishes. The quadratic fluctuation operator produces a functional determinant,
+    cubic and higher derivatives produce vacuum diagrams with its inverse as propagator,
+    and ordinary counterterms plus a source counterterm cancel divergences and tadpoles.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-background-field-expansion
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 370
+    - 371
+    - 372
+    - 373
+- id: qft.align011.effective-action-varying-background-proof-boundary
+  label: Effective-action renormalization boundary for varying backgrounds
+  summary: The general argument is presented for scalar fields and constant backgrounds,
+    where BPHZ applies after the propagators become ordinary Klein-Gordon propagators.
+    For smoothly varying backgrounds the source gives an intuitive locality and derivative-expansion
+    argument rather than a BPHZ-level proof, reporting two-loop checks for several
+    nontrivial configurations; spinor and vector generalization is asserted rather
+    than derived.
+  kind: assumption
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-varying-background-proof-boundary
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 386
+    - 387
+- id: qft.align011.effective-potential-constant-background
+  label: Effective potential for a constant background and vacuum candidates
+  summary: For a translationally invariant constant field, the effective action factors
+    into spacetime volume times an ordinary effective potential. Its stationary points
+    are quantum field configurations, and its absolute minimum selects the stable
+    vacuum. The scoped Peskin–Schroeder treatment retains fixed-background unstable
+    or metastable branches without confusing them with the exact mixed-state convexity
+    construction.
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.effective-potential-constant-background
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-potential-vacua-and-convexity
+    note: Preserves the constant-field Gamma/V_eff relation, vacuum minimum, and fixed-background
+      branch qualification.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 68
+    - 69
+    note: Equations (16.2.1)–(16.2.5) define the constant-background potential and
+      shifted mass.
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 367
+    - 368
+    note: Relates constant fields to V_eff and identifies the quantum vacuum through
+      its minimum.
+- id: qft.align011.effective-potential-constrained-energy-interpretation
+  label: Effective potential as constrained minimum energy density
+  summary: Adiabatically turning on a static source relates W to the ground-state
+    energy in that source. Legendre transformation then shows that Γ[φ] is minus the
+    minimum energy among normalized states constrained to have the specified field
+    expectation values; for a constant field, V(φ) is that minimum energy density.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.effective-potential-constrained-energy-interpretation
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 72
+    - 73
+    - 74
+    note: Equations (16.3.1)–(16.3.15) establish the constrained-energy interpretation.
+- id: qft.align011.exact-effective-potential-convexity-and-mixed-state-region
+  label: Exact effective-potential convexity and the mixed-state region
+  summary: The exact effective potential is convex because it is the constrained energy
+    density, and between degenerate minima its linear region represents mixed states
+    rather than additional homogeneous pure vacua. The scoped Peskin–Schroeder origin
+    retains its phase-separation convexity explanation and the warning that a fixed-background
+    calculation can display nonconvex branches.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.exact-effective-potential-convexity-and-mixed-state-region
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-potential-vacua-and-convexity
+    note: Preserves the phase-separation convexity account and distinguishes it from
+      the fixed-background branches.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The page derives convexity and explains why the perturbative double-well
+      portion is replaced by a constant or linear segment.
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 368
+    - 369
+    note: Explains phase separation, convexity, and the fixed-background qualification.
+- id: qft.align011.external-source-generating-functional
+  label: External-source generating and connected functionals
+  summary: Coupling classical currents to fields defines the vacuum functional Z[J].
+    Its logarithm W[J] generates connected vacuum diagrams, while functional derivatives
+    with respect to a source give expectation values of the coupled operator in the
+    presence of that source.
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.external-source-generating-functional
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 63
+    - 64
+    - 65
+    note: Equations (16.1.1)–(16.1.5) introduce sources, connected diagrams, and the
+      source derivative.
+  notation:
+  - source: weinberg-2
+    note: The fields and currents may be fermionic; the initial discussion suppresses
+      their sign bookkeeping.
+- id: qft.align011.fermion-versus-boson-effective-potential-loop-sign
+  label: Fermion contribution to the effective potential has opposite determinant
+    sign
+  summary: A Dirac fermion with a background-dependent mass contributes an effective-potential
+    term with the opposite sign from a bosonic Gaussian and a fourfold coefficient
+    in the stated example, reflecting particle/antiparticle and two spin states.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.fermion-versus-boson-effective-potential-loop-sign
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 71
+    - 72
+    note: The text following Eq. (16.2.16) explains the fermion mass dependence, multiplicity,
+      and determinant sign.
+- id: qft.align011.full-two-point-function-is-inverse-1pi-kernel
+  label: Full two-point function as inverse 1PI kernel
+  summary: Differentiating the Legendre identities makes the complete two-point function
+    the inverse, up to the source conventions, of the effective-action two-point kernel.
+    The zeroes of that inverse kernel determine mass poles. The scoped Peskin–Schroeder
+    origin supplies the same second-derivative/inverse-propagator interpretation.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-1pi-generating-functional
+    note: Preserves the second-functional-derivative inverse-propagator interpretation;
+      it does not assert notation-level identity with Weinberg's Delta and Pi.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 68
+    note: Equations (16.1.19)–(16.1.21) derive A=−Π⁻¹.
+  - source: peskin-schroeder
+    section: '11.5'
+    pages:
+    - 381
+    - 383
+    note: Identifies the second derivative of the effective action with the inverse
+      propagator and its mass-pole use.
+- id: qft.align011.legendre-quantum-effective-action
+  label: Quantum effective action as a functional Legendre transform
+  summary: The external-source functional defines the expectation-value field, and
+    its functional Legendre transform gives Gamma with derivative fixed by the source.
+    At vanishing source, stationary configurations give the quantum field equation.
+    The shared record retains Peskin–Schroeder's vacuum-energy convention and Weinberg's
+    connected-functional convention without identifying their notation.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-legendre-transform
+    note: Preserves the vacuum-energy Legendre construction, including its sign convention
+      and zero-source stationary-state interpretation.
+  - project: weinberg-2
+    node: weinberg-2.legendre-quantum-effective-action
+    note: Preserves the connected-functional Legendre construction and its source-derivative
+      convention.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 364
+    - 365
+    - 366
+    - 367
+    note: Defines the classical field and Legendre transform in the vacuum-energy
+      convention.
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 65
+    - 66
+    note: Defines the quantum effective action as the source Legendre transform.
+  notation:
+  - source: peskin-schroeder
+    note: The transform is written using the vacuum-energy functional E[J] and phi_cl.
+  - source: weinberg-2
+    note: The transform is written using W[J] and the source-produced field phi.
+- id: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  label: Linear action symmetries yield Slavnov–Taylor identities for Γ
+  summary: If the action and measure are invariant under an infinitesimal field transformation,
+    changing variables in the sourced functional gives an identity involving the source
+    and the source-average transformation. For a linear transformation that average
+    equals the transformation of the mean field, so Γ inherits the corresponding linear
+    symmetry; with fermionic variables the identity requires left/right derivative
+    signs.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.linear-symmetry-slavnov-taylor-identity-for-effective-action
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 75
+    - 76
+    - 77
+    note: Equations (16.4.1)–(16.4.12) derive the identity, its linear case, and fermionic
+      sign form.
+- id: qft.align011.msbar-scale-and-large-log-qualification
+  label: Fixed-order MS-bar effective-potential scale and large-log qualification
+  summary: For the fixed-order effective-potential calculation, MS-bar subtracts the
+    dimensional pole with its conventional terms and introduces the scale M. Shifting
+    M is compensated by renormalized parameters, but logarithms large enough to compete
+    with a small coupling make that fixed-order potential unreliable for deciding
+    symmetry breaking. This record does not claim the broader generic subtraction-scale
+    or RG-improvement treatment.
+  kind: assumption
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.msbar-scale-and-large-log-qualification
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 377
+    - 378
+    - 379
+- id: qft.align011.nonlinear-symmetry-average-obstruction-for-effective-action
+  label: Nonlinear symmetry average obstructs identical Γ transformations
+  summary: For nonlinear field transformations, the expectation value of the transformation
+    functional generally differs from that functional evaluated on expectation values.
+    The induced effective-action transformation is therefore dynamics-dependent and
+    usually nonlocal, which motivates the antibracket construction used next.
+  kind: concept
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.nonlinear-symmetry-average-obstruction-for-effective-action
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 77
+    note: The discussion after Eq. (16.4.9) contrasts nonlinear BRST transformations
+      with the linear case.
+- id: qft.align011.on-sigma-effective-potential-determinant
+  label: O(N) effective potential from fluctuation determinants
+  summary: For a constant O(N) background, orienting it along one component splits
+    the fluctuation determinant into N−1 transverse and one radial Klein-Gordon determinant.
+    Its dimensional-regularization poles are canceled by the symmetric mass and quartic
+    counterterms; source-counterterm removal makes ordinary diagrammatic corrections
+    begin at two loops.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-sigma-effective-potential-determinant
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 374
+    - 375
+    - 376
+- id: qft.align011.on-sigma-tadpole-and-goldstone-one-loop
+  label: One-loop tadpole cancellation and massless pions
+  summary: An infrared pion-mass regulator clarifies massless tadpoles while the tadpole
+    condition fixes delta-mu. The linked counterterms cancel sigma two-point divergences;
+    at this order delta-Z vanishes. The complete pion two-point amplitude at zero
+    momentum is finite and vanishes, verifying that Goldstone bosons remain massless
+    at one loop.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-sigma-tadpole-and-goldstone-one-loop
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 361
+    - 362
+    - 363
+- id: qft.align011.one-loop-effective-potential-determinant-method
+  label: One-loop effective potential from a quadratic determinant
+  summary: For the shifted scalar theory, the one-loop effective action is the logarithm
+    of the quadratic fluctuation determinant. Diagonalizing the kernel in momentum
+    space converts its trace-log into a momentum integral; differentiating enough
+    times in the field-dependent mass makes the divergent integral convergent before
+    integrating back and absorbing the integration constants into renormalized vacuum,
+    mass, and quartic parameters.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.one-loop-effective-potential-determinant-method
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 70
+    - 71
+    note: Equations (16.2.7)–(16.2.15) calculate and renormalize the one-loop potential.
+- id: qft.align011.problem-finite-linear-symmetry-of-effective-action
+  label: 'Problem prompt: finite linear symmetry inherited by W and Γ'
+  summary: For an action invariant under a finite matrix transformation of fields,
+    determine the current transformation that leaves W invariant and use it to derive
+    the associated symmetry of Γ.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-finite-linear-symmetry-of-effective-action
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 4 asks for the current transformation and effective-action consequence.
+- id: qft.align011.problem-higher-connected-correlators-from-effective-action
+  label: 'Problem prompt: higher connected correlators from Γ derivatives'
+  summary: Derive the third and fourth derivatives of W[J] in terms of variational
+    derivatives of Γ[φ], and identify the Feynman diagrams represented by each term.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-higher-connected-correlators-from-effective-action
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 states the derivative and diagram-identification task.
+- id: qft.align011.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  label: 'Problem prompt: one-loop pseudoscalar Yukawa effective potential'
+  summary: Compute the one-loop effective potential at constant pseudoscalar field
+    and vanishing Dirac field for real pseudoscalars coupled to complex Dirac fields
+    through a pseudoscalar Yukawa interaction.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-one-loop-pseudoscalar-yukawa-effective-potential
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 requests this calculation.
+- id: qft.align011.problem-six-dimensional-cubic-effective-potential
+  label: 'Problem prompt: six-dimensional cubic-scalar effective potential'
+  summary: Calculate the one-loop effective potential for a neutral scalar with cubic
+    interaction in six spacetime dimensions.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-six-dimensional-cubic-effective-potential
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 3 requests the six-dimensional cubic calculation.
+- id: qft.align011.symmetric-counterterms-general-effective-action
+  label: Symmetry-preserving counterterms for constant scalar backgrounds
+  summary: For scalar field theories and constant classical backgrounds, power counting
+    plus BPHZ restricts divergences to local operators with nonnegative coefficient
+    dimension. Manifest symmetry of the effective action then restricts the required
+    counterterms to those invariant under the original symmetry, even when the vacuum
+    breaks it. The source asserts, rather than proves here, the spinor/vector extension.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.symmetric-counterterms-general-effective-action
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 384
+    - 385
+    - 386
+- id: qft.align011.vacuum-alignment-for-approximate-symmetry
+  label: Vacuum alignment under small explicit breaking
+  summary: With an invariant potential plus a small explicit-breaking term, the unperturbed
+    vacuum must be chosen so that the broken-direction derivative of the perturbation
+    vanishes. For a compact symmetry group, minimizing that perturbation along the
+    orbit supplies such an aligned vacuum and avoids a parametrically large vacuum
+    shift.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.vacuum-alignment-for-approximate-symmetry
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '19.3'
+    pages:
+    - 178
+    - 179
+    note: Equations (19.3.6)–(19.3.9) derive and establish the compact-group vacuum-alignment
+      condition.
+- id: qft.align011.zeroth-order-natural-relations
+  label: Zeroth-order natural relations as finite predictions
+  summary: A classical relation that holds for all choices of the symmetric Lagrangian
+    parameters receives no counterterm correction after those parameters are renormalized.
+    Its loop correction is therefore ultraviolet finite; the linear sigma-model sigma-mass
+    relation is the example.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.zeroth-order-natural-relations
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 387
+- id: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  label: Zinn–Justin equation for the quantum effective action
+  summary: Coupling external K fields to the BRST variations Aⁿ and Legendre transforming
+    only the ordinary sources makes the expectation of Aⁿ a K derivative of Γ[x,K].
+    BRST nilpotence then yields the Zinn–Justin equation, equivalently the vanishing
+    antibracket (Γ,Γ), as a quantum effective-action constraint.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+    note: Preserves this book-specific treatment, including its stated conditions,
+      notation, and proof or task boundary.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    - 82
+    note: Equations (17.1.1)–(17.1.11) introduce K, derive the derivative identity,
+      and give the Zinn–Justin equation.
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -5398,12 +5963,17 @@ nodes:
   - source: weinberg-2
     section: '19.2'
     pages:
+    - 170
     - 171
     - 172
-    - 170
+    note: The locality, current-conservation, spectral, and zero-mass-state reasoning
+      are retained together.
   notation:
   - source: weinberg-2
     note: The spectral coefficient rho_n(mu^2) contains the forced delta(mu^2) term.
+  - source: weinberg-2
+    note: The spectral conclusion uses the nonzero broken-charge commutator in a selected
+      vacuum and is an independent route from the effective-action proof.
 - id: qft.graviton-polarizations-and-trace-coupling
   label: Graviton polarizations and trace coupling
   summary: The graviton-polarization problem treats h_μν as a symmetric tensor coupled
@@ -7306,19 +7876,28 @@ nodes:
       route and its independent broken-generator count.
   evidence:
   - source: peskin-schroeder
-    section: '11.6'
+    section: 11.5–11.6
     pages:
+    - 381
     - 388
+    note: The 1PI/inverse-propagator interpretation and all-orders effective-action
+      proof are both retained.
   - source: weinberg-2
-    section: '19.2'
+    section: 16.4 and 19.2
     pages:
+    - 167
     - 168
+    note: The linear-symmetry identity, translationally invariant effective potential,
+      broken vacuum, and inverse-kernel step are retained.
   notation:
   - source: peskin-schroeder
     note: V_eff is obtained from Gamma for constant classical fields.
   - source: weinberg-2
     note: The source denotes the full propagator by Delta and its inverse at zero
       momentum by Delta inverse(0).
+  - source: weinberg-2
+    note: This route assumes a linearly realized exact continuous symmetry and a translationally
+      invariant broken vacuum; it is distinct from the current-spectral proof.
 - id: qft.rapidity-parameterization-of-boosts
   label: Rapidity parameterization of boosts
   summary: Boosts use hyperbolic angles β_i (rapidities); for one direction coshβ=1/√(1−v²)
@@ -12254,6 +12833,792 @@ edges:
     - 95
     - 96
     note: Makes the global choice and derives each operator type.
+- id: qft.align011.brst-exact-gauge-fixing-to-zinn-justin
+  from: qft.brst-exact-gauge-fixing-functional
+  to: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction starts from the gauge-fixed BRST-invariant action used
+    in the K-extended functional.
+  failure_mode: Without the gauge-fixed BRST action, the functional whose effective-action
+    identity is derived is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    note: The construction explicitly uses the Section 15.7 gauge-fixed action in
+      the K-extended functional.
+- id: qft.align011.brst-nilpotence-to-zinn-justin
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Nilpotence makes the BRST variations coupled to K invariant in the construction.
+  failure_mode: Without nilpotence, the K-coupled variation used to obtain the effective-action
+    condition is not justified.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    note: The source calls the construction a device for nilpotent symmetry transformations
+      and uses invariance of the BRST variations.
+- id: qft.align011.classical-master-equation-context-for-zinn-justin
+  from: qft.bv-antibracket-classical-master-equation
+  to: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The quantum effective-action relation is presented in the same antibracket
+    form as the classical master equation, with the source fields taking the antifield
+    role.
+  failure_mode: Without the comparison, the scope difference between a constraint
+    on the quantum effective action and one on the fundamental action is easy to miss.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 82
+    note: The page states the formal master-equation correspondence and distinguishes
+      the quantum-effective-action scope.
+- id: qft.align011.current-spectral-selected-vacuum
+  from: qft.align011.degenerate-vacua-and-cluster-selection
+  to: qft.goldstone-theorem-current-spectral-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonzero broken-charge commutator is taken in a selected vacuum sector
+    for the independent current-spectral argument.
+  failure_mode: Without selecting the vacuum sector, the nonzero commutator hypothesis
+    has no specified vacuum expectation value.
+  evidence:
+  - source: weinberg-2
+    section: 19.1–19.2
+    pages:
+    - 167
+    - 171
+    note: The selected-vacuum discussion and the current-spectral commutator condition
+      are both retained.
+- id: qft.align011.effective-action-goldstone-constant-background
+  from: qft.align011.effective-potential-constant-background
+  to: qft.quantum-effective-action-goldstone-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: For a translationally invariant vacuum, the effective action is evaluated
+    as a constant-field effective potential before its Hessian is used.
+  failure_mode: The zero-momentum Hessian cannot be identified from a general functional
+    without the constant-background specialization.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 167
+    - 168
+    note: The proof specializes to translationally invariant fields and their effective
+      potential.
+  - source: peskin-schroeder
+    section: 11.3, 11.6
+    pages:
+    - 367
+    - 388
+    note: The constant-field potential and its all-orders Goldstone application are
+      stated together.
+- id: qft.align011.effective-action-goldstone-inverse-kernel
+  from: qft.align011.full-two-point-function-is-inverse-1pi-kernel
+  to: qft.quantum-effective-action-goldstone-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Hessian zero mode yields a massless pole only through its inverse
+    relation to the complete two-point function.
+  failure_mode: A zero of an abstract effective-potential Hessian would not yet imply
+    the spectral massless-particle conclusion.
+  evidence:
+  - source: weinberg-2
+    section: 16.1, 19.2
+    pages:
+    - 68
+    - 168
+    note: The full two-point/1PI inverse relation is applied at zero momentum.
+  - source: peskin-schroeder
+    section: 11.5–11.6
+    pages:
+    - 381
+    - 383
+    - 388
+    note: The second functional derivative is identified with the inverse propagator
+      and used in the Goldstone conclusion.
+- id: qft.align011.effective-action-goldstone-linear-symmetry
+  from: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  to: qft.quantum-effective-action-goldstone-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The effective-action proof differentiates the identity inherited from
+    an exact continuous linear symmetry of the action and measure.
+  failure_mode: Without the identity, the broken-direction Hessian zero mode is not
+    established.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 167
+    - 168
+    note: The route starts from the linear transformation and carries its identity
+      to the effective potential.
+- id: qft.align011.effective-action-goldstone-selected-constant-vacuum
+  from: qft.align011.degenerate-vacua-and-cluster-selection
+  to: qft.quantum-effective-action-goldstone-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The argument is evaluated in one selected broken vacuum rather than in
+    a symmetric superposition.
+  failure_mode: Without a selected broken vacuum, there is no specified expectation
+    value at which to evaluate the broken-symmetry direction.
+  evidence:
+  - source: weinberg-2
+    section: 19.1–19.2
+    pages:
+    - 167
+    - 168
+    note: Cluster selection supplies the selected vacuum used by the effective-potential
+      argument.
+- id: qft.align011.linear-symmetry-to-direct-brst-renormalization
+  from: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  to: qft.direct-brst-renormalizability-induction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The direct induction restricts divergent terms by the linearly realized
+    Lorentz, global-gauge, antighost-translation, and ghost-number symmetries.
+  failure_mode: The classification of allowed local counterterms loses its stated
+    symmetry restrictions.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 84
+    - 88
+    note: The proof identifies the linearly realized symmetries and uses them to restrict
+      renormalizable terms.
+- id: qft.align011.linear-symmetry-to-zero-momentum-goldstone-vertices
+  from: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  to: qft.zero-momentum-goldstone-effective-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The zero-momentum vertex constraints follow by further differentiating
+    the effective-potential identity of a linearly realized exact symmetry.
+  failure_mode: Without that identity, the tadpole, transition, and three-Goldstone
+    cancellations are unsupported.
+  evidence:
+  - source: weinberg-2
+    section: '19.2'
+    pages:
+    - 176
+    - 177
+    note: The effective interactions and vanishing zero-momentum vertices are obtained
+      by differentiating the symmetry identity.
+- id: qft.align011.nonlinear-obstruction-context-for-zinn-justin
+  from: qft.align011.nonlinear-symmetry-average-obstruction-for-effective-action
+  to: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The nonlinear-average obstruction explains why an auxiliary-source identity
+    is introduced instead of treating the effective action as simply invariant under
+    nonlinear BRST transformations.
+  failure_mode: The construction can be memorized as an unmotivated formal trick if
+    the obstruction is omitted.
+  evidence:
+  - source: weinberg-2
+    section: 16.4, 17.1
+    pages:
+    - 77
+    - 80
+    note: The earlier nonlinear caveat and the later quadratic-BRST caveat identify
+      the same need for the extended construction.
+- id: qft.align011.peskin-schroeder.edge-background-to-determinant
+  from: qft.align011.effective-action-background-field-expansion
+  to: qft.align011.on-sigma-effective-potential-determinant
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The sigma-model computation is the stated general quadratic-determinant
+    method in a constant O(N) background.
+  failure_mode: The determinant formula would appear without its background-field
+    derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 371
+    - 374
+- id: qft.align011.peskin-schroeder.edge-determinant-to-msbar
+  from: qft.align011.on-sigma-effective-potential-determinant
+  to: qft.align011.msbar-scale-and-large-log-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: MS-bar is applied to the divergent determinant expression for the effective
+    potential.
+  failure_mode: The scale and logarithms would not be tied to the regulated calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 376
+    - 377
+- id: qft.align011.peskin-schroeder.edge-effective-action-to-background
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.effective-action-background-field-expansion
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The background-field expansion computes the Legendre-transformed functional
+    as a function of phi-cl.
+  failure_mode: The shifted source and fluctuation expansion have no target functional.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.3–11.4
+    pages:
+    - 366
+    - 370
+- id: qft.align011.peskin-schroeder.edge-effective-boundary-to-symmetric-counterterms
+  from: qft.align011.effective-action-varying-background-proof-boundary
+  to: qft.align011.symmetric-counterterms-general-effective-action
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: This records the proof boundary of the general counterterm conclusion.
+  failure_mode: The constant-background proof could be overgeneralized.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 386
+    - 387
+- id: qft.align011.peskin-schroeder.edge-symmetric-counterterms-to-natural-relations
+  from: qft.align011.symmetric-counterterms-general-effective-action
+  to: qft.align011.zeroth-order-natural-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finiteness of loop corrections to a classical parameter relation
+    uses the fact that counterterms preserve it.
+  failure_mode: One could not infer ultraviolet finiteness of the predicted correction.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 387
+- id: qft.align011.w-degenerate-vacua-to-current-spectral
+  from: qft.align011.degenerate-vacua-and-cluster-selection
+  to: qft.goldstone-theorem-current-spectral-route
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The spectral argument needs the nonzero vacuum expectation value of the
+    broken-charge commutator.
+  failure_mode: Without the broken-vacuum condition, the integrated commutator would
+    not force the zero-mass spectral contribution.
+  evidence:
+  - source: weinberg-2
+    section: 19.1–19.2
+    pages:
+    - 167
+    - 171
+    note: The selected sector supplies the broken-symmetry condition used when the
+      current spectral relation is integrated.
+- id: qft.align011.weinberg-2.1pi-tree-prerequisite-higher-correlator-problem
+  from: qft.align011.effective-action-1pi-tree-reconstruction
+  to: qft.align011.problem-higher-connected-correlators-from-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task's diagram identification uses connected graphs assembled as
+    trees of 1PI vertices.
+  failure_mode: The terms in the higher-derivative identities cannot be matched to
+    their Feynman-diagram structures.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 explicitly asks which Feynman diagrams correspond to the formula
+      terms.
+- id: qft.align011.weinberg-2.constant-background-prerequisite-one-loop-potential
+  from: qft.align011.effective-potential-constant-background
+  to: qft.align011.one-loop-effective-potential-determinant-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant is the quadratic fluctuation kernel obtained after shifting
+    by the constant background.
+  failure_mode: Without the background-dependent mass kernel, there is no stated determinant
+    calculation for V(φ₀).
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 69
+    - 70
+    note: The shifted action and its quadratic kernel precede the trace-log calculation.
+- id: qft.align011.weinberg-2.constant-potential-prerequisite-convexity
+  from: qft.align011.effective-potential-constant-background
+  to: qft.align011.exact-effective-potential-convexity-and-mixed-state-region
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Convexity is stated for the constant-field effective potential V(φ).
+  failure_mode: The argument has no scalar potential whose curvature or intervening
+    region can be analyzed.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The page discusses the scalar effective potential V(φ) and its second derivative.
+- id: qft.align011.weinberg-2.constant-potential-prerequisite-cubic-problem
+  from: qft.align011.effective-potential-constant-background
+  to: qft.align011.problem-six-dimensional-cubic-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task changes interaction and dimension while retaining the constant-background
+    effective-potential setup.
+  failure_mode: The target effective potential and its background specialization are
+    undefined.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 3 requests the one-loop effective potential for a scalar theory.
+- id: qft.align011.weinberg-2.constant-potential-prerequisite-pseudoscalar-problem
+  from: qft.align011.effective-potential-constant-background
+  to: qft.align011.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for an effective potential at a constant pseudoscalar background.
+  failure_mode: The target quantity and prescribed constant-background setting are
+    undefined.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 specifies φ constant and requests the effective potential.
+- id: qft.align011.weinberg-2.constrained-energy-prerequisite-convexity
+  from: qft.align011.effective-potential-constrained-energy-interpretation
+  to: qft.align011.exact-effective-potential-convexity-and-mixed-state-region
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The mixed-state construction uses V as the minimum energy density at
+    fixed expectation value.
+  failure_mode: Without that energy interpretation, the constant or linear interpolating
+    region has no source-backed variational justification.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The page invokes the minimum-energy result to construct the intervening
+      potential.
+- id: qft.align011.weinberg-2.degenerate-vacua-to-vacuum-alignment
+  from: qft.align011.degenerate-vacua-and-cluster-selection
+  to: qft.align011.vacuum-alignment-for-approximate-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Alignment chooses a member of the degenerate broken-vacuum orbit after
+    explicit breaking is added.
+  failure_mode: Without the degenerate orbit, there is no vacuum direction to align
+    with the perturbation.
+  evidence:
+  - source: weinberg-2
+    section: '19.3'
+    pages:
+    - 179
+    note: The compact-group construction minimizes the perturbation along a symmetry
+      orbit of invariant-potential minima.
+- id: qft.align011.weinberg-2.determinant-prerequisite-cubic-problem
+  from: qft.align011.one-loop-effective-potential-determinant-method
+  to: qft.align011.problem-six-dimensional-cubic-effective-potential
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested one-loop potential requires the quadratic-fluctuation determinant
+    calculation in the new dimension.
+  failure_mode: No one-loop route is supplied for the cubic theory.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 3 specifies a one-loop calculation in six dimensions.
+- id: qft.align011.weinberg-2.determinant-prerequisite-fermion-loop-sign
+  from: qft.align011.one-loop-effective-potential-determinant-method
+  to: qft.align011.fermion-versus-boson-effective-potential-loop-sign
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The fermion extension compares its Gaussian determinant with the bosonic
+    determinant calculation.
+  failure_mode: The sign and multiplicity comparison lacks its reference bosonic determinant
+    route.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 71
+    - 72
+    note: The fermion contribution is introduced as an addition to the preceding one-loop
+      potential calculation.
+- id: qft.align011.weinberg-2.determinant-prerequisite-pseudoscalar-problem
+  from: qft.align011.one-loop-effective-potential-determinant-method
+  to: qft.align011.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: At one loop the requested potential is calculated from fluctuation determinants.
+  failure_mode: The task lacks the required one-loop calculation method.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 asks for the one-loop potential.
+- id: qft.align011.weinberg-2.effective-potential-to-degenerate-vacua
+  from: qft.align011.effective-potential-constrained-energy-interpretation
+  to: qft.align011.degenerate-vacua-and-cluster-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vacuum-sector argument identifies vacua by minima of the effective
+    potential and compares their energy under a symmetry.
+  failure_mode: Without the constrained-energy meaning of the effective potential,
+    a learner cannot justify why its symmetry-related minima represent candidate vacuum
+    sectors.
+  evidence:
+  - source: weinberg-2
+    section: '19.1'
+    pages:
+    - 164
+    note: The section identifies the vacuum expectation value with a minimum of the
+      vacuum energy.
+- id: qft.align011.weinberg-2.external-source-prerequisite-finite-symmetry-problem
+  from: qft.align011.external-source-generating-functional
+  to: qft.align011.problem-finite-linear-symmetry-of-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task first asks for the current transformation that makes W[J] invariant.
+  failure_mode: There is no sourced functional or current whose finite transformation
+    can be determined.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 4 asks for a transformation of the currents under which W is invariant.
+- id: qft.align011.weinberg-2.external-sources-prerequisite-legendre-effective-action
+  from: qft.align011.external-source-generating-functional
+  to: qft.align011.legendre-quantum-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Legendre definition inverts the source-to-mean-field map generated
+    by W[J].
+  failure_mode: Without the sourced connected functional, the required source J_φ
+    and Legendre transform are undefined.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 65
+    note: The page defines φ_J through W and then defines Γ by its Legendre transform.
+- id: qft.align011.weinberg-2.external-sources-prerequisite-linear-st
+  from: qft.align011.external-source-generating-functional
+  to: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The change-of-variables argument is performed in the sourced functional
+    integral.
+  failure_mode: Without source insertions and their averages, the Ward/Slavnov–Taylor
+    relation cannot be expressed for Γ.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 75
+    - 76
+    note: The derivation changes variables in Z[J] and rewrites the result using the
+      source.
+- id: qft.align011.weinberg-2.fermion-sign-prerequisite-pseudoscalar-problem
+  from: qft.align011.fermion-versus-boson-effective-potential-loop-sign
+  to: qft.align011.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The specified model includes complex Dirac fields, requiring the fermion
+    determinant sign and multiplicity.
+  failure_mode: A bosonic-only determinant calculation gives the wrong fermion contribution.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 explicitly includes complex Dirac fields.
+- id: qft.align011.weinberg-2.legendre-prerequisite-1pi-tree-reconstruction
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.effective-action-1pi-tree-reconstruction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The stationary phase equation uses the Legendre identity δΓ/δφ=−J.
+  failure_mode: The stationary point cannot be identified with φ_J without the Legendre
+    relation.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 66
+    - 67
+    note: Equations (16.1.13)–(16.1.16) use the defining relation to obtain tree reconstruction.
+- id: qft.align011.weinberg-2.legendre-prerequisite-constant-background-potential
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.effective-potential-constant-background
+  relation: prerequisite
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: The effective potential is defined by specializing the effective action
+    to a constant field.
+  failure_mode: Without Γ[φ], the volume-factorized quantity V(φ₀) has no effective-action
+    definition.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 68
+    - 69
+    note: The section specializes Γ[φ₀] to define V(φ₀).
+- id: qft.align011.weinberg-2.legendre-prerequisite-constrained-energy
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.effective-potential-constrained-energy-interpretation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The constrained energy is shown equal to the Legendre transform evaluated
+    at the source producing the expectation value.
+  failure_mode: The source energy alone does not establish the constrained energy
+    functional Γ[φ].
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 73
+    note: Equations (16.3.12)–(16.3.13) identify the constrained minimum with −Γ.
+- id: qft.align011.weinberg-2.legendre-prerequisite-finite-symmetry-problem
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.problem-finite-linear-symmetry-of-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested property of Γ follows by Legendre transformation from the
+    W symmetry.
+  failure_mode: The final Γ symmetry cannot be derived from the transformed connected
+    functional.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 4 explicitly asks to use the W result to derive a symmetry property
+      of Γ.
+- id: qft.align011.weinberg-2.legendre-prerequisite-higher-correlator-problem
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.problem-higher-connected-correlators-from-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested W derivatives must be rewritten through Γ's Legendre relation.
+  failure_mode: There is no functional relationship from which to express W derivatives
+    in terms of Γ derivatives.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 asks for W derivatives in terms of variational derivatives of
+      Γ.
+- id: qft.align011.weinberg-2.legendre-prerequisite-linear-st
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The sourced identity is converted into an effective-action identity by
+    replacing the current with the Γ derivative.
+  failure_mode: A source identity alone does not establish the claimed symmetry of
+    Γ.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 76
+    note: Equation (16.4.6) uses the effective-action source relation.
+- id: qft.align011.weinberg-2.legendre-prerequisite-two-point-inverse
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.full-two-point-function-is-inverse-1pi-kernel
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The inverse-kernel result follows by differentiating the two Legendre
+    relations.
+  failure_mode: The matrices A and Π have no derived inverse relation without both
+    functional derivative identities.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 68
+    note: The text explicitly derives the relation from Eqs. (16.1.5) and (16.1.7).
+- id: qft.align011.weinberg-2.legendre-prerequisite-zinn-justin
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The K-extended construction is a Legendre transform in the ordinary sources.
+  failure_mode: The effective action Γ[x,K] and its functional derivatives are undefined
+    without this construction.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    note: Equation (17.1.3) defines Γ[x,K] by a Legendre transform.
+- id: qft.align011.weinberg-2.linear-st-evidence-nonlinear-obstruction
+  from: qft.align011.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  to: qft.align011.nonlinear-symmetry-average-obstruction-for-effective-action
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The linear case makes clear exactly which replacement fails for nonlinear
+    transformations.
+  failure_mode: The obstruction is easily mistaken for a loss of all symmetry information
+    without the linear comparison.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 77
+    note: The text contrasts the linear result with the nonlinear average.
+- id: qft.align011.weinberg-2.two-point-inverse-prerequisite-convexity
+  from: qft.align011.full-two-point-function-is-inverse-1pi-kernel
+  to: qft.align011.exact-effective-potential-convexity-and-mixed-state-region
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The convexity argument uses positivity of the two-point function together
+    with −Π=A⁻¹.
+  failure_mode: The claimed sign of the effective-potential curvature is not obtained
+    without the inverse-kernel relation.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The convexity discussion explicitly invokes −Π=A⁻¹.
+- id: qft.align011.weinberg-2.two-point-prerequisite-higher-correlator-problem
+  from: qft.align011.full-two-point-function-is-inverse-1pi-kernel
+  to: qft.align011.problem-higher-connected-correlators-from-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Higher differentiations of the Legendre identities use the two-point
+    inverse relation as their propagator kernel.
+  failure_mode: The requested third- and fourth-derivative formulas cannot be assembled
+    from Γ derivatives.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 extends the connected/1PI derivative relation to higher correlators.
+- id: qft.align011.zinn-justin-to-direct-brst-renormalization
+  from: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  to: qft.direct-brst-renormalizability-induction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The loop induction obtains the linearized constraint on the divergent
+    N-loop effective action by expanding the Zinn–Justin equation.
+  failure_mode: Power counting alone leaves the symmetry-compatible counterterm structure
+    unproved.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 83
+    note: The N-loop expansion of the Zinn–Justin condition gives the constraint on
+      the infinite part.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation

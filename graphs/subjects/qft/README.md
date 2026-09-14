@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 389 concepts and 304 relationships, mapping 437 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 414 concepts and 348 relationships, mapping 465 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -23,7 +23,7 @@ A shared node's `origins` identify the book concepts it represents and explain t
 |---|---:|
 | Peskin–Schroeder / Schwartz | 28 |
 | Peskin–Schroeder / Weinberg I | 0 |
-| Peskin–Schroeder / Weinberg II | 9 |
+| Peskin–Schroeder / Weinberg II | 14 |
 | Schwartz / Weinberg I | 2 |
 | Schwartz / Weinberg II | 7 |
 | Weinberg I / Weinberg II | 0 |
@@ -38,14 +38,14 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Adjoint representation and covariant derivative (`qft.adjoint-representation-and-covariant-derivative`) | Peskin–Schroeder: `peskin-schroeder.adjoint-representation-covariant-derivative-and-bianchi-input`; Schwartz: `schwartz.adjoint-representation-of-gauge-fields` |
 | Little-group induced vector representations (`qft.align010.schwartz.little-group-induced-vector-representations`) | Schwartz: `schwartz.little-group-induced-vector-representations`; Weinberg I: `weinberg-1.induced-representations-and-little-groups` |
 | Particle as an irreducible unitary Poincaré representation (`qft.align010.schwartz.particle-as-unitary-poincare-irrep`) | Schwartz: `schwartz.particle-as-unitary-poincare-irrep`; Weinberg I: `weinberg-1.one-particle-irreducible-poincare-states` |
+| Effective action as the 1PI generator and tree reconstruction (`qft.align011.effective-action-1pi-tree-reconstruction`) | Weinberg II: `weinberg-2.effective-action-1pi-tree-reconstruction`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
+| Effective potential for a constant background and vacuum candidates (`qft.align011.effective-potential-constant-background`) | Weinberg II: `weinberg-2.effective-potential-constant-background`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
+| Exact effective-potential convexity and the mixed-state region (`qft.align011.exact-effective-potential-convexity-and-mixed-state-region`) | Weinberg II: `weinberg-2.exact-effective-potential-convexity-and-mixed-state-region`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
+| Full two-point function as inverse 1PI kernel (`qft.align011.full-two-point-function-is-inverse-1pi-kernel`) | Weinberg II: `weinberg-2.full-two-point-function-is-inverse-1pi-kernel`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
+| Quantum effective action as a functional Legendre transform (`qft.align011.legendre-quantum-effective-action`) | Peskin–Schroeder: `peskin-schroeder.effective-action-legendre-transform`; Weinberg II: `weinberg-2.legendre-quantum-effective-action` |
 | BRST auxiliary-field transformations and nilpotence (`qft.brst-auxiliary-field-transformations-and-nilpotence`) | Peskin–Schroeder: `peskin-schroeder.brst-auxiliary-field-symmetry-and-nilpotence`; Weinberg II: `weinberg-2.brst-field-transformations`; Weinberg II: `weinberg-2.brst-nilpotence` |
 | BRST cohomology and physical-state qualification (`qft.brst-cohomology-and-physical-state-qualification`) | Schwartz: `schwartz.brst-cohomological-physical-state-qualification`; Weinberg II: `weinberg-2.brst-cohomology-of-physical-states` |
 | Canonical momentum and Hamiltonian for a field (`qft.canonical-field-momentum-hamiltonian`) | Peskin–Schroeder: `peskin-schroeder.canonical-field-momentum-hamiltonian`; Schwartz: `schwartz.classical-field-hamiltonian-lagrangian-legendre-transform`; Schwartz: `schwartz.canonical-scalar-field-energy-density` |
-| Casimir, index, and SU(N) color factors (`qft.casimir-index-and-sun-factors`) | Peskin–Schroeder: `peskin-schroeder.sun-casimir-normalization-and-adjoint-values`; Peskin–Schroeder: `peskin-schroeder.casimir-definitions-and-index-relation`; Schwartz: `schwartz.casimir-index-and-sun-color-factors` |
-| Classical spontaneous symmetry breaking (`qft.classical-spontaneous-symmetry-breaking`) | Schwartz: `schwartz.classical-spontaneous-symmetry-breaking`; Peskin–Schroeder: `peskin-schroeder.discrete-symmetry-breaking-scalar-shift` |
-| Compact simple Lie algebras and classification (`qft.compact-simple-lie-algebra-classification`) | Peskin–Schroeder: `peskin-schroeder.compact-simple-lie-algebra-classification`; Schwartz: `schwartz.orthogonal-symplectic-and-exceptional-simple-groups`; Schwartz: `schwartz.simple-and-semisimple-lie-algebras`; Weinberg II: `weinberg-2.compact-simple-lie-algebra-classification`; Weinberg II: `weinberg-2.compactness-and-hermitian-representations`; Weinberg II: `weinberg-2.positive-invariant-lie-algebra-metric` |
-| Complex scalar U(1) current (`qft.complex-scalar-u1-current`) | Peskin–Schroeder: `peskin-schroeder.complex-scalar-u1-current`; Schwartz: `schwartz.noether-current-and-conserved-charge`; Schwartz: `schwartz.complex-scalar-global-u1-symmetry` |
-| Continuum running-coupling method for large logarithms (`qft.continuum-rg-running-coupling-large-log-method`) | Schwartz: `schwartz.rg-large-log-resummation`; Weinberg II: `weinberg-2.sliding-scale-coupling-callan-symanzik-method` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 
