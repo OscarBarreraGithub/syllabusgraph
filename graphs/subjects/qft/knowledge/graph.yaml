@@ -1,4 +1,40 @@
 nodes:
+- id: qft.abelian-curvature-from-holonomy
+  label: Abelian curvature from holonomy and covariant-derivative commutators
+  summary: An infinitesimal closed comparator loop measures F_mu_nu=partial_mu A_nu-partial_nu
+    A_mu. The same curvature is obtained from the covariant-derivative commutator,
+    and a closed Abelian Wilson loop is gauge invariant and related by Stokes theorem
+    to flux.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.abelian-curvature-from-holonomy-and-covariant-commutator
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.abelian-wilson-loop-curvature
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.abelian-wilson-line-and-loop
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.1 The Geometry of Gauge Invariance
+    pages:
+    - 484
+    - 485
+  - source: schwartz
+    section: 25.2.1
+    pages:
+    - 490
+  - source: peskin-schroeder
+    section: 15.3 The Gauge-Invariant Wilson Loop
+    pages:
+    - 491
+    - 492
+  notation: []
 - id: qft.abelian-higgs-gauge-shift-and-degree-count
   label: Abelian Higgs gauge shift and degree count
   summary: The Abelian Higgs gauge transformation A_mu to A_mu+(partial_mu alpha)/e
@@ -67,6 +103,32 @@ nodes:
     node: weinberg-2.adjoint-representation
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.adjoint-representation-and-covariant-derivative
+  label: Adjoint representation and covariant derivative
+  summary: Structure constants furnish the adjoint representation, in which gauge
+    fields and adjoint matter transform. Its covariant derivative supplies the geometric
+    input to covariant field equations and Bianchi identities.
+  kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.adjoint-representation-covariant-derivative-and-bianchi-input
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.adjoint-representation-of-gauge-fields
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 499
+    - 500
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 486
+  notation: []
 - id: qft.align006.abelian-chiral-anomaly-and-one-loop-exactness
   label: Abelian chiral anomaly and one-loop exactness
   summary: The regulated measure gives partial_mu J5^mu=-e^2 epsilon_mu_nu_alpha_beta
@@ -1573,6 +1635,22 @@ nodes:
     - 26
     note: Recasts the atomic transition calculation with a quantum photon field.
   notation: []
+- id: qft.axial-and-lightcone-gauge-ghost-decoupling
+  label: Axial and lightcone gauges with ghost decoupling
+  summary: In the stated axial gauge the ghost–gluon vertex decouples; the lightcone
+    specialization has two physical polarizations.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.axial-and-lightcone-gauges-ghost-decoupling
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: 25.4.3
+    pages:
+    - 502
+  notation: []
 - id: qft.baryon-octet-decuplet-quantum-number-diagram
   label: Baryon octet and decuplet quantum-number organization
   summary: The baryon octet and decuplet diagram organizes states by charge and strangeness.
@@ -1921,6 +1999,62 @@ nodes:
     - 18
     note: Reviews canonical oscillator quantization and time evolution.
   notation: []
+- id: qft.casimir-index-and-sun-factors
+  label: Casimir, index, and SU(N) color factors
+  summary: For an irreducible representation, the quadratic Casimir and trace index
+    obey d(R) C2(R)=T(R) d(G). In the stated SU(N) convention, T_F=1/2, C_F=(N-squared-minus-one)/(2N),
+    and C_A=N.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.sun-casimir-normalization-and-adjoint-values
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.casimir-definitions-and-index-relation
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.casimir-index-and-sun-color-factors
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 The Casimir Operator
+    pages:
+    - 500
+    - 501
+    - 502
+  - source: peskin-schroeder
+    section: 15.4 Representations; The Casimir Operator
+    pages:
+    - 498
+    - 500
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 486
+    - 487
+  notation:
+  - source: peskin-schroeder
+    note: Keep C(r) versus T(R) as source-specific names for the trace index.
+- id: qft.casimir-subgroup-decomposition-task
+  label: Casimir SU(2)-subgroup decomposition task
+  summary: The assigned problem asks for Casimir calculations by SU(2)-subgroup decomposition,
+    including fundamental, adjoint, and two-index cases. It is retained as a task
+    statement.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-casimir-su2-decomposition
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.5
+    pages:
+    - 504
+  notation: []
 - id: qft.charge-conjugation-time-reversal-phase-constraints
   label: Charge-conjugation and time-reversal phase constraints
   summary: For the causal scalar field to transform proportionally under charge conjugation,
@@ -2106,6 +2240,76 @@ nodes:
     - 10
     note: The Bhabha example explicitly says the two diagram amplitudes must first
       be added, then squared.
+  notation: []
+- id: qft.compact-simple-lie-algebra-classification
+  label: Compact simple Lie algebras and classification
+  summary: A simple Lie algebra has no nontrivial ideal, while a semisimple algebra
+    is a direct sum of simple algebras. For the stated finite-dimensional gauge setting,
+    compact groups have unitary representations and independent Hermitian generators
+    require a direct sum of compact simple and U(1) algebras. Real nonsingular generator
+    changes preserve a real algebra, whereas complex changes can alter its real form.
+    The compact finite-dimensional classification comprises SU(N), SO(N), and Sp(N)
+    families plus five exceptional cases.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.compact-simple-lie-algebra-classification
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.orthogonal-symplectic-and-exceptional-simple-groups
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.simple-and-semisimple-lie-algebras
+    note: Retains the ideal-based simple/semisimple definitions and the source’s finite-dimensional
+      Hermitian-representation qualification.
+  - project: weinberg-2
+    node: weinberg-2.compact-simple-lie-algebra-classification
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.compactness-and-hermitian-representations
+    note: Retains the real-versus-complex basis-change qualification and the finite-dimensional
+      compact-unitary/Hermitian-generator condition.
+  - project: weinberg-2
+    node: weinberg-2.positive-invariant-lie-algebra-metric
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Classification of Lie Algebras
+    pages:
+    - 496
+    - 497
+  - source: schwartz
+    section: '25.1'
+    pages:
+    - 484
+  - source: schwartz
+    section: '25.1'
+    pages:
+    - 483
+    - 484
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 11
+    note: The source gives the three-generator case, the four-to-seven gap, and the
+      classical-plus-exceptional classification.
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 10
+    note: The page contrasts real and complex basis changes and derives the algebraic
+      restriction from a positive trace metric.
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    - 9
+    note: Pages 8–9 state the invariance and positivity requirements and the three
+      equivalent algebraic conditions.
   notation: []
 - id: qft.complex-causal-scalar-field
   label: Complex causal scalar field from particle and antiparticle
@@ -2301,6 +2505,32 @@ nodes:
     pages:
     - 26
   notation: []
+- id: qft.covariant-yang-mills-equation-and-bianchi
+  label: Covariant Yang–Mills equation and non-Abelian Bianchi identity
+  summary: The gauge equation can be written D_mu F^{a mu nu}=minus matter-current.
+    The cyclic covariant-derivative identity follows from Jacobi and is independent
+    of the field equations.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.covariant-yang-mills-equation-and-bianchi-identity
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.nonabelian-bianchi-identity
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 500
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 13
+    note: Equation (15.3.9) is stated as an identity valid on and off shell.
+  notation: []
 - id: qft.current-roles-and-nondynamical-sources
   label: Roles of currents and nondynamical sources
   summary: A current can be a Noether current, an external prescribed charge flow,
@@ -2436,6 +2666,25 @@ nodes:
   - source: weinberg-2
     note: φ̄ denotes a vacuum magnitude and x₀ the wall-center integration constant;
       the bound and profile equations were visually checked privately.
+- id: qft.dynamical-gauge-fields-local-symmetry-content
+  label: Dynamical gauge fields give local symmetry physical content
+  summary: A local symmetry can describe a fixed conventional background; it gains
+    the stated physical content when the gauge field is dynamical and integrated over
+    in S-matrix calculations.
+  kind: concept
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.dynamical-gauge-fields-give-local-symmetry-physical-content
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 1
+    note: The opening and its footnote distinguish a fixed choice of phase or coordinates
+      from a dynamical field integrated over in S-matrix elements.
+  notation: []
 - id: qft.einstein-emission-and-absorption-coefficients
   label: Einstein emission and absorption coefficient relations
   summary: For two atomic levels, the spontaneous-emission coefficient A, stimulated-emission
@@ -3108,6 +3357,34 @@ nodes:
     - 37
     - 38
   notation: []
+- id: qft.general-nonabelian-gauge-construction
+  label: General non-Abelian gauge construction
+  summary: For Hermitian generators satisfying a Lie-algebra commutator, local covariance
+    fixes the covariant derivative, connection transformation, and curvature. The
+    stated dimension-four, P- and T-conserving construction yields the Yang–Mills
+    form; nonlinearity is tied to noncommuting generators.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.general-nonabelian-gauge-construction
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.nonabelian-connection-and-curvature
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.2 The Yang-Mills Lagrangian
+    pages:
+    - 490
+    - 491
+  - source: schwartz
+    section: 25.2.2
+    pages:
+    - 492
+    - 493
+  notation: []
 - id: qft.generalized-brst-slavnov-operator-and-closure
   label: Generalized BRST Slavnov operator and closure condition
   summary: For general local symmetries, the Slavnov operator acts on fields, ghosts,
@@ -3719,6 +3996,82 @@ nodes:
     node: schwartz.massless-field-plane-wave-oscillator-modes
     note: Corresponds only to the m=0 plane-wave specialization; Schwartz temporarily
       treats photon polarizations through a scalar surrogate.
+- id: qft.lattice-correlator-mass-extraction
+  label: Lattice correlator mass extraction
+  summary: At large Euclidean separation, a two-point correlator falls exponentially
+    with the lightest mass in its channel, allowing mass extraction from its scaling.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.lattice-correlator-mass-extraction
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: '25.5'
+    pages:
+    - 505
+  notation: []
+- id: qft.lattice-gauge-links-plaquettes-and-action
+  label: Lattice links, plaquettes, continuum curvature, and Wilson action
+  summary: Lattice link variables transform at their endpoints and make transported
+    matter products covariant. The plaquette has a small-spacing curvature expansion,
+    and matching it fixes the Wilson action’s continuum Yang–Mills limit.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.lattice-link-fields-and-gauge-covariance
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.lattice-plaquette-continuum-field-strength
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.lattice-wilson-action-continuum-matching
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: '25.5'
+    pages:
+    - 503
+  - source: schwartz
+    section: '25.5'
+    pages:
+    - 504
+    - 505
+  - source: schwartz
+    section: '25.5'
+    pages:
+    - 505
+  notation: []
+- id: qft.lie-algebra-jacobi-and-local-global-distinction
+  label: Lie algebra, Jacobi identity, and local/global distinction
+  summary: Generators close under a bracket with structure constants obeying Jacobi.
+    The local gauge Lagrangian depends on this algebraic data; groups can share the
+    same local algebra while differing in global structure.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.lie-algebra-jacobi-identity-and-local-global-distinction
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.lie-group-generators-bracket-and-jacobi
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 495
+    - 496
+  - source: schwartz
+    section: '25.1'
+    pages:
+    - 483
+  notation: []
 - id: qft.lie-algebra-structure-constants
   label: Lie-algebra generators and structure constants
   summary: The generators obey [t_α,t_β]=i C^γ_{αβ}t_γ. The real structure constants
@@ -3763,6 +4116,36 @@ nodes:
   notation:
   - source: schwartz
     note: The source's ungauged polar convention has F_pi=2m/sqrt(lambda)=sqrt(2)v.
+- id: qft.local-comparator-and-abelian-connection
+  label: Local comparator, Abelian connection, and covariant derivative
+  summary: Local phase choices prevent direct comparison of neighboring charged fields.
+    An endpoint-transforming comparator or Wilson line defines the connection and
+    a covariant derivative; Peskin–Schroeder uses D_mu=partial_mu+i e A_mu while Schwartz
+    uses D_mu=partial_mu-i e A_mu.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.local-comparator-connection-and-covariant-derivative
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.abelian-wilson-line-as-parallel-transport
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.1 The Geometry of Gauge Invariance
+    pages:
+    - 482
+    - 483
+  - source: schwartz
+    section: 25.2.1
+    pages:
+    - 489
+  notation:
+  - source: peskin-schroeder
+    note: The two sources use opposite signs in D_mu because of their stated Wilson-line
+      conventions.
 - id: qft.local-field-action
   label: Local field action
   summary: For fields phi(x), the action is the spacetime integral of a local Lagrangian
@@ -3842,6 +4225,55 @@ nodes:
   notation:
   - source: weinberg-2
     note: The source writes finite parameters as Lambda^alpha(x).
+- id: qft.local-su2-yang-mills-construction
+  label: Local SU(2) connection and Yang–Mills construction
+  summary: A local SU(2) multiplet requires one connection component per generator
+    and a covariant derivative. The connection transforms inhomogeneously and its
+    curvature contains the structure-constant A A term; Schwartz writes [tau^a,tau^b]=i
+    epsilon^{abc} tau^c and Peskin–Schroeder uses a related generator convention.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.su2-local-covariant-derivative-and-connection
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.yang-mills-local-su2-construction
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.2 The Yang-Mills Lagrangian
+    pages:
+    - 487
+    - 488
+  - source: schwartz
+    section: 25 introduction
+    pages:
+    - 482
+  notation:
+  - source: peskin-schroeder
+    note: Keep the source-specific generator and coupling normalizations; do not identify
+      their signs by relabeling.
+- id: qft.local-symmetry-maxwell-dirac-selection
+  label: Local symmetry and the dimension-four Maxwell–Dirac selection
+  summary: For a local U(1) connection, gauge invariance permits the Dirac and F-squared
+    terms and the parity-odd F-dual-F term at dimension four; imposing P or T removes
+    the last term. Higher-dimension gauge-invariant terms are outside the stated renormalizable
+    truncation.
+  kind: assumption
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.local-symmetry-dimension-four-maxwell-dirac-selection
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.1 The Geometry of Gauge Invariance
+    pages:
+    - 485
+    - 486
+  notation: []
 - id: qft.loop-momentum-integration-and-divergence
   label: Loop momentum integration and ultraviolet divergence
   summary: A virtual momentum not fixed at vertices is summed by integrating over
@@ -4111,6 +4543,35 @@ nodes:
     - 34
     note: States the theorem and its stated qualifications.
   notation: []
+- id: qft.nonabelian-curvature-and-self-interactions
+  label: Non-Abelian curvature and symmetry-fixed self-interactions
+  summary: The commutator of covariant derivatives defines a Lie-algebra-valued field
+    strength with a quadratic connection term. Its squared kinetic term necessarily
+    yields non-Abelian vector self-interactions, unlike Abelian electrodynamics.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.yang-mills-field-strength-self-interactions
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.nonabelian-gauge-self-interaction
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.2 The Yang-Mills Lagrangian
+    pages:
+    - 488
+    - 489
+    - 491
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The source explains why the quadratic field-strength term necessarily supplies
+      gauge-field interactions.
+  notation: []
 - id: qft.nonabelian-field-strength
   label: Non-Abelian field strength from covariant-derivative commutators
   summary: The commutator [D_ν,D_μ] acting on matter defines F^γ_{νμ}; explicitly
@@ -4137,19 +4598,70 @@ nodes:
       equivalence beyond the stated concept.
 - id: qft.nonabelian-noether-current-conservation-task
   label: Non-Abelian Noether-current conservation task
-  summary: The assigned task is to check on-shell conservation of J^a_mu = minus psi-bar
-    gamma_mu T^a psi plus f^{abc} A^b_nu F^c_{mu nu}. It is a task prompt, not a completed
-    derivation in this packet.
+  summary: The assigned task is to check on-shell ordinary conservation of the total
+    Noether current J^a_mu=minus psi-bar gamma_mu T^a psi+f^{abc}A^b_nu F^c_{mu nu}.
+    It remains a task prompt, not a completed derivation. The required context distinguishes
+    this total current from the fermion-only matter current, which obeys covariant
+    D_mu j^{a mu}=0 rather than ordinary conservation.
   kind: method
   group: qft.gauge-quantization
   origins:
   - project: schwartz
     node: schwartz.nonabelian-noether-current-conservation-task
-    note: Retains the on-shell conservation task and its stated current.
+    note: Retains the exact on-shell task and its stated total current.
   evidence:
   - source: schwartz
     section: Problem 25.5
     pages:
+    - 507
+    note: The problem asks for on-shell conservation of the displayed Noether current.
+  - source: schwartz
+    section: 25.3 Conserved currents
+    pages:
+    - 494
+    note: The preceding text separates the ordinarily conserved total current from
+      the covariantly conserved matter current.
+  - source: peskin-schroeder
+    section: 15.2 and 15.4
+    pages:
+    - 490
+    - 500
+    note: The packet supplies the connection, curvature, covariant equation, and Bianchi
+      inputs needed to interpret the task.
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    - 13
+    - 14
+    note: The packet explicitly distinguishes the ordinary total current from the
+      covariantly conserved matter current and states why gauge fields contribute.
+  notation: []
+- id: qft.nonabelian-path-ordered-wilson-line
+  label: Path-ordered non-Abelian Wilson line
+  summary: Because Lie-algebra matrices at different points on a path need not commute,
+    the non-Abelian Wilson line is path ordered. It solves the parallel-transport
+    equation and transforms through its endpoints.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonabelian-path-ordered-wilson-line
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.nonabelian-path-ordered-wilson-line
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.3 The Gauge-Invariant Wilson Loop
+    pages:
+    - 492
+    - 493
+  - source: schwartz
+    section: 25.2.2; Problem 25.6
+    pages:
+    - 491
     - 507
   notation: []
 - id: qft.nonlinear-gravity-dimensional-analysis-and-perihelion
@@ -4992,6 +5504,23 @@ nodes:
     node: schwartz.euler-lagrange-and-klein-gordon-equations
     note: Corresponds to the composite presentation’s real-scalar Klein-Gordon Lagrangian
       component.
+- id: qft.real-pseudoreal-and-complex-representations
+  label: Real, pseudoreal, and complex representations
+  summary: An invariant symmetric or antisymmetric bilinear identifies a representation
+    with its conjugate as real or pseudoreal. Without such an identification, it is
+    complex.
+  kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.real-pseudoreal-and-complex-representations
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 499
+  notation: []
 - id: qft.reducible-gauge-symmetry-and-ghosts-of-ghosts
   label: Reducible gauge symmetry and ghosts of ghosts
   summary: A determinant construction assumes independent gauge transformations. For
@@ -5046,6 +5575,25 @@ nodes:
   - source: schwartz
     note: This origin is a narrower threshold argument; Peskin-Schroeder additionally
       motivates fields through variable particle number and causality.
+- id: qft.renormalizable-yang-mills-lagrangian-truncation
+  label: Renormalizable Yang–Mills Lagrangian truncation
+  summary: The stated renormalizable construction uses matter covariant derivatives
+    and minus one-quarter F-squared, excluding higher covariant derivatives and F-dependent
+    matter terms as large-scale-suppressed nonrenormalizable operators.
+  kind: assumption
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.renormalizable-yang-mills-lagrangian-assumption
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    note: The paragraph before equation (15.3.1) specifies the omission of higher-derivative
+      and F-dependent matter terms.
+  notation: []
 - id: qft.rotations-and-invariant-inner-products
   label: Rotations and invariant inner products
   summary: A rotation is an orientation-preserving orthogonal transformation R with
@@ -5495,6 +6043,190 @@ nodes:
     pages:
     - 561
   notation: []
+- id: qft.su2-adjoint-casimir-task
+  label: SU(2) adjoint basis and Casimir task
+  summary: The assigned problem asks for the SU(2) adjoint matrices and direct calculation
+    of C(G) and C2(G) under the source normalization. It is retained as a task statement.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-su2-adjoint-casimirs
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.2
+    pages:
+    - 502
+  notation: []
+- id: qft.su3-generators-and-invariants-task
+  label: SU(3) fundamental generators and invariant task
+  summary: The assigned problem asks for SU(3) generator commutators, structure constants,
+    antisymmetry, Casimirs, and the dimension–index relation under the supplied normalization.
+    It is retained as a task statement.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-su3-fundamental-generators-and-invariants
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.1
+    pages:
+    - 502
+  notation: []
+- id: qft.sun-products-fierz-and-anomaly-invariant
+  label: SU(N) generator products, Fierz reduction, and anomaly invariant
+  summary: In the fundamental matrix representation, generator products resolve into
+    delta, d^{abc}, and i f^{abc} terms. The same normalization gives the Fierz trace
+    reduction and the anomaly-coefficient definition; these are distinct algebraic
+    tools.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.anomaly-coefficient-definition-and-normalization
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.sun-fierz-and-trace-reduction
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.sun-generator-products-and-symmetric-invariant
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 488
+  - source: schwartz
+    section: 25.1.1-25.1.2
+    pages:
+    - 487
+    - 488
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 486
+  notation: []
+- id: qft.sun-representations-and-normalization
+  label: SU(N) representations and generator normalization
+  summary: SU(N) has N-squared-minus-one traceless Hermitian fundamental generators.
+    Trace normalization fixes numerical structure-constant and invariant conventions.
+    The conjugate field transforms in the antifundamental representation with T_antifund^a=minus(T_fund^a)^star;
+    Hermiticity permits the reversed-index fundamental form. Changing normalization
+    changes convention-dependent numerical values.
+  kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.sun-generators-representations-and-trace-normalization
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.fundamental-antifundamental-transformations
+    note: Retains the fundamental-to-antifundamental generator relation and Hermiticity-based
+      reversed-index form; it does not identify all representation or normalization
+      conventions.
+  - project: schwartz
+    node: schwartz.sun-defining-representation-and-dimension
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: schwartz
+    node: schwartz.sun-generator-normalization-and-trace
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 497
+    - 498
+    - 501
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 485
+  - source: schwartz
+    section: '25.1'
+    pages:
+    - 484
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 485
+  notation:
+  - source: peskin-schroeder
+    note: Peskin–Schroeder writes C(r) for the trace index; Schwartz writes T(R) and
+      fixes T_F=1/2.
+- id: qft.total-current-and-covariant-matter-current
+  label: Ordinarily conserved total current and covariantly conserved matter current
+  summary: The non-Abelian gauge equation has two related current formulations. Moving
+    gauge-field terms to the right gives an ordinarily conserved total current whose
+    charge includes gauge fields; retaining the matter current gives a gauge-covariant
+    equation and D_mu J^{a mu}=0, which is not ordinary matter-current conservation.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.nonabelian-noether-current-and-covariant-matter-current
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.yang-mills-field-equations-and-total-current
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.covariant-field-equation-and-matter-current
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.gauge-charge-includes-gauge-fields
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: '25.3'
+    pages:
+    - 494
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    note: Equations (15.3.2)–(15.3.4) define the current and state its ordinary conservation.
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 13
+    note: Equations (15.3.5)–(15.3.8) define the covariant derivative on F, identify
+      the matter current, and state covariant conservation.
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 14
+    note: The discussion around equation (15.3.10) interprets the conserved total
+      current and explains its gauge-field term.
+  notation:
+  - source: schwartz
+    note: Weinberg uses distinct symbols for the ordinary total and matter-only currents;
+      this distinction is retained.
+- id: qft.traced-nonabelian-wilson-loop
+  label: Traced non-Abelian Wilson loop and curvature
+  summary: A closed non-Abelian Wilson line transforms by conjugation, so its trace
+    is gauge invariant. Its small-loop expansion detects the full non-Abelian curvature,
+    including the commutator contribution.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.traced-nonabelian-wilson-loop-and-curvature
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.3 The Gauge-Invariant Wilson Loop
+    pages:
+    - 494
+  notation: []
 - id: qft.translation-symmetry-and-energy-momentum-tensor
   label: Translation symmetry and energy-momentum tensor
   summary: Applying Noether’s construction to spacetime translations gives a conserved
@@ -5643,6 +6375,34 @@ nodes:
     note: The chapter names Feynman trace technology and describes both its trace
       calculation and mass restoration.
   notation: []
+- id: qft.weinberg-witten-current-obstructions
+  label: Weinberg–Witten spin-one and spin-two obstructions
+  summary: For a theory with a global non-Abelian symmetry under which massless spin-one
+    particles are charged, the spin-one Weinberg–Witten statement excludes a gauge-invariant
+    conserved current (equivalently, in the source formulation, a conserved Lorentz-covariant
+    current). Separately, in the stated fixed-spacetime setting, a massless spin-two
+    particle is excluded when there is a conserved Lorentz-covariant energy-momentum
+    tensor. These are conditional theorem statements, not generic gauge-theory claims.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.weinberg-witten-spin-one-current-obstruction
+    note: Retains the global non-Abelian, charged massless spin-one hypothesis and
+      the no-gauge-invariant-conserved-current conclusion.
+  - project: schwartz
+    node: schwartz.weinberg-witten-spin-two-and-fixed-spacetime-qualification
+    note: Retains the fixed-spacetime and conserved Lorentz-covariant energy-momentum
+      hypotheses and their conditional spin-two conclusion.
+  evidence:
+  - source: schwartz
+    section: Box 25.1
+    pages:
+    - 494
+  - source: schwartz
+    section: '25.3'
+    pages:
+    - 495
+  notation: []
 - id: qft.weinberg1-renormalizable-critical-surface
   label: Renormalizable critical surface as a stable manifold
   summary: 'Weinberg gives a small-coupling argument: for Lambda much less than Lambda_0,
@@ -5789,6 +6549,146 @@ nodes:
     - 124
     - 125
     - 126
+- id: qft.wilson-loop-coulomb-potential-task
+  label: Wilson-loop Coulomb-potential task
+  summary: The assigned problem asks for Abelian and order-g-squared non-Abelian Wilson-loop
+    calculations and their Coulomb potentials, with the representation Casimir in
+    the latter. It is retained as a task statement.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-wilson-loop-coulomb-potentials
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.3
+    pages:
+    - 503
+  notation: []
+- id: qft.worldline-wilson-line-task
+  label: Worldline scalar propagator and Wilson-line task
+  summary: The assigned problem asks for proper-time derivations of the scalar propagator
+    and background-field worldline functional integral, then the non-Abelian path-ordering
+    condition. It is retained as a task statement.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-scalar-propagator-worldline-wilson-line
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.4
+    pages:
+    - 503
+    - 504
+  notation: []
+- id: qft.yang-mills-coupling-normalization
+  label: Yang–Mills coupling normalization by algebra factor
+  summary: After normalizing the gauge-field metric, Weinberg places a factor-specific
+    coupling in generators and structure constants; an equivalent convention leaves
+    inverse squared couplings in the gauge Lagrangian.
+  kind: concept
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.yang-mills-coupling-normalization
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 11
+    - 12
+    note: Equations (15.2.5)–(15.2.9) identify the factor-by-factor rescaling and
+      the resulting coupling conventions.
+  notation:
+  - source: weinberg-2
+    note: This convention differs from the explicit g in Peskin–Schroeder and Schwartz
+      covariant derivatives.
+- id: qft.yang-mills-first-class-constraints
+  label: First-class Yang–Mills constraints
+  summary: Canonical Yang–Mills theory has a primary pi^{a0}=0 constraint and a secondary
+    Gauss-law constraint. Their stated Poisson brackets vanish, so they are first
+    class.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.yang-mills-first-class-constraints
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 15
+    note: Equations (15.4.2)–(15.4.3) and the following text identify the constraints
+      and their first-class character.
+  notation: []
+- id: qft.yang-mills-gauge-invariance-task
+  label: Yang–Mills gauge-invariance verification task
+  summary: The assigned Schwartz problem asks for direct verification of gauge invariance
+    after inserting the infinitesimal connection transformation. It is a task, not
+    a completed proof in the packet.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.yang-mills-gauge-invariance-task
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: Problem 25.1
+    pages:
+    - 506
+  notation: []
+- id: qft.yang-mills-historical-mass-obstacle
+  label: Original Yang–Mills massless-vector obstacle
+  summary: The original SU(2) isospin interpretation faced a phenomenological obstacle
+    because its vector mesons would have to be massless. This is a historical framing
+    claim.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.yang-mills-original-massless-vector-obstacle
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 1
+    note: The opening gives the original SU(2) interpretation and explicitly states
+      the massless-vector obstacle.
+  notation: []
+- id: qft.yang-mills-theta-term-qualification
+  label: 'Yang–Mills theta term: perturbative and nonperturbative qualification'
+  summary: The parity-odd F dual F term is a total derivative and does not affect
+    perturbative rules in the stated treatment, while both sources reserve nonperturbative
+    effects.
+  kind: assumption
+  origins:
+  - project: schwartz
+    node: schwartz.yang-mills-theta-term-perturbative-qualification
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  - project: weinberg-2
+    node: weinberg-2.theta-term-nonperturbative-effects
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: schwartz
+    section: 25.2.2
+    pages:
+    - 493
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The opening continuation explicitly states that the term can have nonperturbative
+      quantum-mechanical effects.
+  notation: []
 - id: qft.yang-mills-three-and-four-vector-vertices
   label: Three- and four-vector Yang–Mills vertices
   summary: Cubic and quartic terms of the non-Abelian field-strength Lagrangian give
@@ -5809,6 +6709,26 @@ nodes:
   notation:
   - source: weinberg-2
     note: C_{abc} includes coupling factors.
+- id: qft.yang-mills-universal-coupling
+  label: Yang–Mills vertices and universal coupling
+  summary: Expanding a single locally invariant Yang–Mills Lagrangian gives fermion–gauge,
+    three-gauge, and four-gauge vertices with the same coupling in the Peskin–Schroeder
+    convention.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.yang-mills-feynman-rules-and-universal-coupling
+    note: Retains the reviewed book treatment with its source-specific conditions
+      and notation.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.1 Interactions of Non-Abelian Gauge Bosons
+    pages:
+    - 505
+    - 506
+    - 507
+    - 508
+  notation: []
 - id: qft.yukawa-potential-and-massive-vector-constraint
   label: Yukawa potential and massive-vector constraint
   summary: The massive-vector source problem derives the field equation and a constraint
@@ -7795,6 +8715,145 @@ edges:
     - 10
     note: The Bhabha discussion identifies a second allowed diagram and requires amplitude
       addition before squaring.
+- id: qft.e-align007-casimir-task-route
+  from: qft.casimir-subgroup-decomposition-task
+  to: qft.casimir-index-and-sun-factors
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Peskin–Schroeder problem gives an explicit SU(2)-subgroup route to
+    the stated Casimir and index relations.
+  failure_mode: A reader may confuse this optional derivation route with the only
+    prerequisite for using the established color factors.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.3
+    pages:
+    - 504
+    note: The problem requests the subgroup decomposition and Casimir checks.
+- id: qft.e-align007-current-context-connection-curvature
+  from: qft.general-nonabelian-gauge-construction
+  to: qft.nonabelian-noether-current-conservation-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s total current contains the connection and curvature, whose
+    transformation and commutator definitions must be identified before an on-shell
+    check.
+  failure_mode: Covariant matter-current conservation could be substituted incorrectly
+    for the ordinary divergence statement about the total Noether current.
+  evidence:
+  - source: schwartz
+    section: 25.2–25.3 and Problem 25.5
+    pages:
+    - 492
+    - 493
+    - 507
+    note: The context defines the non-Abelian connection and curvature; the problem
+      states the total-current task.
+- id: qft.e-align007-current-context-total-versus-matter
+  from: qft.total-current-and-covariant-matter-current
+  to: qft.nonabelian-noether-current-conservation-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s ordinary conservation statement concerns the total current,
+    whereas the fermion-only matter current is covariantly conserved.
+  failure_mode: The distinct conservation laws and the gauge-field current contribution
+    would be conflated.
+  evidence:
+  - source: schwartz
+    section: 25.3 and Problem 25.5
+    pages:
+    - 494
+    - 507
+    note: The text distinguishes the two currents and the problem asks for the total-current
+      check.
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    - 13
+    - 14
+    note: The packet separates the ordinary total-current and covariant matter-current
+      formulations.
+- id: qft.e-align007-su2-adjoint-task-route
+  from: qft.su2-adjoint-casimir-task
+  to: qft.adjoint-representation-and-covariant-derivative
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The SU(2) exercise supplies a special-case adjoint-basis and Casimir
+    calculation supporting the broad adjoint record; it does not derive that record’s
+    general adjoint covariant derivative.
+  failure_mode: Calling this task a complete alternative derivation would overstate
+    its special SU(2) scope.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.2
+    pages:
+    - 502
+    note: The problem asks for the adjoint matrices and the direct invariant calculations.
+- id: qft.e-align007-su2-task-route
+  from: qft.local-su2-yang-mills-construction
+  to: qft.yang-mills-gauge-invariance-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for direct verification of the local SU(2) Lagrangian and
+    its transformation law.
+  failure_mode: The task would be treated as a free-standing proof without its stated
+    covariant derivative, connection transformation, and kinetic term.
+  evidence:
+  - source: schwartz
+    section: 25 opening and Problem 25.1
+    pages:
+    - 482
+    - 506
+    note: The construction supplies Eq. 25.6 and the problem asks for its gauge-invariance
+      check.
+- id: qft.e-align007-su3-task-route
+  from: qft.su3-generators-and-invariants-task
+  to: qft.casimir-index-and-sun-factors
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The SU(3) exercise verifies fundamental commutators and invariants in
+    the supplied normalization, supporting the broad color-factor record without deriving
+    its general SU(N) result.
+  failure_mode: Calling this task a complete alternative derivation would extend a
+    fundamental SU(3) check to the general SU(N) statement.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.1
+    pages:
+    - 502
+    note: The task specifies the SU(3) commutator, normalization, and invariant checks.
+- id: qft.e-align007-worldline-task-route
+  from: qft.worldline-wilson-line-task
+  to: qft.nonabelian-path-ordered-wilson-line
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The worldline problem asks for a route to the path-ordering requirement
+    in a non-Abelian background.
+  failure_mode: Path ordering would be presented as a result without retaining the
+    independent proper-time derivation route.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.4
+    pages:
+    - 503
+    - 504
+    note: The task explicitly generalizes the worldline functional integral to a non-Abelian
+      background and asks why path ordering is required.
 - id: qft.energy-momentum-conservation-to-graviton-polarizations
   from: qft.translation-symmetry-and-energy-momentum-tensor
   to: qft.graviton-polarizations-and-trace-coupling
