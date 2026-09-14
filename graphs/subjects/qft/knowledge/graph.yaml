@@ -82,6 +82,25 @@ nodes:
   - source: schwartz
     note: F_pi=v is fixed in the decoupled gauged Lagrangian; F_pi=sqrt(2)v belongs
       to the earlier ungauged parametrization.
+- id: qft.abelian-rxi-ghost-higgs-coupling-and-unphysical-mass
+  label: Abelian R-xi ghost–Higgs coupling and common unphysical mass
+  summary: In the spontaneously broken Abelian R-xi construction, the Goldstone, unphysical
+    vector components, and Faddeev–Popov ghosts acquire the same gauge-dependent mass.
+    Unlike unbroken QED, the Abelian ghosts couple to the physical Higgs field even
+    though they do not directly couple to the gauge field. This is a broken-theory
+    qualification, separate from generic R-xi propagator formulas.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.rxi-abelian-propagators-and-ghost
+    note: Retains the common unphysical mass and the specifically broken-Abelian ghost–Higgs
+      coupling qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 734
 - id: qft.adjoint-representation
   label: Adjoint representation from structure constants
   summary: For structure constants satisfying the displayed antisymmetry and Jacobi
@@ -1920,6 +1939,289 @@ nodes:
     - 32
     - 35
   notation: []
+- id: qft.bv-antibracket-classical-master-equation
+  label: Antibracket form of the classical master equation
+  summary: The antibracket uses right and left functional derivatives with respect
+    to fields and antifields. For the bosonic master action, its graded signs rewrite
+    the classical master equation as (S,S)=0. This self-antibracket condition is nontrivial
+    for bosonic S; the corresponding self-antibracket of a fermionic functional vanishes
+    automatically.
+  kind: representation
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-antibracket-classical-master-equation
+    note: Preserves left/right derivative conventions and the bosonic-versus-fermionic
+      qualification.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 45
+    - 46
+    note: These pages define the antibracket, derive (S,S)=0, and state its graded
+      self-bracket distinction.
+  notation:
+  - source: weinberg-2
+    note: Right and left functional derivatives must be kept distinct for fermionic
+      variables.
+- id: qft.bv-anticanonical-transformations
+  label: BV anticanonical transformations
+  summary: A fermionic ghost-number-minus-one generator changes one solution of the
+    master equation into another. Anticanonical transformations are precisely field–antifield
+    transformations that preserve the fundamental antibrackets; the Jacobi identity
+    shows this preservation for the infinitesimal generated transformation and therefore
+    preserves the master structure.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-anticanonical-transformations
+    note: Preserves the generator grading and the defining preservation of fundamental
+      antibrackets.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 47
+    - 48
+    note: The source introduces the solution-changing transformation, defines anticanonical
+      transformations, and verifies bracket preservation.
+- id: qft.bv-antifields-and-classical-master-action
+  label: BV antifields and the graded classical master action
+  summary: BV introduces an external antifield for every field. The antifield has
+    opposite statistics to its field and ghost number minus the field ghost number
+    minus one. In the closed cases displayed by the source, coupling antifields to
+    BRST variations gives a bosonic ghost-number-zero master action whose zeroth and
+    linear antifield orders encode gauge invariance and nilpotence.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-antifields-and-graded-master-action
+    note: Preserves the grading and the stated closed-case master-action construction.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    note: The page assigns the antifield grading, displays the master action, and
+      identifies its zeroth and linear orders.
+  notation:
+  - source: weinberg-2
+    note: The source writes antifields as x with a star-like superscript and explicitly
+      distinguishes them from complex or charge conjugation and from antighosts.
+- id: qft.bv-cohomological-renormalization-general-gauge-theories
+  label: BV cohomological renormalization of general gauge theories
+  summary: For general gauge theories, the quantum master equation and a loop expansion
+    constrain counterterms. Anticanonical field–antifield redefinitions remove antibracket-exact
+    divergent terms. The possible remaining divergences are cohomology classes of
+    the nilpotent map X to (S_R,X), and the proof succeeds when the structural constraints
+    on the action allow counterterms for those classes.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+    note: Preserves the structural-constraint condition and distinguishes exact redefinitions
+      from the remaining cohomology classes.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 91
+    - 92
+    - 93
+    - 94
+    - 95
+    note: The packet pages set up the general BRST action, quantum-master loop expansion,
+      anticanonical redefinitions, cohomological condition, and its limitations.
+- id: qft.bv-cohomology-theorem-and-renormalizability-limits
+  label: Cohomology theorem and limits of structural renormalizability
+  summary: For gravity coupled to semisimple Yang–Mills fields under the stated nonexceptional
+    assumptions, the cited local ghost-number-zero cohomology consists of gauge-invariant
+    functionals, so bare-action parameters and field–antifield renormalizations can
+    cancel divergences despite higher-dimensional operators. Other theories can have
+    extra cohomology classes; some need not be realized as divergences, while actual
+    unremovable classes would require weaker structural constraints or rejection of
+    the theory.
+  kind: result
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-cohomology-theorem-and-renormalizability-limits
+    note: Preserves the gravity-plus-semisimple-Yang–Mills, local-functional, nonexceptional-assumption,
+      and possible-extra-class qualifications.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 94
+    - 95
+    note: The theorem's scope and the U(1)/extra-cohomology limitations are given
+      on these pages.
+- id: qft.bv-gauge-fixing-fermion-and-on-shell-brst
+  label: BV gauge fixing by a fermion and on-shell field-only BRST
+  summary: BV gauge fixing sets antifields to derivatives of a fermionic gauge-fixing
+    functional of ghost number minus one; equivalently, an anticanonical shift sets
+    transformed antifields to zero. The resulting gauge-fixed action has a BRST transformation
+    on fields alone. For a general open algebra, this field-only transformation differs
+    from the original one and is generally nilpotent only when the field equations
+    hold.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
+    note: Preserves both gauge-fixing routes and the general-open-algebra, on-shell-nilpotence
+      boundary.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    - 48
+    - 49
+    note: The direct substitution, shifted-antifield interpretation, and open-algebra
+      qualification are stated on these pages.
+- id: qft.bv-generalized-brst-antibracket-differential
+  label: Generalized BV BRST differential from the antibracket
+  summary: The BV generalized BRST transformation acts on fields and antifields through
+    the antibracket with S. Its graded derivative rule extends the transformation
+    to general functionals. The classical master equation makes S invariant, and the
+    antibracket Jacobi identity then gives nilpotence of this enlarged differential.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-generalized-brst-antibracket-differential
+    note: Preserves the antibracket action on fields and antifields rather than identifying
+      it with every gauge-fixed field-only BRST operation.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 46
+    - 47
+    note: The transformation, graded derivation rule, Jacobi identity, and nilpotence
+      follow across these pages.
+- id: qft.bv-minimal-variables-and-trivial-pairs
+  label: BV minimal variables and trivial pairs
+  summary: For reducible theories, the BV field set includes ghosts of ghosts and
+    their antifields. The nonlinear minimal sector contains the original fields, ghosts,
+    and their antifields, whereas antighost and auxiliary-field sectors have linear
+    BRST transformations and enter bilinearly as trivial pairs. This separation does
+    not make the open-algebra complications apply to the trivial pairs.
+  kind: representation
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-minimal-and-trivial-pairs
+    note: Preserves reducible-theory ghosts of ghosts and the source's minimal-versus-trivial-pair
+      distinction.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    note: The general master action includes ghosts of ghosts for reducible theories
+      and its footnote identifies minimal variables and trivial pairs.
+  notation:
+  - source: weinberg-2
+    note: For the displayed fields phi, omega, and omega-star, the source gives antifield
+      ghost numbers minus one, minus two, and zero respectively.
+- id: qft.bv-open-algebra-master-equation-consistency-tower
+  label: Master equation as the open-algebra consistency tower
+  summary: Expanding the BV master equation in antifield order yields gauge invariance,
+    then on-shell closure and generalized Jacobi consistency, followed by consistency
+    conditions at successively higher orders. Field-equation terms from quadratic
+    and higher antifield dependence are characteristic of an open algebra, so one
+    master equation packages the tower rather than asserting off-shell closure of
+    the field-only BRST transformation.
+  kind: result
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-master-equation-open-algebra-consistency-tower
+    note: Preserves the on-shell and higher-antifield qualifications of the consistency
+      hierarchy.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    - 45
+    note: The expansion is displayed on p. 44 and p. 45 identifies its on-shell and
+      higher-order consistency content.
+- id: qft.bv-open-and-reducible-gauge-symmetries
+  label: BV treatment of open and reducible gauge symmetries
+  summary: The Batalin–Vilkovisky formalism extends the earlier irreducible, off-shell-closed
+    BRST setting to gauge theories with open algebras, whose closure holds only on
+    field equations, and to reducible gauge symmetries. Its scope here is a formalism
+    for these general systems, with separate later uses in renormalization and quantum
+    symmetry violations.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-formalism-for-open-and-reducible-symmetries
+    note: Preserves the source's open-algebra and reducibility scope without treating
+      either condition as an unrestricted off-shell BRST claim.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 42
+    note: The introduction states both the field-equation closure condition and the
+      open/reducible scope.
+- id: qft.bv-quantum-brst-observable-condition
+  label: Quantum BRST condition for gauge-fixing-independent observables
+  summary: Assuming the quantum master equation, expectation values of generalized-BRST-invariant
+    operators are unchanged by a small change of gauge-fixing fermion. In open gauge
+    theories, field-only invariant operators are generally only constants; the source
+    instead gives the nilpotent quantum BRST operator on field-and-antifield observables.
+    This is an observable condition, not a claim that every operator is gauge-fixing
+    independent.
+  kind: result
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-quantum-brst-observable-condition
+    note: Preserves the quantum-master prerequisite and the open-theory field-and-antifield
+      qualification.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 50
+    note: The expectation-value conclusion and the open-theory quantum-BRST qualification
+      occur on this page.
+- id: qft.bv-quantum-master-equation
+  label: Quantum master equation for gauge-fixing independence
+  summary: For the functional-integral calculation, gauge-fixing-fermion independence
+    requires the quantum master equation (S,S)−2i Delta S=0 at the gauge-fixing antifield
+    values, rather than the classical master equation alone. With hbar restored, the
+    Delta term carries hbar; failure of a local action to meet this condition is the
+    anomaly case deferred by the source.
+  kind: result
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bv-quantum-master-equation
+    note: Preserves the functional-integral and gauge-fixing-fermion scope, including
+      the anomaly boundary.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 49
+    - 50
+    note: The source derives the equation from varying the gauge-fixing fermion and
+      identifies the anomaly qualification.
+  notation:
+  - source: weinberg-2
+    note: Delta is the field–antifield second-order operator defined on p. 49; the
+      displayed convention suppresses hbar until the following discussion.
 - id: qft.canonical-and-path-integral-quantization-routes
   label: Canonical and path-integral quantization routes
   summary: The source identifies canonical quantization and the Feynman path integral
@@ -2596,6 +2898,38 @@ nodes:
     - 36
     - 37
   notation: []
+- id: qft.direct-brst-renormalizability-induction
+  label: Direct BRST renormalizability induction in the displayed Yang–Mills sector
+  summary: For the displayed simple-group Yang–Mills theory with spin-one-half matter
+    and no elementary scalars, the direct argument inducts in loop order. With lower-order
+    subdivergences removed, the N-loop divergence is local, dimension at most four,
+    respects the linearly realized symmetries, and obeys a linearized master condition.
+    Nilpotence and the stated Lorentz, global-gauge, antighost-translation, and ghost-number
+    constraints reduce it to the original Lagrangian form with renormalized coefficients,
+    so counterterms remove the divergence. The scalar sector is explicitly outside
+    this displayed proof.
+  kind: method
+  group: qft.batalin-vilkovisky-formalism
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.direct-brst-renormalizability-induction
+    note: Preserves the simple-group fermion-sector, no-elementary-scalar, and antighost-translation
+      assumptions of the direct route.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 82
+    - 83
+    - 84
+    - 85
+    - 86
+    - 87
+    - 88
+    - 89
+    - 90
+    note: The section develops the loop induction, symmetry and dimension restrictions,
+      nilpotent transformation, and counterterm completion.
 - id: qft.discrete-global-and-gauged-breaking-outcomes
   label: Distinct outcomes of discrete, global, and gauged breaking
   summary: 'Spontaneous breaking has different physical consequences by symmetry type:
@@ -3301,6 +3635,25 @@ nodes:
     pages:
     - 2
   notation: []
+- id: qft.gauged-nonlinear-sigma-model-and-unitary-gauge-propagator
+  label: Gauged nonlinear sigma model and unitary-gauge propagator
+  summary: Starting from a massive-vector Lagrangian, the CCWZ field transformation
+    introduces Goldstones and produces a gauged nonlinear sigma model with vector–Goldstone
+    kinetic mixing; canonical pion normalization fixes g F_pi=2m_A in the displayed
+    convention. Unitary gauge removes the Goldstones and gives the massive-vector
+    propagator with numerator -g_mu_nu+p_mu p_nu/m_A^2.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.gauged-nonlinear-sigma-model-and-unitary-propagator
+    note: Retains the CCWZ restoration route, its normalization, and the unitary-gauge
+      propagator.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 580
 - id: qft.general-brst-cohomology-of-ghost-number-zero-functionals
   label: General BRST cohomology of ghost-number-zero functionals
   summary: Within the stated general setup, a BRST-invariant ghost-number-zero functional
@@ -3565,6 +3918,25 @@ nodes:
   - source: schwartz
     note: The source's displayed matrix element is bra Goldstone, ket vacuum; its
       conjugate convention is used later for the pion field.
+- id: qft.goldstone-pole-transversality-and-unitarity-gauge
+  label: Goldstone pole, transversality, and unitarity gauge
+  summary: In Peskin and Schroeder's Abelian construction, derivative gauge–Goldstone
+    mixing together with the local mass insertion gives a transverse vacuum polarization
+    because the massless Goldstone propagator supplies the required pole. A local
+    gauge transformation can then make the scalar real, leaving the radial scalar
+    and a massive vector with three physical polarizations.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-transverse-polarization-and-unitarity-gauge
+    note: Retains both the pole-based transversality argument and the unitarity-gauge
+      physical-spectrum conclusion.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 691
 - id: qft.goldstone-shift-symmetry-decoupling-and-current
   label: Goldstone shift symmetry, radial decoupling, and pion current
   summary: The broken global U(1) acts as pi to pi+F_pi theta while sigma is invariant,
@@ -3786,6 +4158,53 @@ nodes:
   - source: schwartz
     note: The gauged model uses D_mu phi=(partial_mu+i e A_mu)phi in the displayed
       product form.
+- id: qft.higgs-mechanism-superconducting-meissner-screening
+  label: Higgs mechanism, superconducting photon mass, and Meissner screening
+  summary: In the Ginzburg–Landau/Abelian-Higgs description of a superconductor, the
+    broken phase gives the electromagnetic field a mass. Magnetic fields are consequently
+    excluded or screened over the inverse photon-mass scale; this is the Meissner
+    effect. The statement concerns the effective superconducting description, not
+    a general claim about all media.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-mechanism-superconducting-meissner-application
+    note: Retains the Landau–Ginzburg identification and inverse-gauge-mass penetration
+      statement.
+  - project: schwartz
+    node: schwartz.superconducting-photon-mass-and-meissner-screening
+    note: Retains the temperature-dependent Ginzburg–Landau setting and penetration-depth
+      interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 692
+  - source: schwartz
+    section: 28.3.2
+    pages:
+    - 577
+- id: qft.higgs-radial-mode-and-renormalizability-limit
+  label: Higgs radial mode and renormalizability limit
+  summary: At low energy, massive-vector behavior by itself does not distinguish explicit
+    from spontaneous breaking. In a linear sigma model the radial sigma/Higgs field
+    is part of the renormalizable completion; the nonlinear pion-only theory is generally
+    nonrenormalizable. The Abelian-Higgs exception without a radial mode relies on
+    the absence of photon self-interactions, so it does not establish the non-Abelian
+    case.
+  kind: assumption
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.higgs-radial-mode-and-renormalizability-limit
+    note: Retains the low-energy indistinguishability point, linear-versus-nonlinear
+      renormalizability distinction, and Abelian exception.
+  evidence:
+  - source: schwartz
+    section: 28.3.1
+    pages:
+    - 577
 - id: qft.higher-derivative-effective-interactions-and-instability
   label: Higher-derivative terms, effective interactions, and instability
   summary: Restricting kinetic terms to first derivatives lets initial positions and
@@ -4596,6 +5015,33 @@ nodes:
     node: weinberg-2.nonabelian-field-strength
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  label: Non-Abelian Higgs mass matrix and SO(3) breaking example
+  summary: For a vacuum phi_0 in a real scalar representation, the gauge-boson mass
+    matrix is built from the generator actions T^a phi_0; generators that leave the
+    vacuum invariant give massless vectors. In the SO(3) fundamental example with
+    vacuum (0,0,v), the unbroken SO(2) leaves one vector massless while the two broken
+    directions have equal mass squared g^2 v^2. The example illustrates the general
+    criterion without identifying every group or representation with SO(3).
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonabelian-higgs-mass-matrix
+    note: Retains the positive-semidefinite generator-action mass matrix and unbroken-generator
+      criterion.
+  - project: schwartz
+    node: schwartz.nonabelian-so3-breaking-and-vector-mass-matrix
+    note: Retains the SO(3)-to-SO(2) example and its two equal massive-vector eigenvalues.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 693
+  - source: schwartz
+    section: 28.3.3
+    pages:
+    - 579
 - id: qft.nonabelian-noether-current-conservation-task
   label: Non-Abelian Noether-current conservation task
   summary: The assigned task is to check on-shell ordinary conservation of the total
@@ -4664,6 +5110,47 @@ nodes:
     - 491
     - 507
   notation: []
+- id: qft.nonabelian-rxi-f-matrix-gauge-fixing-and-mass-correspondence
+  label: Non-Abelian R-xi F-matrix gauge fixing and mass correspondence
+  summary: 'For real scalar fluctuations about a broken non-Abelian vacuum, F_ai=-T^a_ij
+    phi_0j need not be square: its nonzero directions connect broken generators and
+    Goldstones. The R-xi gauge condition using F cancels vector–Goldstone mixing.
+    The gauge, timelike-vector, and Goldstone mass matrices involve F F^T and F^T
+    F, whose nonzero eigenvalues correspond one to one.'
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonabelian-rxi-gauge-fixing-matrices
+    note: Retains the rectangular F convention, mixing cancellation, and nonzero-eigenvalue
+      correspondence.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 739
+    - 740
+    - 741
+- id: qft.nonabelian-rxi-ghost-matrix-and-gws-mass-specialization
+  label: Non-Abelian R-xi ghost matrix and GWS mass specialization
+  summary: Varying the non-Abelian R-xi condition gives ghosts with the timelike gauge-component
+    mass matrix and both gauge-field and physical-Higgs interactions. In the GWS mass
+    basis, the charged and neutral Goldstones and their corresponding ghosts carry
+    the associated xi m_W^2 and xi m_Z^2 masses, while the physical Higgs propagates
+    independently of xi.
+  kind: result
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonabelian-rxi-ghosts-and-gws-specialization
+    note: Retains the ghost mass matrix and interactions plus the GWS charged/neutral
+      mass-eigenstate specialization.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 742
+    - 743
 - id: qft.nonlinear-gravity-dimensional-analysis-and-perihelion
   label: Nonlinear gravity, dimensional analysis, and perihelion shift
   summary: The nonlinear-gravity problem rescales a schematic gravitational field,
@@ -4876,6 +5363,25 @@ nodes:
     - 40
     note: Develops the nonlinear scalar-gravity perturbative expansion.
   notation: []
+- id: qft.peskin-abelian-higgs-potential-expansion-and-vector-mass
+  label: Peskin Abelian-Higgs potential expansion and vector mass
+  summary: For the complex scalar potential with negative quadratic term, expansion
+    about the nonzero vacuum separates a massive radial scalar from the massless phase
+    field, while the covariant kinetic term supplies the gauge-field mass term. This
+    is the real-component convention used by Peskin and Schroeder before their later
+    R-xi gauge fixing.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.abelian-higgs-mechanism
+    note: Retains the book's real-component potential expansion, radial/Goldstone
+      distinction, and kinetic-term origin of the Abelian gauge mass.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 690
 - id: qft.peskin-beta-flow-classes
   label: Beta-function flow classes and fixed-point data
   summary: A beta function can approach zero in the infrared, zero in the ultraviolet,
@@ -5615,9 +6121,12 @@ nodes:
   notation: []
 - id: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
   label: Rxi gauge fixing with Faddeev–Popov ghosts
-  summary: For spontaneously broken gauge theory, G[A,pi]=partial dot A minus xi m_A
-    pi removes vector–Goldstone kinetic mixing. In the non-Abelian case its Faddeev–Popov
-    determinant yields ghosts governed by partial_mu D^mu plus xi m_A squared.
+  summary: For spontaneously broken gauge theory, an Rxi gauge condition removes vector–Goldstone
+    kinetic mixing. In the shifted Abelian scalar construction it is G=(partial dot
+    A-xi e v varphi)/sqrt(xi); in the degenerate-mass non-Abelian construction it
+    is G[A,pi]=partial dot A-xi m_A pi. The non-Abelian Faddeev–Popov determinant
+    yields ghosts governed by partial_mu D^mu+xi m_A squared. Matrix-valued nondegenerate
+    constructions remain represented separately.
   kind: method
   group: qft.gauge-quantization
   origins:
@@ -5625,12 +6134,42 @@ nodes:
     node: schwartz.rxi-gauge-fixing-and-faddeev-popov-ghosts
     note: Retains the broken-gauge-theory mixing-removal purpose and its non-Abelian
       determinant.
+  - project: peskin-schroeder
+    node: peskin-schroeder.rxi-abelian-gauge-fixing
+    note: Retains the shifted Abelian condition, its Faddeev–Popov use, and cancellation
+      of quadratic vector–Goldstone mixing.
   evidence:
   - source: schwartz
     section: '28.4'
     pages:
     - 581
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 733
   notation: []
+- id: qft.rxi-gauge-limits-renormalizability-and-unitary-gauge-boundary
+  label: R-xi gauge limits, renormalizability, and unitary-gauge boundary
+  summary: 'In the broken Abelian model, xi=0 gives a transverse vector propagator
+    and massless Goldstone, xi=1 requires the Feynman–''t Hooft vector and Goldstone
+    rules together, and finite xi gives 1/k^2 falloff. Power counting alone is not
+    the full physical-renormalizability argument: preservation of local gauge invariance
+    and xi independence is also required. The xi-to-infinity unitary-gauge limit has
+    only physical poles, while individual loop diagrams can diverge in that limit
+    even when the gauge-invariant sum is smooth.'
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.rxi-gauge-limits-and-proof-boundary
+    note: Retains the special-gauge limits, finite-xi falloff, all-orders proof boundary,
+      and unitary-limit loop qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 737
+    - 738
 - id: qft.rxi-propagators-and-gauge-dependent-unphysical-masses
   label: Rxi propagators and gauge-dependent unphysical masses
   summary: In Rxi gauge, the vector propagator has a physical pole at p squared equals
@@ -6059,6 +6598,24 @@ nodes:
     pages:
     - 502
   notation: []
+- id: qft.su2-doublet-higgs-complete-gauge-breaking
+  label: SU(2) doublet Higgs complete gauge breaking
+  summary: For a single SU(2) scalar doublet with vacuum (0,v/sqrt(2))^T, all three
+    generator actions move the vacuum. Accordingly all three SU(2) gauge bosons acquire
+    the same mass gv/2; this is complete breaking of that SU(2), without the additional
+    U(1) of the electroweak model.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.su2-doublet-higgs-complete-breaking
+    note: Retains the single-doublet SU(2) vacuum, complete breaking, and degenerate
+      mass result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 694
 - id: qft.su3-generators-and-invariants-task
   label: SU(3) fundamental generators and invariant task
   summary: The assigned problem asks for SU(3) generator commutators, structure constants,
@@ -6076,6 +6633,24 @@ nodes:
     pages:
     - 502
   notation: []
+- id: qft.su5-adjoint-breaking-to-standard-model-gauge-group
+  label: SU(5) adjoint breaking to the Standard Model gauge group
+  summary: For an SU(5) adjoint vacuum proportional to diag(2,2,2,-3,-3), the commuting
+    generators form SU(3) x SU(2) x U(1). This is a symmetry-breaking example that
+    motivates a grand-unified embedding; it does not establish that nature realizes
+    SU(5) unification.
+  kind: result
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.su5-adjoint-breaking-to-standard-model-group
+    note: Retains the adjoint vacuum, commuting-generator criterion, and explicitly
+      limited grand-unification interpretation.
+  evidence:
+  - source: schwartz
+    section: 28.3.3
+    pages:
+    - 579
 - id: qft.sun-products-fierz-and-anomaly-invariant
   label: SU(N) generator products, Fierz reduction, and anomaly invariant
   summary: In the fundamental matrix representation, generator products resolve into
@@ -6288,6 +6863,26 @@ nodes:
   notation:
   - source: peskin-schroeder
     note: alpha=e^2/(4 pi) in the book's units.
+- id: qft.tree-level-xi-cancellation-in-broken-abelian-chiral-scattering
+  label: Tree-level xi cancellation in broken-Abelian chiral scattering
+  summary: For the deliberately stripped-down broken-Abelian chiral fermion model,
+    the xi-dependent part of vector exchange cancels Goldstone exchange after the
+    massive chiral current is used on shell. The source limits this example to tree
+    graphs because its axial-vector anomaly would make loop calculations inconsistent;
+    it is an illustration, not an all-orders proof of gauge-parameter independence.
+  kind: method
+  group: qft.gauge-quantization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.rxi-tree-gauge-parameter-cancellation
+    note: Retains the vector/Goldstone tree cancellation and the anomalous-model loop
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 735
+    - 736
 - id: qft.two-level-equilibrium-detailed-balance
   label: Two-level equilibrium detailed balance
   summary: For atoms with energies E₁ and E₂ separated by ℏω, the population-rate
@@ -6308,6 +6903,25 @@ nodes:
     - 6
     note: Sets up the rate balance and thermal populations.
   notation: []
+- id: qft.type-two-vortices-and-cooper-pair-order-parameter
+  label: Type-II vortices and Cooper-pair order parameter
+  summary: In the Ginzburg–Landau description, the comparison between correlation
+    length xi=1/m and penetration depth R=1/m_A distinguishes type-II flux-tube formation
+    from the type-I regime. The same effective order parameter is connected microscopically
+    to Cooper pairs formed through phonon-mediated attraction. These are superconducting-model
+    claims, not a generic consequence of every Higgs phase.
+  kind: concept
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: schwartz
+    node: schwartz.type-two-vortices-and-cooper-pair-order-parameter
+    note: Retains the xi/R type classification and the Cooper-pair microscopic identification.
+  evidence:
+  - source: schwartz
+    section: 28.3.2
+    pages:
+    - 577
+    - 578
 - id: qft.ultraviolet-catastrophe
   label: Ultraviolet catastrophe
   summary: The equipartition spectrum rises with frequency, whereas the observed blackbody
@@ -6354,6 +6968,24 @@ nodes:
   - source: weinberg-2
     note: T, K, and V are the three source-defined gauge-Higgs contributions; H is
       the unbroken subgroup.
+- id: qft.unitary-and-feynman-thooft-gauge-comparison-in-broken-theory
+  label: Unitary and Feynman–'t Hooft gauge comparison in broken theory
+  summary: For the broken gauge theory in Schwartz's degenerate-mass presentation,
+    xi to infinity is unitary gauge with three physical vector polarizations, whereas
+    xi=1 gives simple vector, Goldstone, and ghost propagators of equal mass. Finite
+    xi has 1/p^2 ultraviolet scaling, but this does not make a nonlinear massive-vector
+    EFT renormalizable with finitely many counterterms.
+  kind: assumption
+  group: qft.gauge-quantization
+  origins:
+  - project: schwartz
+    node: schwartz.unitary-and-feynman-thooft-gauge-comparison
+    note: Retains the stated gauge comparison and nonlinear-EFT counterterm qualification.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 582
 - id: qft.unpolarized-trace-technology
   label: Trace technology for unpolarized cross sections
   summary: Products of gamma matrices and spinors in an unpolarized cross section
@@ -7544,6 +8176,432 @@ edges:
     pages:
     - 370
     note: The p-form Lagrangian is introduced 'By analogy with electrodynamics'.
+- id: full-align-008-abelian-higgs-to-transverse-pole
+  from: qft.peskin-abelian-higgs-potential-expansion-and-vector-mass
+  to: qft.goldstone-pole-transversality-and-unitarity-gauge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pole calculation uses the broken vacuum, the Goldstone field, and
+    the induced vector mass term.
+  failure_mode: Neither contribution to the transverse vacuum polarization is identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 691
+- id: full-align-008-abelian-unphysical-spectrum-to-rxi-limits
+  from: qft.abelian-rxi-ghost-higgs-coupling-and-unphysical-mass
+  to: qft.rxi-gauge-limits-renormalizability-and-unitary-gauge-boundary
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The special-gauge and xi-to-infinity comparison depends on the vector
+    and Goldstone pole behavior established after gauge fixing.
+  failure_mode: The stated gauge limits have no propagating-field interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 738
+- id: full-align-008-abelian-unphysical-spectrum-to-tree-cancellation
+  from: qft.abelian-rxi-ghost-higgs-coupling-and-unphysical-mass
+  to: qft.tree-level-xi-cancellation-in-broken-abelian-chiral-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation compares the xi-dependent vector contribution with Goldstone
+    exchange in the same broken-Abelian R-xi spectrum.
+  failure_mode: The cancelling exchanged contribution cannot be specified.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 736
+- id: full-align-008-ccwz-to-rxi-mixing-removal
+  from: qft.gauged-nonlinear-sigma-model-and-unitary-gauge-propagator
+  to: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Schwartz introduces the mixed gauged nonlinear sigma model and then removes
+    its mixing with R-xi gauge fixing; this is a distinct derivation route from Peskin's
+    shifted linear Abelian scalar.
+  failure_mode: Making the Peskin shift compulsory would erase Schwartz's independent
+    nonlinear-sigma route.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 580
+    - 581
+- id: full-align-008-f-matrix-to-nonabelian-ghosts
+  from: qft.nonabelian-rxi-f-matrix-gauge-fixing-and-mass-correspondence
+  to: qft.nonabelian-rxi-ghost-matrix-and-gws-mass-specialization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The non-Abelian ghost action is obtained by varying the F-matrix R-xi
+    condition, and its mass matrix is the one already identified there.
+  failure_mode: The ghost mass matrix and GWS specialization lack their gauge-fixing
+    source.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 742
+- id: full-align-008-meissner-to-vortices
+  from: qft.higgs-mechanism-superconducting-meissner-screening
+  to: qft.type-two-vortices-and-cooper-pair-order-parameter
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The type classification compares the penetration depth set by photon
+    mass with the scalar correlation length in the same superconducting effective
+    model.
+  failure_mode: The R scale in the xi/R comparison is undefined.
+  evidence:
+  - source: schwartz
+    section: 28.3.2
+    pages:
+    - 577
+    - 578
+- id: full-align-008-nonabelian-mass-to-f-matrix
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.nonabelian-rxi-f-matrix-gauge-fixing-and-mass-correspondence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The F-matrix construction rewrites the broken-vacuum generator actions
+    and their gauge-boson mass matrix.
+  failure_mode: F F^T has no physical identification as the gauge mass matrix.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 741
+- id: full-align-008-nonabelian-mass-to-su2-example
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.su2-doublet-higgs-complete-gauge-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(2) doublet calculation evaluates the generator-action mass rule
+    at a chosen vacuum.
+  failure_mode: The complete-breaking and degenerate-mass conclusion cannot be obtained
+    from the vacuum alone.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 694
+- id: full-align-008-peskin-abelian-higgs-to-rxi
+  from: qft.peskin-abelian-higgs-potential-expansion-and-vector-mass
+  to: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The broken-field shift identifies the Goldstone coordinate and vector–Goldstone
+    mixing that the Abelian R-xi condition cancels.
+  failure_mode: The gauge-fixing functional's scalar term and cancellation target
+    are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 733
+- id: full-align-008-radial-mode-to-renormalizability-boundary
+  from: qft.higgs-radial-mode-and-renormalizability-limit
+  to: qft.rxi-gauge-limits-renormalizability-and-unitary-gauge-boundary
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The radial-mode discussion explains why good finite-xi power counting
+    alone does not settle the ultraviolet completion of a nonlinear massive-vector
+    theory.
+  failure_mode: The finite-xi comparison loses a source-qualified ultraviolet-completion
+    boundary but remains derivable from its own propagator analysis.
+  evidence:
+  - source: schwartz
+    section: 28.3.1; 28.4
+    pages:
+    - 577
+    - 582
+- id: full-align-008-rxi-limits-to-schwartz-gauge-comparison
+  from: qft.rxi-gauge-limits-renormalizability-and-unitary-gauge-boundary
+  to: qft.unitary-and-feynman-thooft-gauge-comparison-in-broken-theory
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Peskin's Abelian gauge-limit analysis and Schwartz's degenerate non-Abelian
+    presentation are independent source routes to comparing unitary and Feynman–'t
+    Hooft gauges.
+  failure_mode: Treating one presentation as necessary for the other would make parallel
+    source routes cumulative.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 582
+- id: full-align-008-rxi-to-abelian-ghost-coupling
+  from: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  to: qft.abelian-rxi-ghost-higgs-coupling-and-unphysical-mass
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Abelian ghost operator and unphysical mass follow from the gauge
+    variation of the broken-theory R-xi functional.
+  failure_mode: The common unphysical mass and Higgs coupling have no Faddeev–Popov
+    derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 734
+- id: full-align-009-antibracket-to-generalized-differential
+  from: qft.bv-antibracket-classical-master-equation
+  to: qft.bv-generalized-brst-antibracket-differential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The generalized BV differential is defined by antibracketing with the
+    master action.
+  failure_mode: Its graded action and nilpotence cannot be derived without the antibracket
+    formulation.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 46
+    - 47
+    note: The differential and its Jacobi-identity nilpotence are given across these
+      pages.
+- id: full-align-009-anticanonical-route-to-gauge-fixing
+  from: qft.bv-anticanonical-transformations
+  to: qft.bv-gauge-fixing-fermion-and-on-shell-brst
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The anticanonical shift is an equivalent interpretation of gauge fixing,
+    while direct antifield substitution remains an independent route.
+  failure_mode: Without this route, only the transformed-antifield-to-zero interpretation
+    is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 48
+    note: The source explicitly identifies the transformed-antifield interpretation.
+- id: full-align-009-anticanonical-to-general-cohomological-renormalization
+  from: qft.bv-anticanonical-transformations
+  to: qft.bv-cohomological-renormalization-general-gauge-theories
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Anticanonical field–antifield redefinitions remove exact divergent representatives.
+  failure_mode: The proof has no allowed redefinition route for antibracket-exact
+    infinities.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 93
+    - 94
+    note: The source introduces the transformations and uses them to cancel exact
+      terms.
+- id: full-align-009-antifields-to-consistency-tower
+  from: qft.bv-antifields-and-classical-master-action
+  to: qft.bv-open-algebra-master-equation-consistency-tower
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The consistency tower is obtained by expanding the graded antifield master
+    action.
+  failure_mode: There is no object whose antifield orders can encode gauge invariance,
+    closure, and higher consistency conditions.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    - 45
+    note: The expansion and its order-by-order interpretation are stated on these
+      pages.
+- id: full-align-009-antifields-to-gauge-fixing
+  from: qft.bv-antifields-and-classical-master-action
+  to: qft.bv-gauge-fixing-fermion-and-on-shell-brst
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge fixing is the specified substitution of antifields by derivatives
+    of the fermion.
+  failure_mode: The gauge-fixed action and its field-only BRST operation are not defined.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 43
+    - 48
+    note: The direct substitution and the later gauge-fixed action are stated on these
+      pages.
+- id: full-align-009-direct-induction-to-general-brst-limit
+  from: qft.direct-brst-renormalizability-induction
+  to: qft.brst-renormalizability-and-nonbilinear-ghost-qualification
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The direct proof shows exactly where antighost-translation symmetry enters
+    and why more general gauges need the broader BRST-invariant action.
+  failure_mode: The direct proof's restricted gauge-fixing scope is obscured.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 90
+    note: The source identifies the antighost-translation assumption and its failure
+      in more general gauges.
+- id: full-align-009-gauge-fixing-to-qme
+  from: qft.bv-gauge-fixing-fermion-and-on-shell-brst
+  to: qft.bv-quantum-master-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quantum master equation is obtained by varying the gauge-fixing fermion
+    in the functional integral.
+  failure_mode: The variation whose cancellation produces the quantum master equation
+    is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 49
+    note: The source varies the gauge-fixing fermion before deriving the quantum master
+      equation.
+- id: full-align-009-general-cohomology-to-limits
+  from: qft.bv-cohomological-renormalization-general-gauge-theories
+  to: qft.bv-cohomology-theorem-and-renormalizability-limits
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The theorem and its limits classify the remaining cohomology identified
+    by the general proof.
+  failure_mode: The scope of the theorem and the significance of extra classes cannot
+    be assessed.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 94
+    - 95
+    note: The source applies the cohomological criterion to the stated theory and
+      discusses extra terms.
+- id: full-align-009-generalized-brst-to-bv-scope
+  from: qft.generalized-brst-slavnov-operator-and-closure
+  to: qft.bv-open-and-reducible-gauge-symmetries
+  relation: evidence
+  source_level: derive
+  target_level: recognize
+  necessity: helpful
+  rationale: The earlier off-shell nilpotence conditions explain why open algebras,
+    whose closure is field-equation dependent, require the BV enlargement.
+  failure_mode: The reason for distinguishing open algebras from the earlier generalized
+    BRST construction is lost.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 42
+    note: The BV introduction contrasts open algebra closure with the preceding closed
+      setting.
+- id: full-align-009-generalized-differential-to-anticanonical
+  from: qft.bv-generalized-brst-antibracket-differential
+  to: qft.bv-anticanonical-transformations
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The same master-equation nilpotence and Jacobi structure underwrite the
+    solution-changing antibracket transformation.
+  failure_mode: Master-equation preservation by the generated transformation is left
+    unsupported.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 47
+    - 48
+    note: The solution transformation and bracket-preservation proof use this structure.
+- id: full-align-009-qme-to-general-cohomological-renormalization
+  from: qft.bv-quantum-master-equation
+  to: qft.bv-cohomological-renormalization-general-gauge-theories
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general counterterm recursion begins by imposing and expanding the
+    quantum master equation in the loop-counting parameter.
+  failure_mode: The stated recursion and classical-master base condition do not follow.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 92
+    note: The page imposes the quantum master equation and expands the action in hbar.
+- id: full-align-009-qme-to-observable-condition
+  from: qft.bv-quantum-master-equation
+  to: qft.bv-quantum-brst-observable-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The observable-independence result is stated under the quantum master
+    equation.
+  failure_mode: The integration-by-parts cancellation that protects the expectation
+    value is not warranted.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 50
+    note: The page begins the expectation-value conclusion by assuming the quantum
+      master equation.
+- id: full-align-009-reducibility-to-minimal-sector
+  from: qft.reducible-gauge-symmetry-and-ghosts-of-ghosts
+  to: qft.bv-minimal-variables-and-trivial-pairs
+  relation: prerequisite
+  source_level: use
+  target_level: recognize
+  necessity: necessary
+  rationale: Recognizing why the minimal BV sector includes ghosts of ghosts requires
+    the reducibility mechanism.
+  failure_mode: Higher-stage ghosts would appear as an unmotivated addition to an
+    irreducible Yang–Mills field set.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    note: The general BV action explicitly adds ghosts of ghosts for reducible theories.
 - id: qft.abelian-higgs-model-to-gauge-shift
   from: qft.abelian-higgs-model-and-vector-mass
   to: qft.abelian-higgs-gauge-shift-and-degree-count
@@ -10437,6 +11495,10 @@ groups:
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,
     cancellation, and matching treatments constrain anomalous quantum field theories?
+- id: qft.batalin-vilkovisky-formalism
+  title: Batalin–Vilkovisky formalism and structural renormalization
+  question: How do antifields, master equations, and cohomology organize open or reducible
+    gauge systems and their renormalization?
 - id: qft.brst-and-physical-states
   title: BRST symmetry and physical states
 - id: qft.causal-scalar-fields
