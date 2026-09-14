@@ -1,16 +1,18 @@
 schema_version: 1
 source: schwartz
 graph_digest: sha256:4a90511ca4ec0c164e9ed0f93f44bd422ad1332cba07b25d9f67b80966b93863
-status: construction-in-progress
-whole_book_graph_audit: pending
+status: model-reviewed
+whole_book_graph_audit: Accepted; all findings resolved. See reconciliation.md for
+  the baseline and source-backed dispositions.
 inventory_review:
   extractor: gpt-5.6-terra/high
   critic_and_final_decision: gpt-5.6-sol/high
   verdict: accept
-interpretation: Section coordinates and nonconceptual exclusions were independently
-  reviewed. Page-scope status measures accepted full extraction units, not proof of
-  conceptual completeness. Narrow pilots do not establish full section coverage. Final
-  graph coverage and cross-unit dependency review remain pending.
+interpretation: Section coordinates and exclusions were independently reviewed. Page-scope
+  status measures accepted full extraction units; it does not prove conceptual completeness.
+  The separate reconciliation report assesses semantic section coverage and cross-unit
+  dependencies on its identified baseline, with amendment outcomes recorded explicitly.
+  Cross-volume/shared-graph alignment and the end human audit remain separate.
 substantive_printed_range:
   first: 3
   last: 833
@@ -1881,3 +1883,23 @@ inventory_supplements:
     last: 812
   - first: 814
     last: 814
+- id: whole-book-divider-annotations-001
+  extractor: gpt-5.6-terra/high
+  critic: gpt-5.6-sol/high
+  verdict: accept
+  denominator_change: false
+  scope: Explicit classifications from accepted whole-book audits. Original inventory
+    and prior exclusions are preserved; these annotations do not subtract pages or
+    change graph content.
+  pages:
+  - first: 813
+    last: 813
+nonconceptual_annotations:
+- page: 813
+  classification: nonconceptual-divider
+  review: Accepted whole-book assessment; see reconciliation.md.
+  disposition: No scientific content or concept node. Retained in the historical reviewed-scope
+    denominator.
+page_count_interpretation: substantive_pages preserves the accepted historical inventory
+  denominator, including the explicitly annotated title-only dividers. It measures
+  reviewed source scope, not a requirement to create content for every page.

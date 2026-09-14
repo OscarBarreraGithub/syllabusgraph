@@ -18,7 +18,7 @@ The graph is correctly conditional, but it lacks a source-reviewed correspondenc
 
 Source context: weinberg-1 pp. 504–532; weinberg-2 pp. 256–291; weinberg-2 pp. 323–323.
 
-## Final audit decisions
+## Audit decisions
 
 **Pending power-counting issue omits its full-008 use page.** Add Weinberg II page 323 as a separate source-context slice while preserving the issue and its external-proof limits.
 

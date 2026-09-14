@@ -26,7 +26,7 @@ The derive-level Euler–Heisenberg matching method integrates out the electron 
 
 Source context: weinberg-1 pp. 355–356; weinberg-1 pp. 403–413; weinberg-1 pp. 523–524.
 
-## Final audit decisions
+## Audit decisions
 
 **Section 12.2 includes a catalogue evidenced only in section 12.3 because “Table 12.2” was mistaken for a section designation..** Remove weinberg-1.scalar-spinor-photon-renormalizable-catalogue from section 12.2 and retain it in section 12.3.
 

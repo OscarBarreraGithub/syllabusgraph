@@ -1,6 +1,6 @@
 # The Quantum Theory of Fields, Volume I: Foundations
 
-**Partial, model-reviewed graph:** 483 concepts and 631 relationships. Accepted units cover printed pages 1–189, 191–595; exact topic scopes and exclusions are in [review.yaml](review.yaml).
+**Model-reviewed textbook graph:** 483 concepts and 631 relationships. Accepted units cover printed pages 1–189, 191–595; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
 Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. The whole-book assessment and its resolved or pending amendments are recorded in the reconciliation report. Cross-volume correspondence and shared-graph alignment remain in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
 

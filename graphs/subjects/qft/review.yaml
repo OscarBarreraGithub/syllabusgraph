@@ -2,7 +2,7 @@ schema_version: 1
 status: partial-model-reviewed
 complete_subject: false
 human_audit: pending
-graph_digest: sha256:3c6d1c82e5c34fa0e649a8fedc2489e7eb948f66855d103f693640c8b7f4ba76
+graph_digest: sha256:a4f3e42c329a0e25d42cdd7db7c4462286e17f9af32d81554907b9cdd3bde787
 extraction:
   model: gpt-5.6-terra
   effort: high
@@ -225,6 +225,40 @@ units:
   mapped_book_nodes: 13
   new_nodes: 13
   replaced_nodes: 0
+- id: full-align-006
+  source: peskin-schroeder
+  printed_pages:
+    first: 659
+    last: 682
+  scope: Source-backed concepts, results, methods and substantial derivations within
+    the listed pages; section-level evidence is retained on each record.
+  nodes: 71
+  edges: 59
+  acceptance: independent-critic
+  source_ranges:
+  - source: peskin-schroeder
+    first: 659
+    last: 682
+  - source: schwartz
+    first: 506
+    last: 507
+  - source: schwartz
+    first: 621
+    last: 640
+  - source: weinberg-2
+    first: 362
+    last: 392
+  book_inputs:
+  - project: peskin-schroeder
+    graph_digest: sha256:08a1eb5357568887c3c37eba00d8d4706ee61ca09eaa0e92756b7b3ffd9c722d
+  - project: schwartz
+    graph_digest: sha256:fb0268dfa3a45f8c51399f08beda16a6c923e5a9183378e504d41ea23e61f077
+  - project: weinberg-2
+    graph_digest: sha256:2810774958356170e41f42ffc906d725de7bdfe6b4ef2254cc316a581b0464f2
+  input_book_nodes: 70
+  mapped_book_nodes: 70
+  new_nodes: 71
+  replaced_nodes: 0
 - id: pilot-01
   scope: Align the independently reviewed textbook pilot graphs, preserving source-specific
     treatments and source citations.
@@ -263,5 +297,5 @@ omissions:
 - Shared alignment covers only the bounded reviewed book inputs listed in each unit.
 - Book concepts outside those inputs remain to be aligned; absence of a mapping is
   not evidence that a textbook omits a topic.
-- Whole-book coverage, global dependency reconciliation and the end human audit remain
-  pending.
+- Shared-graph dependency reconciliation and the end human audit remain pending; each
+  book's separate coverage and audit are recorded in its own project.

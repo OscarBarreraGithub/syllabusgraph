@@ -12,7 +12,7 @@ The end human audit is **pending**. Shared-graph alignment and cross-volume foll
 
 No graph amendment remains from this accepted whole-book audit.
 
-## Final audit decisions
+## Audit decisions
 
 **The audit treats necessity=necessary on an alternative edge as planner-enforced, falsely making the optional Chapter 9 Wick route compulsory..** Remove the issue and dependent audit language; retain the alternative edge because it is noncompulsory and necessary only within its optional route.
 
