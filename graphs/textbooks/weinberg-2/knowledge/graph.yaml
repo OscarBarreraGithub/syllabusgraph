@@ -90,6 +90,62 @@ nodes:
     note: The source replaces the constrained A_0 solution by independent integration,
       then integrates the canonical momenta under its Gaussian assumption and retains
       all four gauge-field components.
+- id: weinberg-2.background-field-gauge-formal-invariance
+  label: Background-field gauge and formal background invariance
+  summary: Splitting each field into a fixed background and an integrated quantum
+    fluctuation, then choosing fᵃ=Dᵘ[A]A′ᵃ_μ, makes the gauge-fixing term covariant
+    under a formal transformation in which the background transforms as a connection
+    and the fluctuation transforms homogeneously. With matching background transformations
+    of matter and ghosts, the measure and modified action imply that the effective
+    action is invariant under the background transformations.
+  kind: method
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 95
+    - 96
+    - 97
+    - 98
+    note: Equations (17.4.1)–(17.4.28) construct the background split, gauge functional,
+      and invariant ghost action.
+- id: weinberg-2.background-formal-versus-true-gauge-transformations
+  label: Formal background transformations differ from true gauge transformations
+  summary: The formal background transformation changes the prescribed background
+    and rotates fluctuations homogeneously, preserving the chosen background gauge-fixing
+    term. A true gauge transformation leaves prescribed backgrounds fixed and transforms
+    the total field; it preserves the original Lagrangian but generally does not preserve
+    that gauge-fixing term.
+  kind: concept
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 97
+    - 98
+    note: Equations (17.4.16)–(17.4.20) make the distinction and its gauge-fixing
+      consequence.
+- id: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  label: Background gauge invariance ties coupling renormalization to the field-strength
+    term
+  summary: Background gauge invariance restricts divergent local terms to background-covariant
+    field-strength, matter, and ghost structures. For a simple group with irreducible
+    fermions, redefining fields and mass restores the classical form and forces the
+    renormalized coupling to be determined by the coefficient of Fᵃ_{μν}F^{aμν}. Thus
+    one background gauge-field amplitude suffices, unlike in a general gauge where
+    field and coupling factors must be separated from multiple amplitudes.
+  kind: result
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 98
+    - 99
+    - 100
+    note: Equations (17.4.29)–(17.4.48) classify divergences and derive g_R=g(1+L_A)^−1/2.
 - id: weinberg-2.brst-beyond-power-counting-and-bilinear-faddeev-popov
   label: Why BRST must extend power counting and bilinear Faddeev–Popov actions
   summary: Power counting does not by itself ensure that every divergence has an available
@@ -287,6 +343,44 @@ nodes:
   - source: weinberg-2
     note: Weinberg uses x*_n as an antifield symbol; it is explicitly unrelated to
       complex or charge conjugation, and the antighost is not the ghost's antifield.
+- id: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+  label: BV cohomological renormalization of general gauge theories
+  summary: For a general gauge theory, the quantum master equation and a loop expansion
+    constrain counterterms. Allowing anticanonical field–antifield redefinitions removes
+    exact divergences; the remaining possible divergences are cohomology classes of
+    the nilpotent map X↦(S_R,X). Renormalizability follows when these classes obey
+    the action's structural constraints and hence have available counterterms.
+  kind: method
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 91
+    - 92
+    - 93
+    - 94
+    - 95
+    note: Equations (17.3.1)–(17.3.14) formulate the quantum-master, anticanonical,
+      and cohomological proof route.
+- id: weinberg-2.bv-cohomology-theorem-and-renormalizability-limits
+  label: Cohomology theorem and limits of structural renormalizability
+  summary: For gravity coupled to semisimple Yang–Mills fields under the stated nonexceptional
+    assumptions, the cited local ghost-number-zero cohomology consists of gauge-invariant
+    functionals, so available bare-action parameters and field–antifield renormalizations
+    cancel divergences despite higher-dimensional operators. Other theories can have
+    extra classes; some are excluded by separate theorems, while unremovable divergent
+    classes would require relaxing structural constraints or rejecting the theory.
+  kind: result
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 94
+    - 95
+    note: The closing paragraphs state the cohomology theorem, U(1) qualification,
+      and possible limitation.
 - id: weinberg-2.bv-formalism-for-open-and-reducible-symmetries
   label: Batalin-Vilkovisky formalism for open and reducible gauge symmetries
   summary: The Batalin-Vilkovisky formalism extends the treatment beyond irreducible
@@ -496,6 +590,26 @@ nodes:
     - 10
     note: The page contrasts real and complex basis changes and derives the algebraic
       restriction from a positive trace metric.
+- id: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  label: Constant-background determinant method for one-loop gauge coupling renormalization
+  summary: In background-field gauge a constant non-Abelian background has a nonzero
+    quartic field-strength contribution. Expanding the gauge, ghost, and fermion quadratic
+    operators in zero-, one-, and two-background-field pieces, taking their trace-logs,
+    and extracting the quartic term gives the logarithmically divergent coefficient
+    of F² through finite-matrix algebra in momentum space.
+  kind: method
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    - 102
+    - 103
+    - 104
+    note: The section sets the constant background, obtains determinant factors, and
+      derives the quartic trace-log expansion.
 - id: weinberg-2.covariant-derivative
   label: Covariant derivative of matter fields
   summary: The operator (D_μψ)_l=∂_μψ_l−iA^β_μ(t_β)_l{}^mψ_m is constructed so that
@@ -570,6 +684,35 @@ nodes:
   - source: weinberg-2
     note: In this section A labels an independent gauge variation and r labels fields,
       both potentially including spacetime coordinates.
+- id: weinberg-2.direct-brst-renormalizability-induction
+  label: Direct BRST proof for the displayed simple Yang–Mills fermion sector
+  summary: For the displayed simple-group theory with spin-one-half matter, the listed
+    Lorentz, global-gauge, antighost-translation, and ghost-number symmetries, and
+    no elementary scalar sector, the direct proof inducts on loop order. After lower-loop
+    subdivergences are cancelled, the divergent N-loop effective action is local,
+    has dimension at most four, respects the linear symmetries, and obeys the linearized
+    Zinn–Justin condition. Dimensionality and ghost number restrict its K dependence;
+    nilpotence and the remaining symmetries reduce the allowed Lagrangian to the original
+    form with renormalized coefficients, whose counterterms remove the divergence.
+    The omitted scalar-dependent terms are a separate extension requested by Problem
+    1.
+  kind: method
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 82
+    - 83
+    - 84
+    - 85
+    - 86
+    - 87
+    - 88
+    - 89
+    - 90
+    note: Section 17.2 derives the loop-order condition, classifies terms, applies
+      nilpotence, and completes the counterterm proof.
 - id: weinberg-2.dynamical-gauge-fields-give-local-symmetry-physical-content
   label: Dynamical gauge fields give local symmetry physical content
   summary: Local gauge invariance or general covariance can be a merely conventional
@@ -589,6 +732,92 @@ nodes:
   - source: weinberg-2
     note: The opening compares the electromagnetic A_mu(x) and gravitational g_munu(x)
       cases before extending locality to non-Abelian transformations.
+- id: weinberg-2.effective-action-1pi-tree-reconstruction
+  label: Effective action as 1PI vertices and tree reconstruction
+  summary: A loop-counting rescaling and stationary-phase limit show that W[J] is
+    reconstructed by connected tree diagrams made from Γ vertices and propagators.
+    Hence Γ is the sum of connected one-particle-irreducible diagrams, and its expansion
+    about a background field supplies background-dependent renormalized couplings.
+  kind: method
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 66
+    - 67
+    - 68
+    note: Equations (16.1.9)–(16.1.21) give the loop rescaling proof, shifted action,
+      and 1PI interpretation.
+- id: weinberg-2.effective-potential-constant-background
+  label: Effective potential for a constant background
+  summary: For a spacetime-independent scalar background φ₀, translation invariance
+    factors the effective action as minus spacetime volume times an ordinary effective
+    potential V(φ₀). In the quartic scalar example, shifting the field makes the quadratic
+    kernel depend on the background through its field-dependent mass.
+  kind: representation
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 68
+    - 69
+    note: Equations (16.2.1)–(16.2.5) define the constant-background potential and
+      shifted mass.
+- id: weinberg-2.effective-potential-constrained-energy-interpretation
+  label: Effective potential as constrained minimum energy density
+  summary: Adiabatically turning on a static source relates W to the ground-state
+    energy in that source. Legendre transformation then shows that Γ[φ] is minus the
+    minimum energy among normalized states constrained to have the specified field
+    expectation values; for a constant field, V(φ) is that minimum energy density.
+  kind: method
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 72
+    - 73
+    - 74
+    note: Equations (16.3.1)–(16.3.15) establish the constrained-energy interpretation.
+- id: weinberg-2.exact-effective-potential-convexity-and-mixed-state-region
+  label: Convexity of the exact effective potential and the mixed-state region
+  summary: Positivity of the Euclidean two-point function makes the exact scalar effective
+    potential convex. An apparent nonconvex perturbative potential signals an unstable
+    source-defined vacuum; between degenerate minima the constrained minimum can be
+    a mixed state with constant potential, and between unequal local minima the analogous
+    segment is linear.
+  kind: result
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The page derives convexity and explains why the perturbative double-well
+      portion is replaced by a constant or linear segment.
+- id: weinberg-2.external-source-generating-functional
+  label: External-source generating and connected functionals
+  summary: Coupling classical currents to fields defines the vacuum functional Z[J].
+    Its logarithm W[J] generates connected vacuum diagrams, while functional derivatives
+    with respect to a source give expectation values of the coupled operator in the
+    presence of that source.
+  kind: representation
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 63
+    - 64
+    - 65
+    note: Equations (16.1.1)–(16.1.5) introduce sources, connected diagrams, and the
+      source derivative.
+  notation:
+  - source: weinberg-2
+    note: The fields and currents may be fermionic; the initial discussion suppresses
+      their sign bookkeeping.
 - id: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
   label: Faddeev–Popov gauge-fixed functional integral
   summary: The De Witt–Faddeev–Popov setup integrates gauge and matter fields with
@@ -641,6 +870,22 @@ nodes:
   - source: weinberg-2
     note: ω and ω* are independent variables, not assumed to be related by complex
       conjugation.
+- id: weinberg-2.fermion-versus-boson-effective-potential-loop-sign
+  label: Fermion contribution to the effective potential has opposite determinant
+    sign
+  summary: A Dirac fermion with a background-dependent mass contributes an effective-potential
+    term with the opposite sign from a bosonic Gaussian and a fourfold coefficient
+    in the stated example, reflecting particle/antiparticle and two spin states.
+  kind: result
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 71
+    - 72
+    note: The text following Eq. (16.2.16) explains the fermion mass dependence, multiplicity,
+      and determinant sign.
 - id: weinberg-2.finite-gauge-transformations
   label: Finite gauge transformations
   summary: A finite transformation acts on matter through exp(i t_αΛ^α(x)); requiring
@@ -660,6 +905,20 @@ nodes:
   - source: weinberg-2
     note: Λ^α(x) parameterizes the finite group element, while ε^α(x) denotes its
       infinitesimal limit.
+- id: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
+  label: Full two-point function as inverse 1PI kernel
+  summary: Differentiating the source and effective-action Legendre relations gives
+    the full connected two-point function as minus the functional inverse of the 1PI
+    two-point kernel. This is the effective-action form of the propagator/self-energy
+    relation.
+  kind: result
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 68
+    note: Equations (16.1.19)–(16.1.21) derive A=−Π⁻¹.
 - id: weinberg-2.gauge-and-affine-connection-curvature-analogy
   label: Gauge connection-curvature analogy and its limit
   summary: 'The source compares the gauge field''s construction of covariant derivatives
@@ -919,6 +1178,21 @@ nodes:
     - 54
     note: Equation (15.A.14) and the following reduction argument derive the block
       form and recover equation (15.A.2).
+- id: weinberg-2.legendre-quantum-effective-action
+  label: Legendre definition and stationary equation of the quantum effective action
+  summary: Inverting the source-to-expectation-value relation and Legendre transforming
+    W[J] defines Γ[φ]. Its functional derivative is minus the source required to produce
+    φ, so at zero source its stationary configurations obey quantum-corrected field
+    equations.
+  kind: result
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 65
+    - 66
+    note: Equations (16.1.6)–(16.1.8) define Γ and relate its variation to the source.
 - id: weinberg-2.lie-algebra-structure-constants
   label: Lie-algebra generators and structure constants
   summary: The generators obey [t_α,t_β]=i C^γ_{αβ}t_γ. The real structure constants
@@ -938,6 +1212,25 @@ nodes:
   - source: weinberg-2
     note: The book writes the structure constants as C^γ_{αβ}; their placement should
       not be silently replaced by another convention.
+- id: weinberg-2.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  label: Linear action symmetries yield Slavnov–Taylor identities for Γ
+  summary: If the action and measure are invariant under an infinitesimal field transformation,
+    changing variables in the sourced functional gives an identity involving the source
+    and the source-average transformation. For a linear transformation that average
+    equals the transformation of the mean field, so Γ inherits the corresponding linear
+    symmetry; with fermionic variables the identity requires left/right derivative
+    signs.
+  kind: result
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 75
+    - 76
+    - 77
+    note: Equations (16.4.1)–(16.4.12) derive the identity, its linear case, and fermionic
+      sign form.
 - id: weinberg-2.local-matter-gauge-transformations
   label: Local infinitesimal transformations of matter fields
   summary: Matter components transform infinitesimally as δψ_l(x)=i ε^α(x)(t_α)_l{}^m
@@ -1068,6 +1361,60 @@ nodes:
   - source: weinberg-2
     note: The interaction coefficients remain in the structure constants under the
       book's coupling convention.
+- id: weinberg-2.nonlinear-symmetry-average-obstruction-for-effective-action
+  label: Nonlinear symmetry average obstructs identical Γ transformations
+  summary: For nonlinear field transformations, the expectation value of the transformation
+    functional generally differs from that functional evaluated on expectation values.
+    The induced effective-action transformation is therefore dynamics-dependent and
+    usually nonlocal, which motivates the antibracket construction used next.
+  kind: concept
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 77
+    note: The discussion after Eq. (16.4.9) contrasts nonlinear BRST transformations
+      with the linear case.
+- id: weinberg-2.one-loop-effective-potential-determinant-method
+  label: One-loop effective potential from a quadratic determinant
+  summary: For the shifted scalar theory, the one-loop effective action is the logarithm
+    of the quadratic fluctuation determinant. Diagonalizing the kernel in momentum
+    space converts its trace-log into a momentum integral; differentiating enough
+    times in the field-dependent mass makes the divergent integral convergent before
+    integrating back and absorbing the integration constants into renormalized vacuum,
+    mass, and quartic parameters.
+  kind: method
+  group: weinberg-2.external-field-methods
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 70
+    - 71
+    note: Equations (16.2.7)–(16.2.15) calculate and renormalize the one-loop potential.
+- id: weinberg-2.one-loop-nonabelian-coupling-divergence-group-factors
+  label: One-loop non-Abelian coupling divergence from gauge, ghost, and matter group
+    factors
+  summary: The constant-background calculation combines gauge, ghost, and fermion
+    loop contributions into a background-gauge-invariant F² divergence. For a simple
+    group and irreducible matter representation, the contraction of structure constants
+    and generator trace reduce the answer to group constants C₁ and C₂; the source
+    gives SU(2) and SU(N) defining-representation examples and identifies the regime
+    in which the radiative correction increases the physical coupling relative to
+    the bare coupling.
+  kind: result
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 105
+    - 106
+    - 107
+    - 108
+    note: Equations (17.5.24)–(17.5.40) combine the three loops, define C₁ and C₂,
+      and interpret the coupling shift.
 - id: weinberg-2.original-yang-mills-su2-representation-example
   label: Original Yang-Mills SU(2) representation example
   summary: For the original Yang-Mills theory, the proton and neutron fields form
@@ -1111,6 +1458,18 @@ nodes:
     note: g_{αβ} is the numerical matrix multiplying F^α_{μν}F^{βμν}; the book permits
       upper/lower generator-index distinction to be dropped only in the special antisymmetric
       basis.
+- id: weinberg-2.problem-background-field-brst-quantization
+  label: 'Problem prompt: BRST quantization in background-field gauge'
+  summary: Quantize a non-Abelian gauge theory in background-field gauge using the
+    BRST quantization method discussed at the end of Section 17.2.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 2 states the background-gauge BRST task.
 - id: weinberg-2.problem-brst-and-bv-algebra-exercises
   label: 'Problem prompt: BRST classification and BV identities'
   summary: Problems 7 through 9 ask for a classification of dimension-at-most-four
@@ -1128,6 +1487,31 @@ nodes:
     - 59
     note: The p. 59 problem list explicitly asks these three BRST/BV derivations and
       states their premises.
+- id: weinberg-2.problem-direct-renormalizability-with-elementary-scalars
+  label: 'Problem prompt: extend the direct renormalizability proof to scalars'
+  summary: Carry out the Section 17.2 renormalizability proof while including elementary
+    scalar fields in the Lagrangian.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 1 requests this extension.
+- id: weinberg-2.problem-finite-linear-symmetry-of-effective-action
+  label: 'Problem prompt: finite linear symmetry inherited by W and Γ'
+  summary: For an action invariant under a finite matrix transformation of fields,
+    determine the current transformation that leaves W invariant and use it to derive
+    the associated symmetry of Γ.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 4 asks for the current transformation and effective-action consequence.
 - id: weinberg-2.problem-gauge-fixing-propagator-and-ghost-calculations
   label: 'Problem prompt: gauge-fixing propagator and ghost calculations'
   summary: 'Problems 2, 3, and 6 ask for derivations under specified gauge-fixing
@@ -1146,6 +1530,18 @@ nodes:
     - 59
     note: Problems 2 and 3 are on p. 58, while problem 6's gauge-field, ghost, and
       vertex requests are on p. 59.
+- id: weinberg-2.problem-higher-connected-correlators-from-effective-action
+  label: 'Problem prompt: higher connected correlators from Γ derivatives'
+  summary: Derive the third and fourth derivatives of W[J] in terms of variational
+    derivatives of Γ[φ], and identify the Feynman diagrams represented by each term.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 states the derivative and diagram-identification task.
 - id: weinberg-2.problem-holonomy-curvature-and-local-pure-gauge
   label: 'Problem prompt: holonomy, curvature, and local pure gauge'
   summary: Problem 5 asks the reader to solve the parallel-transport equation for
@@ -1189,6 +1585,56 @@ nodes:
     pages:
     - 58
     note: Problem 1 explicitly requests the derivation of the displayed Bianchi identity.
+- id: weinberg-2.problem-one-loop-gauge-coupling-with-elementary-scalars
+  label: 'Problem prompt: one-loop gauge coupling relation with scalars'
+  summary: Calculate the one-loop relation between renormalized and unrenormalized
+    gauge couplings when the gauge theory contains elementary scalar fields.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 requests the scalar-matter extension.
+- id: weinberg-2.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  label: 'Problem prompt: one-loop pseudoscalar Yukawa effective potential'
+  summary: Compute the one-loop effective potential at constant pseudoscalar field
+    and vanishing Dirac field for real pseudoscalars coupled to complex Dirac fields
+    through a pseudoscalar Yukawa interaction.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 requests this calculation.
+- id: weinberg-2.problem-six-dimensional-cubic-effective-potential
+  label: 'Problem prompt: six-dimensional cubic-scalar effective potential'
+  summary: Calculate the one-loop effective potential for a neutral scalar with cubic
+    interaction in six spacetime dimensions.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 3 requests the six-dimensional cubic calculation.
+- id: weinberg-2.problem-spacetime-dependent-background-coupling-relation
+  label: 'Problem prompt: derive coupling relation from a spacetime-dependent background'
+  summary: Derive the dimensional-regularization relation between renormalized and
+    unrenormalized gauge couplings by calculating the one-loop effective-action terms
+    quadratic in a spacetime-dependent gauge background.
+  kind: method
+  group: weinberg-2.chapter-problems
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 requests the quadratic-background derivation of Eq. (17.5.44).
 - id: weinberg-2.pure-gauge-flatness
   label: Pure gauge and the flatness criterion
   summary: A gauge field is pure gauge when a gauge transformation can make it vanish
@@ -1294,6 +1740,23 @@ nodes:
     note: The context calls the coefficient matrix θ_{αβ}; this node preserves the
       source's distinction between perturbative Feynman rules and nonperturbative
       effects.
+- id: weinberg-2.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  label: Ultraviolet and infrared regulation of the one-loop gauge integral
+  summary: After Wick rotation, the logarithmically divergent loop integral needs
+    both an ultraviolet regulator and an infrared scale. External momenta or a finite
+    background provide the infrared cutoff; a momentum cutoff gives a logarithm of
+    their ratio, while dimensional regularization yields a pole with the same infrared-scale
+    dependence but a different ultraviolet representation.
+  kind: method
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 108
+    - 109
+    note: Equations (17.5.38)–(17.5.44) give cutoff and dimensional-regularization
+      treatments.
 - id: weinberg-2.yang-mills-coupling-normalization
   label: Couplings as normalization of simple algebra factors
   summary: After decomposing the gauge algebra into simple or U(1) factors, one may
@@ -1379,7 +1842,42 @@ nodes:
     - 24
     note: Equations (15.5.26)–(15.5.27) give the momentum-space vertex factors and
       the text identifies their coupling orders.
+- id: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  label: Zinn–Justin equation for the quantum effective action
+  summary: Coupling external K fields to the BRST variations Aⁿ and Legendre transforming
+    only the ordinary sources makes the expectation of Aⁿ a K derivative of Γ[x,K].
+    BRST nilpotence then yields the Zinn–Justin equation, equivalently the vanishing
+    antibracket (Γ,Γ), as a quantum effective-action constraint.
+  kind: method
+  group: weinberg-2.gauge-theory-renormalization
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    - 82
+    note: Equations (17.1.1)–(17.1.11) introduce K, derive the derivative identity,
+      and give the Zinn–Justin equation.
 edges:
+- id: weinberg-2.1pi-tree-prerequisite-higher-correlator-problem
+  from: weinberg-2.effective-action-1pi-tree-reconstruction
+  to: weinberg-2.problem-higher-connected-correlators-from-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task's diagram identification uses connected graphs assembled as
+    trees of 1PI vertices.
+  failure_mode: The terms in the higher-derivative identities cannot be matched to
+    their Feynman-diagram structures.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 explicitly asks which Feynman diagrams correspond to the formula
+      terms.
 - id: weinberg-2.adjoint-prerequisite-appendix-a-proof
   from: weinberg-2.adjoint-representation
   to: weinberg-2.appendix-a-proof-of-compact-algebra-criterion
@@ -1400,6 +1898,25 @@ edges:
     - 52
     note: The appendix constructs the adjoint matrices from structure constants and
       uses their Hermiticity and reducibility to identify simple blocks.
+- id: weinberg-2.adjoint-representation-prerequisite-background-gauge
+  from: weinberg-2.adjoint-representation
+  to: weinberg-2.background-field-gauge-formal-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quantum gauge fluctuation and ghosts transform homogeneously in the
+    adjoint representation.
+  failure_mode: The formal transformation of A′ and the covariance of the gauge function
+    cannot be interpreted.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 96
+    - 98
+    note: The construction states that A′ and ghost fields transform as adjoint matter
+      fields.
 - id: weinberg-2.adjoint-representation-prerequisite-gauge-field
   from: weinberg-2.adjoint-representation
   to: weinberg-2.gauge-field-transformation
@@ -1553,6 +2070,113 @@ edges:
     - 16
     - 17
     note: The argument explicitly uses equations (15.4.7), (15.4.9), and (15.4.13).
+- id: weinberg-2.background-coupling-prerequisite-constant-background-gauge
+  from: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  to: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The constant-background quartic coefficient determines the coupling factor
+    only because background invariance ties it to the field-strength coefficient.
+  failure_mode: A quartic term alone cannot identify the gauge-coupling renormalization
+    in a general gauge.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    note: The transition explains that the background-field relation makes the constant-field
+      calculation sufficient.
+- id: weinberg-2.background-coupling-prerequisite-scalar-loop-problem
+  from: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  to: weinberg-2.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The target is a renormalized/unrenormalized gauge-coupling relation.
+  failure_mode: The scalar loop coefficient has no connection to the coupling normalization
+    it must renormalize.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 asks for the gauge-coupling relation.
+- id: weinberg-2.background-coupling-prerequisite-spacetime-problem
+  from: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  to: weinberg-2.problem-spacetime-dependent-background-coupling-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives the renormalized/unrenormalized coupling relation from
+    the background-field effective action.
+  failure_mode: The quadratic amplitude has no established connection to the gauge-coupling
+    renormalization factor.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 requests the coupling relation from a spacetime-dependent background.
+- id: weinberg-2.background-gauge-prerequisite-background-brst-problem
+  from: weinberg-2.background-field-gauge-formal-invariance
+  to: weinberg-2.problem-background-field-brst-quantization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task quantizes specifically in background field gauge.
+  failure_mode: The background split and gauge-fixing functional to be quantized are
+    absent.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 2 specifies background field gauge.
+- id: weinberg-2.background-gauge-prerequisite-background-coupling
+  from: weinberg-2.background-field-gauge-formal-invariance
+  to: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The coupling-field relation follows from the background invariance of
+    divergent terms.
+  failure_mode: Without the symmetry, the F² coefficient would not be constrained
+    to tie gauge-field and coupling renormalization.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 98
+    - 99
+    - 100
+    note: The invariant effective action is used to restrict divergences and derive
+      the coupling relation.
+- id: weinberg-2.background-gauge-prerequisite-constant-background-method
+  from: weinberg-2.background-field-gauge-formal-invariance
+  to: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Only background gauge invariance lets a constant-background quartic term
+    determine the coupling factor.
+  failure_mode: In a general gauge, independent quadratic and quartic divergences
+    make the constant-background extraction insufficient.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    note: The opening of Section 17.5 states why the constant-field procedure only
+      works in background field gauge.
 - id: weinberg-2.bianchi-evidence-problem-prompt
   from: weinberg-2.nonabelian-bianchi-identity
   to: weinberg-2.problem-nonabelian-bianchi-identity
@@ -1610,6 +2234,58 @@ edges:
     - 33
     note: Equations (15.7.27)–(15.7.31) start from δI=sδΨ and derive the physicality
       condition.
+- id: weinberg-2.brst-exact-gauge-fixing-prerequisite-zinn-justin
+  from: weinberg-2.brst-exact-gauge-fixing
+  to: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation starts from the BRST-invariant gauge-fixed action whose
+    variations are coupled to K.
+  failure_mode: There is no stated BRST-invariant action on which to apply the K-source
+    construction.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    note: The section explicitly applies the BRST symmetry of the gauge-fixed action.
+- id: weinberg-2.brst-field-prerequisite-background-brst-problem
+  from: weinberg-2.brst-field-transformations
+  to: weinberg-2.problem-background-field-brst-quantization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly calls for BRST quantization.
+  failure_mode: The BRST transformations and auxiliary-field formulation needed to
+    set up the quantization are unavailable.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 2 calls for the BRST method of quantization.
+- id: weinberg-2.brst-nilpotence-prerequisite-zinn-justin
+  from: weinberg-2.brst-nilpotence
+  to: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Nilpotence makes the BRST variation insertions coupled to K invariant
+    in the derivation.
+  failure_mode: The BRST-invariance condition for the K-extended effective action
+    cannot be justified without nilpotence.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 81
+    note: The source states that because the Aⁿ are BRST-invariant the extended effective
+      action obeys the condition.
 - id: weinberg-2.brst-transformations-prerequisite-nilpotence
   from: weinberg-2.brst-field-transformations
   to: weinberg-2.brst-nilpotence
@@ -1645,6 +2321,42 @@ edges:
     - 41
     note: The p. 41 discussion explicitly identifies light-cone quantization as the
       string counterpart and invokes BRST quantization for general relativity.
+- id: weinberg-2.bv-antibracket-prerequisite-zinn-justin
+  from: weinberg-2.bv-antibracket-classical-master-equation
+  to: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Zinn–Justin condition is expressed as an antibracket identity with
+    K in place of antifields.
+  failure_mode: The equivalence (Γ,Γ)=0 cannot be read or used without the graded
+    antibracket representation.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 82
+    note: Equation (17.1.11) defines the antibracket used in the equation.
+- id: weinberg-2.bv-anticanonical-prerequisite-general-cohomology-renormalization
+  from: weinberg-2.bv-anticanonical-transformations
+  to: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Anticanonical field–antifield redefinitions remove antibracket-exact
+    infinities.
+  failure_mode: The proof would lack the allowed redefinition route that cancels exact
+    cohomology representatives.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 93
+    - 94
+    note: Equations (17.3.6)–(17.3.14) use finite transformations and identify exact
+      terms.
 - id: weinberg-2.bv-gauge-fixing-prerequisite-quantum-master
   from: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
   to: weinberg-2.bv-quantum-master-equation
@@ -1664,6 +2376,23 @@ edges:
     - 49
     note: Page 48 fixes antifields via Psi and p. 49 varies Psi in the vacuum functional
       integral.
+- id: weinberg-2.bv-quantum-master-prerequisite-general-cohomology-renormalization
+  from: weinberg-2.bv-quantum-master-equation
+  to: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general proof expands the quantum master equation in the loop-counting
+    parameter.
+  failure_mode: Without the quantum master equation, the stated counterterm recursion
+    and its classical master base condition do not follow.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 92
+    note: Equations (17.3.2)–(17.3.5) impose and expand the quantum master equation.
 - id: weinberg-2.cartan-classical-evidence-exceptional-covering
   from: weinberg-2.cartan-catalog-compact-classical-families
   to: weinberg-2.cartan-exceptional-algebras-and-low-rank-isomorphisms
@@ -1702,6 +2431,150 @@ edges:
     - 58
     note: Problem 4 asks for the four-generator proof; the accepted classification
       record identifies the same exclusion as a chapter result.
+- id: weinberg-2.constant-background-prerequisite-one-loop-group-factors
+  from: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  to: weinberg-2.one-loop-nonabelian-coupling-divergence-group-factors
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge, ghost, and matter group factors are extracted from the three
+    trace-log contributions of the determinant calculation.
+  failure_mode: The combined F² divergence and its group constants have no derivation
+    route without the operator expansion.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 105
+    - 106
+    - 107
+    note: The pages evaluate the separate loops and combine them into the group-factor
+      result.
+- id: weinberg-2.constant-background-prerequisite-one-loop-potential
+  from: weinberg-2.effective-potential-constant-background
+  to: weinberg-2.one-loop-effective-potential-determinant-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant is the quadratic fluctuation kernel obtained after shifting
+    by the constant background.
+  failure_mode: Without the background-dependent mass kernel, there is no stated determinant
+    calculation for V(φ₀).
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 69
+    - 70
+    note: The shifted action and its quadratic kernel precede the trace-log calculation.
+- id: weinberg-2.constant-background-prerequisite-regulation
+  from: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  to: weinberg-2.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The constant-background trace-log supplies the source's particular integral
+    J, but the Wick-rotation and regulator method is also usable in the independent
+    spacetime-dependent calculation.
+  failure_mode: Without this connection, the origin of J in the displayed constant-background
+    calculation is less explicit; the regulator method and the spacetime-dependent
+    route remain available.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 105
+    - 108
+    note: The trace-log calculation defines J, and the later passage regulates that
+      integral.
+- id: weinberg-2.constant-potential-prerequisite-convexity
+  from: weinberg-2.effective-potential-constant-background
+  to: weinberg-2.exact-effective-potential-convexity-and-mixed-state-region
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Convexity is stated for the constant-field effective potential V(φ).
+  failure_mode: The argument has no scalar potential whose curvature or intervening
+    region can be analyzed.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The page discusses the scalar effective potential V(φ) and its second derivative.
+- id: weinberg-2.constant-potential-prerequisite-cubic-problem
+  from: weinberg-2.effective-potential-constant-background
+  to: weinberg-2.problem-six-dimensional-cubic-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task changes interaction and dimension while retaining the constant-background
+    effective-potential setup.
+  failure_mode: The target effective potential and its background specialization are
+    undefined.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 3 requests the one-loop effective potential for a scalar theory.
+- id: weinberg-2.constant-potential-prerequisite-pseudoscalar-problem
+  from: weinberg-2.effective-potential-constant-background
+  to: weinberg-2.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for an effective potential at a constant pseudoscalar background.
+  failure_mode: The target quantity and prescribed constant-background setting are
+    undefined.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 specifies φ constant and requests the effective potential.
+- id: weinberg-2.constrained-energy-prerequisite-convexity
+  from: weinberg-2.effective-potential-constrained-energy-interpretation
+  to: weinberg-2.exact-effective-potential-convexity-and-mixed-state-region
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The mixed-state construction uses V as the minimum energy density at
+    fixed expectation value.
+  failure_mode: Without that energy interpretation, the constant or linear interpolating
+    region has no source-backed variational justification.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The page invokes the minimum-energy result to construct the intervening
+      potential.
+- id: weinberg-2.coupling-normalization-prerequisite-background-coupling
+  from: weinberg-2.yang-mills-coupling-normalization
+  to: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: For a simple algebra, the field-strength coefficient is interpreted as
+    renormalization of the common coupling normalization.
+  failure_mode: The relation between the field-strength coefficient and g_R is not
+    obtained without the source's coupling convention.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 100
+    note: The derivation uses the single common factor in structure constants and
+      generators to identify g_R.
 - id: weinberg-2.coupling-normalization-prerequisite-vector-vertices
   from: weinberg-2.yang-mills-coupling-normalization
   to: weinberg-2.yang-mills-three-and-four-vector-vertices
@@ -1739,6 +2612,24 @@ edges:
     - 6
     note: The analogy explicitly begins by comparing construction of gauge-covariant
       derivatives with construction of affine covariant derivatives.
+- id: weinberg-2.covariant-derivative-prerequisite-background-gauge
+  from: weinberg-2.covariant-derivative
+  to: weinberg-2.background-field-gauge-formal-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The background gauge functional and formal invariance are written with
+    the background-covariant derivative.
+  failure_mode: The covariant transformation of fᵃ and the gauge-fixing invariance
+    cannot be established without D_μ[A].
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 96
+    - 97
+    note: Equations (17.4.4)–(17.4.15) define and use the background-covariant derivative.
 - id: weinberg-2.covariant-derivative-prerequisite-bianchi
   from: weinberg-2.covariant-derivative
   to: weinberg-2.nonabelian-bianchi-identity
@@ -1790,6 +2681,89 @@ edges:
     - 7
     note: The opening paragraph of Section 15.2 names matter fields and their gauge-covariant
       derivatives as ingredients.
+- id: weinberg-2.determinant-prerequisite-cubic-problem
+  from: weinberg-2.one-loop-effective-potential-determinant-method
+  to: weinberg-2.problem-six-dimensional-cubic-effective-potential
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested one-loop potential requires the quadratic-fluctuation determinant
+    calculation in the new dimension.
+  failure_mode: No one-loop route is supplied for the cubic theory.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 3 specifies a one-loop calculation in six dimensions.
+- id: weinberg-2.determinant-prerequisite-fermion-loop-sign
+  from: weinberg-2.one-loop-effective-potential-determinant-method
+  to: weinberg-2.fermion-versus-boson-effective-potential-loop-sign
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The fermion extension compares its Gaussian determinant with the bosonic
+    determinant calculation.
+  failure_mode: The sign and multiplicity comparison lacks its reference bosonic determinant
+    route.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 71
+    - 72
+    note: The fermion contribution is introduced as an addition to the preceding one-loop
+      potential calculation.
+- id: weinberg-2.determinant-prerequisite-pseudoscalar-problem
+  from: weinberg-2.one-loop-effective-potential-determinant-method
+  to: weinberg-2.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: At one loop the requested potential is calculated from fluctuation determinants.
+  failure_mode: The task lacks the required one-loop calculation method.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 asks for the one-loop potential.
+- id: weinberg-2.determinant-prerequisite-scalar-loop-problem
+  from: weinberg-2.one-loop-effective-potential-determinant-method
+  to: weinberg-2.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar contribution is a one-loop quadratic fluctuation determinant.
+  failure_mode: The scalar-loop contribution has no stated computational route.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 asks for a one-loop calculation with elementary scalars.
+- id: weinberg-2.determinant-prerequisite-spacetime-problem
+  from: weinberg-2.one-loop-effective-potential-determinant-method
+  to: weinberg-2.problem-spacetime-dependent-background-coupling-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The independent spacetime-dependent route still evaluates a one-loop
+    effective action through quadratic operators and determinants.
+  failure_mode: The task lacks the one-loop effective-action machinery while remaining
+    independent of the constant-background shortcut.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 asks for a one-loop effective-action calculation with a spacetime-dependent
+      field.
 - id: weinberg-2.direct-antifield-substitution-prerequisite-bv-gauge-fixing
   from: weinberg-2.bv-antifields-and-graded-master-action
   to: weinberg-2.bv-gauge-fixing-fermion-and-on-shell-brst
@@ -1809,6 +2783,114 @@ edges:
     - 48
     note: Page 43 defines the direct substitution by the gauge-fixing fermion, and
       p. 48 returns to it for the S-matrix action.
+- id: weinberg-2.direct-proof-prerequisite-scalar-extension-problem
+  from: weinberg-2.direct-brst-renormalizability-induction
+  to: weinberg-2.problem-direct-renormalizability-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task is to extend the displayed Section 17.2 proof, not reproduce
+    an already supplied scalar result.
+  failure_mode: The required changes to the original proof cannot be identified.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 1 explicitly asks to carry out the proof given in Section 17.2 with
+      scalars.
+- id: weinberg-2.direct-renormalization-evidence-accepted-general-brst-remedy
+  from: weinberg-2.direct-brst-renormalizability-induction
+  to: weinberg-2.brst-beyond-power-counting-and-bilinear-faddeev-popov
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The end of the direct proof identifies the loss of antighost translation
+    symmetry and the consequent need for the accepted general BRST remedy.
+  failure_mode: The scope of the direct proof would obscure why more general gauges
+    require the accepted BRST-invariant action.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 90
+    - 91
+    note: These pages identify four-ghost divergences and the general BRST-invariant-action
+      remedy.
+- id: weinberg-2.effective-potential-determinant-prerequisite-constant-background-gauge
+  from: weinberg-2.one-loop-effective-potential-determinant-method
+  to: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge calculation applies the earlier one-loop quadratic-determinant
+    and trace-log method to gauge, ghost, and fermion operators.
+  failure_mode: The determinant factors and trace-log evaluation have no established
+    one-loop route.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 101
+    - 102
+    - 103
+    note: The section explicitly invokes the Section 16.2 one-loop determinant form
+      and evaluates trace-logs.
+- id: weinberg-2.external-source-prerequisite-finite-symmetry-problem
+  from: weinberg-2.external-source-generating-functional
+  to: weinberg-2.problem-finite-linear-symmetry-of-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task first asks for the current transformation that makes W[J] invariant.
+  failure_mode: There is no sourced functional or current whose finite transformation
+    can be determined.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 4 asks for a transformation of the currents under which W is invariant.
+- id: weinberg-2.external-sources-prerequisite-legendre-effective-action
+  from: weinberg-2.external-source-generating-functional
+  to: weinberg-2.legendre-quantum-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Legendre definition inverts the source-to-mean-field map generated
+    by W[J].
+  failure_mode: Without the sourced connected functional, the required source J_φ
+    and Legendre transform are undefined.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 65
+    note: The page defines φ_J through W and then defines Γ by its Legendre transform.
+- id: weinberg-2.external-sources-prerequisite-linear-st
+  from: weinberg-2.external-source-generating-functional
+  to: weinberg-2.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The change-of-variables argument is performed in the sourced functional
+    integral.
+  failure_mode: Without source insertions and their averages, the Ward/Slavnov–Taylor
+    relation cannot be expressed for Γ.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 75
+    - 76
+    note: The derivation changes variables in Z[J] and rewrites the result using the
+      source.
 - id: weinberg-2.faddeev-popov-evidence-gauge-fixing-problems
   from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
   to: weinberg-2.problem-gauge-fixing-propagator-and-ghost-calculations
@@ -1827,6 +2909,25 @@ edges:
     - 58
     - 59
     note: Problems 2, 3, and 6 supply f and B[f] and ask for propagator or ghost consequences.
+- id: weinberg-2.faddeev-popov-prerequisite-background-gauge
+  from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+  to: weinberg-2.background-field-gauge-formal-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Background field gauge changes the gauge-fixing functional in the gauge-fixed
+    path integral.
+  failure_mode: The role of the chosen fᵃ, ghosts, and integrated fluctuations is
+    unspecified without the Faddeev–Popov setup.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 95
+    - 96
+    note: The section returns to the Gaussian gauge-fixing functional and chooses
+      a new fᵃ.
 - id: weinberg-2.faddeev-popov-prerequisite-gauge-independence
   from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
   to: weinberg-2.faddeev-popov-gauge-fixing-independence
@@ -1865,6 +2966,22 @@ edges:
     - 25
     note: The determinant left in equation (15.5.21) motivates the determinant representation
       in equation (15.6.1).
+- id: weinberg-2.fermion-sign-prerequisite-pseudoscalar-problem
+  from: weinberg-2.fermion-versus-boson-effective-potential-loop-sign
+  to: weinberg-2.problem-one-loop-pseudoscalar-yukawa-effective-potential
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The specified model includes complex Dirac fields, requiring the fermion
+    determinant sign and multiplicity.
+  failure_mode: A bosonic-only determinant calculation gives the wrong fermion contribution.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 1 explicitly includes complex Dirac fields.
 - id: weinberg-2.field-equation-prerequisite-covariant-current
   from: weinberg-2.yang-mills-field-equations-and-total-current
   to: weinberg-2.covariant-field-equation-and-matter-current
@@ -1923,6 +3040,24 @@ edges:
     note: The comparison explicitly pairs derivatives of the gauge field and field
       strength with derivatives of the affine connection and curvature, then states
       the boundary of the analogy.
+- id: weinberg-2.field-strength-prerequisite-background-gauge
+  from: weinberg-2.nonabelian-field-strength
+  to: weinberg-2.background-field-gauge-formal-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rewritten action displays the background field strength as the covariant
+    background object.
+  failure_mode: The formal invariance of the gauge sector cannot be checked without
+    the non-Abelian field strength.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 97
+    note: Equation (17.4.15) gives the background field strength used in the invariant
+      action.
 - id: weinberg-2.field-strength-prerequisite-lagrangian-ingredients
   from: weinberg-2.nonabelian-field-strength
   to: weinberg-2.gauge-invariant-lagrangian-ingredients
@@ -2068,6 +3203,58 @@ edges:
     - 23
     note: The source invokes the theorem before choosing the Gaussian B and Lorentz-invariant
       f^a.
+- id: weinberg-2.gauge-lagrangian-prerequisite-scalar-extension-problem
+  from: weinberg-2.gauge-invariant-lagrangian-ingredients
+  to: weinberg-2.problem-direct-renormalizability-with-elementary-scalars
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Including elementary scalars requires identifying their gauge-covariant
+    renormalizable Lagrangian ingredients.
+  failure_mode: The extension has no gauge-invariant scalar interactions or kinetic
+    structures to classify.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 1 requires elementary scalar fields to be included in the Lagrangian.
+- id: weinberg-2.gauge-lagrangian-prerequisite-scalar-loop-problem
+  from: weinberg-2.gauge-invariant-lagrangian-ingredients
+  to: weinberg-2.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar loop must be built from the scalar representation's gauge-covariant
+    interactions.
+  failure_mode: The scalar field's coupling to the background gauge field is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 changes the theory by adding elementary scalar fields.
+- id: weinberg-2.general-brst-prerequisite-background-brst-problem
+  from: weinberg-2.brst-unitarity-and-general-gauge-fixing
+  to: weinberg-2.problem-background-field-brst-quantization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The referenced end-of-Section-17.2 method permits the general BRST-invariant
+    gauge-fixing functional needed in background gauge.
+  failure_mode: The background-gauge BRST action is not connected to the general-gauge-fixing
+    justification requested by the prompt.
+  evidence:
+  - source: weinberg-2
+    section: 17.2 and Problems for Chapter 17
+    pages:
+    - 91
+    - 109
+    note: Section 17.2 gives the general BRST action remedy and Problem 2 points to
+      that BRST method.
 - id: weinberg-2.general-cohomology-evidence-proof-completion
   from: weinberg-2.general-brst-cohomology-functional-result
   to: weinberg-2.general-brst-cohomology-proof-completion
@@ -2087,6 +3274,25 @@ edges:
     - 41
     note: Page 40 sets up the N-grading and Hodge relation, and p. 41 concludes the
       exactness and N=0 argument.
+- id: weinberg-2.general-cohomology-prerequisite-cohomology-theorem-limits
+  from: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+  to: weinberg-2.bv-cohomology-theorem-and-renormalizability-limits
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The theorem and qualifications concern the remaining cohomology identified
+    by the general proof.
+  failure_mode: The scope of the theorem and the meaning of extra classes cannot be
+    assessed without the cohomological criterion.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 94
+    - 95
+    note: The text applies the cohomology criterion to gravity/Yang–Mills and discusses
+      exceptions.
 - id: weinberg-2.general-fp-evidence-ghosts-of-ghosts
   from: weinberg-2.general-faddeev-popov-dewitt-theorem
   to: weinberg-2.reducible-gauge-symmetry-and-ghosts-of-ghosts
@@ -2273,6 +3479,144 @@ edges:
     - 7
     note: After equation (15.2.1), the text states the restriction and then presents
       equation (15.2.3).
+- id: weinberg-2.legendre-prerequisite-1pi-tree-reconstruction
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.effective-action-1pi-tree-reconstruction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The stationary phase equation uses the Legendre identity δΓ/δφ=−J.
+  failure_mode: The stationary point cannot be identified with φ_J without the Legendre
+    relation.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 66
+    - 67
+    note: Equations (16.1.13)–(16.1.16) use the defining relation to obtain tree reconstruction.
+- id: weinberg-2.legendre-prerequisite-constant-background-potential
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.effective-potential-constant-background
+  relation: prerequisite
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: The effective potential is defined by specializing the effective action
+    to a constant field.
+  failure_mode: Without Γ[φ], the volume-factorized quantity V(φ₀) has no effective-action
+    definition.
+  evidence:
+  - source: weinberg-2
+    section: '16.2'
+    pages:
+    - 68
+    - 69
+    note: The section specializes Γ[φ₀] to define V(φ₀).
+- id: weinberg-2.legendre-prerequisite-constrained-energy
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.effective-potential-constrained-energy-interpretation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The constrained energy is shown equal to the Legendre transform evaluated
+    at the source producing the expectation value.
+  failure_mode: The source energy alone does not establish the constrained energy
+    functional Γ[φ].
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 73
+    note: Equations (16.3.12)–(16.3.13) identify the constrained minimum with −Γ.
+- id: weinberg-2.legendre-prerequisite-finite-symmetry-problem
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.problem-finite-linear-symmetry-of-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested property of Γ follows by Legendre transformation from the
+    W symmetry.
+  failure_mode: The final Γ symmetry cannot be derived from the transformed connected
+    functional.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 4 explicitly asks to use the W result to derive a symmetry property
+      of Γ.
+- id: weinberg-2.legendre-prerequisite-higher-correlator-problem
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.problem-higher-connected-correlators-from-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested W derivatives must be rewritten through Γ's Legendre relation.
+  failure_mode: There is no functional relationship from which to express W derivatives
+    in terms of Γ derivatives.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 asks for W derivatives in terms of variational derivatives of
+      Γ.
+- id: weinberg-2.legendre-prerequisite-linear-st
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The sourced identity is converted into an effective-action identity by
+    replacing the current with the Γ derivative.
+  failure_mode: A source identity alone does not establish the claimed symmetry of
+    Γ.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 76
+    note: Equation (16.4.6) uses the effective-action source relation.
+- id: weinberg-2.legendre-prerequisite-two-point-inverse
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The inverse-kernel result follows by differentiating the two Legendre
+    relations.
+  failure_mode: The matrices A and Π have no derived inverse relation without both
+    functional derivative identities.
+  evidence:
+  - source: weinberg-2
+    section: '16.1'
+    pages:
+    - 68
+    note: The text explicitly derives the relation from Eqs. (16.1.5) and (16.1.7).
+- id: weinberg-2.legendre-prerequisite-zinn-justin
+  from: weinberg-2.legendre-quantum-effective-action
+  to: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The K-extended construction is a Legendre transform in the ordinary sources.
+  failure_mode: The effective action Γ[x,K] and its functional derivatives are undefined
+    without this construction.
+  evidence:
+  - source: weinberg-2
+    section: '17.1'
+    pages:
+    - 80
+    - 81
+    note: Equation (17.1.3) defines Γ[x,K] by a Legendre transform.
 - id: weinberg-2.lie-algebra-prerequisite-brst-nilpotence
   from: weinberg-2.lie-algebra-structure-constants
   to: weinberg-2.brst-nilpotence
@@ -2310,6 +3654,42 @@ edges:
     - 3
     note: The source says the isospin matrices satisfy equation (15.1.2) with epsilon
       structure constants and then identifies their rotation-algebra representation.
+- id: weinberg-2.linear-st-evidence-nonlinear-obstruction
+  from: weinberg-2.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  to: weinberg-2.nonlinear-symmetry-average-obstruction-for-effective-action
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The linear case makes clear exactly which replacement fails for nonlinear
+    transformations.
+  failure_mode: The obstruction is easily mistaken for a loss of all symmetry information
+    without the linear comparison.
+  evidence:
+  - source: weinberg-2
+    section: '16.4'
+    pages:
+    - 77
+    note: The text contrasts the linear result with the nonlinear average.
+- id: weinberg-2.linear-st-prerequisite-direct-renormalization
+  from: weinberg-2.linear-symmetry-slavnov-taylor-identity-for-effective-action
+  to: weinberg-2.direct-brst-renormalizability-induction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The proof requires divergent terms to retain the action's linearly realized
+    symmetries.
+  failure_mode: The classification of allowed local counterterms loses the Lorentz,
+    global-gauge, antighost, and ghost-number restrictions.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 84
+    - 88
+    note: The proof invokes Section 16.4 and then lists the linear symmetries used
+      in the classification.
 - id: weinberg-2.local-transformations-prerequisite-gauge-field
   from: weinberg-2.local-matter-gauge-transformations
   to: weinberg-2.gauge-field-transformation
@@ -2609,6 +3989,79 @@ edges:
     - 44
     note: Pages 38–39 explain reducibility and p. 44 states that reducible BV theories
       include ghosts of ghosts with their antifields.
+- id: weinberg-2.regulation-prerequisite-one-loop-group-factors
+  from: weinberg-2.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  to: weinberg-2.one-loop-nonabelian-coupling-divergence-group-factors
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The group contractions are obtained before regulation, but the target's
+    retained physical coupling shift requires evaluating their common divergent integral
+    and relating it to g_R.
+  failure_mode: The group coefficients alone do not yield the cutoff/dimensional coupling
+    relation or its physical interpretation.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 107
+    - 108
+    - 109
+    note: The group factors multiply J; the following regulator calculation supplies
+      the coupling relation and Eq. (17.5.44).
+- id: weinberg-2.regulation-prerequisite-scalar-loop-problem
+  from: weinberg-2.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  to: weinberg-2.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: A relation between bare and renormalized couplings requires regulating
+    and interpreting the scalar loop divergence.
+  failure_mode: The scalar-loop integral remains divergent and cannot yield a renormalization
+    relation.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 requests the renormalized/unrenormalized relation.
+- id: weinberg-2.regulation-prerequisite-spacetime-problem
+  from: weinberg-2.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  to: weinberg-2.problem-spacetime-dependent-background-coupling-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested Eq. (17.5.44) is the dimensional-regularization relation.
+  failure_mode: The target relation cannot be produced without the dimensional regulator
+    and infrared scale.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 explicitly asks for Eq. (17.5.44).
+- id: weinberg-2.renormalizable-lagrangian-prerequisite-direct-renormalization
+  from: weinberg-2.renormalizable-yang-mills-lagrangian-assumption
+  to: weinberg-2.direct-brst-renormalizability-induction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The direct classification assumes the displayed dimension-four Yang–Mills
+    matter and gauge Lagrangian.
+  failure_mode: The conclusion that the allowed form matches the starting Lagrangian
+    cannot be made without its stated field-content and power-counting scope.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 82
+    - 89
+    note: The proof uses dimension-four power counting and explicitly sets aside scalar-dependent
+      terms.
 - id: weinberg-2.renormalizable-lagrangian-prerequisite-field-equation
   from: weinberg-2.renormalizable-yang-mills-lagrangian-assumption
   to: weinberg-2.yang-mills-field-equations-and-total-current
@@ -2627,6 +4080,25 @@ edges:
     - 12
     note: The source specifies the Lagrangian and immediately derives its gauge-field
       equations.
+- id: weinberg-2.spacetime-dirac-notation-prerequisite-constant-background-method
+  from: weinberg-2.spacetime-index-and-dirac-notation
+  to: weinberg-2.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quadratic fermion operator and its trace calculation use the source's
+    spacetime and Dirac conventions.
+  failure_mode: The fermion determinant and later gamma-matrix trace cannot be interpreted
+    under the source's notation without this convention record.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 101
+    - 102
+    note: The quadratic operator includes spinor and spacetime-index structure before
+      its determinant is evaluated.
 - id: weinberg-2.state-cohomology-evidence-conditional-ghost-independence
   from: weinberg-2.brst-cohomology-of-physical-states
   to: weinberg-2.brst-conditional-ghost-free-gauge-independence
@@ -2681,6 +4153,40 @@ edges:
     pages:
     - 3
     note: Equations (15.1.3), (15.1.5), and (15.1.6) state this construction.
+- id: weinberg-2.two-point-inverse-prerequisite-convexity
+  from: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
+  to: weinberg-2.exact-effective-potential-convexity-and-mixed-state-region
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The convexity argument uses positivity of the two-point function together
+    with −Π=A⁻¹.
+  failure_mode: The claimed sign of the effective-potential curvature is not obtained
+    without the inverse-kernel relation.
+  evidence:
+  - source: weinberg-2
+    section: '16.3'
+    pages:
+    - 74
+    note: The convexity discussion explicitly invokes −Π=A⁻¹.
+- id: weinberg-2.two-point-prerequisite-higher-correlator-problem
+  from: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
+  to: weinberg-2.problem-higher-connected-correlators-from-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Higher differentiations of the Legendre identities use the two-point
+    inverse relation as their propagator kernel.
+  failure_mode: The requested third- and fourth-derivative formulas cannot be assembled
+    from Γ derivatives.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 16
+    pages:
+    - 78
+    note: Problem 2 extends the connected/1PI derivative relation to higher correlators.
 - id: weinberg-2.xi-gauge-prerequisite-covariant-ghost-rules
   from: weinberg-2.generalized-feynman-gauge-propagator
   to: weinberg-2.covariant-gauge-ghost-propagator-and-vertex
@@ -2700,6 +4206,43 @@ edges:
     - 26
     note: The Lorentz gauge functional is selected on p. 23 and inserted into the
       ghost operator on p. 26.
+- id: weinberg-2.zinn-justin-prerequisite-bv-cohomological-renormalization
+  from: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  to: weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general proof constrains the divergent Nth-order quantum effective
+    action with the Zinn–Justin equation.
+  failure_mode: The cohomological condition on the divergent effective action does
+    not follow from the master equation for counterterms alone.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 93
+    - 94
+    note: Equation (17.3.9) is identified as the Zinn–Justin condition on the divergent
+      effective action.
+- id: weinberg-2.zinn-justin-prerequisite-direct-renormalization
+  from: weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  to: weinberg-2.direct-brst-renormalizability-induction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The induction constrains the divergent N-loop term by the loop-order
+    expansion of the Zinn–Justin equation.
+  failure_mode: Power counting alone cannot show that divergences have the symmetry-compatible
+    counterterm form.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 83
+    note: Equations (17.2.2)–(17.2.3) derive the N-loop symmetry condition from the
+      Zinn–Justin equation.
 groups:
 - id: weinberg-2.batalin-vilkovisky-formalism
   title: Batalin-Vilkovisky formalism
@@ -2709,6 +4252,10 @@ groups:
   title: Chapter problem prompts
 - id: weinberg-2.connection-and-curvature
   title: Gauge connection, curvature, and finite transformations
+- id: weinberg-2.external-field-methods
+  title: External-field and effective-action methods
+  question: How do external sources and the effective action reorganize quantum field
+    theory calculations and encode quantum field equations?
 - id: weinberg-2.field-equations-and-quantization
   title: Field equations and axial-gauge quantization
 - id: weinberg-2.gauge-construction
@@ -2717,6 +4264,10 @@ groups:
   title: Faddeev–Popov gauge fixing and ghosts
 - id: weinberg-2.gauge-theory-framing
   title: Opening framing for non-Abelian gauge theory
+- id: weinberg-2.gauge-theory-renormalization
+  title: Gauge-theory renormalization
+  question: How do BRST/BV identities and background gauge invariance control gauge-theory
+    counterterms and coupling renormalization?
 - id: weinberg-2.lagrangian-and-algebra
   title: Gauge Lagrangians, algebra, and coupling conventions
 - id: weinberg-2.lagrangian-ingredients
@@ -2747,6 +4298,24 @@ motivations:
     - 28
     note: The source states the axial-gauge motivation, the overcounting role of ghosts,
       and the counterterm problem caused by gauge fixing.
+- id: weinberg-2.effective-action-organizes-multiloop-effects
+  nodes:
+  - weinberg-2.effective-action-1pi-tree-reconstruction
+  - weinberg-2.one-loop-effective-potential-determinant-method
+  - weinberg-2.constant-background-one-loop-gauge-coupling-method
+  summary: The source introduces external fields because fictitious sources can simplify
+    amplitudes and because the quantum effective action packages multiloop effects
+    into tree graphs with 1PI vertices, enabling both effective-potential calculations
+    and the later gauge-theory renormalization calculation.
+  evidence:
+  - source: weinberg-2
+    section: 16 opening and 16.1
+    pages:
+    - 63
+    - 66
+    - 67
+    note: The opening states the calculation motivation and the section derives the
+      tree/1PI reorganization.
 - id: weinberg-2.local-symmetry-needs-dynamical-fields
   nodes:
   - weinberg-2.dynamical-gauge-fields-give-local-symmetry-physical-content
@@ -2777,3 +4346,23 @@ motivations:
     note: The page explains that derivatives of the local parameters prevent ordinary
       derivatives from transforming like the fields and motivates the compensating
       field.
+- id: weinberg-2.symmetry-controls-counterterms
+  nodes:
+  - weinberg-2.zinn-justin-equation-for-quantum-effective-action
+  - weinberg-2.direct-brst-renormalizability-induction
+  - weinberg-2.bv-cohomological-renormalization-of-general-gauge-theories
+  - weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+  summary: Power counting only limits the dimensionality of divergent terms; gauge-theory
+    renormalizability also requires them to satisfy symmetry constraints so that allowed
+    counterterms exist. The source develops BRST/BV and background-field tools to
+    impose those constraints.
+  evidence:
+  - source: weinberg-2
+    section: 17.2–17.4
+    pages:
+    - 82
+    - 83
+    - 95
+    - 98
+    note: These pages state the insufficiency of power counting and the symmetry-based
+      controls on divergences.

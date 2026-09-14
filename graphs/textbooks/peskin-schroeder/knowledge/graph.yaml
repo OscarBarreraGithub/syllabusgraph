@@ -114,6 +114,21 @@ nodes:
     - 71
     note: The source derives charge conjugation, tabulates bilinears, and states—but
       does not prove—the CPT conclusion.
+- id: peskin-schroeder.chiral-dirac-basis-and-relativistic-normalization-declaration
+  label: Chiral Dirac basis and relativistic spinor-normalization declaration
+  summary: For its Dirac treatment the book declares a chiral basis for the gamma
+    matrices and relativistic normalization for Dirac spinors; the detailed realization
+    and normalization formulas are supplied in the accepted Dirac representation records.
+  kind: representation
+  group: peskin-schroeder.notation-and-conventions
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Dirac Equation
+    pages:
+    - 21
+    note: The frontmatter explicitly declares the chiral gamma-matrix basis and relativistic
+      spinor normalization, referring readers to Sections 3.2, 3.3, and the Appendix
+      for their details.
 - id: peskin-schroeder.chiral-u1-symmetry-and-handed-currents
   label: Chiral U(1) symmetry and handed currents
   summary: The ordinary phase transformation is a symmetry of the full free Dirac
@@ -577,6 +592,23 @@ nodes:
     - 16
     note: The derivation removes the surface term by boundary conditions and uses
       arbitrary variations to obtain the local equation of motion.
+- id: peskin-schroeder.fourier-transform-normalization-conventions
+  label: Fourier-transform and delta-normalization conventions
+  summary: The n-dimensional delta function obeys integral d^n x delta^(n)(x)=1. In
+    four dimensions f(x)=integral d^4k/(2pi)^4 e^{-ik dot x} f-tilde(k) and f-tilde(k)=integral
+    d^4x e^{ik dot x} f(x); all 2pi factors accompany the momentum integral. In three
+    dimensions the two exponent signs are respectively plus and minus, the tilde may
+    be suppressed, and integral d^4x e^{ik dot x}=(2pi)^4 delta^(4)(k).
+  kind: representation
+  group: peskin-schroeder.notation-and-conventions
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Fourier Transforms and Distributions
+    pages:
+    - 21
+    note: The frontmatter specifies delta normalization, both four-dimensional transform
+      directions, placement of 2pi factors, the three-dimensional exponent signs,
+      and the plane-wave delta identity.
 - id: peskin-schroeder.free-field-perturbative-foundation
   label: Free field as the basis of perturbation theory
   summary: The free Klein-Gordon theory has a linear equation and no interparticle
@@ -605,6 +637,23 @@ nodes:
     section: '4.1'
     pages:
     - 79
+- id: peskin-schroeder.heaviside-lorentz-electrodynamics-conventions
+  label: Heaviside-Lorentz electromagnetic conventions
+  summary: 'The book uses Heaviside-Lorentz units: Phi=Q/(4pi r), alpha=e^2/(4pi)=e^2/(4pi
+    hbar c) is approximately 1/137, and e denotes the negative electron charge. Maxwell
+    equations are epsilon^{mu nu rho sigma} partial_nu F_{rho sigma}=0 and partial_mu
+    F^{mu nu}=e j^nu, with A^mu=(Phi,A) and F_{mu nu}=partial_mu A_nu-partial_nu A_mu;
+    e is factored out of the four-current j^mu.'
+  kind: representation
+  group: peskin-schroeder.notation-and-conventions
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Electrodynamics
+    pages:
+    - 21
+    note: The page fixes the electromagnetic unit convention, Coulomb potential, fine-structure
+      constant, sign of e, covariant Maxwell equations, potential and field-strength
+      definitions, and current normalization.
 - id: peskin-schroeder.heisenberg-klein-gordon-field
   label: Heisenberg evolution of the free Klein-Gordon field
   summary: In the Heisenberg picture, phi(x,t)=exp(iHt)phi(x)exp(-iHt), and the Hamiltonian
@@ -1002,6 +1051,33 @@ nodes:
     - 29
     note: The source sets the measurement criterion, performs the spacelike Lorentz
       argument, and states the no-influence conclusion.
+- id: peskin-schroeder.minkowski-index-and-orientation-conventions
+  label: Minkowski index, derivative, and orientation conventions
+  summary: The book uses natural units hbar=c=1 and g_{mu nu}=g^{mu nu}=diag(1,-1,-1,-1).
+    Greek indices run over all four components, Roman indices over spatial components,
+    and repeated indices are summed. Thus x^mu=(x^0,x), x_mu=(x^0,-x), p dot x=p^0
+    x^0-p dot x, p^2=p^mu p_mu=E^2-|p|^2, while partial_mu=(partial/partial x^0,grad)
+    is naturally lowered and p^mu=i partial^mu. Its orientation is epsilon^{0123}=+1,
+    hence epsilon_{0123}=epsilon^{1230}=-1.
+  kind: representation
+  group: peskin-schroeder.notation-and-conventions
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Units; Relativity and Tensors
+    pages:
+    - 19
+    note: The frontmatter fixes natural units, the mostly-minus metric, index ranges,
+      summation, vector typography, and raised/lowered four-vector examples.
+  - source: peskin-schroeder-notation
+    section: Relativity and Tensors; Quantum Mechanics
+    pages:
+    - 20
+    note: The continuation fixes the naturally lowered derivative, the raised-index
+      momentum operator, and the epsilon orientation and lowered-index signs.
+  notation:
+  - source: peskin-schroeder-notation
+    note: Four-vectors are light italic, three-vectors boldface, and unit three-vectors
+      light italic with a hat.
 - id: peskin-schroeder.naive-dirac-commutator-instability
   label: Failure of commutator quantization for the Dirac field
   summary: Expanding the Dirac field in the one-particle Hamiltonian eigenbasis with
@@ -1039,6 +1115,23 @@ nodes:
   - source: peskin-schroeder
     note: For multiple fields, sum the canonical term over fields; J^mu records the
       Lagrangian surface term.
+- id: peskin-schroeder.one-particle-operator-pauli-and-distribution-conventions
+  label: One-particle operator, Pauli-matrix, and distribution conventions
+  summary: For Schrodinger wavefunctions the book takes E=i partial/partial x^0 and
+    p=-i grad, so p^mu=i partial^mu and e^{-ik dot x} has momentum k^mu. ‘h.c.’ means
+    Hermitian conjugate. It uses sigma^i sigma^j=delta^{ij}+i epsilon^{ijk} sigma^k
+    and sigma^plus/minus=(sigma^1 plus/minus i sigma^2)/2. The step function is theta(x)=0
+    for x<0 and 1 for x>0, with delta(x)=d theta(x)/dx.
+  kind: representation
+  group: peskin-schroeder.notation-and-conventions
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Quantum Mechanics; Fourier Transforms and Distributions
+    pages:
+    - 20
+    note: The page states the one-particle operators, plane-wave momentum check, h.c.
+      meaning, Pauli algebra and ladder combinations, and definitions of theta and
+      delta.
 - id: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
   label: Parity of Dirac fields, bilinears, and fermion-antifermion bound states
   summary: Unitary parity reverses momentum without spin flip and acts as Pψ(t,x)P^{-1}=η_aγ^0ψ(t,−x),
@@ -2378,6 +2471,95 @@ edges:
     pages:
     - 34
     note: The problem supplies Q and asks for the charge of each particle type.
+- id: ps-conventions-001-chiral-declaration-to-clifford
+  from: peskin-schroeder.chiral-dirac-basis-and-relativistic-normalization-declaration
+  to: peskin-schroeder.dirac-clifford-algebra-generators
+  relation: evidence
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The frontmatter confirms that the accepted Clifford-algebra representation
+    must be read in the book's chiral basis.
+  failure_mode: A reader may substitute a familiar but different gamma-matrix realization
+    and misread the book's component expressions.
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Dirac Equation
+    pages:
+    - 21
+    note: The page explicitly states that the book uses a chiral basis for Dirac matrices.
+- id: ps-conventions-001-electrodynamics-to-maxwell
+  from: peskin-schroeder.heaviside-lorentz-electrodynamics-conventions
+  to: peskin-schroeder.maxwell-variational-field-equations
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The electromagnetic-action calculation is interpreted with the book's
+    F_{mu nu}, A^mu, current normalization, and Heaviside-Lorentz factors.
+  failure_mode: Mixing Gaussian and Heaviside-Lorentz normalizations or a different
+    current convention gives incorrect factors of 4pi or e.
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Electrodynamics
+    pages:
+    - 21
+    note: The frontmatter gives the field-strength definition, covariant Maxwell equations,
+      and placement of e and 4pi factors.
+- id: ps-conventions-001-fourier-to-dirac-momentum-space
+  from: peskin-schroeder.fourier-transform-normalization-conventions
+  to: peskin-schroeder.dirac-momentum-space-and-feynman-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Interpreting the book's momentum-space inverse Dirac operator requires
+    its stated exponent signs and placement of 2pi factors.
+  failure_mode: An unmarked alternative transform convention changes propagator phases,
+    signs, or normalization factors.
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Fourier Transforms and Distributions
+    pages:
+    - 21
+    note: The frontmatter fixes the four-dimensional transform pair and the placement
+      of every 2pi factor.
+- id: ps-conventions-001-metric-to-dirac-clifford
+  from: peskin-schroeder.minkowski-index-and-orientation-conventions
+  to: peskin-schroeder.dirac-clifford-algebra-generators
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Clifford anticommutator and all raised/lowered gamma-index expressions
+    use the book's metric and index conventions.
+  failure_mode: Using the opposite metric or treating lowered components as unchanged
+    reverses signs in anticommutators and component formulas.
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Relativity and Tensors
+    pages:
+    - 19
+    note: The frontmatter fixes the metric and explicitly illustrates index lowering
+      before the book's spinor conventions are introduced.
+- id: ps-conventions-001-normalization-declaration-to-u-v
+  from: peskin-schroeder.chiral-dirac-basis-and-relativistic-normalization-declaration
+  to: peskin-schroeder.dirac-u-v-normalization
+  relation: evidence
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The frontmatter confirms the normalization choice whose explicit u and
+    v formulas are retained in the accepted spinor-normalization record.
+  failure_mode: A reader can import a nonrelativistic or differently scaled spinor
+    convention and obtain inconsistent completeness factors.
+  evidence:
+  - source: peskin-schroeder-notation
+    section: Dirac Equation
+    pages:
+    - 21
+    note: The page explicitly states that the book uses relativistic normalization
+      for Dirac spinors.
 - id: ps3-adjoint-to-currents
   from: peskin-schroeder.dirac-adjoint-and-free-lagrangian
   to: peskin-schroeder.dirac-vector-and-axial-currents
@@ -4579,6 +4761,10 @@ groups:
   title: Free real scalar-field foundations
   question: How does the real Klein-Gordon field acquire its classical dynamics, canonical
     variables, and oscillator-mode description?
+- id: peskin-schroeder.notation-and-conventions
+  title: Notation and conventions
+  question: Which conventions fix the signs, indices, normalizations, and representation
+    choices used throughout this book?
 - id: peskin-schroeder.qed-scattering
   title: QED scattering and diagrammatics
   question: How does introductory e+e- to mu+mu- connect amplitudes, spin selection,

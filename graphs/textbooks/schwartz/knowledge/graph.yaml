@@ -70,6 +70,19 @@ nodes:
     pages:
     - 26
     note: Recasts the atomic transition calculation with a quantum photon field.
+- id: schwartz.axial-photon-propagator-problem
+  label: Axial-gauge photon propagator problem
+  summary: Problem 8.4 asks for a photon propagator in axial gauge A_0=0. It is a
+    requested gauge-fixed Maxwell inversion independent of the massive-Proca propagator
+    task.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.4
+    pages:
+    - 138
+    note: Requests the photon propagator in axial gauge.
 - id: schwartz.blackbody-cavity-modes-and-classical-spectrum
   label: Blackbody cavity modes and the classical spectrum
   summary: A thermal blackbody can be idealized as a periodic box of electromagnetic
@@ -226,6 +239,22 @@ nodes:
     pages:
     - 28
     note: Specifies the coherent-state construction and properties.
+- id: schwartz.complex-scalar-antiparticle-quantization
+  label: Complex scalar quantization and antiparticles
+  summary: 'A complex scalar requires independent a and b ladder operators: φ contains
+    a and b†, while φ* contains a† and b. The b modes annihilate same-mass opposite-charge
+    antiparticles, so coupling complex matter to a massless spin-1 field entails antiparticles
+    in this relativistic quantum description.'
+  kind: result
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: '9.1'
+    pages:
+    - 140
+    - 141
+    note: Gives opposite classical couplings and the two-operator quantum expansion
+      and conclusion.
 - id: schwartz.complex-scalar-global-u1-symmetry
   label: Complex scalar global U(1) symmetry
   summary: The complex scalar Lagrangian ℒ=|∂_μφ|²−m²|φ|² is invariant under the continuous
@@ -265,6 +294,21 @@ nodes:
     pages:
     - 39
     note: Calculates the potential from the point-charge source.
+- id: schwartz.covariant-rxi-photon-propagator
+  label: Covariant Rξ photon propagator
+  summary: Gauge redundancy makes the Maxwell kinetic operator noninvertible. Adding
+    −(∂·A)²/(2ξ) yields the covariant propagator iΠ_μν=−i[g_μν−(1−ξ)p_μp_ν/p²]/(p²+iε);
+    ξ=1 is Feynman–’t Hooft gauge, while ξ→0 is obtained only after inversion.
+  kind: representation
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.5–8.5.1
+    pages:
+    - 128
+    - 129
+    - 130
+    note: Shows the zero mode, gauge-fixing inverse, propagator, and named gauge limits.
 - id: schwartz.cross-section-flux-probability-luminosity
   label: Cross section from flux, probability, and luminosity
   summary: A differential cross section is differential scattering probability divided
@@ -467,6 +511,20 @@ nodes:
     pages:
     - 42
     note: Requests the general higher-derivative Euler–Lagrange equation.
+- id: schwartz.external-photon-lsz-polarizations
+  label: External photon polarizations in LSZ rules
+  summary: For scalar external states LSZ supplies factor one; each external photon
+    supplies its polarization vector, ε_μ for an incoming photon and ε*_μ for an outgoing
+    one. A diagram contracts those vectors with the derivative-vertex momenta.
+  kind: method
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: 9.2.1
+    pages:
+    - 145
+    - 146
+    note: States the external-state prescription and works a two-photon diagram.
 - id: schwartz.fermi-golden-rule-field-interaction
   label: Fermi golden rule for a field-creating interaction
   summary: Using Γ∼|⟨f|H_int|i⟩|²δ(E_f−E_i), a Hermitian interaction that creates
@@ -526,6 +584,21 @@ nodes:
     - 9
     note: Calculates occupation-dependent transition amplitudes and converts occupation
       to intensity.
+- id: schwartz.fierz-pauli-massive-spin-two
+  label: Fierz–Pauli massive spin-2 Lagrangian
+  summary: Decomposing a symmetric tensor into transverse and longitudinal parts shows
+    that the mass combination h_μν²−h² uniquely removes the dangerous four-derivative
+    longitudinal scalar. The resulting Fierz–Pauli kinetic and mass terms describe
+    the physical massive spin-2 field; their massless kinetic limit is the leading
+    Einstein–Hilbert expansion.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 135
+    note: Derives the unique mass term and displays the Fierz–Pauli Lagrangian.
 - id: schwartz.fock-space-particle-sectors
   label: Fock space and physical particle sectors
   summary: For one particle type, the Fock space is organized into Hilbert spaces
@@ -578,6 +651,71 @@ nodes:
   - source: schwartz
     note: The subscript 0 denotes a free field. The spatial phases on these pages
       use p⃗·x⃗.
+- id: schwartz.gauge-current-minimal-coupling
+  label: Gauge-current minimal coupling and scalar contact term
+  summary: Let J_0^μ=−i(φ∂^μφ*−φ*∂^μφ) be the e=0 global Noether current. Expanding
+    scalar QED gives the full interacting current J^μ=J_0^μ−2eA^μ|φ|²; the Lagrangian’s
+    term linear in A is −eA_μJ_0^μ, and its separate e²A²|φ|² contact term completes
+    local gauge invariance without double counting.
+  kind: result
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: 8.3.1 and 8.4
+    pages:
+    - 122
+    - 123
+    note: Derives the A-dependent current and distinguishes the generic linear current
+      coupling from the scalar quadratic completion.
+- id: schwartz.gauge-invariance-from-longitudinal-decoupling
+  label: Gauge invariance from longitudinal decoupling
+  summary: In the massless limit the longitudinal mode has no kinetic term, so any
+    interaction containing it becomes strongly coupled. Requiring it to disappear
+    forces coupling to a conserved current and, for complex scalar matter, the nonlinear
+    phase transformation and A²|φ|² term that complete the scalar-QED gauge-invariant
+    interaction.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 134
+    - 135
+    note: Derives current conservation and constructs the scalar-QED completion from
+      longitudinal decoupling.
+- id: schwartz.gauge-parameter-independence-from-transversality
+  label: Gauge-parameter independence from transverse contractions
+  summary: Because the ξ-dependent photon-propagator term is proportional to p_μp_ν,
+    a Lorentz-invariant physical result must annihilate that longitudinal structure.
+    This is the internal-photon counterpart of replacing an external polarization
+    by momentum in the Ward identity.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.5.1
+    pages:
+    - 130
+    note: Explicitly relates ξ independence to the Ward-identity condition.
+- id: schwartz.gauge-redundancy-locality-and-global-data
+  label: Gauge redundancy, locality, and global gauge data
+  summary: 'Gauge invariance is a description redundancy rather than an observable
+    global symmetry: its physical content is the two massless spin-1 polarizations.
+    Retaining A_μ keeps local matter couplings manifest, whereas eliminating it in
+    favor of F_μν generally becomes nonlocal; global information can also reside in
+    gauge-invariant Wilson loops rather than F_μν alone.'
+  kind: concept
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 130
+    - 131
+    - 132
+    note: Distinguishes gauge from global symmetry and explains locality and global-field
+      reasons to retain Aμ.
 - id: schwartz.general-operator-creation-annihilation-expansion-problem
   label: General-operator creation/annihilation expansion problem
   summary: Problem 6.3 asks for a proof that any operator can be written in the creation/annihilation
@@ -827,6 +965,21 @@ nodes:
     - 55
     note: Contrasts finite Stark perturbation theory with the high-momentum photon-state
       sum and its interpretation.
+- id: schwartz.light-by-light-gauge-set-problem
+  label: Light-by-light gauge-invariant diagram-set problem
+  summary: Problem 9.2 asks how many same-order diagrams accompany a displayed three-loop
+    light-by-light graph and for the minimal additional set making the sum ξ independent,
+    including why remaining diagrams cancel among themselves. It extends the demonstrated
+    complete-diagram cancellation to a requested loop application.
+  kind: method
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: Problem 9.2
+    pages:
+    - 155
+    - 156
+    note: States the same-order counting and minimal gauge-invariant-set tasks.
 - id: schwartz.lippmann-schwinger-scattering-equation
   label: Lippmann–Schwinger scattering equation
   summary: For H=H₀+V with known H₀ eigenstate |φ⟩ of energy E, the full scattering
@@ -855,6 +1008,38 @@ nodes:
     pages:
     - 67
     note: Explicitly requests the LIPS invariance proof and verification.
+- id: schwartz.little-group-induced-vector-representations
+  label: Little-group induced vector representations
+  summary: A momentum-dependent polarization basis avoids finite-dimensional nonunitarity.
+    For massive p the little group is SO(3), which mixes three physical polarizations;
+    for massless p it is ISO(2), with two physical polarizations. These fixed-momentum
+    transformations characterize the induced Poincaré representation.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.2.4 and 8.4.1
+    pages:
+    - 120
+    - 124
+    - 125
+    note: Summarizes little groups and then shows how the massive basis closes under
+      SO(3).
+- id: schwartz.longitudinal-stueckelberg-ghost-test
+  label: Longitudinal decomposition and ghost test
+  summary: Writing A_μ=A^T_μ+∂_μπ exposes nontransverse dynamics. Unless a+b=0, the
+    longitudinal propagator from the generic vector Lagrangian has a four-derivative
+    structure decomposing into opposite-sign poles, so one mode is a ghost; higher-than-two-derivative
+    kinetic terms similarly conflict with unitarity.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 133
+    - 134
+    note: Performs the decomposition, propagator partial fraction, and ghost diagnosis.
 - id: schwartz.loop-amplitude-position-momentum-lsz-problem
   label: Loop-amplitude and LSZ translation problem
   summary: Problem 7.1 asks for a φ³ decay tree amplitude, a one-loop amplitude, its
@@ -1036,6 +1221,80 @@ nodes:
     - 104
     note: States the mass-as-interaction diagram, summation, and classical comparison
       tasks.
+- id: schwartz.massive-spin-three-kinetic-action-problem
+  label: Massive spin-3 kinetic-action construction problem
+  summary: Problem 8.8 asks for a free massive spin-3 kinetic Lagrangian by embedding
+    the field in Z_μνα. It is a requested higher-spin construction, not a result supplied
+    on the problem page.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.8
+    pages:
+    - 139
+    note: States the massive spin-three embedding and free-action task.
+- id: schwartz.massive-vector-field-quantization
+  label: Massive vector field quantization by polarization modes
+  summary: Quantizing a massive vector expands A_μ in three momentum-dependent polarization
+    vectors with separate ladder operators. States are labeled by momentum and polarization,
+    and ⟨0|A_μ(x)|p,ε_j⟩=ε_{jμ}e^(−ipx), while the scalar polarization proportional
+    to p_μ is omitted.
+  kind: representation
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.4.1
+    pages:
+    - 123
+    - 124
+    note: Gives the operator expansion, state matrix element, and excluded scalar
+      polarization.
+- id: schwartz.massive-vector-longitudinal-perturbative-breakdown
+  label: Massive-vector longitudinal high-energy perturbative breakdown
+  summary: The massive longitudinal polarization scales as E/m at high energy. If
+    an amplitude contains unsuppressed longitudinal factors, a cross section can grow
+    as g²E²/m², eventually violating the probability interpretation of perturbation
+    theory near E∼m/g; this is a source-specific limitation, not a proof that every
+    massive-vector interaction has that growth.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 117
+    note: Gives the longitudinal scaling, illustrative cross-section growth, and perturbative-breakdown
+      scale.
+- id: schwartz.massive-vector-polarization-basis
+  label: Massive vector transverse and longitudinal polarization basis
+  summary: For p=(E,0,0,p_z), three normalized vectors orthogonal to p give two transverse
+    modes and ε_L=(p_z/m,0,0,E/m). Their momentum dependence lets their Fourier span
+    carry the massive spin-1 representation; the longitudinal high-energy scaling
+    E/m also signals eventual breakdown of a perturbative treatment with unsuppressed
+    couplings.
+  kind: representation
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 117
+    note: Constructs the three polarizations and discusses longitudinal high-energy
+      growth.
+- id: schwartz.massive-vector-propagator-problem
+  label: Massive-vector propagator inversion problem
+  summary: Problem 8.3 asks for the classical massive spin-1 propagator by inverting
+    the sourced Proca equations into A_μ=Π_μνJ^ν. It is a requested massive-vector
+    application, not a result derived on the problem page.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.3
+    pages:
+    - 138
+    note: Requests inversion of the massive spin-1 equations.
 - id: schwartz.massless-field-plane-wave-oscillator-modes
   label: Massless field plane waves as oscillator modes
   summary: For □φ=0, Fourier components a_p(t)e^(ip⃗·x⃗) satisfy (∂_t²+|p⃗|²)a_p=0,
@@ -1049,6 +1308,98 @@ nodes:
     pages:
     - 19
     note: Derives the oscillator equation for plane-wave modes.
+- id: schwartz.massless-higher-spin-no-interaction-result
+  label: No interacting massless integer spin above two
+  summary: The source states that gauge invariance required for massless integer spin
+    greater than two is too restrictive to permit interactions, although massive higher-spin
+    particles can have free Lagrangians. The following chapter’s soft-limit argument
+    supplies a sharper version of this conclusion.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.7.3
+    pages:
+    - 138
+    note: States the interacting massless higher-spin obstruction and massive exception.
+- id: schwartz.massless-little-group-ward-identity
+  label: Massless little-group derivation of the Ward identity
+  summary: Massless little-group transformations mix a physical polarization with
+    p_μ. Since the added p_μ component is not a physical state, Lorentz invariance
+    of ε_μM^μ requires p_μM^μ=0. This Ward identity is therefore required by the two-polarization
+    unitary representation and is the momentum-space form of gauge redundancy.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.4.2
+    pages:
+    - 126
+    - 127
+    - 128
+    note: Exhibits the ISO(2) mixing and derives p·M=0, then connects it to gauge
+      invariance.
+- id: schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  label: Massless Maxwell gauge redundancy and two modes
+  summary: The m→0 Maxwell action is invariant under A_μ→A_μ+∂_μα. Coulomb gauge plus
+    residual gauge freedom removes A_0 and the longitudinal component; the remaining
+    on-shell modes are two transverse linear (or circular-helicity) polarizations.
+    The forward p_μ polarization is pure gauge and the timelike mode is unphysical.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.2.3–8.2.4
+    pages:
+    - 118
+    - 119
+    - 120
+    note: Derives gauge invariance, fixes Coulomb gauge, counts two modes, and identifies
+      pure-gauge/unphysical modes.
+- id: schwartz.massless-spin-two-cubic-interactions-problem
+  label: Massless spin-2 cubic-interaction construction problem
+  summary: Problem 8.7 requests the two-derivative cubic interactions of a massless
+    h_μν field using the Section 8.7.2 method, and comparison with the cubic Einstein–Hilbert
+    expansion. It is a requested continuation of that staged completion, not a result
+    proved on the problem page.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.7
+    pages:
+    - 139
+    note: Explicitly directs use of Section 8.7.2 and the cubic Einstein–Hilbert comparison.
+- id: schwartz.massless-spin-two-to-general-relativity-route
+  label: Massless spin-2 longitudinal-decoupling route to general relativity
+  summary: For h_μν→h_μν+∂_μπ_ν+∂_νπ_μ, decoupling π requires a conserved tensor current.
+    Iteratively completing the matter transformation and interactions produces general-coordinate
+    transformations, √−g matter coupling, and the Einstein–Hilbert kinetic action,
+    yielding the source’s bottom-up uniqueness route for a massless spin-2 field coupled
+    to matter.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 136
+    - 137
+    note: Builds the nonlinear transformation and identifies the completed matter
+      and gravitational actions.
+- id: schwartz.maxwell-energy-positivity-problem
+  label: Maxwell energy-positivity derivation problem
+  summary: Problem 8.2 asks for the Maxwell energy-momentum tensor and a demonstration
+    that its energy density is positive up to a total spatial divergence. It is a
+    requested check distinct from the Proca positive-energy derivation in the text.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.2
+    pages:
+    - 138
+    note: States the energy-momentum and positivity-up-to-divergence task.
 - id: schwartz.maxwell-lorenz-gauge-wave-equation
   label: Maxwell theory in Lorenz gauge
   summary: The electromagnetic field strength F_μν=∂_μA_ν−∂_νA_μ obeys the source-free
@@ -1172,6 +1523,21 @@ nodes:
     pages:
     - 34
     note: States the theorem and its stated qualifications.
+- id: schwartz.nonabelian-soft-consistency-problem
+  label: Non-Abelian soft-consistency derivation problem
+  summary: Problem 9.3 requests a derivation that matrix soft charges commute with
+    the mass matrix, then shows how a required contact-term pole resolves into gluon
+    exchange and a unique three-gluon vertex. The requested consistency condition
+    [T^a,T^b]=if^{abc}T^c identifies adjoint Lie-algebra structure; it is not established
+    on the problem page itself.
+  kind: method
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: Problem 9.3
+    pages:
+    - 156
+    note: States the matrix-charge, pole, three-gluon, and commutator derivation tasks.
 - id: schwartz.nonlinear-gravity-dimensional-analysis-and-perihelion
   label: Nonlinear gravity, dimensional analysis, and perihelion shift
   summary: The nonlinear-gravity problem rescales a schematic gravitational field,
@@ -1317,6 +1683,21 @@ nodes:
   - source: schwartz
     note: The source uses |x⃗⟩ for φ_0(x⃗)|0⟩ and distinguishes it from arbitrary
       Fock-space states with the same one-particle projection.
+- id: schwartz.particle-as-unitary-poincare-irrep
+  label: Particle as an irreducible unitary Poincaré representation
+  summary: A particle is a set of states that closes under Poincaré transformations
+    and forms an irreducible unitary representation, so invariant matrix elements
+    retain a positive probabilistic Hilbert-space interpretation.
+  kind: concept
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 109
+    - 110
+    note: Defines the Poincaré group, irreducibility, and the unitarity requirement
+      for invariant matrix elements.
 - id: schwartz.perturbative-nonlinear-classical-field-solution
   label: Perturbative nonlinear classical-field solution
   summary: For □h−λh²−J=0, expand h=h_0+h_1+… in λ. The leading solution h_0=(1/□)J
@@ -1389,6 +1770,35 @@ nodes:
     pages:
     - 77
     note: States the position-space and massless-limit tasks.
+- id: schwartz.positive-norm-probability-problem
+  label: Positive-norm probability proof problem
+  summary: Problem 8.1 asks for a proof that interpreting transition probabilities
+    within 0≤P≤1 requires all states to have one norm sign. It is a requested proof
+    extending the displayed vector-norm conflict, not a derivation supplied on the
+    problem page.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.1
+    pages:
+    - 138
+    note: Explicitly requests the positive- or negative-norm proof.
+- id: schwartz.proca-lagrangian-and-spin-one-constraint
+  label: Proca Lagrangian and massive spin-1 constraint
+  summary: Choosing the unique two-derivative vector kinetic combination with a=−b
+    gives ℒ=−F²/4+m²A²/2. For m≠0 its equations impose ∂·A=0 and (□+m²)A=0, removing
+    the scalar component and leaving the three massive spin-1 modes; the total energy
+    is positive after on-shell and boundary terms are accounted for.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 115
+    - 116
+    note: Derives the divergence constraint, Proca form, and positive total energy.
 - id: schwartz.quantized-massless-photon-modes
   label: Quantized massless photon modes
   summary: Planck assigns a cavity mode energy E_n=ℏω_n=|p⃗_n|; Einstein's particle
@@ -1495,6 +1905,126 @@ nodes:
     pages:
     - 56
     note: Defines asymptotic states and S-matrix elements.
+- id: schwartz.scalar-four-derivative-ghost-proof-problem
+  label: Scalar four-derivative ghost proof problem
+  summary: Problem 8.9 asks for a proof that no Lorentz-invariant single-scalar four-derivative
+    kinetic Lagrangian, such as −φ□²φ, yields nonnegative energy. It is a requested
+    higher-derivative consistency proof rather than a result demonstrated on the problem
+    page.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.9
+    pages:
+    - 139
+    note: States the scalar four-derivative nonnegative-energy proof task.
+- id: schwartz.scalar-moller-scattering-and-xi-cancellation
+  label: Scalar Møller scattering and ξ cancellation
+  summary: Tree-level scalar e⁻e⁻ scattering has t- and u-channel photon-exchange
+    amplitudes. At each exchange vertex k·(p_in+p_out)=p_out²−p_in²=0 for equal on-shell
+    masses, eliminating the ξ-dependent propagator term; inserting the summed amplitude
+    into the CM 2→2 formula gives the displayed scalar-Møller cross section.
+  kind: result
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: '9.3'
+    pages:
+    - 146
+    - 147
+    note: Calculates both channels, cancels ξ, and reports the cross section.
+- id: schwartz.scalar-qed-compton-scattering-problem
+  label: Scalar-QED Compton scattering problem
+  summary: Problem 9.1 requests tree-level γφ→γφ amplitudes and a Ward-identity check,
+    then CM polarized differential cross sections and a test of replacing polarization
+    outer products by −g_μν. These are specified applications rather than results
+    established in the text.
+  kind: method
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Lists the amplitude, polarization, cross-section, and replacement tasks.
+- id: schwartz.scalar-qed-local-u1-lagrangian
+  label: Scalar-QED local U(1) Lagrangian
+  summary: A charged scalar must be complex so that a local phase rotation can compensate
+    A_μ’s gauge shift. With D_μφ=(∂_μ+ieA_μ)φ and D_μφ*= (∂_μ−ieA_μ)φ*, ℒ=−F²/4+|Dφ|²−m²|φ|²
+    is locally gauge invariant; different fields may carry charges Q_n.
+  kind: representation
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: 8.3 and Chapter 9 introduction
+    pages:
+    - 121
+    - 140
+    note: Defines the covariant derivative, charges, and the scalar-QED Lagrangian.
+- id: schwartz.scalar-qed-loop-gauge-cancellation-route
+  label: Scalar-QED internal-photon gauge-cancellation route
+  summary: For a graph with virtual photons contracted into an arbitrary tensor X,
+    replacing one propagator by its longitudinal q_μq_α part does not vanish diagram
+    by diagram. Adding the same-order t, u, and seagull contributions produces an
+    integrand whose longitudinal replacement vanishes by momentum conservation, illustrating
+    the route to ξ independence at loop level.
+  kind: method
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 149
+    - 150
+    note: Sets up Xαβ and shows the summed longitudinal contribution vanishes.
+- id: schwartz.scalar-qed-propagators-and-derivative-vertices
+  label: Scalar-QED propagators and derivative three-point vertices
+  summary: Expanding scalar QED gives a complex-scalar propagator i/(p²−m²+iε), the
+    covariant-gauge photon propagator, and a three-point Aφ*φ interaction. Acting
+    derivatives on the charged-field expansion supplies signed momentum factors; a
+    single particle-flow rule reproduces scattering, pair-annihilation, and pair-creation
+    vertices while making charge conservation manifest.
+  kind: representation
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 142
+    - 143
+    - 144
+    note: Lists propagators, derives signed derivative momenta, and states the particle-flow
+      rule.
+- id: schwartz.scalar-qed-seagull-contact-vertex
+  label: Scalar-QED seagull contact vertex
+  summary: The e²A²|φ|² term forced by |Dφ|² gives a four-point two-photon/two-scalar
+    vertex 2ie²g_μν. The factor two is the symmetry factor for the identical A fields,
+    and this contact interaction is essential to Ward-identity cancellations.
+  kind: result
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 145
+    note: Derives the seagull rule and explains its origin.
+- id: schwartz.scalar-qed-ward-cancellation-complete-diagram-set
+  label: Scalar-QED Ward identity from the complete tree diagram set
+  summary: For e⁺e⁻→γγ, replacing one photon polarization by its momentum leaves the
+    t- and crossed-u diagrams nonzero; the seagull graph cancels their remainder by
+    momentum conservation. The cancellation does not require the photon legs to be
+    physical, allowing the same structure to establish internal gauge-parameter independence.
+  kind: method
+  group: schwartz.scalar-qed
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 147
+    - 148
+    note: Performs the two-diagram replacement, adds the four-point graph, and notes
+      off-shell applicability.
 - id: schwartz.schwinger-dyson-contact-equations
   label: Schwinger–Dyson contact equations
   summary: Differentiating time-ordered correlators generates delta-function contact
@@ -1554,6 +2084,99 @@ nodes:
     pages:
     - 7
     note: Builds the oscillator occupation algebra for one photon frequency.
+- id: schwartz.soft-form-factor-charge-definition
+  label: Soft form factor and charge definition
+  summary: For a general Lorentz-covariant scalar–photon vertex, transversality removes
+    the q_μ form factor and the soft on-shell limit leaves F_i(0). Finiteness of that
+    limit permits the general charge definition Q_i=−F_i(0), while the p·ε/(p·q) soft
+    interaction is universal and spin independent.
+  kind: result
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    - 153
+    note: Reduces the general vertex and identifies Q_i from its soft form factor.
+- id: schwartz.soft-graviton-self-interaction-problem
+  label: Soft-graviton self-interaction derivation problem
+  summary: 'Problem 9.4 asks first for the scalar-QED contact interaction required
+    by soft spin-1 Compton scattering, then for the graviton analogue: an hhφφ interaction
+    whose required pole resolves into graviton exchange and fixes a relation between
+    graviton self-coupling and hφφ coupling. It is a requested derivation, not a demonstrated
+    result.'
+  kind: method
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: Problem 9.4
+    pages:
+    - 156
+    note: States the soft spin-1 and spin-2 contact/pole/self-coupling tasks.
+- id: schwartz.soft-photon-external-leg-factorization
+  label: Soft-photon external-leg factorization
+  summary: For an outgoing photon q with |q·p_i| much smaller than hard invariants,
+    attachments to on-shell external legs give the leading eikonal factors ±eQ_i(p_i·ε)/(p_i·q)
+    times the hard amplitude M₀. Attachments to off-shell loop momenta lack the singular
+    1/(p_i·q) factor and are subleading, so the leading soft amplitude is the signed
+    sum over external legs.
+  kind: method
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 150
+    - 151
+    note: Derives a leg factor, defines the soft limit, and sums incoming/outgoing
+      charges.
+- id: schwartz.soft-spin-greater-than-two-obstruction
+  label: Soft-limit derivation of the massless higher-spin obstruction
+  summary: For massless spin three, Lorentz invariance would require conservation
+    of weighted quadratic momentum tensors, including weighted energy squares, which
+    is too restrictive for interacting scattering unless all charges vanish. This
+    is the source’s soft-limit derivation of the retained higher-spin no-interaction
+    result.
+  kind: method
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 155
+    note: Displays the spin-3 soft constraint and derives the no-interaction conclusion.
+- id: schwartz.soft-spin-one-lorentz-implies-charge-conservation
+  label: Soft massless spin-1 Lorentz invariance implies charge conservation
+  summary: A massless spin-1 little-group transformation shifts ε_μ by q_μ. Applying
+    that shift to the leading soft external-leg sum changes the amplitude by eM₀ times
+    total incoming charge minus total outgoing charge; Lorentz invariance therefore
+    requires charge conservation for every hard process, without assuming a Lagrangian
+    or gauge invariance.
+  kind: result
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    - 153
+    note: Applies the little-group shift to the soft sum and states the general conclusion.
+- id: schwartz.soft-spin-two-universal-gravity
+  label: Soft massless spin-2 implies universal gravity
+  summary: The massless spin-2 little-group Ward condition applied to the soft emission
+    sum requires conservation of Σκ_ip_i^ν. Since ordinary momentum is already conserved,
+    nontrivial scattering requires a common κ for every particle; the source identifies
+    this universal coupling with gravity.
+  kind: result
+  group: schwartz.soft-spin-constraints
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 153
+    - 154
+    note: Derives the spin-2 soft constraint and universal κ conclusion.
 - id: schwartz.sourced-maxwell-equations-from-action
   label: Sourced Maxwell equations from the action
   summary: Varying ℒ=−1/4F_μνF^μν−A_μJ^μ gives ∂_μF^μν=J^ν. In Lorenz gauge this becomes
@@ -1583,6 +2206,36 @@ nodes:
     - 66
     - 67
     note: Sets up polarization overlaps and obtains 1+cos²θ and the cross section.
+- id: schwartz.stueckelberg-massive-vector-representation
+  label: Stueckelberg representation of a massive vector
+  summary: The gauge-invariant toy action −F²/4+m²(A_μ+∂_μπ)²/2 has A_μ→A_μ+∂_μα and
+    π→π−α. Gauge fixing π=0 recovers a massive three-polarization vector, while retaining
+    π distributes the physical longitudinal degree of freedom between fields; integrating
+    π out makes the action nonlocal and exposes why the missing mode remains physical.
+  kind: representation
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 131
+    note: Presents the Stueckelberg action, its gauge fixing, degree count, and nonlocal
+      integrated-out form.
+- id: schwartz.tensor-polarization-sums-problem
+  label: Tensor polarization-sum and degree-counting problem
+  summary: Problem 8.6 asks for transverse symmetric tensor polarization counting,
+    explicit massive spin-2 bases, spin decomposition conditions, the massless limit,
+    and an embedding/constraint proposal for massive spin three. It is a requested
+    representation analysis, not a text-derived result.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.6
+    pages:
+    - 139
+    note: Lists the tensor polarization, massive/massless, and spin-three embedding
+      tasks.
 - id: schwartz.tetrahedron-symmetry-factor-problem
   label: Tetrahedron symmetry-factor problem
   summary: Problem 7.7 asks for the amplitude and symmetry factor of a tetrahedral
@@ -1668,6 +2321,36 @@ nodes:
     pages:
     - 105
     note: States the Breit–Wigner, on-shell-imaginary-part, loop, and decay-rate tasks.
+- id: schwartz.vector-lorentz-unitarity-conflict
+  label: Conflict between vector Lorentz covariance and positive norm
+  summary: The finite four-vector representation preserves the Minkowski bilinear
+    form but a Lorentz boost does not preserve the positive Hilbert norm; using an
+    indefinite norm instead loses a bounded probability interpretation. Physical vector
+    particles therefore require a restricted, momentum-dependent state space.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: 8.1.1
+    pages:
+    - 112
+    - 113
+    note: Uses an explicit boost to show the positive norm is not invariant and summarizes
+      the conflict.
+- id: schwartz.vector-polarization-sums-problem
+  label: Vector polarization-sum derivation problem
+  summary: Problem 8.5 asks for massive and massless physical-polarization outer products,
+    including a covariant massless expression using p and a reference vector r, and
+    for comparison with propagator numerators and a Lagrangian realizing the result.
+    It is a requested derivation, not a result proved on the problem pages.
+  kind: method
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Lists the polarization-sum, propagator, and reference-vector tasks.
 - id: schwartz.weak-decay-scale-estimate-problem
   label: Weak-decay scale-estimate problem
   summary: Problem 7.8 asks for a scalar interaction enabling muon decay, its large-W-mass
@@ -1699,6 +2382,19 @@ nodes:
     - 92
     note: Defines contractions, invokes Wick’s theorem, and proves bubble cancellation
       in the example.
+- id: schwartz.wigner-mass-spin-polarization-classification
+  label: Wigner mass, spin, and polarization classification
+  summary: The source states that unitary irreducible Poincaré representations are
+    classified by nonnegative mass and spin. At fixed on-shell momentum a massive
+    spin-J particle has 2J+1 polarizations, while a massless J>0 particle has two.
+  kind: result
+  group: schwartz.spin-and-gauge-invariance
+  evidence:
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 111
+    note: States Wigner’s classification and polarization counts.
 - id: schwartz.yukawa-potential-and-massive-vector-constraint
   label: Yukawa potential and massive-vector constraint
   summary: The massive-vector source problem derives the field equation and a constraint
@@ -1782,6 +2478,23 @@ edges:
     pages:
     - 37
     note: Represents the point charge by an external current.
+- id: schwartz.e-antiparticles-to-scalar-rules
+  from: schwartz.complex-scalar-antiparticle-quantization
+  to: schwartz.scalar-qed-propagators-and-derivative-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The four signed vertex cases follow from which a/b operator each φ or
+    φ* field creates or annihilates.
+  failure_mode: Particle-flow arrows and signs become a memorized convention.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 143
+    - 144
+    note: Uses the complex-field mode expansion to derive all charged vertex cases.
 - id: schwartz.e-asymptotic-to-lsz
   from: schwartz.asymptotic-freedom-assumption-for-lsz
   to: schwartz.lsz-boundary-operator-derivation
@@ -1799,6 +2512,57 @@ edges:
     - 71
     - 72
     note: Uses free asymptotic behavior in the boundary calculation.
+- id: schwartz.e-cm-cross-section-to-moller
+  from: schwartz.cm-two-to-two-cross-section
+  to: schwartz.scalar-moller-scattering-and-xi-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reported scalar-Møller result converts the summed matrix element
+    into dσ/dΩ in the center-of-mass frame.
+  failure_mode: The amplitude cannot be turned into the displayed observable.
+  evidence:
+  - source: schwartz
+    section: '9.3'
+    pages:
+    - 147
+    note: Reports dσ/dΩ after the channel amplitudes.
+- id: schwartz.e-cm-cross-to-compton-problem
+  from: schwartz.cm-two-to-two-cross-section
+  to: schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (b)–(d) request a center-of-mass differential cross section from
+    the calculated amplitude.
+  failure_mode: The polarization amplitudes cannot be converted into the requested
+    dσ/dcosθ.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Explicitly requests center-of-mass differential cross sections.
+- id: schwartz.e-complex-global-to-antiparticles
+  from: schwartz.complex-scalar-global-u1-symmetry
+  to: schwartz.complex-scalar-antiparticle-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation requires a field distinct from its conjugate, i.e. the
+    accepted complex-scalar structure.
+  failure_mode: There is no reason to introduce independent a and b sectors rather
+    than the real-scalar expansion.
+  evidence:
+  - source: schwartz
+    section: '9.1'
+    pages:
+    - 140
+    - 141
+    note: Moves from the complex charged field to the non-self-conjugate quantum expansion.
 - id: schwartz.e-contractions-to-normal-wick
   from: schwartz.wick-contractions-and-vacuum-bubble-cancellation
   to: schwartz.normal-ordering-and-wicks-theorem
@@ -1818,6 +2582,23 @@ edges:
     - 102
     - 103
     note: Defines normal ordering and proves Wick’s theorem.
+- id: schwartz.e-current-to-seagull
+  from: schwartz.gauge-current-minimal-coupling
+  to: schwartz.scalar-qed-seagull-contact-vertex
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The same covariant-derivative expansion that gives the current coupling
+    fixes the required A²φ*φ term and its vertex.
+  failure_mode: The contact graph is incorrectly treated as optional.
+  evidence:
+  - source: schwartz
+    section: 8.3.1 and 9.2
+    pages:
+    - 123
+    - 145
+    note: Explains the quadratic completion and derives its Feynman rule.
 - id: schwartz.e-dyson-to-hamiltonian-route
   from: schwartz.interaction-picture-dyson-series-route
   to: schwartz.hamiltonian-contraction-route-to-position-rules
@@ -1836,6 +2617,23 @@ edges:
     - 86
     - 87
     note: Derives the Dyson expansion used in the Hamiltonian calculation.
+- id: schwartz.e-energy-momentum-to-maxwell-energy-problem
+  from: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
+  to: schwartz.maxwell-energy-positivity-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks to calculate the energy-momentum tensor before assessing
+    its energy density and total divergence.
+  failure_mode: The energy density is asserted without the tensor construction it
+    asks the learner to perform.
+  evidence:
+  - source: schwartz
+    section: Problem 8.2
+    pages:
+    - 138
+    note: Requests the Maxwell energy-momentum tensor and positivity check.
 - id: schwartz.e-equal-time-to-sd
   from: schwartz.equal-time-scalar-field-commutation-relations
   to: schwartz.schwinger-dyson-contact-equations
@@ -1871,6 +2669,42 @@ edges:
     - 79
     - 80
     note: Inserts the field equation after deriving the contact identity.
+- id: schwartz.e-external-photons-to-compton-problem
+  from: schwartz.external-photon-lsz-polarizations
+  to: schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested incoming and outgoing polarization-dependent amplitudes
+    require the external-photon factors.
+  failure_mode: The polarization dependence and Ward replacement are not attached
+    to the tree amplitude.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Requests amplitudes as functions of incoming and outgoing photon polarizations.
+- id: schwartz.e-fierz-to-gr-route
+  from: schwartz.fierz-pauli-massive-spin-two
+  to: schwartz.massless-spin-two-to-general-relativity-route
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The massless kinetic limit motivates the longitudinal-decoupling construction,
+    but the latter can start directly from a massless tensor gauge transformation.
+  failure_mode: The source’s massive-to-massless comparison is omitted, though the
+    nonlinear completion remains derivable.
+  evidence:
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 135
+    - 136
+    note: Takes the Fierz–Pauli massless limit then begins the massless interaction
+      analysis.
 - id: schwartz.e-fock-to-ofpt
   from: schwartz.fock-space-particle-sectors
   to: schwartz.ofpt-on-shell-intermediate-states
@@ -1888,6 +2722,22 @@ edges:
     pages:
     - 49
     note: States that the intermediate state can lie in the whole Fock space.
+- id: schwartz.e-formfactor-to-nonabelian-problem
+  from: schwartz.soft-form-factor-charge-definition
+  to: schwartz.nonabelian-soft-consistency-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 9.3 explicitly starts from the generic Γ^a_ij vertex introduced
+    in the form-factor soft analysis.
+  failure_mode: The matrix-charge soft limit has no stated general vertex to extend.
+  evidence:
+  - source: schwartz
+    section: Problem 9.3
+    pages:
+    - 156
+    note: References the generic interaction of Eq. 9.57 and asks for matrix charges.
 - id: schwartz.e-fourier-to-momentum-rules
   from: schwartz.fourier-transform-derivative-operator-correspondence
   to: schwartz.momentum-space-feynman-rules
@@ -1907,6 +2757,109 @@ edges:
     - 94
     note: Writes propagators as momentum integrals and integrates positions into delta
       functions.
+- id: schwartz.e-free-scalar-to-antiparticles
+  from: schwartz.free-scalar-field-mode-expansion
+  to: schwartz.complex-scalar-antiparticle-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The page explicitly recalls the real scalar mode expansion before generalizing
+    it to distinct a and b operators.
+  failure_mode: The complex expansion has no reference form whose self-conjugacy is
+    being relaxed.
+  evidence:
+  - source: schwartz
+    section: '9.1'
+    pages:
+    - 141
+    note: Begins the derivation by recalling the quantized real scalar field.
+- id: schwartz.e-global-u1-to-scalar-qed
+  from: schwartz.complex-scalar-global-u1-symmetry
+  to: schwartz.scalar-qed-local-u1-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Local phase covariance extends the accepted complex-scalar global U(1)
+    transformation.
+  failure_mode: The charged field transformation and its two-real-component content
+    have no starting point.
+  evidence:
+  - source: schwartz
+    section: '8.3'
+    pages:
+    - 121
+    note: Builds the local transformation from the complex scalar doublet.
+- id: schwartz.e-gr-route-to-cubic-gravity-problem
+  from: schwartz.massless-spin-two-to-general-relativity-route
+  to: schwartz.massless-spin-two-cubic-interactions-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.7 explicitly directs the learner to continue the Section 8.7.2
+    iterative massless-spin-two construction.
+  failure_mode: The stipulated construction method and Einstein–Hilbert expansion
+    target are unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 8.7
+    pages:
+    - 139
+    note: Explicitly instructs use of Section 8.7.2.
+- id: schwartz.e-green-kernel-to-axial-propagator-problem
+  from: schwartz.green-function-propagator-kernel
+  to: schwartz.axial-photon-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A gauge-specific photon propagator is the Green-function inverse after
+    the axial condition removes the degeneracy.
+  failure_mode: The requested axial result is not understood as an inverse propagator
+    kernel.
+  evidence:
+  - source: schwartz
+    section: 8.5 and Problem 8.4
+    pages:
+    - 128
+    - 138
+    note: Defines the photon Green function and assigns the axial-gauge calculation.
+- id: schwartz.e-green-kernel-to-massive-propagator-problem
+  from: schwartz.green-function-propagator-kernel
+  to: schwartz.massive-vector-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Writing Aμ=ΠμνJν is precisely the requested Green-function inverse-kernel
+    construction.
+  failure_mode: The desired propagator has no source-to-field inverse interpretation.
+  evidence:
+  - source: schwartz
+    section: Problem 8.3
+    pages:
+    - 138
+    note: Specifies the sourced inverse form Aμ=ΠμνJν.
+- id: schwartz.e-green-kernel-to-rxi
+  from: schwartz.green-function-propagator-kernel
+  to: schwartz.covariant-rxi-photon-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation defines the photon propagator as the Green-function kernel
+    inverse of the gauge-fixed kinetic operator.
+  failure_mode: The matrix inverse is detached from the propagator/Green-function
+    construction.
+  evidence:
+  - source: schwartz
+    section: '8.5'
+    pages:
+    - 128
+    - 129
+    note: Defines Πμν through the time-ordered Green function and constructs its inverse.
 - id: schwartz.e-hamiltonian-route-to-position-rules
   from: schwartz.hamiltonian-contraction-route-to-position-rules
   to: schwartz.position-space-feynman-rules
@@ -1945,6 +2898,43 @@ edges:
     - 71
     - 72
     note: Uses time-independent asymptotic operators in the mode-expansion calculation.
+- id: schwartz.e-higher-derivative-to-scalar-4derivative-problem
+  from: schwartz.higher-derivative-effective-interactions-and-instability
+  to: schwartz.scalar-four-derivative-ghost-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested four-derivative scalar consistency proof uses the accepted
+    distinction between higher-derivative effective terms and unstable kinetic propagation.
+  failure_mode: The exercise lacks the prior higher-derivative stability framework
+    it must specialize.
+  evidence:
+  - source: schwartz
+    section: Problem 8.9
+    pages:
+    - 139
+    note: Requests the nonnegative-energy proof for a fourth-derivative kinetic term.
+- id: schwartz.e-induced-to-massive-quantization
+  from: schwartz.little-group-induced-vector-representations
+  to: schwartz.massive-vector-field-quantization
+  relation: pedagogical
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The mode expansion is introduced before the later little-group explanation;
+    induced representations clarify its transformation properties rather than supply
+    a required construction step.
+  failure_mode: The representation-theoretic interpretation is missing, while the
+    polarization-indexed expansion remains usable.
+  evidence:
+  - source: schwartz
+    section: 8.4.1
+    pages:
+    - 123
+    - 124
+    - 125
+    note: Introduces the expansion before explaining the little-group method.
 - id: schwartz.e-kinetic-to-mass-insertions
   from: schwartz.kinetic-terms-interactions-and-dynamical-fields
   to: schwartz.mass-insertion-propagator-resummation-problem
@@ -1998,6 +2988,166 @@ edges:
     - 61
     - 62
     note: States dΓ in terms of dΠ_LIPS.
+- id: schwartz.e-little-ward-to-formfactor
+  from: schwartz.massless-little-group-ward-identity
+  to: schwartz.soft-form-factor-charge-definition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general form factor is inserted into the preceding soft little-group
+    ε→ε+q Lorentz-invariance argument.
+  failure_mode: F_i(0) is identified algebraically but does not acquire the charge-conservation
+    constraint defining it.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    - 153
+    note: Uses the little-group shift before and after replacing the scalar-QED vertex
+      by form factors.
+- id: schwartz.e-little-ward-to-soft-charge
+  from: schwartz.massless-little-group-ward-identity
+  to: schwartz.soft-spin-one-lorentz-implies-charge-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The soft proof applies the same little-group ε→ε+q shift that underlies
+    the massless Ward identity.
+  failure_mode: The source of the Lorentz-invariance constraint on the soft amplitude
+    is missing.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    note: Explicitly invokes the Section 8.4.2 little-group transformation.
+- id: schwartz.e-longitudinal-to-gauge-completion
+  from: schwartz.longitudinal-stueckelberg-ghost-test
+  to: schwartz.gauge-invariance-from-longitudinal-decoupling
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The zero kinetic term in the massless longitudinal sector is the diagnosis
+    that makes its absence from interactions necessary.
+  failure_mode: Gauge invariance is asserted without the strong-coupling failure mode.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 134
+    note: Explains Z→0 strong coupling and the requirement that π never appear.
+- id: schwartz.e-longitudinal-to-massive-spin3-problem
+  from: schwartz.longitudinal-stueckelberg-ghost-test
+  to: schwartz.massive-spin-three-kinetic-action-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter’s higher-spin construction extends the longitudinal-mode/ghost
+    diagnostic used to select viable free kinetic terms.
+  failure_mode: The spin-three construction lacks a criterion for rejecting dangerous
+    longitudinal higher derivatives.
+  evidence:
+  - source: schwartz
+    section: 8.7.1, 8.7.3, and Problem 8.8
+    pages:
+    - 133
+    - 138
+    - 139
+    note: Develops the diagnostic, says higher spins use the same trick, and assigns
+      the spin-three action.
+- id: schwartz.e-longitudinal-to-proca
+  from: schwartz.longitudinal-stueckelberg-ghost-test
+  to: schwartz.proca-lagrangian-and-spin-one-constraint
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Stueckelberg decomposition independently recovers the same unique
+    massive vector kinetic structure by excluding ghosts.
+  failure_mode: The earlier positive-energy derivation remains a complete route.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 133
+    - 134
+    note: Uses the decomposition to recover the Proca form.
+- id: schwartz.e-longitudinal-to-scalar-4derivative-problem
+  from: schwartz.longitudinal-stueckelberg-ghost-test
+  to: schwartz.scalar-four-derivative-ghost-proof-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested scalar proof applies the chapter’s wrong-sign-pole and
+    higher-derivative ghost analysis.
+  failure_mode: The exercise has no established mechanism connecting fourth derivatives
+    to nonunitarity or instability.
+  evidence:
+  - source: schwartz
+    section: 8.7.1 and Problem 8.9
+    pages:
+    - 133
+    - 139
+    note: Derives the higher-derivative ghost diagnostic and assigns the scalar proof.
+- id: schwartz.e-loop-route-to-lightbylight-problem
+  from: schwartz.scalar-qed-loop-gauge-cancellation-route
+  to: schwartz.light-by-light-gauge-set-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for the minimal same-order diagram set using the complete-diagram
+    ξ-cancellation principle demonstrated just above.
+  failure_mode: The selection criterion for added light-by-light diagrams is absent.
+  evidence:
+  - source: schwartz
+    section: 9.4 and Problem 9.2
+    pages:
+    - 150
+    - 155
+    - 156
+    note: Points to the closed-loop case then requests its gauge-invariant completion.
+- id: schwartz.e-lorentz-conflict-to-induced-reps
+  from: schwartz.vector-lorentz-unitarity-conflict
+  to: schwartz.little-group-induced-vector-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Momentum-dependent physical bases and little groups resolve the finite-vector
+    norm conflict.
+  failure_mode: The induced-representation construction looks like an arbitrary change
+    of basis.
+  evidence:
+  - source: schwartz
+    section: 8.2 and 8.4.1
+    pages:
+    - 113
+    - 125
+    note: Sets the momentum-dependent plan and explains the little-group resolution.
+- id: schwartz.e-lorentz-fields-to-tensor-polarization-problem
+  from: schwartz.lorentz-transformation-laws-for-fields
+  to: schwartz.tensor-polarization-sums-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor exercise imposes Lorentz-covariant transverse and symmetry
+    conditions on hμν polarizations.
+  failure_mode: The index conditions and their degree counts lack their tensor transformation
+    meaning.
+  evidence:
+  - source: schwartz
+    section: Problem 8.6
+    pages:
+    - 139
+    note: Defines the tensor polarizations and requests Lorentz-invariant conditions.
 - id: schwartz.e-ls-to-born
   from: schwartz.lippmann-schwinger-scattering-equation
   to: schwartz.transfer-matrix-born-series
@@ -2034,6 +3184,22 @@ edges:
     - 72
     - 73
     note: Derives LSZ then explains its cancellation and projection behavior.
+- id: schwartz.e-lsz-to-external-photons
+  from: schwartz.lsz-reduction-pole-projection
+  to: schwartz.external-photon-lsz-polarizations
+  relation: prerequisite
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: The external-photon rule is explicitly a modification of LSZ by polarization
+    factors.
+  failure_mode: The polarization insertion appears as an isolated rule.
+  evidence:
+  - source: schwartz
+    section: 9.2.1
+    pages:
+    - 145
+    note: States that LSZ is modified by one polarization factor per external photon.
 - id: schwartz.e-lsz-to-momentum-rules
   from: schwartz.lsz-reduction-pole-projection
   to: schwartz.momentum-space-feynman-rules
@@ -2052,6 +3218,75 @@ edges:
     - 94
     - 95
     note: Applies LSZ in the worked conversion and lists external-line cancellation.
+- id: schwartz.e-massive-basis-to-high-energy-limit
+  from: schwartz.massive-vector-polarization-basis
+  to: schwartz.massive-vector-longitudinal-perturbative-breakdown
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy estimate uses the explicit longitudinal polarization’s
+    E/m scaling.
+  failure_mode: The proposed amplitude growth has no polarization factor to estimate.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 117
+    note: Takes the high-energy limit of εL before estimating the cross section.
+- id: schwartz.e-massive-basis-to-vector-polarization-problem
+  from: schwartz.massive-vector-polarization-basis
+  to: schwartz.vector-polarization-sums-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.5(a) begins by summing the physical massive-vector polarization
+    basis.
+  failure_mode: The first requested outer product has no specified physical vectors
+    to sum.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Requests the sum over physical massive spin-one polarizations.
+- id: schwartz.e-massive-propagator-to-vector-polarization-problem
+  from: schwartz.massive-vector-propagator-problem
+  to: schwartz.vector-polarization-sums-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.5(b) explicitly compares the massive-vector propagator numerator
+    from Problem 8.3 with the polarization sum.
+  failure_mode: The requested comparison lacks one of its two objects.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Part (b) explicitly invokes Problem 8.3.
+- id: schwartz.e-maxwell-to-ward
+  from: schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  to: schwartz.massless-little-group-ward-identity
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The earlier gauge-fixed count gives useful context, but the displayed
+    Ward derivation starts from the massless little-group transformation and ε·M.
+  failure_mode: The two-polarization gauge-fixing example is absent, while the little-group
+    derivation itself remains complete.
+  evidence:
+  - source: schwartz
+    section: 8.2.3 and 8.4.2
+    pages:
+    - 120
+    - 126
+    - 127
+    note: Gives the gauge-fixed example then independently derives the identity from
+      little-group mixing.
 - id: schwartz.e-mode-algebra-to-lsz-boundary
   from: schwartz.momentum-mode-creation-annihilation-algebra
   to: schwartz.lsz-boundary-operator-derivation
@@ -2122,6 +3357,42 @@ edges:
     - 99
     - 100
     note: Assigns derivative momenta and uses vertex conservation.
+- id: schwartz.e-momentum-rules-to-scalar-rules
+  from: schwartz.momentum-space-feynman-rules
+  to: schwartz.scalar-qed-propagators-and-derivative-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Scalar-QED rules instantiate the accepted momentum-space prescription
+    with its new propagators and derivative vertex.
+  failure_mode: The factors of i, momentum conservation, and diagram interpretation
+    are ungrounded.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 142
+    - 143
+    note: Reads scalar-QED Feynman rules from the expanded Lagrangian and derivatives.
+- id: schwartz.e-noether-to-gauge-current
+  from: schwartz.noether-current-and-conserved-charge
+  to: schwartz.gauge-current-minimal-coupling
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Pages 122–123 obtain the interacting current by extending the accepted
+    global Noether-current construction.
+  failure_mode: J0 and its conserved-charge meaning are not available to distinguish
+    from the A-dependent full current.
+  evidence:
+  - source: schwartz
+    section: 8.3.1
+    pages:
+    - 122
+    - 123
+    note: Identifies the e=0 Noether current and derives its gauge-field completion.
 - id: schwartz.e-normalization-to-decay
   from: schwartz.relativistic-state-normalization-and-delta-regulation
   to: schwartz.decay-rate-lips-and-time-dilation
@@ -2178,6 +3449,23 @@ edges:
     - 92
     - 93
     note: Explains the factor cancellations in both derivations.
+- id: schwartz.e-normalization-to-seagull
+  from: schwartz.interaction-normalization-and-symmetry-factors
+  to: schwartz.scalar-qed-seagull-contact-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factor two in the seagull rule is the identical-photon symmetry factor,
+    using the accepted interaction-normalization convention.
+  failure_mode: The four-point vertex is assigned the wrong factor of two.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 145
+    note: Explains that the factor two comes from the symmetry factor for the two
+      A fields.
 - id: schwartz.e-on-shell-to-time-orderings
   from: schwartz.ofpt-on-shell-intermediate-states
   to: schwartz.advanced-retarded-time-ordering-sum
@@ -2213,6 +3501,22 @@ edges:
     pages:
     - 61
     note: Defines dΠ_LIPS and inserts it into dσ.
+- id: schwartz.e-poincare-to-wigner
+  from: schwartz.particle-as-unitary-poincare-irrep
+  to: schwartz.wigner-mass-spin-polarization-classification
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The classification is explicitly of unitary irreducible Poincaré representations.
+  failure_mode: Mass and spin are recited without the representation class being classified.
+  evidence:
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 110
+    - 111
+    note: Introduces particle representations then states Wigner’s classification.
 - id: schwartz.e-position-to-momentum-rules
   from: schwartz.position-space-feynman-rules
   to: schwartz.momentum-space-feynman-rules
@@ -2232,6 +3536,72 @@ edges:
     - 94
     - 95
     note: Carries out the conversion and summarizes the rules.
+- id: schwartz.e-proca-to-massive-basis
+  from: schwartz.proca-lagrangian-and-spin-one-constraint
+  to: schwartz.massive-vector-polarization-basis
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The polarization vectors are chosen to solve both Proca equations, especially
+    p·ε=0.
+  failure_mode: The listed vectors are not tied to the field constraints.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 116
+    - 117
+    note: Obtains the equations then constructs their polarization solutions.
+- id: schwartz.e-proca-to-massive-propagator-problem
+  from: schwartz.proca-lagrangian-and-spin-one-constraint
+  to: schwartz.massive-vector-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.3 inverts the sourced equations generated by the Proca action.
+  failure_mode: There is no massive-vector kinetic operator to invert.
+  evidence:
+  - source: schwartz
+    section: Problem 8.3
+    pages:
+    - 138
+    note: Requests the massive spin-one propagator by inversion.
+- id: schwartz.e-proca-to-maxwell
+  from: schwartz.proca-lagrangian-and-spin-one-constraint
+  to: schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The source uses m→0 to motivate restarting the analysis, but derives
+    massless mode counting directly from Maxwell gauge symmetry.
+  failure_mode: The limiting intuition is absent, while the direct Maxwell derivation
+    remains complete.
+  evidence:
+  - source: schwartz
+    section: 8.2.3
+    pages:
+    - 118
+    note: Takes the massless limit and then restarts the degree-of-freedom analysis.
+- id: schwartz.e-proca-to-stueckelberg-rep
+  from: schwartz.proca-lagrangian-and-spin-one-constraint
+  to: schwartz.stueckelberg-massive-vector-representation
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The Stueckelberg action is a gauge-redundant representation of the same
+    massive three-polarization physics.
+  failure_mode: The Proca description remains complete, but its gauge-redundant reformulation
+    and nonlocality lesson are absent.
+  evidence:
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 131
+    note: Gauge fixing π=0 reduces the toy model to a massive gauge boson.
 - id: schwartz.e-propagator-to-iepsilon
   from: schwartz.feynman-propagator-time-ordering
   to: schwartz.feynman-propagator-iepsilon-contour
@@ -2250,6 +3620,38 @@ edges:
     - 75
     - 76
     note: Transforms the step-function expression using the contour identity.
+- id: schwartz.e-rxi-to-gauge-independence
+  from: schwartz.covariant-rxi-photon-propagator
+  to: schwartz.gauge-parameter-independence-from-transversality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The ξ-dependent pμpν numerator identifies precisely the structure that
+    physical contractions must kill.
+  failure_mode: There is no explicit gauge-dependent term to test.
+  evidence:
+  - source: schwartz
+    section: 8.5.1
+    pages:
+    - 130
+    note: Writes the Rξ propagator and states the ξ-independence requirement.
+- id: schwartz.e-rxi-to-vector-polarization-problem
+  from: schwartz.covariant-rxi-photon-propagator
+  to: schwartz.vector-polarization-sums-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.5(e) compares the reference-vector numerator to the Rξ photon
+    propagator.
+  failure_mode: The requested final comparison cannot be made.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Part (e) explicitly asks for comparison with Rξ-gauge numerators.
 - id: schwartz.e-s-matrix-to-cross-section
   from: schwartz.s-matrix-asymptotic-state-map
   to: schwartz.lorentz-invariant-phase-space-cross-section
@@ -2268,6 +3670,56 @@ edges:
     - 60
     - 61
     note: Factors the S-matrix in the derivation of the cross section.
+- id: schwartz.e-scalar-qed-to-current
+  from: schwartz.scalar-qed-local-u1-lagrangian
+  to: schwartz.gauge-current-minimal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Expanding the gauge-invariant scalar-QED action yields the full current
+    and its linear and quadratic gauge couplings.
+  failure_mode: The AμJμ and A²φ*φ terms cannot be derived from a common local symmetry.
+  evidence:
+  - source: schwartz
+    section: 8.3.1
+    pages:
+    - 122
+    - 123
+    note: Expands the Lagrangian, derives Jμ, and gives the generic coupling argument.
+- id: schwartz.e-scalar-rules-to-compton-problem
+  from: schwartz.scalar-qed-propagators-and-derivative-vertices
+  to: schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested Compton tree amplitudes require the charged-scalar propagator
+    and three-point vertex.
+  failure_mode: The exercise cannot assemble its exchange diagrams.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Requests the tree matrix elements.
+- id: schwartz.e-scalar-rules-to-moller
+  from: schwartz.scalar-qed-propagators-and-derivative-vertices
+  to: schwartz.scalar-moller-scattering-and-xi-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The t and u amplitudes use the derivative vertex factors and photon propagator.
+  failure_mode: Neither channel numerator nor gauge-parameter cancellation can be
+    calculated.
+  evidence:
+  - source: schwartz
+    section: '9.3'
+    pages:
+    - 146
+    - 147
+    note: Writes both diagrams directly from the rules.
 - id: schwartz.e-sd-route-to-position-rules
   from: schwartz.lagrangian-schwinger-dyson-feynman-rule-route
   to: schwartz.position-space-feynman-rules
@@ -2306,6 +3758,38 @@ edges:
     - 82
     note: States that the Schwinger–Dyson equations are solved perturbatively to produce
       diagrams.
+- id: schwartz.e-seagull-to-compton-problem
+  from: schwartz.scalar-qed-seagull-contact-vertex
+  to: schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested Ward check needs the scalar-QED contact diagram along with
+    exchange diagrams.
+  failure_mode: The problem’s complete gauge-invariant amplitude is incomplete.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Requests a Compton Ward-identity demonstration.
+- id: schwartz.e-seagull-to-tree-ward
+  from: schwartz.scalar-qed-seagull-contact-vertex
+  to: schwartz.scalar-qed-ward-cancellation-complete-diagram-set
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The seagull amplitude supplies the exact remainder that t and u channels
+    alone fail to cancel.
+  failure_mode: The Ward replacement remains nonzero and the claimed identity fails.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 148
+    note: Identifies the missing four-point graph and shows its cancellation.
 - id: schwartz.e-smatrix-to-decay
   from: schwartz.s-matrix-asymptotic-state-map
   to: schwartz.decay-rate-lips-and-time-dilation
@@ -2325,6 +3809,168 @@ edges:
     - 62
     note: Introduces decay as a one-to-many probability per time after the S-matrix
       derivation.
+- id: schwartz.e-soft-charge-to-spin2
+  from: schwartz.soft-spin-one-lorentz-implies-charge-conservation
+  to: schwartz.soft-spin-two-universal-gravity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Spin two repeats the soft/little-group method with an additional momentum
+    factor; familiarity transfers the route but is not logically required.
+  failure_mode: The spin-two calculation can be derived independently from its tensor
+    soft amplitude.
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 153
+    - 154
+    note: Introduces spin two as the next application of the soft-limit argument.
+- id: schwartz.e-soft-factor-to-charge
+  from: schwartz.soft-photon-external-leg-factorization
+  to: schwartz.soft-spin-one-lorentz-implies-charge-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Lorentz shift is evaluated on the leading external-leg soft sum.
+  failure_mode: There is no amplitude whose qμ shift yields the incoming-minus-outgoing
+    charge sum.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 151
+    - 152
+    note: Derives the soft sum then applies the little-group shift.
+- id: schwartz.e-soft-factor-to-formfactor
+  from: schwartz.soft-photon-external-leg-factorization
+  to: schwartz.soft-form-factor-charge-definition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The form-factor vertex is put into the preceding leading external-leg
+    soft factorization, not offered as a separate route.
+  failure_mode: The p·ε/(p·q) soft expression used to define F_i(0) is unavailable.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 151
+    - 152
+    - 153
+    note: Derives the external-leg soft sum and then generalizes its vertex to form
+      factors.
+- id: schwartz.e-soft-higher-method-to-result
+  from: schwartz.soft-spin-greater-than-two-obstruction
+  to: schwartz.massless-higher-spin-no-interaction-result
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The page-155 soft spin-three argument is the retained derivation of the
+    page-138 higher-spin no-interaction conclusion.
+  failure_mode: The retained higher-spin result loses its distinct soft derivation
+    route.
+  evidence:
+  - source: schwartz
+    section: 8.7.3 and 9.5.1
+    pages:
+    - 138
+    - 155
+    note: States the obstruction first and later derives it from the soft constraint.
+- id: schwartz.e-soft-spin1-to-graviton-problem
+  from: schwartz.soft-spin-one-lorentz-implies-charge-conservation
+  to: schwartz.soft-graviton-self-interaction-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 9.4 includes the spin-one scalar-Compton soft contact argument
+    as part (a) before its graviton construction in part (b).
+  failure_mode: The staged problem target is incomplete because its stated warm-up/contact
+    derivation is omitted.
+  evidence:
+  - source: schwartz
+    section: Problem 9.4
+    pages:
+    - 156
+    note: Explicitly assigns the spin-one warm-up before the graviton analysis.
+- id: schwartz.e-soft-spin2-to-graviton-problem
+  from: schwartz.soft-spin-two-universal-gravity
+  to: schwartz.soft-graviton-self-interaction-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) extends the source’s massless spin-two soft constraint to the
+    required contact pole and self-interaction relation.
+  failure_mode: The graviton Compton portion loses the spin-two soft consistency principle
+    it applies.
+  evidence:
+  - source: schwartz
+    section: 9.5.1 and Problem 9.4
+    pages:
+    - 154
+    - 156
+    note: Derives the spin-two soft condition and asks for its graviton-scattering
+      completion.
+- id: schwartz.e-sourced-maxwell-to-axial-propagator-problem
+  from: schwartz.sourced-maxwell-equations-from-action
+  to: schwartz.axial-photon-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The axial-gauge task begins from the sourced Maxwell field equations
+    before imposing A0=0 and inverting.
+  failure_mode: The photon kinetic operator and source equation to be gauge-fixed
+    are missing.
+  evidence:
+  - source: schwartz
+    section: 8.5 and Problem 8.4
+    pages:
+    - 128
+    - 138
+    note: Introduces the sourced Maxwell inversion and asks for its axial-gauge version.
+- id: schwartz.e-sourced-maxwell-to-rxi
+  from: schwartz.sourced-maxwell-equations-from-action
+  to: schwartz.covariant-rxi-photon-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covariant propagator derivation starts from the sourced Maxwell equations
+    and their momentum-space kinetic operator.
+  failure_mode: There is no field equation whose gauge-fixed inverse is Πμν.
+  evidence:
+  - source: schwartz
+    section: '8.5'
+    pages:
+    - 128
+    - 129
+    note: Writes the sourced Maxwell equation before adding the Rξ gauge-fixing term
+      and inverting.
+- id: schwartz.e-spin2-to-higher-soft
+  from: schwartz.soft-spin-two-universal-gravity
+  to: schwartz.soft-spin-greater-than-two-obstruction
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The spin-three obstruction is presented as the continuation of the spin-one
+    and spin-two soft constraints, but can be checked from its own tensor condition.
+  failure_mode: The pattern is less transparent, though the spin-three conclusion
+    remains derivable.
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 154
+    - 155
+    note: Continues from the spin-two result to the spin-three constraint.
 - id: schwartz.e-time-ordering-to-propagator
   from: schwartz.advanced-retarded-time-ordering-sum
   to: schwartz.feynman-propagator-time-ordering
@@ -2394,6 +4040,61 @@ edges:
     - 88
     - 89
     note: Derives the vacuum-normalized correlation-function formula.
+- id: schwartz.e-vector-conflict-to-positive-norm-problem
+  from: schwartz.vector-lorentz-unitarity-conflict
+  to: schwartz.positive-norm-probability-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks to formalize the bounded-probability claim illustrated
+    by the indefinite vector norm.
+  failure_mode: The requested norm-sign proof lacks its physical probability premise.
+  evidence:
+  - source: schwartz
+    section: 8.1.1 and Problem 8.1
+    pages:
+    - 112
+    - 138
+    note: Shows the bad probability behavior then asks for the general proof.
+- id: schwartz.e-ward-to-loop-cancellation
+  from: schwartz.scalar-qed-ward-cancellation-complete-diagram-set
+  to: schwartz.scalar-qed-loop-gauge-cancellation-route
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The internal-photon demonstration reuses the same complete t/u/contact
+    cancellation with polarization vectors replaced by propagator contractions.
+  failure_mode: The external Ward check remains valid but its internal-propagator
+    extension is absent.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 148
+    - 149
+    - 150
+    note: Explains the off-shell extension and performs it with virtual propagators.
+- id: schwartz.e-ward-to-rxi
+  from: schwartz.massless-little-group-ward-identity
+  to: schwartz.covariant-rxi-photon-propagator
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The Ward identity explains why longitudinal gauge directions in a covariant
+    propagator cannot affect physical amplitudes.
+  failure_mode: The propagator remains usable but its unphysical longitudinal content
+    lacks interpretation.
+  evidence:
+  - source: schwartz
+    section: 8.4.2 and 8.5.1
+    pages:
+    - 128
+    - 130
+    note: Connects the identity to gauge shifts and discusses longitudinal propagator
+      terms.
 - id: schwartz.e-wick-to-hamiltonian-route
   from: schwartz.wick-contractions-and-vacuum-bubble-cancellation
   to: schwartz.hamiltonian-contraction-route-to-position-rules
@@ -2412,6 +4113,27 @@ edges:
     - 91
     - 92
     note: Defines contractions and demonstrates cancellation of vacuum bubbles.
+- id: schwartz.e-wigner-to-proca
+  from: schwartz.wigner-mass-spin-polarization-classification
+  to: schwartz.proca-lagrangian-and-spin-one-constraint
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The polarization count motivates why the constraint is desirable, but
+    the source derives the Proca equations and constraint directly from the Lagrangian.
+  failure_mode: The physical degree-of-freedom motivation is less explicit, while
+    the Lagrangian derivation remains possible.
+  evidence:
+  - source: schwartz
+    section: 8.1 and 8.2.2
+    pages:
+    - 111
+    - 114
+    - 116
+    - 118
+    note: States the count and later notes the Lagrangian calculation need not start
+      from spin.
 - id: schwartz.energy-momentum-conservation-to-graviton-polarizations
   from: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
   to: schwartz.graviton-polarizations-and-trace-coupling
@@ -2944,10 +4666,22 @@ groups:
   title: Radiation and quantization
   question: Why do the thermal spectrum and atomic emission require quantized radiation
     and field degrees of freedom?
+- id: schwartz.scalar-qed
+  title: Scalar quantum electrodynamics
+  question: How do local U(1) invariance and quantization determine scalar-QED amplitudes
+    and their consistency conditions?
 - id: schwartz.scattering-observables
   title: Cross sections and decay rates
   question: How are S-matrix amplitudes converted into measurable scattering and decay
     observables?
+- id: schwartz.soft-spin-constraints
+  title: Soft emission and integer-spin constraints
+  question: What do Lorentz invariance and soft limits require of interactions of
+    massless particles?
+- id: schwartz.spin-and-gauge-invariance
+  title: Spin, representations, and gauge invariance
+  question: How can Lorentz-covariant fields describe exactly the physical polarizations
+    of integer-spin particles?
 motivations:
 - id: schwartz.blackbody-observation-motivation
   nodes:
@@ -2996,6 +4730,21 @@ motivations:
     - 26
     note: Uses a field-containing interaction in an atom-photon transition calculation
       as context for a dynamical electromagnetic system.
+- id: schwartz.motivation-local-description-of-photons
+  nodes:
+  - schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  - schwartz.gauge-redundancy-locality-and-global-data
+  summary: The chapter asks how a local Lorentz-covariant field can describe a massless
+    photon with only two polarizations. Gauge redundancy answers the degree-of-freedom
+    problem while retaining local matter interactions.
+  evidence:
+  - source: schwartz
+    section: 8.2.3 and 8.6
+    pages:
+    - 118
+    - 132
+    note: Introduces the massless-mode problem and explains why the redundant Aμ description
+      is useful.
 - id: schwartz.motivation-observables-from-amplitudes
   nodes:
   - schwartz.lorentz-invariant-phase-space-cross-section
@@ -3027,6 +4776,23 @@ motivations:
     - 52
     note: Frames off-shellness as an efficient conceptual shift and says the Feynman
       propagator combines the two orderings.
+- id: schwartz.motivation-soft-constraints
+  nodes:
+  - schwartz.soft-spin-one-lorentz-implies-charge-conservation
+  - schwartz.soft-spin-two-universal-gravity
+  - schwartz.soft-spin-greater-than-two-obstruction
+  summary: 'The final section seeks consequences of Lorentz invariance that do not
+    depend on choosing a Lagrangian: soft massless spin one enforces charge conservation,
+    spin two enforces universal coupling, and higher spin obstructs interaction.'
+  evidence:
+  - source: schwartz
+    section: 9.5–9.5.1
+    pages:
+    - 150
+    - 153
+    - 155
+    note: Frames the Lagrangian-independent soft argument and states its spin-one,
+      spin-two, and higher-spin conclusions.
 - id: schwartz.spontaneous-emission-motivation
   nodes:
   - schwartz.einstein-emission-and-absorption-coefficients
