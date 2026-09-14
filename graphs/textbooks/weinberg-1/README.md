@@ -1,14 +1,14 @@
 # The Quantum Theory of Fields, Volume I: Foundations
 
-**Partial, model-reviewed graph:** 10 concepts and 10 relationships from printed pages 201–206.
+**Partial, model-reviewed graph:** 65 concepts and 41 relationships. Accepted units cover printed pages 1–48, 201–206; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
-Causal scalar fields: scalar Lorentz transformation behavior, the relation between annihilation and creation pieces, spacelike commutation, the real and charged scalar cases, and the resulting particle-antiparticle constraints.
+Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. Full-book construction and cross-unit dependency reconciliation are in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
 
-Terra/high extracted this batch; Sol/high independently reviewed it before promotion. The end human audit is pending. See [review.yaml](review.yaml) for exact scope, content digests, and omissions.
-
-This graph describes the book independently of any audience, course, or schedule. Earlier supporting sections and the rest of the textbook are not yet extracted.
+This graph describes the book independently of any audience, course, or schedule. Textbooks, extracted passages, source-page renderings, and processing records remain private.
 
 [Read the graph](knowledge/graph.yaml) · [Shared QFT graph](../../subjects/qft/README.md) · [Graph bank instructions](../../README.md)
+
+The following diagram is a small excerpt from the initial accepted batch. The linked YAML contains the current complete set of accepted records.
 
 ```mermaid
 flowchart TD

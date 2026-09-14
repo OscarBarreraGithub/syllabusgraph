@@ -2,7 +2,7 @@ schema_version: 1
 status: partial-model-reviewed
 complete_textbook: false
 human_audit: pending
-graph_digest: sha256:013c10c719e9d456cafd717c8746353b6ec1baa1f97c910079868e39e959d989
+graph_digest: sha256:e29fb340c14d5b1fad7022f9b627595298ac105382c2fa4ad59ec221348720f3
 extraction:
   model: gpt-5.6-terra
   effort: high
@@ -10,6 +10,17 @@ required_critic:
   model: gpt-5.6-sol
   effort: high
 units:
+- id: full-001
+  printed_pages:
+    first: 8
+    last: 40
+  scope: 'Chapter 15 continuation: compact gauge algebras, Yang–Mills dynamics and
+    quantization, Faddeev–Popov gauge fixing, ghost fields, BRST symmetry, physical-state
+    cohomology and the opening general-cohomology argument. The latter proof continues
+    beyond page 40.'
+  nodes: 34
+  edges: 29
+  acceptance: independent-critic
 - id: pilot-01
   printed_pages:
     first: 2
@@ -23,7 +34,9 @@ units:
   edges: 10
   acceptance: independent-critic
 omissions:
-- All portions outside the listed printed-page scope remain unextracted.
-- This bounded graph may have dependencies whose earlier supporting sections are not
-  yet represented.
+- Substantive content outside the accepted unit scopes remains unextracted.
+- Pilot scopes are narrow and may leave unassigned topics on the same pages; full
+  extraction revisits them.
+- Cross-unit dependency reconciliation remains in progress.
 - No claim of whole-book completeness or classroom evaluation.
+reviewed_printed_pages: 39

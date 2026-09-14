@@ -2,7 +2,7 @@ schema_version: 1
 status: partial-model-reviewed
 complete_textbook: false
 human_audit: pending
-graph_digest: sha256:ac3dda5a6a540e382668a7e98c0434d754d459efebe203f52081138cae53e2a5
+graph_digest: sha256:c01e69c731d02a86a4b22f349620a8a5d597b85801d12a3ed7b12d01b8cf8a8b
 extraction:
   model: gpt-5.6-terra
   effort: high
@@ -10,6 +10,21 @@ required_critic:
   model: gpt-5.6-sol
   effort: high
 units:
+- id: full-001
+  printed_pages:
+    first: 1
+    last: 48
+  scope: 'Chapter 1: the physical ideas, methods and conceptual limitations in the
+    historical development of relativistic quantum mechanics, quantum fields, radiative
+    corrections and renormalization. Bibliography and references on pages 39–48 are
+    read but yield no concept nodes.'
+  nodes: 55
+  edges: 31
+  acceptance: independent-critic
+  nonconceptual_content:
+  - first: 39
+    last: 48
+    reason: Bibliography and references; independently checked by Sol/high.
 - id: pilot-01
   printed_pages:
     first: 201
@@ -22,7 +37,9 @@ units:
   edges: 10
   acceptance: independent-critic
 omissions:
-- All portions outside the listed printed-page scope remain unextracted.
-- This bounded graph may have dependencies whose earlier supporting sections are not
-  yet represented.
+- Substantive content outside the accepted unit scopes remains unextracted.
+- Pilot scopes are narrow and may leave unassigned topics on the same pages; full
+  extraction revisits them.
+- Cross-unit dependency reconciliation remains in progress.
 - No claim of whole-book completeness or classroom evaluation.
+reviewed_printed_pages: 54

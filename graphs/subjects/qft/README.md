@@ -1,15 +1,15 @@
 # Quantum field theory graph collection
 
-**First reviewed batch:** four independent textbook graphs contain 36 book concepts. The shared graph contains 37 concepts and 36 relationships, with explicit origins covering every concept in those book batches.
+**Construction in progress:** four independent textbook graphs currently contain 125 reviewed concepts. The shared graph contains 37 concepts and 36 relationships, mapping 36 distinct book concepts through explicit origins.
 
-Terra/high performed extraction and alignment; independent Sol/high review preceded promotion. These are **partial graphs** covering 26 printed pages, with an end human audit still pending. They are not complete textbook maps or finished courses.
+Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. These are **partial graphs**, with an end human audit pending. The shared graph currently represents the initial 26-page pilot; newer book additions await shared-graph alignment. Full-book coverage, global reconciliation, and that alignment must finish before calling this collection complete.
 
-| Book graph | Printed pages in this batch | Concepts | Relationships |
+| Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
 | [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 13–20 | 9 | 7 |
 | [Schwartz](../../textbooks/schwartz/README.md) | 21–26 | 7 | 7 |
-| [Weinberg I](../../textbooks/weinberg-1/README.md) | 201–206 | 10 | 10 |
-| [Weinberg II](../../textbooks/weinberg-2/README.md) | 2–7 | 10 | 10 |
+| [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–48, 201–206 | 65 | 41 |
+| [Weinberg II](../../textbooks/weinberg-2/README.md) | 2–40 | 44 | 39 |
 
 [Read the shared graph](knowledge/graph.yaml) · [Coverage and review record](review.yaml) · [Graph bank instructions](../../README.md)
 

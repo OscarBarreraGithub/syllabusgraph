@@ -6,6 +6,11 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Expand the QFT bank beyond its pilot through independently reviewed textbook
+  batches. Record current counts, exact accepted scopes, and nonconceptual
+  exclusions alongside each graph. Full-book extraction and shared alignment
+  remain in progress.
+
 - Publish a first QFT graph pilot: 36 concepts across four textbook graphs and
   a 37-node shared synthesis over 26 printed pages. Terra/high extraction and
   Sol/high review preserve distinct derivation routes, citations, and origins.

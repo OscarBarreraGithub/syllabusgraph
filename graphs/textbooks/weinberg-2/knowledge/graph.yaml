@@ -15,6 +15,203 @@ nodes:
   notation:
   - source: weinberg-2
     note: A superscript A on t denotes the adjoint representation in this treatment.
+- id: weinberg-2.axial-gauge-canonical-reduction
+  label: Axial gauge canonical reduction
+  summary: Choosing axial gauge A^a_3=0 leaves A^a_i for i=1,2 as canonical gauge
+    variables. The Gauss-law constraint, with suitable boundary conditions, determines
+    A^a_0 from these variables and the matter canonical variables; this avoids the
+    Gribov ambiguity that the source notes for Coulomb gauge.
+  kind: method
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 15
+    - 16
+    note: Equations (15.4.4)–(15.4.9) establish the axial-gauge variables and solve
+      the constraint for A_0.
+  notation:
+  - source: weinberg-2
+    note: In this gauge i,j run only over spatial values 1 and 2, while the gauge
+      condition fixes the 3 component.
+- id: weinberg-2.axial-gauge-path-integral-to-covariant-action
+  label: Deriving the covariant gauge-field path integral from axial gauge
+  summary: Starting with the Gauss-law solution for A^a_0, the source instead introduces
+    A^a_0 as an independent Gaussian integration variable, whose stationary point
+    is that solution. Provided the matter momentum integration is also Gaussian under
+    the stated restriction on the matter Lagrangian, integrating the canonical momenta
+    yields a configuration-space integral over matter and all four A^a_μ components
+    with the original covariant Lagrangian and an axial-gauge delta functional δ(A^a_3).
+  kind: method
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 17
+    - 18
+    note: The source replaces the constrained A_0 solution by independent integration,
+      then integrates the canonical momenta under its Gaussian assumption and retains
+      all four gauge-field components.
+- id: weinberg-2.brst-beyond-power-counting-and-bilinear-faddeev-popov
+  label: Why BRST must extend power counting and bilinear Faddeev–Popov actions
+  summary: Power counting does not by itself ensure that every divergence has an available
+    counterterm, and nonlinear BRST transformations do not directly transfer Lagrangian
+    symmetry to Green functions or matrix elements. The source also notes that gauges
+    beyond the bilinear Faddeev–Popov construction can require quartic ghost counterterms;
+    the more general ghost-number-zero BRST-invariant action permits the needed BRST-exact
+    gauge-fixing functional beyond the bilinear form.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: 15.6–15.7
+    pages:
+    - 27
+    - 32
+    - 35
+    note: These pages state the power-counting limitation, the nonlinear-BRST limitation,
+      and the need for four-ghost counterterms in more general gauges.
+- id: weinberg-2.brst-cohomology-of-physical-states
+  label: Physical states as BRST cohomology
+  summary: The conserved BRST charge Q is nilpotent. Gauge-fixing independence of
+    physical matrix elements requires physical states to be annihilated by Q, and
+    two such states differing by a Q-exact state are physically equivalent. Thus independent
+    physical states are the cohomology ker Q / im Q.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 32
+    - 33
+    note: Equations (15.7.27)–(15.7.31) connect changes of the gauge-fixing functional
+      to Q and derive the cohomological characterization.
+- id: weinberg-2.brst-electrodynamic-polarization-example
+  label: BRST cohomology removes unphysical photon and ghost states
+  summary: In the free electrodynamic example, Q-closed one-photon states have transverse
+    polarization, and polarizations differing by a multiple of momentum are Q-equivalent.
+    Longitudinal/temporal unphysical modes and ghost excitations are excluded or Q-exact,
+    leaving a physical Hilbert space free of ghosts and antighosts.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 33
+    - 34
+    note: Equations (15.7.32)–(15.7.36) and their interpretation give the polarization
+      equivalence and removal of ghost states.
+- id: weinberg-2.brst-exact-gauge-fixing
+  label: Gauge fixing as a BRST-exact term
+  summary: For the auxiliary-field formulation, the gauge-fixed action has the form
+    I_new=∫d⁴x L+sΨ. Since the matter-plus-gauge Lagrangian is gauge invariant and
+    s is nilpotent, both terms are BRST invariant; the gauge-fixing and ghost contribution
+    is BRST exact.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 31
+    - 32
+    note: Equations (15.7.21)–(15.7.26) identify the gauge transformation parameter
+      and rewrite the new action.
+- id: weinberg-2.brst-field-transformations
+  label: BRST transformations with auxiliary field
+  summary: Introducing the Nakanishi–Lautrup field h^a via a Fourier representation
+    of the gauge-fixing weight gives a gauge-fixed action invariant under a constant
+    anticommuting BRST transformation. On matter and gauge fields it is a gauge transformation
+    with parameter proportional to ω^a; it transforms the antighost into h^a, h^a
+    trivially, and the ghost quadratically through C_{abc}ω^bω^c.
+  kind: method
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 28
+    - 29
+    note: Equations (15.7.5)–(15.7.11) introduce h and list the BRST transformations.
+  notation:
+  - source: weinberg-2
+    note: The BRST parameter θ is a constant anticommuting c-number; h^a is often
+      called the Nakanishi–Lautrup field.
+- id: weinberg-2.brst-nilpotence
+  label: Nilpotence of the BRST differential
+  summary: The BRST operator s satisfies s²=0 on all fields and their products. For
+    matter and gauge fields the cancellation uses the Lie-algebra commutator, antisymmetry,
+    and Jacobi identity; for arbitrary products it uses the graded Leibniz rule and
+    the opposite statistics of sφ relative to φ.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 29
+    - 30
+    - 31
+    note: Equations (15.7.14)–(15.7.20) prove nilpotence first on fields and then
+      on arbitrary functionals.
+- id: weinberg-2.brst-unitarity-and-general-gauge-fixing
+  label: BRST quantization and gauge-fixing-functional independence
+  summary: A general local ghost-number-zero BRST-invariant action can be written
+    as a gauge/matter functional plus s applied to a ghost-number-minus-one functional.
+    For Yang–Mills theory, BRST-closed S-matrix elements are independent of that functional;
+    with the stated Yang–Mills result, the BRST cohomology is ghost-free, positive
+    definite, and has a unitary S-matrix, while separate proofs are needed for other
+    local symmetries.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 35
+    - 36
+    note: Equation (15.7.40) and the following discussion state the general action,
+      ghost decoupling argument, and qualified BRST-quantization result.
+- id: weinberg-2.compact-simple-lie-algebra-classification
+  label: Classification consequences for compact simple gauge algebras
+  summary: The positive-metric restriction leaves compact simple algebras of limited
+    types and dimensions. The source identifies the unique three-generator case, shared
+    by O(3) and SU(2), reports no simple algebras with four through seven generators,
+    and places the compact simple algebras into classical infinite families plus five
+    exceptional algebras.
+  kind: result
+  group: weinberg-2.lagrangian-and-algebra
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 11
+    note: The source gives the three-generator case, the four-to-seven gap, and the
+      classical-plus-exceptional classification.
+  notation:
+  - source: weinberg-2
+    note: The three-generator structure constant has an arbitrary nonzero scale c
+      that can be removed by rescaling generators in the source's compact basis.
+- id: weinberg-2.compactness-and-hermitian-representations
+  label: Compact gauge algebras and Hermitian finite representations
+  summary: The source distinguishes real changes of basis, which preserve a real Lie
+    algebra, from complex changes that can turn a noncompact real form into a compact
+    one. It then states that finite-dimensional representations of compact groups
+    are unitary and that independent finite-dimensional Hermitian generators require
+    a direct sum of compact simple and U(1) algebras.
+  kind: result
+  group: weinberg-2.lagrangian-and-algebra
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 10
+    note: The page contrasts real and complex basis changes and derives the algebraic
+      restriction from a positive trace metric.
 - id: weinberg-2.covariant-derivative
   label: Covariant derivative of matter fields
   summary: The operator (D_μψ)_l=∂_μψ_l−iA^β_μ(t_β)_l{}^mψ_m is constructed so that
@@ -32,6 +229,115 @@ nodes:
   notation:
   - source: weinberg-2
     note: D_μ acts on matter components through the representation matrices t_β.
+- id: weinberg-2.covariant-field-equation-and-matter-current
+  label: Gauge-covariant field equation and matter-current conservation
+  summary: Rewriting the gauge equation as D_μF^{aμν}=−J^{aν} isolates the matter
+    current. Gauge invariance makes this equation covariant and gives D_νJ^{aν}=0,
+    rather than ordinary conservation of the matter current alone.
+  kind: result
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 13
+    note: Equations (15.3.5)–(15.3.8) define the covariant derivative on F, identify
+      the matter current, and state covariant conservation.
+  notation:
+  - source: weinberg-2
+    note: D_μ acts here in the adjoint representation on the group label of F and
+      J.
+- id: weinberg-2.covariant-gauge-ghost-propagator-and-vertex
+  label: Adjoint massless ghost propagator and ghost–gauge vertex
+  summary: In generalized ξ gauge, the Faddeev–Popov operator splits into a field-independent
+    free part and a field-dependent part. The ghosts therefore propagate as massless
+    spinless fermions in the adjoint representation and have a one-gauge-boson ghost–antighost
+    interaction vertex determined by the structure constants.
+  kind: result
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 26
+    note: Equations (15.6.8)–(15.6.14) give the operator, propagator, interaction,
+      and vertex.
+  notation:
+  - source: weinberg-2
+    note: The source uses ω^a for a ghost and ω^*_a for an antighost, with gauge indices
+      in the adjoint representation.
+- id: weinberg-2.dewitt-notation-general-local-symmetry
+  label: De Witt notation for general local symmetries
+  summary: For a general action and measure invariant under δφ^r=ε^Aδ_Aφ^r, De Witt
+    indices r and A include both spacetime and discrete labels and repeated indices
+    imply sums and integrals. This notation extends the BRST setup beyond Yang–Mills
+    theory to local symmetries such as those in gravity and string theory.
+  kind: representation
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 36
+    - 37
+    note: Equation (15.8.1) and the following paragraph define the compressed index
+      convention and give the Yang–Mills example.
+  notation:
+  - source: weinberg-2
+    note: In this section A labels an independent gauge variation and r labels fields,
+      both potentially including spacetime coordinates.
+- id: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+  label: Faddeev–Popov gauge-fixed functional integral
+  summary: The De Witt–Faddeev–Popov setup integrates gauge and matter fields with
+    a gauge-invariant weighted measure, a noninvariant gauge-fixing functional f^a,
+    a numerical weight B[f], and the determinant of the variation of f under a gauge
+    transformation. Axial gauge is a special case whose determinant is field independent.
+  kind: method
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 19
+    - 20
+    note: Equations (15.5.1)–(15.5.7) define the general integral and identify axial
+      gauge as its special case.
+- id: weinberg-2.faddeev-popov-gauge-fixing-independence
+  label: Gauge-fixing independence in the Faddeev–Popov theorem
+  summary: Assuming the gauge transformations form a group and the required Jacobians
+    exist, inserting the invariant Haar measure over transformations turns the gauge-fixing
+    functions into integration variables. The resulting gauge-fixed integral is independent
+    of the choice of f^a and depends on B only through a constant, with the infinite
+    gauge-orbit volume cancelling formally between numerator and denominator.
+  kind: result
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 21
+    - 22
+    note: Equations (15.5.17)–(15.5.21) complete the theorem and the following discussion
+      records the gauge-orbit divergence caveat.
+- id: weinberg-2.faddeev-popov-ghost-determinant
+  label: Faddeev–Popov determinant as ghost fields
+  summary: A Faddeev–Popov determinant is represented by a path integral over independent
+    anticommuting fields ω^a and ω^*_a. These Lorentz-scalar fields have Fermi statistics
+    because bosonic variables would generate the inverse determinant; they carry ghost
+    numbers +1 and −1 and do not label external physical particles.
+  kind: method
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 25
+    note: Equations (15.6.1)–(15.6.4) give the determinant representation and the
+      page explains statistics and ghost number.
+  notation:
+  - source: weinberg-2
+    note: ω and ω* are independent variables, not assumed to be related by complex
+      conjugation.
 - id: weinberg-2.finite-gauge-transformations
   label: Finite gauge transformations
   summary: A finite transformation acts on matter through exp(i t_αΛ^α(x)); requiring
@@ -51,6 +357,20 @@ nodes:
   - source: weinberg-2
     note: Λ^α(x) parameterizes the finite group element, while ε^α(x) denotes its
       infinitesimal limit.
+- id: weinberg-2.gauge-charge-includes-gauge-fields
+  label: Non-Abelian charge includes the gauge-field contribution
+  summary: The ordinarily conserved total current defines time-independent charges
+    T^a=∫d^3x j^{a0}. Its gauge-field term is required because non-Abelian gauge fields
+    carry the quantum numbers with which they interact; this is contrasted with electrodynamics.
+  kind: result
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 14
+    note: The discussion around equation (15.3.10) interprets the conserved total
+      current and explains its gauge-field term.
 - id: weinberg-2.gauge-field-lagrangian-restrictions
   label: Gauge-field terms and mass restriction
   summary: Within this construction, the gauge field may occur only through field
@@ -95,6 +415,21 @@ nodes:
   - source: weinberg-2
     note: The book includes coupling factors in t_α, and consequently in the structure
       constants, rather than displaying a separate coupling in D_μ.
+- id: weinberg-2.gauge-invariant-functional-measure-assumption
+  label: Gauge invariance of the functional measure
+  summary: For gauge fields, the infinitesimal transformation has unit Jacobian to
+    first order because C^a_{aγ}=0, so the gauge-field volume element is invariant.
+    The chapter assumes the matter-field measure is also gauge invariant, while flagging
+    subtleties to be revisited in the anomaly discussion.
+  kind: assumption
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 18
+    note: Equation (15.4.17) and the final paragraph establish the gauge-field argument
+      and state the matter-measure assumption.
 - id: weinberg-2.gauge-invariant-lagrangian-ingredients
   label: Gauge-covariant ingredients for a Lagrangian
   summary: A Lagrangian built from matter fields, their gauge-covariant derivatives,
@@ -110,6 +445,95 @@ nodes:
     - 7
     note: The opening of Section 15.2 gives the sufficient construction criterion
       and lists the allowed covariant ingredients in equation (15.2.1).
+- id: weinberg-2.general-brst-cohomology-functional-result
+  label: General BRST cohomology of ghost-number-zero functionals
+  summary: Within the stated general setup, the source states that a BRST-invariant
+    ghost-number-zero functional is a gauge-invariant functional of the original fields
+    plus an s-exact functional of ghost number minus one. The included range begins
+    a proof by grading terms by their total h and antighost number and introducing
+    a Hodge operator; the proof is not complete within this packet.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 40
+    note: Equation (15.8.14) states the result and equations (15.8.15)–(15.8.18) begin
+      the proof.
+- id: weinberg-2.general-faddeev-popov-dewitt-theorem
+  label: Faddeev–Popov–De Witt theorem for general local symmetries
+  summary: For general local transformations, gauge-fixing functionals f_A must be
+    chosen so the functional matrix δ_Af_B has nonzero determinant. The theorem represents
+    the gauge-invariant integral through a gauge-fixed integral with this determinant
+    and B[f], whose dependence on the gauge-fixing choice is only through the normalization
+    constant under the stated assumptions.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 37
+    - 38
+    note: Equations (15.8.2)–(15.8.7) state the theorem and its Fourier/ghost implementation.
+- id: weinberg-2.generalized-brst-slavnov-operator
+  label: Generalized BRST Slavnov operator and closure condition
+  summary: For general local symmetries, the Slavnov operator acts on fields, ghosts,
+    antighosts, and auxiliary fields using possibly field-dependent gauge variations
+    and structure functions. Nilpotence requires both closure of the gauge transformations
+    and a generalized consistency condition that replaces the ordinary Jacobi identity
+    when the structure constants depend on fields.
+  kind: method
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 39
+    - 40
+    note: Equations (15.8.8)–(15.8.13) define the operator, state its nilpotence conditions,
+      and show BRST invariance of the gauge-fixed action.
+  notation:
+  - source: weinberg-2
+    note: The subscript L on a derivative in (15.8.9) denotes left differentiation
+      for fermionic variables.
+- id: weinberg-2.generalized-feynman-gauge-propagator
+  label: Generalized Feynman (ξ) gauge
+  summary: Taking B[f]=exp[−(i/2ξ)∫f^af^a] and f^a=∂^μA^a_μ adds the covariant gauge-fixing
+    term and yields the massless vector propagator with ξ-dependent longitudinal part.
+    ξ=0 gives Landau gauge and ξ=1 Feynman gauge; physical amplitudes may be checked
+    for ξ independence.
+  kind: method
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 23
+    - 24
+    note: Equations (15.5.22)–(15.5.25) give the choice and propagator; the next page
+      recommends the ξ-independence check.
+  notation:
+  - source: weinberg-2
+    note: The book writes the gauge parameter as ξ and calls nonzero-ξ propagators
+      generalized Feynman or generalized ξ gauges.
+- id: weinberg-2.ghost-loop-compensation-and-power-counting
+  label: Ghost loops compensate gauge overcounting
+  summary: Ghosts run only in closed loops with an additional fermionic minus sign.
+    The source interprets each ghost–antighost pair as a negative degree of freedom
+    that compensates the overcounting produced by covariant gauge propagators, and
+    notes that the resulting ξ-gauge Lagrangian is power-counting renormalizable when
+    the matter Lagrangian is.
+  kind: result
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 27
+    note: The page gives the loop interpretation, degree-of-freedom rationale, and
+      dimensionality-four-or-less power-counting statement.
 - id: weinberg-2.lie-algebra-structure-constants
   label: Lie-algebra generators and structure constants
   summary: The generators obey [t_α,t_β]=i C^γ_{αβ}t_γ. The real structure constants
@@ -146,6 +570,19 @@ nodes:
   - source: weinberg-2
     note: Weinberg uses Greek generator labels α, β, … and spacetime indices μ, ν,
       …; matter components are ψ_l.
+- id: weinberg-2.nonabelian-bianchi-identity
+  label: Non-Abelian Bianchi identity
+  summary: The cyclic covariant-derivative identity D_λF^a_{μν}+D_νF^a_{λμ}+D_μF^a_{νλ}=0
+    follows from the covariant-derivative commutator and holds independently of the
+    field equations.
+  kind: result
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 13
+    note: Equation (15.3.9) is stated as an identity valid on and off shell.
 - id: weinberg-2.nonabelian-field-strength
   label: Non-Abelian field strength from covariant-derivative commutators
   summary: The commutator [D_ν,D_μ] acting on matter defines F^γ_{νμ}; explicitly
@@ -165,6 +602,45 @@ nodes:
   - source: weinberg-2
     note: The source orders the spacetime indices as F^γ_{νμ}; the displayed nonlinear
       term uses A^α_νA^β_μ.
+- id: weinberg-2.nonabelian-gauge-self-interaction
+  label: Unavoidable non-Abelian gauge self-interactions
+  summary: Because the gauge field transforms in the adjoint representation, its gauge-invariant
+    field-strength kinetic term contains interaction terms. Thus, unlike electrodynamics,
+    a non-Abelian gauge-field kinetic term cannot be introduced without self-interactions.
+  kind: result
+  group: weinberg-2.lagrangian-and-algebra
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The source explains why the quadratic field-strength term necessarily supplies
+      gauge-field interactions.
+  notation:
+  - source: weinberg-2
+    note: The interaction coefficients remain in the structure constants under the
+      book's coupling convention.
+- id: weinberg-2.positive-invariant-lie-algebra-metric
+  label: Positive invariant metric restricts the gauge algebra
+  summary: A real symmetric positive-definite matrix g_{αβ} in the quadratic gauge-field
+    Lagrangian must obey the structure-constant invariance condition. The source states
+    this is equivalent to a basis with totally antisymmetric structure constants and
+    to a direct sum of compact simple and U(1) subalgebras.
+  kind: result
+  group: weinberg-2.lagrangian-and-algebra
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    - 9
+    note: Pages 8–9 state the invariance and positivity requirements and the three
+      equivalent algebraic conditions.
+  notation:
+  - source: weinberg-2
+    note: g_{αβ} is the numerical matrix multiplying F^α_{μν}F^{βμν}; the book permits
+      upper/lower generator-index distinction to be dropped only in the special antisymmetric
+      basis.
 - id: weinberg-2.pure-gauge-flatness
   label: Pure gauge and the flatness criterion
   summary: A gauge field is pure gauge when a gauge transformation can make it vanish
@@ -179,6 +655,128 @@ nodes:
     - 6
     note: The text defines a pure gauge field and states the necessary-and-sufficient
       condition in a simply connected region.
+- id: weinberg-2.reducible-gauge-symmetry-and-ghosts-of-ghosts
+  label: Reducible gauge symmetries require ghosts of ghosts
+  summary: The usual ghost determinant construction requires independent gauge transformations,
+    hence one ghost per independent transformation. For p-form gauge fields with p≥2,
+    the parameter itself has a redundancy because d²=0; compensating the extra ghosts
+    requires ghosts of ghosts, and for p≥3 requires ghosts of ghosts of ghosts, and
+    so on.
+  kind: result
+  group: weinberg-2.brst-and-generalizations
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 38
+    - 39
+    note: The rendered source states p≥2 for the parameter redundancy and p≥3 for
+      the next ghost stage.
+- id: weinberg-2.renormalizable-yang-mills-lagrangian-assumption
+  label: Renormalizable Yang–Mills Lagrangian truncation
+  summary: For the standard-model-type Lagrangian, the matter sector is coupled through
+    covariant derivatives and the gauge sector through −1/4 F^a_{μν}F^{aμν}. The source
+    explicitly excludes higher covariant derivatives and matter dependence on F here
+    as nonrenormalizable terms suppressed at ordinary energies by a large mass scale.
+  kind: assumption
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    note: The paragraph before equation (15.3.1) specifies the omission of higher-derivative
+      and F-dependent matter terms.
+- id: weinberg-2.theta-term-nonperturbative-effects
+  label: Nonperturbative effects of the parity-odd theta term
+  summary: The parity-odd gauge-field term described at the end of the preceding context
+    is a total derivative, so it does not alter the classical field equations or perturbative
+    Feynman rules, but the source immediately qualifies that it can have nonperturbative
+    quantum-mechanical effects. This is a limitation of the derivative-based perturbative
+    conclusion, not a gauge-field mass term.
+  kind: result
+  group: weinberg-2.lagrangian-and-algebra
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The opening continuation explicitly states that the term can have nonperturbative
+      quantum-mechanical effects.
+  notation:
+  - source: weinberg-2
+    note: The context calls the coefficient matrix θ_{αβ}; this node preserves the
+      source's distinction between perturbative Feynman rules and nonperturbative
+      effects.
+- id: weinberg-2.yang-mills-coupling-normalization
+  label: Couplings as normalization of simple algebra factors
+  summary: After decomposing the gauge algebra into simple or U(1) factors, one may
+    rescale gauge fields so g_{αβ}=δ_{αβ}. The corresponding factor-specific constants
+    then occur in the generators and structure constants; equivalently, with fixed
+    generator normalization they appear as inverse squared factors in the gauge-field
+    Lagrangian.
+  kind: concept
+  group: weinberg-2.lagrangian-and-algebra
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 11
+    - 12
+    note: Equations (15.2.5)–(15.2.9) identify the factor-by-factor rescaling and
+      the resulting coupling conventions.
+  notation:
+  - source: weinberg-2
+    note: Weinberg absorbs a coupling g_m for each simple or U(1) subalgebra into
+      t_a and C^a_{bc} after normalizing g_{αβ} to δ_{αβ}.
+- id: weinberg-2.yang-mills-field-equations-and-total-current
+  label: Yang–Mills field equation and ordinarily conserved total current
+  summary: Varying the normalized Yang–Mills Lagrangian gives a field equation that
+    can be written with an ordinary divergence equal to a total current. This current
+    includes a gauge-field contribution as well as the matter contribution, and it
+    is ordinarily conserved.
+  kind: result
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    note: Equations (15.3.2)–(15.3.4) define the current and state its ordinary conservation.
+  notation:
+  - source: weinberg-2
+    note: The source writes the total current as j^a_ν and reserves J^a_ν for the
+      matter-only covariant current introduced next.
+- id: weinberg-2.yang-mills-first-class-constraints
+  label: First-class constraints in canonical Yang–Mills theory
+  summary: Canonical Yang–Mills quantization has the primary constraint π^{a0}=0 and
+    a secondary Gauss-law constraint. Their Poisson brackets vanish because the secondary
+    constraint is independent of A^a_0, so they are first class and cannot be handled
+    by the direct Dirac-bracket replacement used for second-class constraints.
+  kind: result
+  group: weinberg-2.field-equations-and-quantization
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 15
+    note: Equations (15.4.2)–(15.4.3) and the following text identify the constraints
+      and their first-class character.
+- id: weinberg-2.yang-mills-three-and-four-vector-vertices
+  label: Three- and four-vector Yang–Mills vertices
+  summary: The cubic and quartic terms in the non-Abelian field-strength Lagrangian
+    yield three- and four-vector-boson momentum-space vertices. Because Weinberg absorbs
+    couplings into C_{abc}, the cubic and quartic vertex factors are respectively
+    first and second order in the couplings.
+  kind: result
+  group: weinberg-2.gauge-fixing-and-ghosts
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 24
+    note: Equations (15.5.26)–(15.5.27) give the momentum-space vertex factors and
+      the text identifies their coupling orders.
 edges:
 - id: weinberg-2.adjoint-representation-prerequisite-gauge-field
   from: weinberg-2.adjoint-representation
@@ -199,6 +797,114 @@ edges:
     - 4
     note: The paragraph preceding equation (15.1.9) explicitly replaces t_α with the
       adjoint representation matrices of equation (15.1.6).
+- id: weinberg-2.axial-reduction-prerequisite-covariant-path-integral
+  from: weinberg-2.axial-gauge-canonical-reduction
+  to: weinberg-2.axial-gauge-path-integral-to-covariant-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The path-integral derivation starts from the axial-gauge canonical variables
+    and the solution of its Gauss-law constraint.
+  failure_mode: Treating A_0 as an auxiliary Gaussian integration variable would lack
+    its canonical origin.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 16
+    - 17
+    note: The argument explicitly uses equations (15.4.7), (15.4.9), and (15.4.13).
+- id: weinberg-2.brst-cohomology-prerequisite-electrodynamic-example
+  from: weinberg-2.brst-cohomology-of-physical-states
+  to: weinberg-2.brst-electrodynamic-polarization-example
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The electrodynamic calculation applies the Q-closed and Q-equivalent
+    criteria to photon and ghost excitations.
+  failure_mode: The identification of polarization shifts as physical equivalences
+    would be unmotivated.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 33
+    - 34
+    note: The example begins by imposing Q|ψ⟩=0 and then identifies Q-exact states.
+- id: weinberg-2.brst-exact-gauge-fixing-prerequisite-state-cohomology
+  from: weinberg-2.brst-exact-gauge-fixing
+  to: weinberg-2.brst-cohomology-of-physical-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Q-closure condition is derived by requiring physical matrix elements
+    to be independent of changes in the gauge-fixing functional Ψ, whose action variation
+    is sδΨ.
+  failure_mode: Nilpotence alone does not connect Q-closure to gauge-fixing independence
+    of physical amplitudes.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 32
+    - 33
+    note: Equations (15.7.27)–(15.7.31) start from δI=sδΨ and derive the physicality
+      condition.
+- id: weinberg-2.brst-transformations-prerequisite-nilpotence
+  from: weinberg-2.brst-field-transformations
+  to: weinberg-2.brst-nilpotence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Nilpotence is proved by applying the listed transformation rules twice.
+  failure_mode: There is no operator action to evaluate if the field transformations
+    are unknown.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 29
+    - 30
+    note: The proof begins by acting twice with equations (15.7.7)–(15.7.11).
+- id: weinberg-2.coupling-normalization-prerequisite-vector-vertices
+  from: weinberg-2.yang-mills-coupling-normalization
+  to: weinberg-2.yang-mills-three-and-four-vector-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg's identification of the vertex factors as first and second order
+    in couplings relies on the convention that couplings are contained in the structure
+    constants.
+  failure_mode: The stated coupling order of the cubic and quartic vertices cannot
+    be interpreted in the source's convention.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 24
+    note: The source explicitly recalls that C_{αβγ} contains coupling-constant factors
+      when assigning vertex orders.
+- id: weinberg-2.covariant-derivative-prerequisite-bianchi
+  from: weinberg-2.covariant-derivative
+  to: weinberg-2.nonabelian-bianchi-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The identity is derived from the covariant-derivative commutator.
+  failure_mode: The cyclic identity cannot be formed or checked without adjoint covariant
+    differentiation.
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 13
+    note: The source says to derive the identities using the earlier commutator relation.
 - id: weinberg-2.covariant-derivative-prerequisite-field-strength
   from: weinberg-2.covariant-derivative
   to: weinberg-2.nonabelian-field-strength
@@ -234,6 +940,62 @@ edges:
     - 7
     note: The opening paragraph of Section 15.2 names matter fields and their gauge-covariant
       derivatives as ingredients.
+- id: weinberg-2.faddeev-popov-prerequisite-gauge-independence
+  from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+  to: weinberg-2.faddeev-popov-gauge-fixing-independence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The theorem acts on the determinant-and-gauge-fixing functional integral
+    that it first defines.
+  failure_mode: The variables and Jacobians whose transformations are analyzed would
+    be undefined.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 19
+    - 21
+    note: Equations (15.5.1)–(15.5.3) are the starting point of the proof through
+      equations (15.5.17)–(15.5.20).
+- id: weinberg-2.faddeev-popov-prerequisite-ghosts
+  from: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+  to: weinberg-2.faddeev-popov-ghost-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Ghost fields are introduced specifically to represent the determinant
+    in the gauge-fixed integral.
+  failure_mode: The ghost action and its sign/statistics would have no functional-determinant
+    purpose.
+  evidence:
+  - source: weinberg-2
+    section: 15.5–15.6
+    pages:
+    - 24
+    - 25
+    note: The determinant left in equation (15.5.21) motivates the determinant representation
+      in equation (15.6.1).
+- id: weinberg-2.field-equation-prerequisite-covariant-current
+  from: weinberg-2.yang-mills-field-equations-and-total-current
+  to: weinberg-2.covariant-field-equation-and-matter-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covariant form is a rewriting of the same gauge equation that separates
+    the gauge-field portion of the total current.
+  failure_mode: The difference between ordinary total-current conservation and covariant
+    matter-current conservation is lost without the first form.
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    - 13
+    note: The text rewrites equation (15.3.2) into equation (15.3.6).
 - id: weinberg-2.field-strength-prerequisite-lagrangian-ingredients
   from: weinberg-2.nonabelian-field-strength
   to: weinberg-2.gauge-invariant-lagrangian-ingredients
@@ -268,6 +1030,42 @@ edges:
     - 6
     note: The page states that vanishing field strength is necessary and sufficient
       for a pure gauge in a simply connected region.
+- id: weinberg-2.field-strength-prerequisite-vector-vertices
+  from: weinberg-2.nonabelian-field-strength
+  to: weinberg-2.yang-mills-three-and-four-vector-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Expanding the nonlinear field strength in the quadratic gauge Lagrangian
+    produces the cubic and quartic vector interactions.
+  failure_mode: The origin of the three- and four-vector vertices is lost if F^a_{μν}'s
+    nonlinear term is unavailable.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 24
+    note: The page reads the vertices from the trilinear and A^4 terms in the Yang–Mills
+      Lagrangian.
+- id: weinberg-2.first-class-constraints-prerequisite-axial-reduction
+  from: weinberg-2.yang-mills-first-class-constraints
+  to: weinberg-2.axial-gauge-canonical-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The axial-gauge construction is introduced to handle the first-class
+    constraints.
+  failure_mode: The role of the gauge condition and the nonindependence of A_0 are
+    unexplained without the constraints.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 15
+    note: The source introduces axial gauge immediately after identifying the first-class
+      constraints.
 - id: weinberg-2.gauge-field-prerequisite-covariant-derivative
   from: weinberg-2.gauge-field-transformation
   to: weinberg-2.covariant-derivative
@@ -286,6 +1084,153 @@ edges:
     - 4
     note: The text immediately after equation (15.1.10) identifies the cancellation
       and reaches equation (15.1.11).
+- id: weinberg-2.gauge-field-restrictions-evidence-theta-nonperturbative
+  from: weinberg-2.gauge-field-lagrangian-restrictions
+  to: weinberg-2.theta-term-nonperturbative-effects
+  relation: evidence
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The prior record identifies the parity-odd theta term and its perturbative
+    derivative property; the following source page supplies the nonperturbative qualification.
+  failure_mode: The p. 8 continuation could be mistaken for a claim about a different
+    gauge-field term.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The opening sentence refers back to the preceding term and states its nonperturbative
+      effects.
+- id: weinberg-2.gauge-independence-alternative-xi-gauge
+  from: weinberg-2.faddeev-popov-gauge-fixing-independence
+  to: weinberg-2.generalized-feynman-gauge-propagator
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The theorem permits changing from axial gauge to the Lorentz-covariant
+    ξ-gauge route for Feynman rules.
+  failure_mode: Without the theorem, changing gauge would be an unsupported replacement
+    rather than an equivalent calculation route.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 22
+    - 23
+    note: The source invokes the theorem before choosing the Gaussian B and Lorentz-invariant
+      f^a.
+- id: weinberg-2.general-fp-evidence-ghosts-of-ghosts
+  from: weinberg-2.general-faddeev-popov-dewitt-theorem
+  to: weinberg-2.reducible-gauge-symmetry-and-ghosts-of-ghosts
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The theorem's one-ghost-per-independent-transformation requirement exposes
+    why reducible transformations demand further compensation.
+  failure_mode: The need for ghosts of ghosts is not connected to the failure of the
+    independent-transformation assumption.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 38
+    - 39
+    note: The source explains the independence condition and then gives the p-form
+      redundancy.
+- id: weinberg-2.general-local-symmetry-prerequisite-general-fp
+  from: weinberg-2.dewitt-notation-general-local-symmetry
+  to: weinberg-2.general-faddeev-popov-dewitt-theorem
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The theorem's indices and functional determinant are defined for the
+    general local transformations in De Witt notation.
+  failure_mode: The meanings of δ_Aφ^r, f_A, and the required count of gauge conditions
+    are unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 36
+    - 37
+    note: The source introduces equation (15.8.1) before stating the theorem (15.8.2).
+- id: weinberg-2.general-local-symmetry-prerequisite-generalized-brst
+  from: weinberg-2.dewitt-notation-general-local-symmetry
+  to: weinberg-2.generalized-brst-slavnov-operator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The generalized Slavnov operator is built directly from the general variations
+    δ_Aφ^r and their closure relation.
+  failure_mode: The field-dependent structure functions and consistency condition
+    lack their transformation-law meaning.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 39
+    note: Equation (15.8.9) is expressed using the general symmetry notation and equation
+      (15.8.10).
+- id: weinberg-2.generalized-brst-prerequisite-general-cohomology
+  from: weinberg-2.generalized-brst-slavnov-operator
+  to: weinberg-2.general-brst-cohomology-functional-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The functional classification is explicitly a BRST-cohomology result
+    and begins by using sI_N=0.
+  failure_mode: The kernel/image and Hodge-operator argument cannot be formulated
+    without the nilpotent operator.
+  evidence:
+  - source: weinberg-2
+    section: '15.8'
+    pages:
+    - 40
+    note: Equations (15.8.14)–(15.8.18) state the classification and start from BRST
+      invariance.
+- id: weinberg-2.ghost-determinant-prerequisite-brst
+  from: weinberg-2.faddeev-popov-ghost-determinant
+  to: weinberg-2.brst-field-transformations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The BRST formulation acts on the ghost and antighost fields introduced
+    to exponentiate the determinant, together with the auxiliary field.
+  failure_mode: The BRST field content and ghost-number assignments would be incomplete.
+  evidence:
+  - source: weinberg-2
+    section: 15.6–15.7
+    pages:
+    - 25
+    - 28
+    note: The modified ghost action is rewritten before the BRST transformations are
+      introduced.
+- id: weinberg-2.ghost-determinant-prerequisite-covariant-ghost-rules
+  from: weinberg-2.faddeev-popov-ghost-determinant
+  to: weinberg-2.covariant-gauge-ghost-propagator-and-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The ghost propagator and interaction are obtained by treating the determinant
+    as the ghost action and splitting its Faddeev–Popov operator.
+  failure_mode: There is no ghost action from which to identify the free operator,
+    propagator, or vertex.
+  evidence:
+  - source: weinberg-2
+    section: '15.6'
+    pages:
+    - 25
+    - 26
+    note: The determinant representation is followed by the free-plus-interaction
+      operator construction.
 - id: weinberg-2.lagrangian-ingredients-prerequisite-gauge-field-restrictions
   from: weinberg-2.gauge-invariant-lagrangian-ingredients
   to: weinberg-2.gauge-field-lagrangian-restrictions
@@ -304,6 +1249,24 @@ edges:
     - 7
     note: After equation (15.2.1), the text states the restriction and then presents
       equation (15.2.3).
+- id: weinberg-2.lie-algebra-prerequisite-brst-nilpotence
+  from: weinberg-2.lie-algebra-structure-constants
+  to: weinberg-2.brst-nilpotence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nilpotence checks use antisymmetry and the Jacobi identity of the
+    structure constants.
+  failure_mode: The cancellations in s²A and s²ω cannot be established without those
+    algebraic identities.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 30
+    note: The source explicitly attributes the cancellations to antisymmetry and the
+      Jacobi identity (15.1.5).
 - id: weinberg-2.local-transformations-prerequisite-gauge-field
   from: weinberg-2.local-matter-gauge-transformations
   to: weinberg-2.gauge-field-transformation
@@ -340,6 +1303,153 @@ edges:
     - 2
     note: The text directly connects the Lie-group assumption to the generator commutation
       relations.
+- id: weinberg-2.measure-assumption-prerequisite-faddeev-popov
+  from: weinberg-2.gauge-invariant-functional-measure-assumption
+  to: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: Gauge invariance of the weighted measure is an explicit hypothesis of
+    the Faddeev–Popov form and theorem.
+  failure_mode: A gauge-variable change in the theorem is invalid if its measure acquires
+    an unaccounted Jacobian.
+  evidence:
+  - source: weinberg-2
+    section: 15.4–15.5
+    pages:
+    - 18
+    - 19
+    note: The measure argument precedes the general functional-integral assumption.
+- id: weinberg-2.nilpotence-prerequisite-brst-cohomology
+  from: weinberg-2.brst-nilpotence
+  to: weinberg-2.brst-cohomology-of-physical-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A quotient of kernel by image is meaningful here because nilpotence makes
+    Q-exact states Q-closed.
+  failure_mode: The claimed cohomology would not be a well-defined physical-state
+    construction.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 32
+    - 33
+    note: The source derives Q²=0 immediately before defining physical states as its
+      cohomology.
+- id: weinberg-2.nilpotence-prerequisite-brst-exact-gauge-fixing
+  from: weinberg-2.brst-nilpotence
+  to: weinberg-2.brst-exact-gauge-fixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The s-exact gauge-fixing term is invariant precisely because applying
+    s a second time vanishes.
+  failure_mode: BRST invariance of sΨ cannot be inferred without s²=0.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 31
+    - 32
+    note: After writing I_new=∫L+sΨ, the source invokes nilpotence for invariance.
+- id: weinberg-2.nonabelian-field-strength-evidence-self-interaction
+  from: weinberg-2.nonabelian-field-strength
+  to: weinberg-2.nonabelian-gauge-self-interaction
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The nonlinear A A term in the existing field strength is the source of
+    the interactions in its quadratic kinetic term.
+  failure_mode: Without the nonlinear field-strength term, the claimed unavoidable
+    self-interaction has no displayed origin.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The text identifies the interaction terms as arising from the quadratic
+      field-strength term.
+- id: weinberg-2.positive-metric-prerequisite-compact-classification
+  from: weinberg-2.positive-invariant-lie-algebra-metric
+  to: weinberg-2.compact-simple-lie-algebra-classification
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The classification is introduced as the physically important consequence
+    of the compact-simple-and-U(1) restriction that follows from the positive invariant
+    metric.
+  failure_mode: The list of allowed simple algebras would appear as an unmotivated
+    classification rather than a restriction on admissible gauge algebras.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 10
+    - 11
+    note: The source first obtains the compact-algebra condition and then states the
+      limited types and dimensions as its important consequence.
+- id: weinberg-2.positive-metric-prerequisite-coupling-normalization
+  from: weinberg-2.positive-invariant-lie-algebra-metric
+  to: weinberg-2.yang-mills-coupling-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factor decomposition of the invariant metric is what is rescaled
+    to define the coupling convention.
+  failure_mode: One cannot justify which constants are normalized away or transferred
+    into generators without the metric decomposition.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 11
+    - 12
+    note: The rescaling begins from the factorized form of the metric.
+- id: weinberg-2.renormalizable-lagrangian-prerequisite-field-equation
+  from: weinberg-2.renormalizable-yang-mills-lagrangian-assumption
+  to: weinberg-2.yang-mills-field-equations-and-total-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed field equation is obtained by varying the selected renormalizable
+    Lagrangian.
+  failure_mode: Including the excluded higher-derivative terms would change the field
+    equation and current.
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    note: The source specifies the Lagrangian and immediately derives its gauge-field
+      equations.
+- id: weinberg-2.state-cohomology-prerequisite-brst-unitarity
+  from: weinberg-2.brst-cohomology-of-physical-states
+  to: weinberg-2.brst-unitarity-and-general-gauge-fixing
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The later BRST-quantization result defines the physical space by Q-closed
+    states modulo Q-exact states before stating its ghost freedom, positivity, and
+    unitary S-matrix.
+  failure_mode: The space whose positivity and unitarity are asserted would be unspecified.
+  evidence:
+  - source: weinberg-2
+    section: '15.7'
+    pages:
+    - 33
+    - 36
+    note: The physical cohomology is defined on p. 33 and used in the Yang–Mills BRST-quantization
+      discussion on p. 36.
 - id: weinberg-2.structure-constants-prerequisite-adjoint
   from: weinberg-2.lie-algebra-structure-constants
   to: weinberg-2.adjoint-representation
@@ -357,14 +1467,60 @@ edges:
     pages:
     - 3
     note: Equations (15.1.3), (15.1.5), and (15.1.6) state this construction.
+- id: weinberg-2.xi-gauge-prerequisite-covariant-ghost-rules
+  from: weinberg-2.generalized-feynman-gauge-propagator
+  to: weinberg-2.covariant-gauge-ghost-propagator-and-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The explicit ghost operator is evaluated for f^a=∂_μA^{aμ}, the generalized
+    ξ-gauge condition.
+  failure_mode: The specific massless adjoint ghost propagator and one-vector vertex
+    are not obtained without fixing this gauge functional.
+  evidence:
+  - source: weinberg-2
+    section: 15.5–15.6
+    pages:
+    - 23
+    - 26
+    note: The Lorentz gauge functional is selected on p. 23 and inserted into the
+      ghost operator on p. 26.
 groups:
+- id: weinberg-2.brst-and-generalizations
+  title: BRST symmetry and general local gauge systems
 - id: weinberg-2.connection-and-curvature
   title: Gauge connection, curvature, and finite transformations
+- id: weinberg-2.field-equations-and-quantization
+  title: Field equations and axial-gauge quantization
 - id: weinberg-2.gauge-construction
   title: Local symmetry and Lie algebra
+- id: weinberg-2.gauge-fixing-and-ghosts
+  title: Faddeev–Popov gauge fixing and ghosts
+- id: weinberg-2.lagrangian-and-algebra
+  title: Gauge Lagrangians, algebra, and coupling conventions
 - id: weinberg-2.lagrangian-ingredients
   title: Opening gauge-theory Lagrangian ingredients
 motivations:
+- id: weinberg-2.covariant-rules-without-gauge-dependence
+  nodes:
+  - weinberg-2.faddeev-popov-gauge-fixing-independence
+  - weinberg-2.generalized-feynman-gauge-propagator
+  - weinberg-2.faddeev-popov-ghost-determinant
+  - weinberg-2.brst-exact-gauge-fixing
+  summary: Axial gauge is convenient for canonical quantization but obscures rotational
+    and Lorentz invariance in Feynman rules; the source develops gauge fixing, ghosts,
+    and BRST symmetry to obtain covariant calculations while retaining gauge-independent
+    physical content.
+  evidence:
+  - source: weinberg-2
+    section: 15.5–15.7
+    pages:
+    - 19
+    - 27
+    - 28
+    note: The source states the axial-gauge motivation, the overcounting role of ghosts,
+      and the counterterm problem caused by gauge fixing.
 - id: weinberg-2.locality-requires-compensation
   nodes:
   - weinberg-2.local-matter-gauge-transformations
