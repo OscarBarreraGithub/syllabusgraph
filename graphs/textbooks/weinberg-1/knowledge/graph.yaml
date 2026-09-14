@@ -1,4 +1,21 @@
 nodes:
+- id: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
+  label: Abelian gauge averaging for the covariant QED path integral
+  summary: For gauge-invariant inserted operators, action, and measure, change variables
+    by a finite Abelian gauge transformation and average over the gauge function with
+    a quadratic weight. Integrating the gauge function turns the Coulomb-gauge delta
+    functional into a covariant gauge-fixing term; field-independent factors cancel
+    in connected vacuum expectations.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 416
+    - 417
+    note: The source states the gauge-invariance restriction, makes the change of
+      variables, introduces the weighted gauge-function average, and derives the covariant
+      gauge-fixed action.
 - id: weinberg-1.abelian-symmetry-exponentiation
   label: Exponentiation of Abelian symmetry generators
   summary: For additive parameters the structure constants vanish, the generators
@@ -201,6 +218,21 @@ nodes:
     - 303
     note: The text describes auxiliary C fields, their constraints, and the route
       to an interaction-picture perturbation Hamiltonian.
+- id: weinberg-1.auxiliary-field-restoration-of-covariant-action
+  label: Auxiliary-field restoration of a covariant vector action
+  summary: For real massive vector fields, after canonical momentum integration the
+    apparent Lagrangian omits the time component and hides covariance. Reintroducing
+    the auxiliary A0 integration before eliminating the momenta restores the original
+    Lorentz-invariant action, up to field-independent factors.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 393
+    - 394
+    note: The source presents the massive-vector example, adds A0, and states that
+      eliminating the momenta recovers the original covariant Lagrangian.
 - id: weinberg-1.belinfante-symmetric-energy-momentum-tensor
   label: Belinfante symmetric energy-momentum tensor
   summary: Lorentz invariance improves the canonical energy-momentum tensor by a divergence
@@ -215,6 +247,26 @@ nodes:
     - 316
     note: The source derives the improvement, conservation, symmetry, and equality
       of integrated momentum.
+- id: weinberg-1.berezin-integration-completeness-and-inverse-jacobian
+  label: Berezin integration, completeness, and inverse Jacobian
+  summary: Berezin integration selects the highest Grassmann coefficient with an ordered
+    anticommuting differential measure. It is linear, translation-invariant, and equivalent
+    to repeated single-variable integration with the stated reversed differential
+    order; it yields fermionic eigenstate completeness and, under a nonsingular linear
+    change of Grassmann variables, transforms with the inverse determinant.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 403
+    - 404
+    - 405
+    - 406
+    - 407
+    note: The source defines coefficient-selecting Berezin integration, derives repeated-integral,
+      linearity, and translation properties, gives the inverse-determinant change
+      rule, and establishes completeness.
 - id: weinberg-1.born-rule-complete-orthogonal-rays
   label: Born rule for a complete orthogonal set of rays
   summary: For tests that distinguish mutually orthogonal rays, the transition probability
@@ -265,6 +317,24 @@ nodes:
     - 17
     note: The source interprets the ladder matrices, identifies the vacuum, and reads
       the energy spectrum from equation (1.2.14).
+- id: weinberg-1.bosonic-phase-space-path-integral
+  label: Bosonic phase-space path integral from canonical slices
+  summary: For bosonic canonical pairs after first-class constraints have been gauge-fixed
+    and remaining second-class constraints solved into unconstrained Q,P variables,
+    insert coordinate and momentum completeness relations between infinitesimal time
+    slices, with Q ordered left of P. The continuum limit integrates over all q and
+    p paths with fixed endpoint coordinates and action ∫(q̇p−H)dt.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 378
+    - 379
+    - 380
+    - 381
+    note: The source states the constrained-system qualification, coordinate and momentum
+      completeness, the infinitesimal kernel, and the time-sliced endpoint path integral.
 - id: weinberg-1.box-normalization-and-connected-transition-element
   label: Box normalization and connected transition element
   summary: A finite spatial box discretizes momenta and a finite time interval regulates
@@ -1532,6 +1602,21 @@ nodes:
     - 2
     note: The source states the effective-field-theory viewpoint and its low-energy
       rationale.
+- id: weinberg-1.external-dirac-field-determinant-loop-expansion
+  label: External-Dirac-field determinant and fermion-loop expansion
+  summary: For a Dirac field coupled only to an external matrix field, a Grassmann
+    change of variables gives vacuum persistence proportional to a determinant of
+    the external-field kernel. Expanding its trace logarithm reproduces closed fermion
+    loops, including the extra loop sign and disconnected-loop exponentiation.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    - 413
+    note: The source derives the determinant dependence and interprets its expansion
+      as the perturbative fermion-loop series.
 - id: weinberg-1.external-source-functional-derivative-method
   label: External-source functional derivatives as time-ordered insertions
   summary: Couple c-number external sources to interaction-picture currents. Functional
@@ -1592,6 +1677,58 @@ nodes:
     - 20
     note: Equations (1.2.22)–(1.2.25) and their interpretation implement exclusion
       through anticommutators.
+- id: weinberg-1.fermionic-gaussian-pairing-and-dirac-propagator
+  label: Fermionic Gaussian pairing signs and the Dirac propagator
+  summary: For bilinear fermionic free action, Grassmann Gaussian integration sums
+    P–Q pairings with the parity sign of the pairing permutation and propagator −i
+    times the inverse kernel. With q=ψ and p=iψ†, this recovers the Dirac propagator,
+    including its stated γ0 placement for the chosen canonical pairing.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 409
+    - 410
+    - 411
+    note: The source identifies the bilinear free action, evaluates the generating
+      integral, and specializes the inverse kernel to Dirac variables.
+- id: weinberg-1.fermionic-grassmann-eigenstate-basis
+  label: Grassmann eigenstates for fermionic canonical variables
+  summary: For anticommuting canonical Q and P operators, ordinary nonzero eigenvalues
+    are impossible. Introduce Grassmann eigenvalues that anticommute with each other
+    and the operators, then construct right and left Q and P eigenstates from a normalized
+    vacuum. This construction restricts to purely fermionic degrees of freedom with
+    vacuum bra and ket unique up to factors; P need not be related to the adjoint
+    of Q, although it is in the stated Dirac example.
+  kind: representation
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 399
+    - 400
+    - 401
+    - 402
+    note: The source gives the fermionic algebra, the restricted normalized vacuum
+      construction, the non-adjoint qualification, and the Grassmann eigenstates and
+      overlaps.
+- id: weinberg-1.fermionic-phase-space-path-integral
+  label: Fermionic phase-space path integral with graded time ordering
+  summary: Time-slice the Grassmann eigenstate completeness relation using P-left,
+    Q-right Hamiltonian ordering. The resulting fermionic phase-space path integral
+    represents time-ordered products, with a minus sign for every odd permutation
+    of fermionic operators; in field theory its vacuum factors provide iε terms.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 407
+    - 408
+    - 409
+    note: The source derives the time-sliced formula, states graded time ordering,
+      and gives its field-theory vacuum expectation form.
 - id: weinberg-1.feynman-diagram-symmetry-factors
   label: Diagram symmetry and identical-field factors
   summary: Explicit factorials in interactions cancel many identical-field pairings,
@@ -1662,6 +1799,21 @@ nodes:
     - 19
     note: The source reports the Lorentz invariance of spacetime field commutators
       and their measurement interpretation.
+- id: weinberg-1.field-dependent-path-integral-determinant-correction
+  label: Field-dependent determinant correction in a path integral
+  summary: A field-dependent momentum-quadratic kernel produces a determinant that
+    contributes to the effective Lagrangian. In the nonlinear sigma model this contribution
+    is ultraviolet divergent; omitting it gives spurious scalar-field-coordinate dependence
+    of the S-matrix and can violate Lagrangian symmetries.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 392
+    - 393
+    note: The nonlinear sigma-model example evaluates the field-dependent determinant
+      and states the consequence of neglecting the correction.
 - id: weinberg-1.field-mode-expansion-from-translation-covariance
   label: Field mode expansion from translation covariance
   summary: Translation covariance fixes annihilation and creation fields to Fourier
@@ -1883,6 +2035,35 @@ nodes:
     note: The text states the uniqueness qualification and identifies the inhomogeneous
       and homogeneous Maxwell equations; it then notes that a mass term violates gauge
       invariance.
+- id: weinberg-1.gaussian-pairing-wick-formula-proof
+  label: Gaussian pairing formula proof
+  summary: Expand the Gaussian generating function in its linear source and compare
+    coefficients. Odd moments vanish, while each even moment is the sum over index
+    pairings of inverse-kernel factors, with its normalization fixed by counting pairings.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 422
+    - 423
+    note: The appendix compares source coefficients, counts distinct pairings, and
+      gives the two- and four-index examples.
+- id: weinberg-1.gaussian-stationary-point-determinant-proof
+  label: Gaussian stationary-point and determinant proof
+  summary: Diagonalize a real symmetric positive nonsingular quadratic form, evaluate
+    the product integral, and analytically continue. The resulting Gaussian equals
+    its stationary-point exponential times a determinant factor, with the square-root
+    branch fixed by continuation; field-theory kernels use an iε real part.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 420
+    - 421
+    note: The appendix states the finite-dimensional hypotheses, diagonalizes the
+      form, and derives the analytically continued stationary-point determinant result.
 - id: weinberg-1.general-causal-field-clebsch-gordan-construction
   label: General causal field from Clebsch-Gordan coefficients
   summary: For a massive field of type (A,B), the rest-frame coefficients are the
@@ -3485,6 +3666,106 @@ nodes:
     pages:
     - 30
     note: The source draws this conclusion from the proliferating particle spectrum.
+- id: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+  label: Gaussian pairing route to bosonic Feynman rules
+  summary: Expand the interaction action around a quadratic free action. Gaussian
+    functional integrals sum all pairings of field factors; inverse free kernels are
+    the coordinate-space propagators, while disconnected vacuum factors cancel in
+    normalized vacuum expectations.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 395
+    - 396
+    - 397
+    note: The source specifies the quadratic-plus-interaction action, expands the
+      interaction, and identifies Gaussian pairings with covariant coordinate-space
+      rules.
+- id: weinberg-1.path-integral-covariant-propagator-and-derivative-rule
+  label: Path-integral covariant propagators and derivative couplings
+  summary: Fourier inversion of the quadratic kernel gives scalar and massive-vector
+    propagators with the iε boundary prescription. In this route vector contact terms
+    are absent and derivative-field pairings are derivatives of the propagator, so
+    derivative-coupling vertices are read directly from the covariant Lagrangian.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 397
+    - 398
+    note: The source derives the inverse-kernel propagator construction and applies
+      it to scalar, massive-vector, and derivative-coupled scalar fields.
+- id: weinberg-1.path-integral-measure-ordering-and-euclidean-qualification
+  label: Measure-dependent ordering and Euclidean path-integral qualification
+  summary: The displayed q-left, p-right operator prescription follows from the particular
+    discretized measure and is not measure-independent. Euclidean continuation suppresses
+    jagged paths and can be useful for numerical or rigorous work, while the text
+    retains Minkowski form for perturbative amplitudes.
+  kind: assumption
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 384
+    note: The source makes both the measure/ordering dependence and the Euclidean-versus-Minkowski
+      qualification explicit.
+- id: weinberg-1.path-integral-qed-covariant-photon-propagator-proof
+  label: Path-integral proof of covariant QED photon propagators
+  summary: Invert the gauge-fixed photon quadratic kernel to obtain the covariant
+    propagator family. The source identifies α=1 as Feynman gauge and α→∞ as Landau/Lorentz
+    gauge, providing a non-diagrammatic path-integral route to the covariant photon
+    rule from the Coulomb-gauge Hamiltonian under the stated gauge-invariance and
+    matter assumptions.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 417
+    - 418
+    note: The section explicitly contrasts its route with the earlier hand-waving
+      diagram argument, derives the inverse kernel, and gives the Feynman- and Landau-gauge
+      specializations.
+- id: weinberg-1.path-integral-time-ordering-and-contact-terms
+  label: Time ordering and contact terms in phase-space path integrals
+  summary: Insert ordered operator functions into the sliced phase-space integral
+    to represent a time-ordered matrix element. The integration variables are not
+    classical solutions; variational Hamilton equations vanish only away from other
+    insertions and endpoints, where delta-function contact terms occur.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 382
+    - 383
+    - 384
+    note: The source derives time ordering, explains the off-shell integration variables,
+      and qualifies the equation-of-motion identity by contact terms.
+- id: weinberg-1.path-integral-topological-bose-fermi-statistics-proof
+  label: Topological path-integral proof of Bose–Fermi alternatives
+  summary: For indistinguishable particles in d≥3 spatial dimensions, prepare asymptotic
+    initial or final configurations slowly and far apart so nonrelativistic particle
+    paths apply, then sum distinguishable-particle path amplitudes over permutation
+    classes. The composition law requires a one-dimensional permutation-group representation,
+    leaving trivial Bose and alternating Fermi choices. Parastatistics in d≥3 is equivalent
+    to ordinary Bose/Fermi particles with an extra quantum number; in two dimensions
+    braid classes permit anyons.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 418
+    - 419
+    - 420
+    note: The source states the separated asymptotic preparation and particle-path
+      scope, derives the permutation composition condition, and gives the parastatistics
+      and two-dimensional braid-group qualifications.
 - id: weinberg-1.pauli-exclusion-and-statistics
   label: Pauli exclusion principle and particle statistics
   summary: For electrons, antisymmetry of the many-particle wave function forbids
@@ -3552,6 +3833,23 @@ nodes:
     - 188
     note: The packet states the result, derives its perturbative connected contribution
       count, and qualifies the nonperturbative status.
+- id: weinberg-1.phase-space-s-matrix-with-asymptotic-wave-functionals
+  label: Phase-space path integral for S-matrix matrix elements
+  summary: For fields, multiply endpoint-coordinate path integrals by in and out wave
+    functionals and integrate their endpoint arguments. Taking endpoints to asymptotic
+    times gives time-ordered matrix elements between particle in and out states; differentiating
+    the source-coupled form yields the established time-ordered Heisenberg-operator
+    insertion theorem as an independent path-integral route.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 385
+    - 386
+    note: The source contrasts field-coordinate transitions with particle S-matrix
+      elements, gives the unconstrained endpoint-functional form, and differentiates
+      a source-coupled Hamiltonian to recover the operator-insertion result.
 - id: weinberg-1.photon-polarization-density-matrix-and-spin-averaging
   label: Photon polarization mixtures and unobserved-spin sums
   summary: A photon state may be circular, linear, or elliptical through a normalized
@@ -3574,22 +3872,26 @@ nodes:
   label: Covariant photon propagator after Coulomb-contact cancellation
   summary: The transverse Coulomb-gauge photon propagator differs from the covariant
     −iημν/[(2π)⁴(q²−iε)] by terms longitudinal in q and a time-local term. Weinberg's
-    in-scope current-conservation argument removes the longitudinal terms and identifies
+    Chapter 8 current-conservation argument removes the longitudinal terms and identifies
     a local term that cancels the instantaneous Coulomb interaction; he explicitly
-    calls that argument heuristic, with a detailed diagrammatic justification and
-    path-integral treatment deferred outside the packet. The resulting momentum-space
-    rules use the covariant propagator and omit the Coulomb term.
+    calls that argument heuristic. Chapter 8 defers detailed diagrammatic justification
+    and the rigorous path-integral route to Section 9.6, where the latter is supplied
+    under its stated QED assumptions. The resulting momentum-space rules use the covariant
+    propagator and omit the Coulomb term.
   kind: result
   evidence:
   - source: weinberg-1
-    section: '8.5'
+    section: '9.6'
     pages:
-    - 353
-    - 354
-    - 355
-    note: The source constructs the Coulomb-gauge propagator, calls the conservation
-      argument hand-waving, and states the effective covariant rule and dropping of
-      Coulomb interaction.
+    - 413
+    - 414
+    - 415
+    - 416
+    - 417
+    - 418
+    note: Section 9.6 recalls the Chapter 8 heuristic cancellation and supplies the
+      later path-integral derivation of covariant gauge-fixed photon propagators under
+      the stated assumptions.
 - id: weinberg-1.pion-muon-resolution-yukawa-meson
   label: Pion-muon distinction resolves the Yukawa-meson identification
   summary: 'The mesons prevalent in low-altitude cosmic rays interact too weakly with
@@ -4099,6 +4401,18 @@ nodes:
     pages:
     - 256
     note: Problem 5 is the independent discrete-inversion task.
+- id: weinberg-1.problem-neutral-vector-vacuum-wave-functional-ie
+  label: 'Problem: neutral-vector vacuum wave functional and iε terms'
+  summary: Find the field-space vacuum wave function of a neutral vector particle
+    with m>0 and use it to derive the iε terms in that field's propagator.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 3 states the neutral-vector mass condition and both requested derivation
+      stages.
 - id: weinberg-1.problem-nonlinear-sigma-canonical-quantization
   label: 'Problem: nonlinear sigma-model canonical quantization'
   summary: Canonically quantize real scalar fields with field-dependent nonsingular
@@ -4111,6 +4425,31 @@ nodes:
     - 337
     note: Problem 1 specifies the nonlinear sigma-model Lagrangian and both requested
       tasks.
+- id: weinberg-1.problem-one-particle-field-space-wave-function-and-emission
+  label: 'Problem: one-particle field-space wave function and emission rule'
+  summary: Find the field-space wave function of one spinless particle with m>0, then
+    use it to derive Feynman rules for emission or absorption of that particle.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 2 explicitly requests both the one-particle field-space wave function
+      and the emission/absorption-rule derivation.
+- id: weinberg-1.problem-path-integral-harmonic-oscillator-transition-probability
+  label: 'Problem: harmonic-oscillator transition probability by path integrals'
+  summary: Use path-integral methods for a nonrelativistic particle of mass m in V(x)=mω²x²/2
+    to find the probability density for a later position interval given an earlier
+    position.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 1 specifies the oscillator potential, initial position, later interval,
+      and path-integral method.
 - id: weinberg-1.problem-pion-proton-phase-shift-cross-sections
   label: 'Problem: pion–proton phase-shift cross-sections'
   summary: 'Exercise request: express elastic charged-pion–proton differential cross-sections
@@ -4173,6 +4512,18 @@ nodes:
     - 256
     note: Problem 2 specifies the spinor-vector representation and requests the complete
       free-field analysis.
+- id: weinberg-1.problem-rarita-schwinger-path-integral-propagator
+  label: 'Problem: Rarita–Schwinger path-integral propagator'
+  summary: For the supplied free spin-3/2 Rarita–Schwinger Lagrangian density, use
+    path-integral methods to find its propagator.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 4 supplies the field type and directs the reader to obtain its propagator
+      by path-integral methods.
 - id: weinberg-1.problem-resonance-branching-ratio-and-peak-cross-section
   label: 'Problem: resonance branching ratio'
   summary: 'Exercise request: infer the e⁺e⁻ branching ratio for the specified spin-one
@@ -4453,6 +4804,41 @@ nodes:
     - 131
     note: The source writes the PT consequence for nuclear beta decay and states its
       contradiction with the polarized Co60 observation.
+- id: weinberg-1.qed-auxiliary-a0-covariant-action-route
+  label: Auxiliary A0 route from Coulomb energy to the covariant QED action
+  summary: After stationary integration over the transverse momentum, introduce an
+    independent a0 field. Its stationary equation reproduces the Coulomb action, while
+    retaining a0 with the spatial field rewrites the exponent as the Lorentz- and
+    gauge-invariant electromagnetic action plus the Coulomb-gauge constraint.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 414
+    - 415
+    note: The source performs the transverse-momentum reduction, introduces a0, verifies
+      recovery of the Coulomb term, and obtains the covariant action with residual
+      Coulomb-gauge delta functions.
+- id: weinberg-1.qed-coulomb-gauge-constrained-path-integral
+  label: Constrained Coulomb-gauge QED path integral
+  summary: Starting from the Coulomb-gauge photon Hamiltonian, integrate transverse
+    vector potential and conjugate momentum subject to divergence constraints, together
+    with matter fields and the instantaneous Coulomb energy. The stated matter condition
+    is that the matter Hamiltonian is local and either linear in its canonical momenta
+    or quadratic with field-independent quadratic coefficients. The displayed constraint
+    delta functionals differ from the reduced-variable measure by a field-independent
+    Det(∂3²) factor, which cancels in normalized ratios.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 414
+    note: The source recalls the Coulomb-gauge Hamiltonian, writes the constrained
+      path integral, states the matter restriction, and qualifies the constraint measure
+      by its field-independent determinant factor.
 - id: weinberg-1.qed-loop-expansion-parameter
   label: QED loop expansion parameter
   summary: For a connected trivalent QED diagram, loop and line counting together
@@ -4467,6 +4853,22 @@ nodes:
     - 358
     note: The source states L=I−V+1 and 2I+E=3V, counts the factors, and identifies
       the loop expansion parameter.
+- id: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+  label: Quadratic-momentum reduction to a Lagrangian path integral
+  summary: When the canonical Hamiltonian is quadratic in momenta with a real, symmetric,
+    positive, nonsingular coefficient kernel, integrate the momenta at their stationary
+    values. For momentum-independent inserted operators this yields the Lagrangian
+    path integral, multiplied by the associated determinant.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 389
+    - 390
+    - 391
+    note: The source states the kernel hypotheses, invokes the Gaussian stationary-point
+      formula, and gives the Lagrangian form with its operator-insertion restriction.
 - id: weinberg-1.quantum-spontaneous-emission
   label: Quantum-field derivation of spontaneous and induced emission
   summary: Quantizing radiation makes an emission matrix element carry sqrt(n_k+1),
@@ -4779,6 +5181,25 @@ nodes:
   notation:
   - source: weinberg-1
     note: The source writes the scalar representation as D(Λ) = 1.
+- id: weinberg-1.scalar-vacuum-wave-functional-ie-prescription
+  label: Scalar vacuum wave functional and the iε prescription
+  summary: For a neutral scalar field, the asymptotic annihilation condition has a
+    Gaussian field-space vacuum wave functional with kernel Fourier transform E(p).
+    Its endpoint factors supply the iε prescription in the scalar propagator; field-independent
+    factors cancel after normalization by the vacuum-to-vacuum amplitude. Multiparticle
+    field-space wave functionals are Hermite polynomials in the field times this vacuum
+    Gaussian, though the text uses vacuum expectations for S-matrix calculations.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 387
+    - 388
+    - 389
+    note: The source solves for the Gaussian kernel, identifies its iε effect and
+      normalized cancellation, and states the Hermite-polynomial form of multiparticle
+      wave functionals.
 - id: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
   label: One-delta Hamiltonian coefficient hypothesis
   summary: In the normal-ordered Hamiltonian expansion, impose that each coefficient
@@ -5579,6 +6000,26 @@ edges:
     - 109
     note: The transformation rule applies to noninteracting multiparticle states and
       then defines the two asymptotic state sets.
+- id: weinberg-1.auxiliary-a0-to-abelian-gauge-averaging
+  from: weinberg-1.qed-auxiliary-a0-covariant-action-route
+  to: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge averaging removes the residual Coulomb-gauge delta functional in
+    the covariant action obtained after introducing a0.
+  failure_mode: Without the covariant action with its residual gauge condition, there
+    is no gauge-fixing functional to average.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 415
+    - 416
+    - 417
+    note: The source writes the covariant action still carrying the Coulomb condition
+      and then integrates over the gauge function.
 - id: weinberg-1.auxiliary-route-to-scalar-contact
   from: weinberg-1.auxiliary-field-constraint-interaction-picture-route
   to: weinberg-1.scalar-derivative-coupling-contact-term
@@ -5684,6 +6125,44 @@ edges:
     pages:
     - 337
     note: Problem 5 separately requests the symmetric energy-momentum tensor.
+- id: weinberg-1.berezin-to-external-determinant
+  from: weinberg-1.berezin-integration-completeness-and-inverse-jacobian
+  to: weinberg-1.external-dirac-field-determinant-loop-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The external-field change of Grassmann variables uses the inverse Berezin
+    Jacobian to produce the determinant.
+  failure_mode: Without the inverse-Jacobian rule, the determinant factor is not derived
+    from the variable change.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 406
+    - 412
+    note: The source gives the inverse determinant under a Grassmann variable change
+      and applies a variable change to the external-field integral.
+- id: weinberg-1.berezin-to-fermion-phase-space-pi
+  from: weinberg-1.berezin-integration-completeness-and-inverse-jacobian
+  to: weinberg-1.fermionic-phase-space-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-sliced derivation repeatedly inserts the Berezin completeness
+    relation.
+  failure_mode: Without that integral completeness relation, intermediate fermionic
+    state sums cannot be replaced by Grassmann integrations.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 407
+    - 408
+    note: The source says to insert the completeness relation at each time step in
+      deriving the fermionic path integral.
 - id: weinberg-1.boost-coefficients-to-problem-seven
   from: weinberg-1.general-causal-field-clebsch-gordan-construction
   to: weinberg-1.problem-high-spin-external-current-emission-scaling
@@ -5702,6 +6181,99 @@ edges:
     - 256
     note: The boost formula gives finite-momentum coefficients and Problem 7 asks
       their high-energy emission behavior.
+- id: weinberg-1.bosonic-phase-space-to-time-ordering
+  from: weinberg-1.bosonic-phase-space-path-integral
+  to: weinberg-1.path-integral-time-ordering-and-contact-terms
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The operator-insertion formula extends the preceding sliced phase-space
+    integral.
+  failure_mode: Without the sliced integral, there is no representation in which to
+    place the ordered insertions.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 382
+    note: The source inserts operators into the time-slice derivation and then states
+      the ordered formula.
+- id: weinberg-1.bosonic-pi-route-alternative-to-covariant-rules
+  from: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+  to: weinberg-1.feynman-rules-covariant-perturbation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is an independent Gaussian path-integral derivation of covariant
+    perturbative graphical rules.
+  failure_mode: Treating this derivation as compulsory would erase other accepted
+    routes to the same rules.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 397
+    note: The source explicitly identifies the pairing expansion with covariant coordinate-space
+      Feynman rules.
+- id: weinberg-1.bosonic-pi-rules-to-covariant-propagators
+  from: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+  to: weinberg-1.path-integral-covariant-propagator-and-derivative-rule
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator is the inverse free kernel that supplies every Gaussian
+    pairing.
+  failure_mode: Without that kernel-pairing identification, the displayed scalar,
+    vector, and derivative propagators have no route from the path integral.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 397
+    - 398
+    note: The source solves the inverse-kernel equation and applies it to scalar,
+      vector, and derivative fields.
+- id: weinberg-1.bosonic-pi-to-qed-constrained-pi
+  from: weinberg-1.bosonic-phase-space-path-integral
+  to: weinberg-1.qed-coulomb-gauge-constrained-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED expression applies the general bosonic phase-space path integral
+    to the Coulomb-gauge Hamiltonian before the transverse-momentum Gaussian integration.
+  failure_mode: Without the phase-space formula, the constrained QED functional integral
+    is not derived from its Hamiltonian.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 414
+    note: The source says that, as for any Hamiltonian system, the vacuum expectation
+      is calculated as a path integral and then writes the constrained expression.
+- id: weinberg-1.bosonic-pi-to-topological-statistics
+  from: weinberg-1.bosonic-phase-space-path-integral
+  to: weinberg-1.path-integral-topological-bose-fermi-statistics-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The statistics argument applies the Section 9.1 path integral to particle
+    positions and momenta during separated-particle preparation.
+  failure_mode: Without the distinguishable-particle path amplitude, the permutation-class
+    sum and composition calculation cannot begin.
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 418
+    - 419
+    note: The source explicitly invokes Eq. (9.1.34) for particle paths before deriving
+      the permutation composition law.
 - id: weinberg-1.box-normalization-to-cross-section
   from: weinberg-1.box-normalization-and-connected-transition-element
   to: weinberg-1.cross-section-flux-and-invariant-relative-velocity
@@ -5966,6 +6538,25 @@ edges:
     pages:
     - 298
     note: The source applies the transformation to the canonical q and p variables.
+- id: weinberg-1.canonical-pairs-to-bosonic-phase-space-pi
+  from: weinberg-1.free-field-canonical-variable-identification
+  to: weinberg-1.bosonic-phase-space-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-sliced construction starts from coordinate-momentum canonical
+    pairs and their completeness relations.
+  failure_mode: Without canonical pairs, the q,p integration variables and endpoint
+    basis are not defined.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 378
+    - 381
+    note: The source begins with canonical Q and P and inserts their complete coordinate
+      bases in the sliced derivation.
 - id: weinberg-1.canonical-to-fock
   from: weinberg-1.canonical-oscillator-quantization
   to: weinberg-1.bosonic-fock-space-vacuum-energy
@@ -6815,6 +7406,25 @@ edges:
     - 351
     note: The source explicitly breaks the preceding Hamiltonian into H₀+V and transforms
       with H₀.
+- id: weinberg-1.coulomb-hamiltonian-to-qed-constrained-pi
+  from: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
+  to: weinberg-1.qed-coulomb-gauge-constrained-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED path integral is constructed from the recalled Coulomb-gauge
+    Hamiltonian, its transverse variables, and its Coulomb energy.
+  failure_mode: Without that constrained Hamiltonian, the starting action and constraints
+    are unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 414
+    note: The source recalls the Chapter 8 Coulomb-gauge Hamiltonian before writing
+      its constrained path integral.
 - id: weinberg-1.coulomb-reduction-to-scalar-quantization-problem
   from: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
   to: weinberg-1.problem-charged-scalar-coulomb-quantization
@@ -8887,6 +9497,82 @@ edges:
     - 20
     note: The source introduces the electron anticommutators and then states the spin
       rule.
+- id: weinberg-1.fermion-grassmann-to-berezin
+  from: weinberg-1.fermionic-grassmann-eigenstate-basis
+  to: weinberg-1.berezin-integration-completeness-and-inverse-jacobian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Berezin integration is introduced to sum the Grassmann-eigenstate expansion
+    and establish completeness.
+  failure_mode: Without the Grassmann basis, the coefficient-selecting integral lacks
+    the states it resolves.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 403
+    - 406
+    - 407
+    note: The source introduces Berezin integration after the eigenstate expansion
+      and uses it to derive completeness.
+- id: weinberg-1.fermion-pairing-to-rarita-schwinger-problem
+  from: weinberg-1.fermionic-gaussian-pairing-and-dirac-propagator
+  to: weinberg-1.problem-rarita-schwinger-path-integral-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supplied spin-3/2 free Lagrangian requires the fermionic bilinear-kernel
+    inversion used to extract a propagator.
+  failure_mode: Without the bilinear inverse-kernel method, the requested Rarita–Schwinger
+    propagator cannot be extracted from its supplied Lagrangian.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 4 supplies a free spin-3/2 Rarita–Schwinger Lagrangian and requests
+      its path-integral propagator.
+- id: weinberg-1.fermion-pi-to-external-determinant
+  from: weinberg-1.fermionic-phase-space-path-integral
+  to: weinberg-1.external-dirac-field-determinant-loop-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant is obtained directly from the fermionic vacuum path integral
+    in an external field.
+  failure_mode: Without the fermionic vacuum path integral, the external-field determinant
+    has no source-defined integral.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    note: The source writes the external-field vacuum persistence amplitude as a fermionic
+      path integral before changing variables.
+- id: weinberg-1.fermion-pi-to-fermion-gaussian-pairing
+  from: weinberg-1.fermionic-phase-space-path-integral
+  to: weinberg-1.fermionic-gaussian-pairing-and-dirac-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pairing calculation expands the field-theory fermionic path integral
+    around its bilinear free action.
+  failure_mode: Without the fermionic path-integral measure and action, the Grassmann
+    generating integral is disconnected from the quantum theory.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 409
+    - 410
+    - 411
+    note: The source moves from the field-theory path integral to the bilinear free
+      action and its pairing integral.
 - id: weinberg-1.fermion-signs-to-electron-electron-problem
   from: weinberg-1.fermion-exchange-and-loop-signs
   to: weinberg-1.problem-electron-electron-scattering-cross-section
@@ -9366,6 +10052,25 @@ edges:
     - 367
     note: The source points to the appendix for the trace calculation and applies
       the formula to the Compton traces.
+- id: weinberg-1.gauge-averaging-to-qed-photon-proof
+  from: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
+  to: weinberg-1.path-integral-qed-covariant-photon-propagator-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon kernel inverted in the proof includes the gauge-fixing term
+    produced by gauge averaging.
+  failure_mode: Without the covariant gauge-fixed quadratic action, the Feynman- and
+    Landau-gauge inverses do not follow.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 417
+    - 418
+    note: The source obtains the gauge-fixed action and immediately inverts its photon
+      kernel for the named gauges.
 - id: weinberg-1.gauge-potential-to-field-strength
   from: weinberg-1.massless-vector-potential-gauge-transformation
   to: weinberg-1.massless-helicity-one-field-strength-and-maxwell-equations
@@ -9385,6 +10090,61 @@ edges:
     - 252
     note: Equation (5.9.34) is constructed from the gauge-shifting potential and then
       analyzed.
+- id: weinberg-1.gaussian-pairing-proof-to-bosonic-pi-rules
+  from: weinberg-1.gaussian-pairing-wick-formula-proof
+  to: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The functional Feynman-rule derivation applies the appendix pairing formula
+    to the free quadratic action.
+  failure_mode: Without the pairing formula, the sum over contractions and inverse-kernel
+    line factors is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 396
+    - 397
+    note: The source invokes the appendix equations to obtain pairings and identifies
+      them as coordinate-space rules.
+- id: weinberg-1.gaussian-stationary-to-lagrangian-reduction
+  from: weinberg-1.gaussian-stationary-point-determinant-proof
+  to: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The momentum integral is evaluated with the appendix stationary-point
+    Gaussian result.
+  failure_mode: Without the Gaussian result, replacing momenta by stationary values
+    and retaining the determinant is unjustified.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 390
+    - 391
+    note: The source invokes the appendix Gaussian formula to integrate the quadratic
+      momenta.
+- id: weinberg-1.gaussian-stationary-to-qed-constrained-pi
+  from: weinberg-1.gaussian-stationary-point-determinant-proof
+  to: weinberg-1.qed-coulomb-gauge-constrained-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The transverse momentum integral is performed by the stationary-point
+    Gaussian rule.
+  failure_mode: Without this rule, eliminating the transverse momentum is not derived.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 414
+    note: The source identifies the momentum quadratic form and applies the appendix
+      stationary-point result.
 - id: weinberg-1.general-causal-field-to-general-ct
   from: weinberg-1.general-causal-fields-spin-statistics-and-phase
   to: weinberg-1.general-field-charge-and-time-reversal-relations
@@ -10183,6 +10943,45 @@ edges:
     - 150
     - 151
     note: The entropy derivative is computed from the preceding kinetic equation.
+- id: weinberg-1.lagrangian-reduction-to-auxiliary-restoration
+  from: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+  to: weinberg-1.auxiliary-field-restoration-of-covariant-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector example addresses the action obtained after the same momentum
+    integration.
+  failure_mode: Without that reduction, the missing-A0 covariance problem and its
+    repair are not posed.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 393
+    - 394
+    note: The source contrasts the reduced vector action with the auxiliary-field-integrated
+      covariant action.
+- id: weinberg-1.lagrangian-reduction-to-determinant-correction
+  from: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+  to: weinberg-1.field-dependent-path-integral-determinant-correction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correction is the determinant left by the momentum reduction when
+    its kernel depends on fields.
+  failure_mode: Without the reduction determinant, the nonlinear-model effective correction
+    has no source.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 391
+    - 392
+    - 393
+    note: The source first identifies the determinant and then evaluates its field-dependent
+      nonlinear-model contribution.
 - id: weinberg-1.lamb-shift-motivates-renormalized-calculation
   from: weinberg-1.lamb-shift-experimental-test
   to: weinberg-1.renormalization-physical-parameters
@@ -12089,6 +12888,61 @@ edges:
     - 37
     note: Page 14 introduces the Pauli term; page 37 states that it would spoil QED
       renormalizability.
+- id: weinberg-1.phase-space-pi-to-oscillator-problem
+  from: weinberg-1.bosonic-phase-space-path-integral
+  to: weinberg-1.problem-path-integral-harmonic-oscillator-transition-probability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requests the transition probability by the path-integral method
+    for a nonrelativistic canonical particle.
+  failure_mode: Without the path-integral transition formula, the requested calculation
+    has no specified method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 1 explicitly directs use of path-integral methods for the specified
+      oscillator transition.
+- id: weinberg-1.phase-space-s-matrix-alternative-to-source-functional
+  from: weinberg-1.phase-space-s-matrix-with-asymptotic-wave-functionals
+  to: weinberg-1.external-source-functional-derivative-method
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Differentiating the source-coupled phase-space S-matrix gives the time-ordered
+    operator-insertion theorem by a path-integral route.
+  failure_mode: Treating the accepted source-functional derivation as compulsory would
+    erase this independently displayed route.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 386
+    note: The source differentiates the source-coupled path-integral S-matrix and
+      identifies the same operator-insertion result.
+- id: weinberg-1.phase-space-to-s-matrix-path-integral
+  from: weinberg-1.bosonic-phase-space-path-integral
+  to: weinberg-1.phase-space-s-matrix-with-asymptotic-wave-functionals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field-theory S-matrix formula converts the phase-space path integral
+    by endpoint wave functionals.
+  failure_mode: Without the phase-space representation, the endpoint-functional conversion
+    has no base integral.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 385
+    - 386
+    note: The source explicitly converts the Section 9.1 field version into the asymptotic-state
+      formula.
 - id: weinberg-1.physical-spectrum-to-moller-map
   from: weinberg-1.free-hamiltonian-physical-spectrum-assumption
   to: weinberg-1.moller-operators-asymptotic-state-map
@@ -12504,6 +13358,45 @@ edges:
     - 218
     - 223
     note: The Dirac calculation invokes pseudounitarity to evaluate the spin sums.
+- id: weinberg-1.qed-constrained-pi-to-auxiliary-a0
+  from: weinberg-1.qed-coulomb-gauge-constrained-path-integral
+  to: weinberg-1.qed-auxiliary-a0-covariant-action-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The auxiliary-field rewrite starts after the constrained momentum integral
+    and replaces its Coulomb action.
+  failure_mode: Without the constrained Coulomb action, there is no term for the a0
+    stationary equation to reproduce.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 414
+    - 415
+    note: The source integrates the transverse momentum and then introduces a0 to
+      replace the Coulomb term.
+- id: weinberg-1.qed-pi-proof-alternative-to-coulomb-cancellation
+  from: weinberg-1.path-integral-qed-covariant-photon-propagator-proof
+  to: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The new path-integral derivation reaches the covariant photon rule without
+    the earlier diagrammatic heuristic, under its explicit assumptions.
+  failure_mode: Making the earlier heuristic a prerequisite would misstate the independent
+    route established here.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 417
+    - 418
+    note: The source contrasts this route with the prior hand-waving argument and
+      derives the covariant gauge propagators.
 - id: weinberg-1.qed-rules-to-compton-kinematics
   from: weinberg-1.spinor-qed-momentum-space-rules
   to: weinberg-1.compton-tree-amplitude-and-laboratory-kinematics
@@ -12792,6 +13685,26 @@ edges:
     pages:
     - 255
     note: Problem 1 explicitly names the rest and boost coefficient equations.
+- id: weinberg-1.s-matrix-pi-to-scalar-vacuum-functional
+  from: weinberg-1.phase-space-s-matrix-with-asymptotic-wave-functionals
+  to: weinberg-1.scalar-vacuum-wave-functional-ie-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vacuum calculation evaluates the endpoint wave functionals appearing
+    in the S-matrix path integral.
+  failure_mode: Without those endpoint factors, the Gaussian vacuum functional has
+    no role in the transition amplitude.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 386
+    - 387
+    - 388
+    note: The source introduces the vacuum case as the calculation of the final wave-function
+      factors in the S-matrix formula.
 - id: weinberg-1.s-matrix-to-cluster-factorization
   from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
   to: weinberg-1.cluster-decomposition-s-matrix-factorization
@@ -13163,6 +14076,42 @@ edges:
     - 201
     note: The section first fixes the scalar representation and then writes the scalar
       annihilation and creation fields.
+- id: weinberg-1.scalar-vacuum-to-one-particle-problem
+  from: weinberg-1.scalar-vacuum-wave-functional-ie-prescription
+  to: weinberg-1.problem-one-particle-field-space-wave-function-and-emission
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-particle field-space wave function is constructed from the scalar
+    vacuum functional before extracting its emission or absorption rule.
+  failure_mode: Without the vacuum functional, the required one-particle wave function
+    lacks its Gaussian base.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 2 asks first for the one-particle field-space wave function and
+      then for emission/absorption rules.
+- id: weinberg-1.scalar-vacuum-to-vector-ie-problem
+  from: weinberg-1.scalar-vacuum-wave-functional-ie-prescription
+  to: weinberg-1.problem-neutral-vector-vacuum-wave-functional-ie
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task generalizes the Gaussian endpoint-wave-functional mechanism
+    that produces propagator iε terms.
+  failure_mode: Without that mechanism, the requested vector-field iε derivation has
+    no immediate source-developed method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 3 requests a vector vacuum wave function and derivation of its propagator
+      iε terms.
 - id: weinberg-1.single-delta-hypothesis-to-delta-count
   from: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
   to: weinberg-1.connected-graph-delta-counting
@@ -13598,6 +14547,25 @@ edges:
     - 130
     note: The source derives the complete-set relation from time reversal and then
       names the eigenstate phase result Watson’s theorem.
+- id: weinberg-1.topological-statistics-alternative-to-cluster-route
+  from: weinberg-1.path-integral-topological-bose-fermi-statistics-proof
+  to: weinberg-1.bose-fermi-exchange-symmetry-cluster-argument
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This gives a separate path-topology and composition route to the Bose–Fermi
+    alternatives, with its own d≥3 and two-dimensional qualifications.
+  failure_mode: Treating the cluster argument as necessary would erase the independent
+    topological derivation.
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 419
+    - 420
+    note: The source derives the permutation representation condition and separately
+      states the braid-group exception.
 - id: weinberg-1.trace-cyclicity-to-induction-proof
   from: weinberg-1.gamma-trace-cyclicity
   to: weinberg-1.dirac-gamma-trace-induction-proof
@@ -13914,6 +14882,55 @@ groups:
 - id: weinberg-1.unitarity-consequences
   title: Consequences of unitarity
 motivations:
+- id: weinberg-1.path-integral-canonical-complementarity-motivation
+  nodes:
+  - weinberg-1.phase-space-s-matrix-with-asymptotic-wave-functionals
+  - weinberg-1.qed-coulomb-gauge-constrained-path-integral
+  summary: The chapter derives path integrals from canonical quantization because
+    manifest Lorentz invariance in the path-integral rules does not itself make S-matrix
+    unitarity manifest, and because naive Lagrangian rules can fail when extra vertices
+    are required.
+  evidence:
+  - source: weinberg-1
+    section: Chapter 9 introduction
+    pages:
+    - 377
+    note: The introduction states the unitarity limitation and the nonlinear-sigma-model
+      warning about naive rules.
+- id: weinberg-1.path-integral-nonperturbative-boundary-motivation
+  nodes:
+  - weinberg-1.external-dirac-field-determinant-loop-expansion
+  - weinberg-1.path-integral-qed-covariant-photon-propagator-proof
+  summary: The source motivates path integrals by their access to S-matrix contributions
+    with an essential singularity at zero coupling, which no finite perturbative order
+    can reveal. It says the determinant/topological nonperturbative development is
+    pursued in Volume II; this packet does not extract that later theorem.
+  evidence:
+  - source: weinberg-1
+    section: Chapter 9 introduction
+    pages:
+    - 377
+    note: The introduction identifies the non-finite-perturbative contribution motivation.
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 413
+    note: The determinant discussion explicitly defers its topological nonperturbative
+      development to Volume II.
+- id: weinberg-1.path-integrals-direct-covariant-rules-motivation
+  nodes:
+  - weinberg-1.bosonic-phase-space-path-integral
+  - weinberg-1.path-integral-bosonic-gaussian-pairing-route
+  summary: Canonical derivations can require noncovariant Hamiltonian and propagator
+    terms even though final rules are covariant. The chapter seeks a route from Lagrangians
+    directly to Lorentz-covariant Feynman rules.
+  evidence:
+  - source: weinberg-1
+    section: Chapter 9 introduction
+    pages:
+    - 376
+    note: The introduction identifies the awkward canonical cancellations and the
+      desired direct Lagrangian-to-covariant-rule calculation.
 - id: weinberg-1.why-asymptotic-scattering-formalism
   nodes:
   - weinberg-1.asymptotic-multiparticle-state-labels-and-normalization

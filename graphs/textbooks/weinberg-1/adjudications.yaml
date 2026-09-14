@@ -560,3 +560,92 @@ units:
       - 374
       - 375
     affected_records: []
+- id: full-008
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Accepted photon result has a stale forward reference
+    alternatives:
+    - Apply the supplied semantic replacement and clear the unresolved amendment.
+    - Remove the packet-relative clause and point the accepted result to a separate
+      Section 9.6 route without expanding its summary.
+    resolution: Apply the supported replacement and clear the unresolved amendment.
+    rationale: Page 413 explicitly identifies the Chapter 8 current-conservation and
+      Coulomb-cancellation discussion as hand-waving, then pages 414–418 derive the
+      covariant gauge-fixed action and photon propagators. The replacement preserves
+      the earlier scoped conclusion as heuristic and records Section 9.6 as the later
+      independent justification. Its evidence uses only the immutable current packet;
+      the already accepted Chapter 8 meaning is retained without requiring new outside-packet
+      witnesses.
+    evidence:
+    - source: weinberg-1
+      section: '9.6'
+      pages:
+      - 413
+      - 414
+      - 415
+      - 416
+      - 417
+      - 418
+    affected_records:
+    - kind: nodes
+      id: weinberg-1.photon-propagator-coulomb-contact-cancellation
+  - finding: 1
+    issue: Statistics alternative edge retains the wrong dimension
+    alternatives:
+    - Change the edge rationale from d>3 to d≥3.
+    - Remove the dimensional phrase from the edge and leave it only in the method
+      node.
+    resolution: Change the edge rationale to d≥3.
+    rationale: The original rendered page 419 uses the greater-than-or-equal glyph,
+      consistent with the standard permutation-group result for at least three spatial
+      dimensions and with the corrected method node. The packet text layer substitutes
+      a plain greater-than sign, so no fabricated d≥3 quote is added. The edge now
+      agrees with the rendered source while retaining the two-dimensional braid-group
+      exception on page 420.
+    evidence:
+    - source: weinberg-1
+      section: '9.7'
+      pages:
+      - 419
+      - 420
+    affected_records:
+    - kind: edges
+      id: weinberg-1.topological-statistics-alternative-to-cluster-route
+  - finding: 2
+    issue: Several private witnesses remain incomplete locators
+    alternatives:
+    - Add complete matching source excerpts for each retained claim.
+    - Remove or narrow every claim whose current fragment does not entail it.
+    resolution: Add complete operative witnesses while retaining the supported graph
+      claims.
+    rationale: The packet text contains complete prose witnesses for the nonperturbative
+      motivation, constraint assumptions, contact terms, restored vector action, fermionic-basis
+      qualifications, measure determinant, permutation sum, Gaussian positivity assumption,
+      and all three problem destinations. Those excerpts are added only to private
+      quote checks. For the page-419 dimensional glyph, the adjacent permutation statement
+      matches the packet text and the original rendered page establishes d≥3; the
+      OCR substitution is not copied into the graph or repaired by inventing a nonmatching
+      quote.
+    evidence:
+    - source: weinberg-1
+      section: Chapter 9 introduction; 9.1; 9.3
+      pages:
+      - 377
+      - 378
+      - 384
+      - 394
+    - source: weinberg-1
+      section: 9.5; 9.6
+      pages:
+      - 399
+      - 400
+      - 414
+    - source: weinberg-1
+      section: 9.7; Appendix; Problems
+      pages:
+      - 419
+      - 420
+      - 423
+    affected_records: []
