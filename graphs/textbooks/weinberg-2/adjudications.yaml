@@ -734,3 +734,107 @@ units:
       id: weinberg-2.bounce-negative-mode-rate-and-exponentiation
     - kind: nodes
       id: weinberg-2.axion-pion-effective-lagrangian-and-mass
+- id: reconcile-001
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Primary page coverage includes context-only pages
+    alternatives:
+    - Report only the prepared primary Volume II pages 256-291 and retain context
+      evidence in private witness records.
+    - Keep pages 323 and 504-532 in pages_read and leave the prepared-range check
+      failed.
+    resolution: Report pages 256-291 only and retain the context witnesses separately.
+    rationale: The immutable packet prepares Volume II pp. 256-291 as the primary
+      range. Volume II p. 323 and Volume I pp. 504-532 were supplied as bounded context
+      for route and correspondence checks, so they remain available through the private
+      quote witnesses but do not belong in pages_read. This resolves the coverage
+      failure without discarding the evidence used by the two node amendments or the
+      edge removal.
+    evidence:
+    - source: weinberg-2
+      section: 20.2 and Appendix Momentum Flow
+      pages:
+      - 257
+      - 288
+      - 289
+      - 291
+    affected_records: []
+  - finding: 1
+    issue: The general OPE qualification has the wrong cut-line threshold
+    alternatives:
+    - Correct the threshold to three or more intermediate cut lines while retaining
+      the narrow convergence-limit origin.
+    - Keep the more-than-three wording and misstate the rendered footnote's boundary.
+    resolution: Use the rendered threshold of three or more intermediate cut lines.
+    rationale: 'The rendered footnote on Volume II p. 291 gives n(l'''') >= 3, so
+      divergence of subintegrations is already a concern at three cut lines. The replacement
+      states that boundary exactly and preserves the limited conclusion: the appendix
+      does not establish the general OPE, while the simple two-hard-external-line,
+      quadratic-operator case remains the stated exception. Its Volume I origin is
+      retained only for the shared requirement to control every subintegration and
+      for the fact that the proof is external; it does not merge that criterion with
+      the superficial hard-subgraph count.'
+    evidence:
+    - source: weinberg-2
+      section: Appendix Momentum Flow
+      pages:
+      - 291
+    - source: weinberg-1
+      section: 12.1-12.2; Reference 2
+      pages:
+      - 504
+      - 505
+      - 532
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.general-hard-flow-ope-rigor-qualification
+  - finding: 2
+    issue: Three supported canonical amendments remain unresolved
+    alternatives:
+    - Apply both scoped node replacements and explicitly remove the false Chapter
+      12 prerequisite edge.
+    - Defer all three amendments and preserve the current graph unchanged.
+    resolution: Apply the two node replacements and explicitly remove the false Chapter
+      12 edge.
+    rationale: Volume II p. 257 specializes Eq. (12.1.8), and pp. 288-289 invoke the
+      Section 12.1 theorem before giving the general hard-subgraph dimension count.
+      This supports an exact use-level origin to the accepted Volume I superficial-degree
+      node. Volume I pp. 504-505 separately explain that common hard scaling does
+      not establish actual convergence unless every subintegration also has negative
+      degree, and p. 532 reports the external proof's Euclidean scope. The two origins
+      therefore remain distinct. Volume II p. 323 derives its low-energy e and Q/M
+      count by following Sections 19.4-19.6. The accepted necessary use-to-derive
+      edge from the Goldstone EFT counting method already records that route. Section
+      21.4 does not invoke the Chapter 12 hard-subgraph rule, so retaining that second
+      necessary prerequisite would misstate the derivation. The final removal deletes
+      only that false edge and leaves the accepted Chapter 19 route and every unrelated
+      record intact.
+    evidence:
+    - source: weinberg-2
+      section: 20.2 and Appendix Momentum Flow
+      pages:
+      - 257
+      - 288
+      - 289
+      - 291
+    - source: weinberg-1
+      section: 12.1-12.2; Reference 2
+      pages:
+      - 504
+      - 505
+      - 532
+    - source: weinberg-2
+      section: '21.4'
+      pages:
+      - 323
+    affected_records:
+    - kind: nodes
+      id: weinberg-2.imported-chapter12-power-counting-theorem
+    - kind: nodes
+      id: weinberg-2.general-hard-flow-ope-rigor-qualification
+    - kind: edges
+      id: weinberg-2.edge-imported-power-counting-to-dynamical-power-counting
+  removed_edges:
+  - weinberg-2.edge-imported-power-counting-to-dynamical-power-counting

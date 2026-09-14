@@ -2409,19 +2409,28 @@ nodes:
 - id: weinberg-2.general-hard-flow-ope-rigor-qualification
   label: Qualification of the general hard-flow argument
   summary: 'The appendix does not prove the fully general OPE: subintegrations can
-    diverge when the intermediate cut-line set has more than three lines, even when
+    diverge when the intermediate cut-line set has three or more lines, even when
     the displayed overall power count converges. It proves only the simple scalar
     case with two large external momenta and terms associated with operators quadratic
     in fields.'
   kind: result
   group: weinberg-2.ope-general-and-problems
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.power-counting-convergence-theorem-scope
+    note: 'Narrow correspondence: WI states that actual convergence requires a negative
+      degree for the whole integral and every subintegration, with proof reported
+      externally. WII''s footnote independently reports the same subintegration obstacle
+      to its general appendix argument. This origin records the shared limitation
+      only; it does not assert that WII proves, invokes, or satisfies the WI convergence
+      theorem.'
   evidence:
   - source: weinberg-2
     section: Appendix Momentum Flow
     pages:
     - 291
-    note: The footnote explicitly limits the proof claim because of possible divergent
-      subintegrations.
+    note: The footnote states that cut sets of three or more lines can leave divergent
+      subintegrations and therefore limits the appendix's proof claim.
 - id: weinberg-2.general-left-handed-triangle-anomaly-setup
   label: General left-handed triangle-anomaly setup
   summary: For a general massless chiral gauge theory, collect all left-handed fermions
@@ -2791,13 +2800,24 @@ nodes:
     note: The source solves the charge constraints and derives the B−L linear-combination
       conclusion and scale qualification.
 - id: weinberg-2.imported-chapter12-power-counting-theorem
-  label: Imported Chapter 12 power-counting theorem
-  summary: The momentum-flow arguments take as an imported input the Chapter 12.1
-    power-counting theorem that assigns the hard-subgraph power from its field dimensions
-    and external lines. This packet states and applies the resulting formulas but
-    does not reproduce the theorem's proof.
+  label: Imported Section 12.1 superficial hard-subgraph dimension count
+  summary: 'The Section 20 momentum-flow arguments import and use the Section 12.1
+    superficial-dimension count for a region in which hard momentum flows through
+    a subgraph: Section 20.2 specializes Eq. (12.1.8) to obtain the k-power from the
+    subgraph''s connecting lines, and the appendix uses the quoted theorem to write
+    its general hard-subgraph dimension. At this use level its reviewed Volume I origin
+    is weinberg-1.superficial-degree-of-divergence. It is not the separate all-subintegration
+    criterion for actual convergence, and neither Volume II passage supplies a proof
+    of the imported rule.'
   kind: assumption
   group: weinberg-2.ope-general-and-problems
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.superficial-degree-of-divergence
+    note: 'Exact correspondence only at use level: the Section 12.1 superficial degree/dimension
+      count is specialized to hard subgraphs in WII Sections 20.2 and 20.A. This origin
+      does not identify the imported count with WI''s separate all-subintegration
+      convergence criterion or import a proof.'
   evidence:
   - source: weinberg-2
     section: 20.2 and Appendix Momentum Flow
@@ -2805,8 +2825,9 @@ nodes:
     - 257
     - 288
     - 289
-    note: The chapter explicitly imports the earlier theorem before stating and applying
-      its scalar and general hard-subgraph dimension formulas.
+    note: Section 20.2 invokes the earlier rule before specializing the scalar hard-subgraph
+      count; the appendix invokes it before giving the general subgraph dimension
+      formula.
 - id: weinberg-2.imported-compton-invariant-cross-section-formula
   label: Imported invariant Compton cross-section formula
   summary: For the Compton process with photon and spin-1/2-particle external momenta,
@@ -8742,22 +8763,6 @@ edges:
     pages:
     - 351
     - 352
-- id: weinberg-2.edge-imported-power-counting-to-dynamical-power-counting
-  from: weinberg-2.imported-chapter12-power-counting-theorem
-  to: weinberg-2.dynamical-breaking-low-energy-power-counting
-  relation: prerequisite
-  source_level: use
-  target_level: derive
-  necessity: necessary
-  rationale: This chapter applies its established power-counting framework; the Chapter
-    12.1 theorem remains an imported assumption rather than a proof supplied here.
-  failure_mode: The argument would overclaim that this packet proves the underlying
-    power-counting theorem.
-  evidence:
-  - source: weinberg-2
-    section: '21.4'
-    pages:
-    - 323
 - id: weinberg-2.edge-instanton-to-cluster-theta
   from: weinberg-2.bpst-instanton-action-and-normalization
   to: weinberg-2.cluster-decomposition-fixes-theta-weights

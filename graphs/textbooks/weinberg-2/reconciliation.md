@@ -14,7 +14,7 @@ The end human audit is **pending**. Shared-graph alignment and cross-volume foll
 
 The graph is correctly conditional, but it lacks a source-reviewed correspondence stating whether the Volume I criterion supplies the particular Chapter 12.1 input used in the Volume II hard-flow and low-energy counts, and how the external proof limit propagates.
 
-**Pending source-backed amendment.** Dispatch one bounded cross-book amendment review over the listed Volume I Chapter 12 context and already cited Volume II use pages. Add a correspondence only if the source statements align at the stated use level; retain the external-proof qualification and do not replace either accepted node or claim either book proves the theorem.
+**Resolved by accepted unit `reconcile-001`.** The accepted amendment distinguishes the VolumeI superficial-degree count from the all-subintegration theorem and its external-proof limit through two scoped origins. It removes the incorrect Chapter12 prerequisite for Section21.4 while retaining the accepted Chapter19 Goldstone-EFT route; the appendix threshold is three or more. The explicit removal and both replacements appear in the final scientific decision log.
 
 Source context: weinberg-1 pp. 504–532; weinberg-2 pp. 256–291; weinberg-2 pp. 323–323.
 
