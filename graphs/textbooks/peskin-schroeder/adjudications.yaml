@@ -1289,3 +1289,71 @@ units:
     affected_records:
     - kind: edges
       id: peskin-schroeder.e-ps014-59
+- id: full-015
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: A.20 swaps the two high-energy v-spinor projectors.
+    alternatives:
+    - Use the A.20 projectors shown in the original render.
+    - Defer the unit while the v-spinor convention remains contradictory.
+    resolution: Set v's upper projector to (1-p-hat dot sigma)/2 and its lower projector
+      to -(1+p-hat dot sigma)/2.
+    rationale: The original A.20 render agrees with the exact A.19 v-spinor and fixes
+      both projector signs without changing the surrounding convention.
+    evidence:
+    - source: peskin-schroeder
+      section: A.2 Polarizations of External Particles
+      pages:
+      - 803
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.appendix-external-particle-and-polarization-conventions
+  - finding: 1
+    issue: A.44-A.48 lack line-by-line coefficients and state a false common sign.
+    alternatives:
+    - Transcribe all five integrals with their individual signs and factors.
+    - Defer the unit because the abbreviated table is mathematically ambiguous.
+    resolution: 'Write A.44-A.48 separately: A.45-A.46 use (-1)^(n-1); A.44, A.47,
+      and A.48 use (-1)^n.'
+    rationale: The original A.44-A.48 table distinguishes the signs and specifies
+      each Gamma argument, Delta power, metric tensor, and d-dependent coefficient.
+    evidence:
+    - source: peskin-schroeder
+      section: A.4 Loop Integrals and Dimensional Regularization
+      pages:
+      - 807
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.appendix-dimensional-regularization-branch-prescription
+  - finding: 2
+    issue: Several appendix identities and diagram momentum directions remain implicit.
+    alternatives:
+    - Complete the four affected nodes from the original appendix renders.
+    - Defer the appendix unit until every omitted identity and direction is explicit.
+    resolution: Add A.21, A.28, A.30, A.32, A.36, A.49-A.52, A.54-A.55 and the explicit
+      A.11, A.13, and A.14 directions.
+    rationale: The accepted records are qualitative. The source renders supply the
+      omitted matrices, indices, coefficients, scopes, and arrow directions, so bounded
+      node amendments resolve the gap.
+    evidence:
+    - source: peskin-schroeder
+      section: Appendix A.1-A.4
+      pages:
+      - 802
+      - 803
+      - 804
+      - 805
+      - 806
+      - 807
+      - 808
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.appendix-nonabelian-and-ghost-rule-table
+    - kind: nodes
+      id: peskin-schroeder.appendix-external-particle-and-polarization-conventions
+    - kind: nodes
+      id: peskin-schroeder.appendix-numerator-algebra-and-group-identities
+    - kind: nodes
+      id: peskin-schroeder.appendix-dimensional-regularization-branch-prescription

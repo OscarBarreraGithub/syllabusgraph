@@ -4198,6 +4198,181 @@ nodes:
     - 222
     - 223
     note: States the higher-spin forms, CPT-related spinor form, and the limitation.
+- id: schwartz.hqet-current-matching-and-large-log
+  label: HQET heavy–light current matching
+  summary: At leading order the full current Qbar Gamma^mu q matches O_Gamma^mu=Qbar_v
+    Gamma^mu q. Its HQET matrix element has only v^mu, and RG evolution between m_b
+    and m_c resums (alpha_s ln(m_b/m_c))^n corrections that the conserved full-QCD
+    current does not run.
+  kind: method
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: '35.3'
+    pages:
+    - 768
+- id: schwartz.hqet-current-rge-decay-ratio
+  label: HQET current anomalous dimension and decay-ratio running
+  summary: At one loop gamma_O=3 C_F alpha_s/(4 pi)+O(alpha_s^2), hence C(mu)=C(mu_0)[alpha_s(mu)/alpha_s(mu_0)]^(3
+    C_F/(2 beta_0)). With n_f=4, alpha_s(m_b)=0.22 and alpha_s(m_c)=0.35, the source
+    finds [f_B sqrt(m_B)]/[f_D sqrt(m_D)]=[alpha_s(m_b)/alpha_s(m_c)]^(−6/25)=1.12;
+    it does not account for the reported large power correction.
+  kind: result
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: 35.3.2
+    pages:
+    - 771
+    - 772
+- id: schwartz.hqet-heavy-quark-limit
+  label: Heavy-quark spin and flavor symmetry
+  summary: For m_Q much greater than Lambda_QCD, a heavy quark is a classical static
+    source at leading order in 1/m_Q. Brown-muck dynamics is independent of its spin
+    and, at leading order in m_Q^-1, its flavor; B and B* are degenerate at leading
+    order.
+  kind: assumption
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: '35'
+    pages:
+    - 760
+    - 761
+  notation:
+  - source: schwartz
+    note: The expansion parameters are Lambda_QCD/m_b or Lambda_QCD/m_c; m_Q denotes
+      b or c.
+- id: schwartz.hqet-heavy-scalar-construction
+  label: Heavy-scalar EFT and antiparticle removal
+  summary: After phi→exp(−i m_Q v·x) chi_v/sqrt(2m_Q), the scalar Lagrangian is chi_v*
+    i v·D chi_v+|D chi_v|^2/(2m_Q); the second term is subleading. Equivalently, separating
+    chi_v and tilde-chi_v shows the antiparticle component has the 2m_Q gap and is
+    integrated out in the heavy limit.
+  kind: method
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: '35.2'
+    pages:
+    - 765
+    - 766
+- id: schwartz.hqet-hyperfine-mass-scaling
+  label: Heavy-meson hyperfine mass scaling
+  summary: The mass parametrization m_B=m_b+barLambda-lambda_1/(2m_b)-c_1 lambda_2/(2m_b)+O(m_b^-2)
+    and its B* counterpart with c_3 gives m_B*−m_B~Lambda_QCD^2/m_b. Heavy-flavor
+    symmetry yields m_B*^2−m_B^2=m_D*^2−m_D^2+O(Lambda_QCD^3/m_Q).
+  kind: result
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: '35'
+    pages:
+    - 761
+- id: schwartz.hqet-isgur-wise-and-vcb
+  label: Isgur–Wise form factor and zero-recoil V_cb extraction
+  summary: Heavy-meson current matrix elements factor into a heavy-quark matrix element
+    and the universal brown-muck overlap xi(w), w=v·v'. Current conservation fixes
+    xi(1)=1 in the heavy-quark limit, so B→D(*)l nu data extrapolated to zero recoil
+    determine |V_cb|. Perturbative and nonperturbative corrections make F_D(1) and
+    F_D*(1) differ from 1; Luke’s theorem suppresses the latter’s leading power correction
+    to O(m_Q^-2).
+  kind: result
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: 35.1.2
+    pages:
+    - 763
+    - 764
+    - 765
+- id: schwartz.hqet-leading-lagrangian
+  label: Leading HQET spinor Lagrangian and rules
+  summary: Project psi into psi_v=(1+/v)/2 psi and tilde psi_v=(1−/v)/2 psi; integrate
+    out the small component and retain psi→exp(−i m_Q v·x)(1+/v)Q_v/2. The leading
+    Lagrangian contains i Qbar_v v·D (1+/v)Q_v/2, light QCD, and O(1/m_Q) corrections;
+    its heavy propagator is i(1+/v)/[2(v·k+i epsilon)] and vertex is i g v^mu T^a(1+/v)/2.
+  kind: representation
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: '35.2'
+    pages:
+    - 766
+    - 767
+- id: schwartz.hqet-leptonic-decay-scaling
+  label: Leptonic heavy-meson decay constants
+  summary: With relativistic normalization, <0|ubar gamma^mu gamma_5 b|B^->=−i f_B
+    p^mu; changing to nonrelativistic normalization makes the brown-muck matrix element
+    mass independent and predicts f_B/f_D=sqrt(m_D/m_B), up to O(Lambda_QCD/m_Q) corrections.
+    The reported data show an unusually large charm power correction, so this leading
+    prediction is not numerically precise.
+  kind: result
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: 35.1.1
+    pages:
+    - 762
+    - 763
+- id: schwartz.hqet-one-loop-renormalization
+  label: One-loop HQET field and current renormalization
+  summary: Heavy-quark vacuum polarization vanishes in HQET because both heavy propagator
+    poles lie below the k^0 axis. The self energy gives Z_h=1+C_F alpha_s/(pi epsilon),
+    while the composite heavy–light current needs Z_O=1+3 C_F alpha_s/(4 pi epsilon)
+    at one loop; this calculation uses Schwinger parameters because HQET denominators
+    are not quadratic Feynman-parameter denominators.
+  kind: method
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: 35.3.1–35.3.2
+    pages:
+    - 769
+    - 770
+    - 771
+- id: schwartz.hqet-power-correction-mass-parameters
+  label: HQET mass corrections from lambda_1 and lambda_2
+  summary: In the heavy rest frame, barLambda is the O(m_Q^0) brown-muck energy. The
+    spin-independent kinetic matrix element defines lambda_1, and the chromomagnetic
+    term defines lambda_2 through 2 S_Q·S_q; for spin 0 and 1 this gives m_B=m_b+barLambda−lambda_1/(2m_b)−3lambda_2/(4m_b)
+    and m_B*=m_b+barLambda−lambda_1/(2m_b)+lambda_2/(2m_b). The same two flavor- and
+    spin-independent quantities reappear in other HQET observables.
+  kind: result
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: 35.4.1
+    pages:
+    - 774
+    - 775
+- id: schwartz.hqet-subleading-lagrangian
+  label: Integrating out the small component for 1/m_Q HQET
+  summary: With D_perp^mu=D^mu−v^mu(v·D), solve (i v·D+2m_Q) Q_tilde_v=i /D_perp Q_v
+    and expand its inverse. The O(1/m_Q) Lagrangian is L_HQET=...+i Qbar_v v·D Q_v−Qbar_v
+    D_perp^2 Q_v/(2m_Q)−g_s Qbar_v sigma^mu nu Q_v F_mu nu/(4m_Q)+O(m_Q^-2); the terms
+    are the covariant kinetic and chromomagnetic interactions.
+  kind: method
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: '35.4'
+    pages:
+    - 772
+    - 773
+- id: schwartz.hqet-velocity-residual-momentum
+  label: Heavy-quark velocity and residual momentum
+  summary: Write p^mu=m_Q v^mu+k^mu with v^2=1 and k much smaller than m_Q. Brown
+    muck carries O(Lambda_QCD) momentum, so it changes k but only changes v by O(Lambda_QCD/m_Q);
+    HQET labels the heavy field by the conserved leading-power velocity.
+  kind: representation
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: 35; 35.2
+    pages:
+    - 761
+    - 765
 - id: schwartz.identical-particle-exchange-and-pauli-exclusion
   label: Identical-particle exchange algebra and Pauli exclusion
   summary: In 3+1 dimensions exchanging identical normalized particle states gives
@@ -7237,6 +7412,122 @@ nodes:
     section: Problem 34.8
     pages:
     - 759
+- id: schwartz.problem-35-1-reparametrization-invariance
+  label: 'Problem 35.1: reparametrization invariance'
+  summary: Show that the leading plus O(1/m_Q) HQET Lagrangian is invariant under
+    v^mu→v^mu+k^mu/m_Q and Q_v→exp(i k·x)(1+/k/(2m_Q))Q_v, with v·k=0 and k much smaller
+    than m_Q; use it and a direct one-loop check to establish joint renormalization
+    of the kinetic and v·D terms.
+  kind: method
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: Problem 35.1
+    pages:
+    - 775
+- id: schwartz.problem-35-2-chromomagnetic-anomalous-dimension
+  label: 'Problem 35.2: chromomagnetic anomalous dimension'
+  summary: Calculate the one-loop anomalous dimension of the HQET chromomagnetic operator
+    g Qbar_v sigma^mu nu Q_v F_mu nu/(4m_Q).
+  kind: method
+  group: schwartz.hqet
+  evidence:
+  - source: schwartz
+    section: Problem 35.2
+    pages:
+    - 775
+- id: schwartz.problem-36-1-dijet-event-shape-equivalence
+  label: 'Problem 36.1: dijet event-shape equivalence'
+  summary: Show tau approximately equals tau_1 in the dijet region and that their
+    singular distributions agree for any number of particles.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.1
+    pages:
+    - 810
+- id: schwartz.problem-36-2-multiple-collinear-factorization
+  label: 'Problem 36.2: multiple-emission collinear factorization'
+  summary: Prove the multiple-emission collinear factorization formulas of Eq. (36.51)
+    in scalar QED and Eq. (36.43) in QCD.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.2
+    pages:
+    - 810
+- id: schwartz.problem-36-3-gluon-splitting
+  label: 'Problem 36.3: gluon splitting function'
+  summary: Derive g→gg from gluon jet-field matrix elements and azimuthal averaging,
+    obtaining P_gg=2 C_A[z/(1−z)+(1−z)/z+z(1−z)].
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.3
+    pages:
+    - 810
+- id: schwartz.problem-36-4-soft-collinear-two-emission
+  label: 'Problem 36.4: soft-collinear two-emission factorization'
+  summary: Show the stated leading-power scalar-QED factorization for one q photon
+    collinear to p_1 and one soft k photon into two collinear factors and the Y_1
+    Y_2^dagger soft factor.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.4
+    pages:
+    - 810
+- id: schwartz.problem-36-5-lightcone-gauge-jet-function
+  label: 'Problem 36.5: lightcone-gauge jet function'
+  summary: Calculate the one-loop quark self-energy in lightcone gauge and show that
+    its imaginary part reproduces the Section 36.6.2 jet function.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.5
+    pages:
+    - 810
+- id: schwartz.problem-36-6-threshold-drell-yan
+  label: 'Problem 36.6: threshold Drell–Yan'
+  summary: Derive the stated threshold Drell–Yan convolution in f(xi_1)f(xi_2) and
+    the Fourier-transformed soft function W_hat_DY(sqrt(s)(1−z)); compute C for Eq.
+    (36.73) and W_DY and W_hat_DY to one loop.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.6
+    pages:
+    - 810
+- id: schwartz.problem-36-7-laplace-scet-rges
+  label: 'Problem 36.7: Laplace-space SCET RGEs'
+  summary: Use f_tilde(nu)=integral_0^infinity d tau exp(−nu tau)f(tau) to show sigma_tilde=H
+    j_tilde^2 s_tilde_T, derive the local Laplace-space jet and soft RGEs, and invert
+    the solved jet RGE to Eq. (36.128).
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.7
+    pages:
+    - 811
+- id: schwartz.problem-36-8-sudakov-rge-expansion
+  label: 'Problem 36.8: Sudakov RGEs'
+  summary: Verify the hard-function solution Eq. (36.124), derive S(nu,mu)=pi C_F/[beta_0^2
+    alpha_s(nu)]{1−alpha_s(mu)/alpha_s(nu)−ln[alpha_s(mu)/alpha_s(nu)]+O(alpha_s)},
+    and find the analogous A_H expansion.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: Problem 36.8
+    pages:
+    - 811
 - id: schwartz.problem-bch-pion-transformation-task
   label: 'Task: BCH pion transformations and isospin representation'
   summary: Expand Eq. (28.25) through order π² and θ² with the Baker–Campbell–Hausdorff
@@ -9211,6 +9502,292 @@ nodes:
     pages:
     - 408
     - 409
+- id: schwartz.scet-abelian-soft-wilson-lines
+  label: Abelian eikonal identity and soft Wilson lines
+  summary: The eikonal identity makes multiple soft QED emissions a product of single-emission
+    factors. Outgoing particles are represented by Y_n^dagger(x)=exp[i e Q_n n_mu
+    integral_0^infinity ds A^mu(x+s n)e^(−epsilon s)] and incoming particles by the
+    oppositely directed line; their matrix elements reproduce the eikonal factors,
+    including the stated i epsilon prescriptions. The soft approximation fixes the
+    collinear momentum at leading power.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.3.1–36.3.2
+    pages:
+    - 785
+    - 786
+    - 787
+    - 788
+- id: schwartz.scet-collinear-factorization-jet-fields
+  label: Collinear factorization and gauge-invariant jet fields
+  summary: For radiation collinear to separate directions, leading-power matrix elements
+    factor into individual jet matrix elements. The gauge-invariant quark jet field
+    is chi_n=W_tn^dagger psi, where W_tn is a collinear Wilson line in any lightlike
+    direction t_n not collinear to n. In a generic gauge only emission from the matching
+    collinear leg is lambda^−1 enhanced; Wilson-line terms restore gauge invariance,
+    and QCD A^3/A^4 splittings preserve the factorization at leading power.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.4–36.4.1
+    pages:
+    - 790
+    - 791
+    - 792
+    - 793
+    - 794
+- id: schwartz.scet-dijet-thrust-factorization
+  label: Dijet thrust hard–jet–soft factorization
+  summary: For tau much less than 1, the e+e− final state partitions into n-collinear
+    X_1, nbar-collinear X_2, and soft X_s sectors. Completeness defines J(p^mu)=Tr
+    sum_X integral d^4x e^(ipx)<Omega|chibar_n(x)|X><X|/nbar chi_n(0)>/[8 pi N(nbar·p)]
+    and the hemisphere soft function; after extending restricted sums only at r_i^2
+    much less than Q^2 and soft k_i much less than 1, the singular distribution is
+    H integral dr_1^2 dr_2^2 dk J(r_1^2)J(r_2^2)S_T(k)delta(Q^2 tau−r_1^2−r_2^2−Qk).
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.5.2
+    pages:
+    - 799
+    - 800
+    - 801
+    - 802
+- id: schwartz.scet-event-shapes-and-thrust
+  label: Thrust and hemisphere event shapes
+  summary: Thrust is T=max_n sum_j|p_j·n|/sum_j|p_j| and tau=1−T. It approaches zero
+    in the dijet limit and 1/2 for a spherical event. Hemispheres about the thrust
+    axis define rho_H=max(p_1^2,p_2^2)/Q^2, rho_L=min(p_1^2,p_2^2)/Q^2, and tau_1=(p_1^2+p_2^2)/Q^2=rho_L+rho_H.
+  kind: representation
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: '36.1'
+    pages:
+    - 778
+    - 779
+- id: schwartz.scet-factorized-thrust-resummation
+  label: RGE resummation of factorized thrust
+  summary: The hard function obeys mu dH/dmu=[alpha_s(mu) C_F/(4pi)](8 ln(Q^2/mu^2)−12)H+O(alpha_s^2),
+    with H(Q,mu)=H(Q,mu_h) exp[4S(mu_h,mu)−2A_H(mu_h,mu)−2A_Gamma(mu_h,mu)ln(Q^2/mu_h^2)].
+    Here A_H(nu,mu)=−integral_alpha_s(nu)^alpha_s(mu) d alpha gamma_H(alpha)/beta(alpha),
+    S(nu,mu)=−C_F integral d alpha gamma_cusp(alpha)/beta(alpha) integral_alpha_s(nu)^alpha
+    d alpha'/beta(alpha'), gamma_H=−6 C_F alpha/(4pi)+O(alpha^2), gamma_cusp=alpha/pi,
+    and A_Gamma replaces gamma_H by C_F gamma_cusp. The nonlocal jet RGE is mu dJ(p^2,mu)/dmu=[alpha_s
+    C_F/(4pi)]{[−8ln(p^2/mu^2)+6]J(p^2,mu)+8 integral_0^p2 dq^2[J(p^2,mu)−J(q^2,mu)]/(p^2−q^2)};
+    its solution is exp[−4S(mu_j,mu)+2A_J(mu_j,mu)] j_tilde(partial_eta,mu_j)(1/p^2)(p^2/mu_j^2)^eta
+    e^(−gamma_E eta)/Gamma(eta) evaluated at eta=2A_Gamma(mu_j,mu), with j_tilde=1+C_F
+    alpha_s(mu)/(4pi)(2 partial_eta^2−3 partial_eta+7−2pi^2/3)+O(alpha_s^2). The soft
+    RGE is mu dS_T(k,mu)/dmu=[16 C_F alpha_s/(4pi)]{ln(k/mu)S_T(k,mu)−integral_0^k
+    dk'[S_T(k,mu)−S_T(k',mu)]/(k−k')}; its solution is exp[4S(mu_s,mu)+2A_S(mu_s,mu)]
+    s_tilde_T(partial_eta,mu_s)(1/k)(k/mu_s)^eta e^(−gamma_E eta)/Gamma(eta) at eta=−4A_Gamma(mu_s,mu),
+    with s_tilde_T=1+C_F alpha_s(mu)/(4pi)(−8 partial_eta^2−pi^2)+O(alpha_s^2). Combining
+    these factors gives the Eq. (36.133) resummed distribution; natural matching scales
+    are mu_h=Q, mu_j=sqrt(tau)Q, and mu_s=tau Q, and the result is independent of
+    common mu.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.6.5
+    pages:
+    - 807
+    - 808
+    - 809
+- id: schwartz.scet-hard-function-one-loop
+  label: One-loop SCET hard function
+  summary: 'Match the QCD current to the decoupled SCET operator: in dimensional regularization,
+    the scaleless virtual SCET graphs vanish and matching cancels common IR poles.
+    In MS, C=1+C_F alpha_s/(4pi)[−8+7pi^2/6−3pi i−ln^2(Q^2/mu^2)+(3+2pi i)ln(Q^2/mu^2)]+O(alpha_s^2),
+    hence H=|C|^2=1+C_F alpha_s/(4pi)[−16+7pi^2/3−2ln^2(Q^2/mu^2)+6ln(Q^2/mu^2)]+O(alpha_s^2).'
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.6.1
+    pages:
+    - 803
+    - 804
+- id: schwartz.scet-jet-function-one-loop
+  label: One-loop inclusive jet function
+  summary: The jet function is the discontinuity of its forward chi_n propagator matrix
+    element and equals delta(p^2) at leading order. Cut diagrams J5–J8 are scaleless
+    and vanish in dimensional regularization; after virtual graphs convert displayed
+    IR poles into UV poles and MS subtraction, J(p^2)=delta(p^2)+C_F alpha_s/(4pi){delta(p^2)(7−pi^2)+[−3+4
+    ln(p^2/mu^2)]/p^2 star}+O(alpha_s^2). The star distribution is defined by subtracting
+    the test function at p^2=0 over 0 to mu^2.
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.6.2
+    pages:
+    - 804
+    - 805
+    - 806
+- id: schwartz.scet-jets-and-sudakov-problem
+  label: Jet observables and the Sudakov problem
+  summary: Jets are collimated hadron collections whose summed four-momentum approximates
+    the originating hard parton. Fixed-order thrust becomes singular as T→1, while
+    all-order resummation produces the observed Sudakov turnover; the cumulant contains
+    double logarithms such as −C_F alpha_s ln^2(1−T)/pi.
+  kind: concept
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36 introduction
+    pages:
+    - 776
+    - 777
+    - 778
+- id: schwartz.scet-leading-order-thrust-distribution
+  label: LO thrust distribution, distributions, and dijet singular limit
+  summary: For e+e−→q qbar g with s+t+u=Q^2, tau=min(s,t,u)≤1/3. Combining real and
+    virtual terms yields an infrared-safe distribution with plus distributions; its
+    small-tau singular part is delta(tau)+C_F alpha_s/(2pi){delta(tau)(pi^2/3−1)−3[1/tau]_+−4[ln
+    tau/tau]_+}. In the dijet limit tau~tau_1.
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.1.1
+    pages:
+    - 779
+    - 780
+- id: schwartz.scet-nonabelian-soft-factorization
+  label: Non-Abelian soft Wilson lines
+  summary: QCD soft emission has the color eikonal factor −g_s T^a p·epsilon/(p·k).
+    Path ordering in Y_n reproduces the ordered two-gluon diagrams when [T^a,T^b]
+    is nonzero; gluon self-interactions after emission remain governed by the full
+    QCD gluon Lagrangian. Soft matrix elements for quark, antiquark, or gluon jets
+    can be written with fundamental Y_n and Y_n^dagger using Y T^a Y^dagger=Y^{ab}T^b.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.3.3
+    pages:
+    - 788
+    - 789
+    - 790
+- id: schwartz.scet-power-counting-modes
+  label: Jet power counting and soft/collinear modes
+  summary: Use lambda=m/Q much less than 1 (or inclusive analogues such as sqrt(1−x)
+    in DIS) near small jet mass. With n·nbar=2, p^mu=(nbar·p)n^mu/2+(n·p)nbar^mu/2+p_perp^mu
+    and p^2=(n·p)(nbar·p)+p_perp^2; a collinear jet scales Q{lambda^2,1,lambda}, while
+    ultrasoft radiation scales Q{lambda^2,lambda^2,lambda^2}. Hard and Q{lambda,lambda,lambda}
+    soft modes cannot occur among real particles of one such jet; Glauber modes are
+    virtual in these applications.
+  kind: assumption
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: '36.2'
+    pages:
+    - 781
+    - 782
+- id: schwartz.scet-resummed-thrust-scope
+  label: Resummed thrust comparison and hadronization limit
+  summary: Comparison to data requires adding the fixed-order nonsingular distribution.
+    The source reports excellent agreement for 1−T greater than about 0.1, but when
+    mu_s=tau Q approaches hadron masses (tau less than about m_p/Q~0.1) hadronization
+    cannot be ignored; power corrections lie outside this treatment.
+  kind: assumption
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.6.5
+    pages:
+    - 809
+    - 810
+- id: schwartz.scet-sector-lagrangian-and-matching
+  label: SCET sector decomposition and hard matching
+  summary: At leading power, <X_1;...;X_m;X_s|psibar_1...psi_m|Omega> factorizes into
+    one collinear matrix element <X_j|psibar_j W_j|Omega> or <X_j|W_j^dagger psi_j|Omega>
+    per direction and a soft <X_s|Y_1...Y_m^dagger|Omega> factor. SCET implements
+    this with L_SCET=L_1+...+L_m+L_soft, each sector carrying only its own quark and
+    gluon modes, and C(Q) times an operator containing the required collinear W and
+    soft Y lines. The text establishes this at tree level, expects IR loop agreement
+    after removing soft-collinear overlap (the zero bin is zero in dimensional regularization
+    here), and does not present a rigorous all-orders proof.
+  kind: assumption
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: '36.5'
+    pages:
+    - 795
+    - 796
+- id: schwartz.scet-soft-eikonal-factorization
+  label: Soft eikonal emission and charge sensitivity
+  summary: For hard well-separated external states, a soft photon emission supplies
+    the spin-independent eikonal factor e Q_i p_i·epsilon/(p_i·k), with the sign set
+    by incoming/outgoing charge. At leading power, soft radiation sees only each direction’s
+    net charge/color, not the energy, spin, or collinear internal distribution; this
+    is the leading multipole limit.
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.3.1
+    pages:
+    - 783
+    - 784
+    - 785
+- id: schwartz.scet-soft-function-and-singular-check
+  label: One-loop thrust soft function and singular-term check
+  summary: The hemisphere soft function has delta(k_1)delta(k_2) at zeroth order;
+    its one-loop cross term gives S_T(k)=delta(k)[1+C_F alpha_s pi/(12) ]−16 C_F alpha_s/(4pi)[ln(k/mu)/k]_star+O(alpha_s^2).
+    Combining H, J, and S_T reproduces exactly the QCD singular thrust expression
+    through O(alpha_s), with mu dependence canceling.
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.6.3–36.6.4
+    pages:
+    - 806
+    - 807
+- id: schwartz.scet-splitting-function-universality
+  label: Universal quark splitting function from a jet field
+  summary: Squaring the gauge-invariant collinear jet-field amplitude for p=zP and
+    q=(1−z)P gives the universal DGLAP quark splitting kernel proportional to C_F(1+z^2)/(1−z).
+    The source’s problem asks for the analogous azimuthally averaged P_gg=2 C_A[z/(1−z)+(1−z)/z+z(1−z)].
+  kind: result
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.4.2; Problem 36.3
+    pages:
+    - 794
+    - 810
+- id: schwartz.scet-threshold-drell-yan-factorization
+  label: Threshold Drell–Yan SCET factorization
+  summary: Near M→sqrt(s), lambda=1−M^2/s is small and final-state hadronic radiation
+    is soft, while Lambda_QCD/M is separately treated as zero except through alpha_s.
+    The incoming-line operator is O^mu=psibar bar-W_1 Y_n^dagger gamma^mu Y_nbar bar-W_2^dagger
+    psi, equivalently (psibar_alpha bar-W_1)_i gamma^mu_alpha beta (bar-W_2^dagger
+    psi_beta)_j(Y_n^dagger Y_nbar)_ij. The barred W_1 and W_2 are incoming collinear
+    Wilson lines with integrals from −infinity to 0; Y_n and Y_nbar are incoming soft
+    Wilson lines with the corresponding −i epsilon prescription. PDFs follow from
+    multipole-expanded collinear matrix elements and W_DY(x)=tr<Omega|Y_nbar^dagger
+    Y_n(x)Y_n^dagger Y_nbar(0)|Omega>/N, with this displayed ordered product. The
+    source assumes the tree-level factorization technology to resum logs rather than
+    claiming a rigorous derivation.
+  kind: method
+  group: schwartz.scet-jets
+  evidence:
+  - source: schwartz
+    section: 36.5.1
+    pages:
+    - 796
+    - 797
+    - 798
+    - 799
 - id: schwartz.schrodinger-derivative-expansion-eft
   label: Schrödinger equation as a derivative-expansion EFT
   summary: The nonrelativistic Schrödinger equation and relativistic corrections form
@@ -11392,6 +11969,22 @@ edges:
     pages:
     - 735
     - 737
+- id: schwartz.abelian-wilson-line-to-scet-soft
+  from: schwartz.abelian-wilson-line-as-parallel-transport
+  to: schwartz.scet-abelian-soft-wilson-lines
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED soft-line construction explicitly recalls and specializes the
+    Wilson-line exponential to an asymptotic charged-particle path.
+  failure_mode: Without the Abelian Wilson-line construction, the path exponential
+    cannot be used to reproduce eikonal emissions.
+  evidence:
+  - source: schwartz
+    section: 36.3.2
+    pages:
+    - 786
 - id: schwartz.anomaly-coefficient-to-su3-matching
   from: schwartz.anomaly-coefficient-definition-and-normalization
   to: schwartz.su3-chiral-breaking-from-anomaly-matching
@@ -11904,6 +12497,22 @@ edges:
     section: '31.2'
     pages:
     - 655
+- id: schwartz.cutkosky-to-scet-jet
+  from: schwartz.cutkosky-cutting-rules-and-feynman-tree-theorem
+  to: schwartz.scet-jet-function-one-loop
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop jet calculation takes discontinuities by the cutting rules
+    and optical theorem.
+  failure_mode: Without the cutting prescription, the cut-diagram discontinuities
+    and inclusive jet function cannot be calculated.
+  evidence:
+  - source: schwartz
+    section: 36.6.2
+    pages:
+    - 805
 - id: schwartz.cw-to-resummation
   from: schwartz.coleman-weinberg-potential-and-large-log-limit
   to: schwartz.coleman-weinberg-leading-log-resummation
@@ -24173,6 +24782,232 @@ edges:
     - 749
     - 750
     - 759
+- id: schwartz.hqet-current-match-to-renorm
+  from: schwartz.hqet-current-matching-and-large-log
+  to: schwartz.hqet-one-loop-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The renormalized composite operator is the matched heavy–light current.
+  failure_mode: Without identifying O_Gamma, the Z_O calculation has no target operator.
+  evidence:
+  - source: schwartz
+    section: '35.3'
+    pages:
+    - 768
+    - 771
+- id: schwartz.hqet-leading-to-current-match
+  from: schwartz.hqet-leading-lagrangian
+  to: schwartz.hqet-current-matching-and-large-log
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matched Q_v current is defined in the leading EFT.
+  failure_mode: Without HQET fields and normalization, O_Gamma cannot be matched or
+    evolved.
+  evidence:
+  - source: schwartz
+    section: '35.3'
+    pages:
+    - 768
+- id: schwartz.hqet-leading-to-subleading
+  from: schwartz.hqet-leading-lagrangian
+  to: schwartz.hqet-subleading-lagrangian
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The subleading expansion begins from the same large/small HQET projections.
+  failure_mode: Without that decomposition, integrating out Q_tilde and interpreting
+    its operators is undefined.
+  evidence:
+  - source: schwartz
+    section: '35.4'
+    pages:
+    - 772
+    - 773
+- id: schwartz.hqet-limit-to-decay-scaling
+  from: schwartz.hqet-heavy-quark-limit
+  to: schwartz.hqet-leptonic-decay-scaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Mass-independent brown muck underpins the nonrelativistic matrix-element
+    relation.
+  failure_mode: Without it, f_B/f_D scaling cannot follow.
+  evidence:
+  - source: schwartz
+    section: 35.1.1
+    pages:
+    - 762
+    - 763
+- id: schwartz.hqet-limit-to-hyperfine
+  from: schwartz.hqet-heavy-quark-limit
+  to: schwartz.hqet-hyperfine-mass-scaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Spin/flavor symmetry supplies the leading degeneracy and flavor-independent
+    parameters used in the mass relation.
+  failure_mode: Without the symmetry limit, the common coefficients and mass-squared
+    relation have no stated basis.
+  evidence:
+  - source: schwartz
+    section: '35'
+    pages:
+    - 760
+    - 761
+- id: schwartz.hqet-limit-to-isgur-wise
+  from: schwartz.hqet-heavy-quark-limit
+  to: schwartz.hqet-isgur-wise-and-vcb
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Spin and flavor independence factor the brown-muck overlap and normalizes
+    xi(1).
+  failure_mode: Without it, xi is not universal and zero recoil is not fixed.
+  evidence:
+  - source: schwartz
+    section: 35.1.2
+    pages:
+    - 763
+    - 764
+- id: schwartz.hqet-renorm-to-problem-chromo
+  from: schwartz.hqet-one-loop-renormalization
+  to: schwartz.problem-35-2-chromomagnetic-anomalous-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task applies the preceding HQET counterterm and anomalous-dimension
+    method to the chromomagnetic operator.
+  failure_mode: Without the HQET one-loop renormalization method, the operator's anomalous
+    dimension cannot be calculated.
+  evidence:
+  - source: schwartz
+    section: 35.3.1-35.3.2; Problem 35.2
+    pages:
+    - 769
+    - 770
+    - 771
+    - 775
+- id: schwartz.hqet-renorm-to-problem-reparam
+  from: schwartz.hqet-one-loop-renormalization
+  to: schwartz.problem-35-1-reparametrization-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) applies the chapter's one-loop HQET renormalization method to
+    the leading and kinetic operators.
+  failure_mode: Without HQET loop renormalization, the requested direct equality check
+    cannot be performed.
+  evidence:
+  - source: schwartz
+    section: 35.3.1-35.3.2; Problem 35.1
+    pages:
+    - 769
+    - 770
+    - 771
+    - 775
+- id: schwartz.hqet-renorm-to-rge
+  from: schwartz.hqet-one-loop-renormalization
+  to: schwartz.hqet-current-rge-decay-ratio
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Z_O determines gamma_O and therefore Wilson-coefficient evolution.
+  failure_mode: Without Z_O, the stated 12% RG correction cannot be obtained.
+  evidence:
+  - source: schwartz
+    section: 35.3.2
+    pages:
+    - 771
+    - 772
+- id: schwartz.hqet-scalar-to-leading
+  from: schwartz.hqet-heavy-scalar-construction
+  to: schwartz.hqet-leading-lagrangian
+  relation: pedagogical
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The scalar construction motivates the antiparticle removal used for spinors.
+  failure_mode: Skipping it removes a worked route but not the spinor projection derivation.
+  evidence:
+  - source: schwartz
+    section: '35.2'
+    pages:
+    - 766
+- id: schwartz.hqet-subleading-to-masses
+  from: schwartz.hqet-subleading-lagrangian
+  to: schwartz.hqet-power-correction-mass-parameters
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The kinetic and chromomagnetic operators define lambda_1 and lambda_2
+    in the mass calculation.
+  failure_mode: Without the operator content and coefficients, the mass formulas cannot
+    be derived.
+  evidence:
+  - source: schwartz
+    section: 35.4–35.4.1
+    pages:
+    - 773
+    - 774
+    - 775
+- id: schwartz.hqet-subleading-to-problem-chromo
+  from: schwartz.hqet-subleading-lagrangian
+  to: schwartz.problem-35-2-chromomagnetic-anomalous-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s operator is the chromomagnetic 1/m_Q term.
+  failure_mode: Without its definition and normalization, no anomalous dimension is
+    specified.
+  evidence:
+  - source: schwartz
+    section: Problem 35.2
+    pages:
+    - 775
+- id: schwartz.hqet-subleading-to-problem-reparam
+  from: schwartz.hqet-subleading-lagrangian
+  to: schwartz.problem-35-1-reparametrization-invariance
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task tests the leading plus 1/m_Q Lagrangian.
+  failure_mode: Without its exact operator terms, the invariance and renormalization
+    claim cannot be checked.
+  evidence:
+  - source: schwartz
+    section: Problem 35.1
+    pages:
+    - 775
+- id: schwartz.hqet-velocity-to-leading
+  from: schwartz.hqet-velocity-residual-momentum
+  to: schwartz.hqet-leading-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phase redefinition and velocity label follow from p=m_Q v+k.
+  failure_mode: Without residual-momentum separation, the HQET field decomposition
+    has no controlled expansion.
+  evidence:
+  - source: schwartz
+    section: '35.2'
+    pages:
+    - 765
+    - 766
 - id: schwartz.hypercharge-solutions-to-bminusl
   from: schwartz.anomaly-hypercharge-solutions-and-charge-quantization
   to: schwartz.anomaly-allowed-b-minus-l
@@ -24307,6 +25142,23 @@ edges:
     pages:
     - 717
     - 732
+- id: schwartz.lightcone-gauge-to-problem-365
+  from: schwartz.axial-and-lightcone-gauges-ghost-decoupling
+  to: schwartz.problem-36-5-lightcone-gauge-jet-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The prescribed route sets the collinear Wilson line to one in lightcone
+    gauge and evaluates the remaining self-energy graph.
+  failure_mode: Without lightcone-gauge propagating degrees of freedom and gauge condition,
+    the required self-energy route is undefined.
+  evidence:
+  - source: schwartz
+    section: 36.6.2; Problem 36.5
+    pages:
+    - 805
+    - 810
 - id: schwartz.lorentz-contractions-to-kinematics-method
   from: schwartz.lorentz-covariant-index-contractions-and-dalembertian
   to: schwartz.lorentz-invariant-kinematics-method
@@ -24357,6 +25209,41 @@ edges:
     pages:
     - 14
     note: Defines a vector by its Lorentz transformation law.
+- id: schwartz.matching-ir-to-problem-366
+  from: schwartz.matching-ir-cancellation-consistency-test
+  to: schwartz.problem-36-6-threshold-drell-yan
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) extracts the Drell-Yan Wilson coefficient by matching QCD and
+    SCET after their common infrared poles cancel.
+  failure_mode: Without infrared cancellation in matching, the finite Wilson coefficient
+    cannot be isolated from the loop amplitudes.
+  evidence:
+  - source: schwartz
+    section: 36.6.1; Problem 36.6
+    pages:
+    - 803
+    - 804
+    - 810
+- id: schwartz.matching-ir-to-scet-hard
+  from: schwartz.matching-ir-cancellation-consistency-test
+  to: schwartz.scet-hard-function-one-loop
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matching argument identifies equal QCD and SCET infrared poles before
+    reading the Wilson coefficient from the QCD virtual graph.
+  failure_mode: Without IR cancellation in matching, dropping scaleless SCET graphs
+    would not establish C(Q).
+  evidence:
+  - source: schwartz
+    section: 36.6.1
+    pages:
+    - 803
+    - 804
 - id: schwartz.matching-to-breaking
   from: schwartz.thooft-anomaly-matching-hypotheses
   to: schwartz.su3-chiral-breaking-from-anomaly-matching
@@ -24538,6 +25425,22 @@ edges:
     section: '30.4'
     pages:
     - 633
+- id: schwartz.nonabelian-wilson-line-to-scet-soft
+  from: schwartz.nonabelian-path-ordered-wilson-line
+  to: schwartz.scet-nonabelian-soft-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD extension uses path ordering to reproduce noncommuting color-matrix
+    emission order.
+  failure_mode: Without non-Abelian path ordering, the two-soft-gluon Wilson-line
+    amplitude cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 36.3.3
+    pages:
+    - 789
 - id: schwartz.nonlinear-solution-to-classical-diagrams
   from: schwartz.perturbative-nonlinear-classical-field-solution
   to: schwartz.classical-feynman-diagrams-and-rules
@@ -24653,6 +25556,22 @@ edges:
     pages:
     - 19
     note: States that the plane-wave equation is exactly an oscillator equation.
+- id: schwartz.pdf-operator-to-threshold-dy
+  from: schwartz.gauge-invariant-lightcone-pdf-operator
+  to: schwartz.scet-threshold-drell-yan-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The threshold derivation identifies its multipole-expanded collinear
+    matrix elements with the light-cone PDF operator.
+  failure_mode: Without the PDF operator, the collinear factors cannot be converted
+    into the stated threshold convolution.
+  evidence:
+  - source: schwartz
+    section: 36.5.1
+    pages:
+    - 798
 - id: schwartz.photon-quantization-to-planck-spectrum
   from: schwartz.quantized-massless-photon-modes
   to: schwartz.planck-thermal-radiation-spectrum
@@ -25580,6 +26499,23 @@ edges:
     pages:
     - 664
     - 666
+- id: schwartz.qcd-running-to-problem-368
+  from: schwartz.qcd-asymptotic-freedom-and-lambdaqcd
+  to: schwartz.problem-36-8-sudakov-rge-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Expanding S and A_H requires the one-loop beta function and the beta_0
+    running of alpha_s.
+  failure_mode: Without one-loop QCD running, the beta-function integrals cannot yield
+    the requested beta_0-dependent expansion.
+  evidence:
+  - source: schwartz
+    section: 36.6.5; Problem 36.8
+    pages:
+    - 808
+    - 811
 - id: schwartz.regulator-to-fujikawa
   from: schwartz.gauge-invariant-fujikawa-regulator
   to: schwartz.fujikawa-measure-jacobian-method
@@ -25707,6 +26643,451 @@ edges:
     pages:
     - 744
     - 750
+- id: schwartz.scet-abelian-to-nonabelian
+  from: schwartz.scet-abelian-soft-wilson-lines
+  to: schwartz.scet-nonabelian-soft-factorization
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The Abelian construction is a worked route to the QCD generalization;
+    path ordering adds the noncommuting color structure.
+  failure_mode: Without this route, the non-Abelian derivation can start from QCD
+    directly.
+  evidence:
+  - source: schwartz
+    section: 36.3.2–36.3.3
+    pages:
+    - 787
+    - 788
+    - 789
+- id: schwartz.scet-collinear-to-problem-362
+  from: schwartz.scet-collinear-factorization-jet-fields
+  to: schwartz.problem-36-2-multiple-collinear-factorization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem extends the displayed factorization formulas to multiple
+    emissions.
+  failure_mode: Without the one/multiple-sector formulas and Wilson lines, the proof
+    target is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 36.2
+    pages:
+    - 810
+- id: schwartz.scet-collinear-to-problem-364
+  from: schwartz.scet-collinear-factorization-jet-fields
+  to: schwartz.problem-36-4-soft-collinear-two-emission
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s W factors encode the collinear photon.
+  failure_mode: Without collinear factorization, the remaining factors cannot be separated.
+  evidence:
+  - source: schwartz
+    section: Problem 36.4
+    pages:
+    - 810
+- id: schwartz.scet-collinear-to-sector
+  from: schwartz.scet-collinear-factorization-jet-fields
+  to: schwartz.scet-sector-lagrangian-and-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The sector Lagrangian encodes the separate collinear factors.
+  failure_mode: Without collinear factorization, L_1+...+L_m lacks its leading-power
+    interpretation.
+  evidence:
+  - source: schwartz
+    section: 36.4; 36.5
+    pages:
+    - 794
+    - 795
+- id: schwartz.scet-collinear-to-splitting
+  from: schwartz.scet-collinear-factorization-jet-fields
+  to: schwartz.scet-splitting-function-universality
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Universality follows by identifying every leading collinear emission
+    with the jet-field matrix element.
+  failure_mode: Without factorization, the calculated splitting amplitude would not
+    be process independent.
+  evidence:
+  - source: schwartz
+    section: 36.4–36.4.2
+    pages:
+    - 793
+    - 794
+- id: schwartz.scet-dijet-to-hard
+  from: schwartz.scet-dijet-thrust-factorization
+  to: schwartz.scet-hard-function-one-loop
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The hard function is H=|C|^2 appearing in the thrust factorization formula.
+  failure_mode: Without the factorized role of C, matching does not yield a defined
+    H.
+  evidence:
+  - source: schwartz
+    section: 36.5.2; 36.6.1
+    pages:
+    - 801
+    - 803
+- id: schwartz.scet-dijet-to-jet
+  from: schwartz.scet-dijet-thrust-factorization
+  to: schwartz.scet-jet-function-one-loop
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation evaluates the J defined by the factorization formula.
+  failure_mode: Without its inclusive forward-matrix-element definition, the cut calculation
+    lacks normalization.
+  evidence:
+  - source: schwartz
+    section: 36.5.2; 36.6.2
+    pages:
+    - 802
+    - 804
+- id: schwartz.scet-dijet-to-problem-367
+  from: schwartz.scet-dijet-thrust-factorization
+  to: schwartz.problem-36-7-laplace-scet-rges
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Laplace transformation is applied to the thrust HJJ S_T convolution.
+  failure_mode: Without the convolution, sigma_tilde=H j_tilde^2 s_tilde_T cannot
+    be established.
+  evidence:
+  - source: schwartz
+    section: Problem 36.7
+    pages:
+    - 811
+- id: schwartz.scet-dijet-to-soft
+  from: schwartz.scet-dijet-thrust-factorization
+  to: schwartz.scet-soft-function-and-singular-check
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The hemisphere and thrust soft functions are defined in the factorization
+    formula.
+  failure_mode: Without their measurement definition, the real-emission calculation
+    has no observable.
+  evidence:
+  - source: schwartz
+    section: 36.5.2; 36.6.3
+    pages:
+    - 802
+    - 806
+    - 807
+- id: schwartz.scet-dy-to-problem-366
+  from: schwartz.scet-threshold-drell-yan-factorization
+  to: schwartz.problem-36-6-threshold-drell-yan
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests derivation and one-loop ingredients of the preceding
+    threshold formula.
+  failure_mode: Without the definitions of C and W_DY, its computational targets are
+    undefined.
+  evidence:
+  - source: schwartz
+    section: Problem 36.6
+    pages:
+    - 810
+- id: schwartz.scet-event-to-lo-thrust
+  from: schwartz.scet-event-shapes-and-thrust
+  to: schwartz.scet-leading-order-thrust-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation inserts the definition of tau into q qbar g phase space.
+  failure_mode: Without the observable definition, the delta constraints and singular
+    distribution are undefined.
+  evidence:
+  - source: schwartz
+    section: 36.1–36.1.1
+    pages:
+    - 778
+    - 779
+- id: schwartz.scet-event-to-problem-361
+  from: schwartz.scet-event-shapes-and-thrust
+  to: schwartz.problem-36-1-dijet-event-shape-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task compares tau and tau_1 as defined event shapes.
+  failure_mode: Without both definitions, the requested equality has no meaning.
+  evidence:
+  - source: schwartz
+    section: Problem 36.1
+    pages:
+    - 810
+- id: schwartz.scet-hard-to-resum
+  from: schwartz.scet-hard-function-one-loop
+  to: schwartz.scet-factorized-thrust-resummation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The hard RGE and matching boundary condition enter the resummed formula.
+  failure_mode: Without H and its anomalous dimension, one factor’s evolution is missing.
+  evidence:
+  - source: schwartz
+    section: 36.6.1; 36.6.5
+    pages:
+    - 804
+    - 807
+    - 808
+- id: schwartz.scet-jet-to-problem-365
+  from: schwartz.scet-jet-function-one-loop
+  to: schwartz.problem-36-5-lightcone-gauge-jet-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The target is explicitly the Section 36.6.2 jet function.
+  failure_mode: Without its definition and answer for comparison, the proposed equivalence
+    is unspecified.
+  evidence:
+  - source: schwartz
+    section: Problem 36.5
+    pages:
+    - 810
+- id: schwartz.scet-jet-to-resum
+  from: schwartz.scet-jet-function-one-loop
+  to: schwartz.scet-factorized-thrust-resummation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonlocal jet RGE and matching function are extracted from J.
+  failure_mode: Without the jet fixed-order form, its RGE solution and boundary operator
+    are unspecified.
+  evidence:
+  - source: schwartz
+    section: 36.6.2; 36.6.5
+    pages:
+    - 806
+    - 808
+- id: schwartz.scet-lo-to-power-count
+  from: schwartz.scet-leading-order-thrust-distribution
+  to: schwartz.scet-power-counting-modes
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The singular tau limit motivates the mode expansion.
+  failure_mode: The power counting can be introduced from jet mass without deriving
+    the LO distribution.
+  evidence:
+  - source: schwartz
+    section: 36.1.1; 36.2
+    pages:
+    - 780
+    - 781
+- id: schwartz.scet-power-to-collinear
+  from: schwartz.scet-power-counting-modes
+  to: schwartz.scet-collinear-factorization-jet-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof identifies lambda-enhanced emissions using collinear scaling.
+  failure_mode: Without that scaling, one cannot distinguish leading and suppressed
+    diagrams.
+  evidence:
+  - source: schwartz
+    section: 36.2; 36.4
+    pages:
+    - 782
+    - 791
+- id: schwartz.scet-power-to-soft
+  from: schwartz.scet-power-counting-modes
+  to: schwartz.scet-soft-eikonal-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The eikonal expansion is asserted for ultrasoft radiation relative to
+    hard separated directions.
+  failure_mode: Without the soft limit, the dropped momentum changes are unjustified.
+  evidence:
+  - source: schwartz
+    section: 36.2–36.3
+    pages:
+    - 782
+    - 783
+- id: schwartz.scet-resum-to-problem-367
+  from: schwartz.scet-factorized-thrust-resummation
+  to: schwartz.problem-36-7-laplace-scet-rges
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (b) and (c) transform and solve the jet and soft RGEs and recover
+    the displayed position-space solution.
+  failure_mode: Without the resummation construction, the problem supplies only the
+    factorized cross section and lacks its RGE inputs.
+  evidence:
+  - source: schwartz
+    section: 36.6.5; Problem 36.7
+    pages:
+    - 808
+    - 811
+- id: schwartz.scet-resum-to-problem-368
+  from: schwartz.scet-factorized-thrust-resummation
+  to: schwartz.problem-36-8-sudakov-rge-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task verifies and expands the S and A_H functions in the hard RGE
+    solution.
+  failure_mode: Without their definitions in the resummation solution, the requested
+    expansion is undefined.
+  evidence:
+  - source: schwartz
+    section: Problem 36.8
+    pages:
+    - 811
+- id: schwartz.scet-resum-to-scope
+  from: schwartz.scet-factorized-thrust-resummation
+  to: schwartz.scet-resummed-thrust-scope
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The observational range is qualified by the resummed soft-scale choice.
+  failure_mode: Without mu_s=tau Q, the stated hadronization boundary has no basis.
+  evidence:
+  - source: schwartz
+    section: 36.6.5
+    pages:
+    - 809
+    - 810
+- id: schwartz.scet-sector-to-dijet
+  from: schwartz.scet-sector-lagrangian-and-matching
+  to: schwartz.scet-dijet-thrust-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dijet formula uses n, nbar, and soft SCET sectors with a matched
+    operator.
+  failure_mode: Without sector factorization, the product of H, jets, and soft function
+    is not justified.
+  evidence:
+  - source: schwartz
+    section: 36.5–36.5.2
+    pages:
+    - 795
+    - 799
+    - 800
+- id: schwartz.scet-sector-to-dy
+  from: schwartz.scet-sector-lagrangian-and-matching
+  to: schwartz.scet-threshold-drell-yan-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Threshold Drell–Yan applies the SCET operator and decoupled sectors.
+  failure_mode: Without SCET matching, the hard coefficient and separate soft/PDF
+    functions do not arise.
+  evidence:
+  - source: schwartz
+    section: 36.5–36.5.1
+    pages:
+    - 795
+    - 797
+- id: schwartz.scet-soft-to-abelian-wilson
+  from: schwartz.scet-soft-eikonal-factorization
+  to: schwartz.scet-abelian-soft-wilson-lines
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Wilson-line matrix elements are matched to the eikonal factors.
+  failure_mode: Without the target eikonal factor, the Wilson-line construction cannot
+    be verified.
+  evidence:
+  - source: schwartz
+    section: 36.3.1–36.3.2
+    pages:
+    - 785
+    - 786
+    - 787
+- id: schwartz.scet-soft-to-problem-364
+  from: schwartz.scet-abelian-soft-wilson-lines
+  to: schwartz.problem-36-4-soft-collinear-two-emission
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s Y factors encode the soft photon.
+  failure_mode: Without soft Wilson lines, one factor in the proposed product is undefined.
+  evidence:
+  - source: schwartz
+    section: Problem 36.4
+    pages:
+    - 810
+- id: schwartz.scet-soft-to-resum
+  from: schwartz.scet-soft-function-and-singular-check
+  to: schwartz.scet-factorized-thrust-resummation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The soft RGE and matching function are the third factor in resummed thrust.
+  failure_mode: Without S_T, its evolution and the soft scale choice cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 36.6.3; 36.6.5
+    pages:
+    - 807
+    - 808
+- id: schwartz.scet-soft-to-sector
+  from: schwartz.scet-nonabelian-soft-factorization
+  to: schwartz.scet-sector-lagrangian-and-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: SCET places the soft Wilson-line factorization into decoupled sectors.
+  failure_mode: Without soft factorization, the operator’s Y factors are unmotivated.
+  evidence:
+  - source: schwartz
+    section: 36.3.3; 36.5
+    pages:
+    - 789
+    - 795
+- id: schwartz.scet-splitting-to-problem-363
+  from: schwartz.scet-splitting-function-universality
+  to: schwartz.problem-36-3-gluon-splitting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task applies the jet-field splitting method to gluons.
+  failure_mode: Without the method’s factorization premise, P_gg cannot be derived
+    by the specified route.
+  evidence:
+  - source: schwartz
+    section: Problem 36.3
+    pages:
+    - 810
 - id: schwartz.shift-to-routing
   from: schwartz.linearly-divergent-shift-surface-term
   to: schwartz.routing-choice-preserves-vector-ward-identity
@@ -25766,6 +27147,25 @@ edges:
     pages:
     - 38
     note: Specializes the source equations to A0 for a point charge.
+- id: schwartz.spinor-helicity-to-scet-collinear
+  from: schwartz.spinor-helicity-polarizations-and-reference-momentum
+  to: schwartz.scet-collinear-factorization-jet-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The collinear proof uses reference-vector-dependent helicity polarizations
+    to compare generic and collinear gauges.
+  failure_mode: Without those polarization identities, the claimed lambda power counting
+    and gauge argument cannot be reproduced.
+  evidence:
+  - source: schwartz
+    section: 36.4.1
+    pages:
+    - 790
+    - 791
+    - 792
+    - 793
 - id: schwartz.spinor-proper-time-input-to-problem33-4
   from: schwartz.background-field-scalar-and-spinor-proper-time-propagators
   to: schwartz.problem-33-4-fermion-semiclassical-spin-limit
@@ -26154,6 +27554,10 @@ groups:
   title: Free scalar-field quantization
   question: How do momentum-mode operators define a free scalar field and its equal-time
     quantum structure?
+- id: schwartz.hqet
+  title: Heavy-quark effective theory
+  question: What follows when a heavy quark is treated as a static color source and
+    corrections are organized in 1/m_Q?
 - id: schwartz.infrared-safety
   title: Infrared safety and resolved final states
   question: Which sums of QED final states are finite observables?
@@ -26218,6 +27622,10 @@ groups:
   title: Cross sections and decay rates
   question: How are S-matrix amplitudes converted into measurable scattering and decay
     observables?
+- id: schwartz.scet-jets
+  title: Jets and soft-collinear effective theory
+  question: How do soft and collinear limits factorize jet observables and permit
+    logarithmic resummation?
 - id: schwartz.soft-spin-constraints
   title: Soft emission and integer-spin constraints
   question: What do Lorentz invariance and soft limits require of interactions of
@@ -26361,6 +27769,18 @@ motivations:
     pages:
     - 391
     - 393
+- id: schwartz.hqet-motivation
+  nodes:
+  - schwartz.hqet-heavy-quark-limit
+  - schwartz.hqet-leading-lagrangian
+  summary: Charm and bottom form metastable hadrons even though low-energy QCD is
+    strongly coupled; expansion in Lambda_QCD/m_Q supplies a controlled handle.
+  evidence:
+  - source: schwartz
+    section: '35'
+    pages:
+    - 760
+    - 761
 - id: schwartz.ir-observable-motivation
   nodes:
   - schwartz.inclusive-qed-cross-section-ir-finiteness
@@ -26526,6 +27946,18 @@ motivations:
     section: '31.3'
     pages:
     - 658
+- id: schwartz.scet-motivation
+  nodes:
+  - schwartz.scet-jets-and-sudakov-problem
+  - schwartz.scet-factorized-thrust-resummation
+  summary: Fixed-order thrust diverges near the two-jet limit although data turn over;
+    resummation of all-order Sudakov logarithms is needed.
+  evidence:
+  - source: schwartz
+    section: 36 introduction
+    pages:
+    - 777
+    - 778
 - id: schwartz.spin-statistics-motivation
   nodes:
   - schwartz.spin-statistics-theorem

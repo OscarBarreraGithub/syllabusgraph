@@ -1850,3 +1850,57 @@ units:
     affected_records:
     - kind: edges
       id: schwartz.problem34-5-to-higgs
+- id: full-014
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Independent loop, gauge, matching, and running problem branches lack explicit
+      calculation prerequisites.
+    alternatives:
+    - Keep the proposal unchanged and treat the missing calculation methods as implicit
+      background.
+    - Add only the five direct prerequisite edges needed by the explicit independent
+      problem branches.
+    resolution: Add five necessary use-to-derive edges from reviewed calculation inputs
+      to the affected problem nodes.
+    rationale: The source explicitly asks for direct one-loop, lightcone-gauge, matching,
+      and beta-function calculations. The existing edges identify each task's operator
+      or target result but do not supply these independent methods. Five direct use-to-derive
+      prerequisites complete those routes without copying accepted nodes, duplicating
+      an existing edge, or making alternative derivations cumulative.
+    evidence:
+    - source: schwartz
+      section: 35.3.1-35.3.2; Problems 35.1-35.2
+      pages:
+      - 769
+      - 770
+      - 771
+      - 775
+    - source: schwartz
+      section: 36.6.2; Problem 36.5
+      pages:
+      - 805
+      - 810
+    - source: schwartz
+      section: 36.6.1; Problem 36.6
+      pages:
+      - 803
+      - 804
+      - 810
+    - source: schwartz
+      section: 36.6.5; Problem 36.8
+      pages:
+      - 808
+      - 811
+    affected_records:
+    - kind: edges
+      id: schwartz.hqet-renorm-to-problem-reparam
+    - kind: edges
+      id: schwartz.hqet-renorm-to-problem-chromo
+    - kind: edges
+      id: schwartz.lightcone-gauge-to-problem-365
+    - kind: edges
+      id: schwartz.matching-ir-to-problem-366
+    - kind: edges
+      id: schwartz.qcd-running-to-problem-368

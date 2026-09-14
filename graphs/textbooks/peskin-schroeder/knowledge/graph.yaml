@@ -152,6 +152,217 @@ nodes:
     - 646
     note: Derives Mellin factorization, matches its coefficients to the operator matrix,
       and states the common physical interpretation.
+- id: peskin-schroeder.appendix-cross-section-phase-space-reference
+  label: Appendix cross-section, decay-rate, and two-body phase-space formulae
+  summary: A.56 is d sigma=[1/(2E_A 2E_B |v_A-v_B|)] product_f[d^3p_f/((2pi)^3 2E_f)]
+    |M(p_A,p_B->{p_f})|^2 (2pi)^4 delta^(4)(p_A+p_B-sum_f p_f). A.57 is d Gamma=(1/(2m))
+    product_f[d^3p_f/((2pi)^3 2E_f)] |M(i->f)|^2 (2pi)^4 delta^(4)(p_i-sum_f p_f).
+    For a two-particle final state A.58 gives dPhi_2=(|p|/(16pi^2 E_cm))d Omega, with
+    |p| the center-of-mass three-momentum magnitude of either particle.
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.5
+    pages:
+    - 808
+    - 809
+  notation:
+  - source: peskin-schroeder
+    note: A.56--A.58 flux, 2E factors, delta function, parent-mass normalization,
+      and 16pi^2 two-body coefficient were checked against PDF pages 831--832.
+- id: peskin-schroeder.appendix-diagrammatic-conventions
+  label: Appendix scalar and QED rule conventions
+  summary: At every vertex conserve momentum, integrate each undetermined loop momentum
+    as integral d^4p/(2pi)^4, multiply each closed fermion or ghost loop by -1, and
+    include any symmetry factor. For L_phi4=1/2(partial phi)^2-1/2m^2phi^2-lambda
+    phi^4/4!, A.1--A.3 give i/(p^2-m^2+i epsilon), -i lambda, and external scalar
+    1. For QED, L=psi-bar(i slash-partial-m)psi-F^2/4-e psi-bar gamma^mu psi A_mu,
+    A.4--A.9 give i(slash-p+m)/(p^2-m^2+i epsilon), -i g^{mu nu}/(p^2+i epsilon) in
+    Feynman gauge, iQe gamma^mu (Q=-1 for an electron), and the rendered initial/final
+    u, u-bar, v-bar, v and epsilon, epsilon-star assignments.
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.1
+    pages:
+    - 801
+    - 802
+  notation:
+  - source: peskin-schroeder
+    note: A.1--A.9 signs, i factors, Feynman-gauge photon numerator, and arrow-oriented
+      external states were checked on PDF pages 824--825; text-layer OCR is not used
+      for formula transcription.
+- id: peskin-schroeder.appendix-dimensional-regularization-branch-prescription
+  label: Appendix dimensional-regularization integral table and branch prescription
+  summary: A.39 is 1/(A1...An)=(n-1)! integral_0^1 product_i dxi delta(sum_i xi-1)/[sum_i
+    xi Ai]^n, with A.40 1/(AB)=integral_0^1 dx/[xA+(1-x)B]^2. After shifting the loop
+    momentum, A.41--A.42 give ell^mu ell^nu -> g^{mu nu}ell^2/d and ell^mu ell^nu
+    ell^rho ell^sigma -> ell^4(g^{mu nu}g^{rho sigma}+g^{mu rho}g^{nu sigma}+g^{mu
+    sigma}g^{nu rho})/[d(d+2)]. A.43 uses ell^0=i ell_E^0 and ell^2=-ell_E^2. With
+    I[N]=integral d^d ell/(2pi)^d N/(ell^2-Delta)^n, A.44 is I[1]=(-1)^n i Gamma(n-d/2)/[(4pi)^{d/2}Gamma(n)](1/Delta)^{n-d/2}.
+    A.45 is I[ell^2]=(-1)^{n-1} i (d/2)Gamma(n-d/2-1)/[(4pi)^{d/2}Gamma(n)](1/Delta)^{n-d/2-1}.
+    A.46 is I[ell^mu ell^nu]=(-1)^{n-1} i (g^{mu nu}/2)Gamma(n-d/2-1)/[(4pi)^{d/2}Gamma(n)](1/Delta)^{n-d/2-1}.
+    A.47 is I[(ell^2)^2]=(-1)^n i [d(d+2)/4]Gamma(n-d/2-2)/[(4pi)^{d/2}Gamma(n)](1/Delta)^{n-d/2-2}.
+    A.48 is I[ell^mu ell^nu ell^rho ell^sigma]=(-1)^n i Gamma(n-d/2-2)/[4(4pi)^{d/2}Gamma(n)](1/Delta)^{n-d/2-2}
+    times (g^{mu nu}g^{rho sigma}+g^{mu rho}g^{nu sigma}+g^{mu sigma}g^{nu rho}).
+    A.49 is (1/Delta)^{2-d/2}=1-(2-d/2)log Delta+...; A.50 is Gamma(x)=1/x-gamma+O(x)
+    near x=0; A.51 is Gamma(x)=(-1)^n/n![1/(x+n)-gamma+1+...+1/n+O(x+n)] near x=-n.
+    With epsilon=4-d, A.52 is Gamma(2-d/2)(1/Delta)^{2-d/2}/(4pi)^{d/2}=1/(4pi)^2[2/epsilon-log
+    Delta-gamma+log(4pi)+O(epsilon)]. If timelike invariants make Delta negative,
+    A.53 prescribes Delta -> Delta-i varepsilon, where varepsilon is distinct from
+    epsilon=4-d. A.54 is g^{mu nu}g_{mu nu}=delta^mu_mu=d. A.55 gives gamma^mu gamma_mu=d;
+    gamma^mu gamma^nu gamma_mu=-(d-2)gamma^nu; gamma^mu gamma^nu gamma^rho gamma_mu=4g^{nu
+    rho}-(4-d)gamma^nu gamma^rho; and gamma^mu gamma^nu gamma^rho gamma^sigma gamma_mu=-2gamma^sigma
+    gamma^rho gamma^nu+(4-d)gamma^nu gamma^rho gamma^sigma.
+  kind: method
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.4
+    pages:
+    - 806
+    - 807
+    - 808
+  notation:
+  - source: peskin-schroeder
+    note: A.39--A.55 are transcribed directly from print pages 806--808, including
+      every A.44--A.48 sign, Gamma argument, Delta power, tensor coefficient, and
+      the A.49--A.55 expansions and contractions.
+- id: peskin-schroeder.appendix-external-particle-and-polarization-conventions
+  label: Appendix spinor and polarization conventions
+  summary: A.15 gives (slash-p-m)u=u-bar(slash-p-m)=(slash-p+m)v=v-bar(slash-p+m)=0
+    and slash-p=gamma^mu p_mu; A.16 is {gamma^mu,gamma^nu}=2g^{mu nu}. In the chiral
+    basis gamma^mu=((0,sigma^mu),(bar-sigma^mu,0)), gamma_5=diag(-1,1), sigma^mu=(1,sigma),
+    and bar-sigma^mu=(1,-sigma). A.19 gives u=(sqrt(p dot sigma)xi,sqrt(p dot bar-sigma)xi)^T
+    and v=(sqrt(p dot sigma)eta,-sqrt(p dot bar-sigma)eta)^T. A.20 gives u approximately
+    sqrt(2E)((1-p-hat dot sigma)xi/2,(1+p-hat dot sigma)xi/2)^T and v approximately
+    sqrt(2E)((1-p-hat dot sigma)eta/2,-(1+p-hat dot sigma)eta/2)^T. A.21 fixes sigma^1=((0,1),(1,0)),
+    sigma^2=((0,-i),(i,0)), sigma^3=((1,0),(0,-1)); xi=(1,0)^T is spin up in z and
+    xi=(0,1)^T is spin down. For antifermions physical spin is opposite the eta spinor,
+    so eta=(1,0)^T represents spin down in z. A.22 is sum_s u_s u-bar_s=slash-p+m
+    and sum_s v_s v-bar_s=slash-p-m; A.23 is (1+gamma_5)/2 and (1-gamma_5)/2 for right-
+    and left-handed spinors. A.24--A.26 use epsilon=(0,e), p dot e=0, epsilon_R=(0,1,i,0)/sqrt(2),
+    epsilon_L=(0,1,-i,0)/sqrt(2) for p along +z, and replace sum_pol epsilon_mu-star
+    epsilon_nu by -g_mu nu through the Ward identity. Antifermion physical helicity
+    is opposite the spinor's; massless non-Abelian sums also require ghosts, and massive-vector
+    sums require Goldstones.
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.2
+    pages:
+    - 803
+    - 804
+  notation:
+  - source: peskin-schroeder
+    note: A.15--A.26 are transcribed directly from print pages 803--804, including
+      the A.20 spinor projectors, A.21 Pauli basis, and the antifermion spin convention.
+- id: peskin-schroeder.appendix-natural-unit-conversion-factors
+  label: Appendix natural-unit conversion factors
+  summary: 'The source''s conversion table gives: (1 GeV)/c^2=1.783x10^-24 g; (1 GeV)^-1(hbar
+    c)=0.1973x10^-13 cm=0.1973 fm; (1 GeV)^-2(hbar c)^2=0.3894x10^-27 cm^2=0.3894
+    mbarn; 1 barn=10^-24 cm^2; (1 volt/meter)(e hbar c)=1.973x10^-25 GeV^2; and (1
+    tesla)(e hbar c^2)=5.916x10^-17 GeV^2. These are a unit-conversion convention
+    table, not dynamically derived results; the following reference to the 1994 Review
+    of Particle Properties fixes its historical context.'
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.6
+    pages:
+    - 810
+  notation:
+  - source: peskin-schroeder
+    note: All signs, powers, hbar/c factors, and barn equivalence were transcribed
+      from the original page-833 render because the text layer loses superscripts
+      and hbar glyphs.
+- id: peskin-schroeder.appendix-nonabelian-and-ghost-rule-table
+  label: Appendix non-Abelian and ghost Feynman-rule table
+  summary: 'The A.10 fermion vertex is i g gamma^mu t^a. In A.11 all three displayed
+    momenta point inward: k on gauge leg (a,mu), p on (b,nu), and q on (c,rho); the
+    vertex is g f^{abc}[g^{mu nu}(k-p)^rho+g^{nu rho}(p-q)^mu+g^{rho mu}(q-k)^nu].
+    A.12 is -i g^2 times f^{abe}f^{cde}(g^{mu rho}g^{nu sigma}-g^{mu sigma}g^{nu rho})+f^{ace}f^{bde}(g^{mu
+    nu}g^{rho sigma}-g^{mu sigma}g^{nu rho})+f^{ade}f^{bce}(g^{mu nu}g^{rho sigma}-g^{mu
+    rho}g^{nu sigma}). In A.13 the dotted ghost arrow runs from a into the vertex
+    and out toward c, while p points outward from the vertex along the a leg; the
+    upper gauge leg is (b,mu), and the rule is -g f^{abc}p^mu. In A.14 p points left
+    from b toward a and the propagator is i delta^{ab}/(p^2+i epsilon). Fermion and
+    gauge propagators are the QED rules times the gauge-space identity, and each external
+    particle carries a gauge-space orientation.'
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.1
+    pages:
+    - 802
+    - 803
+  notation:
+  - source: peskin-schroeder
+    note: A.10--A.14 are transcribed directly from print pages 802--803, including
+      the A.11 inward momentum assignments and the distinct ghost-arrow and p-arrow
+      directions in A.13--A.14.
+- id: peskin-schroeder.appendix-numerator-algebra-and-group-identities
+  label: Appendix numerator algebra and group-identity table
+  summary: A.27 gives tr 1=4, odd-gamma traces=0, tr(gamma^mu gamma^nu)=4g^{mu nu},
+    tr(gamma^mu gamma^nu gamma^rho gamma^sigma)=4(g^{mu nu}g^{rho sigma}-g^{mu rho}g^{nu
+    sigma}+g^{mu sigma}g^{nu rho}), tr gamma_5=tr(gamma^mu gamma^nu gamma_5)=0, and
+    tr(gamma^mu gamma^nu gamma^rho gamma^sigma gamma_5)=-4i epsilon^{mu nu rho sigma}.
+    A.28 is tr(gamma^mu gamma^nu gamma^rho gamma^sigma ...)=tr(... gamma^sigma gamma^rho
+    gamma^nu gamma^mu). A.29 gives gamma^mu gamma_mu=4, gamma^mu gamma^nu gamma_mu=-2gamma^nu,
+    gamma^mu gamma^nu gamma^rho gamma_mu=4g^{nu rho}, and gamma^mu gamma^nu gamma^rho
+    gamma^sigma gamma_mu=-2gamma^sigma gamma^rho gamma^nu, in four dimensions only.
+    A.30 is epsilon^{alpha beta gamma delta}epsilon_{alpha beta gamma delta}=-24,
+    epsilon^{alpha beta gamma mu}epsilon_{alpha beta gamma nu}=-6 delta^mu_nu, and
+    epsilon^{alpha beta mu nu}epsilon_{alpha beta rho sigma}=-2(delta^mu_rho delta^nu_sigma-delta^mu_sigma
+    delta^nu_rho). A.31 is (u1-bar_L gamma^mu u2_L)(u3-bar_L gamma_mu u4_L)=-(u1-bar_L
+    gamma^mu u4_L)(u3-bar_L gamma_mu u2_L). A.32 is (sigma^mu)_{alpha dot-beta}(sigma_mu)_{gamma
+    dot-delta}=2 epsilon_{alpha gamma}epsilon_{dot-beta dot-delta} and (bar-sigma^mu)^{dot-alpha
+    beta}(bar-sigma_mu)^{dot-gamma delta}=2 epsilon^{dot-alpha dot-gamma}epsilon^{beta
+    delta}. A.33--A.35 give [t^a,t^b]=i f^{abc}t^c, tr(t^a t^b)=C(r)delta^{ab}, t^a
+    t^a=C2(r)1, and C(r)=d(r)C2(r)/d(G). A.36 adds t^a t^b t^a=[C2(r)-C2(G)/2]t^b,
+    f^{acd}f^{bcd}=C2(G)delta^{ab}, and f^{abc}t^b t^c=(i/2)C2(G)t^a. A.37--A.38 give
+    C(N)=1/2, C2(N)=(N^2-1)/(2N), C(G)=C2(G)=N, and (t^a)_{ij}(t^a)_{k ell}=1/2(delta_{i
+    ell}delta_{kj}-delta_{ij}delta_{k ell}/N).
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.3
+    pages:
+    - 805
+    - 806
+  notation:
+  - source: peskin-schroeder
+    note: A.27--A.38 are transcribed directly from print pages 805--806, preserving
+      gamma and epsilon index order, both A.32 identities, and all three A.36 identities.
+- id: peskin-schroeder.appendix-source-era-constants-and-estimation-values
+  label: Appendix source-era physical constants, masses, and derived combinations
+  summary: The p.809 table gives c=2.998x10^10 cm/s; hbar=6.582x10^-22 MeV s; e=-1.602x10^-19
+    C; alpha=e^2/(4pi hbar c)=1/137.04=0.00730; G_F/(hbar c)^3=1.166x10^-5 GeV^-2;
+    alpha_s(10 GeV)=0.18; alpha_s(m_Z)=0.12; and sin^2 theta_W=0.23. Particle masses
+    times c^2 are e 0.5110 MeV, mu 105.6 MeV, tau 1777 MeV, W 80.2 GeV, Z 91.19 GeV,
+    proton 938.3 MeV, neutron 939.6 MeV, pi-plus/minus 139.6 MeV, and pi-zero 135.0
+    MeV. The derived values are a_0=hbar/(alpha m_e c)=5.292x10^-9 cm; lambda=hbar/(m_e
+    c)=3.862x10^-11 cm; r_e=alpha hbar/(m_e c)=2.818x10^-13 cm; sigma_T=8pi r_e^2/3=0.6652
+    barn; and 1 R=4pi alpha^2/(3E_cm^2)=86.8 nbarn/(E_cm in GeV)^2. Coupling estimates
+    and masses are edition-era table values and strong/weak conventions are explicitly
+    qualified by the source.
+  kind: representation
+  group: peskin-schroeder.appendix-reference
+  evidence:
+  - source: peskin-schroeder
+    section: A.6
+    pages:
+    - 809
+  notation:
+  - source: peskin-schroeder
+    note: Every exponent, unit, particle label, and derived formula was checked on
+      PDF page 832; none is reconstructed from the damaged text layer.
 - id: peskin-schroeder.asymptotic-freedom-scaling-violations-and-hard-jets
   label: Asymptotic freedom predicts logarithmic scaling violations
   summary: A non-Abelian gauge theory with gluons explains approximate free partons
@@ -244,6 +455,24 @@ nodes:
     - 426
     - 427
     - 428
+- id: peskin-schroeder.bethe-ansatz-factorized-many-spin-states
+  label: Bethe ansatz from two-spin scattering
+  summary: For the one-dimensional spin-1/2 chain H=sum_i[-J sigma_i dot sigma_(i+1)],
+    the algebra conserves the number of up spins. Bethe's construction uses the two-spin
+    S-matrix to build exact eigenstates with any number of up spins by multiplying
+    two-spin S-matrices; it is presented as a transferable exact-solution technique
+    for one-dimensional systems.
+  kind: method
+  group: peskin-schroeder.ch22-exact-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '22.3'
+    pages:
+    - 792
+  notation:
+  - source: peskin-schroeder
+    note: Hamiltonian and sigma-product decomposition (22.15--22.16) were checked
+      in the render because the text layer drops superscripts and operators.
 - id: peskin-schroeder.bjorken-scaling-parton-cross-section
   label: Parton-model Bjorken scaling
   summary: In the parton model, the deep-inelastic electron-proton distribution is
@@ -336,6 +565,23 @@ nodes:
     pages:
     - 353
     - 354
+- id: peskin-schroeder.broken-supersymmetry-source-era-hierarchy-route
+  label: Broken-supersymmetry source-era route to hierarchy and unification
+  summary: Because equal-mass charged bosons and electrons are absent, the text concludes
+    supersymmetry is not exact in Nature and considers spontaneous breaking. It describes,
+    conditionally, partner mass splittings of a few hundred GeV as yielding a suitable
+    Higgs mass-squared and changing running couplings so the Fig. 22.1 dashed unification
+    is improved; it also says vacuum contributions above the splitting cancel, leaving
+    a then-estimated Lambda of order (100 GeV)^4. These forecasts and scale statements
+    are source-era and conditional.
+  kind: assumption
+  group: peskin-schroeder.ch22-supersymmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 797
+    - 798
 - id: peskin-schroeder.brst-auxiliary-field-symmetry-and-nilpotence
   label: BRST auxiliary-field symmetry and nilpotence
   summary: 'Introducing a nondynamical commuting B^a rewrites the gauge-fixed Faddeev-Popov
@@ -765,6 +1011,20 @@ nodes:
   notation:
   - source: peskin-schroeder
     note: The source chooses the current's overall normalization arbitrarily.
+- id: peskin-schroeder.composite-higgs-source-era-route
+  label: Composite-Higgs source-era route
+  summary: On the composite branch, new strong dynamics close to the weak scale supplies
+    the Higgs sector, modeled in the simplest cases on dynamical chiral symmetry breaking.
+    The stated approximately 1000 GeV new-particle scale and prospective accelerator
+    consequences are source-era expectations. This is a competing route to electroweak
+    breaking, not a supersymmetry branch.
+  kind: representation
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 789
 - id: peskin-schroeder.compton-two-diagram-amplitude
   label: Compton amplitude from the two fermion-line orderings
   summary: The lowest-order e- gamma to e- gamma amplitude is the coherent sum of
@@ -781,6 +1041,22 @@ nodes:
     - 159
     note: The source writes the two-diagram amplitude and performs the on-shell Dirac-algebra
       simplification.
+- id: peskin-schroeder.conditional-rg-bridge-to-confinement
+  label: Conditional RG bridge from asymptotic freedom to confinement
+  summary: For a non-Abelian gauge theory, asymptotic freedom gives weak coupling
+    at short distance and strong coupling at large distance. The chapter connects
+    the short-distance quark/gluon picture to the strong-coupling confinement picture
+    only conditional on integrating out short-distance degrees of freedom without
+    encountering a beta-function zero or another barrier to RG flow, so that the resulting
+    effective theory admits the strong-coupling expansion. This continuum bridge is
+    not the lattice area-law calculation itself.
+  kind: result
+  group: peskin-schroeder.ch22-lattice-qcd
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 784
 - id: peskin-schroeder.configuration-space-path-integral
   label: Configuration-space path integral
   summary: For a one-dimensional particle, the transition amplitude is a sum over
@@ -794,6 +1070,21 @@ nodes:
     pages:
     - 276
     - 277
+- id: peskin-schroeder.confining-string-limit-and-quantitative-limit
+  label: Confining-string picture and its stated quantitative limitation
+  summary: The area-law surface can be pictured as color-electric flux swept through
+    Euclidean time and idealized as a one-dimensional string. The book stresses that
+    each small string element is an independent quantum degree of freedom and that
+    no useful equation for quantitative quark-bound-state calculations had then been
+    obtained; it presents this as an unresolved limitation, not a confinement derivation.
+  kind: representation
+  group: peskin-schroeder.ch22-lattice-qcd
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 784
+    - 785
 - id: peskin-schroeder.connected-amputated-s-matrix-prescription
   label: Connected, amputated S-matrix prescription
   summary: 'The chapter motivates computing the nontrivial S-matrix from connected
@@ -836,6 +1127,39 @@ nodes:
     section: '12.5'
     pages:
     - 436
+- id: peskin-schroeder.cosmological-constant-proposed-possibilities-qualified
+  label: Qualified proposed possibilities for the cosmological constant
+  summary: The text lists vacuum-energy subtraction in quantum gravity, a new particle-physics
+    or gravitational cancellation mechanism, and an energy-momentum scale set by cosmological
+    boundary conditions. It explicitly calls all of these guesses and concludes only
+    that straightforward QFT--gravity unification is incomplete.
+  kind: assumption
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 791
+- id: peskin-schroeder.cosmological-constant-source-era-puzzle
+  label: Cosmological-constant source-era puzzle
+  summary: Zero-point energy, the filled Dirac sea, and symmetry-breaking vacuum shifts
+    contribute to absolute vacuum energy, which cancels from nongravitational energy
+    differences but couples through T_mu_nu to gravity as a cosmological-constant
+    term. The text reports a then-current expansion bound Lambda < 10^-29 g/cm^3,
+    about (10^-11 GeV)^4, and a 120-order discrepancy with naive expectation; all
+    numerical limit and unsolved-status wording are source-era.
+  kind: concept
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 790
+    - 791
+  notation:
+  - source: peskin-schroeder
+    note: Rendered Eq. (22.12) adds Lambda g_mu_nu to the vacuum-subtracted matter
+      stress tensor; Eq. (22.13) supplies the source-era bound.
 - id: peskin-schroeder.coulomb-ladder-bound-state-resummation
   label: Coulomb-ladder resummation produces threshold resonances
   summary: Near a fermion-antifermion threshold, repeated photon exchanges inside
@@ -1795,6 +2119,21 @@ nodes:
     pages:
     - 701
     - 702
+- id: peskin-schroeder.elementary-higgs-source-era-route
+  label: Elementary-Higgs source-era route
+  summary: On the elementary-scalar branch, a scalar vacuum expectation value breaks
+    SU(2) x U(1), and renormalizable fermion--Higgs couplings generate quark and lepton
+    masses. Its negative mass parameter is the setting of the hierarchy problem; the
+    text treats this as one unresolved hypothesis, not an established microscopic
+    description.
+  kind: representation
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 788
+    - 789
 - id: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
   label: Endpoint subtraction isolates the two-loop nonlocal pole
   summary: After Feynman-parameter combination, the w-to-zero endpoint supplies an
@@ -1878,6 +2217,20 @@ nodes:
     section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
     pages:
     - 294
+- id: peskin-schroeder.euclidean-instantons-as-quantum-processes
+  label: Euclidean instantons as quantum processes
+  summary: Instantons are classical solutions localized in Euclidean time as well
+    as space. The text therefore interprets them as quantum processes that modify
+    the effective Hamiltonian, distinct from spatial solitonic particle states. Its
+    cited four-dimensional non-Abelian example violates QCD U(1) axial-current conservation
+    and is linked to the light-meson spectrum discussion.
+  kind: concept
+  group: peskin-schroeder.ch22-exact-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '22.3'
+    pages:
+    - 794
 - id: peskin-schroeder.euclidean-qft-statistical-mechanics-correspondence
   label: Euclidean QFT–statistical-mechanics correspondence
   summary: For the stable scalar phi-four theory displayed after the permitted Wick
@@ -2134,6 +2487,20 @@ nodes:
     pages:
     - 442
     - 443
+- id: peskin-schroeder.flavor-and-cp-source-era-open-questions
+  label: Flavor and CP-pattern source-era open questions
+  summary: Even after detailed Standard Model confirmation, the book identifies the
+    five-order-of-magnitude quark-and-lepton mass range, the CKM mixing pattern, and
+    the magnitude of CP violation as questions then far from solution. This node preserves
+    the historical qualification rather than asserting their current status.
+  kind: concept
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 789
+    - 790
 - id: peskin-schroeder.form-factors-charge-and-magnetic-moment
   label: Charge and magnetic moment from vertex form factors
   summary: The zero-momentum Dirac form factor fixes the electron charge, so the renormalized
@@ -2343,6 +2710,23 @@ nodes:
     section: '4.1'
     pages:
     - 79
+- id: peskin-schroeder.gauge-hierarchy-naturalness-problem
+  label: Gauge hierarchy naturalness problem
+  summary: If an elementary scalar breaks SU(2) x U(1), the required negative Higgs
+    mass parameter is of order -(100 GeV)^2. Because a scalar mass-squared receives
+    additive radiative corrections, keeping it far below a cutoff at a grand-unification
+    scale requires cancellation between the bare value and corrections. The book calls
+    the unexplained large separation the gauge hierarchy problem; this is a naturalness
+    diagnosis conditional on the elementary-scalar and high-cutoff assumptions.
+  kind: concept
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 787
+    - 788
+    - 789
 - id: peskin-schroeder.gauge-invariant-correlator-xi-independence
   label: Gauge-invariant correlators are gauge-parameter independent
   summary: Faddeev–Popov cancellation establishes ξ-independence for gauge-invariant
@@ -2672,6 +3056,27 @@ nodes:
     pages:
     - 745
     - 746
+- id: peskin-schroeder.grand-unification-running-hypothesis
+  label: Grand-unification running hypothesis
+  summary: 'Grand unification embeds SU(3) x SU(2) x U(1) in a simple group, with
+    SU(5) the book''s simplest example. At SU(5) breaking the rendered normalization
+    is g_5=g_3=g_2=sqrt(5/3) g'', where g'' is the book''s U(1) coupling. The solid
+    curves of Fig. 22.1 use the known-particle beta functions: they come close but
+    do not meet. Its dashed curves use supersymmetric-multiplet beta functions and
+    meet within then-current uncertainties. Both are source-era extrapolations, not
+    measurements of unification.'
+  kind: assumption
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 786
+    - 787
+  notation:
+  - source: peskin-schroeder
+    note: Eq. (22.6) and the solid/dashed caption were inspected in the original render;
+      g' must not be silently identified with the SU(5)-normalized U(1) coupling.
 - id: peskin-schroeder.grassmann-algebra-and-shift-invariant-integration
   label: Grassmann algebra and shift-invariant integration
   summary: Grassmann numbers anticommute and square to zero. Shift invariance fixes
@@ -2903,6 +3308,20 @@ nodes:
     section: '20.1'
     pages:
     - 692
+- id: peskin-schroeder.higgs-sector-electroweak-breaking-outcome
+  label: Higgs-sector electroweak-breaking outcome
+  summary: A sector must spontaneously break SU(2) x U(1) to give the observed W and
+    Z masses and to participate in quark and lepton mass generation. The chapter leaves
+    open whether this sector is an elementary scalar vacuum expectation value or new
+    composite dynamics.
+  kind: concept
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 788
+    - 789
 - id: peskin-schroeder.higgs-to-diphoton-fermion-loop-task
   label: 'Final project (e): fermion-loop h to two photons'
   summary: Express the quark and lepton loop contribution to h to two photons using
@@ -3341,6 +3760,27 @@ nodes:
     pages:
     - 465
     - 466
+- id: peskin-schroeder.lattice-qcd-continuum-and-monte-carlo-route
+  label: Lattice QCD continuum and Monte Carlo route
+  summary: Replace spacetime by a finite Euclidean lattice and integrate bounded SU(3)
+    link variables. At nonzero spacing and finite volume this turns the functional
+    integral into finitely many integrations that can be sampled by Monte Carlo; use
+    asymptotic freedom to perturbatively improve short-distance effects as the lattice
+    spacing is taken toward zero. The stated 10--20% hadron-mass, 25% weak-matrix-element,
+    and first alpha_s comparison claims are explicitly source-era reports, not current
+    accuracy claims.
+  kind: method
+  group: peskin-schroeder.ch22-lattice-qcd
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 783
+    - 785
+  notation:
+  - source: peskin-schroeder
+    note: The text's illustrative lattice size is 20^4; the numerical accuracy and
+      alpha_s statements are qualified by 'currently' and 'at the time of this writing'.
 - id: peskin-schroeder.leading-log-inclusive-soft-exponentiation
   label: Leading-log inclusive soft-photon exponentiation
   summary: Within the section's leading-log soft approximation, combining the virtual
@@ -4764,6 +5204,37 @@ nodes:
     pages:
     - 670
     - 671
+- id: peskin-schroeder.planck-scale-and-unification-proximity
+  label: Planck scale and its proximity to unification
+  summary: The book defines m_Planck=(G_N/(hbar c))^(-1/2), about 10^19 GeV, as the
+    scale where gravitational particle interactions are order one. It notes that gravity
+    becomes comparable to grand-unified vector-boson gauge forces already around 10^18
+    GeV and offers only the hope, not a derivation, of a connection to gauge unification.
+  kind: result
+  group: peskin-schroeder.ch22-unification
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 787
+  notation:
+  - source: peskin-schroeder
+    note: Formula and units verified on the source render (22.7).
+- id: peskin-schroeder.planck-scale-quantum-gravity-limit
+  label: Planck-scale quantum-gravity limit
+  summary: Treating gravity as a weak-coupling Feynman-diagram QFT gives nonrenormalizable
+    divergences because its coupling has inverse mass dimension, with complexity concentrated
+    at the Planck scale. The book says quantum gravitational fluctuations may require
+    fluctuating spacetime geometry and topology, or a breakdown of continuous QFT
+    into discrete or nonlocal geometry; it explicitly labels the quantum theory observationally
+    and conceptually uncertain.
+  kind: concept
+  group: peskin-schroeder.ch22-ultimate-theory
+  evidence:
+  - source: peskin-schroeder
+    section: '22.5'
+    pages:
+    - 798
 - id: peskin-schroeder.pointlike-bound-state-wavefunction-at-origin
   label: Pointlike bound-state production probes the wavefunction at the origin
   summary: If the free pair-production amplitude is independent of the constituent
@@ -7877,6 +8348,26 @@ nodes:
     - 34
     note: The problem asks the reader for an exact Bessel-function evaluation at spacelike
       separation; it does not present that derivation on this page.
+- id: peskin-schroeder.spatial-solitons-and-monopoles-as-particle-states
+  label: Spatial solitons and monopoles as particle states
+  summary: At weak coupling, new particle states can arise from spatial classical
+    solutions rather than quanta of the original fields. In broken two-dimensional
+    phi^4, the static kink connects the two vacua and has energy of order mu^3/lambda,
+    larger than the phi-quantum mass by 1/lambda. In the Georgi--Glashow model, phi^a(x)=f(|x|)x^a
+    gives a magnetic monopole. The appearance of such solitonic particles is often
+    tied to the topology of the vacuum manifold.
+  kind: concept
+  group: peskin-schroeder.ch22-exact-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '22.3'
+    pages:
+    - 793
+    - 794
+  notation:
+  - source: peskin-schroeder
+    note: The energy power mu^3/lambda and monopole field configuration were verified
+      from the original p.793--794 renders, not inferred from the broken OCR equations.
 - id: peskin-schroeder.spin-statistics-theorem-stated-assumptions
   label: Stated spin-statistics theorem assumptions
   summary: The source states, without proving the general theorem here, that Lorentz
@@ -7952,6 +8443,25 @@ nodes:
     - 714
     - 715
     - 716
+- id: peskin-schroeder.string-theory-source-era-proposal-and-effective-qft
+  label: String-theory source-era proposal and effective QFT
+  summary: 'The chapter presents string theory as one speculative Planck-distance
+    model: extended one-dimensional excitations replace point-contact interactions,
+    with spin-2 interpreted as gravitons and spin-1 as gauge bosons. It reports a
+    ten-dimensional anomaly-canceling construction and conditional ultraviolet finiteness
+    with supersymmetry, while saying the required geometry was not intuitively understood.
+    Whatever the microscopic structure, it argues that at much larger distances an
+    effective continuum QFT can remain an accurate approximation; these are source-era
+    proposals, not settled conclusions.'
+  kind: representation
+  group: peskin-schroeder.ch22-ultimate-theory
+  evidence:
+  - source: peskin-schroeder
+    section: '22.5'
+    pages:
+    - 798
+    - 799
+    - 800
 - id: peskin-schroeder.su2-adjoint-higgs-to-u1
   label: 'SU(2) adjoint Higgs: residual U(1)'
   summary: For a real SU(2) vector vacuum oriented in internal direction 3, the T^1
@@ -8157,6 +8667,71 @@ nodes:
   - source: peskin-schroeder
     note: Ne and Nγ count external electron and photon lines; Pe, Pγ, V, and L count
       propagators, vertices, and loops.
+- id: peskin-schroeder.supersymmetric-multiplets-and-gauginos
+  label: Supersymmetric multiplets and gauginos
+  summary: The elementary examples in the text require a chiral fermion for each complex
+    scalar and an adjoint chiral fermion (a gaugino) for each gauge field. Supersymmetry
+    relates scalar self-interactions to scalar--fermion interactions and fixes gaugino
+    mediation strength by the gauge coupling.
+  kind: representation
+  group: peskin-schroeder.ch22-supersymmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 796
+  notation:
+  - source: peskin-schroeder
+    note: The example interaction formula (22.23) was visually inspected; this summary
+      retains its relation rather than a partial OCR transcription.
+- id: peskin-schroeder.supersymmetric-vacuum-zero-energy
+  label: Supersymmetric vacuum zero energy
+  summary: For a zero-momentum vacuum that is itself supersymmetric, Q_alpha|0>=Q_dot-alpha^dagger|0>=0.
+    Taking its expectation value in the superalgebra gives <0|H|0>=0, so bosonic positive
+    and fermionic negative zero-point energies cancel to all perturbative orders.
+    This conclusion requires the supersymmetric-vacuum hypothesis, not merely a paired
+    spectrum.
+  kind: result
+  group: peskin-schroeder.ch22-supersymmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 796
+- id: peskin-schroeder.supersymmetry-algebra-spectrum-pairing
+  label: Supersymmetry algebra and boson--fermion spectrum pairing
+  summary: A supersymmetry charge Q_alpha converts bosonic and fermionic states and
+    has spin one-half. Lorentz covariance and the Coleman--Mandula restriction give
+    {Q_alpha^i,Q_dotbeta^dagger_j}=2 delta^i_j sigma^mu_(alpha dotbeta) P_mu. Consequently
+    an exact supersymmetry acts in every sector and pairs bosonic and fermionic states
+    at equal energy; a realistic exact theory would include a fermionic gravitational
+    partner.
+  kind: result
+  group: peskin-schroeder.ch22-supersymmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 795
+  notation:
+  - source: peskin-schroeder
+    note: Anticommutators (22.21--22.22) were read from the original render; the text-layer
+      glyphs are unreliable.
+- id: peskin-schroeder.supersymmetry-scalar-radiative-cancellation
+  label: Supersymmetric scalar radiative cancellation
+  summary: The supersymmetric relation between bosonic self-interactions and scalar--fermion
+    interactions, together with equal partner masses, cancels scalar quadratic mass
+    divergences between boson and virtual-fermion loops to every perturbative order.
+    The text further states that scalar--fermion self-couplings are renormalized only
+    by field-strength factors and that beta(g)=0 exactly for N=4.
+  kind: result
+  group: peskin-schroeder.ch22-supersymmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 796
+    - 797
 - id: peskin-schroeder.symmetric-counterterms-general-effective-action
   label: Symmetry-preserving counterterms for constant scalar backgrounds
   summary: For scalar field theories and constant classical backgrounds, power counting
@@ -8441,6 +9016,21 @@ nodes:
     pages:
     - 654
     - 655
+- id: peskin-schroeder.two-dimensional-bosonization-and-thirring-fixed-line
+  label: Two-dimensional bosonization and the Thirring fixed line
+  summary: Massless two-dimensional QED can be exactly rewritten from interacting
+    fermions into a scalar theory whose boson creates fermion-antifermion pairs; in
+    the stated class the bosonic theory is free. For the two-dimensional Thirring
+    model, bosonization permits explicit fermion-bilinear correlators and anomalous
+    dimensions, giving a line of RG fixed points parametrized by its coupling.
+  kind: method
+  group: peskin-schroeder.ch22-exact-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '22.3'
+    pages:
+    - 791
+    - 792
 - id: peskin-schroeder.two-dimensional-chiral-qed-representation
   label: Two-dimensional massless QED chirality
   summary: For L=psi-bar i gamma^mu(D_mu) psi in 1+1 dimensions, choose 2-by-2 gamma
@@ -8456,6 +9046,22 @@ nodes:
     pages:
     - 652
     - 653
+- id: peskin-schroeder.two-dimensional-conformal-fixed-points-and-wzw-example
+  label: Two-dimensional conformal fixed points and Wess--Zumino example
+  summary: Massless two-dimensional theories can have classical conformal symmetry,
+    generally spoiled by anomalies. When the anomaly vanishes, conformal invariance
+    can determine anomalous dimensions. The text gives the group-valued nonlinear
+    sigma model plus the Wess--Zumino perturbation as an example with a conformal
+    fixed point and manifest G x G global symmetry, while referring the detailed perturbation
+    formula to the original source.
+  kind: result
+  group: peskin-schroeder.ch22-exact-solutions
+  evidence:
+  - source: peskin-schroeder
+    section: '22.3'
+    pages:
+    - 792
+    - 793
 - id: peskin-schroeder.two-dimensional-nonlinear-sigma-mass-gap
   label: Two-dimensional nonlinear sigma-model mass gap
   summary: In the large-N two-dimensional sigma model, renormalizing the logarithmic
@@ -8776,6 +9382,27 @@ nodes:
     section: '12.1'
     pages:
     - 405
+- id: peskin-schroeder.wilson-loop-area-law-static-potential
+  label: Wilson-loop area law and static confinement potential
+  summary: For a lattice gauge group G, assign a finite group transformation U to
+    each link and form gauge-invariant products around closed paths. In the strong-coupling
+    expansion, a rectangular Wilson loop of spatial width R and Euclidean duration
+    T has area-law suppression. Comparing it with Euclidean time evolution yields
+    V(R) proportional to R at large R, so widely separated color sources are suppressed
+    and only color-singlet bound states have finite asymptotic energy in this strong-coupling
+    result.
+  kind: result
+  group: peskin-schroeder.ch22-lattice-qcd
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 783
+    - 784
+  notation:
+  - source: peskin-schroeder
+    note: The rendered equations give <tr product_P U> ~ exp[-A/xi^2], <exp[-H_E T]>
+      ~ exp[-RT/xi^2], and V(R) ~ R/xi^2; the text layer loses parts of these formulae.
 - id: peskin-schroeder.wilson-rescaling-transformation
   label: Wilson rescaling transformation
   summary: After integrating a shell, rescale k'=k/b, x'=bx and rescale the field
@@ -13324,6 +13951,22 @@ edges:
     pages:
     - 383
     - 385
+- id: peskin-schroeder.edge-area-law-to-string-picture
+  from: peskin-schroeder.wilson-loop-area-law-static-potential
+  to: peskin-schroeder.confining-string-limit-and-quantitative-limit
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The string picture is an interpretation of the physical surface responsible
+    for the Wilson-loop area suppression.
+  failure_mode: Without the area-law input, the flux-surface interpretation lacks
+    the specified confinement connection.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 784
 - id: peskin-schroeder.edge-background-to-determinant
   from: peskin-schroeder.effective-action-background-field-expansion
   to: peskin-schroeder.on-sigma-effective-potential-determinant
@@ -13405,6 +14048,24 @@ edges:
     pages:
     - 321
     - 323
+- id: peskin-schroeder.edge-composite-higgs-to-breaking-outcome
+  from: peskin-schroeder.composite-higgs-source-era-route
+  to: peskin-schroeder.higgs-sector-electroweak-breaking-outcome
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: New composite dynamics is the competing source route to the required
+    electroweak-breaking sector.
+  failure_mode: Without separating it from the elementary route, supersymmetry would
+    incorrectly become an alternative to composite dynamics rather than a protection
+    mechanism for an elementary scalar.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 788
+    - 789
 - id: peskin-schroeder.edge-counterterms-to-on-conditions
   from: peskin-schroeder.broken-on-sigma-counterterms
   to: peskin-schroeder.on-sigma-renormalization-conditions
@@ -13468,6 +14129,23 @@ edges:
     pages:
     - 376
     - 377
+- id: peskin-schroeder.edge-dimreg-to-appendix-branch
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.appendix-dimensional-regularization-branch-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The table, tensor averages, epsilon expansion, and d-dependent contractions
+    are explicitly d-dimensional.
+  failure_mode: Setting d=4 before resolving a divergent integral loses the stated
+    dimensional-regularization qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: A.4
+    pages:
+    - 807
+    - 808
 - id: peskin-schroeder.edge-dimreg-to-one-loop-vertex
   from: peskin-schroeder.dim-reg-loop-integral-method
   to: peskin-schroeder.renormalization-conditions-and-phi4-one-loop-vertex
@@ -13667,6 +14345,39 @@ edges:
     pages:
     - 368
     - 388
+- id: peskin-schroeder.edge-elementary-higgs-to-breaking-outcome
+  from: peskin-schroeder.elementary-higgs-source-era-route
+  to: peskin-schroeder.higgs-sector-electroweak-breaking-outcome
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: An elementary scalar vacuum expectation value is one of the source's
+    two routes to the required electroweak-breaking sector.
+  failure_mode: Without this route distinction, its conditional hierarchy problem
+    is confused with a statement about every Higgs sector.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 788
+    - 789
+- id: peskin-schroeder.edge-elementary-higgs-to-broken-susy
+  from: peskin-schroeder.elementary-higgs-source-era-route
+  to: peskin-schroeder.broken-supersymmetry-source-era-hierarchy-route
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The broken-supersymmetry proposal protects the scalar mass specifically
+    in a supersymmetric Standard Model with an elementary Higgs field.
+  failure_mode: Without the elementary-scalar branch, the stated Higgs-mass protection
+    mechanism has no target and is incorrectly conflated with the composite route.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 797
 - id: peskin-schroeder.edge-endpoint-to-pole-log-cancellation
   from: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
   to: peskin-schroeder.two-loop-counterterm-pole-log-cancellation
@@ -13791,6 +14502,23 @@ edges:
     section: Problem 11.3(d-f)
     pages:
     - 391
+- id: peskin-schroeder.edge-feynman-param-to-appendix-branch
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.appendix-dimensional-regularization-branch-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The appendix procedure begins by combining propagator denominators and
+    shifting the loop momentum.
+  failure_mode: Without that input, the symmetric-integration and branch steps have
+    no defined combined denominator.
+  evidence:
+  - source: peskin-schroeder
+    section: A.4
+    pages:
+    - 806
+    - 807
 - id: peskin-schroeder.edge-feynman-parameters-to-endpoint-subtraction
   from: peskin-schroeder.feynman-parameter-denominator-combination
   to: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
@@ -13884,6 +14612,40 @@ edges:
     pages:
     - 318
     - 344
+- id: peskin-schroeder.edge-grand-unification-to-hierarchy
+  from: peskin-schroeder.grand-unification-running-hypothesis
+  to: peskin-schroeder.gauge-hierarchy-naturalness-problem
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The stated hierarchy tension is sharpened by taking the grand-unification
+    scale as the scalar cutoff.
+  failure_mode: The extreme cancellation has no stated scale comparison if the high-cutoff
+    hypothesis is omitted.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 787
+    - 788
+- id: peskin-schroeder.edge-lattice-route-to-area-law
+  from: peskin-schroeder.lattice-qcd-continuum-and-monte-carlo-route
+  to: peskin-schroeder.wilson-loop-area-law-static-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The claimed area behavior is explicitly the strong-coupling expansion
+    of Wilson's lattice gauge theory.
+  failure_mode: A learner could confuse the lattice strong-coupling result with a
+    generic continuum perturbative calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 783
+    - 784
 - id: peskin-schroeder.edge-loop-integrals-to-problem-10-4
   from: peskin-schroeder.loop-momentum-integration-and-divergence
   to: peskin-schroeder.problem-ch10-phi4-fixedt-leading-logs
@@ -13930,6 +14692,22 @@ edges:
     pages:
     - 387
     - 390
+- id: peskin-schroeder.edge-nonabelian-wilson-line-to-lattice-links
+  from: peskin-schroeder.nonabelian-path-ordered-wilson-line
+  to: peskin-schroeder.wilson-loop-area-law-static-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The lattice construction uses link group elements and closed gauge-invariant
+    products as the finite-link analogue of a Wilson loop.
+  failure_mode: Without using the gauge-invariant loop construction, an area law could
+    be applied to a gauge-dependent path product.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 783
 - id: peskin-schroeder.edge-on-conditions-to-four-point
   from: peskin-schroeder.on-sigma-renormalization-conditions
   to: peskin-schroeder.on-sigma-one-loop-four-point-cancellations
@@ -14134,6 +14912,24 @@ edges:
     pages:
     - 328
     - 329
+- id: peskin-schroeder.edge-planck-problem-motivates-string
+  from: peskin-schroeder.planck-scale-quantum-gravity-limit
+  to: peskin-schroeder.string-theory-source-era-proposal-and-effective-qft
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The nonrenormalizable, uncertain Planck-scale gravity problem motivates
+    the chapter's speculative string example; it does not derive string theory or
+    make it an alternative route.
+  failure_mode: Calling this an alternative would mistake a motivating problem for
+    a competing construction.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.5'
+    pages:
+    - 798
+    - 799
 - id: peskin-schroeder.edge-power-counting-to-problem-10-2
   from: peskin-schroeder.superficial-divergence-power-counting
   to: peskin-schroeder.problem-ch10-yukawa-renormalization
@@ -14274,6 +15070,22 @@ edges:
     section: Problem 11.1
     pages:
     - 389
+- id: peskin-schroeder.edge-scalar-cancellation-to-broken-susy
+  from: peskin-schroeder.supersymmetry-scalar-radiative-cancellation
+  to: peskin-schroeder.broken-supersymmetry-source-era-hierarchy-route
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The broken-supersymmetry hierarchy estimate relies on cancellation of
+    contributions above partner mass splittings.
+  failure_mode: A learner could ascribe the residual Higgs scale to exact supersymmetry
+    rather than its breaking.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 797
 - id: peskin-schroeder.edge-self-energy-to-two-loop-fieldstrength
   from: peskin-schroeder.self-energy-resummation-and-pole-conditions
   to: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
@@ -14322,6 +15134,39 @@ edges:
     pages:
     - 316
     - 336
+- id: peskin-schroeder.edge-susy-algebra-to-vacuum-energy
+  from: peskin-schroeder.supersymmetry-algebra-spectrum-pairing
+  to: peskin-schroeder.supersymmetric-vacuum-zero-energy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The zero-energy conclusion is obtained by taking a supersymmetric vacuum
+    expectation value of the superalgebra.
+  failure_mode: Without the superalgebra and its P_mu right-hand side, <0|H|0>=0 would
+    be asserted without the source's argument.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 795
+    - 796
+- id: peskin-schroeder.edge-susy-multiplets-to-scalar-cancellation
+  from: peskin-schroeder.supersymmetric-multiplets-and-gauginos
+  to: peskin-schroeder.supersymmetry-scalar-radiative-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The all-order scalar cancellation uses the supersymmetry-fixed relation
+    of bosonic and fermionic interactions, not only the algebraic spectrum pairing.
+  failure_mode: Without the interaction relation, equal masses alone do not establish
+    cancellation of scalar loop corrections.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.4'
+    pages:
+    - 796
 - id: peskin-schroeder.edge-symmetric-counterterms-to-natural-relations
   from: peskin-schroeder.symmetric-counterterms-general-effective-action
   to: peskin-schroeder.zeroth-order-natural-relations
@@ -22431,6 +23276,10 @@ edges:
     - 257
     - 258
 groups:
+- id: peskin-schroeder.appendix-reference
+  title: Appendix reference formulae
+  question: Which conventions, formulae, and numerical conversions are supplied for
+    calculations?
 - id: peskin-schroeder.ch10-systematics-renormalization
   title: Systematics of renormalization
   question: Which ultraviolet divergences arise, and how do counterterms remove them?
@@ -22497,6 +23346,25 @@ groups:
   title: R-xi gauges in broken gauge theories
   question: How does gauge fixing retain calculable propagators while separating physical
     from unphysical states?
+- id: peskin-schroeder.ch22-exact-solutions
+  title: Exact and nonperturbative solutions
+  question: What can two-dimensional and topological examples teach about QFT?
+- id: peskin-schroeder.ch22-frontier
+  title: Quantum field theory at the frontier
+  question: Which issues did this edition present as unsettled, and what methods did
+    it propose?
+- id: peskin-schroeder.ch22-lattice-qcd
+  title: Lattice QCD and confinement
+  question: How does a lattice formulation make strong-coupling QCD calculable?
+- id: peskin-schroeder.ch22-supersymmetry
+  title: Supersymmetry
+  question: What follows from a symmetry that relates bosons and fermions?
+- id: peskin-schroeder.ch22-ultimate-theory
+  title: Quantum gravity and strings
+  question: Why might Planck-scale physics alter QFT's microscopic description?
+- id: peskin-schroeder.ch22-unification
+  title: Grand unification and its paradoxes
+  question: What do unification, naturalness, flavor, and vacuum energy leave unexplained?
 - id: peskin-schroeder.ch5-crossing-and-compton
   title: Crossing, channels, and Compton scattering
   question: How do crossing variables, gauge-current constraints, and kinematics organize
@@ -22692,6 +23560,18 @@ motivations:
     - 245
     - 252
     - 255
+- id: peskin-schroeder.confinement-calculation-motivation
+  nodes:
+  - peskin-schroeder.lattice-qcd-continuum-and-monte-carlo-route
+  - peskin-schroeder.wilson-loop-area-law-static-potential
+  summary: The chapter frames nonperturbative QCD around hadron binding forces, bound-state
+    descriptions, and matrix elements, which perturbative weak-coupling results do
+    not answer.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.1'
+    pages:
+    - 782
 - id: peskin-schroeder.critical-universality-question
   nodes:
   - peskin-schroeder.critical-fluctuation-qft-correspondence
@@ -22781,6 +23661,22 @@ motivations:
     section: Chapter 9, Functional Methods
     pages:
     - 275
+- id: peskin-schroeder.hierarchy-and-vacuum-energy-motivation
+  nodes:
+  - peskin-schroeder.gauge-hierarchy-naturalness-problem
+  - peskin-schroeder.cosmological-constant-source-era-puzzle
+  - peskin-schroeder.supersymmetry-scalar-radiative-cancellation
+  - peskin-schroeder.supersymmetric-vacuum-zero-energy
+  summary: 'Large proposed unification scales sharpen two separate naturalness puzzles
+    in the text: a light Higgs scalar and a small gravitating vacuum energy.'
+  evidence:
+  - source: peskin-schroeder
+    section: '22.2'
+    pages:
+    - 787
+    - 788
+    - 790
+    - 791
 - id: peskin-schroeder.motivation-vector-boson-theories
   nodes:
   - peskin-schroeder.parton-model-deep-inelastic-assumptions
@@ -22796,6 +23692,20 @@ motivations:
     - 474
     - 475
     - 481
+- id: peskin-schroeder.planck-scale-motivation
+  nodes:
+  - peskin-schroeder.planck-scale-quantum-gravity-limit
+  - peskin-schroeder.string-theory-source-era-proposal-and-effective-qft
+  summary: The text treats quantum gravity as both nonrenormalizable in weak-coupling
+    Feynman-diagram form and observationally uncertain, motivating exploration of
+    different microscopic structures while retaining effective QFT at accessible scales.
+  evidence:
+  - source: peskin-schroeder
+    section: '22.5'
+    pages:
+    - 798
+    - 799
+    - 800
 - id: peskin-schroeder.quantum-vacuum-geometry-question
   nodes:
   - peskin-schroeder.effective-action-legendre-transform
@@ -22860,6 +23770,21 @@ motivations:
     section: '13.3'
     pages:
     - 466
+- id: peskin-schroeder.source-era-frontier-qualification
+  nodes:
+  - peskin-schroeder.lattice-qcd-continuum-and-monte-carlo-route
+  - peskin-schroeder.grand-unification-running-hypothesis
+  - peskin-schroeder.cosmological-constant-source-era-puzzle
+  summary: The chapter explicitly presents personal views of then-current problems
+    and says the list will date. Its experimental numbers, forecasts, and open-question
+    status are therefore claims of the 1994-era discussion, not present-day status
+    assertions.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 22 introduction
+    pages:
+    - 781
+    - 782
 - id: peskin-schroeder.why-commutators-test-causality
   nodes:
   - peskin-schroeder.spacelike-wightman-amplitude
