@@ -1599,6 +1599,1404 @@ nodes:
     - 637
     - 638
   notation: []
+- id: qft.align010.schwartz.gauge-current-minimal-coupling
+  label: Gauge-current minimal coupling and scalar contact term
+  summary: For the complex scalar, the locally covariant derivative D_μφ=(∂_μ+ieA_μ)φ
+    defines scalar QED. Its e=0 global Noether current is J_0^μ=−i(φ∂^μφ*−φ*∂^μφ);
+    expanding the locally invariant Lagrangian gives J^μ=J_0^μ−2eA^μ|φ|², the linear
+    coupling −eA_μJ_0^μ, and the separate e²A²|φ|² completion required to cancel the
+    scalar variation.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-current-minimal-coupling
+    note: Retains the source record ‘Gauge-current minimal coupling and scalar contact
+      term’ with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.3.1 and 8.4
+    pages:
+    - 122
+    - 123
+    note: Constructs scalar QED from the covariant derivative, then derives the A-dependent
+      current, generic linear Noether-current coupling, and scalar quadratic completion.
+  notation: []
+- id: qft.align010.schwartz.little-group-induced-vector-representations
+  label: Little-group induced vector representations
+  summary: 'Choose standard momentum states and use their little-group action to induce
+    a Poincaré representation at arbitrary momentum. Weinberg gives the general W(Λ,p)=L⁻¹(Λp)ΛL(p)
+    construction; Schwartz specializes it to momentum-dependent vector polarizations:
+    massive SO(3) mixes three physical modes, while the massless ISO(2) case has two
+    physical modes and a longitudinal gauge direction.'
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.little-group-induced-vector-representations
+    note: 'Supplies the vector-polarization specialization: momentum-dependent bases
+      and the massive and massless little groups.'
+  - project: weinberg-1
+    node: weinberg-1.induced-representations-and-little-groups
+    note: Supplies the general standard-momentum, Wigner-little-group, and induced-representation
+      construction; Schwartz is retained as a spin-one specialization.
+  evidence:
+  - source: schwartz
+    section: 8.2.4 and 8.4.1
+    pages:
+    - 120
+    - 124
+    - 125
+    note: Summarizes little groups and then shows how the massive basis closes under
+      SO(3).
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 64
+    - 65
+    note: Constructs standard states, Wigner little-group elements, and the induced
+      transformation law.
+  notation: []
+- id: qft.align010.schwartz.massive-vector-field-quantization
+  label: Massive vector field quantization by polarization modes
+  summary: Quantizing a massive vector expands A_μ in three momentum-dependent polarization
+    vectors with separate ladder operators. States are labeled by momentum and polarization,
+    and ⟨0|A_μ(x)|p,ε_j⟩=ε_{jμ}e^(−ipx), while the scalar polarization proportional
+    to p_μ is omitted.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.massive-vector-field-quantization
+    note: Retains the source record ‘Massive vector field quantization by polarization
+      modes’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.4.1
+    pages:
+    - 123
+    - 124
+    note: Gives the operator expansion, state matrix element, and excluded scalar
+      polarization.
+  notation: []
+- id: qft.align010.schwartz.massive-vector-longitudinal-perturbative-breakdown
+  label: Massive-vector longitudinal high-energy perturbative breakdown
+  summary: The massive longitudinal polarization scales as E/m at high energy. If
+    an amplitude contains unsuppressed longitudinal factors, a cross section can grow
+    as g²E²/m², eventually violating the probability interpretation of perturbation
+    theory near E∼m/g; this is a source-specific limitation, not a proof that every
+    massive-vector interaction has that growth.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.massive-vector-longitudinal-perturbative-breakdown
+    note: Retains the source record ‘Massive-vector longitudinal high-energy perturbative
+      breakdown’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 117
+    note: Gives the longitudinal scaling, illustrative cross-section growth, and perturbative-breakdown
+      scale.
+  notation: []
+- id: qft.align010.schwartz.massive-vector-polarization-basis
+  label: Massive vector transverse and longitudinal polarization basis
+  summary: For p=(E,0,0,p_z), three normalized vectors orthogonal to p give two transverse
+    modes and ε_L=(p_z/m,0,0,E/m). Their momentum dependence lets their Fourier span
+    carry the massive spin-1 representation; the longitudinal high-energy scaling
+    E/m also signals eventual breakdown of a perturbative treatment with unsuppressed
+    couplings.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.massive-vector-polarization-basis
+    note: Retains the source record ‘Massive vector transverse and longitudinal polarization
+      basis’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 117
+    note: Constructs the three polarizations and discusses longitudinal high-energy
+      growth.
+  notation: []
+- id: qft.align010.schwartz.massless-little-group-ward-identity
+  label: Massless little-group derivation of the Ward identity
+  summary: For the massless ISO(2) little group, a Lorentz transformation can send
+    a physical polarization to transverse terms plus c p_μ. Because p_μ is not a physical
+    polarization, Lorentz invariance of ε_μM^μ requires p_μM^μ=0. This establishes
+    the displayed Ward requirement from the little-group transformation; its perturbative
+    QED proof is explicitly deferred by the source.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.massless-little-group-ward-identity
+    note: Retains the source record ‘Massless little-group derivation of the Ward
+      identity’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.4.2
+    pages:
+    - 126
+    - 127
+    - 128
+    note: Exhibits the ISO(2) mixing and derives p·M=0; the following page relates
+      it to gauge invariance without supplying its perturbative proof.
+  notation: []
+- id: qft.align010.schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  label: Massless Maxwell gauge redundancy and two modes
+  summary: The m→0 Maxwell action is invariant under A_μ→A_μ+∂_μα. Coulomb gauge plus
+    residual gauge freedom removes A_0 and the longitudinal component; the remaining
+    on-shell modes are two transverse linear (or circular-helicity) polarizations.
+    The forward p_μ polarization is pure gauge and the timelike mode is unphysical.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+    note: Retains the source record ‘Massless Maxwell gauge redundancy and two modes’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.2.3–8.2.4
+    pages:
+    - 118
+    - 119
+    - 120
+    note: Derives gauge invariance, fixes Coulomb gauge, counts two modes, and identifies
+      pure-gauge/unphysical modes.
+  notation: []
+- id: qft.align010.schwartz.particle-as-unitary-poincare-irrep
+  label: Particle as an irreducible unitary Poincaré representation
+  summary: A particle type is an irreducible unitary Poincaré representation. Weinberg
+    restricts one-particle states to a four-momentum eigenvalue plus discrete labels
+    and works with the inhomogeneous proper-orthochronous Lorentz group; Schwartz
+    emphasizes that unitarity preserves the Hilbert-space interpretation of invariant
+    matrix elements.
+  kind: concept
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.particle-as-unitary-poincare-irrep
+    note: Supplies the irreducible-unitary particle criterion and its unitarity rationale.
+  - project: weinberg-1
+    node: weinberg-1.one-particle-irreducible-poincare-states
+    note: Supplies the one-particle restriction, discrete-label qualification, and
+      proper-orthochronous Poincaré scope.
+  evidence:
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 109
+    - 110
+    note: Defines the Poincaré group, irreducibility, and the unitarity requirement
+      for invariant matrix elements.
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 63
+    note: Defines one-particle states and their irreducible proper-orthochronous Poincaré
+      representation.
+  notation: []
+- id: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  label: Proca Lagrangian and massive spin-1 constraint
+  summary: Choosing the unique two-derivative vector kinetic combination with a=−b
+    gives ℒ=−F²/4+m²A²/2. For m≠0 its equations impose ∂·A=0 and (□+m²)A=0, removing
+    the scalar component and leaving the three massive spin-1 modes; the total energy
+    is positive after on-shell and boundary terms are accounted for.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.proca-lagrangian-and-spin-one-constraint
+    note: Retains the source record ‘Proca Lagrangian and massive spin-1 constraint’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 115
+    - 116
+    note: Derives the divergence constraint, Proca form, and positive total energy.
+  notation: []
+- id: qft.align010.schwartz.vector-lorentz-unitarity-conflict
+  label: Conflict between vector Lorentz covariance and positive norm
+  summary: The finite four-vector representation preserves the Minkowski bilinear
+    form but a Lorentz boost does not preserve the positive Hilbert norm; using an
+    indefinite norm instead loses a bounded probability interpretation. Physical vector
+    particles therefore require a restricted, momentum-dependent state space.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.vector-lorentz-unitarity-conflict
+    note: Retains the source record ‘Conflict between vector Lorentz covariance and
+      positive norm’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: 8.1.1
+    pages:
+    - 112
+    - 113
+    note: Uses an explicit boost to show the positive norm is not invariant and summarizes
+      the conflict.
+  notation: []
+- id: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  label: Wigner mass, spin, and polarization classification
+  summary: For the ordinary nonexotic sector treated in this chapter, the source states
+    that unitary irreducible Poincaré representations have nonnegative mass and nonnegative
+    half-integer spin. At fixed on-shell momentum a massive spin-J particle has 2J+1
+    polarizations, while a massless J>0 particle has two. The source explicitly excepts
+    tachyonic m²<0 and massless continuous-spin representations, and states rather
+    than proves the classification, referring to Weinberg for proof.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: schwartz
+    node: schwartz.wigner-mass-spin-polarization-classification
+    note: Retains the source record ‘Wigner mass, spin, and polarization classification’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 111
+    note: States Wigner’s classification and polarization counts.
+  notation: []
+- id: qft.align010.weinberg-1.abelian-symmetry-exponentiation
+  label: Exponentiation of Abelian symmetry generators
+  summary: For additive parameters the structure constants vanish, the generators
+    commute, and finite transformations are exponentials of the Hermitian generators.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.abelian-symmetry-exponentiation
+    note: Retains the source record ‘Exponentiation of Abelian symmetry generators’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 55
+    note: Treats translations and fixed-axis rotations as the additive case.
+  notation: []
+- id: qft.align010.weinberg-1.central-charges-from-projectivity
+  label: Central charges as the local algebraic form of projectivity
+  summary: Near identity, a projective phase adds antisymmetric constants times the
+    identity to generator commutators. Jacobi identities constrain these central charges;
+    charges of the form induced by shifting generators are removable.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.central-charges-from-projectivity
+    note: Retains the source record ‘Central charges as the local algebraic form of
+      projectivity’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 82
+    - 83
+    note: Expands the cocycle and derives the centrally extended commutators and shift.
+  notation: []
+- id: qft.align010.weinberg-1.conserved-poincare-generators
+  label: Conserved momentum, angular momentum, and energy
+  summary: With H=P0, the three-momentum, angular momentum, and energy commute with
+    H and are conserved; boost generators do not, so their eigenvalues are not used
+    to label physical states. The three-vector commutators exhibit rotations, boosts,
+    and translations explicitly.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.conserved-poincare-generators
+    note: Retains the source record ‘Conserved momentum, angular momentum, and energy’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 61
+    note: Identifies the conserved generators, boosts, and finite translation and
+      rotation operators.
+  notation: []
+- id: qft.align010.weinberg-1.cpt-and-unconventional-inversion-actions
+  label: CPT, CP, and unconventional inversion multiplets
+  summary: The stated quantum-field-theory CPT action maps a particle to its antiparticle
+    without extra phase or mixing matrix, excluding the proposed anomalous sign for
+    (CPT)². With conventional time reversal, CP and charge conjugation act conventionally;
+    an unconventional time-reversal multiplet can make CP fail to interchange a paired
+    particle-antiparticle pair. The text reports no known examples of such unconventional
+    inversion representations.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.cpt-and-unconventional-inversion-actions
+    note: Retains the source record ‘CPT, CP, and unconventional inversion multiplets’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: Appendix C
+    pages:
+    - 103
+    - 104
+    note: Relates the general multiplet analysis to CPT, CP, and C.
+  notation: []
+- id: qft.align010.weinberg-1.degenerate-multiplet-parity-and-joint-inversion-degeneracy
+  label: Parity diagonalization and joint parity–time-reversal degeneracy
+  summary: On a degenerate multiplet parity is represented by a unitary matrix that
+    can be diagonalized by a basis choice, unlike antiunitary time reversal. That
+    parity-diagonal basis need not make time reversal simple, so the two inversions
+    together can impose degeneracies that neither requires separately.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.degenerate-multiplet-parity-and-joint-inversion-degeneracy
+    note: Retains the source record ‘Parity diagonalization and joint parity–time-reversal
+      degeneracy’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: Appendix C
+    pages:
+    - 103
+    note: Contrasts parity diagonalization with the time-reversal basis and states
+      the joint-degeneracy possibility.
+  notation: []
+- id: qft.align010.weinberg-1.degenerate-multiplet-time-reversal-blocks
+  label: Time reversal on degenerate multiplets has canonical blocks
+  summary: For degenerate massive species, antiunitary time reversal may mix species
+    through a unitary matrix rather than a phase. A unitary basis change acts by congruence,
+    not ordinary similarity, so it need not diagonalize the action but can reduce
+    it to one-dimensional phase blocks and paired two-dimensional blocks.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.degenerate-multiplet-time-reversal-blocks
+    note: Retains the source record ‘Time reversal on degenerate multiplets has canonical
+      blocks’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: Appendix C
+    pages:
+    - 100
+    - 101
+    - 102
+    note: Introduces the multiplet action and derives the canonical block reduction.
+  notation: []
+- id: qft.align010.weinberg-1.deprojectivization-theorem
+  label: Conditions for eliminating a projective phase
+  summary: A group's representation may be rephased to an ordinary one when its generator
+    central charges can all be removed and the group is simply connected. Hence intrinsic
+    projectivity can arise locally from nonremovable central charges or globally from
+    nontrivial topology.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.deprojectivization-theorem
+    note: Retains the source record ‘Conditions for eliminating a projective phase’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Appendix B
+    pages:
+    - 83
+    - 84
+    - 96
+    - 97
+    - 98
+    note: States the two joint conditions and gives the path-construction proof of
+      path independence.
+  notation: []
+- id: qft.align010.weinberg-1.galilean-contraction-and-mass-central-charge
+  label: Galilean contraction and mass central charge
+  summary: The low-velocity Inönü–Wigner contraction of the Poincaré algebra yields
+    the Galilean algebra with a central total-mass operator. Its translation–boost
+    phase gives a projective representation and a mass superselection statement, removable
+    by adjoining mass as a central generator.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.galilean-contraction-and-mass-central-charge
+    note: Retains the source record ‘Galilean contraction and mass central charge’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 62
+    note: Takes the low-velocity limit and discusses its phase and enlarged algebra.
+  notation: []
+- id: qft.align010.weinberg-1.group-operator-path-construction
+  label: Path construction of finite group operators
+  summary: Appendix B constructs a finite group operator by integrating a differential
+    equation along a path in group-parameter space using the infinitesimal generators.
+    Associativity makes concatenated paths reproduce operator products; with no central
+    charges, endpoint-fixed infinitesimal path variations leave the endpoint operator
+    stationary.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.group-operator-path-construction
+    note: Retains the source record ‘Path construction of finite group operators’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 96
+    - 97
+    - 98
+    note: Sets up the path-ordered construction and proves its local path-variation
+      property.
+  notation: []
+- id: qft.align010.weinberg-1.homotopy-classes-classify-global-projective-phases
+  label: Homotopy classes classify global projective phases
+  summary: If the parameter space is simply connected, continuous deformation makes
+    the constructed finite operator path-independent and yields an ordinary representation.
+    Otherwise, the residual composition phase depends only on the homotopy class of
+    the loop; possible global projective types are the one-dimensional representations
+    of the fundamental group when local central charges vanish.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.homotopy-classes-classify-global-projective-phases
+    note: Retains the source record ‘Homotopy classes classify global projective phases’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 98
+    - 99
+    - 100
+    note: Concludes the theorem and identifies the fundamental-group classification.
+  notation: []
+- id: qft.align010.weinberg-1.lie-algebra-from-local-group-law
+  label: Lie algebra from a connected Lie group's local law
+  summary: Expanding an ordinary unitary representation near the identity converts
+    the quadratic part of the group multiplication law into commutators of Hermitian
+    generators; the structure constants define the Lie algebra and recursively determine
+    the local representation from its generators.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lie-algebra-from-local-group-law
+    note: Retains the source record ‘Lie algebra from a connected Lie group's local
+      law’ with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 53
+    - 54
+    note: Derives the generator commutators from the local multiplication law.
+  notation: []
+- id: qft.align010.weinberg-1.lorentz-invariant-one-particle-normalization
+  label: Invariant mass-shell delta and adopted momentum-state normalization
+  summary: On a positive-energy mass shell, the Lorentz-invariant delta function is
+    p0δ3(p′−p). Weinberg then adopts N(p)=√(k0/p0), yielding momentum states normalized
+    as δσ′σδ3(p′−p), not as p0δ3(p′−p). Little-group matrices are unitary because
+    standard-momentum states are orthonormal.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-invariant-one-particle-normalization
+    note: Retains the source record ‘Invariant mass-shell delta and adopted momentum-state
+      normalization’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    - 66
+    - 67
+    note: Derives little-group unitarity, identifies the invariant delta, and states
+      the adopted normalization.
+  notation: []
+- id: qft.align010.weinberg-1.lorentz-topology-sign-projective-representations
+  label: Proper-orthochronous Lorentz topology and representations up to a sign
+  summary: 'SL(2,C) is simply connected and topologically R3×S3, but quotienting k∼−k
+    leaves the proper orthochronous Lorentz group SO+(3,1) doubly connected. Its possible
+    projective composition phases are therefore signs: integer-spin states are single-valued,
+    while half-integer-spin states can acquire a minus sign on the noncontractible
+    loop, producing the stated superselection rule.'
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-topology-sign-projective-representations
+    note: Retains the source record ‘Proper-orthochronous Lorentz topology and representations
+      up to a sign’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 88
+    - 89
+    note: Derives the topology and its sign-valued projective representations for
+      the connected component.
+  notation: []
+- id: qft.align010.weinberg-1.massive-intrinsic-parity-and-time-reversal
+  label: Massive intrinsic parity and conventional time reversal
+  summary: For a nondegenerate massive species, parity acts on rest states by a spin-independent
+    intrinsic-parity phase and maps momentum p to −p. Time reversal reverses p and
+    spin projection with the standard (−1)^(j−σ) factor; its remaining species phase
+    is removable by rephasing the one-particle states.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massive-intrinsic-parity-and-time-reversal
+    note: Retains the source record ‘Massive intrinsic parity and conventional time
+      reversal’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 77
+    - 78
+    note: Derives the intrinsic-parity and time-reversal actions for massive states.
+  notation: []
+- id: qft.align010.weinberg-1.massive-spin-so3-little-group
+  label: Massive spin from the SO(3) little group and SU(2) cover
+  summary: For p²=−M² and p0>0, the standard rest momentum has little group SO(3).
+    Ordinary irreducible SO(3) representations have integer j; the j=0,1/2,1,… multiplets
+    with 2j+1 components use either projective SO(3) representations or ordinary representations
+    of its SU(2) covering group, as the chapter's enlarged-group convention permits.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massive-spin-so3-little-group
+    note: Retains the source record ‘Massive spin from the SO(3) little group and
+      SU(2) cover’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and 2.7
+    pages:
+    - 66
+    - 68
+    - 89
+    - 90
+    note: Develops massive little-group multiplets and later specifies the projective/cover
+      qualification.
+  notation: []
+- id: qft.align010.weinberg-1.massive-time-reversal-square
+  label: Massive one-particle T² sign
+  summary: For a massive one-particle spin-j state, antiunitary time reversal satisfies
+    T²=(−1)^(2j).
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 78
+    - 80
+    note: Uses the massive time-reversal action and antiunitarity to derive the massive
+      T² factor.
+  notation: []
+- id: qft.align010.weinberg-1.massive-wigner-rotation
+  label: Massive-particle Wigner rotations under proper orthochronous transformations
+  summary: With a rotation-covariant standard boost from rest, a proper orthochronous
+    Lorentz transformation acts on a massive momentum state through a momentum-dependent
+    Wigner rotation in its spin-j representation. For a spatial rotation in the connected
+    rotation subgroup this reduces to the same rotation for every momentum, preserving
+    the nonrelativistic angular-momentum machinery.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massive-wigner-rotation
+    note: Retains the source record ‘Massive-particle Wigner rotations under proper
+      orthochronous transformations’ with its stated scope, assumptions, and notation;
+      this source-scoped alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 68
+    - 69
+    note: Specifies the standard boost and proves the rotation consistency property.
+  notation: []
+- id: qft.align010.weinberg-1.massless-helicity-lorentz-action
+  label: Proper-orthochronous Lorentz action on helicity and polarization phase
+  summary: Under a proper orthochronous Lorentz transformation, a massless state transforms
+    by a phase exp(iσθ(Λ,p)) determined by its Wigner little-group rotation. Helicity
+    is invariant between inertial frames in this connected component; parity is treated
+    separately and flips helicity. The choice of standard rotation fixes a phase convention
+    and necessarily has a spinorial sign subtlety for half-integer helicity.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-helicity-lorentz-action
+    note: Retains the source record ‘Proper-orthochronous Lorentz action on helicity
+      and polarization phase’ with its stated scope, assumptions, and notation; this
+      source-scoped alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: 2.5–2.6
+    pages:
+    - 72
+    - 73
+    - 74
+    - 78
+    note: Gives the connected transformation law and treats parity separately.
+  notation:
+  - source: weinberg-1
+    note: σ is the component of angular momentum along the momentum; θ(Λ,p) is the
+      little-group rotation angle in the selected L(p) convention.
+- id: qft.align010.weinberg-1.massless-helicity-representations
+  label: Physical massless helicity representations
+  summary: Nonzero eigenvalues of the ISO(2) translation generators generate a continuous
+    family of states. To describe observed massless particles without that continuum,
+    set those generators to zero; the remaining J3 eigenvalue σ is helicity and supplies
+    the one-dimensional little-group representation.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-helicity-representations
+    note: Retains the source record ‘Physical massless helicity representations’ with
+      its stated scope, assumptions, and notation; this source-scoped alignment does
+      not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 71
+    - 72
+    note: Shows the continuum consequence and imposes the zero-translation physical
+      representation.
+  notation: []
+- id: qft.align010.weinberg-1.massless-iso2-little-group
+  label: ISO(2) little group of a massless momentum
+  summary: 'For a positive-energy null standard momentum, the little group is ISO(2):
+    a rotation about the momentum semidirectly acting on two commuting planar translations.
+    Its generators are J3 and two commuting combinations of rotations and boosts.'
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-iso2-little-group
+    note: Retains the source record ‘ISO(2) little group of a massless momentum’ with
+      its stated scope, assumptions, and notation; this source-scoped alignment does
+      not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 70
+    - 71
+    note: Derives the ISO(2) form and its Lie algebra.
+  notation: []
+- id: qft.align010.weinberg-1.massless-parity-helicity-pairing
+  label: Parity pairs opposite massless helicities
+  summary: Parity reverses momentum while retaining the spin component along a fixed
+    axis, so it maps a massless helicity σ state to helicity −σ. Thus a parity symmetry
+    requires an opposite-helicity partner for any nonzero-helicity massless species;
+    momentum-dependent signs in the stated convention reflect rotation-group topology.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-parity-helicity-pairing
+    note: Retains the source record ‘Parity pairs opposite massless helicities’ with
+      its stated scope, assumptions, and notation; this source-scoped alignment does
+      not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 78
+    - 79
+    note: Derives the helicity flip and its convention-dependent sign.
+  notation: []
+- id: qft.align010.weinberg-1.massless-polarization-lorentz-rotation
+  label: Proper-orthochronous Lorentz rotation of photon and graviton polarization
+    planes
+  summary: Under a proper orthochronous Lorentz transformation, a superposition of
+    opposite helicities is not invariant because its components acquire helicity-dependent
+    phases. For linearly polarized photons, the polarization-plane angle rotates by
+    θ(Λ,p); for linearly polarized gravitons it rotates by twice that angle.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-polarization-lorentz-rotation
+    note: Retains the source record ‘Proper-orthochronous Lorentz rotation of photon
+      and graviton polarization planes’ with its stated scope, assumptions, and notation;
+      this source-scoped alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 74
+    note: Applies the helicity transformation phase to photon and graviton polarization.
+  notation: []
+- id: qft.align010.weinberg-1.massless-time-reversal-preserves-helicity
+  label: Time reversal preserves massless helicity
+  summary: Time reversal reverses both momentum and angular momentum, so it preserves
+    their longitudinal projection and by itself does not demand a partner of opposite
+    helicity. The finite-momentum action again contains a convention-dependent phase.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-time-reversal-preserves-helicity
+    note: Retains the source record ‘Time reversal preserves massless helicity’ with
+      its stated scope, assumptions, and notation; this source-scoped alignment does
+      not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 79
+    - 80
+    note: Contrasts time reversal with parity for massless states.
+  notation: []
+- id: qft.align010.weinberg-1.massless-time-reversal-square
+  label: Massless one-particle T² sign
+  summary: For a massless one-particle helicity-σ state, antiunitary time reversal
+    satisfies T²=(−1)^(2|σ|), with |σ| serving as spin.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 79
+    - 80
+    note: Uses the massless helicity time-reversal action to derive the massless T²
+      factor.
+  notation: []
+- id: qft.align010.weinberg-1.multiparticle-time-reversal-square
+  label: Multiparticle T² sign from sector-specific factors
+  summary: For a noninteracting collection of massive and/or massless particles, multiply
+    the sector-specific one-particle T² factors. An odd number of half-integer spin
+    or helicity constituents gives T²=−1.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 80
+    note: States the product rule for noninteracting massive or massless constituents
+      and the odd-half-integer sign.
+  notation: []
+- id: qft.align010.weinberg-1.nonphysical-little-groups-require-infinite-unitary-multiplets
+  label: Nonphysical little groups require infinite nontrivial unitary multiplets
+  summary: For the spacelike p²>0 orbit and the pμ=0 orbit, the little groups SO(2,1)
+    and SO(3,1) have no nontrivial finite-dimensional unitary representations. Thus
+    any nontrivial fixed-momentum transformation in either class would require infinitely
+    many states.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.nonphysical-little-groups-require-infinite-unitary-multiplets
+    note: Retains the source record ‘Nonphysical little groups require infinite nontrivial
+      unitary multiplets’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    note: Footnote states the finite-dimensional unitary-representation restriction
+      for these two little groups.
+  notation: []
+- id: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  label: Parity is unitary and time reversal antiunitary
+  summary: Assuming the discrete inversion symmetries are conserved is only an approximation
+    because weak interactions violate parity and observed effects also limit time
+    reversal. Given a spectrum bounded below by the vacuum, parity must be linear
+    unitary while time reversal must be antilinear antiunitary; both preserve energy,
+    but they transform J, K, and P differently.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.parity-unitary-time-reversal-antiunitary
+    note: Retains the source record ‘Parity is unitary and time reversal antiunitary’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 75
+    - 76
+    note: States the approximation and uses the energy-spectrum argument to select
+      the operator types.
+  notation: []
+- id: qft.align010.weinberg-1.poincare-central-charges-removable
+  label: All Poincaré-algebra central charges are removable
+  summary: Applying Jacobi identities to the most general centrally extended Poincaré
+    commutators shows that the candidate charges can be eliminated by constant shifts
+    of Pμ and Jμν. The Lorentz subalgebra is semisimple; the non-semisimple translation
+    sector needs the explicit argument, unlike the Galilean mass charge.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.poincare-central-charges-removable
+    note: Retains the source record ‘All Poincaré-algebra central charges are removable’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 84
+    - 85
+    - 86
+    note: Works through the Jacobi constraints and generator redefinitions.
+  notation: []
+- id: qft.align010.weinberg-1.poincare-generators
+  label: Poincaré generators Jμν and Pμ
+  summary: Near identity, the unitary Poincaré operator is generated by six antisymmetric
+    Hermitian Jμν and four Hermitian Pμ. The former include rotations and boosts;
+    the latter become momentum and energy, subject to the sign convention stated in
+    the text.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.poincare-generators
+    note: Retains the source record ‘Poincaré generators Jμν and Pμ’ with its stated
+      scope, assumptions, and notation; this source-scoped alignment does not assert
+      a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 59
+    note: Introduces the infinitesimal operator and its ten Hermitian generators.
+  notation:
+  - source: weinberg-1
+    note: Indices are raised and lowered with η; Jμν=−Jνμ, H=P0, and the sign of the
+      translation term is a convention.
+- id: qft.align010.weinberg-1.poincare-group-and-lorentz-interval
+  label: Poincaré transformations preserve the Lorentz interval
+  summary: Inertial-frame changes are affine transformations x′ = Λx+a whose Lorentz
+    matrix preserves the Minkowski metric (signature +++−). Their composition defines
+    the inhomogeneous Lorentz, or Poincaré, group; the interval condition preserves
+    light speed.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.poincare-group-and-lorentz-interval
+    note: Retains the source record ‘Poincaré transformations preserve the Lorentz
+      interval’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.3'
+    pages:
+    - 55
+    - 56
+    - 57
+    note: Defines the metric-preserving affine transformations and their group law.
+  notation:
+  - source: weinberg-1
+    note: Coordinates are x^μ with x^0=t and c=1; η11=η22=η33=+1 and η00=−1.
+- id: qft.align010.weinberg-1.poincare-lie-algebra
+  label: Poincaré Lie algebra and covariance of generators
+  summary: 'Conjugation by a Poincaré transformation makes Pμ a four-vector and Jμν
+    a tensor with an origin-dependent orbital term. Expanding this covariance gives
+    the Lorentz-generator, Lorentz-momentum, and mutually commuting momentum commutators:
+    the Poincaré Lie algebra.'
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.poincare-lie-algebra
+    note: Retains the source record ‘Poincaré Lie algebra and covariance of generators’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 60
+    note: Derives covariance laws and equations (2.4.12)–(2.4.14).
+  notation: []
+- id: qft.align010.weinberg-1.poincare-momentum-orbits-and-vacuum
+  label: Poincaré momentum orbits, physical sectors, and vacuum
+  summary: Proper-orthochronous Lorentz orbits are classified by p² and, for timelike
+    p, the sign of p0. The chapter lists six standard-momentum classes and little
+    groups; it treats positive-energy massive and massless orbits as particles, identifies
+    pμ=0 as the invariant vacuum, and notes that the remaining classes have no known
+    physical interpretation here.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.poincare-momentum-orbits-and-vacuum
+    note: Retains the source record ‘Poincaré momentum orbits, physical sectors, and
+      vacuum’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 64
+    - 65
+    - 66
+    note: Classifies invariant momentum data, tabulates the six classes, and identifies
+      the physical cases and vacuum.
+  notation: []
+- id: qft.align010.weinberg-1.problem-2plus1-massive-spin
+  label: 'Problem: massive spin and inversions in 2+1 dimensions'
+  summary: Problem asks how to describe massive one-particle spin states, their SO(2,1)
+    Lorentz transformations, and P and T in two spatial and one time dimension; it
+    does not supply a result.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-2plus1-massive-spin
+    note: 'Retains the source record ‘Problem: massive spin and inversions in 2+1
+      dimensions’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 105
+    note: Problem 5.
+  notation: []
+- id: qft.align010.weinberg-1.problem-2plus1-massless-spin
+  label: 'Problem: massless spin and inversions in 2+1 dimensions'
+  summary: Problem asks the corresponding description of massless one-particle spin
+    states, Lorentz transformations, and P and T for O(2,1); it does not supply a
+    result.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-2plus1-massless-spin
+    note: 'Retains the source record ‘Problem: massless spin and inversions in 2+1
+      dimensions’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 105
+    note: Problem 6.
+  notation: []
+- id: qft.align010.weinberg-1.problem-galilean-central-charges
+  label: 'Problem: derive Galilean algebra and irreducible central charges'
+  summary: Problem asks for a direct derivation of Galilean-generator commutators
+    from the group multiplication law, including the most general central charges
+    that cannot be removed by redefining generators; it is an assigned derivation,
+    not a proof supplied by the chapter.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-galilean-central-charges
+    note: 'Retains the source record ‘Problem: derive Galilean algebra and irreducible
+      central charges’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 105
+    note: Problem 3.
+  notation: []
+- id: qft.align010.weinberg-1.problem-poincare-casimirs
+  label: 'Problem: Poincaré Casimirs from Pauli–Lubanski vector'
+  summary: Problem asks to show that PμPμ and WμWμ commute with every Poincaré transformation,
+    with Wμ defined from ε and JμνPρ; it requests a proof and does not provide one.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-poincare-casimirs
+    note: 'Retains the source record ‘Problem: Poincaré Casimirs from Pauli–Lubanski
+      vector’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 105
+    note: Problem 4.
+  notation: []
+- id: qft.align010.weinberg-1.problem-transverse-boost-massive-spin-state
+  label: 'Problem: transverse boost of a massive spin-one state'
+  summary: Problem asks for the second observer's description of a massive W-boson
+    state initially specified by y-directed momentum and z spin component when the
+    observer is boosted in the z direction; it asks for the transformed state and
+    does not present a solution.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-transverse-boost-massive-spin-state
+    note: 'Retains the source record ‘Problem: transverse boost of a massive spin-one
+      state’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 104
+    note: Problem 1.
+  notation: []
+- id: qft.align010.weinberg-1.problem-transverse-boost-photon-polarization
+  label: 'Problem: transverse boost of photon polarization'
+  summary: Problem asks how a photon with y-directed momentum and z polarization is
+    described by an observer moving in the z direction; it asks for a result and does
+    not present a derivation or answer.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-transverse-boost-photon-polarization
+    note: 'Retains the source record ‘Problem: transverse boost of photon polarization’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 105
+    note: Problem 2.
+  notation: []
+- id: qft.align010.weinberg-1.projective-cocycles
+  label: Projective cocycles and phase redefinitions
+  summary: Associativity constrains the phase in a projective multiplication law to
+    a two-cocycle. A coboundary phase produced by rephasing U(T) is trivial and can
+    be removed; intrinsic projectivity means no such rephasing eliminates the phase.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.projective-cocycles
+    note: Retains the source record ‘Projective cocycles and phase redefinitions’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 81
+    - 82
+    note: Defines the projective law, cocycle condition, and trivial cocycles.
+  notation: []
+- id: qft.align010.weinberg-1.projective-symmetry-representations
+  label: Projective representations and superselection qualification
+  summary: Because Hilbert operators act on vectors while symmetries act on rays,
+    composition can hold only up to a phase. The phase becomes state-independent when
+    the relevant superpositions are physically available; superselection sectors are
+    the stated exception.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.projective-symmetry-representations
+    note: Retains the source record ‘Projective representations and superselection
+      qualification’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 52
+    - 53
+    note: Derives the composition phase and states the superselection exception.
+  notation: []
+- id: qft.align010.weinberg-1.proper-orthochronous-lorentz-component
+  label: Proper orthochronous Lorentz subgroup and discrete inversions
+  summary: The component connected to identity has det Λ=+1 and Λ⁰₀≥+1; equality includes
+    the identity and spatial rotations. Every other Lorentz transformation is this
+    component times space inversion, time reversal, or both, so continuous and discrete
+    transformations can be studied separately.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.proper-orthochronous-lorentz-component
+    note: Retains the source record ‘Proper orthochronous Lorentz subgroup and discrete
+      inversions’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.3'
+    pages:
+    - 58
+    note: Classifies Lorentz components and isolates ℘ and 𝒯.
+  notation: []
+- id: qft.align010.weinberg-1.simple-connectedness-for-deprojectivization
+  label: Simple connectedness for path-independent group operators
+  summary: Simple connectedness means that paths with the same endpoints can be continuously
+    deformed into one another. Together with a central-charge-free local algebra,
+    it turns the endpoint-stationary path construction into a path-independent finite
+    group operator.
+  kind: assumption
+  group: qft.particle-representations-and-gauge-polarizations
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Appendix B
+    pages:
+    - 83
+    - 84
+    - 98
+    note: States simple connectedness as the second theorem condition and uses it
+      to pass from local stationarity to path independence.
+  notation: []
+- id: qft.align010.weinberg-1.sl2c-double-cover-of-lorentz-group
+  label: SL(2,C) double cover of the proper orthochronous Lorentz group
+  summary: A real four-vector corresponds to a Hermitian 2×2 matrix, whose determinant
+    gives its Lorentz square. Congruence by a unit-determinant complex matrix preserves
+    that square, yielding a proper orthochronous Lorentz transformation; k and −k
+    act identically, so SO+(3,1) is SL(2,C)/Z2.
+  kind: representation
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.sl2c-double-cover-of-lorentz-group
+    note: Retains the source record ‘SL(2,C) double cover of the proper orthochronous
+      Lorentz group’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 86
+    - 87
+    - 88
+    note: Builds the Hermitian-matrix representation and identifies the quotient for
+      the connected Lorentz component.
+  notation:
+  - source: weinberg-1
+    note: The source uses v=Vμσμ with σ0=1; k∈SL(2,C) acts as v↦kvk†.
+- id: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
+  label: Hermiticity in an infinitesimal unitary expansion
+  summary: Assume a linear, unitary operator has the near-identity form U = 1 + iεt
+    with real infinitesimal ε. First-order unitarity then requires t to be Hermitian.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.symmetry-generators-as-hermitian-observables
+    note: 'Retains the assigned source origin for its conditional p. 52 result: once
+      the linear, unitary near-identity form is assumed, unitarity constrains the
+      generator to be Hermitian.'
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 52
+    note: Given the stated linear, unitary near-identity expansion, derives the Hermiticity
+      of its generator.
+  notation: []
+- id: qft.align010.weinberg-1.time-reversal-forbids-static-dipoles
+  label: Time-reversal invariance forbids static electric or gravitational dipoles
+  summary: A static electric or gravitational field would remove the spin degeneracy
+    of a particle with the corresponding dipole moment. Since Kramers degeneracy persists
+    under arbitrary static fields that respect time reversal, the chapter concludes
+    that such dipole moments are forbidden by time-reversal invariance.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.time-reversal-forbids-static-dipoles
+    note: Retains the source record ‘Time-reversal invariance forbids static electric
+      or gravitational dipoles’ with its stated scope, assumptions, and notation;
+      this source-scoped alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 81
+    note: States the static-field consequence of Kramers degeneracy.
+  notation: []
+- id: qft.align010.weinberg-1.time-reversal-square-and-kramers-degeneracy
+  label: T² sign and Kramers degeneracy
+  summary: Once the appropriate sector-specific T² factor has been supplied for every
+    constituent, a noninteracting multiparticle state with an odd number of half-integer-spin
+    or half-integer-helicity particles has T²=−1. In a time-reversal-invariant setting,
+    an energy eigenstate with that sign has a distinct degenerate partner, even when
+    rotation symmetry is broken.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.time-reversal-square-and-kramers-degeneracy
+    note: Retains the source record ‘T² sign and Kramers degeneracy’ with its stated
+      scope, assumptions, and notation; this source-scoped alignment does not assert
+      a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: 2.6–2.7
+    pages:
+    - 80
+    - 81
+    note: Combines one-particle T² factors into the multiparticle sign and derives
+      the Kramers-degeneracy consequence.
+  notation: []
+- id: qft.align010.weinberg-1.topological-helicity-quantization-and-covering-choice
+  label: Topological helicity quantization and proper-orthochronous covering choice
+  summary: Within the proper orthochronous Lorentz group, a 4π rotation of a massless
+    state is contractible, forcing helicity to be integer or half-integer. Replacing
+    SO+(3,1) by its simply connected cover SL(2,C) removes the inference of an integer/half-integer
+    superselection rule from proper-orthochronous Lorentz invariance alone; symmetry
+    principles by themselves do not settle whether such superpositions can be prepared.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.topological-helicity-quantization-and-covering-choice
+    note: Retains the source record ‘Topological helicity quantization and proper-orthochronous
+      covering choice’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 89
+    - 90
+    note: Applies topology to massless helicity and explains the universal-cover alternative.
+  notation: []
+- id: qft.align010.weinberg-1.unconventional-time-reversal-degeneracy
+  label: Unconventional time reversal can require extra degeneracy
+  summary: For a nontrivial paired time-reversal block, no linear combination is merely
+    multiplied by a phase, so time-reversal invariance imposes a two-fold degeneracy
+    beyond spin. An internal symmetry may allow redefinition of time reversal and
+    remove the mixing; without it the doubling is attributable to time reversal. This
+    is a possible representation, not a proof that such particles exist.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.unconventional-time-reversal-degeneracy
+    note: Retains the source record ‘Unconventional time reversal can require extra
+      degeneracy’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.
+  evidence:
+  - source: weinberg-1
+    section: Appendix C
+    pages:
+    - 102
+    - 103
+    note: Derives the extra degeneracy and states the internal-symmetry qualification.
+  notation: []
+- id: qft.align010.weinberg-1.wigner-theorem-proof-coefficient-dichotomy
+  label: 'Proof method: coefficient ratios are preserved or conjugated'
+  summary: By fixing phases with selected two-component superpositions and comparing
+    transition probabilities, the proof shows that coefficient ratios of an arbitrary
+    state are either preserved or complex conjugated. A consistency argument forces
+    one choice across all components and then all states for a fixed symmetry.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.wigner-theorem-proof-coefficient-dichotomy
+    note: 'Retains the source record ‘Proof method: coefficient ratios are preserved
+      or conjugated’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 92
+    - 93
+    - 94
+    - 95
+    note: Establishes the global preservation-versus-conjugation dichotomy.
+  notation: []
+- id: qft.align010.weinberg-1.wigner-theorem-proof-operator-conclusion
+  label: 'Proof conclusion: linear-unitary or antilinear-antiunitary operator'
+  summary: The preserved-coefficient branch gives a linear operator preserving scalar
+    products, hence unitary; the conjugated-coefficient branch gives an antilinear
+    operator conjugating scalar products, hence antiunitary. This completes the theorem
+    stated in Section 2.2.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.wigner-theorem-proof-operator-conclusion
+    note: 'Retains the source record ‘Proof conclusion: linear-unitary or antilinear-antiunitary
+      operator’ with its stated scope, assumptions, and notation; this source-scoped
+      alignment does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 95
+    - 96
+    note: Derives linearity/unitarity and antilinearity/antiunitarity from the two
+      branches.
+  notation: []
+- id: qft.align010.weinberg-1.wigner-theorem-proof-orthonormal-basis
+  label: 'Proof method: transformed orthonormal basis'
+  summary: Appendix A begins Wigner's theorem by choosing a complete orthonormal basis
+    of rays and arbitrary normalized representatives of their images. Transition-probability
+    preservation keeps the image basis orthonormal, and invertibility proves it complete.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.wigner-theorem-proof-orthonormal-basis
+    note: 'Retains the source record ‘Proof method: transformed orthonormal basis’
+      with its stated scope, assumptions, and notation; this source-scoped alignment
+      does not assert a broader equivalence.'
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 91
+    - 92
+    note: Constructs and normalizes the image basis before treating arbitrary rays.
+  notation: []
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -9598,6 +10996,1264 @@ edges:
     - 372
     note: The explicit correlator instantiates the general left-handed three-current
       setup with both triangle orderings.
+- id: qft.align010.schwartz.e-induced-little-group-to-ward
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.schwartz.massless-little-group-ward-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward argument uses the massless little-group transformation that
+    adds a pμ component to a physical polarization.
+  failure_mode: The pμ shift whose Lorentz invariance requires pμMμ=0 is unavailable.
+  evidence:
+  - source: schwartz
+    section: 8.2.4 and 8.4.2
+    pages:
+    - 120
+    - 126
+    - 127
+    note: Identifies the little-group induced representation and then gives the massless
+      polarization shift and Ward derivation.
+- id: qft.align010.schwartz.e-induced-to-massive-quantization
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.schwartz.massive-vector-field-quantization
+  relation: pedagogical
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The mode expansion is introduced before the later little-group explanation;
+    induced representations clarify its transformation properties rather than supply
+    a required construction step.
+  failure_mode: The representation-theoretic interpretation is missing, while the
+    polarization-indexed expansion remains usable.
+  evidence:
+  - source: schwartz
+    section: 8.4.1
+    pages:
+    - 123
+    - 124
+    - 125
+    note: Introduces the expansion before explaining the little-group method.
+- id: qft.align010.schwartz.e-lorentz-conflict-to-induced-reps
+  from: qft.align010.schwartz.vector-lorentz-unitarity-conflict
+  to: qft.align010.schwartz.little-group-induced-vector-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Momentum-dependent physical bases and little groups resolve the finite-vector
+    norm conflict.
+  failure_mode: The induced-representation construction looks like an arbitrary change
+    of basis.
+  evidence:
+  - source: schwartz
+    section: 8.2 and 8.4.1
+    pages:
+    - 113
+    - 125
+    note: Sets the momentum-dependent plan and explains the little-group resolution.
+- id: qft.align010.schwartz.e-massive-and-massless-branches-to-wigner
+  from: qft.align010.weinberg-1.massive-spin-so3-little-group
+  to: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Weinberg's massive SO(3) branch gives a compatible representation-theoretic
+    realization of the ordinary massive sector stated by Schwartz.
+  failure_mode: The Schwartz statement remains usable, but this cross-book massive-sector
+    correspondence is absent.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 66
+    - 68
+    note: Identifies the massive little group and its finite spin representations.
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 111
+    note: States the ordinary massive mass-spin and polarization classification with
+      its exotic exceptions.
+- id: qft.align010.schwartz.e-massive-basis-to-high-energy-limit
+  from: qft.align010.schwartz.massive-vector-polarization-basis
+  to: qft.align010.schwartz.massive-vector-longitudinal-perturbative-breakdown
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy estimate uses the explicit longitudinal polarization’s
+    E/m scaling.
+  failure_mode: The proposed amplitude growth has no polarization factor to estimate.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 117
+    note: Takes the high-energy limit of εL before estimating the cross section.
+- id: qft.align010.schwartz.e-massless-helicity-branch-to-wigner
+  from: qft.align010.weinberg-1.massless-helicity-representations
+  to: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Weinberg's massless ISO(2)/helicity branch gives a compatible realization
+    of the ordinary massless two-polarization sector stated by Schwartz.
+  failure_mode: The Schwartz statement remains usable, but this cross-book massless-sector
+    correspondence is absent.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 70
+    - 71
+    - 72
+    note: Derives the massless little group and the physical helicity representations.
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 111
+    note: States the ordinary massless two-polarization classification with its exotic
+      exceptions.
+- id: qft.align010.schwartz.e-maxwell-to-ward
+  from: qft.align010.schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  to: qft.align010.schwartz.massless-little-group-ward-identity
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The earlier gauge-fixed count gives helpful context, but the displayed
+    Ward derivation starts from the massless little-group transformation and ε·M.
+  failure_mode: The two-polarization gauge-fixing example is absent, while the little-group
+    derivation itself remains complete.
+  evidence:
+  - source: schwartz
+    section: 8.2.3 and 8.4.2
+    pages:
+    - 120
+    - 126
+    - 127
+    note: Gives the gauge-fixed example then independently derives the identity from
+      little-group mixing.
+- id: qft.align010.schwartz.e-poincare-to-wigner
+  from: qft.align010.schwartz.particle-as-unitary-poincare-irrep
+  to: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The classification is explicitly of unitary irreducible Poincaré representations.
+  failure_mode: Mass and spin are recited without the representation class being classified.
+  evidence:
+  - source: schwartz
+    section: '8.1'
+    pages:
+    - 110
+    - 111
+    note: Introduces particle representations then states Wigner’s classification.
+- id: qft.align010.schwartz.e-proca-to-massive-basis
+  from: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  to: qft.align010.schwartz.massive-vector-polarization-basis
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The polarization vectors are chosen to solve both Proca equations, especially
+    p·ε=0.
+  failure_mode: The listed vectors are not tied to the field constraints.
+  evidence:
+  - source: schwartz
+    section: 8.2.2
+    pages:
+    - 116
+    - 117
+    note: Obtains the equations then constructs their polarization solutions.
+- id: qft.align010.schwartz.e-proca-to-maxwell
+  from: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  to: qft.align010.schwartz.massless-maxwell-gauge-redundancy-and-two-modes
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The source uses m→0 to motivate restarting the analysis, but derives
+    massless mode counting directly from Maxwell gauge symmetry.
+  failure_mode: The limiting intuition is absent, while the direct Maxwell derivation
+    remains complete.
+  evidence:
+  - source: schwartz
+    section: 8.2.3
+    pages:
+    - 118
+    note: Takes the massless limit and then restarts the degree-of-freedom analysis.
+- id: qft.align010.schwartz.e-wigner-to-proca
+  from: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  to: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The polarization count motivates why the constraint is desirable, but
+    the source derives the Proca equations and constraint directly from the Lagrangian.
+  failure_mode: The physical degree-of-freedom motivation is less explicit, while
+    the Lagrangian derivation remains possible.
+  evidence:
+  - source: schwartz
+    section: 8.1 and 8.2.2
+    pages:
+    - 111
+    - 114
+    - 116
+    - 118
+    note: States the count and later notes the Lagrangian calculation need not start
+      from spin.
+- id: qft.align010.shared-complex-u1-current-to-gauge-current
+  from: qft.complex-scalar-u1-current
+  to: qft.align010.schwartz.gauge-current-minimal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-QED calculation identifies the e=0 global complex-scalar Noether
+    current before distinguishing the A-dependent full current and the linear coupling.
+  failure_mode: J0 cannot be distinguished from the interacting current, so the current
+    coupling is not derived from its global-symmetry input.
+  evidence:
+  - source: schwartz
+    section: 8.3.1
+    pages:
+    - 122
+    - 123
+    note: Identifies the free-theory term as the Noether current and derives the general
+      current coupling.
+- id: qft.align010.shared-covariant-derivative-to-gauge-current
+  from: qft.covariant-derivative
+  to: qft.align010.schwartz.gauge-current-minimal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-QED expansion begins from a locally covariant matter derivative
+    and its gauge-invariant Lagrangian.
+  failure_mode: The displayed A-dependent current and the linear and quadratic terms
+    lack their common local-gauge construction.
+  evidence:
+  - source: schwartz
+    section: 8.3 and 8.3.1
+    pages:
+    - 121
+    - 122
+    - 123
+    note: Defines the scalar-QED covariant derivative and expands its Lagrangian to
+      the current coupling and contact term.
+- id: qft.align010.shared-lorentz-metric-to-weinberg-poincare-interval
+  from: qft.lorentz-metric-and-transformations
+  to: qft.align010.weinberg-1.poincare-group-and-lorentz-interval
+  relation: prerequisite
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: Weinberg’s affine Poincare transformation is defined by preservation
+    of a Lorentz metric and interval; his coordinate ordering and +++− signature remain
+    explicit on the target record.
+  failure_mode: The metric-preservation condition in the affine transformation is
+    only a formal matrix statement.
+  evidence:
+  - source: weinberg-1
+    section: '2.3'
+    pages:
+    - 55
+    - 56
+    note: Defines the invariant interval and the metric-preserving Lorentz condition.
+- id: qft.align010.shared-onshell-measure-to-weinberg-normalization
+  from: qft.lorentz-invariant-onshell-phase-space-measure
+  to: qft.align010.weinberg-1.lorentz-invariant-one-particle-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source derives its invariant mass-shell delta before distinguishing
+    it from the adopted three-momentum normalization of one-particle states.
+  failure_mode: The normalization convention is used without the invariant mass-shell
+    distribution from which it is contrasted.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    - 66
+    - 67
+    note: Derives the invariant delta and then states the chosen normalization.
+- id: qft.align010.shared-photon-context-to-schwartz-ward
+  from: qft.photon-polarizations-current-conservation-and-causality
+  to: qft.align010.schwartz.massless-little-group-ward-identity
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The accepted photon-polarization problem supplies compatible current-conservation
+    context, while Schwartz derives the Ward identity independently from massless
+    little-group mixing.
+  failure_mode: The little-group derivation remains complete; only the connection
+    to a prior photon-polarization application is absent.
+  evidence:
+  - source: schwartz
+    section: 8.4.2
+    pages:
+    - 126
+    - 127
+    - 128
+    note: Derives the amplitude constraint from the little-group polarization shift.
+- id: qft.align010.weinberg-1.edge-algebra-conservation
+  from: qft.align010.weinberg-1.poincare-lie-algebra
+  to: qft.align010.weinberg-1.conserved-poincare-generators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Conservation is read from commutators with H=P0.
+  failure_mode: One cannot determine which generators commute with the energy operator.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 60
+    - 61
+    note: Uses the algebra to identify conserved quantities.
+- id: qft.align010.weinberg-1.edge-central-path-construction
+  from: qft.align010.weinberg-1.central-charges-from-projectivity
+  to: qft.align010.weinberg-1.group-operator-path-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The appendix uses a central-charge-free Lie algebra to make endpoint-fixed
+    infinitesimal path variations stationary.
+  failure_mode: The local path-independence step in the proof cannot be obtained.
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Appendix B
+    pages:
+    - 83
+    - 98
+    note: States removable central charges and then invokes the Lie algebra without
+      central charges in the variation argument.
+- id: qft.align010.weinberg-1.edge-central-theorem
+  from: qft.align010.weinberg-1.central-charges-from-projectivity
+  to: qft.align010.weinberg-1.deprojectivization-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Removability of central charges is one of the theorem's two conditions.
+  failure_mode: The algebraic branch of intrinsic projectivity is unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 83
+    - 84
+    note: States the removable-charge condition before the theorem.
+- id: qft.align010.weinberg-1.edge-central-to-homotopy-phases
+  from: qft.align010.weinberg-1.central-charges-from-projectivity
+  to: qft.align010.weinberg-1.homotopy-classes-classify-global-projective-phases
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The residual loop-phase classification is conditional on a Lie algebra
+    with no central charges; otherwise local projectivity remains an additional source.
+  failure_mode: Topology would be presented as the sole source of projective phases
+    despite unresolved local central charges.
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Appendix B
+    pages:
+    - 83
+    - 99
+    - 100
+    note: Distinguishes the algebraic and topological sources, then limits the fundamental-group
+      classification to the no-central-charge case.
+- id: qft.align010.weinberg-1.edge-degenerate-cpt
+  from: qft.align010.weinberg-1.degenerate-multiplet-time-reversal-blocks
+  to: qft.align010.weinberg-1.cpt-and-unconventional-inversion-actions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unconventional CP consequence is evaluated for the paired time-reversal
+    representation.
+  failure_mode: The nonstandard CP action has no underlying multiplet transformation.
+  evidence:
+  - source: weinberg-1
+    section: Appendix C
+    pages:
+    - 102
+    - 103
+    - 104
+    note: Develops the block action before applying CPT and CP.
+- id: qft.align010.weinberg-1.edge-degenerate-time-doubling
+  from: qft.align010.weinberg-1.degenerate-multiplet-time-reversal-blocks
+  to: qft.align010.weinberg-1.unconventional-time-reversal-degeneracy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The degeneracy conclusion concerns the nontrivial two-dimensional canonical
+    blocks.
+  failure_mode: There is no specified unconventional action whose eigenvectors can
+    fail to exist.
+  evidence:
+  - source: weinberg-1
+    section: Appendix C
+    pages:
+    - 101
+    - 102
+    - 103
+    note: Reduces the action to blocks then derives their degeneracy implication.
+- id: qft.align010.weinberg-1.edge-discrete-massive-actions
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align010.weinberg-1.massive-intrinsic-parity-and-time-reversal
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The state actions follow from the selected operator type and generator
+    transformations.
+  failure_mode: The energy-spectrum selection and action on J and P are missing.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 76
+    - 77
+    note: Derives generator transformations then applies them to massive states.
+- id: qft.align010.weinberg-1.edge-discrete-massless-parity
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align010.weinberg-1.massless-parity-helicity-pairing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parity's action on momentum and angular momentum determines the helicity
+    flip.
+  failure_mode: The sign change of helicity has no discrete-generator basis.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 76
+    - 78
+    note: Lists parity generator action then applies it to a null state.
+- id: qft.align010.weinberg-1.edge-discrete-massless-time
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align010.weinberg-1.massless-time-reversal-preserves-helicity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Time reversal flips both longitudinal factors in helicity.
+  failure_mode: Helicity preservation cannot be inferred without the antiunitary time-reversal
+    action.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 76
+    - 79
+    note: Gives T generator rules and applies them to massless states.
+- id: qft.align010.weinberg-1.edge-generators-lie
+  from: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
+  to: qft.align010.weinberg-1.lie-algebra-from-local-group-law
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local representation is expanded in these generators.
+  failure_mode: There are no operator coefficients to compare with the group law.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 52
+    - 54
+    note: Introduces generators and derives their commutators.
+- id: qft.align010.weinberg-1.edge-helicity-lorentz-action
+  from: qft.align010.weinberg-1.massless-helicity-representations
+  to: qft.align010.weinberg-1.massless-helicity-lorentz-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phase transformation law uses the remaining helicity eigenvalue.
+  failure_mode: There is no one-dimensional little-group character to exponentiate.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 72
+    - 73
+    note: Uses σ to state the finite Lorentz transformation law.
+- id: qft.align010.weinberg-1.edge-helicity-polarization
+  from: qft.align010.weinberg-1.massless-helicity-lorentz-action
+  to: qft.align010.weinberg-1.massless-polarization-lorentz-rotation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The polarization-plane rotation follows by comparing the phases of opposite-helicity
+    components.
+  failure_mode: The relative phase of a polarization superposition has no Lorentz
+    transformation law.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 74
+    note: Uses the helicity-dependent phase in Eq. (2.5.42) for polarization.
+- id: qft.align010.weinberg-1.edge-induced-iso2
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.weinberg-1.massless-iso2-little-group
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massless orbit needs its own little group before its representations
+    can be classified.
+  failure_mode: There is no residual symmetry group to analyze at null standard momentum.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    - 66
+    - 70
+    note: Table identifies ISO(2), then the text derives its structure.
+- id: qft.align010.weinberg-1.edge-induced-massive
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.weinberg-1.massive-spin-so3-little-group
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Massive spin is the irreducible representation of the massive orbit's
+    little group.
+  failure_mode: Spin j is unmotivated without the little-group classification.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    - 66
+    - 68
+    note: Reduces the particle problem to the little group and selects SO(3).
+- id: qft.align010.weinberg-1.edge-induced-normalization
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.weinberg-1.lorentz-invariant-one-particle-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The normalization calculation uses unitarity of the induced little-group
+    matrices.
+  failure_mode: The scalar-product transformation does not specify the little-group
+    factor.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    - 66
+    note: Derives little-group unitarity then computes scalar products.
+- id: qft.align010.weinberg-1.edge-iso2-helicity
+  from: qft.align010.weinberg-1.massless-iso2-little-group
+  to: qft.align010.weinberg-1.massless-helicity-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Helicity remains after selecting a special representation of ISO(2).
+  failure_mode: The translation generators whose eigenvalues must vanish have not
+    been defined.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 71
+    - 72
+    note: Defines the ISO(2) generators before imposing their zero eigenvalues.
+- id: qft.align010.weinberg-1.edge-kramers-dipoles
+  from: qft.align010.weinberg-1.time-reversal-square-and-kramers-degeneracy
+  to: qft.align010.weinberg-1.time-reversal-forbids-static-dipoles
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The no-dipole conclusion comes from persistence of Kramers degeneracy
+    in static time-reversal-invariant fields.
+  failure_mode: A static-field energy splitting cannot be compared with a required
+    degeneracy.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 81
+    note: Applies Kramers degeneracy to dipole-induced splitting.
+- id: qft.align010.weinberg-1.edge-lie-abelian
+  from: qft.align010.weinberg-1.lie-algebra-from-local-group-law
+  to: qft.align010.weinberg-1.abelian-symmetry-exponentiation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Abelian result is the vanishing-structure-constant specialization
+    of the local analysis.
+  failure_mode: The exponentiation argument loses the condition that generators commute.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 54
+    - 55
+    note: Specializes the general commutator law to additive parameters.
+- id: qft.align010.weinberg-1.edge-lorentz-topology-helicity
+  from: qft.align010.weinberg-1.lorentz-topology-sign-projective-representations
+  to: qft.align010.weinberg-1.topological-helicity-quantization-and-covering-choice
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massless 4π argument is the same nontrivial topology applied to helicity.
+  failure_mode: The contractible-loop restriction has no topological framework.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 89
+    - 90
+    note: Moves from double connectivity to the helicity and covering-group consequences.
+- id: qft.align010.weinberg-1.edge-massive-spin-wigner-rotation
+  from: qft.align010.weinberg-1.massive-spin-so3-little-group
+  to: qft.align010.weinberg-1.massive-wigner-rotation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Wigner rotation acts through the spin-j little-group matrices, interpreted
+    as ordinary SO(3) matrices for integer j or through the SU(2) cover/projective
+    SO(3) convention for half-integer j.
+  failure_mode: The transformation matrix has no correctly qualified spin representation
+    to apply.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and 2.7
+    pages:
+    - 68
+    - 69
+    - 89
+    - 90
+    note: Uses the spin matrices for massive transformations and later supplies the
+      cover qualification.
+- id: qft.align010.weinberg-1.edge-massive-square-to-multiparticle-square
+  from: qft.align010.weinberg-1.massive-time-reversal-square
+  to: qft.align010.weinberg-1.multiparticle-time-reversal-square
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A multiparticle state containing massive constituents requires their
+    T² factors in the product.
+  failure_mode: The massive constituents contribute no justified sign to the multiparticle
+    calculation.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 80
+    note: States the massive one-particle factor and its multiplication in noninteracting
+      systems.
+- id: qft.align010.weinberg-1.edge-massless-square-to-multiparticle-square
+  from: qft.align010.weinberg-1.massless-time-reversal-square
+  to: qft.align010.weinberg-1.multiparticle-time-reversal-square
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A multiparticle state containing massless constituents requires their
+    helicity T² factors in the product.
+  failure_mode: The massless constituents contribute no justified sign to the multiparticle
+    calculation.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 80
+    note: States the massless one-particle factor and its multiplication in noninteracting
+      systems.
+- id: qft.align010.weinberg-1.edge-massless-time-kramers
+  from: qft.align010.weinberg-1.massless-time-reversal-preserves-helicity
+  to: qft.align010.weinberg-1.massless-time-reversal-square
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Composing the stated helicity-preserving time-reversal action gives the
+    massless T² factor.
+  failure_mode: The massless sector factor cannot be supplied to a multiparticle calculation.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 79
+    - 80
+    note: Gives the massless time-reversal action and computes its square.
+- id: qft.align010.weinberg-1.edge-momentum-orbits-induced
+  from: qft.align010.weinberg-1.poincare-momentum-orbits-and-vacuum
+  to: qft.align010.schwartz.little-group-induced-vector-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The induced construction starts by choosing a standard momentum in each
+    proper-orthochronous Lorentz orbit.
+  failure_mode: L(p), k, and the associated little group cannot be selected without
+    the orbit classification.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 64
+    - 65
+    - 66
+    note: Classifies the orbits, then chooses standard momenta and little groups.
+- id: qft.align010.weinberg-1.edge-momentum-orbits-nonphysical-little-groups
+  from: qft.align010.weinberg-1.poincare-momentum-orbits-and-vacuum
+  to: qft.align010.weinberg-1.nonphysical-little-groups-require-infinite-unitary-multiplets
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finite-dimensional unitary restriction is stated for the spacelike
+    and zero-momentum orbit little groups.
+  failure_mode: The groups SO(2,1) and SO(3,1) are not identified as the relevant
+    fixed-momentum stabilizers.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 65
+    - 66
+    note: Names the little groups and gives the unitary-representation qualification.
+- id: qft.align010.weinberg-1.edge-multiparticle-square-to-kramers
+  from: qft.align010.weinberg-1.multiparticle-time-reversal-square
+  to: qft.align010.weinberg-1.time-reversal-square-and-kramers-degeneracy
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Kramers argument begins from the noninteracting multiparticle T²=−1
+    sign and retains it under time-reversal-invariant interactions.
+  failure_mode: There is no premise contradicting a one-dimensional time-reversal
+    eigenstate.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 80
+    - 81
+    note: Derives the odd-particle sign and then the Kramers contradiction for an
+      energy eigenstate.
+- id: qft.align010.weinberg-1.edge-one-particle-induced
+  from: qft.align010.schwartz.particle-as-unitary-poincare-irrep
+  to: qft.align010.schwartz.little-group-induced-vector-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The induced construction relates the discrete labels of momentum eigenstates
+    across an orbit.
+  failure_mode: There is no state space or momentum labeling for L(p) and W(Λ,p) to
+    act upon.
+  evidence:
+  - source: weinberg-1
+    section: '2.5'
+    pages:
+    - 63
+    - 64
+    note: Introduces momentum states before defining standard-state construction.
+- id: qft.align010.weinberg-1.edge-path-construction-to-theorem
+  from: qft.align010.weinberg-1.group-operator-path-construction
+  to: qft.align010.weinberg-1.deprojectivization-theorem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The proof constructs finite operators along paths and uses path independence
+    to establish an ordinary group representation.
+  failure_mode: The theorem has no finite-operator construction connecting its conditions
+    to the group multiplication law.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 96
+    - 97
+    - 98
+    - 99
+    note: Constructs the path operators, obtains path independence, and removes the
+      projective phase.
+- id: qft.align010.weinberg-1.edge-paths-homotopy
+  from: qft.align010.weinberg-1.group-operator-path-construction
+  to: qft.align010.weinberg-1.homotopy-classes-classify-global-projective-phases
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Path dependence is what survives as homotopy-class dependence in a nonsimply
+    connected group.
+  failure_mode: There is no constructed operator whose dependence on loop class can
+    be analyzed.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 98
+    - 99
+    - 100
+    note: Shows simple-connectivity path independence then describes residual loop
+      phases.
+- id: qft.align010.weinberg-1.edge-poincare-algebra-galilean
+  from: qft.align010.weinberg-1.poincare-lie-algebra
+  to: qft.align010.weinberg-1.galilean-contraction-and-mass-central-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Galilean algebra is obtained as a low-velocity contraction of these
+    commutators.
+  failure_mode: The contraction has no relativistic algebra to limit.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 61
+    - 62
+    note: Starts from the displayed Poincaré commutators to take the contraction.
+- id: qft.align010.weinberg-1.edge-poincare-algebra-one-particle
+  from: qft.align010.weinberg-1.poincare-lie-algebra
+  to: qft.align010.schwartz.particle-as-unitary-poincare-irrep
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: One-particle labels are simultaneous eigenvalues of commuting four-momentum
+    components.
+  failure_mode: Momentum-state classification lacks the commuting Pμ operators.
+  evidence:
+  - source: weinberg-1
+    section: 2.4–2.5
+    pages:
+    - 60
+    - 63
+    note: States [Pμ,Pν]=0 before using four-momentum eigenvectors.
+- id: qft.align010.weinberg-1.edge-poincare-central
+  from: qft.align010.weinberg-1.poincare-lie-algebra
+  to: qft.align010.weinberg-1.poincare-central-charges-removable
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The extension analysis starts from the Poincaré commutators.
+  failure_mode: There is no baseline algebra to extend with central constants.
+  evidence:
+  - source: weinberg-1
+    section: 2.4 and 2.7
+    pages:
+    - 60
+    - 84
+    - 85
+    note: Replaces the original Poincaré commutators by the centrally extended ones.
+- id: qft.align010.weinberg-1.edge-poincare-generators-algebra
+  from: qft.align010.weinberg-1.poincare-generators
+  to: qft.align010.weinberg-1.poincare-lie-algebra
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The algebra is the commutator structure of Jμν and Pμ.
+  failure_mode: The commutators lack identified generators and their tensor/vector
+    roles.
+  evidence:
+  - source: weinberg-1
+    section: '2.4'
+    pages:
+    - 59
+    - 60
+    note: Introduces generators then derives their commutators.
+- id: qft.align010.weinberg-1.edge-poincare-group-generators
+  from: qft.align010.weinberg-1.poincare-group-and-lorentz-interval
+  to: qft.align010.weinberg-1.poincare-generators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The infinitesimal generators are obtained by expanding Poincaré transformations
+    near their identity.
+  failure_mode: Jμν and Pμ have no specified transformation group to generate.
+  evidence:
+  - source: weinberg-1
+    section: 2.3–2.4
+    pages:
+    - 57
+    - 59
+    note: Gives the Poincaré composition law and its near-identity expansion.
+- id: qft.align010.weinberg-1.edge-problem-2plus1-massive-induced
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.weinberg-1.problem-2plus1-massive-spin
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for a one-particle spin-state classification and Lorentz
+    transformation, for which the chapter's method is induced representations from
+    a little group.
+  failure_mode: There is no method for constructing the requested SO(2,1) particle
+    representation.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and Problems
+    pages:
+    - 64
+    - 65
+    - 105
+    note: Develops induced representations and poses Problem 5.
+- id: qft.align010.weinberg-1.edge-problem-2plus1-massive-inversions
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align010.weinberg-1.problem-2plus1-massive-spin
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5 explicitly asks about P and T, requiring the discrete-transformation
+    method.
+  failure_mode: The inversion portion of the requested description is absent.
+  evidence:
+  - source: weinberg-1
+    section: 2.6 and Problems
+    pages:
+    - 75
+    - 76
+    - 105
+    note: Develops P and T operators and poses Problem 5.
+- id: qft.align010.weinberg-1.edge-problem-2plus1-massless-induced
+  from: qft.align010.schwartz.little-group-induced-vector-representations
+  to: qft.align010.weinberg-1.problem-2plus1-massless-spin
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for a massless one-particle Lorentz representation,
+    requiring little-group induction.
+  failure_mode: There is no method for constructing the requested O(2,1) particle
+    representation.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and Problems
+    pages:
+    - 64
+    - 65
+    - 105
+    note: Develops induced representations and poses Problem 6.
+- id: qft.align010.weinberg-1.edge-problem-2plus1-massless-inversions
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align010.weinberg-1.problem-2plus1-massless-spin
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 6 explicitly asks about P and T, requiring the discrete-transformation
+    method.
+  failure_mode: The inversion portion of the requested description is absent.
+  evidence:
+  - source: weinberg-1
+    section: 2.6 and Problems
+    pages:
+    - 75
+    - 76
+    - 105
+    note: Develops P and T operators and poses Problem 6.
+- id: qft.align010.weinberg-1.edge-problem-galilean-central-charges
+  from: qft.align010.weinberg-1.central-charges-from-projectivity
+  to: qft.align010.weinberg-1.problem-galilean-central-charges
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for the central charges that cannot be eliminated by
+    generator redefinition.
+  failure_mode: One cannot distinguish removable from nonremovable central terms.
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Problems
+    pages:
+    - 83
+    - 105
+    note: Explains central-charge redefinitions and poses the central-charge exercise.
+- id: qft.align010.weinberg-1.edge-problem-galilean-contraction-alternative
+  from: qft.align010.weinberg-1.galilean-contraction-and-mass-central-charge
+  to: qft.align010.weinberg-1.problem-galilean-central-charges
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: Section 2.4 supplies a Lorentz-contraction derivation as a distinct route,
+    but Problem 3 expressly requests the direct Galilean-group route.
+  failure_mode: Treating contraction as required would violate the problem's stated
+    no-Lorentz-results condition.
+  evidence:
+  - source: weinberg-1
+    section: 2.4 and Problems
+    pages:
+    - 62
+    - 105
+    note: Presents the contraction route and explicitly excludes it in Problem 3.
+- id: qft.align010.weinberg-1.edge-problem-galilean-local-law
+  from: qft.align010.weinberg-1.lie-algebra-from-local-group-law
+  to: qft.align010.weinberg-1.problem-galilean-central-charges
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 explicitly asks for a direct derivation of generator commutators
+    from the Galilean group multiplication law.
+  failure_mode: The requested direct-from-the-group-law derivation has no local expansion
+    method.
+  evidence:
+  - source: weinberg-1
+    section: 2.2 and Problems
+    pages:
+    - 54
+    - 105
+    note: Derives the general local group-law method and poses the direct Galilean
+      exercise.
+- id: qft.align010.weinberg-1.edge-problem-massive-wigner
+  from: qft.align010.weinberg-1.massive-wigner-rotation
+  to: qft.align010.weinberg-1.problem-transverse-boost-massive-spin-state
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested boosted W-boson description is obtained by the massive
+    Wigner-rotation transformation rule.
+  failure_mode: The spin-state transformation under the observer's transverse boost
+    cannot be calculated.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and Problems
+    pages:
+    - 68
+    - 69
+    - 104
+    note: Develops the massive transformation rule and poses Problem 1.
+- id: qft.align010.weinberg-1.edge-problem-photon-helicity
+  from: qft.align010.weinberg-1.massless-helicity-lorentz-action
+  to: qft.align010.weinberg-1.problem-transverse-boost-photon-polarization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The photon components acquire the Lorentz transformation phase determined
+    by their helicities.
+  failure_mode: The transformed photon state cannot be found from its polarization
+    data.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and Problems
+    pages:
+    - 72
+    - 73
+    - 105
+    note: Develops the helicity transformation and poses Problem 2.
+- id: qft.align010.weinberg-1.edge-problem-photon-polarization
+  from: qft.align010.weinberg-1.massless-polarization-lorentz-rotation
+  to: qft.align010.weinberg-1.problem-transverse-boost-photon-polarization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The prompt specifies a polarization vector, so its solution needs the
+    relation between opposite-helicity phases and the polarization plane.
+  failure_mode: The helicity phases cannot be translated into the requested polarization
+    description.
+  evidence:
+  - source: weinberg-1
+    section: 2.5 and Problems
+    pages:
+    - 74
+    - 105
+    note: Applies helicity phases to polarization and poses Problem 2.
+- id: qft.align010.weinberg-1.edge-problem-poincare-casimirs
+  from: qft.align010.weinberg-1.poincare-lie-algebra
+  to: qft.align010.weinberg-1.problem-poincare-casimirs
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Commuting P² and W² with all Poincaré operators is checked from the generator
+    algebra.
+  failure_mode: The requested commutator calculation lacks its defining relations.
+  evidence:
+  - source: weinberg-1
+    section: 2.4 and Problems
+    pages:
+    - 60
+    - 105
+    note: Derives the Poincaré algebra and poses Problem 4.
+- id: qft.align010.weinberg-1.edge-projective-cocycle-central
+  from: qft.align010.weinberg-1.projective-cocycles
+  to: qft.align010.weinberg-1.central-charges-from-projectivity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The central term is obtained by locally expanding the projective cocycle.
+  failure_mode: The added identity term lacks a group-level phase source.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 82
+    - 83
+    note: Expands the projective law to obtain central charges.
+- id: qft.align010.weinberg-1.edge-projective-representation-cocycles
+  from: qft.align010.weinberg-1.projective-symmetry-representations
+  to: qft.align010.weinberg-1.projective-cocycles
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cocycle analysis formalizes the phase in the projective composition
+    law introduced earlier.
+  failure_mode: There is no projective phase for the two-cocycle condition to constrain.
+  evidence:
+  - source: weinberg-1
+    section: 2.2 and 2.7
+    pages:
+    - 53
+    - 82
+    note: Introduces composition up to phase and then defines its cocycle condition.
+- id: qft.align010.weinberg-1.edge-simple-connectivity-to-theorem
+  from: qft.align010.weinberg-1.simple-connectedness-for-deprojectivization
+  to: qft.align010.weinberg-1.deprojectivization-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Simple connectedness is the theorem's second joint condition and converts
+    local stationarity into global path independence.
+  failure_mode: Global topology could still leave path-dependent phases, so the theorem's
+    conclusion would not follow.
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Appendix B
+    pages:
+    - 84
+    - 98
+    note: Lists simple connectedness as condition (b) and applies it to all paths
+      with common endpoints.
+- id: qft.align010.weinberg-1.edge-sl2-topology
+  from: qft.align010.weinberg-1.sl2c-double-cover-of-lorentz-group
+  to: qft.align010.weinberg-1.lorentz-topology-sign-projective-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The double-cover construction supplies the quotient whose topology is
+    analyzed.
+  failure_mode: The origin of the Z2 loop and sign is absent.
+  evidence:
+  - source: weinberg-1
+    section: '2.7'
+    pages:
+    - 87
+    - 88
+    - 89
+    note: Identifies SL(2,C)/Z2 then derives its double connectivity.
+- id: qft.align010.weinberg-1.edge-theorem-paths
+  from: qft.align010.weinberg-1.deprojectivization-theorem
+  to: qft.align010.weinberg-1.group-operator-path-construction
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The theorem is stated before Appendix B, so presenting its conclusion
+    first can orient the later proof but is not an input to the construction.
+  failure_mode: The proof is encountered without its announced conclusion, while its
+    construction remains derivable from its actual inputs.
+  evidence:
+  - source: weinberg-1
+    section: 2.7 and Appendix B
+    pages:
+    - 84
+    - 96
+    - 97
+    note: The theorem is stated before the appendix constructs it.
+- id: qft.align010.weinberg-1.edge-time-action-kramers
+  from: qft.align010.weinberg-1.massive-intrinsic-parity-and-time-reversal
+  to: qft.align010.weinberg-1.massive-time-reversal-square
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Composing the stated massive one-particle time-reversal action gives
+    T²=(−1)^(2j).
+  failure_mode: The massive sector factor cannot be supplied to a multiparticle calculation.
+  evidence:
+  - source: weinberg-1
+    section: '2.6'
+    pages:
+    - 78
+    - 80
+    note: States the massive transformation and calculates its square.
+- id: qft.align010.weinberg-1.edge-wigner-basis-dichotomy
+  from: qft.align010.weinberg-1.wigner-theorem-proof-orthonormal-basis
+  to: qft.align010.weinberg-1.wigner-theorem-proof-coefficient-dichotomy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Coefficient comparisons are made by expanding in the chosen complete
+    image basis.
+  failure_mode: There is no common coordinate basis in which to compare coefficients.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 91
+    - 92
+    - 93
+    note: Establishes the basis and then compares expansion coefficients.
+- id: qft.align010.weinberg-1.edge-wigner-dichotomy-conclusion
+  from: qft.align010.weinberg-1.wigner-theorem-proof-coefficient-dichotomy
+  to: qft.align010.weinberg-1.wigner-theorem-proof-operator-conclusion
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The linear and antilinear conclusions correspond exactly to the two globally
+    consistent coefficient branches.
+  failure_mode: The two operator forms cannot be justified without the global branch
+    choice.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 94
+    - 95
+    - 96
+    note: Makes the global choice and derives each operator type.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -11529,6 +14185,10 @@ groups:
     description?
 - id: qft.nonabelian-gauge-invariance
   title: Non-Abelian gauge invariance
+- id: qft.particle-representations-and-gauge-polarizations
+  title: Particle representations, little groups, and gauge polarizations
+  question: How do Poincare symmetry, little-group representations, and gauge constraints
+    determine particle and vector-polarization content?
 - id: qft.qed-scattering
   title: QED scattering and diagrammatics
   question: How does introductory e+e- to mu+mu- connect amplitudes, spin selection,
