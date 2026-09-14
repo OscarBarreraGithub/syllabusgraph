@@ -18,8 +18,8 @@ imply a package has been published to a package index.
   overlap, preserving the distinction between using and deriving a result.
 - Expand the QFT bank beyond its pilot through independently reviewed textbook
   batches. Record current counts, exact accepted scopes, and nonconceptual
-  exclusions alongside each graph. Full-book extraction and shared alignment
-  remain in progress.
+  exclusions alongside each graph. Extraction now covers the four inventoried
+  source scopes; whole-book audits and shared alignment remain in progress.
 - Add reviewed source inventories and remaining section scopes to the QFT bank.
   Optional coverage ledgers must match their project and current graph digest.
   Clarify joint prerequisites within alternative derivations and complete-word

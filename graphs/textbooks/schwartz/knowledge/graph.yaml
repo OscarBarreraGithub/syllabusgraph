@@ -312,6 +312,342 @@ nodes:
     section: Problem 25.4(c)
     pages:
     - 506
+- id: schwartz.appendix-derivative-regularization-method
+  label: Derivative regularization method
+  summary: For I(Delta)=integral d4k/((2pi)^4(k^2-Delta+i epsilon)^2), dI/dDelta=integral
+    d4k/(2pi)^4 2/(k^2-Delta+i epsilon)^3=-i/(16pi^2Delta), hence I=-i ln(Delta/Lambda^2)/(16pi^2).
+    Differentiating a quadratic divergence twice yields -i[Delta ln(Delta/Lambda_1^2)+Lambda_2^2]/(8pi^2).
+    Its independent integration constants cannot enforce cancellations such as gauge-invariance
+    constraints, so it checks a logarithm coefficient rather than supplying an ideal
+    regulator.
+  kind: method
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.4.1
+    pages:
+    - 830
+    - 831
+- id: schwartz.appendix-dimensional-analysis-problem
+  label: Appendix dimensional-analysis problem
+  summary: Problem A.1 asks for [A_mu], [phi], [g], and [lambda] in d dimensions for
+    S=integral d^d x[-F_mu_nu^2/4-phi-star box phi+gA_mu phi-star partial_mu phi+lambda
+    phi^3+...], then asks in which d the electromagnetic and phi^3 couplings are dimensionless.
+    It supplies no solution.
+  kind: method
+  group: schwartz.appendix-a-conventions
+  evidence:
+  - source: schwartz
+    section: Problem A.1
+    pages:
+    - 821
+- id: schwartz.appendix-dimensional-continuation-conventions
+  label: Dimensional-continuation conventions
+  summary: Dimensional regularization first evaluates a convergent integral at d<4
+    and analytically continues it. It uses g_mu_nu=diag(1,-1,...,-1), g_mu_nu g^mu_nu=d,
+    and dPi_LIPS=(2pi)^d product_j[d^(d-1)p_j/((2pi)^(d-1)2E_pj)]delta^d(sum p). These
+    scalar and measure conventions are distinct from any gamma_5 prescription.
+  kind: representation
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3
+    pages:
+    - 825
+- id: schwartz.appendix-dimensional-logarithmic-loop-route
+  label: Dimensional route for the logarithmic loop
+  summary: Combining the d-dimensional scalar integral with e->mu^((4-d)/2)e and expansion
+    at d=4-epsilon yields the normalized dimensional-regulation route i e^2/(16pi^2)[2/epsilon+ln(mu-tilde^2/Delta)+O(epsilon)]
+    for the stated logarithmic denominator integral.
+  kind: method
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3.2–B.3.3
+    pages:
+    - 827
+    - 828
+- id: schwartz.appendix-dimensional-poles-and-scaleless-integrals
+  label: Dimensional poles, IR regulation, and scaleless integrals
+  summary: Dimensional regularization represents logarithmic UV behavior by a Gamma-function
+    pole at d=4 and quadratic behavior by a pole at d=2; expanding the latter near
+    d=4 can still produce a 1/epsilon term. Taking d=4-epsilon with epsilon<0 regulates
+    the stated IR divergence. Splitting a scaleless integral at an arbitrary Euclidean
+    scale gives a term proportional to 1/epsilon_UV-1/epsilon_IR; the conventional
+    common-epsilon value is zero, while its isolated UV divergence is i/(8pi^2 epsilon_UV).
+  kind: method
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 829
+- id: schwartz.appendix-dimensional-scalar-integral-formula
+  label: d-dimensional scalar-integral formulas
+  summary: Write d^dk=dOmega_d k^(d-1)dk with dOmega_d=sin^(d-2)(phi_(d-1))sin^(d-3)(phi_(d-2))...sin(phi_2)dphi_1...dphi_(d-1),
+    0<=phi_1<2pi and 0<=phi_i<pi for i>1. Thus Omega_2=2pi, Omega_3=4pi, Omega_4=2pi^2
+    and V_d=Omega_d R^d/d. The Gaussian identity pi^(d/2)=Gamma(d/2)Omega_d/2 and
+    the equivalent telescoping angular product give Omega_d=2pi^(d/2)/Gamma(d/2);
+    Gamma(n)=(n-1)! at positive integers and Gamma(epsilon)=1/epsilon-gamma_E+O(epsilon).
+    Also sin(pi x)=pi(1-x)/(Gamma(x)Gamma(2-x)); cos(pi x)=(1-2x)Gamma(1-x)Gamma(1+x)/(2x
+    Gamma(2-2x)Gamma(2x)); and beta(a,b)=Gamma(a)Gamma(b)/Gamma(a+b)=integral_0^1
+    dx(1-x)^(a-1)x^(b-1). The radial integral is integral_0^infinity dk_E k_E^a/(k_E^2+Delta)^b=Delta^((a+1)/2-b)Gamma((a+1)/2)Gamma(b-(a+1)/2)/(2Gamma(b)).
+    Hence integral d^dk/(2pi)^d k^(2a)/(k^2-Delta)^b=i(-1)^(a-b)(4pi)^(-d/2)Delta^(-(b-a-d/2))Gamma(a+d/2)Gamma(b-a-d/2)/(Gamma(b)Gamma(d/2)).
+    Its B.36-B.39 special cases are respectively i(4pi)^(-d/2)Delta^(d/2-2)Gamma(2-d/2);
+    -(d/2)i(4pi)^(-d/2)Delta^(d/2-1)Gamma(2-d/2); (d/4)i(4pi)^(-d/2)Delta^(d/2-2)Gamma(2-d/2);
+    and -i Gamma(3-d/2)/[2(4pi)^(d/2)Delta^(3-d/2)]. The conventions d=4-epsilon and
+    d=4-2epsilon differ by a factor of two.
+  kind: method
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3.2
+    pages:
+    - 826
+    - 827
+- id: schwartz.appendix-dimreg-field-dimensions-and-scale
+  label: Dimensional field dimensions and the modified minimal-subtraction scale
+  summary: 'In d-dimensional QED, [A_nu]=(d-2)/2, [psi]=(d-1)/2, [m]=1, and [e]=(4-d)/2.
+    Replacing e by mu^((4-d)/2)e keeps e dimensionless. The logarithmic loop becomes
+    i e^2/(16pi^2)[2/epsilon+ln(mu-tilde^2/Delta)+O(epsilon)] at d=4-epsilon, with
+    mu-tilde^2=4pi exp(-gamma_E)mu^2. The parameter mu is not a UV cutoff: the regulator
+    is removed as d->4, and both epsilon and mu must cancel from physical predictions.'
+  kind: representation
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
+- id: schwartz.appendix-dimreg-gamma5-assumption
+  label: d-dimensional gamma-matrix and gamma_5 assumption
+  summary: 'The appendix assumes d four-dimensional gamma matrices obeying {gamma_mu,gamma_nu}=2g_mu_nu,
+    Tr 1=4, and a gamma_5 obeying {gamma_5,gamma_mu}=0 in d=4-epsilon. It explicitly
+    limits the claim: anomalous theories are where this definition can be subtle.'
+  kind: assumption
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3.1
+    pages:
+    - 825
+- id: schwartz.appendix-dirac-algebra-and-field-strength-identities
+  label: Dirac algebra, traces, polarizations, and field-strength identities
+  summary: The conventions are {gamma_mu,gamma_nu}=2g_mu_nu, gamma_5=i gamma^0gamma^1gamma^2gamma^3
+    with {gamma_5,gamma^mu}=0, sigma_mu_nu=i[gamma_mu,gamma_nu]/2, epsilon^0123=-epsilon_0123=1,
+    and P_L,R=(1∓gamma_5)/2. Thus gamma_5 psi_L=-psi_L, gamma_5 psi_R=psi_R, and psi=(psi_L,psi_R)^T.
+    The contractions are g^mu_nu g_mu_nu=4, gamma^mu gamma_mu=4, gamma^mu gamma^nu
+    gamma_mu=-2gamma^nu, gamma^mu gamma^nu gamma^rho gamma_mu=4g^nu_rho, and gamma^mu
+    gamma^nu gamma^rho gamma^sigma gamma_mu=-2gamma^sigma gamma^rho gamma^nu. Tr(gamma_5),
+    Tr(gamma^mu), and odd-gamma traces vanish; Tr(gamma^mu gamma^nu)=4g^mu_nu, Tr(gamma^alpha
+    gamma^mu gamma^beta gamma^nu)=4(g^alpha_mu g^beta_nu-g^alpha_beta g^mu_nu+g^alpha_nu
+    g^mu_beta), and Tr(gamma^mu gamma^nu gamma^alpha gamma^beta gamma_5)=-4i epsilon^mu_nu_alpha_beta.
+    The spin sums are sum_s u_s(p)u-bar_s(p)=slash-p+m and sum_s v_s(p)v-bar_s(p)=slash-p-m,
+    while u-bar_sigma gamma^mu u_sigma-prime=2 delta_sigma,sigma-prime p^mu. Circular
+    polarizations are epsilon_L,R^mu=(0,1,∓i,0)/sqrt(2). Finally slash-D^2=D_mu^2+(e/2)F_mu_nu
+    sigma^mu_nu, (sigma_mu_nu F^mu_nu)^2=2F_mu_nu F^mu_nu+2i gamma_5 F_mu_nu F-tilde^mu_nu,
+    and F-tilde^mu_nu=epsilon^mu_nu_alpha_beta F^alpha_beta/2.
+  kind: representation
+  group: schwartz.appendix-a-conventions
+  evidence:
+  - source: schwartz
+    section: A.4
+    pages:
+    - 820
+    - 821
+- id: schwartz.appendix-feynman-parameter-identities-and-shift
+  label: Feynman-parameter identities and loop shift
+  summary: The identities are 1/(AB)=integral_0^1 dx/[A+(B-A)x]^2=integral_0^1 dxdy
+    delta(x+y-1)/[xA+yB]^2, 1/(AB^n)=integral_0^1 dxdy delta(x+y-1)n y^(n-1)/[xA+yB]^(n+1),
+    and 1/(ABC)=integral_0^1 dxdydz delta(x+y+z-1)2/[xA+yB+zC]^3. For integral d4k/((2pi)^4
+    k^2(k-p)^2), completing the square gives Delta=-p^2x(1-x) and denominator [(k-xp)^2-Delta]^2;
+    shifting the integration variable k->k+xp then gives [k^2-Delta]^2, so the integral
+    depends only on k^2.
+  kind: method
+  group: schwartz.appendix-b-loop-tools
+  evidence:
+  - source: schwartz
+    section: B.1.1
+    pages:
+    - 822
+- id: schwartz.appendix-free-mode-and-diagram-conventions
+  label: Free-field modes and Feynman-diagram symbols
+  summary: 'With omega_p=sqrt(p_vec^2+m^2), the real scalar is phi(x)=integral d3p/((2pi)^3sqrt(2omega_p))[a_p(t)exp(i
+    p_vec dot x_vec)+a_p-dagger(t)exp(-i p_vec dot x_vec)]. The complex modes are
+    phi(x)=integral d3p/((2pi)^3sqrt(2omega_p))[a_p exp(-ipx)+b_p-dagger exp(ipx)]
+    and phi-star(x)=integral d3p/((2pi)^3sqrt(2omega_p))[a_p-dagger exp(ipx)+b_p exp(-ipx)].
+    The Dirac modes are psi(x)=sum_s integral d3p/((2pi)^3sqrt(2omega_p))[a_p^s u_p^s
+    exp(-ipx)+b_p^{s dagger}v_p^s exp(ipx)] and psi-bar(x)=sum_s integral d3p/((2pi)^3sqrt(2omega_p))[a_p^{s
+    dagger}u-bar_p^s exp(ipx)+b_p^s v-bar_p^s exp(-ipx)]. The phases follow from a(t)=exp(-iomega
+    t)a(0). Table A.1 maps: solid line/generic particle; arrowed solid/fermion; dashed/scalar;
+    arrowed dashed/charged scalar; wavy/photon or Z; dotted arrow/ghost; curly/gluon;
+    arrowed wavy/W; double wavy/graviton; double-line arrow/heavy quark; barred line/background
+    field; star/counterterm; circled cross/operator or current; 1PI circle/all one-particle-irreducible
+    contributions; filled circle/generic amplitude; hatched square/alternative generic
+    amplitude.'
+  kind: representation
+  group: schwartz.appendix-a-conventions
+  evidence:
+  - source: schwartz
+    section: A.2–A.3; Table A.1
+    pages:
+    - 818
+    - 819
+- id: schwartz.appendix-logarithmic-loop-regularization-comparison
+  label: Agreement of three logarithmic-loop routes
+  summary: For the logarithmically divergent scalar denominator integral, the complete
+    dimensional route, the derivative route, and Pauli--Villars subtraction agree
+    on the i/(16pi^2) logarithm coefficient. Their scales have different regulator
+    interpretations.
+  kind: result
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.3.3–B.4.2
+    pages:
+    - 828
+    - 831
+    - 832
+- id: schwartz.appendix-lorentz-tensor-loop-reduction
+  label: Lorentz-tensor loop reduction
+  summary: When a loop tensor depends only on scalar Delta, Lorentz covariance gives
+    integral d^dk/(2pi)^d k_mu k_nu/(k^2-Delta)^n=(g_mu_nu/d) integral d^dk/(2pi)^d
+    k^2/(k^2-Delta)^n. A numerator with one unpaired k_mu is odd under k->-k and integrates
+    to zero over all momentum space.
+  kind: method
+  group: schwartz.appendix-b-loop-tools
+  evidence:
+  - source: schwartz
+    section: B.3.4
+    pages:
+    - 830
+- id: schwartz.appendix-natural-units-and-mass-dimensions
+  label: Natural units, mass dimensions, and cross-section conversion
+  summary: Set c=hbar=1, so [d4x]=-4 and [S]=[integral d4x L]=0 requires [L]=4. A
+    scalar kinetic term gives [phi]=1; bosons with two-derivative kinetic terms have
+    dimension 1 and fermions with one derivative have 3/2. Restoring units gives hbar^2c^2=9.996x10^-52
+    joule^2 metre^2 and 1 GeV^-2 hbar^2c^2=3.894x10^-32 metre^2=3.894x10^8 pb.
+  kind: representation
+  group: schwartz.appendix-a-conventions
+  evidence:
+  - source: schwartz
+    section: A.1
+    pages:
+    - 815
+    - 816
+- id: schwartz.appendix-other-regulator-survey
+  label: Other regulator survey
+  summary: A hard Euclidean cutoff k_E<Lambda breaks Lorentz invariance and usually
+    every symmetry. Point splitting imposes |x_1^mu-x_2^mu|>|epsilon^mu|, breaks translation
+    invariance, and is impractical for gauge theories but useful for composite operators.
+    A lattice breaks translation and Lorentz invariance, though both can be restored
+    in the continuum limit.
+  kind: representation
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.4.3
+    pages:
+    - 833
+- id: schwartz.appendix-pauli-villars-regularization-method
+  label: Pauli--Villars ghost subtraction
+  summary: At one loop L_PV=-F^2/4+psi-bar(i slash-partial-e slash-A-e slash-A-tilde-m)psi+F-tilde^2/4-Lambda^2
+    A-tilde^2/2+psi-tilde-bar(i slash-partial-e slash-A-e slash-A-tilde-Lambda)psi-tilde,
+    with F-tilde_mu_nu=partial_mu A-tilde_nu-partial_nu A-tilde_mu. Both ghost fields
+    use bosonic statistics; A-tilde also has a wrong-sign kinetic term and propagator
+    +i g_mu_nu/(p^2-Lambda^2+i epsilon). The subtraction 1/(k^2-m^2+i epsilon)^2-1/(k^2-Lambda^2+i
+    epsilon)^2 falls at least as 1/k^6 and evaluates to -i ln(m^2/Lambda^2)/(16pi^2),
+    so the regulated original is i ln(Lambda^2/m^2)/(16pi^2). Further, 1/(k^2-m^2)-1/(k^2-Lambda^2)=integral_(m^2)^(Lambda^2)[-dXi/(k^2-Xi)^2],
+    and integral dm^2 d/dm^2[1/(k^2-m^2)]=integral dm^2/(k^2-m^2)^2. This makes Pauli--Villars
+    a systematic derivative method. It becomes impractical beyond one loop and is
+    unsuitable for non-Abelian gauge theories; its stated Abelian one-loop use requires
+    a conserved current.
+  kind: method
+  group: schwartz.appendix-b-regularization
+  evidence:
+  - source: schwartz
+    section: B.4.2
+    pages:
+    - 831
+    - 832
+- id: schwartz.appendix-schwinger-parameter-identities
+  label: Schwinger parameters and complementary Feynman fractions
+  summary: For Im(A)>0, i/A=integral_0^infinity ds exp(isA) and [i/A]^2=integral_0^infinity
+    s ds exp(isA). For Im(A),Im(B)>0, 1/(AB)=-integral_0^infinity ds integral_0^infinity
+    dt exp(isA+itB). With tau=s+t, x=t/tau, t=x tau and s=(1-x)tau, this becomes -integral_0^infinity
+    tau d tau integral_0^1 dx exp[i tau(A+(B-A)x)]=integral_0^1 dx/[A+(B-A)x]^2. The
+    appendix also gives 1/(A^nB^m)=Gamma(n+m)/(Gamma(n)Gamma(m)) integral_0^infinity
+    ds s^(m-1)/(A+Bs)^(n+m) and 1/(AB)=integral_0^infinity ds/(A+Bs)^2. The printed
+    sentence after the change of variables calls x=s/tau although its equation defines
+    x=t/tau; these are complementary labels.
+  kind: representation
+  group: schwartz.appendix-b-loop-tools
+  evidence:
+  - source: schwartz
+    section: B.1.2
+    pages:
+    - 822
+    - 823
+- id: schwartz.appendix-sign-propagator-and-covariant-derivative-conventions
+  label: Appendix signs, propagators, and covariant derivative
+  summary: 'With eta_mu_nu=diag(1,-1,-1,-1), p^2=p_0^2-p_vec^2=m^2>0. The real scalar
+    has L=-phi(box+m^2)phi/2=(partial_mu phi)(partial^mu phi)/2-m^2phi^2/2; the complex
+    scalar has L=-phi-star(box+m^2)phi=(partial_mu phi-star)(partial^mu phi)-m^2phi-star
+    phi. For F_mu_nu=partial_mu A_nu-partial_nu A_mu, L=-F_mu_nu F^mu_nu/4=-partial_mu
+    A_nu partial^mu A^nu/2+partial_mu A_nu partial^nu A^mu/2=A_nu box A^nu/2-A_mu
+    partial^mu partial^nu A_nu/2. Dirac fields use L=psi-bar(i slash-partial-e slash-A-m)psi.
+    Contracted indices may be raised or lowered consistently: x dot p=x^mu p_mu=x_mu
+    p^mu. D_mu=partial_mu-i g T_R^a A_mu^a; QED has D_mu=partial_mu-i e Q A_mu, e=0.303
+    and Q_e=-1, hence D_mu psi_e=(partial_mu+i e A_mu)psi_e. `tr` denotes group or
+    state sums and `Tr` a Dirac trace. The real-scalar propagator is integral d4p/(2pi)^4
+    exp(ip(x-y)) i/(p^2-m^2+i epsilon); the massless covariant-gauge vector is integral
+    d4p/(2pi)^4 exp(ip(x-y))[-i(g_mu_nu-(1-xi)p_mu p_nu/p^2)]/(p^2+i epsilon); and
+    the Dirac propagator is integral d4p/(2pi)^4 exp(-ip(x-y)) i(slash-p+m)/(p^2-m^2+i
+    epsilon).'
+  kind: representation
+  group: schwartz.appendix-a-conventions
+  evidence:
+  - source: schwartz
+    section: A.2
+    pages:
+    - 817
+    - 818
+  notation:
+  - source: schwartz
+    note: Contracted indices may be raised or lowered; tr is a generator/state sum
+      and Tr is a Dirac trace.
+- id: schwartz.appendix-wick-rotation-delta-negative-problem
+  label: Wick rotation for negative Delta problem
+  summary: Problem B.1 asks the learner to show that the Wick rotation still works
+    if Delta<0. It is a requested extension of the contour argument, not a supplied
+    result.
+  kind: method
+  group: schwartz.appendix-b-loop-tools
+  evidence:
+  - source: schwartz
+    section: Problem B.1
+    pages:
+    - 833
+- id: schwartz.appendix-wick-rotation-method
+  label: Wick rotation of a Feynman loop
+  summary: For integral d4k/((2pi)^4(k^2-Delta+i epsilon)^n) with Delta>0, the Feynman
+    poles occupy the top-left and bottom-right k^0 quadrants, permitting k^0->ik_E^0
+    and k^2->-k_E^2 when no additional pole obstructs the contour. With integral dOmega_4=2pi^2,
+    integral d4k_E/(2pi)^4 f(k_E^2)=1/(8pi^2)integral_0^infinity k_E^3dk_E f(k_E^2).
+    The n=3 denominator integral is -i/(32pi^2Delta), and integral d4k/(2pi)^4 k^2/(k^2-Delta+i
+    epsilon)^4=-i/(48pi^2Delta). Generally, the denominator-only result is i(-1)^r/[(4pi)^2(r-1)(r-2)Delta^(r-2)]
+    for r>2, while the k^2-numerator result is i(-1)^(r-1)2/[(4pi)^2(r-1)(r-2)(r-3)Delta^(r-3)]
+    for r>3. After rotation epsilon may be set to zero. Wick rotation is a calculational
+    device, and the unobstructed-contour caveat matters at higher loops.
+  kind: method
+  group: schwartz.appendix-b-loop-tools
+  evidence:
+  - source: schwartz
+    section: B.2
+    pages:
+    - 823
+    - 824
+    - 825
 - id: schwartz.asymptotic-freedom-assumption-for-lsz
   label: Asymptotic-free-state assumption for LSZ
   summary: The LSZ derivation assumes interactions are negligible at asymptotically
@@ -3139,10 +3475,13 @@ nodes:
     - 554
     - 555
 - id: schwartz.fourier-transform-derivative-operator-correspondence
-  label: Fourier correspondence for field operators
-  summary: With the source's Fourier conventions, ∇² corresponds to −|k⃗|² and □ corresponds
-    to −k². This diagonalizes differential operators and turns inverse differential
-    operators such as 1/□ into momentum-space factors.
+  label: Fourier correspondence and Appendix A normalization
+  summary: With the source's Fourier conventions, the accepted p. 38 result is nabla^2<->-|k_vec|^2
+    and box<->-k^2. This diagonalizes differential operators and turns inverse operators
+    such as 1/box into momentum-space factors. Appendix A fixes delta(x)=integral
+    dp exp(plus-or-minus 2pi i p x), integral dp exp(plus-or-minus i p x)=2pi delta(x),
+    f(x)=integral d4p/(2pi)^4 f-tilde(p)exp(-ipx), f-tilde(p)=integral d4x f(x)exp(ipx),
+    p_mu<->i partial_mu, and p_vec<->-i grad.
   kind: method
   group: schwartz.classical-field-theory
   evidence:
@@ -3151,6 +3490,12 @@ nodes:
     pages:
     - 38
     note: Derives ∆↔−k⃗² and □↔−k².
+  - source: schwartz
+    section: A.1.1
+    pages:
+    - 816
+    note: Fixes the delta-function normalization, transform phases and measures, and
+      derivative correspondence.
 - id: schwartz.free-dirac-particle-antiparticle-solutions
   label: Free Dirac particle and antiparticle solutions
   summary: Positive-energy u_s(p)e−ipx and v_s(p)e+ipx solutions of the free Dirac
@@ -7992,11 +8337,14 @@ nodes:
     - 724
     - 725
 - id: schwartz.proper-time-feynman-parameter-composition
-  label: Proper-time composition and Feynman parameters
-  summary: For two denominators, separate proper times s,t can be changed to total
-    time τ=s+t and x=s/(s+t), yielding 1/(AB)=∫₀¹dx/[Ax+B(1−x)]² (with the displayed
-    iε prescription implicit). Thus a Feynman parameter records the fraction of the
-    loop proper time associated with one propagator.
+  label: Proper-time composition and complementary Feynman fractions
+  summary: For two denominators, separate proper times have total tau=s+t. Choosing
+    x=s/tau gives 1/(AB)=integral_0^1 dx/[Ax+B(1-x)]^2; equivalently, choosing x=t/tau
+    gives t=x tau, s=(1-x)tau and denominator A+(B-A)x. The Schwinger derivation assumes
+    Im(A)>0 and Im(B)>0. Each parameter measures a propagator's fraction of total
+    loop proper time. Appendix B defines x=t/tau in the displayed change of variables
+    but the following sentence calls it s/tau; this is a printed label mismatch between
+    complementary conventions, not a different identity.
   kind: representation
   group: schwartz.effective-actions-proper-time
   evidence:
@@ -8005,6 +8353,13 @@ nodes:
     pages:
     - 706
     - 707
+  - source: schwartz
+    section: B.1.1–B.1.2
+    pages:
+    - 822
+    - 823
+    note: Gives the complementary parameter convention and contains the printed label
+      mismatch.
 - id: schwartz.proton-elastic-form-factors-and-rosenbluth-cross-section
   label: Proton elastic form factors and the Rosenbluth cross section
   summary: For on-shell proton spinors, the electromagnetic vertex is Γμ(q)=F1(q²)γμ+iσμνqνF2(q²)/(2mp).
@@ -13014,6 +13369,21 @@ edges:
     - 143
     - 144
     note: Uses the complex-field mode expansion to derive all charged vertex cases.
+- id: schwartz.e-appendix-natural-units-to-dimensional-analysis-problem
+  from: schwartz.appendix-natural-units-and-mass-dimensions
+  to: schwartz.appendix-dimensional-analysis-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requires dimensional assignments for the given action.
+  failure_mode: The requested dimensions cannot be derived.
+  evidence:
+  - source: schwartz
+    section: A.1; Problem A.1
+    pages:
+    - 815
+    - 821
 - id: schwartz.e-asymptotic-to-lsz
   from: schwartz.asymptotic-freedom-assumption-for-lsz
   to: schwartz.lsz-boundary-operator-derivation
@@ -14491,6 +14861,21 @@ edges:
     section: Problem 29.3
     pages:
     - 614
+- id: schwartz.e-derivative-to-comparison
+  from: schwartz.appendix-derivative-regularization-method
+  to: schwartz.appendix-logarithmic-loop-regularization-comparison
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The derivative calculation independently fixes the same logarithm coefficient.
+  failure_mode: The independent method would be falsely cumulative with dimensional
+    regularization.
+  evidence:
+  - source: schwartz
+    section: B.4.1
+    pages:
+    - 831
 - id: schwartz.e-diagonalize-to-ckm
   from: schwartz.biunitary-yukawa-diagonalization-and-mass-basis
   to: schwartz.ckm-charged-current-mixing-matrix
@@ -14505,6 +14890,84 @@ edges:
     section: 29.3.2
     pages:
     - 597
+- id: schwartz.e-dim-continuation-to-field-scale
+  from: schwartz.appendix-dimensional-continuation-conventions
+  to: schwartz.appendix-dimreg-field-dimensions-and-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field dimensions and mu exponent are defined after continuation to
+    d dimensions.
+  failure_mode: The d-dependent dimensions and coupling rescaling are undefined.
+  evidence:
+  - source: schwartz
+    section: B.3–B.3.3
+    pages:
+    - 825
+    - 828
+- id: schwartz.e-dim-continuation-to-poles
+  from: schwartz.appendix-dimensional-continuation-conventions
+  to: schwartz.appendix-dimensional-poles-and-scaleless-integrals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pole and UV/IR analysis compares analytic continuations above and
+    below four dimensions.
+  failure_mode: The meanings of epsilon_UV and epsilon_IR are unavailable.
+  evidence:
+  - source: schwartz
+    section: B.3–B.3.3
+    pages:
+    - 825
+    - 829
+- id: schwartz.e-dim-continuation-to-scalar-integral
+  from: schwartz.appendix-dimensional-continuation-conventions
+  to: schwartz.appendix-dimensional-scalar-integral-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar formula uses the d-dimensional measure and metric convention.
+  failure_mode: The continued integration formula lacks its d-dimensional definition.
+  evidence:
+  - source: schwartz
+    section: B.3–B.3.2
+    pages:
+    - 825
+    - 826
+- id: schwartz.e-dim-continuation-to-tensor-reduction
+  from: schwartz.appendix-dimensional-continuation-conventions
+  to: schwartz.appendix-lorentz-tensor-loop-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor coefficient is 1/d and uses d-dimensional Lorentz covariance.
+  failure_mode: Using a fixed four-dimensional coefficient would give the wrong reduction.
+  evidence:
+  - source: schwartz
+    section: B.3.1; B.3.4
+    pages:
+    - 825
+    - 830
+- id: schwartz.e-dimensional-log-route-to-comparison
+  from: schwartz.appendix-dimensional-logarithmic-loop-route
+  to: schwartz.appendix-logarithmic-loop-regularization-comparison
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This complete dimensional branch is one independent derivation of the
+    coefficient.
+  failure_mode: Its jointly required inputs would be mistaken for separate sufficient
+    routes.
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
 - id: schwartz.e-dirac-adjoint-to-current
   from: schwartz.dirac-adjoint-and-covariant-bilinears
   to: schwartz.dirac-noether-number-current
@@ -15338,6 +15801,20 @@ edges:
     - 257
     - 258
     note: Rewrites the scalar Hamiltonian in φ̂ and π̂ before time slicing.
+- id: schwartz.e-field-scale-to-dimensional-log-route
+  from: schwartz.appendix-dimreg-field-dimensions-and-scale
+  to: schwartz.appendix-dimensional-logarithmic-loop-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The same route jointly needs the mu coupling rescaling and epsilon expansion.
+  failure_mode: Its normalization and logarithmic scale are absent.
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
 - id: schwartz.e-field-states-from-et-commutator
   from: schwartz.equal-time-scalar-field-commutation-relations
   to: schwartz.field-configuration-and-momentum-eigenstates
@@ -18538,6 +19015,20 @@ edges:
     - 173
     - 174
     note: Derives the term then interprets it.
+- id: schwartz.e-pauli-villars-to-comparison
+  from: schwartz.appendix-pauli-villars-regularization-method
+  to: schwartz.appendix-logarithmic-loop-regularization-comparison
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Pauli--Villars supplies the third independent route.
+  failure_mode: The regulator routes would be incorrectly made compulsory together.
+  evidence:
+  - source: schwartz
+    section: B.4.2
+    pages:
+    - 832
 - id: schwartz.e-photon-polarization-to-unitarity
   from: schwartz.physical-photon-polarization-sum
   to: schwartz.unitarity-propagator-numerator-and-physical-polarizations
@@ -20047,6 +20538,21 @@ edges:
     section: 23.5.1
     pages:
     - 437
+- id: schwartz.e-scalar-integral-to-dimensional-log-route
+  from: schwartz.appendix-dimensional-scalar-integral-formula
+  to: schwartz.appendix-dimensional-logarithmic-loop-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The route evaluates the denominator with the scalar d-dimensional integral.
+  failure_mode: The regulated loop coefficient cannot be obtained.
+  evidence:
+  - source: schwartz
+    section: B.3.2–B.3.3
+    pages:
+    - 827
+    - 828
 - id: schwartz.e-scalar-loop-from-feynman-rules
   from: schwartz.momentum-space-feynman-rules
   to: schwartz.scalar-four-point-loop-renormalization
@@ -22373,6 +22879,40 @@ edges:
     section: '27.1'
     pages:
     - 536
+- id: schwartz.e-wick-to-derivative-method
+  from: schwartz.appendix-wick-rotation-method
+  to: schwartz.appendix-derivative-regularization-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The convergent derivative is evaluated with the n=3 Wick-rotation integral.
+  failure_mode: The derivative method's normalized logarithm coefficient cannot be
+    reproduced.
+  evidence:
+  - source: schwartz
+    section: B.2; B.4.1
+    pages:
+    - 824
+    - 831
+- id: schwartz.e-wick-to-dimensional-scalar-integral
+  from: schwartz.appendix-wick-rotation-method
+  to: schwartz.appendix-dimensional-scalar-integral-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Wick rotation supplies the Euclidean radial integral and the Minkowski
+    i and sign factors.
+  failure_mode: The displayed Minkowski scalar formulas cannot be reconstructed from
+    the Euclidean measure.
+  evidence:
+  - source: schwartz
+    section: B.2–B.3.2
+    pages:
+    - 824
+    - 826
+    - 827
 - id: schwartz.e-wick-to-hamiltonian-route
   from: schwartz.wick-contractions-and-vacuum-bubble-cancellation
   to: schwartz.hamiltonian-contraction-route-to-position-rules
@@ -22391,6 +22931,36 @@ edges:
     - 91
     - 92
     note: Defines contractions and demonstrates cancellation of vacuum bubbles.
+- id: schwartz.e-wick-to-negative-delta-problem
+  from: schwartz.appendix-wick-rotation-method
+  to: schwartz.appendix-wick-rotation-delta-negative-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task extends the stated contour argument from Delta>0 to Delta<0.
+  failure_mode: There is no contour construction to extend.
+  evidence:
+  - source: schwartz
+    section: B.2; Problem B.1
+    pages:
+    - 823
+    - 833
+- id: schwartz.e-wick-to-pauli-villars
+  from: schwartz.appendix-wick-rotation-method
+  to: schwartz.appendix-pauli-villars-regularization-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed Pauli--Villars subtraction is evaluated by Wick rotation.
+  failure_mode: The shown Euclidean integral cannot be reproduced.
+  evidence:
+  - source: schwartz
+    section: B.2; B.4.2
+    pages:
+    - 824
+    - 832
 - id: schwartz.e-wigner-classification-to-free-dirac-solutions
   from: schwartz.wigner-mass-spin-polarization-classification
   to: schwartz.free-dirac-particle-antiparticle-solutions
@@ -27534,6 +28104,16 @@ edges:
     pages:
     - 727
 groups:
+- id: schwartz.appendix-a-conventions
+  title: Appendix A conventions
+  question: Which unit, sign, field, and diagram conventions fix the book's calculations?
+- id: schwartz.appendix-b-loop-tools
+  title: Appendix B loop tools
+  question: How are loop denominators parameterized, rotated, and reduced?
+- id: schwartz.appendix-b-regularization
+  title: Appendix B regularization
+  question: How do dimensional continuation and independent regulators evaluate divergent
+    loops?
 - id: schwartz.background-fields-effective-action
   title: Background fields and 1PI effective actions
   question: How do 1PI and background-field actions encode quantum corrections while

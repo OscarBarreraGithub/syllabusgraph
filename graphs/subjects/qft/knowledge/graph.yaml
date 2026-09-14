@@ -870,6 +870,32 @@ nodes:
     - 36
     note: Lists current roles and states the nondynamical-source qualification.
   notation: []
+- id: qft.derrick-scaling-and-higher-derivative-balance
+  label: Derrick scaling and higher-derivative stabilization
+  summary: For the two-derivative Goldstone functional, n_R(x)=n(x/R) gives S[n_R]=R^(d−2)S[n].
+    For d>2, a nontrivial configuration can shrink toward singular S=0, so topology
+    alone does not stabilize a stationary skyrmion. Adding a four-derivative contribution
+    scaling as R^(d−4) can yield a finite-R minimum for 2<d<4, particularly d=3. The
+    source cautions that generically competing higher-derivative terms frustrate realistic
+    calculations.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.derrick-scaling-and-higher-derivative-balance
+    note: Retains the scaling derivation, finite-size range, singular-collapse qualification,
+      and effective-field-theory limitation.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 424
+    - 425
+    note: Derrick scaling, higher-derivative balance, and generic-term caveat.
+  notation:
+  - source: weinberg-2
+    note: n_R is the rescaled Goldstone configuration; T and D denote the two- and
+      four-derivative contributions checked in the original render.
 - id: qft.dewitt-notation-and-general-local-symmetry
   label: De Witt notation for general local symmetries
   summary: For general local symmetries, De Witt indices include spacetime and discrete
@@ -933,6 +959,32 @@ nodes:
     - 27
     note: Applies the definition to an improper single-coordinate reflection.
   notation: []
+- id: qft.domain-wall-topological-bound-and-first-order-profile
+  label: Domain-wall topological bound and first-order profile
+  summary: For a real scalar with reflection-symmetric potential and degenerate minima
+    ±φ̄, opposite limits at x→±∞ select stable flat-wall sectors. Completing the one-dimensional
+    energy into a square plus boundary term gives S[φ]≥∫_{−φ̄}^{φ̄}√(2V(f))df, saturated
+    by dφ/dx=±√(2V(φ)); x₀ is the translation zero mode. The source also gives a second-order
+    stationarity route, which remains an independent derivation of the profile.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.domain-wall-topological-bound-and-first-order-profile
+    note: Retains the potential and boundary conditions, completed-square bound, saturation
+      profile, zero mode, and separate second-order route.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 425
+    - 426
+    note: Domain-sector setup, topological bound, first-order equality condition,
+      and second-order alternative.
+  notation:
+  - source: weinberg-2
+    note: φ̄ denotes a vacuum magnitude and x₀ the wall-center integration constant;
+      the bound and profile equations were visually checked privately.
 - id: qft.einstein-emission-and-absorption-coefficients
   label: Einstein emission and absorption coefficient relations
   summary: For two atomic levels, the spontaneous-emission coefficient A, stimulated-emission
@@ -1203,6 +1255,32 @@ nodes:
     note: Calculates occupation-dependent transition amplitudes and converts occupation
       to intensity.
   notation: []
+- id: qft.finite-functional-topological-sectors
+  label: Finite functional sectors and local minima
+  summary: Requiring a functional S to remain finite can give field-configuration
+    space nontrivial topology. Continuous deformations that avoid S=∞ define equivalence
+    classes; a minimizer within one such class is a local minimum under small variations
+    and therefore a stationary solution. The source instantiates S as potential energy,
+    a Hamiltonian, a Euclidean action, or a proportional quantity according to the
+    physical setting.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.finite-functional-topological-sectors
+    note: Retains finite-S equivalence, sector-local minimization, and the source's
+      setting-specific meanings of S.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 422
+    - 423
+    note: Finite-functional definition and local-minimum use in stability and Euclidean
+      expansion.
+  notation:
+  - source: weinberg-2
+    note: S denotes the relevant finite functional, not a fixed universal action convention.
 - id: qft.finite-gauge-transformations
   label: Finite gauge transformations
   summary: A finite transformation acts on matter through exp(i t_αΛ^α(x)); requiring
@@ -1272,6 +1350,27 @@ nodes:
     node: schwartz.fock-space-particle-sectors
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.four-dimensional-pform-field-content
+  label: Four-dimensional p-form gauge-field content
+  summary: For D=4, the nontrivial p-form cases are p=0, 1, and 2. The zero-form has
+    constant-shift gauge invariance and is a massless scalar with derivative interactions;
+    the one-form is an electromagnetic vector coupled to a conserved vector current;
+    the two-form is dual to the zero-form and hence to that derivatively coupled scalar.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.four-dimensional-p-form-field-content
+    note: Retains the source's p=0,1,2 enumeration and each four-dimensional identification.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 372
+    note: The four-dimensional specialization of the stated duality result.
+  notation:
+  - source: weinberg-1
+    note: The zero-form source notation is S, with constant shift S→S+c.
 - id: qft.fourier-transform-derivative-operator-correspondence
   label: Fourier correspondence for field operators
   summary: With the source's Fourier conventions, ∇² corresponds to −|k⃗|² and □ corresponds
@@ -1316,6 +1415,36 @@ nodes:
     node: schwartz.free-scalar-field-mode-expansion
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.fundamental-group-concatenation-and-vortex-fusion
+  label: Fundamental-group concatenation and vortex fusion
+  summary: π₁(M) consists of based-loop homotopy classes. Concatenation defines multiplication;
+    deformation establishes associativity, the constant loop is the unit, and reversal
+    supplies an inverse. For π₁(S¹)=Z, the product adds winding labels. A large loop
+    surrounding two vortex lines yields their product class, so fusion is constrained
+    to that class and annihilation requires inverse classes; the Z and Z₂ examples
+    retain their distinct consequences.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.fundamental-group-concatenation
+    note: Retains the based-loop group construction, associativity/unit/inverse argument,
+      and the physical vortex-fusion examples.
+  evidence:
+  - source: weinberg-2
+    section: '23.2'
+    pages:
+    - 430
+    - 431
+    - 432
+    - 433
+    - 434
+    note: Definition, group operations, Z example, and vortex fusion/annihilation
+      interpretation.
+  notation:
+  - source: weinberg-2
+    note: p₀ is the base point; c denotes a homotopy class and × its source-defined
+      product.
 - id: qft.gauge-affine-connection-curvature-analogy-limit
   label: Gauge and affine-connection curvature analogy, with its limit
   summary: 'Gauge fields and affine connections both construct covariant derivatives,
@@ -1389,6 +1518,32 @@ nodes:
     node: weinberg-2.gauge-field-transformation
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+- id: qft.gauge-higgs-defect-classification-and-restored-cores
+  label: Gauge-Higgs defect classification and restored-symmetry cores
+  summary: For a broken gauge group G→H, finite energy makes the sphere at infinity
+    a based map into G/H and gives π_(d−1)(G/H) classification. In d=3, the stated
+    simply connected G to H containing electromagnetic U(1) condition supports monopoles;
+    in d=2, the stated non-simply-connected/discrete cases support vortex cross sections.
+    A nontrivial surrounding Goldstone configuration cannot shrink smoothly, so its
+    core restores G and requires a linearly transforming order parameter.
+  kind: concept
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.gauge-higgs-defect-classification-and-cores
+    note: Retains finite-energy G/H maps, dimension- and group-qualified monopole/vortex
+      cases, and the restored-symmetry core explanation.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 428
+    - 429
+    note: Gauge-Higgs finite-boundary classification and core argument.
+  notation:
+  - source: weinberg-2
+    note: H is the subgroup leaving the selected vacuum value invariant; the source's
+      gauge-Higgs action and scale terms were checked in the original render.
 - id: qft.gauge-invariant-functional-measure-assumption
   label: Gauge-invariant functional-measure assumption
   summary: For infinitesimal gauge transformations, the gauge-field Jacobian is unity
@@ -1588,6 +1743,32 @@ nodes:
     - 167
     - 172
   notation: []
+- id: qft.goldstone-boundary-compactification-and-global-homotopy
+  label: Goldstone boundary compactification and global homotopy class
+  summary: For Goldstone fields on G/H in d-dimensional Euclidean space, finite two-derivative
+    S requires derivatives to vanish at infinity and fields to approach a constant.
+    Identifying the sphere at infinity as one point compactifies the complete space
+    to S^d; the resulting based maps S^d→G/H are classified by π_d(G/H). This is a
+    global boundary-condition and homotopy construction, distinct from the local closed/exact
+    p-form argument.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.goldstone-boundary-compactification-and-homotopy
+    note: Retains the finite-boundary condition, fixed asymptotic coset representative,
+      compactification, and based homotopy-class scope.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 423
+    - 424
+    note: Goldstone asymptotics, compactification, and global homotopy classification.
+  notation:
+  - source: weinberg-2
+    note: A global G transformation fixes n^a_∞=0; π_d denotes based homotopy classes
+      of maps into G/H.
 - id: qft.goldstone-coset-transformations-and-order-parameter
   label: Goldstone coset transformations and order parameter
   summary: For G spontaneously broken to H, Goldstones transform linearly under unbroken
@@ -1897,6 +2078,32 @@ nodes:
     - 32
     note: Explains the first-derivative restriction and its effective-theory qualification.
   notation: []
+- id: qft.higher-homotopy-products-and-winding-conservation
+  label: Higher homotopy products and winding conservation
+  summary: π_k(M) uses based maps S^k→M, and its product joins mappings across a hypercube
+    coordinate. The prose states an Abelian property for its higher groups and describes
+    elements of π_k(M)=Z as signed covering numbers. In its examples π₂(G/U(1))=Z
+    gives additive monopole winding and π₂(G/SO(n))=Z₂ permits pair annihilation.
+    No proof beyond the source's stated prose is imported here.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.higher-homotopy-products-and-winding
+    note: Retains the based higher-map product, n>1 Abelian statement, winding/fusion
+      applications, and the explicit problem-versus-prose proof limit.
+  evidence:
+  - source: weinberg-2
+    section: '23.2'
+    pages:
+    - 434
+    - 435
+    - 436
+    note: Higher-map definition, product/group statement, and winding examples.
+  notation:
+  - source: weinberg-2
+    note: v is the signed integer winding label in the Z examples; it is not the unit
+      element.
 - id: qft.infrared-inclusive-final-states
   label: Infrared-inclusive final-state requirement
   summary: At the next order, a muon-pair observable must include final states with
@@ -2933,6 +3140,85 @@ nodes:
     section: '12.1'
     pages:
     - 401
+- id: qft.pform-exterior-derivative-and-local-exactness
+  label: Exterior derivative, closed forms, and local exactness
+  summary: A p-form is an antisymmetric covariant tensor of rank p; its antisymmetrized
+    exterior derivative d is a (p+1)-form and obeys d²=0. Exact forms are therefore
+    closed. Poincaré's theorem supplies the converse only on a region smoothly contractible
+    to a point; on multiply connected spaces a closed form can be locally but not
+    globally exact. This is local differential-form reasoning, not a classification
+    of global homotopy sectors.
+  kind: concept
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.p-form-exterior-derivative-and-local-exactness
+    note: Retains the p-form definition, nilpotence, contractible-region condition,
+      and multiply connected caveat as a local de Rham/Poincaré construction.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 369
+    - 370
+    note: Definitions, nilpotence, local theorem, and global caveat.
+  notation:
+  - source: weinberg-1
+    note: d is the exterior derivative; “closed” means dω=0 and “exact” means ω=dη
+      in the stated local scope.
+- id: qft.pform-gauge-action-and-conserved-current
+  label: p-form gauge action, field strength, and current conservation
+  summary: For a massless p-form potential A, δA=dQ and F=dA give a gauge-invariant
+    field strength. The Maxwell-like Lagrangian is ℒ=−F²/[2(p+1)!]+J·A, with an antisymmetric
+    p-form current J. Gauge invariance requires ∂_{μ₁}J^{μ₁…μ_p}=0, and variation
+    gives the p-form Maxwell equation. The displayed coefficient and conservation
+    condition are source-specific.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.p-form-gauge-action-and-conserved-current
+    note: Retains the source's p-form gauge transformation, field strength, action
+      coefficient, current condition, and Euler–Lagrange route.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    - 371
+    note: Gauge transformation, field strength, action/current condition, and field
+      equation.
+  notation:
+  - source: weinberg-1
+    note: Q is an arbitrary (p−1)-form; J is an antisymmetric p-form current. The
+      indexed action and equation were visually checked in the private inspection
+      note.
+- id: qft.pform-gauge-duality
+  label: Duality of p-form gauge fields
+  summary: In D spacetime dimensions, dualizing the (p+1)-form field strength and
+    p-form current rewrites the field equation and conservation condition. Applying
+    the local closed-implies-exact step yields a dual (D−p−2)-form gauge field φ and
+    its gauge transformation. For p=D−1 the gauge field has no degrees of freedom;
+    for p≤D−2 the source concludes equivalence to the dual-form theory. This derivation
+    retains its local-exactness condition and does not claim a global homotopy classification.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.p-form-gauge-duality
+    note: Retains the dual-current argument, the local Poincaré step, the p=D−1 exception,
+      and the stated dual-form equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 371
+    - 372
+    note: Dual construction, exceptional degree count, and equivalence conclusion.
+  notation:
+  - source: weinberg-1
+    note: D is spacetime dimension and φ is the dual (D−p−2)-form; the dual symbols
+      and indexed equations were visually checked privately.
 - id: qft.photon-mediated-second-order-amplitude
   label: Photon-mediated second-order amplitude
   summary: Because electromagnetism couples electrons and muons through the photon
@@ -2995,6 +3281,30 @@ nodes:
     - 5
     note: Derives the mean mode energy and continuum intensity.
   notation: []
+- id: qft.pure-gauge-asymptotics-and-instanton-dimension
+  label: Pure-gauge asymptotics and instanton dimension constraint
+  summary: Finite Euclidean Yang–Mills S[A]=¼∫d^dx F^a_ijF^a_ij permits a direction-dependent
+    pure-gauge asymptote A_i→g⁻¹∂_ig, defining a based map S^(d−1)→G and π_(d−1)(G).
+    Under A_R(x)=A(x/R)/R, S[A_R]=R^(d−4)S[A], so a nontrivial stationary point requires
+    d=4 unless S=0. At d=4, instantons have a scale degeneracy that the source says
+    quantum corrections remove.
+  kind: method
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pure-gauge-asymptotics-and-instanton-dimension
+    note: Retains the asymptotic-map condition, scaling argument, d=4 constraint,
+      S=0 qualification, and quantum-correction statement.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 427
+    note: Pure-gauge asymptote, based map, scaling relation, and instanton qualifier.
+  notation:
+  - source: weinberg-2
+    note: g(x̂) is direction-dependent; this asymptotic construction is global at
+      infinity and is not identified with the existing local flatness criterion.
 - id: qft.pure-gauge-flatness
   label: Pure gauge and the flatness criterion
   summary: A gauge field is pure gauge when a gauge transformation can make it vanish
@@ -3835,6 +4145,32 @@ nodes:
     - 4
     note: Contrasts the classical spectrum with observation.
   notation: []
+- id: qft.unbroken-subgroup-reduction-at-d-four
+  label: d=4 gauge-Higgs scaling reduction to unbroken Yang–Mills
+  summary: For the gauge-Higgs scaling problem at d=4, a finite-R minimum requires
+    the covariant-gradient and potential terms T[φ,A] and V[φ] to vanish. After a
+    gauge transformation makes a vacuum value constant, gauge fields for broken generators
+    vanish; the remaining H fields must solve the Euclidean Yang–Mills equations.
+    This conditional reduction replaces G by its unbroken subgroup H and does not
+    assert that every broken theory has instantons.
+  kind: result
+  group: qft.extended-field-topology
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.unbroken-subgroup-reduction-at-d-four
+    note: Retains the d=4 finite-R condition, constant-vacuum gauge, broken-generator
+      elimination, and conditional reduction to H Yang–Mills.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 429
+    - 430
+    note: Gauge-Higgs scaling and reduction to the unbroken subgroup.
+  notation:
+  - source: weinberg-2
+    note: T, K, and V are the three source-defined gauge-Higgs contributions; H is
+      the unbroken subgroup.
 - id: qft.unpolarized-trace-technology
   label: Trace technology for unpolarized cross sections
   summary: Products of gamma matrices and spinors in an unpolarized cross section
@@ -4652,6 +4988,191 @@ edges:
     pages:
     - 36
     - 41
+- id: full-align-005-boundary-homotopy-to-derrick
+  from: qft.goldstone-boundary-compactification-and-global-homotopy
+  to: qft.derrick-scaling-and-higher-derivative-balance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scaling argument preserves the nontrivial Goldstone topology while
+    testing whether it stabilizes a finite-size configuration.
+  failure_mode: Without the homotopy-sector condition, singular shrinkage is not distinguished
+    from a deformation of an unconstrained vacuum configuration.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 424
+    note: The rescaled configuration is introduced with the same topology.
+- id: full-align-005-finite-sectors-to-boundary-homotopy
+  from: qft.finite-functional-topological-sectors
+  to: qft.goldstone-boundary-compactification-and-global-homotopy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The compactification is introduced for finite-S Goldstone configurations
+    with the stated asymptotic behavior.
+  failure_mode: Without the finite-functional condition, the target would incorrectly
+    classify unrestricted fields as protected sectors.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 422
+    - 423
+    note: The finite-S framework supplies the asymptotic constraint used for the map.
+- id: full-align-005-fundamental-to-higher-homotopy
+  from: qft.fundamental-group-concatenation-and-vortex-fusion
+  to: qft.higher-homotopy-products-and-winding-conservation
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The loop construction illustrates the group product, but the source defines
+    the higher-sphere product directly.
+  failure_mode: Treating the preceding π₁ example as compulsory would add an unnecessary
+    prerequisite to the directly defined higher-map route.
+  evidence:
+  - source: weinberg-2
+    section: '23.2'
+    pages:
+    - 434
+    - 435
+    note: The text transitions from the loop illustration to an independent higher-map
+      definition.
+- id: full-align-005-goldstone-coset-to-boundary-homotopy
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.goldstone-boundary-compactification-and-global-homotopy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The compactification method classifies Goldstone fields whose values
+    form the coset G/H.
+  failure_mode: Without the G/H field-value space, the target based maps have no specified
+    codomain.
+  evidence:
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 423
+    note: The source identifies the Goldstone field-value manifold as G/H before forming
+      the based map.
+- id: full-align-005-local-exactness-global-homotopy-scope
+  from: qft.pform-exterior-derivative-and-local-exactness
+  to: qft.goldstone-boundary-compactification-and-global-homotopy
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: 'Both records use topology language, but the cited constructions establish
+    different things: a local exactness condition for forms and a global classification
+    of finite-boundary field maps.'
+  failure_mode: Conflating the records would turn a local Poincaré/de Rham step into
+    an unsupported homotopy classification or claim an unprovided equivalence.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    note: The source limits exactness to smoothly contractible regions and notes the
+      multiply connected caveat.
+  - source: weinberg-2
+    section: '23.1'
+    pages:
+    - 423
+    - 424
+    note: The source classifies global based maps after compactifying the sphere at
+      infinity.
+- id: full-align-005-pform-action-to-duality
+  from: qft.pform-gauge-action-and-conserved-current
+  to: qft.pform-gauge-duality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dual construction begins by rewriting the p-form field equation and
+    current-conservation condition.
+  failure_mode: Without those equations, the source's dual field/current system has
+    no starting relation.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    - 371
+    note: The current condition and Euler–Lagrange equation become the dual equations.
+- id: full-align-005-pform-duality-to-four-dimensional-content
+  from: qft.pform-gauge-duality
+  to: qft.four-dimensional-pform-field-content
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The four-dimensional two-form identification is an application of the
+    general p↔D−p−2 equivalence.
+  failure_mode: Without duality, the reduction of the two-form to the derivatively
+    coupled scalar is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 372
+    note: The source applies the general result to p=2 in D=4.
+- id: full-align-005-pform-local-exactness-to-action
+  from: qft.pform-exterior-derivative-and-local-exactness
+  to: qft.pform-gauge-action-and-conserved-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction of F=dA and its invariance under δA=dQ uses d²=0.
+  failure_mode: Without exterior-derivative nilpotence, the stated gauge-invariance
+    derivation does not follow.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 369
+    - 370
+    note: Nilpotence is used before the p-form gauge construction.
+- id: full-align-005-pform-local-exactness-to-duality
+  from: qft.pform-exterior-derivative-and-local-exactness
+  to: qft.pform-gauge-duality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The duality derivation invokes Poincaré's theorem to represent closed
+    dual forms by exterior derivatives.
+  failure_mode: Without the stated local-exactness step, the dual potential φ cannot
+    be introduced by this route.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    - 371
+    note: The page states the local theorem and then applies it to closed dual forms.
+- id: full-align-005-sourced-maxwell-to-pform-action
+  from: qft.sourced-maxwell-equations-from-action
+  to: qft.pform-gauge-action-and-conserved-current
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The source explicitly motivates the p-form Lagrangian by analogy with
+    electrodynamics, while the p-form derivation remains independently specified.
+  failure_mode: Without the Maxwell analogy, the p-form action can still be derived
+    from its displayed ingredients but loses that stated motivation.
+  evidence:
+  - source: weinberg-1
+    section: '8.8'
+    pages:
+    - 370
+    note: The p-form Lagrangian is introduced 'By analogy with electrodynamics'.
 - id: qft.abelian-higgs-model-to-gauge-shift
   from: qft.abelian-higgs-model-and-vector-mass
   to: qft.abelian-higgs-gauge-shift-and-degree-count
@@ -6430,6 +6951,10 @@ groups:
   title: Classical field theory
   question: How do actions, symmetries, sources, and Green functions organize classical
     field dynamics?
+- id: qft.extended-field-topology
+  title: Extended-field topology
+  question: How do local p-form constructions, finite-boundary sectors, and homotopy
+    methods differ when analyzing gauge and Goldstone configurations?
 - id: qft.field-symmetry-and-charge
   title: Field symmetries, currents, and stress-energy
   question: How do continuous field and spacetime symmetries produce currents, charges,
