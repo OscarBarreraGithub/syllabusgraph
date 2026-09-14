@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Support explicit removal of an accepted edge through final adjudication.
+  Require an affected-record decision and source evidence; retain the removal
+  in the audit history and recover interrupted promotion without restoring it.
 - Support reviewed inputs imported from another textbook through exact node
   origins. Validate those references and report them separately from shared
   overlap, preserving the distinction between using and deriving a result.

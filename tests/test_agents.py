@@ -279,6 +279,98 @@ def test_adjudication_cannot_override_mechanical_evidence_checks(unit):
     assert not wf.check(project, "unit-one")["ok"]
 
 
+@pytest.fixture
+def removable_edge_unit(unit):
+    project, packet, proposal = unit
+    base = deepcopy(proposal["graph"])
+    other = deepcopy(base["nodes"][0])
+    other.update(id="outcome", label="Outcome")
+    base["nodes"].append(other)
+    base["edges"].append({
+        "id": "unsupported-input", "from": "outcome", "to": "event",
+        "relation": "prerequisite", "source_level": "use", "target_level": "recognize",
+        "necessity": "necessary", "rationale": "An overstated prerequisite.",
+        "failure_mode": "This claim needs source review.",
+        "evidence": [{"source": "primer", "section": "Events", "pages": [1]}],
+    })
+    write_yaml(project.root / "knowledge/graph.yaml", base)
+    project, proposal = extracted((load_project(project.root), packet, proposal))
+    value = decision(proposal)
+    value["removals"] = [{"kind": "edges", "id": "unsupported-input"}]
+    value["decisions"][0]["affected_records"] = deepcopy(value["removals"])
+    return project, proposal, value
+
+
+def test_final_edge_removal_is_explicit_and_recovers_atomically(removable_edge_unit):
+    project, proposal, value = removable_edge_unit
+    # Omitting a canonical edge from a proposal is never an implicit deletion.
+    assert wf._combine(project, proposal["graph"])["edges"][0]["id"] == "unsupported-input"
+    critique(project, proposal, "revise")
+    send(project, "adjudicate", value)
+    assert wf.check(project, "unit-one")["ok"]
+    expected = agents.accepted_candidate(project, "unit-one", proposal)
+    assert expected["edges"] == []
+    assert {n["id"] for n in expected["nodes"]} == {"event", "outcome"}
+    # A crash after writing the graph must still recover the exact reviewed removal.
+    write_yaml(project.root / "knowledge/graph.yaml", expected)
+    receipt = wf.promote(project, "unit-one")
+    assert load_project(project.root).knowledge == expected
+    assert wf.promote(project, "unit-one") == receipt
+    history = agents.audit(project)["units"][0]["decision_history"]
+    assert any(entry.get("removals") == value["removals"] for entry in history)
+
+
+def test_critic_cannot_authorize_removal(removable_edge_unit):
+    project, proposal, value = removable_edge_unit
+    with pytest.raises(ProjectError, match="Only final adjudication"):
+        send(project, "critique", {"proposal_digest": digest(proposal), "verdict": "accept",
+                                  "notes": ["Remove the unsupported prerequisite."],
+                                  "removals": value["removals"]})
+    assert len(load_project(project.root).knowledge["edges"]) == 1
+
+
+def test_removal_authorization_cannot_be_changed_after_final(removable_edge_unit):
+    project, proposal, value = removable_edge_unit
+    critique(project, proposal, "revise")
+    send(project, "adjudicate", value)
+    path = wf.unit_dir(project, "unit-one") / "adjudication.json"
+    record = wf.read_json(path)
+    record["removals"] = []
+    write_json(path, record)
+    with pytest.raises(ProjectError, match="Adjudication record changed"):
+        wf.promote(project, "unit-one")
+    assert len(load_project(project.root).knowledge["edges"]) == 1
+
+
+@pytest.mark.parametrize("case, message", [
+    ("undocumented", "affected-record decision"),
+    ("unknown", "unknown accepted edge"),
+    ("duplicate", "Duplicate edge removal"),
+    ("also-proposed", "both proposed and removed"),
+    ("node", "explicit existing edge identities"),
+    ("defer", "deferral cannot remove"),
+])
+def test_invalid_removals_preserve_canonical_graph(removable_edge_unit, case, message):
+    project, proposal, value = removable_edge_unit
+    critique(project, proposal, "revise")
+    before = deepcopy(project.knowledge)
+    if case == "undocumented":
+        value["decisions"][0]["affected_records"] = []
+    elif case == "unknown":
+        value["removals"][0]["id"] = "missing-edge"
+    elif case == "duplicate":
+        value["removals"] *= 2
+    elif case == "also-proposed":
+        value["proposal"]["graph"]["edges"] = deepcopy(before["edges"])
+    elif case == "node":
+        value["removals"] = [{"kind": "nodes", "id": "event"}]
+    else:
+        value["verdict"] = "defer"
+    with pytest.raises(ProjectError, match=message):
+        send(project, "adjudicate", value)
+    assert load_project(project.root).knowledge == before
+
+
 def test_human_audit_is_final_optional_and_snapshot_bound(unit):
     project, proposal = extracted(unit)
     critique(project, proposal)

@@ -101,6 +101,18 @@ Return one JSON object in this form:
 `finding` is a zero-based index into the adverse critic's `notes`. `kind` is one
 of `nodes`, `edges`, `groups`, or `motivations`. The complete revised proposal
 must retain the packet digest and be valid for the exact base it replaces.
+To remove an already accepted edge, a final `accept` may include an optional
+top-level `removals` list alongside `proposal` and `decisions`:
+`"removals": [{"kind": "edges", "id": "existing-edge-id"}]`.
+Use this only when the immutable dispatch's response contract advertises it.
+List that edge in the decision's `affected_records`, explain the source-backed
+reason, and omit it from the proposed graph. Merely omitting an accepted edge
+from a proposal does not delete it. Do not retarget an unsupported edge merely
+to avoid removing it. Removal is limited to existing edges; nodes, groups, and
+motivations are not deletable through this operation. An ordinary critic or a
+`defer` cannot authorize a removal. The original graph and decision remain in
+the local review history.
+
 Your verdict must be `accept` or `defer`, never a request for another review.
 Choose a supported, usable resolution without requiring unanimous preferences.
 Your `accept` is final substantive approval, subject to mechanical validation.

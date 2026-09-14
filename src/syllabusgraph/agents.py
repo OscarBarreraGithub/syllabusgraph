@@ -212,6 +212,7 @@ def dispatch(
                 else {
                     "verdict": "accept|defer (final decision; no further critic)",
                     "proposal": "full revised proposal matching proposal_schema",
+                    "removals": "optional list of {kind: edges, id: existing-edge-id}; final authority only",
                     "decisions": [
                         {
                             "issue": "dispute",
@@ -352,6 +353,8 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
     with wf.project_lock(project):
         project = load_project(project.root)
         path, ticket, request = _ticket(project, directory, dispatch_id)
+        if "removals" in value and ticket["stage"] != "adjudicate":
+            raise ProjectError("Only final adjudication may request edge removals.")
         if not _identity(agent_id) or agent_id == ticket["orchestrator"]:
             raise ProjectError(
                 "A separate worker identity is required; the orchestrator cannot self-review."
@@ -447,6 +450,29 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                 affected = {
                     (r["kind"], r["id"]) for d in value["decisions"] for r in d["affected_records"]
                 }
+                removed = value.get("removals", [])
+                if not isinstance(removed, list) or any(
+                    not isinstance(row, dict)
+                    or set(row) != {"kind", "id"}
+                    or row["kind"] != "edges"
+                    or not _identity(row["id"])
+                    for row in removed
+                ):
+                    raise ProjectError("Removals must list explicit existing edge identities.")
+                removed_ids = {row["id"] for row in removed}
+                if removed and "removals" not in request["response_contract"]:
+                    raise ProjectError("This immutable dispatch does not support edge removals.")
+                if len(removed_ids) != len(removed):
+                    raise ProjectError("Duplicate edge removal.")
+                if removed and value["verdict"] != "accept":
+                    raise ProjectError("A deferral cannot remove accepted edges.")
+                old_edges = {row["id"] for row in project.knowledge["edges"]}
+                if not removed_ids <= old_edges:
+                    raise ProjectError("Cannot remove an unknown accepted edge.")
+                if any(("edges", identity) not in affected for identity in removed_ids):
+                    raise ProjectError("Every removed edge needs an affected-record decision.")
+                if removed_ids & {row["id"] for row in incoming["graph"]["edges"]}:
+                    raise ProjectError("An edge cannot be both proposed and removed.")
                 for kind in KINDS:
                     before = {r["id"]: r for r in request["proposal"]["graph"][kind]}
                     after = {r["id"]: r for r in incoming["graph"][kind]}
@@ -491,6 +517,7 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                     "proposal_digest": digest(incoming),
                     "knowledge_digest": ticket["knowledge_digest"],
                     "decisions": value["decisions"],
+                    "removals": value.get("removals", []),
                     "verdict": value["verdict"],
                     "final": True,
                 },
@@ -638,28 +665,40 @@ def accepted_candidate(project, unit, proposal):
     base = replace(project, knowledge=request["current_knowledge"])
     if digest(base.knowledge) != ticket["knowledge_digest"]:
         raise ProjectError("Critic base changed.")
-    return wf._combine(base, proposal["graph"], replacements=replacements(base, unit, proposal))
+    authorized, removed = adjudicated_changes(base, unit, proposal)
+    return wf._combine(base, proposal["graph"], replacements=authorized, removals=removed)
 
 
 def replacements(project, unit, proposal, *, recovering=False):
+    return adjudicated_changes(project, unit, proposal, recovering=recovering)[0]
+
+
+def adjudicated_changes(project, unit, proposal, *, recovering=False):
     directory = wf.unit_dir(project, unit)
     path = directory / "adjudication.json"
     if not path.exists():
-        return set()
+        return set(), set()
     record = wf.read_json(path)
     if record["proposal_digest"] != digest(proposal):
-        return set()
+        return set(), set()
     try:
         ticket, value = _completion(project, directory, record["provenance"], stage="adjudicate")
     except ProjectError:
-        return set()  # Stale authorization grants no replacement; allow new work to repair it.
-    if value["proposal"] != proposal or record["decisions"] != value["decisions"]:
+        return set(), set()  # Stale authorization grants no changes.
+    if (
+        value["proposal"] != proposal
+        or record["decisions"] != value["decisions"]
+        or record.get("removals", []) != value.get("removals", [])
+    ):
         raise ProjectError("Adjudication record changed.")
     if ticket["knowledge_digest"] != digest(project.knowledge) and not recovering:
         raise ProjectError(
             "Knowledge changed since adjudication; adjudicate against the current base."
         )
-    return {(r["kind"], r["id"]) for d in value["decisions"] for r in d["affected_records"]}
+    return (
+        {(r["kind"], r["id"]) for d in value["decisions"] for r in d["affected_records"]},
+        {(r["kind"], r["id"]) for r in value.get("removals", [])},
+    )
 
 
 def require_critic(project, unit, report, *, recovering=False):
@@ -730,6 +769,8 @@ def audit(project, *, reviewer=None, notes=None):
                         {
                             "provenance": result["provenance"],
                             "decisions": result["value"]["decisions"],
+                            **({"removals": result["value"]["removals"]}
+                               if "removals" in result["value"] else {}),
                             "at": wf.read_json(path.parent / "ticket.json")["at"],
                         }
                     )

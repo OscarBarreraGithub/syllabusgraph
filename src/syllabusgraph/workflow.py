@@ -353,8 +353,16 @@ def run(
     return value
 
 
-def _combine(project: Project, proposed: dict, *, replacements=frozenset()) -> dict:
+def _combine(project: Project, proposed: dict, *, replacements=frozenset(), removals=frozenset()) -> dict:
     combined = deepcopy(project.knowledge)
+    for kind, identity in removals:
+        if kind != "edges" or (kind, identity) not in replacements:
+            raise ProjectError("Edge removal requires a matching final-adjudicator decision.")
+        if any(row["id"] == identity for row in proposed[kind]):
+            raise ProjectError("An edge cannot be both proposed and removed.")
+        if not any(row["id"] == identity for row in combined[kind]):
+            raise ProjectError(f"Cannot remove unknown edge: {identity}")
+        combined[kind] = [row for row in combined[kind] if row["id"] != identity]
     for kind in ("nodes", "edges", "groups", "motivations"):
         unique(proposed[kind], kind)
         existing = {r["id"]: r for r in combined[kind]}
@@ -380,7 +388,7 @@ def _normalize(text: str) -> str:
 
 
 def check(project: Project, unit: str, *, _recovering=False) -> dict:
-    from .agents import replacements
+    from .agents import accepted_candidate, adjudicated_changes
 
     directory = unit_dir(project, unit)
     packet = _ensure_packet(project, directory)
@@ -399,11 +407,11 @@ def check(project: Project, unit: str, *, _recovering=False) -> dict:
             "Unresolved extraction questions need a revised proposal or explicit removal of the affected claims."
         )
     try:
-        _combine(
-            project,
-            proposal["graph"],
-            replacements=replacements(project, unit, proposal, recovering=_recovering),
-        )
+        if _recovering:
+            accepted_candidate(project, unit, proposal)
+        else:
+            authorized, removed = adjudicated_changes(project, unit, proposal)
+            _combine(project, proposal["graph"], replacements=authorized, removals=removed)
     except ProjectError as exc:
         errors.append(str(exc))
     quotes, supported, loaded_sources = [], set(), {}
