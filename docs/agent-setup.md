@@ -88,10 +88,9 @@ when the policy pins an effort. Neither flag is needed for the inherited default
 The orchestrator is the only role that dispatches or advances work. It dispatches
 one immutable request at a time; the host runs the real native agent and passes
 the JSON result back with its runtime identity. A critic is mandatory after every
-extraction and adjudicated revision. Its recorded `accept` permits the
-orchestrator to promote once the current checks pass. There is no required human
-approval for each unit. The critic's runtime identity must differ from the
-extractor's and, after adjudication, from the adjudicator's.
+extraction. Its recorded `accept` permits the orchestrator to promote once the
+current checks pass. There is no required human approval for each unit. The
+critic's runtime identity must differ from the extractor's.
 
 If a critic leaves disputes unresolved, the adjudicator returns a full revised
 proposal and a decision log that names each issue, at least two alternatives,
@@ -100,7 +99,12 @@ record. Each decision's `finding` is the zero-based index of exactly one
 actionable note from the current adverse critic; every adverse note needs one
 decision. The revision limit counts adverse completions cumulatively for the
 unit: two revisions require adjudication, and a `reject` does so immediately.
-A fresh independent critic reviews that exact revision. See
+The adjudicator makes the final `accept` or `defer` decision. It is not sent to
+another critic. Failed final validation defers the unit without promoting it.
+Default flow has one correction pass and a six-dispatch total budget including
+retries. Budget exhaustion closes the unit as deferred; the orchestrator
+continues elsewhere and reports the omission in the audit. Style preferences
+and reasonable planning tradeoffs are not grounds for blocking approval. See
 [orchestration](../workflows/orchestrate.md),
 [extraction](../workflows/extract.md), and [review](../workflows/review.md).
 Do not stop for human approval between normal units; seek direction only when

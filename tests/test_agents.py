@@ -47,6 +47,7 @@ def critique(project, proposal, verdict="accept"):
 
 def decision(proposal):
     return {
+        "verdict": "accept",
         "proposal": proposal,
         "decisions": [
             {
@@ -228,12 +229,19 @@ def test_revision_limit_forces_documented_adjudication(unit):
     with pytest.raises(ProjectError, match="adjudicator"):
         send(project, "extract", proposal)
     send(project, "adjudicate", decision(proposal))
-    critique(project, proposal)
     wf.promote(project, "unit-one")
-    assert agents.audit(project)["units"][0]["decision_history"]
+    report = agents.audit(project)["units"][0]
+    assert report["decision_history"]
+    assert [d["stage"] for d in report["dispatch_history"]] == [
+        "extract",
+        "critique",
+        "extract",
+        "critique",
+        "adjudicate",
+    ]
 
 
-def test_adjudicator_override_requires_evidence_and_fresh_critic(unit):
+def test_adjudicator_override_is_final_and_requires_evidence(unit):
     project, proposal = extracted(unit)
     old = deepcopy(proposal["graph"])
     old["nodes"][0]["summary"] = "One single outcome only."
@@ -251,9 +259,6 @@ def test_adjudicator_override_requires_evidence_and_fresh_critic(unit):
         send(project, "adjudicate", bad)
     send(project, "adjudicate", decision(proposal))
     assert wf.check(project, "unit-one")["ok"]
-    with pytest.raises(ProjectError):
-        wf.promote(project, "unit-one")
-    critique(project, proposal)
     receipt = wf.promote(project, "unit-one")
     assert receipt["critic"]["model"] == "gpt-5.6-sol"
     assert (
@@ -267,9 +272,10 @@ def test_adjudication_cannot_override_mechanical_evidence_checks(unit):
     project, proposal = extracted(unit)
     critique(project, proposal, "revise")
     proposal["quote_checks"][0]["quote"] = "This sentence never appeared."
-    send(project, "adjudicate", decision(proposal))
-    with pytest.raises(ProjectError, match="failures"):
-        critique(project, proposal)
+    result = send(project, "adjudicate", decision(proposal))
+    assert result["status"] == "deferred"
+    with pytest.raises(ProjectError, match="Deferred"):
+        wf.promote(project, "unit-one")
     assert not wf.check(project, "unit-one")["ok"]
 
 
@@ -314,7 +320,7 @@ def test_tampered_dispatch_is_rejected(unit):
         )
 
 
-def test_adjudication_needs_findings_and_independent_final_critic(unit):
+def test_adjudication_needs_findings_and_ends_review(unit):
     project, proposal = extracted(unit)
     with pytest.raises(ProjectError):
         send(project, "adjudicate", decision(proposal))
@@ -327,7 +333,7 @@ def test_adjudication_needs_findings_and_independent_final_critic(unit):
     with pytest.raises(ProjectError, match="Every critic finding"):
         send(project, "adjudicate", bad)
     send(project, "adjudicate", decision(proposal), identity="adjudicator-session")
-    with pytest.raises(ProjectError, match="fresh independent critic"):
+    with pytest.raises(ProjectError, match="Final adjudication"):
         send(
             project,
             "critique",
@@ -438,3 +444,80 @@ def test_bound_runner_failure_is_preserved_in_audit(unit):
         )
     history = agents.audit(project)["units"][0]["dispatch_history"]
     assert history[-1]["failures"][0]["dispatch_id"] == task["id"]
+    with pytest.raises(ProjectError, match="without rerunning"):
+        wf.run(
+            project,
+            "unit-one",
+            [sys.executable, "-c", "raise AssertionError('must not rerun')"],
+            stage="critique",
+            model=task["model"],
+            effort=task["effort"],
+            dispatch_id=task["id"],
+            agent_id="failed-adapter",
+        )
+
+
+def test_final_deferral_is_visible_and_does_not_block_other_units(unit):
+    project, proposal = extracted(unit)
+    critique(project, proposal, "reject")
+    value = decision(proposal)
+    value["verdict"] = "defer"
+    value["decisions"][0]["resolution"] = "Defer until notation can be verified."
+    value["decisions"][0]["rationale"] = "The source evidence cannot settle the reported ambiguity."
+    value["decisions"][0]["evidence"] = []  # Deferral must not require invented support.
+    record = send(project, "adjudicate", value)
+    assert record["status"] == "deferred"
+    assert not load_project(project.root).nodes
+    report = agents.audit(project)
+    assert report["deferred_units"] == ["unit-one"]
+    assert report["unfinished_units"] == []
+    assert report["units"][0]["deferral"]["reason"]
+    for stage in ("extract", "critique", "adjudicate"):
+        assert (
+            agents.dispatch(project, "unit-one", stage=stage, orchestrator="host-session") == record
+        )
+    with pytest.raises(ProjectError, match="closed"):
+        wf.import_proposal(project, "unit-one", proposal)
+    with pytest.raises(ProjectError, match="Deferred"):
+        wf.promote(project, "unit-one")
+    from syllabusgraph.cli import _coverage
+
+    assert _coverage(project, "primer", 1, 1)["missing_pages"] == [1]
+    wf.prepare(project, "unit-two", "primer", 2, 2, scope="Define frequency.")
+    assert (
+        agents.dispatch(project, "unit-two", stage="extract", orchestrator="host-session")["stage"]
+        == "extract"
+    )
+
+
+def test_retry_budget_closes_unit_even_when_runtime_never_completes(unit):
+    project, _, _ = unit
+    agents.configure(project)
+    for attempt in range(6):
+        task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
+        agents.fail(
+            project, "unit-one", task["id"], reason=f"Runtime failed on attempt {attempt + 1}."
+        )
+    # Reconfiguration cannot reset a work unit's original budget.
+    agents.configure(project, revision_limit=10)
+    record = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
+    assert record["status"] == "deferred"
+    assert "6 calls" in record["reason"]
+    assert len(agents.audit(project)["units"][0]["dispatch_history"]) == 6
+
+
+def test_final_adjudication_cannot_request_another_review(unit):
+    project, proposal = extracted(unit)
+    critique(project, proposal, "reject")
+    bad = decision(proposal)
+    bad["verdict"] = "revise"
+    with pytest.raises(ProjectError, match="final decision"):
+        send(project, "adjudicate", bad)
+    send(project, "adjudicate", decision(proposal))
+    for stage in ("extract", "critique", "adjudicate"):
+        with pytest.raises(ProjectError, match="Final adjudication"):
+            agents.dispatch(project, "unit-one", stage=stage, orchestrator="host-session")
+    # Recover a crash after the final decision's atomic graph write.
+    expected = agents.accepted_candidate(project, "unit-one", proposal)
+    write_yaml(project.root / "knowledge/graph.yaml", expected)
+    assert wf.promote(project, "unit-one")["knowledge_digest"] == digest(expected)

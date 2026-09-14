@@ -23,7 +23,9 @@ local; reviewed graphs and course plans can be shared.
 
 All roles are configurable, including the orchestrator. Disputes have a written
 decision trail. Review it at the end, or choose to trust the critic; neither mode
-requires a human approval for each unit.
+requires a human approval for each unit. Review is finite: one correction pass,
+then a final critic decision. Unresolved work is recorded and deferred so the
+rest can proceed; there is no reviewer-after-reviewer loop.
 
 SyllabusGraph connects learning goals to the concepts they depend on and the
 sources that support them. Choose what students should be able to recognize,

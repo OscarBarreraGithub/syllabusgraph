@@ -155,6 +155,9 @@ def parser() -> argparse.ArgumentParser:
     sub = subs.add_parser("audit")
     sub.add_argument("--reviewer")
     sub.add_argument("--notes")
+    sub = subs.add_parser("defer")
+    sub.add_argument("unit")
+    sub.add_argument("--reason", required=True)
     p = project_command("source", "Register source metadata or attach local material.")
     subs = p.add_subparsers(dest="source_action", required=True)
     sub = subs.add_parser("add")
@@ -350,6 +353,8 @@ def execute(args) -> int:
             )
         elif args.agent_action == "fail":
             result = agents.fail(project, args.unit, args.dispatch_id, reason=args.reason)
+        elif args.agent_action == "defer":
+            result = agents.defer(project, args.unit, reason=args.reason)
         else:
             result = agents.audit(project, reviewer=args.reviewer, notes=args.notes)
     elif args.action == "source":

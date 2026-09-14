@@ -98,24 +98,24 @@ def test_adjudication_rejects_duplicate_alternatives_and_findings(unit):
         send(project, "adjudicate", duplicate_finding)
 
 
-def test_stale_policy_authorization_allows_new_work_to_repair(unit):
+def test_policy_change_cannot_restart_final_adjudication(unit):
     project, proposal = extracted(unit)
     critique(project, proposal, "revise")
     send(project, "adjudicate", decision(proposal))
 
     agents.configure(project, critic_model="replacement-critic")
-    send(project, "extract", proposal, identity="repair-extractor")
-    result = send(
-        project,
-        "critique",
-        {
-            "proposal_digest": digest(proposal),
-            "verdict": "accept",
-            "notes": ["Rechecked after the policy change."],
-        },
-        identity="replacement-critic-session",
+    with pytest.raises(ProjectError, match="Final adjudication"):
+        send(project, "extract", proposal, identity="repair-extractor")
+    with pytest.raises(ProjectError, match="policy changed"):
+        wf.promote(project, "unit-one")
+    assert (
+        agents.defer(
+            project,
+            "unit-one",
+            reason="Policy changed; preserve the final decision for later audit.",
+        )["status"]
+        == "deferred"
     )
-    assert result["recorded"] is True
 
 
 def test_policy_change_can_close_an_unfinished_dispatch(unit):

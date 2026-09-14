@@ -108,6 +108,23 @@ def dispatch(
         state = wf.read_json(directory / "state.json")
         if state["status"] == "merged":
             raise ProjectError("Merged units are immutable; prepare an amendment unit.")
+        if state["status"] == "deferred":
+            return wf.read_json(directory / "deferral.json")
+        adjudication_path = directory / "adjudication.json"
+        if adjudication_path.exists() and wf.read_json(adjudication_path).get("final"):
+            raise ProjectError(
+                "Final adjudication is recorded; promote or defer this unit, without another review."
+            )
+        # One correction by default, then a final decision; one spare dispatch
+        # accommodates a runtime retry. Count failed/superseded attempts as well.
+        limit = state.setdefault("dispatch_limit", 2 * max(1, config["revision_limit"]) + 2)
+        write_json(directory / "state.json", state)
+        if len(list((directory / "dispatches").glob("*/ticket.json"))) >= limit:
+            return _defer(
+                project,
+                unit,
+                f"Dispatch budget exhausted ({limit} calls); continue with other units.",
+            )
         active = state.get("active_dispatch")
         if active:
             active_path = directory / "dispatches" / active
@@ -193,6 +210,7 @@ def dispatch(
                 }
                 if stage == "critique"
                 else {
+                    "verdict": "accept|defer (final decision; no further critic)",
                     "proposal": "full revised proposal matching proposal_schema",
                     "decisions": [
                         {
@@ -308,7 +326,9 @@ def _validate_decisions(value):
             or len(set(options)) != len(options)
         ):
             raise ProjectError("Record at least two alternatives per decision.")
-        if not isinstance(decision["evidence"], list) or not decision["evidence"]:
+        if not isinstance(decision["evidence"], list) or (
+            not decision["evidence"] and value.get("verdict") != "defer"
+        ):
             raise ProjectError("Each decision needs source evidence.")
         for evidence in decision["evidence"]:
             validate_shape(evidence, "evidence")
@@ -355,8 +375,12 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                 raise ProjectError("Completed dispatches are immutable; issue a new dispatch.")
             if (path / "done.json").exists():
                 return wf.read_json(path / "done.json")
-        if wf.read_json(directory / "state.json")["status"] == "merged":
-            raise ProjectError("Merged units are immutable.")
+        if any((path / "failures").glob("*.json")):
+            raise ProjectError(
+                "This dispatch failed; a new worker invocation needs a new dispatch within the unit budget."
+            )
+        if wf.read_json(directory / "state.json")["status"] in {"merged", "deferred"}:
+            raise ProjectError("Merged or deferred units are closed.")
         if (
             wf.read_json(directory / "state.json").get("dispatches", {}).get(ticket["stage"])
             != dispatch_id
@@ -391,14 +415,6 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
             if agent_id == extraction["agent_id"]:
                 raise ProjectError("The extractor cannot act as its own critic/adjudicator.")
             if ticket["stage"] == "critique":
-                adjudication_path = directory / "adjudication.json"
-                if adjudication_path.exists():
-                    adjudication = wf.read_json(adjudication_path)
-                    if (
-                        adjudication["proposal_digest"] == ticket["proposal_digest"]
-                        and agent_id == adjudication["provenance"]["agent_id"]
-                    ):
-                        raise ProjectError("The adjudicator requires a fresh independent critic.")
                 if not isinstance(value, dict) or value.get("verdict") not in {
                     "accept",
                     "revise",
@@ -414,7 +430,15 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                 ):
                     raise ProjectError("Critic needs substantive notes.")
             else:
+                if value.get("verdict") not in {"accept", "defer"}:
+                    raise ProjectError(
+                        "The adjudicator must make a final decision: accept or defer."
+                    )
                 _validate_decisions(value)
+                if value["verdict"] == "defer" and incoming != request["proposal"]:
+                    raise ProjectError(
+                        "A deferral preserves the draft; return the supplied proposal unchanged."
+                    )
                 findings = request["previous_critique"]
                 if {d["finding"] for d in value["decisions"]} != set(
                     range(len(findings["notes"]))
@@ -445,7 +469,7 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                             )
                 # Verify all decision citations have an actual packet/registered page witness.
                 witnessed = {(w["source"], w["page"]) for w in incoming["quote_checks"]}
-                if any(
+                if value["verdict"] == "accept" and any(
                     (e["source"], p) not in witnessed
                     for d in value["decisions"]
                     for e in d["evidence"]
@@ -467,6 +491,20 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                     "proposal_digest": digest(incoming),
                     "knowledge_digest": ticket["knowledge_digest"],
                     "decisions": value["decisions"],
+                    "verdict": value["verdict"],
+                    "final": True,
+                },
+            )
+            write_json(
+                directory / "critique.json",
+                {
+                    "proposal_digest": digest(incoming),
+                    "verdict": value["verdict"],
+                    "notes": [d["rationale"] for d in value["decisions"]],
+                    "provenance": provenance,
+                    "knowledge_digest": ticket["knowledge_digest"],
+                    "producer_dispatch": dispatch_id,
+                    "final": True,
                 },
             )
         else:
@@ -489,6 +527,36 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
             state = wf.read_json(directory / "state.json")
             state["producer_dispatch"] = dispatch_id
             write_json(directory / "state.json", state)
+    if ticket["stage"] == "adjudicate":
+        if value["verdict"] == "defer":
+            summary = defer(
+                project, unit, reason="; ".join(d["rationale"] for d in value["decisions"])
+            )
+        else:
+            try:
+                wf.review(
+                    project,
+                    unit,
+                    decision="accept",
+                    reviewer=agent_id,
+                    notes=[d["rationale"] for d in value["decisions"]],
+                )
+            except ProjectError as exc:
+                # A final model decision cannot waive mechanical safeguards.
+                # Preserve the attempted resolution and move on instead of looping.
+                summary = defer(
+                    project, unit, reason=f"Final adjudication failed validation: {exc}"
+                )
+            else:
+                summary = {
+                    "unit": unit,
+                    "stage": "adjudicate",
+                    "dispatch_id": dispatch_id,
+                    "recorded": True,
+                    "status": "reviewed",
+                }
+        write_json(path / "done.json", summary)
+        return summary
     if ticket["stage"] == "critique" and value["verdict"] == "accept":
         try:
             wf.review(project, unit, decision="accept", reviewer=agent_id, notes=value["notes"])
@@ -502,6 +570,36 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
     summary = {"unit": unit, "stage": ticket["stage"], "dispatch_id": dispatch_id, "recorded": True}
     write_json(path / "done.json", summary)
     return summary
+
+
+def _defer(project, unit, reason):
+    """Close a unit without writing its proposal into the graph; caller holds lock."""
+    directory = wf.unit_dir(project, unit)
+    state = wf.read_json(directory / "state.json")
+    if state["status"] == "merged":
+        raise ProjectError("A merged unit cannot be deferred.")
+    if state["status"] == "deferred":
+        return wf.read_json(directory / "deferral.json")
+    record = {
+        "unit": unit,
+        "status": "deferred",
+        "reason": reason,
+        "at": wf.timestamp(),
+        "proposal_digest": state.get("proposal_digest"),
+        "active_dispatch": state.get("active_dispatch"),
+        "next": "Continue with other units; report this omission at the final audit.",
+    }
+    write_json(directory / "deferral.json", record)
+    state["status"] = "deferred"
+    write_json(directory / "state.json", state)
+    return record
+
+
+def defer(project, unit, *, reason):
+    if not isinstance(reason, str) or not reason.strip():
+        raise ProjectError("Deferral needs a substantive reason for the final audit.")
+    with wf.project_lock(project):
+        return _defer(project, unit, reason)
 
 
 def _record_failure(directory, dispatch_id, reason):
@@ -573,18 +671,25 @@ def require_critic(project, unit, report, *, recovering=False):
     critique = wf.read_json(directory / "critique.json")
     if critique.get("verdict") != "accept":
         raise ProjectError("The current critic requested revisions or rejection.")
-    if wf.read_json(directory / "state.json").get("dispatches", {}).get("critique") != critique.get(
+    final = critique.get("final", False)
+    stage = "adjudicate" if final else "critique"
+    if wf.read_json(directory / "state.json").get("dispatches", {}).get(stage) != critique.get(
         "provenance", {}
     ).get("dispatch_id"):
         raise ProjectError("The latest critic dispatch has not accepted this proposal.")
     state = wf.read_json(directory / "state.json")
     if state.get("active_dispatch") != critique["provenance"]["dispatch_id"]:
         raise ProjectError("A later extraction/adjudication dispatch needs fresh critique.")
-    ticket, value = _completion(
-        project, directory, critique.get("provenance", {}), stage="critique"
-    )
-    if ticket["producer_dispatch"] != state.get("producer_dispatch"):
+    ticket, value = _completion(project, directory, critique.get("provenance", {}), stage=stage)
+    producer = ticket["id"] if final else ticket["producer_dispatch"]
+    if producer != state.get("producer_dispatch"):
         raise ProjectError("The latest proposal producer needs fresh critique.")
+    if final:
+        value = {
+            "proposal_digest": digest(value["proposal"]),
+            "verdict": value["verdict"],
+            "notes": [d["rationale"] for d in value["decisions"]],
+        }
     if any(critique.get(k) != value.get(k) for k in ("proposal_digest", "verdict", "notes")):
         raise ProjectError("Critic record changed.")
     if value["proposal_digest"] != report["proposal_digest"]:
@@ -601,13 +706,6 @@ def require_critic(project, unit, report, *, recovering=False):
             raise ProjectError("Proposal needs a matching extractor or adjudicator dispatch.")
     if critique["provenance"]["agent_id"] == extraction["agent_id"]:
         raise ProjectError("Independent critic required.")
-    if (directory / "adjudication.json").exists():
-        adjudication = wf.read_json(directory / "adjudication.json")
-        if (
-            adjudication["proposal_digest"] == digest(proposal)
-            and critique["provenance"]["agent_id"] == adjudication["provenance"]["agent_id"]
-        ):
-            raise ProjectError("The adjudicator requires a fresh independent critic.")
     return critique
 
 
@@ -620,7 +718,7 @@ def audit(project, *, reviewer=None, notes=None):
             directory = wf.unit_dir(project, state["unit"])
             full_state = wf.read_json(directory / "state.json")
             records = {}
-            for name in ("extraction", "critique", "adjudication", "receipt"):
+            for name in ("extraction", "critique", "adjudication", "receipt", "deferral"):
                 if (directory / f"{name}.json").exists():
                     records[name] = wf.read_json(directory / f"{name}.json")
             # Include all adjudications, including decisions superseded by later revisions.
@@ -685,7 +783,10 @@ def audit(project, *, reviewer=None, notes=None):
             "audit_status": "reviewed"
             if human_audits
             else ("trusted-critic" if config["audit_mode"] == "trust" else "pending-human-audit"),
-            "unfinished_units": [u["unit"] for u in units if u["status"] != "merged"],
+            "unfinished_units": [
+                u["unit"] for u in units if u["status"] not in {"merged", "deferred"}
+            ],
+            "deferred_units": [u["unit"] for u in units if u["status"] == "deferred"],
             "scope_note": "Unit coverage is not proof of whole-course completeness. Inspect source coverage and agreed guidance at the final audit.",
         }
         write_json(project.local / "audit.json", result)

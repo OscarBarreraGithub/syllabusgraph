@@ -177,9 +177,9 @@ def import_proposal(
         directory = unit_dir(project, unit)
         packet = _ensure_packet(project, directory)
         state = read_json(directory / "state.json")
-        if state["status"] == "merged":
+        if state["status"] in {"merged", "deferred"}:
             raise ProjectError(
-                "Merged work units are immutable; create another unit for amendments."
+                "Merged or deferred work units are closed; amendments need new evidence or user direction."
             )
         if value["packet_digest"] != packet["packet_digest"]:
             raise ProjectError("Proposal belongs to a different source packet.")
@@ -232,7 +232,7 @@ def run(
     if dispatch_id:
         from .agents import _ticket
 
-        _, ticket, request = _ticket(project, directory, dispatch_id)
+        dispatch_path, ticket, request = _ticket(project, directory, dispatch_id)
         if (
             stage != ticket["stage"]
             or model != ticket["model"]
@@ -241,6 +241,14 @@ def run(
         ):
             raise ProjectError(
                 "Runner stage/model/effort and agent identity must match its dispatch."
+            )
+        if (dispatch_path / "done.json").exists():
+            return read_json(dispatch_path / "done.json")
+        if (dispatch_path / "result.json").exists() or any(
+            (dispatch_path / "failures").glob("*.json")
+        ):
+            raise ProjectError(
+                "Dispatch already returned or failed; recover its saved result or issue a new dispatch, without rerunning this worker."
             )
     try:
         response = subprocess.run(
@@ -463,8 +471,8 @@ def review(project: Project, unit: str, *, decision: str, reviewer: str, notes: 
         )
     with project_lock(project):
         directory = unit_dir(project, unit)
-        if read_json(directory / "state.json")["status"] == "merged":
-            raise ProjectError("Merged units cannot be re-reviewed in place.")
+        if read_json(directory / "state.json")["status"] in {"merged", "deferred"}:
+            raise ProjectError("Merged or deferred units cannot be re-reviewed in place.")
         report = check(project, unit)
         if decision == "accept" and not report["ok"]:
             raise ProjectError("Resolve the source-check failures before accepting this proposal.")
@@ -493,6 +501,10 @@ def promote(project: Project, unit: str) -> dict:
         project = load_project(project.root)
         directory = unit_dir(project, unit)
         state = read_json(directory / "state.json")
+        if state["status"] == "deferred":
+            raise ProjectError(
+                "Deferred units are excluded from promotion; continue with other units."
+            )
         proposal = read_json(directory / "proposal.json")
         record = read_json(directory / "review.json")
         if record["decision"] != "accept" or record["proposal_digest"] != digest(proposal):

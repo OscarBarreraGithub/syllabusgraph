@@ -20,13 +20,22 @@ for the operator. Do not silently retry it with a fallback provider or model.
 Do not pause for a human between normal units; request direction only when
 required course guidance or access is actually missing.
 
-A critic with a fresh native runtime identity is required after every extraction
-or adjudicated revision. It decides whether the proposal is ready, and its
-acceptance is recorded by the workflow; the operator's optional end-of-run audit
-is separate. On `revise` or `reject`, every critic note must be an actionable
-finding and must have a later adjudication decision. The revision limit counts
-cumulative adverse critic completions for the unit: two require adjudication,
-and a critic `reject` escalates immediately. In `trust` audit mode, the critic
+Keep the process simple. Make a short workable plan and execute it; do not gate
+implementation plans or course-plan drafts on repeated reviewer approval. Review
+source-backed claims for material errors. Wording, stylistic preferences, and
+reasonable alternative sequencing are suggestions, not reasons to block work.
+
+For each unit, the default is extraction → independent critic → at most one
+extractor correction and recheck → final adjudication if still disputed. The
+configured critic model (Sol/high by default, Opus/high for Claude) accepts a
+supported resolution or defers the unit, recording its reasoning. That decision
+is final for the unit: do not dispatch a reviewer to review the adjudicator.
+Mechanical evidence and graph checks still apply; a failed final check defers
+the unit without changing the graph. Continue with other work and show deferrals
+in the final audit. Use `agent defer UNIT --reason TEXT` when a unit cannot
+proceed; do not keep reopening it under new IDs without new evidence or explicit
+user direction. Default dispatch budget is six calls per unit including failed
+and superseded attempts; exhaustion closes the unit as deferred. In `trust` audit mode, the critic
 remains required and the end-human audit is optional. In `end` mode, record the
 end-human audit before treating a run as finished.
 

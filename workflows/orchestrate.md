@@ -88,21 +88,47 @@ background loop. The host invokes the native agent and passes the result back to
 `complete`. A manual `import-proposal` remains a draft: it cannot promote until
 the corresponding extraction and critic dispatches are recorded.
 
-After extraction, dispatch a critic for that exact proposal. A critic `accept`
-is recorded as the workflow's operator acceptance; `revise` or `reject` cannot
-be promoted. Every adverse critic note is an actionable finding. The policy
-counts adverse critic completions cumulatively for the unit: two revisions
-require adjudication, and a `reject` requires it immediately. Dispatch an
-adjudicator only with a current adverse critic. Its completion must contain a
-complete revised proposal and exactly one decision for every finding, using that
-finding's zero-based critic-note index, at least two alternatives, rationale,
-source/section/pages evidence, and every affected proposal record. Run a fresh
-critic with a native identity different from both extractor and adjudicator on
-the revision. If later adverse cycles reach the limit, adjudication remains
-mandatory under the configured critic/adjudicator policy; do not replace it with
-a per-unit human approval loop. Under the default Codex policy, those decisions
-continue to use `gpt-5.6-sol` at high effort. The orchestrator promotes only
-after current checks and a current recorded critic acceptance.
+Keep plans short and start useful work. Course-plan choices do not require an
+agent approval loop. For source units, use the following finite sequence:
+
+1. Extract, then review once. Collect material issues in that review; wording
+   and acceptable alternative approaches are nonblocking suggestions.
+2. If needed, give the extractor one correction pass and recheck the findings.
+3. If disagreement remains, dispatch the configured critic model as adjudicator.
+   A `reject` goes directly to adjudication. Sol/high (or Opus/high for Claude)
+   makes the final decision and logs the alternatives, evidence, and reasons.
+4. Final `accept` authorizes promotion if mechanical checks pass. Final `defer`
+   closes the unit without promoting its draft. Failed final validation also
+   defers the unit. There is no review after adjudication.
+
+An adjudication contains a full proposal, final `verdict` (`accept` or `defer`),
+and one decision for each current finding. Each decision identifies its
+zero-based critic-note index and affected records. An accepted revision may
+remove unsupported claims while explaining the omission in the ledger. A whole
+unit deferral preserves its draft unchanged. Do not manufacture citations to
+justify a deferral.
+
+The existing `revision_limit` controls escalation: default 2 means one
+correction before the second adverse review goes to adjudication. Total dispatch
+budget is `2 * max(1, revision_limit) + 2`, fixed when a unit first dispatches:
+six by default, allowing the normal five-call dispute path plus one runtime
+retry. Each native worker invocation needs its own dispatch, including a retry
+after failure. Re-importing an existing result does not launch a worker. Failed
+and superseded dispatches consume that budget. Exhaustion returns
+a terminal `deferred` record rather than another request. The host must inspect
+that status and move to the next unit.
+
+The orchestrator can also close a blocked unit directly:
+
+```bash
+syllabusgraph agent defer chapter-01 --reason "Source notation cannot be verified"
+```
+
+Deferrals retain their reasons in the audit and do not count as extracted source
+coverage. Continue with independent units; do not restart the same dispute under
+another ID or seek further reviewers merely to obtain agreement. Revisit it
+only when new evidence or explicit user direction changes the task. Keep accepted
+work as it stands; a final decision is followed by promotion or deferral.
 
 ## End-of-run audit
 

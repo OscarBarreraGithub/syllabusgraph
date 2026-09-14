@@ -155,8 +155,16 @@ issue, zero-based critic-note `finding` index, alternatives, resolution, rationa
 records. It may replace an existing graph record only through a decision bound
 to the current knowledge and exact proposed replacement. It may defer a claim
 when evidence is insufficient. It cannot override failed evidence or graph
-checks. A fresh independent critic reviews the adjudicated proposal before
-promotion. Full decision history stays available for the final audit.
+checks. Its final `verdict` is `accept` or `defer`; there is no additional critic
+after this decision. Failed final validation also defers the unit. With the
+defaults there is one correction pass and at most six dispatches, including
+runtime retries. Full decision history stays available for the final audit.
+
+For a whole-unit deferral, return its draft unchanged and explain the issue.
+The orchestrator may also run `agent defer chapter-01 --reason "..."` when work
+cannot proceed. Deferred units are closed, remain absent from promoted coverage,
+and appear in `agent audit` under `deferred_units`. Continue with other units;
+revisiting a closed dispute requires new evidence or explicit user direction.
 
 See [the orchestration contract](../workflows/orchestrate.md) for role behavior
 and [the review contract](../workflows/review.md) for response examples.
@@ -169,7 +177,7 @@ syllabusgraph validate
 syllabusgraph agent audit
 ```
 
-The orchestrator promotes after the configured critic accepts. No per-unit
+The orchestrator promotes after the configured critic or final adjudicator accepts. No per-unit
 human approval is required. Promotion checks current dispatch provenance,
 policy, proposal, source packet, critic verdict, and knowledge base; writes the
 graph atomically; and records a receipt. It does not commit or publish anything.

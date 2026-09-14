@@ -1,6 +1,6 @@
 ---
 name: syllabus-critic
-description: Critique one SyllabusGraph proposal after extraction or adjudication. Use only when dispatched by the syllabus orchestrator.
+description: Critique one SyllabusGraph proposal after extraction. Use only when dispatched by the syllabus orchestrator.
 model: opus
 effort: high
 tools: Read, Glob, Grep

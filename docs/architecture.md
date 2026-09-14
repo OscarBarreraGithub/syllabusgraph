@@ -69,9 +69,11 @@ apart from recovery after the same atomic graph write already completed.
 `agents.py` records accepted local role policy and immutable orchestrator
 requests. The native host launches the configured runtime; model identity is a
 trusted runtime report, not cryptographic attestation. Extractors and adjudicators
-produce proposals; independent critics must accept the current producer's exact
-revision, base, and policy before promotion. Adverse findings cannot be rerolled
-unchanged, and cumulative revision limits force documented adjudication.
+produce proposals. An independent critic reviews extraction; the configured
+critic model gives the final adjudication when disputes persist. Acceptance binds
+the exact revision, base, and policy before promotion. There is no critic after
+adjudication. A fixed per-unit dispatch budget also bounds failed retries;
+unresolved or invalid final results are deferred, not endlessly resubmitted.
 
 Decision ledgers authorize exact record replacements and retain source citations,
 alternatives, and rationale. They do not waive graph or evidence checks. Audit

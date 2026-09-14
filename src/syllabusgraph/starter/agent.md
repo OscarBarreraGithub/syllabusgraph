@@ -83,10 +83,18 @@ For every bounded unit, prepare first, then use this sequence:
 4. For unresolved disputes, dispatch an adjudicator, complete the revised full
    proposal with an auditable decision log. It may run only with a current
    adverse critic; every decision uses the zero-based critic-note `finding` and
-   declares every affected proposal record. Then run a fresh critic with an
-   identity distinct from both extractor and adjudicator.
-5. The orchestrator promotes only after current checks and recorded critic
-   acceptance. It does not require a person to babysit each unit.
+   declares every affected proposal record. The adjudicator gives final
+   `accept` or `defer`; do not dispatch another critic to review this decision.
+5. The orchestrator promotes after current checks and recorded critic or final
+   adjudicator acceptance. Failed final checks defer the unit. Continue with
+   other units, then report deferrals in the final audit.
+
+Default flow allows one extractor correction, then a final decision. Six total
+dispatches per unit cover that path and one runtime retry; budget exhaustion
+returns a deferred record. Use `agent defer UNIT --reason TEXT` to close a stuck
+unit earlier. Do not rename and resubmit the same dispute without new evidence
+or user direction. Keep implementation and course plans practical; no repeated
+plan-approval loop. Style or defensible alternative approaches do not block work.
 
 `end` audit mode requires a final human audit record for the run. `trust` mode
 keeps the forced critic but makes that final audit optional. Record an end audit

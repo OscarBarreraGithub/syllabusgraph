@@ -6,12 +6,21 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Make review finite: one extractor correction by default, then final Sol/Opus
+  adjudication. Remove the review-after-adjudication requirement. Final acceptance
+  still requires passing evidence and graph checks.
+- Bound all dispatches, including failures and superseded retries (six by default).
+  Add terminal deferrals with reasons and visible audit omissions; continue other
+  units without promoting unresolved claims or resetting the same dispute.
+- Keep plans practical and treat wording or defensible teaching preferences as
+  nonblocking feedback. No repeated plan-approval loop.
+
 - Add clone-first Codex/Claude instructions and native role profiles. Default to
   Terra high extraction with mandatory Sol high critique/adjudication, or Sonnet
   high extraction with Opus high critique/adjudication. Roles are configurable.
 - Add orchestrator dispatch contracts, runtime completion records, bounded
-  revisions, documented adjudication of conflicting graph records, and a fresh
-  independent critic gate. Promotion rejects stale policy/proposal/base reviews
+  revisions, documented adjudication of conflicting graph records, and mandatory
+  substantive review. Promotion rejects stale policy/proposal/base reviews
   and later critic rejection, including after an earlier acceptance.
 - Add a local final audit with complete decision history and snapshot-bound
   human review, plus an explicit trust-critic mode. No per-unit human approval.
