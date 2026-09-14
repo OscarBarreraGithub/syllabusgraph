@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 756 concepts and 727 relationships, mapping 862 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 806 concepts and 802 relationships, mapping 922 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -21,10 +21,10 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 46 |
-| Peskin–Schroeder / Weinberg I | 7 |
+| Peskin–Schroeder / Schwartz | 55 |
+| Peskin–Schroeder / Weinberg I | 8 |
 | Peskin–Schroeder / Weinberg II | 26 |
-| Schwartz / Weinberg I | 4 |
+| Schwartz / Weinberg I | 7 |
 | Schwartz / Weinberg II | 21 |
 | Weinberg I / Weinberg II | 0 |
 
@@ -36,16 +36,16 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 |---|---|
 | Abelian curvature from holonomy and covariant-derivative commutators (`qft.abelian-curvature-from-holonomy`) | Peskin–Schroeder: `peskin-schroeder.abelian-curvature-from-holonomy-and-covariant-commutator`; Schwartz: `schwartz.abelian-wilson-loop-curvature`; Peskin–Schroeder: `peskin-schroeder.abelian-wilson-line-and-loop` |
 | Adjoint representation and covariant derivative (`qft.adjoint-representation-and-covariant-derivative`) | Peskin–Schroeder: `peskin-schroeder.adjoint-representation-covariant-derivative-and-bianchi-input`; Schwartz: `schwartz.adjoint-representation-of-gauge-fields` |
+| Classical vector and axial currents in QED (`qft.align006.classical-vector-axial-currents`) | Schwartz: `schwartz.classical-vector-axial-currents`; Peskin–Schroeder: `peskin-schroeder.dirac-vector-and-axial-currents`; Schwartz: `schwartz.dirac-noether-number-current` |
 | Little-group induced vector representations (`qft.align010.schwartz.little-group-induced-vector-representations`) | Schwartz: `schwartz.little-group-induced-vector-representations`; Weinberg I: `weinberg-1.induced-representations-and-little-groups` |
 | Particle as an irreducible unitary Poincaré representation (`qft.align010.schwartz.particle-as-unitary-poincare-irrep`) | Schwartz: `schwartz.particle-as-unitary-poincare-irrep`; Weinberg I: `weinberg-1.one-particle-irreducible-poincare-states` |
+| Proper-orthochronous Lorentz topology and representations up to a sign (`qft.align010.weinberg-1.lorentz-topology-sign-projective-representations`) | Weinberg I: `weinberg-1.lorentz-topology-sign-projective-representations`; Schwartz: `schwartz.spinor-two-pi-rotation-and-projective-representations` |
+| Parity is unitary and time reversal antiunitary (`qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary`) | Weinberg I: `weinberg-1.parity-unitary-time-reversal-antiunitary`; Schwartz: `schwartz.wigner-time-reversal-antilinearity` |
 | Effective action as the 1PI generator and tree reconstruction (`qft.align011.effective-action-1pi-tree-reconstruction`) | Weinberg II: `weinberg-2.effective-action-1pi-tree-reconstruction`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
 | Effective potential for a constant background and vacuum candidates (`qft.align011.effective-potential-constant-background`) | Weinberg II: `weinberg-2.effective-potential-constant-background`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
 | Exact effective-potential convexity and the mixed-state region (`qft.align011.exact-effective-potential-convexity-and-mixed-state-region`) | Weinberg II: `weinberg-2.exact-effective-potential-convexity-and-mixed-state-region`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
 | Full two-point function as inverse 1PI kernel (`qft.align011.full-two-point-function-is-inverse-1pi-kernel`) | Weinberg II: `weinberg-2.full-two-point-function-is-inverse-1pi-kernel`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
 | Quantum effective action as a functional Legendre transform (`qft.align011.legendre-quantum-effective-action`) | Peskin–Schroeder: `peskin-schroeder.effective-action-legendre-transform`; Weinberg II: `weinberg-2.legendre-quantum-effective-action` |
-| QED one-loop running charge (`qft.align012.qed-running-charge-one-loop-flow`) | Schwartz: `schwartz.qed-running-charge-beta-function`; Weinberg II: `weinberg-2.qed-running-charge-at-sliding-scale` |
-| DIS analytic dispersion route to OPE moments (`qft.align013.shared.dis-analytic-dispersion-and-moment-route`) | Peskin–Schroeder: `peskin-schroeder.dis-dispersion-moment-sum-rules`; Schwartz: `schwartz.dis-analytic-contour-moment-route`; Weinberg II: `weinberg-2.dis-ope-dispersion-connection` |
-| Inclusive DIS from the forward Compton discontinuity (`qft.align013.shared.dis-forward-compton-optical-theorem`) | Peskin–Schroeder: `peskin-schroeder.dis-forward-compton-optical-theorem`; Schwartz: `schwartz.dis-current-product-and-forward-compton-amplitude` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 

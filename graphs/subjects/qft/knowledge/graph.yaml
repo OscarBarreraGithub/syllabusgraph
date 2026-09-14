@@ -521,12 +521,33 @@ nodes:
     node: schwartz.classical-vector-axial-currents
     note: Retains this reviewed book-specific treatment, including its stated conditions,
       conventions, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-vector-and-axial-currents
+    note: Compatible free-Dirac current core, retaining Peskin–Schroeder’s mass qualification.
+  - project: schwartz
+    node: schwartz.dirac-noether-number-current
+    note: Compatible Dirac number-current core, retaining J0 as positive number density.
   evidence:
   - source: schwartz
     section: 30.1.3
     pages:
     - 621
-  notation: []
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: Derives vector conservation and the mass-qualified axial divergence.
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 174
+    note: Derives the Dirac Noether current and interprets J0.
+  notation:
+  - source: peskin-schroeder
+    note: Free-Dirac axial-current conservation is qualified by m=0.
+  - source: schwartz
+    note: The electromagnetic current is e Jmu in the source convention.
 - id: qft.align006.euclidean-fujikawa-spectrum-and-index-theorem
   label: Euclidean spectral derivation and the Dirac index
   summary: After Wick rotation, the gauge-covariant Euclidean Dirac operator is Hermitian
@@ -2187,6 +2208,10 @@ nodes:
     note: Retains the source record ‘Proper-orthochronous Lorentz topology and representations
       up to a sign’ with its stated scope, assumptions, and notation; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: schwartz
+    node: schwartz.spinor-two-pi-rotation-and-projective-representations
+    note: Compatible spinor two-pi sign and projective-representation core, retaining
+      Schwartz’s spinor route.
   evidence:
   - source: weinberg-1
     section: '2.7'
@@ -2195,7 +2220,17 @@ nodes:
     - 89
     note: Derives the topology and its sign-valued projective representations for
       the connected component.
-  notation: []
+  - source: schwartz
+    section: '10.5'
+    pages:
+    - 175
+    - 176
+    - 177
+    - 178
+    note: Derives the spinor two-pi sign and projective Lorentz-representation interpretation.
+  notation:
+  - source: schwartz
+    note: The two-pi sign is displayed through the source’s spinor rotation representation.
 - id: qft.align010.weinberg-1.massive-intrinsic-parity-and-time-reversal
   label: Massive intrinsic parity and conventional time reversal
   summary: For a nondegenerate massive species, parity acts on rest states by a spin-independent
@@ -2485,6 +2520,10 @@ nodes:
     note: Retains the source record ‘Parity is unitary and time reversal antiunitary’
       with its stated scope, assumptions, and notation; this source-scoped alignment
       does not assert a broader equivalence.
+  - project: schwartz
+    node: schwartz.wigner-time-reversal-antilinearity
+    note: Compatible Wigner anti-linearity core, retaining the source’s distinction
+      from simple T-hat.
   evidence:
   - source: weinberg-1
     section: '2.6'
@@ -2493,7 +2532,18 @@ nodes:
     - 76
     note: States the approximation and uses the energy-spectrum argument to select
       the operator types.
-  notation: []
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 199
+    - 200
+    - 201
+    note: Distinguishes simple field conjugation from Wigner anti-linear time reversal
+      and composes CPT.
+  notation:
+  - source: schwartz
+    note: Wigner time reversal sends i to minus i; this differs from the source’s
+      simple T-hat action.
 - id: qft.align010.weinberg-1.poincare-central-charges-removable
   label: All Poincaré-algebra central charges are removable
   summary: Applying Jacobi identities to the most general centrally extended Poincaré
@@ -6413,6 +6463,10 @@ nodes:
     note: Preserves this reviewed weinberg-1 treatment at the stated scope; it does
       not import a different derivation, historical framing, or later proof beyond
       this correspondence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermionic-ladder-operators-and-statistics
+    note: Compatible free-Dirac operator reinterpretation; the source’s statistics
+      consequences remain in a residual node.
   evidence:
   - source: weinberg-1
     section: '1.2'
@@ -6421,6 +6475,14 @@ nodes:
     - 24
     note: Equations (1.2.41)–(1.2.47) display the negative-energy problem, operator
       redefinition, vacuum condition, and positive relative energy.
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 57
+    note: Reinterprets the b modes as positive-energy antifermion excitations.
+  notation:
+  - source: peskin-schroeder
+    note: Uses the source’s a and b ladder-operator convention.
 - id: qft.align015.fermionic-anticommutation-occupancy
   label: Fermionic anticommutators and single-mode occupancy
   summary: 'Electron normal modes require anticommutation relations rather than bosonic
@@ -7614,6 +7676,13 @@ nodes:
     - 125
     note: The source gives parity covariance and explains its redefinition by B, L,
       and Q phase transformations.
+  - source: schwartz
+    section: '11.5'
+    pages:
+    - 195
+    - 196
+    - 197
+    note: Gives the parity phases and their spinor-representation consequence.
   id: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
   group: qft.align016.symmetries
   origins:
@@ -7622,7 +7691,14 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
-  notation: []
+  - project: schwartz
+    node: schwartz.parity-intrinsic-phases-and-spinor-chirality-swap
+    note: Compatible intrinsic-phase freedom; the source’s chirality-swap result remains
+      in a residual node.
+  notation:
+  - source: schwartz
+    note: Preserves the source’s spinor parity phases separately from the S-matrix
+      phase redefinition convention.
 - label: Momentum-space phi-four Feynman rules
   summary: Fourier transforming each propagator gives i/(p^2-m^2+i epsilon); vertex
     integrations impose four-momentum conservation, leaving integrations only over
@@ -11014,6 +11090,1365 @@ nodes:
     pages:
     - 193
   notation: []
+- id: qft.align020.beta-decay-electron-polarization-problem
+  label: Beta-decay electron-polarization problem
+  summary: Problem 11.6(f) asks how a cobalt-60 beta-decay experiment could test electron
+    polarization and which helicity is expected more often. It is an independent physical
+    interpretation prompt.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.beta-decay-electron-polarization-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.6(f)
+    pages:
+    - 202
+    note: States the beta-decay polarization question.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.canonical-dirac-momentum-and-hamiltonian
+  label: Canonical Dirac momentum and Hamiltonian
+  summary: For L=ψ̄(iγ·∂−m)ψ, the canonical momentum conjugate to ψ is π_ψ=iψ†. The
+    Hamiltonian H=∫d^3x ψ†[−iα·∇+mβ]ψ uses α=γ^0γ and β=γ^0, matching the one-particle
+    Dirac Hamiltonian; this classical/canonical construction precedes and is retained
+    through the failed commutator route.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.canonical-dirac-momentum-and-hamiltonian
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    note: Equations (3.83)–(3.85) derive the conjugate momentum and Hamiltonian before
+      the attempted commutator quantization.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+- id: qft.align020.charge-conjugation-bilinear-problem
+  label: Charge-conjugation bilinear derivation problem
+  summary: Problem 11.5 asks for derivations of the charge-conjugation properties
+    of the pseudoscalar, axial-vector, and tensor bilinears listed immediately before
+    it. This is a requested extension of the stated C transformation rules.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.charge-conjugation-bilinear-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.5
+    pages:
+    - 202
+    note: Requests derivation of the properties in Eqs. 11.54–11.56.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.charge-conjugation-qed-and-bilinears
+  label: Charge conjugation in QED and for bilinears
+  summary: With the stated C action, the free Dirac terms are C even and the vector
+    current is C odd. QED is C invariant when Aμ changes sign as well; the source
+    separately lists the C parities of pseudoscalar, axial-vector, and tensor bilinears.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.charge-conjugation-qed-and-bilinears
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: '11.4'
+    pages:
+    - 194
+    - 195
+    note: Checks the free terms and vector current, extends C to the photon, and lists
+      other bilinears.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.charge-conjugation-spinor-transformation
+  label: Charge-conjugation transformation of a Dirac spinor
+  summary: In the source's Weyl basis, charge conjugation maps ψ to ψc=−iγ2ψ*. Applied
+    to rest-frame free modes, it exchanges particle and antiparticle solutions while
+    reversing their displayed spin labels; C²=1 on the spinor field.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.charge-conjugation-spinor-transformation
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 11.3–11.4
+    pages:
+    - 192
+    - 194
+    note: Defines charge conjugation and evaluates it on the rest-frame modes.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.chiral-qed-and-helicity-problem
+  label: Chiral-QED selection and helicity-reversal problem
+  summary: Problem 11.6(a,d) asks for the chiral-projector selection rule at the QED
+    vertex and for the distinction between helicity and chirality when an electron's
+    momentum is reversed with electric fields. These form one chiral/helicity application
+    route.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.chiral-qed-and-helicity-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.6(a,d)
+    pages:
+    - 202
+    note: States the projector selection-rule and reversed-momentum tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.chiral-u1-and-handed-current-symmetry
+  label: Chiral U(1) symmetry and separately conserved handed currents
+  summary: The free massive Dirac Lagrangian retains ordinary phase symmetry, while
+    the gamma-five rotation preserves only the derivative term. In the massless limit
+    the left- and right-handed current combinations are separately conserved; this
+    source-specific symmetry statement is retained apart from the common current identities.
+  kind: concept
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.chiral-u1-symmetry-and-handed-currents
+    note: Retains the mass qualification and the handed-current interpretation beyond
+      the compatible current core.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 51
+    note: States the phase and chiral transformations, mass qualification, and handed-current
+      combinations.
+  notation:
+  - source: peskin-schroeder
+    note: Uses the source’s gamma-five and chiral-representation convention.
+- id: qft.align020.chirality-helicity-and-massless-weyl-limit
+  label: Chirality, helicity, and the massless Weyl limit
+  summary: Helicity h=(S·p)/|p| labels the high-boost solutions. It is frame dependent
+    for a massive particle but Lorentz invariant for a massless particle; massless
+    left- and right-Weyl solutions have definite left- and right-handed helicity,
+    respectively. In the chiral representation ψ=(ψ_L,ψ_R)^T decomposes into inequivalent
+    two-component Lorentz representations. The mass term couples them; only for m=0
+    do the Weyl equations decouple, with σ^μ=(1,σ) and σ̄^μ=(1,−σ) giving the compact
+    notation. Chirality labels the separate Lorentz representations and is projected
+    by PL,R=(1∓γ5)/2. Helicity is spin projected on momentum; for massless free spinors
+    it aligns with chirality, whereas mass mixes chiral components and helicity need
+    not equal chirality. Spin remains the useful nonrelativistic label.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.helicity-and-massless-weyl-solutions
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: peskin-schroeder
+    node: peskin-schroeder.weyl-spinors-and-chiral-mass-mixing
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.chirality-helicity-and-spin-distinction
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 47
+    note: The source identifies the helicity eigenstates and explains the massive
+      versus massless distinction.
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    - 44
+    note: The source derives left/right transformations, the coupled equations, and
+      their massless decoupling.
+  - source: schwartz
+    section: '11.1'
+    pages:
+    - 185
+    - 186
+    - 187
+    - 188
+    note: Defines the projectors and distinguishes the three notions across massless,
+      interacting, and nonrelativistic regimes.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.cp-simple-time-reversal-calculation
+  label: CP T-hat transformation calculation
+  summary: 'Combining the source''s C, P, and simple T-hat field actions gives CP
+    T-hat: ψ(t,x)→−iψ(−t,−x), with the displayed current and vector transformations.
+    This makes the simple combined invariance essentially fixed by the CP relation
+    rather than an instance of the CPT theorem.'
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.cp-simple-time-reversal-calculation
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 11.6.1
+    pages:
+    - 199
+    note: Carries out the CP T-hat composition and comments on its triviality.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.cpt-theorem-scope
+  label: CPT theorem scope
+  summary: The source gives the combined CPT action on Dirac spinors and examples
+    of local Lagrangian terms that are CPT invariant. It states the theorem as a consequence
+    of Lorentz invariance and unitarity, while explicitly noting that its rigorous
+    proof need not assume a Lagrangian and is not supplied in this passage.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.cpt-theorem-scope
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 201
+    note: States the CPT action, representative terms, theorem conditions, and proof
+      limitation.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dipole-operator-discrete-symmetry-problem
+  label: Magnetic/electric dipole discrete-symmetry problem
+  summary: Problem 11.10 asks learners to expand the electric-dipole operator in electric
+    and magnetic fields and classify magnetic- and electric-dipole operators under
+    C, P, and T, including the source's comparison between fundamental-particle and
+    molecular dipoles.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.dipole-operator-discrete-symmetry-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.10
+    pages:
+    - 203
+    - 204
+    note: Defines the two operators and states the expansion and discrete-symmetry
+      tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-adjoint-and-covariant-bilinears
+  label: Dirac adjoint and covariant bilinears
+  summary: The sixteen Dirac matrices decompose into scalar, vector, antisymmetric
+    tensor, pseudovector, and pseudoscalar Lorentz types. γ^5=iγ^0γ^1γ^2γ^3 is Hermitian,
+    squares to one, anticommutes with γ^μ, and its chiral eigenvalues distinguish
+    the Weyl components. Because boosts are not unitary in the finite spinor representation,
+    ψ†ψ is not a Lorentz scalar. The adjoint ψ̄=ψ†γ0 transforms with Λs−1, making
+    ψ̄ψ invariant and ψ̄γμψ a four-vector; the gamma-matrix transformation law ties
+    spinor and vector representations together.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-bilinear-lorentz-basis
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.dirac-adjoint-and-covariant-bilinears
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 49
+    - 50
+    note: The source classifies all sixteen matrices and derives the γ^5 properties.
+  - source: schwartz
+    section: 10.3.1
+    pages:
+    - 170
+    - 171
+    - 172
+    note: Derives Λs−1γμΛs, gamma hermiticity, the adjoint, and covariant bilinears.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  label: Dirac adjoint, free Lagrangian, and equation
+  summary: Because boosts are not unitary in the spinor representation, ψ†ψ is not
+    a Lorentz scalar. Defining ψ̄=ψ†γ^0 gives scalar ψ̄ψ and vector ψ̄γ^μψ, and L=ψ̄(iγ·∂−m)ψ
+    yields the Dirac equation plus its adjoint equation by independent variations.
+    Combining ψL and ψR into a four-component Dirac spinor and using the Weyl-basis
+    gamma matrices packages the kinetic and Dirac-mass terms as L=ψ̄(iγμ∂μ−m)ψ. Its
+    Euler–Lagrange equation is the first-order Dirac equation.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-adjoint-and-free-lagrangian
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.dirac-spinor-lagrangian-and-equation
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    note: Equations (3.32)–(3.35) define the adjoint, scalar, Lagrangian, and conjugate
+      equation.
+  - source: schwartz
+    section: 10.2.2
+    pages:
+    - 167
+    - 168
+    note: Defines ψ, ψ̄, γμ and derives the conventional Lagrangian and equation.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-algebra-identities-problem
+  label: Dirac-algebra identity derivation problem
+  summary: Problem 11.1 asks for basis-independent derivations from the Clifford algebra
+    of γ5 properties, contracted gamma strings, anticommutation with γ5, and the four-gamma
+    trace. These are requested algebraic results.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-algebra-identities-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.1
+    pages:
+    - 201
+    note: Lists the five gamma-matrix identity tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-clifford-and-lorentz-generators
+  label: Dirac Clifford algebra and spinor Lorentz generators
+  summary: Matrices γ^μ obeying {γ^μ,γ^ν}=2g^{μν} generate S^{μν}=i[γ^μ,γ^ν]/4, a
+    Lorentz-algebra representation. In four-dimensional Minkowski space the minimal
+    matrices are 4×4; Peskin and Schroeder adopt the Weyl (chiral) representation.
+    Gamma matrices obey {γμ,γν}=2gμν. From this algebra Sμν=i[γμ,γν]/4 obeys the Lorentz
+    algebra and generates the reducible Dirac representation; the Weyl and Majorana
+    gamma choices are physically equivalent bases for that representation.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-clifford-algebra-generators
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.dirac-clifford-algebra-and-spin-generators
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 40
+    - 41
+    note: Equations (3.22)–(3.27) build the spinor generators and display the chiral
+      realization.
+  - source: schwartz
+    section: '10.3'
+    pages:
+    - 168
+    - 169
+    - 170
+    note: Introduces the Clifford algebra, spinor generators, and Weyl/Majorana bases.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  label: Dirac covariance and Klein–Gordon factorization
+  summary: A four-component Dirac spinor transforms by the spinor matrix Λ_{1/2};
+    the relation Λ_{1/2}^{−1}γ^μΛ_{1/2}=Λ^μ{}_νγ^ν makes (iγ^μ∂_μ−m)ψ=0 Lorentz covariant.
+    Multiplying by the conjugate first-order operator yields the Klein–Gordon equation
+    for each component. Multiplying the free Dirac operator by its conjugate factor
+    and using the Clifford algebra gives (□+m²)ψ=0. Spinors therefore have the scalar
+    relativistic mass shell while retaining the stronger first-order equation; the
+    adjoint equation has a left-acting derivative.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-spinor-and-covariant-equation
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.dirac-equation-klein-gordon-factorization
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 42
+    - 43
+    note: The source proves covariance of (3.31) and then derives (∂²+m²)ψ=0.
+  - source: schwartz
+    section: 10.3.1
+    pages:
+    - 172
+    note: Carries out the factorization and writes the adjoint equation.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-magnetic-dipole-prediction
+  label: Dirac magnetic-dipole prediction
+  summary: With F0i=Ei and Fij=−εijkBk, the Pauli term yields the spin magnetic coupling.
+    Its nonrelativistic limit reproduces the Schrödinger–Pauli equation and predicts
+    a magnetic moment of scale μB=e/(2me); the source distinguishes the accompanying
+    boosted-frame electric term from an electric dipole moment.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-magnetic-dipole-prediction
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 174
+    note: Identifies the magnetic moment, its conventional size, and the electric-field
+      qualification.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-number-current-interpretation-residual
+  label: Dirac number density and current interpretation
+  summary: For Jμ=barψγμψ, J0=ψ†ψ is a positive number density rather than a Lorentz
+    scalar. Its conserved charge counts electrons minus positrons, its spatial components
+    describe electron-number flow, and the electromagnetic current is eJμ in the source
+    convention.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-noether-number-current
+    note: Retains the source's density, charge-counting, flow, and electromagnetic-normalization
+      interpretation beyond the amended compatible current core.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 174
+    note: Interprets the time and spatial components of the Dirac Noether current
+      and relates number current to charge current.
+  notation:
+  - source: schwartz
+    note: Uses the source's electron-number and electric-charge convention.
+- id: qft.align020.dirac-photon-coupling-and-pauli-term
+  label: Minimal photon coupling and the spin Pauli term
+  summary: For a charge −1 spinor, Dμ=∂μ+ieAμ gives (i∕D−m)ψ=0. Squaring it produces
+    D∕²=Dμ²+eFμνσμν/2, so the spinor equation differs from the minimally coupled scalar
+    equation by a field-strength coupling.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-photon-coupling-and-pauli-term
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 173
+    note: Introduces the covariant derivative and derives the squared equation and
+      compact identity.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.dirac-spin-sum-completeness
+  label: Dirac spin-sum completeness relations
+  summary: Summing the physical u and v polarizations gives the displayed Dirac completeness
+    projectors. Peskin–Schroeder introduces slash notation for these combinations;
+    Schwartz states the same normalized spin sums.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-spin-sum-completeness
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.dirac-spinor-normalization-and-completeness
+    note: Retains the source’s completeness sums; the same composite record also supplies
+      the compatible normalization core.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.3–3.4
+    pages:
+    - 48
+    - 49
+    note: The source evaluates the u and v sums and introduces slash notation.
+  - source: schwartz
+    section: '11.2'
+    pages:
+    - 191
+    note: States the normalized u/v spinors and the completeness sums.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Schwartz’s Weyl-basis spinor convention is retained for its displayed completeness
+      sums.
+- id: qft.align020.dirac-spinor-normalization-and-completeness
+  label: Dirac u and v normalization and orthogonality
+  summary: Free Dirac u and v spinors have the stated barred normalizations and equal-momentum
+    barred orthogonality. This node retains normalization conventions only; the spin-sum
+    completeness relations are retained in the distinct completeness core.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-u-v-normalization
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.dirac-spinor-normalization-and-completeness
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 47
+    - 48
+    note: Equations (3.55)–(3.65) state the Lorentz-scalar normalization, negative-frequency
+      solutions, and orthogonality.
+  - source: schwartz
+    section: 11.2.1
+    pages:
+    - 191
+    note: Derives the normalizations, orthogonality, and outer-product completeness
+      relations.
+  notation:
+  - source: peskin-schroeder
+    note: Uses ubar_r u_s=2m delta_rs and vbar_r v_s=-2m delta_rs in the source convention.
+  - source: schwartz
+    note: Retains Schwartz’s normalization convention and its distinct completeness
+      calculation.
+- id: qft.align020.fermionic-anticommutator-causality
+  label: Anticommutators from positivity and spacelike causality
+  summary: Positive vacuum norms force the coefficients of positive- and negative-frequency
+    propagation to have the same sign, so a spacelike commutator cannot cancel. Setting
+    their magnitudes equal instead makes Dirac fields anticommute at spacelike separation;
+    even-field observables still commute there.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermionic-anticommutator-causality
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, How Not to Quantize the Dirac Field
+    pages:
+    - 55
+    - 56
+    note: The source derives the sign obstruction and replaces commutation by anticommutation
+      for causal observables.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+- id: qft.align020.fermionic-ladder-statistics-residual
+  label: Fermionic ladder nilpotence and Fermi–Dirac statistics
+  summary: After the antiparticle reinterpretation, the source also derives nilpotence
+    of fermionic creation operators, antisymmetric multiparticle states, Pauli exclusion,
+    and Fermi–Dirac statistics. These statistics consequences are retained separately
+    from the common operator reinterpretation core.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermionic-ladder-operators-and-statistics
+    note: Retains the source’s statistics and exclusion consequences; its operator
+      reinterpretation also corresponds to the amended common core.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 57
+    note: Derives the nilpotence, antisymmetry, exclusion, and Fermi–Dirac-statistics
+      consequences.
+  notation: []
+- id: qft.align020.fierz-rearrangement-problem
+  label: Fierz rearrangement derivation problem
+  summary: Problem 11.8 asks for specified chiral Fierz identities, an orthogonal
+    gamma-matrix basis trace relation, and the general trace-coefficient rearrangement
+    formula. It is a separate algebraic exercise whose left-handed projector convention
+    is explicit.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.fierz-rearrangement-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.8
+    pages:
+    - 202
+    note: Lists the chiral and general Fierz tasks and defines PL.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.free-dirac-plane-wave-solutions
+  label: Free Dirac plane-wave solutions
+  summary: Positive-frequency plane waves ψ=u(p)e^{−ip·x}, p²=m² and p^0>0 obey (p̸−m)u(p)=0.
+    In the rest frame only two components are free; a normalized two-spinor ξ labels
+    the two spin states before quantization establishes their spin angular momentum.
+    Positive-energy u_s(p)e−ipx and v_s(p)e+ipx solutions of the free Dirac equation
+    are obtained from rest-frame spinors and boosts. The four on-shell Dirac solutions
+    encode two particle and two antiparticle spin states; in the massless limit the
+    nonzero-component solutions have fixed helicity.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-positive-frequency-spinors
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  - project: schwartz
+    node: schwartz.free-dirac-particle-antiparticle-solutions
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 45
+    note: The source obtains the rest-frame u(p_0) solutions and explains their two
+      independent components.
+  - source: schwartz
+    section: '11.2'
+    pages:
+    - 188
+    - 189
+    - 190
+    note: Builds rest-frame and boosted u and v spinors and interprets the massless
+      limit.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.general-local-cpt-invariance-problem
+  label: General local Dirac/photon CPT-invariance problem
+  summary: Problem 11.7 asks learners to show that the most general Lagrangian term
+    made from Dirac spinors, gamma matrices, and Aμ is CPT invariant, beginning with
+    the representative local terms. It is a requested verification, distinct from
+    the source's statement of theorem scope.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.general-local-cpt-invariance-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.7
+    pages:
+    - 202
+    note: States the general local-term CPT exercise.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.gordon-identity-problem
+  label: On-shell Gordon-identity problem
+  summary: Problem 11.4 asks for the Gordon decomposition of an on-shell Dirac vector
+    current into momentum and σμν terms. It is an independent algebraic derivation
+    using the on-shell Dirac equations and gamma algebra.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.gordon-identity-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.4
+    pages:
+    - 201
+    - 202
+    note: States the requested Gordon identity and defines σμν.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.majorana-charge-conjugacy-and-u1-neutrality
+  label: Majorana charge conjugacy and U(1) neutrality
+  summary: Embedding one Weyl field as ψ=(ψL,iσ2ψL*)T gives a four-component Majorana
+    spinor satisfying ψ=ψc=−iγ2ψ*. Charge conjugation reverses the Dirac charge, so
+    a Majorana condition and its mass term are incompatible with a U(1) gauge or global
+    charge.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.majorana-charge-conjugacy-and-u1-neutrality
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: '11.3'
+    pages:
+    - 192
+    - 193
+    note: Defines the embedding and charge conjugation, then proves the U(1) restriction.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.majorana-mass-grassmann-necessity
+  label: Majorana mass and Grassmann necessity
+  summary: A same-chirality bilinear ψTRσ2ψR is Lorentz invariant, unlike ψ†RψR, but
+    is nonzero only when fermion components anticommute. The antisymmetric ε tensor
+    gives the invariant contraction and records the source's Grassmann-number qualification.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.majorana-mass-grassmann-necessity
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 10.6.1
+    pages:
+    - 178
+    - 179
+    note: Derives Lorentz invariance and explains why commuting components make the
+      mass vanish.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.majorana-representation-problem
+  label: Majorana-representation algebra problem
+  summary: Problem 10.4 asks for the Lorentz generators and γ5 in the Majorana representation
+    and for J² eigenvalue comparisons across Majorana, Weyl, and four-vector representations.
+    It is a representation-specific algebra exercise.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.majorana-representation-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 10.4
+    pages:
+    - 182
+    note: Lists the Majorana generators, J², and γ5 tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.massless-spin-one-charge-conservation-problem
+  label: Massless spin-one charge-conservation proof problem
+  summary: Problem 11.3 asks the learner to prove the charge-conservation statement
+    for a massless spin-one particle, permitting use of results from Section 9.5.
+    It is a requested proof task; the later little-group/Ward result is an input,
+    not the supplied proof.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.massless-spin-one-charge-conservation-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.3
+    pages:
+    - 201
+    note: Explicitly directs the reader to use Section 9.5.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.naive-dirac-commutator-instability
+  label: Failure of commutator quantization for the Dirac field
+  summary: Expanding the Dirac field in the one-particle Hamiltonian eigenbasis with
+    bosonic commutators reproduces the formal equal-time field commutator, but leaves
+    a negative-energy b excitation whose repeated creation lowers H without bound.
+    The source presents this as a deliberately failed route.
+  kind: assumption
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.naive-dirac-commutator-instability
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.5, How Not to Quantize the Dirac Field
+    pages:
+    - 52
+    - 53
+    - 54
+    note: The source postulates commutators, derives the mode expansion, and exposes
+      the negative-energy term.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+- id: qft.align020.neutrino-majorana-u1-obstruction-problem
+  label: Neutrino Majorana U(1)-obstruction problem
+  summary: Problem 11.9(a) asks learners to show that the stated left-handed Majorana
+    mass is forbidden by the stated U(1) symmetry. It is a specific symmetry test,
+    distinct from the later mass-eigenstate and decay-diagram tasks.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.neutrino-majorana-u1-obstruction-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(a)
+    pages:
+    - 202
+    note: States the left-handed Majorana mass and U(1)-forbiddance task.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.neutrino-mass-eigenstate-and-seesaw-problem
+  label: Neutrino mass-eigenstate and see-saw problem
+  summary: Problem 11.9(b–d) asks for the left-handed charge-conjugate field, a doublet
+    rewrite, Klein–Gordon mass eigenstates, particle count, and the large-M see-saw
+    spectrum. These are a staged diagonalization route.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.neutrino-mass-eigenstate-and-seesaw-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(b–d)
+    pages:
+    - 203
+    note: States the field rewrite, mass-eigenstate, and see-saw tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.neutrinoless-double-beta-lepton-flow-problem
+  label: Neutrinoless double-beta lepton-flow problem
+  summary: Problem 11.9(e–f) asks for a neutrinoless double-beta diagram from the
+    supplied weak interactions and a lepton-number-flow analysis of whether it diagnoses
+    a Majorana mass. It is a distinct application of the displayed interactions.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.neutrinoless-double-beta-lepton-flow-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(e–f)
+    pages:
+    - 203
+    note: States the diagram and lepton-number-flow tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.nonrelativistic-dirac-magnetic-and-spin-orbit-problem
+  label: Nonrelativistic Dirac magnetic and spin–orbit derivation problem
+  summary: Problem 10.1 asks for the Dirac Hamiltonian, its controlled 1/c expansion,
+    magnetic and electric dipole interpretation, angular-momentum normalization, gyromagnetic
+    ratio, rotational constraint on spin–orbit coupling, and higher-order fine-structure
+    scaling. These are requested derivations, not results established in the text.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.nonrelativistic-dirac-magnetic-and-spin-orbit-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 10.1
+    pages:
+    - 181
+    - 182
+    note: States the staged Hamiltonian, expansion, symmetry, and scaling tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.nonrelativistic-spin-flip-and-measurement-problem
+  label: Nonrelativistic spin-flip and measurement problem
+  summary: Problem 11.6(c,e) asks learners to use nonrelativistic electromagnetic
+    dynamics to distinguish electric from magnetic spin flips and to describe an operational
+    measurement of a slow electron's spin. These tasks use the magnetic Pauli coupling
+    rather than the free-spinor current calculation.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.nonrelativistic-spin-flip-and-measurement-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.6(c,e)
+    pages:
+    - 202
+    note: States the spin-flip and slow-electron measurement tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.parity-chirality-swap-residual
+  label: Parity phases and massless spinor chirality swap
+  summary: In the source's Weyl basis, parity acts on a Dirac spinor as ψ(t,x)→γ0ψ(t,−x)
+    and on the photon vector with A0 even and Ai odd. It reverses momentum without
+    reversing spin, so it interchanges left- and right-handed massless spinor representations;
+    intrinsic phase freedom remains in the accepted S-matrix core.
+  kind: concept
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.parity-intrinsic-phases-and-spinor-chirality-swap
+    note: Retains the source’s spinor chirality-swap and field-phase treatment; its
+      intrinsic-phase convention also corresponds to the amended accepted core.
+  evidence:
+  - source: schwartz
+    section: '11.5'
+    pages:
+    - 195
+    - 196
+    - 197
+    note: Develops parity phases and the resulting left/right spinor interchange.
+  notation:
+  - source: schwartz
+    note: Uses the source’s Weyl-basis parity transformation convention.
+- id: qft.align020.rapidity-boosted-dirac-spinors
+  label: Rapidity boosts and boosted u spinors
+  summary: Rapidity is additive under collinear boosts. Applying the spinor boost
+    to the rest solution gives u(p) in terms of the positive square root of p·σ (and
+    p·σ̄), a form valid for arbitrary momentum direction and verified with (p·σ)(p·σ̄)=m².
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.rapidity-boosted-dirac-spinors
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 46
+    note: Equations (3.48)–(3.51) introduce rapidity and the matrix-square-root form
+      of u(p).
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+- id: qft.align020.rest-spinor-current-problem
+  label: Rest-spinor current-selection problem
+  summary: Problem 11.6(b) asks learners to choose explicit rest-frame spinors and
+    show that the Dirac vector current vanishes unless the two spin labels agree.
+    It is an explicit free-spinor calculation, separate from the magnetic spin-flip
+    and measurement tasks.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.rest-spinor-current-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.6(b)
+    pages:
+    - 202
+    note: States the rest-spinor vector-current calculation.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.simple-time-reversal-field-conjugation
+  label: Simple T-hat field conjugation
+  summary: The source's simple T-hat conjugates the spinor field as ψ(t,x)→γ0γ2ψ*(−t,x)
+    and uses a corresponding vector transformation to preserve the displayed Dirac
+    terms. Unlike Wigner T, this construction is not defined as an anti-linear operator
+    acting on every scalar i in the Lagrangian.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.simple-time-reversal-field-conjugation
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 11.6.1
+    pages:
+    - 198
+    - 199
+    note: Introduces the field-conjugation ansatz, derives Γ, and contrasts it with
+      the later Wigner operation.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.spinor-completeness-and-current-problem
+  label: Spinor completeness and current-identity problem
+  summary: Problem 11.2 asks learners to derive the particle and antiparticle completeness
+    sums and the diagonal vector-current identity from free on-shell spinors. The
+    established completeness formulas are the goal of this proof, not a compulsory
+    input.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.spinor-completeness-and-current-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 11.2
+    pages:
+    - 201
+    note: States the two completeness sums and current identity as requested proofs.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.su2-finite-irrep-construction-problem
+  label: Finite-dimensional SU(2) irrep construction problem
+  summary: Problem 10.2 requests a ladder-operator derivation of the finite-dimensional
+    SU(2) spectrum, the dimension 2J+1, and an explicit five-dimensional representation.
+    It is an independent construction exercise based on the su(2) algebra.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.su2-finite-irrep-construction-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 10.2
+    pages:
+    - 182
+    note: Gives the τi algebra, ladder tasks, dimension proof, and explicit construction.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.supersymmetry-auxiliary-field-problem
+  label: Supersymmetry and auxiliary-field elimination problem
+  summary: Problem 10.5 asks to verify a specified supersymmetric Lagrangian transformation,
+    integrate out the nondynamical auxiliary field F, and find the on-shell transformation.
+    It keeps off-shell versus equation-of-motion symmetry claims distinct.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.supersymmetry-auxiliary-field-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 10.5
+    pages:
+    - 182
+    - 183
+    note: States the invariance, auxiliary-field, and on-shell tasks.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.vector-and-axial-currents-under-parity
+  label: Vector and axial currents under parity
+  summary: Under the stated parity action, ψ̄γμψ transforms as a four-vector and preserves
+    the Dirac QED coupling, while ψ̄γμγ5ψ has the opposite component parities. The
+    latter defines the axial current; weak interactions use the V−A combination.
+  kind: result
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.vector-and-axial-currents-under-parity
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 11.5.2
+    pages:
+    - 197
+    - 198
+    note: Computes the bilinear transformations and names the vector and axial currents.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.weyl-fierz-rearrangement
+  label: Weyl-spinor Fierz rearrangement
+  summary: The two-component σ-matrix identity produces a nontrivial rearrangement
+    of products of same-chirality vector bilinears, antisymmetric under interchange
+    of the indicated external spinors. Further σ identities reduce longer Weyl-bilinear
+    products; this is an algebraic identity, not a dynamical interaction.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.weyl-fierz-rearrangement
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 51
+    - 52
+    note: Equations (3.77)–(3.82) derive and apply the Weyl Fierz identity.
+  notation:
+  - source: peskin-schroeder
+    note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
+      where the cited treatment uses them.
+- id: qft.align020.weyl-index-and-sigma-conventions
+  label: Weyl index, epsilon, and sigma-matrix conventions
+  summary: The source's two-component notation distinguishes undotted left-handed
+    and dotted right-handed indices. ε raises and lowers spinor indices, anticommuting
+    fields make the contracted same-chirality product symmetric, and σμ/σ̄μ replace
+    gamma matrices in Weyl kinetic terms and Lorentz contractions.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.weyl-index-and-sigma-conventions
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 10.6.2
+    pages:
+    - 179
+    - 180
+    - 181
+    note: Defines dotted/undotted indices, epsilon contractions, and sigma identities.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.weyl-sigma-identity-problem
+  label: Weyl sigma-identity derivation problem
+  summary: Problem 10.3 asks for derivations of the two displayed σμ and σ̄μ index-contraction
+    identities. It is a two-component-index calculation, separate from the Majorana-basis
+    exercises that follow.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.weyl-sigma-identity-problem
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: Problem 10.3
+    pages:
+    - 182
+    note: States the two requested sigma-matrix identities.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.wigner-cpt-transformation-calculation
+  label: Wigner-CPT transformation calculation
+  summary: Composing the source's C, P, and Wigner T actions sends a Dirac spinor
+    to −γ5ψ*(−x), Aμ(x) to −Aμ(−x), φ to φ*(−x), and i to −i. This is the displayed
+    transformation calculation that precedes the theorem statement.
+  kind: method
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.wigner-cpt-transformation-calculation
+    note: Retains this reviewed book treatment with its stated conditions, conventions,
+      and task or proof boundary; the correspondence asserts only the shared physical
+      core stated here.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 201
+    note: Gives the combined CPT action on fields and i.
+  notation:
+  - source: schwartz
+    note: Preserves Schwartz’s displayed Weyl-basis, metric, and discrete-symmetry
+      conventions where the cited treatment uses them.
+- id: qft.align020.wigner-time-reversal-field-action-residual
+  label: Wigner time reversal on Dirac and vector fields
+  summary: In the source's Weyl basis, Wigner time reversal is anti-linear and acts
+    on a Dirac spinor as ψ(t,x)→γ1γ3ψ(−t,x). It reverses momentum and spin without
+    converting particles into antiparticles; A0 is even and Ai odd, and the stated
+    Dirac Lagrangian is invariant.
+  kind: representation
+  group: qft.align020.relativistic-fermion-structures
+  origins:
+  - project: schwartz
+    node: schwartz.wigner-time-reversal-antilinearity
+    note: Retains the source's explicit Dirac/vector field action apart from the amended
+      common anti-linearity result.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 200
+    - 201
+    note: Derives the spinor matrix, identifies momentum and spin reversal, and gives
+      the vector-field transformation.
+  notation:
+  - source: schwartz
+    note: Uses the source's Weyl-basis gamma matrices and anti-linear action on scalar
+      factors.
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -18721,6 +20156,1309 @@ edges:
     - 28
     note: Page 13 rejects the inference that spin-zero relativistic wave equations
       are invalid; pages 27–28 explain that quantum fields are not probability amplitudes.
+- id: full-align-020-ps3-adjoint-to-currents
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align006.classical-vector-axial-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current divergences cancel only by applying both the Dirac and adjoint
+    equations.
+  failure_mode: The on-shell conservation calculation has no equations for ψ and ψ̄.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: The source computes the divergences assuming ψ satisfies the Dirac equation
+      and its adjoint.
+- id: full-align-020-ps3-anticommutators-to-antiparticle-reinterpretation
+  from: qft.align020.fermionic-anticommutator-causality
+  to: qft.align015.fermion-antiparticle-operator-reinterpretation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fermionic anticommutation permits the negative-frequency b operators
+    to exchange creation and annihilation roles while preserving the positive algebra.
+  failure_mode: The positive-energy antifermion reinterpretation lacks the algebra
+    that makes the operator exchange possible.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 56
+    - 57
+    note: The causal anticommutators lead to the ladder algebra and the positive-energy
+      antifermion mode redefinition.
+- id: full-align-020-ps3-anticommutators-to-statistics
+  from: qft.align020.fermionic-anticommutator-causality
+  to: qft.align020.fermionic-ladder-statistics-residual
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical anticommutators both permit the b↔b† reinterpretation and
+    make exchanged multiparticle states antisymmetric.
+  failure_mode: Positive-energy antifermion redefinition and exclusion statistics
+    would not follow.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 56
+    - 57
+    note: The field anticommutators lead to ladder anticommutators, mode redefinition,
+      and Fermi–Dirac statistics.
+- id: full-align-020-ps3-bilinears-to-currents
+  from: qft.align020.dirac-adjoint-and-covariant-bilinears
+  to: qft.align006.classical-vector-axial-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector and pseudovector bilinears define j^μ and j_5^μ.
+  failure_mode: The Lorentz character of the purported currents is unestablished.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    note: The source forms the currents directly from the vector and pseudovector
+      matrices.
+- id: full-align-020-ps3-bilinears-to-fierz
+  from: qft.align020.dirac-adjoint-and-covariant-bilinears
+  to: qft.align020.weyl-fierz-rearrangement
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The preceding bilinear classification situates the rearrangement among
+    Dirac-field products, but the stated derivation uses the independent two-component
+    sigma identity.
+  failure_mode: Without it, the Fierz identity has less four-component context but
+    can still be derived by the displayed Weyl route.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: The classification precedes the sigma identity; the calculation itself is
+      performed with Weyl components.
+- id: full-align-020-ps3-boost-to-helicity
+  from: qft.align020.rapidity-boosted-dirac-spinors
+  to: qft.align020.chirality-helicity-and-massless-weyl-limit
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The helicity interpretation is read from the large-rapidity boosted spinors.
+  failure_mode: The connection between the boost limit and the simple massless helicity
+    states is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 46
+    - 47
+    note: The explicit boosted spinors are followed by their infinite-rapidity helicity
+      interpretation.
+- id: full-align-020-ps3-boosted-spinors-to-u-v-normalization
+  from: qft.align020.rapidity-boosted-dirac-spinors
+  to: qft.align020.dirac-spinor-normalization-and-completeness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses the boosted explicit spinors to obtain Lorentz-scalar
+    and nonzero-energy normalizations before summarizing u and v bases.
+  failure_mode: The normalization conventions would not be derived from the source's
+    on-shell solutions.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 46
+    - 47
+    - 48
+    note: The boosted solution is followed by its normalization and then the complete
+      u/v solution summary.
+- id: full-align-020-ps3-canonical-field-hamiltonian-to-dirac-hamiltonian
+  from: qft.canonical-field-momentum-hamiltonian
+  to: qft.align020.canonical-dirac-momentum-and-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac construction uses the canonical conjugate momentum and Hamiltonian
+    procedure for a field Lagrangian.
+  failure_mode: The Legendre/canonical interpretation of π_ψ and H is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    note: The source identifies the conjugate momentum and Hamiltonian directly from
+      the Dirac Lagrangian.
+- id: full-align-020-ps3-canonical-hamiltonian-to-naive-quantization
+  from: qft.align020.canonical-dirac-momentum-and-hamiltonian
+  to: qft.align020.naive-dirac-commutator-instability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The attempted mode quantization chooses eigenfunctions that diagonalize
+    the canonical Hamiltonian and exposes its negative-energy term.
+  failure_mode: The instability calculation has no Hamiltonian whose spectrum is to
+    be diagonalized.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    - 53
+    - 54
+    note: The Hamiltonian is derived before the source expands in its eigenfunctions
+      and obtains the unbounded term.
+- id: full-align-020-ps3-clifford-to-bilinears
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.dirac-adjoint-and-covariant-bilinears
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bilinear basis is made from antisymmetrized gamma products and γ^5.
+  failure_mode: Their Lorentz transformation classes cannot be defined without the
+    gamma algebra.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 49
+    - 50
+    note: The source forms the sixteen matrices from gamma products and defines γ^5.
+- id: full-align-020-ps3-clifford-to-dirac-equation
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covariance proof uses the simultaneous vector-spinor transformation
+    property of γ^μ.
+  failure_mode: The Lorentz invariance of γ·∂ would be unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 42
+    note: The source invokes equation (3.29) to form the invariant differential operator
+      and prove the equation's covariance.
+- id: full-align-020-ps3-clifford-to-weyl
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.chirality-helicity-and-massless-weyl-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The block form of the chiral gamma matrices makes the reducible Dirac
+    representation and its Weyl blocks visible.
+  failure_mode: The source's split into left and right transformation laws would have
+    no specified representation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 41
+    - 43
+    - 44
+    note: The chiral gamma representation precedes the reducibility and Weyl-equation
+      discussion.
+- id: full-align-020-ps3-currents-to-chiral-symmetry
+  from: qft.align006.classical-vector-axial-currents
+  to: qft.align020.chiral-u1-and-handed-current-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass-qualified vector and axial currents combine into separately
+    conserved right- and left-handed currents in the massless theory.
+  failure_mode: The handed-current conservation statement lacks the current identities
+    and mass qualification from which it follows.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.4'
+    pages:
+    - 50
+    - 51
+    note: Derives the vector and axial current relations and then forms the two handed-current
+      combinations in the massless limit.
+- id: full-align-020-ps3-dirac-to-adjoint-lagrangian
+  from: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  to: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Lagrangian is constructed to yield the established first-order Dirac
+    equation.
+  failure_mode: The target Euler–Lagrange equation and its conjugate would be unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    note: The source defines the adjoint and immediately writes the Lagrangian whose
+      variation yields (3.31).
+- id: full-align-020-ps3-dirac-to-free-solutions
+  from: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  to: qft.align020.free-dirac-plane-wave-solutions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Plane-wave substitution into the Dirac equation gives the on-shell spinor
+    constraint.
+  failure_mode: The rest-frame u(p) solution cannot be selected without (p̸−m)u=0.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 45
+    note: The source inserts the plane wave into the Dirac equation to obtain (3.46).
+- id: full-align-020-ps3-dirac-to-weyl-equations
+  from: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  to: qft.align020.chirality-helicity-and-massless-weyl-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coupled two-component equations are the block form of the massive
+    Dirac equation.
+  failure_mode: The mass mixing and its massless decoupling cannot be derived without
+    the underlying four-component equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.2'
+    pages:
+    - 43
+    - 44
+    note: The source writes the Dirac equation in left/right blocks and then sets
+      m=0 to decouple them.
+- id: full-align-020-ps3-free-lagrangian-to-dirac-hamiltonian
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align020.canonical-dirac-momentum-and-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical momentum and Hamiltonian are obtained from the free Dirac
+    Lagrangian.
+  failure_mode: The derivative term and mass term producing the Hamiltonian are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    note: Equation (3.83) is used to read off π_ψ and H in (3.84).
+- id: full-align-020-ps3-naive-to-anticommutators
+  from: qft.align020.naive-dirac-commutator-instability
+  to: qft.align020.fermionic-anticommutator-causality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The positivity and causal-cancellation failure of the commutator attempt
+    motivates the anticommutator relation.
+  failure_mode: The change of quantization algebra loses the source's sign and stability
+    rationale.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 54
+    - 55
+    - 56
+    note: The failed negative-energy construction is reconsidered through the two
+      propagation amplitudes before anticommutation is imposed.
+- id: full-align-020-ps3-rest-to-boosted-spinors
+  from: qft.align020.free-dirac-plane-wave-solutions
+  to: qft.align020.rapidity-boosted-dirac-spinors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general solution is obtained by boosting the rest-frame spinor.
+  failure_mode: There is no reference solution for the boost calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 45
+    - 46
+    note: The source says the general solution follows by boosting u(p_0), then performs
+      the boost.
+- id: full-align-020-ps3-spin-sums-to-naive-quantization
+  from: qft.align020.dirac-spin-sum-completeness
+  to: qft.align020.naive-dirac-commutator-instability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equation (3.89) verifies the proposed equal-time field commutator by
+    using the u and v spin-sum completeness relations.
+  failure_mode: The stated check that the mode algebra reproduces the field commutator
+    cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 53
+    note: The source explicitly cites equations (3.66) and (3.67) in the equal-time
+      commutator calculation.
+- id: full-align-020-ps3-u-v-to-naive-quantization
+  from: qft.align020.dirac-spinor-normalization-and-completeness
+  to: qft.align020.naive-dirac-commutator-instability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The attempted canonical expansion uses the complete positive- and negative-energy
+    u/v eigenfunction basis.
+  failure_mode: The mode expansion and its energy signs cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.5'
+    pages:
+    - 52
+    - 53
+    note: The source explicitly reuses the Section 3.3 eigenfunctions in the attempted
+      quantization.
+- id: full-align-020-ps3-u-v-to-spin-sums
+  from: qft.align020.dirac-spinor-normalization-and-completeness
+  to: qft.align020.dirac-spin-sum-completeness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Completeness sums use the normalized two-spinor bases for both u and
+    v solutions.
+  failure_mode: The polarization sums cannot be normalized or evaluated from unspecified
+    solution bases.
+  evidence:
+  - source: peskin-schroeder
+    section: '3.3'
+    pages:
+    - 48
+    - 49
+    note: The source introduces the u/v bases and then sums their polarizations.
+- id: full-align-020-ps3-weyl-to-fierz
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.weyl-fierz-rearrangement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equations (3.77)–(3.79) use the two-component σ matrices and left/right
+    Weyl spinors.
+  failure_mode: The indices and same-chirality bilinears being rearranged are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: 3.2–3.4
+    pages:
+    - 44
+    - 51
+    note: The Weyl notation is established before the source sandwiches the sigma
+      identity between Weyl-spinor components.
+- id: full-align-020-schwartz.e-c-to-cp-that
+  from: qft.align020.charge-conjugation-spinor-transformation
+  to: qft.align020.cp-simple-time-reversal-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The CP T-hat composition explicitly applies C to the field.
+  failure_mode: The first factor in the displayed composite transformation is undefined.
+  evidence:
+  - source: schwartz
+    section: 11.6.1
+    pages:
+    - 199
+    note: Computes the CP T-hat action.
+- id: full-align-020-schwartz.e-c-to-dipole-problem
+  from: qft.align020.charge-conjugation-spinor-transformation
+  to: qft.align020.dipole-operator-discrete-symmetry-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for the C parity of the operators, which requires the field
+    C action.
+  failure_mode: The charge-conjugation classification has no transformation rule.
+  evidence:
+  - source: schwartz
+    section: Problem 11.10
+    pages:
+    - 203
+    note: Asks explicitly for C, P, and T properties.
+- id: full-align-020-schwartz.e-c-to-wigner-cpt
+  from: qft.align020.charge-conjugation-spinor-transformation
+  to: qft.align020.wigner-cpt-transformation-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed CPT operation includes the charge-conjugation action.
+  failure_mode: The particle-antiparticle field factor is omitted from the composite.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 201
+    note: States the combined CPT action after the C discussion.
+- id: full-align-020-schwartz.e-c-transform-to-c-bilinear-problem
+  from: qft.align020.charge-conjugation-spinor-transformation
+  to: qft.align020.charge-conjugation-bilinear-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.5 derives the listed bilinear parities by applying the spinor
+    charge-conjugation transformation.
+  failure_mode: The proof has no C action on the spinor fields.
+  evidence:
+  - source: schwartz
+    section: 11.4 and Problem 11.5
+    pages:
+    - 194
+    - 202
+    note: Defines the transformation before assigning the derivation task.
+- id: full-align-020-schwartz.e-charge-conjugacy-to-c-symmetry
+  from: qft.align020.majorana-charge-conjugacy-and-u1-neutrality
+  to: qft.align020.charge-conjugation-qed-and-bilinears
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED transformation uses the charge-conjugation operation first defined
+    to characterize Majorana spinors.
+  failure_mode: The C action on the Dirac field and photon is introduced without its
+    charge-reversal meaning.
+  evidence:
+  - source: schwartz
+    section: 11.3–11.4
+    pages:
+    - 192
+    - 193
+    - 194
+    note: Defines C then applies it to general Dirac spinors.
+- id: full-align-020-schwartz.e-chirality-to-beta-polarization-problem
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.beta-decay-electron-polarization-problem
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Helicity is the observable named by the prompt, but the source supplies
+    no weak-interaction derivation within this exercise statement.
+  failure_mode: The terminology for the expected polarization is less grounded; the
+    experimental-design prompt remains answerable.
+  evidence:
+  - source: schwartz
+    section: Problem 11.6(f)
+    pages:
+    - 202
+    note: Asks how to test helicity polarization.
+- id: full-align-020-schwartz.e-chirality-to-chiral-helicity-problem
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.chiral-qed-and-helicity-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (a,d) explicitly invoke chiral projectors and distinguish helicity
+    from chirality.
+  failure_mode: The requested selection rule and reversal analysis have no chiral/helicity
+    definitions.
+  evidence:
+  - source: schwartz
+    section: 11.1 and Problem 11.6(a,d)
+    pages:
+    - 186
+    - 187
+    - 202
+    note: Defines the distinctions and poses the two applications.
+- id: full-align-020-schwartz.e-chirality-to-double-beta-problem
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.neutrinoless-double-beta-lepton-flow-problem
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The displayed weak interactions in the prompt involve left-handed neutrinos
+    and electrons, so their chirality meaning is needed to interpret the lines.
+  failure_mode: The chiral interaction content of the diagram is not identified.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(e–f)
+    pages:
+    - 203
+    note: Writes the weak interactions with νL and eL.
+- id: full-align-020-schwartz.e-chirality-to-fierz-problem
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.fierz-rearrangement-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The first two Fierz identities use the left-handed projector PL defined
+    from γ5.
+  failure_mode: The chiral identities have an undefined projector convention.
+  evidence:
+  - source: schwartz
+    section: 11.1 and Problem 11.8
+    pages:
+    - 186
+    - 202
+    note: Defines PL and uses it in the Fierz prompts.
+- id: full-align-020-schwartz.e-clifford-to-adjoint
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.dirac-adjoint-and-covariant-bilinears
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The adjoint transformation proof uses gamma hermiticity and spinor generators
+    derived from the Clifford algebra.
+  failure_mode: ψ̄ is adopted as notation without showing why it restores Lorentz
+    covariance.
+  evidence:
+  - source: schwartz
+    section: 10.3.1
+    pages:
+    - 171
+    - 172
+    note: Derives gamma hermiticity and the adjoint transformation.
+- id: full-align-020-schwartz.e-clifford-to-dipole-problem
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.dipole-operator-discrete-symmetry-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two dipole operators use γ5 and [γμ,γν], whose algebra and conventions
+    are required for the field expansion.
+  failure_mode: The gamma-matrix operator structures cannot be expanded or classified.
+  evidence:
+  - source: schwartz
+    section: Problem 11.10
+    pages:
+    - 203
+    note: Defines the magnetic and electric dipole operators.
+- id: full-align-020-schwartz.e-clifford-to-dirac-algebra-problem
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.dirac-algebra-identities-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.1 explicitly permits only identities following from the Clifford
+    anticommutator.
+  failure_mode: The requested basis-independent proofs are replaced by representation-specific
+    matrix multiplication.
+  evidence:
+  - source: schwartz
+    section: Problem 11.1
+    pages:
+    - 201
+    note: Specifies derivation without an explicit representation.
+- id: full-align-020-schwartz.e-clifford-to-fierz-problem
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.fierz-rearrangement-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gamma-matrix basis and traces in the Fierz formulas require the Dirac
+    algebra.
+  failure_mode: The general trace-coefficient formula has no algebraic matrix basis.
+  evidence:
+  - source: schwartz
+    section: 10.3 and Problem 11.8
+    pages:
+    - 169
+    - 202
+    note: Defines the Dirac algebra and later requests the trace rearrangement.
+- id: full-align-020-schwartz.e-clifford-to-gordon-problem
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.gordon-identity-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The target decomposition contains σμν=i[γμ,γν]/2 and requires gamma rearrangements.
+  failure_mode: The commutator term cannot be derived or interpreted.
+  evidence:
+  - source: schwartz
+    section: Problem 11.4
+    pages:
+    - 202
+    note: Defines σμν in the requested identity.
+- id: full-align-020-schwartz.e-clifford-to-kg-factorization
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Anticommuting gamma matrices removes the antisymmetric derivative product
+    in the factorization.
+  failure_mode: The Klein–Gordon consequence is guessed without the operator algebra.
+  evidence:
+  - source: schwartz
+    section: 10.3.1
+    pages:
+    - 172
+    note: Multiplies the operators and uses the anticommutator.
+- id: full-align-020-schwartz.e-clifford-to-majorana-representation-problem
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.majorana-representation-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 10.4 asks for generators and gamma5 in a specified gamma-matrix
+    representation.
+  failure_mode: The representation-specific calculation has no defining Dirac algebra
+    or generator formula.
+  evidence:
+  - source: schwartz
+    section: 10.3 and Problem 10.4
+    pages:
+    - 169
+    - 170
+    - 182
+    note: Defines the Majorana representation and assigns its calculations.
+- id: full-align-020-schwartz.e-dirac-adjoint-to-current
+  from: qft.align020.dirac-adjoint-and-covariant-bilinears
+  to: qft.align006.classical-vector-axial-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Noether current is the covariant bilinear ψ̄γμψ.
+  failure_mode: Jμ is treated as a componentwise expression without its Lorentz transformation
+    law.
+  evidence:
+  - source: schwartz
+    section: 10.3.1 and 10.4
+    pages:
+    - 172
+    - 174
+    note: Establishes the bilinear then identifies it as the current.
+- id: full-align-020-schwartz.e-dirac-clifford-to-chirality
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align020.chirality-helicity-and-massless-weyl-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Chiral projectors are defined from γ5, itself a gamma-matrix product
+    with Clifford-algebra properties.
+  failure_mode: Chirality projectors are mistaken for arbitrary component selectors.
+  evidence:
+  - source: schwartz
+    section: '11.1'
+    pages:
+    - 185
+    - 186
+    note: Defines γ5 and projectors after the Dirac algebra.
+- id: full-align-020-schwartz.e-dirac-current-to-number-interpretation
+  from: qft.align006.classical-vector-axial-currents
+  to: qft.align020.dirac-number-current-interpretation-residual
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The density, flow, and electromagnetic normalization interpret the components
+    of the conserved Dirac current.
+  failure_mode: The source-specific density and flow claims are detached from the
+    current whose components they interpret.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 174
+    note: Introduces the conserved Dirac Noether current before interpreting its charge
+      density, spatial flow, and charge normalization.
+- id: full-align-020-schwartz.e-dirac-equation-to-gordon-problem
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align020.gordon-identity-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Gordon identity is derived by applying the on-shell Dirac equations
+    to the external spinors.
+  failure_mode: The on-shell substitutions in the current cannot be made.
+  evidence:
+  - source: schwartz
+    section: Problem 11.4
+    pages:
+    - 201
+    - 202
+    note: States the identity for on-shell spinors.
+- id: full-align-020-schwartz.e-dirac-equation-to-nr-problem
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align020.nonrelativistic-dirac-magnetic-and-spin-orbit-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 10.1 begins by rewriting and expanding the Dirac equation into
+    a Hamiltonian.
+  failure_mode: The requested Hamiltonian and 1/c expansion have no starting equation.
+  evidence:
+  - source: schwartz
+    section: Problem 10.1
+    pages:
+    - 181
+    note: Requests the Dirac Hamiltonian and expansion.
+- id: full-align-020-schwartz.e-dirac-equation-to-photon-pauli
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align020.dirac-photon-coupling-and-pauli-term
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Minimal coupling is applied directly to the Dirac equation and its gamma-matrix
+    factorization.
+  failure_mode: The field-strength spin term has no parent equation or charge convention.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 173
+    note: Replaces derivatives in the Dirac equation and squares it.
+- id: full-align-020-schwartz.e-dirac-kg-to-free-solutions
+  from: qft.align020.dirac-covariance-and-klein-gordon-factorization
+  to: qft.align020.free-dirac-plane-wave-solutions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The plane-wave solution construction starts from the Klein–Gordon consequence
+    and then imposes the Dirac equation.
+  failure_mode: The positive- and negative-frequency ansatz lacks its mass-shell justification.
+  evidence:
+  - source: schwartz
+    section: '11.2'
+    pages:
+    - 188
+    - 189
+    note: Uses the Klein–Gordon equation to introduce the plane waves.
+- id: full-align-020-schwartz.e-dirac-lagrangian-to-clifford
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align020.dirac-clifford-and-lorentz-generators
+  relation: pedagogical
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: Schwartz introduces the four-component Dirac Lagrangian before developing
+    the representation-independent Clifford algebra; this is a source presentation
+    order, not a physical prerequisite.
+  failure_mode: 'No conceptual failure follows from a different order: the Clifford
+    algebra can be introduced before the Lagrangian construction.'
+  evidence:
+  - source: schwartz
+    section: 10.2.2–10.3
+    pages:
+    - 168
+    - 169
+    note: Introduces gamma matrices before defining their algebra.
+- id: full-align-020-schwartz.e-free-solutions-to-completeness-problem
+  from: qft.align020.free-dirac-plane-wave-solutions
+  to: qft.align020.spinor-completeness-and-current-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.2 derives its sums and current identity from explicit on-shell
+    u and v solutions.
+  failure_mode: The proof has no spinor solutions on which to evaluate the products.
+  evidence:
+  - source: schwartz
+    section: 11.2 and Problem 11.2
+    pages:
+    - 189
+    - 190
+    - 201
+    note: Builds the solutions and requests the identities.
+- id: full-align-020-schwartz.e-free-solutions-to-rest-spin-current-problem
+  from: qft.align020.free-dirac-plane-wave-solutions
+  to: qft.align020.rest-spinor-current-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.6(b) requires the explicit rest-frame Dirac spinors to evaluate
+    the vector current for two spin labels.
+  failure_mode: The current-selection calculation has no explicit spinor states to
+    substitute.
+  evidence:
+  - source: schwartz
+    section: 11.2 and Problem 11.6(b)
+    pages:
+    - 189
+    - 202
+    note: Gives rest-frame solutions and asks for the corresponding current calculation.
+- id: full-align-020-schwartz.e-free-solutions-to-spin-sums
+  from: qft.align020.free-dirac-plane-wave-solutions
+  to: qft.align020.dirac-spinor-normalization-and-completeness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Normalization and completeness are calculated from the explicit u and
+    v solutions.
+  failure_mode: The spin-sum matrices are asserted without a chosen solution normalization.
+  evidence:
+  - source: schwartz
+    section: 11.2–11.2.1
+    pages:
+    - 190
+    - 191
+    note: Writes the solutions then evaluates their products.
+- id: full-align-020-schwartz.e-gauge-minimal-to-dirac-photon
+  from: qft.align010.schwartz.gauge-current-minimal-coupling
+  to: qft.align020.dirac-photon-coupling-and-pauli-term
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spinor coupling applies the same local U(1) covariant-derivative
+    construction to a charged Dirac field.
+  failure_mode: The choice of Dμ and the charge convention appear without gauge-symmetry
+    origin.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 173
+    note: States that a spinor transforms like a scalar under the gauge transformation.
+- id: full-align-020-schwartz.e-little-group-ward-to-charge-problem
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.align020.massless-spin-one-charge-conservation-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Section 9.5 derivation imposes longitudinal-polarization decoupling
+    through the massless little-group Ward identity.
+  failure_mode: The soft-factor constraint is not connected to Lorentz invariance
+    of the spin-one amplitude.
+  evidence:
+  - source: schwartz
+    section: Problem 11.3
+    pages:
+    - 201
+    note: Directs the reader to the Section 9.5 result and method.
+- id: full-align-020-schwartz.e-majorana-mass-to-charge-conjugacy
+  from: qft.align020.majorana-mass-grassmann-necessity
+  to: qft.align020.majorana-charge-conjugacy-and-u1-neutrality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The four-component Majorana embedding rewrites the same one-Weyl-field
+    Majorana mass and identifies its conjugacy constraint.
+  failure_mode: Majorana self-conjugacy is confused with an unconstrained Dirac field.
+  evidence:
+  - source: schwartz
+    section: '11.3'
+    pages:
+    - 192
+    note: Embeds the earlier Weyl Majorana mass into a Dirac spinor.
+- id: full-align-020-schwartz.e-majorana-mass-to-weyl-notation
+  from: qft.align020.majorana-mass-grassmann-necessity
+  to: qft.align020.weyl-index-and-sigma-conventions
+  relation: pedagogical
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The Majorana contraction motivates the source’s later epsilon and sigma
+    conventions, but those conventions can be defined independently.
+  failure_mode: No conceptual failure follows from defining the Weyl index and sigma
+    conventions before presenting the Majorana example.
+  evidence:
+  - source: schwartz
+    section: 10.6.1–10.6.2
+    pages:
+    - 179
+    - 180
+    note: Moves from σ2 to epsilon notation and Weyl indices.
+- id: full-align-020-schwartz.e-minimal-coupling-to-nr-problem
+  from: qft.align010.schwartz.gauge-current-minimal-coupling
+  to: qft.align020.nonrelativistic-dirac-magnetic-and-spin-orbit-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Hamiltonian task contains the electromagnetic potentials and asks
+    to identify their magnetic couplings.
+  failure_mode: The charged covariant-momentum terms in the requested expansion are
+    unexplained.
+  evidence:
+  - source: schwartz
+    section: Problem 10.1
+    pages:
+    - 181
+    note: Uses pi, Ai, and the magnetic field in the task.
+- id: full-align-020-schwartz.e-noether-charge-to-dirac-current
+  from: qft.noether-current-and-conserved-charge
+  to: qft.align006.classical-vector-axial-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source identifies the current of the Dirac global phase symmetry
+    by applying Noether's theorem.
+  failure_mode: Conservation of Jμ and its charge interpretation are asserted without
+    the symmetry-current result.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 174
+    note: Calls Jμ the Noether current of the global symmetry and interprets Q.
+- id: full-align-020-schwartz.e-p-to-cp-that
+  from: qft.align020.parity-chirality-swap-residual
+  to: qft.align020.cp-simple-time-reversal-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The CP T-hat composition explicitly applies the Dirac parity action.
+  failure_mode: The spatial inversion and gamma0 factor are undefined.
+  evidence:
+  - source: schwartz
+    section: 11.5.2 and 11.6.1
+    pages:
+    - 197
+    - 199
+    note: Defines P on spinors and composes CP T-hat.
+- id: full-align-020-schwartz.e-p-to-wigner-cpt
+  from: qft.align020.parity-chirality-swap-residual
+  to: qft.align020.wigner-cpt-transformation-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed CPT operation includes the parity spatial inversion.
+  failure_mode: The −x argument in the composite lacks its parity input.
+  evidence:
+  - source: schwartz
+    section: 11.5.2 and 11.6.2
+    pages:
+    - 197
+    - 201
+    note: Defines parity and displays the composite action.
+- id: full-align-020-schwartz.e-parity-to-dipole-problem
+  from: qft.align020.parity-chirality-swap-residual
+  to: qft.align020.dipole-operator-discrete-symmetry-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for P parity of the dipole operators.
+  failure_mode: The parity classification has no transformation rule.
+  evidence:
+  - source: schwartz
+    section: Problem 11.10
+    pages:
+    - 203
+    note: Asks explicitly for C, P, and T properties.
+- id: full-align-020-schwartz.e-parity-to-vector-axial
+  from: qft.align020.parity-chirality-swap-residual
+  to: qft.align020.vector-and-axial-currents-under-parity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bilinear transformation calculation applies the established parity
+    action on Dirac spinors.
+  failure_mode: Vector and axial current parities are memorized without field transformation.
+  evidence:
+  - source: schwartz
+    section: 11.5.2
+    pages:
+    - 197
+    - 198
+    note: Applies P:ψ→γ0ψ to both bilinears.
+- id: full-align-020-schwartz.e-pauli-term-to-magnetic-prediction
+  from: qft.align020.dirac-photon-coupling-and-pauli-term
+  to: qft.align020.dirac-magnetic-dipole-prediction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The magnetic-moment inference interprets the Fμνσμν term by resolving
+    it into E and B.
+  failure_mode: The predicted moment is quoted without the spin-field term that fixes
+    it.
+  evidence:
+  - source: schwartz
+    section: '10.4'
+    pages:
+    - 173
+    - 174
+    note: Derives the term then interprets it.
+- id: full-align-020-schwartz.e-poincare-irrep-to-free-dirac-solutions
+  from: qft.align010.schwartz.particle-as-unitary-poincare-irrep
+  to: qft.align020.free-dirac-plane-wave-solutions
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The source interprets momentum-labelled u and v solutions as little-group
+    bases inducing particle and antiparticle Poincaré representations.
+  failure_mode: The free solutions are treated as arbitrary four-vectors rather than
+    particle-state polarizations.
+  evidence:
+  - source: schwartz
+    section: 11 introduction and 11.2
+    pages:
+    - 184
+    - 188
+    note: Frames the spinor solutions as induced Poincaré representations.
+- id: full-align-020-schwartz.e-simple-t-to-wigner-t
+  from: qft.align020.simple-time-reversal-field-conjugation
+  to: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  relation: pedagogical
+  source_level: recognize
+  target_level: use
+  necessity: helpful
+  rationale: The source contrasts simple field conjugation with Wigner's anti-linear
+    operation, but derives Wigner T directly from the Schrödinger equation.
+  failure_mode: The terminology distinction is missed while the Wigner derivation
+    remains available.
+  evidence:
+  - source: schwartz
+    section: 11.6.1–11.6.2
+    pages:
+    - 199
+    - 200
+    note: Separates simple T-hat from conventionally named Wigner T.
+- id: full-align-020-schwartz.e-simple-that-to-cp-that
+  from: qft.align020.simple-time-reversal-field-conjugation
+  to: qft.align020.cp-simple-time-reversal-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The composite calculation applies the simple T-hat field-conjugation
+    map.
+  failure_mode: The time-reversal factor in the calculation is undefined.
+  evidence:
+  - source: schwartz
+    section: 11.6.1
+    pages:
+    - 199
+    note: Uses the derived T-hat action in the composite.
+- id: full-align-020-schwartz.e-vector-axial-to-beta-polarization-problem
+  from: qft.align020.vector-and-axial-currents-under-parity
+  to: qft.align020.beta-decay-electron-polarization-problem
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The source identifies weak interactions with a V−A current, supplying
+    the chiral interaction input for the prompt's expected beta-decay polarization.
+  failure_mode: The expected polarization has no stated weak-interaction selection
+    principle.
+  evidence:
+  - source: schwartz
+    section: 11.5.2 and Problem 11.6(f)
+    pages:
+    - 198
+    - 202
+    note: Names the V−A weak current and asks the beta-decay helicity question.
+- id: full-align-020-schwartz.e-weyl-notation-to-neutrino-seesaw-problem
+  from: qft.align020.weyl-index-and-sigma-conventions
+  to: qft.align020.neutrino-mass-eigenstate-and-seesaw-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass rewrite and doublet kinetic Lagrangian use the source's σ2 and
+    two-component notation.
+  failure_mode: The specified field redefinition and mass terms cannot be manipulated
+    consistently.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(b–d)
+    pages:
+    - 203
+    note: Defines χL=iσ2νR* and the Θ doublet.
+- id: full-align-020-schwartz.e-weyl-notation-to-neutrino-u1-problem
+  from: qft.align020.weyl-index-and-sigma-conventions
+  to: qft.align020.neutrino-majorana-u1-obstruction-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof applies the stated phase transformation to the two-component
+    σ2 contraction.
+  failure_mode: The Majorana bilinear's two-component contraction cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(a)
+    pages:
+    - 202
+    note: Gives the νTLσ2νL mass form to test.
+- id: full-align-020-schwartz.e-weyl-notation-to-sigma-problem
+  from: qft.align020.weyl-index-and-sigma-conventions
+  to: qft.align020.weyl-sigma-identity-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 10.3 is exactly a derivation of the sigma and epsilon contractions
+    defined in the Weyl notation section.
+  failure_mode: The requested contractions have no index or matrix conventions.
+  evidence:
+  - source: schwartz
+    section: 10.6.2 and Problem 10.3
+    pages:
+    - 181
+    - 182
+    note: States the identities and requests their derivation.
+- id: full-align-020-schwartz.e-weyl-notation-to-susy-problem
+  from: qft.align020.weyl-index-and-sigma-conventions
+  to: qft.align020.supersymmetry-auxiliary-field-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The specified supersymmetry transformations and Majorana-like contractions
+    use two-component spinor notation.
+  failure_mode: The prompt's spinor contractions and transformations cannot be parsed.
+  evidence:
+  - source: schwartz
+    section: Problem 10.5
+    pages:
+    - 182
+    - 183
+    note: Presents the two-component supersymmetry exercise.
+- id: full-align-020-schwartz.e-wigner-antilinearity-to-field-action
+  from: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+  to: qft.align020.wigner-time-reversal-field-action-residual
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Anti-linearity fixes the conjugation of i and the Weyl-basis gamma-matrix
+    constraints used to derive the explicit Wigner field action.
+  failure_mode: The spinor and vector transformations cannot be derived while treating
+    time reversal as an ordinary linear field map.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 200
+    - 201
+    note: Uses anti-linearity to constrain the gamma matrices and obtain the Dirac
+      and vector transformations.
+- id: full-align-020-schwartz.e-wigner-classification-to-free-dirac-solutions
+  from: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  to: qft.align020.free-dirac-plane-wave-solutions
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The two spin states for each massive particle and antiparticle are interpreted
+    through the massive spin-1/2 polarization count.
+  failure_mode: The number of independent solutions has no little-group spin interpretation.
+  evidence:
+  - source: schwartz
+    section: 11 introduction
+    pages:
+    - 184
+    note: Connects spin-1/2 degrees of freedom to the free solution basis.
+- id: full-align-020-schwartz.e-wigner-cpt-to-cpt-problem
+  from: qft.align020.wigner-cpt-transformation-calculation
+  to: qft.align020.general-local-cpt-invariance-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.7 checks local terms under the displayed combined field transformation,
+    not by assuming the unproved theorem statement.
+  failure_mode: The calculation has no CPT action to apply to fields, gamma matrices,
+    and i.
+  evidence:
+  - source: schwartz
+    section: 11.6.2 and Problem 11.7
+    pages:
+    - 201
+    - 202
+    note: Displays the transformation then requests local-term checks.
+- id: full-align-020-schwartz.e-wigner-cpt-to-cpt-scope
+  from: qft.align020.wigner-cpt-transformation-calculation
+  to: qft.align020.cpt-theorem-scope
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The calculated local transformations illustrate the theorem's conclusion,
+    while the source states the theorem under Lorentz invariance and unitarity without
+    proving it here.
+  failure_mode: The local example is absent; the theorem statement and stated assumptions
+    remain intelligible.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 201
+    note: Gives the transformation and then states the theorem scope.
+- id: full-align-020-schwartz.e-wigner-t-to-dipole-problem
+  from: qft.align020.wigner-time-reversal-field-action-residual
+  to: qft.align020.dipole-operator-discrete-symmetry-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for T parity, for which the source distinguishes Wigner
+    anti-linearity from simple field conjugation.
+  failure_mode: The time-reversal classification silently uses the wrong T operation.
+  evidence:
+  - source: schwartz
+    section: 11.6.2 and Problem 11.10
+    pages:
+    - 200
+    - 203
+    note: Defines Wigner T and poses the C/P/T task.
+- id: full-align-020-schwartz.e-wigner-t-to-wigner-cpt
+  from: qft.align020.wigner-time-reversal-field-action-residual
+  to: qft.align020.wigner-cpt-transformation-calculation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed CPT operation is the composition using Wigner T, including
+    i→−i.
+  failure_mode: The anti-linear time-reversal factor is replaced by the distinct simple
+    T-hat action.
+  evidence:
+  - source: schwartz
+    section: 11.6.2
+    pages:
+    - 200
+    - 201
+    note: Derives Wigner T and then composes CPT.
 - id: qft.abelian-higgs-model-to-gauge-shift
   from: qft.abelian-higgs-model-and-vector-mass
   to: qft.abelian-higgs-gauge-shift-and-degree-count
@@ -29670,6 +32408,10 @@ groups:
   title: Nonlinear sigma models, large N, and critical flow
 - id: qft.align018.source-backed-tasks
   title: Source-backed derivation tasks
+- id: qft.align020.relativistic-fermion-structures
+  title: Relativistic fermion structures, bilinears, and discrete symmetries
+  question: How do Dirac and Weyl representations, free solutions, currents, Majorana
+    structures, and discrete symmetries retain their source-specific conditions?
 - id: qft.anomaly-regularization-and-matching
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,

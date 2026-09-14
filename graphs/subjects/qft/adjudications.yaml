@@ -1051,3 +1051,168 @@ units:
     affected_records:
     - kind: nodes
       id: qft.goldstone-coset-transformations-and-order-parameter
+- id: full-align-020-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Dependencies lost when common cores were split from source residuals
+    alternatives:
+    - Keep the split graph and leave the source-specific dependencies implicit.
+    - Restore the three explicit dependencies and retarget the Noether edge to the
+      general theorem.
+    resolution: Restore both source-route edges and retarget the Dirac-current edge
+      to the general Noether result.
+    rationale: Peskin–Schroeder derives the handed currents from its vector/axial
+      current identities and the antifermion reinterpretation from the fermionic anticommutator
+      algebra. Schwartz identifies the Dirac current by applying the general Noether
+      construction, not the complex-scalar example. These edges restore the actual
+      route inputs without joining the independent book derivations into one compulsory
+      chain.
+    evidence:
+    - source: peskin-schroeder
+      section: '3.4'
+      pages:
+      - 50
+      - 51
+    - source: peskin-schroeder
+      section: '3.5'
+      pages:
+      - 56
+      - 57
+    - source: schwartz
+      section: '10.4'
+      pages:
+      - 174
+    affected_records:
+    - kind: edges
+      id: full-align-020-ps3-anticommutators-to-antiparticle-reinterpretation
+    - kind: edges
+      id: full-align-020-ps3-currents-to-chiral-symmetry
+    - kind: edges
+      id: full-align-020-schwartz.e-noether-charge-to-dirac-current
+  - finding: 1
+    issue: Source-specific field actions and current interpretations were omitted
+    alternatives:
+    - Broaden the accepted common nodes to include every Schwartz field action and
+      interpretation.
+    - Retain Schwartz-specific residuals and route only the derivations that use their
+      explicit content through them.
+    resolution: Add Schwartz residuals, expand the parity residual, and route the
+      explicit-field derivations through them.
+    rationale: Rendered pp.174, 197, and 200–201 support the retained density, parity,
+      and Wigner-T formulas. Separate residuals preserve Schwartz's normalization
+      and Weyl-basis transformations without merging them into the broader accepted
+      cores. CPT and the dipole task require the explicit Wigner field action, while
+      the accepted anti-linearity result remains its prerequisite.
+    evidence:
+    - source: schwartz
+      section: '10.4'
+      pages:
+      - 174
+    - source: schwartz
+      section: '11.5'
+      pages:
+      - 195
+      - 196
+      - 197
+    - source: schwartz
+      section: 11.6.2
+      pages:
+      - 200
+      - 201
+    affected_records:
+    - kind: nodes
+      id: qft.align020.dirac-number-current-interpretation-residual
+    - kind: nodes
+      id: qft.align020.parity-chirality-swap-residual
+    - kind: nodes
+      id: qft.align020.wigner-time-reversal-field-action-residual
+    - kind: edges
+      id: full-align-020-schwartz.e-dirac-current-to-number-interpretation
+    - kind: edges
+      id: full-align-020-schwartz.e-wigner-antilinearity-to-field-action
+    - kind: edges
+      id: full-align-020-schwartz.e-wigner-t-to-dipole-problem
+    - kind: edges
+      id: full-align-020-schwartz.e-wigner-t-to-wigner-cpt
+  - finding: 2
+    issue: Five scientifically supported accepted-record amendments need final authority
+    alternatives:
+    - Leave the five accepted records unchanged and keep the correspondences unresolved.
+    - Authorize the five exact replacements supported by their retained and newly
+      supplied witnesses.
+    resolution: Authorize all five exact replacement records and clear their amendment
+      entries.
+    rationale: Each replacement preserves the accepted record and its prior evidence
+      while adding only the compatible assigned-source origin, evidence, and convention
+      qualification. The packet now includes witnesses for every retained citation
+      page, and the source-specific consequences remain in separate residual nodes.
+    evidence:
+    - source: schwartz
+      section: 30.1.3
+      pages:
+      - 621
+    - source: peskin-schroeder
+      section: '3.4'
+      pages:
+      - 50
+      - 51
+    - source: schwartz
+      section: '10.4'
+      pages:
+      - 174
+    - source: weinberg-1
+      section: '1.2'
+      pages:
+      - 23
+      - 24
+    - source: peskin-schroeder
+      section: '3.5'
+      pages:
+      - 57
+    - source: weinberg-1
+      section: '2.7'
+      pages:
+      - 88
+      - 89
+    - source: schwartz
+      section: '10.5'
+      pages:
+      - 175
+      - 176
+      - 177
+      - 178
+    - source: weinberg-1
+      section: '2.6'
+      pages:
+      - 75
+      - 76
+    - source: schwartz
+      section: 11.6.2
+      pages:
+      - 199
+      - 200
+      - 201
+    - source: weinberg-1
+      section: '3.3'
+      pages:
+      - 124
+      - 125
+    - source: schwartz
+      section: '11.5'
+      pages:
+      - 195
+      - 196
+      - 197
+    affected_records:
+    - kind: nodes
+      id: qft.align006.classical-vector-axial-currents
+    - kind: nodes
+      id: qft.align010.weinberg-1.lorentz-topology-sign-projective-representations
+    - kind: nodes
+      id: qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary
+    - kind: nodes
+      id: qft.align015.fermion-antiparticle-operator-reinterpretation
+    - kind: nodes
+      id: qft.align016.parity-s-matrix-covariance-and-intrinsic-phase-freedom
