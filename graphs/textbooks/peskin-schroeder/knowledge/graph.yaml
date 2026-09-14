@@ -142,6 +142,21 @@ nodes:
     - 71
     note: The source derives charge conjugation, tabulates bilinears, and states—but
       does not prove—the CPT conclusion.
+- id: peskin-schroeder.charge-renormalization-and-running-coupling
+  label: Charge renormalization and momentum-dependent effective coupling
+  summary: The physical charge is square-root Z3 times the bare Lagrangian charge.
+    At nonzero momentum transfer, the difference between the polarization function
+    and its zero-momentum value defines an effective electromagnetic coupling whose
+    variation is observable even though the bare-to-physical constant shift is not.
+  kind: result
+  group: peskin-schroeder.ch7-charge-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 246
+    - 247
+    - 252
 - id: peskin-schroeder.chiral-dirac-basis-and-relativistic-normalization-declaration
   label: Chiral Dirac basis and relativistic spinor-normalization declaration
   summary: For its Dirac treatment the book declares a chiral basis for the gamma
@@ -370,6 +385,39 @@ nodes:
     - 155
     note: Electron-muon scattering is obtained from annihilation and the section states
       the general S-matrix crossing rule and fermion sign.
+- id: peskin-schroeder.cutkosky-cutting-rules
+  label: Cutkosky cutting rules for diagram discontinuities
+  summary: A physical discontinuity is found by summing every cut that can put its
+    crossed propagators on shell, replacing each cut propagator by minus two-pi-i
+    times its mass-shell delta function, and carrying out the remaining loop integrals.
+    The delta functions convert the loop integral into the intermediate-state phase
+    space required by unitarity.
+  kind: method
+  group: peskin-schroeder.ch7-unitarity-ward
+  evidence:
+  - source: peskin-schroeder
+    section: '7.3'
+    pages:
+    - 233
+    - 234
+    - 235
+    - 236
+- id: peskin-schroeder.dim-reg-loop-integral-method
+  label: Dimensional regularization for symmetry-preserving loop integrals
+  summary: Continue loop integrals and Dirac algebra to d spacetime dimensions, Wick
+    rotate to a d-dimensional Euclidean integral, and analytically continue toward
+    four dimensions. Gamma and beta functions expose ultraviolet divergences as poles
+    in epsilon; d-dimensional rotational averaging and gamma contractions must be
+    retained because epsilon-suppressed numerator terms can multiply divergent integrals.
+  kind: method
+  group: peskin-schroeder.ch7-charge-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: 7.5 Dimensional Regularization
+    pages:
+    - 249
+    - 250
+    - 251
 - id: peskin-schroeder.dirac-adjoint-and-free-lagrangian
   label: Dirac adjoint and free Dirac Lagrangian
   summary: Because boosts are not unitary in the spinor representation, ψ†ψ is not
@@ -462,6 +510,20 @@ nodes:
     - 61
     note: The source applies Noether's theorem, obtains (3.111), and checks rest fermion
       and antifermion spin.
+- id: peskin-schroeder.dirac-pole-residue-and-physical-mass
+  label: Dirac propagator pole residue and physical mass
+  summary: The Dirac two-point function has a free-field form at its one-particle
+    pole, with the physical mass and a residue Z2. The matrix element of the field
+    between the vacuum and an exact particle carries square-root Z2 times the spinor;
+    omitted terms contain multiparticle cuts.
+  kind: result
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 216
+    - 217
 - id: peskin-schroeder.dirac-positive-frequency-spinors
   label: Positive-frequency free Dirac spinors
   summary: Positive-frequency plane waves ψ=u(p)e^{−ip·x}, p²=m² and p^0>0 obey (p̸−m)u(p)=0.
@@ -825,6 +887,18 @@ nodes:
     - 31
     note: The source contrasts isolated free modes with scattering and identifies
       the free theory as the perturbative basis.
+- id: peskin-schroeder.gauge-current-and-ward-identity-distinction
+  label: Gauge symmetry, current conservation, and Ward identity
+  summary: The text distinguishes gauge invariance as a Lagrangian symmetry, current
+    conservation as its equation-of-motion consequence, and the Ward identity as the
+    corresponding diagrammatic constraint on quantum amplitudes.
+  kind: concept
+  group: peskin-schroeder.ch7-unitarity-ward
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 244
 - id: peskin-schroeder.gauge-field-quantization-obstruction-and-gauge-tradeoff
   label: Gauge-field canonical obstruction and gauge-choice tradeoff
   summary: Canonical electromagnetic quantization is obstructed because A^0 has identically
@@ -838,6 +912,80 @@ nodes:
     section: '4.1'
     pages:
     - 79
+- id: peskin-schroeder.gluon-jet-project-inclusive-ir-cancellation
+  label: 'Project: inclusive quark-pair plus gluon cross section'
+  summary: Final-project parts (d–f) integrate the regulated real-emission distribution,
+    analytically continue the virtual form-factor integral from spacelike momentum,
+    and combine the two channels. The infrared logarithms cancel in the inclusive
+    quark-antiquark or quark-antiquark-gluon cross section as the gluon mass tends
+    to zero; the remaining finite correction gives a second strong-coupling measurement.
+  kind: method
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project parts (d–f)
+    pages:
+    - 262
+- id: peskin-schroeder.gluon-jet-project-model-and-regulator
+  label: Gluon-jet project model and infrared regulator
+  summary: The final project treats quarks of three colors coupled universally to
+    a massless vector gluon, using a strong coupling alpha-s. It neglects electron
+    and quark masses, averages initial polarizations, and gives the gluon a small
+    mass mu as an infrared regulator that is sent to zero only after the inclusive
+    calculation; its toy-model results carry over to QCD with the stated color-factor
+    replacement.
+  kind: assumption
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: 'Final Project: Radiation of Gluon Jets'
+    pages:
+    - 259
+    - 260
+- id: peskin-schroeder.gluon-jet-project-real-emission-three-jet-distribution
+  label: 'Project: real-gluon emission and three-jet distribution'
+  summary: Final-project part (c) computes the leading e-plus e-minus to quark-antiquark-gluon
+    differential cross section after integrating away beam-axis correlations. Current
+    transversality restricts the integrated hadron tensor, yielding the energy-fraction
+    distribution; interpreting each colored final parton as a jet makes its shape
+    a prediction and its normalization a measure of the strong coupling.
+  kind: result
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (c)
+    pages:
+    - 261
+    - 262
+- id: peskin-schroeder.gluon-jet-project-three-body-kinematics
+  label: 'Project: three-body energy fractions and phase space'
+  summary: Final-project part (b) defines dimensionless energy fractions for the quark,
+    antiquark, and gluon. It derives their sum rule, reconstructs final-state Lorentz
+    scalars from them and masses, rewrites three-body phase space in the two selected
+    fractions, and determines the allowed region with a massive infrared-regulator
+    gluon.
+  kind: method
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (b)
+    pages:
+    - 260
+    - 261
+- id: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  label: 'Project: virtual-gluon quark form-factor route'
+  summary: Final-project part (a) computes the virtual-gluon correction to e-plus
+    e-minus to quark-antiquark production, reduces it with Feynman parameters, and
+    subtracts at zero momentum transfer. For massless quarks the exclusive no-gluon
+    cross section is expressed through the quark Dirac form factor, normalized by
+    F1(0)=Qf.
+  kind: method
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (a)
+    pages:
+    - 260
 - id: peskin-schroeder.heaviside-lorentz-electrodynamics-conventions
   label: Heaviside-Lorentz electromagnetic conventions
   summary: 'The book uses Heaviside-Lorentz units: Phi=Q/(4pi r), alpha=e^2/(4pi)=e^2/(4pi
@@ -1080,6 +1228,22 @@ nodes:
     pages:
     - 84
     - 85
+- id: peskin-schroeder.kallen-lehmann-spectral-representation
+  label: Kallen-Lehmann spectral representation
+  summary: Insert a complete set of exact energy-momentum eigenstates into a scalar
+    two-point function to express it as an integral of free propagators weighted by
+    a positive spectral density. An isolated one-particle state contributes a delta
+    term whose coefficient is the field-strength factor Z, while multiparticle states
+    begin at their threshold.
+  kind: representation
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 212
+    - 213
+    - 214
 - id: peskin-schroeder.kg-ladder-mode-expansion
   label: Klein-Gordon ladder-operator mode expansion
   summary: The real Klein-Gordon field and canonical momentum are expanded over Fourier
@@ -1346,6 +1510,54 @@ nodes:
     - 40
     note: The text derives the representation condition and Lorentz algebra before
       identifying rotations and boosts.
+- id: peskin-schroeder.lsz-asymptotic-wavepacket-pole-analysis
+  label: Asymptotic wavepackets and multiparticle pole extraction
+  summary: Fourier-transform a higher-point correlator against separated wavepackets.
+    Its far-past and far-future one-particle singularities select in and out states;
+    after the narrow-wavepacket limit, the coefficient of the product of external
+    poles is the S-matrix element.
+  kind: method
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 223
+    - 224
+    - 225
+    - 226
+- id: peskin-schroeder.lsz-field-strength-correction-to-form-factor
+  label: LSZ field-strength correction justifies charge subtraction
+  summary: Adding the two external-electron LSZ factors shifts the Dirac form factor
+    by delta Z2. Since the self-energy calculation gives delta Z2 equal to minus the
+    unrenormalized vertex correction at zero momentum transfer, the corrected form
+    factor is the vertex correction subtracted at zero transfer and obeys F1(0)=1
+    at this order.
+  kind: result
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: 7.1; 7.2
+    pages:
+    - 222
+    - 229
+    - 230
+- id: peskin-schroeder.lsz-reduction-from-correlation-functions
+  label: LSZ reduction from correlation functions
+  summary: For each external particle, take the on-shell residue of the Fourier-transformed
+    time-ordered correlator and divide by the corresponding square-root field-strength
+    factor; spin fields additionally require their polarization spinor or vector.
+    This reduction identifies the connected, maximally singular amputated diagram
+    coefficient with the S-matrix element.
+  kind: method
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 227
+    - 228
+    - 229
 - id: peskin-schroeder.mandelstam-variables-and-identity
   label: Mandelstam variables and the four-mass identity
   summary: For two-to-two scattering, define s from total initial momentum and t and
@@ -1498,6 +1710,21 @@ nodes:
     - 150
     note: The source defines relative variables, the momentum-space wavefunction,
       normalization, and spin replacements.
+- id: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  label: One-loop vacuum polarization, pair threshold, and unitarity check
+  summary: Dimensional regularization gives the transverse one-loop photon self-energy
+    and a logarithmically divergent zero-momentum charge shift, while the subtracted
+    polarization is finite. Its timelike branch cut starts at the electron-positron
+    threshold; the imaginary part has the same energy dependence as pair production,
+    as required by the optical theorem.
+  kind: result
+  group: peskin-schroeder.ch7-charge-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 252
+    - 253
 - id: peskin-schroeder.one-loop-vertex-form-factors-and-charge-subtraction
   label: Regularized one-loop form factors and charge subtraction
   summary: The regulated parameter integral yields F1 and F2. Subtract the first-order
@@ -1546,6 +1773,21 @@ nodes:
     note: The page states the one-particle operators, plane-wave momentum check, h.c.
       meaning, Pauli algebra and ladder combinations, and definitions of theta and
       delta.
+- id: peskin-schroeder.optical-theorem-unitarity-relation
+  label: Optical theorem from S-matrix unitarity
+  summary: Writing S as one plus iT and imposing unitarity gives a generalized relation
+    between the discontinuity of an amplitude and a sum over on-shell intermediate
+    states. For forward scattering, the imaginary part of the invariant amplitude
+    is proportional to the total cross section into every allowed final state.
+  kind: result
+  group: peskin-schroeder.ch7-unitarity-ward
+  evidence:
+  - source: peskin-schroeder
+    section: '7.3'
+    pages:
+    - 230
+    - 231
+    - 232
 - id: peskin-schroeder.parity-dirac-field-bilinears-and-bound-states
   label: Parity of Dirac fields, bilinears, and fermion-antifermion bound states
   summary: Unitary parity reverses momentum without spin flip and acts as Pψ(t,x)P^{-1}=η_aγ^0ψ(t,−x),
@@ -2041,6 +2283,18 @@ nodes:
     - 170
     note: The exercise specifies the repeated Rutherford route and the independent
       heavy-muon limit.
+- id: peskin-schroeder.problem-phi4-one-loop-optical-theorem
+  label: 'Problem: direct phi-four one-loop calculation and optical theorem'
+  summary: Problem 7.1 asks for all three one-loop boson-boson scattering diagrams
+    by Feynman parameters, then asks for a direct check of the optical theorem against
+    the earlier discontinuity analysis.
+  kind: method
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.1
+    pages:
+    - 257
 - id: peskin-schroeder.problem-positronium-cp-selection-rules
   label: 'Problem: positronium P/C quantum numbers and photon selection rules'
   summary: Problem 3.8 asks the reader to assign P and C to electron–positron S, P,
@@ -2086,6 +2340,19 @@ nodes:
     - 171
     note: Part (a) specifies the S-wave projection, spin selection, and wavefunction-at-origin
       lifetime calculation.
+- id: peskin-schroeder.problem-qed-regulator-comparison
+  label: 'Problem: regulator dependence of Z1 equals Z2'
+  summary: Problem 7.2 compares the QED vertex and electron-field rescalings using
+    a naive loop-momentum cutoff and dimensional regularization. It asks the reader
+    to show that the cutoff violates Z1=Z2 while dimensional regularization preserves
+    it at order alpha.
+  kind: method
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.2
+    pages:
+    - 257
 - id: peskin-schroeder.problem-rosenbluth-elastic-form-factor-cross-section
   label: 'Problem: Rosenbluth elastic form-factor cross section'
   summary: Problem 6.1 asks for the leading-alpha elastic electron-proton cross section
@@ -2199,6 +2466,21 @@ nodes:
     - 174
     note: The problem specifies the mass cutoff, leading logarithm, convolution, and
       universal distribution interpretation.
+- id: peskin-schroeder.problem-yukawa-qed-vertex-renormalization
+  label: 'Problem: QED plus Yukawa vertex renormalization'
+  summary: Problem 7.3 first compares the virtual-scalar contribution to the electromagnetic
+    vertex rescaling with the scalar contribution to the fermion field rescaling using
+    dimensional regularization. It then separately shows that the scalar Yukawa vertex
+    rescaling is not canceled by the field-strength correction, so the observable
+    scalar coupling shifts relative to its bare value.
+  kind: method
+  group: peskin-schroeder.ch7-problems-project
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+    - 258
 - id: peskin-schroeder.qed-diagrammatic-calculation
   label: Feynman diagrams as a calculational prescription
   summary: 'For a QED process, a Feynman diagram encodes a perturbative contribution
@@ -2359,6 +2641,21 @@ nodes:
     - 16
     note: Equation (2.6) defines the single-field classical Lagrangian used in the
       subsequent Klein-Gordon discussion.
+- id: peskin-schroeder.regulator-must-preserve-ward-identity
+  label: Regulator symmetry requirement
+  summary: A naive momentum cutoff in the vacuum-polarization integral obstructs the
+    loop-momentum shift used by the Ward proof and produces a nontransverse, infinitely
+    massive photon. Dimensional regularization preserves the QED symmetry in this
+    calculation; when regulators disagree on an observable, the text treats the violated
+    symmetry as a condition to preserve.
+  kind: assumption
+  group: peskin-schroeder.ch7-charge-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 248
+    - 249
 - id: peskin-schroeder.relativistic-field-viewpoint
   label: Relativistic field viewpoint
   summary: A relativistic quantum description must accommodate variable particle number
@@ -2461,6 +2758,44 @@ nodes:
     pages:
     - 196
     - 197
+- id: peskin-schroeder.self-energy-imaginary-part-and-decay-width
+  label: Self-energy imaginary part and narrow-resonance width
+  summary: For a stable particle, the on-shell self-energy is real and the propagator
+    pole lies below the multiparticle cut. When decay channels are open, its imaginary
+    part moves the pole off the real axis; for a narrow resonance, the generalized
+    optical theorem identifies the Breit-Wigner width with minus the on-shell imaginary
+    self-energy divided by the mass and reproduces the decay-rate formula.
+  kind: method
+  group: peskin-schroeder.ch7-unitarity-ward
+  evidence:
+  - source: peskin-schroeder
+    section: 7.3 Unstable Particles
+    pages:
+    - 236
+    - 237
+- id: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  label: Self-energy resummation, mass shift, and field-strength residue
+  summary: Define the fermion self-energy as the sum of one-particle-irreducible two-leg
+    diagrams and sum repeated insertions as a geometric series. With a small photon
+    mass as an infrared regulator, the one-loop logarithm has an electron-photon branch
+    cut at its two-particle threshold; in massless-photon QED that cut merges with
+    the one-particle pole. The full propagator pole fixes the physical mass and its
+    derivative fixes Z2. Chiral symmetry when the bare mass vanishes forces the mass
+    shift to be proportional to that bare mass, while the one-loop mass and field-strength
+    shifts remain ultraviolet divergent before parameters are expressed in physical
+    terms.
+  kind: method
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 217
+    - 218
+    - 219
+    - 220
+    - 221
+    - 222
 - id: peskin-schroeder.single-soft-photon-infrared-divergence
   label: Single-soft-photon infrared divergence
   summary: The factorized one-soft-photon expression gives a logarithmically divergent
@@ -2650,6 +2985,23 @@ nodes:
     note: The translation transformation is set up on p. 18; p. 19 identifies the
       resulting four currents as the stress-energy tensor and identifies the energy
       and momentum charges.
+- id: peskin-schroeder.transverse-photon-vacuum-polarization
+  label: Transverse photon vacuum polarization and massless pole
+  summary: In the four-dimensional QED treatment here, the photon one-particle-irreducible
+    self-energy has the transverse tensor form (q-squared g-mu-nu minus q-mu q-nu)
+    times a scalar polarization function taken regular at zero momentum. The text
+    says that regularity requires a nontrivial proof and notes a two-dimensional massless-fermion
+    counterexample. After longitudinal terms are removed in an amplitude by the Ward
+    identity, resumming the four-dimensional form leaves a photon pole at zero momentum
+    and defines the photon field-strength factor Z3.
+  kind: result
+  group: peskin-schroeder.ch7-charge-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 245
+    - 246
 - id: peskin-schroeder.tree-level-muon-pair-cross-section
   label: Leading muon-pair angular distribution and energy scaling
   summary: After initial-spin averaging and final-spin summation, the leading e+e-
@@ -2685,6 +3037,37 @@ nodes:
     - 169
     note: The source crosses the Compton result, gives the high-energy expression,
       and states the identical-photon counting rule.
+- id: peskin-schroeder.two-point-poles-cuts-and-bound-states
+  label: Particle poles, multiparticle cuts, and bound-state poles
+  summary: In the momentum-squared plane, an isolated one-particle contribution gives
+    a simple pole, a multiparticle continuum gives a branch cut starting at threshold,
+    and a bound state contributes an additional pole below that cut. The strength
+    of the singularity distinguishes one-particle from multiparticle propagation.
+  kind: result
+  group: peskin-schroeder.ch7-propagators-lsz
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 215
+    - 216
+- id: peskin-schroeder.uehling-potential-and-vacuum-screening
+  label: Uehling potential, vacuum screening, and short-distance growth
+  summary: Fourier transforming the subtracted vacuum polarization gives a short-range
+    correction to the Coulomb potential, called the Uehling potential, with range
+    set by the electron Compton wavelength. Virtual electron-positron dipoles screen
+    the bare charge at larger distances; probing inside the polarization cloud makes
+    the effective coupling larger and produces a running coupling.
+  kind: result
+  group: peskin-schroeder.ch7-charge-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 253
+    - 254
+    - 255
+    - 256
 - id: peskin-schroeder.unpolarized-trace-technology
   label: Trace technology for unpolarized cross sections
   summary: Products of gamma matrices and spinors in an unpolarized cross section
@@ -2732,6 +3115,38 @@ nodes:
     - 161
     note: The source states the quantum-current assumption, derives the conditional
       replacement, and defers a formal proof and subtleties.
+- id: peskin-schroeder.ward-takahashi-correlation-identity
+  label: Ward-Takahashi identity for QED correlation functions
+  summary: Sum the insertion of an external photon over every allowed place in each
+    QED diagram. Adjacent insertions on a through-going fermion line telescope to
+    endpoint terms, and insertions around a closed loop cancel after an allowed loop-momentum
+    shift, giving the off-shell correlation-function identity; its endpoint terms
+    do not contain the full LSZ pole product.
+  kind: method
+  group: peskin-schroeder.ch7-unitarity-ward
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 238
+    - 239
+    - 240
+    - 241
+    - 242
+- id: peskin-schroeder.ward-vertex-identity-and-z1-z2
+  label: Ward vertex identity and Z1 equals Z2
+  summary: Amputating the electron three-point Ward-Takahashi identity relates the
+    momentum contraction of the exact vertex to the difference of inverse exact propagators.
+    Expanding near zero photon momentum and the electron pole gives Z1=Z2, so vertex
+    and external-leg rescalings cancel and F1(0)=1 to all perturbative orders.
+  kind: result
+  group: peskin-schroeder.ch7-unitarity-ward
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 243
+    - 244
 - id: peskin-schroeder.weyl-fierz-rearrangement
   label: Weyl-spinor Fierz rearrangement
   summary: The two-component σ-matrix identity produces a nontrivial rearrangement
@@ -7386,6 +7801,1107 @@ edges:
     section: Problem 6.3(a)
     pages:
     - 210
+- id: ps7-charge-subtraction-to-virtual-route
+  from: peskin-schroeder.one-loop-vertex-form-factors-and-charge-subtraction
+  to: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) specifies zero-momentum subtraction following the earlier form-factor
+    prescription.
+  failure_mode: The stated renormalization condition F1(0)=Qf has no subtraction method.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (a)
+    pages:
+    - 260
+- id: ps7-charge-to-uehling
+  from: peskin-schroeder.charge-renormalization-and-running-coupling
+  to: peskin-schroeder.uehling-potential-and-vacuum-screening
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The potential and screening interpretation begin from the momentum-dependent
+    effective interaction.
+  failure_mode: There is no modified Coulomb kernel to Fourier transform or interpret.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 253
+    - 254
+    - 255
+- id: ps7-chiral-to-self-energy
+  from: peskin-schroeder.chiral-u1-symmetry-and-handed-currents
+  to: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass-shift qualification applies the decoupling of left- and right-handed
+    electron components when the bare mass vanishes.
+  failure_mode: The conclusion that the perturbative mass shift is proportional to
+    the bare mass is unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 221
+- id: ps7-cutting-to-width
+  from: peskin-schroeder.cutkosky-cutting-rules
+  to: peskin-schroeder.self-energy-imaginary-part-and-decay-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The method converts the self-energy discontinuity into its physical decay-channel
+    phase-space integral.
+  failure_mode: The imaginary self-energy cannot be evaluated from on-shell decay
+    states.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.3 Unstable Particles
+    pages:
+    - 236
+    - 237
+- id: ps7-dimreg-to-one-loop-vp
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop photon self-energy is evaluated with d-dimensional integration
+    and d-dimensional gamma algebra.
+  failure_mode: The calculation does not preserve the transverse Ward-required tensor
+    structure.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 249
+    - 250
+    - 251
+    - 252
+- id: ps7-dimreg-to-regulator-problem
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.problem-qed-regulator-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) requires recomputing the two rescalings in dimensional regularization.
+  failure_mode: The symmetry-preserving comparison route is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.2
+    pages:
+    - 257
+- id: ps7-dimreg-to-yukawa-problem
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.problem-yukawa-qed-vertex-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Both requested virtual-scalar comparisons are to be carried out with
+    dimensional regularization.
+  failure_mode: The specified regulator calculation cannot be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+    - 258
+- id: ps7-dirac-pole-to-lsz
+  from: peskin-schroeder.dirac-pole-residue-and-physical-mass
+  to: peskin-schroeder.lsz-reduction-from-correlation-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reduction divides each external residue by its field-strength factor
+    and projects spin states.
+  failure_mode: External normalization and spin projection factors are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 227
+- id: ps7-dirac-pole-to-z1-z2
+  from: peskin-schroeder.dirac-pole-residue-and-physical-mass
+  to: peskin-schroeder.ward-vertex-identity-and-z1-z2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The specialization expands the exact propagator near its Dirac pole and
+    uses its residue to define Z2.
+  failure_mode: The pole normalization needed to compare Z1 with Z2 is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 243
+- id: ps7-dirac-prop-to-self-energy
+  from: peskin-schroeder.dirac-momentum-space-and-feynman-propagator
+  to: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The resummation inserts the self-energy between the free Dirac propagators.
+  failure_mode: There is no propagator denominator to resum or expand at its pole.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 217
+    - 220
+- id: ps7-external-ward-to-real-emission
+  from: peskin-schroeder.ward-identity-external-photon-polarization-sum
+  to: peskin-schroeder.gluon-jet-project-real-emission-three-jet-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor reduction uses current transversality to eliminate q-proportional
+    structures, the same constraint used in the earlier Ward-identity method.
+  failure_mode: The integrated tensor cannot be restricted to its transverse scalar
+    form.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (c)
+    pages:
+    - 261
+- id: ps7-feynman-parameters-to-one-loop-vp
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The loop calculation combines its two electron propagators before shifting
+    the loop momentum.
+  failure_mode: The displayed polarization integral cannot be reduced to the scalar
+    d-dimensional integrals.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 247
+    - 248
+- id: ps7-feynman-parameters-to-phi4-problem
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.problem-phi4-one-loop-optical-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 7.1 explicitly requests the standard Feynman-parameter evaluation
+    of each loop diagram.
+  failure_mode: The requested direct loop calculation lacks its prescribed integration
+    method.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.1
+    pages:
+    - 257
+- id: ps7-feynman-parameters-to-self-energy
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The explicit one-loop self-energy combines its two denominators with
+    a Feynman parameter.
+  failure_mode: The displayed loop integral cannot be reduced to the scalar momentum
+    integral used for the self-energy.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 217
+    - 218
+- id: ps7-feynman-parameters-to-virtual-route
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly reduces the virtual-gluon diagram to Feynman parameters.
+  failure_mode: The requested virtual-loop reduction is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (a)
+    pages:
+    - 260
+- id: ps7-inclusive-assumption-to-project
+  from: peskin-schroeder.infrared-inclusive-final-states
+  to: peskin-schroeder.gluon-jet-project-inclusive-ir-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation concerns the explicitly inclusive quark-pair or quark-pair-plus-gluon
+    total cross section.
+  failure_mode: Combining channels would not correspond to the observable named in
+    the task.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project parts (e)–(f)
+    pages:
+    - 262
+- id: ps7-inout-to-lsz-wavepackets
+  from: peskin-schroeder.in-out-states-s-t-and-invariant-matrix-element
+  to: peskin-schroeder.lsz-asymptotic-wavepacket-pole-analysis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The separated wavepacket limits are identified with the accepted in and
+    out states.
+  failure_mode: The leading multiparticle poles cannot be interpreted as an S-matrix
+    element between asymptotic states.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 225
+    - 226
+    - 227
+- id: ps7-inout-to-optical
+  from: peskin-schroeder.in-out-states-s-t-and-invariant-matrix-element
+  to: peskin-schroeder.optical-theorem-unitarity-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unitarity derivation inserts complete asymptotic states and rewrites
+    T-matrix elements as invariant matrix elements.
+  failure_mode: The intermediate-state sum and its invariant-amplitude normalization
+    are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.3'
+    pages:
+    - 230
+    - 231
+- id: ps7-kl-to-dirac-pole-context
+  from: peskin-schroeder.kallen-lehmann-spectral-representation
+  to: peskin-schroeder.dirac-pole-residue-and-physical-mass
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The scalar spectral analysis motivates the stated higher-spin analogue,
+    while the Dirac extension requires additional invariant spectral functions.
+  failure_mode: The source's analogy between scalar and Dirac pole structures is not
+    visible, although it is not a required derivation route.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 216
+- id: ps7-kl-to-singularities
+  from: peskin-schroeder.kallen-lehmann-spectral-representation
+  to: peskin-schroeder.two-point-poles-cuts-and-bound-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pole and cut classification follows by reading the isolated and continuous
+    contributions in the spectral integral.
+  failure_mode: Without the spectral decomposition, the singularity types cannot be
+    tied to intermediate-state spectra.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 214
+    - 215
+- id: ps7-loop-sign-to-one-loop-vp
+  from: peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+  to: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon self-energy loop begins with the closed-fermion-loop minus
+    sign.
+  failure_mode: The one-loop polarization amplitude has the wrong overall sign.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 245
+    - 247
+- id: ps7-lsz-form-factor-to-subtraction-evidence
+  from: peskin-schroeder.lsz-field-strength-correction-to-form-factor
+  to: peskin-schroeder.one-loop-vertex-form-factors-and-charge-subtraction
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The LSZ external-leg factor justifies the zero-transfer subtraction portion
+    of the accepted method; it does not replace the loop evaluation or the F2 calculation.
+  failure_mode: The accepted subtraction remains disconnected from its later field-strength
+    justification, while its original calculation still stands.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 230
+- id: ps7-lsz-to-amputated-prescription
+  from: peskin-schroeder.lsz-reduction-from-correlation-functions
+  to: peskin-schroeder.connected-amputated-s-matrix-prescription
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: LSZ supplies the deferred formal route from correlation functions to
+    the connected amputated diagram prescription, including external-leg normalization.
+  failure_mode: The earlier prescription remains an unproved diagrammatic rule.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 227
+    - 228
+    - 229
+- id: ps7-lsz-to-crossing-context
+  from: peskin-schroeder.lsz-reduction-from-correlation-functions
+  to: peskin-schroeder.crossing-symmetry-s-matrix
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: Analytic continuation of an LSZ pole supplies the nonperturbative crossing
+    argument here; the earlier treatment retains the separate crossed-fermion sign.
+  failure_mode: The later general support for crossing is disconnected from the accepted
+    result, without affecting its independent diagrammatic route.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 230
+- id: ps7-lsz-to-lsz-form-factor
+  from: peskin-schroeder.lsz-reduction-from-correlation-functions
+  to: peskin-schroeder.lsz-field-strength-correction-to-form-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: LSZ supplies the two external square-root Z2 factors that correct the
+    amplitude.
+  failure_mode: The connection between field-strength residue and form-factor normalization
+    is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 229
+    - 230
+- id: ps7-lsz-to-ward-correlation
+  from: peskin-schroeder.lsz-reduction-from-correlation-functions
+  to: peskin-schroeder.ward-takahashi-correlation-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof uses the external pole structure to show that the endpoint
+    terms of the correlation identity do not contribute to an S-matrix element.
+  failure_mode: The reduction from the off-shell identity to the external-photon Ward
+    identity is not established.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 240
+    - 242
+- id: ps7-lsz-to-width
+  from: peskin-schroeder.lsz-reduction-from-correlation-functions
+  to: peskin-schroeder.self-energy-imaginary-part-and-decay-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The text uses LSZ to identify the amputated one-particle scattering amplitude
+    with the self-energy before applying unitarity.
+  failure_mode: The self-energy cannot be connected to the decay amplitudes in the
+    optical-theorem relation.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.3 Unstable Particles
+    pages:
+    - 236
+    - 237
+- id: ps7-one-loop-vp-to-charge
+  from: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  to: peskin-schroeder.charge-renormalization-and-running-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculated subtracted polarization function gives the displayed leading-order
+    effective coupling.
+  failure_mode: The momentum dependence of the effective charge has no computed polarization
+    input.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 252
+- id: ps7-one-loop-vp-to-uehling
+  from: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  to: peskin-schroeder.uehling-potential-and-vacuum-screening
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The branch-cut imaginary part determines the finite-range correction
+    to the potential.
+  failure_mode: The contour contribution and Compton-wavelength range are not available.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 253
+    - 254
+- id: ps7-optical-to-one-loop-vp
+  from: peskin-schroeder.optical-theorem-unitarity-relation
+  to: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pair-threshold imaginary part is interpreted by comparing the cut
+    to the forward-scattering total cross section required by the optical theorem.
+  failure_mode: The stated unitarity check of the pair-production threshold is unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 253
+- id: ps7-optical-to-phi4-problem
+  from: peskin-schroeder.optical-theorem-unitarity-relation
+  to: peskin-schroeder.problem-phi4-one-loop-optical-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task's final check compares its direct diagrams to the optical theorem.
+  failure_mode: There is no unitarity criterion to verify.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.1
+    pages:
+    - 257
+- id: ps7-phase-space-to-optical
+  from: peskin-schroeder.lorentz-invariant-phase-space-cross-section
+  to: peskin-schroeder.optical-theorem-unitarity-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The forward form converts the on-shell intermediate-state sum into the
+    total cross section with its kinematic factor.
+  failure_mode: The amplitude discontinuity cannot be expressed as a total cross section.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.3'
+    pages:
+    - 231
+    - 232
+- id: ps7-phase-space-to-threebody
+  from: peskin-schroeder.lorentz-invariant-phase-space-cross-section
+  to: peskin-schroeder.gluon-jet-project-three-body-kinematics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) rewrites the complete invariant three-body phase-space measure.
+  failure_mode: The required phase-space integral has no invariant starting definition.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (b)
+    pages:
+    - 261
+- id: ps7-phi4-rules-to-phi4-problem
+  from: peskin-schroeder.phi4-momentum-space-feynman-rules
+  to: peskin-schroeder.problem-phi4-one-loop-optical-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem evaluates all three one-loop phi-four scattering diagrams
+    before testing their discontinuities.
+  failure_mode: The diagrams and their factors are not defined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.1
+    pages:
+    - 257
+- id: ps7-poles-to-lsz-wavepackets
+  from: peskin-schroeder.two-point-poles-cuts-and-bound-states
+  to: peskin-schroeder.lsz-asymptotic-wavepacket-pole-analysis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: LSZ identifies the isolated one-particle singularity in each external
+    Fourier variable.
+  failure_mode: The analysis cannot distinguish asymptotic particle poles from multiparticle
+    cuts.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 222
+    - 223
+    - 224
+- id: ps7-pv-to-self-energy
+  from: peskin-schroeder.pauli-villars-photon-regularization
+  to: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter regulates the ultraviolet-divergent self-energy by the Pauli-Villars
+    subtraction.
+  failure_mode: The divergent integral has no regulated form from which its mass and
+    residue shifts can be read.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 218
+- id: ps7-qed-diagrams-to-ward-correlation
+  from: peskin-schroeder.qed-diagrammatic-calculation
+  to: peskin-schroeder.ward-takahashi-correlation-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof enumerates and sums photon insertions in the QED Feynman diagrams
+    for a correlation function.
+  failure_mode: There is no diagrammatic amplitude construction on which to perform
+    the insertion sum.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 238
+    - 239
+- id: ps7-qed-rules-to-yukawa-problem
+  from: peskin-schroeder.qed-diagrammatic-calculation
+  to: peskin-schroeder.problem-yukawa-qed-vertex-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) compares a virtual-scalar correction to the electromagnetic
+    vertex with the fermion field rescaling.
+  failure_mode: The electromagnetic vertex contribution has no QED diagrammatic rule.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+- id: ps7-qed-tree-to-real-emission
+  from: peskin-schroeder.qed-tree-amplitude-rule
+  to: peskin-schroeder.gluon-jet-project-real-emission-three-jet-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) begins by drawing and evaluating the leading quark-line emission
+    diagrams.
+  failure_mode: There is no tree-amplitude construction for the real-emission process.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (c)
+    pages:
+    - 261
+- id: ps7-quark-cross-section-to-virtual-route
+  from: peskin-schroeder.quark-pair-r-ratio
+  to: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly recalls the lowest-order quark-pair cross section
+    before correcting it with the quark form factor.
+  failure_mode: The corrected exclusive cross section lacks its Born normalization.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (a)
+    pages:
+    - 260
+- id: ps7-real-to-inclusive-project
+  from: peskin-schroeder.gluon-jet-project-real-emission-three-jet-distribution
+  to: peskin-schroeder.gluon-jet-project-inclusive-ir-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (d) and (f) integrate the real-gluon distribution before combining
+    it with the virtual channel.
+  failure_mode: The real-emission infrared logarithms needed for the inclusive cancellation
+    are missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project parts (d)–(f)
+    pages:
+    - 262
+- id: ps7-regulator-assumption-to-one-loop-vp
+  from: peskin-schroeder.regulator-must-preserve-ward-identity
+  to: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation selects dimensional regularization because a naive cutoff
+    violates the Ward identity.
+  failure_mode: A nontransverse cutoff result would incorrectly generate a photon
+    mass.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 248
+    - 249
+- id: ps7-regulator-to-ward-correlation
+  from: peskin-schroeder.regulator-must-preserve-ward-identity
+  to: peskin-schroeder.ward-takahashi-correlation-identity
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The loop-insertion cancellation requires a momentum shift that the later
+    discussion shows is invalid in a divergent integral without a symmetry-preserving
+    regulator.
+  failure_mode: The closed-loop cancellation can be falsely applied to a regulator
+    that violates the Ward identity.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.4; 7.5
+    pages:
+    - 241
+    - 242
+    - 248
+    - 249
+- id: ps7-self-energy-to-dirac-pole
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.dirac-pole-residue-and-physical-mass
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The QED diagrammatic resummation checks the same pole mass and residue
+    structure obtained from the general spectral analysis.
+  failure_mode: The perturbative route from self-energy diagrams to the pole structure
+    is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 219
+    - 220
+    - 221
+- id: ps7-self-energy-to-lsz-form-factor
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.lsz-field-strength-correction-to-form-factor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation uses the computed delta Z2 from the self-energy.
+  failure_mode: The required external-leg correction cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.1; 7.2
+    pages:
+    - 222
+    - 229
+    - 230
+- id: ps7-self-energy-to-regulator-problem
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.problem-qed-regulator-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) and part (b) recompute the chapter's electron field-strength
+    residue alongside the vertex rescaling.
+  failure_mode: The requested delta Z2 comparison is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.2
+    pages:
+    - 257
+- id: ps7-self-energy-to-width
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.self-energy-imaginary-part-and-decay-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unstable-particle construction starts from the resummed propagator
+    and its one-particle-irreducible self-energy.
+  failure_mode: There is no propagator denominator or self-energy whose imaginary
+    part can displace its pole.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.3 Unstable Particles
+    pages:
+    - 236
+    - 237
+- id: ps7-self-energy-to-yukawa-problem
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.problem-yukawa-qed-vertex-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Both parts require the fermion field-strength rescaling from a scalar
+    self-energy diagram.
+  failure_mode: The requested Z2 comparisons and uncanceled Yukawa rescaling are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+    - 258
+- id: ps7-threebody-to-real-emission
+  from: peskin-schroeder.gluon-jet-project-three-body-kinematics
+  to: peskin-schroeder.gluon-jet-project-real-emission-three-jet-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The differential distribution is expressed in the two energy fractions
+    and integrated over the phase space established in part (b).
+  failure_mode: The differential cross section has no defined variables or integration
+    domain.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project parts (b)–(c)
+    pages:
+    - 261
+- id: ps7-toy-model-to-threebody
+  from: peskin-schroeder.gluon-jet-project-model-and-regulator
+  to: peskin-schroeder.gluon-jet-project-three-body-kinematics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phase-space boundary is derived for the stated massless quarks and
+    massive regulator gluon.
+  failure_mode: The particle masses and final-state assignment needed for the kinematic
+    region are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (b)
+    pages:
+    - 260
+    - 261
+- id: ps7-toy-model-to-virtual-route
+  from: peskin-schroeder.gluon-jet-project-model-and-regulator
+  to: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The virtual calculation uses the project's quark-gluon coupling, mass
+    assumptions, and infrared regulator.
+  failure_mode: Its diagram and subtraction problem have no defined interaction or
+    regulator.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (a)
+    pages:
+    - 259
+    - 260
+- id: ps7-traces-to-one-loop-vp
+  from: peskin-schroeder.dirac-trace-identities-gamma5
+  to: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The electron-loop numerator is obtained by taking its Dirac trace before
+    parameterizing the denominators.
+  failure_mode: The tensor numerator of the vacuum-polarization integral cannot be
+    derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 247
+- id: ps7-unitarity-to-cutting
+  from: peskin-schroeder.optical-theorem-unitarity-relation
+  to: peskin-schroeder.cutkosky-cutting-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cutting rules are derived as the diagrammatic realization of the
+    unitarity discontinuity relation.
+  failure_mode: Putting cut lines on shell would not be connected to the required
+    intermediate-state sum.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.3'
+    pages:
+    - 231
+    - 235
+    - 236
+- id: ps7-unpolarized-traces-to-real-emission
+  from: peskin-schroeder.unpolarized-trace-technology
+  to: peskin-schroeder.gluon-jet-project-real-emission-three-jet-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) evaluates the squared amplitude with electron and quark traces
+    after averaging over initial polarizations.
+  failure_mode: The tensor H and differential cross section cannot be obtained from
+    the amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (c)
+    pages:
+    - 260
+    - 261
+- id: ps7-vacuum-transverse-to-charge
+  from: peskin-schroeder.transverse-photon-vacuum-polarization
+  to: peskin-schroeder.charge-renormalization-and-running-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The zero-momentum residue defines Z3, and the resummed transverse propagator
+    supplies the effective charge.
+  failure_mode: There is no photon-propagator factor from which to define physical
+    charge or its momentum dependence.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 246
+    - 247
+- id: ps7-vertex-loop-to-regulator-problem
+  from: peskin-schroeder.one-loop-vertex-form-factors-and-charge-subtraction
+  to: peskin-schroeder.problem-qed-regulator-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) and part (b) recompute the accepted one-loop vertex rescaling
+    under the two regulators.
+  failure_mode: There is no established vertex-rescaling integral to recalculate.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.2
+    pages:
+    - 257
+- id: ps7-vertex-loop-to-yukawa-problem
+  from: peskin-schroeder.one-loop-vertex-form-factors-and-charge-subtraction
+  to: peskin-schroeder.problem-yukawa-qed-vertex-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task compares vertex and field-strength rescalings at zero momentum
+    transfer.
+  failure_mode: The required vertex-rescaling construction is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+    - 258
+- id: ps7-vertex-reduction-to-virtual-route
+  from: peskin-schroeder.one-loop-vertex-reduction-to-form-factors
+  to: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) interprets the virtual-gluon contribution as a correction to
+    the quark Dirac form factor.
+  failure_mode: The form-factor reduction of the virtual vertex is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project part (a)
+    pages:
+    - 260
+- id: ps7-virtual-to-inclusive-project
+  from: peskin-schroeder.gluon-jet-project-virtual-form-factor-route
+  to: peskin-schroeder.gluon-jet-project-inclusive-ir-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (e) and (f) analytically continue and add the virtual form-factor
+    contribution to the real-emission integral.
+  failure_mode: One of the two infrared-divergent channels needed for cancellation
+    is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project parts (e)–(f)
+    pages:
+    - 262
+- id: ps7-ward-correlation-to-external-ward
+  from: peskin-schroeder.ward-takahashi-correlation-identity
+  to: peskin-schroeder.ward-identity-external-photon-polarization-sum
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The all-orders correlation-function proof supplies the deferred formal
+    basis for the external-photon Ward identity.
+  failure_mode: The earlier external-polarization argument remains conditional.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 238
+    - 242
+- id: ps7-ward-correlation-to-vacuum-transverse
+  from: peskin-schroeder.ward-takahashi-correlation-identity
+  to: peskin-schroeder.transverse-photon-vacuum-polarization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon self-energy decomposition uses the Ward constraint to remove
+    longitudinal terms in S-matrix amplitudes.
+  failure_mode: The transverse projector and massless-pole conclusion are not justified.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 245
+    - 246
+- id: ps7-ward-correlation-to-vertex
+  from: peskin-schroeder.ward-takahashi-correlation-identity
+  to: peskin-schroeder.ward-vertex-identity-and-z1-z2
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Amputation and the three-point specialization of the correlation identity
+    give the inverse-propagator vertex relation.
+  failure_mode: There is no identity from which to extract Z1=Z2.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.4'
+    pages:
+    - 242
+    - 243
+- id: ps7-ward-z-to-regulator-problem
+  from: peskin-schroeder.ward-vertex-identity-and-z1-z2
+  to: peskin-schroeder.problem-qed-regulator-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem tests whether each regulator preserves the Z1=Z2 identity.
+  failure_mode: The compared quantities lack their Ward-identity criterion.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.2
+    pages:
+    - 257
+- id: ps7-wavepackets-to-lsz
+  from: peskin-schroeder.lsz-asymptotic-wavepacket-pole-analysis
+  to: peskin-schroeder.lsz-reduction-from-correlation-functions
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The wavepacket construction establishes that the maximal pole coefficient
+    is an in-out S-matrix element before the compact reduction formula is stated.
+  failure_mode: The Fourier-space residue would lack its asymptotic-state interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.2'
+    pages:
+    - 225
+    - 226
+    - 227
+- id: ps7-wick-to-dimreg
+  from: peskin-schroeder.wick-rotation-for-convergent-loop-integrals
+  to: peskin-schroeder.dim-reg-loop-integral-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dimensional-regulation calculation Wick rotates the analytically
+    continued loop integral before using d-dimensional Euclidean spherical coordinates.
+  failure_mode: The Euclidean integral formulas used for dimensional regularization
+    have no contour-rotation basis.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.5 Dimensional Regularization
+    pages:
+    - 249
+    - 250
+- id: ps7-wick-to-self-energy
+  from: peskin-schroeder.wick-rotation-for-convergent-loop-integrals
+  to: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The regulated explicit self-energy calculation Wick rotates its loop
+    momentum before evaluating the Euclidean integral.
+  failure_mode: The displayed regulated momentum integral cannot be evaluated by the
+    route used in the chapter.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 218
+- id: ps7-width-to-breit-wigner-evidence
+  from: peskin-schroeder.self-energy-imaginary-part-and-decay-width
+  to: peskin-schroeder.breit-wigner-resonance-width-and-time-dilation
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The self-energy pole supports the invariant narrow-resonance denominator
+    and width identification; the accepted record's time-dilation result remains independently
+    derived.
+  failure_mode: The field-theoretic check of the narrow-resonance portion is absent,
+    without blocking the earlier complete treatment.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.3'
+    pages:
+    - 237
+- id: ps7-yukawa-rules-to-yukawa-problem
+  from: peskin-schroeder.yukawa-feynman-rules
+  to: peskin-schroeder.problem-yukawa-qed-vertex-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task introduces a Yukawa-coupled elementary scalar and requires its
+    vertex and self-energy diagrams.
+  failure_mode: The scalar interaction diagrams and their factors are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+    - 258
 groups:
 - id: peskin-schroeder.ch5-crossing-and-compton
   title: Crossing, channels, and Compton scattering
@@ -7403,6 +8919,21 @@ groups:
   title: 'Radiative corrections: soft photons, vertex structure, and infrared observables'
   question: How do loop and soft-radiation effects modify QED scattering while leaving
     a detector-defined observable finite?
+- id: peskin-schroeder.ch7-charge-renormalization
+  title: Vacuum polarization and electric charge
+  question: How does photon vacuum polarization preserve a massless photon while changing
+    the observed electromagnetic coupling?
+- id: peskin-schroeder.ch7-problems-project
+  title: Chapter 7 problems and gluon-jet project
+  question: Which calculations test cuts, regulators, non-gauge couplings, and inclusive
+    gluon radiation?
+- id: peskin-schroeder.ch7-propagators-lsz
+  title: Propagator singularities and LSZ reduction
+  question: How do exact correlation functions identify particle poles and yield S-matrix
+    elements?
+- id: peskin-schroeder.ch7-unitarity-ward
+  title: Unitarity, cuts, and Ward identities
+  question: How do unitarity and gauge-current constraints organize quantum amplitudes?
 - id: peskin-schroeder.chapter-three-problem-applications
   title: Chapter 3 problem applications
   question: Which further representation, spinor, Majorana, supersymmetry, Fierz,
@@ -7489,6 +9020,34 @@ motivations:
     pages:
     - 200
     - 201
+- id: peskin-schroeder.ch7-poles-to-observables
+  nodes:
+  - peskin-schroeder.kallen-lehmann-spectral-representation
+  - peskin-schroeder.lsz-reduction-from-correlation-functions
+  - peskin-schroeder.optical-theorem-unitarity-relation
+  summary: The chapter asks how analytic singularities in correlation functions and
+    diagrams encode particles, scattering probabilities, and decay observables.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 7 introduction; 7.1–7.3
+    pages:
+    - 211
+    - 216
+    - 232
+- id: peskin-schroeder.ch7-vacuum-screening-question
+  nodes:
+  - peskin-schroeder.charge-renormalization-and-running-coupling
+  - peskin-schroeder.uehling-potential-and-vacuum-screening
+  summary: The photon self-energy poses the question of how a divergent bare charge
+    can leave an observable momentum-dependent interaction and a measurable short-distance
+    screening effect.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 245
+    - 252
+    - 255
 - id: peskin-schroeder.why-commutators-test-causality
   nodes:
   - peskin-schroeder.spacelike-wightman-amplitude

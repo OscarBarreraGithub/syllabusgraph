@@ -1,17 +1,17 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 904 reviewed concepts. The shared graph contains 97 concepts and 70 relationships, mapping 104 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 931 reviewed concepts. The shared graph contains 97 concepts and 70 relationships, mapping 104 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. These are **partial graphs**, with an end human audit pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Full-book coverage, global reconciliation, and that alignment must finish before calling this collection complete.
 
 | Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
-| [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–210 | 181 | 270 |
+| [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–263 | 208 | 338 |
 | [Schwartz](../../textbooks/schwartz/README.md) | 3–105, 109–284 | 294 | 345 |
 | [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–189, 191–258 | 264 | 317 |
 | [Weinberg II](../../textbooks/weinberg-2/README.md) | 1–59, 63–210 | 165 | 208 |
 
-The reviewed inventories account for 2,646 substantive numbered pages and 605 section entries. Accepted full extraction scopes currently cover 931 of those pages; narrow pilots are excluded from that measure. Each book README links its complete inventory and remaining ranges. These counts track progress; the final conceptual-coverage and dependency audit is still pending. [Read the final inventory decision](review-decisions.yaml).
+The reviewed inventories account for 2,646 substantive numbered pages and 605 section entries. Accepted full extraction scopes currently cover 984 of those pages; narrow pilots are excluded from that measure. Each book README links its complete inventory and remaining ranges. These counts track progress; the final conceptual-coverage and dependency audit is still pending. [Read the final inventory decision](review-decisions.yaml).
 
 [Read the shared graph](knowledge/graph.yaml) · [Coverage and review record](review.yaml) · [Final scientific decisions](adjudications.yaml) · [Graph bank instructions](../../README.md)
 
