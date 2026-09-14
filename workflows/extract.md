@@ -46,6 +46,9 @@ Match necessity to the target mastery. An input needed to derive a formula is
 not automatically needed to use that formula when it is supplied. Likewise, an
 analogous worked example can be helpful without being a necessary input to an
 exercise whose assumptions or interaction are given explicitly.
+Choose the source mastery just as carefully: applying an established identity
+usually requires being able to use it, not to reconstruct its proof. Require
+`derive` for the input only when the target argument actually needs that ability.
 
 Preserve substantial exercises as source-backed tasks or derivation methods,
 distinguishing requested proofs from results established in the text. Separate
@@ -53,6 +56,9 @@ independent tasks when combining them would make unrelated prerequisites
 compulsory. A staged derivation can remain one target when its stages belong to
 the same route. Connect retained applications to the accepted results they
 actually use instead of leaving them isolated.
+When an exercise or new method derives a result already in the graph, reuse
+that result as the route's destination and supply the method's actual inputs.
+Do not make the answer a necessary prerequisite of the proof that establishes it.
 
 When the source gives several routes to the same result, preserve the inputs
 needed jointly within each route. Do not make every route's inputs compulsory

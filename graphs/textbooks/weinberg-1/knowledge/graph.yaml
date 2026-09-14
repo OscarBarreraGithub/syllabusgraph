@@ -24,6 +24,24 @@ nodes:
     - 33
     note: The source describes eliminating the field in favor of direct interaction
       at a distance and its retarded/advanced-potential result.
+- id: weinberg-1.additive-operator-and-free-hamiltonian-form
+  label: Additive observables and the free Hamiltonian in Fock form
+  summary: An additive operator whose eigenvalue on a multiparticle state is the sum
+    of one-particle values has the one-body Fock expression ∫dq a†(q)a(q)f(q). The
+    free Hamiltonian is the special case with f(q) equal to the one-particle energy,
+    so its spectrum adds E(q) over occupied particles.
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 176
+    note: The source gives the additive-operator expression and specializes it to
+      H0.
+  notation:
+  - source: weinberg-1
+    note: For a particle of species n and mass m_n, E(p,σ,n)=sqrt(p²+m_n²).
 - id: weinberg-1.angular-momentum-coupling-orthogonality
   label: Angular-momentum coupling and spherical-harmonic orthogonality
   summary: The two-body coupled basis is built from Clebsch–Gordan coefficients and
@@ -136,6 +154,29 @@ nodes:
     pages:
     - 50
     note: Gives the transition probability and completeness normalization.
+- id: weinberg-1.bose-fermi-exchange-symmetry-cluster-argument
+  label: Bose–Fermi exchange symmetry and its cluster argument
+  summary: For identical particles, exchanging labels gives the same ray up to a unit
+    phase. If that phase is species-dependent, applying the exchange twice restricts
+    it to +1 or −1. The source argues that dependence on distant particles conflicts
+    with cluster decomposition, spin dependence would require a nonexistent one-dimensional
+    rotation representation, and Lorentz-compatible momentum dependence does not evade
+    the double-exchange argument. It also states the path-dependent two-dimensional
+    caveat.
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.1'
+    pages:
+    - 170
+    - 171
+    note: The exchange-ray phase is introduced and its restrictions, including the
+      dimensional caveat, are discussed.
+  notation:
+  - source: weinberg-1
+    note: A particle label has momentum p, spin component or helicity σ, and species
+      n; α_n denotes the exchange phase for species n.
 - id: weinberg-1.bosonic-fock-space-vacuum-energy
   label: Bosonic occupation-number states and vacuum energy
   summary: A bosonic Fock state is specified by unrestricted nonnegative occupation
@@ -207,6 +248,26 @@ nodes:
     - 22
     note: The source describes the Heisenberg-Pauli prescription and works it out
       for a free complex scalar field.
+- id: weinberg-1.canonical-fock-commutation-relations
+  label: Bosonic and fermionic Fock brackets
+  summary: The creation–annihilation bracket equals δ(q′−q), while the creation–creation
+    and annihilation–annihilation brackets vanish. These are commutators for bosons
+    and anticommutators for fermions; for different species the bracket commutes unless
+    both particles are fermions. They follow from the explicit actions on every Fock
+    state.
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 174
+    note: The source applies the actions to arbitrary states to establish all three
+      bracket relations.
+  notation:
+  - source: weinberg-1
+    note: The displayed ± bracket means AB∓BA, with the top sign for bosons and the
+      bottom sign for fermions.
 - id: weinberg-1.canonical-oscillator-quantization
   label: Canonical quantization and ladder operators
   summary: Canonical coordinate-momentum commutators for each normal mode are represented
@@ -321,6 +382,40 @@ nodes:
     - 203
     note: The source contrasts the simple charge commutators of φ⁺ and its adjoint
       with the self-adjoint field.
+- id: weinberg-1.cluster-decomposition-forces-multiparticle-scattering
+  label: Cluster decomposition forces higher-particle scattering
+  summary: If a Hamiltonian has a nonzero two-particle interaction term, its three-particle
+    matrix element contains spectator-delta contributions. Cancelling them with a
+    three-particle coefficient would introduce two momentum delta factors, violating
+    the one-delta clustering condition. Therefore a clustering theory with two-particle
+    scattering cannot set all three-and-higher-particle scattering processes to zero.
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 187
+    - 188
+    note: The source displays the two- and three-particle matrix elements and explains
+      why the proposed cancellation violates clustering.
+- id: weinberg-1.cluster-decomposition-s-matrix-factorization
+  label: Cluster decomposition as S-matrix factorization
+  summary: For processes performed in mutually distant spatial laboratories, the S-matrix
+    element for their joint process factorizes into the individual S-matrix elements,
+    with the fermion rearrangement sign. This makes the corresponding transition probabilities
+    factorize and expresses the physical requirement that distant experiments have
+    uncorrelated results.
+  kind: assumption
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 177
+    - 178
+    note: The source states the physical separation principle and its S-matrix factorization
+      formula.
 - id: weinberg-1.complex-causal-scalar-field
   label: Complex causal scalar field from particle and antiparticle
   summary: For spinless bosons of equal mass and opposite charges, combining a particle
@@ -341,6 +436,110 @@ nodes:
   - source: weinberg-1
     note: Superscript c labels the charge-conjugate particle; φ⁺c† is the adjoint
       of its annihilation field.
+- id: weinberg-1.connected-amplitude-separation-and-single-delta-condition
+  label: Connected amplitudes, separation, and the single-delta condition
+  summary: 'Cluster decomposition is equivalent to a connected S-matrix element vanishing
+    when any subset of its external particles is taken far from the others in coordinate
+    space. After Fourier transformation, translational and energy conservation require
+    overall momentum and energy delta functions, but the coefficient may not contain
+    additional momentum delta functions. Smoothness need only exclude singularities
+    as severe as delta functions: poles and branch cuts, including massless-exchange
+    behavior with power-law falloff, are allowed.'
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 180
+    - 181
+    - 182
+    note: The source proves the factorization equivalence, Fourier-transforms the
+      condition, and qualifies permitted singularities.
+  notation:
+  - source: weinberg-1
+    note: The connected element is written as an overall δ³ of total momentum times
+      δ of total energy times a coefficient C of external momenta.
+- id: weinberg-1.connected-diagram-perturbative-prescription
+  label: Connected-diagram prescription from time-dependent perturbation theory
+  summary: Expanding the S-matrix in time-ordered interaction-picture insertions and
+    commuting annihilation operators to the right converts each vacuum expectation
+    value into signed products of delta functions. Lines record the matched creation–annihilation
+    pairs and vertices record interaction insertions. Partitioning a diagram into
+    disconnected components factorizes the time-ordered contribution; after the combinatoric
+    cancellation, a connected S-matrix element is the sum of exactly those perturbative
+    contributions in which every external particle and interaction insertion is linked
+    by creations and annihilations.
+  kind: method
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 183
+    - 184
+    - 185
+    - 186
+    note: The source constructs the line-and-vertex bookkeeping, factors disconnected
+      components, and identifies the connected prescription.
+- id: weinberg-1.connected-graph-delta-counting
+  label: Graph count proving one momentum delta for a connected contribution
+  summary: With one three-momentum delta at each vertex, delta functions fix all nonloop
+    internal momenta. For a graph with V vertices, I internal lines, L independent
+    loops, and C connected components, V−I+L=C counts the remaining external momentum
+    constraints. Thus a connected contribution has C=1 and exactly one three-momentum-conservation
+    delta function.
+  kind: method
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 186
+    - 187
+    note: The source performs the delta counting and invokes the graph identity to
+      establish the one-delta conclusion.
+- id: weinberg-1.connected-multibody-lippmann-schwinger-limitation
+  label: Connected reformulation for multibody Lippmann–Schwinger equations
+  summary: For three or more particles, spectator delta functions in ordinary Lippmann–Schwinger
+    kernels prevent square integrability even after removing overall momentum conservation,
+    so direct finite-matrix approximation fails. The source says a connected-right-hand-side
+    reformulation is necessary for such problems; it notes recursive nonrelativistic
+    solutions but does not present a useful relativistic construction. It further
+    reports consistency of these nonperturbative equations with the one-delta condition,
+    while leaving a nonperturbative proof of the main theorem unavailable.
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 188
+    note: The source identifies the kernel obstruction, the connected reformulation,
+      and the stated nonperturbative limitation.
+- id: weinberg-1.connected-s-matrix-recursive-partition
+  label: Recursive connected S-matrix elements
+  summary: 'The full multiparticle S-matrix element is decomposed into a signed sum
+    over partitions of incoming and outgoing particles, each term a product of connected
+    S-matrix elements. This relation recursively defines the connected element: the
+    one-particle term is the stable-particle identity overlap, the two-particle connected
+    part is S−1, and higher-particle connected parts subtract every lower partition
+    product. The connected vacuum element is set to zero in this definition.'
+  kind: method
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 178
+    - 179
+    - 180
+    note: The source gives the partition formula, its recursion, the stable one-particle
+      case, and explicit two-, three-, and four-particle forms.
+  notation:
+  - source: weinberg-1
+    note: S^C_βα denotes a connected element; α and β each collect all particle labels
+      in an asymptotic state.
 - id: weinberg-1.conserved-poincare-generators
   label: Conserved momentum, angular momentum, and energy
   summary: With H=P0, the three-momentum, angular momentum, and energy commute with
@@ -417,6 +616,49 @@ nodes:
     - 150
     note: Equations (3.6.12)–(3.6.15) give the CPT amplitude relation, total-rate
       equality, and lifetime consequence.
+- id: weinberg-1.creation-annihilation-actions-on-fock-states
+  label: Creation and annihilation actions on Fock states
+  summary: The creation operator a†(q) prepends label q to a normalized multiparticle
+    state, so repeated creation builds the state from the vacuum. Its adjoint a(q)
+    removes each matching particle in turn, with the bosonic or fermionic exchange
+    sign, and annihilates the vacuum. The removal formula follows by comparing scalar
+    products using the permutation normalization.
+  kind: method
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 173
+    - 174
+    note: The source defines creation, derives the adjoint removal action from scalar
+      products, and gives the vacuum case.
+  notation:
+  - source: weinberg-1
+    note: a†(q) creates and a(q) annihilates; upper and lower signs in the removal
+      formula are for bosons and fermions respectively.
+- id: weinberg-1.creation-operator-symmetry-transformation-rules
+  label: Symmetry actions on creation operators
+  summary: Requiring Fock states built from a† to transform as their one-particle
+    constituents fixes the creation operator’s proper-orthochronous Lorentz action,
+    including the Wigner rotation and normalization factor. The source also writes
+    the corresponding charge-conjugation, parity, and time-reversal actions. The same
+    construction applies to in and out creation operators after replacing the free
+    Lorentz operator by the exact one.
+  kind: representation
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 176
+    - 177
+    note: The multiparticle transformation, invariant vacuum, and induced creation-operator
+      rules are displayed.
+  notation:
+  - source: weinberg-1
+    note: U0 acts on free states; W(Λ,p) is the massive-particle Wigner rotation.
+      The displayed discrete rules use the book’s species phases.
 - id: weinberg-1.cross-section-flux-and-invariant-relative-velocity
   label: Cross-section, flux, and invariant relative velocity
   summary: For two incoming particles, the cross-section is the transition rate divided
@@ -435,6 +677,29 @@ nodes:
     - 139
     note: The source defines flux and cross-section, derives the invariant spin sum
       and relative-velocity expression, and qualifies its center-of-mass interpretation.
+- id: weinberg-1.cross-species-exchange-ordering-convention
+  label: Cross-species exchange ordering convention
+  summary: 'For particles of different species, their ordering in a state-vector can
+    be fixed arbitrarily: one may always list species in a standard order and absorb
+    other orderings into phases. The source adopts the convention that any boson exchange,
+    including a boson with a fermion of another species, is symmetric, while exchanging
+    two fermions is antisymmetric. This convention is chosen to make symmetries relating
+    species, such as isospin, convenient; it is distinct from the physical identical-particle
+    exchange argument.'
+  kind: representation
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.1'
+    pages:
+    - 171
+    - 172
+    note: The source distinguishes arbitrary different-species ordering phases from
+      the chosen common boson–fermion convention and states its rotational rationale.
+  notation:
+  - source: weinberg-1
+    note: The convention extends the exchange sign to labels of different species
+      and to different spin components or helicities.
 - id: weinberg-1.dalitz-plot-three-body-dynamics-diagnostic
   label: Dalitz plot as a three-body dynamics diagnostic
   summary: For a three-body final state, the center-of-mass phase-space measure can
@@ -787,6 +1052,23 @@ nodes:
     - 29
     note: The source lists representative lowest-order reactions and characterizes
       their finite, experimentally reasonable results.
+- id: weinberg-1.finite-time-evolution-connected-delta-structure
+  label: Finite-time evolution has connected momentum, but no energy, deltas
+  summary: 'The connected-component and delta-counting argument also applies to finite-time
+    evolution U(t,t0): each connected part contains a single three-momentum-conservation
+    delta when the Hamiltonian coefficients satisfy the one-delta hypothesis. Unlike
+    the scattering S-matrix, finite-time U contains no energy-conservation delta;
+    the connected S-matrix has one such energy delta in the later Feynman-diagram
+    treatment.'
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 187
+    note: The source explicitly extends the argument to U(t,t0) and contrasts its
+      energy-delta structure with S.
 - id: weinberg-1.fourier-energy-denominator-dyson-route
   label: Fourier energy-denominator route to the Dyson series
   summary: Representing each old-fashioned energy denominator by its convergent time
@@ -1707,6 +1989,24 @@ nodes:
   notation:
   - source: weinberg-1
     note: Δ₊(x) denotes the positive-frequency integral in equation (5.2.7).
+- id: weinberg-1.normal-ordered-creation-annihilation-expansion
+  label: Normal-ordered expansion of an arbitrary operator
+  summary: Any operator can be expanded as integrals of coefficients multiplying a
+    normal-ordered product of creation operators followed by annihilation operators.
+    An induction on incoming and outgoing particle numbers chooses each coefficient
+    to set the remaining matrix element after lower-number contributions are fixed.
+    Repeated Fock brackets put an expression initially written in another order into
+    this form, generating delta-function terms.
+  kind: method
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 175
+    - 176
+    note: The source proves the general expansion by induction and explains normal
+      ordering through repeated brackets.
 - id: weinberg-1.old-fashioned-perturbation-covariant-equivalence
   label: Equivalence of complete old-fashioned and covariant perturbation theory
   summary: When all terms through a chosen order are retained, old-fashioned nonrelativistic
@@ -1951,6 +2251,27 @@ nodes:
     - 14
     note: Equation (1.1.32) and the surrounding discussion identify the allowed Pauli
       term and its magnetic-moment effect.
+- id: weinberg-1.perturbative-single-delta-cluster-theorem
+  label: Perturbative one-delta route to cluster decomposition
+  summary: For a normal-ordered Hamiltonian satisfying the one-delta coefficient hypothesis,
+    the perturbative connected-diagram expansion and graph count leave each connected
+    S-matrix contribution with only the overall three-momentum-conservation delta.
+    Together with the connected-amplitude separation criterion, this establishes the
+    forward perturbative route to cluster decomposition. The source presents a broader
+    converse only with its stated qualification and does not give a nonperturbative
+    proof of the main theorem.
+  kind: result
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 183
+    - 186
+    - 187
+    - 188
+    note: The packet states the result, derives its perturbative connected contribution
+      count, and qualifies the nonperturbative status.
 - id: weinberg-1.pion-muon-resolution-yukawa-meson
   label: Pion-muon distinction resolves the Yukawa-meson identification
   summary: 'The mesons prevalent in low-altitude cosmic rays interact too weakly with
@@ -2118,6 +2439,59 @@ nodes:
     pages:
     - 105
     note: Problem 6.
+- id: weinberg-1.problem-boson-contact-scattering-order-g
+  label: 'Problem: first-order bosonic contact scattering'
+  summary: For a real coupling multiplying a momentum-conserving a†a†aa interaction
+    of spinless massive bosons, calculate the center-of-mass S-matrix element through
+    first order in the coupling and obtain its differential cross-section. The task
+    requires evaluating the operator interaction between bosonic Fock states and converting
+    the transition result to the stated observable.
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 189
+    note: Problem 2 supplies the quartic interaction and asks for the order-g center-of-mass
+      amplitude and differential cross-section.
+  notation:
+  - source: weinberg-1
+    note: The problem uses a(p) for a spinless boson of mass M>0 and V=g∫d³p1…d³p4
+      δ³(p1+p2−p3−p4)a†(p1)a†(p2)a(p3)a(p4).
+- id: weinberg-1.problem-bosonic-coherent-state-fock-construction
+  label: 'Problem: construct a bosonic coherent state in the Fock basis'
+  summary: For ordinary complex annihilation eigenvalues λ(q), construct the bosonic
+    coherent state as a superposition of normalized multiparticle Fock states. The
+    annihilation action determines its recurrence across particle-number sectors.
+    A fermionic coherent-state construction would require Grassmann-valued eigenvalues
+    and is not supplied by this problem.
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 3
+    pages:
+    - 189
+    note: Problem 3 defines the annihilation-operator eigenvalue condition and requests
+      the Fock-state superposition.
+  notation:
+  - source: weinberg-1
+    note: The coherent state is Φ_λ and its annihilation eigenvalues are λ(q).
+- id: weinberg-1.problem-connected-s-matrix-generating-functionals
+  label: 'Problem: relate full and connected S-matrix generating functionals'
+  summary: Define bosonic generating functionals from full S-matrix elements and from
+    connected elements, then derive their relation. The task tests conversion of the
+    partition expansion into a functional identity rather than merely applying a supplied
+    connected amplitude.
+  kind: method
+  group: weinberg-1.scattering-theory-problems
+  evidence:
+  - source: weinberg-1
+    section: Problems 1
+    pages:
+    - 189
+    note: Problem 1 defines both generating functionals and requests their relation.
 - id: weinberg-1.problem-dyson-series-from-old-fashioned-perturbation
   label: 'Problem: Dyson expansion from old-fashioned perturbation theory'
   summary: 'Exercise request: derive the time-dependent perturbation expansion directly
@@ -2588,6 +2962,26 @@ nodes:
   notation:
   - source: weinberg-1
     note: The source writes the scalar representation as D(Λ) = 1.
+- id: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  label: One-delta Hamiltonian coefficient hypothesis
+  summary: In the normal-ordered Hamiltonian expansion, impose that each coefficient
+    h_NM contains exactly one three-momentum-conservation delta function and no additional
+    delta factor. Normal ordering by itself is unrestricted, so the single-delta requirement
+    is the substantive hypothesis used in the clustering argument.
+  kind: assumption
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 182
+    - 183
+    note: The packet gives the explicit h_NM factorization and distinguishes this
+      condition from a generic normal-ordered expansion.
+  notation:
+  - source: weinberg-1
+    note: h_NM=δ³(sum outgoing momenta−sum incoming momenta) times a coefficient with
+      no delta-function factor.
 - id: weinberg-1.sl2c-double-cover-of-lorentz-group
   label: SL(2,C) double cover of the proper orthochronous Lorentz group
   summary: A real four-vector corresponds to a Hermitian 2×2 matrix, whose determinant
@@ -2701,6 +3095,26 @@ nodes:
     - 150
     note: The source explicitly applies the other unitarity relation SS†=1 and gives
       equation (3.6.16).
+- id: weinberg-1.stable-one-particle-scattering-assumption
+  label: Stable one-particle scattering assumption
+  summary: For the one-particle connected element to equal the identity overlap and
+    for the two-particle connected term to reduce to S−1, assume a one-particle state
+    cannot transition to the vacuum or to any other particle-number sector. The connected
+    vacuum–vacuum element is set to zero for the recursive partition definition, while
+    the ordinary vacuum S-matrix is unity when external fields are time independent.
+  kind: assumption
+  group: weinberg-1.cluster-decomposition
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 179
+    note: The source explicitly assumes stable one-particle states and separately
+      sets the connected vacuum element to zero.
+  notation:
+  - source: weinberg-1
+    note: The assumption concerns S^C(q′,q); it does not identify the full vacuum
+      amplitude S_0,0 with the connected vacuum element.
 - id: weinberg-1.strangeness-associated-production-and-weak-decay
   label: Strangeness selection in strong production and weak decay
   summary: Approximate strangeness conservation explains associated production of
@@ -3048,6 +3462,45 @@ edges:
     - 144
     - 145
     note: The source assumes a scalar interaction density and imposes spacelike commutation.
+- id: weinberg-1.accepted-normalization-to-connected-partition
+  from: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  to: weinberg-1.connected-s-matrix-recursive-partition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The recursive partition formula carries the fermion signs generated by
+    rearranging multiparticle particle labels.
+  failure_mode: Without the signed permutation convention, the partition terms have
+    no prescribed boson–fermion sign.
+  evidence:
+  - source: weinberg-1
+    section: 4.1; 4.3
+    pages:
+    - 172
+    - 178
+    - 179
+    note: The packet uses the established Fock permutation signs in the connected
+      partition formula.
+- id: weinberg-1.accepted-normalization-to-operator-actions
+  from: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+  to: weinberg-1.creation-annihilation-actions-on-fock-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The annihilation action is derived by taking scalar products and substituting
+    the established permutation normalization.
+  failure_mode: Without that normalization, the removal sum and its exchange signs
+    do not follow.
+  evidence:
+  - source: weinberg-1
+    section: 4.1–4.2
+    pages:
+    - 172
+    - 173
+    note: The packet uses the all-permutation normalization to derive the annihilation
+      action.
 - id: weinberg-1.algebraic-route-to-s-unitarity
   from: weinberg-1.lippmann-schwinger-orthonormality-and-s-unitarity-route
   to: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
@@ -3281,6 +3734,23 @@ edges:
     - 17
     note: The source first gives the ladder matrices and then interprets their action
       and Hamiltonian spectrum.
+- id: weinberg-1.charge-conjugation-to-creation-operator-symmetry
+  from: weinberg-1.charge-conjugation-cp-cpt-process-relations
+  to: weinberg-1.creation-operator-symmetry-transformation-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Fock-space charge-conjugation rule is the creation-operator realization
+    of the one-particle particle–antiparticle interchange.
+  failure_mode: Without the one-particle charge-conjugation action, the species transformation
+    and phase in the operator rule are unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 177
+    note: The packet displays charge conjugation on the creation operator.
 - id: weinberg-1.charge-conjugation-to-neutral-pion-selection
   from: weinberg-1.charge-conjugation-cp-cpt-process-relations
   to: weinberg-1.charge-conjugation-neutral-pion-decay-selection
@@ -3319,6 +3789,45 @@ edges:
     - 204
     note: The source says it must suppose two opposite-charge bosons, then defines
       a field with the same Q commutator as the annihilation field.
+- id: weinberg-1.cluster-factorization-to-connected-separation
+  from: weinberg-1.cluster-decomposition-s-matrix-factorization
+  to: weinberg-1.connected-amplitude-separation-and-single-delta-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The connected separation criterion is presented as the condition equivalent
+    to the factorization principle.
+  failure_mode: Without the factorization requirement, vanishing of connected elements
+    at separation has no stated cluster interpretation.
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 178
+    - 180
+    note: The packet starts from factorization and proves the equivalence with connected-element
+      separation.
+- id: weinberg-1.cluster-factorization-to-exchange-argument
+  from: weinberg-1.cluster-decomposition-s-matrix-factorization
+  to: weinberg-1.bose-fermi-exchange-symmetry-cluster-argument
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exchange-phase argument invokes cluster decomposition to rule out
+    dependence on particles elsewhere in the universe.
+  failure_mode: Without the independence of distant experiments, the exclusion of
+    other-particle dependence in the phase is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: 4.1; 4.3
+    pages:
+    - 171
+    - 177
+    - 178
+    note: The packet explicitly names cluster decomposition in the exchange argument
+      and later supplies its S-matrix formulation.
 - id: weinberg-1.completeness-to-overlap-unitarity-route
   from: weinberg-1.asymptotic-completeness-assumption
   to: weinberg-1.asymptotic-overlap-unitarity-proof
@@ -3392,6 +3901,86 @@ edges:
     - 206
     note: The source applies parity to the two constituent fields, requires proportionality,
       and then gives the self-conjugate consequence.
+- id: weinberg-1.connected-diagrams-to-delta-count
+  from: weinberg-1.connected-diagram-perturbative-prescription
+  to: weinberg-1.connected-graph-delta-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The graph identity is applied to the line-and-vertex diagrams that define
+    a connected perturbative contribution.
+  failure_mode: Without that diagram construction, vertices, internal lines, loops,
+    and connected components are not the source-defined objects being counted.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 184
+    - 186
+    - 187
+    note: The packet defines the diagrams, identifies connected contributions, then
+      counts their delta functions.
+- id: weinberg-1.connected-partition-to-connected-separation
+  from: weinberg-1.connected-s-matrix-recursive-partition
+  to: weinberg-1.connected-amplitude-separation-and-single-delta-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equivalence argument applies the recursive connected-part partition
+    expansion to the factorization condition.
+  failure_mode: Without the connected decomposition, there is no object whose separation
+    behavior can establish the factorization property.
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 178
+    - 180
+    - 181
+    note: The packet refers back to the partition definition while deriving the spatial
+      and momentum-space criterion.
+- id: weinberg-1.connected-partition-to-generating-functional-problem
+  from: weinberg-1.connected-s-matrix-recursive-partition
+  to: weinberg-1.problem-connected-s-matrix-generating-functionals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested functional relation is the generating-functional form of
+    the full-to-connected partition decomposition.
+  failure_mode: Without the partition relation, the functional identity has no source-developed
+    combinatoric basis.
+  evidence:
+  - source: weinberg-1
+    section: 4.3; Problems 1
+    pages:
+    - 178
+    - 179
+    - 189
+    note: The packet defines connected partitions and the final problem asks for the
+      corresponding functional relation.
+- id: weinberg-1.connected-separation-to-perturbative-cluster-theorem
+  from: weinberg-1.connected-amplitude-separation-and-single-delta-condition
+  to: weinberg-1.perturbative-single-delta-cluster-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The count proves the momentum structure that the connected-amplitude
+    criterion identifies as the requirement for cluster decomposition.
+  failure_mode: Without that criterion, a single remaining momentum delta does not
+    establish the physical clustering conclusion.
+  evidence:
+  - source: weinberg-1
+    section: 4.3–4.4
+    pages:
+    - 182
+    - 183
+    - 187
+    note: The packet states the connected one-delta requirement before proving it
+      perturbatively from the Hamiltonian structure.
 - id: weinberg-1.continuous-unitary-symmetry-to-internal-selection
   from: weinberg-1.continuous-symmetries-unitary
   to: weinberg-1.internal-symmetry-s-matrix-selection-rules
@@ -3545,6 +4134,26 @@ edges:
     - 140
     note: The general cross-section precedes the center-of-mass phase-space reduction
       and equation (3.4.30).
+- id: weinberg-1.cross-species-convention-to-fock-brackets
+  from: weinberg-1.cross-species-exchange-ordering-convention
+  to: weinberg-1.canonical-fock-commutation-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mixed-species operator brackets inherit the exchange signs fixed
+    by the adopted state-ordering convention.
+  failure_mode: Without that convention, the commutation or anticommutation sign for
+    operators of unlike species has no defined basis.
+  evidence:
+  - source: weinberg-1
+    section: 4.1–4.2
+    pages:
+    - 171
+    - 172
+    - 174
+    note: The source adopts a sign convention across species and then states the corresponding
+      bracket rule for their creation and annihilation operators.
 - id: weinberg-1.decay-rate-to-time-dilation
   from: weinberg-1.decay-rate-and-narrow-width-validity
   to: weinberg-1.decay-rate-lorentz-time-dilation
@@ -3581,6 +4190,43 @@ edges:
     - 137
     - 139
     - 140
+- id: weinberg-1.delta-count-to-finite-time-evolution
+  from: weinberg-1.connected-graph-delta-counting
+  to: weinberg-1.finite-time-evolution-connected-delta-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source extends the same connected-component and delta-counting argument
+    to finite integration limits.
+  failure_mode: Without the established count, the finite-time result has no stated
+    reason to retain one momentum delta while losing energy conservation.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 187
+    note: The packet explicitly says the same arguments apply to U(t,t0) and contrasts
+      its energy-delta structure with S.
+- id: weinberg-1.delta-count-to-perturbative-cluster-theorem
+  from: weinberg-1.connected-graph-delta-counting
+  to: weinberg-1.perturbative-single-delta-cluster-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The V−I+L=C count supplies the proof that a connected contribution has
+    only its overall momentum-conservation delta.
+  failure_mode: Without this count, the forward perturbative conclusion about the
+    connected S-matrix has no proof of its one-delta property.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 186
+    - 187
+    note: The packet uses C=1 in the graph identity to obtain the one-delta connected
+      result.
 - id: weinberg-1.diagonal-phase-shift-to-resonance-eigenphase
   from: weinberg-1.diagonal-partial-wave-phase-shifts
   to: weinberg-1.resonance-isospin-eigenphase-and-background-interference
@@ -3601,6 +4247,24 @@ edges:
     - 165
     note: The source first defines diagonal phase shifts and later gives their resonant
       jump and background interference.
+- id: weinberg-1.discrete-symmetries-to-creation-operator-symmetry
+  from: weinberg-1.massive-intrinsic-parity-and-time-reversal
+  to: weinberg-1.creation-operator-symmetry-transformation-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Fock-space parity and time-reversal formulas lift the massive one-particle
+    inversion actions to creation operators.
+  failure_mode: Without the one-particle parity and time-reversal actions, the momentum,
+    spin, and sign factors in the operator rules are not determined.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 177
+    note: The packet displays the free-state discrete actions as creation-operator
+      formulas.
 - id: weinberg-1.distorted-born-to-watson
   from: weinberg-1.distorted-wave-born-approximation
   to: weinberg-1.watson-theorem-final-state-phase
@@ -3621,6 +4285,43 @@ edges:
     - 146
     note: The time-reversal discussion cites distorted-wave Born for this type of
       weak process; section 3.5 gives the construction.
+- id: weinberg-1.dyson-to-connected-diagram-prescription
+  from: weinberg-1.dyson-time-ordered-series-result
+  to: weinberg-1.connected-diagram-perturbative-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof begins with the time-ordered perturbation series whose terms
+    are partitioned into connected contributions.
+  failure_mode: Without the S-matrix time-ordered expansion, there are no interaction
+    insertions or time integrals to factor by components.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 183
+    - 185
+    - 186
+    note: The packet writes the time-ordered series and reorganizes its terms by connected
+      components.
+- id: weinberg-1.dyson-to-contact-scattering-problem
+  from: weinberg-1.dyson-time-ordered-series-result
+  to: weinberg-1.problem-boson-contact-scattering-order-g
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem expressly requests a perturbative S-matrix calculation through
+    first order in g.
+  failure_mode: Without the perturbative S-matrix expansion, the instruction to retain
+    the order-g contribution has no stated calculation route.
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 189
+    note: The packet explicitly requests perturbation theory through order g.
 - id: weinberg-1.dyson-to-local-microcausality
   from: weinberg-1.interaction-picture-dyson-series
   to: weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
@@ -4611,6 +5312,104 @@ edges:
     - 37
     note: The source first describes Feynman's rules and then states Dyson's equivalence
       and diagram-divergence analysis.
+- id: weinberg-1.fock-actions-to-bosonic-coherent-state-problem
+  from: weinberg-1.creation-annihilation-actions-on-fock-states
+  to: weinberg-1.problem-bosonic-coherent-state-fock-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Applying the bosonic annihilation action to each Fock sector supplies
+    the recurrence that determines the coherent-state superposition.
+  failure_mode: Without the annihilation action, the eigenvalue condition cannot be
+    imposed on the multiparticle expansion.
+  evidence:
+  - source: weinberg-1
+    section: 4.2; Problems 3
+    pages:
+    - 173
+    - 174
+    - 189
+    note: The packet derives the removal action and the problem asks for an annihilation-operator
+      eigenstate in the Fock basis.
+- id: weinberg-1.fock-actions-to-creation-operator-symmetry
+  from: weinberg-1.creation-annihilation-actions-on-fock-states
+  to: weinberg-1.creation-operator-symmetry-transformation-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation compares transformed states written as products of creation
+    operators acting on the invariant vacuum.
+  failure_mode: Without the Fock-state construction, the operator transformation cannot
+    be inferred from state transformation.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 173
+    - 176
+    - 177
+    note: The source uses the product construction of states to derive the transformation
+      rule.
+- id: weinberg-1.fock-brackets-to-connected-diagram-prescription
+  from: weinberg-1.canonical-fock-commutation-relations
+  to: weinberg-1.connected-diagram-perturbative-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The diagrammatic bookkeeping applies the established brackets to commute
+    annihilators through creators, with every contraction supplying a delta function.
+  failure_mode: Without the brackets, the lines and their delta functions in the perturbative
+    construction cannot be obtained.
+  evidence:
+  - source: weinberg-1
+    section: 4.2; 4.4
+    pages:
+    - 174
+    - 183
+    - 184
+    note: The packet rewrites the bracket and uses it to generate the line bookkeeping.
+- id: weinberg-1.fock-brackets-to-contact-scattering-problem
+  from: weinberg-1.canonical-fock-commutation-relations
+  to: weinberg-1.problem-boson-contact-scattering-order-g
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Evaluating the quartic a†a†aa interaction between bosonic external states
+    requires the bosonic contractions and their normalization factors.
+  failure_mode: Without the brackets, the order-g matrix element and identical-boson
+    contributions cannot be calculated.
+  evidence:
+  - source: weinberg-1
+    section: 4.2; Problems 2
+    pages:
+    - 174
+    - 189
+    note: The packet derives the brackets and the problem specifies a quartic creation–annihilation
+      interaction.
+- id: weinberg-1.fock-brackets-to-normal-order-expansion
+  from: weinberg-1.canonical-fock-commutation-relations
+  to: weinberg-1.normal-ordered-creation-annihilation-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Repeated brackets are the stated operation that moves every creator left
+    of every annihilator and generates the needed delta terms.
+  failure_mode: Without the brackets, an arbitrarily ordered operator expression cannot
+    be converted to the normal form used by the expansion.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 174
+    - 175
+    - 176
+    note: The packet establishes the brackets, proves the expansion, and invokes repeated
+      brackets for reordering.
 - id: weinberg-1.fock-to-spontaneous-emission
   from: weinberg-1.bosonic-fock-space-vacuum-energy
   to: weinberg-1.quantum-spontaneous-emission
@@ -4650,6 +5449,25 @@ edges:
     - 143
     note: The source explicitly says the series can also be derived directly from
       old-fashioned perturbation theory.
+- id: weinberg-1.free-hamiltonian-to-delta-count
+  from: weinberg-1.additive-operator-and-free-hamiltonian-form
+  to: weinberg-1.connected-graph-delta-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The count passes the one-delta condition from H to the interaction V
+    by using that the free-particle Hamiltonian H0 already has the condition.
+  failure_mode: Without the Fock form of H0, the proof does not establish that V separately
+    has one momentum delta at every vertex.
+  evidence:
+  - source: weinberg-1
+    section: 4.2; 4.4
+    pages:
+    - 176
+    - 186
+    note: The packet gives H0 in one-body Fock form and later uses its automatic one-delta
+      structure to isolate V.
 - id: weinberg-1.generalized-partial-waves-to-two-body-coupled-basis
   from: weinberg-1.generalized-partial-wave-discrete-basis
   to: weinberg-1.two-body-angular-momentum-coupled-partial-wave-basis
@@ -5069,6 +5887,24 @@ edges:
     - 111
     - 112
     note: The source substitutes (3.1.17) into wave packets before contour closure.
+- id: weinberg-1.lippmann-schwinger-to-multibody-limitation
+  from: weinberg-1.lippmann-schwinger-scattering-state-equations
+  to: weinberg-1.connected-multibody-lippmann-schwinger-limitation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated obstruction concerns the momentum kernel of the Lippmann–Schwinger
+    equation used for multibody scattering.
+  failure_mode: Without the Lippmann–Schwinger equation, the nonsquare-integrable
+    kernel and its replacement are undefined.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 188
+    note: The packet identifies the Lippmann–Schwinger kernel and explains its multibody
+      obstruction.
 - id: weinberg-1.lippmann-schwinger-to-old-fashioned-perturbation
   from: weinberg-1.lippmann-schwinger-scattering-state-equations
   to: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
@@ -5290,6 +6126,25 @@ edges:
     - 108
     note: The source writes W(Λ,p) and the massive rotation matrices in the multiparticle
       transformation rule.
+- id: weinberg-1.massive-wigner-to-creation-operator-symmetry
+  from: weinberg-1.massive-wigner-rotation
+  to: weinberg-1.creation-operator-symmetry-transformation-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free creation-operator Lorentz rule is fixed by the one-particle
+    massive Wigner-rotation transformation used for each Fock constituent.
+  failure_mode: Without the one-particle transformation law, the Wigner matrix and
+    normalization in the operator rule are unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 176
+    - 177
+    note: The packet recalls the multiparticle Lorentz transformation before deriving
+      the operator rule.
 - id: weinberg-1.massless-helicity-action-to-multiparticle-states
   from: weinberg-1.massless-helicity-lorentz-action
   to: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
@@ -5559,6 +6414,26 @@ edges:
     - 16
     note: The oscillator reduction on page 15 is followed by the canonical commutators
       and ladder representation on page 16.
+- id: weinberg-1.normal-order-to-single-delta-hypothesis
+  from: weinberg-1.normal-ordered-creation-annihilation-expansion
+  to: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The hypothesis constrains the h_NM coefficient functions in the normal-ordered
+    Hamiltonian representation.
+  failure_mode: Without the expansion, the h_NM condition cannot be distinguished
+    from a statement about arbitrary matrix elements.
+  evidence:
+  - source: weinberg-1
+    section: 4.2; 4.4
+    pages:
+    - 175
+    - 182
+    - 183
+    note: The packet first proves the normal form and then imposes the one-delta restriction
+      on Hamiltonian coefficients.
 - id: weinberg-1.observable-program-to-s-matrix
   from: weinberg-1.matrix-mechanics-observable-program
   to: weinberg-1.s-matrix-observable-formalism
@@ -5615,6 +6490,25 @@ edges:
     pages:
     - 166
     note: Problem 4 directly names expansion (3.5.3) as the input to derive (3.5.8).
+- id: weinberg-1.one-particle-normalization-to-creation-operator-symmetry
+  from: weinberg-1.lorentz-invariant-one-particle-normalization
+  to: weinberg-1.creation-operator-symmetry-transformation-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The operator Lorentz rule includes the square-root momentum normalization
+    inherited from the normalized one-particle transformation law.
+  failure_mode: Without the normalization convention, the momentum-dependent square-root
+    factor in the creation-operator transformation is not fixed.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 176
+    - 177
+    note: The packet recalls the normalized multiparticle Lorentz transformation and
+      derives the creator rule from it.
 - id: weinberg-1.one-particle-normalization-to-problem-partial-wave-normalization
   from: weinberg-1.lorentz-invariant-one-particle-normalization
   to: weinberg-1.problem-two-body-partial-wave-normalization
@@ -5674,6 +6568,43 @@ edges:
     - 166
     note: The chapter defines the S–T convention before asking for its standing-wave
       analogue.
+- id: weinberg-1.operator-actions-to-additive-free-hamiltonian
+  from: weinberg-1.creation-annihilation-actions-on-fock-states
+  to: weinberg-1.additive-operator-and-free-hamiltonian-form
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-body Fock operator is verified by the creation–annihilation action
+    on each particle in a multiparticle state.
+  failure_mode: Without that action, the integral a†af(q) is not shown to sum one-particle
+    eigenvalues.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 173
+    - 176
+    note: The state action is established before the source identifies the additive
+      one-body expression.
+- id: weinberg-1.operator-actions-to-fock-brackets
+  from: weinberg-1.creation-annihilation-actions-on-fock-states
+  to: weinberg-1.canonical-fock-commutation-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bracket identities apply the established creation and annihilation
+    actions on arbitrary states.
+  failure_mode: Without the actions, the canonical brackets would be asserted without
+    the chapter’s derivation.
+  evidence:
+  - source: weinberg-1
+    section: '4.2'
+    pages:
+    - 173
+    - 174
+    note: The packet applies both actions and subtracts or adds the resulting expressions.
 - id: weinberg-1.optical-theorem-to-cpt-total-rates
   from: weinberg-1.generalized-optical-theorem-from-s-unitarity
   to: weinberg-1.cpt-total-rate-equality-and-antiparticle-lifetime
@@ -6180,6 +7111,44 @@ edges:
     - 165
     note: The source derives eigenphase motion from the resonant S matrix, then includes
       diagonal background scattering and identifies the dip.
+- id: weinberg-1.s-matrix-to-cluster-factorization
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.cluster-decomposition-s-matrix-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Cluster decomposition is formulated as a condition on joint S-matrix
+    elements for asymptotic processes.
+  failure_mode: Without the S-matrix transition-amplitude meaning, the factorization
+    equation has no identified physical quantity.
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 177
+    - 178
+    note: The packet formulates the distant-laboratory requirement directly as a condition
+      on S-matrix elements.
+- id: weinberg-1.s-matrix-to-connected-partition
+  from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
+  to: weinberg-1.connected-s-matrix-recursive-partition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The partition formula recursively decomposes full S-matrix transition
+    elements into connected elements.
+  failure_mode: Without the full S-matrix transition element, the recursive definition
+    has no quantity to partition.
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 178
+    - 179
+    note: The packet decomposes multiparticle S-matrix elements and identifies the
+      recursion.
 - id: weinberg-1.s-operator-to-dyson-series
   from: weinberg-1.s-matrix-in-out-overlaps-and-unitarity
   to: weinberg-1.interaction-picture-dyson-series
@@ -6393,6 +7362,65 @@ edges:
     - 201
     note: The section first fixes the scalar representation and then writes the scalar
       annihilation and creation fields.
+- id: weinberg-1.single-delta-hypothesis-to-delta-count
+  from: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  to: weinberg-1.connected-graph-delta-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The count begins with exactly one three-momentum delta supplied by each
+    vertex.
+  failure_mode: Without the one-delta vertex hypothesis, V−I+L does not count the
+    remaining external constraints.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 183
+    - 186
+    - 187
+    note: The packet states the coefficient hypothesis and then uses one delta per
+      vertex in the count.
+- id: weinberg-1.single-delta-hypothesis-to-multibody-limitation
+  from: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  to: weinberg-1.connected-multibody-lippmann-schwinger-limitation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spectator delta factors arise in a Hamiltonian constrained to preserve
+    clustering, and the connected reformulation is assessed against the same one-delta
+    requirement.
+  failure_mode: Without the clustering constraint, the source’s reason for requiring
+    a connected multibody equation is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 187
+    - 188
+    note: The packet moves from the one-delta condition and spectator terms to the
+      connected equation requirement.
+- id: weinberg-1.single-delta-hypothesis-to-multiparticle-necessity
+  from: weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  to: weinberg-1.cluster-decomposition-forces-multiparticle-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The no-cancellation conclusion follows because the proposed three-particle
+    coefficient would have two delta factors, forbidden by the Hamiltonian condition.
+  failure_mode: Without the one-delta restriction, cancelling spectator terms would
+    not contradict clustering.
+  evidence:
+  - source: weinberg-1
+    section: '4.4'
+    pages:
+    - 187
+    - 188
+    note: The packet derives the spectator terms and rejects their cancellation by
+      the one-delta criterion.
 - id: weinberg-1.spin-zero-to-field-probability-resolution
   from: weinberg-1.spin-zero-klein-gordon-legitimacy
   to: weinberg-1.fields-are-not-probability-amplitudes
@@ -6449,6 +7477,24 @@ edges:
     pages:
     - 147
     - 150
+- id: weinberg-1.stability-to-connected-partition
+  from: weinberg-1.stable-one-particle-scattering-assumption
+  to: weinberg-1.connected-s-matrix-recursive-partition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-particle identity term and the two-particle S−1 simplification
+    used in the recursion require stable one-particle sectors.
+  failure_mode: Without stability, connected one-particle and two-particle terms can
+    include transitions to other sectors, invalidating those simplifications.
+  evidence:
+  - source: weinberg-1
+    section: '4.3'
+    pages:
+    - 179
+    note: The packet states the stability assumption before deriving the one- and
+      two-particle special cases.
 - id: weinberg-1.statistics-mass-to-complex-field
   from: weinberg-1.spinless-boson-and-mass-constraint
   to: weinberg-1.complex-causal-scalar-field
@@ -6542,6 +7588,23 @@ edges:
     - 163
     note: The chapter’s two-body cross-section normalization is used in the resonance
       cross-section formulas.
+- id: weinberg-1.two-body-phase-space-to-contact-scattering-problem
+  from: weinberg-1.two-body-phase-space-and-cross-section
+  to: weinberg-1.problem-boson-contact-scattering-order-g
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: After the center-of-mass two-body transition element is found, the requested
+    differential cross-section uses the reduced two-body phase space.
+  failure_mode: Without the two-body phase-space conversion, the amplitude cannot
+    be turned into the requested differential cross-section.
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 189
+    note: The packet asks for the corresponding center-of-mass differential cross-section.
 - id: weinberg-1.uv-to-fundamental-length
   from: weinberg-1.uv-self-energy-divergence
   to: weinberg-1.fundamental-length-nonlocal-cutoff
@@ -6679,6 +7742,10 @@ groups:
   title: Asymptotic scattering states
 - id: weinberg-1.birth-of-qft
   title: Birth of quantum field theory
+- id: weinberg-1.cluster-decomposition
+  title: Cluster decomposition and Fock-space construction
+  question: Which Fock-space Hamiltonian structures make distant scattering experiments
+    factorize?
 - id: weinberg-1.discrete-symmetries
   title: Discrete symmetry constraints
 - id: weinberg-1.historical-introduction
@@ -6722,6 +7789,27 @@ motivations:
     - 113
     note: The chapter frames scattering experiments by distant initial and final particles,
       defines their asymptotic labels, and identifies the transition overlap.
+- id: weinberg-1.why-cluster-decomposition
+  nodes:
+  - weinberg-1.cluster-decomposition-s-matrix-factorization
+  - weinberg-1.connected-amplitude-separation-and-single-delta-condition
+  - weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  - weinberg-1.perturbative-single-delta-cluster-theorem
+  summary: Predictions for one experiment should not require knowing what unrelated
+    experiments elsewhere are doing. The chapter turns that physical independence
+    into S-matrix factorization, a connected-amplitude condition, a Hamiltonian coefficient
+    hypothesis, and a perturbative route to clustering.
+  evidence:
+  - source: weinberg-1
+    section: 4; 4.3; 4.4
+    pages:
+    - 169
+    - 177
+    - 178
+    - 182
+    - 183
+    note: The chapter introduces uncorrelated distant experiments, formulates factorization,
+      and asks which Hamiltonian structure ensures it.
 - id: weinberg-1.why-combine-field-pieces
   nodes:
   - weinberg-1.hermitian-local-interaction-condition

@@ -106,3 +106,54 @@ units:
       id: weinberg-1.two-body-phase-space-to-decay-rate
     - kind: edges
       id: weinberg-1.decay-rate-to-two-body-phase-space
+- id: full-004
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The cross-species ordering convention is isolated from the mixed-species
+      bracket conclusion it determines.
+    alternatives:
+    - Add a necessary use-to-derive edge from the retained cross-species convention
+      to the canonical Fock brackets.
+    - Narrow the bracket result to same-species operators and move the unlike-species
+      bracket rule into the convention node.
+    resolution: Add the necessary use-to-derive convention-to-bracket edge.
+    rationale: Pages 171–172 choose exchange signs for unlike species, and page 174
+      uses that convention to state when unlike-species operators commute or anticommute.
+      Connecting the retained convention directly to the bracket result is the smallest
+      correction and preserves both useful records.
+    evidence:
+    - source: weinberg-1
+      section: 4.1–4.2
+      pages:
+      - 171
+      - 172
+      - 174
+    affected_records:
+    - kind: edges
+      id: weinberg-1.cross-species-convention-to-fock-brackets
+  - finding: 1
+    issue: The coherent-state exercise has an unnecessary compulsory prerequisite
+      from the earlier oscillator and vacuum-energy record.
+    alternatives:
+    - Remove the earlier bosonic oscillator and vacuum-energy edge because the chapter's
+      Fock-action route is complete.
+    - Retain the earlier oscillator record only as a helpful pedagogical edge rather
+      than a necessary prerequisite.
+    resolution: Remove the unnecessary bosonic oscillator and vacuum-energy prerequisite
+      edge.
+    rationale: Pages 173–174 supply the bosonic annihilation action and arbitrary
+      Fock sectors used to derive the recurrence requested on page 189. The earlier
+      oscillator and vacuum-energy discussion is useful background but contributes
+      no additional step required by this exercise.
+    evidence:
+    - source: weinberg-1
+      section: 4.2; Problems 3
+      pages:
+      - 173
+      - 174
+      - 189
+    affected_records:
+    - kind: edges
+      id: weinberg-1.bosonic-fock-input-to-coherent-state-problem
