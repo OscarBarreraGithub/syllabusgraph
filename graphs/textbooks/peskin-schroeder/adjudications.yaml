@@ -653,3 +653,78 @@ units:
       id: peskin-schroeder.problem-coleman-weinberg-nonzero-mass-endpoint
     - kind: nodes
       id: peskin-schroeder.problem-coleman-weinberg-superconductor-epsilon-flow
+- id: full-010
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Numerical Casimir answers were necessary premises for Problems 15.1 and
+      15.2.
+    alternatives:
+    - Remove the answer edges and add a definition-only Casimir node feeding both
+      exercises.
+    - Split definitions from numerical values inside the existing Casimir result before
+      linking the exercises.
+    resolution: Add a definition-only Casimir node and replace both numerical-result
+      prerequisite edges with definition edges.
+    rationale: Pages 498 and 500 define C(r), C2(r), the adjoint form, and d(r)C2(r)=d(G)C(r).
+      Page 502 asks students to calculate the SU(3) and SU(2) values, so the numerical
+      result remains available elsewhere but is no longer an exercise premise.
+    evidence:
+    - source: peskin-schroeder
+      section: 15.4 Representations and The Casimir Operator
+      pages:
+      - 498
+      - 500
+    - source: peskin-schroeder
+      section: Problems 15.1-15.2
+      pages:
+      - 502
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.casimir-definitions-and-index-relation
+    - kind: edges
+      id: ps10-sun-casimirs-to-su3-problem
+    - kind: edges
+      id: ps10-sun-casimirs-to-su2-adjoint-problem
+    - kind: edges
+      id: ps10-casimir-definitions-to-su3-problem
+    - kind: edges
+      id: ps10-casimir-definitions-to-su2-adjoint-problem
+  - finding: 1
+    issue: Private witnesses omitted operative formula operands and distinct exercise
+      branches.
+    alternatives:
+    - Use exact cached-text excerpts around each formula or task and inspect the original
+      rendered math where extraction drops glyphs.
+    - Defer the unit because the immutable text cache omits parts of several displayed
+      equations.
+    resolution: Add complete cached-text excerpts and use rendered-source inspection
+      for displayed operands dropped by extraction.
+    rationale: The added witnesses cover the DIS definitions and elastic condition,
+      Casimir definitions and values, complete Problems 15.1-15.2, the beta-function
+      derivation, and every branch of Problems 16.2-16.3. Rendered pp.477, 501-502,
+      531, and 544 resolve the displayed operands that the immutable text extraction
+      drops. The scalar-problem summary is also corrected to its displayed gauge-plus-one-complex-scalar
+      target.
+    evidence:
+    - source: peskin-schroeder
+      section: 14 Almost Free Partons
+      pages:
+      - 477
+    - source: peskin-schroeder
+      section: 15.4 The Casimir Operator and Problems 15.1-15.2
+      pages:
+      - 501
+      - 502
+    - source: peskin-schroeder
+      section: 16.5 The beta Function
+      pages:
+      - 531
+    - source: peskin-schroeder
+      section: Problems 16.2-16.3
+      pages:
+      - 544
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.problem-nonabelian-charged-scalar-beta-function
