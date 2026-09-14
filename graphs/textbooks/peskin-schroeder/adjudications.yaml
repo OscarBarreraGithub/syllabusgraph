@@ -345,3 +345,132 @@ units:
       pages:
       - 313
     affected_records: []
+- id: full-008
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Operative witnesses remain incomplete for corrected formulas, qualifications,
+      motivations, and multi-part exercises.
+    alternatives:
+    - Preserve the page-level fragments and defer the unit.
+    - Add claim-specific private witnesses and retain the corrected graph.
+    resolution: Add complete private witnesses and extend the symmetry motivation
+      evidence to the proof page.
+    rationale: The revised private set now covers the power-counting formula and cases,
+      multiloop derivation steps, all corrected exercise branches, the constant/varying-background
+      proof boundary, asserted field-type extension, and both parts of the symmetry
+      motivation. The page 345 displayed asymptotic formula was also checked in the
+      rendered source.
+    evidence:
+    - source: peskin-schroeder
+      section: 10.1, 10.2, 10.3, 10.5, Problems 10.2-10.4, 11.6, and Problems 11.1-11.3
+      pages:
+      - 315
+      - 316
+      - 328
+      - 329
+      - 333
+      - 334
+      - 338
+      - 339
+      - 340
+      - 341
+      - 342
+      - 343
+      - 344
+      - 345
+      - 384
+      - 386
+      - 387
+      - 389
+      - 390
+      - 391
+    affected_records:
+    - kind: motivations
+      id: peskin-schroeder.renormalization-and-symmetry-question
+  - finding: 1
+    issue: Corrected methods and exercises remain isolated from genuine accepted inputs,
+      and the broad Gross-Neveu task duplicates its branches.
+    alternatives:
+    - Keep the isolated and duplicate records and defer the unit.
+    - Add exact accepted-input edges and retain only the two disjoint Gross-Neveu
+      task branches.
+    resolution: Add the required use-to-derive inputs and remove the duplicate broad
+      Gross-Neveu exercise record.
+    rationale: The new edges supply the denominator identity, phi-four combinatorics,
+      Yukawa rules, dimensional regularization, free-field functional method, dimensional
+      power counting, and fermion functional/determinant inputs at the stages that
+      use them. The two Gross-Neveu records now divide parts (a-c) from (d-f), with
+      no exercise used as a premise.
+    evidence:
+    - source: peskin-schroeder
+      section: 10.2, 10.5, Problems 10.2, 11.1, and 11.3
+      pages:
+      - 328
+      - 329
+      - 338
+      - 339
+      - 342
+      - 343
+      - 344
+      - 345
+      - 389
+      - 390
+      - 391
+    affected_records:
+    - kind: nodes
+      id: peskin-schroeder.problem-gross-neveu-large-n-effective-potential
+    - kind: edges
+      id: peskin-schroeder.edge-denominator-identity-to-endpoint-subtraction
+    - kind: edges
+      id: peskin-schroeder.edge-phi4-symmetry-factors-to-two-loop-fieldstrength
+    - kind: edges
+      id: peskin-schroeder.edge-phi4-symmetry-factors-to-crossing-groups
+    - kind: edges
+      id: peskin-schroeder.edge-power-counting-to-problem-10-2
+    - kind: edges
+      id: peskin-schroeder.edge-yukawa-rules-to-problem-10-2
+    - kind: edges
+      id: peskin-schroeder.edge-dimreg-to-problem-10-2
+    - kind: edges
+      id: peskin-schroeder.edge-free-scalar-functional-to-problem-11-1
+    - kind: edges
+      id: peskin-schroeder.edge-renormalizable-power-counting-to-problem-11-1
+    - kind: edges
+      id: peskin-schroeder.edge-power-counting-to-problem-11-3-ac
+    - kind: edges
+      id: peskin-schroeder.edge-dirac-functional-to-problem-11-3-ac
+    - kind: edges
+      id: peskin-schroeder.edge-fermion-determinant-to-problem-11-3-df
+    - kind: edges
+      id: peskin-schroeder.edge-dimreg-to-problem-11-3-df
+  - finding: 2
+    issue: Problem 10.4 is incorrectly forced through the preceding pole-log cancellation
+      although the source presents another calculation route.
+    alternatives:
+    - Keep the preceding result compulsory and defer the unit.
+    - Make that result helpful and connect the exercise to its own jointly required
+      inputs.
+    resolution: Preserve the independent route with direct rules, loop-integration,
+      and Feynman-parameter prerequisites.
+    rationale: The source identifies the exercise as another approach to the two-loop
+      calculation. The revised graph therefore treats the preceding cancellation only
+      as context and makes the exercise depend on the phi-four rules, loop integration,
+      and denominator-combination skills used by its own fixed-transfer asymptotic
+      calculation.
+    evidence:
+    - source: peskin-schroeder
+      section: 10.5 and Problem 10.4
+      pages:
+      - 341
+      - 345
+    affected_records:
+    - kind: edges
+      id: peskin-schroeder.edge-two-loop-polelog-to-problem-10-4
+    - kind: edges
+      id: peskin-schroeder.edge-phi4-rules-to-problem-10-4
+    - kind: edges
+      id: peskin-schroeder.edge-loop-integrals-to-problem-10-4
+    - kind: edges
+      id: peskin-schroeder.edge-feynman-parameters-to-problem-10-4

@@ -39,6 +39,19 @@ nodes:
     section: Problem 6.3(c)
     pages:
     - 210
+- id: peskin-schroeder.bare-to-renormalized-parameter-elimination
+  label: Bare perturbation theory and renormalization
+  summary: Bare perturbation theory regulates diagrams in terms of bare mass, coupling,
+    and cutoff, computes physical parameters and field strengths consistently, and
+    eliminates bare parameters in favor of measured ones. In a renormalizable theory
+    the resulting S-matrix expression is finite as the ultraviolet cutoff is removed.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
 - id: peskin-schroeder.bosonic-functional-determinant
   label: Bosonic functional determinant
   summary: A quadratic scalar functional integral formally gives an inverse square-root
@@ -67,6 +80,28 @@ nodes:
     - 152
     note: The text derives the resonance constraint and the production-width relation,
       then generalizes the spin factor.
+- id: peskin-schroeder.bphz-and-two-loop-phi4-nonlocal-cancellation
+  label: BPHZ finiteness and the two-loop phi-four cancellation
+  summary: The BPHZ theorem states that in a renormalizable theory all divergences
+    at every perturbative order are removed by counterterms for superficially divergent
+    amplitudes. The two-loop phi-four four-point example organizes crossing-related
+    diagrams so a first-order vertex counterterm cancels momentum-dependent nonlocal
+    terms, leaving momentum-independent divergences for the second-order vertex counterterm;
+    the remaining poles can be double poles and finite high-energy terms contain double
+    logarithms.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: 10.4–10.5
+    pages:
+    - 338
+    - 339
+    - 340
+    - 341
+    - 342
+    - 343
+    - 344
 - id: peskin-schroeder.breit-wigner-resonance-width-and-time-dilation
   label: Breit-Wigner width, rest-frame decay rate, and time dilation
   summary: Near an unstable-particle resonance, the invariant Breit-Wigner denominator
@@ -79,6 +114,21 @@ nodes:
     section: '4.5'
     pages:
     - 101
+- id: peskin-schroeder.broken-on-sigma-counterterms
+  label: Symmetry-linked counterterms in the broken O(N) model
+  summary: Although the shifted linear sigma model has eight superficially divergent
+    amplitude types, rewriting the original symmetric Lagrangian supplies only three
+    independent counterterms, delta-Z, delta-mu, and delta-lambda. Their many shifted
+    vertices are linked, so adding independent symmetry-breaking counterterms would
+    be necessary only if quantum theory failed to preserve O(N).
+  kind: concept
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 353
+    - 354
 - id: peskin-schroeder.canonical-dirac-momentum-and-hamiltonian
   label: Canonical Dirac momentum and Hamiltonian
   summary: For L=ψ̄(iγ·∂−m)ψ, the canonical momentum conjugate to ψ is π_ψ=iψ†. The
@@ -199,6 +249,20 @@ nodes:
     - 51
     note: The text relates the two currents to Noether transformations and states
       the mass qualification.
+- id: peskin-schroeder.classical-goldstone-theorem
+  label: Classical Goldstone theorem from symmetry of the potential
+  summary: Every spontaneously broken continuous symmetry yields a massless scalar.
+    At a constant potential minimum, differentiating the symmetry-invariance identity
+    shows that the broken transformation direction is a zero eigenvector of the Hessian,
+    whose eigenvalues are the scalar masses.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 351
+    - 352
 - id: peskin-schroeder.classical-soft-bremsstrahlung-spectrum
   label: Classical soft-bremsstrahlung spectrum
   summary: Solve the worldline current in Lorenz gauge with retarded boundary conditions,
@@ -772,6 +836,100 @@ nodes:
     - 65
     note: The section defines the operations, gives the four Lorentz components, and
       discusses their physical status.
+- id: peskin-schroeder.discrete-symmetry-breaking-scalar-shift
+  label: Discrete scalar symmetry breaking by shifting about a vacuum
+  summary: For a real phi-four theory with negative mass-squared, the even potential
+    has two uniform minima phi-zero=plus-or-minus v. Shifting about one minimum removes
+    the linear term and yields a massive scalar with cubic and quartic interactions;
+    the original discrete symmetry survives as relations among their coefficients.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 348
+- id: peskin-schroeder.effective-action-1pi-generating-functional
+  label: Effective action generates one-particle-irreducible amplitudes
+  summary: E[J]=−i log Z[J] generates connected correlators. The second derivative
+    of Gamma is the inverse exact propagator, and higher derivatives are the one-particle-irreducible
+    correlators; attaching full propagators reconstructs connected amplitudes and
+    S-matrix information.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.5'
+    pages:
+    - 379
+    - 380
+    - 381
+    - 382
+    - 383
+- id: peskin-schroeder.effective-action-background-field-expansion
+  label: Background-field expansion of the effective action
+  summary: Write phi=phi-cl+eta and choose the leading source so the eta-linear term
+    vanishes. The quadratic fluctuation operator produces a functional determinant,
+    cubic and higher derivatives produce vacuum diagrams with its inverse as propagator,
+    and ordinary counterterms plus a source counterterm cancel divergences and tadpoles.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 370
+    - 371
+    - 372
+    - 373
+- id: peskin-schroeder.effective-action-legendre-transform
+  label: Effective action as a functional Legendre transform
+  summary: With external source J(x), the source derivative of the vacuum-energy functional
+    defines the classical field phi-cl(x). The Legendre transform Gamma[phi-cl]=−E[J]−integral-J-phi-cl
+    has functional derivative −J, so at J=0 its stationary configurations are quantum
+    states.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 364
+    - 365
+    - 366
+    - 367
+- id: peskin-schroeder.effective-action-varying-background-proof-boundary
+  label: Effective-action renormalization boundary for varying backgrounds
+  summary: The general argument is presented for scalar fields and constant backgrounds,
+    where BPHZ applies after the propagators become ordinary Klein-Gordon propagators.
+    For smoothly varying backgrounds the source gives an intuitive locality and derivative-expansion
+    argument rather than a BPHZ-level proof, reporting two-loop checks for several
+    nontrivial configurations; spinor and vector generalization is asserted rather
+    than derived.
+  kind: assumption
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 386
+    - 387
+- id: peskin-schroeder.effective-potential-vacua-and-convexity
+  label: Effective potential, vacuum selection, and convexity
+  summary: For translation-invariant fields Gamma equals minus spacetime volume times
+    V-eff; stationary points solve its ordinary derivative equation and its absolute
+    minimum is the stable vacuum. Exact phase separation makes V-eff convex, while
+    a fixed constant-background calculation can display unstable and metastable branches;
+    the absolute minimum is unchanged.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 367
+    - 368
+    - 369
 - id: peskin-schroeder.effective-theory-relevant-parameters-and-degrees-of-freedom
   label: Effective-theory parameters and long-distance degrees of freedom
   summary: Writing a large-distance effective theory requires identifying both the
@@ -817,6 +975,21 @@ nodes:
     - 184
     - 185
     - 186
+- id: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
+  label: Endpoint subtraction isolates the two-loop nonlocal pole
+  summary: After Feynman-parameter combination, the w-to-zero endpoint supplies an
+    additional pole. Adding and subtracting f(0) isolates a remainder with only a
+    local momentum-independent simple-pole residue and a first term whose pole multiplies
+    log[m-squared−y(1−y)p-squared], the nonlocal divergence.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 341
+    - 342
+    - 343
 - id: peskin-schroeder.equivalent-photon-polarization-independence-assumption
   label: Polarization-independence assumption in the equivalent-photon approximation
   summary: The final equivalent-photon result assumes that the target cross sections
@@ -874,6 +1047,19 @@ nodes:
     - 146
     note: The text contrasts the explicit-spinor route with traces and computes its
       currents and amplitudes.
+- id: peskin-schroeder.external-momentum-derivative-power-counting
+  label: External-momentum differentiation lowers superficial divergence
+  summary: For an overall electron self-energy divergence, differentiating a propagator
+    with respect to its external momentum lowers D by one. The argument needs qualification
+    when the ultraviolet divergence is in a subdiagram, and the Taylor coefficients
+    require infrared regulation to compute explicitly.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 319
 - id: peskin-schroeder.faddeev-popov-gauge-fixing-abelian
   label: Faddeev–Popov gauge fixing in Abelian theory
   summary: Insert an integral over gauge transformations, a gauge-condition delta
@@ -1121,6 +1307,19 @@ nodes:
     section: 9.6 Symmetries in the Functional Formalism
     pages:
     - 311
+- id: peskin-schroeder.furry-theorem-photon-odd-point-vanishing
+  label: Furry theorem for odd photon-current amplitudes
+  summary: Lorentz invariance and charge conjugation make the photon one-point function
+    vanish; charge conjugation similarly makes vacuum expectation values of an odd
+    number of electromagnetic currents, including the photon three-point function,
+    vanish.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 318
 - id: peskin-schroeder.gauge-current-and-ward-identity-distinction
   label: Gauge symmetry, current conservation, and Ward identity
   summary: The text distinguishes gauge invariance as a Lagrangian symmetry, current
@@ -1182,6 +1381,19 @@ nodes:
     section: 9.2 Functional Quantization of Scalar Fields
     pages:
     - 288
+- id: peskin-schroeder.general-feynman-denominator-identity-proof
+  label: General denominator-combination identity and proof
+  summary: The two-loop analysis combines unequal denominator powers using the beta-function
+    identity with Gamma(a+b)/(Gamma(a)Gamma(b)). The source proves the special case
+    by a change of integration variable and states that the more general formula follows
+    by induction.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 342
 - id: peskin-schroeder.general-noether-schwinger-dyson-identity
   label: General Noether Schwinger–Dyson identity
   summary: For fields varied by δφa=εAφa under a global symmetry, localizing ε(x)
@@ -2039,6 +2251,22 @@ nodes:
   - source: peskin-schroeder-notation
     note: Four-vectors are light italic, three-vectors boldface, and unit three-vectors
       light italic with a hat.
+- id: peskin-schroeder.msbar-scale-and-large-log-qualification
+  label: Modified minimal subtraction, scale dependence, and large logarithms
+  summary: MS-bar subtracts the dimensional pole together with conventional gamma
+    and log(4-pi) terms, introducing an arbitrary mass scale M. Shifting M can be
+    compensated by shifts of renormalized parameters, but when logarithms grow enough
+    to compete with a small coupling the fixed-order effective potential is not reliable
+    for deciding symmetry breaking.
+  kind: assumption
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 377
+    - 378
+    - 379
 - id: peskin-schroeder.naive-dirac-commutator-instability
   label: Failure of commutator quantization for the Dirac field
   summary: Expanding the Dirac field in the one-particle Hamiltonian eigenbasis with
@@ -2117,6 +2345,83 @@ nodes:
     - 150
     note: The source defines relative variables, the momentum-space wavefunction,
       normalization, and spin replacements.
+- id: peskin-schroeder.on-linear-sigma-model-broken-vacuum
+  label: O(N) linear sigma model and broken vacuum
+  summary: The O(N)-invariant scalar model has a degenerate trough of minima of fixed
+    field-vector length. Choosing the vacuum along one component and writing phi=(pi-k,v+sigma)
+    exposes a massive radial sigma field, N−1 massless tangential pions, and only
+    O(N−1) as manifest unbroken symmetry.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 349
+    - 350
+- id: peskin-schroeder.on-sigma-effective-potential-determinant
+  label: O(N) effective potential from fluctuation determinants
+  summary: For a constant O(N) background, orienting it along one component splits
+    the fluctuation determinant into N−1 transverse and one radial Klein-Gordon determinant.
+    Its dimensional-regularization poles are canceled by the symmetric mass and quartic
+    counterterms; source-counterterm removal makes ordinary diagrammatic corrections
+    begin at two loops.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 374
+    - 375
+    - 376
+- id: peskin-schroeder.on-sigma-one-loop-four-point-cancellations
+  label: One-loop O(N) four- and three-point cancellation
+  summary: Dimensional power counting makes loops with enough propagators or mass-dimension
+    cubic vertices finite. The divergent sigma and pion four-point diagrams have the
+    symmetry-linked index structure canceled by the one delta-lambda, and the corresponding
+    three-point divergences are the same structures with an external leg replaced
+    by v.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 356
+    - 357
+    - 358
+    - 359
+    - 360
+- id: peskin-schroeder.on-sigma-renormalization-conditions
+  label: Linear sigma renormalization conditions with a tadpole convention
+  summary: 'Use three conditions: cancel the one-sigma tadpole so the chosen v is
+    retained, fix the sigma field strength, and fix the threshold four-sigma amplitude.
+    The physical sigma mass can then differ finitely from its classical relation to
+    mu and lambda.'
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 355
+- id: peskin-schroeder.on-sigma-tadpole-and-goldstone-one-loop
+  label: One-loop tadpole cancellation and massless pions
+  summary: An infrared pion-mass regulator clarifies massless tadpoles while the tadpole
+    condition fixes delta-mu. The linked counterterms cancel sigma two-point divergences;
+    at this order delta-Z vanishes. The complete pion two-point amplitude at zero
+    momentum is finite and vanishes, verifying that Goldstone bosons remain massless
+    at one loop.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 361
+    - 362
+    - 363
 - id: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
   label: One-loop vacuum polarization, pair threshold, and unitarity check
   summary: Dimensional regularization gives the transverse one-loop photon self-energy
@@ -2262,6 +2567,20 @@ nodes:
     section: 9.1 Path Integrals in Quantum Mechanics
     pages:
     - 281
+- id: peskin-schroeder.phi4-field-rescaling-counterterm-split
+  label: Renormalized phi-four Lagrangian and counterterm split
+  summary: Rescale phi=Z^(1/2) phi-r so the two-point pole has unit residue, then
+    define delta-Z, delta-m, and delta-lambda by splitting the bare Lagrangian into
+    physical-mass and physical-coupling terms plus counterterms. This is a rearrangement
+    of the same bare Lagrangian, not an added interaction.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 324
+    - 325
 - id: peskin-schroeder.phi4-momentum-space-feynman-rules
   label: Momentum-space phi-four Feynman rules
   summary: Fourier transforming each propagator gives i/(p^2-m^2+i epsilon); vertex
@@ -2295,6 +2614,20 @@ nodes:
     section: '4.4'
     pages:
     - 94
+- id: peskin-schroeder.phi4-primitive-divergences-and-z2-symmetry
+  label: Phi-four primitive divergences and odd-amplitude exclusion
+  summary: In four-dimensional phi-four theory D=4−N. The phi-to-minus-phi symmetry
+    eliminates odd external-leg amplitudes, leaving the vacuum, two-point, and four-point
+    primitive divergent amplitudes; excluding the vacuum shift leaves three infinite
+    constants for mass, coupling, and field strength.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
+    - 324
 - id: peskin-schroeder.phi4-symmetry-factors
   label: Phi-four diagram symmetry factors
   summary: For phi-four diagrams, vertex permutations cancel the Taylor-series factorial
@@ -2319,6 +2652,49 @@ nodes:
     pages:
     - 110
     - 112
+- id: peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  label: Two-loop phi-four crossing groups and factorized Group I subtraction
+  summary: Crossing reduces the sixteen two-loop four-point diagrams to six distinct
+    diagrams. Separating the one-loop vertex counterterm into threshold pieces organizes
+    the first five diagrams into three crossing-related groups; Group I factors into
+    V(p-squared) terms, so V(p-squared)−V(4m-squared) is finite and only a momentum-independent
+    square remains for the second-order counterterm.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 338
+    - 339
+    - 340
+- id: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
+  label: Phi-four two-loop field-strength and subdivergence structures
+  summary: The first nonzero phi-four M-squared and delta-Z occur at order lambda-squared.
+    Of the three two-loop two-point structures, the one-loop vertex-counterterm insertion
+    cancels the region with one large and one small loop momentum, while the propagator
+    counterterm cancels the remaining both-large-momenta divergence.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: peskin-schroeder.phi4-two-point-onshell-counterterms
+  label: Phi-four two-point on-shell counterterms
+  summary: The full propagator is a geometric series in the one-particle-irreducible
+    insertion M-squared. Pole location and unit residue require M-squared(m-squared)=0
+    and its p-squared derivative to vanish; at one loop in phi-four theory this gives
+    delta-Z=0 and a mass counterterm that cancels the tadpole insertion.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
 - id: peskin-schroeder.photon-mediated-second-order-amplitude
   label: Photon-mediated second-order amplitude
   summary: Because electromagnetism couples electrons and muons through the photon
@@ -2433,6 +2809,56 @@ nodes:
     section: Problem 9.2(a)
     pages:
     - 313
+- id: peskin-schroeder.problem-ch10-phi4-fixedt-leading-logs
+  label: 'Problem: phi-four fixed-t high-energy leading logarithms'
+  summary: Problem 10.4 asks for leading terms in boson scattering as s tends to infinity
+    at fixed t, neglecting internal masses while retaining external masses only where
+    needed as infrared regulators, and extracting the leading logarithms.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.4
+    pages:
+    - 345
+- id: peskin-schroeder.problem-ch10-phi4-two-loop-field-strength
+  label: 'Problem: phi-four two-loop field-strength renormalization'
+  summary: Problem 10.3 asks for the massless dimensional-regularization two-loop
+    propagator contribution near d=4, verification that its second diagram vanishes
+    there, and the resulting pole canceled by a field-strength counterterm.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.3
+    pages:
+    - 345
+- id: peskin-schroeder.problem-ch10-qed-odd-even-photon-divergences
+  label: 'Problem: one-loop QED odd- and four-photon amplitudes'
+  summary: Problem 10.1 asks for direct one-loop verification that odd-photon amplitudes
+    cancel in pairs and that the potential logarithmic divergences in the six four-photon
+    diagrams cancel.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.1
+    pages:
+    - 344
+- id: peskin-schroeder.problem-ch10-yukawa-renormalization
+  label: 'Problem: pseudoscalar Yukawa renormalization'
+  summary: Problem 10.2 asks for superficially divergent amplitudes, renormalized
+    rules, and one-loop divergent counterterms for a parity-invariant pseudoscalar
+    Yukawa theory. It requires a scalar quartic interaction and counterterm because
+    the four-scalar amplitude diverges, even if its renormalized value is chosen zero.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.2
+    pages:
+    - 344
+    - 345
 - id: peskin-schroeder.problem-classical-source-poisson-statistics
   label: 'Problem: source-created-particle Poisson statistics'
   summary: Exercise 4.1 asks for a perturbative derivation of the no-particle probability,
@@ -2568,6 +2994,31 @@ nodes:
     - 73
     note: The problem defines Grassmann algebra and asks for reality and variational
       derivation.
+- id: peskin-schroeder.problem-gross-neveu-determinant-minimum-large-n
+  label: 'Problem: Gross-Neveu determinant, broken minimum, and large-N suppression'
+  summary: Problem 11.3 separately asks to diagonalize the Dirac determinant for the
+    one-loop effective potential, minimally subtract its alpha-squared renormalization,
+    establish a scheme-independent broken minimum at this order, and show higher contributions
+    are suppressed by N inverse at fixed g-squared-N.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d–f)
+    pages:
+    - 391
+- id: peskin-schroeder.problem-gross-neveu-symmetry-and-auxiliary-field
+  label: 'Problem: Gross-Neveu discrete chiral symmetry and auxiliary field'
+  summary: Problem 11.3 asks to establish the two-dimensional discrete chiral symmetry
+    that forbids a fermion mass, verify renormalizability by dimensional analysis,
+    and represent the four-fermion functional integral with an auxiliary scalar field.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(a–c)
+    pages:
+    - 390
 - id: peskin-schroeder.problem-higgs-scalar-gminus2-constraint
   label: 'Problem: scalar Higgs contribution and constraint for electron g minus 2'
   summary: Problem 6.3(a-b) asks for the scalar virtual-Higgs one-loop contribution
@@ -2740,6 +3191,20 @@ nodes:
     - 170
     note: The exercise specifies the repeated Rutherford route and the independent
       heavy-muon limit.
+- id: peskin-schroeder.problem-natural-relation-with-fermions
+  label: 'Problem: finite natural relation in a broken fermion model'
+  summary: Problem 11.2 asks to show a global symmetry and its spontaneous breaking,
+    shift to the broken variables, derive the fermion mass relation, and show its
+    one-loop correction is nonzero but finite under conditions fixing v and the zero-transfer
+    Yukawa coupling.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.2
+    pages:
+    - 389
+    - 390
 - id: peskin-schroeder.problem-phi4-one-loop-optical-theorem
   label: 'Problem: direct phi-four one-loop calculation and optical theorem'
   summary: Problem 7.1 asks for all three one-loop boson-boson scattering diagrams
@@ -2896,6 +3361,18 @@ nodes:
     section: Problem 9.1(c)
     pages:
     - 312
+- id: peskin-schroeder.problem-spin-wave-theory
+  label: 'Problem: spin-wave theory and low-dimensional order'
+  summary: Problem 11.1 asks to derive an exponential free-field correlator identity,
+    formulate the U(1) spin-wave effective theory, and compute its correlation behavior
+    for dimensions one through four.
+  kind: method
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.1
+    pages:
+    - 389
 - id: peskin-schroeder.problem-spinor-helicity-photon-polarizations
   label: 'Problem: spinor-helicity photon polarization vectors'
   summary: Problem 5.6 constructs photon helicity polarization vectors from a photon
@@ -3080,6 +3557,19 @@ nodes:
     section: 9.5 Functional Quantization of Spinor Fields
     pages:
     - 303
+- id: peskin-schroeder.qed-graph-topology-and-primitive-amplitudes
+  label: QED topology reduction to primitively divergent amplitudes
+  summary: Using L=Pe+Pγ−V+1 and QED vertex incidence, D depends only on external
+    legs. It therefore suffices to classify amputated one-particle-irreducible amplitudes;
+    other divergences arise by their insertion as subdiagrams.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+    - 317
 - id: peskin-schroeder.qed-minimal-coupling-and-local-gauge-symmetry
   label: QED minimal coupling and local gauge symmetry
   summary: QED combines the free Dirac and Maxwell terms with the electron-current
@@ -3092,6 +3582,46 @@ nodes:
     section: '4.1'
     pages:
     - 78
+- id: peskin-schroeder.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  label: One-loop QED delta-m, delta-2, and delta-3 in dimensional regularization
+  summary: In the stated dimensional-regularization scheme, the epsilon-dependent
+    Dirac contraction terms enter the electron self-energy before the on-shell conditions
+    determine delta-m and delta-2. The transverse photon self-energy at q-squared=0
+    determines delta-3.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+- id: peskin-schroeder.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  label: One-loop QED delta-1 and all-orders Ward recursion
+  summary: The zero-transfer vertex integral in dimensional regularization fixes delta-1.
+    An integration by parts relates it to delta-2, and gauge invariance of the regulated
+    counterterm-free Lagrangian gives the Ward identity underlying the recursive all-orders
+    equality Z1=Z2.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+- id: peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints
+  label: QED primitive divergences constrained by chiral and Ward identities
+  summary: Electron self-energy, electron-photon vertex, and photon self-energy are
+    the only primitively divergent QED amplitudes. Chiral symmetry forbids an electron
+    mass shift independent of m, while Ward identities reduce photon self-energy divergence
+    to logarithmic form and make four-photon scattering finite.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 319
+    - 320
 - id: peskin-schroeder.qed-tree-amplitude-rule
   label: QED tree amplitude from propagator, vertices, and spinors
   summary: For one-photon annihilation, the QED rules attach -i g_mu_nu/q-squared
@@ -3113,6 +3643,20 @@ nodes:
   - source: peskin-schroeder
     note: gamma^mu are four constant 4-by-4 matrices; u,v are column and u-bar,v-bar
       row spinors.
+- id: peskin-schroeder.qed-uv-ir-regulator-separation
+  label: Source-specific UV and IR regulator choice in QED
+  summary: For its collected one-loop QED calculation, the source chooses dimensional
+    regularization for ultraviolet divergences and a photon mass mu for infrared control.
+    This is the scheme used in that calculation, not a claim that this precise IR
+    regulator is required for the Ward identity.
+  kind: assumption
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+    - 334
 - id: peskin-schroeder.quantized-dirac-field-expansion
   label: Quantized Dirac field, vacuum, and particle-antiparticle modes
   summary: The finalized field expansion contains a_s(p)u_s(p)e^{−ip·x} and b_s†(p)v_s(p)e^{ip·x};
@@ -3129,6 +3673,20 @@ nodes:
     - 59
     note: Equations (3.99)–(3.107) summarize the field, algebra, vacuum, Hamiltonian,
       momentum, and Lorentz-normalized one-particle states.
+- id: peskin-schroeder.quantum-goldstone-theorem
+  label: Goldstone theorem to all quantum orders
+  summary: The symmetry-invariant effective potential has its minimum at the quantum
+    vacuum. If a continuous symmetry is broken there, the Hessian of V-eff has a zero
+    symmetry-direction eigenvalue; because the second functional derivative of Gamma
+    is the inverse propagator, this gives a massless scalar pole at zero momentum
+    to all perturbative orders.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 388
 - id: peskin-schroeder.quark-pair-r-ratio
   label: High-energy quark-pair R ratio and color multiplicity
   summary: At energies well above accessible quark thresholds, e+e- to q qbar inherits
@@ -3236,6 +3794,20 @@ nodes:
     - 14
     note: The discussion gives variable particle number and a nonzero spacelike single-particle
       propagation amplitude as motivations for a multiparticle field theory.
+- id: peskin-schroeder.renormalizability-classification-by-dimension
+  label: Renormalizability classification from dimension and power counting
+  summary: In d-dimensional QED, d<4 is super-renormalizable, d=4 renormalizable,
+    and d>4 non-renormalizable by superficial counting. In scalar phi-to-the-n theory,
+    the field has dimension (d−2)/2 and the coupling has dimension d−n(d−2)/2; positive,
+    zero, and negative coupling dimension give the corresponding three classifications.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 321
+    - 322
 - id: peskin-schroeder.renormalizable-qft-fixed-physical-parameters
   label: Renormalizable QFT and fixed physical parameters
   summary: The chapter previews renormalizable QFT as the class in which all ultraviolet
@@ -3249,6 +3821,35 @@ nodes:
     section: Chapter 8, Invitation
     pages:
     - 265
+- id: peskin-schroeder.renormalization-conditions-and-phi4-one-loop-vertex
+  label: Renormalization conditions and one-loop phi-four vertex subtraction
+  summary: Define the physical mass by the propagator pole and its unit residue, and
+    define lambda by the four-point amplitude at threshold. Dimensional regularization
+    plus the s, t, and u one-loop diagrams fixes delta-lambda so their threshold value
+    cancels, leaving a finite subtracted amplitude.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 325
+    - 326
+    - 327
+- id: peskin-schroeder.renormalized-qed-counterterms-and-conditions
+  label: Renormalized QED counterterms and on-shell conditions
+  summary: 'Rescaling electron and photon fields and defining the charge at q-squared=0
+    gives four QED counterterms: photon field strength, electron field strength, electron
+    mass, and vertex. Conditions fix the electron pole, electron and photon residues,
+    and zero-transfer vertex charge.'
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 331
+    - 332
 - id: peskin-schroeder.retarded-klein-gordon-green-function
   label: Retarded Klein-Gordon Green's function
   summary: D_R(x-y)=theta(x^0-y^0)<0|[phi(x),phi(y)]|0> vanishes when x^0<y^0 and
@@ -3507,6 +4108,34 @@ nodes:
     pages:
     - 58
     note: The text attributes the general result to Pauli and lists its assumptions.
+- id: peskin-schroeder.spontaneous-symmetry-breaking-question
+  label: Spontaneous symmetry breaking as a quantum renormalization question
+  summary: The chapter frames hidden or spontaneous symmetry breaking as a vacuum
+    with a directional field value that is not invariant under the Lagrangian symmetry,
+    and asks whether ultraviolet divergences obey that underlying symmetry.
+  kind: concept
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 11
+    pages:
+    - 347
+- id: peskin-schroeder.subdivergences-locality-and-counterterm-insertion
+  label: Subdivergences, locality, and counterterm insertion
+  summary: Nested or overlapping loops can generate nonpolynomial nonlocal divergences
+    even when superficial overall counting predicts only a local polynomial. These
+    are local divergent subgraphs embedded in otherwise finite processes and are canceled
+    by inserting the lower-order counterterm before an additional local counterterm
+    removes the remaining overall divergence.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.4'
+    pages:
+    - 335
+    - 336
+    - 337
 - id: peskin-schroeder.sudakov-form-factor
   label: Sudakov form factor for no hard photon
   summary: Within the section's leading-log soft approximation, at momentum transfers
@@ -3535,6 +4164,52 @@ nodes:
     pages:
     - 177
     - 178
+- id: peskin-schroeder.superficial-degree-qualifications
+  label: Qualifications on superficial divergence
+  summary: 'Superficial power counting does not equal an actual divergence automatically:
+    divergent subdiagrams can worsen it, symmetries can cancel terms, and a loop-free
+    trivial diagram can have D=0 without a divergence.'
+  kind: assumption
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+    - 317
+- id: peskin-schroeder.superficial-divergence-power-counting
+  label: Superficial degree of divergence in QED
+  summary: For a QED graph, power counting gives D=4L−Pe−2Pγ. A positive, zero, or
+    negative D naively signals cutoff-power, logarithmic, or no overall ultraviolet
+    divergence, respectively.
+  kind: method
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 315
+    - 316
+  notation:
+  - source: peskin-schroeder
+    note: Ne and Nγ count external electron and photon lines; Pe, Pγ, V, and L count
+      propagators, vertices, and loops.
+- id: peskin-schroeder.symmetric-counterterms-general-effective-action
+  label: Symmetry-preserving counterterms for constant scalar backgrounds
+  summary: For scalar field theories and constant classical backgrounds, power counting
+    plus BPHZ restricts divergences to local operators with nonnegative coefficient
+    dimension. Manifest symmetry of the effective action then restricts the required
+    counterterms to those invariant under the original symmetry, even when the vacuum
+    breaks it. The source asserts, rather than proves here, the spinor/vector extension.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 384
+    - 385
+    - 386
 - id: peskin-schroeder.threshold-muon-pair-spin-triplet-swave
   label: Threshold muon pairs as a spin-triplet S wave
   summary: Near muon-pair threshold, the electron current creates an angle-independent
@@ -3649,6 +4324,21 @@ nodes:
   notation:
   - source: peskin-schroeder
     note: alpha=e^2/(4 pi) in the book's units.
+- id: peskin-schroeder.two-loop-counterterm-pole-log-cancellation
+  label: Two-loop counterterm cancellation, double poles, and double logarithms
+  summary: The Group-II t-plus-u counterterm graph supplies the opposite nonlocal
+    pole-log and cancels it exactly. Remaining divergences are momentum-independent
+    and require a second-order vertex counterterm with a double pole; the finite two-loop
+    high-momentum behavior has lambda-cubed log-squared(p-squared/m-squared).
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 341
+    - 343
+    - 344
 - id: peskin-schroeder.two-photon-pair-annihilation-cross-section
   label: Electron-positron annihilation into two photons
   summary: Crossing the Compton amplitude gives the lowest-order e+e- to two-photon
@@ -3768,6 +4458,20 @@ nodes:
     - 161
     note: The source states the quantum-current assumption, derives the conditional
       replacement, and defers a formal proof and subtleties.
+- id: peskin-schroeder.ward-identity-z1-z2-and-universal-charge
+  label: Ward identity, Z1 equals Z2, and universal charge
+  summary: With a gauge-invariant regulator, the Ward identity equates the vertex
+    and electron field-strength renormalizations, Z1=Z2, recursively to all perturbative
+    orders. Consequently e=square-root(Z3) e0, so species-specific vertex and fermion
+    factors cancel and charged species share one electric charge.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: 10.3–10.4
+    pages:
+    - 334
+    - 335
 - id: peskin-schroeder.ward-takahashi-correlation-identity
   label: Ward-Takahashi identity for QED correlation functions
   summary: Sum the insertion of an external photon over every allowed place in each
@@ -3876,6 +4580,33 @@ nodes:
     - 121
     - 122
     - 123
+- id: peskin-schroeder.yukawa-scalar-field-strength-renormalization
+  label: Yukawa scalar self-energy needs mass and field-strength counterterms
+  summary: A fermion loop in Yukawa theory produces a scalar two-point function with
+    both constant and p-squared divergent pieces. Enforcing the on-shell conditions
+    therefore needs nonzero delta-m and delta-Z; this contrasts with the one-loop
+    phi-four special case.
+  kind: result
+  group: peskin-schroeder.ch10-systematics-renormalization
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 329
+    - 330
+- id: peskin-schroeder.zeroth-order-natural-relations
+  label: Zeroth-order natural relations as finite predictions
+  summary: A classical relation that holds for all choices of the symmetric Lagrangian
+    parameters receives no counterterm correction after those parameters are renormalized.
+    Its loop correction is therefore ultraviolet finite; the linear sigma-model sigma-mass
+    relation is the example.
+  kind: result
+  group: peskin-schroeder.ch11-renormalization-symmetry
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 387
 edges:
 - id: peskin-schroeder.adiabatic-to-vacuum-correlators
   from: peskin-schroeder.adiabatic-interacting-vacuum-projection
@@ -5071,6 +5802,1163 @@ edges:
     - 152
     note: The source compares the displayed matrix elements and then says the relation
       is independent of their details.
+- id: peskin-schroeder.edge-1pi-to-quantum-goldstone
+  from: peskin-schroeder.effective-action-1pi-generating-functional
+  to: peskin-schroeder.quantum-goldstone-theorem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The second derivative must be identified with the inverse propagator
+    to turn a Hessian zero into a massless particle.
+  failure_mode: A zero of the effective-potential Hessian would not imply a pole statement.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.5–11.6
+    pages:
+    - 381
+    - 388
+- id: peskin-schroeder.edge-1pi-to-symmetric-counterterms
+  from: peskin-schroeder.effective-action-1pi-generating-functional
+  to: peskin-schroeder.symmetric-counterterms-general-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general renormalization analysis uses effective-action derivatives
+    as the divergent 1PI Green functions.
+  failure_mode: Finiteness of differentiated Green functions would not follow from
+    the effective-action argument.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.5–11.6
+    pages:
+    - 383
+    - 385
+- id: peskin-schroeder.edge-background-to-determinant
+  from: peskin-schroeder.effective-action-background-field-expansion
+  to: peskin-schroeder.on-sigma-effective-potential-determinant
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The sigma-model computation is the stated general quadratic-determinant
+    method in a constant O(N) background.
+  failure_mode: The determinant formula would appear without its background-field
+    derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 371
+    - 374
+- id: peskin-schroeder.edge-bare-to-phi4-counterterms
+  from: peskin-schroeder.bare-to-renormalized-parameter-elimination
+  to: peskin-schroeder.phi4-field-rescaling-counterterm-split
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phi-four construction implements the alternative renormalized bookkeeping
+    procedure.
+  failure_mode: Counterterms could be misread as unrelated added interactions.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
+    - 325
+- id: peskin-schroeder.edge-bare-to-renormalized-qed
+  from: peskin-schroeder.bare-to-renormalized-parameter-elimination
+  to: peskin-schroeder.renormalized-qed-counterterms-and-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED construction applies the preceding counterterm algorithm.
+  failure_mode: The four QED conditions would be disconnected from the renormalization
+    procedure.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.2–10.3
+    pages:
+    - 326
+    - 331
+- id: peskin-schroeder.edge-classical-goldstone-to-quantum
+  from: peskin-schroeder.classical-goldstone-theorem
+  to: peskin-schroeder.quantum-goldstone-theorem
+  relation: pedagogical
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The classical proof is a useful template, while the quantum proof is
+    completed directly with V-eff and the Gamma inverse-propagator relation.
+  failure_mode: The all-orders proof does not require the classical proof as a compulsory
+    premise.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.1 and 11.6
+    pages:
+    - 352
+    - 388
+- id: peskin-schroeder.edge-classification-to-bare-renormalization
+  from: peskin-schroeder.renormalizability-classification-by-dimension
+  to: peskin-schroeder.bare-to-renormalized-parameter-elimination
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The claimed finite-parameter procedure is scoped to renormalizable theories.
+  failure_mode: One could apply the conclusion without its renormalizability qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1–10.2
+    pages:
+    - 321
+    - 323
+- id: peskin-schroeder.edge-counterterms-to-on-conditions
+  from: peskin-schroeder.broken-on-sigma-counterterms
+  to: peskin-schroeder.on-sigma-renormalization-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Three independent counterterms require three renormalization conditions.
+  failure_mode: The finite parts and vacuum convention would remain unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 354
+    - 355
+- id: peskin-schroeder.edge-crossing-to-pole-log-cancellation
+  from: peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  to: peskin-schroeder.two-loop-counterterm-pole-log-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation uses the Group-II t-plus-u counterterm selected by the
+    crossing organization.
+  failure_mode: The canceling counterterm contribution would not be selected.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 340
+    - 344
+- id: peskin-schroeder.edge-denominator-identity-to-endpoint-subtraction
+  from: peskin-schroeder.general-feynman-denominator-identity-proof
+  to: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The endpoint analysis first uses the generalized denominator identity
+    to introduce the parameter whose zero endpoint produces the extra pole.
+  failure_mode: The endpoint variable and its singular measure would lack their derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 342
+    - 343
+- id: peskin-schroeder.edge-determinant-to-msbar
+  from: peskin-schroeder.on-sigma-effective-potential-determinant
+  to: peskin-schroeder.msbar-scale-and-large-log-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: MS-bar is applied to the divergent determinant expression for the effective
+    potential.
+  failure_mode: The scale and logarithms would not be tied to the regulated calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 376
+    - 377
+- id: peskin-schroeder.edge-dimreg-to-one-loop-vertex
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.renormalization-conditions-and-phi4-one-loop-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The integral is explicitly evaluated in dimensional regularization.
+  failure_mode: The regulated loop function V cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 327
+- id: peskin-schroeder.edge-dimreg-to-problem-10-2
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.problem-ch10-yukawa-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise requests the poles as the dimension approaches four for
+    every one-loop counterterm.
+  failure_mode: The requested pole parts have no regulated extraction method.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.2
+    pages:
+    - 345
+- id: peskin-schroeder.edge-dimreg-to-problem-10-3
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.problem-ch10-phi4-two-loop-field-strength
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 10.3 explicitly specifies dimensional regularization near d=4.
+  failure_mode: The requested pole calculation has no regulator method.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.3
+    pages:
+    - 345
+- id: peskin-schroeder.edge-dimreg-to-problem-11-3-df
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop determinant is continued around two dimensions before its
+    scalar-square divergence is minimally subtracted.
+  failure_mode: The requested minimal-subtraction pole has no dimensional regulator.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d-f)
+    pages:
+    - 391
+- id: peskin-schroeder.edge-dimreg-to-qed-counterterms
+  from: peskin-schroeder.dim-reg-loop-integral-method
+  to: peskin-schroeder.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source collects the counterterms in dimensional regularization.
+  failure_mode: The epsilon-dependent and pole-subtraction formulas cannot be reproduced.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+- id: peskin-schroeder.edge-dirac-functional-to-problem-11-3-ac
+  from: peskin-schroeder.dirac-generating-functional-grassmann-sources
+  to: peskin-schroeder.problem-gross-neveu-symmetry-and-auxiliary-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The auxiliary-field representation is an identity between the fermionic
+    functional integral and its scalar-extended form.
+  failure_mode: The functional-integral transformation cannot be formulated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(a-c)
+    pages:
+    - 390
+- id: peskin-schroeder.edge-discrete-break-to-on-sigma
+  from: peskin-schroeder.discrete-symmetry-breaking-scalar-shift
+  to: peskin-schroeder.on-linear-sigma-model-broken-vacuum
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The source presents the discrete model before the O(N) example as a helpful
+    comparison.
+  failure_mode: The continuous model can be introduced directly from its invariant
+    Lagrangian.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 348
+    - 349
+- id: peskin-schroeder.edge-effective-action-to-1pi
+  from: peskin-schroeder.effective-action-legendre-transform
+  to: peskin-schroeder.effective-action-1pi-generating-functional
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Legendre relation is differentiated to prove the inverse-propagator
+    and 1PI statements.
+  failure_mode: The generating-functional identities cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.3 and 11.5
+    pages:
+    - 366
+    - 380
+- id: peskin-schroeder.edge-effective-action-to-background
+  from: peskin-schroeder.effective-action-legendre-transform
+  to: peskin-schroeder.effective-action-background-field-expansion
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The background-field expansion computes the Legendre-transformed functional
+    as a function of phi-cl.
+  failure_mode: The shifted source and fluctuation expansion have no target functional.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.3–11.4
+    pages:
+    - 366
+    - 370
+- id: peskin-schroeder.edge-effective-action-to-potential
+  from: peskin-schroeder.effective-action-legendre-transform
+  to: peskin-schroeder.effective-potential-vacua-and-convexity
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The potential is the translation-invariant volume density of the Legendre-transformed
+    effective action.
+  failure_mode: Vacuum extrema and convexity would lack a defined functional origin.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 367
+    - 368
+- id: peskin-schroeder.edge-effective-action-to-problem-gross-neveu
+  from: peskin-schroeder.effective-action-legendre-transform
+  to: peskin-schroeder.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for an effective potential, its stationary minimum,
+    and its renormalization.
+  failure_mode: The effective-potential construction is not available for the requested
+    calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.3 and Problem 11.3
+    pages:
+    - 367
+    - 391
+- id: peskin-schroeder.edge-effective-boundary-to-symmetric-counterterms
+  from: peskin-schroeder.effective-action-varying-background-proof-boundary
+  to: peskin-schroeder.symmetric-counterterms-general-effective-action
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: This records the proof boundary of the general counterterm conclusion.
+  failure_mode: The constant-background proof could be overgeneralized.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 386
+    - 387
+- id: peskin-schroeder.edge-effective-potential-to-quantum-goldstone
+  from: peskin-schroeder.effective-potential-vacua-and-convexity
+  to: peskin-schroeder.quantum-goldstone-theorem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The proof applies the symmetry and minimum properties of V-eff.
+  failure_mode: The quantum Hessian argument has no vacuum functional to differentiate.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.3 and 11.6
+    pages:
+    - 368
+    - 388
+- id: peskin-schroeder.edge-endpoint-to-pole-log-cancellation
+  from: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
+  to: peskin-schroeder.two-loop-counterterm-pole-log-cancellation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The subtraction exposes the nonlocal pole-log that the counterterm cancels.
+  failure_mode: There is no identified nonlocal term to cancel.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 343
+    - 344
+- id: peskin-schroeder.edge-existing-bosonic-determinant-to-sigma-effective-potential
+  from: peskin-schroeder.bosonic-functional-determinant
+  to: peskin-schroeder.on-sigma-effective-potential-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The O(N) calculation evaluates its leading fluctuation correction as
+    a product of Klein-Gordon functional determinants.
+  failure_mode: The determinant contribution would be used without its Gaussian-integral
+    meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 374
+- id: peskin-schroeder.edge-existing-loop-integrals-to-superficial-counting
+  from: peskin-schroeder.loop-momentum-integration-and-divergence
+  to: peskin-schroeder.superficial-divergence-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Superficial degree counting compares the loop momentum measure with propagator
+    momentum powers.
+  failure_mode: The power-counting expression lacks its loop-integral basis.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+- id: peskin-schroeder.edge-existing-power-counting-to-dimensional-classification
+  from: peskin-schroeder.power-counting-renormalizable-interactions
+  to: peskin-schroeder.renormalizability-classification-by-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The d-dimensional scalar criterion applies the relation between operator
+    dimension and coupling dimension.
+  failure_mode: The sign-of-coupling-dimension classification would be ungrounded.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 322
+- id: peskin-schroeder.edge-existing-scalar-path-integral-to-background-field
+  from: peskin-schroeder.real-scalar-field-path-integral
+  to: peskin-schroeder.effective-action-background-field-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The effective-action construction expands the sourced scalar functional
+    integral around its classical field.
+  failure_mode: The Gaussian fluctuation and determinant expansion would lack its
+    functional-integral input.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 370
+    - 371
+- id: peskin-schroeder.edge-existing-self-energy-to-phi4-onshell
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.phi4-two-point-onshell-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phi-four calculation explicitly uses the 1PI self-energy insertion
+    and its pole-residue conditions.
+  failure_mode: The propagator conditions would be applied without their resummation
+    interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+- id: peskin-schroeder.edge-existing-ward-z1z2-to-all-orders
+  from: peskin-schroeder.ward-vertex-identity-and-z1-z2
+  to: peskin-schroeder.ward-identity-z1-z2-and-universal-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter extends the already established Ward relation to renormalized
+    perturbation theory and universal charge.
+  failure_mode: The all-orders counterterm identity would lack its Ward-identity foundation.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+- id: peskin-schroeder.edge-fermion-determinant-to-problem-11-3-df
+  from: peskin-schroeder.fermion-determinant-as-closed-loop-series
+  to: peskin-schroeder.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Integrating out the Gross-Neveu fermions produces the Dirac determinant
+    whose spectrum gives the one-loop effective potential.
+  failure_mode: The determinant contribution and its large-N counting cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d-f)
+    pages:
+    - 391
+- id: peskin-schroeder.edge-feynman-parameters-to-endpoint-subtraction
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.endpoint-subtraction-isolates-two-loop-nonlocal-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The endpoint pole emerges after the stated Feynman-parameter combination.
+  failure_mode: The variable w and endpoint analysis lack construction.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 342
+    - 343
+- id: peskin-schroeder.edge-feynman-parameters-to-one-loop-vertex
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.renormalization-conditions-and-phi4-one-loop-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation introduces a Feynman parameter before shifting and integrating.
+  failure_mode: The stated loop-evaluation route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 327
+- id: peskin-schroeder.edge-feynman-parameters-to-problem-10-4
+  from: peskin-schroeder.feynman-parameter-denominator-combination
+  to: peskin-schroeder.problem-ch10-phi4-fixedt-leading-logs
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massless internal-line approximation simplifies the Feynman-parameter
+    integrals used by the independent asymptotic route.
+  failure_mode: The exercise's stated integral simplification has no denominator-combination
+    method.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.4
+    pages:
+    - 345
+- id: peskin-schroeder.edge-fourpoint-to-twopoint
+  from: peskin-schroeder.on-sigma-one-loop-four-point-cancellations
+  to: peskin-schroeder.on-sigma-tadpole-and-goldstone-one-loop
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The already fixed delta-lambda enters the linked two-point and tadpole
+    cancellations.
+  failure_mode: The claimed all-amplitude cancellation would treat a shared counterterm
+    as adjustable again.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 360
+    - 361
+- id: peskin-schroeder.edge-free-scalar-functional-to-problem-11-1
+  from: peskin-schroeder.free-scalar-generating-functional
+  to: peskin-schroeder.problem-spin-wave-theory
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.1 begins by deriving an exponential free-scalar correlation
+    identity and then applies it to spin waves.
+  failure_mode: The correlation formula has no Gaussian free-field input.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.1
+    pages:
+    - 389
+- id: peskin-schroeder.edge-furry-to-problem-10-1
+  from: peskin-schroeder.furry-theorem-photon-odd-point-vanishing
+  to: peskin-schroeder.problem-ch10-qed-odd-even-photon-divergences
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks for direct verification of the odd-photon cancellations
+    established by the theorem.
+  failure_mode: The calculation lacks the claimed cancellation target.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1 and Problem 10.1
+    pages:
+    - 318
+    - 344
+- id: peskin-schroeder.edge-loop-integrals-to-problem-10-4
+  from: peskin-schroeder.loop-momentum-integration-and-divergence
+  to: peskin-schroeder.problem-ch10-phi4-fixedt-leading-logs
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise extracts the high-energy terms by evaluating the loop-momentum
+    regions after the stated mass approximations.
+  failure_mode: The logarithmic asymptotics cannot be calculated from the diagrams.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.4
+    pages:
+    - 345
+- id: peskin-schroeder.edge-momentum-derivative-to-qed-primitives
+  from: peskin-schroeder.external-momentum-derivative-power-counting
+  to: peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses the derivative argument to determine the divergent self-energy
+    and vertex coefficients.
+  failure_mode: The simple external-momentum structure would be unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 319
+- id: peskin-schroeder.edge-natural-relation-to-problem-11-2
+  from: peskin-schroeder.zeroth-order-natural-relations
+  to: peskin-schroeder.problem-natural-relation-with-fermions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise explicitly tests the finite correction to a zeroth-order
+    natural relation.
+  failure_mode: The requested finiteness conclusion lacks its criterion.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.6 and Problem 11.2
+    pages:
+    - 387
+    - 390
+- id: peskin-schroeder.edge-on-conditions-to-four-point
+  from: peskin-schroeder.on-sigma-renormalization-conditions
+  to: peskin-schroeder.on-sigma-one-loop-four-point-cancellations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vertex cancellation determines delta-lambda from the threshold condition.
+  failure_mode: The counterterm value would be unavailable for the cancellation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 355
+    - 357
+- id: peskin-schroeder.edge-on-sigma-to-classical-goldstone
+  from: peskin-schroeder.on-linear-sigma-model-broken-vacuum
+  to: peskin-schroeder.classical-goldstone-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The model supplies the concrete count of N−1 broken directions that motivates
+    the general proof.
+  failure_mode: The general proof remains possible, but its representative realization
+    is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 350
+    - 351
+- id: peskin-schroeder.edge-on-sigma-to-counterterms
+  from: peskin-schroeder.on-linear-sigma-model-broken-vacuum
+  to: peskin-schroeder.broken-on-sigma-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The counterterm linkage is obtained by expanding the broken O(N) model.
+  failure_mode: The origin of the correlated shifted counterterm vertices is lost.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 353
+- id: peskin-schroeder.edge-on-sigma-to-problem-11-2
+  from: peskin-schroeder.on-linear-sigma-model-broken-vacuum
+  to: peskin-schroeder.problem-natural-relation-with-fermions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise extends the broken O(2) scalar construction by coupling
+    fermions.
+  failure_mode: The shifted broken-phase variables would be unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.1 and Problem 11.2
+    pages:
+    - 350
+    - 390
+- id: peskin-schroeder.edge-phi4-odd-to-primitive-classification
+  from: peskin-schroeder.phi4-odd-correlation-vanishing
+  to: peskin-schroeder.phi4-primitive-divergences-and-z2-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity exclusion removes odd external-leg amplitudes from the list.
+  failure_mode: The primitive count would retain forbidden odd amplitudes.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
+    - 324
+- id: peskin-schroeder.edge-phi4-rules-to-crossing-groups
+  from: peskin-schroeder.phi4-momentum-space-feynman-rules
+  to: peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-loop four-point diagram enumeration applies the phi-four rules.
+  failure_mode: The grouped diagrams and their counterterms cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 338
+    - 339
+- id: peskin-schroeder.edge-phi4-rules-to-primitive-classification
+  from: peskin-schroeder.phi4-momentum-space-feynman-rules
+  to: peskin-schroeder.phi4-primitive-divergences-and-z2-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The classification counts the phi-four diagram amplitudes defined by
+    these rules.
+  failure_mode: The divergent-amplitude list would have no diagrammatic object to
+    classify.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
+    - 324
+- id: peskin-schroeder.edge-phi4-rules-to-problem-10-4
+  from: peskin-schroeder.phi4-momentum-space-feynman-rules
+  to: peskin-schroeder.problem-ch10-phi4-fixedt-leading-logs
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The independent fixed-transfer calculation constructs the one- and two-loop
+    boson-scattering diagrams from the phi-four rules.
+  failure_mode: The scattering diagrams and coupling powers cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.4
+    pages:
+    - 345
+- id: peskin-schroeder.edge-phi4-rules-to-two-loop-fieldstrength
+  from: peskin-schroeder.phi4-momentum-space-feynman-rules
+  to: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-loop insertion structures use the phi-four propagator and vertices.
+  failure_mode: The three diagrams cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: peskin-schroeder.edge-phi4-split-to-two-point
+  from: peskin-schroeder.phi4-field-rescaling-counterterm-split
+  to: peskin-schroeder.phi4-two-point-onshell-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-point insertion and counterterms follow from the renormalized
+    phi-four rules.
+  failure_mode: The on-shell counterterms would have no defined role.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 325
+    - 328
+- id: peskin-schroeder.edge-phi4-split-to-vertex-subtraction
+  from: peskin-schroeder.phi4-field-rescaling-counterterm-split
+  to: peskin-schroeder.renormalization-conditions-and-phi4-one-loop-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The counterterm vertex and physical definitions are required to impose
+    the one-loop subtraction.
+  failure_mode: The finite amplitude would lack the parameter that cancels its threshold
+    divergence.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 325
+    - 327
+- id: peskin-schroeder.edge-phi4-symmetry-factors-to-crossing-groups
+  from: peskin-schroeder.phi4-symmetry-factors
+  to: peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Enumerating and grouping the two-loop four-point diagrams requires their
+    phi-four combinatorial weights as well as the vertex rules.
+  failure_mode: The grouped amplitudes would not have justified relative coefficients.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 338
+    - 339
+- id: peskin-schroeder.edge-phi4-symmetry-factors-to-two-loop-fieldstrength
+  from: peskin-schroeder.phi4-symmetry-factors
+  to: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The relative weights of the two-loop self-energy and counterterm-insertion
+    diagrams use the phi-four symmetry-factor rules.
+  failure_mode: The three order-lambda-squared structures would have unsupported coefficients.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: peskin-schroeder.edge-power-counting-to-problem-10-2
+  from: peskin-schroeder.superficial-divergence-power-counting
+  to: peskin-schroeder.problem-ch10-yukawa-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The first part of Problem 10.2 asks for the superficially divergent amplitudes
+    and the complete counterterm set.
+  failure_mode: The exercise cannot classify which amplitudes require counterterms.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.2
+    pages:
+    - 344
+    - 345
+- id: peskin-schroeder.edge-power-counting-to-problem-11-3-ac
+  from: peskin-schroeder.power-counting-renormalizable-interactions
+  to: peskin-schroeder.problem-gross-neveu-symmetry-and-auxiliary-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.3(b) asks for the two-dimensional renormalizability classification
+    by dimensional analysis.
+  failure_mode: The renormalizability subtask lacks its dimensional criterion.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(a-c)
+    pages:
+    - 390
+- id: peskin-schroeder.edge-power-counting-to-qed-topology
+  from: peskin-schroeder.superficial-divergence-power-counting
+  to: peskin-schroeder.qed-graph-topology-and-primitive-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The topology rewrite starts from the QED expression for D.
+  failure_mode: Without the loop-and-propagator count, the external-leg classification
+    cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+- id: peskin-schroeder.edge-qed-conditions-to-z1z2
+  from: peskin-schroeder.renormalized-qed-counterterms-and-conditions
+  to: peskin-schroeder.ward-identity-z1-z2-and-universal-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward calculation enforces the four stated QED renormalization conditions.
+  failure_mode: Z1=Z2 would lose its renormalized counterterm meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 332
+    - 334
+- id: peskin-schroeder.edge-qed-primitives-to-renormalization
+  from: peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints
+  to: peskin-schroeder.bare-to-renormalized-parameter-elimination
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The renormalization discussion uses the finite set of divergent QED structures
+    as its motivating case.
+  failure_mode: The parameter-elimination aim loses its concrete divergence target.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1–10.2
+    pages:
+    - 320
+    - 323
+- id: peskin-schroeder.edge-real-path-integral-to-effective-action
+  from: peskin-schroeder.real-scalar-field-path-integral
+  to: peskin-schroeder.effective-action-legendre-transform
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The sourced functional integral defines the vacuum-energy functional
+    used in the Legendre transform.
+  failure_mode: The construction lacks its functional-integral starting point.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 365
+    - 366
+- id: peskin-schroeder.edge-regulator-ward-to-qed-delta1
+  from: peskin-schroeder.regulator-must-preserve-ward-identity
+  to: peskin-schroeder.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equality relies on a UV regulator preserving gauge invariance and
+    the Ward identity.
+  failure_mode: A symmetry-breaking regulator can invalidate the equality.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+- id: peskin-schroeder.edge-regulators-to-z1z2
+  from: peskin-schroeder.qed-uv-ir-regulator-separation
+  to: peskin-schroeder.ward-identity-z1-z2-and-universal-charge
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This records the source's calculation-specific infrared choice alongside
+    its ultraviolet scheme.
+  failure_mode: The particular photon-mass choice could be mistaken for a Ward-identity
+    premise.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+    - 334
+- id: peskin-schroeder.edge-renormalizable-power-counting-to-problem-11-1
+  from: peskin-schroeder.power-counting-renormalizable-interactions
+  to: peskin-schroeder.problem-spin-wave-theory
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks for the most general renormalizable translation-invariant
+    spin-wave Lagrangian in arbitrary positive dimension.
+  failure_mode: The restriction to the free derivative theory cannot be justified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.1
+    pages:
+    - 389
+- id: peskin-schroeder.edge-self-energy-to-two-loop-fieldstrength
+  from: peskin-schroeder.self-energy-resummation-and-pole-conditions
+  to: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The structures contribute to the 1PI two-point insertion and its residue
+    condition.
+  failure_mode: The role of delta-Z is undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: peskin-schroeder.edge-subdivergence-to-bphz
+  from: peskin-schroeder.subdivergences-locality-and-counterterm-insertion
+  to: peskin-schroeder.bphz-and-two-loop-phi4-nonlocal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The theorem and example formalize the described local and nonlocal cancellation
+    pattern.
+  failure_mode: The two-loop cancellations would appear as unmotivated algebra.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.4–10.5
+    pages:
+    - 337
+    - 338
+- id: peskin-schroeder.edge-superficial-qualification-to-subdivergence
+  from: peskin-schroeder.superficial-degree-qualifications
+  to: peskin-schroeder.subdivergences-locality-and-counterterm-insertion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The later multiloop analysis develops the subdiagram exception stated
+    in the power-counting caveat.
+  failure_mode: Overall D would be mistaken for a complete multiloop divergence analysis.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1 and 10.4
+    pages:
+    - 316
+    - 336
+- id: peskin-schroeder.edge-symmetric-counterterms-to-natural-relations
+  from: peskin-schroeder.symmetric-counterterms-general-effective-action
+  to: peskin-schroeder.zeroth-order-natural-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finiteness of loop corrections to a classical parameter relation
+    uses the fact that counterterms preserve it.
+  failure_mode: One could not infer ultraviolet finiteness of the predicted correction.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.6'
+    pages:
+    - 387
+- id: peskin-schroeder.edge-topology-to-primitive-divergences
+  from: peskin-schroeder.qed-graph-topology-and-primitive-amplitudes
+  to: peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The primitive-amplitude conclusion is drawn after the 1PI external-leg
+    reduction.
+  failure_mode: One would not know which QED amplitudes require separate analysis.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 317
+    - 320
+- id: peskin-schroeder.edge-transverse-vp-to-qed-delta3
+  from: peskin-schroeder.transverse-photon-vacuum-polarization
+  to: peskin-schroeder.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon condition uses the transverse vacuum-polarization function
+    at zero momentum.
+  failure_mode: The derivation of delta-3 omits the relevant polarization structure.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 331
+    - 333
+- id: peskin-schroeder.edge-two-loop-fieldstrength-to-problem-10-3
+  from: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
+  to: peskin-schroeder.problem-ch10-phi4-two-loop-field-strength
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests the first of the three displayed two-loop propagator
+    diagrams and its counterterm consequence.
+  failure_mode: The selected diagram and its role are not identified.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.2 and Problem 10.3
+    pages:
+    - 328
+    - 345
+- id: peskin-schroeder.edge-two-loop-polelog-to-problem-10-4
+  from: peskin-schroeder.two-loop-counterterm-pole-log-cancellation
+  to: peskin-schroeder.problem-ch10-phi4-fixedt-leading-logs
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The completed two-loop cancellation supplies a useful expectation for
+    the exercise, while Problem 10.4 develops an independent asymptotic calculation.
+  failure_mode: Treating the earlier derivation as compulsory would erase the independent
+    route identified by the source.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.5 and Problem 10.4
+    pages:
+    - 341
+    - 345
+- id: peskin-schroeder.edge-two-point-to-yukawa
+  from: peskin-schroeder.phi4-two-point-onshell-counterterms
+  to: peskin-schroeder.yukawa-scalar-field-strength-renormalization
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The Yukawa calculation contrasts the general scalar case with the special
+    phi-four result.
+  failure_mode: The special status of one-loop delta-Z=0 would be obscured.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: peskin-schroeder.edge-ward-takahashi-to-qed-delta1
+  from: peskin-schroeder.ward-takahashi-correlation-identity
+  to: peskin-schroeder.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The all-orders recursion is the renormalized diagrammatic Ward identity.
+  failure_mode: The recursion becomes an unsupported equality.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+- id: peskin-schroeder.edge-yukawa-rules-to-problem-10-2
+  from: peskin-schroeder.yukawa-feynman-rules
+  to: peskin-schroeder.problem-ch10-yukawa-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise constructs renormalized pseudoscalar Yukawa rules and evaluates
+    their one-loop counterterms.
+  failure_mode: The loop amplitudes and counterterm vertices cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.2
+    pages:
+    - 344
+    - 345
 - id: peskin-schroeder.effective-theory-to-natural-light-particles
   from: peskin-schroeder.effective-theory-relevant-parameters-and-degrees-of-freedom
   to: peskin-schroeder.natural-light-particles-and-cutoff-hierarchy
@@ -10924,6 +12812,13 @@ edges:
     - 257
     - 258
 groups:
+- id: peskin-schroeder.ch10-systematics-renormalization
+  title: Systematics of renormalization
+  question: Which ultraviolet divergences arise, and how do counterterms remove them?
+- id: peskin-schroeder.ch11-renormalization-symmetry
+  title: Renormalization and symmetry
+  question: How do spontaneous symmetry breaking and the effective action coexist
+    with renormalization?
 - id: peskin-schroeder.ch5-crossing-and-compton
   title: Crossing, channels, and Compton scattering
   question: How do crossing variables, gauge-current constraints, and kinematics organize
@@ -11132,6 +13027,33 @@ motivations:
     section: Chapter 9, Functional Methods
     pages:
     - 275
+- id: peskin-schroeder.quantum-vacuum-geometry-question
+  nodes:
+  - peskin-schroeder.effective-action-legendre-transform
+  - peskin-schroeder.effective-potential-vacua-and-convexity
+  summary: The effective action restores a geometric way to identify the quantum vacuum
+    and its possible symmetry breaking.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 364
+    - 368
+- id: peskin-schroeder.renormalization-and-symmetry-question
+  nodes:
+  - peskin-schroeder.superficial-divergence-power-counting
+  - peskin-schroeder.effective-action-1pi-generating-functional
+  - peskin-schroeder.quantum-goldstone-theorem
+  summary: The chapters ask how a finite parameter set controls ultraviolet divergences,
+    and why an underlying symmetry still constrains the quantum theory after a vacuum
+    chooses a direction.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1 and 11.6
+    pages:
+    - 315
+    - 384
+    - 387
 - id: peskin-schroeder.why-commutators-test-causality
   nodes:
   - peskin-schroeder.spacelike-wightman-amplitude
