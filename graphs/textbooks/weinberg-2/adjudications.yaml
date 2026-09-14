@@ -71,3 +71,75 @@ units:
     affected_records:
     - kind: edges
       id: weinberg-2.constant-background-prerequisite-regulation
+- id: full-005
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Goldstone theorem input missing from pion identification
+    alternatives:
+    - Add a direct necessary use-level prerequisite from the common theorem result
+      to pion identification.
+    - Add the theorem as a necessary input to the pseudo-Goldstone mass result, giving
+      pion identification a transitive theorem dependency.
+    resolution: Add the direct necessary use-level prerequisite to pion identification.
+    rationale: 'The direct edge states the actual application on pp. 184-185: three
+      broken axial generators produce three Goldstone modes, and small quark masses
+      make them pseudo-Goldstone pions. It preserves both proof methods as alternatives
+      and does not force either proof route.'
+    evidence:
+    - source: weinberg-2
+      section: 19.2; 19.4
+      pages:
+      - 167
+      - 184
+      - 185
+    affected_records:
+    - kind: edges
+      id: weinberg-2.goldstone-theorem-to-pion-identification
+  - finding: 1
+    issue: Pure-pion counting input missing from the Q4 EFT result
+    alternatives:
+    - Add a necessary use-level prerequisite from pion EFT power counting to the separate
+      Q4 result.
+    - Merge the Q4 renormalization and matching material into the pion EFT power-counting
+      method node.
+    resolution: Add the necessary use-level prerequisite to the separate Q4 result.
+    rationale: Keeping the next-order result separate preserves useful granularity.
+      Its derivation first uses the power-counting formula to isolate the loop and
+      four-derivative tree classes, then renormalizes their couplings and matches
+      F to F_pi.
+    evidence:
+    - source: weinberg-2
+      section: '19.5'
+      pages:
+      - 198
+      - 199
+    affected_records:
+    - kind: edges
+      id: weinberg-2.pion-power-counting-to-q4-renormalization
+  - finding: 2
+    issue: Seven private witnesses do not entail the cited claims
+    alternatives:
+    - Replace the seven fragments with complete matching excerpts from the same packet
+      pages.
+    - Remove or narrow the claims and evidence pages that the fragments do not support.
+    resolution: Replace the seven private witnesses with source-entailing excerpts.
+    rationale: The source supports the reviewed graph records, so replacing the private
+      witnesses preserves the accepted public science. Each replacement now contains
+      the operative finite-volume, mode-count, normalization, renormalization, scattering-length,
+      or forward-amplitude statement and matches the registered page text at word
+      boundaries. The equations on pp. 202 and 210 were also checked visually in the
+      original PDF. No graph record changes for this witness-only repair.
+    evidence:
+    - source: weinberg-2
+      section: 19.1; 19.2; 19.4; 19.5
+      pages:
+      - 164
+      - 165
+      - 169
+      - 186
+      - 199
+      - 202
+      - 210
+    affected_records: []

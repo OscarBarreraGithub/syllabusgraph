@@ -157,3 +157,167 @@ units:
     affected_records:
     - kind: edges
       id: weinberg-1.bosonic-fock-input-to-coherent-state-problem
+- id: full-005
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Discrete-inversion results lack joint operator, field, and Dirac-identity
+      inputs, while a scalar analogy is compulsory.
+    alternatives:
+    - Add explicit use-level prerequisites and make the scalar comparison helpful
+      pedagogical context.
+    - Fold the matrix identities into the Dirac construction, then connect that combined
+      node with the operator and field inputs.
+    resolution: Add the explicit use-level inputs and downgrade the scalar analogy
+      to helpful pedagogical context.
+    rationale: The source performs each transformation on a constructed causal field
+      by applying particle-operator symmetry rules. The Dirac results also use the
+      earlier transpose or conjugation identities, while the spin-one calculation
+      uses vector polarization identities. Keeping these as separate prerequisite
+      records preserves the source's reusable methods and makes every joint derivation
+      route complete. The scalar discussion supplies an analogy to the vector phase
+      pattern rather than algebra needed by the vector derivation.
+    evidence:
+    - source: weinberg-1
+      section: '5.3'
+      pages:
+      - 212
+      - 213
+    - source: weinberg-1
+      section: 5.4–5.5
+      pages:
+      - 219
+      - 225
+      - 226
+      - 227
+      - 228
+      - 229
+    - source: weinberg-1
+      section: '5.7'
+      pages:
+      - 238
+      - 239
+      - 240
+      - 241
+      - 242
+      - 243
+    affected_records:
+    - kind: edges
+      id: weinberg-1.scalar-parity-to-vector-inversions
+    - kind: edges
+      id: weinberg-1.dirac-matrices-to-transpose-identities
+    - kind: edges
+      id: weinberg-1.dirac-identities-to-pc-majorana
+    - kind: edges
+      id: weinberg-1.dirac-identities-to-time-reversal
+    - kind: edges
+      id: weinberg-1.dirac-identities-to-bilinears
+    - kind: edges
+      id: weinberg-1.causal-dirac-to-pc-majorana
+    - kind: edges
+      id: weinberg-1.operator-inversions-to-dirac-pc
+    - kind: edges
+      id: weinberg-1.causal-dirac-to-time-reversal
+    - kind: edges
+      id: weinberg-1.operator-inversions-to-dirac-time-reversal
+    - kind: edges
+      id: weinberg-1.dirac-pc-to-bilinears
+    - kind: edges
+      id: weinberg-1.operator-inversions-to-spin-one
+    - kind: edges
+      id: weinberg-1.vector-polarizations-to-spin-one-inversions
+    - kind: edges
+      id: weinberg-1.causal-vector-to-spin-one-inversions
+    - kind: edges
+      id: weinberg-1.operator-inversions-to-general-parity
+    - kind: edges
+      id: weinberg-1.operator-inversions-to-general-ct
+    - kind: edges
+      id: weinberg-1.general-causal-field-to-general-ct
+  - finding: 1
+    issue: The general Lorentz-scalar method omits the product-representation input
+      needed to couple its two index sets independently.
+    alternatives:
+    - Add the Lorentz irrep classification as a necessary use-level prerequisite.
+    - Expand the scalar-coupling node to rederive the product representation before
+      applying angular-momentum coupling.
+    resolution: Add the Lorentz irrep classification as a necessary use-to-derive
+      prerequisite.
+    rationale: The source constructs a scalar by using the product structure of an
+      (A,B) representation and coupling its two rotation-index families separately
+      to zero. The angular-momentum input explains each coupling, while the Lorentz
+      classification explains why there are two independent factors. A direct prerequisite
+      edge records the missing jointly necessary input without duplicating the representation
+      derivation inside the scalar method.
+    evidence:
+    - source: weinberg-1
+      section: 5.6–5.7
+      pages:
+      - 230
+      - 231
+      - 235
+      - 236
+    affected_records:
+    - kind: edges
+      id: weinberg-1.lorentz-irrep-to-general-scalar-couplings
+  - finding: 2
+    issue: Problems 2 and 3 request parity transformations, but their current inversion
+      input supplies only charge and time reversal.
+    alternatives:
+    - Add the general causal-field parity relation directly as a prerequisite to both
+      problems.
+    - Create a shared general P, C, T problem method and make both construction problems
+      depend on that method.
+    resolution: Add the general parity relation as a necessary use-to-derive prerequisite
+      to Problems 2 and 3.
+    rationale: Both exercises request all three discrete transformations. Their existing
+      general charge and time-reversal input covers C and T, and their representation
+      input identifies the admissible field type, but neither supplies the causal
+      field's parity action or intrinsic particle-antiparticle parity relation. Direct
+      parity edges complete each exercise without introducing an extra method node.
+    evidence:
+    - source: weinberg-1
+      section: '5.7'
+      pages:
+      - 239
+      - 240
+      - 241
+    - source: weinberg-1
+      section: Problems
+      pages:
+      - 255
+      - 256
+    affected_records:
+    - kind: edges
+      id: weinberg-1.general-parity-to-problem-two
+    - kind: edges
+      id: weinberg-1.general-parity-to-problem-three
+  - finding: 3
+    issue: The normal-ordering method is isolated from the cluster and causal-field
+      premises applied in its derivation.
+    alternatives:
+    - Connect the reviewed cluster route and causal-field combination directly to
+      the normal-ordering method.
+    - Split the method into separate cluster-ordering and locality-preservation nodes
+      with one prerequisite route for each.
+    resolution: Add necessary use-level inputs from the cluster route and the causal-field
+      combination.
+    rationale: The normal-ordering argument has two independent jobs. The cluster
+      route explains why the expansion must display one overall momentum delta function,
+      and causal fields explain why converting the normal-ordered expression into
+      ordinary field products preserves spacelike commutation. Two direct inputs capture
+      those jointly necessary premises while retaining the useful combined method
+      node.
+    evidence:
+    - source: weinberg-1
+      section: '5.1'
+      pages:
+      - 197
+      - 198
+      - 200
+    affected_records:
+    - kind: edges
+      id: weinberg-1.cluster-route-to-normal-ordering
+    - kind: edges
+      id: weinberg-1.causal-field-to-normal-ordering
