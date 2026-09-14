@@ -368,6 +368,41 @@ nodes:
     - 381
     note: The source states the constrained-system qualification, coordinate and momentum
       completeness, the infinitesimal kernel, and the time-sliced endpoint path integral.
+- id: weinberg-1.bound-state-coulomb-resummation-scale
+  label: Coulomb bound states require all-order resummation at atomic momentum
+  summary: For electron--proton relative momentum q, an additional Coulomb exchange
+    has old-fashioned-perturbation-theory size (me/q^2)(e^2/q^2)q^3=e^2 me/q. Thus
+    fixed-order perturbation theory fails for q of order or below e^2me, equivalently
+    when kinetic and potential energies are of order e^4me; the bound-state pole can
+    arise only after the diagram sum diverges near that energy.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '14'
+    pages:
+    - 564
+    - 565
+    note: The opening power count gives the extra-exchange factor and its atomic-energy
+      consequence.
+- id: weinberg-1.bound-state-energy-shift-from-propagator-pole
+  label: Bound-state energy shift from the external-field self-energy pole
+  summary: For a static external potential, the full propagator in energy space has
+    poles at electron bound-state energies and at negatives of positron energies.
+    To lowest radiative order, inserting the external-field one-particle-irreducible
+    self-energy Sigma_A between two S_A propagators makes the coefficient of the double
+    electron pole equal to delta E_N. Hence delta E_N=-integral d^3x d^3y bar u_N(x)
+    Sigma_A(x,y;E_N)u_N(y). Its real part is the level shift and its imaginary part
+    is -Gamma/2 for radiative decay to lower levels.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 574
+    - 575
+    - 576
+    note: The pole expansion, one-loop insertion, double-pole comparison, matrix-element
+      formula, and width interpretation are derived here.
 - id: weinberg-1.box-normalization-and-connected-transition-element
   label: Box normalization and connected transition element
   summary: A finite spatial box discretizes momenta and a finite time interval regulates
@@ -587,6 +622,23 @@ nodes:
     - 82
     - 83
     note: Expands the cocycle and derives the centrally extended commutators and shift.
+- id: weinberg-1.central-electrostatic-dirac-radial-decomposition
+  label: Central electrostatic Dirac spinors and coupled radial equations
+  summary: 'For a pure electrostatic potential in the standard Dirac representation,
+    split an electron mode into large f_N and small g_N two-spinors. For a rotationally
+    invariant potential, label modes by total j, z-component, and parity: f and g
+    carry the two orbital angular momenta j plus or minus one-half with opposite parities.
+    Taking ell as the orbital angular momentum of f fixes parity (-1)^ell and gives
+    the coupled radial F,G equations with kappa determined by the parity branch.'
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 568
+    - 569
+    note: The two-component reduction, parity condition, angular decomposition, and
+      radial equations are given here.
 - id: weinberg-1.charge-as-number-difference
   label: Charge as particle-minus-antiparticle number
   summary: After subtracting the vacuum contribution, the relevant conserved number
@@ -1005,6 +1057,27 @@ nodes:
     - 261
     note: The text identifies the surviving delta-function pairings after the vacuum
       terms vanish.
+- id: weinberg-1.coulomb-dirac-spectrum-and-degeneracy
+  label: Coulomb Dirac spectrum, admissibility, and fine-structure degeneracy
+  summary: For e A^0=Z alpha/r, the cited familiar point-Coulomb solution has near-origin
+    behavior r^(s-1), s^2=kappa^2-Z^2 alpha^2; kappa^2 is at least one, so s is real
+    for Z alpha<=1, and s<0 is rejected by normalization. Decay at infinity yields
+    E_nj=m[1+(Z alpha/(n-j-1/2+sqrt((j+1/2)^2-Z^2 alpha^2)))^2]^(-1/2), with j+1/2<=n.
+    The energy depends on n and j, not parity or ell, except that at n=j+1/2 only
+    kappa>0 occurs, with parity (-1)^(j-1/2) and ell=j-1/2. For Z alpha<<1 its quoted
+    expansion gives the first j-dependent relativistic correction and E(2p_3/2)-E(2p_1/2)=alpha^4m_e/32
+    in hydrogen, but leaves 2s_1/2 and 2p_1/2 degenerate. This section explicitly
+    summarizes the familiar solution and cites Reference 3; it does not derive that
+    spectrum.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 570
+    - 571
+    note: The spectrum, boundary and quantum-number restrictions, light-atom expansion,
+      fine splitting, and residual 2s--2p degeneracy are stated here.
 - id: weinberg-1.coulomb-gauge-auxiliary-potential-reduction
   label: Coulomb-gauge reduction of the auxiliary potential
   summary: Choose Coulomb gauge ∇·A=0 by solving ∇²λ=−∇·A. For matter Lagrangians
@@ -1778,6 +1851,54 @@ nodes:
     - 413
     note: The source derives the determinant dependence and interprets its expansion
       as the perturbative fermion-loop series.
+- id: weinberg-1.external-field-dirac-mode-completeness
+  label: External-field Dirac modes, charge sectors, and canonical normalization
+  summary: With only a c-number external vector potential in the Heisenberg Hamiltonian,
+    define u_N from vacuum-to-state electron-field matrix elements and v_N from state-to-vacuum
+    matrix elements. They solve the homogeneous external-field Dirac equation; the
+    equal-time anticommutator gives their completeness relation, including continuum
+    and bound states. For a time-independent field, u_N has energy +E_N and v_N the
+    negative-energy equation with -E_N. Bounded-current boundary conditions establish
+    the displayed energy orthogonality relations; all u modes are also orthogonal
+    to all v modes only while the potential is not strong enough to produce negative-energy
+    states. The normalization follows from field anticommutation, not a probability
+    interpretation.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 566
+    - 567
+    - 568
+    note: Definitions, external-field equations, charge interpretation, orthogonality
+      conditions, completeness, and normalization are established across these pages.
+  notation:
+  - source: weinberg-1
+    note: In this chapter upper-case Psi denotes the full Heisenberg electron field,
+      while lower-case psi has time dependence generated only by the c-number external
+      field.
+- id: weinberg-1.external-field-feynman-propagator
+  label: Feynman propagator in a static external Dirac field
+  summary: Summing any number of external-potential insertions replaces S(x-y) by
+    S_A(x,y), which depends on x and y separately because translation invariance is
+    broken. It is the external-field time-ordered two-point function and satisfies
+    -i S_A(x,y)=theta(x^0-y^0) sum_N u_N(x) bar u_N(y)-theta(y^0-x^0) sum_M v_M(x)
+    bar v_M(y). Equivalently it solves [gamma dot partial_x+m+i e gamma dot A(x)]S_A(x,y)=delta^4(x-y)
+    with Feynman positive- and negative-frequency boundary conditions; those conditions
+    permit numerical treatment even when the external field is too strong for the
+    insertion series.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 572
+    - 573
+    - 574
+    note: The replacement, correlation-function and mode forms, Green-function equation,
+      boundary conditions, and use in ordinary external-field diagrams are developed
+      here.
 - id: weinberg-1.external-field-ladder-limitations
   label: External-field diagram content and ladder limitation
   summary: The external-field electron diagrams represent the underlying diagrams
@@ -1796,6 +1917,26 @@ nodes:
     - 561
     - 562
     note: Diagram mapping, ladder restriction, and stated limitations.
+- id: weinberg-1.external-field-self-energy-diagrams-and-weak-field-master-formula
+  label: External-field self-energy diagrams and momentum-space energy-shift formula
+  summary: The external-field self-energy includes the photon exchange term, the closed-fermion-loop
+    photon tadpole, and Z_2, Z_3, and mass counterterms. The tadpole is newly allowed
+    because the external field breaks Lorentz and charge-conjugation invariance. In
+    a weak time-independent field, energy conservation factors out delta(p'^0-p^0),
+    and the energy shift is delta E_N=-integral d^3p' d^3p bar u_N(p') Sigma_A(p',p;E_N)u_N(p),
+    with Sigma_A expanded in the external field and counterterms. This is the section's
+    master formula for weak external fields.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 576
+    - 577
+    - 578
+    note: Figure 14.1 and equations (14.2.18)--(14.2.28) give the diagram content,
+      symmetry qualification, Fourier representation, static-field reduction, and
+      master formula.
 - id: weinberg-1.external-source-functional-derivative-method
   label: External-source functional derivatives as time-ordered insertions
   summary: Couple c-number external sources to interaction-picture currents. Functional
@@ -2668,6 +2809,31 @@ nodes:
     note: The rendered equations (3.7.23)–(3.7.24) give the 2π, π, π allocation; the
       following text identifies opaque-disk absorption and diffraction and states
       log-squared growth.
+- id: weinberg-1.high-energy-lamb-shift-form-factors
+  label: High-energy Lamb-shift contribution from on-shell form factors
+  summary: 'At mu above binding energies, the external-field vertex insertion reduces
+    to the renormalized one-loop vertex Gamma_1^mu. With |q^2|<<m_e^2 and the nonrelativistic
+    bound spinor, use its Dirac and Pauli form factors: F_1(q^2) contains the q^2
+    logarithm and vacuum-polarization constant, while F_2(0) supplies the anomalous
+    magnetic moment. For an electrostatic potential, [delta E_N]_high=-e^2/[24 pi^2m_e^2][ln(mu^2/m_e^2)+2/5]
+    integral d^3x f_N^dagger[e nabla^2A^0]f_N + i e^2/[16 pi^2m_e^2] integral d^3x
+    f_N^dagger sigma dot [grad(eA^0) cross grad f_N], through order alpha(Z alpha)^4m_e.'
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 579
+    - 580
+    - 581
+    - 582
+    - 583
+    note: The vertex reduction, on-shell form factors, electrostatic F1 term, magnetic
+      F2 term, and combined high-energy result are derived across these pages.
+  notation:
+  - source: weinberg-1
+    note: The high-energy form-factor expansion assumes |q^2|<<m_e^2 and Z alpha<<1;
+      it is not the full external-field vertex at arbitrary field strength.
 - id: weinberg-1.high-spin-interaction-picture-qualification
   label: Interaction-picture qualification on high-spin pathologies
   summary: The text distinguishes physical-particle free fields and perturbative S-matrix
@@ -2771,6 +2937,25 @@ nodes:
     - 99
     - 100
     note: Concludes the theorem and identifies the fundamental-group classification.
+- id: weinberg-1.hydrogen-lamb-shift-numerics-and-higher-correction-limit
+  label: Hydrogen Lamb-shift numerical result and omitted-correction limit
+  summary: Using nonrelativistic wave functions, the source gives Delta E_1s=19.769266917(6)
+    Ry, Delta E_2s=16.63934203(1) Ry, and Delta E_2p=0.9704293186(3) Ry. Its leading
+    calculation gives the 1s, 2s, and 2p_1/2 shifts as 8127.4 MHz, 1039.31 MHz, and
+    -12.88 MHz, respectively, hence 2s minus 2p_1/2 equal to 1052.19 MHz. The earlier
+    high-energy-only 1300 MHz estimate overstates the shift because its infrared scale
+    was too small. The later proton-size, recoil, and higher-order values reported
+    on p. 594 are externally calculated results cited by the source, not derivations
+    in this section; the leading calculation is therefore not a modern precision prediction.
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 593
+    - 594
+    note: The mean-excitation values, level shifts, classic Lamb difference, cutoff
+      comparison, and stated higher-order/nuclear limitations are provided here.
 - id: weinberg-1.in-out-states-heisenberg-asymptotic-definition
   label: In and out states as asymptotic particle content
   summary: In the Heisenberg picture, an in or out state is a time-independent vector
@@ -3021,6 +3206,27 @@ nodes:
     - 4
     note: Equations (1.1.2)–(1.1.4) give the classical relation, derivative identifications,
       and formal substitution method.
+- id: weinberg-1.lamb-shift-cancellation-and-hydrogenic-formulas
+  label: Regulator-independent Lamb shift and hydrogenic mean-excitation formulas
+  summary: Combining the high- and low-energy terms cancels ln mu. For a general electrostatic
+    potential, the resulting order-alpha(Z alpha)^4m_e shift is a logarithmic weighted
+    sum over nonrelativistic transitions plus the spin-orbit expectation. For a Coulomb
+    field, the transition sum reduces to |f_N(0)|^2 and therefore contributes only
+    to ell=0, while the spin-orbit term contributes for ell not equal to zero. With
+    separate mean excitation energies, the source gives [delta E]_(n,ell=0)=4 alpha(Z
+    alpha)^4m_e/[3 pi n^3] [ln(m_e/(2 Delta E_(n,ell=0)))+19/30], and, for ell not
+    equal to zero, [delta E]_(jnell)=-4 alpha(Z alpha)^4m_e/[3 pi n^3] ln(2 Delta
+    E_(jnell)/(Z^2 alpha^2m_e))+alpha(Z alpha)^4m_e/[2 pi n^3] [j(j+1)-ell(ell+1)-3/4]/[ell(ell+1)(2ell+1)].
+  kind: result
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 591
+    - 592
+    note: The cancellation, general formula, Coulomb contact and spin-orbit selection
+      rules, definitions of the two mean excitation energies, and final formulas are
+      given here.
 - id: weinberg-1.lamb-shift-experimental-test
   label: Lamb shift as a test of radiative energy corrections
   summary: Resonant microwave transitions between metastable 2s and rapidly decaying
@@ -3037,6 +3243,24 @@ nodes:
     - 35
     note: The source describes the earlier prediction issue and the Lamb-Retherford
       resonance measurement.
+- id: weinberg-1.lamb-shift-photon-mass-scale-separation
+  label: Photon-mass separation of high- and low-energy Lamb-shift contributions
+  summary: For a nonrelativistic electron in a light Coulomb field, use a fictitious
+    photon mass mu satisfying (Z alpha)^2 m_e << mu << Z alpha m_e. Split the photon
+    propagator into a high-energy part and the difference that defines the low-energy
+    part. High energy retains only first order in the external field but relativistic
+    effects; low energy treats the binding field to all orders. The two contributions
+    must cancel their mu dependence, so this is a calculational separation rather
+    than a physical photon-mass dependence.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 578
+    - 579
+    note: The infrared issue, inequality for mu, definition of the two terms, their
+      distinct approximations, and cancellation requirement are stated here.
 - id: weinberg-1.lepton-charge-radius-infrared-qualification
   label: Lepton charge radius and infrared qualification
   summary: Charge normalization cancels the ultraviolet divergence in the vertex charge
@@ -3338,6 +3562,33 @@ nodes:
     - 556
     note: Pole/non-pole decomposition, symmetry constraints, zero-momentum amplitude,
       and universality.
+- id: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width
+  label: Low-energy Lamb-shift spectral sum, renormalization cancellation, and decay
+    width
+  summary: The low-energy propagator difference is evaluated with the Coulomb field
+    to all orders. Its spectral form sums electron intermediate states with denominators
+    E_M-E_N+omega and positron states with E_M+E_N+omega; current conservation and
+    parity rewrite it in spatial-current matrix elements. Mass renormalization cancels
+    all terms that would survive as Z alpha tends to zero, leaving a difference that
+    retains E_M-E_N in denominators. The remaining integral is infrared sensitive,
+    produces a real logarithmic spectral sum, and has an imaginary term when a lower
+    state is available; that imaginary part gives the radiative decay rate.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 583
+    - 584
+    - 585
+    - 586
+    - 587
+    - 588
+    - 589
+    - 590
+    note: The low-energy kernel, complete-state representation, current-conservation
+      identities, exact rewriting, mass-renormalization cancellations, retained level
+      differences, and imaginary decay term are developed here.
 - id: weinberg-1.lsz-reduction-renormalized-field-normalization
   label: LSZ reduction and renormalized field normalization
   summary: For an operator with nonzero overlap with a one-particle state, the external
@@ -3887,6 +4138,24 @@ nodes:
     - 65
     note: Footnote states the finite-dimensional unitary-representation restriction
       for these two little groups.
+- id: weinberg-1.nonrelativistic-external-dirac-reduction-and-bilinears
+  label: Nonrelativistic external-Dirac reduction and bilinear matrix elements
+  summary: When |e A^0| is small and Z alpha<<1, E_N+m is approximately 2m, so g_N
+    approximately equals (sigma dot grad)f_N/(2m) and f_N obeys the Schrödinger equation
+    with energy E_N-m. The normalized four-spinor and its momentum-space expansion
+    can then be expressed through a two-component Schrödinger spinor and free Dirac
+    spinors. The leading matrix elements of the sixteen Dirac matrices, including
+    density, current, commutator, spin, axial, and pseudoscalar bilinears, provide
+    the stated perturbative reduction rules.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 571
+    - 572
+    note: The small-component and Schrödinger reductions, normalization and momentum
+      representation, then the leading bilinears, are given on these pages.
 - id: weinberg-1.nonrenormalizable-eft-suppression
   label: Effective-theory suppression of higher-dimensional interactions
   summary: Although a non-renormalizable Lagrangian needs infinitely many symmetry-allowed
@@ -5106,6 +5375,36 @@ nodes:
     - 374
     note: Problem 1 gives the process, perturbative order, unobserved-spin condition,
       and Lagrangian qualification.
+- id: weinberg-1.problem-external-scalar-mode-completeness
+  label: 'Problem: external-field charged-scalar mode completeness and expansion'
+  summary: For a charged scalar of nonzero mass m with only a time-independent external
+    electromagnetic interaction, use vacuum-to-one-boson and one-antiboson matrix
+    elements to show that the u_N and v_N modes are complete, then derive the coefficients
+    of an arbitrary function's expansion in those modes.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 594
+    note: Problem 1 specifies the external-field scalar modes, completeness proof,
+      and expansion-coefficient task.
+- id: weinberg-1.problem-external-scalar-radiative-energy-shift
+  label: 'Problem: scalar bound-state energy shift from the radiative kernel'
+  summary: For a nonzero-mass charged scalar in a time-independent external electromagnetic
+    field, with u_N and v_N defined by vacuum-to-one-boson and one-antiboson matrix
+    elements, include order-alpha radiative corrections. Derive the one-boson energy
+    shift in terms of u_N(x) and i Pi*(x,y), the sum of diagrams with one incoming
+    and one outgoing scalar line excluding final scalar propagators.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 594
+    - 595
+    note: Problem 2 defines the radiative kernel and requests the scalar one-boson
+      energy-shift formula.
 - id: weinberg-1.problem-forward-photon-electron-order-e4
   label: 'Problem: forward photon-electron scattering through order e4'
   summary: Use dispersion theory together with the Section 8.7 forward photon-electron
@@ -5166,6 +5465,18 @@ nodes:
     pages:
     - 256
     note: Problem 7 asks for this independent asymptotic estimate.
+- id: weinberg-1.problem-hydrogen-2p-radiative-decay-rate
+  label: 'Problem: hydrogen 2p radiative decay rate from the Lamb-shift calculation'
+  summary: Use the results of Section 14.3 to calculate the radiative decay rate of
+    hydrogen's 2p states, retaining the connection between a level shift's imaginary
+    part and its decay rate.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 595
+    note: Problem 3 explicitly requests the 2p radiative decay rate from Section 14.3.
 - id: weinberg-1.problem-k-matrix-s-relation
   label: 'Problem: S-matrix in terms of the K-matrix'
   summary: 'Exercise request: after defining the standing-wave K-matrix and establishing
@@ -5205,6 +5516,19 @@ nodes:
     pages:
     - 562
     note: Independent requested subproblem and all stated conditions.
+- id: weinberg-1.problem-massive-light-scalar-hydrogenic-1s-shift
+  label: 'Problem: 1s shift from a light scalar with intermediate mass'
+  summary: For an electron interaction g phi bar-psi psi with a light scalar satisfying
+    (Z alpha)^2m_e<m_phi<<Z alpha m_e, calculate the resulting 1s energy change in
+    hydrogenic atoms.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 595
+    note: Problem 4 gives the scalar coupling, mass window, hydrogenic 1s target,
+      and requested energy shift.
 - id: weinberg-1.problem-massive-spin-two-field-construction
   label: 'Problem: construct massive spin-two tensor field'
   summary: For a real symmetric traceless tensor field that creates and annihilates
@@ -5231,6 +5555,18 @@ nodes:
     pages:
     - 256
     note: Problem 4 asks for this massless derivative construction.
+- id: weinberg-1.problem-massless-scalar-hydrogenic-1s-shift
+  label: 'Problem: massless-scalar limit of the hydrogenic 1s shift'
+  summary: For the electron coupling g phi bar-psi_e psi_e to a massless scalar, m_phi=0,
+    calculate the resulting energy change of the 1s state of a hydrogenic atom.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 595
+    note: Problem 5 explicitly changes the scalar mass to zero while retaining the
+      Problem 4 calculation.
 - id: weinberg-1.problem-massless-spin-j-inversion-transformations
   label: 'Problem: massless spin-j P, C, T transformations'
   summary: Work out P, C, and T transformations of parity-completed fields of type
@@ -7760,6 +8096,47 @@ edges:
     - 419
     note: The source explicitly invokes Eq. (9.1.34) for particle paths before deriving
       the permutation composition law.
+- id: weinberg-1.bound-state-energy-shift-from-propagator-pole-to-external-field-self-energy-diagrams-and-weak-field-master-formula
+  from: weinberg-1.bound-state-energy-shift-from-propagator-pole
+  to: weinberg-1.external-field-self-energy-diagrams-and-weak-field-master-formula
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The weak-field momentum formula is the pole-derived energy shift expressed
+    with the explicit self-energy kernel.
+  failure_mode: Without the coordinate-space matrix-element formula, the momentum-space
+    master expression lacks its derivation and sign.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 576
+    - 578
+    note: The section moves from the pole formula through the diagram kernel to equation
+      (14.2.28).
+- id: weinberg-1.bound-state-energy-shift-from-propagator-pole-to-problem-external-scalar-radiative-energy-shift
+  from: weinberg-1.bound-state-energy-shift-from-propagator-pole
+  to: weinberg-1.problem-external-scalar-radiative-energy-shift
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for the scalar analogue of extracting a bound-state energy
+    shift from a one-particle-irreducible radiative kernel, not for an answer to Problem
+    1.
+  failure_mode: Without the propagator-pole energy-shift method, the requested relation
+    between Pi* and delta E_N has no reusable derivation route.
+  evidence:
+  - source: weinberg-1
+    section: 14.2; Problems, Chapter 14
+    pages:
+    - 575
+    - 576
+    - 594
+    - 595
+    note: Section 14.2 derives the pole method, and Problem 2 requests its charged-scalar
+      counterpart.
 - id: weinberg-1.box-normalization-to-cross-section
   from: weinberg-1.box-normalization-and-connected-transition-element
   to: weinberg-1.cross-section-flux-and-invariant-relative-velocity
@@ -8253,6 +8630,26 @@ edges:
     - 213
     note: Without the causal vector field, the relative phases required by a field-level
       inversion law are not fixed.
+- id: weinberg-1.central-electrostatic-dirac-radial-decomposition-to-coulomb-dirac-spectrum-and-degeneracy
+  from: weinberg-1.central-electrostatic-dirac-radial-decomposition
+  to: weinberg-1.coulomb-dirac-spectrum-and-degeneracy
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Using the quoted familiar Coulomb solution requires recognizing the central-field
+    radial quantum numbers and branches, but the source does not derive that solution
+    here.
+  failure_mode: Without the kappa/parity radial labels, the quoted spectrum's admissibility
+    and degeneracy restrictions cannot be interpreted.
+  evidence:
+  - source: weinberg-1
+    section: 14.1; Reference 3
+    pages:
+    - 569
+    - 570
+    note: The radial equations precede a treatment explicitly described as a brief
+      summary of a familiar solution and externally referenced.
 - id: weinberg-1.charge-conjugation-to-creation-operator-symmetry
   from: weinberg-1.charge-conjugation-cp-cpt-process-relations
   to: weinberg-1.creation-operator-symmetry-transformation-rules
@@ -8508,6 +8905,44 @@ edges:
     - 113
     - 114
     note: The source inserts the completeness relations to derive both unitarity equations.
+- id: weinberg-1.complex-causal-scalar-field-to-problem-external-scalar-mode-completeness
+  from: weinberg-1.complex-causal-scalar-field
+  to: weinberg-1.problem-external-scalar-mode-completeness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task adapts charged particle and antiparticle scalar modes to a static
+    external field.
+  failure_mode: Without the charged scalar particle/antiparticle field structure,
+    the two requested mode families are undefined.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 594
+    note: Problem 1 specifies one-boson and one-antiboson states and their scalar
+      field matrix elements.
+- id: weinberg-1.complex-causal-scalar-field-to-problem-external-scalar-radiative-energy-shift
+  from: weinberg-1.complex-causal-scalar-field
+  to: weinberg-1.problem-external-scalar-radiative-energy-shift
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task needs the charged scalar particle/antiparticle field setup,
+    but supplies its external-field mode definitions without requiring Problem 1's
+    solution.
+  failure_mode: Without the charged scalar field structure, the incoming and outgoing
+    charged scalar lines in Pi* are undefined.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 594
+    - 595
+    note: Problems 1 and 2 specify charged scalar one-boson/one-antiboson states and
+      the radiative scalar-line kernel.
 - id: weinberg-1.complex-field-to-c-t-constraints
   from: weinberg-1.complex-causal-scalar-field
   to: weinberg-1.charge-conjugation-time-reversal-phase-constraints
@@ -9000,6 +9435,23 @@ edges:
     pages:
     - 266
     note: The source discusses the factors as additions to the just-stated rules.
+- id: weinberg-1.coordinate-space-feynman-rules-to-external-field-self-energy-diagrams-and-weak-field-master-formula
+  from: weinberg-1.coordinate-space-feynman-rules
+  to: weinberg-1.external-field-self-energy-diagrams-and-weak-field-master-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed external-field self-energy is obtained by applying position-space
+    Feynman rules to Figure 14.1.
+  failure_mode: Without the position-space rules, the diagrammatic kernel and signs,
+    including the closed-loop term, cannot be constructed.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 577
+    note: The source explicitly applies position-space Feynman rules to the diagrams.
 - id: weinberg-1.coulomb-hamiltonian-to-free-photon
   from: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
   to: weinberg-1.transverse-free-photon-interaction-picture
@@ -11962,6 +12414,23 @@ edges:
     - 95
     - 96
     note: Makes the global choice and derives each operator type.
+- id: weinberg-1.electromagnetic-form-factors-spin-zero-spin-half-to-high-energy-lamb-shift-form-factors
+  from: weinberg-1.electromagnetic-form-factors-spin-zero-spin-half
+  to: weinberg-1.high-energy-lamb-shift-form-factors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy vertex is reduced by the on-shell Dirac--Pauli F1,F2
+    decomposition.
+  failure_mode: Without the form-factor normalization and decomposition, Gamma_1^mu
+    cannot be separated into its contact and spin-orbit contributions.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 580
+    note: The source invokes the general form of the on-shell matrix element of Gamma_1^mu.
 - id: weinberg-1.even-traces-to-gamma5
   from: weinberg-1.dirac-gamma-even-trace-pairing-formula
   to: weinberg-1.gamma5-trace-identities
@@ -12018,6 +12487,96 @@ edges:
     - 370
     note: The source uses d²=0 to establish both exact-implies-closed and electromagnetic
       gauge invariance before generalizing to p forms.
+- id: weinberg-1.external-field-dirac-mode-completeness-to-central-electrostatic-dirac-radial-decomposition
+  from: weinberg-1.external-field-dirac-mode-completeness
+  to: weinberg-1.central-electrostatic-dirac-radial-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The radial decomposition is a specialization of the normalized external-field
+    electron modes.
+  failure_mode: Without the external-field eigenvalue equation, there are no mode
+    equations to split into two-spinor radial components.
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 568
+    - 569
+    note: The reduction explicitly starts from the energy eigenvalue condition (14.1.10).
+- id: weinberg-1.external-field-dirac-mode-completeness-to-external-field-feynman-propagator
+  from: weinberg-1.external-field-dirac-mode-completeness
+  to: weinberg-1.external-field-feynman-propagator
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator's spectral representation inserts the complete u and v
+    mode set.
+  failure_mode: Without completeness and charge-sector modes, the time-ordered propagator
+    cannot be expanded or normalized as shown.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 573
+    note: Equation (14.2.3) is obtained by inserting the complete intermediate-state
+      set and uses the previous modes.
+- id: weinberg-1.external-field-dirac-mode-completeness-to-nonrelativistic-external-dirac-reduction-and-bilinears
+  from: weinberg-1.external-field-dirac-mode-completeness
+  to: weinberg-1.nonrelativistic-external-dirac-reduction-and-bilinears
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonrelativistic approximation reduces the external-field energy eigenmodes
+    and their normalization.
+  failure_mode: The small/large component approximation has no normalized Dirac-mode
+    object to approximate.
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 571
+    - 572
+    note: The reduction invokes the earlier eigenvalue and normalization equations.
+- id: weinberg-1.external-field-feynman-propagator-to-bound-state-energy-shift-from-propagator-pole
+  from: weinberg-1.external-field-feynman-propagator
+  to: weinberg-1.bound-state-energy-shift-from-propagator-pole
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The pole method compares the radiatively corrected propagator with the
+    external-field propagator.
+  failure_mode: Without the uncorrected pole expansion, there is no double-pole coefficient
+    from which to identify delta E_N.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 574
+    - 575
+    note: The full pole expansion is compared directly with the S_A plus delta-S_A
+      construction.
+- id: weinberg-1.external-field-self-energy-diagrams-and-weak-field-master-formula-to-lamb-shift-photon-mass-scale-separation
+  from: weinberg-1.external-field-self-energy-diagrams-and-weak-field-master-formula
+  to: weinberg-1.lamb-shift-photon-mass-scale-separation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Lamb-shift split is explicitly applied to the weak-field self-energy
+    master formula.
+  failure_mode: Without the external-field self-energy terms, there is no photon propagator
+    contribution to split into high and low energies.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 579
+    note: The high- and low-energy pieces are defined from equation (14.2.24).
 - id: weinberg-1.external-source-to-heisenberg-offshell
   from: weinberg-1.external-source-functional-derivative-method
   to: weinberg-1.heisenberg-off-shell-symmetry-constraints
@@ -12076,6 +12635,24 @@ edges:
     - 407
     note: The source introduces Berezin integration after the eigenstate expansion
       and uses it to derive completeness.
+- id: weinberg-1.fermion-onshell-renormalization-conditions-to-external-field-self-energy-diagrams-and-weak-field-master-formula
+  from: weinberg-1.fermion-onshell-renormalization-conditions
+  to: weinberg-1.external-field-self-energy-diagrams-and-weak-field-master-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The external-field self-energy includes the second-order Z2 and mass
+    counterterms fixed by the renormalization prescription.
+  failure_mode: Without the on-shell counterterm conditions, the kernel's counterterm
+    contributions and finite weak-field shift are unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 577
+    note: Equation (14.2.18) includes Z2, Z3, and delta-m counterterms calculated
+      to second order.
 - id: weinberg-1.fermion-onshell-to-electron-self-energy
   from: weinberg-1.fermion-onshell-renormalization-conditions
   to: weinberg-1.one-loop-electron-self-energy-pauli-villars
@@ -13223,6 +13800,25 @@ edges:
     pages:
     - 302
     note: The source calculates the scalar conjugate and Hamiltonian from the transform.
+- id: weinberg-1.heavy-target-external-field-limit-to-external-field-dirac-mode-completeness
+  from: weinberg-1.heavy-target-external-field-limit
+  to: weinberg-1.external-field-dirac-mode-completeness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mode construction uses the c-number external vector potential obtained
+    in the heavy-target approximation.
+  failure_mode: One cannot state the external-field Hamiltonian or its mode equation
+    without its prescribed external interaction.
+  evidence:
+  - source: weinberg-1
+    section: '14.1'
+    pages:
+    - 565
+    - 566
+    note: The external potential is introduced before the external-field Heisenberg
+      construction.
 - id: weinberg-1.heisenberg-symmetry-to-furry
   from: weinberg-1.heisenberg-off-shell-symmetry-constraints
   to: weinberg-1.furrys-theorem-odd-photon-sums
@@ -13242,6 +13838,23 @@ edges:
     - 428
     note: The section introduces the bridge before applying charge conjugation to
       graph sums.
+- id: weinberg-1.high-energy-lamb-shift-form-factors-to-lamb-shift-cancellation-and-hydrogenic-formulas
+  from: weinberg-1.high-energy-lamb-shift-form-factors
+  to: weinberg-1.lamb-shift-cancellation-and-hydrogenic-formulas
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The regulator-independent result adds the high-energy form-factor contribution.
+  failure_mode: Without the high-energy logarithm and spin-orbit term, the total formula
+    omits a required contribution and cannot cancel ln mu.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 591
+    note: The total-energy-shift step explicitly combines the high- and low-energy
+      terms.
 - id: weinberg-1.high-energy-realpart-to-pomeranchuk
   from: weinberg-1.high-energy-boundary-layer-forward-amplitude
   to: weinberg-1.generalized-pomeranchuk-and-photon-kramers-kronig
@@ -13728,6 +14341,25 @@ edges:
     - 393
     note: The source first identifies the determinant and then evaluates its field-dependent
       nonlinear-model contribution.
+- id: weinberg-1.lamb-shift-cancellation-and-hydrogenic-formulas-to-hydrogen-lamb-shift-numerics-and-higher-correction-limit
+  from: weinberg-1.lamb-shift-cancellation-and-hydrogenic-formulas
+  to: weinberg-1.hydrogen-lamb-shift-numerics-and-higher-correction-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical shifts evaluate the s and non-s analytic formulas using
+    calculated mean excitation energies.
+  failure_mode: Without the formulas, the listed mean excitation energies do not determine
+    the displayed level shifts or Lamb difference.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 592
+    - 593
+    note: The text immediately inserts the mean excitation energies into equations
+      (14.3.53) and (14.3.56).
 - id: weinberg-1.lamb-shift-motivates-renormalized-calculation
   from: weinberg-1.lamb-shift-experimental-test
   to: weinberg-1.renormalization-physical-parameters
@@ -13749,6 +14381,61 @@ edges:
     - 38
     note: The source describes the measurement's impact, subsequent renormalized calculations,
       and the confidence shift at Shelter Island.
+- id: weinberg-1.lamb-shift-photon-mass-scale-separation-to-high-energy-lamb-shift-form-factors
+  from: weinberg-1.lamb-shift-photon-mass-scale-separation
+  to: weinberg-1.high-energy-lamb-shift-form-factors
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The form-factor calculation is the high-energy branch defined by the
+    photon-mass split.
+  failure_mode: Without the high-energy regime and its mu hierarchy, retaining only
+    first order in the external field is unjustified.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 579
+    - 580
+    note: The source states that mu above binding energies permits lowest external-field
+      order before constructing Gamma_1.
+- id: weinberg-1.lamb-shift-photon-mass-scale-separation-to-low-energy-lamb-shift-spectral-sum-and-width
+  from: weinberg-1.lamb-shift-photon-mass-scale-separation
+  to: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The spectral calculation is the low-energy branch defined by the propagator
+    difference.
+  failure_mode: Without the low-energy prescription, treating the electrostatic binding
+    field to all orders and retaining infrared level differences has no basis.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 583
+    - 584
+    note: The source returns to the configuration-space low-energy kernel and says
+      the electrostatic force must be treated to all orders.
+- id: weinberg-1.lamb-shift-photon-mass-scale-separation-to-problem-massive-light-scalar-hydrogenic-1s-shift
+  from: weinberg-1.lamb-shift-photon-mass-scale-separation
+  to: weinberg-1.problem-massive-light-scalar-hydrogenic-1s-shift
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4 states the same hierarchy between the scalar mass, binding
+    energy, and atomic momentum used to separate scales.
+  failure_mode: Without recognizing that hierarchy, one cannot select the corresponding
+    light-field approximation regime.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 14
+    pages:
+    - 595
+    note: Problem 4 gives (Z alpha)^2m_e<m_phi<<Z alpha m_e.
 - id: weinberg-1.legendre-to-coulomb-hamiltonian
   from: weinberg-1.hamiltonian-legendre-transform-equations
   to: weinberg-1.coulomb-gauge-hamiltonian-and-instantaneous-energy
@@ -13768,6 +14455,24 @@ edges:
     - 350
     note: The source invokes the Chapter 7 Hamiltonian–Lagrangian relation for constrained
       variables and derives H.
+- id: weinberg-1.lepton-charge-radius-infrared-qualification-to-high-energy-lamb-shift-form-factors
+  from: weinberg-1.lepton-charge-radius-infrared-qualification
+  to: weinberg-1.high-energy-lamb-shift-form-factors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The small-q-squared F1 slope used here carries the fictitious-photon-mass
+    infrared logarithm.
+  failure_mode: Without that infrared-qualified slope, the high-energy contact term's
+    ln(mu^2/m_e^2) coefficient is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 581
+    note: The source takes the small-q-squared F1 limit using its photon-mass-regulated
+      earlier result.
 - id: weinberg-1.linearization-to-positive-current
   from: weinberg-1.dirac-linearization-clifford-algebra
   to: weinberg-1.dirac-positive-probability-current
@@ -14209,6 +14914,45 @@ edges:
     - 316
     note: The source derives the improvement identity from invariance under the field
       and derivative Lorentz transformations.
+- id: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width-to-lamb-shift-cancellation-and-hydrogenic-formulas
+  from: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width
+  to: weinberg-1.lamb-shift-cancellation-and-hydrogenic-formulas
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The low-energy spectral logarithm supplies the other term needed for
+    the total and for mean excitation energies.
+  failure_mode: Without its transition sum, the total formula cannot define the effective
+    infrared scale or demonstrate regulator cancellation.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 590
+    - 591
+    - 592
+    note: The real low-energy sum is connected to the high-energy matrix element and
+      then specialized into mean excitation energies.
+- id: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width-to-problem-hydrogen-2p-radiative-decay-rate
+  from: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width
+  to: weinberg-1.problem-hydrogen-2p-radiative-decay-rate
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks for the decay rate from the Section 14.3 imaginary
+    energy shift.
+  failure_mode: Without the imaginary-part/width relation and the spectral energy
+    denominators, the radiative rate has no supplied derivation.
+  evidence:
+  - source: weinberg-1
+    section: 14.3; Problems, Chapter 14
+    pages:
+    - 590
+    - 595
+    note: The text identifies the imaginary energy-shift contribution as the decay
+      rate, and Problem 3 directs use of Section 14.3.
 - id: weinberg-1.lsz-proca-to-vector-renorm
   from: weinberg-1.lsz-reduction-renormalized-field-normalization
   to: weinberg-1.problem-vector-1pi-renormalization
@@ -15105,6 +15849,26 @@ edges:
     pages:
     - 337
     note: Problem 5 separately requests the current associated with its stated symmetry.
+- id: weinberg-1.nonrelativistic-external-dirac-reduction-and-bilinears-to-high-energy-lamb-shift-form-factors
+  from: weinberg-1.nonrelativistic-external-dirac-reduction-and-bilinears
+  to: weinberg-1.high-energy-lamb-shift-form-factors
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy form-factor reduction uses the nonrelativistic wavefunction
+    and bilinear approximations.
+  failure_mode: Without those approximations, the contact and spin-orbit matrix elements
+    cannot be reduced from the relativistic vertex.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 580
+    - 581
+    - 583
+    note: The text invokes the Section 14.1 wavefunction and matrix-element approximations
+      for both F1 and F2.
 - id: weinberg-1.normal-modes-to-canonical-quantization
   from: weinberg-1.radiation-normal-modes
   to: weinberg-1.canonical-oscillator-quantization
@@ -15181,6 +15945,24 @@ edges:
     - 33
     note: Page 4 identifies the S-matrix as a reappearance of the positivist program;
       page 33 gives its observable scattering formulation.
+- id: weinberg-1.old-fashioned-perturbation-theory-energy-denominators-to-bound-state-coulomb-resummation-scale
+  from: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
+  to: weinberg-1.bound-state-coulomb-resummation-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factor e^2m_e/q is obtained by multiplying an old-fashioned intermediate-state
+    energy denominator, Coulomb matrix element, and momentum integral.
+  failure_mode: Without energy-denominator perturbation theory, the stated scaling
+    calculation cannot be performed.
+  evidence:
+  - source: weinberg-1
+    section: '14'
+    pages:
+    - 564
+    note: The source switches specifically to time-ordered old-fashioned diagrams
+      to count the intermediate-state denominator.
 - id: weinberg-1.old-fashioned-to-fourier-dyson-route
   from: weinberg-1.old-fashioned-perturbation-theory-energy-denominators
   to: weinberg-1.fourier-energy-denominator-dyson-route
@@ -15234,6 +16016,25 @@ edges:
     - 197
     note: The source explicitly identifies one momentum-conservation delta as the
       cluster form.
+- id: weinberg-1.one-loop-electron-self-energy-pauli-villars-to-low-energy-lamb-shift-spectral-sum-and-width
+  from: weinberg-1.one-loop-electron-self-energy-pauli-villars
+  to: weinberg-1.low-energy-lamb-shift-spectral-sum-and-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The low-energy calculation imports the order-alpha mass shift and uses
+    its small-mu expansion to cancel unphysical terms.
+  failure_mode: Without the mass-renormalization result, the low-energy spectral expression
+    retains terms that incorrectly survive in the free-electron limit.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 587
+    - 588
+    note: The source explicitly imports delta m_e(mu) from Section 11.4 and demonstrates
+      its cancellations.
 - id: weinberg-1.one-loop-vertex-to-charge-radius
   from: weinberg-1.one-loop-vertex-form-factor-evaluation
   to: weinberg-1.lepton-charge-radius-infrared-qualification
@@ -15314,6 +16115,24 @@ edges:
     - 166
     note: The chapter uses the adopted state normalization in constructing the coupled
       basis and asks to prove its scalar product.
+- id: weinberg-1.one-particle-pole-factorization-bound-states-to-bound-state-coulomb-resummation-scale
+  from: weinberg-1.one-particle-pole-factorization-bound-states
+  to: weinberg-1.bound-state-coulomb-resummation-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The resummation argument begins from the fact that a bound state produces
+    a scattering-amplitude pole absent from every fixed perturbative term.
+  failure_mode: Without the bound-state pole result, there is no singular feature
+    that the all-order Coulomb sum must explain.
+  evidence:
+  - source: weinberg-1
+    section: '14'
+    pages:
+    - 564
+    note: The source explicitly invokes Section 10.3 for the hydrogen bound-state
+      pole before the power count.
 - id: weinberg-1.one-particle-representations-to-asymptotic-multiparticle-states
   from: weinberg-1.one-particle-irreducible-poincare-states
   to: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
@@ -16773,6 +17592,24 @@ edges:
     - 161
     note: The resonance definition and mechanisms precede the lower-half-plane pole
       derivation.
+- id: weinberg-1.resonance-pole-energy-and-decay-width-to-bound-state-energy-shift-from-propagator-pole
+  from: weinberg-1.resonance-pole-energy-and-decay-width
+  to: weinberg-1.bound-state-energy-shift-from-propagator-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The interpretation Im(delta E_N)=-Gamma/2 imports the Chapter 3 relation
+    between an unstable-state pole and its decay rate.
+  failure_mode: Without the resonance-pole result, the complex self-energy matrix
+    element has no supplied decay-width interpretation.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 576
+    note: The source explicitly recalls the Chapter 3 pole E-i Gamma/2 to identify
+      the imaginary part.
 - id: weinberg-1.resonance-projector-to-breit-wigner
   from: weinberg-1.resonance-unitarity-projector-decomposition
   to: weinberg-1.breit-wigner-cross-section-and-partial-widths
@@ -17292,6 +18129,25 @@ edges:
     - 423
     note: Problem 3 requests a vector vacuum wave function and derivation of its propagator
       iε terms.
+- id: weinberg-1.schwinger-one-loop-anomalous-magnetic-moment-to-high-energy-lamb-shift-form-factors
+  from: weinberg-1.schwinger-one-loop-anomalous-magnetic-moment
+  to: weinberg-1.high-energy-lamb-shift-form-factors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The F2(0) value inserted into the spin-orbit term is the one-loop Schwinger
+    form factor.
+  failure_mode: Without F2(0), the coefficient of the high-energy spin-orbit contribution
+    is undetermined.
+  evidence:
+  - source: weinberg-1
+    section: '14.3'
+    pages:
+    - 581
+    - 582
+    note: The source uses the quoted F2 small-q-squared limit before deriving the
+      magnetic contribution.
 - id: weinberg-1.screening-to-scalar-uehling-problem
   from: weinberg-1.vacuum-polarization-screening-and-uehling-shift
   to: weinberg-1.problem-scalar-vacuum-polarization-z3-uehling
@@ -18230,6 +19086,10 @@ groups:
   title: Asymptotic scattering states
 - id: weinberg-1.birth-of-qft
   title: Birth of quantum field theory
+- id: weinberg-1.bound-states-external-fields
+  title: Bound states in external fields
+  question: How are external-field bound states and their radiative energy corrections
+    constructed without a fixed-order expansion in the binding interaction?
 - id: weinberg-1.cluster-decomposition
   title: Cluster decomposition and Fock-space construction
   question: Which Fock-space Hamiltonian structures make distant scattering experiments
@@ -18259,6 +19119,21 @@ groups:
 - id: weinberg-1.unitarity-consequences
   title: Consequences of unitarity
 motivations:
+- id: weinberg-1.bound-state-poles-motivate-resummation
+  nodes:
+  - weinberg-1.bound-state-coulomb-resummation-scale
+  - weinberg-1.external-field-feynman-propagator
+  summary: A hydrogen bound-state pole is absent from every finite perturbative contribution,
+    so the source motivates an external-field treatment that resums the necessary
+    Coulomb interactions from the beginning.
+  evidence:
+  - source: weinberg-1
+    section: '14'
+    pages:
+    - 564
+    - 565
+    note: The opening discussion identifies the missing fixed-order pole and the need
+      to sum selected diagrams to all orders.
 - id: weinberg-1.motivation-heavy-sources
   nodes:
   - weinberg-1.heavy-target-external-field-limit

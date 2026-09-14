@@ -1016,3 +1016,94 @@ units:
       - 558
       - 562
     affected_records: []
+- id: full-011
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The p.572 witness truncated Eq. (14.1.42) and no witness contained Eq.
+      (14.1.47).
+    alternatives:
+    - Keep the short Eq. (14.1.42) fragment and accept the matcher failure.
+    - Replace it with exact complete equation blocks containing Eqs. (14.1.42) and
+      (14.1.47).
+    resolution: Use exact p.572 blocks containing complete OCR lines for Eqs. (14.1.42)
+      and (14.1.47).
+    rationale: The first replacement spans the stated nonrelativistic assumptions
+      and Eqs. (14.1.40)-(14.1.42), including the full printed equation label that
+      restores the matcher's right boundary. The second spans Eqs. (14.1.43)-(14.1.47).
+      Both are verbatim packet text and the registered-source matcher accepts them.
+    evidence:
+    - source: weinberg-1
+      section: '14.1'
+      pages:
+      - 572
+    affected_records: []
+  - finding: 1
+    issue: Formula witnesses often omitted operands, normalizations, hypotheses, or
+      cancellation limits.
+    alternatives:
+    - Retain one-line fragments and infer missing formula content from headings.
+    - Replace fragments with exact local blocks that include equations and their operative
+      conditions.
+    resolution: Replace fragmentary checks with matched formula-and-condition blocks
+      across all cited pages.
+    rationale: The revised checks cover every cited page with contiguous source blocks.
+      They expressly include the radial system and kappa definition; Coulomb spectrum,
+      degeneracy and fine splitting; Schrodinger reduction and normalization; F1 and
+      F2 terms; the photon-mass split; spectral denominators; mass renormalization;
+      low-energy cancellations; widths; and mean-excitation formulas. The original
+      renders were used to interpret OCR-damaged mathematics, while every stored witness
+      remains exact registered text. No graph claim or dependency is changed.
+    evidence:
+    - source: weinberg-1
+      section: '14.1'
+      pages:
+      - 569
+      - 570
+      - 571
+      - 572
+    - source: weinberg-1
+      section: '14.3'
+      pages:
+      - 579
+      - 580
+      - 581
+      - 582
+      - 583
+      - 584
+      - 585
+      - 586
+      - 587
+      - 588
+      - 589
+      - 590
+      - 591
+      - 592
+    affected_records: []
+  - finding: 2
+    issue: Problems 2 and 5 depended on setup stated only in earlier exercises.
+    alternatives:
+    - Keep cross-exercise shorthand and treat exercise statements as prerequisite
+      answers.
+    - Restate each inherited theory, field, mass, and requested observable in its
+      own task node.
+    resolution: Make both task summaries self-contained and retain only conceptual
+      prerequisite edges.
+    rationale: Problem 2 now states the nonzero-mass charged scalar, time-independent
+      external field, mode definitions, radiative order, kernel, and excluded final
+      propagators. Problem 5 now states the electron-scalar coupling, m_phi=0, hydrogenic
+      1s state, and requested energy change. The p.594-595 witnesses contain the complete
+      inherited setups and tasks. The already-corrected graph has no exercise-answer
+      edge, so its conceptual dependencies remain valid.
+    evidence:
+    - source: weinberg-1
+      section: Problems, Chapter 14
+      pages:
+      - 594
+      - 595
+    affected_records:
+    - kind: nodes
+      id: weinberg-1.problem-external-scalar-radiative-energy-shift
+    - kind: nodes
+      id: weinberg-1.problem-massless-scalar-hydrogenic-1s-shift
