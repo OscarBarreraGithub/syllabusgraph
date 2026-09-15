@@ -1941,6 +1941,10 @@ nodes:
   - project: weinberg-1
     node: weinberg-1.multiphonon-transversality-and-gauge-replacement
     note: Retains WI gauge-replacement/multiphoton argument.
+  - project: schwartz
+    node: schwartz.qed-ward-identity-from-lsz-and-contact-terms
+    note: Adds the independent LSZ/contact proof with its linear-coupling and external-state
+      qualifications.
   evidence:
   - source: schwartz
     section: 8.4.2
@@ -1973,6 +1977,13 @@ nodes:
     - 450
     note: The source derives transversality, gives the Schwinger-term qualification,
       and states the on-shell and graph-sum qualifications for gauge replacements.
+  - source: schwartz
+    section: 14.7.3
+    pages:
+    - 280
+    - 281
+    - 282
+    note: Derives the QED Ward identity from LSZ and contact terms.
   notation: []
 - id: qft.align010.schwartz.massless-maxwell-gauge-redundancy-and-two-modes
   label: Massless Maxwell gauge redundancy and two modes
@@ -14973,12 +14984,14 @@ nodes:
     note: Completes the square and obtains the source functional whose derivatives
       give all pairings.
 - id: qft.align021.gauge-invariant-correlator-xi-independence
-  label: Xi independence of gauge-invariant correlators
-  summary: With gauge-invariant inserted operators, action and measure in the Abelian
-    functional integral, normalized gauge-invariant correlators are independent of
-    the covariant gauge parameter. Gauge-covariant field correlators, including the
-    photon propagator, need not be parameter independent. Schwartz and Weinberg I
-    retain their distinct orbit-factorization and gauge-averaging proofs.
+  label: Gauge-parameter independence of gauge-invariant observables
+  summary: Gauge-parameter independence has distinct source-local realizations. For
+    normalized correlators of gauge-invariant inserted operators, an Abelian gauge-invariant
+    action and measure let the gauge-orbit factor cancel; gauge-covariant field correlators
+    need not be xi independent. Separately, at fixed perturbative order a complete
+    QED S-matrix diagram set is xi independent by Ward contraction when external fermions
+    are on shell; external photons need not be on shell. Schwartz and Weinberg I retain
+    their orbit-factorization, gauge-averaging, and fixed-order Ward routes.
   kind: result
   group: qft.gauge-quantization
   origins:
@@ -14989,6 +15002,11 @@ nodes:
     node: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
     note: Contributes the finite-transformation/gauge-average proof under gauge-invariant
       insertion, action and measure assumptions.
+  - project: schwartz
+    node: schwartz.qed-s-matrix-xi-independence-from-ward-identity
+    note: Contributes the distinct fixed-order QED S-matrix Ward route under its diagram-count
+      and external-state conditions; it is not a proof about arbitrary gauge-covariant
+      correlators.
   evidence:
   - source: schwartz
     section: '14.5'
@@ -15003,6 +15021,13 @@ nodes:
     note: The source states the gauge-invariance restriction, makes the change of
       variables, introduces the weighted gauge-function average, and derives the covariant
       gauge-fixed action.
+  - source: schwartz
+    section: 14.7.3
+    pages:
+    - 281
+    - 282
+    - 283
+    note: States the fixed-order xi-independence argument and its diagram-set conditions.
 - id: qft.align021.gaussian-functional-wick-contractions
   label: Gaussian functional Wick contractions
   summary: A quadratic Gaussian measure has vanishing odd correlators and even correlators
@@ -23678,6 +23703,10 @@ nodes:
     node: peskin-schroeder.schwinger-dyson-equations-from-field-shifts
     note: Retains PS’s shift-invariant functional-measure change-of-variables derivation
       and its general contact equation.
+  - project: schwartz
+    node: schwartz.path-integral-schwinger-dyson-contact-derivation
+    note: Adds the field-shift/path-integral contact derivation; the canonical equal-time
+      route remains independent.
   evidence:
   - source: schwartz
     section: 7.1 Lagrangian derivation
@@ -23697,6 +23726,14 @@ nodes:
     - 310
     note: Derives field-shift contact equations and the localized symmetry identity,
       including the measure-preserving change of variables.
+  - source: schwartz
+    section: 14.7.1
+    pages:
+    - 273
+    - 274
+    - 275
+    note: An invariant linear field shift yields the free, interacting, and QED contact
+      equations.
   notation: []
 - id: qft.align030.spin-projection-annihilation-angular-distribution
   label: Spin projections in e⁺e⁻→μ⁺μ⁻
@@ -29029,6 +29066,11 @@ nodes:
     node: schwartz.dirac-propagator-requires-fermionic-ordering
     note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
       task boundary at the stated source scope; no broader equivalence is inferred.
+  - project: schwartz
+    node: schwartz.fermionic-generating-functional-and-dirac-propagator
+    note: Contributes the Grassmann-Gaussian construction of the covariant propagator
+      as helpful evidence; it does not replace the canonical comparison showing ordinary
+      ordering fails.
   evidence:
   - source: schwartz
     section: 12.4.2
@@ -29038,6 +29080,11 @@ nodes:
     - 215
     note: Builds the spinor two-point functions, compares statistics, and gives the
       propagator.
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 272
+    note: The free fermionic functional gives the Dirac propagator.
   notation:
   - source: schwartz
     note: The propagator is a matrix in spinor indices; p∕ and the iε prescription
@@ -31568,6 +31615,404 @@ nodes:
     note: The source solves for the Gaussian kernel, identifies its iε effect and
       normalized cancellation, and states the Hermite-polynomial form of multiparticle
       wave functionals.
+  notation: []
+- id: qft.align047.canonical-path-integral-equivalence-by-schwinger-dyson
+  label: Canonical/path-integral equivalence by Schwinger–Dyson equations
+  summary: The canonically defined source functional obeys the same Schwinger–Dyson
+    differential equation and boundary conditions as the path-integral functional,
+    so the two formulations generate the same correlation functions.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.canonical-path-integral-equivalence-by-schwinger-dyson
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 276
+    - 277
+    note: Matches the canonical Taylor expansion to the functional equation and concludes
+      equivalence.
+  notation: []
+- id: qft.align047.complex-scalar-gaussian-functional-problem
+  label: Complex-scalar Gaussian functional problem
+  summary: Problem 14.1 asks for the complex-scalar functional Gaussian with its inverse
+    determinant and source-kernel exponential.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.complex-scalar-gaussian-functional-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.1
+    pages:
+    - 283
+    note: States the complex-scalar Gaussian identity to show.
+  notation: []
+- id: qft.align047.dirac-canonical-schwinger-dyson-verification-problem
+  label: Dirac canonical Schwinger–Dyson verification problem
+  summary: Problem 14.7(a–b) asks for the Dirac analogues of the scalar equation and
+    commutator inputs and a canonical verification of the displayed QED Schwinger–Dyson
+    equation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-canonical-schwinger-dyson-verification-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7(a–b)
+    pages:
+    - 284
+    note: States the Dirac inputs and canonical-verification tasks.
+  notation: []
+- id: qft.align047.dirac-path-integral-schwinger-dyson-verification-problem
+  label: Dirac path-integral Schwinger–Dyson verification problem
+  summary: Problem 14.7(c) asks for a path-integral verification of the displayed
+    Dirac Schwinger–Dyson equation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-path-integral-schwinger-dyson-verification-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7(c)
+    pages:
+    - 284
+    note: States the independent path-integral verification task.
+  notation: []
+- id: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  label: Fermionic generating functional and Dirac propagator
+  summary: The free Dirac path integral over ψ and ψ̄ with Grassmann sources is a
+    Grassmann Gaussian. Differentiating it gives the time-ordered Dirac propagator,
+    whose numerator follows by rationalizing (/p−m)⁻¹.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.fermionic-generating-functional-and-dirac-propagator
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 272
+    note: Defines the fermionic functional and derives the propagator.
+  notation: []
+- id: qft.align047.field-eigenstate-measure-problem
+  label: Field-eigenstate measure construction problem
+  summary: Problem 14.4 asks for position eigenstates of one oscillator, their field-theory
+    generalization to |Φ⟩, and a proof of the functional orthogonality relation defining
+    the path-integral measure.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.field-eigenstate-measure-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.4
+    pages:
+    - 284
+    note: States the oscillator, field-eigenstate, and orthogonality tasks.
+  notation: []
+- id: qft.align047.gauge-deformation-consistency-problem
+  label: Gauge-deformation consistency problem
+  summary: Problem 14.6(b) asks whether the gauge-invariant-correlator argument survives
+    quartic divergence gauge fixing or a mass-like ξA² term.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-deformation-consistency-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.6(b)
+    pages:
+    - 284
+    note: States the two altered gauge-term tests.
+  notation: []
+- id: qft.align047.global-symmetry-ward-contact-method
+  label: Global-symmetry Ward contact derivation
+  summary: A local change of variables implementing a global U(1) symmetry leaves
+    the fermionic path integral invariant while varying the kinetic term and charged
+    insertions. Equating first-order terms gives current-divergence contact terms
+    weighted by the inserted fields’ charges. Its scope is vector U(1), a unit-Jacobian
+    field transformation, and interactions locally symmetric under the change of variables.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.global-symmetry-ward-contact-method
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.8.1
+    pages:
+    - 277
+    - 278
+    - 279
+    note: Derives the current contact equation and gives its charged-field generalization.
+  notation: []
+- id: qft.align047.grassmann-gaussian-determinant
+  label: Grassmann Gaussian determinant
+  summary: A quadratic Gaussian integral over independent barred and unbarred Grassmann
+    variables equals det A, and adding Grassmann sources yields det A times exp(η̄A⁻¹η),
+    unlike the inverse determinant of the bosonic Gaussian.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.grassmann-gaussian-determinant
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 271
+    - 272
+    note: Expands the Grassmann Gaussian and derives the determinant and source formula.
+  notation: []
+- id: qft.align047.grassmann-integration-and-shift-method
+  label: Grassmann integration and shift method
+  summary: Grassmann integration is linear, extracts the coefficient of each integrated
+    generator in the prescribed order, equals Grassmann differentiation, and is invariant
+    under shifts independent of that generator.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.grassmann-integration-and-shift-method
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 270
+    - 271
+    note: Defines integration/differentiation, ordering, and shift invariance.
+  notation: []
+- id: qft.align047.grassmann-interaction-nonvanishing-problem
+  label: Grassmann interaction nonvanishing problem
+  summary: Problem 14.6(a) asks why local products such as (ψ̄ψ)⁵ need not vanish
+    despite Grassmann anticommutation and whether canonical and path-integral pair-production
+    answers agree.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.grassmann-interaction-nonvanishing-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.6(a)
+    pages:
+    - 284
+    note: States the Grassmann-product and formalism-comparison tasks.
+  notation: []
+- id: qft.align047.path-integral-schwinger-dyson-contact-derivation
+  label: Path-integral derivation of Schwinger–Dyson contact terms
+  summary: Invariance of the path integral under an arbitrary scalar-field shift yields
+    the classical equation inside correlators plus delta-function terms from differentiated
+    field insertions; interactions add the variational derivative of Lint.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.path-integral-schwinger-dyson-contact-derivation
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.7.1
+    pages:
+    - 273
+    - 274
+    - 275
+    note: Performs the shift and derives free, interacting, scalar, and QED contact
+      equations.
+  notation: []
+- id: qft.align047.qed-s-matrix-xi-independence-from-ward-identity
+  label: QED S-matrix ξ independence from the Ward identity
+  summary: At fixed perturbative order, changing any internal covariant photon propagator
+    by a longitudinal kμkν term vanishes against the current correlator by the Ward
+    identity; therefore QED S-matrix elements with on-shell external fermions are
+    ξ independent. It is a fixed-perturbative-order result for a complete diagram
+    set with equal internal-photon count, whose current tensor is evaluated in the
+    free theory at that order; external fermions are on shell, but external photons
+    need not be.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.qed-s-matrix-xi-independence-from-ward-identity
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.8.4
+    pages:
+    - 283
+    note: Counts internal photons and uses the longitudinal Ward contraction to prove
+      ξ independence.
+  notation: []
+- id: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  label: QED Ward identity from LSZ and contact terms
+  summary: LSZ-amputated external photons can be replaced by current insertions after
+    disconnected photon contractions are removed. The Ward–Takahashi identity then
+    makes an amplitude vanish when an external photon polarization is replaced by
+    its momentum. The nonperturbative proof assumes L_int=e j·A, applies to on-shell
+    external fermion poles, and does not require p²=0 for the photon momentum; it
+    does not directly cover scalar QED because A²|φ|² creates Schwinger terms.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.qed-ward-identity-from-lsz-and-contact-terms
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.8.3
+    pages:
+    - 280
+    - 281
+    - 282
+    note: Uses photon Schwinger–Dyson equations, LSZ, and shifted external fermion
+      poles to prove the Ward identity.
+  notation: []
+- id: qft.align047.scalar-qed-furrys-theorem-problem
+  label: Scalar-QED Furry’s theorem problem
+  summary: Problem 14.2(a–c) asks for charge conjugation in scalar QED, a nonperturbative
+    path-integral proof that odd-photon correlators vanish, and its off-shell scope.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-furrys-theorem-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.2(a–c)
+    pages:
+    - 283
+    - 284
+    note: States the scalar-QED charge-conjugation, proof, and scope tasks.
+  notation: []
+- id: qft.align047.scalar-qed-schwinger-terms-problem
+  label: Scalar-QED Schwinger-terms problem
+  summary: Problem 14.5 asks for scalar-QED Schwinger–Dyson equations with photons
+    and charged scalars and for the difference between scalar-QED and QED current-conservation
+    equations.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-schwinger-terms-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.5
+    pages:
+    - 284
+    note: States the Schwinger-term tasks.
+  notation: []
+- id: qft.align047.schwinger-dyson-functional-differential-equation
+  label: Schwinger–Dyson functional differential equation
+  summary: The scalar generating functional obeys −i□x δZ/δJ(x)={L′int[−iδ/δJ(x)]+J(x)}Z[J].
+    With boundary conditions this equation can define Z and encode the quantum theory.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.schwinger-dyson-functional-differential-equation
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 275
+    - 276
+    note: Derives and interprets the functional Schwinger–Dyson equation.
+  notation: []
+- id: qft.align047.schwinger-dyson-functional-uniqueness-assumption
+  label: Generating-functional uniqueness and boundary-condition assumption
+  summary: The equivalence argument treats the generating functional as the unique
+    solution of the Schwinger–Dyson functional differential equation once appropriate
+    boundary conditions are imposed.
+  kind: assumption
+  origins:
+  - project: schwartz
+    node: schwartz.schwinger-dyson-functional-uniqueness-assumption
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 276
+    note: States uniqueness with appropriate boundary conditions as the defining condition.
+  notation: []
+- id: qft.align047.spinor-qed-furrys-theorem-problem
+  label: Spinor-QED Furry’s theorem problem
+  summary: Problem 14.2(d–e) asks for Furry’s theorem in QED and whether weak charge-conjugation
+    violation changes photon correlation functions in the Standard Model.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.spinor-qed-furrys-theorem-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.2(d–e)
+    pages:
+    - 284
+    note: States the spinor-QED proof and Standard-Model scope tasks.
+  notation: []
+- id: qft.align047.vacuum-wavefunctional-problem
+  label: Free-field vacuum wavefunctional problem
+  summary: Problem 14.3 asks to invert the free-field mode expansion, represent π
+    as a functional derivative, derive the vacuum-wavefunctional equation from ap|0⟩=0,
+    and find its massive and massless kernels.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.vacuum-wavefunctional-problem
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: Problem 14.3
+    pages:
+    - 284
+    note: States the vacuum-wavefunctional construction tasks.
+  notation: []
+- id: qft.align047.ward-takahashi-momentum-identity
+  label: Momentum-space Ward–Takahashi identity
+  summary: Fourier transforming the global-current contact equation relates pμ times
+    a current-insertion correlator to the difference of correlators with the current
+    momentum shifted onto each charged external line; the relation is off-shell and
+    nonperturbative.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.ward-takahashi-momentum-identity
+    note: Retains the exact Schwartz source record, including its source-specific
+      method, conditions, notation, or task boundary.
+  evidence:
+  - source: schwartz
+    section: 14.8.2
+    pages:
+    - 279
+    - 280
+    note: Defines the Fourier transforms and states the basic and generalized identities.
   notation: []
 - id: qft.align048.casimir-fermion-statistics-sign-problem
   label: Fermionic Casimir-sign problem
@@ -83226,6 +83671,801 @@ edges:
     - 373
     note: The source says that commutators have zero trace, so the final subtracted
       term is the same as the left-hand side.
+- id: qft.align047.incident.form-factors-from-ward-identity
+  from: qft.align047.ward-takahashi-momentum-identity
+  to: qft.align019.on-shell-vertex-form-factor-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward identity eliminates the independent longitudinal form-factor
+    combination.
+  failure_mode: The vertex remains overparameterized and the two-form-factor form
+    does not follow.
+  evidence:
+  - source: schwartz
+    section: '17.1'
+    pages:
+    - 317
+    note: Applies the off-shell-photon Ward identity to set f3=f4.
+- id: qft.align047.incident.full-vertex-from-ward-identity
+  from: qft.align047.ward-takahashi-momentum-identity
+  to: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current-insertion Ward–Takahashi relation is converted to the full
+    1PI vertex identity by off-shell amputation.
+  failure_mode: The contact-term identity needed before amputation is absent.
+  evidence:
+  - source: schwartz
+    section: 19.5.1
+    pages:
+    - 352
+    note: Combines the current-insertion identity with full-propagator amputation.
+- id: qft.align047.incident.scalar-z1-problem-from-ward-contact-method
+  from: qft.align047.global-symmetry-ward-contact-method
+  to: qft.align012.scalar-qed-z1-z2-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar proof requires the charged-field contact-term Ward identity
+    rather than the spinor result as an answer.
+  failure_mode: The all-orders identity relating scalar propagator and vertex is unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 19.2
+    pages:
+    - 354
+    note: Requests an independent scalar-QED proof.
+- id: qft.align047.incident.vp-tensor-problem-from-ward-identity
+  from: qft.align047.ward-takahashi-momentum-identity
+  to: qft.align012.vacuum-polarization-tensor-completion-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise explicitly tests the completed tensor against the Ward identity.
+  failure_mode: There is no criterion for the requested consistency check.
+  evidence:
+  - source: schwartz
+    section: Problem 16.1
+    pages:
+    - 314
+    note: Requires a Ward-identity check after both tensor calculations.
+- id: qft.align047.incident.ward-to-dimreg-tree
+  from: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  to: qft.align024.dimreg-tree-cross-section-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Ward transversality justifies the d-dimensional tensor factorization
+    and polarization sum.
+  failure_mode: The scalar tensor reduction is unjustified.
+  evidence:
+  - source: schwartz
+    section: 20.A.1
+    pages:
+    - 373
+- id: qft.align047.incident.ward-to-real-emission
+  from: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  to: qft.align024.real-emission-phase-space-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Ward transversality yields the tensor reduction and removes unphysical
+    polarizations.
+  failure_mode: The factorization into the scalar contraction is unjustified.
+  evidence:
+  - source: schwartz
+    section: 20.1.2
+    pages:
+    - 361
+- id: qft.align047.joint.scalar-qed-structure-to-z1-task
+  from: qft.align010.schwartz.gauge-current-minimal-coupling
+  to: qft.align012.scalar-qed-z1-z2-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Adapting the contact Ward argument to Problem 19.2 requires the scalar
+    covariant derivative and its quadratic photon contact term.
+  failure_mode: A spinor-current identity is applied to scalar QED without the scalar
+    interaction structure.
+  evidence:
+  - source: schwartz
+    section: 8.3–8.4
+    pages:
+    - 121
+    - 122
+    - 123
+    note: The scalar-QED covariant derivative produces both current coupling and the
+      quadratic photon contact term.
+  - source: schwartz
+    section: Problem 19.2
+    pages:
+    - 354
+    note: The task asks for the scalar-QED Z1=Z2 proof.
+- id: qft.align047.route.fermionic-functional-to-ordering-result
+  from: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  to: qft.align042.dirac-propagator-requires-fermionic-ordering
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The Grassmann functional constructs the same covariant propagator, but
+    does not perform the canonical wrong-ordering comparison.
+  failure_mode: The functional construction is overstated as a second proof that ordinary
+    ordering fails.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 272
+    note: The Grassmann Gaussian produces the covariant Dirac propagator.
+- id: qft.align047.route.fixed-order-xi-proof-to-common-independence
+  from: qft.align047.qed-s-matrix-xi-independence-from-ward-identity
+  to: qft.align021.gauge-invariant-correlator-xi-independence
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The fixed-order S-matrix Ward proof is an independent route to the source-neutral
+    gauge-parameter-independence conclusion.
+  failure_mode: S-matrix independence is conflated with the separate normalized-correlator
+    orbit proof.
+  evidence:
+  - source: schwartz
+    section: 14.8.4
+    pages:
+    - 283
+    note: At fixed order the complete diagram set has a fixed internal-photon count
+      and longitudinal changes vanish by Ward contraction.
+- id: qft.align047.route.lsz-contact-ward-to-common-ward
+  from: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  to: qft.align010.schwartz.massless-little-group-ward-identity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The LSZ/contact calculation is a complete source-specific alternative
+    proof of the common Ward conclusion under its linear-coupling conditions.
+  failure_mode: The added origin is listed without a complete route to the shared
+    conclusion.
+  evidence:
+  - source: schwartz
+    section: 14.8.3
+    pages:
+    - 280
+    - 281
+    - 282
+    note: LSZ, photon contact equations, disconnected removal, and the Ward–Takahashi
+      identity establish the momentum replacement.
+- id: qft.align047.route.path-integral-sd-to-common-contact-equations
+  from: qft.align047.path-integral-schwinger-dyson-contact-derivation
+  to: qft.align030.schwinger-dyson-contact-equations
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The invariant field-shift derivation is a complete alternative route
+    to the shared contact equations.
+  failure_mode: The added Schwartz origin has no represented route to the shared result.
+  evidence:
+  - source: schwartz
+    section: 14.7.1
+    pages:
+    - 273
+    - 274
+    - 275
+    note: An arbitrary linear shift derives the contact equations for free, interacting,
+      and QED fields.
+- id: qft.align047.schwartz-e-canonical-pi-equivalence-from-sd-functional
+  from: qft.align047.schwinger-dyson-functional-differential-equation
+  to: qft.align047.canonical-path-integral-equivalence-by-schwinger-dyson
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equivalence follows because both source functionals solve the same functional
+    equation with the same boundary conditions.
+  failure_mode: There is no common characterization that identifies the two functionals.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 276
+    - 277
+    note: Uses the canonical Taylor expansion to verify the same equation and conclude
+      equality.
+- id: qft.align047.schwartz-e-complex-gaussian-problem-from-gaussian
+  from: qft.align021.multivariable-gaussian-integral-method
+  to: qft.align047.complex-scalar-gaussian-functional-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task is a complex-field counterpart of Gaussian functional evaluation.
+  failure_mode: The requested determinant/source formula lacks its calculation method.
+  evidence:
+  - source: schwartz
+    section: Problem 14.1
+    pages:
+    - 283
+    note: States the complex Gaussian functional identity.
+- id: qft.align047.schwartz-e-dirac-canonical-sd-from-anticommutators
+  from: qft.align042.statistics-and-energy-stability
+  to: qft.align047.dirac-canonical-schwinger-dyson-verification-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7
+    pages:
+    - 284
+- id: qft.align047.schwartz-e-dirac-canonical-sd-from-dirac-equation
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align047.dirac-canonical-schwinger-dyson-verification-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical verification starts from the first-order Dirac equation.
+  failure_mode: The differential operator acting on the time-ordered spinor correlator
+    is undefined.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7(a-b)
+    pages:
+    - 284
+    note: Requests the Dirac equation-of-motion analogue and canonical verification.
+- id: qft.align047.schwartz-e-dirac-canonical-sd-from-fermion-time-ordering
+  from: qft.align042.fermionic-time-ordering
+  to: qft.align047.dirac-canonical-schwinger-dyson-verification-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7
+    pages:
+    - 284
+- id: qft.align047.schwartz-e-dirac-canonical-sd-from-minimal-coupling
+  from: qft.align020.dirac-photon-coupling-and-pauli-term
+  to: qft.align047.dirac-canonical-schwinger-dyson-verification-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed QED Schwinger-Dyson equation includes the photon interaction
+    in the Dirac equation.
+  failure_mode: The interaction term on the right side cannot be produced.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7(a-b)
+    pages:
+    - 284
+    note: Requests verification of the interacting QED spinor identity.
+- id: qft.align047.schwartz-e-dirac-canonical-sd-from-mode-expansion
+  from: qft.align042.quantized-dirac-field-mode-expansion
+  to: qft.align047.dirac-canonical-schwinger-dyson-verification-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7
+    pages:
+    - 284
+- id: qft.align047.schwartz-e-dirac-pi-sd-from-fermion-functional
+  from: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  to: qft.align047.dirac-path-integral-schwinger-dyson-verification-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The path-integral proof shifts Grassmann spinor variables in the Dirac
+    functional.
+  failure_mode: The fermionic measure and action needed for the shift are absent.
+  evidence:
+  - source: schwartz
+    section: Problem 14.7(c)
+    pages:
+    - 284
+    note: Requests a path-integral verification for the Dirac equation.
+- id: qft.align047.schwartz-e-equivalence-from-canonical-sd
+  from: qft.align030.schwinger-dyson-contact-equations
+  to: qft.align047.canonical-path-integral-equivalence-by-schwinger-dyson
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 276
+    - 277
+- id: qft.align047.schwartz-e-equivalence-from-uniqueness
+  from: qft.align047.schwinger-dyson-functional-uniqueness-assumption
+  to: qft.align047.canonical-path-integral-equivalence-by-schwinger-dyson
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The conclusion of equality depends on uniqueness under the stated boundary
+    conditions.
+  failure_mode: Sharing a differential equation does not by itself identify the two
+    functionals.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 276
+    - 277
+    note: Uses the unique-solution characterization to equate the two generating functionals.
+- id: qft.align047.schwartz-e-fermion-functional-from-dirac-action
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Grassmann functional uses the free Dirac quadratic action.
+  failure_mode: The inverse operator in the source functional is unspecified.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 272
+    note: Writes the ψ̄(i∕∂−m)ψ action in Z[η̄,η].
+- id: qft.align047.schwartz-e-fermion-functional-from-grassmann-det
+  from: qft.align047.grassmann-gaussian-determinant
+  to: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The fermionic functional integral is evaluated by the Grassmann Gaussian
+    source formula.
+  failure_mode: The determinant normalization and inverse Dirac operator cannot be
+    obtained.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 272
+    note: Takes the continuum limit of the Grassmann Gaussian to solve Z[η̄,η].
+- id: qft.align047.schwartz-e-fermion-functional-from-source-method
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Grassmann sources play the same insertion-generating role as the source-functional
+    method.
+  failure_mode: Differentiation with respect to η and η̄ lacks its correlator role.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 272
+    note: Introduces fermionic external currents and differentiates the resulting
+      functional.
+- id: qft.align047.schwartz-e-field-eigenstate-problem-from-field-eigenstates
+  from: qft.align021.field-configuration-and-momentum-eigenstates
+  to: qft.align047.field-eigenstate-measure-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly constructs the |Φ⟩ eigenstates and their orthogonality
+    relation used in the construction.
+  failure_mode: The task lacks the defining eigenstate and overlap conditions.
+  evidence:
+  - source: schwartz
+    section: Problem 14.4
+    pages:
+    - 284
+    note: Requests construction of the states satisfying the field-eigenvalue equation.
+- id: qft.align047.schwartz-e-gauge-deformation-from-orbit-factorization
+  from: qft.align021.abelian-gauge-orbit-factorization
+  to: qft.align047.gauge-deformation-consistency-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task tests which altered terms preserve the orbit-factorization argument.
+  failure_mode: The comparison is made without the original gauge-fixing proof’s assumptions.
+  evidence:
+  - source: schwartz
+    section: Problem 14.6(b)
+    pages:
+    - 284
+    note: Asks whether modified gauge terms leave the correlator result intact.
+- id: qft.align047.schwartz-e-global-ward-from-dirac-current
+  from: qft.align020.dirac-number-current-interpretation-residual
+  to: qft.align047.global-symmetry-ward-contact-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local phase change produces the divergence of the Dirac number current.
+  failure_mode: The current insertion lacks its global-symmetry origin.
+  evidence:
+  - source: schwartz
+    section: 14.8.1
+    pages:
+    - 278
+    - 279
+    note: Identifies jμ=ψ̄γμψ in the local-variation derivation.
+- id: qft.align047.schwartz-e-grassmann-det-from-grassmann-integral
+  from: qft.align047.grassmann-integration-and-shift-method
+  to: qft.align047.grassmann-gaussian-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant derivation selects the ordered top-degree term using
+    the integration rule and shifts variables for sources.
+  failure_mode: The surviving determinant term and source completion cannot be justified.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 271
+    - 272
+    note: Uses the integral definition in the Gaussian expansion and source shift.
+- id: qft.align047.schwartz-e-grassmann-integral-from-grassmann-algebra
+  from: qft.align021.grassmann-algebra-and-grading
+  to: qft.align047.grassmann-integration-and-shift-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Integration is defined on the Grassmann generators and their graded products.
+  failure_mode: The extraction and ordering rules have no algebraic domain.
+  evidence:
+  - source: schwartz
+    section: '14.6'
+    pages:
+    - 269
+    - 270
+    note: Introduces generators before defining their integrals.
+- id: qft.align047.schwartz-e-grassmann-problem-from-algebra
+  from: qft.align021.grassmann-algebra-and-grading
+  to: qft.align047.grassmann-interaction-nonvanishing-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Explaining local Grassmann interaction products requires the generator
+    and grading rules.
+  failure_mode: The nilpotence question is treated as a scalar-number assertion.
+  evidence:
+  - source: schwartz
+    section: Problem 14.6
+    pages:
+    - 284
+    note: Poses the anticommutation and nonvanishing interaction question.
+- id: qft.align047.schwartz-e-lsz-ward-from-disconnected-removal
+  from: qft.align030.disconnected-amplitudes-and-cluster-decomposition
+  to: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The external-photon contraction is discarded because it is disconnected
+    from the scattering amplitude.
+  failure_mode: A contact contribution is incorrectly retained in the S matrix.
+  evidence:
+  - source: schwartz
+    section: 14.8.3
+    pages:
+    - 281
+    note: The external-photon contraction is discarded as a disconnected S-matrix
+      contribution.
+- id: qft.align047.schwartz-e-lsz-ward-from-qed-sd-contact
+  from: qft.align047.path-integral-schwinger-dyson-contact-derivation
+  to: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The LSZ proof uses the photon Schwinger-Dyson equation to replace amputated
+    photon fields by current insertions and a contact contraction.
+  failure_mode: The photon-to-current replacement and its contact term are unavailable.
+  evidence:
+  - source: schwartz
+    section: 14.8.3
+    pages:
+    - 280
+    - 281
+    note: The photon contact equation replaces amputated photon fields by currents
+      and isolates the disconnected contraction.
+- id: qft.align047.schwartz-e-s-matrix-xi-from-ward-identity
+  from: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  to: qft.align047.qed-s-matrix-xi-independence-from-ward-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Longitudinal internal-propagator changes vanish only after the Ward contraction
+    of the current correlator is established.
+  failure_mode: The claimed xi cancellation has no vanishing longitudinal factor.
+  evidence:
+  - source: schwartz
+    section: 14.8.4
+    pages:
+    - 283
+    note: Ward contraction removes each longitudinal internal-propagator variation.
+- id: qft.align047.schwartz-e-scalar-furry-from-path-integral
+  from: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  to: qft.align047.scalar-qed-furrys-theorem-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonperturbative proof changes variables in the path-integral representation
+    of the photon correlator.
+  failure_mode: There is no functional integral in which the charge-conjugation substitution
+    can be made.
+  evidence:
+  - source: schwartz
+    section: Problem 14.2(a-c)
+    pages:
+    - 283
+    - 284
+    note: Requests a nonperturbative path-integral proof for odd photon correlators.
+- id: qft.align047.schwartz-e-scalar-furry-from-scalar-qed
+  from: qft.align010.schwartz.gauge-current-minimal-coupling
+  to: qft.align047.scalar-qed-furrys-theorem-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: Problem 14.2(a–c)
+    pages:
+    - 283
+    - 284
+    note: The task starts from scalar-QED charge conjugation and asks for the nonperturbative
+      odd-photon result.
+- id: qft.align047.schwartz-e-scalar-qed-schwinger-problem-from-sd
+  from: qft.align047.path-integral-schwinger-dyson-contact-derivation
+  to: qft.align047.scalar-qed-schwinger-terms-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem extends the just-derived Schwinger–Dyson machinery to scalar
+    QED.
+  failure_mode: The requested contact equations have no derivation framework.
+  evidence:
+  - source: schwartz
+    section: Problem 14.5
+    pages:
+    - 284
+    note: Asks for scalar-QED Schwinger–Dyson equations.
+- id: qft.align047.schwartz-e-sd-functional-from-sd-pi
+  from: qft.align047.path-integral-schwinger-dyson-contact-derivation
+  to: qft.align047.schwinger-dyson-functional-differential-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The functional equation is obtained by repeating the arbitrary shift
+    in the source-dependent path integral.
+  failure_mode: The differential equation has no shift-invariance derivation.
+  evidence:
+  - source: schwartz
+    section: 14.7.2
+    pages:
+    - 275
+    - 276
+    note: Shifts the source-dependent functional and rearranges it into the equation.
+- id: qft.align047.schwartz-e-sd-pi-from-source-functional
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align047.path-integral-schwinger-dyson-contact-derivation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation expresses shifted field integrals as source derivatives
+    and normalized correlators.
+  failure_mode: The contact equations cannot be related to quantum Green functions.
+  evidence:
+  - source: schwartz
+    section: 14.7.1
+    pages:
+    - 273
+    - 274
+    note: Writes the one-point function as a derivative of Z[J] before shifting.
+- id: qft.align047.schwartz-e-spinor-furry-from-charge-conjugation
+  from: qft.align020.charge-conjugation-qed-and-bilinears
+  to: qft.align047.spinor-qed-furrys-theorem-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spinor-QED proof uses the accepted charge-conjugation action and
+    odd vector-current parity.
+  failure_mode: The fermionic integral has no specified symmetry under which the photon
+    correlator changes sign.
+  evidence:
+  - source: schwartz
+    section: Problem 14.2(d-e)
+    pages:
+    - 284
+    note: Requests the QED proof and its weak-interaction qualification.
+- id: qft.align047.schwartz-e-spinor-furry-from-dirac-action
+  from: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  to: qft.align047.spinor-qed-furrys-theorem-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED proof transforms the spinor path-integral action and measure.
+  failure_mode: The requested spinor-QED argument has no fermionic functional representation.
+  evidence:
+  - source: schwartz
+    section: Problem 14.2(d–e)
+    pages:
+    - 284
+    note: Requests the QED proof and Standard-Model extension.
+- id: qft.align047.schwartz-e-vacuum-functional-problem-from-field-eigenstates
+  from: qft.align021.field-configuration-and-momentum-eigenstates
+  to: qft.align047.vacuum-wavefunctional-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives ⟨Φ|0⟩ in the field-configuration representation.
+  failure_mode: The state wavefunctional and π functional derivative have no representation
+    basis.
+  evidence:
+  - source: schwartz
+    section: Problem 14.3
+    pages:
+    - 284
+    note: Asks for π’s action on φ eigenstates and the resulting ⟨Φ|0⟩ equation.
+- id: qft.align047.schwartz-e-ward-contact-from-fermion-functional
+  from: qft.align047.fermionic-generating-functional-and-dirac-propagator
+  to: qft.align047.global-symmetry-ward-contact-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward derivation performs a local transformation of the ψ, ψ̄ functional
+    integral and its inserted fermion fields.
+  failure_mode: The measure transformation and charged field insertions are undefined.
+  evidence:
+  - source: schwartz
+    section: 14.8.1
+    pages:
+    - 278
+    note: Starts with the fermionic path-integral correlation function and changes
+      variables.
+- id: qft.align047.schwartz-e-ward-identity-from-lsz
+  from: qft.align016.lsz-reduction-pole-projection
+  to: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof begins from the LSZ-amputated S-matrix expression for external
+    photons.
+  failure_mode: The current correlator relation is not connected to a scattering amplitude.
+  evidence:
+  - source: schwartz
+    section: 14.8.3
+    pages:
+    - 280
+    - 281
+    note: Writes the LSZ formula with photon kinetic operators and polarizations.
+- id: qft.align047.schwartz-e-ward-identity-from-ward-takahashi
+  from: qft.align047.ward-takahashi-momentum-identity
+  to: qft.align047.qed-ward-identity-from-lsz-and-contact-terms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof contracts the current insertion with its momentum and uses
+    the Ward–Takahashi shifted-line identity.
+  failure_mode: Replacing a polarization by momentum cannot be reduced to vanishing
+    on-shell terms.
+  evidence:
+  - source: schwartz
+    section: 14.8.3
+    pages:
+    - 280
+    - 281
+    - 282
+    note: Uses the generalized Ward–Takahashi identity in the LSZ proof.
+- id: qft.align047.schwartz-e-ward-takahashi-from-fourier
+  from: qft.fourier-transform-derivative-operator-correspondence
+  to: qft.align047.ward-takahashi-momentum-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fourier transforming the current divergence produces ipμ times the current
+    correlator.
+  failure_mode: The momentum-space identity does not follow from the contact relation.
+  evidence:
+  - source: schwartz
+    section: 14.8.2
+    pages:
+    - 279
+    note: Defines the Fourier transforms and obtains ipμMμ.
+- id: qft.align047.schwartz-e-ward-takahashi-from-global-ward
+  from: qft.align047.global-symmetry-ward-contact-method
+  to: qft.align047.ward-takahashi-momentum-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fourier transformation applies to the current-divergence contact equation
+    derived from the local change of variables.
+  failure_mode: There is no position-space identity to transform.
+  evidence:
+  - source: schwartz
+    section: 14.8.2
+    pages:
+    - 279
+    note: Fourier transforms the equation from the preceding subsection.
+- id: qft.align047.schwartz-e-xi-s-matrix-from-covariant-propagator
+  from: qft.generalized-xi-gauge-propagator
+  to: qft.align047.qed-s-matrix-xi-independence-from-ward-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: 14.8.4
+    pages:
+    - 283
+    note: The fixed-order argument writes the amplitude as a complete set with a fixed
+      number of internal photon propagators.
+- id: qft.align047.schwartz-e-xi-s-matrix-from-qed-rules
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align047.qed-s-matrix-xi-independence-from-ward-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source route supplies the stated input at the required level.
+  failure_mode: The stated source route lacks an operative input.
+  evidence:
+  - source: schwartz
+    section: 14.8.4
+    pages:
+    - 283
+    note: The fixed-order argument writes the amplitude as a complete set with a fixed
+      number of internal photon propagators.
 - id: qft.align048.peskin-schroeder-edge-crossing-to-pole-log-cancellation
   from: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
   to: qft.align048.two-loop-counterterm-pole-log-cancellation

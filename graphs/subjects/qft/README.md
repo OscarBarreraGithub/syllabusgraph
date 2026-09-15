@@ -1,8 +1,8 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 2130 concepts and 3045 relationships, mapping 2330 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 2151 concepts and 3093 relationships, mapping 2351 distinct book concepts through explicit origins.
 
-Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
+Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. All accepted textbook concepts are represented through reviewed origins. The combined relationship assessment remains pending. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
 | Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
@@ -28,7 +28,7 @@ A shared node's `origins` identify the book concepts it represents and explain t
 | Schwartz / Weinberg II | 50 |
 | Weinberg I / Weinberg II | 5 |
 
-**These numbers are not whole-book overlap estimates.** The reviewed inputs cover different portions of the subject. A zero means no shared-node mapping in the aligned inputs; it does not mean either book omits the topic.
+These counts cover the reviewed book graphs and measure explicit shared-core mappings, not every conceptual similarity. Distinct assumptions and source-specific derivations remain separate.
 
 Examples of the mapped concepts (the YAML contains every correspondence):
 
@@ -44,7 +44,7 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Little-group induced vector representations (`qft.align010.schwartz.little-group-induced-vector-representations`) | Schwartz: `schwartz.little-group-induced-vector-representations`; Weinberg I: `weinberg-1.induced-representations-and-little-groups` |
 | Massive-vector longitudinal high-energy perturbative breakdown (`qft.align010.schwartz.massive-vector-longitudinal-perturbative-breakdown`) | Schwartz: `schwartz.massive-vector-longitudinal-perturbative-breakdown`; Peskin–Schroeder: `peskin-schroeder.massive-vector-high-energy-consistency` |
 | Massive vector transverse and longitudinal polarization basis (`qft.align010.schwartz.massive-vector-polarization-basis`) | Schwartz: `schwartz.massive-vector-polarization-basis`; Peskin–Schroeder: `peskin-schroeder.problem-massive-vector-polarization-sum`; Peskin–Schroeder: `peskin-schroeder.longitudinal-vector-polarization-kinematics` |
-| Massless little-group derivation of the Ward identity (`qft.align010.schwartz.massless-little-group-ward-identity`) | Schwartz: `schwartz.massless-little-group-ward-identity`; Peskin–Schroeder: `peskin-schroeder.ward-identity-external-photon-polarization-sum`; Schwartz: `schwartz.physical-photon-polarization-sum`; Weinberg I: `weinberg-1.multiphonon-transversality-and-gauge-replacement` |
+| Massless little-group derivation of the Ward identity (`qft.align010.schwartz.massless-little-group-ward-identity`) | Schwartz: `schwartz.massless-little-group-ward-identity`; Peskin–Schroeder: `peskin-schroeder.ward-identity-external-photon-polarization-sum`; Schwartz: `schwartz.physical-photon-polarization-sum`; Weinberg I: `weinberg-1.multiphonon-transversality-and-gauge-replacement`; Schwartz: `schwartz.qed-ward-identity-from-lsz-and-contact-terms` |
 | Massless Maxwell gauge redundancy and two modes (`qft.align010.schwartz.massless-maxwell-gauge-redundancy-and-two-modes`) | Schwartz: `schwartz.massless-maxwell-gauge-redundancy-and-two-modes`; Schwartz: `schwartz.gauge-redundancy-locality-and-global-data`; Weinberg I: `weinberg-1.transverse-free-photon-interaction-picture` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
@@ -80,4 +80,4 @@ python scripts/check_graph_bank.py
 
 These commands work from a clone without textbooks, private caches, or a model account. Extending the graphs requires access to the cited material and the usual independent review. Put references in a project's ignored `materials/` directory; extraction records and quote witnesses stay in `.syllabusgraph/`. See the [PDF reading guide](../../../docs/pdf-reading.md) for adaptable setup.
 
-Continue by aligning the remaining reviewed textbook concepts and checking their shared dependencies, retaining each book's treatment and reviewing new correspondences. Coleman and Weinberg III are outside this initial scope. QFT I/II course design follows graph construction; the [roadmap](../../../docs/roadmap.md) records the task of identifying the right questions about goals, background, depth, time, and assessment.
+All textbook concepts are mapped; the combined relationship assessment is the remaining scientific review. Coleman and Weinberg III are outside this initial scope. QFT I/II course design follows graph construction; the [roadmap](../../../docs/roadmap.md) records the task of identifying the right questions about goals, background, depth, time, and assessment.
