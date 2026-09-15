@@ -1302,6 +1302,10 @@ nodes:
     node: weinberg-2.standard-model-gauge-and-mixed-gravitational-cancellation
     note: Retains this reviewed book-specific treatment, including its stated conditions,
       conventions, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-gauge-anomaly-cancellation
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: weinberg-2
     section: '22.4'
@@ -1310,6 +1314,13 @@ nodes:
     - 386
     note: The table and following calculation establish the Standard Model and mixed
       gravitational cancellations.
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 705
+    - 706
+    - 707
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align006.standard-model-mixed-and-gravitational-anomaly-cancellation
   label: Standard Model mixed and gravitational cancellation
@@ -10284,11 +10295,21 @@ nodes:
     node: schwartz.electroweak-vev-photon-z-mixing
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-wz-photon-mixing-masses
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '29.1'
     pages:
     - 585
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 701
+    - 702
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align018.gauge-diagram-cancellation-in-wz-scattering
   label: Gauge-diagram cancellation in WZ scattering
@@ -10402,11 +10423,21 @@ nodes:
     node: schwartz.higgs-mass-and-hvv-couplings
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-higgs-potential-and-mass
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '29.1'
     pages:
     - 587
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 715
+    - 716
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align018.large-n-sigma-phase-transition-above-two
   label: Large-N sigma-model phase transition above two dimensions
@@ -11197,17 +11228,22 @@ nodes:
   notation: []
 - id: qft.align018.standard-model-chiral-fermion-representations
   label: Standard Model chiral fermion representations
-  summary: 'Quark and lepton left-handed fields occur in SU(2) doublets while right-handed
-    fields are singlets, with hypercharges fixed by electromagnetic charges. νR is
-    explicitly included as an unobserved optional field: Table 29.1 makes it an SU(3)
-    and SU(2) singlet with Y=0.'
+  summary: Quark and lepton left-handed fields occur in SU(2) doublets while right-handed
+    charged fields are singlets, with hypercharges fixed by Q=T3+Y. Schwartz explicitly
+    permits an unobserved nu_R that is an SU(3) and SU(2) singlet with Y=0. Peskin–Schroeder
+    instead uses the minimal no-nu_R model, so it has no ordinary neutrino Yukawa
+    mass.
   kind: representation
   group: qft.align018.electroweak-symmetry-breaking
   origins:
   - project: schwartz
     node: schwartz.standard-model-chiral-fermion-representations
-    note: Retains the source-specific result, normalization, conditions, and task
-      or proof boundary within this shared core.
+    note: Retains the optional nu_R singlet with Y=0 together with the charged-fermion
+      chiral assignments.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-su2-u1-hypercharge-assignments
+    note: Adds the minimal chiral assignment and Q=T3+Y convention while retaining
+      its explicit no-nu_R premise.
   evidence:
   - source: schwartz
     section: '29.3'
@@ -11217,11 +11253,23 @@ nodes:
     section: '29.3'
     pages:
     - 593
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 700
+    - 701
+    - 702
+    - 703
+    - 704
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align018.standard-model-higgs-doublet-and-covariant-derivative
   label: Standard Model Higgs doublet and covariant derivative
-  summary: The gauge sector uses a complex SU(2) Higgs doublet H of hypercharge 1/2,
-    with L including −¼(Waμν)²−¼Bμν²+(DμH)†DμH+m²H†H−λ(H†H)². Its derivative is DμH=∂μH−igWaμτaH−ig′BμH/2.
+  summary: Schwartz writes the full gauge/Higgs Lagrangian with a complex Y=1/2 SU(2)
+    doublet H, including (D_mu H)^dagger D^mu H and D_mu H=partial_mu H-ig W_mu^a
+    tau^a H-igprime B_mu H/2. The common Peskin–Schroeder content is the same Y=1/2
+    doublet and quartic symmetry-breaking potential; PS715–716 supplies that potential
+    and radial expansion, not Schwartz’s full covariant-derivative formula.
   kind: representation
   group: qft.align018.electroweak-symmetry-breaking
   origins:
@@ -11229,11 +11277,23 @@ nodes:
     node: schwartz.standard-model-higgs-doublet-and-covariant-derivative
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-higgs-potential-and-mass
+    note: Contributes the Y=1/2 doublet quartic potential and unitary-gauge radial
+      expansion only; the full covariant derivative remains Schwartz-specific.
   evidence:
   - source: schwartz
     section: '29.1'
     pages:
     - 584
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    - 715
+    - 716
+    note: The hypercharge assignment and doublet potential support only the stated
+      common overlap.
   notation: []
 - id: qft.align018.standard-model-w-w-z-and-w-w-z-z-vertices
   label: Standard Model WWZ and WWZZ vertices
@@ -13801,16 +13861,22 @@ nodes:
     note: Uses the source's Weyl-basis gamma matrices and anti-linear action on scalar
       factors.
 - id: qft.align021.abelian-gauge-orbit-factorization
-  label: Abelian gauge-orbit factorization by field redefinition
-  summary: For gauge-invariant correlators, introduce the orbit functional, shift
-    it by the longitudinal component, and use the Stueckelberg-type field redefinition
-    so the common orbit factor cancels.
+  label: Abelian gauge-orbit factorization
+  summary: For gauge-invariant insertions in Abelian theory, the common integration
+    over each gauge orbit factors from the physical correlator and cancels from normalized
+    expectations. Schwartz implements this with an orbit functional and Stueckelberg-type
+    field redefinition; Weinberg I instead changes variables by a finite gauge transformation
+    and averages the gauge function with a quadratic weight.
   kind: method
   group: qft.gauge-quantization
   origins:
   - project: schwartz
     node: schwartz.path-integral-gauge-orbit-factorization
     note: Retains the source-specific Abelian field-redefinition route.
+  - project: weinberg-1
+    node: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
+    note: Contributes finite Abelian gauge transformation and weighted gauge-function
+      averaging as an independent orbit-factorization route.
   evidence:
   - source: schwartz
     section: '14.5'
@@ -13818,6 +13884,14 @@ nodes:
     - 267
     - 268
     - 269
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 416
+    - 417
+    note: The source states the gauge-invariance restriction, makes the change of
+      variables, introduces the weighted gauge-function average, and derives the covariant
+      gauge-fixed action.
 - id: qft.align021.abelian-gauge-orbit-factorization-assumptions
   label: Abelian gauge-orbit factorization assumptions
   summary: The Abelian orbit argument assumes a selectable longitudinal representative,
@@ -13914,21 +13988,48 @@ nodes:
     - 257
 - id: qft.align021.field-theory-path-integral-from-hamiltonian
   label: Field-theory path integral from the Hamiltonian
-  summary: For the stated scalar Hamiltonian, inserting the field and momentum bases
-    on each time slice and Gaussian-integrating the momentum gives the configuration
-    functional integral and Lagrangian.
+  summary: Time slicing a Hamiltonian phase-space integral and integrating quadratic
+    canonical momenta yields the configuration-space functional integral and its Lagrangian.
+    Schwartz retains the scalar constant-kernel specialization; Weinberg I retains
+    the general real, symmetric, positive, nonsingular momentum kernel, its determinant,
+    and the restriction to momentum-independent insertions.
   kind: method
   group: qft.free-scalar-quantization
   origins:
   - project: schwartz
     node: schwartz.field-theory-path-integral-from-hamiltonian
     note: Retains the scalar-Hamiltonian and Gaussian-momentum assumptions.
+  - project: weinberg-1
+    node: weinberg-1.bosonic-phase-space-path-integral
+    note: Contributes the canonical time-sliced phase-space starting point for the
+      Weinberg I route.
+  - project: weinberg-1
+    node: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+    note: Contributes the completed momentum-integration route under the stated kernel
+      and insertion conditions.
   evidence:
   - source: schwartz
     section: 14.2.3
     pages:
     - 257
     - 258
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 378
+    - 379
+    - 380
+    - 381
+    note: The source states the constrained-system qualification, coordinate and momentum
+      completeness, the infinitesimal kernel, and the time-sliced endpoint path integral.
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 389
+    - 390
+    - 391
+    note: The source states the kernel hypotheses, invokes the Gaussian stationary-point
+      formula, and gives the Lagrangian form with its operator-insertion restriction.
 - id: qft.align021.free-four-point-pairing-derivation
   label: Free four-point pairing derivation
   summary: Four source derivatives of the free Gaussian functional give exactly the
@@ -13978,38 +14079,78 @@ nodes:
       give all pairings.
 - id: qft.align021.gauge-invariant-correlator-xi-independence
   label: Xi independence of gauge-invariant correlators
-  summary: Under the stated Abelian assumptions, gauge-invariant operator correlators
-    computed with the covariant gauge-fixing term are xi independent. Gauge-covariant
-    field correlators, including the photon propagator, need not be xi independent.
+  summary: With gauge-invariant inserted operators, action and measure in the Abelian
+    functional integral, normalized gauge-invariant correlators are independent of
+    the covariant gauge parameter. Gauge-covariant field correlators, including the
+    photon propagator, need not be parameter independent. Schwartz and Weinberg I
+    retain their distinct orbit-factorization and gauge-averaging proofs.
   kind: result
   group: qft.gauge-quantization
   origins:
   - project: schwartz
     node: schwartz.gauge-invariant-correlator-xi-independence
     note: Retains the gauge-covariant-correlator exception.
+  - project: weinberg-1
+    node: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
+    note: Contributes the finite-transformation/gauge-average proof under gauge-invariant
+      insertion, action and measure assumptions.
   evidence:
   - source: schwartz
     section: '14.5'
     pages:
     - 268
     - 269
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 416
+    - 417
+    note: The source states the gauge-invariance restriction, makes the change of
+      variables, introduces the weighted gauge-function average, and derives the covariant
+      gauge-fixed action.
 - id: qft.align021.gaussian-functional-wick-contractions
   label: Gaussian functional Wick contractions
-  summary: The direct Fourier/Gaussian scalar calculation has vanishing odd correlators
-    and even correlators given by complete pairings; it reproduces the Feynman propagator
-    and Wick expansion.
+  summary: A quadratic Gaussian measure has vanishing odd correlators and even correlators
+    equal to the complete sum of pairings, with its inverse kernel as propagator.
+    Peskin–Schroeder retains the direct scalar Fourier calculation; Weinberg I retains
+    a finite-dimensional pairing proof and its separate application to bosonic functional
+    integrals.
   kind: method
   group: qft.free-scalar-quantization
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.gaussian-functional-wick-contractions
     note: Retains the direct Fourier/Gaussian Wick route.
+  - project: weinberg-1
+    node: weinberg-1.gaussian-pairing-wick-formula-proof
+    note: Contributes the finite-dimensional pairing theorem used by the functional
+      route.
+  - project: weinberg-1
+    node: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+    note: Contributes the application of the Gaussian pairing theorem to bosonic functional
+      integrals.
   evidence:
   - source: peskin-schroeder
     section: '9.3'
     pages:
     - 287
     - 288
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 422
+    - 423
+    note: The appendix compares source coefficients, counts distinct pairings, and
+      gives the two- and four-index examples.
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 395
+    - 396
+    - 397
+    note: The source specifies the quadratic-plus-interaction action, expands the
+      interaction, and identifies Gaussian pairings with covariant coordinate-space
+      rules.
 - id: qft.align021.grassmann-algebra-and-grading
   label: Grassmann algebra and grading
   summary: Grassmann generators anticommute and square to zero. Their even products
@@ -14075,21 +14216,33 @@ nodes:
     - 283
 - id: qft.align021.multivariable-gaussian-integral-method
   label: Multivariable Gaussian integral method
-  summary: Completing the square and diagonalizing the quadratic matrix gives the
-    determinant normalization and quadratic source term used in the stated finite-dimensional
-    Gaussian integral.
+  summary: Completing the square about the stationary point gives the determinant
+    normalization and quadratic source term of a finite-dimensional Gaussian integral.
+    Schwartz retains its diagonalization route; Weinberg I retains the analytic-continuation
+    and square-root-branch qualifications for the oscillatory complex integral.
   kind: method
   group: qft.free-scalar-quantization
   origins:
   - project: schwartz
     node: schwartz.multivariable-gaussian-integral-method
     note: Retains the finite-dimensional Gaussian method.
+  - project: weinberg-1
+    node: weinberg-1.gaussian-stationary-point-determinant-proof
+    note: Contributes the stationary-point/determinant proof with its analytic-continuation
+      and branch qualifications.
   evidence:
   - source: schwartz
     section: 14.2.1
     pages:
     - 254
     - 255
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 420
+    - 421
+    note: The appendix states the finite-dimensional hypotheses, diagonalizes the
+      form, and derives the analytically continued stationary-point determinant result.
 - id: qft.align021.normalized-vacuum-correlators-from-path-integrals
   label: Normalized vacuum correlators from path integrals
   summary: A normalized path integral with field insertions represents vacuum time-ordered
@@ -14158,20 +14311,46 @@ nodes:
     - 289
 - id: qft.align021.phase-space-path-integral-weyl-ordering
   label: Phase-space path integral and Weyl-ordering qualification
-  summary: The phase-space route integrates unconstrained momenta and endpoint-fixed
-    coordinates with p dot qdot minus H in the exponent. For mixed momentum-coordinate
-    operators, H must be represented in Weyl order, including commutator corrections.
+  summary: 'A time-sliced phase-space path integral integrates canonical momenta and
+    endpoint-fixed coordinates with p·qdot−H in the exponent. The discrete Hamiltonian
+    symbol is prescription-dependent: Peskin–Schroeder uses Weyl ordering with commutator
+    corrections, while Weinberg I orders Q to the left of P and separately qualifies
+    the measure and Euclidean continuation. Neither ordering convention is imposed
+    on the other route.'
   kind: method
   group: qft.free-scalar-quantization
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.phase-space-path-integral-and-weyl-ordering
     note: The Weyl-ordering correction is specific to this phase-space construction.
+  - project: weinberg-1
+    node: weinberg-1.bosonic-phase-space-path-integral
+    note: Contributes the canonical-slice phase-space construction with Q-left/P-right
+      ordering, distinct from the retained Weyl prescription.
+  - project: weinberg-1
+    node: weinberg-1.path-integral-measure-ordering-and-euclidean-qualification
+    note: Contributes only the ordering, measure and Euclidean-continuation qualifications
+      to the Weinberg I route.
   evidence:
   - source: peskin-schroeder
     section: '9.1'
     pages:
     - 281
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 378
+    - 379
+    - 380
+    - 381
+    note: The source states the constrained-system qualification, coordinate and momentum
+      completeness, the infinitesimal kernel, and the time-sliced endpoint path integral.
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 384
+    note: The source makes both the measure/ordering dependence and the Euclidean-versus-Minkowski
+      qualification explicit.
 - id: qft.align021.real-scalar-configuration-functional-integral
   label: Real-scalar configuration functional integral
   summary: For a real scalar, integrating the canonical momentum in the phase-space
@@ -14209,20 +14388,35 @@ nodes:
 - id: qft.align021.s-matrix-boundary-origin-of-iepsilon
   label: S-matrix boundary origin of the i-epsilon prescription
   summary: For S-matrix amplitudes, fields match free states at temporal infinity.
-    The vacuum wavefunctional boundary factors can be rewritten as infinitesimal bulk
-    damping, yielding the plus-i-epsilon Feynman propagator.
+    Vacuum wave-functional boundary factors become infinitesimal bulk damping and
+    yield the plus-i-epsilon Feynman prescription. Weinberg I retains its normalized
+    scalar Gaussian endpoint derivation; Schwartz retains its free-state boundary
+    presentation.
   kind: method
   group: qft.free-scalar-quantization
   origins:
   - project: schwartz
     node: schwartz.s-matrix-boundary-origin-of-iepsilon
     note: Retains the free-state boundary condition and wavefunctional route.
+  - project: weinberg-1
+    node: weinberg-1.scalar-vacuum-wave-functional-ie-prescription
+    note: Contributes the normalized scalar vacuum endpoint calculation and its bulk
+      damping prescription.
   evidence:
   - source: schwartz
     section: 14.4.1
     pages:
     - 265
     - 266
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 387
+    - 388
+    - 389
+    note: The source solves for the Gaussian kernel, identifies its iε effect and
+      normalized cancellation, and states the Hermite-polynomial form of multiparticle
+      wave functionals.
 - id: qft.align021.scalar-functional-integral-lattice-and-iepsilon
   label: Scalar functional-integral lattice definition and i-epsilon
   summary: A scalar functional measure may be defined as a finite lattice limit and
@@ -15438,13 +15632,12 @@ nodes:
       to an algebraic shortcut.
 - id: qft.align023.peskin.dirac-trace-identities-gamma5
   label: Dirac trace identities, gamma5 traces, and contractions
-  summary: 'Use Clifford anticommutation, trace cyclicity, and gamma5 to reduce Dirac
-    traces: odd gamma traces vanish, two- and four-gamma traces reduce to metrics,
-    and the four-gamma gamma5 trace yields the Levi-Civita tensor. Contraction and
-    reversal identities streamline longer products. Schwartz contributes the cyclicity-and-Clifford
-    derivation of the odd-, two-, and four-gamma traces; the accepted Peskin–Schroeder
-    γ5/Levi-Civita and longer contraction/reversal identities remain source-specific
-    extensions.'
+  summary: 'Clifford anticommutation and trace cyclicity reduce Dirac traces: odd
+    gamma traces vanish, two- and four-gamma traces reduce to metrics, and the four-gamma
+    gamma5 trace gives the Levi-Civita tensor. Peskin–Schroeder retains its longer
+    contraction and reversal identities; Schwartz retains its direct cyclicity derivation;
+    Weinberg I retains the general even-trace pairing formula, its induction proof,
+    and its gamma5 convention as complementary source-specific stages.'
   kind: method
   group: qft.qed-scattering
   origins:
@@ -15457,6 +15650,21 @@ nodes:
     node: schwartz.gamma-trace-identities
     note: Maps Schwartz’s cyclicity/Clifford trace derivation to the compatible subset;
       Peskin–Schroeder’s γ5/ε and longer identities remain distinct.
+  - project: weinberg-1
+    node: weinberg-1.dirac-gamma-even-trace-pairing-formula
+    note: Contributes the all-even pairing formula under Weinberg I conventions; the
+      separate induction node supplies its proof.
+  - project: weinberg-1
+    node: weinberg-1.dirac-gamma-trace-induction-proof
+    note: Contributes the Clifford-and-cyclicity induction route to the even-trace
+      subset.
+  - project: weinberg-1
+    node: weinberg-1.gamma-trace-cyclicity
+    note: Contributes a route premise used in the induction proof, not the whole trace
+      catalog by itself.
+  - project: weinberg-1
+    node: weinberg-1.gamma5-trace-identities
+    note: Contributes the gamma5/Levi-Civita subset with Weinberg I sign conventions.
   evidence:
   - source: peskin-schroeder
     section: 5.1 Trace Technology
@@ -15471,6 +15679,33 @@ nodes:
     - 229
     - 230
     note: Derives the odd-, two-, and four-gamma trace identities used below.
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 372
+    - 373
+    note: The appendix gives the general pairing formula with its factor four, counts
+      the pairings, supplies examples, and states the odd-trace result.
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    - 374
+    note: The source supplies the two-matrix base case, the commutator/cyclicity recurrence,
+      the induction statement, and the similarity-transformation argument for odd
+      traces.
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The proof explicitly says all commutators have zero trace and uses this
+      to equate the remaining term to the left-hand side.
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 374
+    note: The appendix states the vanishing cases, antisymmetry argument, epsilon
+      convention, four-gamma result, and reduction of longer traces.
 - id: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
   label: Electron-muon scattering cross section and forward Coulomb pole
   summary: Crossing the spin-averaged e+e- to mu+mu- squared amplitude gives the lowest-order
@@ -16531,9 +16766,10 @@ nodes:
 - id: qft.align024.furry-theorem-photon-odd-point-vanishing
   label: Furry theorem for odd photon-current amplitudes
   summary: Lorentz invariance and charge conjugation make the photon one-point function
-    vanish; charge conjugation similarly makes vacuum expectation values of an odd
-    number of electromagnetic currents, including the photon three-point function,
-    vanish.
+    vanish, and charge conjugation makes vacuum amplitudes with an odd number of electromagnetic-current
+    or photon insertions vanish. Peskin–Schroeder retains its current-correlator statements;
+    Weinberg I retains the graph-sum proof and does not assert that each individual
+    diagram vanishes.
   kind: result
   group: qft.renormalization-group
   origins:
@@ -16542,11 +16778,20 @@ nodes:
     note: Retains this reviewed book-specific statement, conditions, notation, and
       proof or task boundary; the correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-1
+    node: weinberg-1.furrys-theorem-odd-photon-sums
+    note: Contributes the charge-conjugation proof for sums of graphs with an odd
+      number of external photons; individual graphs are not asserted to vanish.
   evidence:
   - source: peskin-schroeder
     section: '10.1'
     pages:
     - 318
+  - source: weinberg-1
+    section: Chapters 7–9
+    pages:
+    - 428
+    note: Operative passage for the added Weinberg I correspondence.
   notation: []
 - id: qft.align024.initial-state-radiation-and-electron-distributions
   label: Initial-state radiation and electron distribution functions
@@ -17404,12 +17649,23 @@ nodes:
     node: schwartz.custodial-symmetry-as-current-strength-equality
     note: Retains the current-strength interpretation, QCD analogy, and Higgs-triplet
       qualification; correspondence is the shared custodial core.
+  - project: peskin-schroeder
+    node: peskin-schroeder.custodial-symmetry-rho-relation
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '31.2'
     pages:
     - 654
     - 655
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align025.delta-rho-doublet-mass-splitting
   label: Delta rho from doublet mass splitting
@@ -18056,21 +18312,36 @@ nodes:
   notation: []
 - id: qft.align025.tree-level-electroweak-observable-formulas
   label: Tree-level electroweak observable formulas
-  summary: At tree level the selected observables depend on three electroweak parameters,
+  summary: 'At tree level the selected observables depend on three electroweak parameters,
     equivalently alpha_e, sin-squared theta_w, and G_F; the source defines hatted
     quantities from measurement and uses their tree algebra to form predicted observables.
+    Peskin–Schroeder’s fit is a 1994 source-era analysis: it reports relatively strong
+    top-mass dependence and weak Higgs-sector dependence.'
   kind: result
   group: qft.align025.precision-electroweak
   origins:
   - project: schwartz
     node: schwartz.tree-level-electroweak-observable-formulas
     note: Retains the tree-level parameterization and hatted-input convention.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-precision-observables-and-radiative-corrections
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '31.1'
     pages:
     - 642
     - 643
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 710
+    - 711
+    - 712
+    - 713
+    - 714
+    note: Operative source passage for the added common correspondence.
   notation:
   - source: schwartz
     note: Circumflexes denote values defined from the stated measurements, rather
@@ -23851,21 +24122,25 @@ nodes:
       densities are quantum equivalent.
   notation: []
 - id: qft.align038.accidental-lepton-flavor-symmetry
-  label: Accidental lepton flavor conservation of renormalizable electrodynamics
-  summary: With charged leptons of the same electric charge and a renormalizable electromagnetic
-    Lagrangian, general kinetic and mass matrices can be reduced by nonsingular field
-    transformations to diagonal mass eigenfields while leaving a common electromagnetic
-    coupling. The resulting theory accidentally conserves P, C, and T and each lepton
-    flavor. Off-shell flavor-changing matrix elements do not imply an on-shell radiative
-    decay; the common transformation of left- and right-handed fields under electromagnetic
-    gauge transformations is essential. Higher-dimensional terms may violate any of
-    these laws.
+  label: Conditional accidental lepton-flavor conservation
+  summary: Weinberg’s renormalizable electromagnetic theory reduces general charged-lepton
+    kinetic and mass matrices to diagonal mass eigenfields while preserving a common
+    photon coupling; it then accidentally conserves P, C, T, and each lepton flavor,
+    subject to its on-shell and higher-dimensional-operator qualifications. Independently,
+    Peskin–Schroeder biunitarily diagonalizes charged-lepton Yukawas in a chiral electroweak
+    model with no nu_R or neutrino mass, yielding CP and separate generation lepton-number
+    conservation. These routes share the conditional flavor result, not their gauge
+    assumptions or discrete-symmetry proofs.
   kind: result
   origins:
   - project: weinberg-1
     node: weinberg-1.accidental-lepton-flavor-symmetry
-    note: Retains the reviewed source-specific hypothesis, normalization, functional
-      route, sign convention or problem boundary; no broader equivalence is asserted.
+    note: Retains the electromagnetic field-redefinition proof, on-shell qualification,
+      discrete symmetries, and higher-dimensional limitation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.lepton-yukawa-diagonalization-and-flavor-conservation
+    note: Adds the distinct chiral-electroweak Yukawa-diagonalization route under
+      the no-nu_R and massless-neutrino assumptions.
   evidence:
   - source: weinberg-1
     section: '12.5'
@@ -23873,7 +24148,13 @@ nodes:
     - 529
     - 530
     - 531
-    note: Accidental-symmetry motivation, field reduction, and on-shell qualification.
+    note: Electromagnetic field reduction and its on-shell and operator-scope qualifications.
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 726
+    - 727
+    note: Charged-lepton diagonalization and the no-nu_R flavor conclusion.
   notation: []
 - id: qft.align038.appendix-feynman-parameters-dimensional-integrals
   label: 'WI residual route: Appendix: Feynman parameters and dimensional loop integrals'
@@ -24867,11 +25148,24 @@ nodes:
     node: schwartz.electromagnetic-charge-and-neutral-current-structure
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-charged-neutral-current-couplings
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: 29.3.1
     pages:
     - 595
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 702
+    - 703
+    - 704
+    - 705
+    note: The explicit W, photon, and Z current formulas complete the source-specific
+      correspondence.
   notation: []
 - id: qft.align039.electroweak-mixing-and-charged-neutral-vectors
   label: Electroweak mixing and W±, Z, photon fields
@@ -25049,11 +25343,21 @@ nodes:
     node: schwartz.neutral-current-four-fermi-theory-and-massless-photon-limit
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermi-constant-from-w-exchange
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '29.4'
     pages:
     - 604
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 708
+    - 709
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align039.neutrino-oscillation-observables-and-mass-squared-differences
   label: Neutrino oscillation observables and mass-squared differences
@@ -25200,11 +25504,21 @@ nodes:
     node: schwartz.tree-level-four-fermi-matching
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermi-constant-from-w-exchange
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '29.4'
     pages:
     - 603
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 708
+    - 709
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align039.unbroken-gauge-field-canonical-normalization-and-charge
   label: 'Unbroken gauge field: canonical normalization and charge'
@@ -25269,11 +25583,24 @@ nodes:
     node: schwartz.v-minus-a-charged-weak-currents
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-charged-neutral-current-couplings
+    note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
+      all prior equations, conventions, hypotheses, and source-specific residual treatment.
   evidence:
   - source: schwartz
     section: '29.4'
     pages:
     - 603
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 702
+    - 703
+    - 704
+    - 705
+    note: The explicit W, photon, and Z current formulas complete the source-specific
+      correspondence.
   notation: []
 - id: qft.align039.wolfenstein-approximation-and-three-generation-cp-condition
   label: Wolfenstein approximation and the three-generation CP condition (source-specific
@@ -25307,20 +25634,34 @@ nodes:
   notation: []
 - id: qft.align039.yukawa-fermion-masses-and-higgs-couplings
   label: Yukawa fermion masses and Higgs couplings
-  summary: Gauge-invariant Yukawa terms −Ydij Q̄iHdjR−Yuij Q̄i H̃ujR+h.c. give fermion
-    masses after the Higgs vev and hff couplings proportional to each fermion mass.
-    H̃=iσ2H* supplies the up-type/Dirac-neutrino hypercharge.
+  summary: Gauge-invariant Yukawa terms give charged-fermion masses after the Higgs
+    vev and hff couplings proportional to those masses; the up-type term uses H-tilde=i
+    sigma_2 H*. Schwartz also permits a Dirac-neutrino H-tilde term when its optional
+    nu_R is present. Peskin–Schroeder omits nu_R, so its minimal model has no corresponding
+    ordinary neutrino mass.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.yukawa-fermion-masses-and-higgs-couplings
-    note: Retains the reviewed source-specific statement, normalization, derivation
-      or problem boundary; no broader equivalence is asserted.
+    note: Retains the charged-fermion Yukawa formulas and the optional Dirac-neutrino
+      term conditional on nu_R.
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-yukawa-masses-and-higgs-couplings
+    note: Adds the charged-fermion mass and hff result while retaining the source’s
+      explicit absence of nu_R and ordinary neutrino mass.
   evidence:
   - source: schwartz
     section: 29.3.2
     pages:
     - 595
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    - 714
+    - 715
+    - 716
+    note: Operative source passage for the added common correspondence.
   notation: []
 - id: qft.align039.zero-gauge-coupling-vector-goldstone-exchange-equivalence
   label: Zero-gauge-coupling vector/Goldstone exchange equivalence
@@ -25917,16 +26258,23 @@ nodes:
   notation: []
 - id: qft.align042.exchange-path-topology-and-anyons
   label: Exchange-path topology in 3+1 and 2+1 dimensions
-  summary: In three spatial dimensions exchange paths give only bosonic or fermionic
-    phases because winding by 2π can be unwrapped; a rotation route then connects
-    the exchange sign to integer versus half-integer spin. In 2+1 dimensions distinct
-    windings permit arbitrary exchange phase and anyons.
+  summary: Exchange-path topology in at least three spatial dimensions restricts one-dimensional
+    permutation phases to Bose or Fermi choices because a 2π winding can be unwrapped,
+    while two spatial dimensions allow distinct braid phases and anyons. Schwartz
+    separately connects the three-dimensional exchange sign to integer versus half-integer
+    spin by a rotation route. Weinberg I supplies the permutation-representation,
+    parastatistics-equivalence and two-dimensional-anyon route, but not that spin-statistics
+    step.
   kind: concept
   origins:
   - project: schwartz
     node: schwartz.exchange-path-topology-and-anyons
     note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
       task boundary at the stated source scope; no broader equivalence is inferred.
+  - project: weinberg-1
+    node: weinberg-1.path-integral-topological-bose-fermi-statistics-proof
+    note: Contributes permutation phases, parastatistics equivalence and the two-dimensional
+      braid exception; it does not prove the spin connection.
   evidence:
   - source: schwartz
     section: '12.2'
@@ -25937,6 +26285,15 @@ nodes:
     - 211
     note: Defines the path angle, derives the 3+1 restriction and spin sign, then
       contrasts 2+1 anyons.
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 418
+    - 419
+    - 420
+    note: The source states the separated asymptotic preparation and particle-path
+      scope, derives the permutation composition condition, and gives the parastatistics
+      and two-dimensional braid-group qualifications.
   notation: []
 - id: qft.align042.fermionic-time-ordering
   label: Fermionic time ordering
@@ -26237,15 +26594,15 @@ nodes:
   notation: []
 - id: qft.align043.qed-fermion-exchange-and-loop-signs
   label: Fermion exchange and loop signs in QED
-  summary: 'Anticommuting time-ordered spinors give a relative minus sign between
-    diagrams related by exchange of identical external fermions and one additional
-    minus sign for each closed fermion loop. Peskin–Schroeder supplies two functional
-    routes to the fermionic sign structure: finite-dimensional Grassmann Gaussian
-    pairings and the external-background determinant series. Neither makes the other
-    a compulsory prerequisite. Weinberg’s sign proof is an independent operator-permutation
-    route to the same exchange and loop signs. It is not a compulsory premise for
-    the retained Schwartz time-ordering derivation or the PS Grassmann Gaussian and
-    determinant routes.'
+  summary: Anticommuting time-ordered spinors give a relative minus sign between diagrams
+    related by exchange of identical external fermions and one extra minus sign for
+    each closed fermion loop. Schwartz and the earlier Weinberg operator treatment
+    retain their time-ordering and odd-permutation routes. Peskin–Schroeder retains
+    distinct finite-dimensional Grassmann signed pairings and the external-background
+    trace-log determinant series with its cyclic 1/n factor. The added Weinberg I
+    pairing record contributes permutation signs and the Dirac inverse kernel, while
+    its determinant record contributes the closed-loop sign and exponentiation; neither
+    partial record alone proves the combined result.
   kind: result
   origins:
   - project: schwartz
@@ -26264,6 +26621,14 @@ nodes:
     node: weinberg-1.fermion-exchange-and-loop-signs
     note: Contributes the shared exchange and closed-loop sign result; Weinberg's
       odd-operator-permutation proof remains a separate independent route.
+  - project: weinberg-1
+    node: weinberg-1.fermionic-gaussian-pairing-and-dirac-propagator
+    note: Contributes Grassmann pairing-permutation signs and the Dirac inverse kernel,
+      not the closed-loop determinant result.
+  - project: weinberg-1
+    node: weinberg-1.external-dirac-field-determinant-loop-expansion
+    note: Contributes the closed-loop sign and disconnected-loop exponentiation, not
+      the external-exchange proof.
   evidence:
   - source: schwartz
     section: 13.1.1
@@ -26289,6 +26654,21 @@ nodes:
     - 270
     note: Derives fermionic pairing signs from odd permutations and states the closed-loop
       rule.
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 409
+    - 410
+    - 411
+    note: The source identifies the bilinear free action, evaluates the generating
+      integral, and specializes the inverse kernel to Dirac variables.
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    - 413
+    note: The source derives the determinant dependence and interprets its expansion
+      as the perturbative fermion-loop series.
   notation: []
 - id: qft.align043.qed-fermion-line-and-loop-evaluation
   label: QED fermion-line and loop evaluation
@@ -26967,6 +27347,1337 @@ nodes:
     - 237
     note: The section introduces anomalous action terms, constructs the five-ball
       functional, shows its phenomenological role, and derives coefficient quantization.
+  notation: []
+- id: qft.align045.current-algebra-higgs-mass-construction
+  label: Current-algebra construction of the Higgs mass matrix
+  summary: For a global symmetry with delta L_0=(partial_mu alpha^a)J^{mu a}, define
+    Goldstone overlaps <0|J^{mu a}(x)|pi_j(p)>=-i p^mu F^a_j exp(-ip dot x); F^a_j=0
+    for unbroken generators. Gauging G with the common coupling g gives (m^2)_{ab}=g^2
+    sum_j F^a_j F^b_j. The text emphasizes that this applies when breaking is elementary-scalar,
+    strong-interaction, or otherwise nonperturbative.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.current-algebra-higgs-mass-construction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 697
+    - 698
+    - 699
+    - 700
+  notation: []
+- id: qft.align045.custodial-symmetry-rho-relation
+  label: Custodial symmetry and the rho mass relation
+  summary: A single Higgs doublet has an O(4)-symmetric scalar sector whose vacuum
+    leaves custodial O(3). The resulting current matrix elements give m_W=m_Z cos(theta_W),
+    equivalently rho=1 at tree level. The cited passage establishes this protected
+    relation but does not attribute its corrections to hypercharge or Yukawa splittings.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.custodial-symmetry-rho-relation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+  notation: []
+- id: qft.align045.electroweak-charged-neutral-current-couplings
+  label: Electroweak charged and neutral currents
+  summary: The covariant derivative fixes W^± couplings to left-handed charged currents
+    with g/sqrt(2), photon coupling eQ, and Z coupling g/cos(theta_W)(T^3-Q sin^2(theta_W)).
+    Right-handed fermions have T^3=0, so weak neutral currents violate parity.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-charged-neutral-current-couplings
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 702
+    - 703
+    - 704
+    - 705
+    note: The covariant derivatives and the displayed W, photon, and Z currents fix
+      the stated couplings.
+  notation: []
+- id: qft.align045.electroweak-precision-observables-and-radiative-corrections
+  label: Electroweak precision relations and radiative corrections
+  summary: Tree-level relations among alpha, G_F, m_Z, m_W, and sin^2(theta_W) permit
+    parameter predictions. The source then compares definitions of sin^2(theta_W),
+    weak-neutral-current data, and Z-pole observables in a 1994-era radiative-correction
+    fit, reporting relatively strong top-mass dependence and weak Higgs-sector dependence.
+    The numerical fit is historical rather than a current precision summary.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-precision-observables-and-radiative-corrections
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 710
+    - 711
+    - 712
+    - 713
+    - 714
+  notation: []
+- id: qft.align045.electroweak-su2-u1-hypercharge-assignments
+  label: Electroweak SU(2)_L x U(1)_Y representations
+  summary: The Glashow--Weinberg--Salam theory gauges SU(2)_L x U(1)_Y. Left-handed
+    leptons and quarks are SU(2) doublets while right-handed charged fermions are
+    singlets, with electric charge Q=T^3+Y; the Higgs is a Y=1/2 doublet. These chiral
+    assignments determine the covariant derivatives and allowed renormalizable couplings.
+  kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-su2-u1-hypercharge-assignments
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 700
+    - 701
+    - 702
+    - 703
+    - 704
+    note: Chiral multiplets, hypercharges, and Q=T3+Y.
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    note: The allowed renormalizable Higgs–fermion couplings use these assignments.
+  notation: []
+- id: qft.align045.electroweak-wz-photon-mixing-masses
+  label: W, Z, photon mixing and masses
+  summary: With <phi>=(0,v/sqrt(2))^T, define W^±=(A^1 mp iA^2)/sqrt(2), Z=cos(theta_W)A^3-sin(theta_W)B,
+    and A=sin(theta_W)A^3+cos(theta_W)B where tan(theta_W)=gprime/g. Then m_W=gv/2,
+    m_Z=v sqrt(g^2+gprime^2)/2=m_W/cos(theta_W), and the photon remains massless.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-wz-photon-mixing-masses
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 701
+    - 702
+  notation: []
+- id: qft.align045.fermi-constant-from-w-exchange
+  label: Low-energy weak interactions from W exchange
+  summary: At momentum transfer much smaller than m_W, W exchange reduces to a local
+    current-current interaction with coefficient G_F/sqrt(2)=g^2/(8m_W^2)=1/(2v^2).
+    The charged-current and neutral-current effective Lagrangians retain their chiral
+    and weak-angle factors.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermi-constant-from-w-exchange
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 707
+    - 708
+    - 709
+  notation: []
+- id: qft.align045.higgs-decay-phenomenology-and-mass-bounds
+  label: General Higgs-sector requirements and custodial relation
+  summary: Pages 717-719 do not derive decay widths. They state that a Higgs sector
+    must generate quark/lepton masses and W/Z masses and naturally reproduce m_W=m_Z
+    cos(theta_W), experimentally satisfied to better than one percent at the source-era
+    one-loop level. A global custodial SU(2) left unbroken by the sector supplies
+    that relation; the single-doublet scalar sector realizes it as O(4)->O(3).
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-decay-phenomenology-and-mass-bounds
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+  notation: []
+- id: qft.align045.lepton-yukawa-diagonalization-and-flavor-conservation
+  label: Lepton Yukawa diagonalization without right-handed neutrinos
+  summary: 'For three charged-lepton Yukawa couplings, separate unitary rotations
+    diagonalize the charged-lepton masses. With no right-handed neutrinos and no neutrino
+    mass term, these rotations leave no lepton mixing matrix: the theory conserves
+    each generation lepton number and is CP conserving in this lepton sector.'
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.lepton-yukawa-diagonalization-and-flavor-conservation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 726
+    - 727
+  notation: []
+- id: qft.align045.problem-20-1-su5-breaking-spectrum
+  label: 'Problem 20.1: SU(5) adjoint breaking spectrum'
+  summary: For each of the two supplied SU(5) adjoint expectation values, determine
+    the unbroken subgroup and the gauge-boson mass spectrum from the adjoint Higgs
+    mass matrix.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-1-su5-breaking-spectrum
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.1
+    pages:
+    - 728
+  notation: []
+- id: qft.align045.problem-20-2a-w-decay-widths
+  label: 'Problem 20.2(a): W partial and total widths'
+  summary: Compute W decays to allowed quark and lepton pairs, omit top production
+    and other quark masses, include the stated order-alpha_s QCD correction for quarks,
+    and use sin^2 theta_W=0.23 to obtain the total width.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-2a-w-decay-widths
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2(a)
+    pages:
+    - 728
+  notation: []
+- id: qft.align045.problem-20-2b-z-decay-widths
+  label: 'Problem 20.2(b): Z partial widths and branching fractions'
+  summary: Compute Z partial widths to quarks and leptons with the same quark QCD
+    treatment, then determine the total Z width and the hadronic, charged-lepton,
+    and invisible-neutrino fractions.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-2b-z-decay-widths
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2(b)
+    pages:
+    - 728
+  notation: []
+- id: qft.align045.problem-20-3a-z-interference-cross-section
+  label: 'Problem 20.3(a): photon--Z interference cross section'
+  summary: For massless f of charge Q_f and left-handed isospin I_f^3, compute e+e-
+    -> f f-bar including photon exchange, Z exchange, interference, and the Breit--Wigner
+    Z width; plot total cross sections through the Z resonance for u,d,mu.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-3a-z-interference-cross-section
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3(a)
+    pages:
+    - 728
+  notation: []
+- id: qft.align045.problem-20-3bc-forward-backward-asymmetry
+  label: 'Problem 20.3(b,c): forward-backward asymmetry'
+  summary: Compute the center-of-mass-energy dependent forward-backward asymmetry
+    and show its stated on-resonance expression in terms of the angular coefficients
+    A and B.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-3bc-forward-backward-asymmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3(b,c)
+    pages:
+    - 728
+  notation: []
+- id: qft.align045.problem-20-3d-z-peak-invisible-modes
+  label: 'Problem 20.3(d): Z peak and extra invisible modes'
+  summary: Derive the peak Z-resonance cross section in terms of partial and total
+    widths, then calculate how a hypothetical fourth neutrino changes Gamma_Z and
+    the peak height and compare with the cited measurements.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-3d-z-peak-invisible-modes
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3(d)
+    pages:
+    - 729
+  notation: []
+- id: qft.align045.problem-20-4a-neutral-current-dis
+  label: 'Problem 20.4(a): neutral-current neutrino DIS'
+  summary: Compute d sigma/(dx dy) for neutrino and antineutrino neutral-current scattering
+    on protons, including u,d quarks and antiquarks and the invisible final lepton.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-4a-neutral-current-dis
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4(a)
+    pages:
+    - 729
+  notation: []
+- id: qft.align045.problem-20-4b-isoscalar-ratios
+  label: 'Problem 20.4(b): isoscalar neutral-to-charged ratios'
+  summary: For an isoscalar nuclear target, use f_u=f_d and the analogous antiquark
+    equality to derive R_nu and R_antinu in terms of sin^2 theta_W and r, including
+    the statement that the formula applies to accepted x,y integration regions.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-4b-isoscalar-ratios
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4(b)
+    pages:
+    - 729
+  notation: []
+- id: qft.align045.problem-20-4c-weinberg-nose
+  label: 'Problem 20.4(c): Weinberg nose curve'
+  summary: Set r=0.4, vary sin^2 theta_W, sketch the resulting R_antinu versus R_nu
+    curve, and locate the point near sin^2 theta_W=0.23.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-4c-weinberg-nose
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4(c)
+    pages:
+    - 729
+  notation: []
+- id: qft.align045.problem-20-5ab-two-higgs-vacuum
+  label: 'Problem 20.5(a,b): two-Higgs vacuum and stability'
+  summary: For two Y=1/2 SU(2) doublets with parallel expectation values v_1,v_2,
+    derive the replacement v^2 -> v_1^2+v_2^2 in the gauge-boson mass matrix; then
+    use the displayed discrete-symmetry potential to find conditions for that configuration
+    to be locally stable.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-20-5ab-two-higgs-vacuum
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5(a,b)
+    pages:
+    - 729
+    - 730
+  notation: []
+- id: qft.align045.standard-model-gauge-anomaly-cancellation
+  label: Standard-Model local gauge-anomaly cancellation
+  summary: For one generation, the source evaluates massless-fermion triangle traces
+    with gamma_5=-1 on left-handed fields and +1 on right-handed fields. Vectorlike
+    QED and QCD contributions cancel, the SU(2)^3 coefficient vanishes, and the remaining
+    mixed and hypercharge sums cancel with the stated color multiplicities. This is
+    the source’s gamma_5 bookkeeping calculation, not a left-handed-conjugate-field
+    derivation.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-gauge-anomaly-cancellation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 704
+    - 705
+    - 706
+    - 707
+  notation: []
+- id: qft.align045.standard-model-higgs-potential-and-mass
+  label: Standard-Model Higgs potential and physical scalar
+  summary: For the single doublet, V=-mu^2 phi-dagger phi+lambda(phi-dagger phi)^2
+    has v^2=mu^2/lambda and leaves one physical h after unitary gauge. The text gives
+    m_h^2=2lambda v^2 and its couplings to W and Z proportional to their masses squared,
+    plus fermionic Yukawa couplings proportional to fermion masses.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-higgs-potential-and-mass
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 715
+    - 716
+  notation: []
+- id: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  label: Yukawa masses and Higgs couplings
+  summary: With Higgs doublet phi of Y=1/2 and <phi>=(0,v/sqrt(2)), the source writes
+    -lambda_e E_L dot phi e_R and analogous down-quark and epsilon_ab Q_L^a phi^{*b}u_R
+    terms. They give m_e=lambda_e v/sqrt(2), m_d=lambda_d v/sqrt(2), m_u=lambda_u
+    v/sqrt(2); an ordinary neutrino mass is absent because the analogous term requires
+    a right-handed neutrino. In unitary gauge h couples as -m_f f-bar f(1+h/v), while
+    its vector couplings arise from the expanded Higgs kinetic term.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.standard-model-yukawa-masses-and-higgs-couplings
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    - 714
+    - 715
+    - 716
+  notation: []
+- id: qft.align045.su2-adjoint-higgs-to-u1
+  label: 'SU(2) adjoint Higgs: residual U(1)'
+  summary: For a real SU(2) vector vacuum oriented in internal direction 3, the T^1
+    and T^2 gauge bosons have masses gv whereas T^3 leaves the vacuum invariant and
+    its gauge boson remains massless. This realizes SU(2)->U(1).
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.su2-adjoint-higgs-to-u1
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 695
+    - 696
+  notation: []
+- id: qft.align045.su3-adjoint-higgs-breaking-patterns
+  label: SU(3) adjoint Higgs breaking patterns
+  summary: Diagonalizing a traceless Hermitian adjoint vacuum identifies its unbroken
+    generators as those commuting with Phi_0. The displayed orientations yield SU(3)->SU(2)xU(1),
+    with four massless and four massive bosons, or SU(3)->U(1)xU(1), with two massless
+    and six massive bosons; masses follow from -g^2 tr([t^a,Phi_0][t^b,Phi_0]).
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.su3-adjoint-higgs-breaking-patterns
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 696
+    - 697
+    - 698
+  notation: []
+- id: qft.align045.su3-adjoint-higgs-exact-mass-spectra
+  label: SU(3) adjoint-Higgs exact mass spectra
+  summary: 'For Phi_0 proportional to diag(1,1,-2), SU(3)->SU(2)xU(1): the four noncommuting
+    generators have m^2=(3g|Phi|)^2. For Phi_0 proportional to diag(1,-1,0), SU(3)->U(1)xU(1):
+    t^1,t^2 have m^2=(2g|Phi|)^2 and t^4,t^5,t^6,t^7 have m^2=(g|Phi|)^2, while t^3,t^8
+    remain massless. These are the explicit scalar-adjoint examples following the
+    commutator mass formula.'
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.su3-adjoint-higgs-exact-mass-spectra
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 697
+  notation: []
+- id: qft.align045.z-polarization-asymmetry
+  label: Z polarization asymmetry
+  summary: For massless f with left isospin I_f^3 and charge Q_f, the source defines
+    A_f=[Gamma(Z->f_L f-bar_R)-Gamma(Z->f_R f-bar_L)]/[Gamma(Z->f_L f-bar_R)+Gamma(Z->f_R
+    f-bar_L)] = [(I_f^3-Q_f sin^2 theta_W)^2-(Q_f sin^2 theta_W)^2]/[(I_f^3-Q_f sin^2
+    theta_W)^2+(Q_f sin^2 theta_W)^2]. At sin^2 theta_W=0.23 it reports 15 percent
+    for charged leptons and 95 percent for d,s,b; it gives polarization and on-resonance
+    forward-backward measurements as checks.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.z-polarization-asymmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 710
+    - 711
+  notation: []
+- id: qft.align046.abelian-gauge-averaging-covariant-qed-path-integral
+  label: Abelian gauge averaging for the covariant QED path integral
+  summary: For gauge-invariant inserted operators, action, and measure, change variables
+    by a finite Abelian gauge transformation and average over the gauge function with
+    a quadratic weight. Integrating the gauge function turns the Coulomb-gauge delta
+    functional into a covariant gauge-fixing term; field-independent factors cancel
+    in connected vacuum expectations.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.abelian-gauge-averaging-covariant-qed-path-integral
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 416
+    - 417
+    note: The source states the gauge-invariance restriction, makes the change of
+      variables, introduces the weighted gauge-function average, and derives the covariant
+      gauge-fixed action.
+  notation: []
+- id: qft.align046.auxiliary-field-restoration-of-covariant-action
+  label: Auxiliary-field restoration of a covariant vector action
+  summary: For real massive vector fields, after canonical momentum integration the
+    apparent Lagrangian omits the time component and hides covariance. Reintroducing
+    the auxiliary A0 integration before eliminating the momenta restores the original
+    Lorentz-invariant action, up to field-independent factors.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.auxiliary-field-restoration-of-covariant-action
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 393
+    - 394
+    note: The source presents the massive-vector example, adds A0, and states that
+      eliminating the momenta recovers the original covariant Lagrangian.
+  notation: []
+- id: qft.align046.berezin-integration-completeness-and-inverse-jacobian
+  label: Berezin integration, completeness, and inverse Jacobian
+  summary: Berezin integration selects the highest Grassmann coefficient with an ordered
+    anticommuting differential measure. It is linear, translation-invariant, and equivalent
+    to repeated single-variable integration with the stated reversed differential
+    order; it yields fermionic eigenstate completeness and, under a nonsingular linear
+    change of Grassmann variables, transforms with the inverse determinant.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.berezin-integration-completeness-and-inverse-jacobian
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 403
+    - 404
+    - 405
+    - 406
+    - 407
+    note: The source defines coefficient-selecting Berezin integration, derives repeated-integral,
+      linearity, and translation properties, gives the inverse-determinant change
+      rule, and establishes completeness.
+  notation: []
+- id: qft.align046.bosonic-phase-space-path-integral
+  label: Bosonic phase-space path integral from canonical slices
+  summary: For bosonic canonical pairs after first-class constraints have been gauge-fixed
+    and remaining second-class constraints solved into unconstrained Q,P variables,
+    insert coordinate and momentum completeness relations between infinitesimal time
+    slices, with Q ordered left of P. The continuum limit integrates over all q and
+    p paths with fixed endpoint coordinates and action ∫(q̇p−H)dt.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.bosonic-phase-space-path-integral
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 378
+    - 379
+    - 380
+    - 381
+    note: The source states the constrained-system qualification, coordinate and momentum
+      completeness, the infinitesimal kernel, and the time-sliced endpoint path integral.
+  notation: []
+- id: qft.align046.dirac-gamma-even-trace-pairing-formula
+  label: Even Dirac-gamma trace pairing formula
+  summary: The trace of 2N Dirac gamma matrices is four times the signed sum over
+    all pairings of their spacetime indices, with (2N−1)!! distinct pairings. Odd
+    gamma traces vanish.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-gamma-even-trace-pairing-formula
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 372
+    - 373
+    note: The appendix gives the general pairing formula with its factor four, counts
+      the pairings, supplies examples, and states the odd-trace result.
+  notation: []
+- id: qft.align046.dirac-gamma-trace-induction-proof
+  label: Inductive proof of the gamma-trace pairing formula
+  summary: Use the Clifford anticommutation relation to commute the first matrix through
+    the trace, and use cyclicity so the leftover commutator term is the original trace.
+    The two-gamma trace is the base case; the resulting recurrence proves the signed
+    pairing formula by induction.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-gamma-trace-induction-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    - 374
+    note: The source supplies the two-matrix base case, the commutator/cyclicity recurrence,
+      the induction statement, and the similarity-transformation argument for odd
+      traces.
+  notation: []
+- id: qft.align046.external-dirac-field-determinant-loop-expansion
+  label: External-Dirac-field determinant and fermion-loop expansion
+  summary: For a Dirac field coupled only to an external matrix field, a Grassmann
+    change of variables gives vacuum persistence proportional to a determinant of
+    the external-field kernel. Expanding its trace logarithm reproduces closed fermion
+    loops, including the extra loop sign and disconnected-loop exponentiation.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.external-dirac-field-determinant-loop-expansion
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    - 413
+    note: The source derives the determinant dependence and interprets its expansion
+      as the perturbative fermion-loop series.
+  notation: []
+- id: qft.align046.fermionic-gaussian-pairing-and-dirac-propagator
+  label: Fermionic Gaussian pairing signs and the Dirac propagator
+  summary: For bilinear fermionic free action, Grassmann Gaussian integration sums
+    P–Q pairings with the parity sign of the pairing permutation and propagator −i
+    times the inverse kernel. With q=ψ and p=iψ†, this recovers the Dirac propagator,
+    including its stated γ0 placement for the chosen canonical pairing.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.fermionic-gaussian-pairing-and-dirac-propagator
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 409
+    - 410
+    - 411
+    note: The source identifies the bilinear free action, evaluates the generating
+      integral, and specializes the inverse kernel to Dirac variables.
+  notation: []
+- id: qft.align046.fermionic-grassmann-eigenstate-basis
+  label: Grassmann eigenstates for fermionic canonical variables
+  summary: For anticommuting canonical Q and P operators, ordinary nonzero eigenvalues
+    are impossible. Introduce Grassmann eigenvalues that anticommute with each other
+    and the operators, then construct right and left Q and P eigenstates from a normalized
+    vacuum. This construction restricts to purely fermionic degrees of freedom with
+    vacuum bra and ket unique up to factors; P need not be related to the adjoint
+    of Q, although it is in the stated Dirac example.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.fermionic-grassmann-eigenstate-basis
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 399
+    - 400
+    - 401
+    - 402
+    note: The source gives the fermionic algebra, the restricted normalized vacuum
+      construction, the non-adjoint qualification, and the Grassmann eigenstates and
+      overlaps.
+  notation: []
+- id: qft.align046.fermionic-phase-space-path-integral
+  label: Fermionic phase-space path integral with graded time ordering
+  summary: Time-slice the Grassmann eigenstate completeness relation using P-left,
+    Q-right Hamiltonian ordering. The resulting fermionic phase-space path integral
+    represents time-ordered products, with a minus sign for every odd permutation
+    of fermionic operators; in field theory its vacuum factors provide iε terms.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.fermionic-phase-space-path-integral
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 407
+    - 408
+    - 409
+    note: The source derives the time-sliced formula, states graded time ordering,
+      and gives its field-theory vacuum expectation form.
+  notation: []
+- id: qft.align046.field-dependent-path-integral-determinant-correction
+  label: Field-dependent determinant correction in a path integral
+  summary: A field-dependent momentum-quadratic kernel produces a determinant that
+    contributes to the effective Lagrangian. In the nonlinear sigma model this contribution
+    is ultraviolet divergent; omitting it gives spurious scalar-field-coordinate dependence
+    of the S-matrix and can violate Lagrangian symmetries.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.field-dependent-path-integral-determinant-correction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 392
+    - 393
+    note: The nonlinear sigma-model example evaluates the field-dependent determinant
+      and states the consequence of neglecting the correction.
+  notation: []
+- id: qft.align046.furrys-theorem-odd-photon-sums
+  label: Furry’s theorem for odd-photon graph sums
+  summary: In charge-conjugation-invariant electrodynamics, C reverses the electromagnetic
+    field and current. Consequently, the vacuum time-ordered product, and hence the
+    sum of graphs, with an odd number of external photon fields or currents and no
+    other external lines vanishes. This cancellation applies to graph sums, not necessarily
+    individual diagrams.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.furrys-theorem-odd-photon-sums
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '10.1'
+    pages:
+    - 428
+    - 429
+    note: The source derives the C action, states Furry’s theorem, and illustrates
+      the cancellation for photon scattering from an external field.
+  notation: []
+- id: qft.align046.gamma-trace-cyclicity
+  label: Cyclicity and commutator invariance of Dirac traces
+  summary: Trace cyclicity makes the trace of a commutator vanish. In the appendix
+    proof this identifies the final commutator term with the original trace after
+    it has been moved around the product.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.gamma-trace-cyclicity
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The proof explicitly says all commutators have zero trace and uses this
+      to equate the remaining term to the left-hand side.
+  notation: []
+- id: qft.align046.gamma5-trace-identities
+  label: Gamma-five trace identities
+  summary: Traces containing γ⁵ vanish for an odd number of other gamma matrices and
+    for zero or two such matrices. The four-gamma γ⁵ trace is proportional to the
+    totally antisymmetric tensor, with Weinberg's convention giving Tr(γ⁵γμγνγργσ)=4iεμνρσ;
+    longer cases reduce by the same methods as ordinary traces.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.gamma5-trace-identities
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 374
+    note: The appendix states the vanishing cases, antisymmetry argument, epsilon
+      convention, four-gamma result, and reduction of longer traces.
+  notation:
+  - source: weinberg-1
+    note: The displayed sign is tied to the source convention ε0123=−1.
+- id: qft.align046.gaussian-pairing-wick-formula-proof
+  label: Gaussian pairing formula proof
+  summary: Expand the Gaussian generating function in its linear source and compare
+    coefficients. Odd moments vanish, while each even moment is the sum over index
+    pairings of inverse-kernel factors, with its normalization fixed by counting pairings.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.gaussian-pairing-wick-formula-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 422
+    - 423
+    note: The appendix compares source coefficients, counts distinct pairings, and
+      gives the two- and four-index examples.
+  notation: []
+- id: qft.align046.gaussian-stationary-point-determinant-proof
+  label: Gaussian stationary-point and determinant proof
+  summary: Diagonalize a real symmetric positive nonsingular quadratic form, evaluate
+    the product integral, and analytically continue. The resulting Gaussian equals
+    its stationary-point exponential times a determinant factor, with the square-root
+    branch fixed by continuation; field-theory kernels use an iε real part.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.gaussian-stationary-point-determinant-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 420
+    - 421
+    note: The appendix states the finite-dimensional hypotheses, diagonalizes the
+      form, and derives the analytically continued stationary-point determinant result.
+  notation: []
+- id: qft.align046.heisenberg-off-shell-symmetry-constraints
+  label: Heisenberg correlator symmetry constraints off shell
+  summary: The Heisenberg-picture time-ordered insertion theorem extends translation,
+    Lorentz, and internal-charge symmetry constraints from on-shell S-matrix elements
+    to sums of graphs with specified on- and off-shell external lines. Translation
+    covariance makes the Fourier transform carry the overall four-momentum delta function,
+    while charge conservation makes an insertion amplitude vanish unless the external
+    and operator charges balance.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.heisenberg-off-shell-symmetry-constraints
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '10.1'
+    pages:
+    - 425
+    - 426
+    - 427
+    note: The section states the Heisenberg/Feynman-graph bridge, derives the translation
+      delta function, and gives the charge-balance selection rule.
+  notation: []
+- id: qft.align046.path-integral-bosonic-gaussian-pairing-route
+  label: Gaussian pairing route to bosonic Feynman rules
+  summary: Expand the interaction action around a quadratic free action. Gaussian
+    functional integrals sum all pairings of field factors; inverse free kernels are
+    the coordinate-space propagators, while disconnected vacuum factors cancel in
+    normalized vacuum expectations.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 395
+    - 396
+    - 397
+    note: The source specifies the quadratic-plus-interaction action, expands the
+      interaction, and identifies Gaussian pairings with covariant coordinate-space
+      rules.
+  notation: []
+- id: qft.align046.path-integral-covariant-propagator-and-derivative-rule
+  label: Path-integral covariant propagators and derivative couplings
+  summary: Fourier inversion of the quadratic kernel gives scalar and massive-vector
+    propagators with the iε boundary prescription. In this route vector contact terms
+    are absent and derivative-field pairings are derivatives of the propagator, so
+    derivative-coupling vertices are read directly from the covariant Lagrangian.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.path-integral-covariant-propagator-and-derivative-rule
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 397
+    - 398
+    note: The source derives the inverse-kernel propagator construction and applies
+      it to scalar, massive-vector, and derivative-coupled scalar fields.
+  notation: []
+- id: qft.align046.path-integral-measure-ordering-and-euclidean-qualification
+  label: Measure-dependent ordering and Euclidean path-integral qualification
+  summary: The displayed q-left, p-right operator prescription follows from the particular
+    discretized measure and is not measure-independent. Euclidean continuation suppresses
+    jagged paths and can be useful for numerical or rigorous work, while the text
+    retains Minkowski form for perturbative amplitudes.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.path-integral-measure-ordering-and-euclidean-qualification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 384
+    note: The source makes both the measure/ordering dependence and the Euclidean-versus-Minkowski
+      qualification explicit.
+  notation: []
+- id: qft.align046.path-integral-qed-covariant-photon-propagator-proof
+  label: Path-integral proof of covariant QED photon propagators
+  summary: Invert the gauge-fixed photon quadratic kernel to obtain the covariant
+    propagator family. The source identifies α=1 as Feynman gauge and α→∞ as Landau/Lorentz
+    gauge, providing a non-diagrammatic path-integral route to the covariant photon
+    rule from the Coulomb-gauge Hamiltonian under the stated gauge-invariance and
+    matter assumptions.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.path-integral-qed-covariant-photon-propagator-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 417
+    - 418
+    note: The section explicitly contrasts its route with the earlier hand-waving
+      diagram argument, derives the inverse kernel, and gives the Feynman- and Landau-gauge
+      specializations.
+  notation: []
+- id: qft.align046.path-integral-time-ordering-and-contact-terms
+  label: Time ordering and contact terms in phase-space path integrals
+  summary: Insert ordered operator functions into the sliced phase-space integral
+    to represent a time-ordered matrix element. The integration variables are not
+    classical solutions; variational Hamilton equations vanish only away from other
+    insertions and endpoints, where delta-function contact terms occur.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.path-integral-time-ordering-and-contact-terms
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 382
+    - 383
+    - 384
+    note: The source derives time ordering, explains the off-shell integration variables,
+      and qualifies the equation-of-motion identity by contact terms.
+  notation: []
+- id: qft.align046.path-integral-topological-bose-fermi-statistics-proof
+  label: Topological path-integral proof of Bose–Fermi alternatives
+  summary: For indistinguishable particles in d≥3 spatial dimensions, prepare asymptotic
+    initial or final configurations slowly and far apart so nonrelativistic particle
+    paths apply, then sum distinguishable-particle path amplitudes over permutation
+    classes. The composition law requires a one-dimensional permutation-group representation,
+    leaving trivial Bose and alternating Fermi choices. Parastatistics in d≥3 is equivalent
+    to ordinary Bose/Fermi particles with an extra quantum number; in two dimensions
+    braid classes permit anyons.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.path-integral-topological-bose-fermi-statistics-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 418
+    - 419
+    - 420
+    note: The source states the separated asymptotic preparation and particle-path
+      scope, derives the permutation composition condition, and gives the parastatistics
+      and two-dimensional braid-group qualifications.
+  notation: []
+- id: qft.align046.phase-space-s-matrix-with-asymptotic-wave-functionals
+  label: Phase-space path integral for S-matrix matrix elements
+  summary: For fields, multiply endpoint-coordinate path integrals by in and out wave
+    functionals and integrate their endpoint arguments. Taking endpoints to asymptotic
+    times gives time-ordered matrix elements between particle in and out states; differentiating
+    the source-coupled form yields the established time-ordered Heisenberg-operator
+    insertion theorem as an independent path-integral route.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.phase-space-s-matrix-with-asymptotic-wave-functionals
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 385
+    - 386
+    note: The source contrasts field-coordinate transitions with particle S-matrix
+      elements, gives the unconstrained endpoint-functional form, and differentiates
+      a source-coupled Hamiltonian to recover the operator-insertion result.
+  notation: []
+- id: qft.align046.photon-propagator-coulomb-contact-cancellation
+  label: Covariant photon propagator after Coulomb-contact cancellation
+  summary: The transverse Coulomb-gauge photon propagator differs from the covariant
+    −iημν/[(2π)⁴(q²−iε)] by terms longitudinal in q and a time-local term. Weinberg's
+    Chapter 8 current-conservation argument removes the longitudinal terms and identifies
+    a local term that cancels the instantaneous Coulomb interaction; he explicitly
+    calls that argument heuristic. Chapter 8 defers detailed diagrammatic justification
+    and the rigorous path-integral route to Section 9.6, where the latter is supplied
+    under its stated QED assumptions. The resulting momentum-space rules use the covariant
+    propagator and omit the Coulomb term.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.photon-propagator-coulomb-contact-cancellation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 414
+    - 415
+    - 416
+    - 417
+    - 418
+    note: Section 9.6 recalls the Chapter 8 heuristic cancellation and supplies the
+      later path-integral derivation of covariant gauge-fixed photon propagators under
+      the stated assumptions.
+  notation: []
+- id: qft.align046.problem-charged-massive-vector-gauge-lagrangian
+  label: 'Problem: gauge-invariant charged massive-vector Lagrangian'
+  summary: Write a gauge-invariant Lagrangian for a charged massive vector field interacting
+    with the electromagnetic field.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-charged-massive-vector-gauge-lagrangian
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 4 states this construction task.
+  notation: []
+- id: qft.align046.problem-charged-scalar-coulomb-quantization
+  label: 'Problem: charged-scalar electrodynamics in Coulomb gauge'
+  summary: Canonically quantize a charged scalar interacting with electromagnetism
+    in Coulomb gauge; express the Hamiltonian using A, Φ, Φ† and their canonical conjugates,
+    then evaluate the interaction-picture V(t) in terms of interaction-picture fields
+    and derivatives.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-charged-scalar-coulomb-quantization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    - 375
+    note: Problem 2 specifies the charged scalar Lagrangian and Coulomb gauge on p.
+      374 and completes its Hamiltonian and interaction-picture request on p. 375.
+  notation: []
+- id: qft.align046.problem-electron-electron-scattering-cross-section
+  label: 'Problem: electron–electron scattering cross-section'
+  summary: Calculate the lowest-order-in-e differential cross-section for electron–electron
+    scattering when neither the initial nor final spins are measured.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-electron-electron-scattering-cross-section
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 gives the process, order, observable, and spin condition.
+  notation: []
+- id: qft.align046.problem-electron-muon-annihilation-cross-sections
+  label: 'Problem: e⁺e⁻→μ⁺μ⁻ cross-sections'
+  summary: Calculate the lowest-order-in-e differential and total cross-sections for
+    e⁺e⁻→μ⁺μ⁻ using the simplest electron–muon electrodynamics Lagrangian, with neither
+    electron nor muon spins observed.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-electron-muon-annihilation-cross-sections
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    note: Problem 1 gives the process, perturbative order, unobserved-spin condition,
+      and Lagrangian qualification.
+  notation: []
+- id: qft.align046.problem-neutral-vector-vacuum-wave-functional-ie
+  label: 'Problem: neutral-vector vacuum wave functional and iε terms'
+  summary: Find the field-space vacuum wave function of a neutral vector particle
+    with m>0 and use it to derive the iε terms in that field's propagator.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-neutral-vector-vacuum-wave-functional-ie
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 3 states the neutral-vector mass condition and both requested derivation
+      stages.
+  notation: []
+- id: qft.align046.problem-one-particle-field-space-wave-function-and-emission
+  label: 'Problem: one-particle field-space wave function and emission rule'
+  summary: Find the field-space wave function of one spinless particle with m>0, then
+    use it to derive Feynman rules for emission or absorption of that particle.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-one-particle-field-space-wave-function-and-emission
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 2 explicitly requests both the one-particle field-space wave function
+      and the emission/absorption-rule derivation.
+  notation: []
+- id: qft.align046.problem-path-integral-harmonic-oscillator-transition-probability
+  label: 'Problem: harmonic-oscillator transition probability by path integrals'
+  summary: Use path-integral methods for a nonrelativistic particle of mass m in V(x)=mω²x²/2
+    to find the probability density for a later position interval given an earlier
+    position.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-path-integral-harmonic-oscillator-transition-probability
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 1 specifies the oscillator potential, initial position, later interval,
+      and path-integral method.
+  notation: []
+- id: qft.align046.problem-rarita-schwinger-path-integral-propagator
+  label: 'Problem: Rarita–Schwinger path-integral propagator'
+  summary: For the supplied free spin-3/2 Rarita–Schwinger Lagrangian density, use
+    path-integral methods to find its propagator.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-rarita-schwinger-path-integral-propagator
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 4 supplies the field type and directs the reader to obtain its propagator
+      by path-integral methods.
+  notation: []
+- id: qft.align046.problem-scalar-compton-cross-sections
+  label: 'Problem: scalar Compton cross-sections'
+  summary: Using the results of the charged-scalar Coulomb-gauge quantization problem,
+    calculate the lowest-order-in-e differential and total cross-sections for photon
+    scattering by a massive charged scalar particle.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-scalar-compton-cross-sections
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 3 explicitly calls for the preceding problem's results and states
+      the scalar target and order.
+  notation: []
+- id: qft.align046.qed-auxiliary-a0-covariant-action-route
+  label: Auxiliary A0 route from Coulomb energy to the covariant QED action
+  summary: After stationary integration over the transverse momentum, introduce an
+    independent a0 field. Its stationary equation reproduces the Coulomb action, while
+    retaining a0 with the spatial field rewrites the exponent as the Lorentz- and
+    gauge-invariant electromagnetic action plus the Coulomb-gauge constraint.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.qed-auxiliary-a0-covariant-action-route
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 414
+    - 415
+    note: The source performs the transverse-momentum reduction, introduces a0, verifies
+      recovery of the Coulomb term, and obtains the covariant action with residual
+      Coulomb-gauge delta functions.
+  notation: []
+- id: qft.align046.qed-coulomb-gauge-constrained-path-integral
+  label: Constrained Coulomb-gauge QED path integral
+  summary: Starting from the Coulomb-gauge photon Hamiltonian, integrate transverse
+    vector potential and conjugate momentum subject to divergence constraints, together
+    with matter fields and the instantaneous Coulomb energy. The stated matter condition
+    is that the matter Hamiltonian is local and either linear in its canonical momenta
+    or quadratic with field-independent quadratic coefficients. The displayed constraint
+    delta functionals differ from the reduced-variable measure by a field-independent
+    Det(∂3²) factor, which cancels in normalized ratios.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.qed-coulomb-gauge-constrained-path-integral
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 414
+    note: The source recalls the Coulomb-gauge Hamiltonian, writes the constrained
+      path integral, states the matter restriction, and qualifies the constraint measure
+      by its field-independent determinant factor.
+  notation: []
+- id: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction
+  label: Quadratic-momentum reduction to a Lagrangian path integral
+  summary: When the canonical Hamiltonian is quadratic in momenta with a real, symmetric,
+    positive, nonsingular coefficient kernel, integrate the momenta at their stationary
+    values. For momentum-independent inserted operators this yields the Lagrangian
+    path integral, multiplied by the associated determinant.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 389
+    - 390
+    - 391
+    note: The source states the kernel hypotheses, invokes the Gaussian stationary-point
+      formula, and gives the Lagrangian form with its operator-insertion restriction.
+  notation: []
+- id: qft.align046.scalar-vacuum-wave-functional-ie-prescription
+  label: Scalar vacuum wave functional and the iε prescription
+  summary: For a neutral scalar field, the asymptotic annihilation condition has a
+    Gaussian field-space vacuum wave functional with kernel Fourier transform E(p).
+    Its endpoint factors supply the iε prescription in the scalar propagator; field-independent
+    factors cancel after normalization by the vacuum-to-vacuum amplitude. Multiparticle
+    field-space wave functionals are Hermite polynomials in the field times this vacuum
+    Gaussian, though the text uses vacuum expectations for S-matrix calculations.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.scalar-vacuum-wave-functional-ie-prescription
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 387
+    - 388
+    - 389
+    note: The source solves for the Gaussian kernel, identifies its iε effect and
+      normalized cancellation, and states the Hermite-polynomial form of multiparticle
+      wave functionals.
   notation: []
 - id: qft.align048.casimir-fermion-statistics-sign-problem
   label: Fermionic Casimir-sign problem
@@ -32571,13 +34282,12 @@ nodes:
     note: A subscript L denotes left differentiation for fermionic variables.
 - id: qft.generalized-xi-gauge-propagator
   label: Generalized xi-gauge propagator
-  summary: A Gaussian covariant gauge-fixing weight with f=∂·A removes the Maxwell
-    or Yang–Mills kinetic zero mode and yields a vector propagator whose longitudinal
-    part depends on ξ. ξ=1 gives Feynman gauge, while ξ→0 gives Landau gauge only
-    after the kernel is inverted. Peskin–Schroeder provides both the Maxwell-kernel
-    zero-mode obstruction and the covariant xi-dependent result, so those two source
-    records share this common gauge-fixed-propagator core without erasing the separate
-    diagnostic route.
+  summary: A Gaussian covariant gauge-fixing weight removes the Maxwell or Yang–Mills
+    kinetic zero mode and yields a vector propagator with a gauge-dependent longitudinal
+    part. In the accepted xi convention, xi=1 is Feynman gauge and xi→0 is Landau
+    gauge. Weinberg I instead writes −alpha(∂·A)^2/2, so alpha=1 is Feynman gauge
+    and alpha→infinity is Landau/Lorentz gauge; its path-integral inversion assumes
+    the preceding Abelian gauge averaging and gauge-invariant matter setup.
   kind: method
   group: qft.gauge-quantization
   origins:
@@ -32596,6 +34306,10 @@ nodes:
     node: peskin-schroeder.covariant-photon-propagator-and-gauge-parameter
     note: Retains PS’s covariant photon propagator and its xi=0 Landau and xi=1 Feynman
       specializations.
+  - project: weinberg-1
+    node: weinberg-1.path-integral-qed-covariant-photon-propagator-proof
+    note: Contributes the Abelian path-integral inversion in Weinberg I alpha convention
+      and retains its gauge-invariance and matter assumptions.
   evidence:
   - source: weinberg-2
     section: '15.5'
@@ -32617,6 +34331,12 @@ nodes:
     - 297
     note: Shows the gauge zero mode, the need for a gauge condition, and the resulting
       covariant propagator.
+  - source: weinberg-1
+    section: Chapters 7–9
+    pages:
+    - 417
+    - 418
+    note: Operative passage for the added Weinberg I correspondence.
   notation: []
 - id: qft.ghost-loop-compensation-of-unphysical-gauge-modes
   label: Ghost-loop compensation of unphysical gauge modes
@@ -65521,6 +67241,2052 @@ edges:
     - 244
     - 245
     - 246
+- id: qft.align045.current-algebra-to-general-higgs-route
+  from: qft.align045.current-algebra-higgs-mass-construction
+  to: qft.align045.higgs-decay-phenomenology-and-mass-bounds
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general Higgs-sector route uses current overlaps to form the charged
+    and neutral vector mass matrix.
+  failure_mode: Custodial symmetry would have no mass matrix on which to impose its
+    equality.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+- id: qft.align045.current-algebra-to-universal-vector-mass
+  from: qft.align045.current-algebra-higgs-mass-construction
+  to: qft.align039.general-unitarity-gauge-and-universal-vector-mass-formula
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: Peskin–Schroeder’s current-overlap calculation independently derives
+    the same universal mass-matrix result.
+  failure_mode: Omitting the link isolates a complete packet-supported route, while
+    the accepted Weinberg route remains sufficient.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 697
+    - 698
+    - 699
+    - 700
+- id: qft.align045.current-to-fermi
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align045.fermi-constant-from-w-exchange
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 708
+    - 709
+- id: qft.align045.custodial-to-general-higgs-route
+  from: qft.align045.custodial-symmetry-rho-relation
+  to: qft.align045.higgs-decay-phenomenology-and-mass-bounds
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Custodial current normalization is the route-local condition that enforces
+    m_W=m_Z cos(theta_W).
+  failure_mode: The general current mass matrix alone does not fix the charged-to-neutral
+    ratio.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+- id: qft.align045.general-higgs-route-to-ew-mixing
+  from: qft.align045.higgs-decay-phenomenology-and-mass-bounds
+  to: qft.align045.electroweak-wz-photon-mixing-masses
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: Current algebra, the unbroken charge, and custodial normalization form
+    a second complete route to the spectrum.
+  failure_mode: Omitting it would make the scalar doublet appear compulsory.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+- id: qft.align045.general-mass-to-scalar-higgs-route
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.standard-model-higgs-potential-and-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar route uses the generator-action mass rule when the doublet
+    takes its vacuum value.
+  failure_mode: Its vector masses and hVV coefficients would not follow from the potential
+    alone.
+  evidence:
+  - source: peskin-schroeder
+    section: 20.1; 20.2
+    pages:
+    - 693
+    - 715
+    - 716
+- id: qft.align045.general-mass-to-su2-adjoint
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.su2-adjoint-higgs-to-u1
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(2) adjoint example evaluates the general generator-action mass
+    matrix on its own vacuum.
+  failure_mode: The residual U(1) and massive directions cannot be inferred from the
+    vacuum orientation alone.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 693
+    - 695
+    - 696
+- id: qft.align045.general-mass-to-su3-pattern
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.su3-adjoint-higgs-breaking-patterns
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(3) adjoint patterns independently evaluate the general commutator
+    mass matrix.
+  failure_mode: The unbroken generators and massive directions would lack their stated
+    criterion.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 693
+    - 696
+    - 697
+    - 698
+- id: qft.align045.goldstone-normalization-to-current-algebra
+  from: qft.goldstone-current-matrix-element-normalization
+  to: qft.align045.current-algebra-higgs-mass-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general current matrix element supplies the route-local decay-constant
+    normalization.
+  failure_mode: Without this normalization, the overlap matrix F and its mass dimension
+    are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 697
+    - 698
+    - 699
+    - 700
+- id: qft.align045.hypercharge-to-general-higgs-route
+  from: qft.align045.electroweak-su2-u1-hypercharge-assignments
+  to: qft.align045.higgs-decay-phenomenology-and-mass-bounds
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Q=T3+Y identifies the unbroken electromagnetic generator in the current-algebra
+    route.
+  failure_mode: The massless photon direction and neutral mixing angle would be undetermined.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+- id: qft.align045.hypercharge-to-scalar-higgs-route
+  from: qft.align045.electroweak-su2-u1-hypercharge-assignments
+  to: qft.align045.standard-model-higgs-potential-and-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-doublet route needs the Y=1/2 assignment to select the neutral
+    vacuum and allowed couplings.
+  failure_mode: The unbroken electromagnetic direction and Yukawa terms would be unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    - 715
+    - 716
+- id: qft.align045.peskin-schroeder-e-ps013-05
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.electroweak-wz-photon-mixing-masses
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The scalar generator-action mass formula supports the doublet route;
+    a separate current-algebra route also derives the W/Z relation.
+  failure_mode: Treating this input as globally necessary would erase the source’s
+    independent current-algebra construction.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 701
+- id: qft.align045.peskin-schroeder-e-ps013-06
+  from: qft.align045.electroweak-su2-u1-hypercharge-assignments
+  to: qft.align045.standard-model-gauge-anomaly-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Anomaly sums use the exact chiral representations and hypercharges.
+  failure_mode: Without the assignments, the cancellation calculation has no coefficients
+    to sum.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 705
+- id: qft.align045.peskin-schroeder-e-ps013-2hdm-vacuum-charged
+  from: qft.align045.problem-20-5ab-two-higgs-vacuum
+  to: qft.align022.peskin-schroeder.problem-20-5c-charged-higgs-mode
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The physical charged combination is defined after the parallel-vacuum
+    gauge choice.
+  failure_mode: Without the vacuum directions, the eaten and physical combinations
+    cannot be identified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5
+    pages:
+    - 730
+- id: qft.align045.peskin-schroeder-e-ps013-anomaly-coeff-sm
+  from: qft.align006.gauge-anomaly-group-coefficient
+  to: qft.align045.standard-model-gauge-anomaly-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation check sums the triangle group coefficients.
+  failure_mode: Without the anomaly coefficient, there is no consistency condition
+    to evaluate.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 705
+- id: qft.align045.peskin-schroeder-e-ps013-breit-z-interference
+  from: qft.align016.decay-width-and-lorentz-time-dilation
+  to: qft.align045.problem-20-3a-z-interference-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly requires the Breit-Wigner Z width.
+  failure_mode: Without the resonance denominator, the requested energy dependence
+    is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-ew-current-nc-dis
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align045.problem-20-4a-neutral-current-dis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Neutral-current DIS uses the Z couplings to neutrinos and quarks.
+  failure_mode: Without the current charges, the partonic cross sections cannot be
+    specified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4
+    pages:
+    - 729
+- id: qft.align045.peskin-schroeder-e-ps013-ew-current-w-width
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align045.problem-20-2a-w-decay-widths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W partial widths use its chiral couplings to each quark and lepton
+    channel.
+  failure_mode: Without the W current, channel amplitudes cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-ew-current-z-interference
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align045.problem-20-3a-z-interference-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation combines the photon and Z couplings fixed by the covariant
+    derivative.
+  failure_mode: Without those couplings, the interference amplitude is undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-ew-current-z-polarization
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align045.z-polarization-asymmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The left- and right-handed Z charges determine the two partial rates
+    in the polarization asymmetry.
+  failure_mode: Without the chiral Z couplings, the numerator and denominator of A_f
+    are undetermined.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 710
+- id: qft.align045.peskin-schroeder-e-ps013-ew-current-z-width
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align045.problem-20-2b-z-decay-widths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Z vector and chiral charges determine each partial width.
+  failure_mode: Without the neutral current, the charged and invisible fractions cannot
+    be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-interference-asymmetry
+  from: qft.align045.problem-20-3a-z-interference-cross-section
+  to: qft.align045.problem-20-3bc-forward-backward-asymmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The forward-backward asymmetry is extracted from the angular cross section
+    in part (a).
+  failure_mode: Without that differential cross section, its forward and backward
+    integrals cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-interference-z-peak
+  from: qft.align045.problem-20-3a-z-interference-cross-section
+  to: qft.align045.problem-20-3d-z-peak-invisible-modes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The peak formula specializes the resonance cross section constructed
+    with the Z amplitude and Breit-Wigner denominator in part (a).
+  failure_mode: Widths alone do not supply the resonance cross section whose peak
+    and invisible-mode shift are requested.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3
+    pages:
+    - 728
+    - 729
+- id: qft.align045.peskin-schroeder-e-ps013-nc-ratios
+  from: qft.align045.problem-20-4a-neutral-current-dis
+  to: qft.align045.problem-20-4b-isoscalar-ratios
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The isoscalar formulas simplify the proton cross sections from part (a).
+  failure_mode: Without the neutral-current cross sections, the ratios have no numerator.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4
+    pages:
+    - 729
+- id: qft.align045.peskin-schroeder-e-ps013-neutrino-dis-nc
+  from: qft.align028.peskin-schroeder.qcd-neutrino-dis-flavor-and-helicity-analysis
+  to: qft.align045.problem-20-4a-neutral-current-dis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4(a)
+    pages:
+    - 729
+- id: qft.align045.peskin-schroeder-e-ps013-nonabelian-2hdm-task
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.problem-20-5ab-two-higgs-vacuum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parallel doublet vacua are inserted into the gauge-boson mass matrix.
+  failure_mode: Without it, the v_1 squared plus v_2 squared replacement cannot be
+    derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5
+    pages:
+    - 729
+- id: qft.align045.peskin-schroeder-e-ps013-nonabelian-su3-exact
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.su3-adjoint-higgs-exact-mass-spectra
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exact SU(3) spectra follow by inserting each adjoint vacuum into
+    the commutator form of the general mass matrix.
+  failure_mode: Without the mass-matrix rule, the commuting and massive generator
+    eigenvalues are not obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 697
+- id: qft.align045.peskin-schroeder-e-ps013-phase-w-width
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align045.problem-20-2a-w-decay-widths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Partial widths require invariant two-body phase space.
+  failure_mode: Without phase space, the total width cannot be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-phase-z-width
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align045.problem-20-2b-z-decay-widths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Partial and total Z widths require invariant phase space.
+  failure_mode: Without phase space, branching fractions cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-qcd-w-width
+  from: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  to: qft.align045.problem-20-2a-w-decay-widths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2(a)
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-qcd-z-width
+  from: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  to: qft.align045.problem-20-2b-z-decay-widths
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.2(b)
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-ratio-nose
+  from: qft.align045.problem-20-4b-isoscalar-ratios
+  to: qft.align045.problem-20-4c-weinberg-nose
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The curve is obtained by varying sin squared theta W in the derived ratios.
+  failure_mode: Without the ratio formulae, there is no curve to plot.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.4
+    pages:
+    - 729
+- id: qft.align045.peskin-schroeder-e-ps013-su5-adjoint-task
+  from: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  to: qft.align045.problem-20-1-su5-breaking-spectrum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(5) task determines an adjoint-vacuum spectrum from the general
+    mass matrix.
+  failure_mode: Without the mass-matrix rule, the gauge-boson masses cannot be found.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.1
+    pages:
+    - 728
+- id: qft.align045.peskin-schroeder-e-ps013-yukawa-2hdm
+  from: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  to: qft.align022.peskin-schroeder.problem-20-5d-charged-higgs-quark-couplings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-doublet task starts from Yukawa mass couplings and rewrites them
+    in the quark mass basis.
+  failure_mode: Without the Yukawa mass relation, physical scalar couplings cannot
+    be expressed through masses.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.5
+    pages:
+    - 730
+- id: qft.align045.peskin-schroeder-e-ps013-z-width-peak
+  from: qft.align045.problem-20-2b-z-decay-widths
+  to: qft.align045.problem-20-3d-z-peak-invisible-modes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The peak-height question uses the total and partial Z widths.
+  failure_mode: Without the width decomposition, extra invisible-mode shifts cannot
+    be evaluated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 20.3
+    pages:
+    - 729
+- id: qft.align045.ps-anomaly-to-common
+  from: qft.align045.standard-model-gauge-anomaly-cancellation
+  to: qft.align006.standard-model-gauge-and-mixed-gravitational-cancellation
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 704
+    - 705
+    - 706
+    - 707
+- id: qft.align045.ps-currents-to-common-neutral
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align039.electromagnetic-charge-and-neutral-current-structure
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 702
+    - 703
+    - 704
+    - 705
+- id: qft.align045.ps-currents-to-common-va
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align039.v-minus-a-charged-weak-currents
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 702
+    - 703
+    - 704
+    - 705
+- id: qft.align045.ps-custodial-to-common
+  from: qft.align045.custodial-symmetry-rho-relation
+  to: qft.align025.custodial-symmetry-and-rho-relation
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+- id: qft.align045.ps-fermi-to-common-charged
+  from: qft.align045.fermi-constant-from-w-exchange
+  to: qft.align039.tree-level-four-fermi-matching
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 707
+    - 708
+    - 709
+- id: qft.align045.ps-fermi-to-common-neutral
+  from: qft.align045.fermi-constant-from-w-exchange
+  to: qft.align039.neutral-current-four-fermi-theory-and-massless-photon-limit
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 707
+    - 708
+    - 709
+- id: qft.align045.ps-general-higgs-to-common-custodial
+  from: qft.align045.higgs-decay-phenomenology-and-mass-bounds
+  to: qft.align025.custodial-symmetry-and-rho-relation
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 717
+    - 718
+    - 719
+- id: qft.align045.ps-higgs-to-common-doublet
+  from: qft.align045.standard-model-higgs-potential-and-mass
+  to: qft.align018.standard-model-higgs-doublet-and-covariant-derivative
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    - 715
+    - 716
+- id: qft.align045.ps-higgs-to-common-hvv
+  from: qft.align045.standard-model-higgs-potential-and-mass
+  to: qft.align018.higgs-mass-and-hvv-couplings
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 715
+    - 716
+- id: qft.align045.ps-hypercharge-to-common-representations
+  from: qft.align045.electroweak-su2-u1-hypercharge-assignments
+  to: qft.align018.standard-model-chiral-fermion-representations
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 700
+    - 701
+    - 702
+    - 703
+    - 704
+    - 713
+- id: qft.align045.ps-lepton-to-common-flavor
+  from: qft.align045.lepton-yukawa-diagonalization-and-flavor-conservation
+  to: qft.align038.accidental-lepton-flavor-symmetry
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 726
+    - 727
+- id: qft.align045.ps-mixing-to-common-mixing
+  from: qft.align045.electroweak-wz-photon-mixing-masses
+  to: qft.align018.electroweak-vev-photon-z-mixing
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 701
+    - 702
+- id: qft.align045.ps-precision-to-common-tree
+  from: qft.align045.electroweak-precision-observables-and-radiative-corrections
+  to: qft.align025.tree-level-electroweak-observable-formulas
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 710
+    - 711
+    - 712
+    - 713
+    - 714
+- id: qft.align045.ps-yukawa-to-common
+  from: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  to: qft.align039.yukawa-fermion-masses-and-higgs-couplings
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: This source-specific route supports the bounded shared result while preserving
+    its own assumptions and method.
+  failure_mode: Without this link the retained source derivation is isolated, while
+    other accepted origins still support the common result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 713
+    - 714
+    - 715
+    - 716
+- id: qft.align045.scalar-higgs-route-to-ew-mixing
+  from: qft.align045.standard-model-higgs-potential-and-mass
+  to: qft.align045.electroweak-wz-photon-mixing-masses
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The explicit doublet expansion completes the scalar route to the W, Z,
+    and photon spectrum.
+  failure_mode: Without the link, this complete route is disconnected; the current-algebra
+    route still supports the result.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 701
+    - 702
+    - 715
+    - 716
+- id: qft.align045.su3-pattern-to-exact-spectrum
+  from: qft.align045.su3-adjoint-higgs-breaking-patterns
+  to: qft.align045.su3-adjoint-higgs-exact-mass-spectra
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 697
+- id: qft.align045.wz-and-current-to-fermi
+  from: qft.align045.electroweak-wz-photon-mixing-masses
+  to: qft.align045.fermi-constant-from-w-exchange
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.2'
+    pages:
+    - 708
+    - 709
+- id: qft.align045.yukawa-to-lepton-diagonalization
+  from: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  to: qft.align045.lepton-yukawa-diagonalization-and-flavor-conservation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.3'
+    pages:
+    - 726
+    - 727
+- id: qft.align046.abelian-gauge-averaging-to-orbit-factorization-core
+  from: qft.align046.abelian-gauge-averaging-covariant-qed-path-integral
+  to: qft.align021.abelian-gauge-orbit-factorization
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 416
+    - 417
+- id: qft.align046.abelian-gauge-averaging-to-xi-independence-core
+  from: qft.align046.abelian-gauge-averaging-covariant-qed-path-integral
+  to: qft.align021.gauge-invariant-correlator-xi-independence
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 416
+    - 417
+- id: qft.align046.auxiliary-to-scalar-coulomb
+  from: qft.align037.auxiliary-field-constraint-interaction-picture-route
+  to: qft.align046.problem-charged-scalar-coulomb-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    - 375
+- id: qft.align046.bosonic-pairing-to-covariant-rules
+  from: qft.align046.path-integral-bosonic-gaussian-pairing-route
+  to: qft.align053.feynman-rules-covariant-perturbation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The bosonic pairing route independently yields perturbative contractions.
+  failure_mode: It does not require the canonical route.
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 395
+    - 396
+    - 397
+- id: qft.align046.bosonic-phase-space-to-ordering-core
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align021.phase-space-path-integral-weyl-ordering
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 378
+    - 379
+    - 380
+    - 381
+- id: qft.align046.bosonic-phase-space-to-quadratic-reduction
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Weinberg I Hamiltonian-to-Lagrangian route begins with this canonical
+    phase-space integral before its qualified momentum integration.
+  failure_mode: Skipping the phase-space construction hides the canonical and constraint
+    assumptions used by the reduction.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 389
+    - 390
+    - 391
+- id: qft.align046.canonical-pairs-to-bosonic-phase
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align046.bosonic-phase-space-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: '8.1'
+    pages:
+    - 378
+    - 379
+    - 380
+    - 381
+- id: qft.align046.clifford-to-induction
+  from: qft.align053.dirac-linearization-clifford-algebra
+  to: qft.align046.dirac-gamma-trace-induction-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 373
+    - 374
+- id: qft.align046.complex-vector-to-massive-vector-problem
+  from: qft.align033.causal-massive-vector-field
+  to: qft.align046.problem-charged-massive-vector-gauge-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+- id: qft.align046.covariant-photon-to-contact-compensation
+  from: qft.align046.path-integral-qed-covariant-photon-propagator-proof
+  to: qft.align036.covariant-propagator-local-contact-compensation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The covariant path-integral route avoids the canonical contact mechanism.
+  failure_mode: It does not prove that canonical compensation mechanism.
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 417
+    - 418
+- id: qft.align046.dirac-gamma-even-trace-pairing-formula-to-core
+  from: qft.align046.dirac-gamma-even-trace-pairing-formula
+  to: qft.align023.peskin.dirac-trace-identities-gamma5
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 372
+    - 373
+- id: qft.align046.dirac-gamma-trace-induction-proof-to-core
+  from: qft.align046.dirac-gamma-trace-induction-proof
+  to: qft.align023.peskin.dirac-trace-identities-gamma5
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    - 374
+- id: qft.align046.dirac-linearization-to-even-traces
+  from: qft.align053.dirac-linearization-clifford-algebra
+  to: qft.align046.dirac-gamma-even-trace-pairing-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 372
+    - 373
+- id: qft.align046.external-dirac-field-determinant-loop-expansion-to-core
+  from: qft.align046.external-dirac-field-determinant-loop-expansion
+  to: qft.align043.qed-fermion-exchange-and-loop-signs
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    - 413
+- id: qft.align046.external-photon-polarizations-to-scalar-compton-problem
+  from: qft.align054.external-photon-lsz-polarizations
+  to: qft.align046.problem-scalar-compton-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar Compton task requires external photon polarization vectors
+    alongside the scalar-electrodynamics result of the preceding problem.
+  failure_mode: Without external photon polarizations, the Compton amplitude and its
+    unpolarized cross section are not defined.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+- id: qft.align046.fermion-signs-to-electron-electron-problem
+  from: qft.align043.qed-fermion-exchange-and-loop-signs
+  to: qft.align046.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+- id: qft.align046.fermionic-gaussian-pairing-and-dirac-propagator-to-core
+  from: qft.align046.fermionic-gaussian-pairing-and-dirac-propagator
+  to: qft.align043.qed-fermion-exchange-and-loop-signs
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 409
+    - 410
+    - 411
+- id: qft.align046.furrys-theorem-odd-photon-sums-to-core
+  from: qft.align046.furrys-theorem-odd-photon-sums
+  to: qft.align024.furry-theorem-photon-odd-point-vanishing
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '10.1'
+    pages:
+    - 428
+    - 429
+- id: qft.align046.gamma-trace-cyclicity-to-core
+  from: qft.align046.gamma-trace-cyclicity
+  to: qft.align023.peskin.dirac-trace-identities-gamma5
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+- id: qft.align046.gamma5-trace-identities-to-core
+  from: qft.align046.gamma5-trace-identities
+  to: qft.align023.peskin.dirac-trace-identities-gamma5
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 374
+- id: qft.align046.gaussian-pairing-wick-formula-proof-to-core
+  from: qft.align046.gaussian-pairing-wick-formula-proof
+  to: qft.align021.gaussian-functional-wick-contractions
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 422
+    - 423
+- id: qft.align046.gaussian-stationary-point-determinant-proof-to-core
+  from: qft.align046.gaussian-stationary-point-determinant-proof
+  to: qft.align021.multivariable-gaussian-integral-method
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Gaussian Multiple Integrals'
+    pages:
+    - 420
+    - 421
+- id: qft.align046.path-integral-bosonic-gaussian-pairing-route-to-core
+  from: qft.align046.path-integral-bosonic-gaussian-pairing-route
+  to: qft.align021.gaussian-functional-wick-contractions
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 395
+    - 396
+    - 397
+- id: qft.align046.path-integral-measure-ordering-and-euclidean-qualification-to-core
+  from: qft.align046.path-integral-measure-ordering-and-euclidean-qualification
+  to: qft.align021.phase-space-path-integral-weyl-ordering
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 384
+- id: qft.align046.path-integral-qed-covariant-photon-propagator-proof-to-core
+  from: qft.align046.path-integral-qed-covariant-photon-propagator-proof
+  to: qft.generalized-xi-gauge-propagator
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 417
+    - 418
+- id: qft.align046.path-integral-topological-bose-fermi-statistics-proof-to-core
+  from: qft.align046.path-integral-topological-bose-fermi-statistics-proof
+  to: qft.align042.exchange-path-topology-and-anyons
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific record supplies the stated subset or qualification
+    of the shared result; it is not a complete proof of every clause.
+  failure_mode: Treating this partial contribution as a whole proof would erase the
+    other jointly required stage or source-specific limitation.
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 418
+    - 419
+    - 420
+- id: qft.align046.phase-s-matrix-alternative
+  from: qft.align046.phase-space-s-matrix-with-asymptotic-wave-functionals
+  to: qft.align021.source-generating-functional-and-functional-derivatives
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Differentiating the source-coupled phase-space S-matrix provides an independent
+    path-integral route to time-ordered insertions.
+  failure_mode: Pointing this edge at the later off-shell symmetry application would
+    conflate the insertion theorem with its use.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 386
+- id: qft.align046.proca-to-massive-task
+  from: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  to: qft.align046.problem-charged-massive-vector-gauge-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses this input in the stated route.
+  failure_mode: Without this input, the stated route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+- id: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction-to-core
+  from: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction
+  to: qft.align021.field-theory-path-integral-from-hamiltonian
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Together with its phase-space and Gaussian prerequisites, this qualified
+    momentum reduction independently reaches the common Hamiltonian-to-configuration
+    result.
+  failure_mode: Making the whole WI route compulsory would erase the independent scalar
+    derivation.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 389
+    - 390
+    - 391
+- id: qft.align046.scalar-vacuum-wave-functional-ie-prescription-to-core
+  from: qft.align046.scalar-vacuum-wave-functional-ie-prescription
+  to: qft.align021.s-matrix-boundary-origin-of-iepsilon
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Under its stated source-specific assumptions, this route independently
+    reaches the scoped common result.
+  failure_mode: Making this route compulsory would collapse independent source methods.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 387
+    - 388
+    - 389
+- id: qft.align046.source-functional-to-heisenberg
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align046.heisenberg-off-shell-symmetry-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The off-shell graph constraints use the external-source theorem to identify
+    graph sums with time-ordered Heisenberg insertions.
+  failure_mode: Without that insertion theorem, the symmetry action on the off-shell
+    graph sum is not established.
+  evidence:
+  - source: weinberg-1
+    section: Chapter 10 introduction and 10.1
+    pages:
+    - 425
+    - 426
+- id: qft.align046.unpolarized-traces-to-electron-electron-problem
+  from: qft.unpolarized-trace-technology
+  to: qft.align046.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Unobserved initial and final electron spins require spin sums and gamma-trace
+    reduction in addition to exchange and phase-space inputs.
+  failure_mode: Without spin averaging and trace reduction, the requested unpolarized
+    differential cross-section calculation is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+- id: qft.align046.unpolarized-traces-to-electron-muon-problem
+  from: qft.unpolarized-trace-technology
+  to: qft.align046.problem-electron-muon-annihilation-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Unobserved electron and muon spins require spin sums and gamma-trace
+    reduction before the differential and total cross sections are evaluated.
+  failure_mode: Without the spin-sum trace route, the stated unpolarized task lacks
+    a calculation method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+- id: qft.align046.weinberg-1-auxiliary-a0-to-abelian-gauge-averaging
+  from: qft.align046.qed-auxiliary-a0-covariant-action-route
+  to: qft.align046.abelian-gauge-averaging-covariant-qed-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge averaging removes the residual Coulomb-gauge delta functional in
+    the covariant action obtained after introducing a0.
+  failure_mode: Without the covariant action with its residual gauge condition, there
+    is no gauge-fixing functional to average.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 415
+    - 416
+    - 417
+    note: The source writes the covariant action still carrying the Coulomb condition
+      and then integrates over the gauge function.
+- id: qft.align046.weinberg-1-berezin-to-external-determinant
+  from: qft.align046.berezin-integration-completeness-and-inverse-jacobian
+  to: qft.align046.external-dirac-field-determinant-loop-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The external-field change of Grassmann variables uses the inverse Berezin
+    Jacobian to produce the determinant.
+  failure_mode: Without the inverse-Jacobian rule, the determinant factor is not derived
+    from the variable change.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 406
+    - 412
+    note: The source gives the inverse determinant under a Grassmann variable change
+      and applies a variable change to the external-field integral.
+- id: qft.align046.weinberg-1-berezin-to-fermion-phase-space-pi
+  from: qft.align046.berezin-integration-completeness-and-inverse-jacobian
+  to: qft.align046.fermionic-phase-space-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-sliced derivation repeatedly inserts the Berezin completeness
+    relation.
+  failure_mode: Without that integral completeness relation, intermediate fermionic
+    state sums cannot be replaced by Grassmann integrations.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 407
+    - 408
+    note: The source says to insert the completeness relation at each time step in
+      deriving the fermionic path integral.
+- id: qft.align046.weinberg-1-bosonic-phase-space-to-time-ordering
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align046.path-integral-time-ordering-and-contact-terms
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The operator-insertion formula extends the preceding sliced phase-space
+    integral.
+  failure_mode: Without the sliced integral, there is no representation in which to
+    place the ordered insertions.
+  evidence:
+  - source: weinberg-1
+    section: '9.1'
+    pages:
+    - 382
+    note: The source inserts operators into the time-slice derivation and then states
+      the ordered formula.
+- id: qft.align046.weinberg-1-bosonic-pi-rules-to-covariant-propagators
+  from: qft.align046.path-integral-bosonic-gaussian-pairing-route
+  to: qft.align046.path-integral-covariant-propagator-and-derivative-rule
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator is the inverse free kernel that supplies every Gaussian
+    pairing.
+  failure_mode: Without that kernel-pairing identification, the displayed scalar,
+    vector, and derivative propagators have no route from the path integral.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 397
+    - 398
+    note: The source solves the inverse-kernel equation and applies it to scalar,
+      vector, and derivative fields.
+- id: qft.align046.weinberg-1-bosonic-pi-to-qed-constrained-pi
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align046.qed-coulomb-gauge-constrained-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED expression applies the general bosonic phase-space path integral
+    to the Coulomb-gauge Hamiltonian before the transverse-momentum Gaussian integration.
+  failure_mode: Without the phase-space formula, the constrained QED functional integral
+    is not derived from its Hamiltonian.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 414
+    note: The source says that, as for any Hamiltonian system, the vacuum expectation
+      is calculated as a path integral and then writes the constrained expression.
+- id: qft.align046.weinberg-1-bosonic-pi-to-topological-statistics
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align046.path-integral-topological-bose-fermi-statistics-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The statistics argument applies the Section 9.1 path integral to particle
+    positions and momenta during separated-particle preparation.
+  failure_mode: Without the distinguishable-particle path amplitude, the permutation-class
+    sum and composition calculation cannot begin.
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 418
+    - 419
+    note: The source explicitly invokes Eq. (9.1.34) for particle paths before deriving
+      the permutation composition law.
+- id: qft.align046.weinberg-1-charge-conjugation-to-furry
+  from: qft.align016.charge-conjugation-cp-cpt-process-relations
+  to: qft.align046.furrys-theorem-odd-photon-sums
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Furry’s theorem applies the previously defined unitary particle-antiparticle
+    interchange to the QED current and photon field.
+  failure_mode: Without the charge-conjugation action, the sign reversal and odd-insertion
+    cancellation cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: '10.1'
+    pages:
+    - 427
+    - 428
+    note: The source recalls the Chapter 5 charge-conjugation operator, derives its
+      action on current and photon field, and obtains the odd-product cancellation.
+- id: qft.align046.weinberg-1-cross-section-to-electron-electron-problem
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align046.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested differential observable requires the two-body amplitude-to-cross-section
+    relation.
+  failure_mode: Without phase space and flux, the task does not yield a differential
+    cross-section.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 explicitly requests a differential cross-section.
+- id: qft.align046.weinberg-1-cross-section-to-electron-muon-problem
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align046.problem-electron-muon-annihilation-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for both differential and total two-body cross-sections,
+    requiring amplitude-to-phase-space conversion and angular integration.
+  failure_mode: Without the cross-section method, the calculation cannot reach either
+    requested observable.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 374
+    note: Problem 1 explicitly requests differential and total cross-sections.
+- id: qft.align046.weinberg-1-cross-section-to-scalar-compton-problem
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align046.problem-scalar-compton-cross-sections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for differential and total cross-sections after obtaining
+    the scalar scattering amplitude.
+  failure_mode: Without the cross-section conversion, the result remains an amplitude
+    rather than the requested observables.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 3 explicitly requests differential and total cross-sections.
+- id: qft.align046.weinberg-1-even-traces-to-gamma5
+  from: qft.align046.dirac-gamma-even-trace-pairing-formula
+  to: qft.align046.gamma5-trace-identities
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The γ⁵ vanishing and epsilon result use γ⁵=γ⁰γ¹γ²γ³ together with index
+    pairings and gamma anticommutation.
+  failure_mode: Without the ordinary trace pairing structure, the stated zero and
+    two-gamma vanishings are not justified.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 374
+    note: The source recalls the γ⁵ product and argues from the absence of possible
+      index pairings.
+- id: qft.align046.weinberg-1-fermion-grassmann-to-berezin
+  from: qft.align046.fermionic-grassmann-eigenstate-basis
+  to: qft.align046.berezin-integration-completeness-and-inverse-jacobian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Berezin integration is introduced to sum the Grassmann-eigenstate expansion
+    and establish completeness.
+  failure_mode: Without the Grassmann basis, the coefficient-selecting integral lacks
+    the states it resolves.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 403
+    - 406
+    - 407
+    note: The source introduces Berezin integration after the eigenstate expansion
+      and uses it to derive completeness.
+- id: qft.align046.weinberg-1-fermion-pairing-to-rarita-schwinger-problem
+  from: qft.align046.fermionic-gaussian-pairing-and-dirac-propagator
+  to: qft.align046.problem-rarita-schwinger-path-integral-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supplied spin-3/2 free Lagrangian requires the fermionic bilinear-kernel
+    inversion used to extract a propagator.
+  failure_mode: Without the bilinear inverse-kernel method, the requested Rarita–Schwinger
+    propagator cannot be extracted from its supplied Lagrangian.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 4 supplies a free spin-3/2 Rarita–Schwinger Lagrangian and requests
+      its path-integral propagator.
+- id: qft.align046.weinberg-1-fermion-pi-to-external-determinant
+  from: qft.align046.fermionic-phase-space-path-integral
+  to: qft.align046.external-dirac-field-determinant-loop-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant is obtained directly from the fermionic vacuum path integral
+    in an external field.
+  failure_mode: Without the fermionic vacuum path integral, the external-field determinant
+    has no source-defined integral.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    note: The source writes the external-field vacuum persistence amplitude as a fermionic
+      path integral before changing variables.
+- id: qft.align046.weinberg-1-fermion-pi-to-fermion-gaussian-pairing
+  from: qft.align046.fermionic-phase-space-path-integral
+  to: qft.align046.fermionic-gaussian-pairing-and-dirac-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pairing calculation expands the field-theory fermionic path integral
+    around its bilinear free action.
+  failure_mode: Without the fermionic path-integral measure and action, the Grassmann
+    generating integral is disconnected from the quantum theory.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 409
+    - 410
+    - 411
+    note: The source moves from the field-theory path integral to the bilinear free
+      action and its pairing integral.
+- id: qft.align046.weinberg-1-gauge-averaging-to-qed-photon-proof
+  from: qft.align046.abelian-gauge-averaging-covariant-qed-path-integral
+  to: qft.align046.path-integral-qed-covariant-photon-propagator-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon kernel inverted in the proof includes the gauge-fixing term
+    produced by gauge averaging.
+  failure_mode: Without the covariant gauge-fixed quadratic action, the Feynman- and
+    Landau-gauge inverses do not follow.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 417
+    - 418
+    note: The source obtains the gauge-fixed action and immediately inverts its photon
+      kernel for the named gauges.
+- id: qft.align046.weinberg-1-gaussian-pairing-proof-to-bosonic-pi-rules
+  from: qft.align046.gaussian-pairing-wick-formula-proof
+  to: qft.align046.path-integral-bosonic-gaussian-pairing-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The functional Feynman-rule derivation applies the appendix pairing formula
+    to the free quadratic action.
+  failure_mode: Without the pairing formula, the sum over contractions and inverse-kernel
+    line factors is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '9.4'
+    pages:
+    - 396
+    - 397
+    note: The source invokes the appendix equations to obtain pairings and identifies
+      them as coordinate-space rules.
+- id: qft.align046.weinberg-1-gaussian-stationary-to-lagrangian-reduction
+  from: qft.align046.gaussian-stationary-point-determinant-proof
+  to: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The momentum integral is evaluated with the appendix stationary-point
+    Gaussian result.
+  failure_mode: Without the Gaussian result, replacing momenta by stationary values
+    and retaining the determinant is unjustified.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 390
+    - 391
+    note: The source invokes the appendix Gaussian formula to integrate the quadratic
+      momenta.
+- id: qft.align046.weinberg-1-gaussian-stationary-to-qed-constrained-pi
+  from: qft.align046.gaussian-stationary-point-determinant-proof
+  to: qft.align046.qed-coulomb-gauge-constrained-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The transverse momentum integral is performed by the stationary-point
+    Gaussian rule.
+  failure_mode: Without this rule, eliminating the transverse momentum is not derived.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 414
+    note: The source identifies the momentum quadratic form and applies the appendix
+      stationary-point result.
+- id: qft.align046.weinberg-1-heisenberg-symmetry-to-furry
+  from: qft.align046.heisenberg-off-shell-symmetry-constraints
+  to: qft.align046.furrys-theorem-odd-photon-sums
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Furry’s theorem applies the off-shell Heisenberg insertion symmetry argument
+    to charge conjugation.
+  failure_mode: Without the correlator-to-graph symmetry bridge, the statement would
+    be only a diagram heuristic.
+  evidence:
+  - source: weinberg-1
+    section: '10.1'
+    pages:
+    - 425
+    - 428
+    note: The section introduces the bridge before applying charge conjugation to
+      graph sums.
+- id: qft.align046.weinberg-1-identical-state-counting-to-electron-electron-problem
+  from: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  to: qft.align046.problem-electron-electron-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cross-section must use the identical-particle state normalization
+    and avoid double-counting exchanged final-electron labels.
+  failure_mode: Without that normalization/counting rule, the differential rate can
+    overcount identical final states.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 5 concerns two identical final electrons.
+- id: qft.align046.weinberg-1-induction-proof-to-even-traces
+  from: qft.align046.dirac-gamma-trace-induction-proof
+  to: qft.align046.dirac-gamma-even-trace-pairing-formula
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The method proves the general pairing formula from the two-gamma base
+    case and recurrence.
+  failure_mode: Without the proof route, deriving the formula's factor and signed
+    pairings is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The source states that the recurrence shows the formula for 2N gamma matrices
+      from the formula for 2N−2.
+- id: qft.align046.weinberg-1-lagrangian-reduction-to-auxiliary-restoration
+  from: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction
+  to: qft.align046.auxiliary-field-restoration-of-covariant-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector example addresses the action obtained after the same momentum
+    integration.
+  failure_mode: Without that reduction, the missing-A0 covariance problem and its
+    repair are not posed.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 393
+    - 394
+    note: The source contrasts the reduced vector action with the auxiliary-field-integrated
+      covariant action.
+- id: qft.align046.weinberg-1-lagrangian-reduction-to-determinant-correction
+  from: qft.align046.quadratic-momentum-lagrangian-path-integral-reduction
+  to: qft.align046.field-dependent-path-integral-determinant-correction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correction is the determinant left by the momentum reduction when
+    its kernel depends on fields.
+  failure_mode: Without the reduction determinant, the nonlinear-model effective correction
+    has no source.
+  evidence:
+  - source: weinberg-1
+    section: '9.3'
+    pages:
+    - 391
+    - 392
+    - 393
+    note: The source first identifies the determinant and then evaluates its field-dependent
+      nonlinear-model contribution.
+- id: qft.align046.weinberg-1-phase-space-pi-to-oscillator-problem
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align046.problem-path-integral-harmonic-oscillator-transition-probability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requests the transition probability by the path-integral method
+    for a nonrelativistic canonical particle.
+  failure_mode: Without the path-integral transition formula, the requested calculation
+    has no specified method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 1 explicitly directs use of path-integral methods for the specified
+      oscillator transition.
+- id: qft.align046.weinberg-1-phase-space-to-s-matrix-path-integral
+  from: qft.align046.bosonic-phase-space-path-integral
+  to: qft.align046.phase-space-s-matrix-with-asymptotic-wave-functionals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field-theory S-matrix formula converts the phase-space path integral
+    by endpoint wave functionals.
+  failure_mode: Without the phase-space representation, the endpoint-functional conversion
+    has no base integral.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 385
+    - 386
+    note: The source explicitly converts the Section 9.1 field version into the asymptotic-state
+      formula.
+- id: qft.align046.weinberg-1-qed-constrained-pi-to-auxiliary-a0
+  from: qft.align046.qed-coulomb-gauge-constrained-path-integral
+  to: qft.align046.qed-auxiliary-a0-covariant-action-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The auxiliary-field rewrite starts after the constrained momentum integral
+    and replaces its Coulomb action.
+  failure_mode: Without the constrained Coulomb action, there is no term for the a0
+    stationary equation to reproduce.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 414
+    - 415
+    note: The source integrates the transverse momentum and then introduces a0 to
+      replace the Coulomb term.
+- id: qft.align046.weinberg-1-qed-pi-proof-alternative-to-coulomb-cancellation
+  from: qft.align046.path-integral-qed-covariant-photon-propagator-proof
+  to: qft.align046.photon-propagator-coulomb-contact-cancellation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The new path-integral derivation reaches the covariant photon rule without
+    the earlier diagrammatic heuristic, under its explicit assumptions.
+  failure_mode: Making the earlier heuristic a prerequisite would misstate the independent
+    route established here.
+  evidence:
+  - source: weinberg-1
+    section: '9.6'
+    pages:
+    - 413
+    - 417
+    - 418
+    note: The source contrasts this route with the prior hand-waving argument and
+      derives the covariant gauge propagators.
+- id: qft.align046.weinberg-1-s-matrix-pi-to-scalar-vacuum-functional
+  from: qft.align046.phase-space-s-matrix-with-asymptotic-wave-functionals
+  to: qft.align046.scalar-vacuum-wave-functional-ie-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vacuum calculation evaluates the endpoint wave functionals appearing
+    in the S-matrix path integral.
+  failure_mode: Without those endpoint factors, the Gaussian vacuum functional has
+    no role in the transition amplitude.
+  evidence:
+  - source: weinberg-1
+    section: '9.2'
+    pages:
+    - 386
+    - 387
+    - 388
+    note: The source introduces the vacuum case as the calculation of the final wave-function
+      factors in the S-matrix formula.
+- id: qft.align046.weinberg-1-scalar-quantization-to-scalar-compton-problem
+  from: qft.align046.problem-charged-scalar-coulomb-quantization
+  to: qft.align046.problem-scalar-compton-cross-sections
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 explicitly directs the reader to use the results of Problem
+    2.
+  failure_mode: Without the scalar interaction and quantization result, the scalar
+    photon-scattering amplitude is not supplied by the stated route.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 8
+    pages:
+    - 375
+    note: Problem 3 begins, “Use the results of Problem 2”.
+- id: qft.align046.weinberg-1-scalar-vacuum-to-one-particle-problem
+  from: qft.align046.scalar-vacuum-wave-functional-ie-prescription
+  to: qft.align046.problem-one-particle-field-space-wave-function-and-emission
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-particle field-space wave function is constructed from the scalar
+    vacuum functional before extracting its emission or absorption rule.
+  failure_mode: Without the vacuum functional, the required one-particle wave function
+    lacks its Gaussian base.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 2 asks first for the one-particle field-space wave function and
+      then for emission/absorption rules.
+- id: qft.align046.weinberg-1-scalar-vacuum-to-vector-ie-problem
+  from: qft.align046.scalar-vacuum-wave-functional-ie-prescription
+  to: qft.align046.problem-neutral-vector-vacuum-wave-functional-ie
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task generalizes the Gaussian endpoint-wave-functional mechanism
+    that produces propagator iε terms.
+  failure_mode: Without that mechanism, the requested vector-field iε derivation has
+    no immediate source-developed method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 9
+    pages:
+    - 423
+    note: Problem 3 requests a vector vacuum wave function and derivation of its propagator
+      iε terms.
+- id: qft.align046.weinberg-1-trace-cyclicity-to-induction-proof
+  from: qft.align046.gamma-trace-cyclicity
+  to: qft.align046.dirac-gamma-trace-induction-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Cyclicity is used to identify the final commutator term with the original
+    trace and isolate the recurrence.
+  failure_mode: Without this trace property, the left-hand trace cannot be moved to
+    the other side of the induction relation.
+  evidence:
+  - source: weinberg-1
+    section: 'Appendix: Traces'
+    pages:
+    - 373
+    note: The source says that commutators have zero trace, so the final subtracted
+      term is the same as the left-hand side.
 - id: qft.align048.peskin-schroeder-edge-crossing-to-pole-log-cancellation
   from: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
   to: qft.align048.two-loop-counterterm-pole-log-cancellation
