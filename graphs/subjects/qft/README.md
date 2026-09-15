@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 1280 concepts and 1503 relationships, mapping 1466 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 1345 concepts and 1608 relationships, mapping 1551 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -21,12 +21,12 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 125 |
-| Peskin–Schroeder / Weinberg I | 15 |
-| Peskin–Schroeder / Weinberg II | 31 |
-| Schwartz / Weinberg I | 14 |
+| Peskin–Schroeder / Schwartz | 130 |
+| Peskin–Schroeder / Weinberg I | 22 |
+| Peskin–Schroeder / Weinberg II | 32 |
+| Schwartz / Weinberg I | 22 |
 | Schwartz / Weinberg II | 26 |
-| Weinberg I / Weinberg II | 0 |
+| Weinberg I / Weinberg II | 3 |
 
 **These numbers are not whole-book overlap estimates.** The reviewed inputs cover different portions of the subject. A zero means no shared-node mapping in the aligned inputs; it does not mean either book omits the topic.
 
@@ -44,8 +44,8 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Particle as an irreducible unitary Poincaré representation (`qft.align010.schwartz.particle-as-unitary-poincare-irrep`) | Schwartz: `schwartz.particle-as-unitary-poincare-irrep`; Weinberg I: `weinberg-1.one-particle-irreducible-poincare-states` |
 | Proper-orthochronous Lorentz topology and representations up to a sign (`qft.align010.weinberg-1.lorentz-topology-sign-projective-representations`) | Weinberg I: `weinberg-1.lorentz-topology-sign-projective-representations`; Schwartz: `schwartz.spinor-two-pi-rotation-and-projective-representations` |
 | Parity is unitary and time reversal antiunitary (`qft.align010.weinberg-1.parity-unitary-time-reversal-antiunitary`) | Weinberg I: `weinberg-1.parity-unitary-time-reversal-antiunitary`; Schwartz: `schwartz.wigner-time-reversal-antilinearity`; Peskin–Schroeder: `peskin-schroeder.time-reversal-antiunitary-dirac-symmetry` |
+| Proper orthochronous Lorentz subgroup and discrete inversions (`qft.align010.weinberg-1.proper-orthochronous-lorentz-component`) | Weinberg I: `weinberg-1.proper-orthochronous-lorentz-component`; Schwartz: `schwartz.groups-representations-and-lorentz-components` |
 | Effective action as the 1PI generator and tree reconstruction (`qft.align011.effective-action-1pi-tree-reconstruction`) | Weinberg II: `weinberg-2.effective-action-1pi-tree-reconstruction`; Peskin–Schroeder: `peskin-schroeder.effective-action-1pi-generating-functional` |
-| Effective potential for a constant background and vacuum candidates (`qft.align011.effective-potential-constant-background`) | Weinberg II: `weinberg-2.effective-potential-constant-background`; Peskin–Schroeder: `peskin-schroeder.effective-potential-vacua-and-convexity` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 

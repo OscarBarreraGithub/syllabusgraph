@@ -3792,6 +3792,370 @@ units:
       id: qft.align051.schwartz-e-massless-to-polarizations
     - kind: edges
       id: qft.align051.schwartz-e-weyl-to-helicity
+- id: full-align-053-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The Lorentz-generator core used an unknown group and left both source copies
+      and routes unfactored.
+    alternatives:
+    - Keep two source nodes and remove the unusable common core.
+    - Use one mergeable common core while retaining each source-specific derivation
+      route.
+    resolution: Use the valid Lorentz group, correct the Schwartz section, factor
+      the duplicate nodes, and retarget their routes.
+    rationale: PS 38–40 and Schwartz 160–162 derive the same Lorentz-generator algebra
+      through field/orbital and abstract-algebra routes. One core preserves both methods
+      and has valid graph membership.
+    evidence:
+    - source: peskin-schroeder
+      section: '3.1'
+      pages:
+      - 38
+      - 39
+      - 40
+    - source: schwartz
+      section: 10.1.1-10.1.2
+      pages:
+      - 160
+      - 161
+      - 162
+    affected_records:
+    - kind: nodes
+      id: qft.align053.lorentz-generator-field-and-algebra-core
+    - kind: nodes
+      id: qft.align053.lorentz-representations-and-generators
+    - kind: nodes
+      id: qft.align053.lorentz-lie-algebra-generators
+    - kind: edges
+      id: qft.align053.ps3-covariance-to-representations
+    - kind: edges
+      id: qft.align053.ps3-representations-to-clifford
+    - kind: edges
+      id: qft.align053.schwartz-e-groups-representations-to-lorentz-algebra
+    - kind: edges
+      id: qft.align053.schwartz-e-lorentz-algebra-to-su2-factors
+    - kind: edges
+      id: qft.align053.schwartz-e-poincare-irrep-to-lorentz-field-content
+    - kind: edges
+      id: qft.align053.schwartz-e-wigner-classification-to-lorentz-field-content
+  - finding: 1
+    issue: The 17 draft AMENDs replaced detailed accepted records with abstract summaries
+      and dropped retained fields.
+    alternatives:
+    - Defer all 17 accepted-record changes.
+    - Rebuild each replacement from the fresh accepted record and append only packet-supported
+      scope.
+    resolution: Rebuild all 17 from current records, retaining formulas, conditions,
+      notation, citations, and PS78 before adding new scope.
+    rationale: The packet supports the added correspondences, while the current records
+      contain operative formulas and qualifications that cannot be discarded. Full
+      replacements preserve both.
+    evidence:
+    - source: peskin-schroeder
+      section: '4.1'
+      pages:
+      - 78
+    - source: weinberg-1
+      section: '1.2'
+      pages:
+      - 9
+      - 10
+    - source: schwartz
+      section: 10.1-10.5
+      pages:
+      - 157
+      - 162
+      - 167
+      - 173
+    affected_records:
+    - kind: nodes
+      id: qft.lorentz-transformation-laws-for-fields
+    - kind: nodes
+      id: qft.align010.weinberg-1.proper-orthochronous-lorentz-component
+    - kind: nodes
+      id: qft.align033.lorentz-irrep-su2-times-su2-classification
+    - kind: nodes
+      id: qft.align033.lorentz-irrep-rotation-content-and-parity-completion
+    - kind: nodes
+      id: qft.align020.chirality-helicity-and-massless-weyl-limit
+    - kind: nodes
+      id: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+    - kind: nodes
+      id: qft.align020.dirac-covariance-and-klein-gordon-factorization
+    - kind: nodes
+      id: qft.align020.dirac-photon-coupling-and-pauli-term
+    - kind: nodes
+      id: qft.align020.dirac-magnetic-dipole-prediction
+    - kind: nodes
+      id: qft.align019.schwinger-one-loop-anomalous-magnetic-moment
+    - kind: nodes
+      id: qft.infrared-inclusive-final-states
+    - kind: nodes
+      id: qft.align012.bare-to-renormalized-parameter-elimination
+    - kind: nodes
+      id: qft.yukawa-potential-and-massive-vector-constraint
+    - kind: nodes
+      id: qft.align021.feynman-path-integral-historical-validation
+    - kind: nodes
+      id: qft.align054.matrix-spinor-and-antifield-notation
+    - kind: nodes
+      id: qft.align054.natural-unit-charge-and-uncertainty-conventions
+    - kind: nodes
+      id: qft.align054.spacetime-index-and-dirac-notation
+  - finding: 2
+    issue: Several AMENDs lacked exact assigned origins or used the wrong WI Yukawa
+      origin; one component claim exceeded its source.
+    alternatives:
+    - Keep the incomplete provenance and defer promotion.
+    - Add the exact reviewed origin pairs and remove the unsupported component overreach.
+    resolution: Add the required Schwartz/WI origins, use WI’s scalar-mediator origin,
+      and keep nonunitarity out of the component AMEND.
+    rationale: The cited pages support the exact representation, electromagnetic,
+      anomaly, and scalar-mediator records. Nonunitarity belongs in the finite-representation
+      classification, not the component test.
+    evidence:
+    - source: schwartz
+      section: 10.1.2-10.2
+      pages:
+      - 164
+      - 165
+      - 166
+    - source: weinberg-1
+      section: Historical Introduction
+      pages:
+      - 30
+      - 36
+    affected_records:
+    - kind: nodes
+      id: qft.align033.lorentz-irrep-su2-times-su2-classification
+    - kind: nodes
+      id: qft.align020.chirality-helicity-and-massless-weyl-limit
+    - kind: nodes
+      id: qft.align020.dirac-photon-coupling-and-pauli-term
+    - kind: nodes
+      id: qft.align020.dirac-magnetic-dipole-prediction
+    - kind: nodes
+      id: qft.align019.schwinger-one-loop-anomalous-magnetic-moment
+    - kind: nodes
+      id: qft.yukawa-potential-and-massive-vector-constraint
+  - finding: 3
+    issue: The corrected draft retained duplicate cores and failed to isolate the
+      source-specific historical, method, and notation residuals.
+    alternatives:
+    - Retain all source copies beside the common cores.
+    - Factor shared claims and keep only source-specific routes, limits, and historical
+      residuals.
+    resolution: Omit absorbed copies, narrow genuine residuals, preserve limits and
+      proof boundaries, and retarget dependencies.
+    rationale: The sources share several physical conclusions but use distinct active-field,
+      representation, historical, and calculation routes. The revised records state
+      those residual boundaries explicitly.
+    evidence:
+    - source: weinberg-1
+      section: Historical Introduction
+      pages:
+      - 7
+      - 8
+      - 9
+      - 10
+      - 30
+      - 32
+      - 33
+      - 34
+      - 36
+      - 37
+    - source: schwartz
+      section: 10 introduction-10.2
+      pages:
+      - 157
+      - 158
+      - 164
+      - 165
+      - 166
+      - 167
+    affected_records:
+    - kind: nodes
+      id: qft.align053.anomalous-magnetic-moment-radiative-correction
+    - kind: nodes
+      id: qft.align053.dirac-electromagnetic-coupling-spin
+    - kind: nodes
+      id: qft.align053.dirac-linearization-clifford-algebra
+    - kind: nodes
+      id: qft.align053.dirac-positive-probability-current
+    - kind: nodes
+      id: qft.align053.dirac-spinor-lorentz-covariance
+    - kind: nodes
+      id: qft.align053.feynman-rules-covariant-perturbation
+    - kind: nodes
+      id: qft.align053.finite-spinor-lorentz-nonunitarity
+    - kind: nodes
+      id: qft.align053.groups-representations-and-lorentz-components
+    - kind: nodes
+      id: qft.align053.infrared-inclusive-cancellation
+    - kind: nodes
+      id: qft.align053.light-by-light-effective-interaction
+    - kind: nodes
+      id: qft.align053.lorentz-algebra-two-su2-factors
+    - kind: nodes
+      id: qft.align053.lorentz-covariance-field-law
+    - kind: nodes
+      id: qft.align053.lorentz-generator-field-and-algebra-core
+    - kind: nodes
+      id: qft.align053.lorentz-irrep-labels-and-rotation-content
+    - kind: nodes
+      id: qft.align053.lorentz-lie-algebra-generators
+    - kind: nodes
+      id: qft.align053.lorentz-representations-and-generators
+    - kind: nodes
+      id: qft.align053.massless-weyl-equation-and-mass-obstruction
+    - kind: nodes
+      id: qft.align053.matrix-adjoint-and-dirac-bar-notation
+    - kind: nodes
+      id: qft.align053.natural-unit-charge-and-uncertainty-conventions
+    - kind: nodes
+      id: qft.align053.pauli-spinor-and-schrodinger-pauli-equation
+    - kind: nodes
+      id: qft.align053.renormalization-physical-parameters
+    - kind: nodes
+      id: qft.align053.spacetime-index-vector-and-dirac-notation
+    - kind: nodes
+      id: qft.align053.weyl-kinetic-terms-and-dirac-mass
+    - kind: nodes
+      id: qft.align053.weyl-spinor-lorentz-representations
+    - kind: nodes
+      id: qft.align053.yukawa-massive-mediator-potential
+    - kind: edges
+      id: qft.align053.ps-conventions-001-fourier-to-dirac-momentum-space
+    - kind: edges
+      id: qft.align053.ps3-covariance-to-representations
+    - kind: edges
+      id: qft.align053.ps3-representations-to-clifford
+    - kind: edges
+      id: qft.align053.schwartz-e-groups-representations-to-lorentz-algebra
+    - kind: edges
+      id: qft.align053.schwartz-e-irrep-labels-to-weyl-reps
+    - kind: edges
+      id: qft.align053.schwartz-e-lorentz-algebra-to-su2-factors
+    - kind: edges
+      id: qft.align053.schwartz-e-poincare-irrep-to-lorentz-field-content
+    - kind: edges
+      id: qft.align053.schwartz-e-su2-factors-to-irrep-labels
+    - kind: edges
+      id: qft.align053.schwartz-e-wigner-classification-to-lorentz-field-content
+    - kind: edges
+      id: qft.align053.weinberg-1-linearization-to-spinor-covariance
+    - kind: edges
+      id: qft.align053.weinberg-1-spinor-to-dirac-em-coupling
+  - finding: 4
+    issue: The 62-row incident ledger used stale canonical endpoints and missed two
+      mappings present in the fresh graph.
+    alternatives:
+    - Freeze the stale 1,180-node classifications.
+    - Recompute every identity against the 1,295-node graph and packet evidence.
+    resolution: Record 43 emitted, 13 mapped-later, five unmapped, and one absorbed
+      identity with exact current endpoints.
+    rationale: Fresh origin mappings make the PS Fourier edge emit-able and the PS
+      SU(2) task mapped-later. Twelve earlier boundaries now use their exact accepted
+      IDs; one WI edge is internalized by the common core.
+    evidence:
+    - source: peskin-schroeder-notation
+      section: Fourier Transforms and Distributions
+      pages:
+      - 21
+    - source: schwartz
+      section: 10.1.2
+      pages:
+      - 162
+    - source: weinberg-1-notation
+      section: Notation
+      pages:
+      - 25
+    affected_records:
+    - kind: edges
+      id: qft.align053.ps-conventions-001-fourier-to-dirac-momentum-space
+    - kind: edges
+      id: qft.align053.ps3-covariance-to-representations
+    - kind: edges
+      id: qft.align053.ps3-representations-to-clifford
+    - kind: edges
+      id: qft.align053.schwartz-e-groups-representations-to-lorentz-algebra
+    - kind: edges
+      id: qft.align053.schwartz-e-irrep-labels-to-weyl-reps
+    - kind: edges
+      id: qft.align053.schwartz-e-lorentz-algebra-to-su2-factors
+    - kind: edges
+      id: qft.align053.schwartz-e-poincare-irrep-to-lorentz-field-content
+    - kind: edges
+      id: qft.align053.schwartz-e-su2-factors-to-irrep-labels
+    - kind: edges
+      id: qft.align053.schwartz-e-wigner-classification-to-lorentz-field-content
+    - kind: edges
+      id: qft.align053.weinberg-1-linearization-to-spinor-covariance
+    - kind: edges
+      id: qft.align053.weinberg-1-spinor-to-dirac-em-coupling
+  - finding: 5
+    issue: Ordinary criticism cannot authorize the 17 supported replacements of accepted
+      records.
+    alternatives:
+    - Defer the family and leave all accepted records unchanged.
+    - Authorize the complete field-preserving AMENDs after resolving findings 0–4.
+    resolution: Authorize all 17 complete AMENDs; the packet supports their added
+      scope and every accepted field is retained.
+    rationale: The rebuilt nodes preserve the fresh accepted graph verbatim before
+      adding the reviewed sources, with exact origins and witnessed citations. The
+      corrected routes and residuals keep independent methods distinct.
+    evidence:
+    - source: peskin-schroeder
+      section: '4.1'
+      pages:
+      - 78
+    - source: schwartz
+      section: 10.1.2
+      pages:
+      - 165
+      - 166
+    - source: weinberg-1
+      section: Historical Introduction
+      pages:
+      - 30
+      - 36
+    affected_records:
+    - kind: nodes
+      id: qft.lorentz-transformation-laws-for-fields
+    - kind: nodes
+      id: qft.align010.weinberg-1.proper-orthochronous-lorentz-component
+    - kind: nodes
+      id: qft.align033.lorentz-irrep-su2-times-su2-classification
+    - kind: nodes
+      id: qft.align033.lorentz-irrep-rotation-content-and-parity-completion
+    - kind: nodes
+      id: qft.align020.chirality-helicity-and-massless-weyl-limit
+    - kind: nodes
+      id: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+    - kind: nodes
+      id: qft.align020.dirac-covariance-and-klein-gordon-factorization
+    - kind: nodes
+      id: qft.align020.dirac-photon-coupling-and-pauli-term
+    - kind: nodes
+      id: qft.align020.dirac-magnetic-dipole-prediction
+    - kind: nodes
+      id: qft.align019.schwinger-one-loop-anomalous-magnetic-moment
+    - kind: nodes
+      id: qft.infrared-inclusive-final-states
+    - kind: nodes
+      id: qft.align012.bare-to-renormalized-parameter-elimination
+    - kind: nodes
+      id: qft.yukawa-potential-and-massive-vector-constraint
+    - kind: nodes
+      id: qft.align021.feynman-path-integral-historical-validation
+    - kind: nodes
+      id: qft.align054.matrix-spinor-and-antifield-notation
+    - kind: nodes
+      id: qft.align054.natural-unit-charge-and-uncertainty-conventions
+    - kind: nodes
+      id: qft.align054.spacetime-index-and-dirac-notation
 - id: full-align-054-extended
   model_verdict: accept
   outcome: promoted
@@ -4050,3 +4414,160 @@ units:
       id: qft.compact-simple-lie-algebra-classification
     - kind: nodes
       id: qft.align010.schwartz.gauge-current-minimal-coupling
+- id: full-align-055-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Two Chapter-10 problem endpoints are mapped in fresh1280 but remain classified
+      as future boundaries.
+    alternatives:
+    - Reclassify both identities as mapped relations whose operative evidence remains
+      outside this packet.
+    - Keep both identities in the future-unmapped list despite their exact current
+      origin mappings.
+    resolution: Reclassify both as mapped-outside-packet and correct the 98-row ledger
+      totals.
+    rationale: The current graph maps the exact book endpoints to qft.align048.problem-ch10-yukawa-renormalization
+      and qft.align048.problem-ch10-phi4-two-loop-field-strength. Their book-edge
+      evidence is page 345, which is not in this packet, so neither relation is emitted.
+    evidence:
+    - source: peskin-schroeder
+      section: 10.3 retained dimensional-regularization context
+      pages:
+      - 333
+    affected_records: []
+  - finding: 1
+    issue: The QED amendment misattributes the Chapter-7 self-energy regulator and
+      narrows its residual below ten incident routes.
+    alternatives:
+    - Correct the regulator split and restore the source-specific route content in
+      the residual node.
+    - Correct the regulator split, omit the residual, and retarget its incident relations
+      to the broader amended core.
+    resolution: State the Pauli–Villars/dimensional split and restore the ten-route
+      content in the residual.
+    rationale: Pages 217–222 use a photon mass, Feynman parameters, Pauli–Villars
+      subtraction, Wick rotation, resummation, and pole/residue conditions. Page 333
+      explicitly says dimensional regularization re-evaluates that self-energy in
+      Chapter 10. Keeping the detailed Chapter-7 method in a residual preserves the
+      chiral, loop-method, residue, and pole routes without making them compulsory
+      for the broader counterterm core.
+    evidence:
+    - source: peskin-schroeder
+      section: '7.1'
+      pages:
+      - 217
+      - 218
+      - 219
+      - 220
+      - 221
+      - 222
+    - source: peskin-schroeder
+      section: '10.3'
+      pages:
+      - 333
+    affected_records:
+    - kind: nodes
+      id: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+    - kind: nodes
+      id: qft.align055.self-energy-resummation-and-pole-conditions
+  - finding: 2
+    issue: Seven supported accepted-record replacements require final amendment authority.
+    alternatives:
+    - Authorize all seven field-preserving replacements with their exact retained
+      and assigned evidence.
+    - Defer all seven amendments and omit the supported assigned correspondences from
+      this unit.
+    resolution: Authorize all seven amendments with retained fields, origins, conditions,
+      routes, and citations.
+    rationale: Each replacement is rebased on the fresh accepted record and preserves
+      every prior field, origin, citation, notation entry, formula, and source qualification.
+      The packet witnesses every retained and added evidence page, and the replacements
+      map all assigned common cores without making independent source routes cumulative
+      prerequisites.
+    evidence:
+    - source: peskin-schroeder
+      section: 7.1–7.5, Final Project, and 10.3
+      pages:
+      - 217
+      - 218
+      - 219
+      - 220
+      - 221
+      - 222
+      - 223
+      - 224
+      - 225
+      - 226
+      - 227
+      - 228
+      - 229
+      - 230
+      - 231
+      - 232
+      - 233
+      - 234
+      - 235
+      - 236
+      - 238
+      - 239
+      - 240
+      - 241
+      - 242
+      - 243
+      - 244
+      - 245
+      - 246
+      - 247
+      - 249
+      - 250
+      - 251
+      - 252
+      - 253
+      - 254
+      - 255
+      - 256
+      - 262
+      - 333
+    - source: schwartz
+      section: 6.1.1, 19.5.1, and 31.1.1
+      pages:
+      - 69
+      - 70
+      - 73
+      - 352
+      - 353
+      - 646
+    - source: weinberg-1
+      section: 3.2 and 11.2
+      pages:
+      - 113
+      - 114
+      - 115
+      - 116
+      - 480
+      - 481
+      - 482
+      - 483
+      - 484
+    - source: weinberg-2
+      section: '18.7'
+      pages:
+      - 153
+      - 154
+    affected_records:
+    - kind: nodes
+      id: qft.align016.lsz-reduction-pole-projection
+    - kind: nodes
+      id: qft.align016.conditional-s-matrix-unitarity
+    - kind: nodes
+      id: qft.align012.ward-takahashi-proof-of-z1-equals-z2
+    - kind: nodes
+      id: qft.align025.effective-charge-vacuum-polarization-matching
+    - kind: nodes
+      id: qft.align019.vacuum-polarization-screening-and-uehling-shift
+    - kind: nodes
+      id: qft.align014.qcd-infrared-safe-inclusive-and-jet-rates
+    - kind: nodes
+      id: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
