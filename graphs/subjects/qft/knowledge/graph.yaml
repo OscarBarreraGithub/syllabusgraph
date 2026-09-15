@@ -1963,7 +1963,10 @@ nodes:
   summary: Choosing the unique two-derivative vector kinetic combination with a=−b
     gives ℒ=−F²/4+m²A²/2. For m≠0 its equations impose ∂·A=0 and (□+m²)A=0, removing
     the scalar component and leaving the three massive spin-1 modes; the total energy
-    is positive after on-shell and boundary terms are accounted for.
+    is positive after on-shell and boundary terms are accounted for. Weinberg independently
+    selects the Proca coefficients by excluding propagation of the divergence as a
+    scalar; its Hamiltonian validation and contact compensation remain a separate
+    route.
   kind: result
   group: qft.particle-representations-and-gauge-polarizations
   origins:
@@ -1972,6 +1975,9 @@ nodes:
     note: Retains the source record ‘Proca Lagrangian and massive spin-1 constraint’
       with its stated scope, assumptions, and notation; this source-scoped alignment
       does not assert a broader equivalence.
+  - project: weinberg-1
+    node: weinberg-1.proca-lagrangian-spin-one-selection
+    note: Retains WI’s massive-vector Lagrangian and free-spin-one validation boundary.
   evidence:
   - source: schwartz
     section: 8.2.2
@@ -1979,6 +1985,12 @@ nodes:
     - 115
     - 116
     note: Derives the divergence constraint, Proca form, and positive total energy.
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 320
+    note: Selects alpha=-beta so the divergence is constrained rather than an independently
+      propagating scalar.
   notation: []
 - id: qft.align010.schwartz.vector-lorentz-unitarity-conflict
   label: Conflict between vector Lorentz covariance and positive norm
@@ -6936,7 +6948,10 @@ nodes:
     Green function and internal scalar-line factor. Schwartz’s contour derivation
     retains the off-shell energy integral; separately, the p.212–213 ordering comparison
     shows that the covariant scalar Feynman propagator requires bosonic commutators,
-    whereas scalar anticommutators give a noncovariant energy-dependent factor.
+    whereas scalar anticommutators give a noncovariant energy-dependent factor. Weinberg
+    supplies the compatible scalar Fourier Green function in the convention q²=|q⃗|²−(q⁰)²,
+    with (□−m²)Δ_F=−δ⁴ and denominator q²+m²−iε. His general-field numerator and correlator
+    constructions remain separate residual methods.
   kind: result
   group: qft.align015-peskin-free-fields
   origins:
@@ -6958,6 +6973,10 @@ nodes:
     note: 'Retains Schwartz’s scalar two-point comparison: commutator ordering gives
       the covariant Feynman propagator, while scalar anticommutators leave a non-Lorentz-invariant
       energy factor.'
+  - project: weinberg-1
+    node: weinberg-1.feynman-propagator-fourier-green-function
+    note: Retains only Weinberg's compatible scalar Fourier Green function, metric
+      convention, differential equation, and frequency boundary condition.
   evidence:
   - source: peskin-schroeder
     section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
@@ -6985,6 +7004,13 @@ nodes:
     - 213
     note: Computes the scalar time-ordered products and contrasts bosonic and wrong-statistics
       ordering.
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 276
+    - 277
+    note: Derives the scalar Fourier denominator, Green-function equation, and frequency
+      boundary condition.
   notation:
   - source: peskin-schroeder
     note: T places the later operator left; i epsilon specifies displaced poles.
@@ -6995,6 +7021,9 @@ nodes:
   - source: schwartz
     note: Peskin–Schroeder writes the propagator with its Fourier convention; Schwartz
       writes D_F(x1,x2) and emphasizes the contour’s off-shell k0 variable.
+  - source: weinberg-1
+    note: Weinberg uses q²=|q⃗|²−(q⁰)², so Δ_F has denominator q²+m²−iε and obeys
+      (□−m²)Δ_F=−δ⁴.
 - id: qft.align015.field-commutator-lorentz-invariance
   label: Lorentz invariance of field commutators
   summary: Weinberg’s historical account reports that Jordan and Pauli showed in 1928
@@ -7779,7 +7808,10 @@ nodes:
   summary: Represent a propagator contraction by a line and a spacetime field insertion
     by a point; in an interacting expression distinguish external points from integrated
     internal vertices. The diagrams encode the analytic terms, not independent physical
-    histories.
+    histories. Weinberg supplies an operator-pairing S-matrix derivation of the same
+    contraction representation. Its Dyson and external-particle route remains an independent
+    residual method rather than a required premise of the existing functional or scalar-vacuum
+    derivations.
   kind: representation
   evidence:
   - source: peskin-schroeder
@@ -7787,6 +7819,14 @@ nodes:
     pages:
     - 91
     - 92
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 261
+    - 262
+    - 263
+    - 264
+    note: Develops the operator pairings and their coordinate-space diagram factors.
   id: qft.align016.feynman-diagram-representation
   group: qft.align016.diagrammatics
   origins:
@@ -7795,6 +7835,10 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
+  - project: weinberg-1
+    node: weinberg-1.coordinate-wick-pairing-diagram-method
+    note: Contributes the common contraction-to-line and insertion-to-vertex representation;
+      the full Dyson/operator-pairing construction remains a separate Weinberg route.
   notation: []
 - label: Free Hamiltonian with physical spectrum
   summary: The scattering split H=H₀+V assumes H₀ has free-particle eigenstates with
@@ -8349,7 +8393,9 @@ nodes:
     undetermined momenta, while the Feynman boundary prescription supplies the i epsilon
     continuation. Schwartz additionally states that external-line propagators cancel
     under LSZ, vertices contribute i times their Lagrangian coupling, and all diagrams
-    are summed to obtain iM.
+    are summed to obtain iM. Weinberg contributes the compatible scalar Fourier, vertex-delta,
+    and loop-integration core. His general external wavefunctions, arrow/matrix ordering,
+    and polynomial numerators remain a separate residual method.
   kind: method
   evidence:
   - source: peskin-schroeder
@@ -8363,6 +8409,14 @@ nodes:
     - 94
     - 95
     note: Works the Fourier/LSZ conversion and lists the resulting rules.
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 280
+    - 281
+    - 282
+    note: Derives the momentum rules, including external factors and the momentum-conserving
+      delta functions.
   id: qft.align016.phi4-momentum-space-feynman-rules
   group: qft.align016.diagrammatics
   origins:
@@ -8375,6 +8429,10 @@ nodes:
     node: schwartz.momentum-space-feynman-rules
     note: Retains Schwartz’s LSZ external-line cancellation, vertex-coupling convention,
       and sum-to-iM rule within the compatible scalar diagrammatic core.
+  - project: weinberg-1
+    node: weinberg-1.momentum-space-feynman-rules
+    note: Contributes only the compatible scalar momentum-rule core; Weinberg's full
+      Hamiltonian external-state and general-field prescription remains in the residual.
   notation:
   - source: schwartz
     note: Peskin–Schroeder gives the phi-four scalar convention; Schwartz phrases
@@ -8403,7 +8461,9 @@ nodes:
     Lagrangian coefficient to each vertex, and the appropriate external-point factors;
     multiply independent factors and divide by the geometrical symmetry factor. Schwartz
     retains that the Hamiltonian contraction route and the Lagrangian Schwinger–Dyson
-    route agree after their distinct derivations.
+    route agree after their distinct derivations. Weinberg contributes the compatible
+    scalar specialization of his coordinate-space S-matrix rules. His general Hamiltonian,
+    external-state, and non-scalar prescription remains a separate residual method.
   kind: method
   evidence:
   - source: peskin-schroeder
@@ -8417,6 +8477,13 @@ nodes:
     - 93
     note: States equivalence of derivations and summarizes vertex and symmetry-factor
       accounting.
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 264
+    - 265
+    note: States the coordinate-space diagram prescription and the generic vertex-permutation
+      cancellation.
   id: qft.align016.phi4-position-space-feynman-rules
   group: qft.align016.diagrammatics
   origins:
@@ -8429,6 +8496,11 @@ nodes:
     node: schwartz.position-space-feynman-rules
     note: Retains Schwartz’s external-point/internal-vertex formulation and the agreement
       of its distinct Hamiltonian and Lagrangian routes.
+  - project: weinberg-1
+    node: weinberg-1.coordinate-space-feynman-rules
+    note: Contributes the scalar line/vertex/integration core only; Weinberg's general
+      Hamiltonian S-matrix prescription and external-state normalization remain in
+      the source-specific residual.
   notation:
   - source: schwartz
     note: Peskin–Schroeder states the phi-four factors as −i lambda; Schwartz states
@@ -11968,7 +12040,9 @@ nodes:
   summary: For L=ψ̄(iγ·∂−m)ψ, the canonical momentum conjugate to ψ is π_ψ=iψ†. The
     Hamiltonian H=∫d^3x ψ†[−iα·∇+mβ]ψ uses α=γ^0γ and β=γ^0, matching the one-particle
     Dirac Hamiltonian; this classical/canonical construction precedes and is retained
-    through the failed commutator route.
+    through the failed commutator route. Weinberg independently obtains the canonical
+    Dirac equation, anticommutators, and positive free Hamiltonian; discarded c-numbers
+    retain the gravity and boundary caveat.
   kind: method
   group: qft.align020.relativistic-fermion-structures
   origins:
@@ -11977,6 +12051,10 @@ nodes:
     note: Retains this reviewed book treatment with its stated conditions, conventions,
       and task or proof boundary; the correspondence asserts only the shared physical
       core stated here.
+  - project: weinberg-1
+    node: weinberg-1.dirac-canonical-lagrangian-hamiltonian-method
+    note: Retains WI’s Dirac canonical momentum, equation, anticommutators, and positive-Hamiltonian
+      route.
   evidence:
   - source: peskin-schroeder
     section: '3.5'
@@ -11984,6 +12062,14 @@ nodes:
     - 52
     note: Equations (3.83)–(3.85) derive the conjugate momentum and Hamiltonian before
       the attempted commutator quantization.
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 323
+    - 324
+    - 325
+    note: Derives the canonical conjugate and Hamiltonian, the Dirac equation, mode
+      anticommutators, and positivity qualification.
   notation:
   - source: peskin-schroeder
     note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
@@ -14003,7 +14089,10 @@ nodes:
   label: Source generating functional and functional derivatives
   summary: Adding a classical scalar source J times phi defines Z[J]. Functional differentiation
     inserts fields, and division by Z[0] gives vacuum time-ordered Green functions;
-    the functional-derivative definition fixes the delta-function convention.
+    the functional-derivative definition fixes the delta-function convention. Weinberg’s
+    external-source theorem is an independent in/out all-orders source route. Its
+    source parity and antisymmetry for fermionic currents are retained; it is not
+    made a premise of the existing scalar functional-derivative method.
   kind: method
   group: qft.free-scalar-quantization
   origins:
@@ -14013,6 +14102,11 @@ nodes:
   - project: schwartz
     node: schwartz.source-generating-functional-method
     note: Shares the source-to-insertions route for arbitrary time-ordered correlators.
+  - project: weinberg-1
+    node: weinberg-1.external-source-functional-derivative-method
+    note: Retains Weinberg’s c-number external-source theorem for in/out S-matrix
+      derivatives and time-ordered Heisenberg insertions, including source parity
+      and antisymmetry for fermionic currents.
   evidence:
   - source: peskin-schroeder
     section: '9.4'
@@ -14023,6 +14117,19 @@ nodes:
     pages:
     - 261
     - 262
+  - source: weinberg-1
+    section: '6.4'
+    pages:
+    - 287
+    - 288
+    - 289
+    - 290
+    note: Defines source-coupled interactions and proves the all-orders in/out derivative
+      theorem.
+  notation:
+  - source: weinberg-1
+    note: Fermionic external sources have the parity needed to make source-current
+      couplings even; their functional derivatives are antisymmetric.
 - id: qft.align021.task-thermal-fermion-antiperiodic-boundary
   label: 'Task: thermal fermion antiperiodic boundary conditions'
   summary: The assigned problem asks the learner to evaluate the stated two-level
@@ -19653,13 +19760,19 @@ nodes:
     element; in perturbation theory, a total derivative vanishes by momentum conservation
     at the vertex. Problems 7.5–7.6 request a general integration-by-parts proof and
     a derivative-coupling tree-level cross section, respectively; those requested
-    calculations are not proved on the problem page.
+    calculations are not proved on the problem page. Weinberg supplies an independent
+    canonical proof for total derivatives under vanishing boundary contributions,
+    explicitly excluding sectors of differing topology.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.derivative-couplings-and-total-derivative-invariance
     note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
       or task boundary; no broader equivalence is asserted.
+  - project: weinberg-1
+    node: weinberg-1.total-derivative-lagrangian-quantum-equivalence
+    note: Retains WI’s canonical total-derivative proof with vanishing-boundary and
+      topology qualifications.
   evidence:
   - source: schwartz
     section: 7.4.2 Derivative couplings
@@ -19673,6 +19786,13 @@ nodes:
     pages:
     - 104
     note: Requests the general proof and a derivative-coupling cross section.
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 305
+    - 306
+    note: Shows that a total time derivative shifts canonical momentum while preserving
+      the Hamiltonian form and canonical brackets.
   notation: []
 - id: qft.align030.disconnected-amplitudes-and-cluster-decomposition
   label: Disconnected amplitudes and cluster decomposition
@@ -19711,19 +19831,34 @@ nodes:
     field permutations cancel the vertex combinatorics. After labeled external points
     are held fixed, any remaining geometrical graph symmetry divides the diagram value.
     This general Schwartz convention is retained separately from the accepted phi-four
-    common core.
+    common core. Weinberg supplies the compatible residual symmetry-factor analysis,
+    including cases where repeated lines leave an automorphism factor. This augments
+    the general Schwartz identical-field convention without collapsing it into a phi-four
+    label match.
   kind: method
   origins:
   - project: schwartz
     node: schwartz.interaction-normalization-and-symmetry-factors
     note: Retains the general identical-field factorial convention and external-label-fixed
       geometrical symmetry factor beyond the phi-four common core.
+  - project: weinberg-1
+    node: weinberg-1.feynman-diagram-symmetry-factors
+    note: Retains Weinberg’s residual identical-pairing and vertex-automorphism factors
+      after the explicit interaction factorial cancellations.
   evidence:
   - source: schwartz
     section: 7.1.1 Position-space Feynman rules
     pages:
     - 83
     note: Explains normalized interactions and the residual geometrical symmetry division.
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 265
+    - 266
+    - 267
+    note: Explains the usual factorial cancellation, its exceptions, and the remaining
+      diagram symmetry factors.
   notation:
   - source: schwartz
     note: The interaction normalization uses 1/n! for n identical scalar fields; geometrical
@@ -22282,6 +22417,1101 @@ nodes:
     pages:
     - 310
   notation: []
+- id: qft.align036.coordinate-space-feynman-rules
+  label: WI general coordinate-space S-matrix rules
+  summary: For a fixed perturbative order in a polynomial interaction Hamiltonian,
+    Weinberg draws all diagrams with the required initial, final, and internal pairings,
+    assigns the Hamiltonian vertex and line factors, integrates every vertex position,
+    and sums the diagrams. External coefficient functions and particle/antiparticle
+    arrows retain the book's normalization; residual symmetry factors and fermion
+    signs are separate inputs.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 264
+    - 265
+    note: States the general coordinate-space S-matrix prescription and generic Dyson-factorial
+      cancellation.
+  notation:
+  - source: weinberg-1
+    note: Vertices arise from the interaction Hamiltonian and carry −i times its coupling;
+      external lines carry the book's coefficient-function normalization.
+- id: qft.align036.coordinate-wick-pairing-diagram-method
+  label: WI Dyson/operator-pairing S-matrix route
+  summary: Weinberg moves creation and annihilation operators through Dyson S-matrix
+    elements, discards vacuum-annihilating terms, and keeps the operator pairings.
+    This is an independent route to the amended contraction-diagram representation,
+    with initial and final external-state normalization retained.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 261
+    - 262
+    - 263
+    - 264
+    note: The text identifies the surviving delta-function pairings after the vacuum
+      terms vanish.
+  notation: []
+- id: qft.align036.covariant-propagator-local-contact-compensation
+  label: Massive-particle covariant propagators with local contact compensation
+  summary: For massive particles, an off-shell covariant extension of a spin numerator
+    can differ from the canonical propagator by a factor cancelling its denominator,
+    hence by local delta-function terms. Add the corresponding local but noncovariant
+    Hamiltonian interactions, quadratic in the coupled currents or their derivatives,
+    so amplitudes may use the covariant propagator; the later canonical formalism
+    supplies these terms automatically.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.covariant-propagator-local-contact-compensation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 277
+    - 278
+    - 279
+    note: Works the vector and derivative-scalar examples and states the general massive-particle
+      local compensation.
+  notation:
+  - source: weinberg-1
+    note: The compensating Hamiltonian-density terms are local but noncovariant; their
+      role is to permit a covariant internal propagator.
+- id: qft.align036.diagram-line-counting-and-coupling-order
+  label: Diagram line counting and coupling order
+  summary: Counting line ends gives 2I+E=ΣᵢnᵢVᵢ. For connected interactions of common
+    valence n, this relates vertex number, external lines, and loop number and organizes
+    the coupling expansion by loop order.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.diagram-line-counting-and-coupling-order
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 286
+    note: Equations (6.3.11)–(6.3.13) give the line count and the connected common-valence
+      consequence.
+  notation: []
+- id: qft.align036.external-source-functional-derivative-method
+  label: WI in/out all-orders external-source route
+  summary: Weinberg differentiates an in/out source-coupled S matrix to obtain time-ordered
+    Heisenberg insertions at all orders. Fermionic source parity and antisymmetric
+    derivatives remain part of this independent route.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '6.4'
+    pages:
+    - 287
+    - 288
+    - 289
+    - 290
+    note: The section defines the source-coupled interaction and proves the functional-derivative
+      time-ordered-product theorem.
+  notation: []
+- id: qft.align036.fermion-exchange-and-loop-signs
+  label: WI odd-permutation fermion-sign proof
+  summary: Weinberg proves the exchange and closed-loop signs by counting odd permutations
+    needed to pair fermion operators. This remains independent of the accepted functional,
+    time-ordering, and determinant derivations.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 267
+    - 268
+    - 269
+    - 270
+    note: The source derives signs from operator permutations and applies the rule
+      to fermion propagators and loops.
+  notation: []
+- id: qft.align036.feynman-propagator-time-ordered-correlator
+  label: WI general propagator as a time-ordered correlator
+  summary: For general free fields, Weinberg's internal pairing factor obeys −iΔ_lm(x,y)=<0|T{ψ_l(x)ψ†_m(y)}|0>.
+    Time ordering includes a minus sign for each odd permutation of fermionic operators;
+    this general representation remains distinct from the scalar Fourier Green function.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.feynman-propagator-time-ordered-correlator
+    note: Retains Weinberg's general-field time-ordered vacuum-correlator identity
+      and fermionic ordering convention.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 279
+    - 280
+    note: Takes the vacuum expectation of the pairing definition and obtains the general
+      time-ordered identity.
+  notation:
+  - source: weinberg-1
+    note: The full internal-line pairing factor is −iΔ_lm; T includes odd-fermion-permutation
+      signs.
+- id: qft.align036.general-field-propagator-polynomial-numerator
+  label: WI Hamiltonian and external-wavefunction propagator route
+  summary: Weinberg derives the on-shell polynomial numerator P_lm from general-field
+    mode-coefficient sums, constructs an extension linear in q⁰, and compares it with
+    a covariant off-shell extension. With the scalar Feynman kernel as a joint input,
+    the internal factor is −i(2π)⁻⁴P_lm(q)/(q²+m²−iε).
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 274
+    - 275
+    - 276
+    - 277
+    note: The text derives the coefficient sums as an on-shell polynomial and then
+      defines its off-shell continuation for the propagator.
+  notation:
+  - source: weinberg-1
+    note: Weinberg uses q²=|q⃗|²−(q⁰)² and an internal factor −i(2π)⁻⁴P_lm(q)/(q²+m²−iε).
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.general-field-propagator-polynomial-numerator
+    note: Retains the general-field mode-coefficient numerator, off-shell continuation,
+      and Weinberg Fourier convention.
+- id: qft.align036.graph-loop-number-and-tree-integrals
+  label: Loop number and independent momentum integrals
+  summary: For a graph with I internal lines, V vertices, and C connected components,
+    the number of independent loop momenta is L=I−V+C. A tree has no remaining momentum
+    integrals after its vertex delta functions are used.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.graph-loop-number-and-tree-integrals
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 282
+    - 283
+    note: The source derives the loop count from the remaining delta functions and
+      identifies trees.
+  notation: []
+- id: qft.align036.momentum-space-feynman-rules
+  label: WI general momentum-space S-matrix rules
+  summary: Weinberg labels internal lines by off-shell four-momenta, assigns each
+    vertex −i(2π)⁴ times its coupling and momentum delta function, attaches normalized
+    external coefficient functions, uses −i(2π)⁻⁴P_lm(q)/(q²+m²−iε) internally, integrates
+    unfixed momenta, and sums diagrams. Arrow flow fixes the ordering of coefficient
+    functions, couplings, and propagators for general fields.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 280
+    - 281
+    - 282
+    - 283
+    - 284
+    note: Derives the general momentum rules, normalizations, and arrow-directed matrix
+      ordering.
+  notation:
+  - source: weinberg-1
+    note: q²=|q⃗|²−(q⁰)²; external coefficient functions carry (2π)⁻³ᐟ² and internal
+      lines carry −i(2π)⁻⁴P_lm(q)/(q²+m²−iε).
+- id: qft.align036.off-shell-diagram-continuation
+  label: Off-shell diagram continuation
+  summary: A diagram with external energies unconstrained by the mass shell is an
+    off-shell diagram; putting those momenta on the appropriate incoming or outgoing
+    mass shells and attaching external coefficient functions recovers the associated
+    S-matrix element.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.off-shell-diagram-continuation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '6.4'
+    pages:
+    - 286
+    note: The text defines off-shell external lines and describes the on-shell recovery
+      of S-matrix elements.
+  notation: []
+- id: qft.align036.problem-cubic-scalar-scattering-cross-section
+  label: 'Problem: cubic scalar scattering through order g²'
+  summary: Calculate the connected scalar-scalar S-matrix from a φ³ interaction through
+    second order and use it to obtain the center-of-mass differential cross-section.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-cubic-scalar-scattering-cross-section
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 1 requests the order-g² connected element, all integrals, and the
+      center-of-mass cross-section.
+  notation: []
+- id: qft.align036.problem-derivative-dirac-contraction
+  label: 'Problem: derivative Dirac-field contraction'
+  summary: Determine the Feynman-diagram contribution obtained by contracting a derivative
+    of a Dirac field with the field adjoint.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-derivative-dirac-contraction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 291
+    note: Problem 4 asks for this derivative-field contraction contribution.
+  notation: []
+- id: qft.align036.problem-quartic-scalar-loop-correction
+  label: 'Problem: quartic scalar order-g² loop correction'
+  summary: For the φ⁴ interaction, calculate the order-g² correction to scalar-scalar
+    scattering with all position integrals performed and one four-momentum integral
+    left.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-quartic-scalar-loop-correction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: The second part of Problem 3 requests the stated one-momentum-integral order-g²
+      correction.
+  notation: []
+- id: qft.align036.problem-quartic-scalar-tree-cross-section
+  label: 'Problem: quartic scalar tree scattering and cross-section'
+  summary: For the φ⁴ interaction, calculate scalar-scalar scattering to order g and
+    derive the center-of-mass differential cross-section.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-quartic-scalar-tree-cross-section
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: The first part of Problem 3 requests the order-g S-matrix and its differential
+      cross-section.
+  notation: []
+- id: qft.align036.problem-source-theorem-correlators
+  label: 'Problem: source theorem for interacting vacuum correlators'
+  summary: Use the external-source theorem to express the stated one-point and time-ordered
+    two-point Heisenberg-picture vacuum expectation values in the cubic scalar theory
+    to the requested perturbative orders.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-source-theorem-correlators
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 291
+    note: Problem 5 explicitly invokes the theorem of Section 6.4 for these correlators.
+  notation: []
+- id: qft.align036.problem-yukawa-diagram-amplitudes
+  label: 'Problem: Yukawa-theory connected amplitudes'
+  summary: Enumerate the connected order-g² diagrams and calculate their S-matrix
+    elements for the listed fermion, antifermion, and neutral-boson processes in a
+    pseudoscalar Yukawa interaction.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-yukawa-diagram-amplitudes
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 2 specifies the interaction, three processes, connected diagrams,
+      amplitudes, and integrations.
+  notation: []
+- id: qft.align037.appendix-dirac-brackets-type-a-proof
+  label: 'Appendix proof: Dirac brackets for auxiliary-coordinate constraints'
+  summary: When auxiliary coordinates have zero conjugate momenta and secondary constraints
+    solve them in terms of independent canonical variables, compute all constrained
+    commutators from the independent brackets and show they equal i times the Dirac
+    brackets. The proof requires generic canonical-pair algebra; concrete free scalar,
+    vector, and Dirac fields are helpful examples rather than universally necessary
+    premises.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.appendix-dirac-brackets-type-a-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 333
+    - 334
+    note: Part A states the constraint form and compares all brackets with the canonical
+      commutators.
+  notation: []
+- id: qft.align037.appendix-dirac-brackets-type-b-proof
+  label: 'Appendix proof: Dirac brackets after coordinate and momentum reduction'
+  summary: When constraints separately reduce coordinates and momenta, use the tangent
+    and normal relations implied by those constraints to derive the commutators as
+    i times Dirac brackets; the Hamiltonian may then be written using constrained
+    variables. The proof requires generic canonical-pair algebra; concrete free scalar,
+    vector, and Dirac fields are helpful examples rather than universally necessary
+    premises.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.appendix-dirac-brackets-type-b-proof
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 335
+    - 336
+    - 337
+    note: Part B derives the reduced brackets and closes by giving the constrained-variable
+      Hamiltonian.
+  notation: []
+- id: qft.align037.auxiliary-field-constraint-interaction-picture-route
+  label: Auxiliary-field constraints and interaction-picture route
+  summary: Fields without time derivatives have no canonical conjugates; solve their
+    constraint equations together with the canonical momentum definitions when possible,
+    then express the Hamiltonian in canonical variables, split it into H₀ and V, and
+    transform V to the interaction picture.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.auxiliary-field-constraint-interaction-picture-route
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 303
+    note: The text describes auxiliary C fields, their constraints, and the route
+      to an interaction-picture perturbation Hamiltonian.
+  notation: []
+- id: qft.align037.belinfante-symmetric-energy-momentum-tensor
+  label: Belinfante symmetric energy-momentum tensor
+  summary: Lorentz invariance improves the canonical energy-momentum tensor by a divergence
+    term to a conserved symmetric Belinfante tensor with the same integrated four-momentum;
+    this symmetric tensor is the gravitational source.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.belinfante-symmetric-energy-momentum-tensor
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 315
+    - 316
+    note: The source derives the improvement, conservation, symmetry, and equality
+      of integrated momentum.
+  notation: []
+- id: qft.align037.canonical-energy-momentum-tensor
+  label: WI canonical translation-tensor route
+  summary: WI derives the canonical translation tensor as a source-specific route
+    to the amended shared translation result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 310
+    - 311
+    - 312
+    note: Introduces the translation currents and charges, derives their generator
+      action, and gives the canonical tensor and Hamiltonian component.
+  notation: []
+- id: qft.align037.canonical-functional-derivatives-and-hamilton-equations
+  label: Canonical functional derivatives and Hamilton equations
+  summary: Bracket-defined functional derivatives fix the quantum signs for bosonic
+    functionals. The free Hamiltonian generates time translation of canonical variables,
+    yielding the Hamiltonian equations for fields and conjugates.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.canonical-functional-derivatives-and-hamilton-equations
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 295
+    - 296
+    note: Defines the bracket-based functional derivatives and uses them to state
+      the free Hamilton equations with the required graded signs.
+  notation: []
+- id: qft.align037.canonical-rotation-generator-action
+  label: Canonical rotation-generator action on fields
+  summary: Write the rotation generator using canonical fields, conjugates, orbital
+    derivatives, and finite-dimensional rotation matrices; the equal-time brackets
+    then give the expected rotation action on both fields and momenta.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.canonical-rotation-generator-action
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 318
+    note: Equations (7.4.24)–(7.4.26) state the canonical form and its commutators.
+  notation: []
+- id: qft.align037.canonical-symmetry-generator-method
+  label: WI canonical-generator route
+  summary: WI uses generic canonical-pair algebra to show a charge generates its stated
+    continuous canonical transformation.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 309
+    - 310
+    note: Equations (7.3.16)–(7.3.19) give the canonical charge and generator calculation.
+  notation: []
+- id: qft.align037.dirac-bracket-algebraic-properties
+  label: Dirac-bracket algebraic properties
+  summary: The Dirac bracket has the Poisson-bracket antisymmetry, product, and Jacobi
+    properties and has zero bracket with every second-class constraint.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-bracket-algebraic-properties
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 329
+    note: The text states these properties after defining the bracket, while distinguishing
+      them from a proof of the commutator prescription.
+  notation: []
+- id: qft.align037.dirac-bracket-commutator-prescription
+  label: Dirac-bracket commutator prescription
+  summary: Dirac's proposed constrained quantization rule replaces canonical commutators
+    by i times the Dirac bracket.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-bracket-commutator-prescription
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 328
+    note: The text presents this as Dirac's suggested quantization prescription.
+  notation: []
+- id: qft.align037.dirac-bracket-quantization-method
+  label: Dirac-bracket definition for second-class constraints
+  summary: For an invertible matrix of second-class constraint brackets, define the
+    Dirac bracket by subtracting the two Poisson brackets with the constraints contracted
+    with the inverse matrix.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-bracket-quantization-method
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 328
+    note: The source defines the Dirac bracket after constructing the inverse second-class
+      constraint matrix.
+  notation: []
+- id: qft.align037.dirac-canonical-lagrangian-hamiltonian-method
+  label: WI canonical Dirac route
+  summary: WI derives the Dirac canonical equation, anticommutators, and positive
+    free Hamiltonian under its stated conditions.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 323
+    - 324
+    - 325
+    note: Gives the real action, conjugate and Hamiltonian, derives the Dirac equation
+      and mode algebra, and states the positive-Hamiltonian qualification.
+  notation: []
+- id: qft.align037.first-and-second-class-constraint-classification
+  label: First- and second-class constraint classification
+  summary: First-class constraints have Poisson brackets vanishing on the constraint
+    surface and are associated with gauge symmetries; after gauge fixing, second-class
+    constraints have a nonsingular constraint-bracket matrix. The two massive-vector
+    constraints are second class.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.first-and-second-class-constraint-classification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 327
+    - 328
+    note: The source defines both classes and evaluates the massive-vector constraint
+      matrix.
+  notation: []
+- id: qft.align037.free-field-canonical-variable-identification
+  label: Canonical-pair algebra and free scalar, vector, and Dirac realizations
+  summary: Canonical coordinate-momentum pairs obey equal-time graded brackets, with
+    the mixed bracket equal to i times the spatial delta and like-variable brackets
+    zero. Free real and complex scalars, massive-vector spatial components, and non-Majorana
+    Dirac fields realize this algebra; vector time components and Dirac adjoints are
+    not independent canonical coordinates.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.free-field-canonical-variable-identification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 294
+    - 295
+    note: The source identifies the canonical pairs for scalar, vector, and Dirac
+      examples.
+  notation: []
+- id: qft.align037.free-hamiltonian-to-lagrangian-legendre-method
+  label: Free Hamiltonian to Lagrangian by Legendre transformation
+  summary: Starting from the physical free-particle Hamiltonian, eliminate momenta
+    in L₀=∫p q̇−H₀ to find a free-field Lagrangian; for a real scalar this produces
+    the Klein–Gordon free Lagrangian.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.free-hamiltonian-to-lagrangian-legendre-method
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 297
+    note: The source presents the Legendre construction and its scalar example.
+  notation: []
+- id: qft.align037.hamiltonian-legendre-transform-equations
+  label: WI canonical Legendre route
+  summary: WI defines canonical functional derivatives and Legendre equations using
+    generic canonical-pair algebra; the stationary-action connection is helpful only.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 301
+    - 302
+    note: The source gives the general transform and validates it for the scalar example.
+  notation: []
+- id: qft.align037.heisenberg-canonical-hamilton-equations
+  label: Heisenberg-picture canonical Hamilton equations
+  summary: Similarity transformation with the full Hamiltonian preserves equal-time
+    canonical brackets and makes Heisenberg canonical fields satisfy the full Hamiltonian
+    equations.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.heisenberg-canonical-hamilton-equations
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 298
+    note: Equations (7.1.28)–(7.1.34) define the transformation and state bracket
+      preservation and time dependence.
+  notation: []
+- id: qft.align037.internal-symmetry-current-and-lie-generators
+  label: Internal-symmetry currents and Lie-algebra charges
+  summary: For a linear coordinate-independent internal transformation represented
+    by Hermitian matrices, action invariance gives conserved currents. If the Lagrangian
+    is invariant, the charge has the canonical momentum-weighted form and generates
+    the field transformation; if the density is invariant, an explicit current follows.
+    The charges obey the representation Lie algebra.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.internal-symmetry-current-and-lie-generators
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 312
+    - 313
+    note: The source constructs the charges and derives their commutator algebra.
+  notation: []
+- id: qft.align037.local-current-field-commutators
+  label: Local current-field commutators
+  summary: When the Lagrangian density is invariant and the linear internal action
+    has J_a^0=-iP t_a Q, equal-time canonical algebra gives delta-function commutators
+    with Q and P. The auxiliary-field relation additionally assumes those fields are
+    local functions of Q,P transforming in the stated representation; the combined
+    relation later feeds Ward identities.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.local-current-field-commutators
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 313
+    - 314
+    note: Equations (7.3.49)–(7.3.52) give the local current commutators.
+  notation: []
+- id: qft.align037.lorentz-generators-and-s-matrix-covariance
+  label: Lorentz generators and S-matrix covariance
+  summary: The symmetric energy-momentum tensor supplies conserved rotation and boost
+    generators. With the stated interaction-picture smoothness condition, their commutators
+    with H and P imply Lorentz invariance of the S-matrix.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-generators-and-s-matrix-covariance
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 316
+    - 317
+    note: The source constructs the generators and invokes smoothness to conclude
+      S-matrix Lorentz invariance.
+  notation: []
+- id: qft.align037.lorentz-scalar-lagrangian-density-hypothesis
+  label: Lorentz-scalar Lagrangian-density hypothesis
+  summary: Require the Lagrangian density to be a Lorentz scalar so that the Euler–Lagrange
+    field equations are Lorentz invariant.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-scalar-lagrangian-density-hypothesis
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 300
+    note: The source states the scalar-density condition separately from the reality
+      condition.
+  notation: []
+- id: qft.align037.noether-current-and-conserved-charge
+  label: WI internal-current local-variation route
+  summary: WI promotes the constant parameter of an off-shell action symmetry to a
+    spacetime function; on shell, stationarity and integration by parts give a conserved
+    current and time-independent charge. Explicit charge and current formulas require
+    the stronger Lagrangian and Lagrangian-density invariances treated in separate
+    residual nodes.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 307
+    - 308
+    - 309
+    note: Derives the local-parameter current and charge, then distinguishes the stronger
+      assumptions needed for explicit charge and current formulas.
+  notation: []
+- id: qft.align037.poisson-bracket-algebra
+  label: Poisson-bracket algebra
+  summary: Poisson brackets are antisymmetric, obey the product rule, and satisfy
+    the Jacobi identity; these identities are the algebraic starting point for testing
+    a modified bracket.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.poisson-bracket-algebra
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 327
+    note: The source lists the defining algebraic relations for the Poisson bracket
+      before introducing constraints.
+  notation: []
+- id: qft.align037.primary-and-secondary-constraints
+  label: Primary and secondary constraints from an irregular Lagrangian
+  summary: An irregular Lagrangian has a singular velocity–momentum map and therefore
+    primary constraints. Requiring their compatibility with the equations of motion
+    produces secondary constraints; the massive-vector Π⁰=0 condition and V⁰ equation
+    illustrate the sequence.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.primary-and-secondary-constraints
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 326
+    note: The source defines primary and secondary constraints and gives the massive-vector
+      example.
+  notation: []
+- id: qft.align037.problem-dirac-bracket-constraint-redefinition
+  label: 'Problem: prove Dirac-bracket independence of constraint functions'
+  summary: Prove that the Dirac bracket is unchanged by the choice of functions used
+    to describe the same constraint submanifold.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-dirac-bracket-constraint-redefinition
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 7 explicitly requests this invariance proof.
+  notation: []
+- id: qft.align037.problem-dirac-bracket-jacobi-identity
+  label: 'Problem: prove the Dirac-bracket Jacobi identity'
+  summary: Prove that the Dirac bracket satisfies the Jacobi identity used in the
+    constrained quantization prescription.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-dirac-bracket-jacobi-identity
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 6 explicitly requests this proof.
+  notation: []
+- id: qft.align037.problem-global-symmetry-current
+  label: 'Problem: global-symmetry current for scalar and Dirac fields'
+  summary: Under the stated infinitesimal global transformation of the scalar and
+    Dirac fields, derive the associated conserved current.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-global-symmetry-current
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 3 supplies the symmetry and requests its conserved current.
+  notation: []
+- id: qft.align037.problem-nonlinear-sigma-canonical-quantization
+  label: 'Problem: nonlinear sigma-model canonical quantization'
+  summary: Canonically quantize real scalar fields with field-dependent nonsingular
+    kinetic matrix and derive the interaction-picture interaction.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-nonlinear-sigma-canonical-quantization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 1 specifies the nonlinear sigma-model Lagrangian and both requested
+      tasks.
+  notation: []
+- id: qft.align037.problem-scalar-vector-canonical-quantization
+  label: 'Problem: scalar-vector canonical quantization'
+  summary: Canonically quantize a complex scalar coupled by a covariant derivative
+    to a real vector with arbitrary potential, then derive the interaction-picture
+    interaction.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-scalar-vector-canonical-quantization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 4 specifies the scalar-vector Lagrangian and requested quantization
+      and interaction.
+  notation: []
+- id: qft.align037.problem-scalar-vector-conserved-current
+  label: 'Problem: scalar-vector conserved current'
+  summary: For the scalar-vector theory and its stated scalar phase symmetry, derive
+    the associated conserved current.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-scalar-vector-conserved-current
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 5 separately requests the conserved current.
+  notation: []
+- id: qft.align037.problem-scalar-vector-symmetric-energy-momentum-tensor
+  label: 'Problem: scalar-vector symmetric energy-momentum tensor'
+  summary: For the scalar-vector theory, derive its symmetric energy-momentum tensor.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-scalar-vector-symmetric-energy-momentum-tensor
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 5 separately requests the symmetric energy-momentum tensor.
+  notation: []
+- id: qft.align037.problem-symmetric-energy-momentum-tensor
+  label: 'Problem: symmetric energy-momentum tensor with scalar and Dirac fields'
+  summary: For scalar and Dirac fields with derivative-free interactions, derive an
+    explicit symmetric energy-momentum tensor.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-symmetric-energy-momentum-tensor
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 2 requests the symmetric energy-momentum tensor for the stated theory.
+  notation: []
+- id: qft.align037.proca-interaction-picture-contact-compensation
+  label: Proca Hamiltonian and interaction-picture compensation
+  summary: Use the auxiliary V⁰ constraint to form the Proca Hamiltonian, split off
+    the spin-one free Hamiltonian, and obtain an interaction with current-dependent
+    noninvariant terms. Those terms cancel the corresponding noncovariant vector-propagator
+    contribution.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.proca-interaction-picture-contact-compensation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 321
+    - 322
+    - 323
+    note: Derives the constrained Hamiltonian, verifies the free spin-one equations
+      and modes, and identifies the compensating interaction term.
+  notation: []
+- id: qft.align037.proca-lagrangian-spin-one-selection
+  label: WI Proca free-spin-one validation route
+  summary: WI validates the massive-vector selection and retains its free-field and
+    local noncovariant-compensation boundaries.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 320
+    note: The source uses the divergence equation to select α=−β and identifies V⁰
+      as auxiliary.
+  notation: []
+- id: qft.align037.real-action-field-equation-count-hypothesis
+  label: Real-action field-equation-count hypothesis
+  summary: 'For N real field degrees of freedom, require a real action: a complex
+    action would normally impose separate stationary conditions on its real and imaginary
+    parts and overdetermine the fields.'
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.real-action-field-equation-count-hypothesis
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 300
+    note: The source gives the field-equation-count reason for requiring a real action.
+  notation: []
+- id: qft.align037.reduced-canonical-variables-dirac-bracket-result
+  label: Dirac brackets as reduced canonical brackets
+  summary: A canonical transformation can put second-class constraints into conjugate
+    pairs, making the Dirac bracket equal to the Poisson bracket of the remaining
+    unconstrained variables. Promoting that equality to general operator commutators
+    assumes the reduced Q,P are canonically quantized; the source calls that step
+    open in general and proves it for two broad classes in the Appendix. The massive-vector
+    example reproduces its constrained equal-time commutators.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.reduced-canonical-variables-dirac-bracket-result
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 329
+    - 330
+    note: The Maskawa–Nakajima result and the massive-vector application establish
+      the reduced-variable interpretation.
+  notation: []
+- id: qft.align037.redundant-couplings-by-field-redefinition
+  label: Redundant couplings from field redefinitions
+  summary: A continuous local field redefinition changes the action by field-equation
+    terms and cannot change observables. A coupling is redundant precisely when its
+    action variation vanishes on the field equations; scalar field normalization Z
+    is the example.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.redundant-couplings-by-field-redefinition
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.7'
+    pages:
+    - 331
+    - 332
+    note: The section states the field-redefinition criterion and the Z-rescaling
+      example.
+  notation: []
+- id: qft.align037.scalar-derivative-coupling-contact-term
+  label: Canonical scalar derivative coupling contact term
+  summary: For a scalar derivative coupling, canonical quantization and the interaction-picture
+    split generate a J⁰² contact term. It cancels the noncovariant contribution in
+    the derivative-field propagator.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.scalar-derivative-coupling-contact-term
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 319
+    - 320
+    note: The source derives the interaction-picture expression and identifies its
+      extra term with the Chapter 6 cancellation.
+  notation: []
+- id: qft.align037.scalar-lagrangian-hamiltonian-validation
+  label: Scalar Lagrangian validation by canonical Hamiltonian
+  summary: For a real scalar with nonderivative interaction, the Lagrangian gives
+    Π=Φdot and the expected Hamiltonian. This validates the candidate Lagrangian against
+    the already required free-particle Hamiltonian rather than independently deriving
+    it. For an energy interpretation, the kinetic sign is positive and one-half m-squared
+    Φ-squared plus the interaction potential must be bounded below.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.scalar-lagrangian-hamiltonian-validation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 302
+    note: The source explicitly calls the scalar exercise validation rather than another
+      derivation.
+  notation: []
+- id: qft.align037.stationary-action-euler-lagrange-method
+  label: WI localized stationary-action route
+  summary: WI localizes variations in the action to derive field equations, retaining
+    its boundary condition as an independent proof route.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 299
+    - 300
+    note: The text derives the stationary-action equivalence and the Euler–Lagrange
+      equations.
+  notation: []
+- id: qft.align037.total-derivative-lagrangian-quantum-equivalence
+  label: WI canonical total-derivative route
+  summary: WI proves total-derivative equivalence with vanishing-boundary assumptions
+    and excludes differing topology.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 305
+    - 306
+    note: The text analyzes the momentum shift and concludes that partial-integration-related
+      densities are quantum equivalent.
+  notation: []
 - id: qft.align041.born-rule-complete-orthogonal-rays
   label: Born rule for a complete orthogonal set of rays
   summary: For tests that distinguish mutually orthogonal rays, the transition probability
@@ -22736,7 +23966,10 @@ nodes:
     minus sign for each closed fermion loop. Peskin–Schroeder supplies two functional
     routes to the fermionic sign structure: finite-dimensional Grassmann Gaussian
     pairings and the external-background determinant series. Neither makes the other
-    a compulsory prerequisite.'
+    a compulsory prerequisite. Weinberg’s sign proof is an independent operator-permutation
+    route to the same exchange and loop signs. It is not a compulsory premise for
+    the retained Schwartz time-ordering derivation or the PS Grassmann Gaussian and
+    determinant routes.'
   kind: result
   origins:
   - project: schwartz
@@ -22751,6 +23984,10 @@ nodes:
     node: peskin-schroeder.fermion-determinant-as-closed-loop-series
     note: Retains PS’s Tr log determinant-series route, including its closed-loop
       minus sign and cyclic 1/n factor.
+  - project: weinberg-1
+    node: weinberg-1.fermion-exchange-and-loop-signs
+    note: Contributes the shared exchange and closed-loop sign result; Weinberg's
+      odd-operator-permutation proof remains a separate independent route.
   evidence:
   - source: schwartz
     section: 13.1.1
@@ -22767,6 +24004,15 @@ nodes:
     - 305
     note: Derives Grassmann determinants and pairings, then matches Tr log terms to
       closed-loop signs and symmetry factors.
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 267
+    - 268
+    - 269
+    - 270
+    note: Derives fermionic pairing signs from odd permutations and states the closed-loop
+      rule.
   notation: []
 - id: qft.align043.qed-fermion-line-and-loop-evaluation
   label: QED fermion-line and loop evaluation
@@ -26834,7 +28080,9 @@ nodes:
   label: Canonical momentum and Hamiltonian for a field
   summary: The conjugate momentum density is pi(x) = partial L / partial phidot(x),
     and the Hamiltonian is H = integral d^3x [pi phidot - L]. This is the continuum
-    Legendre construction used for the field.
+    Legendre construction used for the field. Weinberg independently derives the field
+    Legendre transform and its Hamilton equations; source order relative to stationary
+    action is not a necessary premise.
   kind: method
   group: qft.scalar-field-foundations
   notation:
@@ -26858,6 +28106,13 @@ nodes:
     - 30
     note: Introduces field Hamiltonians through the Legendre transform and gives the
       scalar energy density.
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 301
+    - 302
+    note: Defines the conjugates and Legendre transform and checks the canonical Hamilton
+      equations.
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.canonical-field-momentum-hamiltonian
@@ -26870,6 +28125,9 @@ nodes:
     node: schwartz.canonical-scalar-field-energy-density
     note: Supplies the scalar-field energy-density specialization of the same Legendre
       construction.
+  - project: weinberg-1
+    node: weinberg-1.hamiltonian-legendre-transform-equations
+    note: Retains WI’s canonical functional-derivative and Legendre equations.
 - id: qft.canonical-quantum-harmonic-oscillator
   label: Canonical quantum harmonic oscillator
   summary: Canonical quantization gives an oscillator ladder algebra and occupation-number
@@ -27930,7 +29188,8 @@ nodes:
   label: Field Euler-Lagrange equation
   summary: Varying a local field action with boundary-vanishing variations yields
     partial_mu[partial L / partial(partial_mu phi)] - partial L / partial phi = 0;
-    one equation occurs for each field.
+    one equation occurs for each field. Weinberg supplies an independent stationary-action
+    route with boundary-vanishing variations; that proof is retained separately.
   kind: result
   group: qft.scalar-field-foundations
   notation:
@@ -27957,6 +29216,13 @@ nodes:
     pages:
     - 42
     note: Asks for the corresponding higher-derivative generalization.
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 299
+    - 300
+    note: Derives stationarity and the local Euler-Lagrange equations with the stated
+      boundary condition.
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.field-euler-lagrange-equation
@@ -27966,6 +29232,9 @@ nodes:
     node: schwartz.euler-lagrange-and-klein-gordon-equations
     note: Corresponds to the composite presentation’s Euler-Lagrange component, including
       the higher-derivative extension qualification.
+  - project: weinberg-1
+    node: weinberg-1.stationary-action-euler-lagrange-method
+    note: Retains WI’s localized stationary-action derivation and its boundary qualification.
 - id: qft.field-theoretic-einstein-coefficient-derivation
   label: Field-theoretic derivation of Einstein coefficients
   summary: The field-theoretic route combines the n_ω+1 versus n_ω transition rates
@@ -29779,7 +31048,9 @@ nodes:
   summary: For a continuous global symmetry, the conserved charge Q=integral d^3x
     J^0 generates the field transformation through its equal-time commutator with
     the field, and charge conservation gives [H,Q]=0. This charge-generator statement
-    is kept distinct from the general on-shell Noether-current theorem.
+    is kept distinct from the general on-shell Noether-current theorem. Weinberg independently
+    proves the generator action with generic canonical-pair algebra; the Schwartz
+    scalar commutator calculation remains a separate route.
   kind: result
   group: qft.spontaneously-broken-symmetries
   origins:
@@ -29787,11 +31058,21 @@ nodes:
     node: schwartz.noether-charge-generates-continuous-symmetry
     note: Retains the canonical-commutator construction of Q as generator and the
       [H,Q]=0 consequence.
+  - project: weinberg-1
+    node: weinberg-1.canonical-symmetry-generator-method
+    note: Retains WI’s canonical-generator derivation for a continuous canonical transformation.
   evidence:
   - source: schwartz
     section: '28.2'
     pages:
     - 564
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 309
+    - 310
+    note: Writes the canonical charge and derives its commutators with canonical fields
+      and conjugates.
   notation:
   - source: schwartz
     note: The source writes [Q,phi_n(y)]=−i delta phi_n(y)/delta alpha.
@@ -29800,7 +31081,9 @@ nodes:
   summary: For a continuous field transformation whose Lagrangian changes by at most
     a divergence, the on-shell Noether current is conserved and its spatial integral
     gives a time-independent charge. The correspondence retains the separate complex-scalar
-    U(1) examples and notation of the two sources.
+    U(1) examples and notation of the two sources. Weinberg supplies an independent
+    local-parameter stationary-action derivation; its stronger Lagrangian and density
+    invariance cases remain in source-specific residuals.
   kind: result
   group: qft.field-symmetry-and-charge
   origins:
@@ -29812,6 +31095,10 @@ nodes:
     node: schwartz.noether-current-and-conserved-charge
     note: Matches the displayed complex-scalar global-U(1) current as a concrete specialization
       of the same theorem.
+  - project: weinberg-1
+    node: weinberg-1.noether-current-and-conserved-charge
+    note: Retains WI’s action, Lagrangian, and density-invariance distinctions for
+      current and charge.
   evidence:
   - source: peskin-schroeder
     section: '2.2 Elements of Classical Field Theory: Noether’s Theorem'
@@ -29824,6 +31111,12 @@ nodes:
     pages:
     - 33
     note: Computes the U(1) example and identifies its Noether current.
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 307
+    note: Promotes the constant symmetry parameter locally and derives the on-shell
+      conserved current and time-independent charge.
   notation:
   - source: peskin-schroeder
     note: For multiple fields the canonical term is summed and J^mu denotes the Lagrangian
@@ -31900,7 +33193,9 @@ nodes:
     record retains the sources’ canonical construction and their stated improvement
     context separately. Peskin–Schroeder supplies both its canonical translation-current
     presentation and a later localized-functional derivation; the latter is an alternative
-    route and does not erase the retained canonical construction.
+    route and does not erase the retained canonical construction. Weinberg independently
+    derives the canonical translation current and its charges; Belinfante improvement
+    remains a separate result.
   kind: result
   group: qft.field-symmetry-and-charge
   origins:
@@ -31916,6 +33211,10 @@ nodes:
     node: peskin-schroeder.translation-schwinger-dyson-stress-tensor
     note: Retains PS’s localized functional translation variation and canonical stress-tensor
       identity as an independent functional route.
+  - project: weinberg-1
+    node: weinberg-1.canonical-energy-momentum-tensor
+    note: Retains WI’s canonical translation-current construction and its canonical
+      tensor scope.
   evidence:
   - source: peskin-schroeder
     section: '2.2 Elements of Classical Field Theory: Noether’s Theorem'
@@ -31941,6 +33240,14 @@ nodes:
     pages:
     - 310
     note: Obtains the translation stress-tensor identity by local functional variation.
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 310
+    - 311
+    - 312
+    note: Applies Noether reasoning to translations, derives the canonical tensor,
+      and identifies its energy-momentum charges.
   notation:
   - source: peskin-schroeder
     note: T^{mu nu} supplies one conserved current for each translation direction
@@ -51276,16 +52583,14 @@ edges:
 - id: qft.align030.schwartz-e-momentum-rules-to-derivatives
   from: qft.align016.phi4-momentum-space-feynman-rules
   to: qft.align030.derivative-couplings-and-total-derivative-invariance
-  relation: prerequisite
+  relation: alternative
   source_level: use
   target_level: derive
-  necessity: necessary
-  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
-    from Momentum-space Feynman rules to Derivative couplings and total-derivative
-    invariance; its source and target mastery levels preserve the route’s actual input
-    requirement.
-  failure_mode: Without this retained relation, the source-supported prerequisite
-    connection between these mapped endpoints is missing.
+  necessity: helpful
+  rationale: Momentum-space rules supply the Schwartz derivative-coupling route but
+    are not compulsory for the independent WI canonical total-derivative proof.
+  failure_mode: Without this route the Schwartz momentum-conservation proof is absent,
+    while the WI canonical proof remains complete.
   evidence:
   - source: schwartz
     section: 7.4.2 Derivative couplings
@@ -54942,6 +56247,1721 @@ edges:
     pages:
     - 294
     - 295
+- id: qft.align036.coordinate-rules-to-common-position-rules
+  from: qft.align036.coordinate-space-feynman-rules
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The scalar specialization of Weinberg's general coordinate prescription
+    independently supplies the common position-space rule core.
+  failure_mode: Making this source-specific Hamiltonian route compulsory would combine
+    independent PS and Schwartz derivations.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 264
+    - 265
+    note: States the coordinate-space line, vertex, integration, and summation rules.
+- id: qft.align036.general-correlator-to-common-scalar
+  from: qft.align036.feynman-propagator-time-ordered-correlator
+  to: qft.align015.feynman-scalar-propagator
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The scalar specialization of Weinberg's general time-ordered identity
+    recovers the common scalar propagator representation.
+  failure_mode: Treating the general-field identity as the scalar core itself would
+    erase its fermionic ordering scope.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 279
+    - 280
+    note: States the general time-ordered identity whose scalar specialization is
+      the accepted core.
+- id: qft.align036.general-propagator-to-common-scalar
+  from: qft.align036.general-field-propagator-polynomial-numerator
+  to: qft.align015.feynman-scalar-propagator
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This Weinberg route independently establishes the compatible common result
+    at its stated scope.
+  failure_mode: Making this route compulsory would incorrectly combine independent
+    derivations.
+  evidence:
+  - source: weinberg-1
+    section: 6.1–6.4
+    pages:
+    - 274
+    - 275
+    - 276
+    - 277
+- id: qft.align036.inout-source-to-common-source
+  from: qft.align036.external-source-functional-derivative-method
+  to: qft.align021.source-generating-functional-and-functional-derivatives
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This Weinberg route independently establishes the compatible common result
+    at its stated scope.
+  failure_mode: Making this route compulsory would incorrectly combine independent
+    derivations.
+  evidence:
+  - source: weinberg-1
+    section: 6.1–6.4
+    pages:
+    - 287
+    - 288
+    - 289
+    - 290
+- id: qft.align036.momentum-rules-to-common-scalar-rules
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align016.phi4-momentum-space-feynman-rules
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The P=1 specialization of Weinberg's general momentum prescription independently
+    supplies the common scalar rule core.
+  failure_mode: Making this route compulsory would incorrectly join the Hamiltonian
+    external-state route to the PS Fourier and Schwartz LSZ routes.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 280
+    - 281
+    - 282
+    note: Derives the general rules and identifies the scalar numerator P=1.
+- id: qft.align036.odd-sign-proof-to-common-signs
+  from: qft.align036.fermion-exchange-and-loop-signs
+  to: qft.align043.qed-fermion-exchange-and-loop-signs
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This Weinberg route independently establishes the compatible common result
+    at its stated scope.
+  failure_mode: Making this route compulsory would incorrectly combine independent
+    derivations.
+  evidence:
+  - source: weinberg-1
+    section: 6.1–6.4
+    pages:
+    - 267
+    - 268
+    - 269
+    - 270
+- id: qft.align036.operator-pairing-to-common-diagrams
+  from: qft.align036.coordinate-wick-pairing-diagram-method
+  to: qft.align016.feynman-diagram-representation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This Weinberg route independently establishes the compatible common result
+    at its stated scope.
+  failure_mode: Making this route compulsory would incorrectly combine independent
+    derivations.
+  evidence:
+  - source: weinberg-1
+    section: 6.1–6.4
+    pages:
+    - 261
+    - 262
+    - 263
+    - 264
+- id: qft.align036.weinberg-1-coordinate-pairing-to-coordinate-rules
+  from: qft.align036.coordinate-wick-pairing-diagram-method
+  to: qft.align036.coordinate-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Applying the established pairing factors supplies the line and vertex
+    ingredients summarized by the rules.
+  failure_mode: Without those factors, diagram enumeration has no amplitude prescription.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 263
+    - 265
+    note: The figures represent pairings and the following list turns them into rules.
+- id: qft.align036.weinberg-1-coordinate-pairing-to-general-propagator
+  from: qft.align036.coordinate-wick-pairing-diagram-method
+  to: qft.align036.general-field-propagator-polynomial-numerator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator calculation evaluates the internal field pairing supplied
+    by the coordinate-space construction.
+  failure_mode: Without the pairing definition, the mode sums do not select the time-ordered
+    Feynman combination.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 274
+    note: The section begins its propagator calculation from the internal field pairing
+      defined in Section 6.1.
+- id: qft.align036.weinberg-1-coordinate-pairing-to-propagator-correlator
+  from: qft.align036.coordinate-wick-pairing-diagram-method
+  to: qft.align036.feynman-propagator-time-ordered-correlator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The propagator is the internal field-pairing factor rewritten as a vacuum
+    correlator.
+  failure_mode: Without the pairing definition, the correlator identity lacks its
+    diagrammatic meaning.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 279
+    - 280
+    note: The source starts from the pairing definition before taking its vacuum expectation
+      value.
+- id: qft.align036.weinberg-1-coordinate-rules-to-momentum-rules
+  from: qft.align036.coordinate-space-feynman-rules
+  to: qft.align036.momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Momentum-space rules Fourier transform the coordinate-space line and
+    vertex factors.
+  failure_mode: Without coordinate factors, there is no integrand to transform.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 280
+    - 282
+    note: The source introduces the momentum rules from the coordinate-space factors
+      and propagator Fourier integral.
+- id: qft.align036.weinberg-1-coordinate-rules-to-symmetry-factors
+  from: qft.align036.coordinate-space-feynman-rules
+  to: qft.align030.general-interaction-normalization-and-symmetry-residual
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg derives the residual combinatoric factors as corrections to
+    the general coordinate-space diagram prescription.
+  failure_mode: Without the base diagram-counting prescription, it is unclear which
+    pairing and vertex multiplicities remain uncancelled.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 266
+    note: The source discusses the factors as additions to the just-stated rules.
+- id: qft.align036.weinberg-1-cross-section-to-cubic-problem
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align036.problem-cubic-scalar-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The amplitude must be converted into the requested center-of-mass differential
+    cross-section.
+  failure_mode: Without the cross-section relation, the problem stops at an S-matrix
+    element.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+- id: qft.align036.weinberg-1-cross-section-to-quartic-tree-problem
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align036.problem-quartic-scalar-tree-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested order-g amplitude must be converted into the stated differential
+    cross-section.
+  failure_mode: Without the cross-section formula, the task cannot reach its requested
+    observable.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+- id: qft.align036.weinberg-1-fermion-signs-to-yukawa-problem
+  from: qft.align043.qed-fermion-exchange-and-loop-signs
+  to: qft.align036.problem-yukawa-diagram-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The listed fermionic processes require the established exchange and closed-loop
+    sign result.
+  failure_mode: Without the sign result, relative signs of the fermionic diagrams
+    cannot be determined.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 2 specifies Dirac fermions and asks for all connected diagram amplitudes.
+- id: qft.align036.weinberg-1-field-modes-to-coordinate-pairing
+  from: qft.align033.field-mode-expansion-from-translation-covariance
+  to: qft.align036.coordinate-wick-pairing-diagram-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation replaces interaction-picture fields by their creation
+    and annihilation mode terms before pairing them.
+  failure_mode: Without the field modes, the surviving operator pairings cannot be
+    identified.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 261
+    - 262
+    note: Applies the creation/annihilation brackets and displays the positive- and
+      negative-frequency mode terms used in the pairings.
+- id: qft.align036.weinberg-1-field-modes-to-general-propagator
+  from: qft.align033.field-mode-expansion-from-translation-covariance
+  to: qft.align036.general-field-propagator-polynomial-numerator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction inserts the general field's positive- and negative-frequency
+    mode coefficients.
+  failure_mode: Without the mode coefficients, the numerator polynomial cannot be
+    formed.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 274
+    - 275
+- id: qft.align036.weinberg-1-general-propagator-to-derivative-dirac-problem
+  from: qft.align036.general-field-propagator-polynomial-numerator
+  to: qft.align036.problem-derivative-dirac-contraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task differentiates the Dirac numerator propagator obtained by the
+    general polynomial construction.
+  failure_mode: Without the Dirac numerator and its off-shell continuation, the derivative
+    contraction cannot be evaluated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 291
+    note: Problem 4 asks for a derivative Dirac-field contraction, which uses the
+      Dirac propagator established in Section 6.2.
+- id: qft.align036.weinberg-1-general-propagator-to-fourier-green-function
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align036.general-field-propagator-polynomial-numerator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg first fixes the scalar Fourier Green function before extending
+    the numerator to general fields.
+  failure_mode: Without the scalar kernel and boundary prescription, the general polynomial
+    numerator would have no required denominator and continuation.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 274
+    - 276
+    note: The source identifies the scalar numerator and writes the Feynman propagator.
+- id: qft.align036.weinberg-1-general-propagator-to-local-compensation
+  from: qft.align036.general-field-propagator-polynomial-numerator
+  to: qft.align036.covariant-propagator-local-contact-compensation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local difference follows when two off-shell extensions of the massive-particle
+    numerator agree on shell.
+  failure_mode: Without the numerator extension and its common mass-shell value, denominator
+    cancellation cannot be shown.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 275
+    - 279
+    note: The source compares off-shell extensions and then gives the massive-particle
+      local-term argument.
+- id: qft.align036.weinberg-1-general-propagator-to-momentum-rules
+  from: qft.align036.general-field-propagator-polynomial-numerator
+  to: qft.align036.momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general internal-line rule uses the field-dependent polynomial numerator
+    over the Feynman denominator.
+  failure_mode: Without the general numerator, the rule set covers scalar internal
+    lines but not the stated Dirac and higher-spin lines.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 282
+    note: The source assigns each internal line the Fourier coefficient containing
+      its field-dependent numerator polynomial.
+- id: qft.align036.weinberg-1-loop-count-to-line-counting
+  from: qft.align036.graph-loop-number-and-tree-integrals
+  to: qft.align036.diagram-line-counting-and-coupling-order
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vertex formula follows by combining the line-end count with the loop
+    relation.
+  failure_mode: Without the loop relation, line counting cannot give the stated V–E–L
+    relation.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 286
+    note: The source explicitly eliminates I from the two relations.
+- id: qft.align036.weinberg-1-momentum-rules-to-cubic-problem
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align036.problem-cubic-scalar-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested connected amplitude is evaluated by the Feynman rules.
+  failure_mode: Without them, the order-g² S-matrix integrand cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 1 requests the connected S-matrix calculation.
+- id: qft.align036.weinberg-1-momentum-rules-to-loop-count
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align036.graph-loop-number-and-tree-integrals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The loop count is the number of momentum integrations left after applying
+    vertex delta functions.
+  failure_mode: Without the momentum variables and deltas, the independent-integral
+    count is undefined.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 282
+    note: The source counts integrations after the listed momentum-space rules.
+- id: qft.align036.weinberg-1-momentum-rules-to-off-shell
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align036.off-shell-diagram-continuation
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Off-shell diagrams use the same momentum-space prescription with free
+    external energies.
+  failure_mode: Without the rule set, there is no diagram amplitude to continue off
+    shell.
+  evidence:
+  - source: weinberg-1
+    section: '6.4'
+    pages:
+    - 286
+    note: The source defines off-shell diagrams as the Feynman-diagram generalization.
+- id: qft.align036.weinberg-1-momentum-rules-to-quartic-loop-problem
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align036.problem-quartic-scalar-loop-correction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The order-g² loop correction is calculated from momentum-space line and
+    vertex factors.
+  failure_mode: Without the rules, its one-momentum-integral integrand cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 3 asks for the order-g² correction with its remaining momentum integral.
+- id: qft.align036.weinberg-1-momentum-rules-to-quartic-tree-problem
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align036.problem-quartic-scalar-tree-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The order-g tree S-matrix is assembled from the momentum-space diagram
+    factors.
+  failure_mode: Without the rules, the tree amplitude cannot be calculated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 3 first asks for the order-g scalar-scattering S-matrix.
+- id: qft.align036.weinberg-1-momentum-rules-to-yukawa-problem
+  from: qft.align036.momentum-space-feynman-rules
+  to: qft.align036.problem-yukawa-diagram-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested diagram enumeration and amplitudes use the Feynman rule
+    factors and signs.
+  failure_mode: Without them, the specified order-g² amplitudes cannot be evaluated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 2 asks for connected diagrams and their S-matrix elements.
+- id: qft.align036.weinberg-1-propagator-correlator-to-derivative-problem
+  from: qft.align036.feynman-propagator-time-ordered-correlator
+  to: qft.align036.problem-derivative-dirac-contraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested contraction is obtained by differentiating the field-pair
+    propagator.
+  failure_mode: Without the contraction representation, there is nothing to differentiate.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 291
+    note: Problem 4 asks for a derivative-field contraction contribution.
+- id: qft.align036.weinberg-1-propagator-fourier-to-momentum-rules
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align036.momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general momentum prescription uses the scalar Fourier denominator
+    as its P=1 internal-line kernel.
+  failure_mode: Without the propagator coefficient, internal lines have no prescribed
+    factor.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 280
+    - 282
+    note: The source explicitly uses the internal-line Fourier coefficient in the
+      rule.
+- id: qft.align036.weinberg-1-source-functional-to-correlator-problem
+  from: qft.align036.external-source-functional-derivative-method
+  to: qft.align036.problem-source-theorem-correlators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly invokes the Section 6.4 theorem.
+  failure_mode: Without that theorem, the requested source expressions do not follow.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 291
+    note: Problem 5 says to use the theorem of Section 6.4.
+- id: qft.align036.weinberg-1-symmetry-factors-to-quartic-loop-problem
+  from: qft.align030.general-interaction-normalization-and-symmetry-residual
+  to: qft.align036.problem-quartic-scalar-loop-correction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The order-g² quartic diagrams contain repeated identical lines and require
+    their residual symmetry factors.
+  failure_mode: Without the factors, the loop correction has incorrect multiplicities.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 3 requests the complete order-g² correction, including all diagram
+      contributions.
+- id: qft.align037.canonical-hamiltonian-to-nonlinear-sigma-problem
+  from: qft.canonical-field-momentum-hamiltonian
+  to: qft.align037.problem-nonlinear-sigma-canonical-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The nonsingular field-dependent kinetic matrix is handled by the ordinary
+    Legendre transform and canonical Hamiltonian route.
+  failure_mode: Without inverting the nonsingular velocity-momentum relation, the
+    requested Hamiltonian and interaction-picture interaction cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.canonical-pair-algebra-to-generator-route
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.canonical-symmetry-generator-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The WI generator calculation evaluates the charge action with equal-time
+    canonical-pair brackets.
+  failure_mode: Without the canonical algebra, the displayed generator commutators
+    cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 309
+    - 310
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.stationary-route-to-wi-noether-route
+  from: qft.align037.stationary-action-euler-lagrange-method
+  to: qft.align037.noether-current-and-conserved-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The WI Noether route uses stationarity on the field equations after localizing
+    the symmetry parameter.
+  failure_mode: Without stationarity, the localized variation does not imply current
+    conservation.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 307
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.weinberg-1-appendix-a-evidence-for-dirac-prescription
+  from: qft.align037.appendix-dirac-brackets-type-a-proof
+  to: qft.align037.dirac-bracket-commutator-prescription
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: Appendix A derives the prescription for systems whose auxiliary coordinates
+    are solved by secondary constraints.
+  failure_mode: Without this restricted proof, the proposed rule lacks its displayed
+    Type A canonical justification.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 333
+    - 334
+    note: The appendix compares every constrained commutator with the corresponding
+      Dirac bracket in the Type A class.
+- id: qft.align037.weinberg-1-appendix-b-evidence-for-dirac-prescription
+  from: qft.align037.appendix-dirac-brackets-type-b-proof
+  to: qft.align037.dirac-bracket-commutator-prescription
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: Appendix B derives the prescription when coordinate and momentum constraints
+    are separately reduced.
+  failure_mode: Without this restricted proof, the proposed rule lacks its displayed
+    Type B canonical justification.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 335
+    - 336
+    note: The appendix derives the constrained commutators from reduced canonical
+      variables in the Type B class.
+- id: qft.align037.weinberg-1-auxiliary-route-to-scalar-contact
+  from: qft.align037.auxiliary-field-constraint-interaction-picture-route
+  to: qft.align037.scalar-derivative-coupling-contact-term
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar example follows the Hamiltonian split and interaction-picture
+    replacement procedure.
+  failure_mode: Without that procedure, the extra canonical interaction term is not
+    obtained.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 319
+    note: The source explicitly applies the Section 7.2 transition procedure.
+- id: qft.align037.weinberg-1-belinfante-to-energy-tensor-problem
+  from: qft.align037.belinfante-symmetric-energy-momentum-tensor
+  to: qft.align037.problem-symmetric-energy-momentum-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests the symmetric energy-momentum tensor established
+    by the Belinfante construction.
+  failure_mode: Without that construction, symmetry of the requested tensor is not
+    ensured.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 2 asks for the symmetric energy-momentum tensor.
+- id: qft.align037.weinberg-1-belinfante-to-lorentz-covariance
+  from: qft.align037.belinfante-symmetric-energy-momentum-tensor
+  to: qft.align037.lorentz-generators-and-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Lorentz generators are spatial integrals constructed from the symmetric
+    tensor.
+  failure_mode: Without the symmetric tensor, their conservation and displayed form
+    cannot be established.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 316
+    - 317
+    note: The source constructs Jμν from the Belinfante tensor.
+- id: qft.align037.weinberg-1-belinfante-to-scalar-vector-tensor-problem
+  from: qft.align037.belinfante-symmetric-energy-momentum-tensor
+  to: qft.align037.problem-scalar-vector-symmetric-energy-momentum-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for the symmetric tensor constructed by the Belinfante
+    improvement.
+  failure_mode: Without the symmetric-tensor construction, the requested observable
+    cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 5 separately requests the symmetric energy-momentum tensor.
+- id: qft.align037.weinberg-1-canonical-brackets-to-total-derivative-equivalence
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.total-derivative-lagrangian-quantum-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The result tests whether the momentum shift preserves canonical commutators.
+  failure_mode: Without the canonical brackets, quantum equivalence cannot be established.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 305
+    - 306
+    note: The source calculates the shifted momentum commutators to establish equivalence.
+- id: qft.align037.weinberg-1-canonical-energy-momentum-to-belinfante
+  from: qft.align037.canonical-energy-momentum-tensor
+  to: qft.align037.belinfante-symmetric-energy-momentum-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Belinfante tensor is an improvement of the canonical translation
+    tensor.
+  failure_mode: Without the canonical tensor, there is no object to improve or compare
+    in integrated momentum.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 315
+    - 316
+    note: The source derives the improvement from the canonical tensor and compares
+      their charges.
+- id: qft.align037.weinberg-1-canonical-generator-to-internal-lie-charges
+  from: qft.align037.canonical-symmetry-generator-method
+  to: qft.align037.internal-symmetry-current-and-lie-generators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The internal charges are evaluated as canonical generators and their
+    brackets give the Lie algebra.
+  failure_mode: Without the generator calculation, the normalization and commutator
+    algebra of Tₐ are not established.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 312
+    - 313
+    note: The source uses canonical brackets to derive the internal generator commutators.
+- id: qft.align037.weinberg-1-canonical-generator-to-rotation-action
+  from: qft.align037.canonical-symmetry-generator-method
+  to: qft.align037.canonical-rotation-generator-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rotation calculation applies the canonical generator method to the
+    rotation charge.
+  failure_mode: Without the bracket-generator relation, the rotation commutators cannot
+    be derived.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 318
+    note: The source says the canonical commutation relations immediately give the
+      action.
+- id: qft.align037.weinberg-1-canonical-identification-to-functional-derivatives
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.canonical-functional-derivatives-and-hamilton-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The functional derivatives and Hamilton equations are defined for canonical
+    coordinate–momentum pairs.
+  failure_mode: Without canonical variables, the bracket derivative definitions have
+    no inputs.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 295
+    - 296
+    note: The source introduces the derivative definitions after establishing canonical
+      brackets.
+- id: qft.align037.weinberg-1-canonical-identification-to-heisenberg-equations
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.heisenberg-canonical-hamilton-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The similarity transformation carries established canonical pairs into
+    the Heisenberg picture.
+  failure_mode: Without the pairs, bracket preservation and the Hamilton equations
+    cannot be stated.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 298
+    note: The source applies the transformation to the canonical q and p variables.
+- id: qft.align037.weinberg-1-canonical-variables-to-appendix-a
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.appendix-dirac-brackets-type-a-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Appendix A starts with independent canonical coordinates and momenta
+    whose brackets are used to calculate all constrained commutators.
+  failure_mode: Without independent canonical brackets, the appendix's direct commutator
+    calculation has no inputs.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 333
+    - 334
+    note: The appendix assumes independent Q and P canonical brackets and derives
+      the constrained ones from them.
+- id: qft.align037.weinberg-1-canonical-variables-to-appendix-b
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.appendix-dirac-brackets-type-b-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part B derives constrained commutators from the assumed canonical brackets
+    of the unreduced variables.
+  failure_mode: Without canonical brackets, the coordinate and momentum reduction
+    cannot calculate commutators.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 335
+    note: The appendix assumes usual canonical brackets for the unconstrained variables.
+- id: qft.align037.weinberg-1-canonical-variables-to-reduced-dirac-result
+  from: qft.align037.free-field-canonical-variable-identification
+  to: qft.align037.reduced-canonical-variables-dirac-bracket-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reduced-coordinate argument assumes unconstrained coordinate-momentum
+    pairs with canonical equal-time brackets.
+  failure_mode: Without canonical reduced pairs, the reduced Poisson bracket cannot
+    be promoted to the stated commutator.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 329
+    - 330
+    note: The source introduces reduced canonical pairs and states the conditional
+      quantization step.
+- id: qft.align037.weinberg-1-classification-to-dirac-bracket
+  from: qft.align037.first-and-second-class-constraint-classification
+  to: qft.align037.dirac-bracket-quantization-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac prescription requires the inverse bracket matrix of the remaining
+    second-class constraints.
+  failure_mode: Without second-class nonsingularity, the inverse matrix and bracket
+    are undefined.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 328
+    note: The source introduces the Dirac bracket after establishing nonsingularity.
+- id: qft.align037.weinberg-1-constraints-to-scalar-vector-problem
+  from: qft.align037.primary-and-secondary-constraints
+  to: qft.align037.problem-scalar-vector-canonical-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The real vector time component in the coupled theory must be handled
+    through its constraint equations.
+  failure_mode: Without the constraint route, the vector sector retains an invalid
+    independent time-component momentum.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 4 asks for canonical quantization of a scalar coupled to a real
+      vector field.
+- id: qft.align037.weinberg-1-dirac-bracket-to-redefinition-problem
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.problem-dirac-bracket-constraint-redefinition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task proves a property of the defined Dirac bracket under constraint
+    redefinitions.
+  failure_mode: Without its formula, the independence claim cannot be proved.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 7 asks for the Dirac bracket's independence from constraint functions.
+- id: qft.align037.weinberg-1-dirac-bracket-to-reduced-result
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.reduced-canonical-variables-dirac-bracket-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reduction theorem interprets the Dirac bracket prescription in unconstrained
+    canonical coordinates.
+  failure_mode: Without the bracket being interpreted, there is no result to compare
+    with reduced Poisson brackets.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 329
+    - 330
+    note: The source starts the Maskawa–Nakajima discussion from the Dirac bracket.
+- id: qft.align037.weinberg-1-dirac-definition-to-appendix-a
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.appendix-dirac-brackets-type-a-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The appendix compares independently computed canonical commutators with
+    the defined Dirac bracket.
+  failure_mode: Without the bracket definition, the required comparison cannot be
+    formed.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 333
+    - 334
+    note: The appendix calculates constrained brackets and compares them with the
+      Dirac-bracket definition.
+- id: qft.align037.weinberg-1-dirac-definition-to-appendix-b
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.appendix-dirac-brackets-type-b-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part B compares brackets derived by coordinate and momentum reduction
+    with the defined Dirac bracket.
+  failure_mode: Without the bracket definition, the comparison result cannot be stated.
+  evidence:
+  - source: weinberg-1
+    section: Appendix B
+    pages:
+    - 335
+    - 336
+    note: Part B derives the reduced brackets and identifies them with the Dirac bracket.
+- id: qft.align037.weinberg-1-dirac-definition-to-commutator-prescription
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.dirac-bracket-commutator-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The prescription states that commutators are proportional to the previously
+    defined Dirac bracket.
+  failure_mode: Without the definition, the proposed replacement rule has no bracket
+    to apply.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 328
+    note: The source gives the commutator prescription immediately after defining
+      the Dirac bracket.
+- id: qft.align037.weinberg-1-dirac-definition-to-jacobi-problem
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.problem-dirac-bracket-jacobi-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task proves an identity for the defined Dirac bracket.
+  failure_mode: Without its definition, the Jacobi statement cannot be formulated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 6 explicitly requests a proof about the Dirac bracket.
+- id: qft.align037.weinberg-1-dirac-definition-to-properties
+  from: qft.align037.dirac-bracket-quantization-method
+  to: qft.align037.dirac-bracket-algebraic-properties
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The algebraic statements concern the bracket defined with the inverse
+    constraint matrix.
+  failure_mode: Without the definition, there is no modified bracket whose identities
+    can be tested.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 328
+    - 329
+    note: The source states the Dirac-bracket identities after its definition.
+- id: qft.align037.weinberg-1-dirac-equation-to-dirac-canonical-method
+  from: qft.align033.dirac-equation-from-parity-completed-spinor-field
+  to: qft.align037.dirac-canonical-lagrangian-hamiltonian-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical free Hamiltonian is validated by reproducing the already
+    established Dirac equation and spinor modes.
+  failure_mode: Without the free Dirac equation, there is no target mode structure
+    or equation to verify.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 324
+    - 325
+    note: The source derives the Dirac equation and states agreement with the Chapter
+      5 anticommutators.
+- id: qft.align037.weinberg-1-dirac-prescription-to-reduced-result
+  from: qft.align037.dirac-bracket-commutator-prescription
+  to: qft.align037.reduced-canonical-variables-dirac-bracket-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Turning the reduced Dirac bracket into a constrained commutator uses
+    Dirac's separately stated commutator prescription.
+  failure_mode: Without the prescription, equality of classical brackets does not
+    determine the quantum commutators claimed in the result.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 330
+    note: The source conditions the commutator conclusion on canonical quantization
+      of the reduced variables.
+- id: qft.align037.weinberg-1-field-modes-to-scalar-validation
+  from: qft.align033.field-mode-expansion-from-translation-covariance
+  to: qft.align037.scalar-lagrangian-hamiltonian-validation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free scalar mode realization fixes the physical free Hamiltonian
+    which the candidate Lagrangian must reproduce.
+  failure_mode: Without the field realization, the free-particle comparison is not
+    tied to the scalar field.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 302
+    note: The source validates the scalar Lagrangian by comparison with the established
+      free scalar Hamiltonian.
+- id: qft.align037.weinberg-1-generator-criterion-to-lorentz-covariance
+  from: qft.align016.generator-commutator-criterion-s-matrix-covariance
+  to: qft.align037.lorentz-generators-and-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The final claim applies the generator-commutator criterion for Lorentz
+    covariance of the S matrix.
+  failure_mode: Without that criterion, the displayed generator commutators do not
+    imply the stated S-matrix property.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 317
+    note: The source concludes Lorentz invariance by applying the commutator condition
+      to the constructed generators.
+- id: qft.align037.weinberg-1-hamilton-legendre-to-auxiliary-route
+  from: qft.align037.hamiltonian-legendre-transform-equations
+  to: qft.align037.auxiliary-field-constraint-interaction-picture-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Auxiliary fields arise when the Legendre velocity–momentum relation is
+    not fully invertible.
+  failure_mode: Without the transform, the constraint obstructing the Hamiltonian
+    construction is undefined.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 302
+    - 303
+    note: The source explains auxiliary variables directly after the Legendre example.
+- id: qft.align037.weinberg-1-hamilton-legendre-to-primary-secondary
+  from: qft.align037.hamiltonian-legendre-transform-equations
+  to: qft.align037.primary-and-secondary-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Constraints are defined by failure of the momentum–velocity relation
+    used in the Legendre transform and by its time consistency.
+  failure_mode: Without that relation, irregularity and primary constraints are not
+    defined.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 326
+    note: The source characterizes primary constraints by noninvertibility of the
+      velocity–momentum equations.
+- id: qft.align037.weinberg-1-hamilton-legendre-to-scalar-validation
+  from: qft.align037.hamiltonian-legendre-transform-equations
+  to: qft.align037.scalar-lagrangian-hamiltonian-validation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Applying the established transform evaluates the scalar candidate Lagrangian
+    and its Hamiltonian.
+  failure_mode: Without the transform, the recovered Hamiltonian cannot be compared
+    with the required one.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 302
+    note: The source calculates the scalar conjugate and Hamiltonian from the transform.
+- id: qft.align037.weinberg-1-interacting-boost-to-lorentz-covariance
+  from: qft.align016.interacting-boost-smoothness-lorentz-sufficiency
+  to: qft.align037.lorentz-generators-and-s-matrix-covariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The conclusion needs the interacting-boost smoothness argument that turns
+    the boost commutator condition into S-matrix covariance.
+  failure_mode: Without that asymptotic smoothness result, the boost condition does
+    not establish the claimed Lorentz covariance.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 317
+    note: The source invokes the previously established smoothness condition when
+      concluding S-matrix Lorentz invariance.
+- id: qft.align037.weinberg-1-internal-charges-to-local-current-brackets
+  from: qft.align037.internal-symmetry-current-and-lie-generators
+  to: qft.align037.local-current-field-commutators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local relations refine the current formula that integrates to the
+    internal charges.
+  failure_mode: Without the current density, its local field commutators cannot be
+    computed.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 313
+    - 314
+    note: The source derives local commutators from the explicit current formula.
+- id: qft.align037.weinberg-1-internal-current-to-scalar-vector-current-problem
+  from: qft.align037.internal-symmetry-current-and-lie-generators
+  to: qft.align037.problem-scalar-vector-conserved-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar phase transformation is an internal symmetry, so its explicit
+    current uses the internal-current construction.
+  failure_mode: Without the internal-symmetry current formula, the current's field
+    expression is not obtained.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 5 specifies a scalar phase symmetry and requests its conserved current.
+- id: qft.align037.weinberg-1-local-compensation-to-proca-hamiltonian
+  from: qft.align036.covariant-propagator-local-contact-compensation
+  to: qft.align037.proca-interaction-picture-contact-compensation
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The previous propagator analysis identifies the role of the independently
+    derived Proca contact term.
+  failure_mode: Without the comparison, the term's cancellation role is not explained.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 323
+    note: The source explicitly connects the term to the Chapter 6 vector-propagator
+      cancellation.
+- id: qft.align037.weinberg-1-local-compensation-to-scalar-contact
+  from: qft.align036.covariant-propagator-local-contact-compensation
+  to: qft.align037.scalar-derivative-coupling-contact-term
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The Chapter 6 result explains what the independently derived canonical
+    contact term cancels.
+  failure_mode: Without this comparison, the covariance role of the term is not identified.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 320
+    note: The source identifies the extra term with the Chapter 6 cancellation.
+- id: qft.align037.weinberg-1-lorentz-scalar-hypothesis-to-belinfante
+  from: qft.align037.lorentz-scalar-lagrangian-density-hypothesis
+  to: qft.align037.belinfante-symmetric-energy-momentum-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Lorentz invariance of the Lagrangian density supplies the identity used
+    to improve and symmetrize the canonical tensor.
+  failure_mode: Without that invariance hypothesis, the Belinfante improvement is
+    not derived as a symmetric conserved tensor.
+  evidence:
+  - source: weinberg-1
+    section: '7.4'
+    pages:
+    - 315
+    - 316
+    note: The source derives the improvement identity from invariance under the field
+      and derivative Lorentz transformations.
+- id: qft.align037.weinberg-1-massive-vector-to-proca-selection
+  from: qft.align033.massive-vector-proca-constraints
+  to: qft.align037.proca-lagrangian-spin-one-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Lagrangian is selected to describe the known three-polarization massive
+    spin-one field rather than an added scalar.
+  failure_mode: Without the spin-one target constraints, there is no criterion for
+    rejecting propagating divergence.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 320
+    note: The source states the aim of retaining only spin-one particles before selecting
+      α=−β.
+- id: qft.align037.weinberg-1-noether-to-current-problem
+  from: qft.align037.noether-current-and-conserved-charge
+  to: qft.align037.problem-global-symmetry-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives a conserved current from a supplied infinitesimal global
+    symmetry.
+  failure_mode: Without Noether's relation, the supplied transformation does not yield
+    the current.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 3 requests the current associated with its stated global symmetry.
+- id: qft.align037.weinberg-1-noether-to-scalar-vector-current-problem
+  from: qft.align037.noether-current-and-conserved-charge
+  to: qft.align037.problem-scalar-vector-conserved-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supplied scalar phase symmetry yields a conserved current through
+    the Noether construction.
+  failure_mode: Without Noether's relation, the transformation does not determine
+    its current.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 5 separately requests the current associated with its stated symmetry.
+- id: qft.align037.weinberg-1-poisson-algebra-to-dirac-bracket
+  from: qft.align037.poisson-bracket-algebra
+  to: qft.align037.dirac-bracket-quantization-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac-bracket definition is a correction to the Poisson bracket.
+  failure_mode: Without the underlying Poisson bracket, the defining expression cannot
+    be evaluated.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 327
+    - 328
+    note: The source first defines the Poisson bracket and then modifies it by the
+      inverse constraint matrix.
+- id: qft.align037.weinberg-1-poisson-algebra-to-dirac-properties
+  from: qft.align037.poisson-bracket-algebra
+  to: qft.align037.dirac-bracket-algebraic-properties
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The properties are assessed against the antisymmetry, product, and Jacobi
+    identities of the Poisson bracket.
+  failure_mode: Without those identities, the claim that the Dirac bracket has the
+    same algebraic structure is not meaningful.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 327
+    - 329
+    note: The source lists the Poisson identities and later says the Dirac bracket
+      satisfies the same relations.
+- id: qft.align037.weinberg-1-poisson-algebra-to-jacobi-problem
+  from: qft.align037.poisson-bracket-algebra
+  to: qft.align037.problem-dirac-bracket-jacobi-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A proof expands the defined bracket using the Poisson-bracket product
+    and Jacobi identities.
+  failure_mode: Without the Poisson algebra, the Dirac-bracket Jacobi proof lacks
+    its algebraic premises.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 6 requests the Jacobi proof; Section 7.6 supplies the Poisson-bracket
+      identities used in it.
+- id: qft.align037.weinberg-1-poisson-algebra-to-redefinition-problem
+  from: qft.align037.poisson-bracket-algebra
+  to: qft.align037.problem-dirac-bracket-constraint-redefinition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof transforms the Dirac-bracket formula built from Poisson brackets
+    and the constraint matrix.
+  failure_mode: Without the Poisson-bracket algebra, the bracket transformation under
+    constraint redefinition cannot be computed.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 7 requests a proof of Dirac-bracket independence from the chosen
+      constraint functions.
+- id: qft.align037.weinberg-1-primary-secondary-to-appendix-a
+  from: qft.align037.primary-and-secondary-constraints
+  to: qft.align037.appendix-dirac-brackets-type-a-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Type A calculation uses auxiliary-coordinate primary constraints
+    and their secondary constraints.
+  failure_mode: Without those constraint relations, the independent-variable reduction
+    cannot be carried out.
+  evidence:
+  - source: weinberg-1
+    section: Appendix A
+    pages:
+    - 333
+    note: The appendix specifies the auxiliary-coordinate constraint form before calculating
+      brackets.
+- id: qft.align037.weinberg-1-primary-secondary-to-classification
+  from: qft.align037.primary-and-secondary-constraints
+  to: qft.align037.first-and-second-class-constraint-classification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: First- and second-class labels classify the full set of primary and secondary
+    constraints.
+  failure_mode: Without constraint functions, their Poisson-bracket matrix cannot
+    be classified.
+  evidence:
+  - source: weinberg-1
+    section: '7.6'
+    pages:
+    - 327
+    - 328
+    note: The source introduces XN for all constraints before classifying them.
+- id: qft.align037.weinberg-1-proca-hamiltonian-to-scalar-vector-problem
+  from: qft.align037.proca-interaction-picture-contact-compensation
+  to: qft.align037.problem-scalar-vector-canonical-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem extends canonical vector-field quantization to a complex
+    scalar coupling.
+  failure_mode: Without the vector constrained-Hamiltonian method, the requested quantization
+    cannot be completed.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 4 asks for canonical quantization of a scalar-vector theory.
+- id: qft.align037.weinberg-1-proca-selection-to-proca-hamiltonian
+  from: qft.align037.proca-lagrangian-spin-one-selection
+  to: qft.align037.proca-interaction-picture-contact-compensation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Applying the selected Proca Lagrangian supplies the V⁰ constraint and
+    the Hamiltonian split.
+  failure_mode: Without that Lagrangian and its V⁰ constraint, the Hamiltonian split
+    cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 321
+    note: The source solves the Proca constraint and explicitly splits the Hamiltonian
+      into free and interaction terms.
+- id: qft.align037.weinberg-1-scalar-legendre-to-scalar-vector-problem
+  from: qft.align037.hamiltonian-legendre-transform-equations
+  to: qft.align037.problem-scalar-vector-canonical-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Canonical quantization of the complex scalar sector requires the scalar
+    momentum and Hamiltonian obtained by the Legendre route.
+  failure_mode: Without the scalar canonical route, the scalar part of the coupled
+    Hamiltonian is not derived.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 4 gives a coupled scalar-vector Lagrangian and asks for canonical
+      quantization.
+- id: qft.align037.weinberg-1-stationary-action-to-hamilton-legendre
+  from: qft.align037.stationary-action-euler-lagrange-method
+  to: qft.align037.hamiltonian-legendre-transform-equations
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The stationary-action discussion organizes the source presentation but
+    is not required to define the Legendre transformation.
+  failure_mode: Treating source order as necessity would make an independent definition
+    compulsory.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 301
+    note: The source introduces the transform using the preceding conjugate-field
+      definition.
+- id: qft.align037.weinberg-1-stationary-action-to-real-action-count
+  from: qft.align037.stationary-action-euler-lagrange-method
+  to: qft.align037.real-action-field-equation-count-hypothesis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field-count argument compares the independent stationary equations
+    obtained from real and imaginary action parts.
+  failure_mode: Without stationary-action equations, the overdetermination argument
+    cannot be made.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 300
+    note: The source gives the reality condition by counting the stationary equations
+      for the field degrees of freedom.
+- id: qft.align037.weinberg-1-stationary-action-to-redundant-couplings
+  from: qft.align037.stationary-action-euler-lagrange-method
+  to: qft.align037.redundant-couplings-by-field-redefinition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Redundancy is tested by whether the field-redefinition variation vanishes
+    using the field equations.
+  failure_mode: Without the Euler–Lagrange equations, the on-shell redundancy criterion
+    cannot be applied.
+  evidence:
+  - source: weinberg-1
+    section: '7.7'
+    pages:
+    - 331
+    - 332
+    note: The source writes the field-redefinition variation in terms of the field
+      equations.
+- id: qft.align037.wi-dirac-route-to-canonical-dirac-core
+  from: qft.align037.dirac-canonical-lagrangian-hamiltonian-method
+  to: qft.align020.canonical-dirac-momentum-and-hamiltonian
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI independently validates the common canonical Dirac momentum and Hamiltonian.
+  failure_mode: Without it the WI validation route is absent, while the PS canonical
+    route remains.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 323
+    - 324
+    - 325
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-generator-route-to-charge-generator-core
+  from: qft.align037.canonical-symmetry-generator-method
+  to: qft.noether-charge-generates-continuous-symmetry
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI supplies the generic canonical-pair proof of the common charge-generator
+    result.
+  failure_mode: Without it the WI route is absent, while the Schwartz scalar route
+    remains.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 309
+    - 310
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-legendre-route-to-canonical-hamiltonian-core
+  from: qft.align037.hamiltonian-legendre-transform-equations
+  to: qft.canonical-field-momentum-hamiltonian
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI independently derives the common field Legendre construction and Hamilton
+    equations.
+  failure_mode: Without it the WI canonical route is absent, while the PS and Schwartz
+    routes remain.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 301
+    - 302
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-noether-route-to-current-core
+  from: qft.align037.noether-current-and-conserved-charge
+  to: qft.noether-current-and-conserved-charge
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI supplies an independent local-parameter stationary-action derivation
+    of the common Noether result.
+  failure_mode: Without it the WI route is absent, while the PS and Schwartz routes
+    remain.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 307
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-noether-route-to-generator-route
+  from: qft.align037.noether-current-and-conserved-charge
+  to: qft.align037.canonical-symmetry-generator-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The canonical generator proof starts from the conserved WI charge and
+    its momentum-weighted expression.
+  failure_mode: Without the conserved charge, there is no operator whose canonical
+    action can be tested.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 309
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-noether-route-to-translation-route
+  from: qft.align037.noether-current-and-conserved-charge
+  to: qft.align037.canonical-energy-momentum-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The WI translation tensor is obtained by applying the localized symmetry-current
+    construction to spacetime translations.
+  failure_mode: Without the WI Noether construction, the canonical translation current
+    lacks its derivation.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 310
+    - 311
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-proca-route-to-proca-core
+  from: qft.align037.proca-lagrangian-spin-one-selection
+  to: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI independently selects the Proca kinetic combination by excluding a
+    propagating scalar divergence.
+  failure_mode: Without it the WI selection route is absent, while the Schwartz derivation
+    remains.
+  evidence:
+  - source: weinberg-1
+    section: '7.5'
+    pages:
+    - 320
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-stationary-route-to-euler-lagrange-core
+  from: qft.align037.stationary-action-euler-lagrange-method
+  to: qft.field-euler-lagrange-equation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI supplies an independent stationary-action derivation of the shared
+    field equation.
+  failure_mode: Without it the WI proof route is absent, while the PS and Schwartz
+    routes remain.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 299
+    - 300
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-total-derivative-route-to-common-core
+  from: qft.align037.total-derivative-lagrangian-quantum-equivalence
+  to: qft.align030.derivative-couplings-and-total-derivative-invariance
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI supplies a canonical-bracket proof of total-derivative equivalence
+    independent of the Schwartz momentum-rule proof.
+  failure_mode: Without it the WI canonical route is absent, while the Schwartz route
+    remains.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 305
+    - 306
+    note: This packet span supports the stated WI route and its conditions.
+- id: qft.align037.wi-translation-route-to-energy-momentum-core
+  from: qft.align037.canonical-energy-momentum-tensor
+  to: qft.translation-symmetry-and-energy-momentum-tensor
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: WI supplies an independent canonical translation-current derivation of
+    the shared tensor result.
+  failure_mode: Without it the WI route is absent, while the accepted canonical and
+    functional routes remain.
+  evidence:
+  - source: weinberg-1
+    section: '7.3'
+    pages:
+    - 310
+    - 311
+    - 312
+    note: This packet span supports the stated WI route and its conditions.
 - id: qft.align041.edge.ray-symmetry-to-continuous-unitary
   from: qft.align041.symmetry-as-transition-probability-invariance
   to: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
@@ -60458,14 +63478,14 @@ edges:
 - id: qft.equal-time-commutators-to-noether-charge-generator
   from: qft.equal-time-scalar-field-commutators
   to: qft.noether-charge-generates-continuous-symmetry
-  relation: prerequisite
+  relation: alternative
   source_level: use
   target_level: derive
-  necessity: necessary
-  rationale: The source evaluates the charge action on the scalar field with canonical
-    equal-time commutators.
-  failure_mode: Without the equal-time algebra, the displayed commutator showing that
-    Q generates the field transformation cannot be derived.
+  necessity: helpful
+  rationale: The Schwartz scalar equal-time calculation is one route to the common
+    generator result and is not compulsory for the independent WI canonical proof.
+  failure_mode: Without this route the Schwartz proof is absent, while the WI generic
+    canonical proof remains complete.
   evidence:
   - source: schwartz
     section: '28.2'
