@@ -35948,6 +35948,10 @@ nodes:
   - project: schwartz
     node: schwartz.scalar-yukawa-mass-self-energy
     note: Retains scalar-Yukawa M-squared/pole calculation and its scheme details.
+  - project: peskin-schroeder
+    node: peskin-schroeder.self-energy-resummation-and-pole-conditions
+    note: Retains Peskin–Schroeder's 1PI self-energy resummation and its pole-and-unit-residue
+      conditions as the source-specific input for the phi-four on-shell route.
 - id: qft.align055.two-point-poles-cuts-and-bound-states
   label: Particle poles, multiparticle cuts, and bound-state poles
   summary: In the momentum-squared plane, an isolated one-particle contribution gives
@@ -49143,6 +49147,46 @@ nodes:
     section: '12.1'
     pages:
     - 401
+- id: qft.peskin.dimreg-loop-integral-method
+  label: Peskin dimensional-regularization loop method
+  summary: Continue loop integrals and Dirac algebra to d spacetime dimensions, Wick
+    rotate to a d-dimensional Euclidean integral, and analytically continue toward
+    four dimensions so gamma and beta functions expose ultraviolet poles while d-dimensional
+    contractions are retained.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dim-reg-loop-integral-method
+    note: Scoped to the dimensional-regularization loop method used by the assigned
+      Peskin calculations; it is not inferred from the narrower QED counterterm calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: 7.5 Dimensional Regularization
+    pages:
+    - 249
+    - 250
+    - 251
+- id: qft.peskin.dis-local-current-ope-and-twist-two-quark-result
+  label: Peskin local-current OPE and twist-two quark result
+  summary: For the Peskin DIS route, expand the short-distance product of two electromagnetic
+    currents into symmetric traceless gauge-invariant local quark operators of even
+    spin, then use their dimensions and spin to identify the leading-twist contribution
+    and its power counting.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dis-twist-two-quark-ope
+    note: Retains Peskin–Schroeder's local-current contraction, covariantized twist-two
+      quark operators, and even-spin condition without importing the broader multi-book
+      forward-quark matching core.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 627
+    - 628
+    - 629
+    - 630
 - id: qft.pform-exterior-derivative-and-local-exactness
   label: Exterior derivative, closed forms, and local exactness
   summary: A p-form is an antisymmetric covariant tensor of rank p; its antisymmetrized
@@ -103931,6 +103975,1282 @@ edges:
     - 6
     note: The text maps external states, interaction Hamiltonians, and the photon
       projector to diagram components.
+- id: qft.shared.peskin-relations.cs-equation-prereq-counterterm-rg
+  from: qft.align014.callan-symanzik-massless-green-functions
+  to: qft.align012.counterterms-determine-leading-cs-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The counterterm calculation identifies beta and gamma by requiring Green
+    functions to satisfy the Callan-Symanzik equation.
+  failure_mode: Counterterm logarithms alone do not state which scale-variation functions
+    they determine.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 411
+    - 412
+    - 414
+- id: qft.shared.peskin-relations.dimreg-prereq-cpn-photon
+  from: qft.peskin.dimreg-loop-integral-method
+  to: qft.align018.problem-cpn-emergent-photon
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) explicitly requires dimensional regularization of the massive-scalar
+    polarization.
+  failure_mode: The induced photon kinetic coefficient cannot be evaluated as requested.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.3(d)
+    pages:
+    - 468
+- id: qft.shared.peskin-relations.dimreg-prereq-cw-one-loop
+  from: qft.peskin.dimreg-loop-integral-method
+  to: qft.align012.problem-coleman-weinberg-one-loop-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Minimal subtraction of the one-loop potential requires dimensionally
+    regulated integrals.
+  failure_mode: The divergent terms and their mass and quartic counterterms cannot
+    be isolated.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (b)
+    pages:
+    - 470
+- id: qft.shared.peskin-relations.dimreg-prereq-massless-subtraction
+  from: qft.peskin.dimreg-loop-integral-method
+  to: qft.align014.massless-dim-reg-subtraction-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massless subtraction prescription analytically continues regulated
+    loop integrals in dimension.
+  failure_mode: The pole locations and dimensional continuation used by the subtraction
+    are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 409
+- id: qft.shared.peskin-relations.e-ps013-03
+  from: qft.classical-goldstone-theorem-potential-hessian-route
+  to: qft.peskin-abelian-higgs-potential-expansion-and-vector-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Abelian construction identifies the phase fluctuation as the Goldstone
+    mode before gauge fixing.
+  failure_mode: Without the Goldstone mode, the transverse mass-generation mechanism
+    is unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 691
+- id: qft.shared.peskin-relations.e-ps013-04
+  from: qft.general-nonabelian-gauge-construction
+  to: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass matrix is obtained by expanding a non-Abelian covariant derivative.
+  failure_mode: Without the representation action in D_mu, one cannot identify which
+    generators break.
+  evidence:
+  - source: peskin-schroeder
+    section: '20.1'
+    pages:
+    - 693
+- id: qft.shared.peskin-relations.e-ps013-abj-point-split-route
+  from: qft.align017.gauge-invariant-point-split-axial-current
+  to: qft.align006.abj-anomaly-operator-equation
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: Gauge-invariant point splitting supplies an operator derivation of the
+    same ABJ equation.
+  failure_mode: Treating this route as compulsory would falsely exclude the other
+    derivations supplied in the source.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.2'
+    pages:
+    - 659
+- id: qft.shared.peskin-relations.e-ps013-phase-pion-rate
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align017.problem-19-2b-pion-helicity-suppression
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested two-body decay rate requires invariant phase space.
+  failure_mode: Without phase space, an amplitude alone does not determine the rate.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.2
+    pages:
+    - 687
+- id: qft.shared.peskin-relations.e-ps013-qed-beta-trace
+  from: qft.align012.qed-running-charge-one-loop-flow
+  to: qft.align017.trace-anomaly-beta-function-and-regulator-routes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The trace-anomaly coefficient is identified with the QED beta-function
+    coefficient.
+  failure_mode: Without beta(g), the coefficient multiplying F squared is undetermined.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.5'
+    pages:
+    - 685
+- id: qft.shared.peskin-relations.e-ps013-vacpol-schwinger
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align017.schwinger-model-photon-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The specialization evaluates the previously derived vacuum-polarization
+    loop in d=2 with tr(1)=2.
+  failure_mode: Without the vacuum-polarization structure, the transverse pole and
+    photon mass cannot be inferred.
+  evidence:
+  - source: peskin-schroeder
+    section: '19.1'
+    pages:
+    - 653
+- id: qft.shared.peskin-relations.e-ps013-weak-current-pion-task
+  from: qft.align028.peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  to: qft.align017.problem-19-2a-pion-weak-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task starts from the semileptonic left-handed weak effective operator.
+  failure_mode: Without that operator, the requested current identification and amplitude
+    are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 19.2
+    pages:
+    - 687
+- id: qft.shared.peskin-relations.e-ps014-05
+  from: qft.tree-level-xi-cancellation-in-broken-abelian-chiral-scattering
+  to: qft.rxi-gauge-limits-renormalizability-and-unitary-gauge-boundary
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The explicit tree cancellation illustrates the gauge-parameter independence
+    used in discussing finite-xi and unitary-gauge limits.
+  failure_mode: Without this example the general limit discussion remains unillustrated,
+    though it can be taught from the stated propagator behavior.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.1'
+    pages:
+    - 736
+    - 738
+- id: qft.shared.peskin-relations.e-spinor-products-to-photon-spinor-problem
+  from: qft.align029.problem-massless-spinor-helicity-products
+  to: qft.align023.peskin.problem-spinor-helicity-photon-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5.6 explicitly extends the spinor-product technology to external
+    photons.
+  failure_mode: The massless reference spinors used in the photon vectors are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.6
+    pages:
+    - 174
+    note: The problem says it extends Problem 5.3 and defines vectors from its massless
+      spinors.
+- id: qft.shared.peskin-relations.e-spinor-products-to-spinor-problem
+  from: qft.align029.problem-massless-spinor-helicity-products
+  to: qft.align023.peskin.problem-spinor-product-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5.3 explicitly uses the massless spinor products introduced earlier.
+  failure_mode: Its requested direct helicity-amplitude calculation has no spinor-product
+    vocabulary.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.3
+    pages:
+    - 170
+    note: The problem recalls its spinor-product definitions before applying them.
+- id: qft.shared.peskin-relations.e18-generalrescale-to-problem181
+  from: qft.align028.peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  to: qft.align013.peskin-schroeder.problem-18-1-proton-decay-operator-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rate enhancement is requested from the leading QCD evolution of the
+    local baryon-violating operator.
+  failure_mode: An anomalous dimension cannot be converted into the requested scale
+    enhancement.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.1
+    pages:
+    - 647
+- id: qft.shared.peskin-relations.e18-optical-to-ee
+  from: qft.align016.conditional-s-matrix-unitarity
+  to: qft.align028.peskin-schroeder.eplus-eminus-hadrons-optical-current-correlator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The total e+e- hadronic rate is converted to the imaginary part of a
+    forward amplitude by the optical theorem.
+  failure_mode: The current correlator would not be connected to an inclusive cross
+    section.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 616
+- id: qft.shared.peskin-relations.e18-qedevolution-to-problem184
+  from: qft.align028.peskin-schroeder.qed-strong-ordering-and-gribov-lipatov-evolution
+  to: qft.align013.peskin-schroeder.problem-18-4-photon-dis-structure-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) evolves quark and antiquark distributions sourced by a photon
+    at leading QED order.
+  failure_mode: The photon boundary condition cannot be evolved into quark distributions.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 18.4
+    pages:
+    - 649
+- id: qft.shared.peskin-relations.e18-twistquark-to-powercounting
+  from: qft.peskin.dis-local-current-ope-and-twist-two-quark-result
+  to: qft.align013.shared.dis-leading-twist-operator-basis-and-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The power count evaluates the dimensions and spins of the constructed
+    quark operators and their proton matrix elements.
+  failure_mode: There is no operator family whose twist or moments can be classified.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 630
+    - 631
+- id: qft.shared.peskin-relations.edge-1pi-to-symmetric-counterterms
+  from: qft.align011.effective-action-1pi-tree-reconstruction
+  to: qft.align011.symmetric-counterterms-general-effective-action
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general renormalization analysis uses effective-action derivatives
+    as the divergent 1PI Green functions.
+  failure_mode: Finiteness of differentiated Green functions would not follow from
+    the effective-action argument.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.5–11.6
+    pages:
+    - 383
+    - 385
+- id: qft.shared.peskin-relations.edge-classical-goldstone-to-quantum
+  from: qft.classical-goldstone-theorem-potential-hessian-route
+  to: qft.quantum-effective-action-goldstone-route
+  relation: pedagogical
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The classical proof is a useful template, while the quantum proof is
+    completed directly with V-eff and the Gamma inverse-propagator relation.
+  failure_mode: The all-orders proof does not require the classical proof as a compulsory
+    premise.
+  evidence:
+  - source: peskin-schroeder
+    section: 11.1 and 11.6
+    pages:
+    - 352
+    - 388
+- id: qft.shared.peskin-relations.edge-dimreg-to-one-loop-vertex
+  from: qft.peskin.dimreg-loop-integral-method
+  to: qft.align012.renormalization-conditions-and-phi4-one-loop-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The integral is explicitly evaluated in dimensional regularization.
+  failure_mode: The regulated loop function V cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 327
+- id: qft.shared.peskin-relations.edge-discrete-break-to-on-sigma
+  from: qft.classical-spontaneous-symmetry-breaking
+  to: qft.on-linear-sigma-model-broken-vacuum
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The source presents the discrete model before the O(N) example as a helpful
+    comparison.
+  failure_mode: The continuous model can be introduced directly from its invariant
+    Lagrangian.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.1'
+    pages:
+    - 348
+    - 349
+- id: qft.shared.peskin-relations.edge-existing-bosonic-determinant-to-sigma-effective-potential
+  from: qft.align021.bosonic-functional-determinant
+  to: qft.align011.on-sigma-effective-potential-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The O(N) calculation evaluates its leading fluctuation correction as
+    a product of Klein-Gordon functional determinants.
+  failure_mode: The determinant contribution would be used without its Gaussian-integral
+    meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 374
+- id: qft.shared.peskin-relations.edge-existing-scalar-path-integral-to-background-field
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align011.effective-action-background-field-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The effective-action construction expands the sourced scalar functional
+    integral around its classical field.
+  failure_mode: The Gaussian fluctuation and determinant expansion would lack its
+    functional-integral input.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.4'
+    pages:
+    - 370
+    - 371
+- id: qft.shared.peskin-relations.edge-existing-self-energy-to-phi4-onshell
+  from: qft.align055.self-energy-resummation-and-pole-conditions
+  to: qft.align012.phi4-two-point-onshell-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phi-four calculation explicitly uses the 1PI self-energy insertion
+    and its pole-residue conditions.
+  failure_mode: The propagator conditions would be applied without their resummation
+    interpretation.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+- id: qft.shared.peskin-relations.edge-feynman-parameters-to-one-loop-vertex
+  from: qft.align019.feynman-parameter-denominator-combination
+  to: qft.align012.renormalization-conditions-and-phi4-one-loop-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation introduces a Feynman parameter before shifting and integrating.
+  failure_mode: The stated loop-evaluation route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 327
+- id: qft.shared.peskin-relations.edge-phi4-odd-to-primitive-classification
+  from: qft.align016.phi4-odd-correlation-vanishing
+  to: qft.align012.phi4-primitive-divergences-and-z2-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The parity exclusion removes odd external-leg amplitudes from the list.
+  failure_mode: The primitive count would retain forbidden odd amplitudes.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
+    - 324
+- id: qft.shared.peskin-relations.edge-phi4-rules-to-primitive-classification
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align012.phi4-primitive-divergences-and-z2-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The classification counts the phi-four diagram amplitudes defined by
+    these rules.
+  failure_mode: The divergent-amplitude list would have no diagrammatic object to
+    classify.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 323
+    - 324
+- id: qft.shared.peskin-relations.edge-power-counting-to-problem-11-3-ac
+  from: qft.align024.dimension-power-counting-and-nonrenormalizable-diagnosis
+  to: qft.align056.problem-gross-neveu-symmetry-and-auxiliary-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.3(b) asks for the two-dimensional renormalizability classification
+    by dimensional analysis.
+  failure_mode: The renormalizability subtask lacks its dimensional criterion.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(a-c)
+    pages:
+    - 390
+- id: qft.shared.peskin-relations.edge-real-path-integral-to-effective-action
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align011.legendre-quantum-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The sourced functional integral defines the vacuum-energy functional
+    used in the Legendre transform.
+  failure_mode: The construction lacks its functional-integral starting point.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.3'
+    pages:
+    - 365
+    - 366
+- id: qft.shared.peskin-relations.edge-regulator-ward-to-qed-delta1
+  from: qft.align055.regulator-must-preserve-ward-identity
+  to: qft.align024.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equality relies on a UV regulator preserving gauge invariance and
+    the Ward identity.
+  failure_mode: A symmetry-breaking regulator can invalidate the equality.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+- id: qft.shared.peskin-relations.edge-renormalizable-power-counting-to-problem-11-1
+  from: qft.align024.dimension-power-counting-and-nonrenormalizable-diagnosis
+  to: qft.align056.problem-spin-wave-theory
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks for the most general renormalizable translation-invariant
+    spin-wave Lagrangian in arbitrary positive dimension.
+  failure_mode: The restriction to the free derivative theory cannot be justified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.1
+    pages:
+    - 389
+- id: qft.shared.peskin-relations.edge-ward-takahashi-to-qed-delta1
+  from: qft.align012.ward-takahashi-proof-of-z1-equals-z2
+  to: qft.align024.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The all-orders recursion is the renormalized diagrammatic Ward identity.
+  failure_mode: The recursion becomes an unsupported equality.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+- id: qft.shared.peskin-relations.final-project-inclusive-prerequisite-qcd-inclusive
+  from: qft.align014.qcd-infrared-safe-inclusive-and-jet-rates
+  to: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The inclusive QCD correction explicitly reuses the Final Project real-plus-virtual
+    infrared cancellation before applying the color factor.
+  failure_mode: Without its inclusive combination, the two separately divergent QCD
+    contributions would be mistaken for physical rates.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Total Cross Section
+    pages:
+    - 549
+    - 550
+- id: qft.shared.peskin-relations.final-project-real-qqg-prerequisite-qcd-qqg
+  from: qft.align055.gluon-jet-project-real-emission-three-jet-distribution
+  to: qft.align028.peskin-schroeder.qcd-qqg-energy-fraction-distribution
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The text obtains the QCD qqg distribution by transcribing the Final Project
+    real-emission result with the SU(3) replacement.
+  failure_mode: Without the real-emission distribution, there is no stated Abelian
+    formula to transcribe.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Gluon Emission and Jet Production
+    pages:
+    - 553
+- id: qft.shared.peskin-relations.gibbs-prereq-correction-scaling-problem
+  from: qft.align056.gibbs-free-energy-scaling-equation
+  to: qft.align018.problem-correction-to-scaling-exponent
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correction-to-scaling task perturbs the chapter's Gibbs free-energy
+    scaling solution.
+  failure_mode: There is no scaling solution to correct by the irrelevant coupling.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.1
+    pages:
+    - 446
+    - 466
+- id: qft.shared.peskin-relations.interacting-quotient-to-vacuum-correlators
+  from: qft.align021.normalized-vacuum-correlators-from-path-integrals
+  to: qft.align016.interacting-correlation-function-quotient
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The path-integral construction independently derives the accepted normalized
+    interacting-correlator representation.
+  failure_mode: Making the earlier Dyson/operator quotient compulsory would collapse
+    two distinct derivation routes.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 284
+- id: qft.shared.peskin-relations.on-epsilon-prereq-eta-problem
+  from: qft.align056.on-epsilon-expansion-critical-exponents
+  to: qft.align018.problem-eta-two-loop-on-model
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The problem generalizes the field anomalous dimension to O(N) and evaluates
+    it at the fixed point.
+  failure_mode: The O(N) normalization and fixed-point value needed for eta are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.2
+    pages:
+    - 448
+    - 449
+    - 466
+- id: qft.shared.peskin-relations.ps10-abelian-wilson-to-path-ordering
+  from: qft.abelian-curvature-from-holonomy
+  to: qft.nonabelian-path-ordered-wilson-line
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Path ordering is the required modification of the Wilson-line exponential
+    when the connection becomes matrix valued.
+  failure_mode: There is no reference comparator construction to generalize or reason
+    to impose ordering.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.3 The Gauge-Invariant Wilson Loop
+    pages:
+    - 492
+    - 493
+- id: qft.shared.peskin-relations.ps10-adjoint-to-covariant-eom
+  from: qft.adjoint-representation-and-covariant-derivative
+  to: qft.covariant-yang-mills-equation-and-bianchi
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The equation and Bianchi identity explicitly use the adjoint covariant
+    derivative and its Jacobi-identity origin.
+  failure_mode: The f-terms in the covariant equation and antisymmetrized identity
+    cannot be derived as covariant structures.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 499
+    - 500
+- id: qft.shared.peskin-relations.ps10-adjoint-to-su2-adjoint-problem
+  from: qft.adjoint-representation-and-covariant-derivative
+  to: qft.su2-adjoint-casimir-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 15.2 asks for the SU(2) adjoint basis itself.
+  failure_mode: The representation matrices to write down are not defined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.2
+    pages:
+    - 502
+- id: qft.shared.peskin-relations.ps10-casimir-definitions-to-su2-adjoint-problem
+  from: qft.casimir-index-and-sun-factors
+  to: qft.su2-adjoint-casimir-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 15.2 needs the trace-index and quadratic-Casimir definitions
+    but asks the reader to calculate the SU(2) adjoint values.
+  failure_mode: C(G) and C2(G) have no definitions from which the requested direct
+    calculation can proceed.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 The Casimir Operator; Problem 15.2
+    pages:
+    - 500
+    - 502
+- id: qft.shared.peskin-relations.ps10-casimir-definitions-to-su3-problem
+  from: qft.casimir-index-and-sun-factors
+  to: qft.su3-generators-and-invariants-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 15.1 applies the definitions of C(r) and C2(r) and verifies their
+    dimension relation, while deriving the SU(3) values itself.
+  failure_mode: The requested trace index, quadratic operator, and relation to verify
+    are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 The Casimir Operator; Problem 15.1
+    pages:
+    - 500
+    - 502
+- id: qft.shared.peskin-relations.ps10-comparator-to-abelian-wilson
+  from: qft.local-comparator-and-abelian-connection
+  to: qft.abelian-curvature-from-holonomy
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Wilson line is the finite-separation realization of the comparator.
+  failure_mode: The endpoint transformation law of the line is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.3 The Gauge-Invariant Wilson Loop
+    pages:
+    - 491
+    - 492
+- id: qft.shared.peskin-relations.ps10-comparator-to-curvature
+  from: qft.local-comparator-and-abelian-connection
+  to: qft.abelian-curvature-from-holonomy
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Both the small-square holonomy and covariant-derivative commutator are
+    constructed from the comparator connection.
+  failure_mode: The curvature construction has no parallel transport or covariant
+    derivative to compare.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.1 The Geometry of Gauge Invariance
+    pages:
+    - 483
+    - 484
+    - 485
+- id: qft.shared.peskin-relations.ps10-covariant-photon-to-wilson-coulomb-problem
+  from: qft.generalized-xi-gauge-propagator
+  to: qft.wilson-loop-coulomb-potential-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free QED and supplied Feynman-gauge non-Abelian Wilson-loop calculations
+    require the propagator kernel.
+  failure_mode: The line-current contraction and the order-g-squared potential cannot
+    be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.3
+    pages:
+    - 503
+- id: qft.shared.peskin-relations.ps10-curvature-to-maxwell-dirac
+  from: qft.abelian-curvature-from-holonomy
+  to: qft.local-symmetry-maxwell-dirac-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The enumeration of allowed local terms uses F_mu_nu as the gauge-invariant
+    connection-dependent building block.
+  failure_mode: The gauge-field kinetic term and exclusion of a mass term are ungrounded.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.1 The Geometry of Gauge Invariance
+    pages:
+    - 485
+    - 486
+- id: qft.shared.peskin-relations.ps10-gaussian-to-wilson-coulomb-problem
+  from: qft.align021.gaussian-functional-wick-contractions
+  to: qft.wilson-loop-coulomb-potential-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 15.3 evaluates the free gauge-field Wilson-loop expectation value
+    by Gaussian functional integration.
+  failure_mode: The requested expectation value cannot be reduced to the propagator
+    contractions.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.3
+    pages:
+    - 503
+- id: qft.shared.peskin-relations.ps10-general-gauge-to-feynman-rules
+  from: qft.general-nonabelian-gauge-construction
+  to: qft.yang-mills-universal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rules are read by expanding the general Yang-Mills Lagrangian.
+  failure_mode: The origin of the vertices and their common coupling is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.1 Interactions of Non-Abelian Gauge Bosons
+    pages:
+    - 506
+    - 507
+    - 508
+- id: qft.shared.peskin-relations.ps10-grassmann-determinant-to-background-determinants
+  from: qft.align043.qed-fermion-exchange-and-loop-signs
+  to: qft.align032.background-determinant-nonabelian-beta-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The fermion and ghost integrations in the background calculation give
+    Grassmann determinants with their required signs and powers.
+  failure_mode: The fermion and ghost determinant contributions, including their relative
+    signs, cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 536
+    - 537
+- id: qft.shared.peskin-relations.ps10-lie-to-adjoint
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.adjoint-representation-and-covariant-derivative
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The adjoint representation checks its generator commutator using the
+    Jacobi identity.
+  failure_mode: The structure constants cannot be shown to furnish a representation
+    or justify the Bianchi input.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 495
+    - 499
+- id: qft.shared.peskin-relations.ps10-lie-to-sun
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.sun-representations-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(N) construction specializes the local Lie-algebra generator and
+    commutator definitions.
+  failure_mode: The representation matrices and their trace normalization lack the
+    algebraic structure they represent.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 Basic Facts about Lie Algebras
+    pages:
+    - 495
+    - 497
+    - 498
+- id: qft.shared.peskin-relations.ps10-path-ordering-to-traced-loop
+  from: qft.nonabelian-path-ordered-wilson-line
+  to: qft.traced-nonabelian-wilson-loop
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The closed line whose conjugation law is traced is the path-ordered non-Abelian
+    transport operator.
+  failure_mode: The trace would be applied to an incorrectly defined noncommuting
+    exponential.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.3 The Gauge-Invariant Wilson Loop
+    pages:
+    - 493
+    - 494
+- id: qft.shared.peskin-relations.ps10-path-ordering-to-worldline-problem
+  from: qft.nonabelian-path-ordered-wilson-line
+  to: qft.worldline-wilson-line-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) asks why the non-Abelian worldline solution requires path ordering.
+  failure_mode: The decisive condition on the group matrices is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.4
+    pages:
+    - 504
+- id: qft.shared.peskin-relations.ps10-scalar-qed-rules-to-scalar-beta-problem
+  from: qft.align035.problem-scalar-qed-propagator-and-vertices
+  to: qft.align032.problem-nonabelian-charged-scalar-beta-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly starts from the scalar-QED rules and asks for their
+    non-Abelian modification before the scalar-loop beta contribution.
+  failure_mode: The starting propagator and scalar-photon vertices to be modified
+    are missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.2
+    pages:
+    - 544
+- id: qft.shared.peskin-relations.ps10-su2-connection-to-ym-curvature
+  from: qft.local-su2-yang-mills-construction
+  to: qft.nonabelian-curvature-and-self-interactions
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The non-Abelian curvature follows by commuting the SU(2) covariant derivatives.
+  failure_mode: The structure-constant A A term and the gauge-field Lagrangian cannot
+    be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.2 The Yang-Mills Lagrangian
+    pages:
+    - 487
+    - 488
+    - 489
+- id: qft.shared.peskin-relations.ps10-sun-normalization-to-su3-problem
+  from: qft.sun-representations-and-normalization
+  to: qft.su3-generators-and-invariants-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 15.1 asks for the supplied SU(3) fundamental matrices' structure
+    constants and trace invariant C(r).
+  failure_mode: The task's representation and orthogonality convention are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.1
+    pages:
+    - 502
+- id: qft.shared.peskin-relations.ps10-sun-normalization-to-sun-casimirs
+  from: qft.sun-representations-and-normalization
+  to: qft.casimir-index-and-sun-factors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derived fundamental and adjoint Casimirs use the trace convention
+    and representation product introduced for SU(N).
+  failure_mode: The numerical Casimir values are detached from the normalization that
+    fixes them.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.4 The Casimir Operator
+    pages:
+    - 501
+    - 502
+- id: qft.shared.peskin-relations.ps10-sun-to-casimir-problem
+  from: qft.sun-representations-and-normalization
+  to: qft.casimir-subgroup-decomposition-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task computes C(r), C2(G), and SU(N) representation decompositions.
+  failure_mode: The invariants and representations requested in the problem are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.5
+    pages:
+    - 504
+- id: qft.shared.peskin-relations.ps10-timeslicing-to-worldline-problem
+  from: qft.align021.time-sliced-quantum-mechanical-path-integral
+  to: qft.worldline-wilson-line-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 15.4 explicitly asks the reader to represent the proper-time
+    kernel using the functional-integral solution of the Schrodinger equation from
+    Section 9.1.
+  failure_mode: The endpoint-normalized path integral required to verify the Green-function
+    equation is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.4
+    pages:
+    - 503
+    - 504
+- id: qft.shared.peskin-relations.ps10-traced-loop-to-coulomb-problem
+  from: qft.traced-nonabelian-wilson-loop
+  to: qft.wilson-loop-coulomb-potential-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem calculates an expectation value of the Wilson loop and interprets
+    its rectangular limit.
+  failure_mode: The quantity whose expectation value encodes the potential is undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 15.3
+    pages:
+    - 503
+- id: qft.shared.peskin-relations.ps10-ym-to-general-gauge
+  from: qft.nonabelian-curvature-and-self-interactions
+  to: qft.general-nonabelian-gauge-construction
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The text first develops SU(2) as the concrete example before replacing
+    its data by a general Lie algebra.
+  failure_mode: Without the example, the general formulas can be used but the textbook's
+    comparison to SU(2) is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: 15.2 The Yang-Mills Lagrangian
+    pages:
+    - 489
+    - 490
+- id: qft.shared.peskin-relations.ps3-lorentz-to-problem-su2
+  from: qft.align053.lorentz-generator-field-and-algebra-core
+  to: qft.align029.problem-lorentz-su2-times-su2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3.1 begins from the Lorentz commutators and generator definitions
+    developed in Section 3.1.
+  failure_mode: The requested J_± decomposition has no supplied algebra to manipulate.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 3.1
+    pages:
+    - 71
+    - 72
+    note: The problem recalls equation (3.17) and defines L and K before requesting
+      the decomposition.
+- id: qft.shared.peskin-relations.ps6-earlier-ww-to-equivalent-photon-problem
+  from: qft.align023.peskin.problem-weizsacker-williams-collinear-distribution
+  to: qft.align019.problem-equivalent-photon-approximation
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The source says the earlier initial-state-emission distribution is the
+    same and that a parallel derivation can be constructed, without using it to derive
+    the forward virtual-photon route.
+  failure_mode: The cross-reference and independent parallel route are omitted; the
+    problem's own derivation remains complete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 6.2(e)
+    pages:
+    - 210
+- id: qft.shared.peskin-relations.ps6-explicit-helicity-to-equivalent-photon-problem
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align019.problem-equivalent-photon-approximation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) explicitly evaluates a definite-helicity massless electron current
+    in a specified forward frame.
+  failure_mode: The requested transverse current components cannot be computed as
+    posed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 6.2
+    pages:
+    - 209
+- id: qft.shared.peskin-relations.ps6-gordon-to-vertex-decomposition
+  from: qft.align020.gordon-identity-problem
+  to: qft.align019.on-shell-vertex-form-factor-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source uses the supplied Gordon identity to replace the sum-of-momenta
+    term by the Pauli tensor structure.
+  failure_mode: The final Dirac-Pauli parameterization is not reached from the Ward-reduced
+    form.
+  evidence:
+  - source: peskin-schroeder
+    section: '6.2 The Electron Vertex Function: Formal Structure'
+    pages:
+    - 186
+- id: qft.shared.peskin-relations.ps6-schwinger-to-axion-gminus2-context
+  from: qft.align019.schwinger-one-loop-anomalous-magnetic-moment
+  to: qft.align019.problem-axion-pseudoscalar-gminus2-constraint
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The known QED anomalous moment supplies comparison context for exclusions
+    but does not derive the pseudoscalar loop.
+  failure_mode: The QED comparison context is absent while the axion calculation remains
+    complete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 6.3(c)
+    pages:
+    - 210
+- id: qft.shared.peskin-relations.ps6-schwinger-to-higgs-gminus2-context
+  from: qft.align019.schwinger-one-loop-anomalous-magnetic-moment
+  to: qft.align019.problem-higgs-scalar-gminus2-constraint
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The known QED anomalous moment supplies comparison context for the stated
+    discrepancy bound but does not derive the scalar loop.
+  failure_mode: The historical QED comparison context is absent while the scalar calculation
+    remains complete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 6.3(b)
+    pages:
+    - 210
+- id: qft.shared.peskin-relations.ps6-ward-to-vertex-decomposition
+  from: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  to: qft.align019.on-shell-vertex-form-factor-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Contracting the vertex with q removes the allowed q-mu structure.
+  failure_mode: The three-vector decomposition retains an unconstrained q-mu term.
+  evidence:
+  - source: peskin-schroeder
+    section: '6.2 The Electron Vertex Function: Formal Structure'
+    pages:
+    - 186
+- id: qft.shared.peskin-relations.rg-potential-prereq-cw-radiative-task
+  from: qft.align012.rg-improved-effective-potential-and-validity
+  to: qft.align012.problem-coleman-weinberg-rg-improved-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) applies RG improvement to the effective potential.
+  failure_mode: Without the improvement construction, the requested resummation step
+    cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: 13.2; Final Project (f)
+    pages:
+    - 453
+    - 470
+- id: qft.shared.peskin-relations.scalar-ie-to-bosonic-determinant
+  from: qft.align021.scalar-functional-integral-lattice-and-iepsilon
+  to: qft.align021.bosonic-functional-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The iε prescription licenses the Gaussian evaluation leading to the determinant.
+  failure_mode: The formal Gaussian determinant would lack its convergence qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 287
+- id: qft.shared.peskin-relations.scalar-ie-to-free-scalar-z
+  from: qft.align021.scalar-functional-integral-lattice-and-iepsilon
+  to: qft.align021.free-scalar-generating-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free source action uses the same iε Green-function inverse.
+  failure_mode: The completed-square shift would have an ambiguous inverse operator.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 290
+- id: qft.shared.peskin-relations.scalar-ie-to-gaussian-wick
+  from: qft.align021.scalar-functional-integral-lattice-and-iepsilon
+  to: qft.align021.gaussian-functional-wick-contractions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free Gaussian mode integral yields the propagator and pairing structure.
+  failure_mode: The contraction calculation would not have a convergent Gaussian measure.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 288
+- id: qft.shared.peskin-relations.scalar-vp-prereq-cw-beta
+  from: qft.align035.problem-scalar-qed-vacuum-polarization
+  to: qft.align018.problem-coleman-weinberg-beta-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar contribution to charge running comes from the scalar-QED vacuum
+    polarization.
+  failure_mode: The photon counterterm contribution to beta(e) is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 470
+- id: qft.shared.peskin-relations.thermal-scalar-to-bose-statistics
+  from: qft.align015.scalar-bose-einstein-statistics
+  to: qft.align021.task-thermal-free-scalar-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The verification target is the thermal partition function for relativistic
+    bosonic scalar particles.
+  failure_mode: The physical partition-function interpretation would be missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(c)
+    pages:
+    - 313
+- id: qft.shared.peskin-relations.thermal-scalar-to-bosonic-thermal
+  from: qft.align021.task-thermal-trace-periodic-euclidean-path-integral
+  to: qft.align021.task-thermal-free-scalar-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free-field determinant is the stated field-theory generalization
+    of the bosonic thermal construction.
+  failure_mode: The periodic Euclidean determinant’s partition-function role would
+    be missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(b)
+    pages:
+    - 313
+- id: qft.shared.peskin-relations.thermal-scalar-to-kg-modes
+  from: qft.klein-gordon-fourier-oscillator-modes
+  to: qft.align021.task-thermal-free-scalar-determinant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Verifying the determinant requires decomposing the free scalar into oscillator
+    modes.
+  failure_mode: The determinant cannot be matched to relativistic scalar modes.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(c)
+    pages:
+    - 313
+- id: qft.shared.peskin-relations.tree-rule-to-traces
+  from: qft.qed-tree-amplitude-rule
+  to: qft.unpolarized-trace-technology
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The source applies trace technology to the gamma-matrix and spinor expression
+    read from this QED diagram; that is a typical application route, not a universal
+    prerequisite for trace identities.
+  failure_mode: Without this amplitude expression, this particular source application
+    has no gamma-matrix product to reduce, though trace identities can be learned
+    or used in other contexts.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 1
+    pages:
+    - 10
+    note: The source introduces trace technology for expressions like Eq. (1.10).
+- id: qft.shared.peskin-relations.two-loop-field-prereq-eta-problem
+  from: qft.align048.problem-ch10-phi4-two-loop-field-strength
+  to: qft.align018.problem-eta-two-loop-on-model
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The eta problem explicitly starts from the earlier two-loop scalar field-strength
+    result.
+  failure_mode: The two-loop pole that determines the leading anomalous dimension
+    is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 13.2
+    pages:
+    - 466
+- id: qft.shared.peskin-relations.yukawa-renorm-prereq-rg-problem
+  from: qft.align048.problem-ch10-yukawa-renormalization
+  to: qft.align012.problem-yukawa-beta-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly reuses the massless Yukawa model and counterterms
+    obtained earlier.
+  failure_mode: The diagrams and counterterms whose scale dependence is requested
+    are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 12.1
+    pages:
+    - 438
 - id: qft.sourced-maxwell-to-coulomb-potential
   from: qft.sourced-maxwell-equations-from-action
   to: qft.coulomb-potential-from-field-propagation

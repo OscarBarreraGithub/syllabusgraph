@@ -9599,3 +9599,88 @@ units:
     affected_records:
     - kind: edges
       id: qft.align068.weinberg-2.locality-to-ope-core
+- id: shared-relations-001
+  model_verdict: accept
+  outcome: deferred
+  decisions:
+  - finding: 0
+    issue: The accepted align055 self-energy method lacks the Peskin–Schroeder origin
+      required by the phi-four pole/residue route.
+    alternatives:
+    - Materialize the full-preservation replacement and use the accepted method for
+      the phi-four route.
+    - Defer the unit or retain a duplicate fresh self-energy method instead of correcting
+      the accepted origin ledger.
+    resolution: Authorize the full-preservation replacement, add only the Peskin–Schroeder
+      origin, and clear the unresolved guard.
+    rationale: The accepted record already contains the required 1PI resummation and
+      pole/unit-residue method. Pages 217–222 support that Peskin route, while p.
+      328 applies it to the phi-four two-point counterterms. Adding the exact Peskin
+      origin repairs provenance without changing any accepted scientific content.
+    evidence:
+    - source: peskin-schroeder
+      section: '7.1'
+      pages:
+      - 217
+      - 218
+      - 219
+      - 220
+      - 221
+      - 222
+    - source: peskin-schroeder
+      section: '10.2'
+      pages:
+      - 328
+    affected_records:
+    - kind: nodes
+      id: qft.align055.self-energy-resummation-and-pole-conditions
+    - kind: edges
+      id: qft.shared.peskin-relations.edge-existing-self-energy-to-phi4-onshell
+- id: shared-relations-001-evidence
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Authorize the evidence-complete full-preservation amendment to the accepted
+      align055 self-energy node.
+    alternatives:
+    - Authorize the replacement that preserves the accepted record and adds the supported
+      Peskin-Schroeder origin.
+    - Defer the amendment, leave the accepted record unchanged, and keep this recovery
+      unit unpromoted.
+    resolution: Authorize the full-preservation replacement and clear the unresolved
+      amendment.
+    rationale: The replacement preserves every accepted field, earlier origin, and
+      scientific disposition while adding the missing Peskin-Schroeder origin supported
+      by Chapter 7. The expanded packet now supplies operative witnesses for every
+      retained Schwartz and Weinberg citation as well. Materialization exactly restores
+      the previously accepted three-node, 80-edge graph, with all 108 witnesses retained.
+    evidence:
+    - source: peskin-schroeder
+      section: '7.1'
+      pages:
+      - 217
+      - 218
+      - 219
+      - 220
+      - 221
+      - 222
+    - source: schwartz
+      section: 18.2-18.5 and 22.6.1
+      pages:
+      - 329
+      - 330
+      - 331
+      - 337
+      - 408
+      - 409
+    - source: weinberg-1
+      section: '10.3'
+      pages:
+      - 439
+      - 440
+      - 441
+      - 442
+    affected_records:
+    - kind: nodes
+      id: qft.align055.self-energy-resummation-and-pole-conditions

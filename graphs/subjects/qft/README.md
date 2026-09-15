@@ -1,8 +1,8 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 2151 concepts and 3093 relationships, mapping 2351 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs contain 2351 reviewed concepts. The shared graph contains 2153 concepts and 3173 relationships, mapping 2351 distinct book concepts through explicit origins.
 
-Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. All accepted textbook concepts are represented through reviewed origins. The combined relationship assessment remains pending. Shared alignment and its combined dependency audit must finish before calling this collection complete.
+Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. The combined relationship assessment is accepted; 147 source-backed relationship repairs remain. Shared source repairs must finish before calling graph construction complete.
 
 | Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
@@ -11,9 +11,9 @@ Terra/high performs extraction and alignment; independent Sol/high review preced
 | [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–189, 191–595 | 483 | 631 |
 | [Weinberg II](../../textbooks/weinberg-2/README.md) | 1–59, 63–247, 252–474 | 359 | 410 |
 
-The reviewed inventories account for 2,646 numbered pages and 605 section entries. Accepted full extraction scopes cover all 2646 of those pages; narrow pilots are excluded from that measure. The historical page denominator retains three explicitly annotated title-only dividers, which require no concept nodes. Each book links its accepted whole-book conceptual-coverage and dependency assessment. Shared alignment and the final combined-graph audit remain in progress. [Read the final inventory decision](review-decisions.yaml).
+The reviewed inventories account for 2,646 numbered pages and 605 section entries. Accepted full extraction scopes cover all 2646 of those pages; narrow pilots are excluded from that measure. The historical page denominator retains three explicitly annotated title-only dividers, which require no concept nodes. Each book links its accepted whole-book conceptual-coverage and dependency assessment. Shared concept mappings and the combined assessment are accepted; the reconciliation report tracks the remaining source relationship repairs. [Read the final inventory decision](review-decisions.yaml).
 
-[Read the shared graph](knowledge/graph.yaml) · [Coverage and review record](review.yaml) · [Final scientific decisions](adjudications.yaml) · [Time and usage](usage.md) · [Graph bank instructions](../../README.md)
+[Read the shared graph](knowledge/graph.yaml) · [Shared reconciliation](reconciliation.md) · [Source relationship ledger](relationships.json) · [Coverage and review record](review.yaml) · [Final scientific decisions](adjudications.yaml) · [Time and usage](usage.md) · [Graph bank instructions](../../README.md)
 
 ## Correspondences in reviewed portions
 
@@ -21,8 +21,8 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 202 |
-| Peskin–Schroeder / Weinberg I | 67 |
+| Peskin–Schroeder / Schwartz | 203 |
+| Peskin–Schroeder / Weinberg I | 68 |
 | Peskin–Schroeder / Weinberg II | 60 |
 | Schwartz / Weinberg I | 84 |
 | Schwartz / Weinberg II | 50 |
