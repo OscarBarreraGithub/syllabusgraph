@@ -2,7 +2,7 @@ schema_version: 1
 status: partial-model-reviewed
 complete_subject: false
 human_audit: pending
-graph_digest: sha256:312414842e794c72d969900147a69ea5f07d44fd8206dbd9e0358234327d7347
+graph_digest: sha256:448a02cbc799d74c9e55ae5ce24d10a1c25ef49b0ea4dd9369c4b1ce93e859a9
 extraction:
   model: gpt-5.6-terra
   effort: high
@@ -916,6 +916,58 @@ units:
   mapped_book_nodes: 43
   new_nodes: 42
   replaced_nodes: 0
+- id: full-align-028-extended
+  source: peskin-schroeder
+  printed_pages:
+    first: 545
+    last: 620
+  scope: QCD factorization, parton evolution, operator-product expansion and weak
+    operator mixing. Reconciles common results while retaining source-specific flavor
+    counts, operator bases, distribution conventions and independent comparison proofs.
+  nodes: 58
+  edges: 72
+  acceptance: final-adjudication
+  source_ranges:
+  - source: peskin-schroeder
+    first: 545
+    last: 620
+  - source: peskin-schroeder
+    first: 173
+    last: 174
+  - source: peskin-schroeder
+    first: 209
+    last: 210
+  - source: peskin-schroeder
+    first: 625
+    last: 627
+  - source: schwartz
+    first: 664
+    last: 665
+  - source: schwartz
+    first: 674
+    last: 676
+  - source: schwartz
+    first: 680
+    last: 681
+  - source: schwartz
+    first: 686
+    last: 686
+  - source: weinberg-2
+    first: 138
+    last: 139
+  - source: weinberg-2
+    first: 152
+    last: 152
+  - source: weinberg-2
+    first: 274
+    last: 275
+  book_inputs:
+  - project: peskin-schroeder
+    graph_digest: sha256:ad7edd01706d3687a2dd2221396a04e39f3192771138eacc95bd53d0aa78ee0e
+  input_book_nodes: 50
+  mapped_book_nodes: 50
+  new_nodes: 50
+  replaced_nodes: 8
 - id: full-align-030-extended
   source: schwartz
   printed_pages:
@@ -1131,6 +1183,9 @@ omissions:
 - A 59-input Weinberg scattering/operator alignment remains unpromoted after a final-result
   formatting failure and an unused retry consumed its request limit. Its shared correspondences
   remain pending; the accepted textbook graph is intact.
+- Twenty-one assigned textbook concepts remain unaligned after two extraction-runtime
+  failures during a bounded correction. Their source ownership, common-core correspondences
+  and dependency repairs have not been accepted.
 pending_content:
 - id: scattering-operator-alignment-format-deferral
   source: weinberg-1
@@ -1188,3 +1243,26 @@ pending_content:
   note: A 59-input Weinberg scattering/operator alignment remains unpromoted after
     a final-result formatting failure and an unused retry consumed its request limit.
     Its shared correspondences remain pending; the accepted textbook graph is intact.
+- id: full-align-047-runtime-deferral
+  source: schwartz
+  section: Functional identities and fermionic generating functions
+  pages:
+  - 269
+  - 270
+  - 271
+  - 272
+  - 273
+  - 274
+  - 275
+  - 276
+  - 277
+  - 278
+  - 279
+  - 280
+  - 281
+  - 282
+  - 283
+  - 284
+  note: Twenty-one assigned textbook concepts remain unaligned after two extraction-runtime
+    failures during a bounded correction. Their source ownership, common-core correspondences
+    and dependency repairs have not been accepted.

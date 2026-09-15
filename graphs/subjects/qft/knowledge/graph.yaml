@@ -4860,9 +4860,12 @@ nodes:
       alignment does not assert a broader equivalence.
 - id: qft.align013.schwartz.dglap-pdf-renormalization-and-evolution
   label: PDF renormalization and DGLAP evolution
-  summary: Defining renormalized PDFs by W0(x,Q)=4πΣiQi²fi(x,μ=Q) gives μ dfi(x,μ)/dμ=(αs/π)∫x¹(dξ/ξ)fi(ξ,μ)Pqq(x/ξ).
-    The zero integral of Pqq preserves the flavor sum rule under this evolution and
-    the equation resums large structure-function logarithms.
+  summary: Renormalized PDFs evolve with scale by splitting-kernel convolutions, resumming
+    collinear logarithms and producing logarithmic scaling violation while preserving
+    the applicable flavor and momentum sum rules. Schwartz gives the quark-channel
+    equation in its W0 normalization. Peskin-Schroeder gives the coupled massless
+    q, qbar, and gluon system with its color factors and states, without proving here,
+    the non-Abelian transverse-gluon reduction used to import the QED derivation.
   kind: method
   evidence:
   - source: schwartz
@@ -4870,6 +4873,14 @@ nodes:
     pages:
     - 680
     - 681
+  - source: peskin-schroeder
+    section: 17.5 The Altarelli-Parisi Equations
+    pages:
+    - 588
+    - 589
+    - 590
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
   group: qft.align013.dis-ope-routes
   origins:
   - project: schwartz
@@ -4877,6 +4888,17 @@ nodes:
     note: Retains the reviewed schwartz treatment with its source-specific conditions,
       normalizations, notation, and stated proof or task boundary; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-altarelli-parisi-evolution
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
+  notation:
+  - source: schwartz
+    note: Uses mu d/dmu and the source W0(x,Q)=4 pi sum_i Q_i^2 f_i(x,mu=Q) normalization.
+  - source: peskin-schroeder
+    note: Uses d/d log Q with alpha_s(Q^2)/pi and P_{i<-j}; q->qg and g->q qbar carry
+      C_F=4/3 and 1/2 in the stated convention.
 - id: qft.align013.schwartz.dis-parton-model-and-bjorken-x
   label: DIS parton model and Bjorken x
   summary: Feynman’s defining parton-model assumption is that some objects within
@@ -4983,16 +5005,25 @@ nodes:
       alignment does not assert a broader equivalence.
 - id: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
   label: Operator product expansion and state-independent coefficients
-  summary: The OPE expands a short-distance product O1(x)O2(y) as ΣnCn(x−y)On(x).
-    Its Wilson coefficients are numbers independent of the external state, so they
-    can be perturbatively calculated from a convenient matrix element and then used
-    in all matrix elements; DIS retains infinitely many relevant twist-2 operators.
+  summary: At short separation, O1(x)O2(y) expands in local operators allowed by the
+    product symmetries, with c-number Wilson coefficients independent of the external
+    state. This state independence permits matching in a convenient matrix element
+    and reuse in all matrix elements. Peskin-Schroeder retains the Wilson/symmetry
+    and separated-external-field framing; Schwartz retains the DIS consequence that
+    infinitely many twist-2 operators can remain relevant.
   kind: method
   evidence:
   - source: schwartz
     section: 32.4.1 The operator product expansion
     pages:
     - 686
+  - source: peskin-schroeder
+    section: 18.3 Operator Product Expansions
+    pages:
+    - 612
+    - 613
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
   group: qft.align013.dis-ope-routes
   origins:
   - project: schwartz
@@ -5000,18 +5031,32 @@ nodes:
     note: Retains the reviewed schwartz treatment with its source-specific conditions,
       normalizations, notation, and stated proof or task boundary; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.ope-local-expansion-and-universality
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
 - id: qft.align013.schwartz.parton-distribution-convolution
   label: Parton distributions and the DIS convolution
-  summary: PDFs fi(ξ) are the parton-model classical probabilities for a species carrying
-    fraction ξ. The phenomenological model writes σ(e−P+→e−X)=Σi∫₀¹dξ fi(ξ) σ̂(e−pi→e−X);
-    scale separation Q≫ΛQCD motivates, but does not itself prove, their probabilistic
-    interpretation.
+  summary: At leading parton-model order, an inclusive DIS rate is a sum over parton
+    species of a hard electron-parton rate convolved with PDFs for momentum fraction
+    xi. Scale separation Q much greater than Lambda_QCD and collinear p=xi P motivate
+    the factorization and probability language, but do not perturbatively determine
+    the soft proton PDFs. Peskin-Schroeder retains its quark/antiquark, leading-alpha_s
+    and hard-correction qualifications; Schwartz retains its phenomenological normalization.
   kind: representation
   evidence:
   - source: schwartz
     section: 32.1.3 Inelastic e−p+ scattering
     pages:
     - 674
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Scattering
+    pages:
+    - 555
+    - 556
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
   group: qft.align013.dis-ope-routes
   origins:
   - project: schwartz
@@ -5019,6 +5064,11 @@ nodes:
     note: Retains the reviewed schwartz treatment with its source-specific conditions,
       normalizations, notation, and stated proof or task boundary; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-dis-leading-parton-factorization
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
 - id: qft.align013.schwartz.parton-shower-sudakov-construction
   label: Parton shower and Sudakov construction
   summary: Interpreting splitting functions as branching probabilities gives a virtuality-ordered
@@ -5059,15 +5109,25 @@ nodes:
       alignment does not assert a broader equivalence.
 - id: qft.align013.schwartz.pdf-flavor-and-momentum-sum-rules
   label: PDF flavor and momentum sum rules
-  summary: Conserved flavor numbers require integrals such as ∫dξ[fd−f_dbar]=1 and
-    ∫dξ[fu−f_ubar]=2, while total momentum conservation requires Σj∫dξ ξfj(ξ)=1. Gluon
-    number has no corresponding conserved-number sum rule.
+  summary: Conserved proton flavor numbers give integral(f_u-f_ubar)=2 and integral(f_d-f_dbar)=1,
+    while total longitudinal momentum gives the sum over quark, antiquark, and gluon
+    integral x f_i(x)=1. Gluon number has no conserved-number sum rule. Peskin-Schroeder
+    separately retains the electron/neutrino data interpretation, the displayed approximate
+    momentum fractions, approximate neutron isospin, and exact antiproton conjugation
+    relations.
   kind: result
   evidence:
   - source: schwartz
     section: 32.1.4 Sum rules
     pages:
     - 676
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Scattering
+    pages:
+    - 562
+    - 563
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
   group: qft.align013.dis-ope-routes
   origins:
   - project: schwartz
@@ -5075,6 +5135,11 @@ nodes:
     note: Retains the reviewed schwartz treatment with its source-specific conditions,
       normalizations, notation, and stated proof or task boundary; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-pdf-flavor-and-momentum-sum-rules
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
 - id: qft.align013.schwartz.pdf-mellin-moments-and-energy-momentum-sum-rule
   label: PDF Mellin moments and energy–momentum sum rule
   summary: The Mellin moment Cmq=∫₀¹dx x^(m−1)fq(x) equals Amq. For m=2, the twist-two
@@ -5645,11 +5710,12 @@ nodes:
       active-flavor assumption, and plus prescription.
 - id: qft.align013.shared.free-dirac-parton-bjorken-scaling-and-callan-gross
   label: Free Dirac-parton scaling and the Callan--Gross relation
-  summary: 'For the stated free, pointlike spin-one-half parton assumptions, the leading
-    parton calculation gives Bjorken scaling and the Callan--Gross relation. This
-    is distinct from the leading-twist OPE route: it retains the books'' different
-    normalizations, distributions, sum-rule assumptions, and qualifications rather
-    than making a parton-model proof compulsory for OPE use.'
+  summary: For free, pointlike, massless spin-one-half partons, the leading calculation
+    fixes xi=x, gives Bjorken scaling, and yields the Callan-Gross y dependence. This
+    common result is distinct from the leading-twist OPE route. Peskin-Schroeder retains
+    its x-y cross-section and PDF/data conventions; the earlier Peskin-Schroeder,
+    Schwartz, and Weinberg origins retain their different structure-function normalizations,
+    distributions, sum-rule assumptions, and neutral-parton qualifications.
   kind: result
   group: qft.align013.shared-dis-cores
   origins:
@@ -5665,6 +5731,11 @@ nodes:
     node: weinberg-2.parton-model-dis-scaling-and-sum-rules
     note: Uses the Dirac-parton scaling result with the source's number/momentum sum-rule
       and neutral-parton qualifications.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-dis-xy-scaling-and-callan-gross
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
   evidence:
   - source: peskin-schroeder
     section: '18.5'
@@ -5686,10 +5757,20 @@ nodes:
     - 275
     note: Equations (20.6.6)–(20.6.13) give the parton assumptions, structure functions,
       and their qualifications.
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Scattering
+    pages:
+    - 557
+    - 558
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
   notation:
   - source: schwartz
     note: The DIS convention is F1=W1/(4π), F2=Q²W2/(8πx), explicitly distinct from
       elastic proton F1,F2.
+  - source: peskin-schroeder
+    note: Uses x=Q^2/(2P dot q), y=P dot q/(P dot k), Q^2=xys, and the [1+(1-y)^2]
+      cross-section form; PDFs and hard corrections retain the source convention.
 - id: qft.align013.weinberg-2.parton-dis-compton-polarization-sum-input
   label: Polarization-sum identity for the parton DIS derivation
   summary: For the real initial and final photon polarizations used with the Compton
@@ -6161,8 +6242,11 @@ nodes:
 - id: qft.align014.qcd-su3-quark-color-representation
   label: QCD SU(3) quark color representation
   summary: QCD is an SU(3) non-Abelian gauge theory with each quark flavor in the
-    defining three-color representation. In the source's stated approximation, baryons
-    and mesons are color-neutral three-quark and quark-antiquark bound states.
+    defining three-color representation. Color-singlet q-qbar and epsilon_ijk q_i
+    q_j q_k combinations give the elementary meson and baryon color structures. Weinberg
+    retains its stated bound-state approximation; Peskin-Schroeder retains the explicit
+    singlet contractions, gluon field content, color-versus-flavor distinction, and
+    baryon color-wavefunction antisymmetry.
   kind: representation
   group: qft.renormalization-group
   origins:
@@ -6170,11 +6254,26 @@ nodes:
     node: weinberg-2.qcd-su3-quark-color-representation
     note: Retains the defining-representation statement and its stated color-neutral
       bound-state approximation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-color-singlets-and-field-content
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
   evidence:
   - source: weinberg-2
     section: '18.7'
     pages:
     - 152
+  - source: peskin-schroeder
+    section: 17.1 From Quarks to QCD
+    pages:
+    - 547
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
+  notation:
+  - source: peskin-schroeder
+    note: Color SU(3) is distinct from approximate flavor SU(3); quarks are 3, antiquarks
+      anti-3, and epsilon_ijk is invariant because det U=1.
 - id: qft.align014.rg-leading-log-prediction-from-lower-orders
   label: RG prediction of leading logarithms from lower orders
   summary: Scale independence of the renormalized QED photon propagator constrains
@@ -16085,10 +16184,13 @@ nodes:
   notation: []
 - id: qft.align025.four-fermi-eigenoperators-and-leading-log-running
   label: Four-Fermi eigenoperators and leading-log running
-  summary: Diagonalizing the two-operator matrix gives O0=(O1+O2)/2 and O3=(O1-O2)/2,
-    with gamma0=alpha_s/pi and gamma3=-2alpha_s/pi. For five active flavors, integrating
-    these RGEs from m_W to m_b gives the source's leading-log coefficient powers 6/23
-    and -12/23.
+  summary: Diagonalizing the common two-current mixing matrix gives a plus eigenoperator
+    with gamma=+alpha_s/pi and a minus eigenoperator with gamma=-2alpha_s/pi. Under
+    the explicit basis map, Peskin-Schroeder O^(3/2)=(O1+O2)/2 matches Schwartz O0,
+    while Peskin-Schroeder O^(1/2)=(O1-O2)/2 matches Schwartz O3. Schwartz retains
+    n_f=5 B-decay running and powers 6/23,-12/23; Peskin-Schroeder separately retains
+    n_f=4 kaon Delta-I running, powers -2/b0,4/b0, matching scales, numerical 0.7/2.1
+    factors, and the nonperturbative remainder.
   kind: result
   group: qft.align025.weak-effective-theory
   origins:
@@ -16096,17 +16198,38 @@ nodes:
     node: schwartz.four-fermi-eigenoperators-and-leading-log-running
     note: Retains eigenoperator definitions, mass-independent UV-symmetry qualification,
       n_f=5 interval, and leading-log exponents.
+  - project: peskin-schroeder
+    node: peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
   evidence:
   - source: schwartz
     section: 31.3.3
     pages:
     - 665
-  notation: []
+  - source: peskin-schroeder
+    section: 18.2 Renormalization of Nonleptonic Weak Interactions
+    pages:
+    - 611
+    - 612
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
+  notation:
+  - source: schwartz
+    note: O0 and O3 label the plus and minus eigenoperators for the n_f=5 m_W-to-m_b
+      interval.
+  - source: peskin-schroeder
+    note: O^(3/2) and O^(1/2) label the plus and minus eigenoperators for the n_f=4
+      kaon application; these isospin labels are not imported into the B-decay basis.
 - id: qft.align025.four-fermi-operator-mixing-rge
   label: Four-Fermi operator-mixing RGE
-  summary: 'Renormalization of O1 and O2 and the quark fields gives a coupled one-loop
-    anomalous-dimension matrix: mu dC1/dmu=alpha_s(-C1+3C2)/(2pi) and mu dC2/dmu=alpha_s(3C1-C2)/(2pi).
-    The RGE follows by requiring the bare effective Lagrangian to be mu independent.'
+  summary: After explicit identification of the two color-current bases, one-loop
+    gluon exchange and field renormalization give the flavor-independent coupled Four-Fermi
+    anomalous-dimension matrix. In the Schwartz coefficient convention, mu dC1/dmu=alpha_s(-C1+3C2)/(2pi)
+    and mu dC2/dmu=alpha_s(3C1-C2)/(2pi), from bare-Lagrangian scale independence.
+    Peskin-Schroeder retains its Fierz/color derivation, cancellation of single-current
+    corrections, and local-W ultraviolet cutoff at m_W.
   kind: result
   group: qft.align025.weak-effective-theory
   origins:
@@ -16114,12 +16237,32 @@ nodes:
     node: schwartz.four-fermi-operator-mixing-rge
     note: Retains coupled operator basis, counterterm/field-renormalization origin,
       displayed RGE, and bare-Lagrangian condition.
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
+      source-specific method, conventions, qualifications, and applications in the
+      align028 residual record.
   evidence:
   - source: schwartz
     section: 31.3.3
     pages:
     - 664
-  notation: []
+  - source: peskin-schroeder
+    section: 18.2 Renormalization of Nonleptonic Weak Interactions
+    pages:
+    - 607
+    - 608
+    - 609
+    - 610
+    note: Supports the added common physical core; source-specific formulas, proof
+      limits, and applications remain in the align028 residual.
+  notation:
+  - source: schwartz
+    note: O1,O2 and C1,C2 use the B-decay operator and coefficient convention of Section
+      31.3.3.
+  - source: peskin-schroeder
+    note: The kaon current basis is mapped through O^(3/2)=(O1+O2)/2 and O^(1/2)=(O1-O2)/2;
+      its m_W cutoff and hadronic lower scale remain source-specific.
 - id: qft.align025.leading-top-and-higgs-oblique-dependence
   label: Leading top and Higgs oblique dependence
   summary: For m_b tending to zero and m_Z much less than m_t, the leading top contribution
@@ -16719,6 +16862,1114 @@ nodes:
     pages:
     - 647
   notation: []
+- id: qft.align028.peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  label: Isospin eigenoperators and hard-QCD Delta-I enhancement
+  summary: 'Diagonalizing the supplied O_1,O_2 mixing matrix gives O^(1/2)=(O_1-O_2)/2
+    and O^(3/2)=(O_1+O_2)/2, with gamma_(1/2)=-8g^2/(4 pi)^2 and gamma_(3/2)=+4g^2/(4
+    pi)^2. Hence [O_1]_{m_W}=[log(m_W^2/Lambda^2)/log(m_K^2/Lambda^2)]^(4/b_0)[O^(1/2)]_{m_K}+[log(m_W^2/Lambda^2)/log(m_K^2/Lambda^2)]^(-2/b_0)[O^(3/2)]_{m_K}.
+    For n_f=4 and Lambda=150 MeV the text finds 2.1 O^(1/2)+0.7 O^(3/2): hard logarithms
+    give about a factor-three relative enhancement, but the observed Delta I=1/2 rule
+    needs about twenty, with the remainder expected partly from nonperturbative hadronic
+    matrix elements. The source attributes this hard-QCD result to Gaillard-Lee and
+    Altarelli-Maiani.'
+  kind: result
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+    note: Retains Peskin–Schroeder's source-specific isospin eigenoperators and hard-qcd
+      delta-i enhancement with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 611
+    - 612
+    note: Gives the eigenoperators, anomalous dimensions, rescaling, numerical illustration,
+      and its limitation.
+- id: qft.align028.peskin-schroeder.eplus-eminus-hadrons-optical-current-correlator
+  label: e-plus-e-minus hadron rate from the current correlator
+  summary: 'Use the optical theorem on forward e+e- scattering to express the inclusive
+    hadronic rate through the imaginary part of the transverse hadronic vacuum polarization:
+    sigma(e+e- to hadrons)=(4 pi alpha/s) Im Pi_h(s). Here i Pi_h^{mu nu}(q)=-e^2
+    integral d^4x exp(iq dot x)<0|T J^mu(x)J^nu(0)|0>, so Pi_h already contains both
+    electromagnetic couplings; J_mu is the electromagnetic quark current. At leading
+    order the usual color-three, charge-squared quark sum follows.'
+  kind: method
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.eplus-eminus-hadrons-optical-current-correlator
+    note: Retains Peskin–Schroeder's source-specific e-plus-e-minus hadron rate from
+      the current correlator with its stated normalization, hypotheses, and task or
+      proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 616
+    - 617
+    note: Relates the inclusive rate to a current-current correlator and checks the
+      leading result.
+- id: qft.align028.peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+  label: OPE power corrections to the inclusive hadronic rate
+  summary: 'In the vacuum current OPE retain gauge-invariant Lorentz scalars: 1, m
+    qbar q, (F^a_mu_nu)^2, and higher operators. Their short-distance coefficients
+    scale as x^-6, x^-2, and x^-2 respectively; after Fourier transform c_1~(q^2)^0
+    while both dimension-four terms obey c_qbarq~(q^2)^-2 and c_F2~(q^2)^-2. Thus
+    soft condensate matrix elements are power suppressed at large timelike q^2. This
+    is a formal short-distance result, not yet a valid direct calculation at timelike
+    q^2.'
+  kind: result
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+    note: Retains Peskin–Schroeder's source-specific ope power corrections to the
+      inclusive hadronic rate with its stated normalization, hypotheses, and task
+      or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 617
+    - 618
+    note: Builds the scalar vacuum OPE and identifies its power-suppressed soft terms.
+- id: qft.align028.peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  label: Nonleptonic weak-operator mixing below the W scale
+  summary: At order alpha_s, cross-current gluon diagrams mix O_1=(dbar_L gamma_mu
+    u_L)(ubar_L gamma^mu s_L) with O_2=(ubar_L gamma_mu u_L)(dbar_L gamma^mu s_L);
+    the single-current corrections cancel the four external field renormalizations.
+    Fierz rearrangement and (t^a)_ij(t^a)_kl=(1/2)(delta_il delta_kj-(1/3)delta_ij
+    delta_kl) expose the second color-singlet current pairing. The local-W approximation
+    is valid only for k^2 much less than m_W^2, so its ultraviolet logarithm is physically
+    cut off at m_W and its lower scale is set by the external hadronic momentum; the
+    one-loop correction both rescales O_1 and introduces O_2.
+  kind: method
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+    note: Retains Peskin–Schroeder's source-specific nonleptonic weak-operator mixing
+      below the w scale with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 607
+    - 608
+    - 609
+    - 610
+    note: Derives color/Fierz mixing and interprets the local-vertex ultraviolet logarithm.
+- id: qft.align028.peskin-schroeder.ope-local-expansion-and-universality
+  label: Wilson operator product expansion
+  summary: For time-ordered O_1(x)O_2(0) with x small while the remaining fields or
+    external states stay far away, replace the product by sum_n C_12n(x) O_n(0). The
+    local basis is restricted by the product's global symmetry quantum numbers; C_12n
+    are c-number functions that may be singular as x tends to zero. The same coefficients
+    apply to every external matrix element, so G_12(x;y_i)=sum_n C_12n(x)G_n(y_i).
+    The text attributes this proposal to Wilson.
+  kind: method
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.ope-local-expansion-and-universality
+    note: Retains Peskin–Schroeder's source-specific wilson operator product expansion
+      with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 612
+    - 613
+    note: Defines the small-separation expansion and its external-state independence.
+- id: qft.align028.peskin-schroeder.ope-operator-mixing-matrix-equation
+  label: Matrix RG equation for mixed OPE operators
+  summary: 'When operators mix, anomalous dimensions are matrices: the two factors
+    in the original product act on the OPE coefficient from the left and the final
+    operator matrix acts from the right. For a product of conserved currents the two
+    left matrices vanish, leaving (M partial_M+beta partial_g)C_12n-C_12k gamma_kn=0.'
+  kind: method
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.ope-operator-mixing-matrix-equation
+    note: Retains Peskin–Schroeder's source-specific matrix rg equation for mixed
+      ope operators with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 615
+    note: States the matrix generalization required in the subsequent DIS analysis.
+- id: qft.align028.peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  label: RG equation and scaling of OPE coefficients
+  summary: With all operators normalized at M, the coefficient obeys (M partial_M+beta
+    partial_g+gamma_1+gamma_2-gamma_n)C_12n=0. Dimensional analysis gives C_12n=x^(-(d_1+d_2-d_n))
+    C(xM); at a fixed point its exponent uses the true dimension d'_j=d_j+gamma_j(g_*).
+    In an asymptotically free theory the leading form carries the additional factor
+    [log(1/(x^2 Lambda^2))/log(M^2/Lambda^2)]^((a_n-a_1-a_2)/(2b_0)).
+  kind: result
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+    note: Retains Peskin–Schroeder's source-specific rg equation and scaling of ope
+      coefficients with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 614
+    note: Derives the OPE Callan-Symanzik equation, dimension rule, and fixed-point/asymptotically-free
+      solutions.
+- id: qft.align028.peskin-schroeder.problem-17-1-scheme-independent-two-loop-asymptotics
+  label: 'Problem 17.1(b): scheme independence of the first two beta coefficients'
+  summary: Combine the two-loop running expression with the perturbative e+e−→hadrons
+    cross section and show that, although a_2 and higher beta coefficients depend
+    on the renormalization prescription, the first two large-s asymptotic terms depend
+    only on b_0 and b_1. This task asks for the resulting prescription independence
+    of the first two QCD beta-function coefficients.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-1-scheme-independent-two-loop-asymptotics
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.1(b): scheme independence
+      of the first two beta coefficients with its stated normalization, hypotheses,
+      and task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.1(b)
+    pages:
+    - 595
+    - 596
+- id: qft.align028.peskin-schroeder.problem-17-1-two-loop-rg-integration
+  label: 'Problem 17.1(a): two-loop QCD running coupling'
+  summary: Starting from the higher-order QCD beta-function series, integrate the
+    RG equation and derive the asymptotic running alpha_s(Q), retaining the b_1 log
+    log(Q^2/Lambda^2)/[log(Q^2/Lambda^2)]^2 correction and identifying omitted terms
+    as decreasing as [log(Q^2/Lambda^2)]^-2.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-1-two-loop-rg-integration
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.1(a): two-loop qcd
+      running coupling with its stated normalization, hypotheses, and task or proof
+      boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.1(a)
+    pages:
+    - 595
+- id: qft.align028.peskin-schroeder.problem-17-2-gluon-spin-discrimination
+  label: 'Problem 17.2(b): energy-ordering test of gluon spin'
+  summary: Because quark and gluon jets cannot easily be identified experimentally,
+    order the three energy fractions as x_a≥x_b≥x_c, sum over the assignments, and
+    derive d^2sigma/(dx_a dx_b) in both QCD and the scalar-gluon model. Use the differing
+    distributions over that plane to distinguish vector from scalar gluon mediation.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-2-gluon-spin-discrimination
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.2(b): energy-ordering
+      test of gluon spin with its stated normalization, hypotheses, and task or proof
+      boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.2(b)
+    pages:
+    - 596
+- id: qft.align028.peskin-schroeder.problem-17-2-scalar-gluon-three-body-rate
+  label: 'Problem 17.2(a): scalar-gluon qqS three-body cross section'
+  summary: For a comparison model with L=g S qbar q and alpha_g=g^2/(4 pi), use the
+    Final Project Part I method to compute e+e-->q qbar S in the x_1,x_2,x_3 convention
+    of Eq.17.18. With sigma_0=4 pi alpha^2/(3s) and quark electric charge Q_q, show
+    (1/sigma_0)d^2sigma/(dx_1 dx_2)=Q_q^2[alpha_g/(4 pi)]x_3^2/[(1-x_1)(1-x_2)].
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-2-scalar-gluon-three-body-rate
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.2(a): scalar-gluon
+      qqs three-body cross section with its stated normalization, hypotheses, and
+      task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.2(a)
+    pages:
+    - 596
+- id: qft.align028.peskin-schroeder.problem-17-3a-qqbar-to-gg-helicity-cross-section
+  label: 'Problem 17.3(a): q qbar to gg helicity calculation'
+  summary: Compute the leading massless QCD differential cross section for q qbar→gg
+    using explicit transverse polarization vectors and spinors. Helicity conservation
+    reduces the calculation to q_L qbar_R→g_R g_R, q_L qbar_R→g_R g_L, and q_L qbar_R→g_L
+    g_L, with CP equating the first and third and parity supplying flipped-helicity
+    rates; square the amplitudes, include color sums/averages, and assemble the unpolarized
+    answer.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-3a-qqbar-to-gg-helicity-cross-section
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.3(a): q qbar to
+      gg helicity calculation with its stated normalization, hypotheses, and task
+      or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(a)
+    pages:
+    - 596
+- id: qft.align028.peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+  label: 'Problem 17.3(b): gg to gg helicity calculation'
+  summary: Compute the leading gluon-gluon differential cross section. Build all 16
+    helicity combinations from g_R g_R→g_R g_R, g_R g_R→g_R g_L, and g_R g_R→g_L g_L
+    using parity and crossing; show the latter two amplitudes vanish, simplify the
+    first with the Jacobi identity, identify the three nonzero polarized cross sections,
+    then average over initial spin and color.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.3(b): gg to gg helicity
+      calculation with its stated normalization, hypotheses, and task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(b)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.problem-17-4-gluon-splitting-kernel
+  label: 'Problem 17.4: gluon splitting function'
+  summary: Compute the g→gg contribution to the Altarelli–Parisi splitting function
+    by evaluating the Figure 17.20 three-gluon vertex between definite-helicity gluon
+    states. Derive the kernel for x<1, then determine its x=1 singular distribution
+    from the required overall normalization.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-4-gluon-splitting-kernel
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.4: gluon splitting
+      function with its stated normalization, hypotheses, and task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.4
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.problem-17-5-heavy-quark-photoproduction
+  label: 'Problem 17.5: heavy-quark photoproduction factorization'
+  summary: For gamma+p→Q Qbar+X with heavy-quark mass M and charge Q, choose the leading
+    QCD parton subprocess, obtain its cross section from the corresponding Chapter
+    5 QED calculation, and write the parton-model gamma-proton cross section. The
+    task's perturbative justification is that sufficiently large M forces a hard momentum
+    transfer; it asks to assess this leading route, noted as practical already for
+    charm production.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-5-heavy-quark-photoproduction
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.5: heavy-quark photoproduction
+      factorization with its stated normalization, hypotheses, and task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.5
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.problem-17-6a-small-x-evolution-variable
+  label: 'Problem 17.6(a): small-x evolution variable'
+  summary: Using alpha_s(Q^2)=4 pi/[b_0 log(Q^2/Lambda^2)] at leading order, rewrite
+    the Q^2 dependence on the right side of the Altarelli–Parisi equations as differential
+    equations in xi=log log(Q^2/Lambda^2). Lambda is a momentum scale; Lambda^2 is
+    the formal Q^2 pole of the one-loop coupling, not a scale with dimensions Q^2
+    assigned to Lambda itself.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-6a-small-x-evolution-variable
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.6(a): small-x evolution
+      variable with its stated normalization, hypotheses, and task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(a)
+    pages:
+    - 597
+    - 598
+- id: qft.align028.peskin-schroeder.problem-17-6b-small-x-gluon-asymptotic
+  label: 'Problem 17.6(b): small-x gluon asymptotic'
+  summary: 'At x→0, use P_g→g(z)~6/z and adopt both stated approximations: gluon-distribution
+    terms dominate the AP right sides, and g-tilde(x,Q²)=x f_g(x,Q²) is slowly varying
+    in x. With w=log(1/x) and b_0=11-(2/3)n_f, derive ∂² g-tilde/(∂w∂xi)=(12/b_0)g-tilde
+    and, for w xi much greater than 1, g-tilde=K(Q²) exp{[48 w(xi-xi_0)/b_0]^(1/2)}.'
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-6b-small-x-gluon-asymptotic
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.6(b): small-x gluon
+      asymptotic with its stated normalization, hypotheses, and task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(b)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.problem-17-6c-small-x-quark-from-gluons
+  label: 'Problem 17.6(c): small-x quarks generated by gluons'
+  summary: Under the same small-x approximations, use g→q qbar to derive ∂q-tilde/∂xi=(2/(3b_0))g-tilde
+    for q-tilde(x,Q²)=x f_q(x,Q²). For w xi much greater than 1, integrate it with
+    the part-(b) gluon result to obtain q-tilde=[(xi-xi_0)/(27b_0w)]^(1/2)K(Q²) exp{[48w(xi-xi_0)/b_0]^(1/2)}
+    for each flavor.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-6c-small-x-quark-from-gluons
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.6(c): small-x quarks
+      generated by gluons with its stated normalization, hypotheses, and task or proof
+      boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(c)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.problem-17-6d-small-x-distribution-sketch
+  label: 'Problem 17.6(d): numerical small-x quark and gluon sketch'
+  summary: Insert K(Q^2)=50.36[exp(xi-xi_0)-0.957] exp[-7.597 sqrt(xi-xi_0)], with
+    Q_0^2=5 GeV^2, Lambda=0.2 GeV, and n_f=5, into the part-(b) and part-(c) asymptotic
+    formulae and sketch quark and gluon distributions at small x and large Q^2. This
+    is a calculation in Ralston's stated approximate extrapolation, not an in-text
+    derivation of its fit.
+  kind: method
+  group: qft.align028.problem-methods
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-17-6d-small-x-distribution-sketch
+    note: 'Retains Peskin–Schroeder''s source-specific problem 17.6(d): numerical
+      small-x quark and gluon sketch with its stated normalization, hypotheses, and
+      task or proof boundary.'
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(d)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  label: Altarelli–Parisi evolution framework
+  summary: Initial-state collinear singularities in massless QCD do not cancel from
+    hard parton subprocesses; absorb them into PDFs, whose Q dependence then violates
+    exact Bjorken scaling logarithmically. At leading logarithmic accuracy, d f_i(x,Q)/d
+    log Q is alpha_s(Q^2)/(pi) times a sum of convolutions integral_x^1 dz/z P_{i←j}(z)
+    f_j(x/z,Q), for each massless quark, antiquark, and gluon. The q→qg and g→q qbar
+    kernels are the QED kernels multiplied by C_F=4/3 and 1/2. This framework respects
+    quark-number and momentum sum rules; the transverse-gluon reduction used to transfer
+    the QED derivation is stated to be true for the non-Abelian case but its proof
+    is outside this chapter.
+  kind: result
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-altarelli-parisi-evolution
+    note: Retains Peskin–Schroeder's source-specific altarelli–parisi evolution framework
+      with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 The Altarelli-Parisi Equations
+    pages:
+    - 588
+    - 589
+    - 590
+- id: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  label: SU(3) color factor in the e+e− QCD correction
+  summary: For the fundamental SU(3) quark representation, tr(t^a t^a)=C_2(r) tr(1)=(4/3)3.
+    Thus the Abelian Final-Project formulas become QCD formulas under g^2→(4/3)g^2,
+    equivalently alpha_g→(4/3)alpha_s with alpha_s=g^2/(4 pi). The Born color sum
+    is 3 sum_f Q_f^2, and the real qqg diagrams and virtual qq form-factor correction
+    must both be retained in the first-order inclusive rate.
+  kind: method
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-color-factor-transcription
+    note: Retains Peskin–Schroeder's source-specific su(3) color factor in the e+e−
+      qcd correction with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Total Cross Section
+    pages:
+    - 549
+    - 550
+- id: qft.align028.peskin-schroeder.qcd-color-singlets-and-field-content
+  label: QCD color representations and color-singlet hadrons
+  summary: QCD is a local SU(3) gauge theory whose quarks of every flavor transform
+    in the fundamental 3 and whose gauge quanta are gluons. A q-qbar contraction and
+    epsilon_ijk q_i q_j q_k (and its conjugate) are invariant; imposing color-singlet
+    physical hadrons therefore gives mesons, baryons, and antibaryons as the simple
+    light combinations. Color also supplies the antisymmetry needed when a baryon
+    spin-flavor wavefunction is symmetric.
+  kind: concept
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-color-singlets-and-field-content
+    note: Retains Peskin–Schroeder's source-specific qcd color representations and
+      color-singlet hadrons with its stated normalization, hypotheses, and task or
+      proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.1 From Quarks to QCD
+    pages:
+    - 547
+  notation:
+  - source: peskin-schroeder
+    note: Color SU(3) is distinct from the approximate flavor SU(3); quarks are 3,
+      antiquarks are anti-3, and epsilon_ijk is invariant because det U=1.
+- id: qft.align028.peskin-schroeder.qcd-dis-leading-parton-factorization
+  label: Leading-order QCD factorization for deep-inelastic scattering
+  summary: At large Q^2=-q^2, a proton constituent has nearly collinear momentum p=xi
+    P, with 0<xi<1; hard transverse momentum in the initial state is suppressed by
+    small alpha_s. The leading inclusive electron-proton rate is the sum over quark
+    and antiquark species of the electron-parton cross section convolved with nonperturbative
+    PDFs f_f(xi). PDFs cannot be calculated by perturbation theory because they describe
+    soft proton binding. This is the parton-model, first term in alpha_s; hard corrections
+    modify both the coefficient process and PDFs.
+  kind: method
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-dis-leading-parton-factorization
+    note: Retains Peskin–Schroeder's source-specific leading-order qcd factorization
+      for deep-inelastic scattering with its stated normalization, hypotheses, and
+      task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Scattering
+    pages:
+    - 555
+    - 556
+- id: qft.align028.peskin-schroeder.qcd-dis-xy-scaling-and-callan-gross
+  label: DIS x-y kinematics, Bjorken scaling, and Callan–Gross behavior
+  summary: For massless elastic scattering from p=xi P, xi=x=Q^2/(2P·q). With y=P·q/(P·k),
+    Q^2=x y s and 0<x,y<1. Removing the virtual-photon 1/Q^4 factor from the leading
+    DIS cross section leaves a factorized x dependence through sum_f Q_f^2 x f_f(x)
+    and y dependence [1+(1-y)^2]. Q-independent PDFs give Bjorken scaling; that y
+    form is the Callan–Gross relation and is specific to massless spin-one-half partons,
+    while hard corrections are O(alpha_s(Q^2)).
+  kind: result
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-dis-xy-scaling-and-callan-gross
+    note: Retains Peskin–Schroeder's source-specific dis x-y kinematics, bjorken scaling,
+      and callan–gross behavior with its stated normalization, hypotheses, and task
+      or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Scattering
+    pages:
+    - 557
+    - 558
+- id: qft.align028.peskin-schroeder.qcd-drell-yan-mass-rapidity-pdfs
+  label: Drell–Yan lepton pairs determine incoming PDF fractions
+  summary: At leading order, a high-mass lepton pair arises from q qbar annihilation;
+    relative to the color-summed e+e−→q qbar rate, the partonic q qbar→l+l− rate averages
+    over both initial colors. Neglecting initial transverse momenta, M²=x_1x_2s and
+    exp(Y)=sqrt(x_1/x_2), hence x_1=(M/sqrt(s))exp(Y), x_2=(M/sqrt(s))exp(-Y), and
+    d²sigma/(dM²dY)=(4 pi alpha²/(9 M⁴)) sum_f Q_f²[x_1 f_f(x_1)x_2 f_fbar(x_2)+x_1
+    f_fbar(x_1)x_2 f_f(x_2)]. The change of variables has Jacobian d(M²,Y)/d(x_1,x_2)=s.
+    The text warns that the O(alpha_s(M)) correction is numerically large for experimental
+    comparison.
+  kind: method
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-drell-yan-mass-rapidity-pdfs
+    note: Retains Peskin–Schroeder's source-specific drell–yan lepton pairs determine
+      incoming pdf fractions with its stated normalization, hypotheses, and task or
+      proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Lepton Pair Production
+    pages:
+    - 564
+    - 565
+    - 566
+- id: qft.align028.peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  label: Leading-log rescaling of a gauge-invariant QCD operator
+  summary: For a gauge-invariant operator O containing n quark/antiquark and k gluon
+    fields, its normalization counterterm and external-field counterterms determine
+    gamma_O=-a_O g^2/(4 pi)^2 at one loop. Matrix elements acquire alpha_s log(M^2/Q^2)
+    terms; resumming them with the QCD beta function gives a power of log(M^2/Lambda^2)/log(Q^2/Lambda^2),
+    with small-Q enhancement when a_O>0.
+  kind: result
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+    note: Retains Peskin–Schroeder's source-specific leading-log rescaling of a gauge-invariant
+      qcd operator with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 604
+    note: Generalizes the mass-operator calculation to any gauge-invariant QCD operator.
+- id: qft.align028.peskin-schroeder.qcd-gluon-splitting-kernel-result
+  label: QCD gluon-to-gluon splitting kernel
+  summary: The full leading kernel requested in Problem 17.4 is P_g←g(z)=6[(1-z)/z+z/(1-z)_++z(1-z)]+[(11/2)-(n_f/3)]delta(1-z).
+    The endpoint term is fixed by conservation normalization and its n_f part subtracts
+    momentum lost to g→q qbar. This is a displayed result of the text; Problem 17.4
+    derives it from the three-gluon helicity amplitudes and must not use this answer
+    as its premise.
+  kind: result
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-gluon-splitting-kernel-result
+    note: Retains Peskin–Schroeder's source-specific qcd gluon-to-gluon splitting
+      kernel with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 The Altarelli-Parisi Equations
+    pages:
+    - 590
+- id: qft.align028.peskin-schroeder.qcd-hadron-collision-factorization
+  label: Hard hadron-collision factorization
+  summary: When two incoming hadron constituents exchange a large transverse momentum,
+    the elementary reaction is short relative to hadronic dynamics and its leading
+    QCD subprocess cross section can be convolved with the same PDFs measured in lepton-hadron
+    DIS. For pp→Y+X, integrate over both longitudinal fractions and sum the allowed
+    parton species. This leading expression is qualified to hard invariant momentum
+    transfer; ordinary soft hadron collisions have large alpha_s and are outside perturbative
+    control.
+  kind: method
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-hadron-collision-factorization
+    note: Retains Peskin–Schroeder's source-specific hard hadron-collision factorization
+      with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Hard-Scattering Processes in Hadron Collisions
+    pages:
+    - 563
+    - 564
+- id: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  label: Inclusive e+e− hadron rate through first order in alpha_s
+  summary: 'For center-of-mass energy high enough to neglect quark masses, the color-summed
+    Born rate is sigma_0 times 3 sum_f Q_f^2. The inclusive QCD prediction is that
+    rate times [1+alpha_s/pi+O(alpha_s^2)]: the individually infrared-divergent virtual
+    qq correction and real qqg rate must be summed. The surviving correction is hard,
+    because soft or collinear dressing changes the hadronic final state but not the
+    inclusive production probability.'
+  kind: result
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+    note: Retains Peskin–Schroeder's source-specific inclusive e+e− hadron rate through
+      first order in alpha_s with its stated normalization, hypotheses, and task or
+      proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 e+ e− Annihilation into Hadrons
+    pages:
+    - 550
+  notation:
+  - source: peskin-schroeder
+    note: alpha_s=g^2/(4 pi); the flavor sum is only over kinematically accessible
+      quarks and the stated first-order formula is inclusive.
+- id: qft.align028.peskin-schroeder.qcd-independent-alpha-s-determinations
+  label: Independent alpha_s determinations in a common convention
+  summary: To compare hard-process determinations, use a common scale m_Z=91.19 GeV
+    and MS-bar alpha_s(m_Z). The displayed inputs include DIS, R in tau decay, bbbar
+    and ccbar spectroscopy, W transverse momentum, DIS evolution, e+e− event shapes,
+    Upsilon decay, R in e+e− annihilation, and R in Z decay. Each fitted value is
+    RG-evolved to m_Z; their consistency at roughly five percent is evidence for running
+    alpha_s, with less QCD precision than QED because soft-process uncertainties remain.
+  kind: result
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-independent-alpha-s-determinations
+    note: Retains Peskin–Schroeder's source-specific independent alpha_s determinations
+      in a common convention with its stated normalization, hypotheses, and task or
+      proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.6 Measurements of alpha_s
+    pages:
+    - 593
+    - 594
+- id: qft.align028.peskin-schroeder.qcd-neutrino-dis-flavor-and-helicity-analysis
+  label: Neutrino DIS separates flavors through chiral charged currents
+  summary: In the |q^2| much less than m_W^2 charged-current limit, W exchange couples
+    only to left-handed relativistic fermions. Neutrino-quark scattering therefore
+    carries the s_hat^2 helicity contribution, while antineutrino-quark scattering
+    carries u_hat^2. Neglecting s and c, d^2sigma(nu p->mu- X)/(dx dy)=(G_F^2 s/pi)[x
+    f_d(x)+x f_ubar(x)(1-y)^2], whereas d^2sigma(nubar p->mu+ X)/(dx dy)=(G_F^2 s/pi)[x
+    f_u(x)(1-y)^2+x f_dbar(x)]. These distinct y weights separate quark and antiquark
+    PDFs; for a valence-dominated nucleon the neutrino rate is roughly constant in
+    y and the antineutrino rate falls as (1-y)^2.
+  kind: method
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-neutrino-dis-flavor-and-helicity-analysis
+    note: Retains Peskin–Schroeder's source-specific neutrino dis separates flavors
+      through chiral charged currents with its stated normalization, hypotheses, and
+      task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Neutrino Scattering
+    pages:
+    - 559
+    - 560
+    - 561
+- id: qft.align028.peskin-schroeder.qcd-on-shell-rg-infrared-proof-boundary
+  label: On-shell QCD RG use and infrared-cancellation proof boundary
+  summary: Applying Callan–Symanzik reasoning to on-shell quark/gluon cross sections
+    assumes cancellation of soft and collinear infrared divergences so that no regulator
+    adds a dimensionful parameter. The text says a complete QCD proof exists but is
+    technical; it also notes an alternative justification by relating an on-shell
+    amplitude to spacelike Green functions, deferred to Chapter 18. These are qualifications
+    on the chapter's hard-process RG predictions, not derivations supplied here.
+  kind: assumption
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-on-shell-rg-infrared-proof-boundary
+    note: Retains Peskin–Schroeder's source-specific on-shell qcd rg use and infrared-cancellation
+      proof boundary with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 The Running of alpha_s
+    pages:
+    - 553
+- id: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  label: Leading spin- and color-averaged parton cross sections
+  summary: 'For massless partons and alpha_s evaluated at a hard transfer, the spin/color-averaged
+    leading subprocesses are: d sigma/dhat_t(qq''->qq'')=4 pi alpha_s^2(hat_s^2+hat_u^2)/(9
+    hat_s^2 hat_t^2); d sigma/dhat_t(q qbar->q'' qbar'')=4 pi alpha_s^2(hat_t^2+hat_u^2)/(9
+    hat_s^4); d sigma/dhat_t(q qbar->q qbar)=4 pi alpha_s^2/(9 hat_s^2)[(hat_s^2+hat_u^2)/hat_t^2+(hat_t^2+hat_u^2)/hat_s^2-2hat_u^2/(3hat_s
+    hat_t)]; and d sigma/dhat_t(qq->qq)=4 pi alpha_s^2/(9 hat_s^2)[(hat_u^2+hat_s^2)/hat_t^2+(hat_t^2+hat_s^2)/hat_u^2-2hat_s^2/(3hat_u
+    hat_t)]. The channels involving gluons are d sigma/dhat_t(q qbar->gg)=32 pi alpha_s^2/(27
+    hat_s^2)[hat_u/hat_t+hat_t/hat_u-(9/4)(hat_t^2+hat_u^2)/hat_s^2], d sigma/dhat_t(gg->q
+    qbar)=pi alpha_s^2/(6 hat_s^2)[hat_u/hat_t+hat_t/hat_u-(9/4)(hat_t^2+hat_u^2)/hat_s^2],
+    d sigma/dhat_t(qg->qg)=4 pi alpha_s^2/(9 hat_s^2)[-hat_u/hat_s-hat_s/hat_u+(9/4)(hat_s^2+hat_u^2)/hat_t^2],
+    and d sigma/dhat_t(gg->gg)=9 pi alpha_s^2/(2 hat_s^2)[3-hat_t hat_u/hat_s^2-hat_s
+    hat_u/hat_t^2-hat_s hat_t/hat_u^2]. The qbar-g rate equals the q-g rate. Gluon
+    sums use transverse polarizations, or the compensating ghost prescription when
+    the polarization sum is replaced by -g_mu_nu.'
+  kind: result
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-parton-scattering-formulas
+    note: Retains Peskin–Schroeder's source-specific leading spin- and color-averaged
+      parton cross sections with its stated normalization, hypotheses, and task or
+      proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 568
+    - 569
+    - 570
+    - 571
+    - 572
+- id: qft.align028.peskin-schroeder.qcd-pdf-flavor-and-momentum-sum-rules
+  label: PDF flavor-number and momentum sum rules
+  summary: 'For a proton, PDF normalization reflects uud valence content: integrals
+    of f_u-f_ubar and f_d-f_dbar are 2 and 1. The longitudinal momentum sum rule integrates
+    x times the quark, antiquark, and gluon PDFs to 1. Electron and neutrino data
+    constrain quarks and antiquarks, while the missing momentum establishes a gluon
+    contribution; the text reports quark and antiquark distributions as about half
+    the proton momentum in the displayed fit. Neutron u↔d relations are approximate
+    to a few percent, whereas antiproton particle-antiparticle relations are exact.'
+  kind: result
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-pdf-flavor-and-momentum-sum-rules
+    note: Retains Peskin–Schroeder's source-specific pdf flavor-number and momentum
+      sum rules with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.3 The Parton Distribution Functions
+    pages:
+    - 562
+    - 563
+- id: qft.align028.peskin-schroeder.qcd-qqg-energy-fraction-distribution
+  label: The leading e+e−→q qbar g energy-fraction distribution
+  summary: For x_i=E_i/E_beam with 0<x_i<1 and x_1+x_2+x_3=2, the leading QCD result
+    is d^2sigma/(dx_1 dx_2)=sigma_0(3 sum_f Q_f^2)[2 alpha_s/(3 pi)](x_1^2+x_2^2)/[(1-x_1)(1-x_2)].
+    Equivalently, division by the full Born hadronic rate sigma_0(3 sum_f Q_f^2) leaves
+    the last two factors. The x_1->1 and x_2->1 limits respectively make qbar-g or
+    q-g nearly collinear and cause the massless integrated rate to diverge.
+  kind: result
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-qqg-energy-fraction-distribution
+    note: Retains Peskin–Schroeder's source-specific the leading e+e−→q qbar g energy-fraction
+      distribution with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Gluon Emission and Jet Production
+    pages:
+    - 553
+- id: qft.align028.peskin-schroeder.qcd-quark-flavors-charges-and-color-motivation
+  label: Quark flavors, charge assignments, flavor symmetry, and the color puzzle
+  summary: 'The chapter frames asymptotic freedom as the key to a realistic strong-interaction
+    model. The six quark flavors are u,d,s,c,b,t, with charges +2/3 for u,c,t and
+    -1/3 for d,s,b; proton uud and neutron udd then have integer charge. Equal u,d
+    masses and interactions give approximate isospin SU(2), while near-degenerate
+    u,d,s motivate flavor SU(3). The original model nevertheless has two stated problems:
+    no isolated fractional charge was found, and the spin-3/2 Delta++ as an L=0 uuu
+    state has symmetric spin-flavor wavefunction, conflicting with Fermi statistics
+    until an antisymmetric color degree of freedom is supplied.'
+  kind: concept
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-quark-flavors-charges-and-color-motivation
+    note: Retains Peskin–Schroeder's source-specific quark flavors, charge assignments,
+      flavor symmetry, and the color puzzle with its stated normalization, hypotheses,
+      and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.1 From Quarks to QCD
+    pages:
+    - 545
+    - 546
+- id: qft.align028.peskin-schroeder.qcd-quark-mass-effective-running
+  label: Effective running quark mass
+  summary: With one quark flavor and terms only to leading order in a small renormalized
+    mass, add Delta L_m=-m(qbar q)_M. Define mbar(Q) by d mbar/d log(Q/M)=gamma_qbarq(gbar)mbar
+    and mbar(M)=m. The one-loop result gamma_qbarq=-8g^2/(4 pi)^2=-2 alpha_s/pi, together
+    with b_0=11-(2/3)n_f, gives mbar(Q)=[log(M^2/Lambda^2)/log(Q^2/Lambda^2)]^(4/b_0)m=[alpha_s(Q^2)/alpha_s(M^2)]^(4/b_0)m.
+    Thus a light-quark mass increases toward lower Q; the displayed n_f=4, Lambda=150
+    MeV example rises about twofold from 100 GeV to 1 GeV.
+  kind: result
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-quark-mass-effective-running
+    note: Retains Peskin–Schroeder's source-specific effective running quark mass
+      with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 600
+    - 602
+    - 603
+    note: Defines the mass insertion, obtains its one-loop value, and solves the leading
+      QCD RG equation.
+- id: qft.align028.peskin-schroeder.qcd-quark-mass-operator-renormalization
+  label: Quark mass-operator renormalization and current check
+  summary: Normalize the qbar q insertion between renormalized quarks at p^2=q^2=(p+q)^2=-M^2.
+    Its one-loop anomalous dimension is gamma_qbarq=M partial_M(-delta_qbarq+delta_2)=-8g^2/(4
+    pi)^2 after the gauge-dependent insertion and quark-field counterterms cancel.
+    Replacing the scalar insertion by the quark-number current produces gamma_j=0,
+    as required because the conserved charge fixes its normalization.
+  kind: method
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-quark-mass-operator-renormalization
+    note: Retains Peskin–Schroeder's source-specific quark mass-operator renormalization
+      and current check with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 601
+    - 602
+    note: Sets the subtraction condition, derives the insertion counterterm relation,
+      and verifies conserved-current protection.
+- id: qft.align028.peskin-schroeder.qcd-running-coupling-and-lambda
+  label: Running alpha_s and the QCD scale Lambda
+  summary: Because on-shell quarks are unsuitable renormalization states, define alpha_s
+    at a large arbitrary scale M. Renormalization-group improvement evaluates it at
+    the hard scale Q (Q^2=s here), summing powers of alpha_s log(P^2/M^2). At one
+    loop alpha_s(Q)=alpha_s(M)/[1+(b_0 alpha_s(M)/(2 pi)) log(Q/M)], equivalently
+    alpha_s(Q)=2 pi/[b_0 log(Q/Lambda)]; Lambda is the scale where this one-loop coupling
+    becomes strong, not a UV cutoff. Perturbation theory is qualified as useful only
+    sufficiently above Lambda, roughly Q above 1 GeV in the text.
+  kind: method
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-running-coupling-and-lambda
+    note: Retains Peskin–Schroeder's source-specific running alpha_s and the qcd scale
+      lambda with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 The Running of alpha_s
+    pages:
+    - 551
+    - 552
+- id: qft.align028.peskin-schroeder.qcd-scaling-violation-phenomenology
+  label: Scaling-violation phenomenology from PDF evolution
+  summary: With experimentally fitted low-scale proton PDFs, AP evolution predicts
+    that increasing Q^2 depletes high x through radiation and enhances small x by
+    creating new partons. The gluon PDF is not directly measured in electron DIS but
+    enters quark evolution and is absolutely normalized by the momentum sum rule,
+    leaving predictive Q^2 dependence. This is the p.591–592 scaling-violation result,
+    distinct from extracting alpha_s from independent experiments.
+  kind: result
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-scaling-violation-phenomenology
+    note: Retains Peskin–Schroeder's source-specific scaling-violation phenomenology
+      from pdf evolution with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Parton Evolution
+    pages:
+    - 591
+    - 592
+- id: qft.align028.peskin-schroeder.qcd-strong-coupling-color-confinement
+  label: Strong-coupling confinement and the color flux tube
+  summary: 'Wilson''s strong-coupling lattice approximation gives confinement: finite-energy
+    asymptotic states are color singlets. Separating the colored parts of a meson
+    produces a fixed-radius flux tube with fixed energy density, so its energy cost
+    grows in proportion to separation. This explains why a theory that is weak at
+    short distance can keep isolated quarks unobserved at long distance; it is a stated
+    strong-coupling result, not a perturbative derivation in this chapter.'
+  kind: result
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-strong-coupling-color-confinement
+    note: Retains Peskin–Schroeder's source-specific strong-coupling confinement and
+      the color flux tube with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.1 From Quarks to QCD
+    pages:
+    - 548
+- id: qft.align028.peskin-schroeder.qcd-three-jet-energy-flow
+  label: Hard-gluon emission as three-jet energy flow
+  summary: For e+e−→qqg, define x_1,x_2,x_3 as the quark, antiquark, and gluon energies
+    divided by beam energy, with 0<x_i<1 and sum x_i=2. The leading differential rate
+    has collinear singularities as x_1 or x_2 tends to 1; below the soft scale these
+    configurations hadronize into two back-to-back jets and the partonic formula is
+    unusable. A gluon with transverse momentum well above about 1 GeV cannot be undone
+    by soft exchange and produces a distinct third hadron jet; choose its transverse
+    momentum as the running-coupling scale, subject to that hard-scale qualification.
+  kind: result
+  group: qft.align028.qcd-jets-and-running
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-three-jet-energy-flow
+    note: Retains Peskin–Schroeder's source-specific hard-gluon emission as three-jet
+      energy flow with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Gluon Emission and Jet Production
+    pages:
+    - 553
+    - 554
+- id: qft.align028.peskin-schroeder.qcd-two-body-jet-rapidity-kinematics
+  label: Two-body parton kinematics in transverse momentum and rapidity
+  summary: For massless 1+2->3+4 partons, the final transverse momenta are equal and
+    opposite. With common p_T, y_*=(y_3-y_4)/2 and Y=(y_3+y_4)/2, one has hat_s=4
+    p_T^2 cosh^2(y_*), hat_t=-2 p_T^2 cosh(y_*) exp(-y_*), x_1=(2p_T/sqrt(s))cosh(y_*)exp(Y),
+    and x_2=(2p_T/sqrt(s))cosh(y_*)exp(-Y). The Jacobian is partial(x_1,x_2,hat_t)/partial(y_3,y_4,p_T)=8p_T^3
+    cosh^2(y_*)/s=2p_T hat_s/s. Consequently d^3sigma/(dy_3 dy_4 dp_T)=f_1(x_1)f_2(x_2)(2p_T
+    hat_s/s)dhat_sigma/dhat_t, or d^4sigma/(dy_3 dy_4 d^2p_T)=x_1f_1(x_1)x_2f_2(x_2)(1/pi)dhat_sigma/dhat_t.
+  kind: method
+  group: qft.align028.hard-factorization
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qcd-two-body-jet-rapidity-kinematics
+    note: Retains Peskin–Schroeder's source-specific two-body parton kinematics in
+      transverse momentum and rapidity with its stated normalization, hypotheses,
+      and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 General Kinematics of Pair Production
+    pages:
+    - 566
+    - 567
+    - 568
+- id: qft.align028.peskin-schroeder.qed-collinear-factorization-and-equivalent-photon
+  label: Collinear splitting factorization and the equivalent-photon distribution
+  summary: 'A nearly on-shell intermediate massless electron or photon factorizes
+    a collinear emission vertex from the hard amplitude. Ward identities remove longitudinal
+    photon polarizations, so only transverse states contribute to the singular term.
+    For an unpolarized target, integrating the electron→electron+photon splitting
+    over transverse momentum from m_e to the hard scale gives the Weizsäcker–Williams
+    formula: the eX rate factors into a photon-X hard cross section at photon momentum
+    fraction z and f_gamma/e(z)=(alpha/(2 pi)) log(s/m_e^2)[1+(1-z)^2]/z. It is a
+    leading collinear-log approximation with the stated unpolarized-target simplification.'
+  kind: method
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-collinear-factorization-and-equivalent-photon
+    note: Retains Peskin–Schroeder's source-specific collinear splitting factorization
+      and the equivalent-photon distribution with its stated normalization, hypotheses,
+      and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Matrix Element for Electron Splitting and Equivalent Photon Approximation
+    pages:
+    - 576
+    - 577
+    - 578
+    - 579
+- id: qft.align028.peskin-schroeder.qed-collinear-virtuality-and-helicity-kernel
+  label: Collinear virtualities and helicity-resolved electron splitting
+  summary: For p=(p,0,0,p), q≈(zp,p_T,0,zp), and k≈((1-z)p,-p_T,0,(1-z)p), the refined
+    on-shell kinematics gives q^2=0, k^2=-p_T^2/z when the photon is real, and k^2=0,
+    q^2=-p_T^2/(1-z) when the electron is real. Helicity conservation keeps e_L→e_L;
+    its photon-helicity amplitudes yield the spin-averaged squared splitting vertex
+    proportional to 2 e^2 p_T^2[1+(1-z)^2]/[z(1-z)]. Ward identity removes longitudinal
+    intermediate-photon polarizations. These statements retain the massless, almost-collinear
+    leading-p_T approximation.
+  kind: method
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-collinear-virtuality-and-helicity-kernel
+    note: Retains Peskin–Schroeder's source-specific collinear virtualities and helicity-resolved
+      electron splitting with its stated normalization, hypotheses, and task or proof
+      boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Matrix Element for Electron Splitting
+    pages:
+    - 576
+    - 577
+    - 578
+- id: qft.align028.peskin-schroeder.qed-gribov-lipatov-kernels
+  label: QED Gribov–Lipatov equations and kernels
+  summary: Including e->e gamma and gamma->e+e-, the QED distributions obey coupled
+    leading-log equations d f_i(x,Q)/d log Q=(alpha/pi) integral_x^1 dz/z P_{i<-j}(z)f_j(x/z,Q).
+    Equivalently, d/d log Q^2 uses alpha/(2 pi). The kernels are P_gamma<-e=[1+(1-z)^2]/z,
+    P_e<-e=[1+z^2]/(1-z)_+ +(3/2)delta(1-z), P_e<-gamma=z^2+(1-z)^2, and P_gamma<-gamma=-(2/3)delta(1-z).
+    At Q=m the physical-electron initial data are f_e=delta(1-x), f_ebar=f_gamma=0;
+    the system conserves net electron number and longitudinal momentum.
+  kind: result
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-gribov-lipatov-kernels
+    note: Retains Peskin–Schroeder's source-specific qed gribov–lipatov equations
+      and kernels with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Evolution Equations for QED
+    pages:
+    - 585
+    - 586
+    - 587
+- id: qft.align028.peskin-schroeder.qed-normalized-electron-distribution
+  label: Normalized first-order electron distribution
+  summary: Real radiation gives f_e^(1)(x)=(alpha/(2 pi))L(1+x^2)/(1-x), with L=log(s/m_e^2),
+    but virtual radiation is required for normalization. With [1/(1-x)]_+ defined
+    by its action integral_0^1 dx [f(x)-f(1)]/(1-x), the normalized result is f_e(x)=delta(1-x)+(alpha/(2
+    pi))L{(1+x^2)[1/(1-x)]_+ +(3/2)delta(1-x)}. Thus integral_0^1 f_e(x)dx=1 at this
+    order.
+  kind: result
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-normalized-electron-distribution
+    note: Retains Peskin–Schroeder's source-specific normalized first-order electron
+      distribution with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 The Electron Distribution
+    pages:
+    - 580
+    - 581
+- id: qft.align028.peskin-schroeder.qed-strong-ordering-and-gribov-lipatov-evolution
+  label: Strongly ordered splittings and QED evolution equations
+  summary: At order alpha^n, the leading collinear logarithms arise when transverse
+    momenta are strongly ordered from the external electron toward the hard collision;
+    other orderings lose at least one large logarithm. Resolving the electron at scale
+    Q therefore yields scale-dependent electron and photon distributions. Their integral-differential
+    evolution sums those leading logarithms; including photon→e+e− splitting gives
+    coupled electron, positron, and photon Gribov–Lipatov equations. With initial
+    electron f_e(x,m_e)=delta(1-x) and zero positron/photon distributions, the evolution
+    conserves net electron number and total longitudinal momentum.
+  kind: method
+  group: qft.align028.collinear-evolution
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-strong-ordering-and-gribov-lipatov-evolution
+    note: Retains Peskin–Schroeder's source-specific strongly ordered splittings and
+      qed evolution equations with its stated normalization, hypotheses, and task
+      or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Multiple Splittings and Evolution Equations for QED
+    pages:
+    - 582
+    - 583
+    - 584
+    - 585
+    - 586
+    - 587
+- id: qft.align028.peskin-schroeder.semileptonic-weak-current-qcd-protection
+  label: QCD protection of a semileptonic weak current
+  summary: QCD acts only on the quark bilinear in a semileptonic weak operator. That
+    bilinear is a current with gamma=0; its vertex logarithm cancels its quark field-strength
+    logarithm, and the left-handed projector does not alter the cancellation. Consequently
+    the cited neutrino-DIS semileptonic normalization receives no QCD logarithmic
+    renormalization.
+  kind: result
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.semileptonic-weak-current-qcd-protection
+    note: Retains Peskin–Schroeder's source-specific qcd protection of a semileptonic
+      weak current with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+    note: Contrasts the protected semileptonic current with the nonleptonic case.
+- id: qft.align028.peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  label: Cabibbo-rotated weak effective vertices
+  summary: For scales well above 1 GeV, neglect quark masses and write weak fields
+    as left handed. The unitary Cabibbo rotation couples u to cos theta_C d+sin theta_C
+    s (with the stated small b admixture omitted). W exchange then gives a nonleptonic
+    Delta S=1 operator (dbar_L gamma_mu u_L)(ubar_L gamma^mu s_L), which permits s
+    to u ubar d, and a semileptonic operator proportional to (lbar_L gamma_mu nu_L)(ubar_L
+    gamma^mu s_L), which permits s to u nubar ell.
+  kind: representation
+  group: qft.align028.operator-rg-and-weak
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+    note: Retains Peskin–Schroeder's source-specific cabibbo-rotated weak effective
+      vertices with its stated normalization, hypotheses, and task or proof boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 605
+    - 606
+    note: States the massless-left-handed approximation, Cabibbo rotation, and nonleptonic/semileptonic
+      channels.
 - id: qft.align030.advanced-retarded-propagator-integrals-problem
   label: Advanced/retarded propagator integral problem
   summary: Problem 6.2 asks for d⁴k integral representations of the advanced and retarded
@@ -41186,6 +42437,1250 @@ edges:
     pages:
     - 647
     - 666
+- id: qft.align028.bridge-3
+  from: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  to: qft.align013.shared.dis-twist-two-moment-evolution-and-dglap-equivalence
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The momentum-space Altarelli–Parisi framework is a route to the established
+    twist-two moment/DGLAP equivalence, but does not replace its local-OPE derivation.
+  failure_mode: Treating the two records as identical would erase the source-specific
+    normalization or proof scope.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 17–18 alignment bridge
+    pages:
+    - 588
+- id: qft.align028.bridge-4
+  from: qft.align028.peskin-schroeder.qcd-scaling-violation-phenomenology
+  to: qft.align013.schwartz.quark-dglap-splitting-kernel-and-scaling-violation
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The stated QCD phenomenology supplies independent support for logarithmic
+    scaling violation; it does not impose a teaching order between source treatments.
+  failure_mode: Without the comparison, the two independent source treatments would
+    remain unconnected despite their compatible physical core.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 17–18 alignment bridge
+    pages:
+    - 591
+- id: qft.align028.bridge-6
+  from: qft.align028.peskin-schroeder.ope-operator-mixing-matrix-equation
+  to: qft.schwartz-wilson-coefficients-matching-mixing
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: typical
+  rationale: The Peskin–Schroeder mixed-operator RG equation is a route compatible
+    with, but more specific than, the existing Wilson-coefficient/mixing treatment.
+  failure_mode: Treating the two records as identical would erase the source-specific
+    normalization or proof scope.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 17–18 alignment bridge
+    pages:
+    - 615
+- id: qft.align028.bridge-7
+  from: qft.align028.peskin-schroeder.qcd-running-coupling-and-lambda
+  to: qft.continuum-rg-running-coupling-large-log-method
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: typical
+  rationale: The explicit QCD one-loop running and Lambda convention give a QCD-specific
+    route to the general continuum running-coupling method.
+  failure_mode: Treating the two records as identical would erase the source-specific
+    normalization or proof scope.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 17–18 alignment bridge
+    pages:
+    - 551
+- id: qft.align028.bridge-8
+  from: qft.align028.peskin-schroeder.qcd-strong-coupling-color-confinement
+  to: qft.align014.qcd-confinement-hypothesis-from-infrared-growth
+  relation: evidence
+  source_level: use
+  target_level: recognize
+  necessity: helpful
+  rationale: The strong-coupling flux-tube account independently motivates confinement
+    while retaining the distinct infrared-growth qualification of the existing record.
+  failure_mode: Without the comparison, the two independent source treatments would
+    remain unconnected despite their compatible physical core.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 17–18 alignment bridge
+    pages:
+    - 548
+- id: qft.align028.bridge-beta-scheme-problem17-1b
+  from: qft.align028.peskin-schroeder.problem-17-1-scheme-independent-two-loop-asymptotics
+  to: qft.align012.beta-function-first-two-coefficients-scheme-invariant
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Problem 17.1(b) supplies an independent QCD observable-asymptotics task
+    route to the same first-two-coefficient scheme invariance proved by analytic coupling
+    redefinition in Weinberg.
+  failure_mode: The accepted result retains Weinberg's proof, but loses the independent
+    Peskin-Schroeder task route through the large-s hadronic rate.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.1(b)
+    pages:
+    - 595
+    - 596
+  - source: weinberg-2
+    section: '18.4'
+    pages:
+    - 138
+    - 139
+- id: qft.align028.bridge-equivalent-photon-ch17-to-ch5
+  from: qft.align028.peskin-schroeder.qed-collinear-factorization-and-equivalent-photon
+  to: qft.align023.peskin.problem-weizsacker-williams-collinear-distribution
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Chapter 17 Ward-identity and splitting-kernel derivation and the
+    Chapter 5 regulated collinear exercise independently obtain the universal electron-to-photon
+    distribution.
+  failure_mode: Both derivations remain usable, but their shared leading-collinear
+    result and distinct assumptions are not represented as independent routes.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 and Problem 5.5(c)
+    pages:
+    - 576
+    - 577
+    - 578
+    - 579
+    - 173
+    - 174
+- id: qft.align028.bridge-equivalent-photon-ch17-to-ch6
+  from: qft.align028.peskin-schroeder.qed-collinear-factorization-and-equivalent-photon
+  to: qft.align019.problem-equivalent-photon-approximation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Chapter 17 derives the leading collinear formula for an unpolarized target,
+    while Problem 6.2 is an independent small-angle current route requiring target
+    polarization independence.
+  failure_mode: The two routes are falsely isolated or may be chained, obscuring that
+    Problem 6.2 has its own polarization assumption and neither derivation is compulsory
+    for the other.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 and Problem 6.2
+    pages:
+    - 576
+    - 577
+    - 578
+    - 579
+    - 209
+    - 210
+- id: qft.align028.peskin-schroeder.ap-evolution-prerequisite-problem-17-4
+  from: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  to: qft.align028.peskin-schroeder.problem-17-4-gluon-splitting-kernel
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.4
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.ap-evolution-prerequisite-problem-17-6
+  from: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  to: qft.align028.peskin-schroeder.problem-17-6a-small-x-evolution-variable
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(a)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.ap-prerequisite-scaling-violation
+  from: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  to: qft.align028.peskin-schroeder.qcd-scaling-violation-phenomenology
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Parton Evolution
+    pages:
+    - 590
+    - 591
+    - 592
+- id: qft.align028.peskin-schroeder.bhabha-prerequisite-parton-scattering
+  from: qft.align023.peskin.problem-bhabha-scattering-interference
+  to: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The same-flavor q qbar calculation imports the massless Bhabha helicity
+    decomposition and then changes its color factors.
+  failure_mode: Without the two-channel Bhabha result, the same-flavor interference
+    structure is not determined by the source route.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 569
+    - 570
+    - 571
+- id: qft.align028.peskin-schroeder.callan-symanzik-prerequisite-qcd-running
+  from: qft.align014.callan-symanzik-massless-green-functions
+  to: qft.align028.peskin-schroeder.qcd-running-coupling-and-lambda
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The text applies the Callan–Symanzik equation with gamma=0 to the observable
+    annihilation rate.
+  failure_mode: Without the RG equation, replacing the fixed coupling by alpha_s(Q)
+    is an unsupported prescription.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 The Running of alpha_s
+    pages:
+    - 551
+    - 552
+- id: qft.align028.peskin-schroeder.crossing-prerequisite-parton-scattering
+  from: qft.align023.peskin.crossing-symmetry-s-matrix
+  to: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Several catalogue entries are obtained from earlier channels by the stated
+    s-t or s-u crossings.
+  failure_mode: Without crossing, the annihilation, inverse, and qg formulas must
+    be independently recomputed and the source route is lost.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 569
+    - 571
+    - 572
+- id: qft.align028.peskin-schroeder.crossing-prerequisite-problem-17-3b
+  from: qft.align023.peskin.crossing-symmetry-s-matrix
+  to: qft.align028.peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) explicitly uses crossing together with parity to generate all
+    sixteen helicity combinations.
+  failure_mode: Without crossing, three seed amplitudes do not determine the requested
+    set of polarized channels.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(b)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.crossing-prerequisite-problem-17-5
+  from: qft.align023.peskin.crossing-symmetry-s-matrix
+  to: qft.align028.peskin-schroeder.problem-17-5-heavy-quark-photoproduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Relating the Chapter-5 annihilation calculation to incoming photon and
+    gluon pair production uses the crossed channel.
+  failure_mode: Without crossing, the cited Chapter-5 result cannot be transferred
+    to gamma-g fusion.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.5
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.dis-factorization-prerequisite-dis-xy
+  from: qft.align028.peskin-schroeder.qcd-dis-leading-parton-factorization
+  to: qft.align028.peskin-schroeder.qcd-dis-xy-scaling-and-callan-gross
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Scattering
+    pages:
+    - 557
+    - 558
+- id: qft.align028.peskin-schroeder.dis-xy-prerequisite-neutrino-dis
+  from: qft.align028.peskin-schroeder.qcd-dis-xy-scaling-and-callan-gross
+  to: qft.align028.peskin-schroeder.qcd-neutrino-dis-flavor-and-helicity-analysis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.3 Deep Inelastic Neutrino Scattering
+    pages:
+    - 559
+    - 560
+    - 561
+- id: qft.align028.peskin-schroeder.e18-cabibbo-to-nonleptonic
+  from: qft.align028.peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  to: qft.align028.peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+    - 607
+- id: qft.align028.peskin-schroeder.e18-cabibbo-to-semileptonic
+  from: qft.align028.peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  to: qft.align028.peskin-schroeder.semileptonic-weak-current-qcd-protection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+- id: qft.align028.peskin-schroeder.e18-cs-to-quark-mass
+  from: qft.align014.callan-symanzik-massless-green-functions
+  to: qft.align028.peskin-schroeder.qcd-quark-mass-effective-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The running-mass equation is obtained by applying the Callan-Symanzik
+    construction to a dimensionful mass coupling.
+  failure_mode: Without the RG equation, the logarithmic mass formula has no derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 600
+- id: qft.align028.peskin-schroeder.e18-current-to-semileptonic
+  from: qft.align028.peskin-schroeder.qcd-quark-mass-operator-renormalization
+  to: qft.align028.peskin-schroeder.semileptonic-weak-current-qcd-protection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 606
+- id: qft.align028.peskin-schroeder.e18-ee-ope-to-power
+  from: qft.align028.peskin-schroeder.ope-local-expansion-and-universality
+  to: qft.align028.peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.4'
+    pages:
+    - 617
+- id: qft.align028.peskin-schroeder.e18-fierz-to-weak-mixing
+  from: qft.align020.weyl-fierz-rearrangement
+  to: qft.align028.peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fierz transformations are used to recast the cross-current diagrams into
+    the O_1,O_2 basis.
+  failure_mode: The new operator structure and mixing matrix cannot be obtained from
+    the diagram algebra.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 607
+    - 608
+- id: qft.align028.peskin-schroeder.e18-general-rescaling-to-delta-i
+  from: qft.align028.peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  to: qft.align028.peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 611
+- id: qft.align028.peskin-schroeder.e18-heavy-w-to-cabibbo
+  from: qft.peskin-local-operator-heavy-w-motivation
+  to: qft.align028.peskin-schroeder.weak-cabibbo-four-fermion-effective-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The vertices are the local low-momentum W-exchange interaction whose
+    Cabibbo structure is then specified.
+  failure_mode: The effective four-fermion interaction has no heavy-W origin or scale
+    regime.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 605
+- id: qft.align028.peskin-schroeder.e18-insertion-to-quark-mass
+  from: qft.peskin-local-operator-insertion-renormalization
+  to: qft.align028.peskin-schroeder.qcd-quark-mass-operator-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation normalizes a local qbar q insertion and combines its
+    counterterm with field renormalization.
+  failure_mode: One cannot identify gamma_qbarq or its gauge cancellation without
+    insertion renormalization.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 601
+- id: qft.align028.peskin-schroeder.e18-mass-log-to-general-operator-log
+  from: qft.align028.peskin-schroeder.qcd-quark-mass-effective-running
+  to: qft.align028.peskin-schroeder.qcd-gauge-invariant-operator-log-rescaling
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.1'
+    pages:
+    - 604
+- id: qft.align028.peskin-schroeder.e18-mixing-to-isospin
+  from: qft.align028.peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  to: qft.align028.peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.2'
+    pages:
+    - 610
+    - 611
+- id: qft.align028.peskin-schroeder.e18-ope-rg-to-matrix
+  from: qft.align028.peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  to: qft.align028.peskin-schroeder.ope-operator-mixing-matrix-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 615
+- id: qft.align028.peskin-schroeder.e18-ope-to-ope-rg
+  from: qft.align028.peskin-schroeder.ope-local-expansion-and-universality
+  to: qft.align028.peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.3'
+    pages:
+    - 613
+    - 614
+- id: qft.align028.peskin-schroeder.e18-ope-to-twistquark
+  from: qft.align028.peskin-schroeder.ope-local-expansion-and-universality
+  to: qft.align013.shared.dis-forward-quark-local-ope-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The DIS construction specializes the OPE to two electromagnetic currents
+    at short distance.
+  failure_mode: The twist-two operators would not be tied to the current product.
+  evidence:
+  - source: peskin-schroeder
+    section: '18.5'
+    pages:
+    - 627
+- id: qft.align028.peskin-schroeder.electron-muon-rate-prerequisite-parton-scattering
+  from: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
+  to: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Different-flavor quark scattering starts from the QED electron-muon t-channel
+    rate before inserting its SU(3) factor.
+  failure_mode: Without that QED rate, Eq.17.64 has no kinematic numerator or t-channel
+    denominator to transcribe.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 568
+    - 569
+- id: qft.align028.peskin-schroeder.general-nonabelian-gauge-construction-prerequisite-qcd-color-singlets
+  from: qft.general-nonabelian-gauge-construction
+  to: qft.align028.peskin-schroeder.qcd-color-singlets-and-field-content
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Constructing QCD as a local SU(3) quark theory requires applying the
+    non-Abelian gauge construction to the fundamental color representation.
+  failure_mode: Without the covariant local-gauge construction, color SU(3) could
+    be treated only as a global classification symmetry and the gluon field content
+    would not follow.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.1 From Quarks to QCD
+    pages:
+    - 547
+- id: qft.align028.peskin-schroeder.hadron-factorization-prerequisite-drell-yan
+  from: qft.align028.peskin-schroeder.qcd-hadron-collision-factorization
+  to: qft.align028.peskin-schroeder.qcd-drell-yan-mass-rapidity-pdfs
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Lepton Pair Production
+    pages:
+    - 564
+    - 565
+    - 566
+- id: qft.align028.peskin-schroeder.hadron-factorization-prerequisite-problem-17-5
+  from: qft.align028.peskin-schroeder.qcd-hadron-collision-factorization
+  to: qft.align028.peskin-schroeder.problem-17-5-heavy-quark-photoproduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.5
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.helicity-method-prerequisite-parton-scattering
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The same-flavor interference and the gluon channels are organized with
+    definite-helicity amplitudes.
+  failure_mode: Without helicity amplitudes, the source's separation and recombination
+    of polarized subprocesses cannot be followed.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 570
+    - 571
+    - 572
+- id: qft.align028.peskin-schroeder.helicity-method-prerequisite-problem-17-3a
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align028.peskin-schroeder.problem-17-3a-qqbar-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly requires definite quark and gluon helicity amplitudes.
+  failure_mode: Without the helicity method, the three independent amplitudes cannot
+    be evaluated and recombined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(a)
+    pages:
+    - 596
+    - 597
+- id: qft.align028.peskin-schroeder.helicity-method-prerequisite-problem-17-3b
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align028.peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) builds sixteen gluon processes from three definite-helicity
+    amplitudes.
+  failure_mode: Without the helicity method, the vanishing and nonvanishing polarized
+    channels cannot be established.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(b)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.helicity-three-gluon-prerequisite-problem-17-4
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align028.peskin-schroeder.problem-17-4-gluon-splitting-kernel
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 17.4 begins by computing three-gluon-vertex matrix elements between
+    definite-helicity gluon states.
+  failure_mode: Without a helicity-amplitude method, the requested polarized vertex
+    calculation cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.4
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.jacobi-prerequisite-problem-17-3b
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.align028.peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The surviving all-like-helicity amplitude is explicitly simplified with
+    the Lie-algebra Jacobi identity.
+  failure_mode: Without the Jacobi identity, the color structures do not reduce in
+    the requested way.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(b)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.problem-17-1a-prerequisite-17-1b
+  from: qft.align028.peskin-schroeder.problem-17-1-two-loop-rg-integration
+  to: qft.align028.peskin-schroeder.problem-17-1-scheme-independent-two-loop-asymptotics
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.1
+    pages:
+    - 595
+    - 596
+- id: qft.align028.peskin-schroeder.problem-17-2a-prerequisite-17-2b
+  from: qft.align028.peskin-schroeder.problem-17-2-scalar-gluon-three-body-rate
+  to: qft.align028.peskin-schroeder.problem-17-2-gluon-spin-discrimination
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.2
+    pages:
+    - 596
+- id: qft.align028.peskin-schroeder.problem-17-6a-prerequisite-problem-17-6b
+  from: qft.align028.peskin-schroeder.problem-17-6a-small-x-evolution-variable
+  to: qft.align028.peskin-schroeder.problem-17-6b-small-x-gluon-asymptotic
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(b)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.problem-17-6b-prerequisite-problem-17-6c
+  from: qft.align028.peskin-schroeder.problem-17-6b-small-x-gluon-asymptotic
+  to: qft.align028.peskin-schroeder.problem-17-6c-small-x-quark-from-gluons
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(c)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.problem-17-6b-prerequisite-problem-17-6d
+  from: qft.align028.peskin-schroeder.problem-17-6b-small-x-gluon-asymptotic
+  to: qft.align028.peskin-schroeder.problem-17-6d-small-x-distribution-sketch
+  relation: prerequisite
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(d)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.problem-17-6c-prerequisite-problem-17-6d
+  from: qft.align028.peskin-schroeder.problem-17-6c-small-x-quark-from-gluons
+  to: qft.align028.peskin-schroeder.problem-17-6d-small-x-distribution-sketch
+  relation: prerequisite
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(d)
+    pages:
+    - 598
+- id: qft.align028.peskin-schroeder.qcd-color-factor-prerequisite-inclusive-rate
+  from: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  to: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Total Cross Section
+    pages:
+    - 549
+    - 550
+- id: qft.align028.peskin-schroeder.qcd-color-factor-prerequisite-qqg-distribution
+  from: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  to: qft.align028.peskin-schroeder.qcd-qqg-energy-fraction-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Gluon Emission and Jet Production
+    pages:
+    - 553
+- id: qft.align028.peskin-schroeder.qcd-dis-factorization-prerequisite-hadron-collision-factorization
+  from: qft.align028.peskin-schroeder.qcd-dis-leading-parton-factorization
+  to: qft.align028.peskin-schroeder.qcd-hadron-collision-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Hard-Scattering Processes in Hadron Collisions
+    pages:
+    - 563
+    - 564
+- id: qft.align028.peskin-schroeder.qcd-inclusive-prerequisite-17-1b
+  from: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  to: qft.align028.peskin-schroeder.problem-17-1-scheme-independent-two-loop-asymptotics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.1
+    pages:
+    - 595
+    - 596
+- id: qft.align028.peskin-schroeder.qcd-qqg-distribution-prerequisite-three-jet-interpretation
+  from: qft.align028.peskin-schroeder.qcd-qqg-energy-fraction-distribution
+  to: qft.align028.peskin-schroeder.qcd-three-jet-energy-flow
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Gluon Emission and Jet Production
+    pages:
+    - 553
+    - 554
+- id: qft.align028.peskin-schroeder.qcd-qqg-prerequisite-17-2b
+  from: qft.align028.peskin-schroeder.qcd-qqg-energy-fraction-distribution
+  to: qft.align028.peskin-schroeder.problem-17-2-gluon-spin-discrimination
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.2
+    pages:
+    - 596
+- id: qft.align028.peskin-schroeder.qcd-running-prerequisite-inclusive-rate
+  from: qft.align028.peskin-schroeder.qcd-running-coupling-and-lambda
+  to: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 The Running of alpha_s
+    pages:
+    - 551
+    - 552
+- id: qft.align028.peskin-schroeder.qcd-running-prerequisite-problem-17-6a
+  from: qft.align028.peskin-schroeder.qcd-running-coupling-and-lambda
+  to: qft.align028.peskin-schroeder.problem-17-6a-small-x-evolution-variable
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.6(a)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.qed-collinear-factorization-prerequisite-gribov-lipatov
+  from: qft.align028.peskin-schroeder.qed-collinear-factorization-and-equivalent-photon
+  to: qft.align028.peskin-schroeder.qed-gribov-lipatov-kernels
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Parton Evolution
+    pages:
+    - 575
+    - 583
+    - 584
+- id: qft.align028.peskin-schroeder.qed-electron-distribution-prerequisite-gribov-lipatov
+  from: qft.align028.peskin-schroeder.qed-normalized-electron-distribution
+  to: qft.align028.peskin-schroeder.qed-gribov-lipatov-kernels
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 The Electron Distribution and Multiple Splittings
+    pages:
+    - 580
+    - 581
+    - 582
+    - 583
+    - 584
+- id: qft.align028.peskin-schroeder.qed-gribov-lipatov-prerequisite-ap
+  from: qft.align028.peskin-schroeder.qed-gribov-lipatov-kernels
+  to: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Peskin–Schroeder route uses the source result or method before the
+    target calculation; this preserves the recorded route without making unrelated
+    routes compulsory.
+  failure_mode: Without the stated source input, the target route loses an operative
+    calculation step or its stated condition.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Evolution Equations for QED and Altarelli-Parisi Equations
+    pages:
+    - 585
+    - 586
+    - 587
+    - 588
+    - 589
+- id: qft.align028.peskin-schroeder.qed-pair-rate-prerequisite-problem-17-5
+  from: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  to: qft.align028.peskin-schroeder.problem-17-5-heavy-quark-photoproduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The heavy-quark subprocess cross section is taken from the corresponding
+    two-gauge-boson QED pair-production calculation with couplings and color changed.
+  failure_mode: Without the QED pair-production rate, the problem's instructed shortcut
+    supplies no hard subprocess formula.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.5
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.quark-ratio-prerequisite-drell-yan
+  from: qft.align023.peskin.quark-pair-r-ratio
+  to: qft.align028.peskin-schroeder.qcd-drell-yan-mass-rapidity-pdfs
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Drell-Yan partonic normalization is obtained from the color-summed
+    e+e- to q qbar rate by reversing the reaction and averaging initial colors.
+  failure_mode: Without the accepted annihilation rate, the 1/9 color-normalized partonic
+    cross section is not supplied.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Lepton Pair Production
+    pages:
+    - 564
+- id: qft.align028.peskin-schroeder.quark-ratio-prerequisite-qcd-color-factor
+  from: qft.align023.peskin.quark-pair-r-ratio
+  to: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD transcription starts from the color-summed high-energy q qbar
+    Born rate and its accessible-flavor condition.
+  failure_mode: Without that rate, the factor 3 sum Q_f^2 in the QCD normalization
+    has no supplied starting point.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 e+e− Annihilation into Hadrons
+    pages:
+    - 548
+    - 549
+- id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-ap
+  from: qft.casimir-index-and-sun-factors
+  to: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD q-to-qg and g-to-q qbar kernels require the displayed color averages
+    C_F=4/3 and 1/2.
+  failure_mode: Without these color factors, QED kernels cannot become the QCD kernels.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 The Altarelli-Parisi Equations
+    pages:
+    - 589
+    - 590
+- id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-parton-scattering
+  from: qft.casimir-index-and-sun-factors
+  to: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark and gluon color sums and averages use the book's SU(3) normalization
+    and fundamental Casimir.
+  failure_mode: Without these values, the numerical color coefficients in Eqs.17.64-17.78
+    cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 569
+    - 570
+    - 571
+    - 572
+- id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-problem-17-3a
+  from: qft.casimir-index-and-sun-factors
+  to: qft.align028.peskin-schroeder.problem-17-3a-qqbar-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) requires color sums and initial-color averages after the helicity
+    amplitudes are squared.
+  failure_mode: Without the SU(3) normalization, the requested unpolarized color-averaged
+    result cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(a)
+    pages:
+    - 596
+    - 597
+- id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-problem-17-3b
+  from: qft.casimir-index-and-sun-factors
+  to: qft.align028.peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The final result averages over initial adjoint colors and sums final
+    colors.
+  failure_mode: Without the SU(3) group normalization, the color-averaged gluon rate
+    is undetermined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(b)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-qcd-color-factor
+  from: qft.casimir-index-and-sun-factors
+  to: qft.align028.peskin-schroeder.qcd-color-factor-transcription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The replacement alpha_g→(4/3)alpha_s follows by applying the fundamental
+    SU(3) Casimir value.
+  failure_mode: Without C_F=4/3, the group-theory multiplication cannot be evaluated.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.2 Total Cross Section
+    pages:
+    - 549
+    - 550
+- id: qft.align028.peskin-schroeder.ward-identity-prerequisite-qed-collinear-factorization
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.align028.peskin-schroeder.qed-collinear-factorization-and-equivalent-photon
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The near-on-shell photon propagator reduces to transverse polarizations
+    by contracting its longitudinal vectors with Ward identities.
+  failure_mode: Without the Ward identity, unphysical intermediate-photon polarizations
+    remain in the singular factor.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 Matrix Element for Electron Splitting
+    pages:
+    - 576
+- id: qft.align028.peskin-schroeder.yang-mills-rules-prerequisite-parton-scattering
+  from: qft.yang-mills-universal-coupling
+  to: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The qqbar-to-gg and gg-to-gg channels require the three- and four-gluon
+    interactions in addition to quark-gluon vertices.
+  failure_mode: Without the Yang-Mills rules, the non-Abelian diagrams and their relative
+    couplings are missing.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.4 Jet Pair Production
+    pages:
+    - 571
+    - 572
+- id: qft.align028.peskin-schroeder.yang-mills-rules-prerequisite-problem-17-3a
+  from: qft.yang-mills-universal-coupling
+  to: qft.align028.peskin-schroeder.problem-17-3a-qqbar-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested qqbar-to-gg amplitude is the coherent sum of the QCD diagrams
+    using quark-gluon and three-gluon vertices.
+  failure_mode: Without the Yang-Mills rules, the amplitude and relative diagram coefficients
+    are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(a)
+    pages:
+    - 596
+    - 597
+- id: qft.align028.peskin-schroeder.yang-mills-rules-prerequisite-problem-17-3b
+  from: qft.yang-mills-universal-coupling
+  to: qft.align028.peskin-schroeder.problem-17-3b-gg-to-gg-helicity-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The four gluon-scattering diagrams require the three- and four-gluon
+    Yang-Mills vertices with one universal coupling.
+  failure_mode: Without those vertices, the requested gluon amplitudes are not defined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.3(b)
+    pages:
+    - 597
+- id: qft.align028.peskin-schroeder.yang-mills-vertex-prerequisite-ap
+  from: qft.nonabelian-curvature-and-self-interactions
+  to: qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: QCD evolution has a g-to-gg channel absent from QED because of the Yang–Mills
+    three-gluon interaction.
+  failure_mode: Without that vertex, the gluon self-splitting term is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5 The Altarelli-Parisi Equations
+    pages:
+    - 589
+    - 590
+- id: qft.align028.peskin-schroeder.yang-mills-vertex-prerequisite-problem-17-4
+  from: qft.nonabelian-curvature-and-self-interactions
+  to: qft.align028.peskin-schroeder.problem-17-4-gluon-splitting-kernel
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise derives the kernel from the three-gluon vertex.
+  failure_mode: Without the Yang–Mills interaction, there is no vertex amplitude to
+    evaluate.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 17.4
+    pages:
+    - 597
 - id: qft.align030.e-linear-polarization-muon-pair-alternative
   from: qft.align030.spin-projection-annihilation-angular-distribution
   to: qft.tree-level-muon-pair-cross-section
@@ -45839,6 +48334,16 @@ groups:
   title: Weak effective theory, matching, and flavor logarithms
   question: How do local weak operators, matching, and renormalization-group evolution
     control flavor amplitudes?
+- id: qft.align028.collinear-evolution
+  title: Collinear splitting and parton evolution
+- id: qft.align028.hard-factorization
+  title: DIS and hard-scattering factorization
+- id: qft.align028.operator-rg-and-weak
+  title: Operator RG, weak interactions, and OPE
+- id: qft.align028.problem-methods
+  title: QCD derivation tasks
+- id: qft.align028.qcd-jets-and-running
+  title: QCD color, jets, and running
 - id: qft.anomaly-regularization-and-matching
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,
@@ -45912,6 +48417,49 @@ motivations:
     pages:
     - 641
     - 658
+- id: qft.align028.why-operator-rg
+  nodes:
+  - qft.align028.peskin-schroeder.nonleptonic-weak-operator-mixing-and-w-cutoff
+  - qft.align028.peskin-schroeder.ope-local-expansion-and-universality
+  - qft.align028.peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
+  summary: The source asks how short-distance QCD logarithms connect a heavy weak
+    scale to hadronic matrix elements while separating the remaining nonperturbative
+    contribution.
+  evidence:
+  - source: peskin-schroeder
+    section: 18.2–18.3
+    pages:
+    - 607
+    - 611
+    - 612
+    - 613
+- id: qft.align028.why-parton-evolution
+  nodes:
+  - qft.align028.peskin-schroeder.qcd-altarelli-parisi-evolution
+  - qft.align028.peskin-schroeder.qcd-scaling-violation-phenomenology
+  summary: The source develops evolution because initial-state collinear radiation
+    prevents exact Bjorken scaling and makes its slow violation predictive.
+  evidence:
+  - source: peskin-schroeder
+    section: 17.5–17.6
+    pages:
+    - 588
+    - 591
+    - 592
+- id: qft.align028.why-qcd-color-and-confinement
+  nodes:
+  - qft.align028.peskin-schroeder.qcd-quark-flavors-charges-and-color-motivation
+  - qft.align028.peskin-schroeder.qcd-color-singlets-and-field-content
+  - qft.align028.peskin-schroeder.qcd-strong-coupling-color-confinement
+  summary: The source frames QCD as the response to the quark-model color puzzle and
+    the nonobservation of isolated fractional-charge constituents.
+  evidence:
+  - source: peskin-schroeder
+    section: '17.1'
+    pages:
+    - 546
+    - 547
+    - 548
 - id: qft.schwartz-dynamical-background-context
   nodes:
   - qft.free-scalar-field-mode-expansion

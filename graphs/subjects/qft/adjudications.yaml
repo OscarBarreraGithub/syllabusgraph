@@ -1626,6 +1626,313 @@ units:
       pages:
       - 301
     affected_records: []
+- id: full-align-028-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The OPE vacuum-power node previously double-counted the quark mass
+    alternatives:
+    - Keep the corrected dimension-four basis m qbar q
+    - Revert to qbar q and put m in its coefficient
+    resolution: Keep m qbar q and F-squared with x^-2 coefficients and q^-4 Fourier
+      suppression
+    rationale: Pages 617-618 support the corrected dimension-four counting and retain
+      the timelike short-distance limitation.
+    evidence:
+    - source: peskin-schroeder
+      section: '18.3'
+      pages:
+      - 617
+      - 618
+    affected_records: []
+  - finding: 1
+    issue: The normalized electron distribution mixes incompatible plus conventions
+    alternatives:
+    - Use denominator-plus with the explicit 3/2 endpoint
+    - Use a correctly defined whole-kernel plus distribution
+    resolution: Use denominator-plus and display the 3/2 delta endpoint explicitly
+    rationale: Page 581 derives the virtual endpoint contribution needed to make the
+      order-alpha electron distribution integrate to one.
+    evidence:
+    - source: peskin-schroeder
+      section: '17.5'
+      pages:
+      - 580
+      - 581
+    affected_records:
+    - kind: nodes
+      id: qft.align028.peskin-schroeder.qed-normalized-electron-distribution
+  - finding: 2
+    issue: Eight accepted physical cores are duplicated instead of amended
+    alternatives:
+    - Authorize all eight retained-field replacements
+    - Defer and leave the duplicate source nodes unmerged
+    resolution: Authorize all eight common-core replacements and remove three amendment-avoidance
+      bridges
+    rationale: All retained and added pages are in the packet and support the shared
+      OPE, DIS, DGLAP, Callan-Gross, sum-rule, color, and Four-Fermi cores.
+    evidence:
+    - source: peskin-schroeder
+      section: 17.1, 17.3, 17.5, and 18.2-18.3
+      pages:
+      - 547
+      - 555
+      - 556
+      - 557
+      - 558
+      - 562
+      - 563
+      - 588
+      - 589
+      - 590
+      - 607
+      - 608
+      - 609
+      - 610
+      - 611
+      - 612
+      - 613
+    - source: schwartz
+      section: 31.3.3 and 32.1-32.4
+      pages:
+      - 664
+      - 665
+      - 674
+      - 675
+      - 676
+      - 680
+      - 681
+      - 686
+    - source: weinberg-2
+      section: 18.7 and 20.6
+      pages:
+      - 152
+      - 274
+      - 275
+    - source: peskin-schroeder
+      section: '18.5'
+      pages:
+      - 625
+      - 626
+      - 627
+    affected_records:
+    - kind: nodes
+      id: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+    - kind: nodes
+      id: qft.align013.schwartz.parton-distribution-convolution
+    - kind: nodes
+      id: qft.align013.schwartz.dglap-pdf-renormalization-and-evolution
+    - kind: nodes
+      id: qft.align013.shared.free-dirac-parton-bjorken-scaling-and-callan-gross
+    - kind: nodes
+      id: qft.align013.schwartz.pdf-flavor-and-momentum-sum-rules
+    - kind: nodes
+      id: qft.align014.qcd-su3-quark-color-representation
+    - kind: nodes
+      id: qft.align025.four-fermi-operator-mixing-rge
+    - kind: nodes
+      id: qft.align025.four-fermi-eigenoperators-and-leading-log-running
+    - kind: edges
+      id: qft.align028.bridge-1
+    - kind: edges
+      id: qft.align028.bridge-2
+    - kind: edges
+      id: qft.align028.bridge-5
+  - finding: 3
+    issue: The common replacements could flatten source-specific assumptions and applications
+    alternatives:
+    - Retain explicit source residuals and basis maps
+    - Defer rather than merge incompatible conventions
+    resolution: Keep PS residuals and explicit basis, flavor, scale, normalization
+      and proof-boundary qualifications
+    rationale: The packet supports a shared physical core while distinguishing the
+      PS coupled AP system and kaon running from Schwartz n_f=5 B-decay running.
+    evidence:
+    - source: peskin-schroeder
+      section: 17.3, 17.5, and 18.2-18.3
+      pages:
+      - 555
+      - 556
+      - 557
+      - 558
+      - 562
+      - 563
+      - 588
+      - 589
+      - 590
+      - 607
+      - 608
+      - 609
+      - 610
+      - 611
+      - 612
+      - 613
+    - source: schwartz
+      section: 31.3.3 and 32.1-32.4
+      pages:
+      - 664
+      - 665
+      - 674
+      - 675
+      - 676
+      - 680
+      - 681
+      - 686
+    affected_records:
+    - kind: nodes
+      id: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+    - kind: nodes
+      id: qft.align013.schwartz.parton-distribution-convolution
+    - kind: nodes
+      id: qft.align013.schwartz.dglap-pdf-renormalization-and-evolution
+    - kind: nodes
+      id: qft.align013.shared.free-dirac-parton-bjorken-scaling-and-callan-gross
+    - kind: nodes
+      id: qft.align013.schwartz.pdf-flavor-and-momentum-sum-rules
+    - kind: nodes
+      id: qft.align014.qcd-su3-quark-color-representation
+    - kind: nodes
+      id: qft.align025.four-fermi-operator-mixing-rge
+    - kind: nodes
+      id: qft.align025.four-fermi-eigenoperators-and-leading-log-running
+  - finding: 4
+    issue: Five mapped incident edges lack their operative source pages in the immutable
+      packet
+    alternatives:
+    - Emit 31 supported boundaries and record five mapped-later source gaps
+    - Defer the whole unit despite complete assigned-claim and amendment support
+    resolution: Emit 31 supported boundaries; record five mapped-later edges and 12
+      genuine futures without citations
+    rationale: All assigned claims and amendments are packet-supported. The permitted
+      mapped-later gaps are peskin-schroeder.e-ps013-weak-current-pion-task (PS687),
+      peskin-schroeder.e18-ap-to-equivalence (PS644-645), peskin-schroeder.e18-ap-to-problem184
+      (PS649), peskin-schroeder.e18-generalrescale-to-problem181 (PS647), and peskin-schroeder.e18-qedevolution-to-problem184
+      (PS649).
+    evidence:
+    - source: peskin-schroeder
+      section: Packet-supported incident audit
+      pages:
+      - 547
+      - 548
+      - 549
+      - 550
+      - 551
+      - 552
+      - 564
+      - 568
+      - 569
+      - 570
+      - 571
+      - 572
+      - 576
+      - 589
+      - 590
+      - 596
+      - 597
+      - 600
+      - 601
+      - 605
+      - 607
+      - 608
+      - 627
+    affected_records:
+    - kind: edges
+      id: qft.align028.peskin-schroeder.bhabha-prerequisite-parton-scattering
+    - kind: edges
+      id: qft.align028.peskin-schroeder.callan-symanzik-prerequisite-qcd-running
+    - kind: edges
+      id: qft.align028.peskin-schroeder.crossing-prerequisite-parton-scattering
+    - kind: edges
+      id: qft.align028.peskin-schroeder.crossing-prerequisite-problem-17-3b
+    - kind: edges
+      id: qft.align028.peskin-schroeder.crossing-prerequisite-problem-17-5
+    - kind: edges
+      id: qft.align028.peskin-schroeder.e18-cs-to-quark-mass
+    - kind: edges
+      id: qft.align028.peskin-schroeder.e18-fierz-to-weak-mixing
+    - kind: edges
+      id: qft.align028.peskin-schroeder.e18-heavy-w-to-cabibbo
+    - kind: edges
+      id: qft.align028.peskin-schroeder.e18-insertion-to-quark-mass
+    - kind: edges
+      id: qft.align028.peskin-schroeder.e18-ope-to-twistquark
+    - kind: edges
+      id: qft.align028.peskin-schroeder.electron-muon-rate-prerequisite-parton-scattering
+    - kind: edges
+      id: qft.align028.peskin-schroeder.general-nonabelian-gauge-construction-prerequisite-qcd-color-singlets
+    - kind: edges
+      id: qft.align028.peskin-schroeder.helicity-method-prerequisite-parton-scattering
+    - kind: edges
+      id: qft.align028.peskin-schroeder.helicity-method-prerequisite-problem-17-3a
+    - kind: edges
+      id: qft.align028.peskin-schroeder.helicity-method-prerequisite-problem-17-3b
+    - kind: edges
+      id: qft.align028.peskin-schroeder.helicity-three-gluon-prerequisite-problem-17-4
+    - kind: edges
+      id: qft.align028.peskin-schroeder.jacobi-prerequisite-problem-17-3b
+    - kind: edges
+      id: qft.align028.peskin-schroeder.qed-pair-rate-prerequisite-problem-17-5
+    - kind: edges
+      id: qft.align028.peskin-schroeder.quark-ratio-prerequisite-drell-yan
+    - kind: edges
+      id: qft.align028.peskin-schroeder.quark-ratio-prerequisite-qcd-color-factor
+    - kind: edges
+      id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-ap
+    - kind: edges
+      id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-parton-scattering
+    - kind: edges
+      id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-problem-17-3a
+    - kind: edges
+      id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-problem-17-3b
+    - kind: edges
+      id: qft.align028.peskin-schroeder.sun-casimir-prerequisite-qcd-color-factor
+    - kind: edges
+      id: qft.align028.peskin-schroeder.ward-identity-prerequisite-qed-collinear-factorization
+    - kind: edges
+      id: qft.align028.peskin-schroeder.yang-mills-rules-prerequisite-parton-scattering
+    - kind: edges
+      id: qft.align028.peskin-schroeder.yang-mills-rules-prerequisite-problem-17-3a
+    - kind: edges
+      id: qft.align028.peskin-schroeder.yang-mills-rules-prerequisite-problem-17-3b
+    - kind: edges
+      id: qft.align028.peskin-schroeder.yang-mills-vertex-prerequisite-ap
+    - kind: edges
+      id: qft.align028.peskin-schroeder.yang-mills-vertex-prerequisite-problem-17-4
+  - finding: 5
+    issue: The scheme and equivalent-photon comparisons omit independent routes
+    alternatives:
+    - Add one scheme and two equivalent-photon alternatives
+    - Defer while the independent routes remain disconnected
+    resolution: Add three alternative edges and preserve each route-specific assumption
+    rationale: Problem 17.1(b) is independent of Weinberg coupling redefinition; Chapters
+      5, 6, and 17 derive equivalent-photon formulas by distinct routes and assumptions.
+    evidence:
+    - source: peskin-schroeder
+      section: Problems 17.1(b), 5.5(c), 6.2 and Section 17.5
+      pages:
+      - 173
+      - 174
+      - 209
+      - 210
+      - 576
+      - 577
+      - 578
+      - 579
+      - 595
+      - 596
+    - source: weinberg-2
+      section: '18.4'
+      pages:
+      - 138
+      - 139
+    affected_records:
+    - kind: edges
+      id: qft.align028.bridge-beta-scheme-problem17-1b
+    - kind: edges
+      id: qft.align028.bridge-equivalent-photon-ch17-to-ch5
+    - kind: edges
+      id: qft.align028.bridge-equivalent-photon-ch17-to-ch6
 - id: full-align-030-extended
   model_verdict: accept
   outcome: promoted
