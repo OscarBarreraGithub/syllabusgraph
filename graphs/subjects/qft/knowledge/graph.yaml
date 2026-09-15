@@ -6594,7 +6594,9 @@ nodes:
   summary: The i epsilon prescription gives D_F(x-y)=integral d^4p/(2 pi)^4 i exp[-ip
     dot (x-y)]/(p-squared-m-squared+i epsilon). It is the vacuum expectation value
     of T phi(x)phi(y), a Klein-Gordon Green's function, and the factor attached to
-    an internal scalar line in later Feynman rules.
+    an internal scalar line in later Feynman rules. Schwartz’s opposite-side energy-pole
+    contour reconstructs the two time-ordering step functions and makes k0 an independent,
+    generally off-shell integration variable.
   kind: result
   group: qft.align015-peskin-free-fields
   origins:
@@ -6607,6 +6609,10 @@ nodes:
     node: schwartz.feynman-propagator-time-ordering
     note: Adds Schwartz’s free time-ordered two-point derivation while retaining the
       accepted Peskin–Schroeder i-epsilon, Green-function, and internal-line scope.
+  - project: schwartz
+    node: schwartz.feynman-propagator-iepsilon-contour
+    note: Retains Schwartz’s opposite-side pole placement, time-ordering reconstruction,
+      and generally off-shell k0 integration.
   evidence:
   - source: peskin-schroeder
     section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
@@ -6620,6 +6626,13 @@ nodes:
     - 75
     note: Derives the free time-ordered two-point function, its two theta-function
       orderings, and their advanced/retarded pieces.
+  - source: schwartz
+    section: 6.2 The Feynman propagator and Problems
+    pages:
+    - 76
+    - 77
+    note: Derives the pole prescription and states the final propagator and off-shell
+      interpretation.
   notation:
   - source: peskin-schroeder
     note: T places the later operator left; i epsilon specifies displaced poles.
@@ -6627,6 +6640,9 @@ nodes:
     note: The displayed free-field two-point function is time ordered by theta(t1-t2)
       and theta(t2-t1); it is a derivation of the accepted propagator, not the full
       Wick theorem.
+  - source: schwartz
+    note: Peskin–Schroeder writes the propagator with its Fourier convention; Schwartz
+      writes D_F(x1,x2) and emphasizes the contour’s off-shell k0 variable.
 - id: qft.align015.field-commutator-lorentz-invariance
   label: Lorentz invariance of field commutators
   summary: Weinberg’s historical account reports that Jordan and Pauli showed in 1928
@@ -6927,7 +6943,9 @@ nodes:
     occupation plus a state-independent zero-point term. Peskin–Schroeder applies
     this to continuum free-scalar momentum modes and permits subtracting the zero
     point for energy differences; Weinberg presents the historical discrete radiation-normal-mode
-    construction and its infinite vacuum energy.
+    construction and its infinite vacuum energy. Schwartz’s free-photon mode sum supplies
+    the compatible bosonic zero-point core; its observable-difference and renormalization
+    discussion remains in a source-specific residual.
   kind: result
   group: qft.align015-peskin-free-fields
   origins:
@@ -6958,6 +6976,13 @@ nodes:
       identify the vacuum, and yield the energy sum and infinite zero-point term;
       this discrete radiation construction is retained alongside the continuum scalar
       treatment.
+  - source: schwartz
+    section: 4.2 Early infinities
+    pages:
+    - 52
+    - 53
+    note: States the vacuum-energy divergence and the energy-difference interpretation.
+  notation: []
 - id: qft.align015.spacelike-wightman-amplitude
   label: Nonzero spacelike free-field propagation amplitude
   summary: D(x-y)=<0|phi(x)phi(y)|0> is Lorentz invariant and, for spacelike separation,
@@ -7274,11 +7299,12 @@ nodes:
   label: Decay rates, resonance widths, and Lorentz time dilation
   summary: A one-particle decay rate is a transition rate with one initial parent;
     its use of finite-time normalization requires the rate to be small compared with
-    characteristic process energies. Peskin–Schroeder identifies the Breit–Wigner
-    peak width with the rest-frame decay rate and gives the moving-frame factor m/E_p.
-    Weinberg derives the corresponding 1/E transformation after spin summation from
-    Lorentz-invariant remaining factors. The Breit–Wigner statement and the narrow-width
-    qualification are retained as source-specific conditions.
+    characteristic process energies. Schwartz obtains dΓ=|M|²dΠ_LIPS/(2E1), so the
+    moving-particle rate carries the expected inverse-energy time dilation. Peskin–Schroeder
+    identifies the Breit–Wigner peak width with the rest-frame decay rate and gives
+    the moving-frame factor m/Ep. Weinberg derives the corresponding 1/E transformation
+    after spin summation from Lorentz-invariant remaining factors. The Breit–Wigner
+    statement and narrow-width qualification remain source-specific.
   kind: result
   group: qft.align016.observables
   origins:
@@ -7297,6 +7323,10 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
+  - project: schwartz
+    node: schwartz.decay-rate-lips-and-time-dilation
+    note: Retains Schwartz’s perturbative finite-time phase-space formula and its
+      moving-particle time-dilation reading.
   evidence:
   - source: peskin-schroeder
     section: '4.5'
@@ -7316,7 +7346,17 @@ nodes:
     - 138
     note: The source identifies the invariant factors in the decay formula and concludes
       that the rate has the transformation property of 1/Eα.
-  notation: []
+  - source: schwartz
+    section: 5.1.1 Decay rates
+    pages:
+    - 61
+    - 62
+    note: Defines decay probability per time and gives the LIPS formula and time-dilation
+      explanation.
+  notation:
+  - source: schwartz
+    note: Schwartz writes dΓ with dΠ_LIPS/(2E1); the accepted record separately retains
+      Peskin–Schroeder’s Breit–Wigner and Weinberg’s spin-summed formulation.
 - label: Feynman diagrams as contraction representations
   summary: Represent a propagator contraction by a line and a spacetime field insertion
     by a point; in an interacting expression distinguish external points from integrated
@@ -7459,13 +7499,21 @@ nodes:
   summary: The interacting time-ordered n-point function is represented by a free-vacuum
     expectation value with T exp[-i integral H_I] in the numerator divided by its
     vacuum expectation value. The identity is exact before truncating its perturbative
-    exponential.
+    exponential. The retained Schwartz treatment supplies its compatible source-specific
+    construction or qualification.
   kind: result
   evidence:
   - source: peskin-schroeder
     section: '4.2'
     pages:
     - 87
+  - source: schwartz
+    section: 7.2.3–7.2.4
+    pages:
+    - 87
+    - 88
+    - 89
+    note: Relates U operators and vacua, then expresses V_I through ℒ_int.
   id: qft.align016.interacting-correlation-function-quotient
   group: qft.align016.diagrammatics
   origins:
@@ -7474,6 +7522,10 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
+  - project: schwartz
+    node: schwartz.interacting-correlator-vacuum-normalization
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
   notation: []
 - label: Internal symmetry and S-matrix selection rules
   summary: A frame-independent internal symmetry acts unitarily on particle-species
@@ -7544,10 +7596,11 @@ nodes:
       shared core stated here.
   notation: []
 - label: Lippmann–Schwinger scattering-state equations
-  summary: The formal solutions of the full energy eigenvalue equation are free states
-    plus the resolvent (Eα−H₀±iε)⁻¹V acting on the scattering state. The positive
-    or negative infinitesimal gives the in or out boundary condition and yields a
-    free-state expansion with T-matrix elements.
+  summary: The formal full-energy scattering state is a free H0 eigenstate plus the
+    resolvent (E−H0±iε)⁻¹V acting on that scattering state. The infinitesimal selects
+    the in/out asymptotic boundary condition. Schwartz’s displayed +iε construction
+    retains free asymptotic states and an intermediate-time V insertion; Weinberg’s
+    two-sign treatment retains both contour-verified boundaries and the T-matrix expansion.
   kind: method
   evidence:
   - source: weinberg-1
@@ -7557,6 +7610,12 @@ nodes:
     - 112
     note: The source introduces the ±iε resolvent equations, names them, and verifies
       their asymptotic conditions by contour closure.
+  - source: schwartz
+    section: 4.1 Lippmann–Schwinger equation
+    pages:
+    - 47
+    note: Defines the Hamiltonian split, equation, scattering interpretation, and
+      iε regulator.
   id: qft.align016.lippmann-schwinger-scattering-state-equations
   group: qft.align016.scattering-operators
   origins:
@@ -7565,10 +7624,17 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
+  - project: schwartz
+    node: schwartz.lippmann-schwinger-scattering-equation
+    note: Retains Schwartz’s +iε Lippmann–Schwinger construction, its free asymptotic
+      state, and its intermediate-time interaction scope.
   notation:
   - source: weinberg-1
     note: 'The book’s ± labels are traditional: the +iε equation is the in-state boundary
       condition and the −iε equation is the out-state boundary condition.'
+  - source: schwartz
+    note: Schwartz writes the incoming condition with +iε; Weinberg retains the ±
+      convention and its in/out interpretation.
 - label: Invariant phase space and cross-section formula
   summary: 'For narrow initial wavepackets and finite detector resolution, the differential
     cross section is incident-flux inverse times |M|² and Lorentz-invariant n-body
@@ -7578,7 +7644,9 @@ nodes:
     to be a Lorentz scalar: uα=sqrt[(p1·p2)²−m1²m2²]/(E1E2). Its center-of-mass value
     need not be a physical velocity. His two-body reduction uses four-momentum conservation
     and the remaining energy delta function to fix the final momentum magnitude, yielding
-    the displayed differential decay and scattering formulas.'
+    the displayed differential decay and scattering formulas. For the two-beam geometry
+    used by Schwartz, the same observable is written dσ=|M|²dΠ_LIPS/[(2E1)(2E2)|v⃗1−v⃗2|]
+    after factoring S=1+i(2π)⁴δ⁴(Σp)M, with one d³p/[(2π)³2E] factor per final particle.'
   kind: result
   evidence:
   - source: peskin-schroeder
@@ -7602,6 +7670,12 @@ nodes:
     - 140
     note: Equations (3.4.20)–(3.4.30) reduce the phase space and state the two-body
       rate and cross-section formulas.
+  - source: schwartz
+    section: 5.1 Cross sections
+    pages:
+    - 60
+    - 61
+    note: Factors the S-matrix and derives LIPS and the rate formula.
   id: qft.align016.lorentz-invariant-phase-space-cross-section
   group: qft.align016.observables
   origins:
@@ -7618,6 +7692,10 @@ nodes:
     node: weinberg-1.two-body-phase-space-and-cross-section
     note: Retains Weinberg’s separate two-body delta-function reduction and its displayed
       rate/cross-section normalization.
+  - project: schwartz
+    node: schwartz.lorentz-invariant-phase-space-cross-section
+    note: Retains Schwartz’s S-matrix normalization, explicit flux denominator, and
+      dΠ_LIPS convention while sharing only the invariant rate core.
   notation:
   - source: weinberg-1
     note: uα=sqrt[(p1·p2)²−m1²m2²]/(E1E2); it equals the other particle’s velocity
@@ -7625,6 +7703,9 @@ nodes:
   - source: weinberg-1
     note: The two-body final quantities are primed and k′ is fixed by the remaining
       energy delta function.
+  - source: schwartz
+    note: Schwartz uses dΠ_LIPS and factors S=1+i(2π)⁴δ⁴(Σp)M; Peskin–Schroeder retains
+      its wavepacket and detector-resolution qualification.
 - label: LSZ boundary-operator derivation
   summary: Integration by parts relates ∫d⁴x e^{ipx}(□+m²)φ(x) to √(2ω_p)[a_p(∞)−a_p(−∞)].
     Time ordering then causes unwanted operators to annihilate the vacuum, yielding
@@ -7820,14 +7901,23 @@ nodes:
 - label: Momentum-space phi-four Feynman rules
   summary: Fourier transforming each propagator gives i/(p^2-m^2+i epsilon); vertex
     integrations impose four-momentum conservation, leaving integrations only over
-    undetermined momenta. The Feynman boundary prescription supplies the i epsilon
-    continuation.
+    undetermined momenta, while the Feynman boundary prescription supplies the i epsilon
+    continuation. Schwartz additionally states that external-line propagators cancel
+    under LSZ, vertices contribute i times their Lagrangian coupling, and all diagrams
+    are summed to obtain iM.
   kind: method
   evidence:
   - source: peskin-schroeder
     section: '4.4'
     pages:
     - 95
+  - source: schwartz
+    section: 7.3 Momentum-space Feynman rules
+    pages:
+    - 93
+    - 94
+    - 95
+    note: Works the Fourier/LSZ conversion and lists the resulting rules.
   id: qft.align016.phi4-momentum-space-feynman-rules
   group: qft.align016.diagrammatics
   origins:
@@ -7836,7 +7926,14 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
-  notation: []
+  - project: schwartz
+    node: schwartz.momentum-space-feynman-rules
+    note: Retains Schwartz’s LSZ external-line cancellation, vertex-coupling convention,
+      and sum-to-iM rule within the compatible scalar diagrammatic core.
+  notation:
+  - source: schwartz
+    note: Peskin–Schroeder gives the phi-four scalar convention; Schwartz phrases
+      vertices by their Lagrangian coupling and explicitly invokes LSZ.
 - label: Vanishing odd phi-four correlation functions
   summary: 'All odd-field correlation functions vanish in phi-four theory: every perturbative
     term has an odd total number of fields, which cannot be fully paired by Wick contractions.'
@@ -7856,15 +7953,25 @@ nodes:
       shared core stated here.
   notation: []
 - label: Position-space phi-four Feynman rules
-  summary: For a phi-four correlation function assign a Feynman propagator to each
-    line, an integrated -i lambda factor to each vertex, and the appropriate external-point
-    factors, multiply independent factors, and divide by the symmetry factor.
+  summary: For a phi-four correlation function, and more generally the reviewed scalar
+    interaction construction, assign a Feynman propagator to each line, an integrated
+    Lagrangian coefficient to each vertex, and the appropriate external-point factors;
+    multiply independent factors and divide by the geometrical symmetry factor. Schwartz
+    retains that the Hamiltonian contraction route and the Lagrangian Schwinger–Dyson
+    route agree after their distinct derivations.
   kind: method
   evidence:
   - source: peskin-schroeder
     section: '4.4'
     pages:
     - 94
+  - source: schwartz
+    section: 7.2.6 Position-space Feynman rules
+    pages:
+    - 92
+    - 93
+    note: States equivalence of derivations and summarizes vertex and symmetry-factor
+      accounting.
   id: qft.align016.phi4-position-space-feynman-rules
   group: qft.align016.diagrammatics
   origins:
@@ -7873,17 +7980,31 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
-  notation: []
+  - project: schwartz
+    node: schwartz.position-space-feynman-rules
+    note: Retains Schwartz’s external-point/internal-vertex formulation and the agreement
+      of its distinct Hamiltonian and Lagrangian routes.
+  notation:
+  - source: schwartz
+    note: Peskin–Schroeder states the phi-four factors as −i lambda; Schwartz states
+      a general Lagrangian coefficient and keeps both derivation routes distinct.
 - label: Phi-four diagram symmetry factors
   summary: For phi-four diagrams, vertex permutations cancel the Taylor-series factorial
     and the four fields at a generic vertex cancel the coupling's 4!; divide the remaining
     diagram value by the number of component interchanges that leave it unchanged.
+    Schwartz page 83 supplies the same cancellation in the phi-four special case;
+    its general phi-to-the-n normalization remains in a source-specific residual.
   kind: method
   evidence:
   - source: peskin-schroeder
     section: '4.4'
     pages:
     - 93
+  - source: schwartz
+    section: 7.1.1 Position-space Feynman rules
+    pages:
+    - 83
+    note: Explains normalized interactions and geometrical symmetry factors.
   id: qft.align016.phi4-symmetry-factors
   group: qft.align016.diagrammatics
   origins:
@@ -7994,7 +8115,8 @@ nodes:
     Weinberg relates its on-shell coefficient to an energy-conserving delta function
     and T-plus; that Lippmann–Schwinger route is retained separately so it is not
     compulsory for the Peskin–Schroeder wavepacket definition or the Schwartz LSZ
-    route.
+    route. The retained Schwartz treatment supplies its compatible source-specific
+    construction or qualification.
   kind: method
   group: qft.align016.scattering-operators
   origins:
@@ -8008,6 +8130,10 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
+  - project: schwartz
+    node: schwartz.s-matrix-asymptotic-state-map
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
   evidence:
   - source: peskin-schroeder
     section: '4.5'
@@ -8021,6 +8147,11 @@ nodes:
     - 114
     note: Equations (3.2.1)–(3.2.6) define the overlap, establish both unitarity relations,
       and define the operator S.
+  - source: schwartz
+    section: Chapter 5 introduction
+    pages:
+    - 56
+    note: Defines asymptotic states and S-matrix elements.
   notation:
   - source: peskin-schroeder
     note: Peskin–Schroeder uses S=1+iT and an invariant M after a four-momentum delta
@@ -8031,7 +8162,8 @@ nodes:
     ordering plus all possible pair contractions. A vacuum expectation value keeps
     only fully contracted terms. Each contraction has the analytic value of the accepted
     Feynman scalar propagator; this Wick-expansion method remains distinct from the
-    two-point propagator derivation itself.
+    two-point propagator derivation itself. The retained Schwartz treatment supplies
+    its compatible source-specific construction or qualification.
   kind: method
   group: qft.align016.diagrammatics
   origins:
@@ -8039,6 +8171,10 @@ nodes:
     node: peskin-schroeder.scalar-wick-theorem
     note: Retains Peskin–Schroeder’s free-field normal-ordering and all-pair-contractions
       theorem, including the fully contracted vacuum-expectation consequence.
+  - project: schwartz
+    node: schwartz.normal-ordering-and-wicks-theorem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
   evidence:
   - source: peskin-schroeder
     section: '4.3'
@@ -8047,6 +8183,14 @@ nodes:
     - 89
     note: The source defines contractions as Feynman propagators, states the all-contractions
       formula, and identifies the surviving fully contracted vacuum terms.
+  - source: schwartz
+    section: 7.A.1–7.A.2
+    pages:
+    - 101
+    - 102
+    - 103
+    note: Defines normal ordering, states Wick’s theorem, and supplies its induction
+      proof.
   notation: []
 - label: Strangeness selection in strong production and weak decay
   summary: Approximate strangeness conservation explains associated production of
@@ -8072,9 +8216,11 @@ nodes:
   notation: []
 - label: Vacuum-bubble exponentiation and cancellation
   summary: Diagrams disconnected from every external point factor into the exponential
-    of the sum of connected vacuum pieces. The same exponential occurs in the normalized
+    of the sum of connected vacuum pieces. The same factor occurs in the normalized
     denominator, so vacuum bubbles cancel from correlation functions while encoding
-    a vacuum-energy shift.
+    a vacuum-energy shift. Schwartz derives the cancellation from complete Wick contractions
+    and retains the criterion that surviving diagrams have connected subgraphs involving
+    an external point.
   kind: result
   evidence:
   - source: peskin-schroeder
@@ -8082,6 +8228,14 @@ nodes:
     pages:
     - 97
     - 98
+  - source: schwartz
+    section: 7.2.5 Time-ordered products and contractions
+    pages:
+    - 90
+    - 91
+    - 92
+    note: Defines contractions, invokes Wick’s theorem, and proves bubble cancellation
+      in the example.
   id: qft.align016.vacuum-bubble-exponentiation-and-cancellation
   group: qft.align016.diagrammatics
   origins:
@@ -8090,7 +8244,14 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
-  notation: []
+  - project: schwartz
+    node: schwartz.wick-contractions-and-vacuum-bubble-cancellation
+    note: Retains Schwartz’s complete-contraction derivation and its external-point
+      connectivity condition.
+  notation:
+  - source: schwartz
+    note: Peskin–Schroeder expresses the disconnected pieces by exponentiation; Schwartz
+      uses the normalized free-vacuum contraction route.
 - label: Watson theorem for final-state phases
   summary: For a weak transition on top of a unitary strong background, time-reversal
     invariance relates amplitudes after summing over sets complete under the strong
@@ -14287,7 +14448,9 @@ nodes:
   summary: For two-to-two scattering, define s from total initial momentum and t and
     u from initial-final momentum differences. Momentum conservation gives s+t+u equal
     to the sum of the four external masses squared; in the equal-mass CM frame, t
-    approaches zero forward and u approaches zero backward.
+    approaches zero forward and u approaches zero backward. Schwartz’s phi-cubed worked
+    calculation supplies the compatible source evidence; its amplitude details remain
+    in the residual record.
   kind: representation
   group: qft.qed-scattering
   origins:
@@ -14305,6 +14468,13 @@ nodes:
     - 158
     note: The source defines s, t, u, applies crossing as an interchange, and derives
       their CM behavior and sum rule.
+  - source: schwartz
+    section: 7.4 and 7.4.1 Mandelstam variables
+    pages:
+    - 97
+    - 98
+    - 99
+    note: Calculates the three exchange diagrams and defines their invariant channels.
 - id: qft.align023.peskin.massive-muon-pair-cross-section
   label: Massive muon-pair production and threshold behavior
   summary: For e+e- to mu+mu- at lowest QED order, retain the muon mass while neglecting
@@ -14835,6 +15005,8 @@ nodes:
     by whether its propagator denominator is s-minus-m-squared, t-minus-m-squared,
     or u-minus-m-squared. A process may have several channels whose amplitudes must
     be added coherently; the channel denominator explains characteristic angular singularities.
+    Schwartz’s phi-cubed worked calculation supplies the compatible source evidence;
+    its amplitude details remain in the residual record.
   kind: concept
   group: qft.qed-scattering
   origins:
@@ -14851,6 +15023,13 @@ nodes:
     - 158
     note: The source defines channels, gives Bhabha and Moller examples, and relates
       t/u to forward/backward angles.
+  - source: schwartz
+    section: 7.4 and 7.4.1 Mandelstam variables
+    pages:
+    - 97
+    - 98
+    - 99
+    note: Calculates the three exchange diagrams and defines their invariant channels.
 - id: qft.align023.peskin.threshold-muon-pair-spin-triplet-swave
   label: Threshold muon pairs as a spin-triplet S wave
   summary: Near muon-pair threshold, the electron current creates an angle-independent
@@ -16476,6 +16655,753 @@ nodes:
     section: 31.1.1
     pages:
     - 647
+  notation: []
+- id: qft.align030.advanced-retarded-propagator-integrals-problem
+  label: Advanced/retarded propagator integral problem
+  summary: Problem 6.2 asks for d⁴k integral representations of the advanced and retarded
+    propagators. It extends the chapter’s time-ordering comparison but does not supply
+    their derivation on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.advanced-retarded-propagator-integrals-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 6.2
+    pages:
+    - 77
+    note: Explicitly requests advanced and retarded integral expressions.
+  notation: []
+- id: qft.align030.advanced-retarded-time-ordering-sum
+  label: Advanced and retarded OFPT time orderings
+  summary: 'Electron scattering by photon exchange has two valid temporal orderings:
+    one intermediate state is retarded relative to a chosen source and the other advanced.
+    Both must be included before expressing the physical transition amplitude covariantly.'
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.advanced-retarded-time-ordering-sum
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 4.1.1 Coulomb’s law revisited
+    pages:
+    - 49
+    - 50
+    - 51
+    note: Identifies the two intermediate states and adds their contributions.
+  notation: []
+- id: qft.align030.circular-polarization-annihilation-problem
+  label: Circular-polarization annihilation problem
+  summary: Problem 5.4 asks for the e⁺e⁻→μ⁺μ⁻ calculation of Section 5.3 in a circular-polarization
+    basis. It is a requested alternative spin representation, not an additional result
+    established on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.circular-polarization-annihilation-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 5.4
+    pages:
+    - 67
+    note: Requests the circular-polarization repetition.
+  notation: []
+- id: qft.align030.cm-two-to-two-cross-section
+  label: Center-of-mass 2→2 cross section
+  summary: For 2→2 scattering in the center-of-mass frame, integrating two-body LIPS
+    gives dσ/dΩ=|M|²(p_f/p_i)/[64π²E_CM²], together with the threshold step function.
+    Equal masses and elastic kinematics set p_f=p_i.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.cm-two-to-two-cross-section
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 5.1.2 Special cases
+    pages:
+    - 62
+    - 63
+    note: Performs the two-body phase-space integral and states the CM formula.
+  notation: []
+- id: qft.align030.cross-section-flux-probability-luminosity
+  label: Cross section from flux, probability, and luminosity
+  summary: A differential cross section is differential scattering probability divided
+    by the incident flux and duration. Collider event counts are obtained by integrating
+    a cross section against luminosity, separating the interaction property from experimental
+    beam conditions.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.cross-section-flux-probability-luminosity
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 5.1 Cross sections
+    pages:
+    - 57
+    - 58
+    - 59
+    note: Defines cross section, differential probability, luminosity, and event counting.
+  notation: []
+- id: qft.align030.derivative-couplings-and-total-derivative-invariance
+  label: Derivative couplings and total-derivative invariance
+  summary: A derivative acting on a field produces a momentum factor whose sign depends
+    on whether the particle enters or leaves a vertex. Rewriting an interaction by
+    integration by parts redistributes such vertex factors but gives the same matrix
+    element; in perturbation theory, a total derivative vanishes by momentum conservation
+    at the vertex. Problems 7.5–7.6 request a general integration-by-parts proof and
+    a derivative-coupling tree-level cross section, respectively; those requested
+    calculations are not proved on the problem page.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.derivative-couplings-and-total-derivative-invariance
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.4.2 Derivative couplings
+    pages:
+    - 99
+    - 100
+    note: Works the derivative-coupling example and proves the perturbative total-derivative
+      statement.
+  - source: schwartz
+    section: Problems 7.5–7.6
+    pages:
+    - 104
+    note: Requests the general proof and a derivative-coupling cross section.
+  notation: []
+- id: qft.align030.disconnected-amplitudes-and-cluster-decomposition
+  label: Disconnected amplitudes and cluster decomposition
+  summary: A disconnected process factorizes into independently connected S-matrix
+    parts and carries additional momentum delta functions. Its singularity structure
+    gives zero interference with a connected amplitude; this is related to cluster
+    decomposition, the requirement that widely separated experiments do not influence
+    one another. Problem 7.2 asks for a connected and a disconnected 2→4 contribution
+    and a check of their noninterference; this requested check is not separately proved
+    on the problem page.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.disconnected-amplitudes-and-cluster-decomposition
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.3.2 Disconnected graphs
+    pages:
+    - 95
+    - 96
+    - 97
+    note: Explains factorization, absence of interference, and the cluster-decomposition
+      interpretation.
+  - source: schwartz
+    section: Problem 7.2
+    pages:
+    - 103
+    note: Requests the connected/disconnected 2→4 calculation and noninterference
+      check.
+  notation: []
+- id: qft.align030.general-interaction-normalization-and-symmetry-residual
+  label: General interaction normalization and graph symmetry factors
+  summary: For a scalar interaction written with a 1/n! factor for n identical fields,
+    field permutations cancel the vertex combinatorics. After labeled external points
+    are held fixed, any remaining geometrical graph symmetry divides the diagram value.
+    This general Schwartz convention is retained separately from the accepted phi-four
+    common core.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.interaction-normalization-and-symmetry-factors
+    note: Retains the general identical-field factorial convention and external-label-fixed
+      geometrical symmetry factor beyond the phi-four common core.
+  evidence:
+  - source: schwartz
+    section: 7.1.1 Position-space Feynman rules
+    pages:
+    - 83
+    note: Explains normalized interactions and the residual geometrical symmetry division.
+  notation:
+  - source: schwartz
+    note: The interaction normalization uses 1/n! for n identical scalar fields; geometrical
+      symmetries are counted with labeled external points fixed.
+- id: qft.align030.general-operator-creation-annihilation-expansion-problem
+  label: General-operator creation/annihilation expansion problem
+  summary: Problem 6.3 asks for a proof that any operator can be written in the creation/annihilation
+    form of Eq. (6.22). It is the requested algebraic support for the generalized-LSZ
+    operator discussion, not a proof supplied in the problem statement.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.general-operator-creation-annihilation-expansion-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 6.3
+    pages:
+    - 77
+    note: Requests the general-operator expansion proof.
+  notation: []
+- id: qft.align030.hamiltonian-contraction-route-to-position-rules
+  label: Hamiltonian contraction route to position-space rules
+  summary: The Hamiltonian derivation becomes a complete route to position-space rules
+    only after combining the interaction-picture Dyson expansion, the vacuum-normalized
+    correlator identity, and Wick contractions. Together they generate the same diagrams
+    and combinatoric factors as the Lagrangian route.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.hamiltonian-contraction-route-to-position-rules
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.2–7.2.6
+    pages:
+    - 85
+    - 89
+    - 90
+    - 91
+    - 92
+    - 93
+    note: Builds the Dyson series, normalized correlator, contractions, bubble cancellation,
+      and identical rules.
+  notation: []
+- id: qft.align030.interaction-picture-dyson-series-route
+  label: Interaction-picture Dyson-series route
+  summary: Splitting H=H₀+V and factoring out free evolution defines U(t,t₀), which
+    obeys i∂ₜU=V_I(t)U. Its unique solution is the time-ordered exponential, whose
+    perturbative expansion is the Dyson series; this supplies a Hamiltonian route
+    to the same diagrammatic expansion.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.interaction-picture-dyson-series-route
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.2 Hamiltonian derivation and 7.2.1
+    pages:
+    - 84
+    - 85
+    - 86
+    - 87
+    note: Defines the interaction picture, time-ordered exponential, and perturbative
+      Dyson-series construction.
+  notation: []
+- id: qft.align030.lab-frame-two-to-two-cross-section-problem
+  label: Lab-frame 2→2 cross-section problem
+  summary: Problem 5.1 asks for the differential 2→2 cross section in the rest frame
+    of one incoming particle, including the final-momentum Jacobian and the supplied
+    kinematic energies. It is a requested lab-frame specialization of the general
+    rate formula, not a derivation supplied on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.lab-frame-two-to-two-cross-section-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 5.1
+    pages:
+    - 67
+    note: States the lab-frame differential-cross-section formula to show.
+  notation: []
+- id: qft.align030.lagrangian-schwinger-dyson-feynman-rule-route
+  label: Lagrangian Schwinger–Dyson route to diagrams
+  summary: Solving the Schwinger–Dyson equations perturbatively attaches propagators
+    to external points, lets lines contract or split at interaction vertices, and
+    integrates internal vertex positions. This gives position-space diagrams for time-ordered
+    correlation functions.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.lagrangian-schwinger-dyson-feynman-rule-route
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.1.1 Position-space Feynman rules
+    pages:
+    - 81
+    - 82
+    - 83
+    note: Constructs free and interacting correlator diagrams and states the diagram-building
+      procedure.
+  notation: []
+- id: qft.align030.lamb-shift-ultraviolet-phase-space-divergence
+  label: Lamb-shift ultraviolet phase-space divergence
+  summary: The OFPT self-energy correction sums dynamical photon intermediate states.
+    At large momentum its phase-space growth overwhelms the energy denominator, producing
+    a divergent ∫k dk contribution in the displayed approximation; the source says
+    additional infinities, including electron-mass effects, must cancel it in the
+    physical Lamb shift.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.lamb-shift-ultraviolet-phase-space-divergence
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 4.2.1 Oppenheimer and the Lamb shift
+    pages:
+    - 53
+    - 54
+    - 55
+    note: Contrasts finite Stark perturbation theory with the high-momentum photon-state
+      sum and its interpretation.
+  notation: []
+- id: qft.align030.lips-lorentz-invariance-problem
+  label: LIPS Lorentz-invariance problem
+  summary: Problem 5.2 asks the learner to prove that dΠ_LIPS is Lorentz invariant
+    and verify the chapter’s phase-space expression. It records a requested proof
+    supporting the phase-space formalism rather than asserting an unshown proof from
+    the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.lips-lorentz-invariance-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 5.2
+    pages:
+    - 67
+    note: Explicitly requests the LIPS invariance proof and verification.
+  notation: []
+- id: qft.align030.loop-amplitude-position-momentum-lsz-problem
+  label: Loop-amplitude and LSZ translation problem
+  summary: Problem 7.1 asks for a φ³ decay tree amplitude, a one-loop amplitude, its
+    position-space representation through propagator factors and contractions, and
+    an LSZ reduction back to the momentum-space expression. It is a requested cross-representation
+    derivation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.loop-amplitude-position-momentum-lsz-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 7.1
+    pages:
+    - 103
+    note: Lists the tree, loop, position-space, and LSZ tasks.
+  notation: []
+- id: qft.align030.mass-insertion-propagator-resummation-problem
+  label: Mass-insertion propagator resummation problem
+  summary: Problem 7.4 asks the learner to treat a scalar mass term as an interaction,
+    compute the two-point diagrams through order m⁶, sum the series, and recover the
+    massive propagator; it also requests the analogous classical sourced-field calculation.
+    The page poses, rather than proves, the resummation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.mass-insertion-propagator-resummation-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 7.4
+    pages:
+    - 104
+    note: States the mass-as-interaction diagram, summation, and classical comparison
+      tasks.
+  notation: []
+- id: qft.align030.moller-scattering-spin-channels-problem
+  label: Møller scattering and spin-channel problem
+  summary: Problem 7.3 asks for the tree-level scalar diagrams for nonrelativistic
+    e⁻e⁻ scattering, their s-, t-, and u-channel amplitudes with the fermion relative
+    sign, spin-allowed channels, and the unpolarized angular rate. It is a requested
+    application, not a completed calculation on the problem pages.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.moller-scattering-spin-channels-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 7.3
+    pages:
+    - 103
+    - 104
+    note: States the diagrams, channel, spin-selection, and unpolarized-rate tasks.
+  notation: []
+- id: qft.align030.momentum-flow-and-identical-final-states
+  label: Momentum-flow conventions and identical final states
+  summary: External momenta are assigned their physical positive-energy values and
+    internal-line orientation is conventional but must be consistent with the vertex
+    delta functions. Identical-particle algebra is already included by Wick contractions;
+    a final state containing n indistinguishable particles requires dividing its cross
+    section by n!.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.momentum-flow-and-identical-final-states
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.3–7.3.1
+    pages:
+    - 94
+    - 95
+    note: Explains external-leg cancellation, identical final states, and momentum-flow
+      convention.
+  notation: []
+- id: qft.align030.multibody-decay-phase-space-problem
+  label: Three-body muon-decay phase-space problem
+  summary: Problem 5.3 asks for the LIPS integration of a supplied massless three-body
+    muon-decay matrix element to obtain Γ=G_F²m⁵/(192π³), then asks for comparison
+    with observed data and a possible source of discrepancy. It records an assigned
+    calculation rather than claiming the problem-page derivation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.multibody-decay-phase-space-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 5.3
+    pages:
+    - 67
+    note: Specifies the supplied matrix element, requested integration, and comparison.
+  notation: []
+- id: qft.align030.nonrelativistic-born-qft-coulomb-match
+  label: Nonrelativistic Born–QFT Coulomb match
+  summary: In the proton-rest, elastic nonrelativistic limit, scalar-QED photon exchange
+    has the two matter-photon vertex factors and a 1/k⃗² propagator needed to reproduce
+    the Born cross section for a Coulomb potential. Rescaling fields relates the relativistic
+    and nonrelativistic normalization conventions without changing the result.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.nonrelativistic-born-qft-coulomb-match
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 5.2 Non-relativistic limit
+    pages:
+    - 63
+    - 64
+    note: Compares the Born potential formula to the scalar-QED scaling estimate and
+      normalization rescaling.
+  notation: []
+- id: qft.align030.offshell-momentum-from-ofpt
+  label: Off-shell momentum from summed OFPT orderings
+  summary: 'Adding the advanced and retarded OFPT denominators yields a Lorentz-invariant
+    1/k² factor, where k=(ΔE,p⃗γ) is a four-vector but is not the on-shell photon
+    momentum: k²≠0. Thus a covariant off-shell propagator summarizes a sum over physical
+    on-shell time orderings.'
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.offshell-momentum-from-ofpt
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 4.1.1 Coulomb’s law revisited
+    pages:
+    - 51
+    note: Defines k, obtains k² and the combined transition matrix.
+  notation: []
+- id: qft.align030.ofpt-annihilation-time-slicings-problem
+  label: OFPT annihilation time-slicings problem
+  summary: Problem 4.1 asks the learner to write the two OFPT intermediate-state denominators
+    for e⁺e⁻→γ→μ⁺μ⁻ and show that their sum gives 2Eγ/k² for the virtual off-shell
+    photon. This is a requested application, not a result proved on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.ofpt-annihilation-time-slicings-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 4.1
+    pages:
+    - 55
+    note: States the two-slicing and combined-denominator task.
+  notation: []
+- id: qft.align030.ofpt-on-shell-intermediate-states
+  label: OFPT on-shell intermediate states
+  summary: Old-fashioned perturbation theory sums physical, on-shell intermediate
+    Fock states. It conserves three-momentum at each local vertex while intermediate-state
+    energy differs from the fixed total external energy, with denominators determined
+    by the total intermediate-state energy.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.ofpt-on-shell-intermediate-states
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 4.1.1–4.1.2
+    pages:
+    - 49
+    - 52
+    note: Builds the electron-photon intermediate states and summarizes OFPT rules.
+  notation: []
+- id: qft.align030.ofpt-relativistic-rules
+  label: Relativistically normalized OFPT rules
+  summary: With relativistic normalization, OFPT assigns an overall energy delta function,
+    a factor 1/(Eᵢ−Eₖ+iε) to each intermediate state, a three-momentum delta function
+    at each vertex, and d³p/[(2π)³2E] for each internal line. These rules retain on-shell
+    internal states rather than covariant four-momentum integration.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.ofpt-relativistic-rules
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 4.1.2 Feynman rules for OFPT
+    pages:
+    - 52
+    note: Footnote states the relativistically normalized rules and the main text
+      contrasts OFPT with the covariant propagator.
+  notation: []
+- id: qft.align030.phi3-worked-channel-amplitudes-residual
+  label: Phi-cubed worked channel amplitudes
+  summary: The retained Schwartz worked phi-cubed scattering calculation sums the
+    s-, t-, and u-channel amplitudes before squaring; the accepted invariant and channel-classification
+    cores carry the shared terminology.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.mandelstam-channels-phi3-scattering
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.4 and 7.4.1 Mandelstam variables
+    pages:
+    - 97
+    - 98
+    - 99
+    note: Calculates the three exchange diagrams and defines their invariant channels.
+  notation: []
+- id: qft.align030.photon-zero-point-energy-observable-differences-residual
+  label: Photon zero-point energy and observable differences
+  summary: The free-photon Hamiltonian has a formally divergent state-independent
+    zero-point contribution, so ordinary energy differences remove the common term.
+    Schwartz uses this as a basic renormalization lesson while retaining physical
+    settings that depend on differences in vacuum energy.
+  kind: concept
+  origins:
+  - project: schwartz
+    node: schwartz.zero-point-energy-observable-differences
+    note: Retains the photon-specific observable-difference interpretation, renormalization
+      lesson, and physical vacuum-energy-difference qualification.
+  evidence:
+  - source: schwartz
+    section: 4.2 Early infinities
+    pages:
+    - 52
+    - 53
+    note: States the divergent photon vacuum term, cancellation from ordinary energy
+      differences, and the qualification for physical vacuum-energy differences.
+- id: qft.align030.position-space-propagator-massless-limit-problem
+  label: Position-space propagator and massless-limit problem
+  summary: Problem 6.1 asks for the position-space Feynman propagator, suggests Schwinger
+    parameters to control poles, and requests its massless limit. This is an assigned
+    evaluation of the propagator, rather than a result proved on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.position-space-propagator-massless-limit-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 6.1
+    pages:
+    - 77
+    note: States the position-space and massless-limit tasks.
+  notation: []
+- id: qft.align030.relativistic-state-normalization-and-delta-regulation
+  label: Relativistic normalization and delta-function regulation
+  summary: Momentum eigenstates have relativistic normalization ⟨p|p⟩=2E V after regulating
+    δ³(0) in a finite volume. Squaring the overall momentum-conserving delta function
+    similarly produces TV, and these regulator factors cancel from the physical rate
+    formula.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.relativistic-state-normalization-and-delta-regulation
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 5.1 Cross sections
+    pages:
+    - 59
+    - 60
+    - 61
+    note: Derives finite-volume delta identities, state normalization, and cancellation
+      factors.
+  notation: []
+- id: qft.align030.rutherford-scattering-cross-section-problem
+  label: Rutherford-scattering correspondence problem
+  summary: Problems 5.5–5.6 ask the learner to connect classical Rutherford scattering,
+    Coulomb Born scattering, virtual-photon kinematics, and Mandelstam invariants,
+    including when identical-electron scattering differs. They are application prompts
+    and do not establish their requested conclusions on these pages.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.rutherford-scattering-cross-section-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problems 5.5–5.6
+    pages:
+    - 67
+    - 68
+    note: States the Rutherford matching, virtual-photon, and s,t,u tasks.
+  notation: []
+- id: qft.align030.schwinger-dyson-contact-equations
+  label: Schwinger–Dyson contact equations
+  summary: Differentiating time-ordered correlators generates delta-function contact
+    terms through equal-time commutators. Combining these terms with the interacting
+    Euler–Lagrange equation gives the Schwinger–Dyson equations; their contact terms
+    distinguish quantum correlation functions from their classical counterparts and
+    enable loop contractions.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.schwinger-dyson-contact-equations
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 7.1 Lagrangian derivation
+    pages:
+    - 79
+    - 80
+    - 81
+    note: Derives contact terms and identifies the Schwinger–Dyson equations and their
+      quantum role.
+  notation: []
+- id: qft.align030.spin-projection-annihilation-angular-distribution
+  label: Spin projections in e⁺e⁻→μ⁺μ⁻
+  summary: For massless, linearly polarized e⁺e⁻ and μ⁺μ⁻ states in the CM frame,
+    only matching initial electron/positron polarizations overlap a spin-1 photon.
+    Summing the two nonzero polarization projections gives |M|² proportional to 1+cos²θ,
+    and hence the stated angular dependence of the cross section.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.spin-projection-annihilation-angular-distribution
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 5.3 e⁺e⁻→μ⁺μ⁻ with spin
+    pages:
+    - 65
+    - 66
+    - 67
+    note: Sets up polarization overlaps and obtains 1+cos²θ and the cross section.
+  notation: []
+- id: qft.align030.tetrahedron-symmetry-factor-problem
+  label: Tetrahedron symmetry-factor problem
+  summary: Problem 7.7 asks for the amplitude and symmetry factor of a tetrahedral
+    scalar graph with external lines in φ⁴ theory, and for the corresponding φ³ vacuum-graph
+    factor. It is a requested symmetry-factor calculation, not a result derived on
+    the problem pages.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.tetrahedron-symmetry-factor-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 7.7
+    pages:
+    - 104
+    - 105
+    note: States the tetrahedron amplitude and symmetry-factor tasks.
+  notation: []
+- id: qft.align030.transfer-matrix-born-series
+  label: Transfer matrix and Born series
+  summary: Defining V|ψ⟩=T|φ⟩ gives T=V+V(E−H₀)⁻¹T and its perturbative expansion.
+    Matrix elements are sums of potential insertions separated by the Lippmann–Schwinger
+    kernel; the first and second terms are the first and second Born approximations.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.transfer-matrix-born-series
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 4.1 Lippmann–Schwinger equation
+    pages:
+    - 48
+    note: Derives the transfer-matrix equation, Born expansion, and intermediate-state
+      interpretation.
+  notation: []
+- id: qft.align030.unstable-particle-width-problem
+  label: Unstable-particle width problem
+  summary: Problem 7.9 asks the learner to analyze the Breit–Wigner form i/(p²−m²+imΓ),
+    relate the imaginary part of a propagator to going on shell, and connect loop
+    imaginary parts to decay widths. It records the exercise’s requested reasoning
+    without asserting its unshown derivation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.unstable-particle-width-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 7.9 Unstable particles
+    pages:
+    - 105
+    note: States the Breit–Wigner, on-shell-imaginary-part, loop, and decay-rate tasks.
+  notation: []
+- id: qft.align030.weak-decay-scale-estimate-problem
+  label: Weak-decay scale-estimate problem
+  summary: Problem 7.8 asks for a scalar interaction enabling muon decay, its large-W-mass
+    amplitude scaling, dimensional factors from spin, muon/tau lifetime estimates,
+    branching-fraction refinement, and a precision-measurement question. It is a requested
+    effective-interaction and scale-estimation exercise, not a problem-page derivation.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.weak-decay-scale-estimate-problem
+    note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
+      or task boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 7.8 Radioactive decay
+    pages:
+    - 105
+    note: States the interaction, scaling, lifetime, branching, and measurement tasks.
   notation: []
 - id: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
   label: Asymptotic multiparticle state labels and normalization
@@ -38855,6 +39781,626 @@ edges:
     pages:
     - 647
     - 666
+- id: qft.align030.e-linear-polarization-muon-pair-alternative
+  from: qft.align030.spin-projection-annihilation-angular-distribution
+  to: qft.tree-level-muon-pair-cross-section
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The linear-polarization derivation independently reaches the angular
+    muon-pair result.
+  failure_mode: Treating this derivation as compulsory would incorrectly exclude other
+    routes.
+  evidence:
+  - source: schwartz
+    section: 5.3 e⁺e⁻→μ⁺μ⁻ with spin
+    pages:
+    - 65
+    - 66
+    - 67
+    note: Sets up polarization overlaps and obtains 1+cos²θ and the cross section.
+- id: qft.align030.schwartz-e-contractions-to-normal-wick
+  from: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  to: qft.align016.scalar-wick-theorem
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The reviewed Schwartz relation supplies the stated evidence connection
+    from Wick contractions and vacuum-bubble cancellation to Normal ordering and Wick’s
+    theorem; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported evidence connection
+    between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.A.1–7.A.2
+    pages:
+    - 101
+    - 102
+    - 103
+    note: Defines normal ordering and proves Wick’s theorem.
+- id: qft.align030.schwartz-e-dyson-to-hamiltonian-route
+  from: qft.align030.interaction-picture-dyson-series-route
+  to: qft.align030.hamiltonian-contraction-route-to-position-rules
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Interaction-picture Dyson-series route to Hamiltonian contraction route to
+    position-space rules; its source and target mastery levels preserve the route’s
+    actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.2–7.2.1
+    pages:
+    - 85
+    - 86
+    - 87
+    note: Derives the Dyson expansion used in the Hamiltonian calculation.
+- id: qft.align030.schwartz-e-equal-time-to-sd
+  from: qft.schwartz-equal-time-commutator-derivation
+  to: qft.align030.schwinger-dyson-contact-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Equal-time scalar-field commutation relations to Schwinger–Dyson contact
+    equations; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.1 Lagrangian derivation
+    pages:
+    - 79
+    - 80
+    note: Uses the equal-time commutator to obtain the contact term.
+- id: qft.align030.schwartz-e-euler-lagrange-to-sd
+  from: qft.real-klein-gordon-lagrangian
+  to: qft.align030.schwinger-dyson-contact-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Euler–Lagrange and Klein–Gordon equations to Schwinger–Dyson contact equations;
+    its source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.1 Lagrangian derivation
+    pages:
+    - 79
+    - 80
+    note: Inserts the field equation after deriving the contact identity.
+- id: qft.align030.schwartz-e-fock-to-ofpt
+  from: qft.fock-space-particle-sectors
+  to: qft.align030.ofpt-on-shell-intermediate-states
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Fock space and physical particle sectors to OFPT on-shell intermediate states;
+    its source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 4.1.1 Coulomb’s law revisited
+    pages:
+    - 49
+    note: States that the intermediate state can lie in the whole Fock space.
+- id: qft.align030.schwartz-e-fourier-to-momentum-rules
+  from: qft.fourier-transform-derivative-operator-correspondence
+  to: qft.align016.phi4-momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Fourier correspondence and Appendix A normalization to Momentum-space Feynman
+    rules; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.3 Momentum-space Feynman rules
+    pages:
+    - 93
+    - 94
+    note: Writes propagators as momentum integrals and integrates positions into delta
+      functions.
+- id: qft.align030.schwartz-e-hamiltonian-route-to-position-rules
+  from: qft.align030.hamiltonian-contraction-route-to-position-rules
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The reviewed Schwartz relation supplies the stated alternative connection
+    from Hamiltonian contraction route to position-space rules to Position-space Feynman
+    rules; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported alternative connection
+    between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.2.5–7.2.6
+    pages:
+    - 90
+    - 91
+    - 92
+    - 93
+    note: Compares the contraction result to the Lagrangian rules and states their
+      equality.
+- id: qft.align030.schwartz-e-kinetic-to-mass-insertions
+  from: qft.kinetic-terms-interactions-and-dynamical-fields
+  to: qft.align030.mass-insertion-propagator-resummation-problem
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Kinetic terms, interactions, and dynamical fields to Mass-insertion propagator
+    resummation problem; its source and target mastery levels preserve the route’s
+    actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: Problem 7.4
+    pages:
+    - 104
+    note: Explicitly directs the learner to treat the mass as an interaction instead.
+- id: qft.align030.schwartz-e-lips-to-cm
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align030.cm-two-to-two-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Lorentz-invariant phase space and cross section to Center-of-mass 2→2 cross
+    section; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1.2 Special cases
+    pages:
+    - 62
+    - 63
+    note: Integrates LIPS and substitutes it into the cross section.
+- id: qft.align030.schwartz-e-lips-to-decay
+  from: qft.lorentz-invariant-onshell-phase-space-measure
+  to: qft.align016.decay-width-and-lorentz-time-dilation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Lorentz-invariant on-shell phase-space measure to Decay rate from phase space
+    and time dilation; its source and target mastery levels preserve the route’s actual
+    input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1.1 Decay rates
+    pages:
+    - 61
+    - 62
+    note: States dΓ in terms of dΠ_LIPS.
+- id: qft.align030.schwartz-e-ls-to-born
+  from: qft.align016.lippmann-schwinger-scattering-state-equations
+  to: qft.align030.transfer-matrix-born-series
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Lippmann–Schwinger scattering equation to Transfer matrix and Born series;
+    its source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 4.1 Lippmann–Schwinger equation
+    pages:
+    - 47
+    - 48
+    note: Introduces the equation then derives T’s expansion from it.
+- id: qft.align030.schwartz-e-lsz-to-momentum-rules
+  from: qft.align016.lsz-reduction-pole-projection
+  to: qft.align016.phi4-momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from LSZ reduction as one-particle pole projection to Momentum-space Feynman rules;
+    its source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.3 Momentum-space Feynman rules
+    pages:
+    - 93
+    - 94
+    - 95
+    note: Applies LSZ in the worked conversion and lists external-line cancellation.
+- id: qft.align030.schwartz-e-mode-algebra-to-wick
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Momentum-mode creation and annihilation algebra to Wick contractions and
+    vacuum-bubble cancellation; its source and target mastery levels preserve the
+    route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.2.5
+    pages:
+    - 90
+    note: Splits free fields into creation and annihilation parts and forms contractions.
+- id: qft.align030.schwartz-e-momentum-rules-to-channels
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align030.phi3-worked-channel-amplitudes-residual
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Momentum-space Feynman rules to Mandelstam channels in φ³ scattering; its
+    source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.4 Examples
+    pages:
+    - 97
+    - 98
+    note: Uses the rules to evaluate the three diagrams.
+- id: qft.align030.schwartz-e-momentum-rules-to-derivatives
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align030.derivative-couplings-and-total-derivative-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Momentum-space Feynman rules to Derivative couplings and total-derivative
+    invariance; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.4.2 Derivative couplings
+    pages:
+    - 99
+    - 100
+    note: Assigns derivative momenta and uses vertex conservation.
+- id: qft.align030.schwartz-e-normalization-to-decay
+  from: qft.align030.relativistic-state-normalization-and-delta-regulation
+  to: qft.align016.decay-width-and-lorentz-time-dilation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Relativistic normalization and delta-function regulation to Decay rate from
+    phase space and time dilation; its source and target mastery levels preserve the
+    route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1.1 Decay rates
+    pages:
+    - 61
+    - 62
+    note: After regulating state norms and the squared momentum delta function, the
+      source says the decay rate follows the same steps for one incoming particle
+      and displays dΓ=|M|²dΠ_LIPS/(2E₁).
+- id: qft.align030.schwartz-e-normalization-to-lips
+  from: qft.align030.relativistic-state-normalization-and-delta-regulation
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Relativistic normalization and delta-function regulation to Lorentz-invariant
+    phase space and cross section; its source and target mastery levels preserve the
+    route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1 Cross sections
+    pages:
+    - 60
+    - 61
+    note: Uses regulated normalization and δ⁴(0) to obtain LIPS.
+- id: qft.align030.schwartz-e-normalization-to-position-rules
+  from: qft.align030.general-interaction-normalization-and-symmetry-residual
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Correct application of the general position-space rules uses the 1/n!
+    identical-field convention and any remaining external-label-fixed graph symmetry.
+  failure_mode: Without the general convention, non-phi-four vertex combinatorics
+    can be overcounted or a genuine geometrical symmetry division can be missed.
+  evidence:
+  - source: schwartz
+    section: 7.1.1 and 7.2.6
+    pages:
+    - 83
+    - 92
+    - 93
+    note: Explains the factor cancellations in both derivations.
+- id: qft.align030.schwartz-e-on-shell-to-time-orderings
+  from: qft.align030.ofpt-on-shell-intermediate-states
+  to: qft.align030.advanced-retarded-time-ordering-sum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from OFPT on-shell intermediate states to Advanced and retarded OFPT time orderings;
+    its source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 4.1.1–4.1.2
+    pages:
+    - 49
+    - 52
+    note: Builds time-sliced intermediate states and states their on-shell OFPT status.
+- id: qft.align030.schwartz-e-onshell-lips-to-lips
+  from: qft.lorentz-invariant-onshell-phase-space-measure
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Lorentz-invariant on-shell phase-space measure to Lorentz-invariant phase
+    space and cross section; its source and target mastery levels preserve the route’s
+    actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1 Cross sections
+    pages:
+    - 61
+    note: Defines dΠ_LIPS and inserts it into dσ.
+- id: qft.align030.schwartz-e-position-to-momentum-rules
+  from: qft.align016.phi4-position-space-feynman-rules
+  to: qft.align016.phi4-momentum-space-feynman-rules
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Position-space Feynman rules to Momentum-space Feynman rules; its source
+    and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.3 Momentum-space Feynman rules
+    pages:
+    - 93
+    - 94
+    - 95
+    note: Carries out the conversion and summarizes the rules.
+- id: qft.align030.schwartz-e-s-matrix-to-cross-section
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from S-matrix as an asymptotic-state map to Lorentz-invariant phase space and
+    cross section; its source and target mastery levels preserve the route’s actual
+    input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1 Cross sections
+    pages:
+    - 60
+    - 61
+    note: Factors the S-matrix in the derivation of the cross section.
+- id: qft.align030.schwartz-e-sd-route-to-position-rules
+  from: qft.align030.lagrangian-schwinger-dyson-feynman-rule-route
+  to: qft.align016.phi4-position-space-feynman-rules
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The reviewed Schwartz relation supplies the stated alternative connection
+    from Lagrangian Schwinger–Dyson route to diagrams to Position-space Feynman rules;
+    its source and target mastery levels preserve the route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported alternative connection
+    between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.1.1 Position-space Feynman rules
+    pages:
+    - 81
+    - 82
+    - 83
+    note: Builds diagrams from the Schwinger–Dyson expansion.
+- id: qft.align030.schwartz-e-sd-to-lagrangian-route
+  from: qft.align030.schwinger-dyson-contact-equations
+  to: qft.align030.lagrangian-schwinger-dyson-feynman-rule-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Schwinger–Dyson contact equations to Lagrangian Schwinger–Dyson route to
+    diagrams; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.1.1 Position-space Feynman rules
+    pages:
+    - 81
+    - 82
+    note: States that the Schwinger–Dyson equations are solved perturbatively to produce
+      diagrams.
+- id: qft.align030.schwartz-e-smatrix-to-decay
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align016.decay-width-and-lorentz-time-dilation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from S-matrix as an asymptotic-state map to Decay rate from phase space and time
+    dilation; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 5.1.1 Decay rates
+    pages:
+    - 61
+    - 62
+    note: Introduces decay as a one-to-many probability per time after the S-matrix
+      derivation.
+- id: qft.align030.schwartz-e-time-ordering-to-propagator
+  from: qft.align030.advanced-retarded-time-ordering-sum
+  to: qft.align015.feynman-scalar-propagator
+  relation: evidence
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The reviewed Schwartz relation supplies the stated evidence connection
+    from Advanced and retarded OFPT time orderings to Feynman propagator from time
+    ordering; its source and target mastery levels preserve the route’s actual input
+    requirement.
+  failure_mode: Without this retained relation, the source-supported evidence connection
+    between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 6.2 The Feynman propagator
+    pages:
+    - 75
+    note: Explicitly identifies the two time-ordered terms with advanced and retarded
+      propagators.
+- id: qft.align030.schwartz-e-time-orderings-to-offshell
+  from: qft.align030.advanced-retarded-time-ordering-sum
+  to: qft.align030.offshell-momentum-from-ofpt
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Advanced and retarded OFPT time orderings to Off-shell momentum from summed
+    OFPT orderings; its source and target mastery levels preserve the route’s actual
+    input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 4.1.1 Coulomb’s law revisited
+    pages:
+    - 51
+    note: Adds the two denominators and rewrites the result in terms of k².
+- id: qft.align030.schwartz-e-vacuum-normalization-to-bubbles
+  from: qft.align016.interacting-correlation-function-quotient
+  to: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Vacuum-normalized interacting correlator to Wick contractions and vacuum-bubble
+    cancellation; its source and target mastery levels preserve the route’s actual
+    input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.2.3–7.2.5
+    pages:
+    - 88
+    - 91
+    - 92
+    note: Supplies the denominator and demonstrates its bubble cancellation.
+- id: qft.align030.schwartz-e-vacuum-to-hamiltonian-route
+  from: qft.align016.interacting-correlation-function-quotient
+  to: qft.align030.hamiltonian-contraction-route-to-position-rules
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Vacuum-normalized interacting correlator to Hamiltonian contraction route
+    to position-space rules; its source and target mastery levels preserve the route’s
+    actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.2.3–7.2.4
+    pages:
+    - 88
+    - 89
+    note: Derives the vacuum-normalized correlation-function formula.
+- id: qft.align030.schwartz-e-wick-to-hamiltonian-route
+  from: qft.align016.vacuum-bubble-exponentiation-and-cancellation
+  to: qft.align030.hamiltonian-contraction-route-to-position-rules
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed Schwartz relation supplies the stated prerequisite connection
+    from Wick contractions and vacuum-bubble cancellation to Hamiltonian contraction
+    route to position-space rules; its source and target mastery levels preserve the
+    route’s actual input requirement.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    connection between these mapped endpoints is missing.
+  evidence:
+  - source: schwartz
+    section: 7.2.5
+    pages:
+    - 90
+    - 91
+    - 92
+    note: Defines contractions and demonstrates cancellation of vacuum bubbles.
 - id: qft.align031.weinberg-1-asymptotic-labels-to-in-out-definition
   from: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
   to: qft.align016.in-out-states-heisenberg-asymptotic-definition
