@@ -7437,7 +7437,8 @@ nodes:
     whereas scalar anticommutators give a noncovariant energy-dependent factor. Weinberg
     supplies the compatible scalar Fourier Green function in the convention q²=|q⃗|²−(q⁰)²,
     with (□−m²)Δ_F=−δ⁴ and denominator q²+m²−iε. His general-field numerator and correlator
-    constructions remain separate residual methods.
+    constructions remain separate residual methods. The Schwartz sign reference contributes
+    the scalar propagator formula with its mostly-minus convention.
   kind: result
   group: qft.align015-peskin-free-fields
   origins:
@@ -7463,6 +7464,10 @@ nodes:
     node: weinberg-1.feynman-propagator-fourier-green-function
     note: Retains only Weinberg's compatible scalar Fourier Green function, metric
       convention, differential equation, and frequency boundary condition.
+  - project: schwartz
+    node: schwartz.appendix-sign-propagator-and-covariant-derivative-conventions
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: peskin-schroeder
     section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
@@ -7497,6 +7502,11 @@ nodes:
     - 277
     note: Derives the scalar Fourier denominator, Green-function equation, and frequency
       boundary condition.
+  - source: schwartz
+    section: A.2
+    pages:
+    - 817
+    - 818
   notation:
   - source: peskin-schroeder
     note: T places the later operator left; i epsilon specifies displaced poles.
@@ -12058,7 +12068,9 @@ nodes:
     general formula (6.42) follows by induction. This proof route is not required
     merely to use the combination identity. Weinberg I independently gives the general
     N-denominator simplex identity together with the dimensionally continued Euclidean
-    integral and Gamma-pole interpretation.
+    integral and Gamma-pole interpretation. The Schwartz algebraic parameter identities
+    and shift contribute a complete denominator-combination route; source-specific
+    conventions remain local.
   kind: method
   origins:
   - project: peskin-schroeder
@@ -12078,6 +12090,17 @@ nodes:
     node: peskin-schroeder.appendix-dimensional-regularization-branch-prescription
     note: A.39--A.40 preserve the general simplex and two-denominator formulae as
       an appendix reference; shifted-integral implementation remains residual.
+  - project: schwartz
+    node: schwartz.appendix-feynman-parameter-identities-and-shift
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
+  - project: schwartz
+    node: schwartz.appendix-schwinger-parameter-identities
+    note: Contributes the proper-time identity used by the complete composition route.
+  - project: schwartz
+    node: schwartz.proper-time-feynman-parameter-composition
+    note: Contributes the complete proper-time composition route without making it
+      compulsory for the algebraic route.
   evidence:
   - source: peskin-schroeder
     section: '6.3 The Electron Vertex Function: Evaluation'
@@ -12101,6 +12124,22 @@ nodes:
     - 806
     - 807
     - 808
+  - source: schwartz
+    section: B.1.1
+    pages:
+    - 822
+  - source: schwartz
+    section: B.1.2
+    pages:
+    - 822
+    - 823
+  - source: schwartz
+    section: 33.2; B.1.1–B.1.2
+    pages:
+    - 706
+    - 707
+    - 822
+    - 823
   notation: []
 - id: qft.align019.form-factors-charge-and-magnetic-moment
   label: Charge and magnetic moment from vertex form factors
@@ -12209,19 +12248,31 @@ nodes:
     where the photon is soft. Its coefficient is positive and, at large spacelike
     momentum transfer, yields a product of the infrared logarithm with a logarithm
     of minus q-squared over the electron mass squared; the exclusive elastic cross
-    section is consequently divergent and negative at fixed order.
+    section is consequently divergent and negative at fixed order. Adds the bounded
+    timelike high-energy vertex contribution; its photon-mass regulator and timelike
+    continuation remain local.
   kind: result
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.infrared-singular-dirac-form-factor
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: schwartz
+    node: schwartz.high-energy-qed-vertex-ir-structure
+    note: Adds the bounded compatible assigned contribution while retaining all source-specific
+      hypotheses, regulator/kinematic qualifications, proof scope, and task status.
   evidence:
   - source: peskin-schroeder
     section: '6.4 The Electron Vertex Function: Infrared Divergence'
     pages:
     - 199
     - 200
+  - source: schwartz
+    section: 20.1.1
+    pages:
+    - 358
+    - 359
+    - 360
   notation: []
 - id: qft.align019.leading-log-inclusive-soft-exponentiation
   label: Leading-log inclusive soft-photon exponentiation
@@ -12424,17 +12475,28 @@ nodes:
     fictitious heavy-photon propagator. The subtraction leaves low loop momenta essentially
     unchanged, makes the relevant integral finite, and introduces a regulator mass
     that has no physical interpretation and must disappear from observable predictions.
+    The Schwartz Abelian one-loop heavy-photon subtraction contributes its bounded
+    conserved-current route; regulator limitations remain local.
   kind: method
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.pauli-villars-photon-regularization
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: schwartz
+    node: schwartz.appendix-pauli-villars-regularization-method
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: peskin-schroeder
     section: '6.3 The Electron Vertex Function: Evaluation'
     pages:
     - 194
+  - source: schwartz
+    section: B.4.2
+    pages:
+    - 831
+    - 832
   notation: []
 - id: qft.align019.precision-qed-alpha-comparisons
   label: Precision-QED comparisons as determinations of alpha
@@ -12883,7 +12945,8 @@ nodes:
     contour to Euclidean momentum and evaluate a rotationally symmetric four-dimensional
     integral in spherical coordinates. The displayed power-counting condition shows
     why the needed quadratic-numerator integral is divergent at its marginal case
-    and cannot simply be Wick-rotated there.
+    and cannot simply be Wick-rotated there. The Schwartz Wick-rotation construction
+    contributes a complete contour route with its unobstructed-contour condition.
   kind: method
   origins:
   - project: peskin-schroeder
@@ -12894,6 +12957,10 @@ nodes:
     node: peskin-schroeder.appendix-dimensional-regularization-branch-prescription
     note: A.43 preserves the Minkowski-to-Euclidean contour convention inside the
       dimensional-regularization table; its branch prescription remains residual.
+  - project: schwartz
+    node: schwartz.appendix-wick-rotation-method
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: peskin-schroeder
     section: '6.3 The Electron Vertex Function: Evaluation'
@@ -12905,6 +12972,12 @@ nodes:
     - 806
     - 807
     - 808
+  - source: schwartz
+    section: B.2
+    pages:
+    - 823
+    - 824
+    - 825
   notation: []
 - id: qft.align020.beta-decay-electron-polarization-problem
   label: Beta-decay electron-polarization problem
@@ -13659,7 +13732,8 @@ nodes:
   label: Dirac spin-sum completeness relations
   summary: Summing the physical u and v polarizations gives the displayed Dirac completeness
     projectors. Peskin–Schroeder introduces slash notation for these combinations;
-    Schwartz states the same normalized spin sums.
+    Schwartz states the same normalized spin sums. The Schwartz Dirac catalog contributes
+    only the spin-sum subset.
   kind: method
   group: qft.align020.relativistic-fermion-structures
   origins:
@@ -13676,6 +13750,10 @@ nodes:
     node: peskin-schroeder.appendix-external-particle-and-polarization-conventions
     note: A.22 is the appendix completeness convention; its explicit spinors, helicity
       caveat, ghosts, and Goldstones remain residual.
+  - project: schwartz
+    node: schwartz.appendix-dirac-algebra-and-field-strength-identities
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: peskin-schroeder
     section: 3.3–3.4
@@ -13693,6 +13771,11 @@ nodes:
     pages:
     - 803
     - 804
+  - source: schwartz
+    section: A.2
+    pages:
+    - 820
+    - 821
   notation:
   - source: peskin-schroeder
     note: Preserves Peskin–Schroeder’s chiral-representation and sign conventions
@@ -16361,7 +16444,9 @@ nodes:
     gamma5 trace gives the Levi-Civita tensor. Peskin–Schroeder retains its longer
     contraction and reversal identities; Schwartz retains its direct cyclicity derivation;
     Weinberg I retains the general even-trace pairing formula, its induction proof,
-    and its gamma5 convention as complementary source-specific stages.'
+    and its gamma5 convention as complementary source-specific stages. The Schwartz
+    Dirac catalog contributes only the trace subset; field-strength identities and
+    its d-dimensional gamma5 assumption remain source-local.'
   kind: method
   group: qft.qed-scattering
   origins:
@@ -16393,6 +16478,10 @@ nodes:
     node: peskin-schroeder.appendix-numerator-algebra-and-group-identities
     note: A.27--A.30 are a PS trace, gamma5, epsilon, reversal, and contraction catalog;
       the full catalog remains residual.
+  - project: schwartz
+    node: schwartz.appendix-dirac-algebra-and-field-strength-identities
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: peskin-schroeder
     section: 5.1 Trace Technology
@@ -16439,6 +16528,11 @@ nodes:
     pages:
     - 805
     - 806
+  - source: schwartz
+    section: A.2
+    pages:
+    - 820
+    - 821
 - id: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
   label: Electron-muon scattering cross section and forward Coulomb pole
   summary: Crossing the spin-averaged e+e- to mu+mu- squared amplitude gives the lowest-order
@@ -17520,7 +17614,9 @@ nodes:
   label: Dimensional real–virtual pole cancellation
   summary: Adding the d-dimensional real-emission cross section to the renormalized
     virtual cross section cancels both the 1/ε² and 1/ε infrared poles and gives σ0
-    3eR²/(16π²), agreeing with the Pauli–Villars plus photon-mass calculation.
+    3eR²/(16π²), agreeing with the Pauli–Villars plus photon-mass calculation. Adds
+    the bounded final-state real/virtual inclusive calculation while preserving the
+    independent dimensional route and source-specific photon-mass sector.
   kind: result
   group: qft.qed-scattering
   origins:
@@ -17529,12 +17625,25 @@ nodes:
     note: Retains this reviewed book-specific statement, conditions, notation, and
       proof or task boundary; the correspondence is only the scope stated by this
       shared record.
+  - project: schwartz
+    node: schwartz.inclusive-qed-cross-section-ir-finiteness
+    note: Adds the bounded compatible assigned contribution while retaining all source-specific
+      hypotheses, regulator/kinematic qualifications, proof scope, and task status.
   evidence:
   - source: schwartz
     section: 20.A.3
     pages:
     - 379
     - 380
+  - source: schwartz
+    section: 20; 20.1
+    pages:
+    - 356
+    - 357
+    - 360
+    - 361
+    - 362
+    - 363
   notation: []
 - id: qft.align024.dimreg-tree-cross-section-normalization
   label: d-dimensional tree cross-section normalization
@@ -21645,13 +21754,19 @@ nodes:
   summary: Splitting H=H₀+V and factoring out free evolution defines U(t,t₀), which
     obeys i∂ₜU=V_I(t)U. Its unique solution is the time-ordered exponential, whose
     perturbative expansion is the Dyson series; this supplies a Hamiltonian route
-    to the same diagrammatic expansion.
+    to the same diagrammatic expansion. The Peskin–Schroeder interaction-picture Dyson
+    construction is a complete alternative route, retaining its source-specific adiabatic
+    and vacuum conventions.
   kind: method
   origins:
   - project: schwartz
     node: schwartz.interaction-picture-dyson-series-route
     note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
       or task boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.interaction-picture-dyson-series
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: schwartz
     section: 7.2 Hamiltonian derivation and 7.2.1
@@ -21662,6 +21777,11 @@ nodes:
     - 87
     note: Defines the interaction picture, time-ordered exponential, and perturbative
       Dyson-series construction.
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 84
+    - 85
   notation: []
 - id: qft.align030.lab-frame-two-to-two-cross-section-problem
   label: Lab-frame 2→2 cross-section problem
@@ -27496,19 +27616,30 @@ nodes:
 - id: qft.align042.fermionic-time-ordering
   label: Fermionic time ordering
   summary: 'For fermionic operator-valued fields, time ordering must include the minus
-    sign obtained by anticommuting fields past one another: T{ψ(x)χ(y)}=ψ(x)χ(y)θ(x0−y0)−χ(y)ψ(x)θ(y0−x0).'
+    sign obtained by anticommuting fields past one another: T{ψ(x)χ(y)}=ψ(x)χ(y)θ(x0−y0)−χ(y)ψ(x)θ(y0−x0).
+    The Peskin–Schroeder fermionic Wick convention contributes its sign rule while
+    retaining source-local contraction ordering.'
   kind: method
   origins:
   - project: schwartz
     node: schwartz.fermionic-time-ordering
     note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
       task boundary at the stated source scope; no broader equivalence is inferred.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermionic-wick-sign-convention
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: schwartz
     section: '12.4'
     pages:
     - 212
     note: Derives the consistent time-ordering definition from fermionic anticommutation.
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 115
+    - 116
   notation: []
 - id: qft.align042.general-spin-kinetic-derivative-statistics-route
   label: General-spin derivative-count route to statistics
@@ -27559,13 +27690,18 @@ nodes:
   summary: The free Dirac field expands in positive-energy u_s modes weighted by electron
     annihilators and v_s modes weighted by positron creators; its adjoint carries
     the complementary creator and annihilator modes. The expansion uses the earlier
-    free spinors and positive ωp.
+    free spinors and positive ωp. The Schwartz appendix contributes only the Dirac-mode
+    subset.
   kind: representation
   origins:
   - project: schwartz
     node: schwartz.quantized-dirac-field-mode-expansion
     note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
       task boundary at the stated source scope; no broader equivalence is inferred.
+  - project: schwartz
+    node: schwartz.appendix-free-mode-and-diagram-conventions
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: schwartz
     section: '12.3'
@@ -27573,6 +27709,10 @@ nodes:
     - 211
     - 212
     note: Gives the spinor field and adjoint mode expansions and particle interpretation.
+  - source: schwartz
+    section: A.3
+    pages:
+    - 819
   notation: []
 - id: qft.align042.s-matrix-lorentz-spin-statistics-route
   label: S-matrix Lorentz-invariance route to spin–statistics
@@ -27800,7 +27940,8 @@ nodes:
     trace-log determinant series with its cyclic 1/n factor. The added Weinberg I
     pairing record contributes permutation signs and the Dirac inverse kernel, while
     its determinant record contributes the closed-loop sign and exponentiation; neither
-    partial record alone proves the combined result.
+    partial record alone proves the combined result. The Peskin–Schroeder Wick/exchange
+    signs contribute a bounded source route.
   kind: result
   origins:
   - project: schwartz
@@ -27832,6 +27973,14 @@ nodes:
     note: The appendix rule to multiply each closed fermion or ghost loop by minus
       one is a compatible rule-table contribution, not the exchanged-fermion proof
       route.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermionic-wick-sign-convention
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+    note: Contributes the closed-loop-sign portion while retaining source-local line-flow
+      conventions.
   evidence:
   - source: schwartz
     section: 13.1.1
@@ -27877,18 +28026,33 @@ nodes:
     pages:
     - 801
     - 802
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 115
+    - 116
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 119
+    - 120
   notation: []
 - id: qft.align043.qed-fermion-line-and-loop-evaluation
   label: QED fermion-line and loop evaluation
   summary: 'Follow particle-flow arrows: multiply spinor matrices opposite the arrow,
     sandwich an open line between its external spinors, and close a virtual fermion
-    line into a spinor trace while integrating its loop momentum.'
+    line into a spinor trace while integrating its loop momentum. The Peskin–Schroeder
+    line-flow and trace portion contributes the route-local evaluation convention.'
   kind: method
   origins:
   - project: schwartz
     node: schwartz.qed-fermion-line-and-loop-evaluation
     note: Retains the assigned Schwartz construction, formula qualification, or problem
       boundary at its stated scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: schwartz
     section: '13.1'
@@ -27897,6 +28061,11 @@ nodes:
     - 227
     note: Builds an open line and turns it into a loop trace with the particle-flow
       convention.
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 119
+    - 120
   notation: []
 - id: qft.align043.qed-higher-order-divergence-and-renormalization-motivation
   label: Higher-order QED divergences and renormalization motivation
@@ -27936,20 +28105,31 @@ nodes:
   notation: []
 - id: qft.align043.scalar-qed-polarization-sum-problem
   label: Scalar-QED polarization-sum consistency problem
-  summary: Problem 13.7(d) asks for the corresponding physical-versus-covariant polarization-sum
-    analysis in scalar QED.
+  summary: In a complete scalar-QED Compton calculation, compare the sum over physical
+    photon polarizations with the covariant replacement by −g_μν and determine when
+    they agree. Problem 13.7(d) asks for this scalar-QED extension, while Problem
+    9.1 includes the comparison within its separate full amplitude, Ward-identity,
+    polarized-cross-section task.
   kind: method
   origins:
   - project: schwartz
     node: schwartz.scalar-qed-polarization-sum-problem
     note: Retains the assigned Schwartz construction, formula qualification, or problem
       boundary at its stated scope.
+  - project: schwartz
+    node: schwartz.scalar-qed-compton-scattering-problem
+    note: Adds the bounded compatible assigned contribution while retaining all source-specific
+      hypotheses, regulator/kinematic qualifications, proof scope, and task status.
   evidence:
   - source: schwartz
     section: Problem 13.7(d)
     pages:
     - 250
     note: States the independent scalar-QED extension.
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
   notation: []
 - id: qft.align043.schwartz.massive-annihilation-trace-residual
   label: Massive electron–muon annihilation trace invariant
@@ -29776,15 +29956,22 @@ nodes:
   notation: []
 - id: qft.align046.problem-scalar-compton-cross-sections
   label: 'Problem: scalar Compton cross-sections'
-  summary: Using the results of the charged-scalar Coulomb-gauge quantization problem,
-    calculate the lowest-order-in-e differential and total cross-sections for photon
-    scattering by a massive charged scalar particle.
+  summary: Calculate the lowest-order-in-e differential and total cross sections for
+    photon scattering by a massive charged scalar. Weinberg’s route uses the preceding
+    charged-scalar Coulomb-gauge quantization problem; Schwartz’s covariant scalar-QED
+    problem supplies the cross-section subset through its own propagator, seagull,
+    external-polarization, and center-of-mass inputs. These source-local prescriptions
+    are alternatives, not common prerequisites.
   kind: method
   origins:
   - project: weinberg-1
     node: weinberg-1.problem-scalar-compton-cross-sections
     note: Retains the reviewed source-specific hypothesis, normalization, functional
       route, sign convention or problem boundary; no broader equivalence is asserted.
+  - project: schwartz
+    node: schwartz.scalar-qed-compton-scattering-problem
+    note: Adds the bounded compatible assigned contribution while retaining all source-specific
+      hypotheses, regulator/kinematic qualifications, proof scope, and task status.
   evidence:
   - source: weinberg-1
     section: Problems, Chapter 8
@@ -29792,6 +29979,10 @@ nodes:
     - 375
     note: Problem 3 explicitly calls for the preceding problem's results and states
       the scalar target and order.
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
   notation: []
 - id: qft.align046.qed-auxiliary-a0-covariant-action-route
   label: Auxiliary A0 route from Coulomb energy to the covariant QED action
@@ -32048,13 +32239,18 @@ nodes:
     and repeated indices are summed. Thus x^mu=(x^0,x), x_mu=(x^0,-x), p dot x=p^0
     x^0-p dot x, p^2=p^mu p_mu=E^2-|p|^2, while partial_mu=(partial/partial x^0,grad)
     is naturally lowered and p^mu=i partial^mu. Its orientation is epsilon^{0123}=+1,
-    hence epsilon_{0123}=epsilon^{1230}=-1.
+    hence epsilon_{0123}=epsilon^{1230}=-1. The Schwartz sign reference contributes
+    only its mostly-minus metric and orientation subset.
   kind: representation
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.minkowski-index-and-orientation-conventions
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: schwartz
+    node: schwartz.appendix-sign-propagator-and-covariant-derivative-conventions
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: peskin-schroeder-notation
     section: Units; Relativity and Tensors
@@ -32068,6 +32264,11 @@ nodes:
     - 20
     note: The continuation fixes the naturally lowered derivative, the raised-index
       momentum operator, and the epsilon orientation and lowered-index signs.
+  - source: schwartz
+    section: A.2
+    pages:
+    - 817
+    - 820
   notation:
   - source: peskin-schroeder-notation
     note: Four-vectors are light italic, three-vectors boldface, and unit three-vectors
@@ -32788,19 +32989,29 @@ nodes:
   summary: The source states that gauge invariance required for massless integer spin
     greater than two is too restrictive to permit interactions, although massive higher-spin
     particles can have free Lagrangians. The following chapter’s soft-limit argument
-    supplies a sharper version of this conclusion.
+    supplies a sharper version of this conclusion. Adds the soft-limit obstruction
+    while retaining its on-shell, finite-form-factor, nontrivial-scattering hypotheses
+    and massive exception.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.massless-higher-spin-no-interaction-result
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: schwartz
+    node: schwartz.soft-spin-greater-than-two-obstruction
+    note: Adds the bounded compatible assigned contribution while retaining all source-specific
+      hypotheses, regulator/kinematic qualifications, proof scope, and task status.
   evidence:
   - source: schwartz
     section: 8.7.3
     pages:
     - 138
     note: States the interacting massless higher-spin obstruction and massive exception.
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 155
   notation: []
 - id: qft.align054.massless-spin-two-cubic-interactions-problem
   label: Massless spin-2 cubic-interaction construction problem
@@ -35038,7 +35249,9 @@ nodes:
     divergences appear as Gamma-function poles near four dimensions. Peskin–Schroeder
     retains its A.39–A.55 tensor table, Delta-i-varepsilon branch, and distinct epsilon
     symbols in a source residual; Weinberg I retains its N-denominator appendix derivation
-    and special-case recursion in its unchanged residual.
+    and special-case recursion in its unchanged residual. The Schwartz continuation
+    conventions contribute only compatible dimensional setup and retain d-dimensional
+    gamma5 and regulator boundaries locally.
   kind: method
   origins:
   - project: peskin-schroeder
@@ -35050,6 +35263,22 @@ nodes:
     node: weinberg-1.appendix-feynman-parameters-dimensional-integrals
     note: WI p.497 contributes the N-denominator dimensional-integral and Gamma-pole
       route; its appendix method remains an unchanged WI residual.
+  - project: schwartz
+    node: schwartz.appendix-dimensional-continuation-conventions
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
+  - project: schwartz
+    node: schwartz.appendix-dimensional-scalar-integral-formula
+    note: Contributes the scalar-integral portion only.
+  - project: schwartz
+    node: schwartz.appendix-dimensional-poles-and-scaleless-integrals
+    note: Contributes the pole/scaleless portion only.
+  - project: schwartz
+    node: schwartz.appendix-lorentz-tensor-loop-reduction
+    note: Contributes the tensor-reduction portion only.
+  - project: schwartz
+    node: schwartz.appendix-dimensional-logarithmic-loop-route
+    note: Contributes the normalized-log portion only.
   evidence:
   - source: peskin-schroeder
     section: A.4
@@ -35061,6 +35290,28 @@ nodes:
     section: Appendix Assorted Integrals
     pages:
     - 497
+  - source: schwartz
+    section: B.3
+    pages:
+    - 825
+  - source: schwartz
+    section: B.3.2
+    pages:
+    - 826
+    - 827
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
+    - 829
+  - source: schwartz
+    section: B.3.4
+    pages:
+    - 830
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
   notation:
   - source: peskin-schroeder
     note: The detailed A.39–A.55 signs, tensors, Delta-i-varepsilon branch, and epsilon
@@ -35270,13 +35521,19 @@ nodes:
     mbarn; 1 barn=10^-24 cm^2; (1 volt/meter)(e hbar c)=1.973x10^-25 GeV^2; and (1
     tesla)(e hbar c^2)=5.916x10^-17 GeV^2. These are a unit-conversion convention
     table, not dynamically derived results; the following reference to the 1994 Review
-    of Particle Properties fixes its historical context.'
+    of Particle Properties fixes its historical context. The Schwartz GeV^-2-to-area
+    conversion contributes the compatible natural-unit conversion.'
   kind: representation
   evidence:
   - source: peskin-schroeder
     section: A.6
     pages:
     - 810
+  - source: schwartz
+    section: A.1
+    pages:
+    - 815
+    - 816
   notation:
   - source: peskin-schroeder
     note: All signs, powers, hbar/c factors, and barn equivalence were transcribed
@@ -35287,6 +35544,10 @@ nodes:
     node: peskin-schroeder.appendix-natural-unit-conversion-factors
     note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
       effective-theory boundary, or task status.
+  - project: schwartz
+    node: schwartz.appendix-natural-units-and-mass-dimensions
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
 - id: qft.align058.peskin-schroeder.appendix-nonabelian-and-ghost-rule-table
   label: Appendix non-Abelian and ghost Feynman-rule table
   summary: 'The A.10 fermion vertex is i g gamma^mu t^a. In A.11 all three displayed
@@ -36134,7 +36395,9 @@ nodes:
   summary: For an S-matrix element, project renormalized Green functions with /p−mP
     and amputate all external-line 1PI corrections, since they are already included
     in the asymptotic pole-state definition. Self-energy insertions on internal lines
-    remain physical radiative corrections.
+    remain physical radiative corrections. The Peskin–Schroeder prescription contributes
+    the motivated, pre-proof connected-amputation route only; the retained Schwartz
+    renormalized-LSZ proof scope is unchanged.
   kind: method
   evidence:
   - source: schwartz
@@ -36144,11 +36407,22 @@ nodes:
     - 334
     note: Explains pole-mass LSZ projection and the distinction between external and
       internal self energies.
+  - source: peskin-schroeder
+    section: 4.6; 4.7
+    pages:
+    - 109
+    - 113
+    - 114
+    - 115
   origins:
   - project: schwartz
     node: schwartz.renormalized-lsz-external-amputation
     note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
       effective-theory boundary, or task status.
+  - project: peskin-schroeder
+    node: peskin-schroeder.connected-amputated-s-matrix-prescription
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
 - id: qft.align059.schwartz.scalar-qed-self-energy-renormalization-problem
   label: Scalar-QED self-energy renormalization problem
   summary: Problem 18.1 requests the scalar-QED self-energy in dimensional regularization,
@@ -39775,7 +40049,9 @@ nodes:
   label: Schwinger proper-time representation of a propagator
   summary: 'For real A and ε>0, i/(A+iε)=∫₀∞ds exp[is(A+iε)]. It gives the scalar
     Feynman propagator as a proper-time integral and, with Ĥ=−p̂², as ∫₀∞ds e^(−sε−ism²)⟨y|e^(−iĤs)|x⟩:
-    an amplitude to go from x to y in proper time s, integrated over s.'
+    an amplitude to go from x to y in proper time s, integrated over s. The Schwartz
+    i/A proper-time identity contributes the compatible proper-time representation
+    while retaining its convergence condition.'
   kind: representation
   evidence:
   - source: schwartz
@@ -39783,11 +40059,20 @@ nodes:
     pages:
     - 705
     - 706
+  - source: schwartz
+    section: B.1.2
+    pages:
+    - 822
+    - 823
   origins:
   - project: schwartz
     node: schwartz.schwinger-proper-time-propagator-representation
     note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
       effective-theory boundary, or task status.
+  - project: schwartz
+    node: schwartz.appendix-schwinger-parameter-identities
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
 - id: qft.align063.schwartz.worldline-path-integral-for-background-propagation
   label: Worldline path integral for a charged scalar propagator
   summary: The scalar background propagator has the exact formal worldline representation
@@ -40585,6 +40870,795 @@ nodes:
   origins:
   - project: schwartz
     node: schwartz.scet-threshold-drell-yan-factorization
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.peskin-schroeder.connected-amputated-s-matrix-prescription
+  label: Connected, amputated S-matrix prescription
+  summary: 'The chapter motivates computing the nontrivial S-matrix from connected
+    and amputated diagrams: discard vacuum bubbles and contributions with disconnected
+    external lines, and remove external-leg corrections because their on-shell propagators
+    diverge and describe one-particle-state evolution rather than scattering. The
+    text postpones a proof and loop normalization refinement.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.6'
+    pages:
+    - 109
+    - 113
+    - 114
+    - 115
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.connected-amputated-s-matrix-prescription
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+  label: Fermion-line particle-number flow and closed-loop sign
+  summary: Assign internal fermion momentum along particle-number-flow arrows, while
+    an external antiparticle's momentum points opposite its arrow. Dirac indices contract
+    along each fermion line; every closed fermion loop contributes -1 times the trace
+    of its propagator/matrix product.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 119
+    - 120
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.peskin-schroeder.fermionic-wick-sign-convention
+  label: Fermionic time ordering, normal ordering, and Wick signs
+  summary: Time ordering and normal ordering of spinor fields acquire one minus sign
+    per fermion interchange. With contractions defined to include these signs, Wick's
+    theorem retains the scalar-looking sum-over-contractions form while yielding the
+    Dirac Feynman propagator.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 115
+    - 116
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermionic-wick-sign-convention
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  label: Interaction-picture evolution and Dyson series
+  summary: With H=H_0+H_int, the interaction-picture evolution operator is the time-ordered
+    exponential of H_I(t). Its Taylor series has later interaction Hamiltonians on
+    the left, providing the perturbative object expressed in known free-field operators.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 84
+    - 85
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.interaction-picture-dyson-series
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.peskin-schroeder.phi4-tree-level-2to2-scattering
+  label: Tree-level phi-four two-to-two scattering
+  summary: For the supplied phi^4 contact interaction, the tree-level identical-scalar
+    2→2 amplitude is −i lambda. In the center-of-mass frame dσ/dΩ_CM=lambda^2/(64
+    pi^2 E_CM^2) and sigma_total=lambda^2/(32 pi E_CM^2), where the latter includes
+    the final identical-particle factor. The source derives this supplied result;
+    the Weinberg quartic-scattering item remains an exercise task.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '4.6'
+    pages:
+    - 110
+    - 112
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-tree-level-2to2-scattering
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  label: Yukawa Feynman rules and external spinors
+  summary: For H_int=g psibar psi phi, construct amplitudes from scalar and Dirac
+    propagators, -ig vertices, u/v external spinors, vertex momentum conservation,
+    loop integrations, and the fermionic sign. Unlike phi-four, Yukawa vertices have
+    no symmetry factors because their three field types cannot be interchanged.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 117
+    - 118
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.yukawa-feynman-rules
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-derivative-regularization-method
+  label: Derivative regularization method
+  summary: For I(Delta)=integral d4k/((2pi)^4(k^2-Delta+i epsilon)^2), dI/dDelta=integral
+    d4k/(2pi)^4 2/(k^2-Delta+i epsilon)^3=-i/(16pi^2Delta), hence I=-i ln(Delta/Lambda^2)/(16pi^2).
+    Differentiating a quadratic divergence twice yields -i[Delta ln(Delta/Lambda_1^2)+Lambda_2^2]/(8pi^2).
+    Its independent integration constants cannot enforce cancellations such as gauge-invariance
+    constraints, so it checks a logarithm coefficient rather than supplying an ideal
+    regulator.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.4.1
+    pages:
+    - 830
+    - 831
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-derivative-regularization-method
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimensional-analysis-problem
+  label: Appendix dimensional-analysis problem
+  summary: Problem A.1 asks for [A_mu], [phi], [g], and [lambda] in d dimensions for
+    S=integral d^d x[-F_mu_nu^2/4-phi-star box phi+gA_mu phi-star partial_mu phi+lambda
+    phi^3+...], then asks in which d the electromagnetic and phi^3 couplings are dimensionless.
+    It supplies no solution.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problem A.1
+    pages:
+    - 821
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimensional-analysis-problem
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimensional-continuation-conventions
+  label: Dimensional-continuation conventions
+  summary: Dimensional regularization first evaluates a convergent integral at d<4
+    and analytically continues it. It uses g_mu_nu=diag(1,-1,...,-1), g_mu_nu g^mu_nu=d,
+    and dPi_LIPS=(2pi)^d product_j[d^(d-1)p_j/((2pi)^(d-1)2E_pj)]delta^d(sum p). These
+    scalar and measure conventions are distinct from any gamma_5 prescription.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: B.3
+    pages:
+    - 825
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimensional-continuation-conventions
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimensional-logarithmic-loop-route
+  label: Dimensional route for the logarithmic loop
+  summary: Combining the d-dimensional scalar integral with e->mu^((4-d)/2)e and expansion
+    at d=4-epsilon yields the normalized dimensional-regulation route i e^2/(16pi^2)[2/epsilon+ln(mu-tilde^2/Delta)+O(epsilon)]
+    for the stated logarithmic denominator integral.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.3.2–B.3.3
+    pages:
+    - 827
+    - 828
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimensional-logarithmic-loop-route
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimensional-poles-and-scaleless-integrals
+  label: Dimensional poles, IR regulation, and scaleless integrals
+  summary: Dimensional regularization represents logarithmic UV behavior by a Gamma-function
+    pole at d=4 and quadratic behavior by a pole at d=2; expanding the latter near
+    d=4 can still produce a 1/epsilon term. Taking d=4-epsilon with epsilon<0 regulates
+    the stated IR divergence. Splitting a scaleless integral at an arbitrary Euclidean
+    scale gives a term proportional to 1/epsilon_UV-1/epsilon_IR; the conventional
+    common-epsilon value is zero, while its isolated UV divergence is i/(8pi^2 epsilon_UV).
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 829
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimensional-poles-and-scaleless-integrals
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimensional-scalar-integral-formula
+  label: d-dimensional scalar-integral formulas
+  summary: Write d^dk=dOmega_d k^(d-1)dk with dOmega_d=sin^(d-2)(phi_(d-1))sin^(d-3)(phi_(d-2))...sin(phi_2)dphi_1...dphi_(d-1),
+    0<=phi_1<2pi and 0<=phi_i<pi for i>1. Thus Omega_2=2pi, Omega_3=4pi, Omega_4=2pi^2
+    and V_d=Omega_d R^d/d. The Gaussian identity pi^(d/2)=Gamma(d/2)Omega_d/2 and
+    the equivalent telescoping angular product give Omega_d=2pi^(d/2)/Gamma(d/2);
+    Gamma(n)=(n-1)! at positive integers and Gamma(epsilon)=1/epsilon-gamma_E+O(epsilon).
+    Also sin(pi x)=pi(1-x)/(Gamma(x)Gamma(2-x)); cos(pi x)=(1-2x)Gamma(1-x)Gamma(1+x)/(2x
+    Gamma(2-2x)Gamma(2x)); and beta(a,b)=Gamma(a)Gamma(b)/Gamma(a+b)=integral_0^1
+    dx(1-x)^(a-1)x^(b-1). The radial integral is integral_0^infinity dk_E k_E^a/(k_E^2+Delta)^b=Delta^((a+1)/2-b)Gamma((a+1)/2)Gamma(b-(a+1)/2)/(2Gamma(b)).
+    Hence integral d^dk/(2pi)^d k^(2a)/(k^2-Delta)^b=i(-1)^(a-b)(4pi)^(-d/2)Delta^(-(b-a-d/2))Gamma(a+d/2)Gamma(b-a-d/2)/(Gamma(b)Gamma(d/2)).
+    Its B.36-B.39 special cases are respectively i(4pi)^(-d/2)Delta^(d/2-2)Gamma(2-d/2);
+    -(d/2)i(4pi)^(-d/2)Delta^(d/2-1)Gamma(2-d/2); (d/4)i(4pi)^(-d/2)Delta^(d/2-2)Gamma(2-d/2);
+    and -i Gamma(3-d/2)/[2(4pi)^(d/2)Delta^(3-d/2)]. The conventions d=4-epsilon and
+    d=4-2epsilon differ by a factor of two.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.3.2
+    pages:
+    - 826
+    - 827
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimensional-scalar-integral-formula
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimreg-field-dimensions-and-scale
+  label: Dimensional field dimensions and the modified minimal-subtraction scale
+  summary: 'In d-dimensional QED, [A_nu]=(d-2)/2, [psi]=(d-1)/2, [m]=1, and [e]=(4-d)/2.
+    Replacing e by mu^((4-d)/2)e keeps e dimensionless. The logarithmic loop becomes
+    i e^2/(16pi^2)[2/epsilon+ln(mu-tilde^2/Delta)+O(epsilon)] at d=4-epsilon, with
+    mu-tilde^2=4pi exp(-gamma_E)mu^2. The parameter mu is not a UV cutoff: the regulator
+    is removed as d->4, and both epsilon and mu must cancel from physical predictions.'
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimreg-field-dimensions-and-scale
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dimreg-gamma5-assumption
+  label: d-dimensional gamma-matrix and gamma_5 assumption
+  summary: 'The appendix assumes d four-dimensional gamma matrices obeying {gamma_mu,gamma_nu}=2g_mu_nu,
+    Tr 1=4, and a gamma_5 obeying {gamma_5,gamma_mu}=0 in d=4-epsilon. It explicitly
+    limits the claim: anomalous theories are where this definition can be subtle.'
+  kind: assumption
+  evidence:
+  - source: schwartz
+    section: B.3.1
+    pages:
+    - 825
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dimreg-gamma5-assumption
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-dirac-algebra-and-field-strength-identities
+  label: Dirac algebra, traces, polarizations, and field-strength identities
+  summary: The conventions are {gamma_mu,gamma_nu}=2g_mu_nu, gamma_5=i gamma^0gamma^1gamma^2gamma^3
+    with {gamma_5,gamma^mu}=0, sigma_mu_nu=i[gamma_mu,gamma_nu]/2, epsilon^0123=-epsilon_0123=1,
+    and P_L,R=(1∓gamma_5)/2. Thus gamma_5 psi_L=-psi_L, gamma_5 psi_R=psi_R, and psi=(psi_L,psi_R)^T.
+    The contractions are g^mu_nu g_mu_nu=4, gamma^mu gamma_mu=4, gamma^mu gamma^nu
+    gamma_mu=-2gamma^nu, gamma^mu gamma^nu gamma^rho gamma_mu=4g^nu_rho, and gamma^mu
+    gamma^nu gamma^rho gamma^sigma gamma_mu=-2gamma^sigma gamma^rho gamma^nu. Tr(gamma_5),
+    Tr(gamma^mu), and odd-gamma traces vanish; Tr(gamma^mu gamma^nu)=4g^mu_nu, Tr(gamma^alpha
+    gamma^mu gamma^beta gamma^nu)=4(g^alpha_mu g^beta_nu-g^alpha_beta g^mu_nu+g^alpha_nu
+    g^mu_beta), and Tr(gamma^mu gamma^nu gamma^alpha gamma^beta gamma_5)=-4i epsilon^mu_nu_alpha_beta.
+    The spin sums are sum_s u_s(p)u-bar_s(p)=slash-p+m and sum_s v_s(p)v-bar_s(p)=slash-p-m,
+    while u-bar_sigma gamma^mu u_sigma-prime=2 delta_sigma,sigma-prime p^mu. Circular
+    polarizations are epsilon_L,R^mu=(0,1,∓i,0)/sqrt(2). Finally slash-D^2=D_mu^2+(e/2)F_mu_nu
+    sigma^mu_nu, (sigma_mu_nu F^mu_nu)^2=2F_mu_nu F^mu_nu+2i gamma_5 F_mu_nu F-tilde^mu_nu,
+    and F-tilde^mu_nu=epsilon^mu_nu_alpha_beta F^alpha_beta/2.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: A.4
+    pages:
+    - 820
+    - 821
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-dirac-algebra-and-field-strength-identities
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-feynman-parameter-identities-and-shift
+  label: Feynman-parameter identities and loop shift
+  summary: The identities are 1/(AB)=integral_0^1 dx/[A+(B-A)x]^2=integral_0^1 dxdy
+    delta(x+y-1)/[xA+yB]^2, 1/(AB^n)=integral_0^1 dxdy delta(x+y-1)n y^(n-1)/[xA+yB]^(n+1),
+    and 1/(ABC)=integral_0^1 dxdydz delta(x+y+z-1)2/[xA+yB+zC]^3. For integral d4k/((2pi)^4
+    k^2(k-p)^2), completing the square gives Delta=-p^2x(1-x) and denominator [(k-xp)^2-Delta]^2;
+    shifting the integration variable k->k+xp then gives [k^2-Delta]^2, so the integral
+    depends only on k^2.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.1.1
+    pages:
+    - 822
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-feynman-parameter-identities-and-shift
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-free-mode-and-diagram-conventions
+  label: Free-field modes and Feynman-diagram symbols
+  summary: 'With omega_p=sqrt(p_vec^2+m^2), the real scalar is phi(x)=integral d3p/((2pi)^3sqrt(2omega_p))[a_p(t)exp(i
+    p_vec dot x_vec)+a_p-dagger(t)exp(-i p_vec dot x_vec)]. The complex modes are
+    phi(x)=integral d3p/((2pi)^3sqrt(2omega_p))[a_p exp(-ipx)+b_p-dagger exp(ipx)]
+    and phi-star(x)=integral d3p/((2pi)^3sqrt(2omega_p))[a_p-dagger exp(ipx)+b_p exp(-ipx)].
+    The Dirac modes are psi(x)=sum_s integral d3p/((2pi)^3sqrt(2omega_p))[a_p^s u_p^s
+    exp(-ipx)+b_p^{s dagger}v_p^s exp(ipx)] and psi-bar(x)=sum_s integral d3p/((2pi)^3sqrt(2omega_p))[a_p^{s
+    dagger}u-bar_p^s exp(ipx)+b_p^s v-bar_p^s exp(-ipx)]. The phases follow from a(t)=exp(-iomega
+    t)a(0). Table A.1 maps: solid line/generic particle; arrowed solid/fermion; dashed/scalar;
+    arrowed dashed/charged scalar; wavy/photon or Z; dotted arrow/ghost; curly/gluon;
+    arrowed wavy/W; double wavy/graviton; double-line arrow/heavy quark; barred line/background
+    field; star/counterterm; circled cross/operator or current; 1PI circle/all one-particle-irreducible
+    contributions; filled circle/generic amplitude; hatched square/alternative generic
+    amplitude.'
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: A.2–A.3; Table A.1
+    pages:
+    - 818
+    - 819
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-free-mode-and-diagram-conventions
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-logarithmic-loop-regularization-comparison
+  label: Agreement of three logarithmic-loop routes
+  summary: For the logarithmically divergent scalar denominator integral, the complete
+    dimensional route, the derivative route, and Pauli--Villars subtraction agree
+    on the i/(16pi^2) logarithm coefficient. Their scales have different regulator
+    interpretations.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: B.3.3–B.4.2
+    pages:
+    - 828
+    - 831
+    - 832
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-logarithmic-loop-regularization-comparison
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-lorentz-tensor-loop-reduction
+  label: Lorentz-tensor loop reduction
+  summary: When a loop tensor depends only on scalar Delta, Lorentz covariance gives
+    integral d^dk/(2pi)^d k_mu k_nu/(k^2-Delta)^n=(g_mu_nu/d) integral d^dk/(2pi)^d
+    k^2/(k^2-Delta)^n. A numerator with one unpaired k_mu is odd under k->-k and integrates
+    to zero over all momentum space.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.3.4
+    pages:
+    - 830
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-lorentz-tensor-loop-reduction
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-natural-units-and-mass-dimensions
+  label: Natural units, mass dimensions, and cross-section conversion
+  summary: Set c=hbar=1, so [d4x]=-4 and [S]=[integral d4x L]=0 requires [L]=4. A
+    scalar kinetic term gives [phi]=1; bosons with two-derivative kinetic terms have
+    dimension 1 and fermions with one derivative have 3/2. Restoring units gives hbar^2c^2=9.996x10^-52
+    joule^2 metre^2 and 1 GeV^-2 hbar^2c^2=3.894x10^-32 metre^2=3.894x10^8 pb.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: A.1
+    pages:
+    - 815
+    - 816
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-natural-units-and-mass-dimensions
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-other-regulator-survey
+  label: Other regulator survey
+  summary: A hard Euclidean cutoff k_E<Lambda breaks Lorentz invariance and usually
+    every symmetry. Point splitting imposes |x_1^mu-x_2^mu|>|epsilon^mu|, breaks translation
+    invariance, and is impractical for gauge theories but useful for composite operators.
+    A lattice breaks translation and Lorentz invariance, though both can be restored
+    in the continuum limit.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: B.4.3
+    pages:
+    - 833
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-other-regulator-survey
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-pauli-villars-regularization-method
+  label: Pauli--Villars ghost subtraction
+  summary: At one loop L_PV=-F^2/4+psi-bar(i slash-partial-e slash-A-e slash-A-tilde-m)psi+F-tilde^2/4-Lambda^2
+    A-tilde^2/2+psi-tilde-bar(i slash-partial-e slash-A-e slash-A-tilde-Lambda)psi-tilde,
+    with F-tilde_mu_nu=partial_mu A-tilde_nu-partial_nu A-tilde_mu. Both ghost fields
+    use bosonic statistics; A-tilde also has a wrong-sign kinetic term and propagator
+    +i g_mu_nu/(p^2-Lambda^2+i epsilon). The subtraction 1/(k^2-m^2+i epsilon)^2-1/(k^2-Lambda^2+i
+    epsilon)^2 falls at least as 1/k^6 and evaluates to -i ln(m^2/Lambda^2)/(16pi^2),
+    so the regulated original is i ln(Lambda^2/m^2)/(16pi^2). Further, 1/(k^2-m^2)-1/(k^2-Lambda^2)=integral_(m^2)^(Lambda^2)[-dXi/(k^2-Xi)^2],
+    and integral dm^2 d/dm^2[1/(k^2-m^2)]=integral dm^2/(k^2-m^2)^2. This makes Pauli--Villars
+    a systematic derivative method. It becomes impractical beyond one loop and is
+    unsuitable for non-Abelian gauge theories; its stated Abelian one-loop use requires
+    a conserved current.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.4.2
+    pages:
+    - 831
+    - 832
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-pauli-villars-regularization-method
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-schwinger-parameter-identities
+  label: Schwinger parameters and complementary Feynman fractions
+  summary: For Im(A)>0, i/A=integral_0^infinity ds exp(isA) and [i/A]^2=integral_0^infinity
+    s ds exp(isA). For Im(A),Im(B)>0, 1/(AB)=-integral_0^infinity ds integral_0^infinity
+    dt exp(isA+itB). With tau=s+t, x=t/tau, t=x tau and s=(1-x)tau, this becomes -integral_0^infinity
+    tau d tau integral_0^1 dx exp[i tau(A+(B-A)x)]=integral_0^1 dx/[A+(B-A)x]^2. The
+    appendix also gives 1/(A^nB^m)=Gamma(n+m)/(Gamma(n)Gamma(m)) integral_0^infinity
+    ds s^(m-1)/(A+Bs)^(n+m) and 1/(AB)=integral_0^infinity ds/(A+Bs)^2. The printed
+    sentence after the change of variables calls x=s/tau although its equation defines
+    x=t/tau; these are complementary labels.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: B.1.2
+    pages:
+    - 822
+    - 823
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-schwinger-parameter-identities
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-sign-propagator-and-covariant-derivative-conventions
+  label: Appendix signs, propagators, and covariant derivative
+  summary: 'With eta_mu_nu=diag(1,-1,-1,-1), p^2=p_0^2-p_vec^2=m^2>0. The real scalar
+    has L=-phi(box+m^2)phi/2=(partial_mu phi)(partial^mu phi)/2-m^2phi^2/2; the complex
+    scalar has L=-phi-star(box+m^2)phi=(partial_mu phi-star)(partial^mu phi)-m^2phi-star
+    phi. For F_mu_nu=partial_mu A_nu-partial_nu A_mu, L=-F_mu_nu F^mu_nu/4=-partial_mu
+    A_nu partial^mu A^nu/2+partial_mu A_nu partial^nu A^mu/2=A_nu box A^nu/2-A_mu
+    partial^mu partial^nu A_nu/2. Dirac fields use L=psi-bar(i slash-partial-e slash-A-m)psi.
+    Contracted indices may be raised or lowered consistently: x dot p=x^mu p_mu=x_mu
+    p^mu. D_mu=partial_mu-i g T_R^a A_mu^a; QED has D_mu=partial_mu-i e Q A_mu, e=0.303
+    and Q_e=-1, hence D_mu psi_e=(partial_mu+i e A_mu)psi_e. `tr` denotes group or
+    state sums and `Tr` a Dirac trace. The real-scalar propagator is integral d4p/(2pi)^4
+    exp(ip(x-y)) i/(p^2-m^2+i epsilon); the massless covariant-gauge vector is integral
+    d4p/(2pi)^4 exp(ip(x-y))[-i(g_mu_nu-(1-xi)p_mu p_nu/p^2)]/(p^2+i epsilon); and
+    the Dirac propagator is integral d4p/(2pi)^4 exp(-ip(x-y)) i(slash-p+m)/(p^2-m^2+i
+    epsilon).'
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: A.2
+    pages:
+    - 817
+    - 818
+  notation:
+  - source: schwartz
+    note: Contracted indices may be raised or lowered; tr is a generator/state sum
+      and Tr is a Dirac trace.
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-sign-propagator-and-covariant-derivative-conventions
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-wick-rotation-delta-negative-problem
+  label: Wick rotation for negative Delta problem
+  summary: Problem B.1 asks the learner to show that the Wick rotation still works
+    if Delta<0. It is a requested extension of the contour argument, not a supplied
+    result.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problem B.1
+    pages:
+    - 833
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-wick-rotation-delta-negative-problem
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.appendix-wick-rotation-method
+  label: Wick rotation of a Feynman loop
+  summary: For integral d4k/((2pi)^4(k^2-Delta+i epsilon)^n) with Delta>0, the Feynman
+    poles occupy the top-left and bottom-right k^0 quadrants, permitting k^0->ik_E^0
+    and k^2->-k_E^2 when no additional pole obstructs the contour. With integral dOmega_4=2pi^2,
+    integral d4k_E/(2pi)^4 f(k_E^2)=1/(8pi^2)integral_0^infinity k_E^3dk_E f(k_E^2).
+    The n=3 denominator integral is -i/(32pi^2Delta), and integral d4k/(2pi)^4 k^2/(k^2-Delta+i
+    epsilon)^4=-i/(48pi^2Delta). Generally, the denominator-only result is i(-1)^r/[(4pi)^2(r-1)(r-2)Delta^(r-2)]
+    for r>2, while the k^2-numerator result is i(-1)^(r-1)2/[(4pi)^2(r-1)(r-2)(r-3)Delta^(r-3)]
+    for r>3. After rotation epsilon may be set to zero. Wick rotation is a calculational
+    device, and the unobstructed-contour caveat matters at higher loops.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: B.2
+    pages:
+    - 823
+    - 824
+    - 825
+  origins:
+  - project: schwartz
+    node: schwartz.appendix-wick-rotation-method
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align065.schwartz.proper-time-feynman-parameter-composition
+  label: Proper-time composition and complementary Feynman fractions
+  summary: For two denominators, separate proper times have total tau=s+t. Choosing
+    x=s/tau gives 1/(AB)=integral_0^1 dx/[Ax+B(1-x)]^2; equivalently, choosing x=t/tau
+    gives t=x tau, s=(1-x)tau and denominator A+(B-A)x. The Schwinger derivation assumes
+    Im(A)>0 and Im(B)>0. Each parameter measures a propagator's fraction of total
+    loop proper time. Appendix B defines x=t/tau in the displayed change of variables
+    but the following sentence calls it s/tau; this is a printed label mismatch between
+    complementary conventions, not a different identity.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: '33.2'
+    pages:
+    - 706
+    - 707
+  - source: schwartz
+    section: B.1.1–B.1.2
+    pages:
+    - 822
+    - 823
+    note: Gives the complementary parameter convention and contains the printed label
+      mismatch.
+  origins:
+  - project: schwartz
+    node: schwartz.proper-time-feynman-parameter-composition
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.high-energy-qed-vertex-ir-structure
+  label: High-energy QED vertex IR structure
+  summary: For timelike p^2=Q^2, the charge-subtracted Dirac form factor obeys F1=1+f(Q^2)+delta1
+    and f(Q^2)+delta1=e_R^2/(16 pi^2){-ln^2[m_gamma^2/(-Q^2-i epsilon)]-3ln[m_gamma^2/(-Q^2-i
+    epsilon)]-2pi^2/3-7/2}+O(m_gamma). With ln(-Q^2-i epsilon)=ln Q^2-i pi and F2→0
+    at high energy, the virtual final-state correction is sigma_V=e_R^2 sigma0/(8pi^2){-ln^2(m_gamma^2/Q^2)-3ln(m_gamma^2/Q^2)-7/2+pi^2/3}.
+    This timelike continuation, its imaginary part, and the photon-mass regulator
+    remain source-specific.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 20.1.1
+    pages:
+    - 358
+    - 359
+    - 360
+  origins:
+  - project: schwartz
+    node: schwartz.high-energy-qed-vertex-ir-structure
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  label: Inclusive e+e−→μ+μ−(+γ) cross section
+  summary: 'In the high-energy final-state-radiation sector proportional to Q_e^2
+    Q_mu^4, combining virtual e+e−→mu+mu− with real e+e−→mu+mu−gamma gives sigma0[1+3e_R^2/(16
+    pi^2)]. It is not the complete NLO process: initial-state radiation, vacuum polarization,
+    and other charge sectors are excluded from this isolated calculation.'
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 20, 20.1
+    pages:
+    - 356
+    - 357
+    - 360
+    - 363
+  origins:
+  - project: schwartz
+    node: schwartz.inclusive-qed-cross-section-ir-finiteness
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.infrared-regulator-versus-observable-cancellation
+  label: Infrared regulators cancel only in inclusive observables
+  summary: In on-shell QED a fictitious photon mass regulates infrared singularities,
+    but unlike UV regulator dependence it generally disappears only after cross sections
+    for experimentally indistinguishable initial or final states are combined at one
+    scale; Green functions and individual S-matrix elements need not be IR finite.
+  kind: concept
+  evidence:
+  - source: schwartz
+    section: 20 introduction
+    pages:
+    - 355
+  origins:
+  - project: schwartz
+    node: schwartz.infrared-regulator-versus-observable-cancellation
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.light-by-light-gauge-set-problem
+  label: Light-by-light gauge-invariant diagram-set problem
+  summary: Problem 9.2 asks how many same-order diagrams accompany a displayed three-loop
+    light-by-light graph and for the minimal additional set making the sum ξ independent,
+    including why remaining diagrams cancel among themselves. It extends the demonstrated
+    complete-diagram cancellation to a requested loop application.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problem 9.2
+    pages:
+    - 155
+    - 156
+    note: States the same-order counting and minimal gauge-invariant-set tasks.
+  origins:
+  - project: schwartz
+    node: schwartz.light-by-light-gauge-set-problem
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.nonabelian-soft-consistency-problem
+  label: Non-Abelian soft-consistency derivation problem
+  summary: Problem 9.3 requests a derivation that matrix soft charges commute with
+    the mass matrix, then shows how a required contact-term pole resolves into gluon
+    exchange and a unique three-gluon vertex. The requested consistency condition
+    [T^a,T^b]=if^{abc}T^c identifies adjoint Lie-algebra structure; it is not established
+    on the problem page itself.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problem 9.3
+    pages:
+    - 156
+    note: States the matrix-charge, pole, three-gluon, and commutator derivation tasks.
+  origins:
+  - project: schwartz
+    node: schwartz.nonabelian-soft-consistency-problem
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  label: Scalar-QED Compton scattering problem
+  summary: Problem 9.1 requests tree-level γφ→γφ amplitudes and a Ward-identity check,
+    then CM polarized differential cross sections and a test of replacing polarization
+    outer products by −g_μν. These are specified applications rather than results
+    established in the text.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Lists the amplitude, polarization, cross-section, and replacement tasks.
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-compton-scattering-problem
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.scalar-qed-vacuum-polarization-transverse-result
+  label: Scalar-QED vacuum-polarization transversality
+  summary: In gauge-preserving dimensional regularization, scalar QED has derivative-vertex
+    and seagull contributions. The displayed d-dimensional parameter integral gives,
+    for Q^2=-p^2 much greater than m^2, Pi_scalar^{mu nu}= -e^2(p^2g^{mu nu}-p^mu
+    p^nu)[2/epsilon+ln(mu_tilde^2/Q^2)+8/3]/(48 pi^2). Its pole/log coefficient is
+    one quarter of the spinor loop, whose finite constant differs. The p^mu p^nu completion
+    is inferred from the Ward identity; Problem 16.1 asks for direct verification.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 16.2.1
+    pages:
+    - 305
+    - 306
+    - 307
+    - 308
+    note: Sets up both scalar diagrams, retains the physical tensor part, and obtains
+      the transverse dimensional-regularization result.
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-vacuum-polarization-transverse-result
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.soft-graviton-self-interaction-problem
+  label: Soft-graviton self-interaction derivation problem
+  summary: 'Problem 9.4 asks first for the scalar-QED contact interaction required
+    by soft spin-1 Compton scattering, then for the graviton analogue: an hhφφ interaction
+    whose required pole resolves into graviton exchange and fixes a relation between
+    graviton self-coupling and hφφ coupling. It is a requested derivation, not a demonstrated
+    result.'
+  kind: method
+  evidence:
+  - source: schwartz
+    section: Problem 9.4
+    pages:
+    - 156
+    note: States the soft spin-1 and spin-2 contact/pole/self-coupling tasks.
+  origins:
+  - project: schwartz
+    node: schwartz.soft-graviton-self-interaction-problem
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.soft-spin-greater-than-two-obstruction
+  label: Soft-limit derivation of the massless higher-spin obstruction
+  summary: For on-shell soft emission from nontrivial scattering, Lorentz little-group
+    invariance and a finite soft form-factor limit require the spin-three weighted
+    quadratic-momentum constraint. It is too restrictive unless all couplings vanish,
+    giving the massless spin-greater-than-two no-interaction conclusion; massive higher-spin
+    particles are outside this result.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 155
+    note: Displays the spin-3 soft constraint and derives the no-interaction conclusion.
+  origins:
+  - project: schwartz
+    node: schwartz.soft-spin-greater-than-two-obstruction
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.schwartz.weak-four-fermi-qed-problem-inputs
+  label: Weak four-Fermi QED problem inputs
+  summary: Problem 23.2 supplies the left-handed four-Fermi operator of Eq. (23.40)
+    and a chiral Fierz identity for the loop algebra. These are givens for calculating
+    its QED anomalous dimension; the vanishing result remains the exercise target.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: 23.3 and Problem 23.2
+    pages:
+    - 427
+    - 450
+  origins:
+  - project: schwartz
+    node: schwartz.weak-four-fermi-qed-problem-inputs
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.wii.axial-gauge-canonical-reduction
+  label: Axial gauge canonical reduction
+  summary: Choosing axial gauge A^a_3=0 leaves A^a_i for i=1,2 as canonical gauge
+    variables. The Gauss-law constraint, with suitable boundary conditions, determines
+    A^a_0 from these variables and the matter canonical variables; this avoids the
+    Gribov ambiguity that the source notes for Coulomb gauge.
+  kind: method
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 15
+    - 16
+    note: Equations (15.4.4)–(15.4.9) establish the axial-gauge variables and solve
+      the constraint for A_0.
+  notation:
+  - source: weinberg-2
+    note: In this gauge i,j run only over spatial values 1 and 2, while the gauge
+      condition fixes the 3 component.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.axial-gauge-canonical-reduction
+    note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
+      effective-theory boundary, or task status.
+- id: qft.align066.wii.problem-zinn-justin-from-quantum-master-equation
+  label: 'Problem: Zinn-Justin equation from the quantum master equation'
+  summary: 'Task: derive the Zinn-Justin equation from the quantum master equation
+    without assuming ΔS=0.'
+  kind: method
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 4 gives the requested derivation and explicitly forbids the ΔS=0
+      assumption.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-zinn-justin-from-quantum-master-equation
     note: Retains the assigned source-specific hypothesis, source-era proposal, normalization,
       effective-theory boundary, or task status.
 - id: qft.anomaly-su4-ten-calculation-task
@@ -42597,7 +43671,8 @@ nodes:
     operators. Schwartz defines the quantum expansion directly and distinguishes it
     from a merely suggestive classical analogy; Peskin–Schroeder derives the real-field
     mode and ladder normalization from equal-time canonical commutators. The common
-    expansion does not erase those different routes.
+    expansion does not erase those different routes. The Schwartz appendix contributes
+    only the scalar-mode subset and retains its diagram-table material locally.
   kind: representation
   group: qft.second-quantized-scalar-field
   origins:
@@ -42610,6 +43685,10 @@ nodes:
     note: Preserves this reviewed peskin-schroeder treatment at the stated scope;
       it does not import a different derivation, historical framing, or later proof
       beyond this correspondence.
+  - project: schwartz
+    node: schwartz.appendix-free-mode-and-diagram-conventions
+    note: Adds this bounded compatible assigned contribution while retaining its source-specific
+      proof scope, conventions, formula limits, and residual material.
   evidence:
   - source: schwartz
     section: 2.3.1 Field expansion
@@ -42625,6 +43704,11 @@ nodes:
     - 21
     note: The source identifies the Fourier oscillator frequency, gives the mode expansion,
       and derives the ladder commutator.
+  - source: schwartz
+    section: A.2–A.3
+    pages:
+    - 818
+    - 819
   notation:
   - source: schwartz
     note: The subscript 0 denotes a free field. The spatial phases on these pages
@@ -43586,7 +44670,8 @@ nodes:
     is tied to the detector-insensitive observable. Weinberg’s historical discussion
     supplies the early infrared problem and its experimental setting; the accepted
     detector-resolution condition and inclusive real–virtual cancellation remain the
-    operative statement.
+    operative statement. Adds only the shared condition that IR cancellation requires
+    inclusive observable final states.
   kind: assumption
   group: qft.qed-scattering
   origins:
@@ -43598,6 +44683,10 @@ nodes:
     node: weinberg-1.infrared-inclusive-cancellation
     note: Adds this packet-reviewed source treatment while retaining the accepted
       record’s formulas, conditions, notation, and proof boundary.
+  - project: schwartz
+    node: schwartz.infrared-regulator-versus-observable-cancellation
+    note: Adds the bounded compatible assigned contribution while retaining all source-specific
+      hypotheses, regulator/kinematic qualifications, proof scope, and task status.
   evidence:
   - source: peskin-schroeder
     section: Chapter 1
@@ -43610,6 +44699,10 @@ nodes:
     pages:
     - 33
     note: The source states the cancellation condition for infrared infinities.
+  - source: schwartz
+    section: 20 introduction
+    pages:
+    - 355
   notation: []
 - id: qft.intensity-mode-occupation-relation
   label: Radiation intensity and mode occupation
@@ -93447,6 +94540,1336 @@ edges:
     - 791
     - 792
     - 793
+- id: qft.align065.dirac-catalog-to-spin-core
+  from: qft.align065.schwartz.appendix-dirac-algebra-and-field-strength-identities
+  to: qft.align020.dirac-spin-sum-completeness
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The source-local Dirac catalog supports the spin-sum subset of the shared
+    core.
+  failure_mode: Without this link, the bounded spin-sum contribution is isolated.
+  evidence:
+  - source: schwartz
+    section: A.2
+    pages:
+    - 820
+    - 821
+- id: qft.align065.dirac-catalog-to-trace-core
+  from: qft.align065.schwartz.appendix-dirac-algebra-and-field-strength-identities
+  to: qft.align023.peskin.dirac-trace-identities-gamma5
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The source-local Dirac catalog supports the trace subset of the shared
+    core.
+  failure_mode: Without this link, the bounded trace contribution is isolated.
+  evidence:
+  - source: schwartz
+    section: A.2
+    pages:
+    - 820
+    - 821
+- id: qft.align065.gamma5-to-chiral-prescription
+  from: qft.align065.schwartz.appendix-dimreg-gamma5-assumption
+  to: qft.align006.chiral-gauge-gamma5-calculation-prescription
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The source states the d-dimensional gamma5 assumption relevant to the
+    retained chiral calculation prescription.
+  failure_mode: Without this helpful link, the source-local assumption is isolated.
+  evidence:
+  - source: schwartz
+    section: B.3.1
+    pages:
+    - 825
+- id: qft.align065.incident.peskin-schroeder.edge-yukawa-rules-to-problem-10-2
+  from: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  to: qft.align048.problem-ch10-yukawa-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise constructs renormalized pseudoscalar Yukawa rules and evaluates
+    their one-loop counterterms.
+  failure_mode: The loop amplitudes and counterterm vertices cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 10.2
+    pages:
+    - 344
+    - 345
+- id: qft.align065.incident.ps4-connected-amputated-to-problem-decay
+  from: qft.align065.peskin-schroeder.connected-amputated-s-matrix-prescription
+  to: qft.align023.peskin.problem-scalar-decay-lifetime
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The decay calculation needs the scattering-amplitude diagram prescription
+    before phase space converts it to a lifetime.
+  failure_mode: There is no rule for selecting the physical amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.2
+    pages:
+    - 127
+- id: qft.align065.incident.ps4-dirac-propagator-to-fermion-wick
+  from: qft.align029.dirac-momentum-space-and-feynman-propagator
+  to: qft.align065.peskin-schroeder.fermionic-wick-sign-convention
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The fermionic contraction is the Dirac Feynman propagator.
+  failure_mode: The contraction's matrix-valued value is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 115
+    - 116
+- id: qft.align065.incident.ps4-dyson-to-problem-decay
+  from: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  to: qft.align023.peskin.problem-scalar-decay-lifetime
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise's lowest-order cubic decay amplitude is obtained by expanding
+    the supplied interaction once; the connected-amputated prescription then selects
+    the decay amplitude before phase-space integration.
+  failure_mode: The supplied cubic interaction cannot be expanded into its lowest-order
+    transition amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: 4.2; Problems 4.2
+    pages:
+    - 84
+    - 85
+    - 127
+- id: qft.align065.incident.ps4-dyson-to-problem-poisson
+  from: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  to: qft.align023.peskin.problem-classical-source-poisson-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4.1 requests the time-ordered perturbation expansion in the source
+    strength.
+  failure_mode: The probability expansion and its order-by-order terms cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.1
+    pages:
+    - 126
+    - 127
+- id: qft.align065.incident.ps4-dyson-to-rutherford-classical
+  from: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  to: qft.align023.peskin.problem-rutherford-classical-potential-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4.4(a) is the first-order expansion of the prescribed external-field
+    interaction Hamiltonian.
+  failure_mode: The lowest-order T-matrix element cannot be generated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(a-b)
+    pages:
+    - 129
+    - 130
+- id: qft.align065.incident.ps4-perturbation-to-dyson
+  from: qft.align029.perturbative-interaction-expansion
+  to: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The interaction picture solves the perturbative H=H_0+H_int split with
+    a time-ordered evolution operator.
+  failure_mode: There is no interaction term to expand in the Dyson series.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 83
+    - 84
+    - 85
+- id: qft.align065.incident.ps6-yukawa-rules-to-higgs-gminus2-problem
+  from: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  to: qft.align019.problem-higgs-scalar-gminus2-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar loop calculation uses fermion and scalar propagators with
+    scalar interaction vertices.
+  failure_mode: The stated scalar coupling cannot be turned into the virtual-Higgs
+    loop amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 6.3(a)
+    pages:
+    - 210
+- id: qft.align065.incident.ps7-loop-sign-to-one-loop-vp
+  from: qft.align065.peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+  to: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon self-energy loop begins with the closed-fermion-loop minus
+    sign.
+  failure_mode: The one-loop polarization amplitude has the wrong overall sign.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.5'
+    pages:
+    - 245
+    - 247
+- id: qft.align065.incident.ps7-yukawa-rules-to-yukawa-problem
+  from: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  to: qft.align055.problem-yukawa-qed-vertex-renormalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task introduces a Yukawa-coupled elementary scalar and requires its
+    vertex and self-energy diagrams.
+  failure_mode: The scalar interaction diagrams and their factors are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 7.3
+    pages:
+    - 257
+    - 258
+- id: qft.align065.ps4-connected-amputated-to-phi4-tree
+  from: qft.align065.peskin-schroeder.connected-amputated-s-matrix-prescription
+  to: qft.align065.peskin-schroeder.phi4-tree-level-2to2-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation keeps the connected single-vertex scattering contribution
+    and omits trivial terms.
+  failure_mode: The tree contribution cannot be selected as an S-matrix amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.6'
+    pages:
+    - 110
+    - 112
+- id: qft.align065.ps4-connected-amputated-to-yukawa-rules
+  from: qft.align065.peskin-schroeder.connected-amputated-s-matrix-prescription
+  to: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Yukawa rules are presented as rules for scattering S-matrix amplitudes
+    with external legs.
+  failure_mode: The scattering-amplitude selection and external-leg treatment are
+    ungrounded.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 117
+    - 118
+- id: qft.align065.ps4-dirac-propagator-to-yukawa-rules
+  from: qft.align029.dirac-momentum-space-and-feynman-propagator
+  to: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The source rule list uses the momentum-space Dirac propagator as an internal-fermion
+    factor alongside the scalar propagator, external spinors, and fermionic signs.
+  failure_mode: Without this joint input, the Yukawa rule set omits its internal-fermion
+    propagator and the Wick-sign path alone does not supply that operand.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 117
+    - 118
+- id: qft.align065.ps4-dirac-spinors-to-yukawa-rules
+  from: qft.align020.dirac-spinor-normalization-and-completeness
+  to: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The external-leg rules assign normalized u and v spinors.
+  failure_mode: External fermion and antifermion factors are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 117
+    - 118
+- id: qft.align065.ps4-dyson-and-vacuum-to-correlation-quotient
+  from: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  to: qft.align016.interacting-correlation-function-quotient
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The normalized correlation formula inserts the time-ordered interaction
+    evolution.
+  failure_mode: Its numerator cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 87
+- id: qft.align065.ps4-dyson-to-common-dyson
+  from: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  to: qft.align030.interaction-picture-dyson-series-route
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The full Peskin–Schroeder Dyson construction is an independent derivation
+    route.
+  failure_mode: Without this alternative edge, a complete route is misclassified as
+    a partial contribution.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 84
+    - 85
+- id: qft.align065.ps4-dyson-to-vacuum-projection
+  from: qft.align065.peskin-schroeder.interaction-picture-dyson-series
+  to: qft.align016.adiabatic-interacting-vacuum-projection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The large-time vacuum construction is rewritten with U.
+  failure_mode: The proposed interacting-vacuum expression cannot be converted into
+    free-field evolution.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.2'
+    pages:
+    - 86
+    - 87
+- id: qft.align065.ps4-fermion-flow-to-qed-analogy
+  from: qft.align065.peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+  to: qft.align023.peskin.qed-from-yukawa-analogy
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The analogy carries the Yukawa fermion-line momentum and sign conventions
+    into QED.
+  failure_mode: The retained fermion-line rules are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+- id: qft.align065.ps4-fermion-wick-to-yukawa-rules
+  from: qft.align065.peskin-schroeder.fermionic-wick-sign-convention
+  to: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Yukawa rules are obtained by applying Wick contractions to spinor
+    fields.
+  failure_mode: The fermionic signs and propagators are not determined.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 117
+    - 118
+- id: qft.align065.ps4-inout-to-connected-amputated
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align065.peskin-schroeder.connected-amputated-s-matrix-prescription
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The prescription computes the nontrivial S/T matrix element between asymptotic
+    states.
+  failure_mode: It has no stated target observable.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.6'
+    pages:
+    - 109
+    - 114
+- id: qft.align065.ps4-momentum-rules-to-connected-amputated
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align065.peskin-schroeder.connected-amputated-s-matrix-prescription
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Amputation identifies and removes propagators from diagrams evaluated
+    by these rules.
+  failure_mode: There is no concrete object to amputate.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.6'
+    pages:
+    - 109
+    - 113
+    - 114
+    - 115
+- id: qft.align065.ps4-phase-space-to-phi4-tree
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align065.peskin-schroeder.phi4-tree-level-2to2-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated cross section substitutes |M| squared into the two-body formula.
+  failure_mode: The amplitude cannot be converted to the reported cross section.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.6'
+    pages:
+    - 112
+- id: qft.align065.ps4-scalar-propagator-to-yukawa-rules
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Yukawa scattering rules include the internal scalar propagator.
+  failure_mode: The exchanged scalar line has no factor.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 117
+    - 118
+- id: qft.align065.ps4-yukawa-flow-to-yukawa-potential
+  from: qft.align065.peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+  to: qft.yukawa-potential-and-massive-vector-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The particle-antiparticle comparison explicitly tracks the fermion-interchange
+    sign.
+  failure_mode: The universal-attraction conclusion has an unaccounted sign.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 122
+    - 123
+- id: qft.align065.ps4-yukawa-rules-to-fermion-flow
+  from: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  to: qft.align065.peskin-schroeder.fermion-line-flow-and-closed-loop-sign
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The flow and loop prescriptions disambiguate the fermion propagators
+    and signs in the rules.
+  failure_mode: A multi-fermion diagram can receive inconsistent momentum directions
+    or signs.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 119
+    - 120
+- id: qft.align065.ps4-yukawa-rules-to-qed-analogy
+  from: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  to: qft.align023.peskin.qed-from-yukawa-analogy
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The analogy retains the Yukawa fermion rules while replacing only the
+    exchanged scalar and vertex.
+  failure_mode: The retained fermion-line factors are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+- id: qft.align065.ps4-yukawa-rules-to-yukawa-potential
+  from: qft.align065.peskin-schroeder.yukawa-feynman-rules
+  to: qft.yukawa-potential-and-massive-vector-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The potential begins from the one-exchange Yukawa amplitude.
+  failure_mode: There is no scattering amplitude to compare with Born approximation.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 121
+    - 122
+- id: qft.align065.schwartz-composition-to-feynman-core
+  from: qft.align065.schwartz.proper-time-feynman-parameter-composition
+  to: qft.align019.feynman-parameter-denominator-combination
+  relation: evidence
+  source_level: derive
+  target_level: recognize
+  necessity: helpful
+  rationale: The proper-time calculation independently derives the two-denominator
+    identity and is helpful evidence for the broader denominator-combination core.
+  failure_mode: Calling this a full alternative would imply that the two-denominator
+    calculation alone establishes the broader arbitrary-product result.
+  evidence:
+  - source: schwartz
+    section: 33.2; B.1.1–B.1.2
+    pages:
+    - 706
+    - 707
+    - 822
+    - 823
+- id: qft.align065.schwartz-feynman-parameters-to-core
+  from: qft.align065.schwartz.appendix-feynman-parameter-identities-and-shift
+  to: qft.align019.feynman-parameter-denominator-combination
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Schwartz algebraic Feynman-parameter derivation is a complete independent
+    route.
+  failure_mode: Without this alternative edge, the complete algebraic route is disconnected.
+  evidence:
+  - source: schwartz
+    section: B.1.1
+    pages:
+    - 822
+- id: qft.align065.schwartz-regulator-comparison-to-loop-core
+  from: qft.align065.schwartz.appendix-logarithmic-loop-regularization-comparison
+  to: qft.align058.dimensionally-continued-loop-integrals-and-gamma-poles
+  relation: evidence
+  source_level: derive
+  target_level: recognize
+  necessity: helpful
+  rationale: The regulator comparison checks one logarithmic coefficient and is helpful
+    evidence for the broader dimensionally continued loop-integral core.
+  failure_mode: Calling this a full alternative would make a single coefficient comparison
+    stand in for the dimensional formulas, tensor reduction, and pole analysis.
+  evidence:
+  - source: schwartz
+    section: B.3.3–B.4.2
+    pages:
+    - 828
+    - 831
+    - 832
+- id: qft.align065.schwartz-schwinger-to-composition
+  from: qft.align065.schwartz.appendix-schwinger-parameter-identities
+  to: qft.align065.schwartz.proper-time-feynman-parameter-composition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The composition derivation starts from the Schwinger proper-time identities.
+  failure_mode: Without those identities, the proper-time composition cannot be derived.
+  evidence:
+  - source: schwartz
+    section: B.1.2
+    pages:
+    - 822
+    - 823
+- id: qft.align065.schwartz-wick-to-core
+  from: qft.align065.schwartz.appendix-wick-rotation-method
+  to: qft.align019.wick-rotation-for-convergent-loop-integrals
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Schwartz contour construction is a complete Wick-rotation derivation
+    route.
+  failure_mode: Without this alternative edge, the complete contour route is disconnected.
+  evidence:
+  - source: schwartz
+    section: B.2
+    pages:
+    - 823
+    - 824
+    - 825
+- id: qft.align065.schwartz.e-appendix-natural-units-to-dimensional-analysis-problem
+  from: qft.align065.schwartz.appendix-natural-units-and-mass-dimensions
+  to: qft.align065.schwartz.appendix-dimensional-analysis-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requires dimensional assignments for the given action.
+  failure_mode: The requested dimensions cannot be derived.
+  evidence:
+  - source: schwartz
+    section: A.1; Problem A.1
+    pages:
+    - 815
+    - 821
+- id: qft.align065.schwartz.e-derivative-to-comparison
+  from: qft.align065.schwartz.appendix-derivative-regularization-method
+  to: qft.align065.schwartz.appendix-logarithmic-loop-regularization-comparison
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The derivative calculation independently fixes the same logarithm coefficient.
+  failure_mode: The independent method would be falsely cumulative with dimensional
+    regularization.
+  evidence:
+  - source: schwartz
+    section: B.4.1
+    pages:
+    - 831
+- id: qft.align065.schwartz.e-dim-continuation-to-field-scale
+  from: qft.align065.schwartz.appendix-dimensional-continuation-conventions
+  to: qft.align065.schwartz.appendix-dimreg-field-dimensions-and-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field dimensions and mu exponent are defined after continuation to
+    d dimensions.
+  failure_mode: The d-dependent dimensions and coupling rescaling are undefined.
+  evidence:
+  - source: schwartz
+    section: B.3–B.3.3
+    pages:
+    - 825
+    - 828
+- id: qft.align065.schwartz.e-dim-continuation-to-poles
+  from: qft.align065.schwartz.appendix-dimensional-continuation-conventions
+  to: qft.align065.schwartz.appendix-dimensional-poles-and-scaleless-integrals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pole and UV/IR analysis compares analytic continuations above and
+    below four dimensions.
+  failure_mode: The meanings of epsilon_UV and epsilon_IR are unavailable.
+  evidence:
+  - source: schwartz
+    section: B.3–B.3.3
+    pages:
+    - 825
+    - 829
+- id: qft.align065.schwartz.e-dim-continuation-to-scalar-integral
+  from: qft.align065.schwartz.appendix-dimensional-continuation-conventions
+  to: qft.align065.schwartz.appendix-dimensional-scalar-integral-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar formula uses the d-dimensional measure and metric convention.
+  failure_mode: The continued integration formula lacks its d-dimensional definition.
+  evidence:
+  - source: schwartz
+    section: B.3–B.3.2
+    pages:
+    - 825
+    - 826
+- id: qft.align065.schwartz.e-dim-continuation-to-tensor-reduction
+  from: qft.align065.schwartz.appendix-dimensional-continuation-conventions
+  to: qft.align065.schwartz.appendix-lorentz-tensor-loop-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor coefficient is 1/d and uses d-dimensional Lorentz covariance.
+  failure_mode: Using a fixed four-dimensional coefficient would give the wrong reduction.
+  evidence:
+  - source: schwartz
+    section: B.3.1; B.3.4
+    pages:
+    - 825
+    - 830
+- id: qft.align065.schwartz.e-dimensional-log-route-to-comparison
+  from: qft.align065.schwartz.appendix-dimensional-logarithmic-loop-route
+  to: qft.align065.schwartz.appendix-logarithmic-loop-regularization-comparison
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This complete dimensional branch is one independent derivation of the
+    coefficient.
+  failure_mode: Its jointly required inputs would be mistaken for separate sufficient
+    routes.
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
+- id: qft.align065.schwartz.e-field-scale-to-dimensional-log-route
+  from: qft.align065.schwartz.appendix-dimreg-field-dimensions-and-scale
+  to: qft.align065.schwartz.appendix-dimensional-logarithmic-loop-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The same route jointly needs the mu coupling rescaling and epsilon expansion.
+  failure_mode: Its normalization and logarithmic scale are absent.
+  evidence:
+  - source: schwartz
+    section: B.3.3
+    pages:
+    - 828
+- id: qft.align065.schwartz.e-pauli-villars-to-comparison
+  from: qft.align065.schwartz.appendix-pauli-villars-regularization-method
+  to: qft.align065.schwartz.appendix-logarithmic-loop-regularization-comparison
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Pauli--Villars supplies the third independent route.
+  failure_mode: The regulator routes would be incorrectly made compulsory together.
+  evidence:
+  - source: schwartz
+    section: B.4.2
+    pages:
+    - 832
+- id: qft.align065.schwartz.e-scalar-integral-to-dimensional-log-route
+  from: qft.align065.schwartz.appendix-dimensional-scalar-integral-formula
+  to: qft.align065.schwartz.appendix-dimensional-logarithmic-loop-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The route evaluates the denominator with the scalar d-dimensional integral.
+  failure_mode: The regulated loop coefficient cannot be obtained.
+  evidence:
+  - source: schwartz
+    section: B.3.2–B.3.3
+    pages:
+    - 827
+    - 828
+- id: qft.align065.schwartz.e-wick-to-derivative-method
+  from: qft.align065.schwartz.appendix-wick-rotation-method
+  to: qft.align065.schwartz.appendix-derivative-regularization-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The convergent derivative is evaluated with the n=3 Wick-rotation integral.
+  failure_mode: The derivative method's normalized logarithm coefficient cannot be
+    reproduced.
+  evidence:
+  - source: schwartz
+    section: B.2; B.4.1
+    pages:
+    - 824
+    - 831
+- id: qft.align065.schwartz.e-wick-to-dimensional-scalar-integral
+  from: qft.align065.schwartz.appendix-wick-rotation-method
+  to: qft.align065.schwartz.appendix-dimensional-scalar-integral-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Wick rotation supplies the Euclidean radial integral and the Minkowski
+    i and sign factors.
+  failure_mode: The displayed Minkowski scalar formulas cannot be reconstructed from
+    the Euclidean measure.
+  evidence:
+  - source: schwartz
+    section: B.2–B.3.2
+    pages:
+    - 824
+    - 826
+    - 827
+- id: qft.align065.schwartz.e-wick-to-negative-delta-problem
+  from: qft.align065.schwartz.appendix-wick-rotation-method
+  to: qft.align065.schwartz.appendix-wick-rotation-delta-negative-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task extends the stated contour argument from Delta>0 to Delta<0.
+  failure_mode: There is no contour construction to extend.
+  evidence:
+  - source: schwartz
+    section: B.2; Problem B.1
+    pages:
+    - 823
+    - 833
+- id: qft.align065.schwartz.e-wick-to-pauli-villars
+  from: qft.align065.schwartz.appendix-wick-rotation-method
+  to: qft.align065.schwartz.appendix-pauli-villars-regularization-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed Pauli--Villars subtraction is evaluated by Wick rotation.
+  failure_mode: The shown Euclidean integral cannot be reproduced.
+  evidence:
+  - source: schwartz
+    section: B.2; B.4.2
+    pages:
+    - 824
+    - 832
+- id: qft.align066.compton-to-cross-section-task
+  from: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  to: qft.align046.problem-scalar-compton-cross-sections
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: Problem 9.1 supplies the cross-section subset as a task.
+  failure_mode: Without this link, the scoped task contribution is isolated.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+- id: qft.align066.compton-to-polarization-task
+  from: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  to: qft.align043.scalar-qed-polarization-sum-problem
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: Problem 9.1 supplies the physical-versus-covariant polarization-sum subset
+    as a task.
+  failure_mode: Without this link, the scoped task contribution is isolated.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+- id: qft.align066.dimreg-inclusive-to-inclusive
+  from: qft.align024.dimreg-real-virtual-pole-cancellation
+  to: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The dimensional calculation is a complete independent regulator route
+    to the inclusive cancellation result.
+  failure_mode: Without this alternative edge, the two complete regulator calculations
+    are made cumulatively compulsory.
+  evidence:
+  - source: schwartz
+    section: 20.A
+    pages:
+    - 373
+    - 379
+    - 380
+- id: qft.align066.external-photons-to-full-compton-problem
+  from: qft.align054.external-photon-lsz-polarizations
+  to: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The full problem asks for amplitudes and polarized cross sections with
+    incoming and outgoing photon polarization vectors.
+  failure_mode: The requested polarized amplitudes and their polarization sums cannot
+    be formed.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Requests amplitudes and cross sections resolved by the incoming and outgoing
+      photon polarizations.
+- id: qft.align066.incident.schwartz.e-formfactor-to-nonabelian-problem
+  from: qft.align054.soft-form-factor-charge-definition
+  to: qft.align066.schwartz.nonabelian-soft-consistency-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 9.3 explicitly starts from the generic Γ^a_ij vertex introduced
+    in the form-factor soft analysis.
+  failure_mode: The matrix-charge soft limit has no stated general vertex to extend.
+  evidence:
+  - source: schwartz
+    section: Problem 9.3
+    pages:
+    - 156
+    note: References the generic interaction of Eq. 9.57 and asks for matrix charges.
+- id: qft.align066.incident.schwartz.e-inclusive-ir-to-nlorhad
+  from: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  to: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source imports the QED real/virtual integrals and their inclusive
+    cancellation.
+  failure_mode: The cancellation mechanism and its QED replacement are unavailable.
+  evidence:
+  - source: schwartz
+    section: 26.3.2
+    pages:
+    - 516
+- id: qft.align066.incident.schwartz.e-ir-regulator-to-problem-ms-lsz
+  from: qft.align066.schwartz.infrared-regulator-versus-observable-cancellation
+  to: qft.align060.schwartz.problem-ms-lsz-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: One branch asks to identify the UV-finite but IR-divergent MS pole-overlap
+    quantity and contrast it with the MS field-strength factor.
+  failure_mode: The required UV/IR distinction is lost.
+  evidence:
+  - source: schwartz
+    section: Problem 24.4
+    pages:
+    - 477
+- id: qft.align066.incident.schwartz.e-loop-route-to-lightbylight-problem
+  from: qft.align054.scalar-qed-loop-gauge-cancellation-route
+  to: qft.align066.schwartz.light-by-light-gauge-set-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for the minimal same-order diagram set using the complete-diagram
+    ξ-cancellation principle demonstrated just above.
+  failure_mode: The selection criterion for added light-by-light diagrams is absent.
+  evidence:
+  - source: schwartz
+    section: 9.4 and Problem 9.2
+    pages:
+    - 150
+    - 155
+    - 156
+    note: Points to the closed-loop case then requests its gauge-invariant completion.
+- id: qft.align066.incident.schwartz.e-scalar-19-counterterm-problem-from-scalar-polarization
+  from: qft.align066.schwartz.scalar-qed-vacuum-polarization-transverse-result
+  to: qft.align012.scalar-qed-onshell-counterterms-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The previously computed scalar vacuum polarization supplies the photon
+    two-point branch of the four-counterterm calculation.
+  failure_mode: The scalar contribution used to fix the photon counterterm is unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 19.1
+    pages:
+    - 354
+    note: Reuses the scalar-QED two-point calculation in the requested on-shell counterterms.
+- id: qft.align066.incident.schwartz.e-scalar-pi-from-derivative-vertices
+  from: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  to: qft.align066.schwartz.scalar-qed-vacuum-polarization-transverse-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The bubble numerator uses the scalar-QED derivative vertices and propagators.
+  failure_mode: The first scalar loop diagram cannot be written.
+  evidence:
+  - source: schwartz
+    section: 16.2.1
+    pages:
+    - 305
+    note: Displays the derivative-vertex scalar loop.
+- id: qft.align066.incident.schwartz.e-scalar-pi-from-gauge-preserving-dr
+  from: qft.align055.regulator-must-preserve-ward-identity
+  to: qft.align066.schwartz.scalar-qed-vacuum-polarization-transverse-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stated cancellation is evaluated only with a gauge-invariance-preserving
+    regulator.
+  failure_mode: A regulator can obscure the cancellation and violate the claimed derivation.
+  evidence:
+  - source: schwartz
+    section: 16.2.1
+    pages:
+    - 307
+    note: Requires dimensional regularization for the gauge cancellation.
+- id: qft.align066.incident.schwartz.e-scalar-pi-from-seagull
+  from: qft.align054.scalar-qed-seagull-contact-vertex
+  to: qft.align066.schwartz.scalar-qed-vacuum-polarization-transverse-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The contact diagram is jointly required for the gauge cancellation.
+  failure_mode: The quadratic terms are not canceled into the transverse result.
+  evidence:
+  - source: schwartz
+    section: 16.2.1
+    pages:
+    - 305
+    - 307
+    note: Adds the scalar contact diagram and explains the cancellation.
+- id: qft.align066.incident.schwartz.e-soft-spin1-to-graviton-problem
+  from: qft.align054.soft-spin-one-lorentz-implies-charge-conservation
+  to: qft.align066.schwartz.soft-graviton-self-interaction-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 9.4 includes the spin-one scalar-Compton soft contact argument
+    as part (a) before its graviton construction in part (b).
+  failure_mode: The staged problem target is incomplete because its stated warm-up/contact
+    derivation is omitted.
+  evidence:
+  - source: schwartz
+    section: Problem 9.4
+    pages:
+    - 156
+    note: Explicitly assigns the spin-one warm-up before the graviton analysis.
+- id: qft.align066.incident.schwartz.e-soft-spin2-to-graviton-problem
+  from: qft.align033.long-range-graviton-coupling-and-general-covariance
+  to: qft.align066.schwartz.soft-graviton-self-interaction-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) extends the source’s massless spin-two soft constraint to the
+    required contact pole and self-interaction relation.
+  failure_mode: The graviton Compton portion loses the spin-two soft consistency principle
+    it applies.
+  evidence:
+  - source: schwartz
+    section: 9.5.1 and Problem 9.4
+    pages:
+    - 154
+    - 156
+    note: Derives the spin-two soft condition and asks for its graviton-scattering
+      completion.
+- id: qft.align066.incident.schwartz.e-spin2-to-higher-soft
+  from: qft.align033.long-range-graviton-coupling-and-general-covariance
+  to: qft.align066.schwartz.soft-spin-greater-than-two-obstruction
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The spin-three obstruction is presented as the continuation of the spin-one
+    and spin-two soft constraints, but can be checked from its own tensor condition.
+  failure_mode: The pattern is less transparent, though the spin-three conclusion
+    remains derivable.
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 154
+    - 155
+    note: Continues from the spin-two result to the spin-three constraint.
+- id: qft.align066.incident.schwartz.e-vp-tensor-problem-from-scalar-result
+  from: qft.align066.schwartz.scalar-qed-vacuum-polarization-transverse-result
+  to: qft.align012.vacuum-polarization-tensor-completion-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar pμpν completion starts from the scalar-QED polarization calculation.
+  failure_mode: The scalar branch of the comparison cannot be completed.
+  evidence:
+  - source: schwartz
+    section: Problem 16.1
+    pages:
+    - 314
+    note: Requests the omitted scalar-QED tensor pieces.
+- id: qft.align066.incident.schwartz.e.cm-inclusive
+  from: qft.align023.peskin.massive-muon-pair-cross-section
+  to: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The NLO result is normalized to the accepted tree-level CM cross section
+    σ0.
+  failure_mode: The inclusive coefficient has no defined Born normalization.
+  evidence:
+  - source: schwartz
+    section: '20.1'
+    pages:
+    - 356
+- id: qft.align066.incident.schwartz.e.lsz-inclusive
+  from: qft.align016.lsz-reduction-pole-projection
+  to: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source specifies amputated S-matrix graphs for the calculation.
+  failure_mode: External-line treatment is mixed into the loop sum incorrectly.
+  evidence:
+  - source: schwartz
+    section: '20.1'
+    pages:
+    - 357
+- id: qft.align066.incident.weinberg-2.axial-reduction-prerequisite-covariant-path-integral
+  from: qft.align066.wii.axial-gauge-canonical-reduction
+  to: qft.align054.axial-gauge-path-integral-to-covariant-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The path-integral derivation starts from the axial-gauge canonical variables
+    and the solution of its Gauss-law constraint.
+  failure_mode: Treating A_0 as an auxiliary Gaussian integration variable would lack
+    its canonical origin.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 16
+    - 17
+    note: The argument explicitly uses equations (15.4.7), (15.4.9), and (15.4.13).
+- id: qft.align066.ir-observable-to-inclusive-core
+  from: qft.align066.schwartz.infrared-regulator-versus-observable-cancellation
+  to: qft.infrared-inclusive-final-states
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The general source principle supports the inclusive-observable condition.
+  failure_mode: Without this link, the bounded general-principle contribution is isolated.
+  evidence:
+  - source: schwartz
+    section: 20 introduction
+    pages:
+    - 355
+- id: qft.align066.scalar-rules-to-full-compton-problem
+  from: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  to: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tree-level scalar-QED exchange diagrams use the charged-scalar propagator
+    and derivative photon-scalar vertices.
+  failure_mode: The exchange contributions to the requested Compton amplitude cannot
+    be written.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Requests the tree matrix elements using the scalar-QED rules developed immediately
+      before it.
+- id: qft.align066.schwartz.e-cm-cross-to-compton-problem
+  from: qft.align030.cm-two-to-two-cross-section
+  to: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (b)–(d) request a center-of-mass differential cross section from
+    the calculated amplitude.
+  failure_mode: The polarization amplitudes cannot be converted into the requested
+    dσ/dcosθ.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: Explicitly requests center-of-mass differential cross sections.
+- id: qft.align066.schwartz.e-weak-four-fermi-inputs-to-problem-23-2
+  from: qft.align066.schwartz.weak-four-fermi-qed-problem-inputs
+  to: qft.align012.problem-weak-four-fermi-qed-nonrunning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem supplies the left-handed operator and Fierz identity as operands
+    for the requested calculation.
+  failure_mode: The exercise has no specified operator or chiral rearrangement with
+    which to evaluate the anomalous dimension.
+  evidence:
+  - source: schwartz
+    section: Problem 23.2
+    pages:
+    - 450
+- id: qft.align066.schwartz.e.chargecondition-vertexir
+  from: qft.align012.qed-vertex-charge-renormalization-condition
+  to: qft.align066.schwartz.high-energy-qed-vertex-ir-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charge counterterm is fixed by F1(0)=1 and cancels the UV piece.
+  failure_mode: UV and IR terms are conflated.
+  evidence:
+  - source: schwartz
+    section: 20.1.1
+    pages:
+    - 358
+- id: qft.align066.schwartz.e.formfactor-vertexir
+  from: qft.align019.on-shell-vertex-form-factor-decomposition
+  to: qft.align066.schwartz.high-energy-qed-vertex-ir-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The imported vertex is decomposed into F1 and F2 before its high-energy
+    limit is used.
+  failure_mode: The vanishing F2 and F1 virtual term cannot be identified.
+  evidence:
+  - source: schwartz
+    section: 20.1.1
+    pages:
+    - 357
+    - 358
+- id: qft.align066.schwartz.e.irreg-inclusive
+  from: qft.align066.schwartz.infrared-regulator-versus-observable-cancellation
+  to: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The inclusive calculation is organized around cancellation of the regulator-dependent
+    virtual and real pieces.
+  failure_mode: One would treat either separately divergent cross section as observable.
+  evidence:
+  - source: schwartz
+    section: 20 introduction
+    pages:
+    - 355
+    - 356
+- id: qft.align066.schwartz.e.real-inclusive
+  from: qft.align024.real-emission-phase-space-method
+  to: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The real 2→3 contribution supplies the cancellation partner.
+  failure_mode: The real contribution and its singular region are omitted.
+  evidence:
+  - source: schwartz
+    section: 20.1.2
+    pages:
+    - 361
+    - 363
+- id: qft.align066.schwartz.e.vertex-inclusive
+  from: qft.align066.schwartz.high-energy-qed-vertex-ir-structure
+  to: qft.align066.schwartz.inclusive-qed-cross-section-ir-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The virtual vertex term is one contribution to the stated sum.
+  failure_mode: The virtual infrared logarithms cannot be combined correctly.
+  evidence:
+  - source: schwartz
+    section: 20.1.1
+    pages:
+    - 358
+    - 360
+- id: qft.align066.seagull-to-full-compton-problem
+  from: qft.align054.scalar-qed-seagull-contact-vertex
+  to: qft.align066.schwartz.scalar-qed-compton-scattering-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-QED contact graph is jointly required with the exchange graphs
+    for the requested Ward-identity check.
+  failure_mode: The complete tree amplitude is missing its contact term and fails
+    the requested Ward-identity test.
+  evidence:
+  - source: schwartz
+    section: Problem 9.1
+    pages:
+    - 155
+    note: The complete Compton amplitude and Ward check require the scalar-QED contact
+      interaction.
+- id: qft.align066.soft-higher-to-core
+  from: qft.align066.schwartz.soft-spin-greater-than-two-obstruction
+  to: qft.align054.massless-higher-spin-no-interaction-result
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The on-shell soft-emission argument independently derives the common
+    massless spin-greater-than-two obstruction under its little-group, finite-form-factor,
+    and nontrivial-scattering hypotheses.
+  failure_mode: This complete soft-limit proof route is lost, although the earlier
+    gauge-invariance statement remains an independent route to the retained result.
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 155
+    note: Derives the spin-three constraint and the higher-spin obstruction under
+      the stated soft-limit assumptions.
+- id: qft.align066.vertex-to-formfactor-core
+  from: qft.align066.schwartz.high-energy-qed-vertex-ir-structure
+  to: qft.align019.infrared-singular-dirac-form-factor
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The high-energy timelike form factor supplies a bounded partial contribution
+    to the common infrared form-factor core.
+  failure_mode: Without this link, the scoped source contribution is isolated.
+  evidence:
+  - source: schwartz
+    section: 20.1.1
+    pages:
+    - 358
+    - 359
+    - 360
+- id: qft.align066.weinberg-2.first-class-constraints-prerequisite-axial-reduction
+  from: qft.yang-mills-first-class-constraints
+  to: qft.align066.wii.axial-gauge-canonical-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The axial-gauge construction is introduced to handle the first-class
+    constraints.
+  failure_mode: The role of the gauge condition and the nonindependence of A_0 are
+    unexplained without the constraints.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 15
+    note: The source introduces axial gauge immediately after identifying the first-class
+      constraints.
+- id: qft.align066.weinberg-2.qme-to-zinn-problem
+  from: qft.bv-quantum-master-equation
+  to: qft.align066.wii.problem-zinn-justin-from-quantum-master-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4 starts from the quantum master equation.
+  failure_mode: Without that equation, the requested derivation has no starting identity.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 4 explicitly asks for a derivation from the quantum master equation.
+- id: qft.align066.weinberg-2.zinn-justin-to-zinn-problem
+  from: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  to: qft.align066.wii.problem-zinn-justin-from-quantum-master-equation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The requested result is the Zinn-Justin equation itself.
+  failure_mode: Without identifying the target identity, the derivation cannot be
+    checked.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 417
+    note: Problem 4 names the Zinn-Justin equation as its destination.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
