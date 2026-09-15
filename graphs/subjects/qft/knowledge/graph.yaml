@@ -1786,7 +1786,8 @@ nodes:
     modes and ε_L=(p_z/m,0,0,E/m). Their momentum dependence lets their Fourier span
     carry the massive spin-1 representation; the longitudinal high-energy scaling
     E/m also signals eventual breakdown of a perturbative treatment with unsuppressed
-    couplings.
+    couplings. Peskin--Schroeder supplies the compatible core under the source-specific
+    conditions retained in its residual record.
   kind: representation
   group: qft.particle-representations-and-gauge-polarizations
   origins:
@@ -1795,6 +1796,10 @@ nodes:
     note: Retains the source record ‘Massive vector transverse and longitudinal polarization
       basis’ with its stated scope, assumptions, and notation; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-massive-vector-polarization-sum
+    note: Corresponds only to the compatible physical core. The source-specific derivation,
+      signs, exercise status, and warnings remain in qft.align023.peskin.residual.problem-massive-vector-polarization-sum.
   evidence:
   - source: schwartz
     section: 8.2.2
@@ -1802,6 +1807,12 @@ nodes:
     - 117
     note: Constructs the three polarizations and discusses longitudinal high-energy
       growth.
+  - source: peskin-schroeder
+    section: Problem 5.5
+    pages:
+    - 173
+    note: The exercise defines the massive-vector basis, conserved-current simplification,
+      and its non-Abelian qualification.
   notation: []
 - id: qft.align010.schwartz.massless-little-group-ward-identity
   label: Massless little-group derivation of the Ward identity
@@ -1809,7 +1820,9 @@ nodes:
     a physical polarization to transverse terms plus c p_μ. Because p_μ is not a physical
     polarization, Lorentz invariance of ε_μM^μ requires p_μM^μ=0. This establishes
     the displayed Ward requirement from the little-group transformation; its perturbative
-    QED proof is explicitly deferred by the source.
+    QED proof is explicitly deferred by the source. Peskin--Schroeder supplies the
+    compatible core under the source-specific conditions retained in its residual
+    record.
   kind: result
   group: qft.particle-representations-and-gauge-polarizations
   origins:
@@ -1818,6 +1831,10 @@ nodes:
     note: Retains the source record ‘Massless little-group derivation of the Ward
       identity’ with its stated scope, assumptions, and notation; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.ward-identity-external-photon-polarization-sum
+    note: Corresponds only to the compatible physical core. The source-specific derivation,
+      signs, exercise status, and warnings remain in qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum.
   evidence:
   - source: schwartz
     section: 8.4.2
@@ -1827,6 +1844,14 @@ nodes:
     - 128
     note: Exhibits the ISO(2) mixing and derives p·M=0; the following page relates
       it to gauge invariance without supplying its perturbative proof.
+  - source: peskin-schroeder
+    section: 5.5 Photon Polarization Sums
+    pages:
+    - 159
+    - 160
+    - 161
+    note: The source states the quantum-current assumption, derives the conditional
+      replacement, and defers a formal proof and subtleties.
   notation: []
 - id: qft.align010.schwartz.massless-maxwell-gauge-redundancy-and-two-modes
   label: Massless Maxwell gauge redundancy and two modes
@@ -4163,11 +4188,20 @@ nodes:
     - 350
     note: Lists the four conditions, MS counterterms, and the distinction between
       cutoff and subtraction scales.
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 331
+    - 332
   origins:
   - project: schwartz
     node: schwartz.qed-four-onshell-renormalization-conditions
     note: This shared record retains the assigned schwartz treatment, including its
       source-specific scope, notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalized-qed-counterterms-and-conditions
+    note: Retains Peskin–Schroeder’s four on-shell conditions and their QED counterterm
+      role without collapsing them into the Lagrangian parametrization.
 - id: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
   label: Full QED vertex–inverse-propagator Ward identity
   summary: After amputating the off-shell current-insertion Green function with full
@@ -4224,11 +4258,20 @@ nodes:
     - 342
     note: Defines renormalization factors, the counterterm Lagrangian, and its Feynman-rule
       role.
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 331
+    - 332
   origins:
   - project: schwartz
     node: schwartz.qed-renormalized-perturbation-lagrangian
     note: This shared record retains the assigned schwartz treatment, including its
       source-specific scope, notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalized-qed-counterterms-and-conditions
+    note: Retains Peskin–Schroeder’s QED counterterm parametrization, regulator setup,
+      and renormalization-condition context as a parallel source route.
 - id: qft.align012.qed-running-charge-one-loop-flow
   label: QED one-loop running charge
   summary: The one-electron one-loop QED flow has beta(e)=e-cubed/(12 pi-squared).
@@ -4325,11 +4368,20 @@ nodes:
     - 351
     - 353
     note: States the charge implication and the scheme scope of the all-orders equality.
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+    - 335
   origins:
   - project: schwartz
     node: schwartz.qed-z1-equals-z2-charge-ratio-result
     note: This shared record retains the assigned schwartz treatment, including its
       source-specific scope, notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.ward-identity-z1-z2-and-universal-charge
+    note: Retains the Ward-identity Z1=Z2 relation, universal charge-ratio conclusion,
+      and the source’s all-orders recursion boundary.
 - id: qft.align012.renormalization-conditions-and-phi4-one-loop-vertex
   label: Renormalization conditions and one-loop phi-four vertex subtraction
   summary: Define the physical mass by the propagator pole and its unit residue, and
@@ -13967,6 +14019,1654 @@ nodes:
   - source: weinberg-2
     note: e is the SU(2) coupling; φ̂_n=φ_n/√(φ_mφ_m), and ℱ is the source's gauge-invariant
       electromagnetic tensor.
+- id: qft.align023.peskin.bound-state-production-decay-detailed-balance
+  label: Bound-state production-decay resonance relation
+  summary: A one-body bound state is produced only when the center-of-mass energy
+    equals its mass; finite lifetime broadens the delta-function resonance. Comparing
+    production and decay from the same matrix element yields a general relation between
+    resonant e+e- production and the leptonic partial width, with a 2J+1 spin factor.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.bound-state-production-decay-detailed-balance
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.3 Vector Meson Production and Decay
+    pages:
+    - 151
+    - 152
+    note: The text derives the resonance constraint and the production-width relation,
+      then generalizes the spin factor.
+- id: qft.align023.peskin.compton-two-diagram-amplitude
+  label: Compton amplitude from the two fermion-line orderings
+  summary: The lowest-order e- gamma to e- gamma amplitude is the coherent sum of
+    the two electron-line orderings. On-shell conditions reduce the propagator denominators
+    to dot products and allow the adjacent Dirac equations to simplify their numerators
+    before squaring.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.compton-two-diagram-amplitude
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Compton Scattering
+    pages:
+    - 158
+    - 159
+    note: The source writes the two-diagram amplitude and performs the on-shell Dirac-algebra
+      simplification.
+- id: qft.align023.peskin.coulomb-ladder-bound-state-resummation
+  label: Coulomb-ladder resummation produces threshold resonances
+  summary: Near a fermion-antifermion threshold, repeated photon exchanges inside
+    higher-order diagrams become large because they contain the Coulomb interaction.
+    Summing the ladder is equivalent to solving the nonrelativistic Schrödinger equation
+    and yields resonance peaks with the projected bound-state areas and widths.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.coulomb-ladder-bound-state-resummation
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.3'
+    pages:
+    - 152
+    - 153
+    note: The source connects the threshold diagrams to Coulomb dynamics, Schrödinger
+      summation, and the resonance prediction.
+- id: qft.align023.peskin.crossing-symmetry-s-matrix
+  label: Crossing symmetry and crossed-fermion sign
+  summary: Relate an S-matrix element with an incoming particle of momentum p to the
+    corresponding process with an outgoing antiparticle of momentum minus p by analytic
+    continuation. Feynman diagrams correspond one to one under crossing; for fermions,
+    the polarization sum introduces a minus sign that is handled by a consistent phase
+    convention or one manual sign per crossed fermion.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.crossing-symmetry-s-matrix
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Crossing Symmetry
+    pages:
+    - 153
+    - 154
+    - 155
+    note: Electron-muon scattering is obtained from annihilation and the section states
+      the general S-matrix crossing rule and fermion sign.
+- id: qft.align023.peskin.dirac-trace-identities-gamma5
+  label: Dirac trace identities, gamma5 traces, and contractions
+  summary: 'Use Clifford anticommutation, trace cyclicity, and gamma5 to reduce Dirac
+    traces: odd gamma traces vanish, two- and four-gamma traces reduce to metrics,
+    and the four-gamma gamma5 trace yields the Levi-Civita tensor. Contraction and
+    reversal identities streamline longer products.'
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-trace-identities-gamma5
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.1 Trace Technology
+    pages:
+    - 133
+    - 134
+    - 135
+    note: The source derives and summarizes the trace and contraction identities.
+- id: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
+  label: Electron-muon scattering cross section and forward Coulomb pole
+  summary: Crossing the spin-averaged e+e- to mu+mu- squared amplitude gives the lowest-order
+    e- mu- to e- mu- result. In the center-of-mass frame it yields the unpolarized
+    differential cross section; at high energy its forward singularity is the Coulomb
+    pole from a nearly on-shell exchanged photon with q-squared approaching zero.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.electron-muon-scattering-cross-section-and-coulomb-pole
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Electron-Muon Scattering
+    pages:
+    - 153
+    - 154
+    - 155
+    note: The source crosses the annihilation expression, evaluates CM kinematics,
+      and explains the forward pole.
+- id: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  label: Explicit ultrarelativistic spinor-amplitude calculation
+  summary: In a chosen center-of-mass frame and the massless limit, evaluate definite-helicity
+    fermion currents with explicit chiral spinors, rotate the outgoing current, and
+    contract the two currents. This gives helicity amplitudes directly but sacrifices
+    manifest Lorentz invariance and is mainly practical in limiting regimes.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.explicit-helicity-spinor-amplitude-method
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 144
+    - 145
+    - 146
+    note: The text contrasts the explicit-spinor route with traces and computes its
+      currents and amplitudes.
+- id: qft.align023.peskin.helicity-projection-trace-method
+  label: Helicity-projection trace calculation
+  summary: For massless fermions, insert (1 plus-or-minus gamma5)/2 to retain a selected
+    chirality before using completeness sums and traces. The projector also fixes
+    the associated antifermion spinor, so same-helicity electron-positron particle
+    states give a vanishing annihilation amplitude.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.helicity-projection-trace-method
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 141
+    - 142
+    - 143
+    note: The section introduces helicity as the basis and derives selected-polarization
+      traces with gamma5 projectors.
+- id: qft.align023.peskin.high-energy-compton-helicity-endpoint
+  label: High-energy Compton backward enhancement and helicity endpoint
+  summary: In high-energy CM Compton scattering, a nearly on-shell u-channel electron
+    enhances backward photon emission and produces a logarithm in the total cross
+    section. Helicity-conserving amplitudes contain an angular p-wave factor and vanish
+    exactly backward, while the mass-suppressed helicity-flip amplitude dominates
+    at the endpoint and reverses the highest-energy inverse-Compton photon polarization.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.high-energy-compton-helicity-endpoint
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 High-Energy Behavior
+    pages:
+    - 164
+    - 165
+    - 166
+    - 167
+    note: The source derives the backward enhancement, its angular-momentum factor,
+      flip term, and inverse-Compton consequence.
+- id: qft.align023.peskin.klein-nishina-and-thomson-limits
+  label: Klein-Nishina Compton formula and Thomson limit
+  summary: Spin-average the Compton amplitude, reduce the traces with Mandelstam variables,
+    and impose lab-frame kinematics to obtain the Klein-Nishina differential cross
+    section and the Compton wavelength shift. At low incident-photon energy it reduces
+    to the Thomson angular distribution and total cross section.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.klein-nishina-and-thomson-limits
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 The Klein-Nishina Formula
+    pages:
+    - 161
+    - 162
+    - 163
+    note: The source evaluates the traces, derives the energy shift and gives Klein-Nishina
+      and Thomson results.
+- id: qft.align023.peskin.mandelstam-variables-and-identity
+  label: Mandelstam variables and the four-mass identity
+  summary: For two-to-two scattering, define s from total initial momentum and t and
+    u from initial-final momentum differences. Momentum conservation gives s+t+u equal
+    to the sum of the four external masses squared; in the equal-mass CM frame, t
+    approaches zero forward and u approaches zero backward.
+  kind: representation
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.mandelstam-variables-and-identity
+    note: Retains this exact reviewed Peskin--Schroeder representation, including
+      its stated task status, hypotheses, and calculation route; no equivalence is
+      asserted merely from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Mandelstam Variables
+    pages:
+    - 156
+    - 157
+    - 158
+    note: The source defines s, t, u, applies crossing as an interchange, and derives
+      their CM behavior and sum rule.
+- id: qft.align023.peskin.massive-muon-pair-cross-section
+  label: Massive muon-pair production and threshold behavior
+  summary: For e+e- to mu+mu- at lowest QED order, retain the muon mass while neglecting
+    the electron mass, spin-average the squared amplitude, and insert CM two-body
+    phase space. The result vanishes below threshold, departs from a pure phase-space
+    curve near threshold, and tends to the familiar alpha-squared(1+cos-squared theta)/Ecm-squared
+    form at high energy.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.massive-muon-pair-cross-section
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.1'
+    pages:
+    - 131
+    - 132
+    - 135
+    - 136
+    - 137
+    - 138
+    note: The text sets up the massive calculation, obtains its CM cross section,
+      discusses threshold, and lists the general procedure.
+- id: qft.align023.peskin.nr-fermion-antifermion-bound-state-vector
+  label: Nonrelativistic fermion-antifermion bound-state vector
+  summary: Represent an equal-mass bound state as a relativistically normalized superposition
+    of free fermion-antifermion states weighted by the momentum-space Schrödinger
+    wavefunction. Center-of-mass and relative variables organize the state, while
+    two-by-two spin matrices select spin-one or spin-zero configurations.
+  kind: representation
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nr-fermion-antifermion-bound-state-vector
+    note: Retains this exact reviewed Peskin--Schroeder representation, including
+      its stated task status, hypotheses, and calculation route; no equivalence is
+      asserted merely from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.3 Bound States
+    pages:
+    - 148
+    - 149
+    - 150
+    note: The source defines relative variables, the momentum-space wavefunction,
+      normalization, and spin replacements.
+- id: qft.align023.peskin.pointlike-bound-state-wavefunction-at-origin
+  label: Pointlike bound-state production probes the wavefunction at the origin
+  summary: If the free pair-production amplitude is independent of the constituent
+    relative momentum, projecting it onto a nonrelativistic S-wave bound state replaces
+    the momentum integral by the position-space wavefunction at zero separation. A
+    pointlike virtual photon therefore creates the bound state with amplitude proportional
+    to psi(0).
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.pointlike-bound-state-wavefunction-at-origin
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.3 Bound States
+    pages:
+    - 149
+    - 150
+    note: The source performs the momentum-space projection and explains the zero-separation
+      interpretation.
+- id: qft.align023.peskin.problem-bhabha-scattering-interference
+  label: 'Problem: Bhabha scattering and channel interference'
+  summary: Problem 5.2 asks for the massless high-energy Bhabha differential cross
+    section by adding its two diagram amplitudes before squaring, tracking their relative
+    sign, expressing the result with Mandelstam variables, and identifying the forward
+    divergence from the diagrams.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-bhabha-scattering-interference
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.2
+    pages:
+    - 170
+    note: The problem explicitly requires coherent diagram addition, Mandelstam variables,
+      and analysis of the forward divergence.
+- id: qft.align023.peskin.problem-classical-source-poisson-statistics
+  label: 'Problem: source-created-particle Poisson statistics'
+  summary: Exercise 4.1 asks for a perturbative derivation of the no-particle probability,
+    its exponentiation, one-particle momentum probability, the n-particle Poisson
+    distribution, normalization, mean, and variance. These are requested exercise
+    results, not independently established by the prose here.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-classical-source-poisson-statistics
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.1
+    pages:
+    - 126
+    - 127
+- id: qft.align023.peskin.problem-linear-sigma-explicit-breaking
+  label: 'Problem: explicit breaking in the linear sigma model'
+  summary: Exercise 4.3(d) asks to add -a Phi_N, find the shifted minimum and particle
+    content, show m_pi-squared is proportional to a, and show the threshold pion-scattering
+    amplitude is nonzero and proportional to a. These are requested exercise demonstrations
+    independent of part (c).
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-linear-sigma-explicit-breaking
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(d)
+    pages:
+    - 129
+- id: qft.align023.peskin.problem-linear-sigma-soft-pion-cancellation
+  label: 'Problem: soft-pion cancellation in the broken linear sigma model'
+  summary: Exercise 4.3(c) asks to sum four leading pion-scattering diagrams and show
+    that their threshold amplitude vanishes; for N=2 it separately asks to show the
+    O(p-squared) term also cancels. These are requested exercise demonstrations.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-linear-sigma-soft-pion-cancellation
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(c)
+    pages:
+    - 129
+- id: qft.align023.peskin.problem-linear-sigma-unbroken-rules
+  label: 'Problem: unbroken linear sigma model rules and cross sections'
+  summary: Exercise 4.3(a) asks, for positive m-squared, to treat the O(N)-symmetric
+    theory as N free Klein-Gordon copies plus a lambda perturbation, derive the indexed
+    propagator and quartic vertex, and compute stated leading center-of-mass cross
+    sections. These remain requested calculations.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-linear-sigma-unbroken-rules
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(a)
+    pages:
+    - 127
+    - 128
+- id: qft.align023.peskin.problem-mott-coulomb-scattering
+  label: 'Problem: relativistic Mott Coulomb scattering'
+  summary: 'Problem 5.1 asks for the spin-averaged relativistic Coulomb-scattering
+    cross section by extending the classical-potential Rutherford calculation with
+    the full matrix element. It then asks for an independent route: take electron-muon
+    scattering in the muon rest frame, retain the electron mass, and send the muon
+    mass to infinity.'
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-mott-coulomb-scattering
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.1
+    pages:
+    - 169
+    - 170
+    note: The exercise specifies the repeated Rutherford route and the independent
+      heavy-muon limit.
+- id: qft.align023.peskin.problem-positronium-p-wave-two-photon-decays
+  label: 'Problem: spin-triplet P-wave positronium two-photon decays'
+  summary: Problem 5.4(b-d) asks for the first-relative-momentum term in e+e- to two
+    photons, the normalized spin-triplet P-wave positronium states of definite J,
+    and each state’s two-photon rate. The problem uses charge-conjugation selection
+    to distinguish the spin-triplet P-wave channel from the singlet one.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-positronium-p-wave-two-photon-decays
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.4(b-d)
+    pages:
+    - 172
+    note: The later parts define P-wave overlap, normalized definite-J states, and
+      requested decay rates.
+- id: qft.align023.peskin.problem-positronium-s-wave-two-photon-lifetime
+  label: 'Problem: S-wave positronium two-photon lifetime'
+  summary: Problem 5.4(a) asks to project the zero-relative-momentum e+e- to two-photon
+    amplitude onto 1S positronium. It asks the reader to use the fermion-antifermion
+    bound-state formalism to show that spin-one states do not decay to two photons
+    and that the spin-zero rate is proportional to the 1S wavefunction at the origin.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-positronium-s-wave-two-photon-lifetime
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.4(a)
+    pages:
+    - 171
+    note: Part (a) specifies the S-wave projection, spin selection, and wavefunction-at-origin
+      lifetime calculation.
+- id: qft.align023.peskin.problem-rutherford-classical-potential-amplitude
+  label: 'Problem: Rutherford scattering from a classical potential'
+  summary: Exercise 4.4(a-b) asks for the lowest-order electron T-matrix in a supplied
+    localized classical A_mu, the time-independent energy delta function and three-dimensional
+    transform rule, and the associated cross-section formula. It does not quantize
+    the electromagnetic field for this application.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-rutherford-classical-potential-amplitude
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(a-b)
+    pages:
+    - 129
+    - 130
+- id: qft.align023.peskin.problem-rutherford-nonrelativistic-formula
+  label: 'Problem: nonrelativistic Rutherford formula'
+  summary: Exercise 4.4(c) asks to specialize the classical-potential result to A^0=Ze/(4
+    pi r) and derive the nonrelativistic Rutherford differential cross section proportional
+    to Z-squared alpha-squared/[m-squared v^4 sin^4(theta/2)]. This is a requested
+    derivation.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-rutherford-nonrelativistic-formula
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(c)
+    pages:
+    - 130
+- id: qft.align023.peskin.problem-scalar-decay-lifetime
+  label: 'Problem: scalar decay lifetime at lowest order'
+  summary: Exercise 4.2 asks to use the supplied cubic interaction of two real scalar
+    fields to calculate, at lowest order in mu, the lifetime for Phi to decay to two
+    phi particles when M>2m. It specifies a task rather than deriving the lifetime
+    in the chapter.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-scalar-decay-lifetime
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.2
+    pages:
+    - 127
+- id: qft.align023.peskin.problem-spinor-helicity-photon-polarizations
+  label: 'Problem: spinor-helicity photon polarization vectors'
+  summary: Problem 5.6 constructs photon helicity polarization vectors from a photon
+    momentum and an auxiliary lightlike reference vector using massless spinors. The
+    Ward identity removes the reference-dependent term in the polarization sum, and
+    the construction is applied to massless e+e- to two photons.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-spinor-helicity-photon-polarizations
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.6
+    pages:
+    - 174
+    note: The problem defines the spinor polarization vectors, reference-vector independence,
+      and annihilation application.
+- id: qft.align023.peskin.problem-spinor-product-helicity-amplitudes
+  label: 'Problem: spinor-product helicity amplitudes for QED trees'
+  summary: Problem 5.3 applies massless spinor products and a Fierz identity to derive
+    helicity-resolved e+e- to mu+mu- and Bhabha amplitudes. It asks for agreement
+    with the trace-based helicity cross sections after summing and averaging the definite-helicity
+    contributions.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-spinor-product-helicity-amplitudes
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.3
+    pages:
+    - 170
+    - 171
+    note: The exercise specifies trace, Fierz, muon-pair, and Bhabha spinor-product
+      tasks.
+- id: qft.align023.peskin.problem-weizsacker-williams-collinear-distribution
+  label: 'Problem: Weizsacker-Williams collinear photon distribution'
+  summary: Problem 5.5(c) asks to regulate the forward collinear divergence by the
+    electron mass and retain its leading log. The resulting photon distribution convolves
+    a universal electron-line emission factor with the reduced-energy annihilation
+    cross section, independently of subsequent dynamics.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-weizsacker-williams-collinear-distribution
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.5(c)
+    pages:
+    - 173
+    - 174
+    note: The problem specifies the mass cutoff, leading logarithm, convolution, and
+      universal distribution interpretation.
+- id: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  label: Photon polarizations and provisional Lorenz-gauge propagator qualification
+  summary: Building on the accepted QED diagrammatic and tree-amplitude rules, the
+    chapter adds charge-dependent gamma-matrix vertices, external photon polarization
+    vectors, and a provisional Lorenz-gauge propagator. On-shell photons are transversely
+    polarized. The Lorenz-gauge argument gives positive norm for spacelike A_i-created
+    states but exposes a negative-norm timelike sector; the chapter defers its full
+    resolution and derivation.
+  kind: result
+  group: qft.particle-representations-and-gauge-polarizations
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-feynman-rules-and-physical-polarizations
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+    - 124
+- id: qft.align023.peskin.qed-from-yukawa-analogy
+  label: Yukawa-to-QED Feynman-rule analogy
+  summary: The chapter develops QED by retaining the fermion-line rules of Yukawa
+    theory while replacing its scalar exchange and -ig vertex with a vector photon,
+    polarization factors, and the charge-dependent gamma-matrix vertex. This is one
+    instructional route to the photon refinements, distinct from applying the accepted
+    QED diagrammatic rule directly.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-from-yukawa-analogy
+    note: Retains this exact reviewed Peskin--Schroeder method, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+- id: qft.align023.peskin.quark-pair-r-ratio
+  label: High-energy quark-pair R ratio and color multiplicity
+  summary: At energies well above accessible quark thresholds, e+e- to q qbar inherits
+    the muon-pair result with a quark-charge-squared factor and three colors. The
+    inclusive hadronic R ratio is 3 times the sum of Q_i-squared over accessible flavors;
+    strong interactions spoil this simple limit near thresholds but asymptotic freedom
+    supports it far above them.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.quark-pair-r-ratio
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.1 Production of Quark-Antiquark Pairs
+    pages:
+    - 139
+    - 140
+    note: The source gives the charge, color, and high-energy strong-interaction qualifications
+      behind R.
+- id: qft.align023.peskin.residual.coulomb-potential-and-exchange-spin-pattern
+  label: 'Peskin--Schroeder residual: Coulomb potential and exchanged-spin force pattern'
+  summary: The nonrelativistic QED exchange amplitude yields a repulsive Coulomb potential
+    for like charges and an attractive one for particle-antiparticle pairs. The chapter
+    contrasts this vector pattern with universally attractive scalar Yukawa and tensor-exchange
+    patterns in its table.
+  kind: result
+  group: qft.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 125
+    - 126
+  notation:
+  - source: peskin-schroeder
+    note: Residual source-specific scope is retained beside the amended accepted physical
+      core qft.coulomb-potential-from-field-propagation.
+- id: qft.align023.peskin.residual.problem-linear-sigma-spontaneous-breaking
+  label: 'Peskin--Schroeder residual: Problem: spontaneously broken linear sigma model'
+  summary: Exercise 4.3(b) asks to shift an O(N)-invariant theory with negative m-squared
+    about a chosen minimum, yielding a massive sigma and N-1 massless pions with cubic
+    and quartic interactions, then construct the corresponding rules. This is an exercise
+    derivation rather than a chapter-proved result.
+  kind: method
+  group: qft.spontaneously-broken-symmetries
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(b)
+    pages:
+    - 128
+  notation:
+  - source: peskin-schroeder
+    note: Residual source-specific scope is retained beside the amended accepted physical
+      core qft.on-linear-sigma-model-broken-vacuum.
+- id: qft.align023.peskin.residual.problem-massive-vector-polarization-sum
+  label: 'Peskin--Schroeder residual: Problem: massive-vector polarization sum from
+    a conserved current'
+  summary: Problem 5.5 introduces a massive QED-coupled vector with three spacelike
+    physical polarizations. Current conservation removes the momentum component in
+    production amplitudes, permitting a metric polarization sum for this case and
+    enabling production, decay, associated-photon, and collinear-region calculations.
+    The source warns that this simple replacement does not carry over unchanged to
+    non-Abelian gauge fields.
+  kind: method
+  group: qft.particle-representations-and-gauge-polarizations
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.5
+    pages:
+    - 173
+    note: The exercise defines the massive-vector basis, conserved-current simplification,
+      and its non-Abelian qualification.
+  notation:
+  - source: peskin-schroeder
+    note: Residual source-specific scope is retained beside the amended accepted physical
+      core qft.align010.schwartz.massive-vector-polarization-basis.
+- id: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  label: 'Peskin--Schroeder residual: Ward identity and external-photon polarization
+    sum'
+  summary: Conditionally assuming that current conservation continues to hold in the
+    quantum theory, the text argues that a QED amplitude vanishes when an external
+    photon polarization vector is replaced by its momentum. This provisional Ward-identity
+    argument permits replacing the physical transverse-polarization sum by minus the
+    metric inside a complete amplitude, so timelike and longitudinal contributions
+    cancel; a formal proof and omitted subtleties are deferred to Section 7.4.
+  kind: method
+  group: qft.qed-scattering
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Photon Polarization Sums
+    pages:
+    - 159
+    - 160
+    - 161
+    note: The source states the quantum-current assumption, derives the conditional
+      replacement, and defers a formal proof and subtleties.
+  notation:
+  - source: peskin-schroeder
+    note: Residual source-specific scope is retained beside the amended accepted physical
+      core qft.align010.schwartz.massless-little-group-ward-identity.
+- id: qft.align023.peskin.residual.yukawa-potential-from-nonrelativistic-exchange
+  label: 'Peskin--Schroeder residual: Attractive Yukawa potential from scalar exchange'
+  summary: For distinguishable fermions at low momentum, compare the one-scalar-exchange
+    amplitude with the nonrelativistic Born formula and Fourier transform it to obtain
+    V(r)=-g^2 exp(-m_phi r)/(4 pi r). The source concludes the same attractive strength
+    for fermion-fermion, fermion-antifermion, and antifermion-antifermion cases.
+  kind: result
+  group: qft.classical-field-theory
+  evidence:
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 121
+    - 122
+    - 123
+  notation:
+  - source: peskin-schroeder
+    note: Residual source-specific scope is retained beside the amended accepted physical
+      core qft.yukawa-potential-and-massive-vector-constraint.
+- id: qft.align023.peskin.s-t-u-channel-classification
+  label: s-, t-, and u-channel propagator classification
+  summary: For a two-to-two diagram with one virtual particle, identify its channel
+    by whether its propagator denominator is s-minus-m-squared, t-minus-m-squared,
+    or u-minus-m-squared. A process may have several channels whose amplitudes must
+    be added coherently; the channel denominator explains characteristic angular singularities.
+  kind: concept
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.s-t-u-channel-classification
+    note: Retains this exact reviewed Peskin--Schroeder concept, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Mandelstam Variables
+    pages:
+    - 157
+    - 158
+    note: The source defines channels, gives Bhabha and Moller examples, and relates
+      t/u to forward/backward angles.
+- id: qft.align023.peskin.threshold-muon-pair-spin-triplet-swave
+  label: Threshold muon pairs as a spin-triplet S wave
+  summary: Near muon-pair threshold, the electron current creates an angle-independent
+    muon pair. The pair is therefore an S wave, and angular-momentum conservation
+    selects total spin one; the cross section carries the final momentum phase-space
+    suppression.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.threshold-muon-pair-spin-triplet-swave
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.3'
+    pages:
+    - 146
+    - 147
+    - 148
+    note: The nonrelativistic-spinor calculation identifies the S-wave and spin-one
+      final state.
+- id: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  label: Electron-positron annihilation into two photons
+  summary: Crossing the Compton amplitude gives the lowest-order e+e- to two-photon
+    squared amplitude and CM differential cross section. In the high-energy limit
+    the distribution has the familiar sin-theta denominator, regulated near the forward/backward
+    directions by the electron mass; identical photons require counting each final
+    state once.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.two-photon-pair-annihilation-cross-section
+    note: Retains this exact reviewed Peskin--Schroeder result, including its stated
+      task status, hypotheses, and calculation route; no equivalence is asserted merely
+      from a similar label.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Pair Annihilation into Photons
+    pages:
+    - 168
+    - 169
+    note: The source crosses the Compton result, gives the high-energy expression,
+      and states the identical-photon counting rule.
+- id: qft.align024.bloch-nordsieck-and-kln-qualifications
+  label: Bloch–Nordsieck and KLN infrared cancellation
+  summary: With a massive electron and finite energy resolution, QED infrared singularities
+    cancel after summing final-state radiation (Bloch–Nordsieck). More generally,
+    a unitary theory requires summing all possible final and initial states in a finite
+    energy window for KLN cancellation; the QCD qualification stated in the text differs
+    for massive quarks at two loops.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.bloch-nordsieck-and-kln-qualifications
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.3.2, Boxes 20.1–20.2
+    pages:
+    - 372
+  notation: []
+- id: qft.align024.dimension-power-counting-and-nonrenormalizable-diagnosis
+  label: Dimension power counting and non-renormalizable diagnosis
+  summary: Operator or coupling dimension diagnoses whether a four-dimensional interaction
+    needs an infinite tower of counterterms. Peskin–Schroeder classifies QED and phi-to-the-n
+    interactions by dimension; Schwartz emphasizes negative-dimension couplings and
+    bad ultraviolet propagators. Both support the diagnostic, while their catalogues
+    and EFT consequences remain source-specific.
+  kind: concept
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalizability-classification-by-dimension
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.nonrenormalizable-power-counting-diagnosis
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 321
+    - 322
+  - source: schwartz
+    section: '21.2'
+    pages:
+    - 387
+    - 388
+    - 389
+    - 390
+  notation: []
+- id: qft.align024.dimreg-real-emission-three-body-phase-space
+  label: d-dimensional real-emission phase-space route
+  summary: For γ*→μ+μ−γ with massless final particles, calculate the d-dimensional
+    spin sum and transform three-body phase space to energy fractions x1,x2,xγ. The
+    endpoint integral carries the real soft-collinear 1/ε² and 1/ε poles.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.dimreg-real-emission-three-body-phase-space
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.A.3
+    pages:
+    - 378
+    - 379
+  notation: []
+- id: qft.align024.dimreg-real-virtual-pole-cancellation
+  label: Dimensional real–virtual pole cancellation
+  summary: Adding the d-dimensional real-emission cross section to the renormalized
+    virtual cross section cancels both the 1/ε² and 1/ε infrared poles and gives σ0
+    3eR²/(16π²), agreeing with the Pauli–Villars plus photon-mass calculation.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.dimreg-real-virtual-pole-cancellation
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.A.3
+    pages:
+    - 379
+    - 380
+  notation: []
+- id: qft.align024.dimreg-tree-cross-section-normalization
+  label: d-dimensional tree cross-section normalization
+  summary: For massless e+e−→γ*→μ+μ− at Q much greater than the fermion masses, derive
+    the d=4−ε tree cross section including its O(ε) terms, using transverse tensor
+    factorization and d-dimensional two-body phase space; those terms are required
+    when it multiplies infrared poles in the virtual correction.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.dimreg-tree-cross-section-normalization
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.A.1
+    pages:
+    - 373
+    - 374
+  notation: []
+- id: qft.align024.dimreg-vertex-uv-ir-pole-separation
+  label: Dimensional vertex UV and IR pole separation
+  summary: For the massless on-shell QED vertex in d dimensions, use Feynman parameters
+    and d-dimensional gamma algebra, distinguish the single UV pole from the soft-collinear
+    double IR pole, and use the scaleless on-shell charge counterterm so the renormalized
+    virtual correction has only IR poles.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.dimreg-vertex-uv-ir-pole-separation
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.A.2
+    pages:
+    - 375
+    - 376
+    - 377
+  notation: []
+- id: qft.align024.external-momentum-derivative-power-counting
+  label: External-momentum differentiation lowers superficial divergence
+  summary: For an overall electron self-energy divergence, differentiating a propagator
+    with respect to its external momentum lowers D by one. The argument needs qualification
+    when the ultraviolet divergence is in a subdiagram, and the Taylor coefficients
+    require infrared regulation to compute explicitly.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.external-momentum-derivative-power-counting
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 319
+  notation: []
+- id: qft.align024.furry-theorem-photon-odd-point-vanishing
+  label: Furry theorem for odd photon-current amplitudes
+  summary: Lorentz invariance and charge conjugation make the photon one-point function
+    vanish; charge conjugation similarly makes vacuum expectation values of an odd
+    number of electromagnetic currents, including the photon three-point function,
+    vanish.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.furry-theorem-photon-odd-point-vanishing
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 318
+  notation: []
+- id: qft.align024.initial-state-radiation-and-electron-distributions
+  label: Initial-state radiation and electron distribution functions
+  summary: Initial-state collinear radiation is regulated by the electron mass but
+    yields large ln(Q²/m²) terms. At high energy, electron distribution functions
+    describe the probability for an electron or photon carrying an energy fraction
+    to enter the hard collision; their leading collinear behavior is universal and
+    large logarithms can be evolved or resummed.
+  kind: concept
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.initial-state-radiation-and-electron-distributions
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.3.2
+    pages:
+    - 369
+    - 370
+    - 371
+  notation: []
+- id: qft.align024.jet-algorithms-and-sudakov-logs
+  label: Jet algorithms and Sudakov logarithms
+  summary: Collider jet observables cluster nearby particles and can measure quantities
+    such as jet mass. Small-resolution or small-mass distributions contain large logarithms,
+    so fixed-order perturbation theory becomes inadequate and logarithms require resummation
+    or additional long-distance input.
+  kind: concept
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.jet-algorithms-and-sudakov-logs
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: '20.2'
+    pages:
+    - 365
+    - 366
+  notation: []
+- id: qft.align024.jet-resolution-ir-safe-cross-section
+  label: Resolution-defined two-jet cross section
+  summary: A two-jet rate is defined by allowing radiation inside cones of half-angle
+    θres around the muons and outside them only below energy Eres. With finite resolution
+    it is finite, although its fixed-order expression contains large logarithms as
+    the resolution becomes small.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.jet-resolution-ir-safe-cross-section
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: '20.2'
+    pages:
+    - 364
+    - 365
+    - 366
+  notation: []
+- id: qft.align024.nonrenormalizable-eft-low-energy-predictivity
+  label: Low-energy predictivity of non-renormalizable EFT
+  summary: A non-renormalizable Lagrangian includes every symmetry-allowed operator,
+    but at energies below its heavy scale only finitely many terms matter. Renormalized
+    coefficients are fitted at low energy while nonanalytic loop dependence provides
+    parameter-independent predictions at a specified order.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.nonrenormalizable-eft-low-energy-predictivity
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 21.2.3–21.2.4
+    pages:
+    - 392
+    - 393
+  notation: []
+- id: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  label: Two-loop phi-four crossing groups and factorized Group I subtraction
+  summary: Crossing reduces the sixteen two-loop four-point diagrams to six distinct
+    diagrams. Separating the one-loop vertex counterterm into threshold pieces organizes
+    the first five diagrams into three crossing-related groups; Group I factors into
+    V(p-squared) terms, so V(p-squared)−V(4m-squared) is finite and only a momentum-independent
+    square remains for the second-order counterterm.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 338
+    - 339
+    - 340
+  notation: []
+- id: qft.align024.phi4-two-loop-field-strength-subdivergence-structure
+  label: Phi-four two-loop field-strength and subdivergence structures
+  summary: The first nonzero phi-four M-squared and delta-Z occur at order lambda-squared.
+    Of the three two-loop two-point structures, the one-loop vertex-counterterm insertion
+    cancels the region with one large and one small loop momentum, while the propagator
+    counterterm cancels the remaining both-large-momenta divergence.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+  notation: []
+- id: qft.align024.problem-20-1-three-body-phase-space
+  label: 'Problem 20.1: derive the three-body phase-space formula'
+  summary: Derive the phase-space formula in Eq. (20.42) for the real-emission energy-fraction
+    variables.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-20-1-three-body-phase-space
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 20.1
+    pages:
+    - 380
+  notation: []
+- id: qft.align024.problem-20-2-sterman-weinberg-rates
+  label: 'Problem 20.2: Sterman–Weinberg jet rates'
+  summary: Calculate the resolution-defined Sterman–Weinberg jet rates in Eqs. (20.55)
+    and (20.56).
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-20-2-sterman-weinberg-rates
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 20.2
+    pages:
+    - 380
+  notation: []
+- id: qft.align024.problem-20-3-initial-state-inclusive-rate
+  label: 'Problem 20.3: initial-state inclusive rate'
+  summary: Calculate e+e−→μ+μ−(+γ) including the initial-state-radiation contribution.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.problem-20-3-initial-state-inclusive-rate
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 20.3
+    pages:
+    - 380
+  notation: []
+- id: qft.align024.problem-20-4-unfactorized-dimreg-rate
+  label: 'Problem 20.4: unfactorized dimensional-regulation rate'
+  summary: Calculate e+e−→μ+μ− directly in dimensional regularization without factoring
+    it into e+e−→γ* and γ*→μ+μ− subprocesses.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-20-4-unfactorized-dimreg-rate
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 20.4
+    pages:
+    - 380
+  notation: []
+- id: qft.align024.problem-20-5-box-crossed-box-ir-diagnosis
+  label: 'Problem 20.5: box and crossed-box IR diagnosis'
+  summary: Calculate the box and crossed-box loops of Eq. (20.58) and determine whether
+    they are infrared divergent.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-20-5-box-crossed-box-ir-diagnosis
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 20.5
+    pages:
+    - 380
+  notation: []
+- id: qft.align024.problem-20-6-qed-splitting-function
+  label: 'Problem 20.6: QED splitting function'
+  summary: Calculate the splitting function for the QED distribution function in Eq.
+    (20.73).
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.problem-20-6-qed-splitting-function
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 20.6
+    pages:
+    - 380
+  notation: []
+- id: qft.align024.problem-21-1-two-loop-qed-counterterms
+  label: 'Problem 21.1: two-loop QED counterterm proof'
+  summary: List all superficially divergent QED amplitudes at two loops and prove
+    their UV divergences are removed by the same four one-loop counterterms.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-21-1-two-loop-qed-counterterms
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 21.1
+    pages:
+    - 393
+  notation: []
+- id: qft.align024.problem-21-2-fourier-range-comparison
+  label: 'Problem 21.2: Fourier range comparison'
+  summary: Fourier transform p⁴/M⁴, square-root(p²/M²), and log²(p²/M²) contributions
+    to V(r), then compare which gives the strongest and weakest large-distance potential.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-21-2-fourier-range-comparison
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 21.2
+    pages:
+    - 393
+  notation: []
+- id: qft.align024.problem-21-3-scalar-interactions-by-dimension
+  label: 'Problem 21.3: scalar interactions by dimension'
+  summary: Write all renormalizable interactions for one scalar field in two through
+    six spacetime dimensions.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.problem-21-3-scalar-interactions-by-dimension
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: Problem 21.3
+    pages:
+    - 393
+  notation: []
+- id: qft.align024.qed-1pi-primitive-divergences-and-ward-constraints
+  label: QED 1PI primitive divergences and Ward constraints
+  summary: QED renormalization is organized by 1PI primitively divergent amplitudes
+    and gauge or charge-conjugation constraints. Peskin–Schroeder gives the chiral,
+    Furry, and primitive-classification route; Schwartz gives 1PI sewing and the four-photon
+    Ward cancellation. The shared organization does not equate the two derivations.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.qed-1pi-sewing-and-four-photon-ward-cancellation
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 319
+    - 320
+  - source: schwartz
+    section: 21.1.1
+    pages:
+    - 382
+    - 383
+  notation: []
+- id: qft.align024.qed-all-orders-counterterm-closure-and-charge-universality
+  label: QED all-orders counterterm closure
+  summary: Schwartz’s BPHZ induction closes renormalized QED on the allowed counterterms
+    to all orders. It does not establish Z1=Z2 or species charge universality; those
+    are retained only through the separate accepted Ward charge-ratio core and its
+    amendment.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.qed-all-orders-counterterm-closure
+    note: Retains the all-orders BPHZ closure result; it does not supply the separate
+      Ward Z1=Z2 or charge-universality conclusion.
+  evidence:
+  - source: schwartz
+    section: 21.1.3
+    pages:
+    - 384
+    - 385
+    - 386
+  notation: []
+- id: qft.align024.qed-all-orders-induction-bphz-qualification
+  label: QED all-orders induction and BPHZ qualification
+  summary: The all-orders QED argument inducts after lower-loop counterterms have
+    rendered 1PI subgraphs finite; insertions preserve superficial degree. Overlapping
+    and nested subdivergences make the full proof nontrivial, and the BPHZ theorem
+    supplies the stated theorem-level completion that no new counterterms are required.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: schwartz
+    node: schwartz.qed-all-orders-induction-bphz-qualification
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 21.1.3
+    pages:
+    - 384
+    - 385
+    - 386
+  notation: []
+- id: qft.align024.qed-graph-topology-and-primitive-amplitudes
+  label: QED topology reduction to primitively divergent amplitudes
+  summary: Using L=Pe+Pγ−V+1 and QED vertex incidence, D depends only on external
+    legs. It therefore suffices to classify amputated one-particle-irreducible amplitudes;
+    other divergences arise by their insertion as subdiagrams.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-graph-topology-and-primitive-amplitudes
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+    - 317
+  notation: []
+- id: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  label: One-loop QED delta-m, delta-2, and delta-3 in dimensional regularization
+  summary: In the stated dimensional-regularization scheme, the epsilon-dependent
+    Dirac contraction terms enter the electron self-energy before the on-shell conditions
+    determine delta-m and delta-2. The transverse photon self-energy at q-squared=0
+    determines delta-3.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+  notation: []
+- id: qft.align024.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  label: One-loop QED delta-1 and all-orders Ward recursion
+  summary: The zero-transfer vertex integral in dimensional regularization fixes delta-1.
+    An integration by parts relates it to delta-2, and gauge invariance of the regulated
+    counterterm-free Lagrangian gives the Ward identity underlying the recursive all-orders
+    equality Z1=Z2.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+  notation: []
+- id: qft.align024.qed-superficial-divergence-power-counting
+  label: QED superficial degree of divergence
+  summary: Superficial power counting identifies ultraviolet degree before subdiagram
+    analysis. Peskin–Schroeder derives D=4L−P_e−2P_gamma for QED and separately qualifies
+    external-momentum differentiation and subdivergences; Schwartz writes D=4−3f/2−b
+    for a 1PI graph and uses it for the allowed counterterm diagnosis. These formulae
+    are source-normalized versions of the shared superficial-counting role, not an
+    equation-by-equation identification.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.superficial-divergence-power-counting
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.qed-superficial-degree-of-divergence
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 315
+    - 316
+  - source: schwartz
+    section: 21, 21.1.1–21.1.2
+    pages:
+    - 381
+    - 382
+    - 383
+    - 384
+    - 387
+    - 388
+  notation:
+  - source: peskin-schroeder
+    note: Ne and Nγ count external electron and photon lines; Pe, Pγ, V, and L count
+      propagators, vertices, and loops.
+- id: qft.align024.qed-uv-ir-regulator-separation
+  label: Source-specific UV and IR regulator choice in QED
+  summary: For its collected one-loop QED calculation, the source chooses dimensional
+    regularization for ultraviolet divergences and a photon mass mu for infrared control.
+    This is the scheme used in that calculation, not a claim that this precise IR
+    regulator is required for the Ward identity.
+  kind: assumption
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-uv-ir-regulator-separation
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+    - 334
+  notation: []
+- id: qft.align024.real-emission-phase-space-method
+  label: Real-emission tensor and phase-space method
+  summary: For e+e− annihilation through an intermediate photon, Ward transversality
+    and Lorentz covariance reduce the spin-summed real-emission tensor to one scalar;
+    Mandelstam invariants and three-body Lorentz-invariant phase space then expose
+    the soft and collinear regions.
+  kind: method
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.real-emission-phase-space-method
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.1.2
+    pages:
+    - 361
+    - 362
+    - 363
+  notation: []
+- id: qft.align024.soft-and-final-state-collinear-singularities
+  label: Soft and final-state collinear singularities
+  summary: The real-emission integral is singular when the emitted photon energy vanishes
+    or when it is collinear with a final charged particle. In the inclusive massive-muon
+    calculation these singularities cancel those of the virtual contribution when
+    the two final-state multiplicities are summed.
+  kind: concept
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.soft-and-final-state-collinear-singularities
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.1.2
+    pages:
+    - 363
+    - 364
+  notation: []
+- id: qft.align024.subdivergences-locality-and-counterterm-insertion
+  label: Subdivergences, locality, and counterterm insertion
+  summary: After subdivergences are handled, ultraviolet divergences have local counterterm
+    form. Peskin–Schroeder shows embedded subgraphs can look nonlocal and that lower-order
+    counterterm insertions cancel them; Schwartz proves locality by external-momentum
+    differentiation and Taylor expansion. The insertion narrative and the locality
+    proof are parallel source routes, not mutually required steps.
+  kind: method
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.subdivergences-locality-and-counterterm-insertion
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  - project: schwartz
+    node: schwartz.locality-of-divergent-counterterms
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.4'
+    pages:
+    - 335
+    - 336
+    - 337
+  - source: schwartz
+    section: 21.2.2
+    pages:
+    - 390
+    - 391
+  notation: []
+- id: qft.align024.superficial-degree-qualifications
+  label: Qualifications on superficial divergence
+  summary: 'Superficial power counting does not equal an actual divergence automatically:
+    divergent subdiagrams can worsen it, symmetries can cancel terms, and a loop-free
+    trivial diagram can have D=0 without a divergence.'
+  kind: assumption
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.superficial-degree-qualifications
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+    - 317
+  notation: []
+- id: qft.align024.vacuum-polarization-timelike-effective-charge
+  label: Timelike effective charge in annihilation
+  summary: The vacuum-polarization correction to e+e−→μ+μ− is −2 Re Π(Q²)σ0 and is
+    absorbed into the scale-dependent effective charge evaluated by analytic continuation,
+    e_eff(−Q²). Charged thresholds and finite terms keep physical cross sections continuous
+    even though the effective-charge description is scheme dependent.
+  kind: result
+  group: qft.qed-scattering
+  origins:
+  - project: schwartz
+    node: schwartz.vacuum-polarization-timelike-effective-charge
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: schwartz
+    section: 20.3.1
+    pages:
+    - 367
+    - 368
+    - 369
+  notation: []
+- id: qft.align024.yukawa-scalar-field-strength-renormalization
+  label: Yukawa scalar self-energy needs mass and field-strength counterterms
+  summary: A fermion loop in Yukawa theory produces a scalar two-point function with
+    both constant and p-squared divergent pieces. Enforcing the on-shell conditions
+    therefore needs nonzero delta-m and delta-Z; this contrasts with the one-loop
+    phi-four special case.
+  kind: result
+  group: qft.renormalization-group
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.yukawa-scalar-field-strength-renormalization
+    note: Retains this reviewed book-specific statement, conditions, notation, and
+      proof or task boundary; the correspondence is only the scope stated by this
+      shared record.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 329
+    - 330
+  notation: []
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -15126,7 +16826,9 @@ nodes:
   label: Coulomb potential from field propagation
   summary: For a static point source J⁰=eδ³(x⃗), Lorenz-gauge Maxwell theory gives
     A⁰=−e∆⁻¹δ³(x⃗). Fourier transformation and contour integration yield A⁰(r)=e/(4πr),
-    recovering the Coulomb potential as propagation from the source.
+    recovering the Coulomb potential as propagation from the source. Peskin--Schroeder
+    supplies the compatible core under the source-specific conditions retained in
+    its residual record.
   kind: result
   group: qft.classical-field-theory
   origins:
@@ -15134,12 +16836,21 @@ nodes:
     node: schwartz.coulomb-potential-from-field-propagation
     note: Preserves this reviewed source treatment and its stated assumptions, notation,
       and derivation scope without asserting more than the shared concept.
+  - project: peskin-schroeder
+    node: peskin-schroeder.coulomb-potential-and-exchange-spin-pattern
+    note: Corresponds only to the compatible physical core. The source-specific derivation,
+      signs, exercise status, and warnings remain in qft.align023.peskin.residual.coulomb-potential-and-exchange-spin-pattern.
   evidence:
   - source: schwartz
     section: 3.4.2 Coulomb potential
     pages:
     - 39
     note: Calculates the potential from the point-charge source.
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 125
+    - 126
   notation: []
 - id: qft.covariant-derivative
   label: Covariant derivative of matter fields
@@ -17648,7 +19359,8 @@ nodes:
     choosing a vacuum direction leaves O(N−1), gives one massive radial mode and N−1
     massless transverse modes, and realizes one Goldstone direction per broken generator.
     Weinberg additionally relates the canonically normalized current coefficient to
-    the vacuum magnitude in its O(N) convention.
+    the vacuum magnitude in its O(N) convention. Peskin--Schroeder supplies the compatible
+    core under the source-specific conditions retained in its residual record.
   kind: result
   group: qft.spontaneously-broken-symmetries
   origins:
@@ -17660,6 +19372,10 @@ nodes:
     node: weinberg-2.on-model-goldstone-mode-counting
     note: Corresponds to the O(N) tree mass-matrix and group-dimension count; its
       F=v normalization is retained as a source-specific qualification.
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-linear-sigma-spontaneous-breaking
+    note: Corresponds only to the compatible physical core. The source-specific derivation,
+      signs, exercise status, and warnings remain in qft.align023.peskin.residual.problem-linear-sigma-spontaneous-breaking.
   evidence:
   - source: peskin-schroeder
     section: '11.1'
@@ -17671,6 +19387,10 @@ nodes:
     pages:
     - 169
     - 173
+  - source: peskin-schroeder
+    section: Problems 4.3(b)
+    pages:
+    - 128
   notation:
   - source: peskin-schroeder
     note: The chosen vacuum is phi=(0,...,0,v), with pi_k for k=1,...,N−1 and sigma
@@ -19953,7 +21673,9 @@ nodes:
   summary: The massive-vector source problem derives the field equation and a constraint
     on A_μ for conserved J_μ, evaluates the static point-source potential, and recovers
     Coulomb behavior as m→0. Its finite-mass potential supplies a short-range force
-    model relevant to Yukawa's nuclear-force proposal.
+    model relevant to Yukawa's nuclear-force proposal. Peskin--Schroeder supplies
+    the compatible core under the source-specific conditions retained in its residual
+    record.
   kind: method
   group: qft.classical-field-theory
   origins:
@@ -19961,12 +21683,22 @@ nodes:
     node: schwartz.yukawa-potential-and-massive-vector-constraint
     note: Preserves this reviewed source treatment and its stated assumptions, notation,
       and derivation scope without asserting more than the shared concept.
+  - project: peskin-schroeder
+    node: peskin-schroeder.yukawa-potential-from-nonrelativistic-exchange
+    note: Corresponds only to the compatible physical core. The source-specific derivation,
+      signs, exercise status, and warnings remain in qft.align023.peskin.residual.yukawa-potential-from-nonrelativistic-exchange.
   evidence:
   - source: schwartz
     section: Problem 3.6 Yukawa potential
     pages:
     - 43
     note: States the massive-vector potential, constraint, and m→0 tasks.
+  - source: peskin-schroeder
+    section: '4.7'
+    pages:
+    - 121
+    - 122
+    - 123
   notation: []
 - id: qft.zero-momentum-goldstone-effective-vertices
   label: Zero-momentum Goldstone effective-vertex constraints
@@ -33470,6 +35202,1838 @@ edges:
     pages:
     - 450
     - 451
+- id: qft.align023.edge.e-bound-vector-to-pwave-positronium
+  from: qft.align023.peskin.nr-fermion-antifermion-bound-state-vector
+  to: qft.align023.peskin.problem-positronium-p-wave-two-photon-decays
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (c-d) construct normalized P-wave bound-state vectors and insert
+    them into the amplitude.
+  failure_mode: The definite-J P-wave decay calculation lacks its state representation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.4(b-d)
+    pages:
+    - 172
+    note: The source requests normalized P-state vectors and their use in the decay-rate
+      calculation.
+- id: qft.align023.edge.e-bound-vector-to-swave-positronium
+  from: qft.align023.peskin.nr-fermion-antifermion-bound-state-vector
+  to: qft.align023.peskin.problem-positronium-s-wave-two-photon-lifetime
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) converts the free amplitude using fermion-antifermion bound-state
+    formalism.
+  failure_mode: The positronium projection and wavefunction-at-origin rate are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.4(a)
+    pages:
+    - 171
+    note: Part (a) expressly combines the amplitude with the bound-state formalism.
+- id: qft.align023.edge.e-bound-vector-to-wavefunction-origin
+  from: qft.align023.peskin.nr-fermion-antifermion-bound-state-vector
+  to: qft.align023.peskin.pointlike-bound-state-wavefunction-at-origin
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The result follows by inserting the normalized momentum-space bound-state
+    superposition into a free-pair amplitude.
+  failure_mode: There is no projection integral that can become psi(0).
+  evidence:
+  - source: peskin-schroeder
+    section: 5.3 Bound States
+    pages:
+    - 149
+    - 150
+    note: The source substitutes the bound-state expression and evaluates its momentum
+      integral.
+- id: qft.align023.edge.e-chiral-spinors-to-explicit-route
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source evaluates the explicit spinors and gamma matrices in the chiral
+    representation.
+  failure_mode: The block structure that makes the helicity-current calculation direct
+    is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 144
+    - 145
+    note: The source gives the high-energy chiral spinors and uses the chiral-representation
+      matrix structure.
+- id: qft.align023.edge.e-coherent-sum-to-bhabha-problem
+  from: qft.coherent-sum-of-diagram-amplitudes
+  to: qft.align023.peskin.problem-bhabha-scattering-interference
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5.2 requires its two diagram amplitudes to be added before squaring.
+  failure_mode: The Bhabha interference term and relative-sign check are lost.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.2
+    pages:
+    - 170
+    note: The problem explicitly requires adding the two invariant-matrix-element
+      diagrams before squaring.
+- id: qft.align023.edge.e-coherent-sum-to-compton
+  from: qft.coherent-sum-of-diagram-amplitudes
+  to: qft.align023.peskin.compton-two-diagram-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two Compton diagram contributions must be added at amplitude level
+    before on-shell simplification or squaring.
+  failure_mode: Squaring separate diagrams discards their interference and gives the
+    wrong amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Compton Scattering
+    pages:
+    - 158
+    - 159
+    note: The source presents the process as two diagrams and writes their sum in
+      the amplitude.
+- id: qft.align023.edge.e-compton-to-klein-nishina
+  from: qft.align023.peskin.compton-two-diagram-amplitude
+  to: qft.align023.peskin.klein-nishina-and-thomson-limits
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Klein-Nishina is obtained by squaring and evaluating this amplitude.
+  failure_mode: There is no amplitude whose squared traces yield the cross section.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 The Klein-Nishina Formula
+    pages:
+    - 161
+    note: The calculation starts from expression (5.74) for the Compton amplitude.
+- id: qft.align023.edge.e-compton-to-two-photon-annihilation
+  from: qft.align023.peskin.compton-two-diagram-amplitude
+  to: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The crossed result begins with the Compton amplitude and its squared
+    matrix element.
+  failure_mode: There is no source expression to cross into annihilation.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Pair Annihilation into Photons
+    pages:
+    - 168
+    note: The source explicitly obtains the correct amplitude from the Compton amplitude.
+- id: qft.align023.edge.e-compton-to-ward-check
+  from: qft.align023.peskin.compton-two-diagram-amplitude
+  to: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The Compton amplitude supplies an explicit check that the two diagrams
+    cancel under polarization replacement.
+  failure_mode: The general identity remains unchecked in this example.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Photon Polarization Sums
+    pages:
+    - 160
+    note: The source asks to replace either Compton polarization by its momentum and
+      observes diagram cancellation.
+- id: qft.align023.edge.e-crossing-to-channels
+  from: qft.align023.peskin.crossing-symmetry-s-matrix
+  to: qft.align023.peskin.s-t-u-channel-classification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: Crossing explains why the same diagrammatic structures reappear with
+    s, t, and u interchanged.
+  failure_mode: The relationship of channels across crossed processes is not derived.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Mandelstam Variables
+    pages:
+    - 156
+    - 157
+    note: The source applies crossing to interchange Mandelstam variables before introducing
+      channel names.
+- id: qft.align023.edge.e-crossing-to-electron-muon
+  from: qft.align023.peskin.crossing-symmetry-s-matrix
+  to: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source obtains the scattering squared amplitude by crossing the annihilation
+    process.
+  failure_mode: The momentum substitutions that produce electron-muon scattering are
+    unjustified.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Electron-Muon Scattering
+    pages:
+    - 153
+    - 154
+    note: The source gives the crossing replacements and applies them to the prior
+      expression.
+- id: qft.align023.edge.e-crossing-to-two-photon-annihilation
+  from: qft.align023.peskin.crossing-symmetry-s-matrix
+  to: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The annihilation amplitude is obtained from Compton scattering by crossing
+    external legs and correcting the fermion sign.
+  failure_mode: The substitutions and overall-sign correction are not justified.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Pair Annihilation into Photons
+    pages:
+    - 168
+    note: The source states the crossing substitutions and removes the sign from the
+      crossing relation.
+- id: qft.align023.edge.e-current-conservation-to-ward
+  from: qft.noether-current-and-conserved-charge
+  to: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed Ward-identity derivation contracts the momentum with a
+    conserved current matrix element.
+  failure_mode: Replacing polarization by momentum has no stated conservation-law
+    basis.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Photon Polarization Sums
+    pages:
+    - 159
+    - 160
+    note: The source identifies the conserved Dirac current and derives k dotted into
+      the amplitude as zero.
+- id: qft.align023.edge.e-dirac-bilinear-basis-to-spinor-problem
+  from: qft.align020.dirac-adjoint-and-covariant-bilinears
+  to: qft.align023.peskin.problem-spinor-product-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem derives its specialized Fierz identity by expanding the stated
+    Dirac matrix in the complete sixteen-matrix basis.
+  failure_mode: The Fierz derivation has no complete matrix basis in which to classify
+    its right-hand side.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.3
+    pages:
+    - 170
+    - 171
+    note: The exercise directs the reader to write the matrix as a linear combination
+      of the sixteen Dirac matrices.
+- id: qft.align023.edge.e-dirac-clifford-to-trace-identities
+  from: qft.align020.dirac-clifford-and-lorentz-generators
+  to: qft.align023.peskin.dirac-trace-identities-gamma5
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The trace reductions repeatedly use gamma anticommutation and gamma5
+    properties.
+  failure_mode: Without the Clifford algebra, the trace formulas are asserted rather
+    than derived.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.1 Trace Technology
+    pages:
+    - 133
+    - 134
+    - 135
+    note: The source derives the trace rules by anticommuting gamma matrices and using
+      gamma5.
+- id: qft.align023.edge.e-electron-muon-route-to-mott-problem
+  from: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
+  to: qft.align023.peskin.problem-mott-coulomb-scattering
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The exercise's second route takes the electron-muon cross section in
+    the muon-rest-frame heavy-target limit.
+  failure_mode: This independent route has no scattering result from which to take
+    the stated limit.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.1
+    pages:
+    - 169
+    - 170
+    note: The source requests a second derivation from electron-muon scattering with
+      an infinitely heavy muon.
+- id: qft.align023.edge.e-explicit-spinor-route-to-helicity-result
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.helicity-angular-momentum-selection
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The source independently obtains the accepted helicity selection and
+    angular factors from explicit spinors.
+  failure_mode: This route cannot reproduce the direct-current derivation or its limiting-regime
+    qualification.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 144
+    - 146
+    note: The text states this is the second calculation and lists the resulting amplitudes.
+- id: qft.align023.edge.e-fierz-problem-to-photon-spinor-problem
+  from: qft.align023.peskin.problem-spinor-product-helicity-amplitudes
+  to: qft.align023.peskin.problem-spinor-helicity-photon-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5.6 explicitly uses the Fierz identity developed in Problem 5.3
+    when applying spinor products to external photons.
+  failure_mode: The stated spinor-product route to the two-photon cross section lacks
+    its required Fierz rearrangement.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.6
+    pages:
+    - 174
+    note: The source directs the reader to use the spinor products and Fierz identity
+      from Problem 5.3.
+- id: qft.align023.edge.e-high-energy-muon-result-to-r-ratio
+  from: qft.tree-level-muon-pair-cross-section
+  to: qft.align023.peskin.quark-pair-r-ratio
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy quark result is obtained by modifying the accepted high-energy
+    muon-pair cross section by charge and color factors.
+  failure_mode: There is no reference annihilation cross section from which the R
+    normalization and quark factors are formed.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.1 Production of Quark-Antiquark Pairs
+    pages:
+    - 139
+    - 140
+    note: The source adapts the muon-production formulas and defines R by their asymptotic
+      value.
+- id: qft.align023.edge.e-klein-nishina-to-high-energy-compton
+  from: qft.align023.peskin.klein-nishina-and-thomson-limits
+  to: qft.align023.peskin.high-energy-compton-helicity-endpoint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The high-energy analysis starts from the invariant squared amplitude
+    already used for the Compton cross section.
+  failure_mode: The backward singular term and its integrated logarithm have no starting
+    expression.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 High-Energy Behavior
+    pages:
+    - 164
+    - 165
+    note: The source constructs the CM cross section from the invariant expression
+      and analyzes its singular term.
+- id: qft.align023.edge.e-mandelstam-to-bhabha-problem
+  from: qft.align023.peskin.mandelstam-variables-and-identity
+  to: qft.align023.peskin.problem-bhabha-scattering-interference
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The exercise recommends Mandelstam variables to express its result.
+  failure_mode: The requested invariant form is unavailable, though another derivation
+    could retain explicit kinematics.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.2
+    pages:
+    - 170
+    note: The problem says it may be useful to introduce s, t, and u.
+- id: qft.align023.edge.e-mandelstam-to-channels
+  from: qft.align023.peskin.mandelstam-variables-and-identity
+  to: qft.align023.peskin.s-t-u-channel-classification
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The channel labels and denominators are defined in terms of s, t, and
+    u.
+  failure_mode: The channel names cannot identify the virtual-particle denominator
+    or angular limit.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Mandelstam Variables
+    pages:
+    - 157
+    - 158
+    note: The source gives the channel denominators and the t/u angular limits.
+- id: qft.align023.edge.e-mandelstam-to-klein-nishina
+  from: qft.align023.peskin.mandelstam-variables-and-identity
+  to: qft.align023.peskin.klein-nishina-and-thomson-limits
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The trace expression is simplified by rewriting it in s, t, and u.
+  failure_mode: The source's compact invariant reduction of the traces cannot be reproduced.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 The Klein-Nishina Formula
+    pages:
+    - 162
+    note: The source introduces Mandelstam variables to simplify the traces.
+- id: qft.align023.edge.e-massive-muon-to-electron-muon
+  from: qft.align023.peskin.massive-muon-pair-cross-section
+  to: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The crossed calculation starts from the earlier spin-summed annihilation
+    expression before specializing its kinematics.
+  failure_mode: There is no prior squared amplitude to transform under the stated
+    crossing substitutions.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Electron-Muon Scattering
+    pages:
+    - 153
+    - 154
+    note: The source identifies the crossed expression with its earlier annihilation
+      trace result.
+- id: qft.align023.edge.e-massive-vector-to-weizsacker-williams
+  from: qft.align023.peskin.residual.problem-massive-vector-polarization-sum
+  to: qft.align023.peskin.problem-weizsacker-williams-collinear-distribution
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The collinear exercise is part (c) of the massive-vector production calculation
+    and factorizes its reduced-energy annihilation cross section.
+  failure_mode: The underlying e+e- to gamma+B process and its t-channel region are
+    absent.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.5(c)
+    pages:
+    - 173
+    - 174
+    note: Part (c) starts from the gamma+B process of part (b) and factors it into
+      a B annihilation cross section.
+- id: qft.align023.edge.e-massless-helicity-to-explicit-route
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The explicit-current calculation chooses the massless helicity states
+    of each external fermion.
+  failure_mode: The selected spinors and particle-antiparticle handedness cannot be
+    assigned.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 141
+    - 144
+    note: The source fixes definite helicity and then writes its high-energy spinors.
+- id: qft.align023.edge.e-massless-helicity-to-projection-route
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align023.peskin.helicity-projection-trace-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The projectors are used specifically in the massless limit to select
+    the physical helicity states.
+  failure_mode: The chirality projectors cannot be interpreted as the selected helicity
+    amplitudes.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 141
+    - 142
+    note: The source chooses helicity states in the high-energy massless limit before
+      introducing the projectors.
+- id: qft.align023.edge.e-phase-space-to-electron-muon
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.electron-muon-scattering-cross-section-and-coulomb-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source inserts the crossed squared amplitude into the two-body CM
+    cross-section formula.
+  failure_mode: The crossed matrix element cannot yield the reported differential
+    cross section.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.4 Electron-Muon Scattering
+    pages:
+    - 154
+    note: The source invokes the simplified two-body formula before giving the cross
+      section.
+- id: qft.align023.edge.e-phase-space-to-klein-nishina
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.klein-nishina-and-thomson-limits
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: After evaluating the amplitude, the source performs the lab-frame phase-space
+    integration to form the differential cross section.
+  failure_mode: The squared amplitude cannot be converted to Klein-Nishina or its
+    Thomson limit.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 The Klein-Nishina Formula
+    pages:
+    - 162
+    - 163
+    note: The source evaluates the phase-space integral and inserts it into the cross-section
+      formula.
+- id: qft.align023.edge.e-phase-space-to-massive-muon
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.massive-muon-pair-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The evaluated squared amplitude must be inserted into the two-body CM
+    cross-section formula.
+  failure_mode: The matrix element cannot be converted into the reported differential
+    or total cross section.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.1'
+    pages:
+    - 136
+    - 138
+    note: The source invokes the two-body formula and summarizes phase-space insertion
+      as the final procedure.
+- id: qft.align023.edge.e-phase-space-to-two-photon-annihilation
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The crossed squared amplitude is specialized to CM kinematics and inserted
+    into the differential cross-section formula.
+  failure_mode: The source's annihilation cross section cannot be obtained from its
+    matrix element.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Pair Annihilation into Photons
+    pages:
+    - 168
+    - 169
+    note: The source specializes to the CM frame, gives the differential cross section,
+      and explains the final-state counting integral.
+- id: qft.align023.edge.e-projector-route-to-helicity-result
+  from: qft.align023.peskin.helicity-projection-trace-method
+  to: qft.helicity-angular-momentum-selection
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The source's first route obtains the accepted helicity selection and
+    angular factors through projected traces.
+  failure_mode: This route cannot establish the angular helicity factors.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 141
+    - 143
+    note: The section announces the projected-trace route and gives its helicity cross
+      sections.
+- id: qft.align023.edge.e-qed-rules-to-compton
+  from: qft.qed-tree-amplitude-rule
+  to: qft.align023.peskin.compton-two-diagram-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Each Compton ordering is written from the QED vertex, propagator, and
+    external-line rules.
+  failure_mode: The two terms and their relative sign cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Compton Scattering
+    pages:
+    - 158
+    - 159
+    note: The source says the Feynman rules determine the two-diagram expression.
+- id: qft.align023.edge.e-rutherford-route-to-mott-problem
+  from: qft.align023.peskin.problem-rutherford-nonrelativistic-formula
+  to: qft.align023.peskin.problem-mott-coulomb-scattering
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The exercise's first route repeats the accepted Rutherford calculation
+    with the full relativistic matrix element.
+  failure_mode: This route has no prior Coulomb-scattering calculation to extend.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.1
+    pages:
+    - 169
+    note: The source tells the reader to repeat Problem 4.4(c) using the full relativistic
+      matrix element.
+- id: qft.align023.edge.e-spin-sum-to-massive-muon
+  from: qft.align020.dirac-spin-sum-completeness
+  to: qft.align023.peskin.massive-muon-pair-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Unobserved spin states are summed and averaged through the completeness
+    relations.
+  failure_mode: The spin-averaged squared amplitude cannot be converted to traces.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.1'
+    pages:
+    - 132
+    note: The source invokes the completeness relations to perform the spin sums.
+- id: qft.align023.edge.e-spin-sums-to-projection-route
+  from: qft.align020.dirac-spin-sum-completeness
+  to: qft.align023.peskin.helicity-projection-trace-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: After inserting a selected-helicity projector, the source still performs
+    the spin sums with completeness.
+  failure_mode: The projected squared amplitude cannot be rewritten as a trace.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 142
+    note: The source explains that the projector permits the spin-sum identities to
+      be used.
+- id: qft.align023.edge.e-threshold-pair-to-wavefunction-origin
+  from: qft.align023.peskin.threshold-muon-pair-spin-triplet-swave
+  to: qft.align023.peskin.pointlike-bound-state-wavefunction-at-origin
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free near-threshold amplitude is momentum independent, which lets
+    the projection reduce to psi(0).
+  failure_mode: The integral does not simplify to the wavefunction at zero separation.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.3 Bound States
+    pages:
+    - 148
+    - 149
+    note: The source uses the momentum-independent free amplitude to evaluate the
+      projection.
+- id: qft.align023.edge.e-traces-to-helicity-projectors
+  from: qft.align023.peskin.dirac-trace-identities-gamma5
+  to: qft.align023.peskin.helicity-projection-trace-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Projector traces introduce gamma5 terms whose evaluation uses the trace
+    theorems.
+  failure_mode: The polarized tensor and its antisymmetric epsilon term cannot be
+    derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 142
+    - 143
+    note: The projection calculation produces gamma5 trace terms and its evaluated
+      tensor.
+- id: qft.align023.edge.e-traces-to-massive-muon
+  from: qft.align023.peskin.dirac-trace-identities-gamma5
+  to: qft.align023.peskin.massive-muon-pair-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The squared amplitude is evaluated by trace identities.
+  failure_mode: The source's covariant squared-amplitude derivation stops at unevaluated
+    traces.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.1'
+    pages:
+    - 135
+    note: The electron and muon traces are evaluated before the cross section is formed.
+- id: qft.align023.edge.e-traces-to-spinor-problem
+  from: qft.align023.peskin.dirac-trace-identities-gamma5
+  to: qft.align023.peskin.problem-spinor-product-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The specialized Fierz route computes its vector coefficients with trace
+    technology.
+  failure_mode: The requested coefficient calculation for the Fierz identity cannot
+    be completed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.3
+    pages:
+    - 170
+    - 171
+    note: The exercise directs the reader to compute its four-vectors by trace technology.
+- id: qft.align023.edge.e-tree-amplitude-to-explicit-route
+  from: qft.qed-tree-amplitude-rule
+  to: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The direct spinor route evaluates the same one-photon annihilation amplitude
+    with explicit external currents.
+  failure_mode: There is no amplitude whose two explicit currents can be contracted.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 144
+    - 146
+    note: The source restates the amplitude and evaluates it from explicit spinors.
+- id: qft.align023.edge.e-tree-amplitude-to-massive-muon
+  from: qft.qed-tree-amplitude-rule
+  to: qft.align023.peskin.massive-muon-pair-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation begins by writing the one-photon annihilation amplitude
+    from QED rules.
+  failure_mode: Without the amplitude, there is no matrix element to square.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.1'
+    pages:
+    - 131
+    - 132
+    note: The source explicitly starts from Feynman rules and then squares the amplitude.
+- id: qft.align023.edge.e-tree-amplitude-to-projection-route
+  from: qft.qed-tree-amplitude-rule
+  to: qft.align023.peskin.helicity-projection-trace-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The projected calculation begins with the one-photon annihilation amplitude
+    before selecting its external helicities.
+  failure_mode: There is no helicity amplitude to project and square.
+  evidence:
+  - source: peskin-schroeder
+    section: '5.2'
+    pages:
+    - 141
+    - 142
+    note: The source identifies the annihilation amplitude as the starting point for
+      both polarized methods.
+- id: qft.align023.edge.e-two-photon-to-pwave-positronium
+  from: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  to: qft.align023.peskin.problem-positronium-p-wave-two-photon-decays
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (b-d) expand the e+e- to two-photon amplitude to first order in
+    relative momentum.
+  failure_mode: There is no P-wave overlap amplitude to combine with the definite-J
+    states.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.4(b-d)
+    pages:
+    - 172
+    note: The later parts require the first-momentum amplitude before computing P-wave
+      decay rates.
+- id: qft.align023.edge.e-two-photon-to-swave-positronium
+  from: qft.align023.peskin.two-photon-pair-annihilation-cross-section
+  to: qft.align023.peskin.problem-positronium-s-wave-two-photon-lifetime
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) begins from the zero-relative-momentum e+e- to two-photon amplitude.
+  failure_mode: There is no annihilation amplitude to project onto S-wave positronium.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.4(a)
+    pages:
+    - 171
+    note: Part (a) explicitly begins by computing the nonrelativistic two-photon annihilation
+      amplitude.
+- id: qft.align023.edge.e-ward-to-klein-nishina
+  from: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  to: qft.align023.peskin.klein-nishina-and-thomson-limits
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The squared-amplitude calculation sums external photon polarizations
+    by the Ward-justified replacement.
+  failure_mode: Photon polarization sums remain unresolved.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.5 Photon Polarization Sums; The Klein-Nishina Formula
+    pages:
+    - 160
+    - 161
+    note: The preceding replacement is used when averaging the Compton squared amplitude.
+- id: qft.align023.edge.e-ward-to-massive-vector-problem
+  from: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  to: qft.align023.peskin.residual.problem-massive-vector-polarization-sum
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massive-vector simplification applies the same conserved-current
+    statement that momentum dotted into the production amplitude vanishes.
+  failure_mode: The longitudinal component cannot be removed from the polarization
+    completeness relation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.5
+    pages:
+    - 173
+    note: The problem explicitly invokes the Ward identity to replace the massive-vector
+      polarization sum.
+- id: qft.align023.edge.e-ward-to-photon-spinor-problem
+  from: qft.align023.peskin.residual.ward-identity-external-photon-polarization-sum
+  to: qft.align023.peskin.problem-spinor-helicity-photon-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Reference-vector independence follows because the Ward identity kills
+    the momentum-proportional polarization-sum term.
+  failure_mode: The proposed spinor polarization sum retains an unremoved reference-dependent
+    contribution.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 5.6
+    pages:
+    - 174
+    note: The problem states that the extra term gives zero against any photon-emission
+      amplitude.
+- id: qft.align023.edge.e-wavefunction-origin-to-detailed-balance
+  from: qft.align023.peskin.pointlike-bound-state-wavefunction-at-origin
+  to: qft.align023.peskin.bound-state-production-decay-detailed-balance
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The projected wavefunction-at-origin application illustrates the same-matrix-element
+    comparison, but the source states the general relation does not depend on matrix-element
+    details.
+  failure_mode: The bound-state application is unavailable, though the general relation
+    can still be derived from spin averages and phase space.
+  evidence:
+  - source: peskin-schroeder
+    section: 5.3 Vector Meson Production and Decay
+    pages:
+    - 151
+    - 152
+    note: The source compares the displayed matrix elements and then says the relation
+      is independent of their details.
+- id: qft.align023.edge.ps4-classical-rutherford-to-nonrel-rutherford
+  from: qft.align023.peskin.problem-rutherford-classical-potential-amplitude
+  to: qft.align023.peskin.problem-rutherford-nonrelativistic-formula
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) specializes the amplitude and cross-section rule derived in
+    parts (a-b).
+  failure_mode: There is no classical-potential scattering formula to specialize to
+    Coulomb A^0.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(c)
+    pages:
+    - 130
+- id: qft.align023.edge.ps4-dirac-uv-to-rutherford-classical
+  from: qft.align020.dirac-spinor-normalization-and-completeness
+  to: qft.align023.peskin.problem-rutherford-classical-potential-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The external electron matrix element uses normalized u spinors.
+  failure_mode: The stated spinor bilinear in M cannot be normalized.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(a-b)
+    pages:
+    - 129
+- id: qft.align023.edge.ps4-inout-to-rutherford-classical
+  from: qft.align016.s-matrix-transition-amplitudes
+  to: qft.align023.peskin.problem-rutherford-classical-potential-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) defines M after extracting the time-independent energy delta
+    function from the T-matrix.
+  failure_mode: The modified invariant amplitude and its normalization are undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(a-b)
+    pages:
+    - 129
+    - 130
+- id: qft.align023.edge.ps4-linear-breaking-to-explicit-breaking
+  from: qft.align023.peskin.residual.problem-linear-sigma-spontaneous-breaking
+  to: qft.align023.peskin.problem-linear-sigma-explicit-breaking
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) deforms and re-minimizes the broken-model potential from part
+    (b).
+  failure_mode: The shifted background and particle interpretation are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(d)
+    pages:
+    - 129
+- id: qft.align023.edge.ps4-linear-breaking-to-soft-pion
+  from: qft.align023.peskin.residual.problem-linear-sigma-spontaneous-breaking
+  to: qft.align023.peskin.problem-linear-sigma-soft-pion-cancellation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c)'s four pion diagrams use the shifted fields and rules from part
+    (b).
+  failure_mode: The requested threshold amplitude is undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(c)
+    pages:
+    - 129
+- id: qft.align023.edge.ps4-momentum-rules-to-linear-unbroken
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align023.peskin.problem-linear-sigma-unbroken-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) asks for propagators, vertices, and leading cross sections for
+    a multi-scalar quartic interaction.
+  failure_mode: The requested indexed rules and amplitudes cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(a)
+    pages:
+    - 128
+- id: qft.align023.edge.ps4-phase-space-to-linear-unbroken
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.problem-linear-sigma-unbroken-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) asks for center-of-mass differential cross sections after deriving
+    the indexed amplitude.
+  failure_mode: The requested amplitudes cannot be converted to cross sections.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(a)
+    pages:
+    - 128
+- id: qft.align023.edge.ps4-phase-space-to-problem-decay
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.problem-scalar-decay-lifetime
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested lowest-order lifetime requires the chapter's decay-rate
+    phase-space construction.
+  failure_mode: An amplitude cannot be converted to a lifetime.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.2
+    pages:
+    - 127
+- id: qft.align023.edge.ps4-phase-space-to-rutherford-classical
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align023.peskin.problem-rutherford-classical-potential-amplitude
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for the modified cross-section formula after defining the
+    external-potential M.
+  failure_mode: The amplitude cannot be converted to the requested scattering cross
+    section.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.4(a-b)
+    pages:
+    - 130
+- id: qft.align023.edge.ps4-qed-analogy-to-photon-qualification
+  from: qft.align023.peskin.qed-from-yukawa-analogy
+  to: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: This is the chapter's analogy route to the additional photon ingredients.
+  failure_mode: The direct QED-rule route remains available without this pedagogical
+    analogy.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+- id: qft.align023.edge.ps4-qed-diagrams-to-photon-qualification
+  from: qft.qed-diagrammatic-calculation
+  to: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The accepted general QED diagram prescription situates the photon qualifications,
+    but either the complete accepted tree-rule route or the complete Yukawa-analogy
+    route can reach them.
+  failure_mode: Without this context, either calculational route remains complete,
+    but the link to the general diagram prescription is omitted.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+    - 124
+- id: qft.align023.edge.ps4-qed-rules-to-coulomb
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align023.peskin.residual.coulomb-potential-and-exchange-spin-pattern
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Coulomb calculation applies the photon vertex and propagator in the
+    nonrelativistic limit.
+  failure_mode: The sign and amplitude of vector exchange cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 125
+    - 126
+- id: qft.align023.edge.ps4-qed-tree-rule-to-photon-qualification
+  from: qft.qed-tree-amplitude-rule
+  to: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The accepted QED tree-amplitude rule is a complete direct calculational
+    route whose photon propagator and vertex are extended here by external polarizations
+    and gauge qualifications.
+  failure_mode: The independent Yukawa-analogy route remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: '4.8'
+    pages:
+    - 123
+    - 124
+- id: qft.align023.edge.ps4-scalar-propagator-to-linear-breaking
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align023.peskin.residual.problem-linear-sigma-spontaneous-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for propagators of the shifted sigma and pion fields.
+  failure_mode: The requested broken-phase Feynman rules lack propagator factors.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(b)
+    pages:
+    - 128
+- id: qft.align023.edge.ps4-scalar-vertex-to-linear-breaking
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align023.peskin.residual.problem-linear-sigma-spontaneous-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks to assign vertex values for cubic and quartic interactions
+    after the shift.
+  failure_mode: The requested broken-phase vertex rules lack a diagrammatic prescription.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.3(b)
+    pages:
+    - 128
+- id: qft.align023.edge.ps4-source-creation-to-problem-poisson
+  from: qft.align015.classical-source-on-shell-particle-creation
+  to: qft.align023.peskin.problem-classical-source-poisson-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4.1 explicitly returns to the Chapter 2 classical-source particle-creation
+    setup and its mean number.
+  failure_mode: The parameter lambda and source Hamiltonian are not grounded.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.1
+    pages:
+    - 126
+    - 127
+- id: qft.align023.edge.ps4-wick-diagrams-to-problem-poisson
+  from: qft.align016.scalar-wick-theorem
+  to: qft.align023.peskin.problem-classical-source-poisson-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks to represent the perturbative probability with diagrams
+    and exponentiate it.
+  failure_mode: The stated diagrammatic summation route cannot be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problems 4.1
+    pages:
+    - 126
+- id: qft.align024.edge-alternative-qed-route-1
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align012.qed-two-point-counterterm-renormalization
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This packet supplies an independent Peskin--Schroeder derivation route
+    to the established result.
+  failure_mode: Treating this derivation as compulsory would wrongly exclude the retained
+    established route.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+- id: qft.align024.edge-alternative-qed-route-2
+  from: qft.align024.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
+  to: qft.align012.qed-z1-equals-z2-charge-ratio-result
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Peskin--Schroeder Ward recursion supplies an independent all-orders
+    derivation of the accepted Z1=Z2 result.
+  failure_mode: Treating this derivation as compulsory would wrongly exclude the retained
+    established route.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 334
+    - 335
+- id: qft.align024ext.peskin-schroeder-edge-bare-to-renormalized-qed
+  from: qft.align012.bare-to-renormalized-parameter-elimination
+  to: qft.align012.qed-renormalized-perturbation-lagrangian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.bare-to-renormalized-parameter-elimination
+    to peskin-schroeder.renormalized-qed-counterterms-and-conditions at the stated
+    mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.2–10.3
+    pages:
+    - 326
+    - 331
+- id: qft.align024ext.peskin-schroeder-edge-classification-to-bare-renormalization
+  from: qft.align024.dimension-power-counting-and-nonrenormalizable-diagnosis
+  to: qft.align012.bare-to-renormalized-parameter-elimination
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.renormalizability-classification-by-dimension
+    to peskin-schroeder.bare-to-renormalized-parameter-elimination at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1–10.2
+    pages:
+    - 321
+    - 323
+- id: qft.align024ext.peskin-schroeder-edge-existing-loop-integrals-to-superficial-counting
+  from: qft.loop-momentum-integration-and-divergence
+  to: qft.align024.qed-superficial-divergence-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.loop-momentum-integration-and-divergence
+    to peskin-schroeder.superficial-divergence-power-counting at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+- id: qft.align024ext.peskin-schroeder-edge-momentum-derivative-to-qed-primitives
+  from: qft.align024.external-momentum-derivative-power-counting
+  to: qft.align024.qed-1pi-primitive-divergences-and-ward-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.external-momentum-derivative-power-counting
+    to peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints at the
+    stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 319
+- id: qft.align024ext.peskin-schroeder-edge-phi4-rules-to-crossing-groups
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.phi4-momentum-space-feynman-rules
+    to peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction at
+    the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 338
+    - 339
+- id: qft.align024ext.peskin-schroeder-edge-phi4-rules-to-two-loop-fieldstrength
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align024.phi4-two-loop-field-strength-subdivergence-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.phi4-momentum-space-feynman-rules
+    to peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure at the
+    stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: qft.align024ext.peskin-schroeder-edge-phi4-symmetry-factors-to-crossing-groups
+  from: qft.align016.phi4-symmetry-factors
+  to: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.phi4-symmetry-factors
+    to peskin-schroeder.phi4-two-loop-crossing-groups-and-factorized-subtraction at
+    the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.5'
+    pages:
+    - 338
+    - 339
+- id: qft.align024ext.peskin-schroeder-edge-phi4-symmetry-factors-to-two-loop-fieldstrength
+  from: qft.align016.phi4-symmetry-factors
+  to: qft.align024.phi4-two-loop-field-strength-subdivergence-structure
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.phi4-symmetry-factors
+    to peskin-schroeder.phi4-two-loop-field-strength-subdivergence-structure at the
+    stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: qft.align024ext.peskin-schroeder-edge-power-counting-to-qed-topology
+  from: qft.align024.qed-superficial-divergence-power-counting
+  to: qft.align024.qed-graph-topology-and-primitive-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.superficial-divergence-power-counting
+    to peskin-schroeder.qed-graph-topology-and-primitive-amplitudes at the stated
+    mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 316
+- id: qft.align024ext.peskin-schroeder-edge-qed-conditions-to-z1z2
+  from: qft.align012.qed-renormalized-perturbation-lagrangian
+  to: qft.align012.qed-z1-equals-z2-charge-ratio-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.renormalized-qed-counterterms-and-conditions
+    to peskin-schroeder.ward-identity-z1-z2-and-universal-charge at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 332
+    - 334
+- id: qft.align024ext.peskin-schroeder-edge-qed-primitives-to-renormalization
+  from: qft.align024.qed-1pi-primitive-divergences-and-ward-constraints
+  to: qft.align012.bare-to-renormalized-parameter-elimination
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints
+    to peskin-schroeder.bare-to-renormalized-parameter-elimination at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1–10.2
+    pages:
+    - 320
+    - 323
+- id: qft.align024ext.peskin-schroeder-edge-regulators-to-z1z2
+  from: qft.align024.qed-uv-ir-regulator-separation
+  to: qft.align012.qed-z1-equals-z2-charge-ratio-result
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: Preserves the reviewed evidence relation from peskin-schroeder.qed-uv-ir-regulator-separation
+    to peskin-schroeder.ward-identity-z1-z2-and-universal-charge at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported evidence input
+    or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.3'
+    pages:
+    - 333
+    - 334
+- id: qft.align024ext.peskin-schroeder-edge-superficial-qualification-to-subdivergence
+  from: qft.align024.superficial-degree-qualifications
+  to: qft.align024.subdivergences-locality-and-counterterm-insertion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.superficial-degree-qualifications
+    to peskin-schroeder.subdivergences-locality-and-counterterm-insertion at the stated
+    mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: 10.1 and 10.4
+    pages:
+    - 316
+    - 336
+- id: qft.align024ext.peskin-schroeder-edge-topology-to-primitive-divergences
+  from: qft.align024.qed-graph-topology-and-primitive-amplitudes
+  to: qft.align024.qed-1pi-primitive-divergences-and-ward-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from peskin-schroeder.qed-graph-topology-and-primitive-amplitudes
+    to peskin-schroeder.qed-primitive-divergences-and-symmetry-constraints at the
+    stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.1'
+    pages:
+    - 317
+    - 320
+- id: qft.align024ext.peskin-schroeder-edge-two-point-to-yukawa
+  from: qft.align012.phi4-two-point-onshell-counterterms
+  to: qft.align024.yukawa-scalar-field-strength-renormalization
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Preserves the reviewed evidence relation from peskin-schroeder.phi4-two-point-onshell-counterterms
+    to peskin-schroeder.yukawa-scalar-field-strength-renormalization at the stated
+    mastery levels.
+  failure_mode: Without this retained relation, the source-supported evidence input
+    or route between the mapped endpoints is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '10.2'
+    pages:
+    - 328
+    - 329
+- id: qft.align024ext.schwartz-e-chargecondition-dimvertex
+  from: qft.align012.qed-vertex-charge-renormalization-condition
+  to: qft.align024.dimreg-vertex-uv-ir-pole-separation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.qed-vertex-charge-renormalization-condition
+    to schwartz.dimreg-vertex-uv-ir-pole-separation at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.2
+    pages:
+    - 376
+    - 377
+- id: qft.align024ext.schwartz-e-dimreal-dimcancel
+  from: qft.align024.dimreg-real-emission-three-body-phase-space
+  to: qft.align024.dimreg-real-virtual-pole-cancellation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.dimreg-real-emission-three-body-phase-space
+    to schwartz.dimreg-real-virtual-pole-cancellation at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.3
+    pages:
+    - 379
+    - 380
+- id: qft.align024ext.schwartz-e-dimtree-dimcancel
+  from: qft.align024.dimreg-tree-cross-section-normalization
+  to: qft.align024.dimreg-real-virtual-pole-cancellation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.dimreg-tree-cross-section-normalization
+    to schwartz.dimreg-real-virtual-pole-cancellation at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.1–20.A.3
+    pages:
+    - 373
+    - 374
+    - 377
+    - 380
+- id: qft.align024ext.schwartz-e-dimtree-dimreal
+  from: qft.align024.dimreg-tree-cross-section-normalization
+  to: qft.align024.dimreg-real-emission-three-body-phase-space
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.dimreg-tree-cross-section-normalization
+    to schwartz.dimreg-real-emission-three-body-phase-space at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.1, 20.A.3
+    pages:
+    - 373
+    - 378
+    - 379
+- id: qft.align024ext.schwartz-e-dimvertex-dimcancel
+  from: qft.align024.dimreg-vertex-uv-ir-pole-separation
+  to: qft.align024.dimreg-real-virtual-pole-cancellation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.dimreg-vertex-uv-ir-pole-separation
+    to schwartz.dimreg-real-virtual-pole-cancellation at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.2–20.A.3
+    pages:
+    - 377
+    - 380
+- id: qft.align024ext.schwartz-e-formfactor-dimvertex
+  from: qft.align019.on-shell-vertex-form-factor-decomposition
+  to: qft.align024.dimreg-vertex-uv-ir-pole-separation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.on-shell-vertex-form-factor-decomposition
+    to schwartz.dimreg-vertex-uv-ir-pole-separation at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.2
+    pages:
+    - 374
+    - 375
+- id: qft.align024ext.schwartz-e-fourier-problem212
+  from: qft.fourier-transform-derivative-operator-correspondence
+  to: qft.align024.problem-21-2-fourier-range-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.fourier-transform-derivative-operator-correspondence
+    to schwartz.problem-21-2-fourier-range-comparison at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 21.2
+    pages:
+    - 393
+- id: qft.align024ext.schwartz-e-isr-edf
+  from: qft.align024.initial-state-radiation-and-electron-distributions
+  to: qft.align024.bloch-nordsieck-and-kln-qualifications
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Preserves the reviewed evidence relation from schwartz.initial-state-radiation-and-electron-distributions
+    to schwartz.bloch-nordsieck-and-kln-qualifications at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported evidence input
+    or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.3.2
+    pages:
+    - 370
+    - 372
+- id: qft.align024ext.schwartz-e-isr-problem206
+  from: qft.align024.initial-state-radiation-and-electron-distributions
+  to: qft.align024.problem-20-6-qed-splitting-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.initial-state-radiation-and-electron-distributions
+    to schwartz.problem-20-6-qed-splitting-function at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 20.6
+    pages:
+    - 380
+- id: qft.align024ext.schwartz-e-jet-sudakov
+  from: qft.align024.jet-resolution-ir-safe-cross-section
+  to: qft.align024.jet-algorithms-and-sudakov-logs
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.jet-resolution-ir-safe-cross-section
+    to schwartz.jet-algorithms-and-sudakov-logs at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: '20.2'
+    pages:
+    - 365
+    - 366
+- id: qft.align024ext.schwartz-e-local-eft
+  from: qft.align024.subdivergences-locality-and-counterterm-insertion
+  to: qft.align024.nonrenormalizable-eft-low-energy-predictivity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.locality-of-divergent-counterterms
+    to schwartz.nonrenormalizable-eft-low-energy-predictivity at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 21.2.2–21.2.3
+    pages:
+    - 391
+    - 392
+- id: qft.align024ext.schwartz-e-locality-problem212
+  from: qft.align024.subdivergences-locality-and-counterterm-insertion
+  to: qft.align024.problem-21-2-fourier-range-comparison
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.locality-of-divergent-counterterms
+    to schwartz.problem-21-2-fourier-range-comparison at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 21.2
+    pages:
+    - 393
+- id: qft.align024ext.schwartz-e-power-locality
+  from: qft.align024.dimension-power-counting-and-nonrenormalizable-diagnosis
+  to: qft.align024.subdivergences-locality-and-counterterm-insertion
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: Preserves the reviewed pedagogical relation from schwartz.nonrenormalizable-power-counting-diagnosis
+    to schwartz.locality-of-divergent-counterterms at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported pedagogical input
+    or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 21.2.1–21.2.2
+    pages:
+    - 390
+    - 391
+- id: qft.align024ext.schwartz-e-power-problem213
+  from: qft.align024.dimension-power-counting-and-nonrenormalizable-diagnosis
+  to: qft.align024.problem-21-3-scalar-interactions-by-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.nonrenormalizable-power-counting-diagnosis
+    to schwartz.problem-21-3-scalar-interactions-by-dimension at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 21.3
+    pages:
+    - 393
+- id: qft.align024ext.schwartz-e-problem201-real
+  from: qft.align024.real-emission-phase-space-method
+  to: qft.align024.problem-20-1-three-body-phase-space
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.real-emission-phase-space-method
+    to schwartz.problem-20-1-three-body-phase-space at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 20.1
+    pages:
+    - 380
+- id: qft.align024ext.schwartz-e-problem202-jet
+  from: qft.align024.jet-resolution-ir-safe-cross-section
+  to: qft.align024.problem-20-2-sterman-weinberg-rates
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.jet-resolution-ir-safe-cross-section
+    to schwartz.problem-20-2-sterman-weinberg-rates at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 20.2
+    pages:
+    - 380
+- id: qft.align024ext.schwartz-e-problem203-isr
+  from: qft.align024.initial-state-radiation-and-electron-distributions
+  to: qft.align024.problem-20-3-initial-state-inclusive-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.initial-state-radiation-and-electron-distributions
+    to schwartz.problem-20-3-initial-state-inclusive-rate at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 20.3
+    pages:
+    - 380
+- id: qft.align024ext.schwartz-e-problem211-qedproof
+  from: qft.align024.qed-all-orders-induction-bphz-qualification
+  to: qft.align024.problem-21-1-two-loop-qed-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.qed-all-orders-induction-bphz-qualification
+    to schwartz.problem-21-1-two-loop-qed-counterterms at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: Problem 21.1
+    pages:
+    - 393
+- id: qft.align024ext.schwartz-e-qed1pi-qedinduction
+  from: qft.align024.qed-1pi-primitive-divergences-and-ward-constraints
+  to: qft.align024.qed-all-orders-induction-bphz-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.qed-1pi-sewing-and-four-photon-ward-cancellation
+    to schwartz.qed-all-orders-induction-bphz-qualification at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 21.1.1–21.1.3
+    pages:
+    - 382
+    - 383
+    - 384
+    - 385
+- id: qft.align024ext.schwartz-e-qeddegree-qedinduction
+  from: qft.align024.qed-superficial-divergence-power-counting
+  to: qft.align024.qed-all-orders-induction-bphz-qualification
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.qed-superficial-degree-of-divergence
+    to schwartz.qed-all-orders-induction-bphz-qualification at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 21.1.3, 21.2.1
+    pages:
+    - 384
+    - 385
+    - 387
+    - 388
+- id: qft.align024ext.schwartz-e-qedinduction-qedclosure
+  from: qft.align024.qed-all-orders-induction-bphz-qualification
+  to: qft.align024.qed-all-orders-counterterm-closure-and-charge-universality
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.qed-all-orders-induction-bphz-qualification
+    to schwartz.qed-all-orders-counterterm-closure at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 21.1.3
+    pages:
+    - 384
+    - 385
+    - 386
+- id: qft.align024ext.schwartz-e-realmethod-dimreal
+  from: qft.align024.real-emission-phase-space-method
+  to: qft.align024.dimreg-real-emission-three-body-phase-space
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.real-emission-phase-space-method
+    to schwartz.dimreg-real-emission-three-body-phase-space at the stated mastery
+    levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: 20.A.3
+    pages:
+    - 378
+    - 379
+- id: qft.align024ext.schwartz-e-singular-jet
+  from: qft.align024.soft-and-final-state-collinear-singularities
+  to: qft.align024.jet-resolution-ir-safe-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Preserves the reviewed prerequisite relation from schwartz.soft-and-final-state-collinear-singularities
+    to schwartz.jet-resolution-ir-safe-cross-section at the stated mastery levels.
+  failure_mode: Without this retained relation, the source-supported prerequisite
+    input or route between the mapped endpoints is absent.
+  evidence:
+  - source: schwartz
+    section: '20.2'
+    pages:
+    - 364
+    - 365
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
