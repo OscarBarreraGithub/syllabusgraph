@@ -50084,6 +50084,26 @@ nodes:
     section: '23.4'
     pages:
     - 430
+- id: qft.schwartz.dis-leading-power-forward-compton-matching-route
+  label: Schwartz leading-power forward-Compton matching route
+  summary: For Schwartz's DIS derivation, expand the forward Compton amplitude at
+    leading power and leading order into local operators with state-independent coefficient
+    functions, separating hard q dependence in the coefficients from soft p dependence
+    in the operator matrix elements. This retains the source proof route separately
+    from the broader multi-book matching core.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.dis-forward-compton-leading-power-operator-matching
+    note: Retains Schwartz's leading-power forward-Compton operator-matching route
+      and its source-specific approximation scope; it is not a duplicate of the broader
+      common matching core.
+  evidence:
+  - source: schwartz
+    section: 32.4.3 Operator product expansion for DIS
+    pages:
+    - 690
+    - 691
 - id: qft.second-quantization-many-mode-particle-interpretation
   label: Second quantization as many mode oscillators
   summary: A field can be organized as normal modes whose oscillator occupations count
@@ -50757,6 +50777,44 @@ nodes:
     note: The chapter names Feynman trace technology and describes both its trace
       calculation and mass restoration.
   notation: []
+- id: qft.weinberg-2.dis-forward-compton-moment-to-leading-twist-route
+  label: Weinberg forward-Compton moment-to-leading-twist route
+  summary: For Weinberg's DIS route, use the forward tensor's momentum dependence
+    to connect the dispersive moment construction with the large-q power counting
+    that selects the leading local QCD operator terms. This records the source derivation
+    route without treating the broad shared leading-twist result as an independent
+    premise.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.twist-and-leading-qcd-dis-operators
+    note: Retains Weinberg's forward-Compton moment-to-leading-twist derivation scope
+      as a source-local route rather than duplicating the broader shared result.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 276
+    - 277
+- id: qft.weinberg-2.gim-doublets-to-ckm-mass-basis-route
+  label: Weinberg GIM-doublet to CKM mass-basis route
+  summary: For Weinberg's flavor route, use the GIM organization of quark doublets
+    to motivate the multi-generation mass-basis mixing analysis and its weak-CP diagnostic.
+    This retains the source route without taking either broader shared CKM result
+    as an independent premise.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.ckm-mass-diagonalization-and-three-generation-cp-violation
+    note: Retains Weinberg's GIM-doublet-to-CKM mass-basis derivation scope as a source-local
+      route rather than duplicating the broader shared CKM results.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 313
+    - 314
+    - 315
 - id: qft.weinberg-witten-current-obstructions
   label: Weinberg–Witten spin-one and spin-two obstructions
   summary: For a theory with a global non-Abelian symmetry under which massless spin-one
@@ -105251,6 +105309,2483 @@ edges:
     section: Problem 12.1
     pages:
     - 438
+- id: qft.shared.schwartz-relations.anomaly-coefficient-to-su3-matching
+  from: qft.sun-products-fierz-and-anomaly-invariant
+  to: qft.align006.su3-chiral-breaking-from-anomaly-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The baryon contradiction evaluates A(R) for the SU(3) representations.
+  failure_mode: The required anomaly sum and representation coefficients are undefined.
+  evidence:
+  - source: schwartz
+    section: '30.6'
+    pages:
+    - 639
+- id: qft.shared.schwartz-relations.base-ms-to-weak-chain
+  from: qft.align051.qcd-renormalization-constants-and-ms-uv-trick
+  to: qft.align025.off-shell-one-loop-matching-ir-artifact
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The off-shell calculation separates UV and IR poles in dimensional regularization
+    and requires MS counterterms.
+  failure_mode: Without the UV/IR prescription, the scaleless-integral artifact is
+    misread as a physical divergence.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+    - 662
+    - 663
+- id: qft.shared.schwartz-relations.base-tree-four-fermi-to-weak-chain
+  from: qft.align039.tree-level-four-fermi-matching
+  to: qft.align025.tree-level-b-to-cud-four-fermi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter’s b→c ubar d matching instantiates the established low-energy
+    W-exchange replacement.
+  failure_mode: Without the four-Fermi matching limit, the local O1 matching has no
+    stated low-energy justification.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 658
+    - 659
+- id: qft.shared.schwartz-relations.e-abelian-gauge-to-rxi
+  from: qft.abelian-higgs-gauge-shift-and-degree-count
+  to: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Rξ gauge is designed to remove the displayed Goldstone–vector mixing.
+  failure_mode: The gauge-fixing functional would have no target mixing term.
+  evidence:
+  - source: schwartz
+    section: '28.4'
+    pages:
+    - 581
+- id: qft.shared.schwartz-relations.e-adjoint-to-curvature
+  from: qft.adjoint-representation-and-covariant-derivative
+  to: qft.general-nonabelian-gauge-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The component curvature transformation is adjoint.
+  failure_mode: The gauge-field transformation law would be disconnected from its
+    representation.
+  evidence:
+  - source: schwartz
+    section: 25.2.2
+    pages:
+    - 493
+- id: qft.shared.schwartz-relations.e-anomaly-definition-to-conjugate-task
+  from: qft.sun-products-fierz-and-anomaly-invariant
+  to: qft.align006.anomaly-conjugate-and-real-representation-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives conjugate and real-representation anomaly rules from
+    the defining symmetrized trace.
+  failure_mode: The requested representation rule could not be derived with the stated
+    normalization.
+  evidence:
+  - source: schwartz
+    section: Problem 25.4
+    pages:
+    - 488
+    - 506
+- id: qft.shared.schwartz-relations.e-anomaly-definition-to-direct-sum-task
+  from: qft.sun-products-fierz-and-anomaly-invariant
+  to: qft.align006.anomaly-direct-sum-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The direct-sum rule follows by evaluating the defining trace on block-diagonal
+    generators.
+  failure_mode: The requested representation rule could not be derived with the stated
+    normalization.
+  evidence:
+  - source: schwartz
+    section: Problem 25.4
+    pages:
+    - 488
+    - 506
+- id: qft.shared.schwartz-relations.e-anomaly-definition-to-product-task
+  from: qft.sun-products-fierz-and-anomaly-invariant
+  to: qft.align006.anomaly-tensor-product-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The product-representation rule starts from the normalized defining trace
+    and the product generators supplied in the problem.
+  failure_mode: The requested representation rule could not be derived with the stated
+    normalization.
+  evidence:
+  - source: schwartz
+    section: Problem 25.4
+    pages:
+    - 488
+    - 506
+- id: qft.shared.schwartz-relations.e-anomaly-definition-to-su4-task
+  from: qft.sun-products-fierz-and-anomaly-invariant
+  to: qft.anomaly-su4-ten-calculation-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(4) exercise evaluates A(10) in the supplied decomposition using
+    the normalized anomaly coefficient.
+  failure_mode: The requested representation rule could not be derived with the stated
+    normalization.
+  evidence:
+  - source: schwartz
+    section: Problem 25.4
+    pages:
+    - 488
+    - 506
+    - 507
+- id: qft.shared.schwartz-relations.e-ckm-counting-to-p296
+  from: qft.align017.weak-cp-diagnostics-and-physical-condition
+  to: qft.align017.problem-pmns-dirac-majorana-phase-count-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: CKM counting supplies the analogous unitary-matrix rephasing method without
+    stating the PMNS answer.
+  failure_mode: The learner would lack the phase-removal counting procedure.
+  evidence:
+  - source: schwartz
+    section: Problem 29.6
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-cm-two-body-to-p291
+  from: qft.align030.cm-two-to-two-cross-section
+  to: qft.align017.problem-lep-higgsstrahlung-cross-section-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-body ZH final state requires the center-of-mass 2→2 phase-space
+    formula.
+  failure_mode: The differential amplitude could not be integrated to the requested
+    total cross section.
+  evidence:
+  - source: schwartz
+    section: Problem 29.1
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-complex-scalar-to-quantized-dirac-field
+  from: qft.align015.complex-scalar-canonical-particles-and-charge
+  to: qft.align042.quantized-dirac-field-mode-expansion
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The source recalls the complex-scalar particle and antiparticle expansion
+    as the analogy for assigning a and b operators to Dirac modes, while postponing
+    the statistics choice.
+  failure_mode: The motivating scalar analogy is absent, but the Dirac expansion can
+    still be defined directly from its free modes.
+  evidence:
+  - source: schwartz
+    section: '12.3'
+    pages:
+    - 211
+    - 212
+    note: Recalls the complex-scalar expansion before defining the spinor field and
+      leaves statistics open.
+- id: qft.shared.schwartz-relations.e-complex-scalar-to-scalar-propagator
+  from: qft.align015.complex-scalar-canonical-particles-and-charge
+  to: qft.align015.feynman-scalar-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two scalar Wightman functions use the independent particle and antiparticle
+    operators in the complex-field expansion.
+  failure_mode: The two orderings cannot be derived with the required independent
+    particle and antiparticle modes.
+  evidence:
+  - source: schwartz
+    section: 12.4.1
+    pages:
+    - 212
+    - 213
+    note: Evaluates both orderings for the complex scalar and compares the two statistics
+      choices.
+- id: qft.shared.schwartz-relations.e-complex-scalar-to-stability
+  from: qft.align015.complex-scalar-canonical-particles-and-charge
+  to: qft.align042.statistics-and-energy-stability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar stability calculation separately tracks particle and antiparticle
+    number operators from the complex-field expansion.
+  failure_mode: The antiparticle energy sign cannot be identified without the independent
+    b modes of the complex scalar.
+  evidence:
+  - source: schwartz
+    section: 12.5.1
+    pages:
+    - 216
+    - 217
+    note: Substitutes the complex scalar fields and compares particle and antiparticle
+      energy contributions.
+- id: qft.shared.schwartz-relations.e-cross-section-to-p291
+  from: qft.align030.cross-section-flux-probability-luminosity
+  to: qft.align017.problem-lep-higgsstrahlung-cross-section-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for a total cross section and an event count from LEP running.
+  failure_mode: The amplitude could not be converted to a rate or event yield.
+  evidence:
+  - source: schwartz
+    section: Problem 29.1
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-curvature-to-noether
+  from: qft.general-nonabelian-gauge-construction
+  to: qft.total-current-and-covariant-matter-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current’s gauge-field term and equation of motion use F and its covariant
+    transformation.
+  failure_mode: One could not test the stated conservation/covariant conservation
+    laws.
+  evidence:
+  - source: schwartz
+    section: '25.3'
+    pages:
+    - 493
+- id: qft.shared.schwartz-relations.e-effective-route-from-form-factors
+  from: qft.align019.on-shell-vertex-form-factor-decomposition
+  to: qft.align012.z1-z2-effective-matching-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The long-distance effective vertex is matched through its soft Dirac
+    form factor.
+  failure_mode: The soft vertex coefficient used to identify Z1 is unavailable.
+  evidence:
+  - source: schwartz
+    section: 19.5.1
+    pages:
+    - 353
+    note: Matches the soft form-factor coefficient to the renormalized vertex factor.
+- id: qft.shared.schwartz-relations.e-equivalence-to-partial-wave-task
+  from: qft.align018.goldstone-boson-equivalence-theorem
+  to: qft.align017.problem-longitudinal-ww-partial-wave-unitarity-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise explicitly requires the Goldstone-equivalence reproduction.
+  failure_mode: One requested proof branch would be unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 29.4
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-fermion-loop-to-p293
+  from: qft.align043.qed-fermion-line-and-loop-evaluation
+  to: qft.align017.problem-higgs-decay-rates-and-branching-plots-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The top triangles require closed-fermion-loop ordering, traces, signs,
+    and loop integration.
+  failure_mode: The H→gg and top contribution to H→γγ would be ill-defined.
+  evidence:
+  - source: schwartz
+    section: Problem 29.3
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-field-pi-from-gaussian
+  from: qft.align021.multivariable-gaussian-integral-method
+  to: qft.align021.field-theory-path-integral-from-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The conjugate momentum functional integral is Gaussian and generates
+    the kinetic term.
+  failure_mode: The Hamiltonian expression cannot be reduced to L=(∂tΦ)²/2−V.
+  evidence:
+  - source: schwartz
+    section: 14.2.3
+    pages:
+    - 258
+    note: Performs the Gaussian Πj integral to obtain the Lagrangian.
+- id: qft.shared.schwartz-relations.e-form-factors-from-dirac-magnetic-prediction
+  from: qft.align020.dirac-magnetic-dipole-prediction
+  to: qft.align019.on-shell-vertex-form-factor-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The decomposition identifies the Pauli tensor coefficient by comparison
+    with the Dirac magnetic interaction.
+  failure_mode: The relation between F2 and g has no normalization.
+  evidence:
+  - source: schwartz
+    section: '17.1'
+    pages:
+    - 315
+    - 316
+    - 317
+    note: Derives the g=2 Pauli structure before defining F2.
+- id: qft.shared.schwartz-relations.e-form-factors-from-qed-vertex-rule
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align019.on-shell-vertex-form-factor-decomposition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tree vertex fixes the normalization against which F1 and F2 are defined.
+  failure_mode: The charge and Pauli form-factor normalization is ambiguous.
+  evidence:
+  - source: schwartz
+    section: '17.1'
+    pages:
+    - 316
+    - 317
+    note: Starts from the QED vertex and decomposes its corrected on-shell matrix
+      element.
+- id: qft.shared.schwartz-relations.e-formal-z1-proof-from-form-factors
+  from: qft.align019.on-shell-vertex-form-factor-decomposition
+  to: qft.align012.ward-takahashi-proof-of-z1-equals-z2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The soft limit identifies the vertex coefficient as F1(0) before comparing
+    it with the self-energy derivative.
+  failure_mode: The vertex side cannot be reduced to the charge form factor fixed
+    by the on-shell condition.
+  evidence:
+  - source: schwartz
+    section: 19.5.1
+    pages:
+    - 353
+    note: Uses the on-shell form-factor parametrization in the soft limit.
+- id: qft.shared.schwartz-relations.e-four-fermi-to-pion-decay
+  from: qft.align039.tree-level-four-fermi-matching
+  to: qft.align018.pion-leptonic-decay-measures-fpi
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Integrating out W gives the V−A interaction used for the decay amplitude.
+  failure_mode: The leptonic weak vertex would be absent.
+  evidence:
+  - source: schwartz
+    section: 28.2.2
+    pages:
+    - 571
+- id: qft.shared.schwartz-relations.e-hzz-to-p291
+  from: qft.align018.higgs-mass-and-hvv-couplings
+  to: qft.align017.problem-lep-higgsstrahlung-cross-section-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Z*→ZH branch requires the hZZ coupling.
+  failure_mode: The tree-level Higgsstrahlung amplitude would lack its Higgs vertex.
+  evidence:
+  - source: schwartz
+    section: Problem 29.1
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-lattice-action-to-correlator
+  from: qft.lattice-gauge-links-plaquettes-and-action
+  to: qft.lattice-correlator-mass-extraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Euclidean lattice correlator is evaluated with the discretized gauge
+    action in its path-integral weight.
+  failure_mode: The mass-extraction correlator would lack the lattice theory defining
+    its expectation value.
+  evidence:
+  - source: schwartz
+    section: '25.5'
+    pages:
+    - 505
+- id: qft.shared.schwartz-relations.e-lie-algebra-to-ym-invariance-task
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.yang-mills-gauge-invariance-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The explicit invariance check uses the structure constants and their
+    antisymmetry in the non-Abelian variation.
+  failure_mode: The cancellation of the variation cannot be checked algebraically.
+  evidence:
+  - source: schwartz
+    section: Problem 25.1
+    pages:
+    - 483
+    - 506
+- id: qft.shared.schwartz-relations.e-lie-bracket-to-generator-product-task
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.align006.generator-product-trace-identities-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The product identities separate generators into commutator and anticommutator
+    parts, so the Lie bracket is needed with the trace normalization.
+  failure_mode: The antisymmetric structure-constant term in the product could not
+    be derived.
+  evidence:
+  - source: schwartz
+    section: Problem 25.2
+    pages:
+    - 483
+    - 506
+- id: qft.shared.schwartz-relations.e-lie-generators-to-semisimplicity-task
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.align006.semisimplicity-hermitian-representations-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The proof works from finite-dimensional matrix generators and their commutator
+    representation, not from the theorem being proved.
+  failure_mode: The matrix-trace proof has no representation-theory starting point.
+  evidence:
+  - source: schwartz
+    section: Problem 25.3(a)
+    pages:
+    - 483
+    - 506
+- id: qft.shared.schwartz-relations.e-lie-to-adjoint
+  from: qft.lie-algebra-jacobi-and-local-global-distinction
+  to: qft.adjoint-representation-and-covariant-derivative
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The adjoint matrices are defined directly from the Lie-algebra structure
+    constants.
+  failure_mode: Without the bracket and f constants, the adjoint matrices cannot be
+    constructed.
+  evidence:
+  - source: schwartz
+    section: 25.1.1
+    pages:
+    - 486
+- id: qft.shared.schwartz-relations.e-loop-method-to-p292
+  from: qft.align030.loop-amplitude-position-momentum-lsz-problem
+  to: qft.align017.problem-ee-hadrons-photon-z-interference-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop part requires prior ability to construct and reduce a loop
+    amplitude.
+  failure_mode: The one-loop calculation would have no operative amplitude method.
+  evidence:
+  - source: schwartz
+    section: Problem 29.2
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-loop-method-to-p293
+  from: qft.align030.loop-amplitude-position-momentum-lsz-problem
+  to: qft.align017.problem-higgs-decay-rates-and-branching-plots-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gg and γγ branches require prior ability to construct and reduce
+    one-loop amplitudes.
+  failure_mode: The loop-induced decay amplitudes could not be evaluated.
+  evidence:
+  - source: schwartz
+    section: Problem 29.3
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-lorentz-generators-to-lorentz-task
+  from: qft.align053.lorentz-generator-field-and-algebra-core
+  to: qft.align006.lorentz-complexification-semisimplicity-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise needs the Lorentz commutators to expose its two complex
+    simple factors.
+  failure_mode: The decomposition could not be calculated from the classification
+    definition alone.
+  evidence:
+  - source: schwartz
+    section: Problem 25.3(b)
+    pages:
+    - 506
+- id: qft.shared.schwartz-relations.e-majorana-rephasing-to-p296
+  from: qft.align020.majorana-charge-conjugacy-and-u1-neutrality
+  to: qft.align017.problem-pmns-dirac-majorana-phase-count-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Majorana fields lack the independent U(1) rephasings available to Dirac
+    fields.
+  failure_mode: The difference between Dirac and Majorana phase removals could not
+    be justified.
+  evidence:
+  - source: schwartz
+    section: Problem 29.6
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-neutral-current-to-p291
+  from: qft.align039.electromagnetic-charge-and-neutral-current-structure
+  to: qft.align017.problem-lep-higgsstrahlung-cross-section-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Higgsstrahlung begins with the electron neutral-current Zee vertex.
+  failure_mode: The initial e+e−→Z* amplitude would lack its fermion coupling.
+  evidence:
+  - source: schwartz
+    section: Problem 29.1
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-neutral-current-to-p292
+  from: qft.align039.electromagnetic-charge-and-neutral-current-structure
+  to: qft.align017.problem-ee-hadrons-photon-z-interference-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Photon and Z exchange require the fermion electromagnetic and neutral-current
+    couplings.
+  failure_mode: The photon, Z, and interference amplitudes could not be constructed.
+  evidence:
+  - source: schwartz
+    section: Problem 29.2
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-neutrino-mass-to-p296
+  from: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  to: qft.align017.problem-pmns-dirac-majorana-phase-count-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task compares general Dirac-plus-Majorana, purely Dirac, and purely
+    Majorana mass structures.
+  failure_mode: There would be no mass-term distinction on which the phase count depends.
+  evidence:
+  - source: schwartz
+    section: Problem 29.6
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-nlo-rhad-to-p292
+  from: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  to: qft.align017.problem-ee-hadrons-photon-z-interference-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop inclusive rate uses the real-plus-virtual QCD correction
+    and its infrared cancellation.
+  failure_mode: The requested one-loop total rate would omit or mishandle the QCD
+    correction.
+  evidence:
+  - source: schwartz
+    section: Problem 29.2
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-normalization-to-generator-product-task
+  from: qft.sun-representations-and-normalization
+  to: qft.align006.generator-product-trace-identities-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested generator-product identities use the fixed fundamental
+    trace normalization.
+  failure_mode: Their numerical coefficients would be ambiguous.
+  evidence:
+  - source: schwartz
+    section: Problem 25.2
+    pages:
+    - 485
+    - 506
+- id: qft.shared.schwartz-relations.e-path-to-curvature
+  from: qft.nonabelian-path-ordered-wilson-line
+  to: qft.general-nonabelian-gauge-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The infinitesimal line expansion determines the connection transformation.
+  failure_mode: The nonlinear connection law would be an unsupported prescription.
+  evidence:
+  - source: schwartz
+    section: 25.2.2
+    pages:
+    - 492
+- id: qft.shared.schwartz-relations.e-pauli-dynamics-to-spin-flip-measurement-problem
+  from: qft.align020.dirac-magnetic-dipole-prediction
+  to: qft.align020.nonrelativistic-spin-flip-and-measurement-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 11.6(c,e) uses the nonrelativistic electric and magnetic couplings
+    to identify spin flips and an operational spin measurement.
+  failure_mode: The spin-flip and measurement tasks lack the Hamiltonian term that
+    couples a magnetic field to spin.
+  evidence:
+  - source: schwartz
+    section: 10 introduction and Problem 11.6(c,e)
+    pages:
+    - 157
+    - 202
+    note: Displays the Pauli magnetic coupling and states the two applications.
+- id: qft.shared.schwartz-relations.e-pmns-to-p297
+  from: qft.align039.pmns-mixing-and-majorana-phase-count
+  to: qft.align017.problem-neutrino-oscillation-probability-and-baseline-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The oscillation task evolves PMNS-related mass eigenstates.
+  failure_mode: The flavor-transition probability would lack its mixing basis.
+  evidence:
+  - source: schwartz
+    section: Problem 29.7
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-scalar-microcausality-to-spinor-microcausality
+  from: qft.align015.microcausality-field-commutator
+  to: qft.align043.schwartz.spinor-causality-statistics-residual
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spinor commutator and anticommutator are expressed as a Dirac differential
+    operator acting on the scalar D1 and D distributions.
+  failure_mode: The source's support test for spinors has undefined scalar distributions.
+  evidence:
+  - source: schwartz
+    section: 12.6–12.6.1
+    pages:
+    - 220
+    - 222
+    note: Defines D and D1 before applying them to spinors.
+- id: qft.shared.schwartz-relations.e-scalar-z1-problem-from-derivative-vertices
+  from: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  to: qft.align012.scalar-qed-z1-z2-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar vertex and inverse-propagator structures are needed to specialize
+    the Ward identity.
+  failure_mode: The scalar-QED quantities whose renormalizations are compared are
+    undefined.
+  evidence:
+  - source: schwartz
+    section: Problem 19.2
+    pages:
+    - 354
+    note: Requests the proof in scalar rather than spinor QED.
+- id: qft.shared.schwartz-relations.e-scalar-z1-problem-from-seagull
+  from: qft.align054.scalar-qed-seagull-contact-vertex
+  to: qft.align012.scalar-qed-z1-z2-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar gauge interaction includes the contact term required by local
+    gauge invariance.
+  failure_mode: The scalar proof is based on an incomplete gauge interaction.
+  evidence:
+  - source: schwartz
+    section: Problem 19.2
+    pages:
+    - 354
+    note: Requests the scalar-QED identity for the complete gauge theory.
+- id: qft.shared.schwartz-relations.e-schwinger-method-from-qed-rules
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align019.schwinger-anomalous-magnetic-moment-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vertex-loop integrand is built from QED propagators and vertices.
+  failure_mode: The three-denominator graph cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: '17.2'
+    pages:
+    - 318
+    note: Writes the one-loop vertex graph from Feynman rules.
+- id: qft.shared.schwartz-relations.e-simple-definitions-to-heisenberg-task
+  from: qft.compact-simple-lie-algebra-classification
+  to: qft.align006.heisenberg-algebra-matrix-and-classification-task
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The Heisenberg exercise applies the simple and semisimple definitions
+    after constructing the matrices.
+  failure_mode: The requested classification would have no criterion.
+  evidence:
+  - source: schwartz
+    section: Problem 25.3(d)
+    pages:
+    - 483
+    - 506
+- id: qft.shared.schwartz-relations.e-simple-definitions-to-lorentz-task
+  from: qft.compact-simple-lie-algebra-classification
+  to: qft.align006.lorentz-complexification-semisimplicity-task
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The task tests the complexified Lorentz algebra against the definitions
+    of simple and semisimple algebras.
+  failure_mode: There would be no classification criterion to apply.
+  evidence:
+  - source: schwartz
+    section: Problem 25.3(b)
+    pages:
+    - 483
+    - 506
+- id: qft.shared.schwartz-relations.e-simple-definitions-to-un-task
+  from: qft.compact-simple-lie-algebra-classification
+  to: qft.align006.un-unitary-group-semisimplicity-task
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The U(N) exercise applies the ideal decomposition and semisimplicity
+    definitions.
+  failure_mode: The task's classification criterion would be absent.
+  evidence:
+  - source: schwartz
+    section: Problem 25.3(c)
+    pages:
+    - 483
+    - 506
+- id: qft.shared.schwartz-relations.e-soft-factorization-to-charge-problem
+  from: qft.align019.soft-photon-emission-factorization
+  to: qft.align020.massless-spin-one-charge-conservation-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Section 9.5's soft-photon external-leg factor is an actual input to its
+    charge-conservation argument reused by Problem 11.3.
+  failure_mode: The proof lacks the soft amplitude whose Lorentz variation constrains
+    charges.
+  evidence:
+  - source: schwartz
+    section: Problem 11.3
+    pages:
+    - 201
+    note: Explicitly permits use of Section 9.5.
+- id: qft.shared.schwartz-relations.e-source-functional-to-polchinski
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align014.wilson-polchinski-exact-rg-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exact RG construction differentiates a cutoff source generating functional
+    while holding it invariant.
+  failure_mode: The functional being kept fixed and differentiated is unspecified.
+  evidence:
+  - source: schwartz
+    section: 23.6.1
+    pages:
+    - 444
+    - 445
+- id: qft.shared.schwartz-relations.e-string-dimension-from-massless-spin-states
+  from: qft.align010.schwartz.wigner-mass-spin-polarization-classification
+  to: qft.align048.string-casimir-critical-dimension-result
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The j=1 string excitation is required to be a massless spin-one state
+    with two polarizations.
+  failure_mode: The condition used to set the j=1 mass to zero is missing.
+  evidence:
+  - source: schwartz
+    section: 15.3.4
+    pages:
+    - 296
+    note: Uses the two-polarization massless j=1 excitation to obtain the bosonic
+      dimension.
+- id: qft.shared.schwartz-relations.e-su2-factors-to-su2-problem
+  from: qft.align033.lorentz-irrep-su2-times-su2-classification
+  to: qft.align020.su2-finite-irrep-construction-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 10.2 constructs the finite-dimensional irreps of the su(2) algebra
+    used in the Lorentz decomposition.
+  failure_mode: The ladder derivation lacks its defining commutation algebra.
+  evidence:
+  - source: schwartz
+    section: 10.1.2 and Problem 10.2
+    pages:
+    - 162
+    - 182
+    note: Identifies su(2) then supplies the irrep task.
+- id: qft.shared.schwartz-relations.e-tree-rhad-to-p292
+  from: qft.align028.peskin-schroeder.qcd-inclusive-eplus-eminus-hadrons
+  to: qft.align017.problem-ee-hadrons-photon-z-interference-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The prompt explicitly extends the photon-only inclusive hadron rate from
+    Section 26.3.
+  failure_mode: The flavor, charge, and color normalization of the inclusive rate
+    would be missing.
+  evidence:
+  - source: schwartz
+    section: Problem 29.2
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e-triangle-to-p295
+  from: qft.align039.ckm-unitarity-triangle-construction
+  to: qft.align017.problem-ckm-fit-constraint-curves-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for constraints in the unitarity-triangle fit.
+  failure_mode: Its plotted constraint curves would lack coordinates.
+  evidence:
+  - source: schwartz
+    section: Problem 29.5
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-vector-conflict-to-positive-norm-problem
+  from: qft.align010.schwartz.vector-lorentz-unitarity-conflict
+  to: qft.align054.positive-norm-probability-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks to formalize the bounded-probability claim illustrated
+    by the indefinite vector norm.
+  failure_mode: The requested norm-sign proof lacks its physical probability premise.
+  evidence:
+  - source: schwartz
+    section: 8.1.1 and Problem 8.1
+    pages:
+    - 112
+    - 138
+    note: Shows the bad probability behavior then asks for the general proof.
+- id: qft.shared.schwartz-relations.e-vertex-condition-from-form-factors
+  from: qft.align019.on-shell-vertex-form-factor-decomposition
+  to: qft.align012.qed-vertex-charge-renormalization-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The condition F1(0)=1 and the distinction from finite F2 use the earlier
+    form-factor decomposition.
+  failure_mode: The charge-renormalization condition cannot be identified within the
+    vertex.
+  evidence:
+  - source: schwartz
+    section: '19.3'
+    pages:
+    - 346
+    - 347
+    note: Recalls the two form factors and sets the F1(0) condition.
+- id: qft.shared.schwartz-relations.e-vertex-condition-from-one-loop-vertex-method
+  from: qft.align019.schwinger-anomalous-magnetic-moment-method
+  to: qft.align012.qed-vertex-charge-renormalization-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charge-renormalization section resumes the one-loop QED vertex calculation,
+    including its F1 structure.
+  failure_mode: The loop correction to which the vertex counterterm is applied is
+    unavailable.
+  evidence:
+  - source: schwartz
+    section: '19.3'
+    pages:
+    - 346
+    - 347
+    note: Returns to the one-loop vertex and fixes its Dirac form factor at zero momentum.
+- id: qft.shared.schwartz-relations.e-weinberg-to-p298
+  from: qft.align039.dimension-five-neutrino-mass-operator-and-seesaw-matching
+  to: qft.align017.problem-integrating-out-right-handed-neutrinos-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives the stated effective operator by integrating out νR.
+  failure_mode: The requested destination operator would be unspecified.
+  evidence:
+  - source: schwartz
+    section: Problem 29.8
+    pages:
+    - 615
+- id: qft.shared.schwartz-relations.e-weyl-reps-to-majorana-mass
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.majorana-mass-grassmann-necessity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Lorentz-invariance check for the same-chirality bilinear uses the
+    Weyl transformation law.
+  failure_mode: The Majorana bilinear is confused with the noninvariant ψ†RψR scalar-like
+    expression.
+  evidence:
+  - source: schwartz
+    section: 10.6.1
+    pages:
+    - 178
+    - 179
+    note: Contrasts the candidate bilinears using the Weyl transformations.
+- id: qft.shared.schwartz-relations.e-weyl-reps-to-neutrino-seesaw-problem
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.neutrino-mass-eigenstate-and-seesaw-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (b–d) require showing that the conjugate of νR transforms as a
+    left-handed spinor before constructing the doublet.
+  failure_mode: The mass-mixing rewrite has no Lorentz-transformation basis.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(b–d)
+    pages:
+    - 203
+    note: Requests the left-handed transformation proof and doublet diagonalization.
+- id: qft.shared.schwartz-relations.e-weyl-reps-to-neutrino-u1-problem
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.neutrino-majorana-u1-obstruction-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) begins with a left-handed Weyl neutrino and asks for its allowed
+    dimension-four mass structure.
+  failure_mode: The Lorentz representation of the proposed mass field is unspecified.
+  evidence:
+  - source: schwartz
+    section: Problem 11.9(a)
+    pages:
+    - 202
+    note: Specifies a left-handed neutrino and Majorana mass form.
+- id: qft.shared.schwartz-relations.e-weyl-reps-to-parity-swap
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align020.parity-chirality-swap-residual
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chirality-swap argument depends on left and right Weyl spinors being
+    inequivalent Lorentz irreps with opposite helicity in the massless case.
+  failure_mode: Parity is incorrectly appended to a single massless Weyl irrep.
+  evidence:
+  - source: schwartz
+    section: 11.5.2
+    pages:
+    - 197
+    note: Uses the Weyl representations and helicity to derive the swap.
+- id: qft.shared.schwartz-relations.e-weyl-reps-to-two-pi-sign
+  from: qft.align020.chirality-helicity-and-massless-weyl-limit
+  to: qft.align010.weinberg-1.lorentz-topology-sign-projective-representations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The 2π sign follows by exponentiating the spinor rotation generator.
+  failure_mode: The sign is recited without its representation action.
+  evidence:
+  - source: schwartz
+    section: 10.2 and 10.5
+    pages:
+    - 164
+    - 175
+    - 176
+    note: Provides the generators and evaluates their rotation.
+- id: qft.shared.schwartz-relations.e-yang-problem-from-identical-boson-exchange
+  from: qft.align042.identical-particle-exchange-and-pauli-exclusion
+  to: qft.align012.yang-theorem-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two identical photons require the bosonic exchange symmetry used
+    to constrain the general amplitude.
+  failure_mode: The exchange constraint on the two-photon amplitude is missing.
+  evidence:
+  - source: schwartz
+    section: Problem 19.3
+    pages:
+    - 354
+    note: Asks for the two-photon decay theorem from the general amplitude.
+- id: qft.shared.schwartz-relations.e-yang-problem-from-massive-vector-basis
+  from: qft.align010.schwartz.massive-vector-polarization-basis
+  to: qft.align012.yang-theorem-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The most general decay amplitude must account for the parent massive-vector
+    polarization.
+  failure_mode: The Lorentz structures involving the parent polarization cannot be
+    enumerated.
+  evidence:
+  - source: schwartz
+    section: Problem 19.3
+    pages:
+    - 354
+    note: Specifies a massive vector as the decaying state.
+- id: qft.shared.schwartz-relations.e-yang-problem-from-photon-transversality
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.align012.yang-theorem-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general amplitude must vanish when either photon polarization is
+    replaced by its momentum.
+  failure_mode: The photon transversality constraint on the amplitude is unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 19.3
+    pages:
+    - 354
+    note: Requests a general massive-vector to two-photon amplitude proof.
+- id: qft.shared.schwartz-relations.e-yukawa-to-p293
+  from: qft.align039.yukawa-fermion-masses-and-higgs-couplings
+  to: qft.align017.problem-higgs-decay-rates-and-branching-plots-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: H→bb and the top-loop branches require the mass-proportional Higgs Yukawa
+    couplings.
+  failure_mode: The bottom tree amplitude and top-loop vertices would be absent.
+  evidence:
+  - source: schwartz
+    section: Problem 29.3
+    pages:
+    - 614
+- id: qft.shared.schwartz-relations.e.lips-problem204
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align024.problem-20-4-unfactorized-dimreg-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The direct rate still requires the invariant phase-space and flux normalization.
+  failure_mode: The direct amplitude cannot be converted to a cross section.
+  evidence:
+  - source: schwartz
+    section: Problem 20.4
+    pages:
+    - 380
+- id: qft.shared.schwartz-relations.e.qedrules-problem204
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align024.problem-20-4-unfactorized-dimreg-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The direct calculation must assemble the unfactorized QED amplitudes.
+  failure_mode: The requested direct diagrams cannot be constructed.
+  evidence:
+  - source: schwartz
+    section: Problem 20.4
+    pages:
+    - 380
+- id: qft.shared.schwartz-relations.e.qedrules-problem205
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align024.problem-20-5-box-crossed-box-ir-diagnosis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The box and crossed-box loop integrands follow from the QED rules.
+  failure_mode: The requested loop graphs cannot be written.
+  evidence:
+  - source: schwartz
+    section: Problem 20.5
+    pages:
+    - 380
+- id: qft.shared.schwartz-relations.e.traces-problem204
+  from: qft.align023.peskin.dirac-trace-identities-gamma5
+  to: qft.align024.problem-20-4-unfactorized-dimreg-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The unfactorized spin sums reduce to Dirac traces.
+  failure_mode: The direct squared amplitudes remain unevaluated.
+  evidence:
+  - source: schwartz
+    section: Problem 20.4
+    pages:
+    - 380
+- id: qft.shared.schwartz-relations.e.traces-problem205
+  from: qft.align023.peskin.dirac-trace-identities-gamma5
+  to: qft.align024.problem-20-5-box-crossed-box-ir-diagnosis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-summed box calculation requires gamma-matrix reduction.
+  failure_mode: The loop numerator and IR test remain incomplete.
+  evidence:
+  - source: schwartz
+    section: Problem 20.5
+    pages:
+    - 380
+- id: qft.shared.schwartz-relations.edge-matching-to-twist
+  from: qft.schwartz.dis-leading-power-forward-compton-matching-route
+  to: qft.align013.shared.dis-leading-twist-operator-basis-and-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Matching explains why the leading DIS basis is constructed and power
+    selected.
+  failure_mode: The basis appears without its forward-amplitude derivation.
+  evidence:
+  - source: schwartz
+    section: Chapter 32
+    pages:
+    - 690
+    - 691
+    - 692
+- id: qft.shared.schwartz-relations.problem-30-2-dirac-majorana-input
+  from: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  to: qft.align006.problem-30-2-neutrino-mass-bminusl-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task distinguishes which neutrino mass terms preserve or break lepton
+    number.
+  failure_mode: Dirac and Majorana cases cannot be classified.
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: qft.shared.schwartz-relations.problem-30-2-majorana-charge-input
+  from: qft.align020.majorana-charge-conjugacy-and-u1-neutrality
+  to: qft.align006.problem-30-2-neutrino-mass-bminusl-anomaly
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Majorana masses are incompatible with a conserved continuous lepton charge.
+  failure_mode: The U(1) consequence of a Majorana mass is unavailable.
+  evidence:
+  - source: schwartz
+    section: Problems 30.1-30.4
+    pages:
+    - 640
+- id: qft.shared.schwartz-relations.problem-31-1-four-fermi-input
+  from: qft.align039.tree-level-four-fermi-matching
+  to: qft.align025.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise starts from the low-energy charged-current four-Fermi interaction.
+  failure_mode: The decay operator and normalization are missing.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.shared.schwartz-relations.problem-31-4a-loop-input
+  from: qft.align043.qed-fermion-line-and-loop-evaluation
+  to: qft.align025.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The loop includes charged fermion propagation, photon vertices, traces,
+    and momentum integration.
+  failure_mode: The fermionic part of the full one-loop amplitude cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.shared.schwartz-relations.problem-31-4c-renorm
+  from: qft.align051.qcd-renormalization-constants-and-ms-uv-trick
+  to: qft.align025.problem-31-4c-bsgamma-qcd
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) requests order-alpha_s effective-theory corrections, which require
+    UV renormalization.
+  failure_mode: Without renormalization constants and the MS pole prescription, the
+    correction is not defined.
+  evidence:
+  - source: schwartz
+    section: 31.3.2; Problems 31.1-31.4
+    pages:
+    - 662
+    - 663
+    - 666
+- id: qft.shared.schwartz-relations.qcd-renorm-to-bsgamma-running
+  from: qft.align051.qcd-renormalization-constants-and-ms-uv-trick
+  to: qft.align025.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dipole anomalous dimension is extracted from its MS ultraviolet counterterms.
+  failure_mode: No anomalous dimension can be obtained from the loop poles.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 664
+    - 666
+- id: qft.shared.weinberg-relations.accepted-normalization-to-operator-actions
+  from: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  to: qft.align026.weinberg-1.creation-annihilation-actions-on-fock-states
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The annihilation action is derived by taking scalar products and substituting
+    the established permutation normalization.
+  failure_mode: Without that normalization, the removal sum and its exchange signs
+    do not follow.
+  evidence:
+  - source: weinberg-1
+    section: 4.1–4.2
+    pages:
+    - 172
+    - 173
+    note: The packet uses the all-permutation normalization to derive the annihilation
+      action.
+- id: qft.shared.weinberg-relations.angular-coupling-to-general-scalar-couplings
+  from: qft.align026.weinberg-1.angular-momentum-coupling-orthogonality
+  to: qft.align033.general-lorentz-scalar-couplings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The separate A and B index contractions are ordinary angular-momentum
+    scalar couplings.
+  failure_mode: The Wigner-symbol construction is unexplained.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 235
+    - 236
+    note: The source constructs each factor by coupling ordinary spins to a scalar.
+- id: qft.shared.weinberg-relations.auxiliary-route-to-sigma-problem
+  from: qft.align037.auxiliary-field-constraint-interaction-picture-route
+  to: qft.align037.problem-nonlinear-sigma-canonical-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for canonical quantization and an interaction-picture
+    interaction.
+  failure_mode: Without the canonical-to-interaction-picture route, neither requested
+    construction is available.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 7
+    pages:
+    - 337
+    note: Problem 1 asks for canonical quantization and V in the interaction picture.
+- id: qft.shared.weinberg-relations.background-method-to-sun-problem
+  from: qft.align032.constant-background-one-loop-gauge-coupling-method
+  to: qft.align014.sun-scalar-loop-gauge-beta-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem expressly recommends a constant background-field calculation
+    for the requested scalar-loop contribution.
+  failure_mode: Without the recommended background-field method, the source-specified
+    calculation route is absent.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 158
+    - 159
+    note: The problem names background field gauge with a constant background as its
+      recommended method.
+- id: qft.shared.weinberg-relations.canonical-action-to-constraint-structure
+  from: qft.align015.canonical-field-action-formalism
+  to: qft.first-class-electromagnetic-constraints-and-gauge-choice-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The primary constraint is obtained by taking canonical derivatives of
+    the electromagnetic Lagrangian.
+  failure_mode: Without canonical momenta, Π⁰=0 and its incompatibility with unconstrained
+    brackets cannot be formulated.
+  evidence:
+  - source: weinberg-1
+    section: '8.2'
+    pages:
+    - 344
+    note: The source defines canonical conjugates to Aμ and derives Π⁰=0 from the
+      absence of A⁰ time derivatives.
+- id: qft.shared.weinberg-relations.cluster-theorem-to-cluster-route
+  from: qft.align026.weinberg-1.perturbative-single-delta-cluster-theorem
+  to: qft.align033.cluster-decomposition-local-field-interaction-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field expansion is evaluated against the accepted cluster theorem's
+    condition.
+  failure_mode: The conclusion that the local interaction clusters is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 197
+    note: The source says the resulting form guarantees cluster decomposition.
+- id: qft.shared.weinberg-relations.connected-delta-counting-to-loop-count
+  from: qft.align026.weinberg-1.connected-graph-delta-counting
+  to: qft.align036.graph-loop-number-and-tree-integrals
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The new loop formula specializes the accepted connected-graph momentum-delta
+    counting to arbitrary component number.
+  failure_mode: Without the connected delta-counting relation, the remaining independent-momentum
+    count lacks its graph-theoretic starting point.
+  evidence:
+  - source: weinberg-1
+    section: '6.3'
+    pages:
+    - 282
+    - 283
+    note: The source counts independent integrals from vertex deltas and states the
+      loop relation.
+- id: qft.shared.weinberg-relations.connected-prescription-to-cubic-problem
+  from: qft.align026.weinberg-1.connected-diagram-perturbative-prescription
+  to: qft.align036.problem-cubic-scalar-scattering-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task specifically asks for the connected S-matrix element, so disconnected
+    diagrams must be excluded by the connected-diagram prescription.
+  failure_mode: Without the connected prescription, the requested connected amplitude
+    is not isolated.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 1 explicitly asks for the connected S-matrix element.
+- id: qft.shared.weinberg-relations.connected-prescription-to-quartic-loop-problem
+  from: qft.align026.weinberg-1.connected-diagram-perturbative-prescription
+  to: qft.align036.problem-quartic-scalar-loop-correction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correction to a scattering S-matrix element is the connected contribution.
+  failure_mode: Without connected-diagram selection, unrelated disconnected terms
+    are included.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 3 asks for the scalar-scattering correction.
+- id: qft.shared.weinberg-relations.connected-prescription-to-quartic-tree-problem
+  from: qft.align026.weinberg-1.connected-diagram-perturbative-prescription
+  to: qft.align036.problem-quartic-scalar-tree-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The S-matrix scattering contribution is selected from connected diagrams.
+  failure_mode: Without connected-diagram selection, vacuum and disconnected contributions
+    can be retained.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 3 asks for a scalar-scattering S-matrix element.
+- id: qft.shared.weinberg-relations.connected-prescription-to-yukawa-problem
+  from: qft.align026.weinberg-1.connected-diagram-perturbative-prescription
+  to: qft.align036.problem-yukawa-diagram-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task calls for connected diagrams, which are selected by the established
+    connected-diagram prescription.
+  failure_mode: Without it, disconnected contributions are not excluded.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 6
+    pages:
+    - 290
+    note: Problem 2 explicitly requests connected order-g² diagrams.
+- id: qft.shared.weinberg-relations.coupling-normalization-prerequisite-vector-vertices
+  from: qft.yang-mills-coupling-normalization
+  to: qft.yang-mills-three-and-four-vector-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg's identification of the vertex factors as first and second order
+    in couplings relies on the convention that couplings are contained in the structure
+    constants.
+  failure_mode: The stated coupling order of the cubic and quartic vertices cannot
+    be interpreted in the source's convention.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 24
+    note: The source explicitly recalls that C_{αβγ} contains coupling-constant factors
+      when assigning vertex orders.
+- id: qft.shared.weinberg-relations.covariant-derivative-prerequisite-bianchi
+  from: qft.covariant-derivative
+  to: qft.covariant-yang-mills-equation-and-bianchi
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The identity is derived from the covariant-derivative commutator.
+  failure_mode: The cyclic identity cannot be formed or checked without adjoint covariant
+    differentiation.
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 13
+    note: The source says to derive the identities using the earlier commutator relation.
+- id: qft.shared.weinberg-relations.current-conservation-to-propagator-cancellation
+  from: qft.noether-current-and-conserved-charge
+  to: qft.align046.photon-propagator-coulomb-contact-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Current conservation removes the qμ and qν propagator terms when they
+    act as current derivatives.
+  failure_mode: Without conserved currents, the longitudinal propagator terms do contribute
+    and the covariant replacement fails.
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 354
+    - 355
+    note: The text says the q factors do not contribute because the coupled currents
+      satisfy the conservation condition, then identifies the cancellation.
+- id: qft.shared.weinberg-relations.dirac-adjoint-notation-to-bilinears
+  from: qft.align054.matrix-spinor-and-antifield-notation
+  to: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The construction begins by defining the barred Dirac adjoint used in
+    every bilinear.
+  failure_mode: The distinction between a row adjoint and the covariant barred spinor
+    is lost.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 228
+    note: The source introduces the new adjoint before classifying bilinears.
+- id: qft.shared.weinberg-relations.dirac-notation-to-dirac-rest-intertwiners
+  from: qft.align054.spacetime-index-and-dirac-notation
+  to: qft.align033.dirac-rest-intertwiners-select-spin-half
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac rest-spinor construction uses the source's gamma-matrix and
+    index conventions.
+  failure_mode: The spinor components and matrices used in the intertwiner equations
+    are ambiguous.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.5
+    pages:
+    - 217
+    - 220
+    note: The explicit gamma representation is used in the Dirac coefficient calculation.
+- id: qft.shared.weinberg-relations.dis-connection-to-twist
+  from: qft.align013.shared.dis-analytic-dispersion-and-moment-route
+  to: qft.weinberg-2.dis-forward-compton-moment-to-leading-twist-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor representation of the nucleon matrix elements supplies rank
+    s and the large-q power counting that defines the relevant twist.
+  failure_mode: Without the dispersion/OPE tensor setup, twist dominance cannot be
+    linked to W1 and W2.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 276
+    - 277
+    note: The source categorizes OPE operators by Lorentz tensors before defining
+      twist.
+- id: qft.shared.weinberg-relations.dyson-to-coordinate-pairing
+  from: qft.align026.weinberg-1.interaction-picture-dyson-series
+  to: qft.align016.feynman-diagram-representation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pairing calculation expands the interaction-picture S matrix in time-ordered
+    Dyson terms.
+  failure_mode: Without the Dyson matrix element, there are no perturbative field
+    insertions to pair.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 259
+    - 261
+    note: The source begins with the interaction-picture perturbation expansion and
+      evaluates its matrix elements by pairings.
+- id: qft.shared.weinberg-relations.dyson-to-source-functional
+  from: qft.align026.weinberg-1.interaction-picture-dyson-series
+  to: qft.align021.source-generating-functional-and-functional-derivatives
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source proof differentiates the Dyson expansion after adding source
+    couplings.
+  failure_mode: Without the time-ordered perturbative expansion, the insertion theorem
+    cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: '6.4'
+    pages:
+    - 287
+    - 288
+    note: The source adds the external coupling and differentiates the Dyson expansion
+      to obtain the insertion theorem.
+- id: qft.shared.weinberg-relations.edge-quark-doublets-to-ckm
+  from: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
+  to: qft.weinberg-2.gim-doublets-to-ckm-mass-basis-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The multiple doublets motivate the general three-generation mass-basis
+    mixing analysis.
+  failure_mode: The cancellation example could be confused with the complete origin
+    of the CKM matrix.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 313
+    - 314
+    - 315
+- id: qft.shared.weinberg-relations.edge-su3-mass-eft-to-problem5
+  from: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  to: qft.align022.weinberg-2.problem-small-three-flavor-axion-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The accepted leading SU(3) pseudoscalar mass matrix supplies the u,d,s
+    mass dependence that must be extended along the PQ axion direction.
+  failure_mode: Without the three-flavor quark-mass potential and mixing, the requested
+    dependence on all three light masses cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 5 explicitly requests the axion mass when u, d, and s masses are
+      all small.
+- id: qft.shared.weinberg-relations.edge-threeflavor-to-problem5
+  from: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  to: qft.align022.weinberg-2.problem-small-three-flavor-axion-mass
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A u,d,s axion-mass derivation needs the accepted constrained three-flavor
+    U field to represent the pseudoscalar degrees of freedom.
+  failure_mode: Without the three-flavor U field, the strange pseudoscalar direction
+    requested by the problem cannot be represented.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 474
+    note: Problem 5 explicitly requires the small u,d,s mass case.
+- id: qft.shared.weinberg-relations.external-determinant-to-euler-heisenberg-one-loop-matching
+  from: qft.align046.external-dirac-field-determinant-loop-expansion
+  to: qft.align038.euler-heisenberg-matching-and-light-by-light-eft
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: For the Euler-Heisenberg one-loop route, integrating out the electron
+    requires using the fermionic functional integral as a determinant and expanding
+    its trace logarithm as closed fermion loops. This is jointly required with the
+    spinor-QED operator edge, and applies only to deriving the electron-integrated
+    one-loop matching construction rather than to a supplied EFT result or generic
+    matching prescription.
+  failure_mode: Without the determinant and trace-log loop expansion, the electron
+    functional integral cannot be evaluated into the closed-loop contribution that
+    is matched to the low-energy photon EFT.
+  evidence:
+  - source: weinberg-1
+    section: '9.5'
+    pages:
+    - 412
+    - 413
+    note: The external-field Dirac path integral yields a determinant, whose expansion
+      is interpreted as fermion loops with the loop sign and disconnected-loop exponentiation.
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 524
+    note: The Euler-Heisenberg construction explicitly integrates the electron out
+      in a one-loop functional integral over the QED action.
+- id: qft.shared.weinberg-relations.fock-brackets-to-coordinate-pairing
+  from: qft.align026.weinberg-1.canonical-fock-commutation-relations
+  to: qft.align016.feynman-diagram-representation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation commutes or anticommutes creation and annihilation operators
+    to isolate pairing brackets.
+  failure_mode: Without the brackets, the pairing factors and fermion signs cannot
+    be calculated.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 261
+    note: The source starts the derivation by repeatedly applying the bracket relations.
+- id: qft.shared.weinberg-relations.fock-brackets-to-fermion-signs
+  from: qft.align026.weinberg-1.canonical-fock-commutation-relations
+  to: qft.align043.qed-fermion-exchange-and-loop-signs
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Odd fermionic operator exchanges create the signs.
+  failure_mode: Without anticommutation, there is no basis for the relative or loop
+    signs.
+  evidence:
+  - source: weinberg-1
+    section: '6.1'
+    pages:
+    - 267
+    note: The text traces the signs to permutations of fermion operators.
+- id: qft.shared.weinberg-relations.fock-brackets-to-general-propagator
+  from: qft.align026.weinberg-1.canonical-fock-commutation-relations
+  to: qft.align036.general-field-propagator-polynomial-numerator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fock brackets contract the creation and annihilation operators in the
+    two field factors.
+  failure_mode: Without these brackets, the coefficient sums in the propagator numerator
+    are not obtained.
+  evidence:
+  - source: weinberg-1
+    section: '6.2'
+    pages:
+    - 274
+    note: The source evaluates the contraction with the particle creation and annihilation
+      brackets.
+- id: qft.shared.weinberg-relations.fock-brackets-to-scalar-validation
+  from: qft.align026.weinberg-1.canonical-fock-commutation-relations
+  to: qft.align037.scalar-lagrangian-hamiltonian-validation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar free Hamiltonian used for the check is fixed by the canonical
+    Fock realization.
+  failure_mode: Without the bracket realization, the normal-mode Hamiltonian being
+    recovered is not established.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 302
+    note: The source identifies the recovered expression with the previously derived
+      free-particle Hamiltonian.
+- id: qft.shared.weinberg-relations.free-fields-to-canonical-identification
+  from: qft.align026.weinberg-1.canonical-fock-commutation-relations
+  to: qft.align037.free-field-canonical-variable-identification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equal-time canonical field brackets are checked from the free-field operator
+    brackets.
+  failure_mode: Without them, the claimed canonical pairs cannot be verified.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 293
+    - 295
+    note: The source begins from the free-field commutators and anticommutators to
+      identify canonical pairs.
+- id: qft.shared.weinberg-relations.free-hamiltonian-to-free-legendre
+  from: qft.align026.weinberg-1.additive-operator-and-free-hamiltonian-form
+  to: qft.align037.free-hamiltonian-to-lagrangian-legendre-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The method starts from the free-particle Hamiltonian that must be reproduced.
+  failure_mode: Without the target H₀, no Lagrangian is selected by the Legendre construction.
+  evidence:
+  - source: weinberg-1
+    section: '7.1'
+    pages:
+    - 297
+    note: The source states that the free-particle Hamiltonian must hold and asks
+      which Lagrangian gives it.
+- id: qft.shared.weinberg-relations.free-hamiltonian-to-scalar-validation
+  from: qft.align026.weinberg-1.additive-operator-and-free-hamiltonian-form
+  to: qft.align037.scalar-lagrangian-hamiltonian-validation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Validation compares the scalar free part with the independently established
+    free-particle Hamiltonian.
+  failure_mode: Without the free-Hamiltonian target, the claimed validation has no
+    criterion.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 302
+    note: The source says this calculation is a check against the Hamiltonian already
+      derived for free particles.
+- id: qft.shared.weinberg-relations.gauge-field-restrictions-evidence-theta-nonperturbative
+  from: qft.gauge-field-lagrangian-restrictions
+  to: qft.yang-mills-theta-term-qualification
+  relation: evidence
+  source_level: recognize
+  target_level: use
+  necessity: necessary
+  rationale: The prior record identifies the parity-odd theta term and its perturbative
+    derivative property; the following source page supplies the nonperturbative qualification.
+  failure_mode: The p. 8 continuation could be mistaken for a claim about a different
+    gauge-field term.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The opening sentence refers back to the preceding term and states its nonperturbative
+      effects.
+- id: qft.shared.weinberg-relations.gauge-independence-alternative-xi-gauge
+  from: qft.faddeev-popov-gauge-fixing-independence
+  to: qft.generalized-xi-gauge-propagator
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The theorem permits changing from axial gauge to the Lorentz-covariant
+    ξ-gauge route for Feynman rules.
+  failure_mode: Without the theorem, changing gauge would be an unsupported replacement
+    rather than an equivalent calculation route.
+  evidence:
+  - source: weinberg-2
+    section: '15.5'
+    pages:
+    - 22
+    - 23
+    note: The source invokes the theorem before choosing the Gaussian B and Lorentz-invariant
+      f^a.
+- id: qft.shared.weinberg-relations.gh-coordinates-to-goldstone-action
+  from: qft.align018.nonlinear-goldstone-coordinate-realizations
+  to: qft.align017.anomaly-matching-goldstone-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The construction separates broken Xa and unbroken Yi generators and uses
+    one ζa per broken generator.
+  failure_mode: Without G/H coordinates, the gauge transformation that removes ζ cannot
+    be stated.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 409
+    - 410
+    note: The source defines the broken/unbroken generator split and Goldstone fields.
+- id: qft.shared.weinberg-relations.goldberger-treiman-to-pi0-rate
+  from: qft.align018.goldberger-treiman-relation
+  to: qft.align006.pi0-two-photon-anomaly-color-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source compares the proton-loop normalization with the anomaly result
+    through Goldberger–Treiman.
+  failure_mode: Without Goldberger–Treiman, the stated gA² qualification of the proton-loop
+    comparison cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 368
+    note: The source explicitly invokes Goldberger–Treiman in the proton-loop comparison.
+- id: qft.shared.weinberg-relations.heavy-trapped-framing-evidence-ghost-loops
+  from: qft.gauge-theory-ghost-loop-historical-framing
+  to: qft.ghost-loop-compensation-of-unphysical-gauge-modes
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The opening explicitly warns that Lagrangian-inspection Feynman rules
+    require additional ghost loops; the accepted later record supplies the chapter's
+    detailed ghost-loop account.
+  failure_mode: Without this caution, a learner may treat naive Lagrangian-inspection
+    rules as complete for a non-Abelian gauge theory.
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 2
+    note: The source explicitly says that naive Feynman rules require additional ghost
+      loops.
+- id: qft.shared.weinberg-relations.high-energy-realpart-to-pomeranchuk
+  from: qft.align026.weinberg-1.high-energy-boundary-layer-forward-amplitude
+  to: qft.align060.weinberg-1.generalized-pomeranchuk-and-photon-kramers-kronig
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The conditional Pomeranchuk argument uses the Section 3.7 high-energy
+    expectation that the forward real part becomes much smaller than the imaginary
+    part.
+  failure_mode: Without this asymptotic real/imaginary comparison, unequal logarithmic
+    cross-section coefficients do not yield the stated contradiction.
+  evidence:
+  - source: weinberg-1
+    section: '10.8'
+    pages:
+    - 468
+    note: The source explicitly invokes Section 3.7 and experiment for the small-real-part
+      high-energy premise.
+- id: qft.shared.weinberg-relations.local-microcausality-to-boost-specialization
+  from: qft.align026.weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  to: qft.align016.interacting-boost-smoothness-lorentz-sufficiency
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: For the scalar local interaction, the source constructs W and verifies
+    the abstract boost commutator and smoothness conditions.
+  failure_mode: Calling this an alternative would miss that it is a sufficient specialization
+    that supplies the abstract proof’s hypotheses.
+  evidence:
+  - source: weinberg-1
+    section: '3.5'
+    pages:
+    - 145
+    note: The source derives W, states the smoothness property, and says causality
+      yields the remaining commutator condition.
+- id: qft.shared.weinberg-relations.microcausality-to-causal-combination
+  from: qft.align026.weinberg-1.local-scalar-interaction-microcausality-lorentz-s-matrix
+  to: qft.align033.causal-combination-of-creation-and-annihilation-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The combined field is introduced to satisfy the spacelike commutation
+    condition required for Lorentz-invariant interactions.
+  failure_mode: The cancellation condition loses the S-matrix locality requirement
+    it is designed to meet.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 198
+    note: The text gives the microcausal bracket condition as the reason to combine
+      field pieces.
+- id: qft.shared.weinberg-relations.minimal-trivial-prerequisite-open-bv
+  from: qft.bv-minimal-variables-and-trivial-pairs
+  to: qft.bv-open-algebra-master-equation-consistency-tower
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The open-algebra expansion distinguishes the nonlinear minimal sector
+    from the bilinear trivial pairs that do not introduce the stated complications.
+  failure_mode: Treating antighost and auxiliary trivial pairs as part of the nonlinear
+    open-algebra mechanism obscures which antifield terms encode open closure.
+  evidence:
+  - source: weinberg-2
+    section: '15.9'
+    pages:
+    - 44
+    - 45
+    note: Page 44 separates the sectors and page 45 attributes the field-equation
+      terms to higher antifield powers in the minimal action.
+- id: qft.shared.weinberg-relations.multicoupling-flow-to-ir-directions
+  from: qft.align012.multicoupling-fixed-point-stability-matrix
+  to: qft.align014.fixed-point-relevant-eigendirection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The infrared classifications are assigned from the eigenvalues of the
+    same linearized fixed-point flow.
+  failure_mode: Without the stability eigenvalue analysis, relevant, marginal, and
+    irrelevant have no defined RG meaning.
+  evidence:
+  - source: weinberg-2
+    section: 18.4; 18.5
+    pages:
+    - 140
+    - 145
+    note: The critical-phenomena section explicitly classifies the fixed-point stability
+      eigenvectors.
+- id: qft.shared.weinberg-relations.nonabelian-field-strength-evidence-self-interaction
+  from: qft.nonabelian-field-strength
+  to: qft.nonabelian-curvature-and-self-interactions
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The nonlinear A A term in the existing field strength is the source of
+    the interactions in its quadratic kinetic term.
+  failure_mode: Without the nonlinear field-strength term, the claimed unavoidable
+    self-interaction has no displayed origin.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 8
+    note: The text identifies the interaction terms as arising from the quadratic
+      field-strength term.
+- id: qft.shared.weinberg-relations.old-fashioned-perturbation-theory-energy-denominators-to-bound-state-coulomb-resummation-scale
+  from: qft.align026.weinberg-1.old-fashioned-perturbation-theory-energy-denominators
+  to: qft.align061.weinberg-1.bound-state-coulomb-resummation-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factor e^2m_e/q is obtained by multiplying an old-fashioned intermediate-state
+    energy denominator, Coulomb matrix element, and momentum integral.
+  failure_mode: Without energy-denominator perturbation theory, the stated scaling
+    calculation cannot be performed.
+  evidence:
+  - source: weinberg-1
+    section: '14'
+    pages:
+    - 564
+    note: The source switches specifically to time-ordered old-fashioned diagrams
+      to count the intermediate-state denominator.
+- id: qft.shared.weinberg-relations.one-delta-hypothesis-to-cluster-route
+  from: qft.align026.weinberg-1.single-delta-hamiltonian-coefficient-hypothesis
+  to: qft.align033.cluster-decomposition-local-field-interaction-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local-field argument identifies its coefficient with the required
+    one-delta form.
+  failure_mode: The cluster claim loses its stated single-delta criterion.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 197
+    note: The source explicitly identifies one momentum-conservation delta as the
+      cluster form.
+- id: qft.shared.weinberg-relations.one-loop-gauge-factors-to-sun-problem
+  from: qft.align032.weinberg-constant-background-beta-route
+  to: qft.align014.sun-scalar-loop-gauge-beta-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Calculating the requested scalar contribution requires the one-loop gauge-coupling
+    divergence framework and representation group factors.
+  failure_mode: Without the group-factor divergence calculation, the scalar loop cannot
+    be converted into a beta-function contribution.
+  evidence:
+  - source: weinberg-2
+    section: 18.7; Problems 1
+    pages:
+    - 152
+    - 158
+    - 159
+    note: The chapter uses the general gauge group factors immediately before the
+      problem asks for the analogous scalar-loop calculation.
+- id: qft.shared.weinberg-relations.one-loop-nonabelian-to-qcd-beta
+  from: qft.align032.weinberg-constant-background-beta-route
+  to: qft.align014.qcd-one-loop-beta-and-active-flavors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(3) specialization substitutes its color and quark representation
+    factors into the general non-Abelian one-loop divergence.
+  failure_mode: Without the general gauge and matter group-factor result, the QCD
+    residue and flavor threshold condition cannot be calculated.
+  evidence:
+  - source: weinberg-2
+    section: '18.7'
+    pages:
+    - 152
+    note: The source invokes the earlier general-gauge result and its C1 and C2 factors
+      before specializing to SU(3).
+- id: qft.shared.weinberg-relations.operator-inversions-to-dirac-pc
+  from: qft.align026.weinberg-1.creation-operator-symmetry-transformation-rules
+  to: qft.align033.dirac-antiparticle-parity-majorana-reality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field parity and charge-conjugation laws compare its mode expansion
+    with the discrete actions on creation and annihilation operators.
+  failure_mode: Without the operator transformation rules, the field-level phase and
+    Majorana relations cannot be obtained from the mode expansion.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 225
+    - 226
+    note: Without the operator transformation rules, the field-level phase and Majorana
+      relations cannot be obtained from the mode expansion.
+- id: qft.shared.weinberg-relations.operator-inversions-to-dirac-time-reversal
+  from: qft.align026.weinberg-1.creation-operator-symmetry-transformation-rules
+  to: qft.align033.dirac-time-reversal-phase-and-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac time-reversal law applies the antiunitary operator transformation
+    to the field's mode expansion.
+  failure_mode: Without the operator time-reversal rule, the field transformation
+    and phase comparison cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 227
+    - 228
+    note: Without the operator time-reversal rule, the field transformation and phase
+      comparison cannot be derived.
+- id: qft.shared.weinberg-relations.operator-inversions-to-general-ct
+  from: qft.align026.weinberg-1.creation-operator-symmetry-transformation-rules
+  to: qft.align033.general-field-charge-and-time-reversal-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general charge-conjugation and time-reversal relations apply the
+    corresponding particle operator actions to the field expansion.
+  failure_mode: Without the operator transformations, the general field-level charge
+    and time reversal phase relations do not follow.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 241
+    - 242
+    - 243
+    note: Without the operator transformations, the general field-level charge and
+      time reversal phase relations do not follow.
+- id: qft.shared.weinberg-relations.operator-inversions-to-general-parity
+  from: qft.align026.weinberg-1.creation-operator-symmetry-transformation-rules
+  to: qft.parity-covariance-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general parity relation follows by applying the particle and antiparticle
+    parity actions to the causal field expansion.
+  failure_mode: Without the operator parity rule, the intrinsic-parity relation cannot
+    be derived from the field coefficients.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 239
+    - 240
+    - 241
+    note: Without the operator parity rule, the intrinsic-parity relation cannot be
+      derived from the field coefficients.
+- id: qft.shared.weinberg-relations.operator-inversions-to-spin-one
+  from: qft.align026.weinberg-1.creation-operator-symmetry-transformation-rules
+  to: qft.align033.spin-one-inversion-phase-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-one field transformation is obtained by applying the discrete
+    symmetry rules to its creation and annihilation operators.
+  failure_mode: Without the operator rules, the particle-antiparticle phase constraints
+    cannot be extracted from the vector mode expansion.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 212
+    - 213
+    note: Without the operator rules, the particle-antiparticle phase constraints
+      cannot be extracted from the vector mode expansion.
+- id: qft.shared.weinberg-relations.operator-symmetry-to-field-intertwining
+  from: qft.align026.weinberg-1.creation-operator-symmetry-transformation-rules
+  to: qft.align033.lorentz-field-intertwining-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coefficient equations follow by combining the desired field law with
+    the operator transformation law.
+  failure_mode: The momentum-dependent Wigner matrix in the coefficient condition
+    is unexplained.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 193
+    - 194
+    note: The source inserts the creation and annihilation transformation rules into
+      the field covariance demand.
+- id: qft.shared.weinberg-relations.optical-theorem-to-forward-dispersion
+  from: qft.align026.weinberg-1.generalized-optical-theorem-from-s-unitarity
+  to: qft.align060.weinberg-1.subtracted-forward-dispersion-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The observable form of the dispersion relation uses the optical theorem
+    to identify its discontinuity with total cross-sections.
+  failure_mode: Without the optical theorem, the analytic discontinuity is not converted
+    into the stated measurable cross-sections.
+  evidence:
+  - source: weinberg-1
+    section: '10.8'
+    pages:
+    - 466
+    - 467
+    note: The source inserts complete intermediate states and then invokes the optical
+      theorem in the forward-amplitude relation.
+- id: qft.shared.weinberg-relations.original-mass-obstacle-evidence-heavy-trapped-framing
+  from: qft.yang-mills-historical-mass-obstacle
+  to: qft.gauge-theory-ghost-loop-historical-framing
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The page-2 heavy/trapped framing gives the source's later physical context
+    for the massless-vector obstacle recorded at the chapter opening.
+  failure_mode: Without the earlier massless-vector obstacle, the significance of
+    the source's heavy-particle alternative is left unspecified.
+  evidence:
+  - source: weinberg-2
+    section: 15 opening
+    pages:
+    - 2
+    note: The source states that gauge-associated spin-one particles may be very heavy
+      after spontaneous breakdown of gauge symmetry.
+- id: qft.shared.weinberg-relations.pion-decay-constant-to-pi0-rate
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align006.pi0-two-photon-anomaly-color-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The anomaly is matched using δπ⁰=αFπ, so the decay-constant normalization
+    is required.
+  failure_mode: Without Fπ normalization, the effective coupling and rate normalization
+    are undetermined.
+  evidence:
+  - source: weinberg-2
+    section: '22.2'
+    pages:
+    - 368
+    note: The source gives the pion transformation with Fπ before fixing the anomalous
+      interaction.
+- id: qft.shared.weinberg-relations.positive-metric-prerequisite-coupling-normalization
+  from: qft.compact-simple-lie-algebra-classification
+  to: qft.yang-mills-coupling-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factor decomposition of the invariant metric is what is rescaled
+    to define the coupling convention.
+  failure_mode: One cannot justify which constants are normalized away or transferred
+    into generators without the metric decomposition.
+  evidence:
+  - source: weinberg-2
+    section: '15.2'
+    pages:
+    - 11
+    - 12
+    note: The rescaling begins from the factorized form of the metric.
+- id: qft.shared.weinberg-relations.qcd-representation-to-twist-operators
+  from: qft.align014.qcd-su3-quark-color-representation
+  to: qft.weinberg-2.dis-forward-compton-moment-to-leading-twist-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed leading basis uses quark flavors, gluons, and gauge-covariant
+    derivatives of QCD.
+  failure_mode: Without the QCD field representation, the quark and gluon operator
+    labels and covariant derivatives are undefined.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 277
+    - 278
+    note: The source gives separate quark-flavor and gluon leading operators.
+- id: qft.shared.weinberg-relations.renormalizable-lagrangian-prerequisite-direct-renormalization
+  from: qft.renormalizable-yang-mills-lagrangian-truncation
+  to: qft.direct-brst-renormalizability-induction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The direct classification assumes the displayed dimension-four Yang–Mills
+    matter and gauge Lagrangian.
+  failure_mode: The conclusion that the allowed form matches the starting Lagrangian
+    cannot be made without its stated field-content and power-counting scope.
+  evidence:
+  - source: weinberg-2
+    section: '17.2'
+    pages:
+    - 82
+    - 89
+    note: The proof uses dimension-four power counting and explicitly sets aside scalar-dependent
+      terms.
+- id: qft.shared.weinberg-relations.renormalizable-lagrangian-prerequisite-field-equation
+  from: qft.renormalizable-yang-mills-lagrangian-truncation
+  to: qft.total-current-and-covariant-matter-current
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The displayed field equation is obtained by varying the selected renormalizable
+    Lagrangian.
+  failure_mode: Including the excluded higher-derivative terms would change the field
+    equation and current.
+  evidence:
+  - source: weinberg-2
+    section: '15.3'
+    pages:
+    - 12
+    note: The source specifies the Lagrangian and immediately derives its gauge-field
+      equations.
+- id: qft.shared.weinberg-relations.resonance-pole-energy-and-decay-width-to-bound-state-energy-shift-from-propagator-pole
+  from: qft.align026.weinberg-1.resonance-pole-energy-and-decay-width
+  to: qft.align061.weinberg-1.bound-state-energy-shift-from-propagator-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The interpretation Im(delta E_N)=-Gamma/2 imports the Chapter 3 relation
+    between an unstable-state pole and its decay rate.
+  failure_mode: Without the resonance-pole result, the complex self-energy matrix
+    element has no supplied decay-width interpretation.
+  evidence:
+  - source: weinberg-1
+    section: '14.2'
+    pages:
+    - 576
+    note: The source explicitly recalls the Chapter 3 pole E-i Gamma/2 to identify
+      the imaginary part.
+- id: qft.shared.weinberg-relations.spacetime-notation-to-vector-polarizations
+  from: qft.align054.spacetime-index-and-dirac-notation
+  to: qft.align033.massive-spin-one-polarization-coefficients
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The polarization and projector calculation uses the source's four-vector
+    index and metric conventions.
+  failure_mode: The signs and index contractions in the polarization sum are ambiguous.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 209
+    - 210
+    note: The vector polarization construction and projector use four-vector notation.
+- id: qft.shared.weinberg-relations.stationary-action-to-hamilton-legendre
+  from: qft.field-euler-lagrange-equation
+  to: qft.canonical-field-momentum-hamiltonian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Legendre transform uses the conjugate-field definition and is shown
+    equivalent to the field equations.
+  failure_mode: Without the Lagrangian variational framework, the transform cannot
+    supply the stated equations.
+  evidence:
+  - source: weinberg-1
+    section: '7.2'
+    pages:
+    - 301
+    note: The source introduces the transform using the preceding conjugate-field
+      definition.
+- id: qft.shared.weinberg-relations.su3-mesons-to-eta-problem
+  from: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  to: qft.align017.problem-eta-to-two-photons-leading-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The η task specifies the leading strange-mass limit, requiring the three-flavor
+    pseudoscalar mass content.
+  failure_mode: Without the SU(3) pseudoscalar mass input, the stated m_s expansion
+    has no meson identification.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 416
+    note: Problem 1 asks for η decay to leading order in ms with mu=md=0.
+- id: qft.shared.weinberg-relations.time-ordered-propagator-to-photon-cancellation
+  from: qft.align036.feynman-propagator-time-ordered-correlator
+  to: qft.align046.photon-propagator-coulomb-contact-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The calculation starts from the photon propagator as a time-ordered vacuum
+    correlator.
+  failure_mode: Without the time-ordered-correlator definition, the field-mode insertion
+    has no propagator object to evaluate.
+  evidence:
+  - source: weinberg-1
+    section: '8.5'
+    pages:
+    - 353
+    note: The source defines the internal photon-line factor as a vacuum expectation
+      value of a time-ordered product.
+- id: qft.shared.weinberg-relations.topological-statistics-alternative-to-cluster-route
+  from: qft.align046.path-integral-topological-bose-fermi-statistics-proof
+  to: qft.align026.weinberg-1.bose-fermi-exchange-symmetry-cluster-argument
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This gives a separate path-topology and composition route to the Bose–Fermi
+    alternatives, with its own d≥3 and two-dimensional qualifications.
+  failure_mode: Treating the cluster argument as necessary would erase the independent
+    topological derivation.
+  evidence:
+  - source: weinberg-1
+    section: '9.7'
+    pages:
+    - 419
+    - 420
+    note: The source derives the permutation representation condition and separately
+      states the braid-group exception.
+- id: qft.shared.weinberg-relations.wzw-to-qcd-wzw
+  from: qft.align044.wess-zumino-witten-term-and-integer-coefficient
+  to: qft.align017.qcd-wess-zumino-witten-action-and-color-coefficient
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source identifies the resulting five-dimensional functional as the
+    prior Wess-Zumino-Witten action and imports its extension property.
+  failure_mode: Without the accepted WZW construction, the boundary-extension qualification
+    cannot be established.
+  evidence:
+  - source: weinberg-2
+    section: '22.7'
+    pages:
+    - 415
+    note: The source explicitly identifies Eq. (22.7.33) with the Wess-Zumino-Witten
+      action and invokes the earlier extension result.
+- id: qft.shared.weinberg-relations.zinn-justin-prerequisite-bv-cohomological-renormalization
+  from: qft.align011.zinn-justin-equation-for-quantum-effective-action
+  to: qft.bv-cohomological-renormalization-general-gauge-theories
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general proof constrains the divergent Nth-order quantum effective
+    action with the Zinn–Justin equation.
+  failure_mode: The cohomological condition on the divergent effective action does
+    not follow from the master equation for counterterms alone.
+  evidence:
+  - source: weinberg-2
+    section: '17.3'
+    pages:
+    - 93
+    - 94
+    note: Equation (17.3.9) is identified as the Zinn–Justin condition on the divergent
+      effective action.
 - id: qft.sourced-maxwell-to-coulomb-potential
   from: qft.sourced-maxwell-equations-from-action
   to: qft.coulomb-potential-from-field-propagation

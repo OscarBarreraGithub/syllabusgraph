@@ -2,7 +2,7 @@
 
 **Model-reviewed textbook graph:** 634 concepts and 844 relationships. Accepted units cover printed pages 3–263, 265–345, 347–391, 393–471, 473–649, 651–777, 779, 781–810; exact topic scopes and exclusions are in [review.yaml](review.yaml).
 
-Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. The whole-book assessment and its resolved or pending amendments are recorded in the reconciliation report. Cross-volume correspondence and shared-graph alignment remain in progress. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
+Terra/high extracts the material; independent Sol/high review precedes each promotion. The end human audit is pending. The whole-book assessment and the shared-graph relationship reconciliation are complete at the model-review stage; their reports retain source-specific scope and final decisions. A listed page range records reviewed scope, not a claim that every topic on a pilot page was extracted.
 
 This graph describes the book independently of any audience, course, or schedule. Textbooks, extracted passages, source-page renderings, and processing records remain private.
 

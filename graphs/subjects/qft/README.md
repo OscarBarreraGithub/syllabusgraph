@@ -1,8 +1,8 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs contain 2351 reviewed concepts. The shared graph contains 2153 concepts and 3173 relationships, mapping 2351 distinct book concepts through explicit origins.
+**Model-reviewed graph collection:** four independent textbook graphs contain 2351 reviewed concepts. The shared graph contains 2156 concepts and 3319 relationships, mapping 2351 distinct book concepts through explicit origins.
 
-Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. The combined relationship assessment is accepted; 147 source-backed relationship repairs remain. Shared source repairs must finish before calling graph construction complete.
+Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph has completed model review**, and the end human audit is pending. All accepted textbook concepts and all 2,857 source relationship identities have reviewed shared realizations or explicit source-scope dispositions.
 
 | Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
@@ -11,7 +11,7 @@ Terra/high performs extraction and alignment; independent Sol/high review preced
 | [Weinberg I](../../textbooks/weinberg-1/README.md) | 1–189, 191–595 | 483 | 631 |
 | [Weinberg II](../../textbooks/weinberg-2/README.md) | 1–59, 63–247, 252–474 | 359 | 410 |
 
-The reviewed inventories account for 2,646 numbered pages and 605 section entries. Accepted full extraction scopes cover all 2646 of those pages; narrow pilots are excluded from that measure. The historical page denominator retains three explicitly annotated title-only dividers, which require no concept nodes. Each book links its accepted whole-book conceptual-coverage and dependency assessment. Shared concept mappings and the combined assessment are accepted; the reconciliation report tracks the remaining source relationship repairs. [Read the final inventory decision](review-decisions.yaml).
+The reviewed inventories account for 2,646 numbered pages and 605 section entries. Accepted full extraction scopes cover all 2646 of those pages; narrow pilots are excluded from that measure. The historical page denominator retains three explicitly annotated title-only dividers, which require no concept nodes. Each book links its accepted whole-book conceptual-coverage and dependency assessment. Shared alignment and the combined relationship audit are model-reviewed, with no pending source relationship repairs. [Read the final inventory decision](review-decisions.yaml).
 
 [Read the shared graph](knowledge/graph.yaml) · [Shared reconciliation](reconciliation.md) · [Source relationship ledger](relationships.json) · [Coverage and review record](review.yaml) · [Final scientific decisions](adjudications.yaml) · [Time and usage](usage.md) · [Graph bank instructions](../../README.md)
 
@@ -80,4 +80,4 @@ python scripts/check_graph_bank.py
 
 These commands work from a clone without textbooks, private caches, or a model account. Extending the graphs requires access to the cited material and the usual independent review. Put references in a project's ignored `materials/` directory; extraction records and quote witnesses stay in `.syllabusgraph/`. See the [PDF reading guide](../../../docs/pdf-reading.md) for adaptable setup.
 
-All textbook concepts are mapped; the combined relationship assessment is the remaining scientific review. Coleman and Weinberg III are outside this initial scope. QFT I/II course design follows graph construction; the [roadmap](../../../docs/roadmap.md) records the task of identifying the right questions about goals, background, depth, time, and assessment.
+Graph construction and model review are complete. The end human audit and subsequent course-design choices remain separate next steps. Coleman and Weinberg III are outside this initial scope. QFT I/II course design follows graph construction; the [roadmap](../../../docs/roadmap.md) records the task of identifying the right questions about goals, background, depth, time, and assessment.

@@ -1,10 +1,10 @@
 # Shared graph reconciliation
 
-The shared graph contains **2,153 concepts and 3,173 relationships**. Its explicit origins map all 2,351 concepts from the four independently reviewed textbook graphs. This review concerns knowledge and derivation structure; it does not choose a course audience or timetable.
+The shared graph contains **2,156 concepts and 3,319 relationships**. Its explicit origins map all 2,351 concepts from the four independently reviewed textbook graphs. This review concerns knowledge and derivation structure; it does not choose a course audience or timetable.
 
 Terra/high assessed the combined graph; Sol/high reviewed that assessment and made its final decisions. The assessment covered all **2,857 source-book relationship identities**. It identified 230 cases needing source-backed repair or a more precise explanation. Three bounded repair batches use the same mandatory independent review, at most one producer correction, and final Sol adjudication when necessary.
 
-**83 of 230 cases are resolved; 147 remain pending.**
+**All 230 cases are resolved in promoted, model-reviewed work.**
 
 The **end human audit remains pending**. Model review does not establish mathematical infallibility or classroom effectiveness. The [relationship ledger](relationships.json) preserves each original source edge separately from its shared realization, including changes of role or direction. [Scientific decisions](adjudications.yaml) record final choices and alternatives.
 
@@ -13,15 +13,16 @@ The **end human audit remains pending**. Model review does not establish mathema
 | Batch | Source relationships resolved |
 |---|---:|
 | `shared-relations-001-evidence` | 83 |
+| `shared-relations-002` | 81 |
+| `shared-relations-003` | 66 |
 
 ## Current relationship dispositions
 
 | Disposition | Source relationships |
 |---|---:|
 | absorbed | 38 |
-| issue | 147 |
-| represented-existing | 3 |
-| represented-new | 80 |
+| represented-existing | 4 |
+| represented-new | 226 |
 | reviewed-role-change | 2 |
 | supported-edge | 2525 |
 | supported-route | 62 |
@@ -48,7 +49,7 @@ Supported correspondence for massless helicity-one gauge redundancy, two physica
 
 Audited baseline: `sha256:d33c6e071bddeffaf1e4edbe994c9f2ef62646db058a5312b609d87b3ece82c7`.
 
-Current graph: `sha256:b55249b81056b21d237d29c4451a5865720367e17da5de001a0a44c04111b0a3`.
+Current graph: `sha256:5f55bb4fec0de5609648bf92e19f3a9f94bcaffa1a4d1ce095aa2a315603d42a`.
 
 The four source graph digests and all accepted repair identifiers are in the relationship ledger. The public repository contains derived graphs, citations, decisions, and reports. Textbooks, quoted source witnesses, page images, and native processing records stay in ignored local storage.
 
