@@ -6,21 +6,21 @@ goal are not included in its token or elapsed-time counters.
 
 | Measurement | Recorded value |
 |---|---:|
-| Goal tracker tokens | 53,012,163 |
-| Goal tracker elapsed hours | 19.78 |
-| Recorded dispatches in this interval | 419 |
-| Recorded native results | 409 |
+| Goal tracker tokens | 54,458,865 |
+| Goal tracker elapsed hours | 20.48 |
+| Recorded dispatches in this interval | 444 |
+| Recorded native results | 434 |
 | Distinct worker sessions confirmed in results | 210 |
 | Dispatches with failure records | 8 |
 
-Goal counters were observed through 2026-09-15T00:19:59+00:00; dispatch and
-graph totals were collected at 2026-09-15T00:20:52.842795+00:00. These are cumulative
+Goal counters were observed through 2026-09-15T01:01:35+00:00; dispatch and
+graph totals were collected at 2026-09-15T01:01:35.576112+00:00. These are cumulative
 observations; do not add successive snapshots together.
 
 | Requested model and effort | Recorded dispatches | Recorded results |
 |---|---:|---:|
-| `gpt-5.6-sol` / high | 241 | 233 |
-| `gpt-5.6-terra` / high | 178 | 176 |
+| `gpt-5.6-sol` / high | 251 | 243 |
+| `gpt-5.6-terra` / high | 193 | 191 |
 
 The current host allows one orchestrator and up to three workers. Historical
 peak concurrency and active worker hours were not measured. A worker can handle
@@ -29,8 +29,8 @@ Failures can also have recorded results, so those columns overlap too.
 
 At this snapshot, 4 textbook graphs have completed model review,
 with 2,351 nodes and 2,857 relationships.
-The shared graph has 949 nodes and 997 relationships,
-representing 1083 book concepts. Shared construction and its
+The shared graph has 992 nodes and 1070 relationships,
+representing 1129 book concepts. Shared construction and its
 combined audit remain in progress; the end human audit is pending.
 
 The token counter does not expose input, cached-input, output or per-model

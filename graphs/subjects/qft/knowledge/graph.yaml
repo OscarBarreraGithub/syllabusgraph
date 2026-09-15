@@ -7570,10 +7570,15 @@ nodes:
     note: 'The book’s ± labels are traditional: the +iε equation is the in-state boundary
       condition and the −iε equation is the out-state boundary condition.'
 - label: Invariant phase space and cross-section formula
-  summary: For narrow initial wavepackets and finite detector resolution, the differential
-    cross section is flux inverse times |M|^2 times Lorentz-invariant n-body phase
-    space. Two-body center-of-mass kinematics gives the familiar angular form; identical
-    final particles require restricting configurations or dividing by n!.
+  summary: 'For narrow initial wavepackets and finite detector resolution, the differential
+    cross section is incident-flux inverse times |M|² and Lorentz-invariant n-body
+    phase space. Two-body center-of-mass kinematics gives the familiar angular form;
+    identical final particles require restricting configurations or dividing by n!.
+    Weinberg defines the two-particle flux as uα/V and fixes uα by requiring uαE1E2
+    to be a Lorentz scalar: uα=sqrt[(p1·p2)²−m1²m2²]/(E1E2). Its center-of-mass value
+    need not be a physical velocity. His two-body reduction uses four-momentum conservation
+    and the remaining energy delta function to fix the final momentum magnitude, yielding
+    the displayed differential decay and scattering formulas.'
   kind: result
   evidence:
   - source: peskin-schroeder
@@ -7582,6 +7587,21 @@ nodes:
     - 106
     - 107
     - 108
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 137
+    - 138
+    - 139
+    note: The source defines flux and cross-section, derives the invariant spin sum
+      and relative-velocity expression, and qualifies its center-of-mass interpretation.
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 139
+    - 140
+    note: Equations (3.4.20)–(3.4.30) reduce the phase space and state the two-body
+      rate and cross-section formulas.
   id: qft.align016.lorentz-invariant-phase-space-cross-section
   group: qft.align016.observables
   origins:
@@ -7590,7 +7610,21 @@ nodes:
     note: Preserves this reviewed source treatment, including its stated assumptions,
       notation, and proof or application scope; this correspondence asserts only the
       shared core stated here.
-  notation: []
+  - project: weinberg-1
+    node: weinberg-1.cross-section-flux-and-invariant-relative-velocity
+    note: Retains Weinberg’s uα/V flux definition, invariant relative-velocity normalization,
+      and center-of-mass non-velocity caveat.
+  - project: weinberg-1
+    node: weinberg-1.two-body-phase-space-and-cross-section
+    note: Retains Weinberg’s separate two-body delta-function reduction and its displayed
+      rate/cross-section normalization.
+  notation:
+  - source: weinberg-1
+    note: uα=sqrt[(p1·p2)²−m1²m2²]/(E1E2); it equals the other particle’s velocity
+      only in the specified rest frame and can exceed one in the center-of-mass frame.
+  - source: weinberg-1
+    note: The two-body final quantities are primed and k′ is fixed by the remaining
+      energy delta function.
 - label: LSZ boundary-operator derivation
   summary: Integration by parts relates ∫d⁴x e^{ipx}(□+m²)φ(x) to √(2ω_p)[a_p(∞)−a_p(−∞)].
     Time ordering then causes unwanted operators to annihilate the vacuum, yielding
@@ -15667,6 +15701,809 @@ nodes:
     - 329
     - 330
   notation: []
+- id: qft.align025.chiral-fermion-vacuum-polarization-integrals
+  label: Chiral-fermion vacuum-polarization integrals
+  summary: For unequal fermion masses, the source evaluates LL/RR and chirality-flipping
+    LR/RL vacuum-polarization integrals in dimensional regularization. The equal-mass
+    vector sum reproduces the QED vacuum polarization, furnishing a check before using
+    the chiral pieces for electroweak self energies.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.chiral-fermion-vacuum-polarization-integrals
+    note: Retains unequal-mass chiral decomposition, dimensional-regularization expressions,
+      and equal-mass QED check.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 649
+    - 650
+  notation: []
+- id: qft.align025.ckm-unitarity-cancels-oblique-divergences
+  label: CKM unitarity cancels oblique divergences
+  summary: The divergent scale-dependent parts of the quark-loop oblique self energies
+    cancel using Q_t-Q_b=1 and CKM unitarity. CKM factors drop from the divergent
+    Pi_WW terms; after neglecting light-quark finite masses the leading finite treatment
+    sets V_tb=1 and keeps the top-bottom loop.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.ckm-unitarity-cancels-oblique-divergences
+    note: Retains charge and CKM-unity cancellation, light-mass approximation, and
+      V_tb=1 leading-top convention.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 651
+  notation: []
+- id: qft.align025.color-fierz-reduction-in-weak-matching
+  label: Color and Fierz reduction in weak matching
+  summary: The SU(N) generator identity and chiral Fierz identities reduce the one-loop
+    crossed color and gamma structures to two current contractions. The displayed
+    full-theory graph is IR divergent but UV finite, a distinction retained in the
+    reduction route.
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.color-fierz-reduction-in-weak-matching
+    note: Retains the generator identity, chiral Fierz reduction, two-contraction
+      outcome, and UV/IR qualification.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 661
+  notation: []
+- id: qft.align025.custodial-symmetry-and-rho-relation
+  label: Custodial symmetry and the rho relation
+  summary: A single Higgs doublet yields rho=m_W-squared/(m_Z-squared cos-squared
+    theta_w)=1 at tree level. Its SO(4)-to-SO(3) breaking gives custodial SU(2), which
+    also equates the weak neutral- and charged-current strengths in the low-energy
+    description; massless two-flavor QCD has the analogous SU(2)_L times SU(2)_R to
+    SU(2)_V symmetry, while Higgs-triplet sectors generally do not.
+  kind: concept
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.custodial-su2-and-rho-tree-relation
+    note: Retains the single-doublet rho relation and SO(4) to SO(3) custodial-symmetry
+      explanation.
+  - project: schwartz
+    node: schwartz.custodial-symmetry-as-current-strength-equality
+    note: Retains the current-strength interpretation, QCD analogy, and Higgs-triplet
+      qualification; correspondence is the shared custodial core.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 654
+    - 655
+  notation: []
+- id: qft.align025.delta-rho-doublet-mass-splitting
+  label: Delta rho from doublet mass splitting
+  summary: Delta rho is the neutral-minus-charged Fermi-strength ratio and equals
+    Pi_WW(0)/m_W-squared-Pi_ZZ(0)/m_Z-squared at this order. A split doublet gives
+    the stated mass-dependent function, which vanishes for equal masses; the large
+    top-bottom splitting gives the leading Standard-Model contribution.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.delta-rho-doublet-mass-splitting
+    note: Retains the current-strength definition, self-energy relation, degenerate-doublet
+      limit, and leading top-bottom specialization.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 655
+  notation: []
+- id: qft.align025.effective-charge-vacuum-polarization-matching
+  label: Effective charge from vacuum polarization
+  summary: At Q=m_Z, the source relates the effective and MS charges by hat-e-squared=e-squared/[1-Pi-gamma-gamma(m_Z-squared)/m_Z-squared],
+    or its one-loop expansion. Photon vacuum polarization carries the running logarithms
+    included in the effective charge.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.effective-charge-vacuum-polarization-matching
+    note: Retains the Q=m_Z condition, MS/effective-charge distinction, and vacuum-polarization
+      qualification.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 646
+  notation: []
+- id: qft.align025.fiducial-input-scheme-and-tree-level-tension
+  label: Fiducial input scheme and tree-level tension
+  summary: With hat-alpha_e(m_Z), hat-G_F, and hat-m_Z as fiducial inputs, hat-s satisfies
+    hat-s-squared(1-hat-s-squared)=pi hat-alpha_e(m_Z)/(sqrt(2) hat-G_F hat-m_Z-squared).
+    The resulting tree m_W and A_e miss the data, so this mismatch calls for loop
+    corrections and parameter renormalization rather than a tree-level contradiction.
+  kind: assumption
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.fiducial-input-scheme-and-tree-level-tension
+    note: Retains the particular hatted input scheme, root choice, numerical tree-level
+      tension, and interpretation.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 643
+    - 644
+  notation: []
+- id: qft.align025.four-fermi-eigenoperators-and-leading-log-running
+  label: Four-Fermi eigenoperators and leading-log running
+  summary: Diagonalizing the two-operator matrix gives O0=(O1+O2)/2 and O3=(O1-O2)/2,
+    with gamma0=alpha_s/pi and gamma3=-2alpha_s/pi. For five active flavors, integrating
+    these RGEs from m_W to m_b gives the source's leading-log coefficient powers 6/23
+    and -12/23.
+  kind: result
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.four-fermi-eigenoperators-and-leading-log-running
+    note: Retains eigenoperator definitions, mass-independent UV-symmetry qualification,
+      n_f=5 interval, and leading-log exponents.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+  notation: []
+- id: qft.align025.four-fermi-operator-mixing-rge
+  label: Four-Fermi operator-mixing RGE
+  summary: 'Renormalization of O1 and O2 and the quark fields gives a coupled one-loop
+    anomalous-dimension matrix: mu dC1/dmu=alpha_s(-C1+3C2)/(2pi) and mu dC2/dmu=alpha_s(3C1-C2)/(2pi).
+    The RGE follows by requiring the bare effective Lagrangian to be mu independent.'
+  kind: result
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.four-fermi-operator-mixing-rge
+    note: Retains coupled operator basis, counterterm/field-renormalization origin,
+      displayed RGE, and bare-Lagrangian condition.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 664
+  notation: []
+- id: qft.align025.leading-top-and-higgs-oblique-dependence
+  label: Leading top and Higgs oblique dependence
+  summary: For m_b tending to zero and m_Z much less than m_t, the leading top contribution
+    grows as m_t-squared/m_Z-squared. The source's leading Higgs corrections to m_W
+    and s_eff-squared are logarithmic in m_h-squared/m_W-squared, and its numerical
+    table distinguishes tree, top-bottom one-loop, and top-bottom-plus-Higgs predictions.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.leading-top-and-higgs-oblique-dependence
+    note: Retains the stated mass hierarchy, leading top scaling, logarithmic Higgs
+      dependence, and table comparison.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 653
+  notation: []
+- id: qft.align025.matching-ir-cancellation-consistency-test
+  label: Infrared cancellation as a matching consistency test
+  summary: EFT counterterms remove UV poles while EFT loops reproduce the full-theory
+    IR poles, leaving IR-finite Wilson coefficients. If IR poles failed to cancel
+    after integrating out W, the two theories would have different infrared degrees
+    of freedom, so the calculation would not be a pure short-distance matching.
+  kind: result
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.matching-ir-cancellation-consistency-test
+    note: Retains UV-counterterm role, IR-pole comparison, Wilson-coefficient finiteness,
+      and degrees-of-freedom diagnostic.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 663
+  notation: []
+- id: qft.align025.muon-decay-fermi-constant-oblique-matching
+  label: Muon-decay Fermi matching
+  summary: Muon decay gives hat-G_F/sqrt(2)=e-squared[1-Pi_WW(0)/m_W-squared+ellipsis]/(8s-squared
+    c-squared m_Z-squared). At this order the formula uses the MS m_Z because Pi_ZZ
+    does not correct muon decay.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.muon-decay-fermi-constant-oblique-matching
+    note: Retains the muon-decay observable, zero-momentum W self-energy, MS-mass
+      qualification, and perturbative scope.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 646
+  notation: []
+- id: qft.align025.new-fermion-doublet-stu-constraints
+  label: New fermion-doublet S and T constraints
+  summary: For a new fermion doublet, the source gives S and T as functions of multiplicity,
+    hypercharge, and the two masses. Splitting breaks custodial isospin through T,
+    while a degenerate multiplet can still yield an excluded S contribution.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.new-fermion-doublet-stu-constraints
+    note: Retains multiplicity, hypercharge, splitting, custodial, and degenerate-S
+      qualifications.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
+  notation: []
+- id: qft.align025.oblique-corrections-strategy-and-scope
+  label: Oblique-correction strategy and scope
+  summary: Express the fiducial inputs through MS e, m_Z, and s; invert those relations;
+    compute other observables in MS parameters; then substitute. In this treatment
+    the retained leading finite, gauge-invariant oblique loops are top-bottom and
+    Higgs contributions.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.oblique-corrections-strategy-and-scope
+    note: Retains the inversion route and the source's stated oblique-loop scope.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 644
+  notation: []
+- id: qft.align025.oblique-inversion-and-mw-prediction
+  label: Oblique inversion and W-mass prediction
+  summary: Invert the one-loop charge, Fermi-constant, and Z-pole relations through
+    the source's Pi_R combination, then substitute them into the W-pole relation.
+    The result predicts m_W,pole and A_e from hatted inputs and the indicated self
+    energies, up to the working one-loop order.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.oblique-inversion-and-mw-prediction
+    note: Retains the input inversion, Pi_R route, predicted observables, and one-loop
+      truncation.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 648
+  notation: []
+- id: qft.align025.off-shell-one-loop-matching-ir-artifact
+  label: Off-shell one-loop matching infrared artifact
+  summary: At order alpha_s, bbar c to ubar d can be matched with on-shell states
+    or with all external momenta set to zero. The zero-momentum dimensional-regularization
+    route has fewer scales but introduces IR divergences; these are matching artifacts
+    rather than physical Wilson-coefficient dependence.
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.off-shell-one-loop-matching-ir-artifact
+    note: Retains the two matching choices, zero-momentum computational advantage,
+      and IR-artifact qualification.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+  notation: []
+- id: qft.align025.peskin-takeuchi-stu-definitions-and-reference
+  label: Peskin-Takeuchi S, T, and U with reference subtraction
+  summary: S, T, and U package new-physics contributions to electroweak vacuum polarizations;
+    T=(rho-1)/alpha_e at the stated order and probes custodial violation. Each parameter
+    uses the source's Standard-Model reference subtraction, so zero is convention
+    dependent; the plotted fits additionally assume U=0.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.peskin-takeuchi-stu-definitions-and-reference
+    note: Retains the definitions, new-physics/reference subtraction, T-rho relation,
+      and fit convention.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
+  notation: []
+- id: qft.align025.pole-mass-self-energy-relation
+  label: Pole mass from transverse self energy
+  summary: For gauge bosons coupled to essentially massless conserved currents, the
+    transverse self energy controls the relevant pole relation; at one loop m_Z,pole-squared=m_Z-squared+Pi_ZZ(m_Z-squared),
+    with the source qualifying the real-part prescription and finite-width line shape
+    separately.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.pole-mass-self-energy-relation
+    note: Retains conserved-current scope, transverse projection, real-part convention,
+      and unstable-pole qualification.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 645
+  notation: []
+- id: qft.align025.precision-electroweak-input-observables
+  label: Precision electroweak input observables
+  summary: 'The precision discussion focuses on lepton and electroweak-gauge-boson
+    observables: electron magnetic moment, muon lifetime, Z and W pole masses, and
+    the Z-production electron asymmetry A_e; quark observables are deferred to the
+    flavor section and later chapters.'
+  kind: concept
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.precision-electroweak-input-observables
+    note: Retains the listed observable family and its stated lepton/gauge-boson scope.
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 642
+  notation: []
+- id: qft.align025.problem-31-1-muon-four-fermi-width
+  label: 'Problem 31.1: tree muon four-Fermi width'
+  summary: Calculate the tree-level four-Fermi-theory rate for mu-minus to e-minus
+    nubar_e nu_mu and verify the source's Eq. (31.3).
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-1-muon-four-fermi-width
+    note: Retains the exact requested decay, tree/four-Fermi scope, and verification
+      task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-2a-zwidth-tree
+  label: 'Problem 31.2(a): tree Z width'
+  summary: Evaluate the supplied tree-level Z-to-e-plus-e-minus width and determine
+    how many standard deviations it misses the stated measurement.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-2a-zwidth-tree
+    note: Retains the supplied width, numerical evaluation, comparison request, and
+      task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-2b-zwidth-ms
+  label: 'Problem 31.2(b): Z width in MS parameters'
+  summary: Derive the one-loop Z-to-e-plus-e-minus width in terms of MS Lagrangian
+    parameters.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-2b-zwidth-ms
+    note: Retains the one-loop, MS-parameter, derivation, and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-2c-zwidth-vacpol
+  label: 'Problem 31.2(c): Z width from vacuum polarizations'
+  summary: Derive the Z-to-e-plus-e-minus width in terms of vacuum-polarization graphs.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-2c-zwidth-vacpol
+    note: Retains the vacuum-polarization representation request and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-2d-zwidth-numeric
+  label: 'Problem 31.2(d): numerical one-loop Z width'
+  summary: Evaluate the Z-to-e-plus-e-minus width numerically at one loop and compare
+    it with experiment.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-2d-zwidth-numeric
+    note: Retains numerical one-loop evaluation, experimental comparison, and task
+      boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-3-higgs-vacuum-polarizations
+  label: 'Problem 31.3: Higgs vacuum polarizations'
+  summary: Calculate the Higgs contributions to the vacuum-polarization graphs exactly
+    and verify the leading behavior in Eqs. (31.68) and (31.69).
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-3-higgs-vacuum-polarizations
+    note: Retains exact-Higgs-loop calculation, specified leading-behavior verification,
+      and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-4a-bsgamma-rate
+  label: 'Problem 31.4(a): Standard-Model b to s gamma rate'
+  summary: Calculate the Standard-Model b to s gamma rate with the photon emitted
+    from a W-boson loop.
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-4a-bsgamma-rate
+    note: Retains Standard-Model process, W-loop photon condition, requested rate,
+      and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-4b-bsgamma-match
+  label: 'Problem 31.4(b): tree b to s gamma EFT matching'
+  summary: Match b to s gamma at tree level onto an effective theory whose rate reproduces
+    the full process.
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-4b-bsgamma-match
+    note: Retains tree-level EFT matching, rate-reproduction condition, and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-4c-bsgamma-qcd
+  label: 'Problem 31.4(c): b to s gamma EFT QCD corrections'
+  summary: Evaluate the order-alpha_s corrections to the b to s gamma effective theory.
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-4c-bsgamma-qcd
+    note: Retains order-alpha_s EFT-correction scope and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.problem-31-4d-bsgamma-running
+  label: 'Problem 31.4(d): b to s gamma operator running'
+  summary: Evolve the b to s gamma operator from m_W to m_b and determine the size
+    of QCD radiative corrections to the decay rate.
+  kind: method
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.problem-31-4d-bsgamma-running
+    note: Retains m_W-to-m_b evolution, radiative-rate question, and task boundary.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+  notation: []
+- id: qft.align025.qcd-running-impact-on-vcb
+  label: QCD running impact on Vcb extraction
+  summary: The evolved O1,O2 coefficients raise the source's root-mean-square b to
+    c dbar u rate coefficient relative to tree level. If this correction were omitted
+    while using a known hadronic relation, the quadratic rate dependence would make
+    extracted |V_cb| too low and could falsely suggest CKM nonunitarity.
+  kind: result
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.qcd-running-impact-on-vcb
+    note: Retains the conditional hadronic input, coefficient comparison, quadratic-rate
+      inference, and false-nonunitarity warning.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+  notation: []
+- id: qft.align025.smeft-oblique-operator-shortcut
+  label: SMEFT shortcut for S and T
+  summary: Higher-dimension operators can generate S and T at tree level through their
+    Wilson coefficients. The source presents this as a shortcut for mapping a new-physics
+    model to precision observables instead of recomputing all vacuum-polarization
+    graphs.
+  kind: method
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.smeft-oblique-operator-shortcut
+    note: Retains higher-dimension operator scope, tree-level Wilson-coefficient mapping,
+      and shortcut boundary.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
+  notation: []
+- id: qft.align025.standard-model-parameter-count-and-overconstraint
+  label: Dirac-neutrino Standard Model parameter count and overconstraint
+  summary: Assuming Dirac neutrino masses, the source counts 27 Standard-Model parameters
+    and explains that infinitely many measurements can be functions of them because
+    the theory is renormalizable; precision tests therefore overconstrain the model.
+  kind: concept
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.standard-model-parameter-count-and-overconstraint
+    note: Retains the Dirac-neutrino assumption, 27-parameter count, renormalizability
+      rationale, and testability scope.
+  evidence:
+  - source: schwartz
+    section: '31'
+    pages:
+    - 641
+  notation: []
+- id: qft.align025.technicolor-s-parameter-constraint
+  label: Technicolor S-parameter constraint
+  summary: For QCD-like technicolor that preserves custodial isospin, T can remain
+    acceptable while S receives contributions proportional to the number of techniquarks.
+    The source uses this estimate to illustrate why precision S constraints challenge
+    simple technicolor models.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.technicolor-s-parameter-constraint
+    note: Retains the QCD-like, custodial-preservation, and illustrative-model scope.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 657
+  notation: []
+- id: qft.align025.top-bottom-oblique-self-energies
+  label: Top-bottom oblique self energies
+  summary: Using the chiral vacuum-polarization functions, the source constructs Pi_gamma-gamma,
+    Pi_gammaZ, Pi_WW, and Pi_ZZ for a top-bottom doublet, including N=3, charge/isospin
+    factors, the W-generator normalization, and V_tb dependence.
+  kind: representation
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.top-bottom-oblique-self-energies
+    note: Retains the displayed gamma, Z, and W self-energy construction and all normalization
+      qualifications.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 650
+    - 651
+  notation: []
+- id: qft.align025.top-ms-mass-and-one-loop-precision-prediction
+  label: MS top mass and one-loop precision prediction
+  summary: For the historical one-loop precision calculation, convert the experimentally
+    fitted top pole mass to the running MS mass to reduce higher-order logarithms,
+    then use the top-bottom self energies with the hatted inputs to predict m_W and
+    s_eff-squared. The pole-versus-MS difference is higher order at one loop but numerically
+    relevant beyond it because of quadratic top-mass dependence.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.top-ms-mass-and-one-loop-precision-prediction
+    note: Retains the pole-to-MS qualification, higher-order-log rationale, and one-loop
+      prediction scope.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 652
+  notation: []
+- id: qft.align025.tree-level-b-to-cud-four-fermi-matching
+  label: Tree-level b to c ubar d four-Fermi matching
+  summary: At energies far below m_W, tree W exchange for b to c ubar d is replaced
+    by a local current-current operator with coefficient G=4G_F V_cb V_ud-star/sqrt(2),
+    up to power corrections. The matching is illustrated with the stated full-theory
+    and effective-theory amplitudes.
+  kind: result
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.tree-level-b-to-cud-four-fermi-matching
+    note: Retains process, CKM coefficient, tree-level local replacement, and low-energy
+      power-suppression scope.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 659
+  notation: []
+- id: qft.align025.tree-level-electroweak-observable-formulas
+  label: Tree-level electroweak observable formulas
+  summary: At tree level the selected observables depend on three electroweak parameters,
+    equivalently alpha_e, sin-squared theta_w, and G_F; the source defines hatted
+    quantities from measurement and uses their tree algebra to form predicted observables.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.tree-level-electroweak-observable-formulas
+    note: Retains the tree-level parameterization and hatted-input convention.
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 642
+    - 643
+  notation:
+  - source: schwartz
+    note: Circumflexes denote values defined from the stated measurements, rather
+      than MS Lagrangian parameters.
+- id: qft.align025.two-operator-b-to-cud-matching-coefficients
+  label: Two-operator b to c ubar d matching coefficients
+  summary: One-loop matching needs two local operators O1=(cbar_L gamma_mu b_L)(dbar_L
+    gamma_mu u_L) and O2=(cbar_L gamma_mu u_L)(dbar_L gamma_mu b_L). Comparing full
+    and EFT amplitudes gives finite C1 and C2 at a matching scale near m_W, with their
+    IR poles cancelling between the theories.
+  kind: result
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.two-operator-b-to-cud-matching-coefficients
+    note: Retains the two operator definitions, one-loop coefficient determination,
+      near-m_W scale choice, and IR cancellation qualification.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 662
+    - 663
+  notation: []
+- id: qft.align025.vcb-hadronic-extraction-and-large-log-problem
+  label: Vcb extraction and large-log problem
+  summary: The hadronic B-to-D-pi rate is proportional to |V_cb|-squared but has nonperturbative
+    uncertainty. Conditional on knowing that relation, QCD corrections to b to c ubar
+    d generate alpha_s log(m_W/m_b) terms that can distort the low-scale V_cb extraction
+    relative to the electroweak scale where CKM unity is tested.
+  kind: concept
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.vcb-hadronic-extraction-and-large-log-problem
+    note: Retains the assumed hadronic relation, nonperturbative limitation, scale
+      comparison, and large-log motivation.
+  evidence:
+  - source: schwartz
+    section: '31.3'
+    pages:
+    - 658
+  notation: []
+- id: qft.align025.weak-effective-hamiltonian-standard-basis
+  label: Standard weak effective-Hamiltonian basis
+  summary: For reusable weak-decay work, integrate out short-distance physics near
+    m_W, match onto a standard operator basis including O1 through O9, and use precomputed
+    evolution. The source identifies the dipole O7gamma as mediating FCNC b to s gamma;
+    it does not derive that full basis here.
+  kind: concept
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.weak-effective-hamiltonian-standard-basis
+    note: Retains the near-m_W matching workflow, O1-to-O9 basis reference, O7gamma
+      example, and non-derivation boundary.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+    - 666
+  notation: []
+- id: qft.align025.weak-effective-lagrangian-locality-and-power-suppression
+  label: Weak EFT locality and power suppression
+  summary: For E much less than m_W and m_Z, a local weak effective Lagrangian with
+    operators built from fields, covariant derivatives, and QED/QCD strengths reproduces
+    full weak physics up to powers of E/m_W. Wilson coefficients may depend on mu
+    and heavy parameters but not external momenta; the source defers the OPE proof.
+  kind: assumption
+  group: qft.align025.weak-effective-theory
+  origins:
+  - project: schwartz
+    node: schwartz.weak-effective-lagrangian-locality-and-power-suppression
+    note: Retains low-energy condition, locality, power suppression, external-state
+      independence, and deferred-OPE proof boundary.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 658
+    - 659
+  notation: []
+- id: qft.align025.zgamma-mixing-effective-angle-and-ae
+  label: Z-photon mixing and effective electron asymmetry
+  summary: Z-photon vacuum polarization changes the effective weak angle, s_eff-squared=s-squared-sc
+    Pi_gammaZ(m_Z-squared)/m_Z-squared, and hence the chiral Z-electron couplings
+    entering A_e. This is a one-loop correction to the MS-Lagrangian tree expression.
+  kind: result
+  group: qft.align025.precision-electroweak
+  origins:
+  - project: schwartz
+    node: schwartz.zgamma-mixing-effective-angle-and-ae
+    note: Retains the effective-angle definition, A_e application, and one-loop MS
+      convention.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 647
+  notation: []
+- id: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  label: Asymptotic multiparticle state labels and normalization
+  summary: A noninteracting multiparticle state transforms as a direct product of
+    one-particle states. Its labels collect each momentum, spin component or massless
+    helicity, and species; the normalization includes exchange terms for identical
+    species, while the abbreviated label α and integration dα avoid counting identical-particle
+    exchanges twice.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.asymptotic-multiparticle-state-labels-and-normalization
+    note: Retains the direct-product asymptotic labels, identical-particle exchange
+      normalization, and restricted α integration without importing later interacting-state
+      constructions.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The text defines the direct-product asymptotic states, their labels, permutation
+      normalization, abbreviated label, integration, and completeness convention.
+  notation:
+  - source: weinberg-1
+    note: α abbreviates the full collection of individual momenta, spin components
+      or helicities, and particle-type labels; δ(β−α) includes momentum delta functions
+      and Kronecker deltas with allowed identical-particle permutations.
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -37034,6 +37871,1144 @@ edges:
     pages:
     - 364
     - 365
+- id: qft.align025.e-basis-problem4b
+  from: qft.align025.weak-effective-hamiltonian-standard-basis
+  to: qft.align025.problem-31-4b-bsgamma-match
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The matching task needs the local dipole representation of b to s gamma.
+  failure_mode: A current-current basis omits the radiative dipole.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 665
+    - 666
+- id: qft.align025.e-basis-problem4c
+  from: qft.align025.weak-effective-hamiltonian-standard-basis
+  to: qft.align025.problem-31-4c-bsgamma-qcd
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QCD correction renormalizes the weak basis containing O7gamma.
+  failure_mode: The specified dipole and mixing partners are absent.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 665
+    - 666
+- id: qft.align025.e-basis-problem4d
+  from: qft.align025.weak-effective-hamiltonian-standard-basis
+  to: qft.align025.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Evolution acts on the weak operator basis containing the dipole.
+  failure_mode: The b-to-c two-operator RGE is incorrectly substituted for b to s
+    gamma.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 665
+    - 666
+- id: qft.align025.e-charge-inversion
+  from: qft.align025.effective-charge-vacuum-polarization-matching
+  to: qft.align025.oblique-inversion-and-mw-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Input inversion starts from the charge relation.
+  failure_mode: The hatted-to-MS substitution lacks its charge equation.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 646
+    - 648
+- id: qft.align025.e-charge-problem-c
+  from: qft.align025.effective-charge-vacuum-polarization-matching
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Photon polarization converts the measured effective charge to MS charge.
+  failure_mode: The requested polarization expression lacks charge matching.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 646
+    - 666
+- id: qft.align025.e-ckm-prediction
+  from: qft.align025.ckm-unitarity-cancels-oblique-divergences
+  to: qft.align025.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The finite top-bottom simplification is used in the numerical prediction.
+  failure_mode: The stated leading-top loop selection is unjustified.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 651
+    - 652
+- id: qft.align025.e-custodial-deltarho
+  from: qft.align025.custodial-symmetry-and-rho-relation
+  to: qft.align025.delta-rho-doublet-mass-splitting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Delta rho quantifies violation of the custodially protected relation.
+  failure_mode: The physical meaning of the deviation is lost.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 654
+    - 655
+- id: qft.align025.e-decay-input-problem-31-1
+  from: qft.align016.decay-width-and-lorentz-time-dilation
+  to: qft.align025.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rate foundation converts the stated four-Fermi amplitude into the
+    requested muon width.
+  failure_mode: The requested decay-rate calculation has no rate-normalization foundation.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-decay-input-problem-31-2a
+  from: qft.align016.decay-width-and-lorentz-time-dilation
+  to: qft.align025.problem-31-2a-zwidth-tree
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tree Z-width task uses the accepted decay-rate conversion.
+  failure_mode: The task lacks its decay-rate normalization.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-decay-input-problem-31-2b
+  from: qft.align016.decay-width-and-lorentz-time-dilation
+  to: qft.align025.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The MS Z-width task still converts the amplitude into a decay width.
+  failure_mode: The one-loop task lacks its rate normalization.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-decay-input-problem-31-4a
+  from: qft.align016.decay-width-and-lorentz-time-dilation
+  to: qft.align025.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The radiative decay task requires a decay-rate conversion, independently
+    of its CKM and loop inputs.
+  failure_mode: The requested radiative rate is not normalized.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-deltarho-stu
+  from: qft.align025.delta-rho-doublet-mass-splitting
+  to: qft.align025.peskin-takeuchi-stu-definitions-and-reference
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: T is the normalized new-physics delta-rho quantity.
+  failure_mode: The custodial interpretation of T is absent.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 655
+    - 656
+- id: qft.align025.e-eft-tree-match
+  from: qft.align025.weak-effective-lagrangian-locality-and-power-suppression
+  to: qft.align025.tree-level-b-to-cud-four-fermi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Locality and E/m_W suppression justify replacing W exchange.
+  failure_mode: The local matching target is unjustified.
+  evidence:
+  - source: schwartz
+    section: 31.3.1
+    pages:
+    - 658
+    - 659
+- id: qft.align025.e-eigen-vcb
+  from: qft.align025.four-fermi-eigenoperators-and-leading-log-running
+  to: qft.align025.qcd-running-impact-on-vcb
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The impact uses the evolved coefficients.
+  failure_mode: No QCD-running correction is available for the rate inference.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 665
+- id: qft.align025.e-ew-bsgamma-rate
+  from: qft.align018.electroweak-gauge-mass-relations-and-self-interactions
+  to: qft.align025.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W-loop rate uses the electroweak W mass, coupling, and photon-W interaction.
+  failure_mode: The specified Standard-Model loop cannot be normalized or drawn.
+  evidence:
+  - source: schwartz
+    section: Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-fiducial-prediction
+  from: qft.align025.fiducial-input-scheme-and-tree-level-tension
+  to: qft.align025.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The prediction uses the hatted input definitions.
+  failure_mode: Its numerical input scheme is unspecified.
+  evidence:
+  - source: schwartz
+    section: 31.1.1-31.1.2
+    pages:
+    - 644
+    - 652
+- id: qft.align025.e-fierz-coefficients
+  from: qft.align025.color-fierz-reduction-in-weak-matching
+  to: qft.align025.two-operator-b-to-cud-matching-coefficients
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Fierz/color reduction exposes the two independent contractions.
+  failure_mode: The two-operator structure cannot be read from the loop.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 661
+    - 663
+- id: qft.align025.e-fierz-existing-core
+  from: qft.sun-products-fierz-and-anomaly-invariant
+  to: qft.align025.color-fierz-reduction-in-weak-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The weak loop uses the accepted SU(N) generator and Fierz identities.
+  failure_mode: The cited color/spinor reduction cannot be carried out.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 661
+- id: qft.align025.e-gf-inversion
+  from: qft.align025.muon-decay-fermi-constant-oblique-matching
+  to: qft.align025.oblique-inversion-and-mw-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Pi_R includes the muon-decay matching relation.
+  failure_mode: The G_F input cannot be converted to MS parameters.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 646
+    - 648
+- id: qft.align025.e-gf-problem-c
+  from: qft.align025.muon-decay-fermi-constant-oblique-matching
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: W polarization converts G_F to MS electroweak parameters.
+  failure_mode: The Fermi input is not represented by polarizations.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 646
+    - 666
+- id: qft.align025.e-heavy-w-to-btoc-matching
+  from: qft.peskin-local-operator-heavy-w-motivation
+  to: qft.align025.tree-level-b-to-cud-four-fermi-matching
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The accepted low-energy heavy-W motivation supports the source-specific
+    local b-to-c ubar d matching result.
+  failure_mode: The local four-Fermi replacement lacks its low-energy heavy-W basis.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 658
+    - 659
+- id: qft.align025.e-heavy-w-to-problem-31-1
+  from: qft.peskin-local-operator-heavy-w-motivation
+  to: qft.align025.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem’s four-Fermi muon interaction uses the accepted heavy-W local-operator
+    motivation as an independent input.
+  failure_mode: The supplied local interaction has no low-energy W rationale.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-higgs-doublet-problem3
+  from: qft.align018.standard-model-higgs-doublet-and-covariant-derivative
+  to: qft.align025.problem-31-3-higgs-vacuum-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The loops use the Higgs electroweak charges and covariant-derivative
+    vertices.
+  failure_mode: The scalar gauge vertices are unavailable.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 653
+    - 666
+- id: qft.align025.e-hvv-problem3
+  from: qft.align018.higgs-mass-and-hvv-couplings
+  to: qft.align025.problem-31-3-higgs-vacuum-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Exact Higgs loops require the mass and hVV couplings.
+  failure_mode: Their mass dependence and vertices cannot be constructed.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 653
+    - 666
+- id: qft.align025.e-inputs-fiducial
+  from: qft.align025.precision-electroweak-input-observables
+  to: qft.align025.fiducial-input-scheme-and-tree-level-tension
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The fiducial scheme selects measured electroweak inputs from this observable
+    set.
+  failure_mode: The definitions no longer have their specified experimental inputs.
+  evidence:
+  - source: schwartz
+    section: '31.1'
+    pages:
+    - 642
+    - 643
+- id: qft.align025.e-inputs-problem-d
+  from: qft.align025.precision-electroweak-input-observables
+  to: qft.align025.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical comparison uses the stated experimental width.
+  failure_mode: There is no specified experimental input for comparison.
+  evidence:
+  - source: schwartz
+    section: 31.1; Problems 31.1-31.4
+    pages:
+    - 642
+    - 666
+- id: qft.align025.e-integrals-problem-c
+  from: qft.align025.chiral-fermion-vacuum-polarization-integrals
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) requires a vacuum-polarization-graph expression.
+  failure_mode: The relevant loop functions are unavailable.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 649
+    - 650
+    - 666
+- id: qft.align025.e-inversion-prediction
+  from: qft.align025.oblique-inversion-and-mw-prediction
+  to: qft.align025.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Self energies enter observables through the inverted input relations.
+  failure_mode: The loop amplitudes are not converted to predictions.
+  evidence:
+  - source: schwartz
+    section: 31.1.1-31.1.2
+    pages:
+    - 648
+    - 652
+- id: qft.align025.e-inversion-problem-c
+  from: qft.align025.oblique-inversion-and-mw-prediction
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The observable is formed by inversion and self-energy substitution.
+  failure_mode: MS parameters cannot be expressed through measured inputs.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 648
+    - 666
+- id: qft.align025.e-inversion-problem-d
+  from: qft.align025.oblique-inversion-and-mw-prediction
+  to: qft.align025.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A numerical result first converts MS inputs to hatted observables.
+  failure_mode: The numerical calculation has incompatible inputs.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 648
+    - 666
+- id: qft.align025.e-leadinghiggs-problem3
+  from: qft.align025.leading-top-and-higgs-oblique-dependence
+  to: qft.align025.problem-31-3-higgs-vacuum-polarizations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task verifies the stated leading Higgs behavior.
+  failure_mode: There is no target asymptotic behavior to verify.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 653
+    - 666
+- id: qft.align025.e-locality-bsgamma-match
+  from: qft.align025.weak-effective-lagrangian-locality-and-power-suppression
+  to: qft.align025.problem-31-4b-bsgamma-match
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for a local effective theory reproducing the radiative
+    rate.
+  failure_mode: The matching target has no locality or power-suppression criterion.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 658
+    - 659
+    - 666
+- id: qft.align025.e-oblique-problem-b
+  from: qft.align025.oblique-corrections-strategy-and-scope
+  to: qft.align025.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) requests the MS representation used by the oblique route.
+  failure_mode: The requested parameterization lacks its source method.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 644
+    - 666
+- id: qft.align025.e-offshell-coefficients
+  from: qft.align025.off-shell-one-loop-matching-ir-artifact
+  to: qft.align025.two-operator-b-to-cud-matching-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Comparing off-shell full and EFT amplitudes determines the coefficients
+    after IR cancellation.
+  failure_mode: The matching calculation lacks its stated kinematic route.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+    - 663
+- id: qft.align025.e-offshell-ircheck
+  from: qft.align025.off-shell-one-loop-matching-ir-artifact
+  to: qft.align025.matching-ir-cancellation-consistency-test
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The zero-momentum choice explains why the IR poles appear.
+  failure_mode: The diagnostic's infrared poles lack their origin.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+    - 663
+- id: qft.align025.e-pole-inversion
+  from: qft.align025.pole-mass-self-energy-relation
+  to: qft.align025.oblique-inversion-and-mw-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The inversion includes the Z pole-mass relation.
+  failure_mode: The Z input is not tied to its self energy.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 645
+    - 648
+- id: qft.align025.e-pole-problem-b
+  from: qft.align025.pole-mass-self-energy-relation
+  to: qft.align025.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The physical width is evaluated at the corrected Z pole.
+  failure_mode: The width has no pole prescription.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 645
+    - 666
+- id: qft.align025.e-pole-problem-c
+  from: qft.align025.pole-mass-self-energy-relation
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The polarization expression uses the pole/self-energy relation.
+  failure_mode: The width's physical mass condition is absent.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 645
+    - 666
+- id: qft.align025.e-rg-bsgamma-running
+  from: qft.continuum-rg-running-coupling-large-log-method
+  to: qft.align025.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) explicitly evolves an operator from m_W to m_b.
+  failure_mode: The requested scale evolution cannot be performed.
+  evidence:
+  - source: schwartz
+    section: 31.3.3; Problems 31.1-31.4
+    pages:
+    - 664
+    - 665
+    - 666
+- id: qft.align025.e-rg-existing-core
+  from: qft.continuum-rg-running-coupling-large-log-method
+  to: qft.align025.four-fermi-eigenoperators-and-leading-log-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The diagonal RGE is integrated to resum large logarithms.
+  failure_mode: The evolution is a matrix diagonalization without its RG use.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 664
+    - 665
+- id: qft.align025.e-rge-eigen
+  from: qft.align025.four-fermi-operator-mixing-rge
+  to: qft.align025.four-fermi-eigenoperators-and-leading-log-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Diagonalizing this anomalous-dimension matrix gives the eigenoperators.
+  failure_mode: The running exponents cannot be derived.
+  evidence:
+  - source: schwartz
+    section: 31.3.3
+    pages:
+    - 664
+    - 665
+- id: qft.align025.e-stu-doublet
+  from: qft.align025.peskin-takeuchi-stu-definitions-and-reference
+  to: qft.align025.new-fermion-doublet-stu-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The doublet expressions are S and T constraints.
+  failure_mode: The evaluated quantities have no precision-observable meaning.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
+    - 657
+- id: qft.align025.e-stu-smeft
+  from: qft.align025.peskin-takeuchi-stu-definitions-and-reference
+  to: qft.align025.smeft-oblique-operator-shortcut
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shortcut maps operator coefficients to S and T.
+  failure_mode: The target observables are undefined.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
+    - 657
+- id: qft.align025.e-stu-technicolor
+  from: qft.align025.peskin-takeuchi-stu-definitions-and-reference
+  to: qft.align025.technicolor-s-parameter-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The application is an S-parameter precision constraint.
+  failure_mode: The technicolor estimate cannot be interpreted.
+  evidence:
+  - source: schwartz
+    section: '31.2'
+    pages:
+    - 656
+    - 657
+- id: qft.align025.e-topbottom-ckm
+  from: qft.align025.top-bottom-oblique-self-energies
+  to: qft.align025.ckm-unitarity-cancels-oblique-divergences
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation analyzes divergent parts of the displayed self energies.
+  failure_mode: There is no loop expression whose divergent factors can cancel.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 651
+- id: qft.align025.e-topbottom-deltarho
+  from: qft.align025.top-bottom-oblique-self-energies
+  to: qft.align025.delta-rho-doublet-mass-splitting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Delta rho is evaluated from W and Z self energies.
+  failure_mode: The split-doublet formula has no self-energy route.
+  evidence:
+  - source: schwartz
+    section: 31.1.2-31.2
+    pages:
+    - 650
+    - 655
+- id: qft.align025.e-topbottom-prediction
+  from: qft.align025.top-bottom-oblique-self-energies
+  to: qft.align025.top-ms-mass-and-one-loop-precision-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical one-loop prediction substitutes top-bottom polarizations.
+  failure_mode: The predicted loop shifts lack their amplitudes.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 650
+    - 652
+- id: qft.align025.e-topbottom-problem-c
+  from: qft.align025.top-bottom-oblique-self-energies
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter's explicit electroweak loop is the top-bottom self energy.
+  failure_mode: The requested concrete loop contribution is missing.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 650
+    - 651
+    - 666
+- id: qft.align025.e-topbottom-problem-d
+  from: qft.align025.top-bottom-oblique-self-energies
+  to: qft.align025.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source's numerical loop evaluation uses top-bottom polarizations.
+  failure_mode: The stated loop contribution cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 650
+    - 651
+    - 666
+- id: qft.align025.e-topmass-problem-d
+  from: qft.align025.top-ms-mass-and-one-loop-precision-prediction
+  to: qft.align025.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical loop calculation requires the stated MS top-mass treatment.
+  failure_mode: The top-loop numerical input is undefined.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 652
+    - 666
+- id: qft.align025.e-tree-fiducial
+  from: qft.align025.tree-level-electroweak-observable-formulas
+  to: qft.align025.fiducial-input-scheme-and-tree-level-tension
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The tension compares hatted-input tree formulas to measurement.
+  failure_mode: The quoted tree predictions cannot be reproduced.
+  evidence:
+  - source: schwartz
+    section: 31.1.1
+    pages:
+    - 644
+- id: qft.align025.e-tree-muon-problem
+  from: qft.align025.tree-level-electroweak-observable-formulas
+  to: qft.align025.problem-31-1-muon-four-fermi-width
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 31.1 verifies the displayed tree muon-decay formula.
+  failure_mode: The requested verification has no supplied target relation.
+  evidence:
+  - source: schwartz
+    section: 31.1; Problems 31.1-31.4
+    pages:
+    - 642
+    - 666
+- id: qft.align025.e-tree-offshell
+  from: qft.align025.tree-level-b-to-cud-four-fermi-matching
+  to: qft.align025.off-shell-one-loop-matching-ir-artifact
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop comparison corrects this tree full/EFT amplitude.
+  failure_mode: The two theories to be matched are not specified.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 659
+    - 660
+- id: qft.align025.e-tree-zwidth-problem
+  from: qft.align025.tree-level-electroweak-observable-formulas
+  to: qft.align025.problem-31-2a-zwidth-tree
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) evaluates the supplied tree Z-width expression.
+  failure_mode: The requested tree prediction has no electroweak parameter input.
+  evidence:
+  - source: schwartz
+    section: 31.1; Problems 31.1-31.4
+    pages:
+    - 642
+    - 666
+- id: qft.align025.e-vacpol-problem-d
+  from: qft.align025.chiral-fermion-vacuum-polarization-integrals
+  to: qft.align025.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical width needs the vacuum-polarization contributions isolated
+    in part (c).
+  failure_mode: The loop functions cannot be numerically supplied.
+  evidence:
+  - source: schwartz
+    section: 31.1.2; Problems 31.1-31.4
+    pages:
+    - 649
+    - 650
+    - 666
+- id: qft.align025.e-vacpol-topbottom
+  from: qft.align025.chiral-fermion-vacuum-polarization-integrals
+  to: qft.align025.top-bottom-oblique-self-energies
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The top-bottom self energies are constructed from these chiral loop functions.
+  failure_mode: Their loop amplitudes cannot be formed.
+  evidence:
+  - source: schwartz
+    section: 31.1.2
+    pages:
+    - 650
+- id: qft.align025.e-vcb-impact
+  from: qft.align025.vcb-hadronic-extraction-and-large-log-problem
+  to: qft.align025.qcd-running-impact-on-vcb
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The result is conditional on relating the hadronic rate to V_cb.
+  failure_mode: The extraction claim lacks its declared hadronic assumption.
+  evidence:
+  - source: schwartz
+    section: '31.3'
+    pages:
+    - 658
+    - 665
+- id: qft.align025.e-weak-cp-to-problem-31-4a
+  from: qft.align017.weak-cp-diagnostics-and-physical-condition
+  to: qft.align025.problem-31-4a-bsgamma-rate
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Standard-Model b-to-s gamma W loop uses the accepted CKM charged-current
+    mixing core independently of its decay-rate input.
+  failure_mode: The task lacks its flavor-changing charged-current input.
+  evidence:
+  - source: schwartz
+    section: 31.3.1; Problems 31.1-31.4
+    pages:
+    - 666
+- id: qft.align025.e-wilson-bsgamma-qcd
+  from: qft.schwartz-wilson-coefficients-matching-mixing
+  to: qft.align025.problem-31-4c-bsgamma-qcd
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Order-alpha_s EFT corrections can renormalize and mix local operators.
+  failure_mode: The task loses its required operator-mixing framework.
+  evidence:
+  - source: schwartz
+    section: 31.3.2; Problems 31.1-31.4
+    pages:
+    - 663
+    - 666
+- id: qft.align025.e-wilson-bsgamma-running
+  from: qft.schwartz-wilson-coefficients-matching-mixing
+  to: qft.align025.problem-31-4d-bsgamma-running
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Wilson-coefficient matrix evolution supplies the general dipole-basis
+    RGE method.
+  failure_mode: The requested evolution has no coefficient-running framework.
+  evidence:
+  - source: schwartz
+    section: 31.3.2-31.3.3; Problems 31.1-31.4
+    pages:
+    - 663
+    - 664
+    - 666
+- id: qft.align025.e-wilson-existing-core
+  from: qft.schwartz-wilson-coefficients-matching-mixing
+  to: qft.align025.two-operator-b-to-cud-matching-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: This calculation is a concrete finite-Wilson-coefficient matching route.
+  failure_mode: The coefficient comparison lacks its EFT interpretation.
+  evidence:
+  - source: schwartz
+    section: 31.3.2
+    pages:
+    - 662
+    - 663
+- id: qft.align025.e-wilson-rge
+  from: qft.schwartz-wilson-coefficients-matching-mixing
+  to: qft.align025.four-fermi-operator-mixing-rge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coupled RGE derives from renormalizing a Wilson-coefficient/operator
+    sum.
+  failure_mode: Operator mixing has no EFT coefficient interpretation.
+  evidence:
+  - source: schwartz
+    section: 31.3.2-31.3.3
+    pages:
+    - 663
+    - 664
+- id: qft.align025.e-zmix-problem-b
+  from: qft.align025.zgamma-mixing-effective-angle-and-ae
+  to: qft.align025.problem-31-2b-zwidth-ms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Z-photon mixing changes the effective electron couplings in the one-loop
+    width.
+  failure_mode: The one-loop width omits a specified polarization contribution.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 647
+    - 666
+- id: qft.align025.e-zmix-problem-c
+  from: qft.align025.zgamma-mixing-effective-angle-and-ae
+  to: qft.align025.problem-31-2c-zwidth-vacpol
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Z-gamma polarization shifts the electron coupling.
+  failure_mode: One one-loop polarization component is excluded.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 647
+    - 666
+- id: qft.align025.e-zmix-problem-d
+  from: qft.align025.zgamma-mixing-effective-angle-and-ae
+  to: qft.align025.problem-31-2d-zwidth-numeric
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The numerical electron coupling includes Z-photon mixing.
+  failure_mode: The one-loop coupling is incomplete.
+  evidence:
+  - source: schwartz
+    section: 31.1.1; Problems 31.1-31.4
+    pages:
+    - 647
+    - 666
+- id: qft.align031.weinberg-1-asymptotic-labels-to-in-out-definition
+  from: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  to: qft.align016.in-out-states-heisenberg-asymptotic-definition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: In and out labels designate the asymptotically noninteracting particle
+    configurations defined by the multiparticle basis.
+  failure_mode: Without asymptotic particle labels, the content specified at early
+    and late times cannot be stated.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 108
+    - 109
+    note: The transformation rule applies to noninteracting multiparticle states and
+      then defines the two asymptotic state sets.
+- id: qft.align031.weinberg-1-box-normalization-to-cross-section
+  from: qft.align016.observable-transition-rates
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The two-particle rate’s 1/V dependence is divided by flux to define the
+    cross-section.
+  failure_mode: Without the volume dependence from the master formula, neither the
+    flux normalization nor the cross-section definition follows.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    note: The text obtains the Nα=2 rate from the master formula and uses its 1/V
+      dependence to define flux and cross-section.
+- id: qft.align031.weinberg-1-decay-rate-to-two-body-phase-space
+  from: qft.align016.decay-width-and-lorentz-time-dilation
+  to: qft.align016.lorentz-invariant-phase-space-cross-section
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The two-body decay specialization inserts the reduced two-body phase-space
+    measure into the already-derived general one-particle decay rate.
+  failure_mode: Reversing this edge makes the general arbitrary-multiplicity decay
+    formula depend on its later two-body specialization.
+  evidence:
+  - source: weinberg-1
+    section: '3.4'
+    pages:
+    - 136
+    - 137
+    - 139
+    - 140
+- id: qft.align031.weinberg-1-lorentz-normalization-to-multiparticle-states
+  from: qft.align010.weinberg-1.lorentz-invariant-one-particle-normalization
+  to: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multiparticle normalization is the product normalization of the one-particle
+    states with identical-particle exchange terms.
+  failure_mode: Without the adopted one-particle mass-shell normalization, the factors
+    in the multiparticle scalar product are not fixed.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source declares the multiparticle states normalized as in the prior
+      one-particle equation and adds permutations.
+- id: qft.align031.weinberg-1-massive-wigner-rotation-to-multiparticle-states
+  from: qft.align010.weinberg-1.massive-wigner-rotation
+  to: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: For each massive factor, the direct-product transformation uses its Wigner
+    rotation matrix.
+  failure_mode: Without the massive one-particle transformation law, the spin-index
+    transformation in the multiparticle product is unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source writes W(Λ,p) and the massive rotation matrices in the multiparticle
+      transformation rule.
+- id: qft.align031.weinberg-1-massless-helicity-action-to-multiparticle-states
+  from: qft.align010.weinberg-1.massless-helicity-lorentz-action
+  to: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Massless factors replace the massive spin matrix by their helicity phase
+    in the direct product.
+  failure_mode: Without the massless transformation law, the stated massive formula
+    would be applied outside its source qualification.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source explicitly replaces the massive matrix by the massless helicity
+      phase.
+- id: qft.align031.weinberg-1-multiparticle-transformation-to-s-covariance
+  from: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  to: qft.align016.proper-orthochronous-s-matrix-covariance-and-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: S covariance compares the common Poincaré transformations of its in and
+    out multiparticle external states.
+  failure_mode: Without the external-state transformation rule, the covariance equation
+    has no defined spin/helicity factors.
+  evidence:
+  - source: weinberg-1
+    section: 3.1; 3.3
+    pages:
+    - 107
+    - 108
+    - 116
+    - 117
+    note: The direct-product state transformation is reused in the S-matrix covariance
+      relation.
+- id: qft.align031.weinberg-1-one-particle-representations-to-asymptotic-multiparticle-states
+  from: qft.align010.schwartz.particle-as-unitary-poincare-irrep
+  to: qft.align031.asymptotic-multiparticle-state-labels-and-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multiparticle transformation rule is explicitly a direct product
+    of the one-particle transformation rules and labels.
+  failure_mode: Without the one-particle Poincaré state labels, the meaning of each
+    factor in the asymptotic direct product is unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '3.1'
+    pages:
+    - 107
+    - 108
+    note: The source begins from direct products of the one-particle states discussed
+      previously and spells out their labels and transformations.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
@@ -38979,6 +40954,14 @@ groups:
   title: Two-Higgs charged-scalar tasks
   question: How are the physical charged scalar and its quark couplings obtained after
     electroweak symmetry breaking?
+- id: qft.align025.precision-electroweak
+  title: Precision electroweak inputs and oblique corrections
+  question: How do measured electroweak inputs, vacuum polarizations, and custodial
+    symmetry constrain the Standard Model and new physics?
+- id: qft.align025.weak-effective-theory
+  title: Weak effective theory, matching, and flavor logarithms
+  question: How do local weak operators, matching, and renormalization-group evolution
+    control flavor amplitudes?
 - id: qft.anomaly-regularization-and-matching
   title: Anomaly regularization, cancellation, and matching
   question: How do distinct triangle, measure, regulator, routing, representation,
@@ -39040,6 +41023,18 @@ groups:
   question: How do vacuum symmetry breaking, Goldstone routes, current constraints,
     and gauging differ?
 motivations:
+- id: qft.align025.precision-and-flavor-motivation
+  nodes:
+  - qft.align025.standard-model-parameter-count-and-overconstraint
+  - qft.align025.vcb-hadronic-extraction-and-large-log-problem
+  summary: The source frames precision tests as overconstraining the Standard Model
+    and flavor EFT as controlling QCD logarithms that otherwise distort a CKM extraction.
+  evidence:
+  - source: schwartz
+    section: '31'
+    pages:
+    - 641
+    - 658
 - id: qft.schwartz-dynamical-background-context
   nodes:
   - qft.free-scalar-field-mode-expansion
