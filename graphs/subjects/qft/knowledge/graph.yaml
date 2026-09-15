@@ -3962,7 +3962,10 @@ nodes:
   summary: Counterterms must be numbers rather than derivative- or momentum-dependent
     coefficients. If a divergence needs such dependence, the Lagrangian must contain
     the corresponding new local operator whose bare coefficient can be renormalized;
-    QED needs no new term in this discussion because it is renormalizable.
+    QED needs no new term in this discussion because it is renormalizable. Weinberg
+    I derives locality by taking D+1 external-momentum derivatives, leaving a degree-D
+    divergent polynomial matched by local operators; two-point terms instead use pole
+    and residue conditions.
   kind: result
   group: qft.renormalization-group
   evidence:
@@ -3973,11 +3976,22 @@ nodes:
     - 342
     note: Contrasts ordinary numerical counterterms with a divergence requiring a
       new derivative operator.
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 505
+    - 506
+    note: The D+1 derivative argument produces a local degree-D polynomial and its
+      matching counterterms.
   origins:
   - project: schwartz
     node: schwartz.local-operator-counterterm-criterion
     note: This shared record retains the assigned schwartz treatment, including its
       source-specific scope, notation, and proof or task boundary.
+  - project: weinberg-1
+    node: weinberg-1.local-divergent-polynomial-counterterms
+    note: D+1 differentiation proof of a local divergent polynomial, including the
+      two-point pole/residue exception.
 - id: qft.align012.multicoupling-fixed-point-stability-matrix
   label: Multi-coupling fixed-point stability matrix
   summary: After linearizing coupled beta-functions around a fixed point, and assuming
@@ -4314,7 +4328,8 @@ nodes:
     the four QED counterterms δm, δ2, δ1, and δ3. In MS the same divergent counterterm
     parts are removed while the finite subtraction convention differs; the UV cutoff
     and finite subtraction point μ are conceptually distinct and neither affects physical
-    predictions.
+    predictions. Weinberg I expresses the same physical subtraction through Z2 delta
+    m=-A, Z2-1=-B, the Ward-related vertex normalization, and Z3=1+C.
   kind: result
   group: qft.renormalization-group
   evidence:
@@ -4330,6 +4345,12 @@ nodes:
     pages:
     - 331
     - 332
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 510
+    note: WI fixes the electron field and mass, vertex, and photon counterterms by
+      on-shell charge, pole, and residue conditions.
   origins:
   - project: schwartz
     node: schwartz.qed-four-onshell-renormalization-conditions
@@ -4339,6 +4360,9 @@ nodes:
     node: peskin-schroeder.renormalized-qed-counterterms-and-conditions
     note: Retains Peskin–Schroeder’s four on-shell conditions and their QED counterterm
       role without collapsing them into the Lagrangian parametrization.
+  - project: weinberg-1
+    node: weinberg-1.qed-counterterm-onshell-subtraction
+    note: WI Z2, mass, vertex, and Z3 on-shell subtraction equations.
 - id: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
   label: Full QED vertex–inverse-propagator Ward identity
   summary: After amputating the off-shell current-insertion Green function with full
@@ -4540,6 +4564,9 @@ nodes:
     Peskin–Schroeder retains the massive threshold, three-channel dimensional-regularization
     treatment; Schwartz retains the massless cutoff s-channel example. Schwartz’s
     bare-coupling inversion and counterterm expansions remain independent routes.
+    Weinberg I adds a distinct massive scalar route that defines the real coupling
+    at a symmetric off-shell point and keeps the amplitude invariant when that subtraction
+    point changes.
   kind: method
   group: qft.renormalization-group
   evidence:
@@ -4558,6 +4585,13 @@ nodes:
     - 299
     note: Evaluates the massless s-channel loop, defines the coupling at a reference
       scale, and derives the finite result by two separate constructions.
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 515
+    - 516
+    note: The real scalar coupling is fixed at the stated symmetric off-shell point
+      and changes with that subtraction point.
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.renormalization-conditions-and-phi4-one-loop-vertex
@@ -4568,6 +4602,9 @@ nodes:
     note: Retains Schwartz’s massless retained-s-channel cutoff example and finite
       reference-scale amplitude; its bare-inversion and counterterm constructions
       stay independent.
+  - project: weinberg-1
+    node: weinberg-1.phi4-renormalization-point-dependence
+    note: Massive symmetric off-shell subtraction route and its real-domain qualification.
 - id: qft.align012.rg-improved-effective-potential-and-validity
   label: RG-improved effective potential and its validity limits
   summary: Using a field-strength sliding scale improves the scalar effective potential,
@@ -6694,10 +6731,13 @@ nodes:
     - 451
 - id: qft.align014.wilsonian-shell-rescaling-and-relevance
   label: Wilsonian shell rescaling and relevance
-  summary: Integrating out a physical momentum shell and rescaling restores the cutoff-form
+  summary: 'Integrating out a physical momentum shell and rescaling restores the cutoff-form
     action while changing its couplings. Near the specified fixed point, the flow
     classifies perturbations as relevant, marginal, or irrelevant; the classification
-    is local to that fixed point and regulator account.
+    is local to that fixed point and regulator account. Weinberg I supplies a floating-cutoff
+    flow route: lowering the cutoff generates every symmetry-allowed coupling, approaches
+    a qualified stable surface, and preserves observables in conventional renormalized
+    coordinates.'
   kind: method
   group: qft.renormalization-group
   origins:
@@ -6713,6 +6753,10 @@ nodes:
     node: schwartz.wilsonian-cutoff-flow-and-operator-relevance
     note: Schwartz keeps a physical high cutoff distinct from a measured momentum
       and states the dimension-r qualification at a lower cutoff.
+  - project: weinberg-1
+    node: weinberg-1.wilsonian-floating-cutoff-flow
+    note: Floating-cutoff flow and stable-surface route, distinct from explicit shell
+      rescaling near a fixed point.
   evidence:
   - source: peskin-schroeder
     section: '12.1'
@@ -6725,6 +6769,14 @@ nodes:
     - 442
     - 443
     - 444
+  - source: weinberg-1
+    section: '12.4'
+    pages:
+    - 525
+    - 526
+    - 528
+    note: Floating-cutoff flow, generation of all symmetry-allowed couplings, stable
+      surface, and cutoff-independent observables.
 - id: qft.align014.wilsonian-shell-wilson-fisher-route
   label: Wilsonian cutoff-shell Wilson–Fisher route
   summary: For scalar phi-four theory below four dimensions, cutoff-shell integration
@@ -8985,13 +9037,15 @@ nodes:
     - 656
 - id: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
   label: GIM cancellation of flavor-changing neutral currents
-  summary: With two up-type quarks, the d–s cross terms in J3 cancel between doublets,
+  summary: 'With two up-type quarks, the d–s cross terms in J3 cancel between doublets,
     leaving a flavor-diagonal neutral current. Without charm, a cosθC sinθC d̄γμs
     term would permit FCNC processes; this is the GIM mechanism. Peskin–Schroeder’s
     three-generation mass-basis account says the same unitary rotations cancel from
     photon and Z currents, leaving no tree-level flavor-changing weak neutral current,
     while W charged currents change flavor through CKM entries and flavor-changing
-    neutral processes occur through weak loops in that account.
+    neutral processes occur through weak loops in that account. Weinberg II independently
+    constructs the charm doublet: its neutral-current d–s cross terms cancel, while
+    charged-current loop effects are separately suppressed by m_c²/m_W².'
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -9005,6 +9059,10 @@ nodes:
     note: Retains the mass-basis cancellation of neutral-current rotations, the W/CKM
       qualification, and the loop-level flavor-changing qualification; correspondence
       is only the shared flavor-diagonal-neutral-current core.
+  - project: weinberg-2
+    node: weinberg-2.gim-quark-doublets-and-flavor-changing-neutral-current-cancellation
+    note: Retains the two-generation charm-doublet cancellation and the distinct m_c²/m_W²
+      loop suppression.
   evidence:
   - source: schwartz
     section: '29.4'
@@ -9017,6 +9075,13 @@ nodes:
     - 725
     note: Neutral-current rotation cancellation, CKM charged-current flavor change,
       and loop-suppressed K processes.
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 312
+    - 313
+    note: Cabibbo doublet, charm completion, loop suppression, and neutral-current
+      cancellation.
 - id: qft.align017.h-anomaly-free-counterterm-goldstone-action
   label: Counterterm construction for G→H with anomaly-free H
   summary: For G→H with D=0 on H, define B[A]=[1/(48π²)]ε_{μνρσ}∫d⁴x Tr{[A_h^μ,A^ν](F^{ρσ}+F_h^{ρσ})+A_h^μA_h^νA_h^ρA_h^σ−A_h^μA^νA^ρA^σ+(1/2)A_h^μA^νA_h^ρA^σ},
@@ -9868,7 +9933,10 @@ nodes:
     V=U_u-dagger U_d as the residual charged-current rotation, removes all phases
     for two generations, and leaves three angles and one irreducible phase for three
     generations; the shared record retains this mass-basis route alongside Schwartz’s
-    basis-invariant diagnostics rather than replacing them.
+    basis-invariant diagnostics rather than replacing them. Schwartz additionally
+    supplies the three-angle/one-phase count, the real two-generation limit, and the
+    triangle-area form of J. Weinberg II supplies a polar-decomposition mass-basis
+    route and notes that multiple scalar doublets give a separate possible CP source.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -9896,6 +9964,20 @@ nodes:
     node: peskin-schroeder.ckm-matrix-and-physical-cp-phase
     note: Retains V=U_u-dagger U_d, the two-generation rephasing result, and the three-generation
       one-phase result; correspondence is only the physical charged-current CP core.
+  - project: schwartz
+    node: schwartz.ckm-physical-parameter-count-and-standard-form
+    note: Three angles and one surviving phase after five mass-preserving rephasings.
+  - project: schwartz
+    node: schwartz.wolfenstein-approximation-and-three-generation-cp-condition
+    note: Two generations have only the real Cabibbo angle; the Wolfenstein expansion
+      remains a source-specific approximation.
+  - project: schwartz
+    node: schwartz.jarlskog-invariant-as-unitarity-triangle-area
+    note: The triangle-area representation of J is retained as a geometric diagnostic.
+  - project: weinberg-2
+    node: weinberg-2.ckm-mass-diagonalization-and-three-generation-cp-violation
+    note: Retains the polar-decomposition mass-basis route, V=A_uL A_dL^{-1}, the
+      two/three-generation distinction, and the scalar-sector caveat.
   evidence:
   - source: schwartz
     section: 29.5.1
@@ -9924,6 +10006,29 @@ nodes:
     - 724
     note: Mass-basis charged current, V=U_u-dagger U_d, two-generation phase removal,
       and the three-generation physical phase.
+  - source: schwartz
+    section: 29.3.2–29.3.3
+    pages:
+    - 597
+    note: Three angles and one surviving phase after five mass-preserving rephasings.
+  - source: schwartz
+    section: 29.3.2–29.3.3
+    pages:
+    - 598
+    note: Two generations have only the real Cabibbo angle; the Wolfenstein expansion
+      remains a source-specific approximation.
+  - source: schwartz
+    section: 29.3.2–29.3.3
+    pages:
+    - 599
+    note: The triangle-area representation of J is retained as a geometric diagnostic.
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 314
+    - 315
+    note: Unitary mass diagonalization, CKM mismatch, rephasing, and the separate
+      scalar-doublet CP possibility.
 - id: qft.align017.wess-zumino-consistency-condition-for-anomalies
   label: Wess-Zumino consistency condition
   summary: Couple symmetry currents to background gauge fields and let the local gauge
@@ -11295,7 +11400,9 @@ nodes:
     On page 342, Peskin–Schroeder displays the two-denominator special case (10.56),
     proves that case by a variable substitution to a beta integral, and says the more
     general formula (6.42) follows by induction. This proof route is not required
-    merely to use the combination identity.
+    merely to use the combination identity. Weinberg I independently gives the general
+    N-denominator simplex identity together with the dimensionally continued Euclidean
+    integral and Gamma-pole interpretation.
   kind: method
   origins:
   - project: peskin-schroeder
@@ -11307,6 +11414,10 @@ nodes:
     note: Retains the assigned proof of special case (10.56) and the stated induction
       boundary for (6.42), without making that proof a prerequisite for using the
       identity.
+  - project: weinberg-1
+    node: weinberg-1.appendix-feynman-parameters-dimensional-integrals
+    note: General-N parameter identity and dimensionally continued loop-integral route;
+      distinct from the retained two-denominator proof.
   evidence:
   - source: peskin-schroeder
     section: '6.3 The Electron Vertex Function: Evaluation'
@@ -11319,6 +11430,11 @@ nodes:
     - 342
     note: Displays (10.56), reduces its proof to the beta integral by a variable change,
       and states that the more general (6.42) follows by induction.
+  - source: weinberg-1
+    section: Appendix Assorted Integrals
+    pages:
+    - 497
+    note: General N-denominator parameters and the dimensionally continued loop integral.
   notation: []
 - id: qft.align019.form-factors-charge-and-magnetic-moment
   label: Charge and magnetic moment from vertex form factors
@@ -11812,7 +11928,9 @@ nodes:
     factors proportional to p·ε/(p·q); for one charged line this is the outgoing-minus-incoming
     difference. Hard subgraphs and numerators may be evaluated at zero soft momentum,
     nonsingular off-shell attachments are subleading, and the phase-space factor reproduces
-    the classical soft spectrum.
+    the classical soft spectrum. Weinberg I gives an arbitrary-spin, all-orders external-pole
+    route, with signed incoming/outgoing i-epsilon factors and charge fixed by the
+    equal-momentum current matrix element.
   kind: method
   origins:
   - project: peskin-schroeder
@@ -11823,6 +11941,9 @@ nodes:
     node: schwartz.soft-photon-external-leg-factorization
     note: Retains the general external-leg derivation, signed incoming/outgoing factors,
       and the suppression of off-shell loop attachments.
+  - project: weinberg-1
+    node: weinberg-1.soft-photon-single-emission-theorem
+    note: Arbitrary-spin all-orders external-pole derivation with signed eikonal factors.
   evidence:
   - source: peskin-schroeder
     section: 6.1 Soft Bremsstrahlung
@@ -11836,6 +11957,14 @@ nodes:
     - 151
     note: Derives the leading signed eikonal sum over external legs and explains why
       off-shell attachments are subleading.
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 534
+    - 535
+    - 536
+    note: Arbitrary-spin external poles, signed incoming/outgoing factors, and the
+      all-orders current normalization.
   notation: []
 - id: qft.align019.soft-photon-poisson-multiplicity
   label: Poisson multiplicity of emitted soft photons
@@ -14293,7 +14422,10 @@ nodes:
   summary: Biunitary decompositions Lambda_u=U_u D_u W_u-dagger and Lambda_d=U_d D_d
     W_d-dagger, followed by unitary field redefinitions, diagonalize quark masses
     and neutral Higgs couplings. The diagonal entries satisfy m_{u,d}=vD_{u,d}/sqrt(2);
-    neutral gauge currents remain flavor diagonal in this basis.
+    neutral gauge currents remain flavor diagonal in this basis. Schwartz independently
+    diagonalizes YY† and factors Y=UMK† before rotating both chiralities. Weinberg
+    II instead invokes polar decomposition to bi-diagonalize arbitrary complex mass
+    matrices and obtains V=A_uL A_dL^{-1}.
   kind: method
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -14302,12 +14434,32 @@ nodes:
     note: Retains the reviewed source-specific statement, coefficients, hypotheses,
       boundary conditions, conventions, and proof or task limit; correspondence is
       only the scope stated by this shared record.
+  - project: schwartz
+    node: schwartz.biunitary-yukawa-diagonalization-and-mass-basis
+    note: Retains the YY† diagonalization, Y=UMK† factorization, right- and left-handed
+      rotations, and residual rephasings.
+  - project: weinberg-2
+    node: weinberg-2.ckm-mass-diagonalization-and-three-generation-cp-violation
+    note: Retains the independent polar-decomposition proof of real diagonal masses
+      and the left-handed mismatch convention.
   evidence:
   - source: peskin-schroeder
     section: '20.3'
     pages:
     - 722
     - 723
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 596
+    note: Complete Schwartz biunitary mass-basis construction and residual U(1)^6
+      rephasings.
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 314
+    - 315
+    note: Polar-decomposition diagonalization and V=A_uL A_dL^{-1}.
   notation: []
 - id: qft.align022.weinberg-2.axion-pion-effective-lagrangian-and-mass
   label: Axion–pion effective Lagrangian and mass
@@ -16426,7 +16578,10 @@ nodes:
   summary: A non-renormalizable Lagrangian includes every symmetry-allowed operator,
     but at energies below its heavy scale only finitely many terms matter. Renormalized
     coefficients are fitted at low energy while nonanalytic loop dependence provides
-    parameter-independent predictions at a specified order.
+    parameter-independent predictions at a specified order. Weinberg I separately
+    supplies the infinite-coupling renormalization statement, the conditional natural-size
+    estimate and k/M suppression after renormalization, and the loss of predictivity
+    near M.
   kind: result
   group: qft.renormalization-group
   origins:
@@ -16435,12 +16590,42 @@ nodes:
     note: Retains this reviewed book-specific statement, conditions, notation, and
       proof or task boundary; the correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-1
+    node: weinberg-1.general-renormalization-equal-status
+    note: Broader renormalization statement with an infinite symmetry-allowed coupling
+      set.
+  - project: weinberg-1
+    node: weinberg-1.nonrenormalizable-eft-suppression
+    note: Conditional natural-size estimate and post-renormalization low-energy suppression
+      route.
+  - project: weinberg-1
+    node: weinberg-1.eft-predictivity-boundary-near-m
+    note: Loss-of-predictivity boundary and its two stated ultraviolet possibilities.
   evidence:
   - source: schwartz
     section: 21.2.3–21.2.4
     pages:
     - 392
     - 393
+  - source: weinberg-1
+    section: 12; 12.1
+    pages:
+    - 499
+    - 504
+    note: Infinite symmetry-allowed couplings give the broader renormalization statement.
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 517
+    - 519
+    note: Negative-dimension couplings, gravity example, natural-size assumption,
+      and low-energy suppression.
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 523
+    note: Predictivity fails near the common scale M, with saturation or new physics
+      as the stated possibilities.
   notation: []
 - id: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
   label: Two-loop phi-four crossing groups and factorized Group I subtraction
@@ -16653,6 +16838,9 @@ nodes:
     and gauge or charge-conjugation constraints. Peskin–Schroeder gives the chiral,
     Furry, and primitive-classification route; Schwartz gives 1PI sewing and the four-photon
     Ward cancellation. The shared organization does not equate the two derivations.
+    Weinberg I independently classifies the QED vertex and two self-energies, then
+    uses Ward, transversality, charge conjugation, and Lorentz invariance to reduce
+    the allowed divergent parts.
   kind: result
   group: qft.renormalization-group
   origins:
@@ -16666,6 +16854,10 @@ nodes:
     note: Retains this reviewed book-specific statement, conditions, notation, and
       proof or task boundary; the correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-1
+    node: weinberg-1.qed-1pi-divergences-and-ward-reduction
+    note: WI primitive classification with regulator-qualified Ward identity, photon
+      transversality, and C constraints.
   evidence:
   - source: peskin-schroeder
     section: '10.1'
@@ -16677,6 +16869,14 @@ nodes:
     pages:
     - 382
     - 383
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 507
+    - 508
+    - 509
+    note: QED primitive classes, Ward relation, transversality, and charge-conjugation
+      eliminations.
   notation: []
 - id: qft.align024.qed-all-orders-counterterm-closure-and-charge-universality
   label: QED all-orders counterterm closure
@@ -16708,7 +16908,9 @@ nodes:
     divergent amplitudes remove all divergences at every perturbative order, so no
     new counterterm forms are needed. Schwartz retains the QED induction; Peskin–Schroeder
     states the general theorem without proof and illustrates the two-loop phi-four
-    cancellation.'
+    cancellation. Weinberg I contributes the explicit forest algorithm: nested or
+    disjoint boxes receive D+1 Taylor terms, while overlapping boxes never occur in
+    one forest.'
   kind: method
   group: qft.renormalization-group
   origins:
@@ -16722,6 +16924,10 @@ nodes:
     note: Retains Peskin–Schroeder’s proof-omitted BPHZ statement and two-loop phi-four
       illustration; the accepted Group-I factorized subtraction remains a distinct
       worked method.
+  - project: weinberg-1
+    node: weinberg-1.bphz-forest-subtractions
+    note: Explicit nested/disjoint forest and Taylor-subtraction algorithm; the accepted
+      induction and illustrative routes remain distinct.
   evidence:
   - source: schwartz
     section: 21.1.3
@@ -16742,6 +16948,14 @@ nodes:
     - 344
     note: Motivates subgraph counterterms, states the BPHZ result and proof boundary,
       and works the separate two-loop illustration.
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 511
+    - 512
+    - 513
+    note: Nested-or-disjoint forest construction, Taylor subtraction, and renormalizable-theory
+      qualification.
   notation: []
 - id: qft.align024.qed-graph-topology-and-primitive-amplitudes
   label: QED topology reduction to primitively divergent amplitudes
@@ -16773,7 +16987,9 @@ nodes:
     while its one-loop vacuum-polarization calculation develops the d-dimensional
     integration and pair-threshold check. Page 333 separately re-evaluates the electron
     self-energy in dimensional regularization before the Chapter-10 on-shell counterterm
-    conditions fix delta-m, delta-2, and delta-3.
+    conditions fix delta-m, delta-2, and delta-3. Weinberg I supplies a regulator-distinct
+    Pauli-Villars electron-self-energy calculation with on-shell subtraction and both
+    large- and small-regulator limits; it is not a dimensional-regularization derivation.
   kind: method
   group: qft.renormalization-group
   origins:
@@ -16794,6 +17010,10 @@ nodes:
     node: peskin-schroeder.one-loop-vacuum-polarization-and-pair-threshold
     note: Retains the transverse one-loop polarization, subtracted charge shift, threshold
       cut, and optical-theorem check.
+  - project: weinberg-1
+    node: weinberg-1.one-loop-electron-self-energy-pauli-villars
+    note: Pauli-Villars self-energy route with on-shell conditions and regulator limits,
+      distinct from dimensional regularization.
   evidence:
   - source: peskin-schroeder
     section: '10.3'
@@ -16822,6 +17042,16 @@ nodes:
     - 252
     - 253
     note: Develops one-loop polarization, subtraction, and pair threshold.
+  - source: weinberg-1
+    section: '11.4'
+    pages:
+    - 493
+    - 494
+    - 495
+    - 496
+    - 497
+    note: The distinct WI Pauli-Villars electron-self-energy route and its on-shell
+      and regulator limits.
   notation: []
 - id: qft.align024.qed-oneloop-vertex-counterterm-and-allorders-ward-recursion
   label: One-loop QED delta-1 and all-orders Ward recursion
@@ -16850,7 +17080,9 @@ nodes:
     external-momentum differentiation and subdivergences; Schwartz writes D=4−3f/2−b
     for a 1PI graph and uses it for the allowed counterterm diagnosis. These formulae
     are source-normalized versions of the shared superficial-counting role, not an
-    equation-by-equation identification.
+    equation-by-equation identification. Weinberg I supplies the general-field formula
+    D=4-sum_f E_f(s_f+1)-sum_i N_i Delta_i, with Delta_i the coupling dimension and
+    explicit propagator-power qualifications.
   kind: method
   group: qft.renormalization-group
   origins:
@@ -16864,6 +17096,10 @@ nodes:
     note: Retains this reviewed book-specific statement, conditions, notation, and
       proof or task boundary; the correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-1
+    node: weinberg-1.superficial-degree-of-divergence
+    note: General-field D formula with propagator-power parameter s_f and coupling
+      dimension Delta_i.
   evidence:
   - source: peskin-schroeder
     section: '10.1'
@@ -16879,6 +17115,14 @@ nodes:
     - 384
     - 387
     - 388
+  - source: weinberg-1
+    section: '12.1'
+    pages:
+    - 500
+    - 501
+    - 502
+    note: General-D graph counting, topological reduction, and dimensional-analysis
+      check.
   notation:
   - source: peskin-schroeder
     note: Ne and Nγ count external electron and photon lines; Pe, Pγ, V, and L count
@@ -19334,19 +19578,30 @@ nodes:
     Yukawa and vector–spinor couplings, derivative scalar-QED terms, and vector self-interactions.
     The residual records that the vector terms are consistent only with specially
     related gauge couplings; the general negative-dimension diagnostic is aligned
-    separately.
+    separately. Weinberg I contributes its Table 12.2 catalogue before extra symmetries
+    are imposed, including the gauge-variant entries that must later combine or be
+    excluded.
   kind: method
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.power-counting-renormalizable-interactions
     note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
       or task boundary for Power counting for renormalizable interactions.
+  - project: weinberg-1
+    node: weinberg-1.scalar-spinor-photon-renormalizable-catalogue
+    note: Pre-symmetry scalar, Dirac, and photon interaction catalogue of Table 12.2.
   evidence:
   - source: peskin-schroeder
     section: '4.1'
     pages:
     - 80
     - 81
+  - source: weinberg-1
+    section: 12.3, Table 12.2
+    pages:
+    - 518
+    note: The table lists the scalar, Dirac, and photon interactions and their coupling
+      dimensions.
   notation: []
 - id: qft.align029.problem-complex-scalar-discrete-symmetries
   label: 'Problem: complex-scalar P, C, T, and CPT exercise'
@@ -23512,6 +23767,1498 @@ nodes:
     note: The text analyzes the momentum shift and concludes that partial-integration-related
       densities are quantum equivalent.
   notation: []
+- id: qft.align038.accidental-lepton-flavor-symmetry
+  label: Accidental lepton flavor conservation of renormalizable electrodynamics
+  summary: With charged leptons of the same electric charge and a renormalizable electromagnetic
+    Lagrangian, general kinetic and mass matrices can be reduced by nonsingular field
+    transformations to diagonal mass eigenfields while leaving a common electromagnetic
+    coupling. The resulting theory accidentally conserves P, C, and T and each lepton
+    flavor. Off-shell flavor-changing matrix elements do not imply an on-shell radiative
+    decay; the common transformation of left- and right-handed fields under electromagnetic
+    gauge transformations is essential. Higher-dimensional terms may violate any of
+    these laws.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.accidental-lepton-flavor-symmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.5'
+    pages:
+    - 529
+    - 530
+    - 531
+    note: Accidental-symmetry motivation, field reduction, and on-shell qualification.
+  notation: []
+- id: qft.align038.appendix-feynman-parameters-dimensional-integrals
+  label: 'WI residual route: Appendix: Feynman parameters and dimensional loop integrals'
+  summary: The appendix gives the N-denominator Feynman-parameter identity and the
+    dimensionally continued Euclidean loop-integral formula used in the vacuum-polarization
+    calculation. Ultraviolet divergences appear as Gamma-function poles as d approaches
+    four, with stated special cases and recursion guidance. This is an independent
+    WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: Appendix Assorted Integrals
+    pages:
+    - 497
+    note: The appendix states the general parameter formula, dimensional integral,
+      and the Gamma-pole interpretation.
+  notation: []
+- id: qft.align038.bphz-forest-subtractions
+  label: 'WI residual route: BPHZ forest subtraction with non-overlapping boxes'
+  summary: BPHZ considers every forest of boxes around a graph and/or subgraphs, with
+    boxes nested or disjoint but never overlapping. Starting at innermost boxes, replace
+    each boxed subgraph's integrand of superficial degree D by the first D+1 terms
+    of its Taylor expansion in the momenta entering or leaving the box, then subtract
+    every forest term, including the one-box whole-graph term. The prescription applies
+    to non-renormalizable as well as renormalizable theories; in the latter it subtracts
+    only the finite set of graph types corresponding to renormalizable Lagrangian
+    terms. This is an independent WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 511
+    - 512
+    - 513
+    note: Overlapping-divergence problem, forest definition, and subtraction interpretation.
+  notation: []
+- id: qft.align038.eft-predictivity-boundary-near-m
+  label: 'WI residual route: EFT predictivity boundary near M'
+  summary: 'Non-renormalizable EFTs have useful energy expansions but lose predictive
+    power at energies of order their common scale M, where literal amplitudes would
+    violate unitarity bounds. The source presents two possibilities: growing non-renormalizable
+    effects may saturate, or new physics enters at M; in the latter case the E<<M
+    theory is an effective rather than fundamental description. This is an independent
+    WI residual route to its amended common result.'
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 523
+    note: Stated loss of predictivity and two alternatives.
+  notation: []
+- id: qft.align038.euler-heisenberg-matching-and-light-by-light-eft
+  label: Integrating out electrons and matching low-energy light-by-light EFT
+  summary: The Euler–Heisenberg construction obtains a photon effective Lagrangian
+    by integrating out the electron in the one-loop functional integral. More generally,
+    write the most general non-renormalizable EFT and match its constants to underlying
+    amplitudes. At sufficiently low energy, photon scattering is described by the
+    unique quartic Lorentz- and gauge-invariant no-derivative terms (E^2-B^2)^2 and
+    (E dot B)^2; operators with more derivatives are further suppressed by E/M. The
+    source also states EFTs can be useful when no underlying derivation is available.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.euler-heisenberg-matching-and-light-by-light-eft
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 523
+    - 524
+    note: Loop counterterm context, Euler–Heisenberg functional identity, matching,
+      and low-energy operators.
+  notation: []
+- id: qft.align038.general-renormalization-equal-status
+  label: 'WI residual route: Renormalization with finite or infinite symmetry-allowed
+    couplings'
+  summary: Ultraviolet divergences can be cancelled by expressing parameters in terms
+    of renormalized quantities. A theory with finitely many renormalizable interactions
+    needs finitely many redefinitions; a non-renormalizable theory is renormalizable
+    in the broader sense only when its Lagrangian contains every interaction allowed
+    by the symmetries, hence generally infinitely many couplings. This is an independent
+    WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12'
+    pages:
+    - 499
+    - 504
+    note: Chapter introduction and the non-renormalizable qualification.
+  notation: []
+- id: qft.align038.high-spin-renormalizability-and-gauge-exceptions
+  label: High-spin power counting and gauge-field exceptions
+  summary: 'The bound Delta_i=4-d_i-sum_f n_if(s_f+1)>=0 becomes negative with too
+    many fields or derivatives or fields of too high spin. Barring special cancellations,
+    no renormalizable interaction involves a field with s_f>=1: the only candidate
+    with that field and at least two others reduces to one s_f=1 field, two scalars,
+    and no derivatives, which is not Lorentz invariant. Separately, a massive vector
+    coupled to a conserved current independent of that vector has effective s_f=0.
+    The Volume II qualifications are that massless spin-one gauge fields in a suitable
+    gauge have effective s_f=0, and massive gauge fields may do so depending on the
+    origin of their mass.'
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.high-spin-renormalizability-and-gauge-exceptions
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 12.1; 12.3
+    pages:
+    - 500
+    - 517
+    note: The conserved-current qualification, the high-spin exclusion and Lorentz
+      argument, and the separate Volume II gauge-field qualifications.
+  notation: []
+- id: qft.align038.higher-derivative-poles-and-eft-cutoff
+  label: 'WI residual route: Higher-derivative poles lie at the EFT cutoff'
+  summary: A scalar operator phi box^n phi alone would add a self-energy term proportional
+    to (q^2)^n and, if resummed while all other non-renormalizable effects are ignored,
+    would give extra generally complex propagator poles. With coefficient of order
+    M^[-2(n-1)] and M much greater than m, those poles occur at q^2 of order M^2,
+    precisely where ignoring the other infinite EFT operators is illegitimate. Higher
+    derivatives therefore neither contradict the low-energy pole argument nor remove
+    ultraviolet divergences. This is an independent WI residual route to its amended
+    common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 520
+    - 521
+    note: Extra-pole argument and its cutoff qualification.
+  notation: []
+- id: qft.align038.lepton-charge-radius-infrared-qualification
+  label: Lepton charge radius and infrared qualification
+  summary: Charge normalization cancels the ultraviolet divergence in the vertex charge
+    form factor, but its remaining small-parameter endpoint divergence is infrared.
+    Introducing a fictitious photon mass makes the integral finite; the small-q² slope
+    defines a charge radius that depends logarithmically on that infrared regulator.
+    The source defers the physical cancellation in inclusive cross-sections and the
+    bound-state infrared cutoff to later chapters.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lepton-charge-radius-infrared-qualification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '11.3'
+    pages:
+    - 490
+    - 491
+    - 492
+    - 493
+    note: The source identifies UV cancellation, infrared origin and photon-mass regulator,
+      then defines the charge radius and defers its physical treatment.
+  notation: []
+- id: qft.align038.local-divergent-polynomial-counterterms
+  label: 'WI residual route: Divergent local polynomial and counterterm matching'
+  summary: If a graph or subgraph has superficial D>=0, D+1 external-momentum derivatives
+    make its common-hard-momentum integral finite, so its contribution is a degree-D
+    polynomial in external momenta with divergent coefficients plus a finite remainder;
+    D=0 is the logarithmic constant case. For E_f external fields this polynomial
+    is reproduced by local interactions with n_if=E_f and d_i<=D; counterterms redefine
+    their couplings. For two external lines, impose the free-particle pole position
+    and residue on the complete propagator instead of a measured effective coupling.
+    This is an independent WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 505
+    - 506
+    note: Differentiation argument, local matching, and two-point qualification.
+  notation: []
+- id: qft.align038.multi-soft-photon-factorization
+  label: Arbitrary multi-soft-photon factorization
+  summary: After summing all orderings of N soft photons emitted from one external
+    line, the ordered eikonal denominators reduce to the product of N single-photon
+    denominators. Combining lines, the N-soft-photon amplitude is M_{beta alpha} times
+    one leading eikonal sum for each photon. The source proves the same-line identity
+    by induction and thereby supplies the factorization used for virtual and real
+    soft-photon sums.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.multi-soft-photon-factorization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 538
+    - 539
+    note: Same-line permutation identity, induction proof, and general factorization.
+  notation: []
+- id: qft.align038.nonrenormalizable-eft-suppression
+  label: 'WI residual route: Effective-theory suppression of higher-dimensional interactions'
+  summary: Although a non-renormalizable Lagrangian needs infinitely many symmetry-allowed
+    terms for ultraviolet cancellation, an effective theory at external momentum k
+    much below its heavy scale M is predictive order by order after ultraviolet divergences
+    have been removed. The estimate g_i~M^(Delta_i) is a natural-size guess in the
+    examples, yielding (k/M)^(-Delta_i) suppression for Delta_i<0, not an unconditional
+    theorem. General relativity is non-renormalizable because its coupling has negative
+    mass dimension; this does not by itself make the low-energy theory unusable. This
+    is an independent WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 517
+    - 519
+    note: Finite renormalizable set, gravity example, and low-energy interpretation.
+  notation: []
+- id: qft.align038.one-loop-electron-self-energy-pauli-villars
+  label: 'WI residual route: One-loop electron self-energy with Pauli–Villars regulation'
+  summary: The electron 1PI self-energy is regulated by a Pauli-Villars difference,
+    evaluated with Feynman parameters and Wick rotation, and combined with mass and
+    field counterterms fixed by the on-shell pole and unit-residue conditions. Ultraviolet
+    regulator logarithms cancel in the complete self-energy, while an on-shell infrared
+    divergence remains for later treatment. The electromagnetic mass shift is positive
+    and behaves for mu -> infinity as delta m_e -> [6 m_e pi^2 e^2/(2 pi)^4] ln(mu/m_e).
+    In the opposite mu << m_e limit it behaves as delta m_e -> e^2 mu/(8 pi)[1-3 mu/(2
+    pi m_e)+...], the form used later for the Lamb shift. This is an independent WI
+    residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '11.4'
+    pages:
+    - 493
+    - 494
+    - 495
+    - 496
+    - 497
+    note: The source defines the 1PI self-energy, introduces Pauli–Villars, fixes
+      counterterms, distinguishes UV cancellation from residual IR divergence, and
+      states positive/logarithmic and small-regulator limits.
+  notation: []
+- id: qft.align038.overlap-counterterm-cancellation-example
+  label: Overlapping QED photon-self-energy counterterm cancellation
+  summary: In the fourth-order overlapping photon self-energy, the two vertex counterterms
+    and the photon Z_3 counterterm must be combined with the two-loop integral; the
+    two possible vertex subgraphs share the photon propagator and are not independent
+    insertions. The rewritten integrand makes each p or p' subintegration finite by
+    a finite difference, cancels the remaining gauge-invariant quadratic q dependence
+    with the Z_3 term, and then satisfies the all-subintegration criterion. The final
+    convergence claim remains conditional on the externally cited theorem.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.overlap-counterterm-cancellation-example
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 513
+    - 514
+    - 515
+    note: The explicit overlap expression, finite differences, and theorem-qualified
+      conclusion.
+  notation: []
+- id: qft.align038.pauli-term-why-absent-from-minimal-qed
+  label: Dimension-five Pauli term and why minimal QED omits it
+  summary: If electron or muon QED is an effective theory with heavy scale M, the
+    leading non-renormalizable Lorentz-, gauge-, and CP-invariant correction is the
+    dimension-five Pauli operator (ie/2M) bar psi[gamma_mu,gamma_nu]psi F_munu. It
+    shifts the magnetic moment by order 4e/M. Formal chiral invariance psi->gamma_5
+    psi, m->-m requires an extra m/M, giving order 4em/M^2. Its omission from the
+    renormalizable spinor-QED Lagrangian is therefore a low-energy renormalizable
+    truncation, not a symmetry prohibition.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.pauli-term-why-absent-from-minimal-qed
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 12.3; Problems
+    pages:
+    - 520
+    - 531
+    note: Pauli term, its magnetic-moment effect, and the stated symmetry variant.
+  notation: []
+- id: qft.align038.phi4-renormalization-point-dependence
+  label: 'WI residual route: Scalar phi^4 coupling defined at an off-shell symmetric
+    point'
+  summary: For real scalar phi^4 theory, the one-loop 2-to-2 amplitude depends on
+    the Mandelstam variables s,t,u with s+t+u=4m^2. Define g_R as the real amplitude
+    at the symmetric off-shell point q_1^2=q_2^2=q_1'^2=q_2'^2=mu^2 and s=t=u=-4mu^2/3
+    (mu^2>-3m^2); its cutoff dependence cancels that of the loop amplitude through
+    order g_R^2. Changing mu changes g_R so that the finite amplitude is unchanged,
+    a freedom the text says will matter for the Volume II renormalization group. This
+    is an independent WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 515
+    - 516
+    note: The scalar amplitude, symmetric point, real-domain restriction, and scheme
+      dependence.
+  notation: []
+- id: qft.align038.power-counting-convergence-theorem-scope
+  label: All-subintegration power-counting criterion and external proof limit
+  summary: Actual convergence of a graph requires D<0 for the whole multiple integral
+    and for every subintegration obtained while holding one or more linear combinations
+    of loop momenta fixed. This chapter does not prove that criterion; it explicitly
+    refers to earlier treatments and later invokes the cited theorem, whose proof
+    relies on Euclidean asymptotic properties of Feynman-graph integrands, to infer
+    convergence after subtractions.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.power-counting-convergence-theorem-scope
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 12.1–12.2; Reference 2
+    pages:
+    - 504
+    - 505
+    - 512
+    - 532
+    note: The criterion, the book's stated proof omission, its use, and the reference's
+      stated scope.
+  notation: []
+- id: qft.align038.power-counting-spin-and-gauge-qualification
+  label: Power-counting spin values and gauge-current qualification
+  summary: The counting parameter is s_f=0 for scalars, 1/2 for Dirac fields, and
+    1 for massive vectors; for a massive Lorentz (A,B) field it is A+B. Gauge-ineffective
+    terms may be dropped so the effective photon propagator has s=0. The same effective
+    s=0 statement for a massive vector requires coupling to a conserved current independent
+    of that vector; the text also states the analogous effective graviton result.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.power-counting-spin-and-gauge-qualification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.1'
+    pages:
+    - 500
+    note: The page gives each value and the qualifications.
+  notation: []
+- id: qft.align038.problem-cubic-neutral-scalar-scattering
+  label: 'Problem: cubic neutral-scalar one-loop scattering'
+  summary: For a neutral scalar of mass m_phi and self-interaction g phi-cubed/6,
+    calculate the scalar-scalar S-matrix element to one-loop order.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-cubic-neutral-scalar-scattering
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 3 specifies the cubic interaction and one-loop scalar-scattering
+      output.
+  notation: []
+- id: qft.align038.problem-neutral-scalar-electron-mass-shift
+  label: 'Problem: neutral-scalar electron mass shift'
+  summary: Calculate to one-loop order the contribution of the neutral scalar defined
+    in Problem 2 to the electron mass shift delta m_e.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-neutral-scalar-electron-mass-shift
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 4 refers to the Problem 2 scalar and requests its one-loop electron
+      mass shift.
+  notation: []
+- id: qft.align038.problem-neutral-scalar-magnetic-moment-z2
+  label: 'Problem: neutral-scalar effects on magnetic moment and Z2'
+  summary: For a neutral scalar of mass m_phi with a Yukawa interaction g phi psi-bar
+    psi, calculate its one-loop effects on the electron magnetic moment and on Z2.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-neutral-scalar-magnetic-moment-z2
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 2 specifies the field, interaction, order, and both requested outputs.
+  notation: []
+- id: qft.align038.problem-qed-eft-cpt-relaxed-operators
+  label: 'Problem: leading and next-to-leading QED EFT operators without C/P/T'
+  summary: Assume electron-photon QED is an EFT obtained by integrating out unknown
+    particles of mass M much greater than m_e. Under gauge and Lorentz invariance,
+    but without assuming C, P, or T, determine the non-renormalizable Lagrangian terms
+    at leading order in 1/M and at next-to-leading order.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-qed-eft-cpt-relaxed-operators
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems 4
+    pages:
+    - 531
+    note: Complete independent Chapter 12 problem statement.
+  notation: []
+- id: qft.align038.problem-qed-electron-self-energy-overlap
+  label: 'Problem: cancel the overlapping electron self-energy divergence'
+  summary: Show how quantum-electrodynamic counterterms cancel the overlapping divergence
+    in the electron self-energy.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-qed-electron-self-energy-overlap
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 531
+    note: Independent requested cancellation task.
+  notation: []
+- id: qft.align038.problem-scalar-renormalizable-terms-by-dimension
+  label: 'Problem: scalar renormalizable terms in 2, 3, and 6 dimensions'
+  summary: List all Lorentz-invariant renormalizable or superrenormalizable Lagrangian
+    terms for one scalar field separately in spacetime dimensions 2, 3, and 6.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-scalar-renormalizable-terms-by-dimension
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems 1
+    pages:
+    - 531
+    note: Independent requested classification task.
+  notation: []
+- id: qft.align038.problem-scalar-vacuum-polarization-z3-uehling
+  label: 'Problem: charged-scalar vacuum polarization, Z3, and 2s shift'
+  summary: Calculate one-loop charged-spinless-particle contributions to Pi(q²) and
+    Z3, then determine their effect on the hydrogen 2s energy shift in the condition
+    m_s much greater than Z alpha m_e.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-scalar-vacuum-polarization-z3-uehling
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 1 specifies the charged scalar, Pi, Z3, 2s shift, and heavy-mass
+      condition.
+  notation: []
+- id: qft.align038.problem-yukawa-scalar-self-energy-subtraction
+  label: 'Problem: Yukawa scalar self-energy as polynomial plus finite integral'
+  summary: For a scalar phi and spinor psi with interaction Hamiltonian g phi bar
+    psi psi, write the one-loop scalar self-energy Pi*(q) as a divergent polynomial
+    in q_mu plus an explicit convergent integral.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-yukawa-scalar-self-energy-subtraction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems 3
+    pages:
+    - 531
+    note: Independent requested derivation task.
+  notation: []
+- id: qft.align038.qed-1pi-divergences-and-ward-reduction
+  label: 'WI residual route: QED divergent 1PI structures constrained by Ward identities'
+  summary: Power counting leaves the QED electron-photon vertex (D=0), electron self-energy
+    (D=1), and photon self-energy (D=2) as the nonvanishing divergent 1PI structures.
+    Lorentz invariance gives the vertex's divergent part L gamma_mu and the self-energy
+    A-B(i slash p+m); a current-conserving regulator and the Ward identity give L=B.
+    Photon transversality removes a photon-mass divergence and leaves Pi_munu=(q^2
+    eta_munu-q_mu q_nu)[C+pi(q^2)], with pi(0)=0. Light-by-light's possible D=0 constant
+    is finite by current conservation; the odd-three-photon and stated one-external-line
+    classes vanish by C or Lorentz invariance. This is an independent WI residual
+    route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 507
+    - 508
+    - 509
+    note: The classification, Ward reduction, transversality, and forbidden structures.
+  notation:
+  - source: weinberg-1
+    note: The Ward conclusion assumes a regularization procedure that respects current
+      conservation.
+- id: qft.align038.qed-counterterm-onshell-subtraction
+  label: 'WI residual route: QED on-shell counterterm subtraction'
+  summary: Choose the electron counterterms by Z_2 delta m=-A and Z_2-1=-B so the
+    self-energy is finite and the electron pole has free position and residue; the
+    Ward-related vertex becomes gamma_mu plus a finite part with its on-shell charge
+    normalization. Choose Z_3=1+C so the transverse photon self-energy is finite and
+    its pole residue is free-field normalized. This is an independent WI residual
+    route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 510
+    note: Equations (12.2.9)–(12.2.15) and their pole/residue conditions.
+  notation: []
+- id: qft.align038.scalar-eft-power-counting-example
+  label: Derivative-scalar EFT power counting and local loop counterterms
+  summary: For the shift- and reflection-symmetric scalar derivative EFT, discard
+    box-phi operators using the equations of motion and take vertices with n_i fields
+    and d_i derivatives. After UV renormalization, a graph at k<<M is suppressed by
+    (k/M)^nu, where nu=-sum_i V_i Delta_i=sum_i V_i(d_i+n_i-4). For a connected graph,
+    sum_i V_i=I-L+1 and sum_i V_i n_i=2I+E give nu=2E-4+4L+sum_i V_i(d_i-n_i). A loop
+    of derivative quartic interactions has a local ultraviolet divergence cancelled
+    by a quartic eight-derivative vertex, while nonanalytic finite terms such as s^4
+    ln s remain. The two formulas were verified against the rendered source. The eight-derivative
+    quartic counterterm statement is specific to dimensional regularization; other
+    regulators also have quartic and quadratic divergences requiring four- and six-derivative
+    quartic counterterms.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.scalar-eft-power-counting-example
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 522
+    - 523
+    note: The scalar setup, both power-counting forms, the connected-graph identities,
+      and the local divergence versus finite logarithm; equations were checked in
+      the render.
+  notation: []
+- id: qft.align038.scalar-spinor-photon-renormalizable-catalogue
+  label: 'WI residual route: Renormalizable scalar, Dirac, and photon interaction
+    catalogue'
+  summary: For scalar phi, Dirac psi, and photon A_mu fields in four dimensions before
+    imposing additional symmetries, Table 12.2 lists phi, phi^2, partial_mu phi partial^mu
+    phi, phi^3, phi^4, phi partial_mu phi A^mu, phi^2 A_mu A^mu, phi bar psi psi,
+    F_munu F^munu, bar psi psi, bar psi gamma^mu partial_mu psi, and bar psi gamma^mu
+    A_mu psi. Their listed coupling dimensions Delta_i are respectively nonnegative,
+    including superrenormalizable linear, quadratic, cubic, and fermion-mass terms.
+    Gauge or other symmetry requirements can exclude individual table entries or combine
+    them into gauge-invariant structures. This is an independent WI residual route
+    to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: 12.3, Table 12.2
+    pages:
+    - 518
+    note: The table enumerates field content, derivatives, dimensionalities, and terms.
+  notation: []
+- id: qft.align038.shift-symmetric-scalar-derivative-eft
+  label: Shift symmetry permits an infinite derivative scalar EFT
+  summary: For a real scalar with shift symmetry phi(x) to phi(x)+epsilon, arbitrary
+    constant epsilon, all renormalizable interactions and a scalar mass are forbidden,
+    while an infinite tower of non-renormalizable derivative interactions is allowed.
+    The source uses this as an example where a symmetry forbids renormalizable interactions
+    but makes a k/M derivative expansion useful.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.shift-symmetric-scalar-derivative-eft
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 521
+    - 522
+    note: Shift symmetry, its exclusions, and the derivative Lagrangian.
+  notation: []
+- id: qft.align038.soft-massless-spin-consistency
+  label: 'WI residual route: Lorentz-consistency constraints from soft massless emission'
+  summary: Contracting the soft spin-one amplitude with q_mu makes its coefficient
+    the final minus initial total charge, so Lorentz invariance requires charge conservation.
+    The soft-graviton analogue requires sum_n f_n p_n^mu to be conserved, which permits
+    nontrivial scattering only when every f_n is the same, yielding universal low-energy
+    gravitational coupling. For massless spin j>2, the required conserved higher-rank
+    momentum tensor would forbid nontrivial scattering unless the low-energy couplings
+    g_n vanish; such particles therefore cannot mediate inverse-square forces. This
+    is an independent WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 537
+    - 538
+    note: Gauge-polarization argument and the spin-two and higher-spin conclusions.
+  notation: []
+- id: qft.align038.soft-photon-single-emission-theorem
+  label: 'WI residual route: Universal leading soft-photon emission factor'
+  summary: For q tending to zero, emission from an external outgoing charged line
+    contributes e p_mu/(p dot q-i epsilon), incoming emission has the corresponding
+    sign/denominator change, and internal emission has no (p dot q)^(-1) singularity.
+    Hence M^mu_{beta alpha}(q) tends to M_{beta alpha} sum_n eta_n e_n p_n^mu/(p_n
+    dot q-i eta_n epsilon), with eta_n=+1 for final and -1 for initial particles.
+    Pole residues and equal-momentum current matrix elements make this leading result
+    valid to all perturbative orders. This is an independent WI residual route to
+    its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 534
+    - 535
+    - 536
+    note: Soft definition, external-line poles, absence of internal singularity, and
+      formula.
+  notation: []
+- id: qft.align038.superficial-degree-of-divergence
+  label: 'WI residual route: Superficial degree of divergence from graph counting'
+  summary: For a connected 1PI graph, define D by common scaling of all internal momenta.
+    With propagator Delta_f(k)~k^(-2+2s_f), internal lines I_f, external lines E_f,
+    vertices N_i, derivatives d_i, and 2 I_f+E_f=sum_i N_i n_if, graph counting gives
+    D=sum_f I_f(2s_f+2)+sum_i N_i(d_i-4)+4, equivalently D=4-sum_f E_f(s_f+1)-sum_i
+    N_i Delta_i, where Delta_i=4-d_i-sum_f n_if(s_f+1). The original rendered p. 501
+    was inspected because its text layer loses the equation glyphs. This is an independent
+    WI residual route to its amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.1'
+    pages:
+    - 500
+    - 501
+    - 502
+    note: Definitions, loop-counting derivation, and dimensional-analysis check.
+  notation:
+  - source: weinberg-1
+    note: s_f is a propagator power-counting parameter, only loosely called spin;
+      Delta_i is the mass/momentum dimensionality of the coupling coefficient.
+- id: qft.align038.symmetry-complete-renormalizable-lagrangian
+  label: Symmetry-complete set of renormalizable interactions
+  summary: For all Delta_i>=0, D is bounded by 4-sum_f E_f(s_f+1), so only finitely
+    many external-field structures diverge. Their local counterterms are exactly the
+    interactions satisfying 0<=d_i<=4-sum_f n_if(s_f+1). Cancellation usually requires
+    every symmetry-allowed renormalizable interaction to be present; a Yukawa scalar–fermion
+    interaction without phi^4 supplies the stated counterexample. The chapter flags
+    supersymmetry and superrenormalizable symmetry breaking as qualifications.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.symmetry-complete-renormalizable-lagrangian
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 506
+    - 507
+    note: General symmetry-completeness condition and the scalar-fermion example.
+  notation: []
+- id: qft.align038.wilsonian-floating-cutoff-flow
+  label: 'WI residual route: Floating-cutoff Wilsonian coupling flow'
+  summary: Integrating out degrees of freedom above a floating cutoff Lambda gives
+    couplings g_n(Lambda) that obey a cutoff-flow equation. Even if only finitely
+    many couplings are nonzero at Lambda_0, changing Lambda generally generates every
+    symmetry-allowed coupling. Physical quantities are Lambda-independent when expressed
+    using the full running set; conventional renormalized masses and couplings can
+    be used instead as coordinates. This is an independent WI residual route to its
+    amended common result.
+  kind: method
+  evidence:
+  - source: weinberg-1
+    section: '12.4'
+    pages:
+    - 525
+    - 526
+    - 528
+    note: Floating-cutoff construction, generated couplings, and physical cutoff independence.
+  notation: []
+- id: qft.align039.biunitary-yukawa-diagonalization-and-mass-basis
+  label: Biunitary Yukawa diagonalization and mass basis (source-specific route)
+  summary: Diagonalize YdYd† and YuYu† with left unitary matrices and factor Y=UMK†.
+    Right-handed rotations remove K, while separate left rotations make diagonal quark
+    masses and leave residual vector rephasings.
+  kind: method
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 596
+  notation: []
+- id: qft.align039.broken-gauge-vector-mass-matrix-kernel
+  label: Elementary-scalar broken-gauge vector mass matrix and unbroken kernel (source-specific
+    route)
+  summary: For elementary canonically normalized scalar fields, expanding around the
+    scalar vacuum gives a real symmetric positive vector mass matrix. Its null vectors
+    are exactly the unbroken generator combinations, so every and only unbroken gauge
+    symmetry has a massless gauge boson; Section 21.4 separately gives the strong-dynamics
+    result. Equivalently, c_alpha mu²_{alpha beta} c_beta=sum_n|sum_{alpha,m}c_alpha(t^alpha)_{nm}v_m|²>=0,
+    and it vanishes exactly for an unbroken generator combination.
+  kind: result
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 296
+    - 297
+  notation: []
+- id: qft.align039.broken-theory-xi-gauge-fixing
+  label: Renormalizable ξ-gauge fixing for a broken gauge theory (source-specific
+    route)
+  summary: With WII's imaginary-antisymmetric Hermitian real-representation generators,
+    choose f^alpha=partial_mu A^{alpha mu}-i xi sum_nm(t^alpha)_nm phi'_n v_m and
+    L_gf=-sum_alpha(f^alpha)^2/(2xi). The cross term cancels scalar-vector mixing;
+    xi→infinity recovers unitarity gauge and xi→0 gives Landau gauge.
+  kind: method
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 301
+  notation: []
+- id: qft.align039.broken-theory-xi-spectrum-and-renormalizability
+  label: ξ-gauge spectrum, cancellation, and renormalizability qualification (source-specific
+    route)
+  summary: The broken-theory ξ gauge includes ghosts and gauge-dependent Goldstone
+    masses √ξ times nonzero vector masses. For finite ξ the propagators have unbroken-theory
+    ultraviolet behavior, while renormalizability still requires the symmetry constraint
+    on divergences beyond good propagators.
+  kind: result
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 302
+    - 303
+    - 304
+  notation: []
+- id: qft.align039.ckm-charged-current-mixing-matrix
+  label: CKM charged-current mixing matrix
+  summary: Neutral B and W3 interactions remain flavor diagonal under mass-basis rotations,
+    whereas the W± current contains V=Uu†Ud. V is the unitary Cabibbo–Kobayashi–Maskawa
+    matrix.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.ckm-charged-current-mixing-matrix
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 597
+  notation: []
+- id: qft.align039.ckm-mass-diagonalization-and-three-generation-cp-violation
+  label: CKM mixing from quark mass diagonalization and three-generation CP violation
+    (source-specific route)
+  summary: Independent unitary rotations diagonalize the up- and down-type mass matrices;
+    their left-handed mismatch is the unitary Kobayashi-Maskawa matrix. With three
+    generations its phases cannot generally all be removed, allowing T and CP violation
+    in gauge interactions.
+  kind: result
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 314
+    - 315
+  notation: []
+- id: qft.align039.ckm-physical-parameter-count-and-standard-form
+  label: CKM physical parameter count and standard form (source-specific route)
+  summary: A three-generation unitary CKM matrix has three mixing angles and one physical
+    phase after five of six mass-preserving rephasings remove phases. The standard
+    θ12,θ23,θ13,δ parametrization makes this explicit.
+  kind: representation
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 597
+  notation: []
+- id: qft.align039.ckm-unitarity-triangle-construction
+  label: CKM unitarity-triangle construction
+  summary: Column orthogonality gives VudVub*+VcdVcb*+VtdVtb*=0. Divide by VcdVcb*
+    to plot a closed complex triangle, a graphical test of three-generation CKM unitarity
+    and of new physics that would spoil it.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.ckm-unitarity-triangle-construction
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.3
+    pages:
+    - 598
+  notation: []
+- id: qft.align039.complex-scalar-vector-mass-matrix
+  label: Vector mass matrix for a complex scalar representation (source-specific route)
+  summary: A complex scalar representation may be written as real fields; equivalently
+    its vector mass matrix is the vacuum expectation of the anticommutator of Hermitian
+    generators. In the source convention mu²_{alpha beta}=one-half times the vacuum
+    matrix element of {T^alpha,T^beta}, with Hermitian T^alpha.
+  kind: representation
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 298
+  notation: []
+- id: qft.align039.custodial-symmetry-electroweak-mass-ratio
+  label: Custodial symmetry and the electroweak W/Z mass ratio
+  summary: If the zero-electroweak-coupling theory has an unbroken custodial rotation
+    symmetry, its Goldstone decay-constant matrix is isotropic and unambiguously gives
+    m_Z/m_W=sqrt(1+g′²/g²). The printed final equality to 1/sinθ appears inconsistent
+    with the chapter’s earlier convention g=−e/sinθ and g′=−e/cosθ, which instead
+    implies 1/|cosθ|; retain the square-root relation and flag the apparent source
+    inconsistency. The minimal scalar doublet has accidental SO(4) supporting custodial
+    symmetry.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.custodial-symmetry-electroweak-mass-ratio
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 325
+    - 326
+  notation: []
+- id: qft.align039.dimension-five-neutrino-mass-operator-and-seesaw-matching
+  label: Dimension-five neutrino mass operator and seesaw matching
+  summary: Without νR, the nonrenormalizable operator −M̃ij(L̄iH̃)(H̃Lj)† gives neutrino
+    masses and is generated by integrating out heavy right-handed neutrinos. Its smallness
+    relative to the weak scale is the EFT see-saw description.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.dimension-five-neutrino-mass-operator-and-seesaw-matching
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 601
+  notation: []
+- id: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  label: Dirac/Majorana neutrino masses and the seesaw
+  summary: Gauge-singlet νR permits Dirac Yukawa and Majorana terms. For one generation
+    the mass matrix [[0,m],[m,M]] has heavy mass about M and light mass about m²/M
+    for M≫m; lepton number forbids Majorana terms if imposed.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-majorana-neutrino-masses-and-seesaw
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 600
+  notation: []
+- id: qft.align039.dynamical-breaking-covariant-building-blocks
+  label: Covariant building blocks for a dynamically broken gauge EFT
+  summary: After separating Goldstone coordinates, compensate the formal local transformation
+    to construct H-covariant quantities, covariant matter derivatives, and a covariant
+    curl. The effective Lagrangian is built from these H-invariant blocks before restricting
+    to the physical gauge subgroup.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.dynamical-breaking-covariant-building-blocks
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 320
+    - 321
+    - 322
+  notation: []
+- id: qft.align039.dynamical-breaking-low-energy-power-counting
+  label: Low-energy power counting for dynamically broken gauge symmetry
+  summary: For energies Q below eM, the EFT expansion counts e and Q/M. Since allowed
+    interactions have d+e at least two, leading contributions are loop-free vertices
+    with d+e=2, including Goldstone kinetic, Yang–Mills, and second-order symmetry-breaking
+    terms.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.dynamical-breaking-low-energy-power-counting
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 323
+  notation: []
+- id: qft.align039.dynamically-broken-local-symmetry-small-gauge-coupling-framework
+  label: Small-gauge-coupling framework for dynamically broken local symmetry
+  summary: For a theory whose zero-gauge-coupling global G breaks to H, gauge a subgroup
+    with small couplings and use its intersection with H as the unbroken gauge subgroup.
+    Massive spin-one resonances are approximate rather than a general nonperturbative
+    theorem at strong gauge coupling.
+  kind: assumption
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.dynamically-broken-local-symmetry-small-gauge-coupling-framework
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 318
+    - 319
+  notation: []
+- id: qft.align039.electric-charge-quantization-and-hypercharge-constraint
+  label: Electric-charge quantization and hypercharge constraint
+  summary: For the Standard-Model particle content, quantum consistency constrains
+    hypercharges; in particular YL+3YQ=0, forcing the stated electron/down-quark charge
+    relation. This is flagged as a result proved later, not derived in this packet.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.electric-charge-quantization-and-hypercharge-constraint
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '29.3'
+    pages:
+    - 594
+  notation: []
+- id: qft.align039.electromagnetic-charge-and-neutral-current-structure
+  label: Electromagnetic charge and neutral-current structure
+  summary: Combining B and W3 interactions gives Q=T3+Y and the Z current JZμ=J3μ/cosθW−sin²θW
+    JEMμ/cosθW. Neutral currents are diagonal in flavor in the mass basis, a condition
+    used later for the GIM result.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.electromagnetic-charge-and-neutral-current-structure
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.1
+    pages:
+    - 595
+  notation: []
+- id: qft.align039.electroweak-mixing-and-charged-neutral-vectors
+  label: Electroweak mixing and W±, Z, photon fields
+  summary: Breaking SU(2)L × U(1) to electromagnetic U(1) yields charged equal-mass
+    W fields and orthogonal neutral Z and photon fields. The unbroken charge fixes
+    the relations among e, g, g′, and the mixing angle.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.electroweak-mixing-and-charged-neutral-vectors
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 307
+  notation: []
+- id: qft.align039.electroweak-precision-inputs-and-one-loop-mass-sensitivity
+  label: Electroweak precision inputs and one-loop top/Higgs sensitivity
+  summary: The source’s 1994–1995 precision-analysis scheme uses measured Z mass,
+    radiatively corrected G_F, and α(m_Z) as inputs and treats sin²θ as derived. One-loop
+    corrections involve top-quark and scalar-Higgs masses, so the historical fits
+    and numerical bounds are data-era-dependent examples rather than present predictions.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.electroweak-precision-inputs-and-one-loop-mass-sensitivity
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 316
+  notation: []
+- id: qft.align039.electroweak-running-charge-neutral-current-tests
+  label: Running-charge correction and neutral-current tests of electroweak theory
+  summary: For electroweak-scale processes the source replaces the low-energy charge
+    by a sliding effective charge, modifying the tree mass estimates. Before W and
+    Z discovery, neutral-current processes supplied the relevant tests and mixing-angle
+    measurements; all displayed numerical examples are 1994–1995 historical data,
+    not current values.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.electroweak-running-charge-neutral-current-tests
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 310
+    - 311
+  notation: []
+- id: qft.align039.electroweak-su2l-u1-lepton-representations
+  label: Electroweak SU(2)L × U(1) lepton representation
+  summary: Left-handed neutrino and charged-lepton fields form an SU(2)L doublet while
+    the right-handed charged lepton is a singlet. Excluding the experimentally unsupported
+    gauged lepton-number direction gives SU(2)L × U(1).
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.electroweak-su2l-u1-lepton-representations
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 305
+    - 306
+  notation: []
+- id: qft.align039.general-unitarity-gauge-and-universal-vector-mass-formula
+  label: General unitarity gauge and universal vector mass formula
+  summary: A general unitarity gauge removes the Goldstones corresponding to broken
+    gauge generators but retains nongauged Goldstones, including pseudo-Goldstones
+    with gauge-induced masses. Canonical Goldstone normalization gives a universal
+    vector mass matrix valid through second order in gauge couplings and all orders
+    in other interactions.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-unitarity-gauge-and-universal-vector-mass-formula
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 324
+    - 325
+  notation: []
+- id: qft.align039.gim-quark-doublets-and-flavor-changing-neutral-current-cancellation
+  label: GIM quark-doublet construction and neutral-current cancellation (source-specific
+    route)
+  summary: Adding the charm-containing quark doublet makes strangeness-changing neutral-current
+    terms cancel and suppresses the charged-current loop contribution to K0 mixing
+    by m_c²/m_W². The source presents this as the resolution of otherwise excessive
+    flavor-changing weak effects.
+  kind: result
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 312
+    - 313
+  notation: []
+- id: qft.align039.higgs-mechanism-local-goldstone-modes
+  label: 'Higgs mechanism: local Goldstone modes become vector longitudinal states
+    (source-specific route)'
+  summary: For a spontaneously broken local symmetry, the would-be Goldstone degrees
+    of freedom occur as helicity-zero states of the associated vector particles, which
+    acquire mass; this is contrasted with the global-symmetry Goldstone theorem.
+  kind: result
+  evidence:
+  - source: weinberg-2
+    section: '21'
+    pages:
+    - 295
+  notation: []
+- id: qft.align039.jarlskog-invariant-as-unitarity-triangle-area
+  label: Jarlskog invariant as unitarity-triangle area (source-specific route)
+  summary: The nonrescaled triangle area gives J=2(area)=Im(VudVtbVtd*Vub*). A real
+    CKM matrix collapses the triangle to a line, linking nonzero area to weak CP violation.
+  kind: result
+  evidence:
+  - source: schwartz
+    section: 29.3.3
+    pages:
+    - 599
+  notation: []
+- id: qft.align039.muon-decay-rate-and-fermi-constant
+  label: Muon decay rate and the Fermi constant
+  summary: For mμ≫me, the four-Fermi theory gives Γ(μ→eν̄ν)=GF²mμ⁵/(192π³), so the
+    measured muon lifetime determines GF.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.muon-decay-rate-and-fermi-constant
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 603
+  notation: []
+- id: qft.align039.muon-lifetime-vev-and-quark-charged-current-tests
+  label: Muon-lifetime vev and quark charged-current tests
+  summary: The measured lifetime gives GF=1.166×10−5 GeV−2 and v≈247 GeV. Charged-current
+    quark processes use Cabibbo mixing, and beta/kaon decay tests give a universal
+    GF and sinθC≈0.22.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.muon-lifetime-vev-and-quark-charged-current-tests
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 604
+  notation: []
+- id: qft.align039.neutral-current-four-fermi-theory-and-massless-photon-limit
+  label: Neutral-current four-Fermi theory and massless-photon limit
+  summary: Z exchange couples JZ=(J3−sin²θW JEM)/cosθW and completes L4F=−4GF/√2[J+·J−+cos²θW(JZ)²].
+    No analogous JEM² local operator exists because a massless photon propagator cannot
+    be approximated by a constant.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.neutral-current-four-fermi-theory-and-massless-photon-limit
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 604
+  notation: []
+- id: qft.align039.neutrino-oscillation-observables-and-mass-squared-differences
+  label: Neutrino oscillation observables and mass-squared differences
+  summary: Propagation diagonalizes in the mass basis, so flavor neutrinos oscillate.
+    Oscillations measure Δm² rather than an absolute scale and permit normal or inverted
+    ordering; solar, atmospheric, reactor, and accelerator sources constrain distinct
+    combinations.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.neutrino-oscillation-observables-and-mass-squared-differences
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 602
+  notation: []
+- id: qft.align039.pmns-mixing-and-majorana-phase-count
+  label: PMNS mixing and Majorana phase count
+  summary: Flavor-basis W couplings are diagonal while mass-basis couplings contain
+    the PMNS matrix U. Its standard form has three angles and a Dirac phase, plus
+    two additional phases when a Majorana component is present; mass labels are not
+    assumed ordered.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.pmns-mixing-and-majorana-phase-count
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 602
+  notation: []
+- id: qft.align039.renormalizable-standard-model-accidental-baryon-lepton-conservation-and-eft-limit
+  label: Accidental B/L conservation of the renormalizable Standard Model and its
+    EFT limit
+  summary: 'With the stated Standard Model field content and SU(3)-neutral scalar
+    doublets, the most general renormalizable Lagrangian contains no baryon- or lepton-number-violating
+    operator. This operator-level statement does not assert exact quantum B+L conservation;
+    the accepted anomaly result supplies that separate qualification. Higher-dimensional
+    EFT terms need not: the dimension-five branch violates lepton number, while dimension-six
+    three-quark-one-lepton operators violate both B and L and give proton-decay rates
+    proportional to M^-4.'
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.renormalizable-standard-model-accidental-baryon-lepton-conservation-and-eft-limit
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 316
+    - 317
+    - 318
+  notation: []
+- id: qft.align039.standard-model-dimension-five-neutrino-mass-operator
+  label: Dimension-five lepton-number-violating neutrino mass operator
+  summary: With one scalar doublet, the unique SU(2)- and Lorentz-invariant dimension-five
+    operator made from two left-handed lepton doublets and two scalar doublets yields
+    lepton-number-violating neutrino masses below the electroweak scale.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.standard-model-dimension-five-neutrino-mass-operator
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 317
+    - 318
+  notation: []
+- id: qft.align039.standard-model-scalar-doublet-yukawa-breaking
+  label: Scalar doublet, Yukawa coupling, and electroweak breaking
+  summary: A weakly coupled renormalizable electron-mass mechanism uses a scalar SU(2)L
+    doublet with a Yukawa coupling. Its gauge-invariant quartic potential has a nonzero
+    tree vacuum for negative mass squared, and unitarity gauge leaves one physical
+    real scalar.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.standard-model-scalar-doublet-yukawa-breaking
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 308
+    - 309
+  notation: []
+- id: qft.align039.technicolor-dynamical-electroweak-breaking-qualification
+  label: Technicolor dynamical electroweak breaking and its qualification
+  summary: An asymptotically free technicolor interaction can dynamically break the
+    electroweak symmetry while retaining the custodial relation and a low scale through
+    logarithmic running. The source notes that extended interactions needed for ordinary
+    fermion masses risk flavor-changing neutral currents.
+  kind: concept
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.technicolor-dynamical-electroweak-breaking-qualification
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 326
+    - 327
+  notation: []
+- id: qft.align039.tree-electroweak-masses-and-fermi-scale
+  label: Tree electroweak masses and Fermi-scale relation
+  summary: The scalar vacuum gives a massless photon, W and Z masses, and the charged-lepton
+    mass. Matching low-energy W exchange to the Fermi interaction fixes the vacuum
+    scale through G_F, subject to later radiative corrections.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.tree-electroweak-masses-and-fermi-scale
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 309
+    - 310
+  notation: []
+- id: qft.align039.tree-level-four-fermi-matching
+  label: Tree-level four-Fermi matching
+  summary: For exchanged momentum p²≪mW², W exchange becomes a local charged-current
+    four-Fermi interaction with 4GF/√2=g²/(2mW²)=2/v². This equality has the stated
+    low-energy domain and is not valid near the W pole.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.tree-level-four-fermi-matching
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 603
+  notation: []
+- id: qft.align039.unbroken-gauge-field-canonical-normalization-and-charge
+  label: 'Unbroken gauge field: canonical normalization and charge'
+  summary: For one unbroken generator, its coefficients select the massless gauge-field
+    combination. Requiring a canonical kinetic coefficient fixes their normalization,
+    and the corresponding generator coefficients identify the charge to which that
+    massless field couples.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.unbroken-gauge-field-canonical-normalization-and-charge
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 298
+  notation: []
+- id: qft.align039.unitarity-gauge-goldstone-elimination
+  label: Unitarity gauge eliminates gauge Goldstone coordinates
+  summary: A spacetime-dependent gauge transformation can impose scalar-field orthogonality
+    to the broken directions. In this gauge there are no Goldstone fields and the
+    physical-particle content is manifest; the conclusion is gauge independent.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.unitarity-gauge-goldstone-elimination
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 296
+  notation: []
+- id: qft.align039.unitarity-gauge-propagator-ultraviolet-limitation
+  label: Unitarity-gauge propagator ultraviolet limitation
+  summary: With all gauge symmetries broken for simplicity, the unitarity-gauge vector
+    propagator has a longitudinal term and approaches order k^0 at high momentum.
+    The source therefore says the usual power-counting proof of renormalizability
+    is unavailable in this gauge; this is a motivation for, not a premise of, ξ gauges.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.unitarity-gauge-propagator-ultraviolet-limitation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 299
+  notation: []
+- id: qft.align039.v-minus-a-charged-weak-currents
+  label: V−A charged weak currents
+  summary: V−A=2γμPL shows weak charged currents couple only left-handed fermions.
+    J+μ contains lepton currents and Vij ūiLγμdjL, while J− is its Hermitian conjugate.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.v-minus-a-charged-weak-currents
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 603
+  notation: []
+- id: qft.align039.wolfenstein-approximation-and-three-generation-cp-condition
+  label: Wolfenstein approximation and the three-generation CP condition (source-specific
+    route)
+  summary: For small angles, λ=sinθ12≈0.22 organizes the Wolfenstein expansion. With
+    only two generations all removable phases make CKM real, so weak CKM CP violation
+    requires a third generation.
+  kind: assumption
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 598
+  notation: []
+- id: qft.align039.xi-gauge-s-matrix-independence-and-unitarity-gauge-equivalence
+  label: ξ-gauge S-matrix independence and unitarity-gauge equivalence
+  summary: For the specified broken-theory gauge-fixed Lagrangian, the general Faddeev-Popov
+    theorem makes the S matrix independent of ξ, so every finite ξ gives the same
+    results as the ξ→∞ unitarity gauge.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.xi-gauge-s-matrix-independence-and-unitarity-gauge-equivalence
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 303
+  notation: []
+- id: qft.align039.yukawa-fermion-masses-and-higgs-couplings
+  label: Yukawa fermion masses and Higgs couplings
+  summary: Gauge-invariant Yukawa terms −Ydij Q̄iHdjR−Yuij Q̄i H̃ujR+h.c. give fermion
+    masses after the Higgs vev and hff couplings proportional to each fermion mass.
+    H̃=iσ2H* supplies the up-type/Dirac-neutrino hypercharge.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.yukawa-fermion-masses-and-higgs-couplings
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 595
+  notation: []
+- id: qft.align039.zero-gauge-coupling-vector-goldstone-exchange-equivalence
+  label: Zero-gauge-coupling vector/Goldstone exchange equivalence
+  summary: Assuming for simplicity that all gauged symmetries are broken, the singular
+    inverse vector-mass contribution makes unitarity-gauge vector exchange survive
+    when gauge couplings vanish. Canonical Goldstone normalization and the current-coupling
+    formulas give the same amplitude as Goldstone exchange, establishing continuity
+    of physical matrix elements.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.zero-gauge-coupling-vector-goldstone-exchange-equivalence
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 299
+    - 300
+  notation: []
 - id: qft.align041.born-rule-complete-orthogonal-rays
   label: Born rule for a complete orthogonal set of rays
   summary: For tests that distinguish mutually orthogonal rays, the transition probability
@@ -27002,13 +28749,19 @@ nodes:
     that shift to the leading soft external-leg sum changes the amplitude by eM₀ times
     total incoming charge minus total outgoing charge; Lorentz invariance therefore
     requires charge conservation for every hard process, without assuming a Lagrangian
-    or gauge invariance.
+    or gauge invariance. Weinberg I independently contracts the universal arbitrary-spin
+    soft factor with the momentum-proportional polarization shift and obtains conservation
+    of the low-energy spin-one coupling.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.soft-spin-one-lorentz-implies-charge-conservation
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: weinberg-1
+    node: weinberg-1.soft-massless-spin-consistency
+    note: WI soft-factor derivation of the separate spin-one and spin-two Lorentz-consistency
+      conclusions.
   evidence:
   - source: schwartz
     section: '9.5'
@@ -27016,19 +28769,31 @@ nodes:
     - 152
     - 153
     note: Applies the little-group shift to the soft sum and states the general conclusion.
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 537
+    note: The momentum-proportional polarization shift turns Lorentz consistency into
+      charge conservation.
   notation: []
 - id: qft.align054.soft-spin-two-universal-gravity
   label: Soft massless spin-2 implies universal gravity
   summary: The massless spin-2 little-group Ward condition applied to the soft emission
     sum requires conservation of Σκ_ip_i^ν. Since ordinary momentum is already conserved,
     nontrivial scattering requires a common κ for every particle; the source identifies
-    this universal coupling with gravity.
+    this universal coupling with gravity. Weinberg I independently derives universal
+    soft spin-two coupling from Lorentz consistency and distinguishes the higher-spin
+    conclusion that nontrivial low-energy couplings vanish.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.soft-spin-two-universal-gravity
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: weinberg-1
+    node: weinberg-1.soft-massless-spin-consistency
+    note: WI soft-factor derivation of the separate spin-one and spin-two Lorentz-consistency
+      conclusions.
   evidence:
   - source: schwartz
     section: 9.5.1
@@ -27036,6 +28801,13 @@ nodes:
     - 153
     - 154
     note: Derives the spin-2 soft constraint and universal κ conclusion.
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 537
+    - 538
+    note: The soft spin-two constraint gives universal coupling; the higher-spin continuation
+      has no nontrivial low-energy coupling.
   notation: []
 - id: qft.align054.spacetime-index-and-dirac-notation
   label: Spacetime, index, and Dirac notation
@@ -30217,10 +31989,12 @@ nodes:
       equivalence beyond the stated concept.
 - id: qft.higgs-mechanism-and-abelian-higgs-lagrangian
   label: Higgs mechanism and Abelian Higgs Lagrangian
-  summary: When the broken continuous symmetry is gauged, the physical Goldstone disappears
-    from the spectrum and the gauge boson becomes massive. The Abelian realization
-    gauges the U(1) linear sigma model with the Maxwell term and covariant scalar
-    kinetic term.
+  summary: 'When the broken continuous symmetry is gauged, the physical Goldstone
+    disappears from the spectrum and the gauge boson becomes massive. The Abelian
+    realization gauges the U(1) linear sigma model with the Maxwell term and covariant
+    scalar kinetic term. Weinberg II independently states only the common local-symmetry
+    result: the missing Goldstone degrees of freedom reappear as helicity-zero vector
+    states; its unitarity-gauge construction remains separate.'
   kind: concept
   group: qft.spontaneously-broken-symmetries
   origins:
@@ -30228,11 +32002,20 @@ nodes:
     node: schwartz.higgs-mechanism-and-abelian-higgs-lagrangian
     note: Retains the local-symmetry contrast and the displayed Abelian-Higgs starting
       Lagrangian.
+  - project: weinberg-2
+    node: weinberg-2.higgs-mechanism-local-goldstone-modes
+    note: Correspondence is limited to local Goldstone modes becoming longitudinal
+      massive-vector states, not the Abelian worked Lagrangian.
   evidence:
   - source: schwartz
     section: 28.3.1
     pages:
     - 575
+  - source: weinberg-2
+    section: 21; 21.1
+    pages:
+    - 295
+    note: Local-versus-global Goldstone statement and longitudinal-vector interpretation.
   notation:
   - source: schwartz
     note: The gauged model uses D_mu phi=(partial_mu+i e A_mu)phi in the displayed
@@ -30289,7 +32072,9 @@ nodes:
   summary: Restricting kinetic terms to first derivatives lets initial positions and
     velocities specify boundary data. Kinetic terms with too many derivatives generally
     introduce negative-energy or negative-norm states and vacuum decay, whereas multi-derivative
-    interactions occur generically in effective field theories.
+    interactions occur generically in effective field theories. Weinberg I adds the
+    EFT qualification that extra poles from resumming one higher-derivative term lie
+    at q-squared of order M-squared, where the omitted operator tower cannot be neglected.
   kind: assumption
   group: qft.classical-field-theory
   origins:
@@ -30297,12 +32082,23 @@ nodes:
     node: schwartz.higher-derivative-effective-interactions-and-instability
     note: Preserves this reviewed source treatment and its stated assumptions, notation,
       and derivation scope without asserting more than the shared concept.
+  - project: weinberg-1
+    node: weinberg-1.higher-derivative-poles-and-eft-cutoff
+    note: Extra-pole-at-cutoff argument, without identifying the isolated resummation
+      as a physical instability below the EFT scale.
   evidence:
   - source: schwartz
     section: 3.2 The Euler–Lagrange equations
     pages:
     - 32
     note: Explains the first-derivative restriction and its effective-theory qualification.
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 520
+    - 521
+    note: Extra resummed poles occur at the EFT cutoff, where omitting the other higher
+      operators is invalid.
   notation: []
 - id: qft.higher-homotopy-products-and-winding-conservation
   label: Higher homotopy products and winding conservation
@@ -31204,7 +33000,11 @@ nodes:
     vacuum invariant give massless vectors. In the SO(3) fundamental example with
     vacuum (0,0,v), the unbroken SO(2) leaves one vector massless while the two broken
     directions have equal mass squared g^2 v^2. The example illustrates the general
-    criterion without identifying every group or representation with SO(3).
+    criterion without identifying every group or representation with SO(3). Weinberg
+    II writes the elementary real-representation quadratic form so c_alpha mu²_{alpha
+    beta} c_beta=sum_n|sum_{alpha,m}c_alpha(t^alpha)_{nm}v_m|²; its kernel is exactly
+    the unbroken-generator space. For complex scalars it becomes one half of the vacuum
+    expectation of {T^alpha,T^beta}.
   kind: result
   group: qft.spontaneously-broken-symmetries
   origins:
@@ -31215,6 +33015,14 @@ nodes:
   - project: schwartz
     node: schwartz.nonabelian-so3-breaking-and-vector-mass-matrix
     note: Retains the SO(3)-to-SO(2) example and its two equal massive-vector eigenvalues.
+  - project: weinberg-2
+    node: weinberg-2.broken-gauge-vector-mass-matrix-kernel
+    note: Retains the canonically normalized real-scalar quadratic form, positivity,
+      and if-and-only-if unbroken kernel.
+  - project: weinberg-2
+    node: weinberg-2.complex-scalar-vector-mass-matrix
+    note: Retains the conversion to a complex representation with Hermitian generators
+      and the anticommutator formula.
   evidence:
   - source: peskin-schroeder
     section: '20.1'
@@ -31224,6 +33032,18 @@ nodes:
     section: 28.3.3
     pages:
     - 579
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 296
+    - 297
+    note: Shifted scalar kinetic term, positive mass matrix, and exact unbroken-generator
+      kernel.
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 298
+    note: Complex-to-real conversion and one-half anticommutator mass matrix.
 - id: qft.nonabelian-noether-current-conservation-task
   label: Non-Abelian Noether-current conservation task
   summary: The assigned task is to check on-shell ordinary conservation of the total
@@ -32478,7 +34298,9 @@ nodes:
     A-xi e v varphi)/sqrt(xi); in the degenerate-mass non-Abelian construction it
     is G[A,pi]=partial dot A-xi m_A pi. The non-Abelian Faddeev–Popov determinant
     yields ghosts governed by partial_mu D^mu+xi m_A squared. Matrix-valued nondegenerate
-    constructions remain represented separately.
+    constructions remain represented separately. Weinberg II's matrix-valued route
+    uses f^alpha=partial_mu A^{alpha mu}-i xi sum_nm(t^alpha)_nm phi'_n v_m and L_gf=-sum_alpha(f^alpha)^2/(2xi);
+    the explicit i follows its imaginary-antisymmetric Hermitian-generator convention.
   kind: method
   group: qft.gauge-quantization
   origins:
@@ -32490,6 +34312,10 @@ nodes:
     node: peskin-schroeder.rxi-abelian-gauge-fixing
     note: Retains the shifted Abelian condition, its Faddeev–Popov use, and cancellation
       of quadratic vector–Goldstone mixing.
+  - project: weinberg-2
+    node: weinberg-2.broken-theory-xi-gauge-fixing
+    note: Retains the matrix-valued f^alpha including its i, generator convention,
+      scalar-vector mixing cancellation, and xi limits.
   evidence:
   - source: schwartz
     section: '28.4'
@@ -32499,6 +34325,12 @@ nodes:
     section: '21.1'
     pages:
     - 733
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 301
+    note: Functional weight, gauge-fixing term, exact f^alpha, cancellation purpose,
+      and Landau/unitarity limits.
   notation: []
 - id: qft.rxi-gauge-limits-renormalizability-and-unitary-gauge-boundary
   label: R-xi gauge limits, renormalizability, and unitary-gauge boundary
@@ -32524,21 +34356,37 @@ nodes:
     - 738
 - id: qft.rxi-propagators-and-gauge-dependent-unphysical-masses
   label: Rxi propagators and gauge-dependent unphysical masses
-  summary: In Rxi gauge, the vector propagator has a physical pole at p squared equals
+  summary: 'In Rxi gauge, the vector propagator has a physical pole at p squared equals
     m_A squared and a xi-dependent longitudinal pole, while Goldstone and ghost propagators
     have p squared equals xi m_A squared. These gauge-dependent poles do not state
-    independent physical particle masses.
+    independent physical particle masses. Weinberg II gives the general matrix spectrum:
+    ghost and would-be-Goldstone mass-squared eigenvalues are xi times the corresponding
+    nonzero vector eigenvalues; their unphysical poles cancel, and finite xi restores
+    k^{-2} ultraviolet vector behavior without itself proving the symmetry constraints
+    on counterterms.'
   kind: result
   group: qft.gauge-quantization
   origins:
   - project: schwartz
     node: schwartz.rxi-propagators-and-gauge-dependent-unphysical-masses
     note: Retains the explicit physical-versus-unphysical pole qualification.
+  - project: weinberg-2
+    node: weinberg-2.broken-theory-xi-spectrum-and-renormalizability
+    note: Retains the matrix-valued ghost/Goldstone spectrum, pole cancellation, finite-xi
+      ultraviolet behavior, and proof qualification.
   evidence:
   - source: schwartz
     section: '28.4'
     pages:
     - 581
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 302
+    - 303
+    - 304
+    note: Ghost operator, quadratic spectrum, propagators, pole cancellation, and
+      renormalizability qualification.
   notation: []
 - id: qft.scalar-lorentz-representation
   label: Scalar Lorentz representation and zero spin
@@ -57962,6 +59810,1994 @@ edges:
     - 311
     - 312
     note: This packet span supports the stated WI route and its conditions.
+- id: qft.align038.appendix-parameters-to-common-core
+  from: qft.align038.appendix-feynman-parameters-dimensional-integrals
+  to: qft.align019.feynman-parameter-denominator-combination
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: Appendix Assorted Integrals
+    pages:
+    - 497
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.bphz-forest-to-common-core
+  from: qft.align038.bphz-forest-subtractions
+  to: qft.align024.qed-all-orders-induction-bphz-qualification
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 511
+    - 512
+    - 513
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.common-bphz-to-electron-overlap-task
+  from: qft.align024.qed-all-orders-induction-bphz-qualification
+  to: qft.align038.problem-qed-electron-self-energy-overlap
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requires the general nested/overlapping subtraction framework
+    rather than the photon example alone.
+  failure_mode: Without the generic core, the task would depend on copying a source-specific
+    QED example instead of adapting the method.
+  evidence:
+  - source: weinberg-1
+    section: Problems 2
+    pages:
+    - 531
+    note: The task statement fixes the requested output and the generic method needed
+      to extract it.
+- id: qft.align038.common-form-factor-to-neutral-scalar-moment-task
+  from: qft.align019.on-shell-vertex-form-factor-decomposition
+  to: qft.align038.problem-neutral-scalar-magnetic-moment-z2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The magnetic moment is isolated with the generic on-shell vertex form-factor
+    decomposition.
+  failure_mode: Without the generic core, the task would depend on copying a source-specific
+    QED example instead of adapting the method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: The task statement fixes the requested output and the generic method needed
+      to extract it.
+- id: qft.align038.common-pole-to-neutral-scalar-mass-task
+  from: qft.align055.self-energy-resummation-and-pole-conditions
+  to: qft.align038.problem-neutral-scalar-electron-mass-shift
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass shift is extracted from the generic pole condition after computing
+    the scalar loop.
+  failure_mode: Without the generic core, the task would depend on copying a source-specific
+    QED example instead of adapting the method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: The task statement fixes the requested output and the generic method needed
+      to extract it.
+- id: qft.align038.common-pole-to-neutral-scalar-z2-task
+  from: qft.align055.self-energy-resummation-and-pole-conditions
+  to: qft.align038.problem-neutral-scalar-magnetic-moment-z2
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested Z2 follows from the generic pole-residue prescription after
+    the scalar-loop computation.
+  failure_mode: Without the generic core, the task would depend on copying a source-specific
+    QED example instead of adapting the method.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: The task statement fixes the requested output and the generic method needed
+      to extract it.
+- id: qft.align038.counterterm-lagrangian-to-wi-onshell-route
+  from: qft.align012.qed-renormalized-perturbation-lagrangian
+  to: qft.align038.qed-counterterm-onshell-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The WI subtraction assigns A, B, L, and C to the existing QED counterterms.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 510
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.eft-boundary-to-predictivity-core
+  from: qft.align038.eft-predictivity-boundary-near-m
+  to: qft.align024.nonrenormalizable-eft-low-energy-predictivity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 523
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.eft-suppression-to-predictivity-core
+  from: qft.align038.nonrenormalizable-eft-suppression
+  to: qft.align024.nonrenormalizable-eft-low-energy-predictivity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 517
+    - 519
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.external-polarization-to-wi-single-soft-route
+  from: qft.align054.external-photon-lsz-polarizations
+  to: qft.align038.soft-photon-single-emission-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The emitted photon polarization contracts the universal external-line
+    soft factor.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 534
+    - 535
+    - 536
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.furry-to-wi-primitive-route
+  from: qft.align024.furry-theorem-photon-odd-point-vanishing
+  to: qft.align038.qed-1pi-divergences-and-ward-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Charge conjugation eliminates the odd-photon graph sums.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 509
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.general-d-to-common-power-counting-core
+  from: qft.align038.superficial-degree-of-divergence
+  to: qft.align024.qed-superficial-divergence-power-counting
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.1'
+    pages:
+    - 500
+    - 501
+    - 502
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.general-renormalization-to-eft-core
+  from: qft.align038.general-renormalization-equal-status
+  to: qft.align024.nonrenormalizable-eft-low-energy-predictivity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: 12; 12.1
+    pages:
+    - 499
+    - 504
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.local-polynomial-to-bphz-route
+  from: qft.align038.local-divergent-polynomial-counterterms
+  to: qft.align038.bphz-forest-subtractions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Taylor subtraction uses the local degree-D polynomial form of each divergent
+    subgraph.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 505
+    - 506
+    - 512
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.local-polynomial-to-common-counterterm-core
+  from: qft.align038.local-divergent-polynomial-counterterms
+  to: qft.align012.local-operator-counterterm-criterion
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 505
+    - 506
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.massless-vector-gauge-shift-to-soft-consistency
+  from: qft.align033.massless-vector-potential-gauge-transformation
+  to: qft.align038.soft-massless-spin-consistency
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A helicity-one polarization changes by a momentum-proportional term under
+    Lorentz transformations.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 537
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.phi4-subtraction-to-common-renormalization-core
+  from: qft.align038.phi4-renormalization-point-dependence
+  to: qft.align012.renormalization-conditions-and-phi4-one-loop-vertex
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 515
+    - 516
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.pole-residue-to-wi-onshell-route
+  from: qft.align055.self-energy-resummation-and-pole-conditions
+  to: qft.align038.qed-counterterm-onshell-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The electron pole and unit residue determine the finite mass and field
+    counterterm parts.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 510
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.qed-content-to-wi-primitive-route
+  from: qft.align029.qed-minimal-coupling-and-local-gauge-symmetry
+  to: qft.align038.qed-1pi-divergences-and-ward-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The classification specializes the general count to the spinor-QED field
+    content.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: 12.1–12.2
+    pages:
+    - 503
+    - 507
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.qed-rules-to-wi-primitive-route
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align038.qed-1pi-divergences-and-ward-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The 1PI external-line classes use the QED propagator and vertex content.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: 12.1–12.2
+    pages:
+    - 503
+    - 507
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.soft-charge-form-factor-to-wi-single-soft-route
+  from: qft.align054.soft-form-factor-charge-definition
+  to: qft.align038.soft-photon-single-emission-theorem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equal-momentum current matrix element fixes the charge multiplying
+    each external pole.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 535
+    - 536
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.superficial-degree-to-bphz-route
+  from: qft.align038.superficial-degree-of-divergence
+  to: qft.align038.bphz-forest-subtractions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The forest algorithm needs each box’s superficial degree to choose D+1
+    Taylor terms.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 511
+    - 512
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.transversality-to-wi-primitive-route
+  from: qft.align012.qed-two-point-counterterm-renormalization
+  to: qft.align038.qed-1pi-divergences-and-ward-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Photon transversality removes the mass term and restricts the divergent
+    tensor.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 509
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.ward-to-wi-primitive-route
+  from: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
+  to: qft.align038.qed-1pi-divergences-and-ward-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward identity equates the vertex and electron-field divergent constants
+    for a current-preserving regulator.
+  failure_mode: Omitting this input leaves the stated WI derivation incomplete at
+    the indicated step.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 508
+    - 509
+    note: The packet explicitly invokes this input in the assigned derivation.
+- id: qft.align038.weinberg-1-appendix-to-one-loop-self-energy
+  from: qft.align038.appendix-feynman-parameters-dimensional-integrals
+  to: qft.align038.one-loop-electron-self-energy-pauli-villars
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Pauli-Villars self-energy calculation uses the appendix’s N=2 denominator-combination
+    identity before shifting and Wick rotating.
+  failure_mode: Without that parameter identity, the displayed one-parameter self-energy
+    reduction is not reproduced.
+  evidence:
+  - source: weinberg-1
+    section: 11.4 and Appendix Assorted Integrals
+    pages:
+    - 494
+    - 495
+    - 497
+    note: Section 11.4 uses the Feynman trick, and the appendix identifies N=2 as
+      a chapter use.
+- id: qft.align038.weinberg-1-appendix-to-one-loop-vertex
+  from: qft.align038.appendix-feynman-parameters-dimensional-integrals
+  to: qft.align019.one-loop-vertex-form-factor-evaluation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vertex calculation explicitly applies the appendix’s N=3 Feynman-parameter
+    identity to combine its three propagators.
+  failure_mode: Without the denominator-combination identity, the source’s two-parameter
+    reduction is not reproducible.
+  evidence:
+  - source: weinberg-1
+    section: 11.3 and Appendix Assorted Integrals
+    pages:
+    - 486
+    - 497
+    note: Section 11.3 invokes the appendix’s repeated Feynman trick, and the appendix
+      identifies N=3 as a chapter use.
+- id: qft.align038.weinberg-1-complex-scalar-to-scalar-loop-problem
+  from: qft.complex-causal-scalar-field
+  to: qft.align038.problem-scalar-vacuum-polarization-z3-uehling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The loop particle is a charged spinless particle, so its complex particle/antiparticle
+    field structure is required.
+  failure_mode: Without the charged complex scalar representation, the loop field
+    and charge flow are unspecified.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 1 specifies a charged spinless particle in the loop.
+- id: qft.align038.weinberg-1-edge-all-subintegrations-to-bphz
+  from: qft.align038.power-counting-convergence-theorem-scope
+  to: qft.align038.bphz-forest-subtractions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Forests target every divergent subintegration demanded by the convergence
+    criterion.
+  failure_mode: Subtracting only the whole graph leaves subdivergences and overlaps
+    untreated.
+  evidence:
+  - source: weinberg-1
+    section: 12.1–12.2
+    pages:
+    - 505
+    - 512
+    note: Criterion and forest construction.
+- id: qft.align038.weinberg-1-edge-counterterms-to-qed-onshell
+  from: qft.align038.local-divergent-polynomial-counterterms
+  to: qft.align038.qed-counterterm-onshell-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED conditions instantiate counterterm cancellation and the special
+    two-point pole/residue prescription.
+  failure_mode: The Z_2, delta m, and Z_3 equations would be unmotivated.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 506
+    - 510
+    note: General rule and QED implementation.
+- id: qft.align038.weinberg-1-edge-dimensional-analysis-to-scalar-dimension-problem
+  from: qft.align038.superficial-degree-of-divergence
+  to: qft.align038.problem-scalar-renormalizable-terms-by-dimension
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requires adapting field and coupling dimension counting to each
+    spacetime dimension.
+  failure_mode: There is no criterion for which scalar monomials are renormalizable
+    or superrenormalizable.
+  evidence:
+  - source: weinberg-1
+    section: 12.1; Problems 1
+    pages:
+    - 501
+    - 531
+    note: Power counting supplies the method requested by the independent problem.
+- id: qft.align038.weinberg-1-edge-dirac-bilinears-to-cpt-relaxed-qed-problem
+  from: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  to: qft.align038.problem-qed-eft-cpt-relaxed-operators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Dirac bilinears and their discrete properties are needed to enumerate
+    Lorentz structures when C, P, and T are not imposed.
+  failure_mode: Allowed parity-odd and charge-conjugation-odd operators would be missed
+    or misclassified.
+  evidence:
+  - source: weinberg-1
+    section: Problems 4
+    pages:
+    - 531
+    note: The problem retains Lorentz and gauge invariance while relaxing C, P, and
+      T.
+- id: qft.align038.weinberg-1-edge-eft-ordering-to-cpt-relaxed-qed-problem
+  from: qft.align038.nonrenormalizable-eft-suppression
+  to: qft.align038.problem-qed-eft-cpt-relaxed-operators
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Operator dimension orders the requested leading and next-to-leading terms
+    in 1/M.
+  failure_mode: The candidate operator basis could not be ranked by heavy-scale suppression.
+  evidence:
+  - source: weinberg-1
+    section: 12.3; Problems 4
+    pages:
+    - 519
+    - 531
+    note: The task applies the chapter's EFT expansion to QED.
+- id: qft.align038.weinberg-1-edge-eft-to-pauli
+  from: qft.align038.nonrenormalizable-eft-suppression
+  to: qft.align038.pauli-term-why-absent-from-minimal-qed
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Pauli term is interpreted as the leading M-suppressed EFT correction.
+  failure_mode: Its absence would be misstated as a symmetry prohibition.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 519
+    - 520
+    note: EFT suppression and Pauli example.
+- id: qft.align038.weinberg-1-edge-local-polynomial-to-yukawa-problem
+  from: qft.align038.local-divergent-polynomial-counterterms
+  to: qft.align038.problem-yukawa-scalar-self-energy-subtraction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested decomposition is precisely the polynomial-plus-convergent-remainder
+    construction.
+  failure_mode: One could write a loop integral without separating the required divergent
+    local polynomial.
+  evidence:
+  - source: weinberg-1
+    section: 12.2; Problems 3
+    pages:
+    - 505
+    - 506
+    - 531
+    note: General construction and the stated task.
+- id: qft.align038.weinberg-1-edge-loop-counting-to-powercount
+  from: qft.align036.graph-loop-number-and-tree-integrals
+  to: qft.align038.superficial-degree-of-divergence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation counts four momentum integrations per independent loop.
+  failure_mode: The 4[I-sum N_i+1] contribution is unexplained.
+  evidence:
+  - source: weinberg-1
+    section: '12.1'
+    pages:
+    - 501
+    note: Loop integration-volume contribution.
+- id: qft.align038.weinberg-1-edge-pauli-symmetry-to-renormalizability-explanation
+  from: qft.align015.pauli-term-symmetry-allowance
+  to: qft.align038.pauli-term-why-absent-from-minimal-qed
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Pauli interaction is symmetry-allowed, so its absence must come from
+    its negative power-counting index.
+  failure_mode: Its omission could again be misattributed to Lorentz or gauge symmetry.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 517
+    - 520
+    note: The chapter contrasts symmetry allowance with exclusion by renormalizability.
+- id: qft.align038.weinberg-1-edge-powercount-to-counterterms
+  from: qft.align038.superficial-degree-of-divergence
+  to: qft.align038.local-divergent-polynomial-counterterms
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The D+1 differentiation and local polynomial degree are defined by D.
+  failure_mode: Without D, one cannot know how many derivatives or local counterterm
+    structures are required.
+  evidence:
+  - source: weinberg-1
+    section: 12.1–12.2
+    pages:
+    - 501
+    - 505
+    - 506
+    note: D formula and its use in the subtraction argument.
+- id: qft.align038.weinberg-1-edge-powercount-to-qed-divergence-classification
+  from: qft.align038.superficial-degree-of-divergence
+  to: qft.align038.qed-1pi-divergences-and-ward-reduction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED list begins by applying the superficial degree formula to its
+    external legs.
+  failure_mode: The superficially divergent 1PI cases and their polynomial degrees
+    cannot be selected.
+  evidence:
+  - source: weinberg-1
+    section: 12.1-12.2
+    pages:
+    - 503
+    - 507
+    note: General power counting is specialized to QED.
+- id: qft.align038.weinberg-1-edge-propagator-scaling-to-powercount
+  from: qft.align036.general-field-propagator-polynomial-numerator
+  to: qft.align038.superficial-degree-of-divergence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Propagator numerator growth supplies the internal-line momentum powers
+    counted in D.
+  failure_mode: The field-dependent contribution 2s_f+2 per internal line would have
+    no basis.
+  evidence:
+  - source: weinberg-1
+    section: '12.1'
+    pages:
+    - 500
+    - 501
+    note: Propagator asymptotics are inserted into the graph count.
+- id: qft.align038.weinberg-1-edge-qed-counterterms-to-overlap
+  from: qft.align038.qed-counterterm-onshell-subtraction
+  to: qft.align038.overlap-counterterm-cancellation-example
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source's worked overlap derivation uses conventional QED Z_2 and
+    Z_3 counterterms, while explicitly saying BPHZ need not be used in practice.
+  failure_mode: The finite-difference cancellation and remaining Z_3 subtraction cannot
+    be reconstructed.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 513
+    - 514
+    - 515
+    note: Conventional counterterms in the example and stated convergence.
+- id: qft.align038.weinberg-1-edge-qed-overlap-to-problem
+  from: qft.align038.overlap-counterterm-cancellation-example
+  to: qft.align038.problem-qed-electron-self-energy-overlap
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This worked source route is a helpful analogue for the independent task;
+    the generic method core is the necessary input.
+  failure_mode: Without this example one useful route is absent, but the task remains
+    supported by its generic method core.
+  evidence:
+  - source: weinberg-1
+    section: 12.2; Problems 2
+    pages:
+    - 511
+    - 512
+    - 531
+    note: Overlaps are identified and the independent task is stated.
+- id: qft.align038.weinberg-1-edge-qed-ward-to-onshell
+  from: qft.align038.qed-1pi-divergences-and-ward-reduction
+  to: qft.align038.qed-counterterm-onshell-subtraction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward relation L=B and transversality determine the linked QED counterterms.
+  failure_mode: One would incorrectly treat vertex and electron-field divergences
+    as independent or allow a photon mass counterterm.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 508
+    - 509
+    - 510
+    note: Ward and transversality constraints followed by the counterterm choices.
+- id: qft.align038.weinberg-1-edge-real-scalar-to-scalar-dimension-problem
+  from: qft.real-causal-scalar-field
+  to: qft.align038.problem-scalar-renormalizable-terms-by-dimension
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The task's single scalar field fixes the real-scalar operator content
+    before dimension counting.
+  failure_mode: Complex-field charge structures could be included even though the
+    problem asks for one scalar field.
+  evidence:
+  - source: weinberg-1
+    section: Problems 1
+    pages:
+    - 531
+    note: The problem specifies a single Lorentz-invariant scalar-field Lagrangian.
+- id: qft.align038.weinberg-1-edge-shift-symmetry-to-scalar-eft
+  from: qft.align038.shift-symmetric-scalar-derivative-eft
+  to: qft.align038.scalar-eft-power-counting-example
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivative-scalar example computes the low-energy consequences of
+    the stated shift-symmetric Lagrangian.
+  failure_mode: The absence of mass and renormalizable interactions would be an unexplained
+    assumption.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 521
+    - 522
+    note: Shift-symmetric Lagrangian and ensuing power counting.
+- id: qft.align038.weinberg-1-edge-soft-single-to-multisoft
+  from: qft.align038.soft-photon-single-emission-theorem
+  to: qft.align038.multi-soft-photon-factorization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The multi-soft theorem is the product and permutation completion of the
+    single-line eikonal factors.
+  failure_mode: One cannot justify factorizing multiple emissions, especially on one
+    external line.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 536
+    - 538
+    - 539
+    note: Single factor and multi-photon permutation proof.
+- id: qft.align038.weinberg-1-edge-soft-single-to-spin-consistency
+  from: qft.align038.soft-photon-single-emission-theorem
+  to: qft.align038.soft-massless-spin-consistency
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Lorentz/gauge consistency conditions are obtained by contracting
+    the leading soft factors.
+  failure_mode: The charge-conservation and universality conclusions would not follow
+    from the amplitude.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 536
+    - 537
+    - 538
+    note: Soft theorem and contractions.
+- id: qft.align038.weinberg-1-momentum-rules-to-cubic-one-loop-problem
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align038.problem-cubic-neutral-scalar-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop scalar-scattering amplitude is assembled from cubic vertices,
+    scalar propagators, conserved momenta, and a loop integration.
+  failure_mode: Without the momentum-space rules, the requested S-matrix loop integral
+    cannot be constructed.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 3 specifies cubic scalar self-interaction and a one-loop S-matrix
+      element.
+- id: qft.align038.weinberg-1-momentum-rules-to-neutral-scalar-mass-problem
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align038.problem-neutral-scalar-electron-mass-shift
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The specified scalar-electron interaction must be converted into the
+    one-loop fermion two-point integral.
+  failure_mode: Without the momentum-space rules, the neutral-scalar self-energy graph
+    cannot be assembled.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 4 uses the neutral-scalar interaction specified in Problem 2 and
+      requests its one-loop mass contribution.
+- id: qft.align038.weinberg-1-one-loop-vertex-to-charge-radius
+  from: qft.align019.one-loop-vertex-form-factor-evaluation
+  to: qft.align038.lepton-charge-radius-infrared-qualification
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The charge-radius slope is extracted from the loop-computed vertex form
+    factor after its charge normalization subtraction.
+  failure_mode: Without the form-factor integral, neither the endpoint infrared divergence
+    nor its q² slope is identified.
+  evidence:
+  - source: weinberg-1
+    section: '11.3'
+    pages:
+    - 490
+    - 491
+    - 492
+    - 493
+    note: The source analyzes the loop form factor, regulates its infrared divergence,
+      and defines the radius.
+- id: qft.align038.weinberg-1-screening-to-scalar-uehling-problem
+  from: qft.align019.vacuum-polarization-screening-and-uehling-shift
+  to: qft.align038.problem-scalar-vacuum-polarization-z3-uehling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested hydrogen 2s shift is obtained from the vacuum-polarization
+    correction to the Coulomb potential.
+  failure_mode: Without the Uehling-shift construction, the problem’s atomic-energy
+    output cannot be formed.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 1 separately requests the effect on the hydrogen 2s energy shift.
+- id: qft.align038.weinberg-1-self-energy-to-neutral-scalar-mass-problem
+  from: qft.align038.one-loop-electron-self-energy-pauli-villars
+  to: qft.align038.problem-neutral-scalar-electron-mass-shift
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This worked source route is a helpful analogue for the independent task;
+    the generic method core is the necessary input.
+  failure_mode: Without this example one useful route is absent, but the task remains
+    supported by its generic method core.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 4 requests the one-loop electron mass shift.
+- id: qft.align038.weinberg-1-self-energy-to-neutral-scalar-z2-problem
+  from: qft.align038.one-loop-electron-self-energy-pauli-villars
+  to: qft.align038.problem-neutral-scalar-magnetic-moment-z2
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This worked source route is a helpful analogue for the independent task;
+    the generic method core is the necessary input.
+  failure_mode: Without this example one useful route is absent, but the task remains
+    supported by its generic method core.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 2 independently requests the one-loop effect on Z2.
+- id: qft.align038.weinberg-1-symmetry-factors-to-cubic-one-loop-problem
+  from: qft.align030.general-interaction-normalization-and-symmetry-residual
+  to: qft.align038.problem-cubic-neutral-scalar-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Identical scalar lines and cubic vertices require the correct residual
+    pairing factors in the one-loop graphs.
+  failure_mode: Without symmetry-factor accounting, the numerical coefficient of the
+    requested amplitude is not determined.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 3 asks for the complete one-loop scalar-scattering S-matrix element.
+- id: qft.align038.weinberg-1-vertex-to-neutral-scalar-moment-problem
+  from: qft.align019.one-loop-vertex-form-factor-evaluation
+  to: qft.align038.problem-neutral-scalar-magnetic-moment-z2
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: This worked source route is a helpful analogue for the independent task;
+    the generic method core is the necessary input.
+  failure_mode: Without this example one useful route is absent, but the task remains
+    supported by its generic method core.
+  evidence:
+  - source: weinberg-1
+    section: Problems, Chapter 11
+    pages:
+    - 498
+    note: Problem 2 requests the one-loop electron magnetic-moment effect.
+- id: qft.align038.wi-catalogue-to-common-renormalizable-core
+  from: qft.align038.scalar-spinor-photon-renormalizable-catalogue
+  to: qft.align029.power-counting-renormalizable-interactions
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: 12.3, Table 12.2
+    pages:
+    - 518
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-extra-poles-to-common-higher-derivative-core
+  from: qft.align038.higher-derivative-poles-and-eft-cutoff
+  to: qft.higher-derivative-effective-interactions-and-instability
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.3'
+    pages:
+    - 520
+    - 521
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-floating-cutoff-to-common-wilson-core
+  from: qft.align038.wilsonian-floating-cutoff-flow
+  to: qft.align014.wilsonian-shell-rescaling-and-relevance
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.4'
+    pages:
+    - 525
+    - 526
+    - 528
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-onshell-to-common-onshell-core
+  from: qft.align038.qed-counterterm-onshell-subtraction
+  to: qft.align012.qed-four-onshell-renormalization-conditions
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 510
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-pv-self-energy-to-common-oneloop-core
+  from: qft.align038.one-loop-electron-self-energy-pauli-villars
+  to: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '11.4'
+    pages:
+    - 493
+    - 494
+    - 495
+    - 496
+    - 497
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-qed-classification-to-common-primitive-core
+  from: qft.align038.qed-1pi-divergences-and-ward-reduction
+  to: qft.align024.qed-1pi-primitive-divergences-and-ward-constraints
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '12.2'
+    pages:
+    - 507
+    - 508
+    - 509
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-single-soft-to-common-soft-core
+  from: qft.align038.soft-photon-single-emission-theorem
+  to: qft.align019.soft-photon-emission-factorization
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 534
+    - 535
+    - 536
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-soft-consistency-to-spin-one-core
+  from: qft.align038.soft-massless-spin-consistency
+  to: qft.align054.soft-spin-one-lorentz-implies-charge-conservation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 537
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align038.wi-soft-consistency-to-spin-two-core
+  from: qft.align038.soft-massless-spin-consistency
+  to: qft.align054.soft-spin-two-universal-gravity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The WI source-specific route independently supports the common physical
+    result while retaining its own hypotheses and method.
+  failure_mode: Without this link the WI derivation remains isolated, although the
+    already accepted route still supports the common core.
+  evidence:
+  - source: weinberg-1
+    section: '13.1'
+    pages:
+    - 537
+    - 538
+    note: The packet supports the stated WI route and its bounded correspondence.
+- id: qft.align039.renormalizable-bl-to-anomaly-qualification
+  from: qft.align039.renormalizable-standard-model-accidental-baryon-lepton-conservation-and-eft-limit
+  to: qft.align006.baryon-lepton-anomalies-and-sphaleron-scope
+  relation: pedagogical
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The renormalizable-Lagrangian operator statement must be read together
+    with the separately accepted anomalous quantum B+L qualification.
+  failure_mode: Without the qualification, operator-level accidental symmetry may
+    be mistaken for exact quantum B+L conservation.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 316
+    - 317
+    - 318
+    note: These pages explicitly formulate the B/L claim for the renormalizable Lagrangian
+      and then distinguish higher-dimensional violations.
+- id: qft.align039.schwartz-biunitary-route-to-mass-basis-core
+  from: qft.align039.biunitary-yukawa-diagonalization-and-mass-basis
+  to: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 596
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.schwartz-count-route-to-weak-cp-core
+  from: qft.align039.ckm-physical-parameter-count-and-standard-form
+  to: qft.align017.weak-cp-diagnostics-and-physical-condition
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 597
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.schwartz-e-accepted-majorana-charge-to-neutrino-mass
+  from: qft.align020.majorana-charge-conjugacy-and-u1-neutrality
+  to: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Majorana mass terms require neutral charge-conjugate structure.
+  failure_mode: The allowed mass terms would be misidentified.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 600
+- id: qft.align039.schwartz-e-accepted-seesaw-to-neutrino-mass
+  from: qft.align020.neutrino-mass-eigenstate-and-seesaw-problem
+  to: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The large-MR light-state limit is the seesaw relation used here.
+  failure_mode: The light/heavy eigenvalue interpretation would be missing.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 600
+- id: qft.align039.schwartz-e-accepted-weyl-to-neutrino-mass
+  from: qft.align053.weyl-kinetic-terms-and-dirac-mass
+  to: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The neutrino construction uses two-component chiral fields and their
+    Dirac pairing before adding the gauge-singlet Majorana term.
+  failure_mode: Without the Weyl/Dirac field structure, the displayed Dirac-plus-Majorana
+    mass matrix is not specified.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 600
+    note: Chiral kinetic fields, Dirac mass, singlet Majorana mass, and seesaw matrix.
+- id: qft.align039.schwartz-e-ckm-count-to-cp-ckm
+  from: qft.align039.ckm-physical-parameter-count-and-standard-form
+  to: qft.align017.weak-cp-diagnostics-and-physical-condition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The physical CKM phase is the condition tested under CP.
+  failure_mode: The phase would be confused with removable convention phases.
+  evidence:
+  - source: schwartz
+    section: 29.5.1
+    pages:
+    - 606
+- id: qft.align039.schwartz-e-ckm-to-triangle
+  from: qft.align039.ckm-charged-current-mixing-matrix
+  to: qft.align039.ckm-unitarity-triangle-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The triangle is a unitarity relation among CKM elements.
+  failure_mode: Its sides would have no matrix elements to test.
+  evidence:
+  - source: schwartz
+    section: 29.3.3
+    pages:
+    - 598
+- id: qft.align039.schwartz-e-diagonalize-to-ckm
+  from: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  to: qft.align039.ckm-charged-current-mixing-matrix
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The reviewed mass-basis diagonalization leaves V=U_u†U_d in the charged
+    current.
+  failure_mode: Without mass diagonalization, the origin and convention of the CKM
+    mismatch are unspecified.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 597
+- id: qft.align039.schwartz-e-four-fermi-to-muon
+  from: qft.align039.tree-level-four-fermi-matching
+  to: qft.align039.muon-decay-rate-and-fermi-constant
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Muon decay rate is calculated from the local low-energy interaction.
+  failure_mode: The rate formula would lack its stated approximation.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 603
+- id: qft.align039.schwartz-e-four-fermi-to-nc
+  from: qft.align039.tree-level-four-fermi-matching
+  to: qft.align039.neutral-current-four-fermi-theory-and-massless-photon-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The full low-energy Lagrangian adds Z-current exchange to charged-current
+    matching.
+  failure_mode: Neutral-current contact terms would lack their common coefficient.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 604
+- id: qft.align039.schwartz-e-neutral-to-gim
+  from: qft.align039.electromagnetic-charge-and-neutral-current-structure
+  to: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Flavor-diagonal neutral currents are the cancellation outcome demonstrated
+    by GIM.
+  failure_mode: The claimed FCNC absence would be ungrounded.
+  evidence:
+  - source: schwartz
+    section: '29.4'
+    pages:
+    - 605
+- id: qft.align039.schwartz-e-neutrino-mass-to-pmns
+  from: qft.align039.dirac-majorana-neutrino-masses-and-seesaw
+  to: qft.align039.pmns-mixing-and-majorana-phase-count
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: PMNS relates flavor interactions to neutrino mass eigenstates.
+  failure_mode: The two bases would not be defined.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 601
+- id: qft.align039.schwartz-e-pmns-to-oscillations
+  from: qft.align039.pmns-mixing-and-majorana-phase-count
+  to: qft.align039.neutrino-oscillation-observables-and-mass-squared-differences
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Flavor oscillation follows from mixing of differently propagating mass
+    eigenstates.
+  failure_mode: The observed flavor change would have no mixing mechanism.
+  evidence:
+  - source: schwartz
+    section: 29.3.4
+    pages:
+    - 602
+- id: qft.align039.schwartz-e-triangle-to-jtriangle
+  from: qft.align039.ckm-unitarity-triangle-construction
+  to: qft.align039.jarlskog-invariant-as-unitarity-triangle-area
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: J is defined geometrically from the constructed triangle.
+  failure_mode: The area interpretation would be unavailable.
+  evidence:
+  - source: schwartz
+    section: 29.3.3
+    pages:
+    - 599
+- id: qft.align039.schwartz-e-yukawa-to-diagonalize
+  from: qft.align039.yukawa-fermion-masses-and-higgs-couplings
+  to: qft.align039.biunitary-yukawa-diagonalization-and-mass-basis
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mass matrices to be diagonalized are the Yukawa matrices after symmetry
+    breaking.
+  failure_mode: There would be no concrete matrices or mass basis.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 596
+- id: qft.align039.schwartz-triangle-j-route-to-weak-cp-core
+  from: qft.align039.jarlskog-invariant-as-unitarity-triangle-area
+  to: qft.align017.weak-cp-diagnostics-and-physical-condition
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: schwartz
+    section: 29.3.3
+    pages:
+    - 599
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.schwartz-wolfenstein-route-to-weak-cp-core
+  from: qft.align039.wolfenstein-approximation-and-three-generation-cp-condition
+  to: qft.align017.weak-cp-diagnostics-and-physical-condition
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: schwartz
+    section: 29.3.2
+    pages:
+    - 598
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.weinberg-2-edge-ccwz-to-dynamical-covariants
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align039.dynamical-breaking-covariant-building-blocks
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The compensating H transformation of the coset representative defines
+    the H-covariant fields and derivatives used by the dynamical EFT.
+  failure_mode: Without the coset transformation law, the compensated covariant building
+    blocks cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 320
+    - 321
+    - 322
+    note: Coset representative, compensator, covariant derivative, connection, and
+      curl.
+- id: qft.align039.weinberg-2-edge-complex-representation-to-vector-mass
+  from: qft.align039.complex-scalar-vector-mass-matrix
+  to: qft.align039.broken-gauge-vector-mass-matrix-kernel
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The complex-scalar formula translates the elementary real-representation
+    result; it is not an independently complete route to the general claim.
+  failure_mode: The relation would incorrectly claim an alternative general derivation.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 298
+- id: qft.align039.weinberg-2-edge-covariants-to-dynamical-power-counting
+  from: qft.align039.dynamical-breaking-covariant-building-blocks
+  to: qft.align039.dynamical-breaking-low-energy-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Counting d+e relies on the covariant EFT ingredients and their gauge-coupling
+    factors.
+  failure_mode: The leading-interaction list would not be justified.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 323
+- id: qft.align039.weinberg-2-edge-custodial-to-technicolor
+  from: qft.align039.custodial-symmetry-electroweak-mass-ratio
+  to: qft.align039.technicolor-dynamical-electroweak-breaking-qualification
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Technicolor is offered as another dynamics with the custodial symmetry
+    needed for the mass relation.
+  failure_mode: Its connection to electroweak mass phenomenology is missed.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 326
+    - 327
+- id: qft.align039.weinberg-2-edge-dynamical-framework-to-covariants
+  from: qft.align039.dynamically-broken-local-symmetry-small-gauge-coupling-framework
+  to: qft.align039.dynamical-breaking-covariant-building-blocks
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The G→H and gauged-subgroup setup defines the transformations that the
+    building blocks compensate.
+  failure_mode: Formal and true symmetry roles would be conflated.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 319
+    - 320
+    - 321
+    - 322
+- id: qft.align039.weinberg-2-edge-dynamical-power-counting-to-general-mass
+  from: qft.align039.dynamical-breaking-low-energy-power-counting
+  to: qft.align039.general-unitarity-gauge-and-universal-vector-mass-formula
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The leading Goldstone kinetic term is expanded in unitarity gauge to
+    obtain the universal mass matrix.
+  failure_mode: The mass formula would lose its stated perturbative order and EFT
+    origin.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 324
+    - 325
+- id: qft.align039.weinberg-2-edge-electroweak-mixing-to-scalar-breaking
+  from: qft.align039.electroweak-mixing-and-charged-neutral-vectors
+  to: qft.align039.standard-model-scalar-doublet-yukawa-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar representation is chosen to break the stated group while preserving
+    electromagnetic charge and permit the Yukawa term.
+  failure_mode: The doublet quantum numbers and mass mechanism are unmotivated.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 308
+    - 309
+- id: qft.align039.weinberg-2-edge-faddeev-popov-functional-to-xi-gauge
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.align039.broken-theory-xi-gauge-fixing
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Section 21.2 introduces the B[f] path-integral weight to define its gauge-fixing
+    term.
+  failure_mode: The ξ-gauge functional and cancellation of mixing lack their Faddeev–Popov
+    construction.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 301
+- id: qft.align039.weinberg-2-edge-faddeev-popov-ghost-to-xi-spectrum
+  from: qft.faddeev-popov-ghost-determinant
+  to: qft.align039.broken-theory-xi-spectrum-and-renormalizability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The broken-theory spectrum includes the ghost action generated by the
+    Faddeev–Popov determinant.
+  failure_mode: The ghost propagator and gauge-dependent ghost mass would have no
+    construction.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 302
+    - 303
+- id: qft.align039.weinberg-2-edge-faddeev-popov-independence-to-xi-s-matrix-independence
+  from: qft.faddeev-popov-gauge-fixing-independence
+  to: qft.align039.xi-gauge-s-matrix-independence-and-unitarity-gauge-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general Faddeev-Popov independence theorem is the stated reason that
+    the S matrix is ξ-independent and agrees with the unitarity-gauge limit.
+  failure_mode: Without the theorem, the claimed equality of physical S-matrix results
+    across ξ gauges is unsupported.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 303
+- id: qft.align039.weinberg-2-edge-general-mass-to-custodial
+  from: qft.align039.general-unitarity-gauge-and-universal-vector-mass-formula
+  to: qft.align039.custodial-symmetry-electroweak-mass-ratio
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Custodial symmetry constrains the decay-constant matrix appearing in
+    the universal mass formula.
+  failure_mode: The W/Z relation would appear to follow from gauge couplings alone.
+  evidence:
+  - source: weinberg-2
+    section: '21.4'
+    pages:
+    - 325
+    - 326
+- id: qft.align039.weinberg-2-edge-global-goldstone-to-higgs-mechanism
+  from: qft.global-goldstone-theorem
+  to: qft.align039.higgs-mechanism-local-goldstone-modes
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The chapter frames the local result as the exception to the global Goldstone
+    conclusion.
+  failure_mode: Without the contrast, one may incorrectly infer physical massless
+    scalars from local breaking.
+  evidence:
+  - source: weinberg-2
+    section: '21'
+    pages:
+    - 295
+- id: qft.align039.weinberg-2-edge-goldstone-current-to-zero-coupling-equivalence
+  from: qft.goldstone-current-matrices-and-decay-constant
+  to: qft.align039.zero-gauge-coupling-vector-goldstone-exchange-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Canonical Goldstone normalization and current couplings are explicitly
+    used to form and compare the Goldstone-exchange amplitude.
+  failure_mode: The equality of the two exchange amplitudes cannot be established.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 300
+- id: qft.align039.weinberg-2-edge-higgs-to-unitarity-gauge
+  from: qft.align039.higgs-mechanism-local-goldstone-modes
+  to: qft.align039.unitarity-gauge-goldstone-elimination
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge choice realizes the claimed relocation of gauge Goldstone coordinates.
+  failure_mode: The scalar constraint would be mistaken for removal of a physical
+    global Goldstone.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 296
+- id: qft.align039.weinberg-2-edge-lepton-representations-to-electroweak-mixing
+  from: qft.align039.electroweak-su2l-u1-lepton-representations
+  to: qft.align039.electroweak-mixing-and-charged-neutral-vectors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(2)L×U(1) generators and canonical couplings define the field mixing.
+  failure_mode: The charge generator and mixing-angle coupling relations lack their
+    representation basis.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 307
+- id: qft.align039.weinberg-2-edge-lepton-representations-to-neutrino-operator
+  from: qft.align039.electroweak-su2l-u1-lepton-representations
+  to: qft.align039.standard-model-dimension-five-neutrino-mass-operator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dimension-five classification explicitly uses two left-handed lepton
+    doublets and their U(1) charges.
+  failure_mode: The operator's lepton representation and lepton-number violation cannot
+    be checked.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 317
+- id: qft.align039.weinberg-2-edge-quark-doublets-to-ckm
+  from: qft.align039.gim-quark-doublets-and-flavor-changing-neutral-current-cancellation
+  to: qft.align039.ckm-mass-diagonalization-and-three-generation-cp-violation
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: WII presents the GIM construction before the three-generation CKM account
+    historically; GIM cancellation is not an input to mass diagonalization or CKM.
+  failure_mode: Without this edge only the historical transition is lost; the independent
+    mass-diagonalization route remains complete.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 313
+    - 314
+    - 315
+- id: qft.align039.weinberg-2-edge-scalar-breaking-to-tree-masses
+  from: qft.align039.standard-model-scalar-doublet-yukawa-breaking
+  to: qft.align039.tree-electroweak-masses-and-fermi-scale
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vacuum and Yukawa coupling are the inputs to W, Z, and electron masses.
+  failure_mode: The mass formulas would be asserted without their symmetry-breaking
+    source.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 309
+    - 310
+- id: qft.align039.weinberg-2-edge-standard-model-to-neutrino-operator
+  from: qft.align039.standard-model-scalar-doublet-yukawa-breaking
+  to: qft.align039.standard-model-dimension-five-neutrino-mass-operator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The operator classification uses the stated Standard Model lepton and
+    scalar representations.
+  failure_mode: Its gauge invariance and low-energy neutrino-mass interpretation cannot
+    be checked.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 317
+    - 318
+- id: qft.align039.weinberg-2-edge-unbroken-normalization-to-electroweak-mixing
+  from: qft.align039.unbroken-gauge-field-canonical-normalization-and-charge
+  to: qft.align039.electroweak-mixing-and-charged-neutral-vectors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general canonical massless-field and charge relation is applied directly
+    to the photon combination.
+  failure_mode: The mixing coefficients cannot be related to the electromagnetic charge
+    generator.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 307
+- id: qft.align039.weinberg-2-edge-unitarity-gauge-to-vector-mass-matrix
+  from: qft.align039.unitarity-gauge-goldstone-elimination
+  to: qft.align039.broken-gauge-vector-mass-matrix-kernel
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shifted, Goldstone-orthogonal scalar expansion supplies the mass-matrix
+    derivation.
+  failure_mode: Scalar-vector cross terms would obscure the quadratic vector spectrum.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 297
+- id: qft.align039.weinberg-2-edge-unitarity-propagator-to-xi-gauge
+  from: qft.align039.unitarity-gauge-propagator-ultraviolet-limitation
+  to: qft.align039.broken-theory-xi-gauge-fixing
+  relation: pedagogical
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The bad ultraviolet behavior motivates the source's change of gauge,
+    but the ξ construction itself does not logically require first deriving it.
+  failure_mode: Treating this motivation as necessary would create a false prerequisite.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 301
+- id: qft.align039.weinberg-2-edge-vector-mass-to-unitarity-propagator
+  from: qft.align039.broken-gauge-vector-mass-matrix-kernel
+  to: qft.align039.unitarity-gauge-propagator-ultraviolet-limitation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quadratic propagator is formed by combining the Yang–Mills term with
+    the vector mass matrix.
+  failure_mode: The longitudinal high-momentum term cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 299
+- id: qft.align039.weinberg-2-edge-vector-mass-to-zero-coupling-equivalence
+  from: qft.align039.broken-gauge-vector-mass-matrix-kernel
+  to: qft.align039.zero-gauge-coupling-vector-goldstone-exchange-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The inverse mass matrix supplies the singular exchange term in the zero-coupling
+    comparison.
+  failure_mode: The surviving vector exchange has no derivable coefficient.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 299
+    - 300
+- id: qft.align039.weinberg-2-edge-xi-fixing-to-xi-spectrum
+  from: qft.align039.broken-theory-xi-gauge-fixing
+  to: qft.align039.broken-theory-xi-spectrum-and-renormalizability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quadratic spectrum and propagator cancellations follow from the specified
+    gauge-fixing function.
+  failure_mode: Gauge-dependent masses and ultraviolet behavior cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 302
+    - 303
+    - 304
+- id: qft.align039.weinberg-2-edge-xi-gauge-fixing-to-xi-s-matrix-independence
+  from: qft.align039.broken-theory-xi-gauge-fixing
+  to: qft.align039.xi-gauge-s-matrix-independence-and-unitarity-gauge-equivalence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The conclusion applies to the broken-theory Lagrangian after imposing
+    the ξ-dependent gauge-fixing construction.
+  failure_mode: Without the ξ-gauge construction, the parameter whose physical independence
+    is asserted is not defined.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 303
+- id: qft.align039.wii-ckm-route-to-weak-cp-core
+  from: qft.align039.ckm-mass-diagonalization-and-three-generation-cp-violation
+  to: qft.align017.weak-cp-diagnostics-and-physical-condition
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 314
+    - 315
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-complex-mass-route-to-common-core
+  from: qft.align039.complex-scalar-vector-mass-matrix
+  to: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 298
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-diagonalization-route-to-mass-basis-core
+  from: qft.align039.ckm-mass-diagonalization-and-three-generation-cp-violation
+  to: qft.align022.peskin-schroeder.yukawa-singular-value-diagonalization-and-mass-basis
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 314
+    - 315
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-gim-route-to-common-core
+  from: qft.align039.gim-quark-doublets-and-flavor-changing-neutral-current-cancellation
+  to: qft.align017.gim-cancellation-of-flavor-changing-neutral-currents
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 312
+    - 313
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-higgs-route-to-common-core
+  from: qft.align039.higgs-mechanism-local-goldstone-modes
+  to: qft.higgs-mechanism-and-abelian-higgs-lagrangian
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: 21; 21.1
+    pages:
+    - 295
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-real-mass-route-to-common-core
+  from: qft.align039.broken-gauge-vector-mass-matrix-kernel
+  to: qft.nonabelian-higgs-mass-matrix-and-so3-breaking-example
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.1'
+    pages:
+    - 296
+    - 297
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-xi-fixing-route-to-common-core
+  from: qft.align039.broken-theory-xi-gauge-fixing
+  to: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 301
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-xi-spectrum-route-to-common-core
+  from: qft.align039.broken-theory-xi-spectrum-and-renormalizability
+  to: qft.rxi-propagators-and-gauge-dependent-unphysical-masses
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This source-specific route independently supports the bounded common
+    core while retaining its own convention and method.
+  failure_mode: Without the link this reviewed route is isolated, while the other
+    accepted derivations still support the common result.
+  evidence:
+  - source: weinberg-2
+    section: '21.2'
+    pages:
+    - 302
+    - 303
+    - 304
+    note: The packet supports this route and the stated common physical conclusion.
+- id: qft.align039.wii-yukawa-to-mass-diagonalization-route
+  from: qft.align039.standard-model-scalar-doublet-yukawa-breaking
+  to: qft.align039.ckm-mass-diagonalization-and-three-generation-cp-violation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The WII route starts from the general scalar-doublet Yukawa mass matrices
+    and diagonalizes them before forming V.
+  failure_mode: Without the Yukawa mass matrices, the independent WII diagonalization
+    and mismatch have no input.
+  evidence:
+  - source: weinberg-2
+    section: '21.3'
+    pages:
+    - 309
+    - 314
+    - 315
+    note: Scalar-doublet Yukawa masses followed by the polar-decomposition mass-basis
+      construction.
 - id: qft.align041.edge.ray-symmetry-to-continuous-unitary
   from: qft.align041.symmetry-as-transition-probability-invariance
   to: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
