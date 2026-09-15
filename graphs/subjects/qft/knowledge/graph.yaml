@@ -6613,12 +6613,11 @@ nodes:
       through anticommutators.
 - id: qft.align015.feynman-scalar-propagator
   label: Feynman scalar propagator and time ordering
-  summary: The i epsilon prescription gives D_F(x-y)=integral d^4p/(2 pi)^4 i exp[-ip
-    dot (x-y)]/(p-squared-m-squared+i epsilon). It is the vacuum expectation value
-    of T phi(x)phi(y), a Klein-Gordon Green's function, and the factor attached to
-    an internal scalar line in later Feynman rules. Schwartz’s opposite-side energy-pole
-    contour reconstructs the two time-ordering step functions and makes k0 an independent,
-    generally off-shell integration variable.
+  summary: The i-epsilon scalar propagator is the time-ordered free Klein–Gordon two-point
+    Green function and internal scalar-line factor. Schwartz’s contour derivation
+    retains the off-shell energy integral; separately, the p.212–213 ordering comparison
+    shows that the covariant scalar Feynman propagator requires bosonic commutators,
+    whereas scalar anticommutators give a noncovariant energy-dependent factor.
   kind: result
   group: qft.align015-peskin-free-fields
   origins:
@@ -6635,6 +6634,11 @@ nodes:
     node: schwartz.feynman-propagator-iepsilon-contour
     note: Retains Schwartz’s opposite-side pole placement, time-ordering reconstruction,
       and generally off-shell k0 integration.
+  - project: schwartz
+    node: schwartz.scalar-propagator-requires-bosonic-ordering
+    note: 'Retains Schwartz’s scalar two-point comparison: commutator ordering gives
+      the covariant Feynman propagator, while scalar anticommutators leave a non-Lorentz-invariant
+      energy factor.'
   evidence:
   - source: peskin-schroeder
     section: '2.4 The Klein-Gordon Field in Space-Time: The Klein-Gordon Propagator'
@@ -6655,6 +6659,13 @@ nodes:
     - 77
     note: Derives the pole prescription and states the final propagator and off-shell
       interpretation.
+  - source: schwartz
+    section: 12.4.1
+    pages:
+    - 212
+    - 213
+    note: Computes the scalar time-ordered products and contrasts bosonic and wrong-statistics
+      ordering.
   notation:
   - source: peskin-schroeder
     note: T places the later operator left; i epsilon specifies displaced poles.
@@ -6852,10 +6863,11 @@ nodes:
     note: The requested identifications are E^i=-F^{0i} and epsilon^{ijk}B^k=-F^{ij}.
 - id: qft.align015.microcausality-field-commutator
   label: Microcausality from the spacelike field commutator
-  summary: Causal separation is tested by [phi(x),phi(y)], not by a one-particle propagation
-    amplitude. For spacelike x-y, Lorentz invariance makes the two Wightman terms
-    equal and they cancel, so no Klein-Gordon measurement can affect another outside
-    the light cone.
+  summary: For a free scalar field, causal separation is tested by the spacelike field
+    commutator. The commutator is iD(x−y), with Pauli–Jordan D satisfying the stated
+    homogeneous Klein–Gordon and equal-time conditions and vanishing outside the light
+    cone; scalar anticommutators instead give D1, which does not. This is scalar/integer-spin
+    causality evidence and does not by itself prove the fermionic branch.
   kind: result
   group: qft.align015-peskin-free-fields
   origins:
@@ -6864,6 +6876,10 @@ nodes:
     note: Preserves this reviewed peskin-schroeder treatment at the stated scope;
       it does not import a different derivation, historical framing, or later proof
       beyond this correspondence.
+  - project: schwartz
+    node: schwartz.scalar-microcausality-pauli-jordan-function
+    note: Retains Schwartz’s scalar Pauli–Jordan D/D1 calculation, equal-time data,
+      and the stated integer-spin-only causality scope.
   evidence:
   - source: peskin-schroeder
     section: '2.4 The Klein-Gordon Field in Space-Time: Causality'
@@ -6872,6 +6888,14 @@ nodes:
     - 29
     note: The source sets the measurement criterion, performs the spacelike Lorentz
       argument, and states the no-influence conclusion.
+  - source: schwartz
+    section: '12.6'
+    pages:
+    - 219
+    - 220
+    - 221
+    note: Derives D, its equal-time data and light-cone support, then shows D1 from
+      scalar anticommutators fails at spacelike separation.
 - id: qft.align015.pauli-term-symmetry-allowance
   label: Pauli term and the limits of symmetry predictions
   summary: A Pauli interaction proportional to a gamma-matrix commutator and electromagnetic
@@ -7036,8 +7060,13 @@ nodes:
       separation; it does not present that derivation on this page.
 - id: qft.align015.spin-statistics-connection
   label: Spin-statistics connection
-  summary: 'The chapter states that the quantization bracket is fixed by spin: integer-spin
-    particles use commutators and half-integer-spin particles use anticommutators.'
+  summary: 'For identical particles in relativistic quantum field theory, integer
+    spin uses symmetric exchange states and canonical commutators, while half-integer
+    spin uses antisymmetric exchange states and canonical anticommutators. Schwartz
+    states this connection and supports it by separate routes: a free-field Poincare-generator
+    exchange construction, Lorentz-invariant free-field time ordering, and conventional
+    free-field stability. The scalar causal calculation is evidence only for the integer-spin
+    branch.'
   kind: result
   group: qft.align015-weinberg-historical-quantization
   origins:
@@ -7046,6 +7075,11 @@ nodes:
     note: Preserves this reviewed weinberg-1 treatment at the stated scope; it does
       not import a different derivation, historical framing, or later proof beyond
       this correspondence.
+  - project: schwartz
+    node: schwartz.spin-statistics-theorem
+    note: Retains Schwartz’s stated integer-spin/commutator and half-integer-spin/anticommutator
+      assignment, while the exchange, Lorentz-ordering, and energy-stability demonstrations
+      remain separate routes.
   evidence:
   - source: weinberg-1
     section: '1.2'
@@ -7053,6 +7087,13 @@ nodes:
     - 20
     note: The source explicitly states the integer-spin/commutator and half-integer-spin/anticommutator
       rule.
+  - source: schwartz
+    section: 12 introduction
+    pages:
+    - 205
+    - 206
+    note: States the spin–statistics assignment and introduces Lorentz invariance,
+      stability, and causality as distinct lines of support.
 - id: qft.align015.spin-zero-klein-gordon-legitimacy
   label: Spin-zero particles and the legitimate Klein-Gordon equation
   summary: The indefinite one-particle scalar density does not make the Klein-Gordon
@@ -18520,6 +18561,226 @@ nodes:
     - 51
     note: Defines the ray-level invariance condition and explicitly qualifies it as
       necessary only.
+  notation: []
+- id: qft.align042.dirac-propagator-requires-fermionic-ordering
+  label: Dirac propagator requires fermionic ordering
+  summary: Using the spin sums in the time-ordered Dirac two-point function, ordinary
+    commutator ordering leaves a non-Lorentz-invariant factor. Anticommutator time
+    ordering instead gives the covariant Feynman propagator i(p∕+m)/(p²−m²+iε), tying
+    the needed sign to half-integer spin.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.dirac-propagator-requires-fermionic-ordering
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: 12.4.2
+    pages:
+    - 213
+    - 214
+    - 215
+    note: Builds the spinor two-point functions, compares statistics, and gives the
+      propagator.
+  notation:
+  - source: schwartz
+    note: The propagator is a matrix in spinor indices; p∕ and the iε prescription
+      follow the source's conventions.
+- id: qft.align042.exchange-path-spin-statistics-route
+  label: Exchange-path route to spin–statistics
+  summary: Within Schwartz's free-field construction, identical particles in 3+1 dimensions
+    are exchanged by Poincare translations and a pi rotation. Path topology and the
+    integer/half-integer 2pi spin sign then give bosonic/fermionic exchange. This
+    route assumes the stated free fields and Poincare-generator action; topology alone
+    is not asserted to prove the theorem for arbitrary interacting theories.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.exchange-path-spin-statistics-route
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: 12.1–12.2
+    pages:
+    - 207
+    - 208
+    - 209
+    - 210
+    note: Defines identical-particle exchange and connects a rotation path to spin.
+  notation: []
+- id: qft.align042.exchange-path-topology-and-anyons
+  label: Exchange-path topology in 3+1 and 2+1 dimensions
+  summary: In three spatial dimensions exchange paths give only bosonic or fermionic
+    phases because winding by 2π can be unwrapped; a rotation route then connects
+    the exchange sign to integer versus half-integer spin. In 2+1 dimensions distinct
+    windings permit arbitrary exchange phase and anyons.
+  kind: concept
+  origins:
+  - project: schwartz
+    node: schwartz.exchange-path-topology-and-anyons
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: '12.2'
+    pages:
+    - 208
+    - 209
+    - 210
+    - 211
+    note: Defines the path angle, derives the 3+1 restriction and spin sign, then
+      contrasts 2+1 anyons.
+  notation: []
+- id: qft.align042.fermionic-time-ordering
+  label: Fermionic time ordering
+  summary: 'For fermionic operator-valued fields, time ordering must include the minus
+    sign obtained by anticommuting fields past one another: T{ψ(x)χ(y)}=ψ(x)χ(y)θ(x0−y0)−χ(y)ψ(x)θ(y0−x0).'
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.fermionic-time-ordering
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: '12.4'
+    pages:
+    - 212
+    note: Derives the consistent time-ordering definition from fermionic anticommutation.
+  notation: []
+- id: qft.align042.general-spin-kinetic-derivative-statistics-route
+  label: General-spin derivative-count route to statistics
+  summary: For conventional free fields with standard local quadratic kinetic terms,
+    integer-spin tensor polarizations have even-index kinetic contractions, while
+    half-integer-spin polarizations require a gamma matrix and an odd derivative to
+    connect conjugate spinor representations. The resulting Hamiltonian sign gives
+    the stated statistics pattern within this conventional free-field scope, not for
+    arbitrary higher-derivative dynamics.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.general-spin-kinetic-derivative-statistics-route
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: 12.5.3
+    pages:
+    - 218
+    - 219
+    note: Compares scalar and spinor time-derivative structure and states the generalization.
+  notation: []
+- id: qft.align042.identical-particle-exchange-and-pauli-exclusion
+  label: Identical-particle exchange algebra and Pauli exclusion
+  summary: In 3+1 dimensions exchanging identical normalized particle states gives
+    a species-dependent phase constrained to ±1. The plus case produces bosonic commutators,
+    the minus case fermionic anticommutators, and the latter makes two identical fermion
+    creation operators in the same state vanish.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.identical-particle-exchange-and-pauli-exclusion
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: '12.1'
+    pages:
+    - 206
+    - 207
+    - 208
+    note: Defines identical particles, constrains exchange, derives the algebras,
+      and shows exclusion.
+  notation: []
+- id: qft.align042.quantized-dirac-field-mode-expansion
+  label: Quantized Dirac field mode expansion
+  summary: The free Dirac field expands in positive-energy u_s modes weighted by electron
+    annihilators and v_s modes weighted by positron creators; its adjoint carries
+    the complementary creator and annihilator modes. The expansion uses the earlier
+    free spinors and positive ωp.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.quantized-dirac-field-mode-expansion
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: '12.3'
+    pages:
+    - 211
+    - 212
+    note: Gives the spinor field and adjoint mode expansions and particle interpretation.
+  notation: []
+- id: qft.align042.s-matrix-lorentz-spin-statistics-route
+  label: S-matrix Lorentz-invariance route to spin–statistics
+  summary: The source's S-matrix route combines the scalar propagator's need for bosonic
+    ordering with the Dirac propagator's need for fermionic ordering. Together these
+    integer- and half-integer-spin branches establish the stated statistics assignment
+    from Lorentz-invariant time ordering.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.s-matrix-lorentz-spin-statistics-route
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: '12.4'
+    pages:
+    - 212
+    - 213
+    - 214
+    - 215
+    note: The section derives both branches before generalizing their spin dependence.
+  notation: []
+- id: qft.align042.stability-general-spin-statistics-route
+  label: Stability route to all-spin statistics
+  summary: The free scalar and Dirac Hamiltonians select commutators and anticommutators,
+    respectively, by lower-bounded energy. Schwartz extends those examples using the
+    even/odd derivative pattern of conventional local quadratic free-field kinetic
+    terms. This stability route does not assert an assumption-free theorem for arbitrary
+    interacting or higher-derivative theories.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.stability-general-spin-statistics-route
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: 12.5.1–12.5.3
+    pages:
+    - 216
+    - 217
+    - 218
+    - 219
+    note: Computes the basic cases and gives the all-spin generalization.
+  notation: []
+- id: qft.align042.statistics-and-energy-stability
+  label: Statistics from lower-bounded free-field energy
+  summary: The free scalar Hamiltonian is bounded below only with commutators, while
+    the free Dirac Hamiltonian is bounded below only with anticommutators; wrong statistics
+    assigns antiparticles an unbounded negative contribution. State-independent zero-point
+    terms do not alter this stability comparison.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.statistics-and-energy-stability
+    note: Retains Schwartz’s reviewed result, route, hypothesis, normalization, or
+      task boundary at the stated source scope; no broader equivalence is inferred.
+  evidence:
+  - source: schwartz
+    section: 12.5.1–12.5.2
+    pages:
+    - 215
+    - 216
+    - 217
+    - 218
+    note: Computes scalar and fermion energies for each statistics choice and identifies
+      the instability.
   notation: []
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
@@ -43214,6 +43475,417 @@ edges:
     - 52
     note: Defines observables as Hermitian operators and identifies the generator
       as a candidate observable.
+- id: qft.align042.schwartz-e-cluster-to-identical-exchange
+  from: qft.align030.disconnected-amplitudes-and-cluster-decomposition
+  to: qft.align042.identical-particle-exchange-and-pauli-exclusion
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: Schwartz invokes cluster decomposition while relating creation/annihilation
+    operators to identical-particle states.
+  failure_mode: The source’s stated cluster context for exchange states is lost.
+  evidence:
+  - source: schwartz
+    section: '12'
+    pages:
+    - 208
+    note: Connects the exchange-state construction to creation/annihilation operators
+      and cluster decomposition.
+- id: qft.align042.schwartz-e-dirac-mode-expansion-to-stability
+  from: qft.align042.quantized-dirac-field-mode-expansion
+  to: qft.align042.statistics-and-energy-stability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The fermion energy calculation substitutes the proposed Dirac field and
+    adjoint mode expansions.
+  failure_mode: The particle and antiparticle operator signs in the Dirac Hamiltonian
+    cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: 12.5.2
+    pages:
+    - 217
+    - 218
+    note: Inserts the quantized spinor expansion into the energy.
+- id: qft.align042.schwartz-e-dirac-propagator-to-s-matrix-route
+  from: qft.align042.dirac-propagator-requires-fermionic-ordering
+  to: qft.align042.s-matrix-lorentz-spin-statistics-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The S-matrix route needs its half-integer-spin Dirac branch.
+  failure_mode: The route cannot establish the fermionic half of the assignment.
+  evidence:
+  - source: schwartz
+    section: 12.4.2
+    pages:
+    - 214
+    - 215
+    note: Shows fermionic time ordering selects anticommutators.
+- id: qft.align042.schwartz-e-exchange-to-fermionic-ladder-residual
+  from: qft.align042.identical-particle-exchange-and-pauli-exclusion
+  to: qft.align020.fermionic-ladder-statistics-residual
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: Schwartz’s exchange algebra and same-state creation-operator vanishing
+    give the Pauli/exclusion consequences represented by the accepted fermionic residual.
+  failure_mode: The source-specific exchange-topology route remains unconnected to
+    its already accepted Pauli-exclusion consequence.
+  evidence:
+  - source: schwartz
+    section: '12'
+    pages:
+    - 206
+    - 207
+    - 208
+    note: Derives exchange phases, the fermionic algebra, and same-state exclusion.
+- id: qft.align042.schwartz-e-fermionic-ordering-to-dirac-propagator
+  from: qft.align042.fermionic-time-ordering
+  to: qft.align042.dirac-propagator-requires-fermionic-ordering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covariant propagator result comes from the minus sign in the fermionic
+    time-ordered product.
+  failure_mode: The contrast between the noninvariant and invariant two-point functions
+    cannot be reproduced.
+  evidence:
+  - source: schwartz
+    section: 12.4 and 12.4.2
+    pages:
+    - 212
+    - 214
+    - 215
+    note: Defines the sign convention and applies it to spinors.
+- id: qft.align042.schwartz-e-free-scalar-to-scalar-microcausality
+  from: qft.free-scalar-field-mode-expansion
+  to: qft.align015.microcausality-field-commutator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spacelike commutator is calculated by substituting the free scalar
+    field expansion.
+  failure_mode: The Pauli–Jordan integral has no field-operator origin.
+  evidence:
+  - source: schwartz
+    section: '12.6'
+    pages:
+    - 220
+    note: Starts the commutator calculation from the scalar mode expansion.
+- id: qft.align042.schwartz-e-free-spinors-to-quantized-dirac-field
+  from: qft.align020.free-dirac-plane-wave-solutions
+  to: qft.align042.quantized-dirac-field-mode-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The field expansion uses the exact accepted Schwartz u and v free plane-wave
+    solutions with positive-energy particle and antiparticle interpretation.
+  failure_mode: The u_s and v_s mode factors lack their exact free Dirac equation
+    and particle/antiparticle input.
+  evidence:
+  - source: schwartz
+    section: '12'
+    pages:
+    - 211
+    note: Writes the free Dirac field using u_s and v_s modes.
+- id: qft.align042.schwartz-e-general-derivatives-to-stability-route
+  from: qft.align042.general-spin-kinetic-derivative-statistics-route
+  to: qft.align042.stability-general-spin-statistics-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The source extends the two free-field energy examples only through the
+    even/odd derivative pattern of conventional quadratic kinetic terms.
+  failure_mode: The stability route remains the scalar/Dirac comparison and no longer
+    contains the source's qualified conventional all-spin extension.
+  evidence:
+  - source: schwartz
+    section: 12.5.3
+    pages:
+    - 219
+    note: States the all-spin derivative result.
+- id: qft.align042.schwartz-e-identical-exchange-to-path-topology
+  from: qft.align042.identical-particle-exchange-and-pauli-exclusion
+  to: qft.align042.exchange-path-topology-and-anyons
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The path analysis refines the exchange phase introduced for identical
+    particles.
+  failure_mode: The path-dependent phase has no initial exchange-state interpretation.
+  evidence:
+  - source: schwartz
+    section: 12.1–12.2
+    pages:
+    - 207
+    - 208
+    - 209
+    note: Moves from exchange phase to a physical exchange path.
+- id: qft.align042.schwartz-e-mode-algebra-to-scalar-microcausality
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.align015.microcausality-field-commutator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar commutator and anticommutator integrals follow from the creation-annihilation
+    algebra.
+  failure_mode: The D versus D1 distributions cannot be derived from operator products.
+  evidence:
+  - source: schwartz
+    section: '12.6'
+    pages:
+    - 220
+    - 221
+    note: Uses the canonical scalar operator algebra in both calculations.
+- id: qft.align042.schwartz-e-mode-algebra-to-scalar-propagator
+  from: qft.momentum-mode-creation-annihilation-algebra
+  to: qft.align015.feynman-scalar-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar vacuum matrix elements and statistics comparison use the oscillator
+    commutation algebra.
+  failure_mode: The contractions and wrong-statistics contrast cannot be evaluated.
+  evidence:
+  - source: schwartz
+    section: 12.4.1
+    pages:
+    - 212
+    - 213
+    note: Evaluates the scalar vacuum products and changes statistics.
+- id: qft.align042.schwartz-e-path-route-to-spin-statistics
+  from: qft.align042.exchange-path-spin-statistics-route
+  to: qft.align015.spin-statistics-connection
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Within Schwartz's free-field construction, this Poincare-generator exchange
+    route independently supports the stated spin-statistics result.
+  failure_mode: The theorem loses this qualified free-field geometric route; the S-matrix
+    and stability routes remain independent.
+  evidence:
+  - source: schwartz
+    section: 12.1–12.2
+    pages:
+    - 207
+    - 208
+    - 209
+    - 210
+    note: Combines identical exchange with the rotation-path argument.
+- id: qft.align042.schwartz-e-path-topology-to-path-route
+  from: qft.align042.exchange-path-topology-and-anyons
+  to: qft.align042.exchange-path-spin-statistics-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The free-field Poincare exchange construction jointly needs the 3+1-dimensional
+    path restriction and the spin-dependent rotation sign.
+  failure_mode: The qualified exchange route cannot connect path class to the integer/half-integer
+    rotation sign.
+  evidence:
+  - source: schwartz
+    section: '12.2'
+    pages:
+    - 209
+    - 210
+    note: Derives the path restriction and the spin exchange sign.
+- id: qft.align042.schwartz-e-quantized-dirac-to-fermionic-ordering
+  from: qft.align042.quantized-dirac-field-mode-expansion
+  to: qft.align042.fermionic-time-ordering
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Fermionic time ordering applies to fields constructed from the anticommuting
+    mode operators.
+  failure_mode: The sign rule is introduced without the fermionic field whose operator
+    order changes.
+  evidence:
+  - source: schwartz
+    section: 12.3–12.4
+    pages:
+    - 211
+    - 212
+    note: Gives the mode expansion then defines time ordering.
+- id: qft.align042.schwartz-e-s-matrix-route-to-spin-statistics
+  from: qft.align042.s-matrix-lorentz-spin-statistics-route
+  to: qft.align015.spin-statistics-connection
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: This completed Lorentz-invariant S-matrix route is independent of the
+    path and stability routes.
+  failure_mode: The theorem loses its time-ordering derivation.
+  evidence:
+  - source: schwartz
+    section: '12.4'
+    pages:
+    - 212
+    - 213
+    - 214
+    - 215
+    note: Combines scalar and spinor propagator requirements.
+- id: qft.align042.schwartz-e-scalar-microcausality-to-spin-statistics
+  from: qft.align015.microcausality-field-commutator
+  to: qft.align015.spin-statistics-connection
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The scalar calculation establishes the integer-spin causality requirement,
+    while the source explicitly limits the half-integer causality conclusion.
+  failure_mode: A qualified causal support is absent; the complete routes remain available.
+  evidence:
+  - source: schwartz
+    section: '12.6'
+    pages:
+    - 220
+    - 221
+    note: Shows scalar spacelike support and contrasts D1.
+- id: qft.align042.schwartz-e-scalar-propagator-to-s-matrix-route
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align042.s-matrix-lorentz-spin-statistics-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The S-matrix route needs its integer-spin scalar branch.
+  failure_mode: The route cannot establish the bosonic half of the assignment.
+  evidence:
+  - source: schwartz
+    section: 12.4.1
+    pages:
+    - 213
+    note: Shows scalar time ordering selects commutators.
+- id: qft.align042.schwartz-e-spin-sums-to-dirac-propagator
+  from: qft.align020.dirac-spin-sum-completeness
+  to: qft.align042.dirac-propagator-requires-fermionic-ordering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-ordered Dirac two-point calculation substitutes the spin sums
+    to obtain the covariant numerator.
+  failure_mode: The propagator numerator and the wrong-ordering contrast cannot be
+    evaluated.
+  evidence:
+  - source: schwartz
+    section: '12'
+    pages:
+    - 214
+    note: Uses the spin-sum identities in the Dirac two-point function.
+- id: qft.align042.schwartz-e-stability-route-to-spin-statistics
+  from: qft.align042.stability-general-spin-statistics-route
+  to: qft.align015.spin-statistics-connection
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: This conventional free-field lower-bound route is independent of the
+    S-matrix and exchange-path routes.
+  failure_mode: The theorem loses the source's qualified stability route; the other
+    two routes remain available.
+  evidence:
+  - source: schwartz
+    section: '12.5'
+    pages:
+    - 216
+    - 217
+    - 218
+    - 219
+    note: Combines the calculations and all-spin extension.
+- id: qft.align042.schwartz-e-stability-to-naive-dirac-instability
+  from: qft.align042.statistics-and-energy-stability
+  to: qft.align020.naive-dirac-commutator-instability
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The free-Dirac wrong-statistics Hamiltonian calculation supplies the
+    same lower-bounded-energy failure represented by the accepted naive-commutator
+    residual.
+  failure_mode: The source’s stability proof would repeat a presently accepted failed
+    Dirac quantization without identifying its shared conclusion.
+  evidence:
+  - source: schwartz
+    section: '12'
+    pages:
+    - 215
+    - 216
+    - 217
+    - 218
+    note: Compares scalar and Dirac wrong-statistics energy signs, including the unbounded
+      antiparticle contribution.
+- id: qft.align042.schwartz-e-statistics-stability-to-general-derivative-route
+  from: qft.align042.statistics-and-energy-stability
+  to: qft.align042.general-spin-kinetic-derivative-statistics-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The conventional derivative-count extension starts from the explicit
+    free scalar and Dirac energy-sign calculations.
+  failure_mode: The qualified derivative argument lacks its two operative free-field
+    stability examples.
+  evidence:
+  - source: schwartz
+    section: 12.5.1–12.5.3
+    pages:
+    - 216
+    - 217
+    - 218
+    - 219
+    note: Computes both cases then generalizes their derivative pattern.
+- id: qft.align042.schwartz-e-translation-energy-to-stability
+  from: qft.translation-symmetry-and-energy-momentum-tensor
+  to: qft.align042.statistics-and-energy-stability
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stability derivation obtains energy from the 00 component of the
+    translation Noether current.
+  failure_mode: The Hamiltonian/energy-density expression has no translation-symmetry
+    origin.
+  evidence:
+  - source: schwartz
+    section: '12.5'
+    pages:
+    - 216
+    note: Recalls the energy-momentum tensor as the translation Noether current.
+- id: qft.align042.schwartz-e-two-pi-sign-to-path-topology
+  from: qft.align010.weinberg-1.lorentz-topology-sign-projective-representations
+  to: qft.align042.exchange-path-topology-and-anyons
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exchange construction uses the accepted double-cover result that
+    a 2pi Lorentz rotation is +1 for integer spin and may be -1 for half-integer spin.
+  failure_mode: The topology route cannot assign its exchange phase to spin without
+    the exact 2pi projective-representation sign.
+  evidence:
+  - source: schwartz
+    section: '12'
+    pages:
+    - 210
+    note: Applies the 2pi rotation sign in the three-dimensional exchange-path argument.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation

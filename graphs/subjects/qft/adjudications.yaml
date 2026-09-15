@@ -2137,3 +2137,106 @@ units:
       id: qft.align041.symmetry-as-transition-probability-invariance
     - kind: nodes
       id: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
+- id: full-align-042-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Three route records overstate the scope of the free-field arguments
+    alternatives:
+    - Qualify the Poincare exchange and conventional kinetic/stability routes
+    - Defer rather than publish assumption-free all-theory claims
+    resolution: Adopt the free-field, Poincare-generator, conventional kinetic and
+      higher-derivative exclusions
+    rationale: Schwartz p.209 explicitly says the exchange is performed in a free-field
+      theory; pp.215 and 218-219 infer general spins from conventional polarization
+      and derivative patterns.
+    evidence:
+    - source: schwartz
+      section: 12.2, 12.4.2, and 12.5.3
+      pages:
+      - 209
+      - 210
+      - 215
+      - 218
+      - 219
+    affected_records:
+    - kind: nodes
+      id: qft.align042.exchange-path-spin-statistics-route
+    - kind: nodes
+      id: qft.align042.general-spin-kinetic-derivative-statistics-route
+    - kind: nodes
+      id: qft.align042.stability-general-spin-statistics-route
+    - kind: nodes
+      id: qft.align015.spin-statistics-connection
+    - kind: edges
+      id: qft.align042.schwartz-e-path-route-to-spin-statistics
+    - kind: edges
+      id: qft.align042.schwartz-e-path-topology-to-path-route
+    - kind: edges
+      id: qft.align042.schwartz-e-general-derivatives-to-stability-route
+    - kind: edges
+      id: qft.align042.schwartz-e-stability-route-to-spin-statistics
+    - kind: edges
+      id: qft.align042.schwartz-e-statistics-stability-to-general-derivative-route
+  - finding: 1
+    issue: Two edges target records that lack the exact Schwartz source origins
+    alternatives:
+    - Retarget both edges to the exact-origin accepted records
+    - Defer until the incident endpoints are corrected
+    resolution: Use the free-plane-wave and Lorentz-topology accepted endpoints; refresh
+      the companion to 1080
+    rationale: The accepted free-plane-wave node carries Schwartz free-dirac-particle-antiparticle-solutions,
+      and the topology node carries Schwartz spinor-two-pi-rotation-and-projective-representations.
+    evidence:
+    - source: schwartz
+      section: 12.2-12.3
+      pages:
+      - 209
+      - 210
+      - 211
+    affected_records:
+    - kind: edges
+      id: qft.align042.schwartz-e-free-spinors-to-quantized-dirac-field
+    - kind: edges
+      id: qft.align042.schwartz-e-two-pi-sign-to-path-topology
+  - finding: 2
+    issue: Three accepted common cores require final amendment authority
+    alternatives:
+    - Authorize all three full retained-field replacements
+    - Defer and keep the accepted nodes without the Schwartz origins
+    resolution: Authorize all three replacements with retained evidence, origins,
+      notation and qualified routes
+    rationale: 'The packet contains every retained page and the new Schwartz evidence:
+      theorem pp.205-206, scalar ordering pp.212-213, and scalar microcausality pp.219-221.'
+    evidence:
+    - source: weinberg-1
+      section: '1.2'
+      pages:
+      - 20
+    - source: peskin-schroeder
+      section: '2.4'
+      pages:
+      - 28
+      - 29
+      - 31
+    - source: schwartz
+      section: 6.2 and 12.1-12.6
+      pages:
+      - 75
+      - 76
+      - 77
+      - 205
+      - 206
+      - 212
+      - 213
+      - 219
+      - 220
+      - 221
+    affected_records:
+    - kind: nodes
+      id: qft.align015.spin-statistics-connection
+    - kind: nodes
+      id: qft.align015.feynman-scalar-propagator
+    - kind: nodes
+      id: qft.align015.microcausality-field-commutator
