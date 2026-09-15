@@ -2950,8 +2950,12 @@ nodes:
     note: The source uses v=Vμσμ with σ0=1; k∈SL(2,C) acts as v↦kvk†.
 - id: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
   label: Hermiticity in an infinitesimal unitary expansion
-  summary: Assume a linear, unitary operator has the near-identity form U = 1 + iεt
-    with real infinitesimal ε. First-order unitarity then requires t to be Hermitian.
+  summary: For a physical symmetry connected continuously to the identity, probability
+    invariance is a necessary premise only. Wigner’s theorem and connectedness select
+    the linear-unitary branch, with that proof imported. Writing U=1+i epsilon t then
+    forces t to be Hermitian. Together with the Hermitian-observable criterion, t
+    is a candidate for an observable; the source does not establish that every generator
+    is an observable.
   kind: result
   group: qft.particle-representations-and-gauge-polarizations
   origins:
@@ -2960,6 +2964,10 @@ nodes:
     note: 'Retains the assigned source origin for its conditional p. 52 result: once
       the linear, unitary near-identity form is assumed, unitarity constrains the
       generator to be Hermitian.'
+  - project: weinberg-1
+    node: weinberg-1.continuous-symmetries-unitary
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
   evidence:
   - source: weinberg-1
     section: '2.2'
@@ -2967,7 +2975,21 @@ nodes:
     - 52
     note: Given the stated linear, unitary near-identity expansion, derives the Hermiticity
       of its generator.
-  notation: []
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 51
+    note: Uses continuity from the identity to select the unitary-linear branch.
+  - source: weinberg-1
+    section: '2.1'
+    pages:
+    - 50
+    note: An observable is represented by a Hermitian operator; this supplies the
+      qualified candidate-for-observable criterion.
+  notation:
+  - source: weinberg-1
+    note: Continuity from the identity selects the linear-unitary branch; antiunitary
+      symmetries reverse time direction in this treatment.
 - id: qft.align010.weinberg-1.time-reversal-forbids-static-dipoles
   label: Time-reversal invariance forbids static electric or gravitational dipoles
   summary: A static electric or gravitational field would remove the spin degeneracy
@@ -17430,6 +17452,1075 @@ nodes:
     note: α abbreviates the full collection of individual momenta, spin components
       or helicities, and particle-type labels; δ(β−α) includes momentum delta functions
       and Kronecker deltas with allowed identical-particle permutations.
+- id: qft.align033.antiparticles-from-charge-eigenfields
+  label: Antiparticles from charge-eigenfield causality
+  summary: To make a causal field have a definite conserved charge, its annihilation
+    component must be paired with a creation component for a species carrying opposite
+    conserved quantum numbers. The construction therefore requires an antiparticle,
+    possibly identical with a neutral particle.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.antiparticles-from-charge-eigenfields
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 199
+    note: The charge commutator argument requires opposite-charge particle species
+      and then restricts attention to an irreducible field and its antiparticle.
+  notation: []
+- id: qft.align033.causal-combination-of-creation-and-annihilation-fields
+  label: Causal combination of creation and annihilation fields
+  summary: Hermiticity rules out using only annihilation or only creation fields.
+    A causal field is therefore a coefficient-controlled linear combination of both,
+    chosen so its graded brackets vanish at spacelike separation; local interactions
+    use even numbers of fermionic components.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.causal-combination-of-creation-and-annihilation-fields
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 198
+    note: The source introduces the combined field in equation (5.1.31) and its spacelike
+      bracket condition in equation (5.1.32).
+  notation: []
+- id: qft.align033.causal-dirac-field-and-fermion-statistics
+  label: Causal Dirac field requires fermion statistics
+  summary: Spacelike cancellation of the Dirac field's two spin sums is possible only
+    with anticommutators, equal coefficient magnitudes, and opposite parity eigenvalues
+    for the particle-annihilation and antiparticle-creation spinors. A phase choice
+    fixes the usual normalized Dirac field and its anticommutator.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.causal-dirac-field-and-fermion-statistics
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 222
+    - 223
+    - 224
+    note: Equations (5.5.29)–(5.5.39) derive the coefficient conditions, enforce Fermi
+      statistics, and record the resulting field and anticommutator.
+  notation: []
+- id: qft.align033.causal-massive-vector-field
+  label: Causal massive vector field
+  summary: Spacelike cancellation for a spin-one vector field requires Bose statistics
+    and equal magnitudes of its annihilation and creation coefficients. It yields
+    a real neutral vector field, or a complex field made from equal-mass opposite-charge
+    particle and antiparticle operators.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.causal-massive-vector-field
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 210
+    - 211
+    note: The mixed bracket is evaluated and the causal real and charged vector fields
+      are given in equations (5.3.31)–(5.3.35).
+  notation: []
+- id: qft.align033.cluster-decomposition-local-field-interaction-route
+  label: Local field interactions as a route to cluster decomposition
+  summary: Substituting field mode expansions into a local interaction yields one
+    momentum-conservation delta function times a smooth coefficient; conversely such
+    coefficients can be represented by local field products. This makes fields natural
+    for a Lorentz-invariant cluster-decomposing S-matrix.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.cluster-decomposition-local-field-interaction-route
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 197
+    note: Equations (5.1.27)–(5.1.29) connect the local interaction expansion with
+      the single-delta cluster condition.
+  notation: []
+- id: qft.align033.conserved-current-for-smooth-massless-vector-limit
+  label: Conserved current for the smooth massless vector limit
+  summary: A spin-one emission rate contains a longitudinal polarization contribution
+    that diverges as m approaches zero unless the source current is conserved. Conservation
+    removes helicity-zero emission so the massive three-state system can approach
+    the two-helicity massless one.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.conserved-current-for-smooth-massless-vector-limit
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 212
+    note: The polarization sum contains pμpν/m² and the text derives current conservation
+      as the condition preventing the divergence.
+  notation: []
+- id: qft.align033.cpt-proof-general-ab-scalar-route
+  label: CPT proof route through general (A,B) scalar couplings
+  summary: For general irreducible fields, compose their P, C, and T actions and use
+    the separate A-index and B-index scalar-coupling condition. Since the sums of
+    A labels and B labels in a scalar are integers, the representation phases multiply
+    to one for a Hermitian scalar interaction.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.cpt-proof-general-ab-scalar-route
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 246
+    note: Equation (5.8.8) and the following scalar-coupling argument give the general
+      (A,B) route.
+  notation: []
+- id: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  label: CPT proof route through scalar, vector, and Dirac tensors
+  summary: Choose the inversion phases so the scalar, vector, and Dirac field CPT
+    transformations send each tensor to its value at −x with the tensor-rank sign.
+    The Dirac-bilinear classification extends the same rule to fermion bilinears,
+    and an even-index Hermitian scalar interaction is therefore invariant.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.cpt-proof-tensor-and-dirac-bilinear-route
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    - 246
+    note: Equations (5.8.1)–(5.8.7) give the field and bilinear tensor route to CPT
+      invariance.
+  notation: []
+- id: qft.align033.cpt-theorem-local-scalar-interaction-proof
+  label: CPT invariance of Hermitian local scalar interactions
+  summary: With suitable inversion-phase conventions, CPT sends each field tensor
+    to its value at −x with the tensor-rank sign. A Hermitian Lorentz-scalar interaction
+    has an even total index count, so it is CPT invariant; consequently CPT commutes
+    with the interaction and free Hamiltonians.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.cpt-theorem-local-scalar-interaction-proof
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 244
+    - 245
+    - 246
+    note: Equations (5.8.1)–(5.8.9) give the free-field CPT transformations and prove
+      invariance of a Hermitian scalar interaction.
+  notation: []
+- id: qft.align033.differential-equivalence-of-field-types
+  label: Differential equivalence of free field types
+  summary: For a fixed massive particle spin, every admissible (A,B) free field can
+    be obtained by a differential operator from a basic (j,0) or (0,j) field. In particular,
+    the (A,A) fields for spin zero are traceless derivatives of a scalar.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.differential-equivalence-of-field-types
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 238
+    - 239
+    note: Equations (5.7.32)–(5.7.33) and the uniqueness argument relate all admissible
+      field types by derivatives.
+  notation: []
+- id: qft.align033.dirac-antiparticle-parity-majorana-reality
+  label: Dirac charge-conjugation and Majorana-reality residual
+  summary: For a self-conjugate spin-one-half field, charge conjugation gives the
+    Majorana reality condition; its intrinsic parity is imaginary and its charge-conjugation
+    phase is real. The opposite particle–antiparticle parity and conjugate C phase
+    are retained in the shared cores.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-antiparticle-parity-majorana-reality
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 225
+    - 226
+    note: Equations (5.5.40), (5.5.46)–(5.5.48) derive the parity relation, charge-conjugation
+      relation, and Majorana condition.
+  notation: []
+- id: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  label: Dirac bilinear Lorentz and discrete-symmetry classification
+  summary: The Dirac adjoint makes bilinears transform covariantly. Choosing one of
+    1, gamma, sigma, gamma-five gamma, or gamma-five produces scalar, vector, tensor,
+    axial-vector, or pseudoscalar bilinears; their charge-conjugation signs constrain
+    which boson current couplings are allowed.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-bilinear-lorentz-and-discrete-symmetries
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: 5.5–5.6
+    pages:
+    - 228
+    - 229
+    note: Equations (5.5.55)–(5.5.58) give the adjoint, Lorentz/parity transformation
+      law, covariant types, and their charge-conjugation signs.
+  notation: []
+- id: qft.align033.dirac-equation-from-parity-completed-spinor-field
+  label: Dirac equation from the parity-completed spinor field
+  summary: The spinor coefficients are eigenvectors of the momentum-space Dirac operator,
+    so the causal field obeys the free Dirac equation. In this construction the equation
+    records the convention that combines the two proper-orthochronous spinor irreducible
+    representations into a field with simple parity behavior.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-equation-from-parity-completed-spinor-field
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 225
+    note: Equations (5.5.42)–(5.5.43) derive the free Dirac equation and explain its
+      relation to the parity-completed representation.
+  notation: []
+- id: qft.align033.dirac-matrix-tensor-basis-and-pseudounitarity
+  label: Dirac tensor basis, parity, and pseudounitarity
+  summary: Gamma matrices generate Lorentz vector, antisymmetric-tensor, axial-vector,
+    and pseudoscalar matrix tensors. In four dimensions they span the sixteen-dimensional
+    matrix algebra; the Dirac representation is nonunitary but obeys a parity-matrix
+    pseudounitarity relation.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-matrix-tensor-basis-and-pseudounitarity
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.4'
+    pages:
+    - 214
+    - 215
+    - 216
+    - 217
+    - 218
+    note: The section constructs Lorentz generators from the Clifford algebra, classifies
+      the antisymmetrized matrix tensors, and derives pseudounitarity.
+  notation: []
+- id: qft.align033.dirac-rest-intertwiners-select-spin-half
+  label: Dirac rest intertwiners select spin one-half
+  summary: Schur's lemma applied to the rest-frame rotation intertwiners shows that
+    a nonzero Dirac field describes spin one-half. Its zero-momentum coefficient matrices
+    are fixed up to four constants before discrete-inversion requirements are imposed.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-rest-intertwiners-select-spin-half
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 220
+    - 221
+    note: Equations (5.5.3)–(5.5.7) use the rotation intertwiners and Schur's lemma
+      to select j = 1/2 and boost the spinors.
+  notation: []
+- id: qft.align033.dirac-time-reversal-phase-and-transformation
+  label: Dirac time-reversal transformation-law residual
+  summary: Complex-conjugated boosted spinors yield the gamma-five/charge-conjugation-matrix
+    time-reversal law for the causal Dirac field. The conjugate particle–antiparticle
+    time-reversal phase condition is retained in the shared C/T core.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-time-reversal-phase-and-transformation
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 227
+    - 228
+    note: Equations (5.5.49)–(5.5.54) derive the time-reversal phase relation and
+      transformed field.
+  notation: []
+- id: qft.align033.dirac-transpose-and-conjugation-identities
+  label: Dirac transpose and complex-conjugation identities
+  summary: The transpose properties of gamma matrices, the charge-conjugation matrix,
+    and their consequences for Dirac tensor matrices give the corresponding complex-conjugation
+    identities. These identities supply the matrix relations used to transform spinors
+    and currents under charge conjugation.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.dirac-transpose-and-conjugation-identities
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.4'
+    pages:
+    - 219
+    note: Equations (5.4.35)–(5.4.43) state the transpose and complex-conjugation
+      identities and identify their role in charge-conjugation properties.
+  notation: []
+- id: qft.align033.field-mode-expansion-from-translation-covariance
+  label: Field mode expansion from translation covariance
+  summary: Translation covariance fixes annihilation and creation fields to Fourier
+    mode expansions, with momentum-dependent coefficient functions multiplying annihilation
+    and creation operators.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.field-mode-expansion-from-translation-covariance
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 195
+    note: Translations give the exponential x dependence and the two Fourier expansions
+      in equations (5.1.17) and (5.1.18).
+  notation: []
+- id: qft.align033.general-causal-field-clebsch-gordan-construction
+  label: General causal field from Clebsch-Gordan coefficients
+  summary: For a massive field of type (A,B), the rest-frame coefficients are the
+    Clebsch-Gordan coefficients coupling A and B to particle spin j. Standard boosts
+    then give finite-momentum coefficients, uniquely up to the creation/annihilation
+    constants and overall field scale.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.general-causal-field-clebsch-gordan-construction
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 233
+    - 234
+    - 235
+    note: Equations (5.7.2)–(5.7.15) identify the rest intertwiners with Clebsch-Gordan
+      coefficients and boost them to finite momentum.
+  notation: []
+- id: qft.align033.general-causal-fields-spin-statistics-and-phase
+  label: Causal-field spin-statistics proof and universal phase residual
+  summary: Under Weinberg’s causal-field assumptions, self-field locality derives
+    the spin-statistics rule. Across all field types for one particle, locality fixes
+    one removable particle–antiparticle relative phase and leaves each causal (A,B)
+    field unique up to overall scale; this proof residual supports the accepted common
+    result.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.general-causal-fields-spin-statistics-and-phase
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 238
+    note: Equations (5.7.28)–(5.7.31) derive the general spin-statistics result and
+      universal relative-phase convention.
+  notation: []
+- id: qft.align033.general-field-charge-and-time-reversal-relations
+  label: General (A,B) charge and time-reversal field-law residual
+  summary: For a causal (A,B) field, charge conjugation maps it to the representation-dependent
+    adjoint (B,A) partner, and self-conjugacy becomes a representation-dependent reality
+    condition. Antiunitary time reversal maps within (A,B) with its explicit index
+    phase; the conjugate one-particle phase conditions are retained in the shared
+    core.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.general-field-charge-and-time-reversal-relations
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 241
+    - 242
+    - 243
+    note: Equations (5.7.44)–(5.7.60) compare the transformed field with the unique
+      causal partner and obtain the phase relations.
+  notation: []
+- id: qft.align033.general-field-spin-sum-polynomial-locality-proof
+  label: Polynomial spin sum proof of general-field locality
+  summary: Applying the supplied fact that the general (A,B) spin sum is the mass-shell
+    value of a polynomial with a definite reflection parity, the chapter checks the
+    fact in one momentum direction and uses it at equal times in a spacelike frame.
+    The resulting distributions fix the creation-annihilation coefficient cancellation
+    condition.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.general-field-spin-sum-polynomial-locality-proof
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 236
+    - 237
+    note: The text says the spin sum has been calculated explicitly elsewhere, checks
+      the polynomial/reflection property for one direction, then applies that supplied
+      property to derive the cancellation condition.
+  notation: []
+- id: qft.align033.general-lorentz-scalar-couplings
+  label: Lorentz scalar couplings from separate spin couplings
+  summary: Lorentz scalars made from (A,B) fields are formed by independently coupling
+    all A indices and all B indices to spin zero. The three-field case has one coupling
+    when each triple admits a scalar, written with two Wigner three-j symbols.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.general-lorentz-scalar-couplings
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 235
+    - 236
+    note: Equations (5.7.16)–(5.7.18) reduce scalar interaction construction to two
+      ordinary angular-momentum scalar couplings.
+  notation: []
+- id: qft.align033.high-spin-interaction-picture-qualification
+  label: Interaction-picture qualification on high-spin pathologies
+  summary: The text distinguishes physical-particle free fields and perturbative S-matrix
+    calculations from claimed high-spin pathologies in external backgrounds. It argues
+    that simple background couplings need not represent the most general interaction
+    and therefore do not establish a universal no-go result.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.high-spin-interaction-picture-qualification
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 243
+    - 244
+    note: The discussion states the restricted scope of reported high-spin difficulties
+      and its interaction-picture rationale.
+  notation: []
+- id: qft.align033.long-range-graviton-coupling-and-general-covariance
+  label: Long-range graviton coupling and general covariance
+  summary: A covariant helicity-two curvature tensor can be formed directly, but inverse-square
+    gravitational interactions require a symmetric potential that transforms up to
+    a gauge transformation. Apart from total-derivative terms that do not affect long-range
+    behavior, the available conserved two-index source is the energy-momentum tensor;
+    the analogous lack of higher-rank sources excludes long-range forces from massless
+    spin above two on the same qualification.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.long-range-graviton-coupling-and-general-covariance
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 252
+    - 253
+    note: The text compares curvature and potential descriptions and states the conserved-source
+      restriction with its total-derivative exception.
+  notation: []
+- id: qft.align033.lorentz-field-intertwining-conditions
+  label: Lorentz field transformation and coefficient intertwining conditions
+  summary: Fields are built so their components transform by a finite-dimensional
+    Lorentz representation independent of momentum. Combining this demand with the
+    creation and annihilation operator transformation laws yields the coefficient-function
+    intertwining conditions; translations, standard boosts, and rest rotations are
+    their special cases.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-field-intertwining-conditions
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 192
+    - 193
+    - 194
+    - 195
+    note: Equations (5.1.6)–(5.1.20) define finite-dimensional field covariance and
+      derive the coefficient conditions before their specialization.
+  notation: []
+- id: qft.align033.lorentz-irrep-rotation-content-and-parity-completion
+  label: Rotation content and parity completion of Lorentz irreps
+  summary: An (A,B) field contains rotations j from A+B down to |A−B|. Tensors and
+    spinors arise from these representations and their products; if A differs from
+    B, adjoining spatial inversion requires the direct sum (A,B)⊕(B,A).
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-irrep-rotation-content-and-parity-completion
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.6'
+    pages:
+    - 231
+    - 232
+    - 233
+    note: The source identifies familiar tensor and spinor cases, gives the Rarita-Schwinger
+      projection example, and derives the parity-completed direct sum.
+  notation: []
+- id: qft.align033.lorentz-irrep-su2-times-su2-classification
+  label: Lorentz irreducible representations from two commuting spins
+  summary: Combining rotation and boost generators into two commuting angular-momentum
+    algebras classifies finite-dimensional proper-orthochronous Lorentz irreducible
+    representations by (A,B), with dimension (2A+1)(2B+1). These representations are
+    generally nonunitary because the Lorentz group is noncompact.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.lorentz-irrep-su2-times-su2-classification
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.6'
+    pages:
+    - 229
+    - 230
+    - 231
+    note: Equations (5.6.7)–(5.6.18) decouple the algebra into two spin algebras and
+      state the dimensionality and nonunitarity.
+  notation: []
+- id: qft.align033.massive-spin-one-polarization-coefficients
+  label: Massive spin-one polarization coefficients
+  summary: Raising and lowering from a chosen rest polarization and then boosting
+    gives the three massive spin-one polarization vectors. Their spin sum is the projector
+    orthogonal to the on-shell momentum.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massive-spin-one-polarization-coefficients
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 209
+    - 210
+    note: Equations (5.3.20)–(5.3.29) construct the polarization vectors and identify
+      the spin sum as a transverse projector.
+  notation: []
+- id: qft.align033.massive-vector-proca-constraints
+  label: Massive vector Klein-Gordon and transversality constraints
+  summary: The causal massive spin-one field obeys the Klein-Gordon equation and has
+    zero divergence because every polarization is orthogonal to its on-shell momentum.
+    In the small-mass limit these are the Lorentz-gauge equations for a vector potential.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massive-vector-proca-constraints
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 211
+    - 212
+    note: Equations (5.3.36)–(5.3.38) give the two free-field equations and the text
+      identifies their small-mass form.
+  notation: []
+- id: qft.align033.massless-ab-helicity-selection-rule
+  label: Massless (A,B) helicity selection rule
+  summary: The little-group null-rotation conditions restrict an (A,B) field to annihilate
+    helicity σ = B−A and create the opposite-helicity antiparticle. The minimal covariant
+    fields are therefore (1,0)⊕(0,1) for helicity one and (2,0)⊕(0,2) for helicity
+    two, rather than vector or symmetric rank-two potentials.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-ab-helicity-selection-rule
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 253
+    - 254
+    - 255
+    note: Equations (5.9.40)–(5.9.41) derive σ = B−A and the following text identifies
+      the minimal helicity-one and helicity-two tensor types.
+  notation: []
+- id: qft.align033.massless-field-little-group-coefficient-constraints
+  label: Massless field coefficients constrained by the little group
+  summary: For massless particle fields, Lorentz covariance reduces coefficient determination
+    to a standard momentum and its ISO(2) little group. Rotation fixes the helicity
+    phase while the null-rotation generators impose extra invariance conditions that
+    do not occur for massive fields.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-field-little-group-coefficient-constraints
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 246
+    - 247
+    - 248
+    - 249
+    note: Equations (5.9.1)–(5.9.16) set up the massless mode expansion and the standard-momentum
+      little-group constraints.
+  notation: []
+- id: qft.align033.massless-helicity-one-field-strength-and-maxwell-equations
+  label: Causal helicity-one field strength and vacuum Maxwell equations
+  summary: The antisymmetric derivative of the gauge-shifting potential is a genuine
+    Lorentz tensor. Equal annihilation and creation coefficient magnitudes make its
+    commutator spacelike zero; it obeys the source-free Maxwell equations and is Hermitian
+    for a self-conjugate photon.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-helicity-one-field-strength-and-maxwell-equations
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 251
+    - 252
+    note: Equations (5.9.32)–(5.9.39) construct the tensor field, derive its Maxwell
+      equations, and impose the coefficient condition for causal commutation.
+  notation: []
+- id: qft.align033.massless-helicity-one-no-covariant-vector-field
+  label: No covariant four-vector field for physical helicity one
+  summary: A helicity-one polarization vector satisfies the little-group rotation
+    condition but fails the null-rotation condition. Therefore annihilation and creation
+    operators for physical massless helicity-one particles cannot construct an ordinary
+    covariant four-vector field.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-helicity-one-no-covariant-vector-field
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 249
+    - 250
+    note: Equations (5.9.19)–(5.9.22) show the incompatible conditions for the four-vector
+      polarization at standard momentum.
+  notation: []
+- id: qft.align033.massless-vector-potential-gauge-transformation
+  label: Massless vector potential transforms up to a gauge derivative
+  summary: Using the noncovariant helicity-one polarization construction gives a transverse
+    radiation-gauge potential whose Lorentz transform contains an added derivative
+    term. Lorentz-invariant interactions can use it when they are invariant under
+    that gauge transformation, which is achieved by coupling it to a conserved four-current.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.massless-vector-potential-gauge-transformation
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 250
+    - 251
+    note: Equations (5.9.23)–(5.9.31) give the radiation-gauge conditions and the
+      transformation with an added gradient, followed by the conserved-current coupling
+      condition.
+  notation: []
+- id: qft.align033.normal-ordering-preserves-locality-and-clustering
+  label: Normal ordering for local cluster-decomposing interactions
+  summary: Normal ordering places creation operators left of annihilation operators
+    to display the single-delta cluster form. It can be rewritten as ordinary field
+    products with c-number terms, so spacelike commutation is retained for interactions
+    built from causal fields.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.normal-ordering-preserves-locality-and-clustering
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 200
+    note: The source defines normal ordering in equation (5.1.35) and explains why
+      it preserves the spacelike-commutation argument.
+  notation: []
+- id: qft.align033.particle-first-free-field-equations
+  label: Particle-first construction and free-field equations
+  summary: Starting from particle operators and Lorentz covariance makes every definite-mass
+    field satisfy the Klein-Gordon equation; extra equations arise only when the field
+    has more components than independent particle states.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.particle-first-free-field-equations
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 200
+    note: Equation (5.1.34) is derived from the mode expansion and the text contrasts
+      this with starting from field equations or a Lagrangian.
+  notation: []
+- id: qft.align033.positronium-charge-conjugation-selection
+  label: Positronium charge-conjugation selection
+  summary: Fermi exchange makes the charge-conjugation parity of a particle-antiparticle
+    fermion state depend on the exchange symmetry of its wave function. The para-
+    and ortho-positronium decay channels illustrate the resulting C assignments.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.positronium-charge-conjugation-selection
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 226
+    - 227
+    note: The source derives the fermion-pair C sign and relates para- and ortho-positronium
+      to two- and three-photon decay channels.
+  notation: []
+- id: qft.align033.problem-boost-covariance-of-massive-coefficients
+  label: 'Problem: prove boost construction satisfies full covariance'
+  summary: Show that rest-frame coefficients satisfying the rotation intertwiner conditions,
+    when boosted by the standard-boost formulas, satisfy the defining homogeneous
+    Lorentz covariance equations for arbitrary momentum.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-boost-covariance-of-massive-coefficients
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    note: Problem 1 explicitly asks for the covariance proof from equations (5.1.21)–(5.1.24)
+      to equations (5.1.19)–(5.1.20).
+  notation: []
+- id: qft.align033.problem-generalized-dirac-field-bilinear-tensors
+  label: 'Problem: classify generalized Dirac-field bilinear tensors'
+  summary: For a field transforming as (j,0)⊕(0,j), list the tensors formed from products
+    of its components and compare the result with the j = 1/2 Dirac case.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-generalized-dirac-field-bilinear-tensors
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 6 requests the tensor classification.
+  notation: []
+- id: qft.align033.problem-high-spin-external-current-emission-scaling
+  label: 'Problem: high-spin emission scaling from an external current'
+  summary: For a general massive spin-j (A,B) field coupled to an external c-number
+    current, determine the high-energy behavior of a definite-helicity emission matrix
+    element under the source's stated current assumptions.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-high-spin-external-current-emission-scaling
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 7 asks for this independent asymptotic estimate.
+  notation: []
+- id: qft.align033.problem-massive-spin-two-field-construction
+  label: 'Problem: construct massive spin-two tensor field'
+  summary: For a real symmetric traceless tensor field that creates and annihilates
+    a massive spin-two particle, determine the coefficient functions, field equations
+    including any transversality condition, polarization sum, commutators, and P,
+    C, T transformations.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-massive-spin-two-field-construction
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    - 256
+    note: Problem 3 gives the tensor constraints and asks for the full massive spin-two
+      construction.
+  notation: []
+- id: qft.align033.problem-massless-higher-spin-derivative-fields
+  label: 'Problem: derive massless higher-spin field types by differentiation'
+  summary: Show that massless spin-j fields of types (A,A+j) and (B+j,B) are respectively
+    2A and 2B derivatives of the basic chiral fields of types (0,j) and (j,0).
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-massless-higher-spin-derivative-fields
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 4 asks for this massless derivative construction.
+  notation: []
+- id: qft.align033.problem-massless-spin-j-inversion-transformations
+  label: 'Problem: massless spin-j P, C, T transformations'
+  summary: Work out P, C, and T transformations of parity-completed fields of type
+    (j,0)⊕(0,j) describing massless helicities plus and minus j.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-massless-spin-j-inversion-transformations
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 5 is the independent discrete-inversion task.
+  notation: []
+- id: qft.align033.problem-rarita-schwinger-field-construction
+  label: 'Problem: construct massive spin-three-halves Rarita-Schwinger field'
+  summary: For a self-charge-conjugate massive spin-three-halves particle, construct
+    a spinor-vector field, derive its coefficient functions, field equations, algebraic
+    and reality constraints, commutators, and P, C, T transformations.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.problem-rarita-schwinger-field-construction
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    - 256
+    note: Problem 2 specifies the spinor-vector representation and requests the complete
+      free-field analysis.
+  notation: []
+- id: qft.align033.rest-frame-intertwiners-determine-massive-fields
+  label: Rest-frame intertwiners determine massive field coefficients
+  summary: For a chosen Lorentz representation, standard boosts determine all massive-particle
+    coefficient functions from their zero-momentum values; the remaining zero-momentum
+    equations embed the particle spin representation in the field's rotation representation.
+  kind: method
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.rest-frame-intertwiners-determine-massive-fields
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 196
+    - 197
+    note: The boost formulas determine finite-momentum coefficients, while the rotation
+      equations identify their rest-frame spin content.
+  notation: []
+- id: qft.align033.spin-one-inversion-phase-relations
+  label: Spin-one inversion laws and polar-vector parity residual
+  summary: The causal spin-one field has explicit P, C, and T transformation laws.
+    After factoring out the shared particle–antiparticle parity and C/T phase constraints,
+    the source-specific residual is the polar-vector convention that assigns intrinsic
+    parity −1 to the spin-one particle.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.spin-one-inversion-phase-relations
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 212
+    - 213
+    note: Equations (5.3.41)–(5.3.46) state the phase constraints and the polar-vector
+      parity inference.
+  notation: []
+- id: qft.align033.vector-representation-spin-zero-or-one-content
+  label: Vector representation contains spin zero or spin one
+  summary: At rest the four-vector representation permits either a spin-zero solution
+    carried by the time component or a spin-one solution carried by spatial components.
+    The spin-zero vector field is the derivative of a scalar field.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.vector-representation-spin-zero-or-one-content
+    note: Retains the reviewed source-specific normalization, hypotheses, derivation,
+      external-proof limit or task boundary; no broader correspondence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 208
+    - 209
+    note: The rest-frame rotation equations split the vector construction into spin-zero
+      and spin-one cases, and equation (5.3.18) identifies the former with a scalar
+      derivative.
+  notation: []
+- id: qft.align041.born-rule-complete-orthogonal-rays
+  label: Born rule for a complete orthogonal set of rays
+  summary: For tests that distinguish mutually orthogonal rays, the transition probability
+    is the squared scalar-product modulus, and probabilities sum to one when the final
+    vectors are complete.
+  kind: result
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.born-rule-complete-orthogonal-rays
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '2.1'
+    pages:
+    - 50
+    note: Gives the transition probability and completeness normalization.
+  notation: []
+- id: qft.align041.hermitian-observables-and-eigenstates
+  label: Hermitian observables and definite values
+  summary: An observable is a linear Hermitian operator. A ray has a definite observable
+    value when its vectors are eigenvectors; Hermiticity makes eigenvalues real and
+    eigenspaces with different eigenvalues orthogonal.
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.hermitian-observables-and-eigenstates
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '2.1'
+    pages:
+    - 50
+    note: States the Hermitian-operator representation, eigenvalue criterion, and
+      orthogonality consequence.
+  notation: []
+- id: qft.align041.hilbert-space-rays
+  label: Physical states as Hilbert-space rays
+  summary: 'Physical states are rays of normalized vectors in a complex Hilbert space:
+    vectors differing by a unit-modulus complex factor represent the same state. The
+    scalar product is conjugate symmetric, linear in its second argument, positive,
+    and complete enough for limits.'
+  kind: representation
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.hilbert-space-rays
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '2.1'
+    pages:
+    - 49
+    - 50
+    note: Defines Hilbert space, rays, and the ray equivalence relation.
+  notation:
+  - source: weinberg-1
+    note: The text writes scalar products as (Φ,Ψ), also ⟨Φ|Ψ⟩; a ray is represented
+      by normalized Ψ up to a phase.
+- id: qft.align041.symmetry-as-transition-probability-invariance
+  label: Symmetry as preservation of transition probabilities
+  summary: A symmetry changes the observer's ray assignment while leaving probabilities
+    of possible experiments unchanged; this condition is necessary, with further conditions
+    deferred to the next chapter.
+  kind: assumption
+  origins:
+  - project: weinberg-1
+    node: weinberg-1.symmetry-as-transition-probability-invariance
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 51
+    note: Defines the ray-level invariance condition and explicitly qualifies it as
+      necessary only.
+  notation: []
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -18202,11 +19293,11 @@ nodes:
     - 504
   notation: []
 - id: qft.charge-conjugation-time-reversal-phase-constraints
-  label: Charge-conjugation and time-reversal phase constraints
-  summary: For the causal scalar field to transform proportionally under charge conjugation,
-    the one-particle phases obey ξᶜ = ξ*. Time reversal is antiunitary; requiring
-    a simple relation to the field at the time-reversed point instead gives ζᶜ = ζ*.
-    In the self-conjugate case the charge-conjugation phase is real and equals ±1.
+  label: Charge-conjugation and time-reversal phase constraints for causal fields
+  summary: Requiring charge-conjugated or antiunitarily time-reversed causal fields
+    to remain proportional to compatible causal partners gives ξᶜ=ξ* and ζᶜ=ζ*. The
+    scalar self-conjugate case keeps real charge parity ξ=±1; general self-conjugate
+    (A,B) reality and explicit field laws remain source-specific residuals.
   kind: result
   evidence:
   - source: weinberg-1
@@ -18215,16 +19306,31 @@ nodes:
     - 206
     note: Equations (5.2.20)–(5.2.31) derive the charge-conjugation and time-reversal
       phase conditions for the scalar field.
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 241
+    - 242
+    - 243
+    note: Equations (5.7.44)–(5.7.60) compare the transformed general causal field
+      with its compatible partner and derive the conjugate C and T phase conditions.
   notation:
   - source: weinberg-1
     note: ξ and ζ are the one-particle phases for charge conjugation and time reversal,
       respectively.
+  - source: weinberg-1
+    note: For general causal fields, ξ and ζ denote particle charge-conjugation and
+      time-reversal phases; superscript c denotes the antiparticle phase.
   group: qft.causal-scalar-fields
   origins:
   - project: weinberg-1
     node: weinberg-1.charge-conjugation-time-reversal-phase-constraints
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+  - project: weinberg-1
+    node: weinberg-1.general-field-charge-and-time-reversal-relations
+    note: Contributes the shared conjugate C/T phase core; representation-dependent
+      (A,B) reality and transformation matrices remain in a residual record.
 - id: qft.charge-conservation-obstruction
   label: Charge-conservation obstruction for a self-adjoint field
   summary: If the particle carries a conserved charge, charge-preserving interaction
@@ -21241,11 +22347,12 @@ nodes:
     - 3
   notation: []
 - id: qft.parity-covariance-constraint
-  label: Parity covariance constrains intrinsic parities
-  summary: Requiring the parity-transformed causal scalar field to remain proportional
-    to the field that can coexist with it forces ηᶜ = η*. Thus a spinless particle-antiparticle
-    pair has even intrinsic parity; for a self-conjugate spinless particle, η is real
-    and equals ±1.
+  label: Parity covariance constrains particle–antiparticle intrinsic parities
+  summary: Requiring a parity-transformed causal field to remain proportional to the
+    causal partner field gives ηᶜ=(−1)^(2j)η*. Thus a particle–antiparticle pair has
+    even intrinsic parity for bosons and odd intrinsic parity for fermions. The scalar
+    case reduces to ηᶜ=η*; for a self-conjugate spinless particle, η is real and equals
+    ±1.
   kind: result
   evidence:
   - source: weinberg-1
@@ -21255,16 +22362,53 @@ nodes:
     - 206
     note: Equations (5.2.18)–(5.2.19) derive the particle-antiparticle parity relation,
       and the next page gives its self-conjugate consequence.
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 239
+    - 240
+    - 241
+    note: Equations (5.7.34)–(5.7.43) derive the general intrinsic-parity relation
+      and transformation law.
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 212
+    - 213
+    note: The spin-one field gives the integer-spin parity relation and retains the
+      polar-vector convention as a separate residual.
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 225
+    - 226
+    note: The Dirac field gives the half-integer opposite-parity relation and retains
+      Majorana reality as a separate residual.
   notation:
   - source: weinberg-1
     note: η and ηᶜ are the intrinsic parities of particle and antiparticle, and ℘x
       = (−x, x⁰).
+  - source: weinberg-1
+    note: For the general causal field, ηᶜ=(−1)^(2j)η*; η and ηᶜ denote particle and
+      antiparticle intrinsic parities.
   group: qft.causal-scalar-fields
   origins:
   - project: weinberg-1
     node: weinberg-1.parity-covariance-constraint
     note: The shared record preserves this book-specific treatment without asserting
       equivalence beyond the stated concept.
+  - project: weinberg-1
+    node: weinberg-1.general-particle-antiparticle-parity-relation
+    note: Retains the unique causal (A,B)/(B,A) field derivation and its all-spin
+      boson/fermion parity conclusion.
+  - project: weinberg-1
+    node: weinberg-1.spin-one-inversion-phase-relations
+    note: Contributes the compatible integer-spin particle–antiparticle parity core;
+      the polar-vector convention remains in its residual record.
+  - project: weinberg-1
+    node: weinberg-1.dirac-antiparticle-parity-majorana-reality
+    note: Contributes the compatible half-integer particle–antiparticle parity core;
+      Majorana reality and imaginary intrinsic parity remain in its residual record.
 - id: qft.pauli-jordan-commutator
   label: Complex scalar-field commutator
   summary: The complex scalar field satisfies [φ(x), φ†(y)] = Δ(x − y), where Δ is
@@ -40555,6 +41699,1521 @@ edges:
     - 108
     note: The source begins from direct products of the one-particle states discussed
       previously and spells out their labels and transformations.
+- id: qft.align033.e-causal-spin-statistics-evidence
+  from: qft.align033.general-causal-fields-spin-statistics-and-phase
+  to: qft.align015.spin-statistics-connection
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The causal-field derivation supports the accepted spin-statistics conclusion
+    without replacing it.
+  failure_mode: The source-specific proof route is not connected to its common result.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 238
+    note: Equations (5.7.28)–(5.7.31) derive the general spin-statistics result and
+      universal relative-phase convention.
+- id: qft.align033.edge.ct-phase-core-to-dirac-majorana-residual
+  from: qft.charge-conjugation-time-reversal-phase-constraints
+  to: qft.align033.dirac-antiparticle-parity-majorana-reality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shared charge-conjugation phase condition is the common input; the
+    Dirac residual imposes self-conjugacy and derives Majorana reality.
+  failure_mode: Without the shared C phase relation, the self-conjugate Dirac-field
+    reality condition lacks its particle–antiparticle phase input.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 225
+    - 226
+    note: Equations (5.5.46)–(5.5.48) specialize charge conjugation to the self-conjugate
+      Dirac field.
+- id: qft.align033.edge.ct-phase-core-to-dirac-time-reversal-residual
+  from: qft.charge-conjugation-time-reversal-phase-constraints
+  to: qft.align033.dirac-time-reversal-phase-and-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shared conjugate T phase is the compatibility input; the Dirac residual
+    supplies the gamma-matrix transformation law.
+  failure_mode: Without the shared T phase constraint, the residual spinor law is
+    not tied to compatible particle and antiparticle coefficients.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 227
+    - 228
+    note: Equations (5.5.49)–(5.5.54) derive the conjugate T phases and the Dirac-specific
+      field matrix.
+- id: qft.align033.edge.ct-phase-core-to-general-field-residual
+  from: qft.charge-conjugation-time-reversal-phase-constraints
+  to: qft.align033.general-field-charge-and-time-reversal-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general transformation laws separate the shared conjugate C/T phase
+    conditions from the representation-dependent (A,B) field factors.
+  failure_mode: Without the shared phase core, the residual field laws lose their
+    particle–antiparticle compatibility condition.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 241
+    - 242
+    - 243
+    note: Equations (5.7.51) and (5.7.59) give the shared phases; equations (5.7.52)–(5.7.60)
+      retain the representation factors.
+- id: qft.align033.edge.ct-phase-core-to-spin-one-residual
+  from: qft.charge-conjugation-time-reversal-phase-constraints
+  to: qft.align033.spin-one-inversion-phase-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-one C/T laws use the shared conjugate phase constraints before
+    the polar-vector convention supplies the source-specific parity choice.
+  failure_mode: Without the shared C/T phases, the vector inversion residual is missing
+    its particle–antiparticle compatibility input.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 212
+    - 213
+    note: Equations (5.3.41)–(5.3.46) specialize the shared phase relations to the
+      causal vector field.
+- id: qft.align033.edge.parity-core-to-dirac-majorana-residual
+  from: qft.parity-covariance-constraint
+  to: qft.align033.dirac-antiparticle-parity-majorana-reality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The half-integer specialization of the shared parity core gives opposite
+    pair parities; self-conjugacy then leaves the imaginary Majorana parity residual.
+  failure_mode: Without the shared half-integer parity relation, the imaginary intrinsic
+    parity of the self-conjugate Dirac field does not follow.
+  evidence:
+  - source: weinberg-1
+    section: 5.5; 5.7
+    pages:
+    - 225
+    - 226
+    - 239
+    - 240
+    note: The Dirac opposite-parity result is the spin-one-half specialization of
+      ηᶜ=(−1)^(2j)η*.
+- id: qft.align033.weinberg-1-boost-coefficients-to-problem-seven
+  from: qft.align033.general-causal-field-clebsch-gordan-construction
+  to: qft.align033.problem-high-spin-external-current-emission-scaling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 7 estimates high-energy emission using finite-momentum (A,B)
+    coefficient functions.
+  failure_mode: The energy dependence of the emitted-field coefficient is unavailable.
+  evidence:
+  - source: weinberg-1
+    section: 5.7; Problems
+    pages:
+    - 235
+    - 256
+    note: The boost formula gives finite-momentum coefficients and Problem 7 asks
+      their high-energy emission behavior.
+- id: qft.align033.weinberg-1-causal-combination-to-antiparticles
+  from: qft.align033.causal-combination-of-creation-and-annihilation-fields
+  to: qft.align033.antiparticles-from-charge-eigenfields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charge argument concerns which annihilation and creation pieces can
+    appear in the same causal charge-eigenfield.
+  failure_mode: Without the mixed-field requirement, the doubling into opposite-charge
+    species has no derivational role.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 198
+    - 199
+    note: The text moves from causal field combinations to their conserved-charge
+      commutators.
+- id: qft.align033.weinberg-1-causal-dirac-to-dirac-equation
+  from: qft.align033.causal-dirac-field-and-fermion-statistics
+  to: qft.align033.dirac-equation-from-parity-completed-spinor-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equation follows from the normalized coefficient spinors in the constructed
+    causal Dirac field.
+  failure_mode: The free equation would be presented as a separate postulate.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 224
+    - 225
+    note: The field and coefficient conventions precede the momentum-space eigenvalue
+      equations.
+- id: qft.align033.weinberg-1-causal-dirac-to-pc-majorana
+  from: qft.align033.causal-dirac-field-and-fermion-statistics
+  to: qft.align033.dirac-antiparticle-parity-majorana-reality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parity and charge conjugation are imposed on the constructed causal Dirac
+    field and its particle-antiparticle coefficients.
+  failure_mode: Without the causal Dirac field, the field transformation and intrinsic-parity
+    comparison have no defined coefficients.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 224
+    - 225
+    - 226
+    note: Without the causal Dirac field, the field transformation and intrinsic-parity
+      comparison have no defined coefficients.
+- id: qft.align033.weinberg-1-causal-dirac-to-time-reversal
+  from: qft.align033.causal-dirac-field-and-fermion-statistics
+  to: qft.align033.dirac-time-reversal-phase-and-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-reversal result acts on the constructed causal Dirac field and
+    compares its two mode coefficients.
+  failure_mode: Without the causal Dirac field, the transformed mode expansion and
+    particle-antiparticle phase relation are unavailable.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 224
+    - 227
+    - 228
+    note: Without the causal Dirac field, the transformed mode expansion and particle-antiparticle
+      phase relation are unavailable.
+- id: qft.align033.weinberg-1-causal-field-to-normal-ordering
+  from: qft.align033.causal-combination-of-creation-and-annihilation-fields
+  to: qft.align033.normal-ordering-preserves-locality-and-clustering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The locality part of the normal-ordering argument rewrites the expression
+    in products of fields whose graded brackets vanish at spacelike separation.
+  failure_mode: Without causal fields, rewriting a normal-ordered interaction as ordinary
+    field products does not establish spacelike commutation.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 198
+    - 200
+    note: Without causal fields, rewriting a normal-ordered interaction as ordinary
+      field products does not establish spacelike commutation.
+- id: qft.align033.weinberg-1-causal-vector-to-proca
+  from: qft.align033.causal-massive-vector-field
+  to: qft.align033.massive-vector-proca-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The equations are properties of the normalized causal spin-one field
+    and its polarization coefficients.
+  failure_mode: One could mistake them for independent assumptions rather than consequences
+    of this free-field construction.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 211
+    - 212
+    note: The text derives the equations immediately after constructing the causal
+      vector field.
+- id: qft.align033.weinberg-1-causal-vector-to-spin-one-inversions
+  from: qft.align033.causal-massive-vector-field
+  to: qft.align033.spin-one-inversion-phase-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The inversion phase constraints are imposed on the causal vector field
+    with its fixed particle-antiparticle coefficient relation.
+  failure_mode: Without the causal vector field, the relative phases required by a
+    field-level inversion law are not fixed.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 210
+    - 211
+    - 212
+    - 213
+    note: Without the causal vector field, the relative phases required by a field-level
+      inversion law are not fixed.
+- id: qft.align033.weinberg-1-cluster-route-to-causal-combination
+  from: qft.align033.cluster-decomposition-local-field-interaction-route
+  to: qft.align033.causal-combination-of-creation-and-annihilation-fields
+  relation: pedagogical
+  source_level: recognize
+  target_level: derive
+  necessity: helpful
+  rationale: The chapter presents the cluster route before turning to the distinct
+    locality obstruction.
+  failure_mode: Without this context, the reader may miss why local fields are useful,
+    though the causal cancellation can still be derived from microcausality.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 197
+    - 198
+    note: The cluster argument precedes the separate spacelike-commutation requirement.
+- id: qft.align033.weinberg-1-cluster-route-to-normal-ordering
+  from: qft.align033.cluster-decomposition-local-field-interaction-route
+  to: qft.align033.normal-ordering-preserves-locality-and-clustering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The normal-ordering method is introduced to expose the one-delta coefficient
+    structure required by the local-field cluster route.
+  failure_mode: Without the cluster route, the role of normal ordering in displaying
+    the required momentum-delta structure is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 197
+    - 200
+    note: Without the cluster route, the role of normal ordering in displaying the
+      required momentum-delta structure is unsupported.
+- id: qft.align033.weinberg-1-cpt-general-route-to-theorem
+  from: qft.align033.cpt-proof-general-ab-scalar-route
+  to: qft.align033.cpt-theorem-local-scalar-interaction-proof
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is the separate complete derivation using general irreducible fields
+    and scalar-coupling integrality.
+  failure_mode: This proof route is unavailable, but the other complete CPT proof
+    route remains.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 246
+    note: The general field argument establishes the same scalar-interaction invariance.
+- id: qft.align033.weinberg-1-cpt-tensor-route-to-theorem
+  from: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  to: qft.align033.cpt-theorem-local-scalar-interaction-proof
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is a complete tensor and Dirac-bilinear derivation of CPT invariance
+    for Hermitian scalar interactions.
+  failure_mode: This proof route is unavailable, but the other complete CPT proof
+    route remains.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    - 246
+    note: The tensor and bilinear argument yields equation (5.8.7).
+- id: qft.align033.weinberg-1-differential-equivalence-to-massless-derivative-problem
+  from: qft.align033.differential-equivalence-of-field-types
+  to: qft.align033.problem-massless-higher-spin-derivative-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 4 applies the chapter's differential equivalence to massless
+    chiral fields.
+  failure_mode: The requested derivative proof has no stated structural starting point.
+  evidence:
+  - source: weinberg-1
+    section: 5.7; Problems
+    pages:
+    - 239
+    - 256
+    note: The text establishes derivative relations and Problem 4 asks for the massless
+      version.
+- id: qft.align033.weinberg-1-dirac-bilinear-to-cpt-tensor-route
+  from: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  to: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The route needs the bilinear tensor classification to extend the rank-sign
+    rule to fermion bilinears.
+  failure_mode: The argument would cover only elementary fields, not Dirac interactions.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    - 246
+    note: The text applies the Dirac-bilinear tensor property in the first route.
+- id: qft.align033.weinberg-1-dirac-bilinears-to-problem-six
+  from: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  to: qft.align033.problem-generalized-dirac-field-bilinear-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 6 asks for the generalization of the listed j=1/2 Dirac bilinear
+    tensors.
+  failure_mode: The requested comparison has no base case.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 6 explicitly asks to check against the j=1/2 result.
+- id: qft.align033.weinberg-1-dirac-charge-conjugation-to-positronium
+  from: qft.align033.dirac-antiparticle-parity-majorana-reality
+  to: qft.align033.positronium-charge-conjugation-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pair-state C transformation uses the particle-antiparticle charge-conjugation
+    phase relation.
+  failure_mode: The C assignment is missing its one-particle transformation input.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 226
+    - 227
+    note: The source uses the charge-conjugation phase relation in the pair-state
+      calculation.
+- id: qft.align033.weinberg-1-dirac-identities-to-bilinears
+  from: qft.align033.dirac-transpose-and-conjugation-identities
+  to: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charge-conjugation signs of the five bilinear classes follow from
+    the transpose identities for the Dirac tensor basis.
+  failure_mode: Without the transpose identities, the charge-conjugation classification
+    of the bilinears is unsupported.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.6
+    pages:
+    - 219
+    - 228
+    - 229
+    note: Without the transpose identities, the charge-conjugation classification
+      of the bilinears is unsupported.
+- id: qft.align033.weinberg-1-dirac-identities-to-pc-majorana
+  from: qft.align033.dirac-transpose-and-conjugation-identities
+  to: qft.align033.dirac-antiparticle-parity-majorana-reality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac charge-conjugation and Majorana relations apply the conjugation
+    identities for the spinor matrices.
+  failure_mode: Without those identities, the charge-conjugated spinor and Majorana
+    reality relation cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.5
+    pages:
+    - 219
+    - 225
+    - 226
+    note: Without those identities, the charge-conjugated spinor and Majorana reality
+      relation cannot be derived.
+- id: qft.align033.weinberg-1-dirac-identities-to-time-reversal
+  from: qft.align033.dirac-transpose-and-conjugation-identities
+  to: qft.align033.dirac-time-reversal-phase-and-transformation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-reversal calculation uses the complex-conjugation identities
+    of the Dirac matrices to transform boosted spinors.
+  failure_mode: Without those identities, the transformed spinors cannot be reduced
+    to the stated causal-field law.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.5
+    pages:
+    - 219
+    - 227
+    - 228
+    note: Without those identities, the transformed spinors cannot be reduced to the
+      stated causal-field law.
+- id: qft.align033.weinberg-1-dirac-matrices-to-transpose-identities
+  from: qft.align033.dirac-matrix-tensor-basis-and-pseudounitarity
+  to: qft.align033.dirac-transpose-and-conjugation-identities
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The transpose and conjugation rules are consequences of the previously
+    constructed Dirac matrices and their tensor basis.
+  failure_mode: Without the Dirac matrix construction, the transpose and conjugation
+    identities lack the algebra they act on.
+  evidence:
+  - source: weinberg-1
+    section: '5.4'
+    pages:
+    - 218
+    - 219
+    note: Without the Dirac matrix construction, the transpose and conjugation identities
+      lack the algebra they act on.
+- id: qft.align033.weinberg-1-dirac-pc-to-bilinears
+  from: qft.align033.dirac-antiparticle-parity-majorana-reality
+  to: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The discrete classification of Dirac bilinears applies the previously
+    derived parity and charge-conjugation actions of the field.
+  failure_mode: Without the field-level discrete transformations, the bilinear parity
+    and charge-conjugation assignments cannot be derived.
+  evidence:
+  - source: weinberg-1
+    section: 5.5–5.6
+    pages:
+    - 226
+    - 228
+    - 229
+    note: Without the field-level discrete transformations, the bilinear parity and
+      charge-conjugation assignments cannot be derived.
+- id: qft.align033.weinberg-1-dirac-pc-to-cpt-tensor-route
+  from: qft.align033.dirac-antiparticle-parity-majorana-reality
+  to: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac route requires its parity and charge-conjugation transformations
+    in addition to time reversal.
+  failure_mode: The displayed Dirac CPT transformation cannot be composed completely.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    note: The CPT section composes all three prior Dirac inversion transformations.
+- id: qft.align033.weinberg-1-dirac-pseudounitarity-to-bilinears
+  from: qft.align033.dirac-matrix-tensor-basis-and-pseudounitarity
+  to: qft.align033.dirac-bilinear-lorentz-and-discrete-symmetries
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac adjoint and bilinear covariance rely on pseudounitarity and
+    the gamma-matrix tensor classification.
+  failure_mode: Using ψ†ψ as a scalar would give incorrect Lorentz transformation
+    behavior.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.5
+    pages:
+    - 218
+    - 228
+    note: Pseudounitarity is established before the barred-spinor bilinear transformation
+      law is derived.
+- id: qft.align033.weinberg-1-dirac-rest-to-causal-dirac
+  from: qft.align033.dirac-rest-intertwiners-select-spin-half
+  to: qft.align033.causal-dirac-field-and-fermion-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spacelike bracket calculation applies the boosted Dirac coefficient
+    functions and their parity eigenvalue signs.
+  failure_mode: The Fermi-statistics conclusion loses the explicit spin-sum derivation.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 221
+    - 222
+    - 223
+    - 224
+    note: The source obtains the coefficient functions first, then uses them in the
+      locality calculation.
+- id: qft.align033.weinberg-1-dirac-tensors-to-rest-intertwiners
+  from: qft.align033.dirac-matrix-tensor-basis-and-pseudounitarity
+  to: qft.align033.dirac-rest-intertwiners-select-spin-half
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rest intertwiner equations use the block spinor representation constructed
+    from the Dirac matrices.
+  failure_mode: The two-dimensional spinor blocks and their rotation generators are
+    unexplained.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.5
+    pages:
+    - 217
+    - 218
+    - 220
+    note: The Dirac representation is constructed before its rest-frame coefficient
+      equations are solved.
+- id: qft.align033.weinberg-1-dirac-time-reversal-to-cpt-tensor-route
+  from: qft.align033.dirac-time-reversal-phase-and-transformation
+  to: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac CPT transformation requires the Dirac time-reversal action
+    along with the already derived parity and C actions.
+  failure_mode: The Dirac component of the first CPT route is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    note: The CPT section composes the prior Dirac inversion transformations.
+- id: qft.align033.weinberg-1-fermion-statistics-to-positronium
+  from: qft.align033.causal-dirac-field-and-fermion-statistics
+  to: qft.align033.positronium-charge-conjugation-selection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Interchanging fermion creation operators produces the sign that controls
+    the pair C parity.
+  failure_mode: The para- and ortho-positronium C assignments have the wrong exchange
+    sign.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 226
+    - 227
+    note: The source explicitly uses anticommutation in deriving the fermion-pair
+      C sign.
+- id: qft.align033.weinberg-1-field-intertwining-to-rest-method
+  from: qft.align033.lorentz-field-intertwining-conditions
+  to: qft.align033.rest-frame-intertwiners-determine-massive-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rest, boost, and rotation equations are specializations of the general
+    coefficient intertwining conditions.
+  failure_mode: The special cases lose their common Lorentz-covariance origin.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 194
+    - 195
+    - 196
+    note: The text derives the general conditions before applying translations, boosts,
+      and rotations.
+- id: qft.align033.weinberg-1-gauge-potential-to-field-strength
+  from: qft.align033.massless-vector-potential-gauge-transformation
+  to: qft.align033.massless-helicity-one-field-strength-and-maxwell-equations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Taking the antisymmetric derivative removes the added gauge gradient
+    and produces the covariant field strength.
+  failure_mode: The tensor covariance and Maxwell equations would have no explanation
+    for their gauge-term cancellation.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 251
+    - 252
+    note: Equation (5.9.34) is constructed from the gauge-shifting potential and then
+      analyzed.
+- id: qft.align033.weinberg-1-general-causal-field-to-general-ct
+  from: qft.align033.general-causal-fields-spin-statistics-and-phase
+  to: qft.align033.general-field-charge-and-time-reversal-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Charge conjugation and time reversal are compared with the unique causal
+    field after its particle-antiparticle phase has been fixed.
+  failure_mode: Without the constructed causal field, there is no normalized field
+    partner against which the transformed field can be compared.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 238
+    - 241
+    - 242
+    - 243
+    note: Without the constructed causal field, there is no normalized field partner
+      against which the transformed field can be compared.
+- id: qft.align033.weinberg-1-general-causal-field-to-parity-relation
+  from: qft.align033.general-causal-fields-spin-statistics-and-phase
+  to: qft.parity-covariance-constraint
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parity is compared with the unique causal partner whose relative creation/annihilation
+    phase was fixed by locality.
+  failure_mode: The parity phase relation would be treated as an independent convention
+    rather than a causal-field constraint.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 238
+    - 239
+    - 240
+    note: The unique causal field convention is used in the parity comparison.
+- id: qft.align033.weinberg-1-general-causal-field-to-rarita-schwinger-problem
+  from: qft.align033.general-causal-field-clebsch-gordan-construction
+  to: qft.align033.problem-rarita-schwinger-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task applies the general coefficient construction to a spinor-vector
+    field.
+  failure_mode: The task would lack a construction for its coefficient functions.
+  evidence:
+  - source: weinberg-1
+    section: 5.7; Problems
+    pages:
+    - 233
+    - 234
+    - 255
+    note: The general construction supplies the requested spinor-vector coefficient
+      route.
+- id: qft.align033.weinberg-1-general-causal-field-to-spin-two-problem
+  from: qft.align033.general-causal-field-clebsch-gordan-construction
+  to: qft.align033.problem-massive-spin-two-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task applies the general coefficient construction to a symmetric
+    traceless tensor field.
+  failure_mode: The task would lack a route to its coefficient functions.
+  evidence:
+  - source: weinberg-1
+    section: 5.7; Problems
+    pages:
+    - 233
+    - 234
+    - 255
+    note: The general construction supplies the requested tensor coefficient route.
+- id: qft.align033.weinberg-1-general-ct-to-cpt-general-route
+  from: qft.align033.general-field-charge-and-time-reversal-relations
+  to: qft.align033.cpt-proof-general-ab-scalar-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general route composes the C and T transformations of an (A,B) field.
+  failure_mode: The representation phase in the CPT transformation cannot be obtained.
+  evidence:
+  - source: weinberg-1
+    section: 5.7–5.8
+    pages:
+    - 241
+    - 242
+    - 243
+    - 246
+    note: The CPT section uses the preceding C and T general-field transformations.
+- id: qft.align033.weinberg-1-general-field-to-spin-sum-locality
+  from: qft.align033.general-causal-field-clebsch-gordan-construction
+  to: qft.align033.general-field-spin-sum-polynomial-locality-proof
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The locality calculation applies the constructed coefficient functions
+    in its field bracket.
+  failure_mode: The supplied spin-sum property would be disconnected from the field
+    whose bracket it controls.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 235
+    - 236
+    - 237
+    note: The general coefficients are used in the field bracket before the supplied
+      spin-sum property is applied.
+- id: qft.align033.weinberg-1-general-inversions-to-problem-five
+  from: qft.align033.general-field-charge-and-time-reversal-relations
+  to: qft.align033.problem-massless-spin-j-inversion-transformations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5 applies the chapter's inversion construction to massless parity-completed
+    fields.
+  failure_mode: The requested P, C, T rules have no transformation route.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 5 explicitly asks for P, C, T transformations.
+- id: qft.align033.weinberg-1-general-inversions-to-problem-three
+  from: qft.align033.general-field-charge-and-time-reversal-relations
+  to: qft.align033.problem-massive-spin-two-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 asks for P, C, and T transformations.
+  failure_mode: The discrete-inversion portion lacks its general-field input.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 3 requests inversion transformations.
+- id: qft.align033.weinberg-1-general-inversions-to-problem-two
+  from: qft.align033.general-field-charge-and-time-reversal-relations
+  to: qft.align033.problem-rarita-schwinger-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 2 asks for P, C, and T transformations of the constructed field.
+  failure_mode: The discrete-inversion part of the task has no input route.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    - 256
+    note: Problem 2 explicitly requests the inversion transformations.
+- id: qft.align033.weinberg-1-general-parity-to-cpt-general-route
+  from: qft.parity-covariance-constraint
+  to: qft.align033.cpt-proof-general-ab-scalar-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general route composes the P transformation of an (A,B) causal field.
+  failure_mode: The CPT phase for a general field is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: 5.7–5.8
+    pages:
+    - 240
+    - 246
+    note: The general field parity result is an input to the CPT composition.
+- id: qft.align033.weinberg-1-general-parity-to-problem-three
+  from: qft.parity-covariance-constraint
+  to: qft.align033.problem-massive-spin-two-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The massive spin-two construction asks for parity as well as charge and
+    time reversal, so it needs the general causal-field parity law.
+  failure_mode: Without the parity relation, the problem's requested parity transformation
+    cannot be derived from its tensor representation alone.
+  evidence:
+  - source: weinberg-1
+    section: 5.7; Problems
+    pages:
+    - 239
+    - 240
+    - 241
+    - 255
+    - 256
+    note: Without the parity relation, the problem's requested parity transformation
+      cannot be derived from its tensor representation alone.
+- id: qft.align033.weinberg-1-general-parity-to-problem-two
+  from: qft.parity-covariance-constraint
+  to: qft.align033.problem-rarita-schwinger-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-three-halves construction asks for parity as well as charge
+    and time reversal, so it needs the general causal-field parity law.
+  failure_mode: Without the parity relation, the problem's requested parity transformation
+    cannot be derived from its representation alone.
+  evidence:
+  - source: weinberg-1
+    section: 5.7; Problems
+    pages:
+    - 239
+    - 240
+    - 241
+    - 255
+    - 256
+    note: Without the parity relation, the problem's requested parity transformation
+      cannot be derived from its representation alone.
+- id: qft.align033.weinberg-1-lorentz-irrep-to-general-causal-field
+  from: qft.align033.lorentz-irrep-su2-times-su2-classification
+  to: qft.align033.general-causal-field-clebsch-gordan-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general field coefficients couple the two spin labels that define
+    the (A,B) representation.
+  failure_mode: The Clebsch-Gordan coefficients lack the representation-theoretic
+    meaning of their A and B indices.
+  evidence:
+  - source: weinberg-1
+    section: 5.6–5.7
+    pages:
+    - 230
+    - 231
+    - 233
+    - 234
+    note: The two-spin classification is used directly in the general-field rest equations.
+- id: qft.align033.weinberg-1-lorentz-irrep-to-general-scalar-couplings
+  from: qft.align033.lorentz-irrep-su2-times-su2-classification
+  to: qft.align033.general-lorentz-scalar-couplings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-coupling construction treats each Lorentz representation as
+    independent left and right rotation factors before coupling both index sets to
+    zero.
+  failure_mode: Without the product representation structure, the two independent
+    angular-momentum scalar couplings are not justified.
+  evidence:
+  - source: weinberg-1
+    section: 5.6–5.7
+    pages:
+    - 230
+    - 231
+    - 235
+    - 236
+    note: Without the product representation structure, the two independent angular-momentum
+      scalar couplings are not justified.
+- id: qft.align033.weinberg-1-massless-helicity-representation-to-coefficients
+  from: qft.align010.weinberg-1.massless-helicity-representations
+  to: qft.align033.massless-field-little-group-coefficient-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coefficient equations are constructed for the physical helicity representation
+    of the massless little group.
+  failure_mode: The allowed helicity labels and trivial little-group translations
+    are unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 247
+    - 248
+    note: The section starts from annihilation operators labelled by physical massless
+      helicity.
+- id: qft.align033.weinberg-1-massless-little-group-to-helicity-selection
+  from: qft.align033.massless-field-little-group-coefficient-constraints
+  to: qft.align033.massless-ab-helicity-selection-rule
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The selection rule solves the same standard-momentum little-group equations
+    for a general (A,B) field.
+  failure_mode: The formula σ = B−A would be an unsupported label assignment.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 248
+    - 249
+    - 253
+    - 254
+    note: The general massless coefficient constraints are applied to the (A,B) generators
+      to obtain equation (5.9.41).
+- id: qft.align033.weinberg-1-massless-little-group-to-no-vector
+  from: qft.align033.massless-field-little-group-coefficient-constraints
+  to: qft.align033.massless-helicity-one-no-covariant-vector-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The impossibility follows from applying the little-group rotation and
+    null-rotation coefficient equations to a four-vector.
+  failure_mode: The failed vector construction would appear as an unexplained property
+    of a chosen polarization.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 248
+    - 249
+    - 250
+    note: The general little-group equations are specialized to the helicity-one vector
+      polarization.
+- id: qft.align033.weinberg-1-massless-lorentz-action-to-coefficients
+  from: qft.align010.weinberg-1.massless-helicity-lorentz-action
+  to: qft.align033.massless-field-little-group-coefficient-constraints
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The helicity phase in the operator Lorentz action is equated with field
+    covariance to obtain the coefficient constraints.
+  failure_mode: The phase factors in the massless intertwining equations cannot be
+    derived.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 247
+    - 248
+    note: The source inserts the massless operator transformation law into the field
+      covariance rule.
+- id: qft.align033.weinberg-1-massless-parity-to-problem-five
+  from: qft.align010.weinberg-1.massless-parity-helicity-pairing
+  to: qft.align033.problem-massless-spin-j-inversion-transformations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parity must pair the opposite helicities in the field specified by Problem
+    5.
+  failure_mode: The parity branch of the requested transformation is incomplete.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 5 asks for P, C, T of a field containing helicities plus and minus
+      j.
+- id: qft.align033.weinberg-1-massless-time-reversal-to-problem-five
+  from: qft.align010.weinberg-1.massless-time-reversal-preserves-helicity
+  to: qft.align033.problem-massless-spin-j-inversion-transformations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The time-reversal branch must preserve helicity while transforming the
+    field at the reversed time.
+  failure_mode: The requested time-reversal transformation is assigned the wrong helicity
+    action.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 256
+    note: Problem 5 explicitly asks for time reversal.
+- id: qft.align033.weinberg-1-mode-expansion-to-rest-intertwiners
+  from: qft.align033.field-mode-expansion-from-translation-covariance
+  to: qft.align033.rest-frame-intertwiners-determine-massive-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The boost and rotation conditions act on the momentum coefficients in
+    the Fourier expansion.
+  failure_mode: Without the mode expansion, there are no coefficient functions to
+    constrain at rest or boost.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 195
+    - 196
+    note: The text derives the Fourier form before solving its coefficient conditions
+      by boosts and rotations.
+- id: qft.align033.weinberg-1-no-vector-to-gauge-potential
+  from: qft.align033.massless-helicity-one-no-covariant-vector-field
+  to: qft.align033.massless-vector-potential-gauge-transformation
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge-shifting potential is introduced precisely after ordinary vector
+    covariance fails.
+  failure_mode: Gauge transformation freedom would look optional instead of supplying
+    a usable replacement for the impossible covariant vector.
+  evidence:
+  - source: weinberg-1
+    section: '5.9'
+    pages:
+    - 250
+    - 251
+    note: The source first establishes the obstruction and then derives the added-gradient
+      transformation law.
+- id: qft.align033.weinberg-1-normalization-to-field-intertwining
+  from: qft.align010.weinberg-1.lorentz-invariant-one-particle-normalization
+  to: qft.align033.lorentz-field-intertwining-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Changing the momentum integration variable produces the square-root energy
+    factors fixed by invariant normalization.
+  failure_mode: The normalization factor in the intertwining equations cannot be recovered.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 193
+    - 194
+    note: The text invokes invariance of d³p/p⁰ when deriving the coefficient conditions.
+- id: qft.align033.weinberg-1-polarization-sum-to-current-conservation
+  from: qft.align033.massive-spin-one-polarization-coefficients
+  to: qft.align033.conserved-current-for-smooth-massless-vector-limit
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The limiting rate is computed from the pμpν/m² term in the spin-one polarization
+    sum.
+  failure_mode: Current conservation would look like an external postulate rather
+    than the condition removing the m-to-zero divergence.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 210
+    - 212
+    note: The transverse projector supplies the longitudinal pμpν/m² term used in
+      the massless-limit argument.
+- id: qft.align033.weinberg-1-pseudounitarity-to-causal-dirac
+  from: qft.align033.dirac-matrix-tensor-basis-and-pseudounitarity
+  to: qft.align033.causal-dirac-field-and-fermion-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Pseudounitarity converts boosted spinor products into the covariant momentum
+    spin sums used in the bracket.
+  failure_mode: The bracket calculation cannot obtain its momentum-space matrices.
+  evidence:
+  - source: weinberg-1
+    section: 5.4–5.5
+    pages:
+    - 218
+    - 223
+    note: The Dirac calculation invokes pseudounitarity to evaluate the spin sums.
+- id: qft.align033.weinberg-1-rep-constraints-to-problem-three
+  from: qft.align033.lorentz-irrep-rotation-content-and-parity-completion
+  to: qft.align033.problem-massive-spin-two-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 starts with a symmetric traceless tensor representation.
+  failure_mode: Its assumed tensor structure is not identified.
+  evidence:
+  - source: weinberg-1
+    section: 5.6; Problems
+    pages:
+    - 231
+    - 232
+    - 255
+    note: The representation discussion identifies symmetric traceless tensors before
+      Problem 3 uses one.
+- id: qft.align033.weinberg-1-rep-constraints-to-problem-two
+  from: qft.align033.lorentz-irrep-rotation-content-and-parity-completion
+  to: qft.align033.problem-rarita-schwinger-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 2 uses the spinor-vector representation and its gamma-trace projection.
+  failure_mode: The requested Rarita-Schwinger constraints have no representation-theoretic
+    basis.
+  evidence:
+  - source: weinberg-1
+    section: 5.6; Problems
+    pages:
+    - 232
+    - 255
+    note: The Rarita-Schwinger example supplies the relevant representation constraint.
+- id: qft.align033.weinberg-1-rep-products-to-problem-six
+  from: qft.align033.lorentz-irrep-rotation-content-and-parity-completion
+  to: qft.align033.problem-generalized-dirac-field-bilinear-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Classifying products of generalized spinor components requires the representation-product
+    content.
+  failure_mode: The tensor list cannot be organized by Lorentz type.
+  evidence:
+  - source: weinberg-1
+    section: 5.6; Problems
+    pages:
+    - 232
+    - 256
+    note: The representation product discussion supplies the classification language
+      used in Problem 6.
+- id: qft.align033.weinberg-1-rest-intertwiners-to-vector-content
+  from: qft.align033.rest-frame-intertwiners-determine-massive-fields
+  to: qft.align033.vector-representation-spin-zero-or-one-content
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector calculation specializes the general rest-frame rotation embedding
+    conditions.
+  failure_mode: The spin-zero/spin-one alternatives appear as unexplained component
+    choices.
+  evidence:
+  - source: weinberg-1
+    section: 5.1–5.3
+    pages:
+    - 196
+    - 208
+    note: The vector section applies the general rotation equations to four-vector
+      coefficients.
+- id: qft.align033.weinberg-1-rest-method-to-general-causal-field
+  from: qft.align033.rest-frame-intertwiners-determine-massive-fields
+  to: qft.align033.general-causal-field-clebsch-gordan-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general construction applies the rest-frame coefficient equations
+    before boosting.
+  failure_mode: The Clebsch-Gordan coefficients lack their role as rest intertwiners.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 233
+    - 234
+    - 235
+    note: The section applies equations (5.1.25)–(5.1.26) and then performs the boost.
+- id: qft.align033.weinberg-1-rest-method-to-problem-one
+  from: qft.align033.rest-frame-intertwiners-determine-massive-fields
+  to: qft.align033.problem-boost-covariance-of-massive-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 1 asks to prove that the rest-condition and boost formulas satisfy
+    the full covariance equations.
+  failure_mode: The requested proof has none of its stated starting formulas.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    note: Problem 1 explicitly names the rest and boost coefficient equations.
+- id: qft.align033.weinberg-1-scalar-coupling-to-cpt-general-route
+  from: qft.align033.general-lorentz-scalar-couplings
+  to: qft.align033.cpt-proof-general-ab-scalar-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Coupling A and B indices separately to scalars imposes the integrality
+    condition that cancels the CPT phases.
+  failure_mode: The final sign cancellation for a general scalar interaction is unexplained.
+  evidence:
+  - source: weinberg-1
+    section: 5.7–5.8
+    pages:
+    - 235
+    - 236
+    - 246
+    note: The section 5.8 scalar argument invokes the separate A and B coupling condition.
+- id: qft.align033.weinberg-1-scalar-field-to-vector-spin-zero
+  from: qft.complex-causal-scalar-field
+  to: qft.align033.vector-representation-spin-zero-or-one-content
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-zero vector solution is explicitly the derivative of the causal
+    scalar field.
+  failure_mode: The spin-zero branch looks like an independent vector particle construction.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 209
+    note: The source identifies the spin-zero vector field with a scalar derivative.
+- id: qft.align033.weinberg-1-scalar-inversion-to-cpt-tensor-route
+  from: qft.charge-conjugation-time-reversal-phase-constraints
+  to: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar component of the first route composes its C and T field transformations.
+  failure_mode: The scalar CPT transformation is not fixed.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    note: The first CPT route starts from the previously derived scalar-field transformation
+      laws.
+- id: qft.align033.weinberg-1-scalar-parity-to-cpt-tensor-route
+  from: qft.parity-covariance-constraint
+  to: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar component of the tensor route also requires its parity transformation.
+  failure_mode: The scalar CPT action lacks one of its three inversion inputs.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    note: The CPT section composes the previously derived scalar inversion transformations.
+- id: qft.align033.weinberg-1-scalar-parity-to-vector-inversions
+  from: qft.parity-covariance-constraint
+  to: qft.align033.spin-one-inversion-phase-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The all-spin parity core supplies the integer-spin particle–antiparticle
+    relation; the vector residual fixes the polar-vector convention.
+  failure_mode: Without the shared parity relation, the vector transformation law
+    lacks its particle–antiparticle phase constraint.
+  evidence:
+  - source: weinberg-1
+    section: 5.3; 5.7
+    pages:
+    - 212
+    - 213
+    - 239
+    - 240
+    note: The spin-one phase relation is the integer-spin specialization of the general
+      parity formula.
+- id: qft.align033.weinberg-1-spacelike-positive-frequency-to-causal-dirac
+  from: qft.nonzero-spacelike-mixed-commutator
+  to: qft.align033.causal-dirac-field-and-fermion-statistics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cancellation separates even positive-frequency terms from odd derivatives
+    at spacelike separation.
+  failure_mode: The coefficient equations enforcing Fermi locality do not follow.
+  evidence:
+  - source: weinberg-1
+    section: '5.5'
+    pages:
+    - 223
+    - 224
+    note: The text explicitly recalls the Section 5.2 spacelike behavior of Δ-plus
+      and its derivatives.
+- id: qft.align033.weinberg-1-spin-sum-locality-to-general-spin-statistics
+  from: qft.align033.general-field-spin-sum-polynomial-locality-proof
+  to: qft.align033.general-causal-fields-spin-statistics-and-phase
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-statistics condition is the special self-field solution of the
+    preceding spacelike bracket equation.
+  failure_mode: The result would be separated from its causality calculation.
+  evidence:
+  - source: weinberg-1
+    section: '5.7'
+    pages:
+    - 237
+    - 238
+    note: Equation (5.7.27) is specialized in equations (5.7.28)–(5.7.31).
+- id: qft.align033.weinberg-1-spin-sum-to-problem-three
+  from: qft.align033.general-field-spin-sum-polynomial-locality-proof
+  to: qft.align033.problem-massive-spin-two-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 3 asks to evaluate the tensor polarization function and commutators,
+    which use spin sums.
+  failure_mode: The requested commutator calculation has no spin-sum input.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    - 256
+    note: Problem 3 explicitly requests the polarization function and commutation
+      relations.
+- id: qft.align033.weinberg-1-spin-sum-to-problem-two
+  from: qft.align033.general-field-spin-sum-polynomial-locality-proof
+  to: qft.align033.problem-rarita-schwinger-field-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 2 asks for commutation relations, which are computed from the
+    spin sum of the constructed field.
+  failure_mode: The requested commutator has no route from coefficient functions to
+    a field bracket.
+  evidence:
+  - source: weinberg-1
+    section: Problems
+    pages:
+    - 255
+    - 256
+    note: Problem 2 explicitly asks for commutation relations.
+- id: qft.align033.weinberg-1-vector-inversion-to-cpt-tensor-route
+  from: qft.align033.spin-one-inversion-phase-relations
+  to: qft.align033.cpt-proof-tensor-and-dirac-bilinear-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector component of the first route uses its P, C, and T transformation
+    rules.
+  failure_mode: The vector CPT transformation is not fixed.
+  evidence:
+  - source: weinberg-1
+    section: '5.8'
+    pages:
+    - 245
+    note: The first CPT route explicitly invokes the vector-field results of Section
+      5.3.
+- id: qft.align033.weinberg-1-vector-polarizations-to-causal-vector
+  from: qft.align033.massive-spin-one-polarization-coefficients
+  to: qft.align033.causal-massive-vector-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The mixed field bracket is evaluated using the spin-one polarization
+    sum.
+  failure_mode: The coefficient cancellation condition would be asserted without the
+    vector spin sum that supplies it.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 210
+    - 211
+    note: The section inserts the polarization sum into the mixed bracket before deriving
+      the causal vector field.
+- id: qft.align033.weinberg-1-vector-polarizations-to-spin-one-inversions
+  from: qft.align033.massive-spin-one-polarization-coefficients
+  to: qft.align033.spin-one-inversion-phase-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-one inversion derivation uses how the massive polarization coefficients
+    change under momentum reversal and conjugation.
+  failure_mode: Without the vector polarization identities, the transformed mode coefficients
+    cannot be compared term by term.
+  evidence:
+  - source: weinberg-1
+    section: '5.3'
+    pages:
+    - 209
+    - 210
+    - 212
+    - 213
+    note: Without the vector polarization identities, the transformed mode coefficients
+      cannot be compared term by term.
+- id: qft.align033.weinberg-1-wigner-rotation-to-field-intertwining
+  from: qft.align010.weinberg-1.massive-wigner-rotation
+  to: qft.align033.lorentz-field-intertwining-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The intertwining equations contain the Wigner rotation which carries
+    the particle spin index.
+  failure_mode: The spin-index transformation in the coefficient conditions is left
+    unspecified.
+  evidence:
+  - source: weinberg-1
+    section: '5.1'
+    pages:
+    - 193
+    - 194
+    note: The displayed operator rules use the Wigner rotation in the coefficient
+      transformation condition.
+- id: qft.align041.edge.ray-symmetry-to-continuous-unitary
+  from: qft.align041.symmetry-as-transition-probability-invariance
+  to: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: Probability invariance supplies a necessary physical-symmetry premise
+    only; the stated Wigner theorem and connectedness select the linear-unitary branch,
+    with the proof imported.
+  failure_mode: The generator conclusion loses its physical-symmetry premise.
+  evidence:
+  - source: weinberg-1
+    section: '2.2'
+    pages:
+    - 51
+- id: qft.align041.weinberg-1-edge-born-symmetry
+  from: qft.align041.born-rule-complete-orthogonal-rays
+  to: qft.align041.symmetry-as-transition-probability-invariance
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The symmetry criterion is equality of transition probabilities.
+  failure_mode: The invariant quantity has no operational meaning without the probability
+    rule.
+  evidence:
+  - source: weinberg-1
+    section: 2.1–2.2
+    pages:
+    - 50
+    - 51
+    note: Defines transition probabilities and requires their equality.
+- id: qft.align041.weinberg-1-edge-observables-symmetry-generators
+  from: qft.align041.hermitian-observables-and-eigenstates
+  to: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Hermitian-operator criterion supports treating the Hermitian infinitesimal
+    generator as a candidate observable; it does not make every generator observable.
+  failure_mode: Without that criterion the candidate-observable interpretation is
+    unsupported; Hermiticity alone still does not establish universal observability.
+  evidence:
+  - source: weinberg-1
+    section: 2.1–2.2
+    pages:
+    - 50
+    - 52
+    note: Defines observables as Hermitian operators and identifies the generator
+      as a candidate observable.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
