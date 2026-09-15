@@ -1503,6 +1503,108 @@ units:
       id: qft.align024.renormalized-qed-counterterms-and-conditions
     - kind: edges
       id: qft.align024.edge-alternative-qed-route-2
+- id: full-align-026
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Conditional unitarity points to an accepted proof instead of SS†, while
+      three target edges use generic evidence.
+    alternatives:
+    - Apply the exact directional and source-specific unitarity corrections.
+    - Defer the unit with the reversed proof edge and generic evidence unresolved.
+    resolution: Remove the reversed proof edge, add conditional unitarity→SS†, and
+      give all four targets exact rationales and pages.
+    rationale: The revised edges distinguish the two halves of unitarity and tie each
+      downstream result to the equations that actually establish it.
+    evidence:
+    - source: weinberg-1
+      section: '3.6'
+      pages:
+      - 147
+      - 148
+      - 150
+    - source: weinberg-1
+      section: '3.7'
+      pages:
+      - 153
+      - 154
+      - 155
+    - source: weinberg-1
+      section: '3.8'
+      pages:
+      - 161
+      - 162
+    affected_records:
+    - kind: edges
+      id: qft.align026.edge.conditional-unitarity-to-asymptotic-overlap-unitarity-proof
+    - kind: edges
+      id: qft.align026.edge.conditional-unitarity-to-ss-dagger-unitarity-identity
+    - kind: edges
+      id: qft.align026.edge.conditional-unitarity-to-generalized-optical-theorem-from-s-unitarity
+    - kind: edges
+      id: qft.align026.edge.conditional-unitarity-to-partial-wave-cross-sections-and-multiparticle-inelasticity
+    - kind: edges
+      id: qft.align026.edge.conditional-unitarity-to-resonance-unitarity-projector-decomposition
+  - finding: 1
+    issue: Dyson remains a necessary input and the scalar condition is duplicated,
+      so the boost route is not independent.
+    alternatives:
+    - Keep one common scalar condition and two independent alternative proof routes.
+    - Defer the unit while Dyson remains compulsory and the common input remains duplicated.
+    resolution: Remove mandatory Dyson and duplicate scalar edges; retain one common
+      condition with separate Dyson and boost alternatives.
+    rationale: The target now has one shared locality condition and two noncumulative
+      derivations, matching the perturbative and boost arguments on pp. 144–145.
+    evidence:
+    - source: weinberg-1
+      section: '3.5'
+      pages:
+      - 144
+      - 145
+    affected_records:
+    - kind: edges
+      id: qft.align026.edge.dyson-to-local-microcausality
+    - kind: edges
+      id: qft.align026.edge.microcausality-common-input
+    - kind: edges
+      id: qft.align026.edge.dyson-perturbative-route
+    - kind: edges
+      id: qft.align026.edge.accepted-boost-nonperturbative-route
+  - finding: 2
+    issue: Flux edges lack task scope, the ledger misclassifies four rows, and the
+      unsupported Grassmann sentence remains.
+    alternatives:
+    - Apply the source-specific edge, task, statement, and boundary-ledger corrections.
+    - Defer the unit with inaccurate incident accounting and unsupported or overscoped
+      claims.
+    resolution: Fix three edge contexts, remove the Grassmann claim, and record 32
+      mapped, 30 unmapped, plus one later-evidence Coulomb handoff.
+    rationale: The three edges now state their actual normalization use and task limits;
+      the node stays within p. 189, and all 119 incident relations are classified.
+    evidence:
+    - source: weinberg-1
+      section: '3.8'
+      pages:
+      - 162
+      - 163
+    - source: weinberg-1
+      section: Problems 3
+      pages:
+      - 166
+    - source: weinberg-1
+      section: Problems 2; Problems 3
+      pages:
+      - 189
+    affected_records:
+    - kind: edges
+      id: qft.align026.edge.lips-to-breit-wigner-cross-section-and-partial-widths
+    - kind: edges
+      id: qft.align026.edge.lips-to-problem-boson-contact-scattering-order-g
+    - kind: edges
+      id: qft.align026.edge.lips-to-problem-laboratory-frame-two-body-cross-section
+    - kind: nodes
+      id: qft.align026.weinberg-1.problem-bosonic-coherent-state-fock-construction
 - id: full-align-027
   model_verdict: defer
   outcome: deferred
@@ -9001,3 +9103,326 @@ units:
       id: qft.align066.seagull-to-full-compton-problem
     - kind: edges
       id: qft.align066.soft-higher-to-core
+- id: full-align-067-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Two replacements mis-scope the common vertex and misattribute the S620
+      axial-current contribution; all eight need final authority.
+    alternatives:
+    - Keep all eight replacements unresolved and defer the unit.
+    - Repair the two origin scopes, preserve each residual, and authorize all eight
+      replacements.
+    resolution: Use a spin-one-half vertex core, attribute S620 to the pion-color
+      origin, preserve residual details, and authorize all eight replacements.
+    rationale: The Dirac/Pauli decomposition is common to on-shell spin-one-half targets,
+      while the charged-lepton and proton observables differ. S620 places the axial-current
+      matrix element in the pion color discussion; the S619 pion-nucleon record instead
+      carries the chiral coupling and width. The other six replacements retain accepted
+      formulas, conventions, origins, citations, and source-specific limitations.
+    evidence:
+    - source: peskin-schroeder
+      section: '6.2'
+      pages:
+      - 184
+      - 185
+      - 186
+    - source: schwartz
+      section: 32.1.1–32.1.2
+      pages:
+      - 315
+      - 316
+      - 317
+      - 318
+      - 670
+      - 671
+    - source: weinberg-1
+      section: '10.6'
+      pages:
+      - 452
+      - 453
+      - 454
+      - 455
+      - 456
+    - source: schwartz
+      section: 30.1.2
+      pages:
+      - 619
+      - 620
+    affected_records:
+    - kind: nodes
+      id: qft.align012.asymptotic-freedom-logarithmic-scaling
+    - kind: nodes
+      id: qft.align013.schwartz.dis-parton-model-and-bjorken-x
+    - kind: nodes
+      id: qft.align013.shared.free-dirac-parton-bjorken-scaling-and-callan-gross
+    - kind: nodes
+      id: qft.align028.peskin-schroeder.qcd-parton-scattering-formulas
+    - kind: nodes
+      id: qft.align019.on-shell-vertex-form-factor-decomposition
+    - kind: nodes
+      id: qft.align063.schwartz.background-scalar-pseudoscalar-currents-and-decays
+    - kind: nodes
+      id: qft.align006.pi0-two-photon-anomaly-decay
+    - kind: nodes
+      id: qft.align018.pion-decay-constant-from-axial-current
+  - finding: 1
+    issue: Several links conflate joint inputs, complete alternatives, partial evidence,
+      and source-local endpoints.
+    alternatives:
+    - Retain the conflated links and defer because they overstate route dependence.
+    - Restore route-local inputs, alternatives, residual endpoints, and helpful partial
+      links.
+    resolution: Restore the U-field input, remove the duplicate BCFW edge, correct
+      task and incident roles, and add qualified residual-to-core links.
+    rationale: The pion-nucleon derivation needs both the nonlinear chiral construction
+      and F_pi. The BCFW proof already has its specific joint inputs. Rosenbluth and
+      Rutherford are independent derivations. Schwartz’s gg calculation is complete
+      for that channel but only partial evidence for the PS multi-channel collection;
+      the direct triangle is an independent source-local anomaly route. The remaining
+      links distinguish complete source routes from helpful applications and checks.
+    evidence:
+    - source: schwartz
+      section: 27.3 and 27.6.1
+      pages:
+      - 547
+      - 548
+      - 555
+      - 556
+      - 557
+      - 558
+    - source: schwartz
+      section: 30.1.1–30.1.2
+      pages:
+      - 618
+      - 619
+      - 620
+      - 621
+    - source: schwartz
+      section: 32.1–32.1.2 and problems
+      pages:
+      - 668
+      - 669
+      - 670
+      - 671
+      - 698
+    - source: peskin-schroeder
+      section: '14'
+      pages:
+      - 476
+      - 477
+      - 478
+      - 479
+      - 480
+    affected_records:
+    - kind: edges
+      id: qft.align067.alternative.pion-color-to-anomaly-core
+    - kind: edges
+      id: qft.align067.alternative.ps-bjorken-scaling-to-core
+    - kind: edges
+      id: qft.align067.alternative.ps-bjorken-x-to-core
+    - kind: edges
+      id: qft.align067.direct.rosenbluth-result-to-task
+    - kind: edges
+      id: qft.align067.direct.rutherford-result-to-task
+    - kind: edges
+      id: qft.align067.helpful.ps-asymptotic-residual-to-core
+    - kind: edges
+      id: qft.align067.helpful.ps-parton-assumptions-to-core
+    - kind: edges
+      id: qft.align067.helpful.schwartz-gg-channel-to-parton-formulas
+    - kind: edges
+      id: qft.align067.helpful.triangle-to-background-current-core
+    - kind: edges
+      id: qft.align067.helpful.width-to-background-current-core
+    - kind: edges
+      id: qft.align067.incident.schwartz-e-color-to-crosssection
+    - kind: edges
+      id: qft.align067.incident.schwartz-e-gg-mhv-to-crosssection
+    - kind: edges
+      id: qft.align067.incident.schwartz-edge-formfactor-to-radius-problem
+    - kind: edges
+      id: qft.align067.incident.schwartz-edge-gg-cross-section-to-gg-splitting-task
+    - kind: edges
+      id: qft.align067.incident.schwartz-triangle-to-background-anomaly
+    - kind: edges
+      id: qft.align067.schwartz.base-pion-chiral-power-to-coupling
+    - kind: edges
+      id: qft.align067.schwartz.e-bcfw-to-task
+  - finding: 2
+    issue: The ledger must preserve 41 immutable book identities while recording split
+      or revised shared semantics independently.
+    alternatives:
+    - Alter immutable book fields to mimic revised shared edges.
+    - Keep book fields fixed and record each actual shared edge, endpoint, owner array,
+      and semantic revision.
+    resolution: Preserve every book field and record the chiral/F_pi split, bundled
+      BCFW split, revised endpoints, owners, and all 41 emitted identities.
+    rationale: The book chiral node bundles the U-field construction and F_pi normalization,
+      while the shared graph represents them separately. Its pion-color relation therefore
+      uses the narrower axial-current owner; the pion-nucleon relation needs both
+      shared realizations. The bundled BCFW source node likewise maps to the specific
+      recursion-formula route. These shared semantic revisions do not alter the immutable
+      book relations, mastery levels, necessity, or evidence.
+    evidence:
+    - source: schwartz
+      section: 27.6.1
+      pages:
+      - 555
+      - 556
+      - 557
+      - 558
+    - source: schwartz
+      section: 30.1.2
+      pages:
+      - 619
+      - 620
+    - source: schwartz
+      section: 27.3 and Chapter 32
+      pages:
+      - 547
+      - 548
+      - 670
+      - 671
+      - 698
+    affected_records:
+    - kind: edges
+      id: qft.align067.schwartz.base-pion-chiral-power-to-coupling
+    - kind: edges
+      id: qft.align067.schwartz.e-bcfw-to-task
+    - kind: edges
+      id: qft.align067.incident.schwartz-edge-formfactor-to-radius-problem
+    - kind: edges
+      id: qft.align067.incident.schwartz-e-color-to-crosssection
+    - kind: edges
+      id: qft.align067.incident.schwartz-e-gg-mhv-to-crosssection
+    - kind: edges
+      id: qft.align067.incident.schwartz-edge-gg-cross-section-to-gg-splitting-task
+    - kind: edges
+      id: qft.align067.incident.schwartz-triangle-to-background-anomaly
+- id: full-align-068-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Five scientifically supported common-core replacements remain unresolved
+      and require final authority.
+    alternatives:
+    - Leave the replacements unresolved and defer all five supported contributions.
+    - Materialize all five replacements while preserving their accepted fields and
+      narrow residual scopes.
+    resolution: Authorize all five replacements with their retained formulas, origins,
+      citations, proof limits, and source-specific residuals.
+    rationale: The replacements merge only the shared Landau coefficient argument,
+      discrete broken-vacuum shift, Wigner theorem conclusion, state-independent short-distance
+      OPE role, and Goldstone derivative count. They retain the relativistic scalar
+      realization, nonlinear Z2 action, accepted Appendix-A proof, multiple-insertion
+      and hard-flow OPE methods, and general heavy-field counting as distinct records.
+      No accepted formula, qualification, origin, citation, or outgoing route is removed.
+    evidence:
+    - source: schwartz
+      section: '28.1'
+      pages:
+      - 562
+      - 563
+    - source: weinberg-1
+      section: 2.2 and Appendix A
+      pages:
+      - 51
+      - 91
+      - 95
+      - 96
+    - source: weinberg-2
+      section: 19.6 and 20.1
+      pages:
+      - 216
+      - 223
+      - 224
+      - 253
+      - 254
+    affected_records:
+    - kind: nodes
+      id: qft.align056.landau-gibbs-free-energy-expansion
+    - kind: nodes
+      id: qft.classical-spontaneous-symmetry-breaking
+    - kind: nodes
+      id: qft.align010.weinberg-1.wigner-theorem-proof-operator-conclusion
+    - kind: nodes
+      id: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+    - kind: nodes
+      id: qft.align018.chiral-pion-eft-derivative-expansion-and-power-counting
+  - finding: 1
+    issue: The draft understates one full locality route, bypasses the imported theorem
+      chain, and leaves three residual/core splits inert.
+    alternatives:
+    - Keep the incomplete route graph and defer the unit.
+    - Repair locality mastery, the import boundary, and all three residual/core links.
+    resolution: Make locality a typical alternative, remove the bypass, add the theorem
+      input, and connect the Landau, Z2, and heavy-field residuals.
+    rationale: The small-ball construction reaches the generalized operator relation
+      and is a complete, qualified source route. The imported Chapter-12 result is
+      a premise of the scalar and appendix hard-flow derivations rather than direct
+      evidence for the OPE, so the existing shared theorem must feed the import boundary.
+      Explicit residual links keep the source-specific Landau variables, nonlinear
+      Z2 interpretation, and heavy-field conditions operative without constraining
+      independent common routes. The scalar proof still receives its hard-flow, 2PI-induction,
+      and point-normalization inputs jointly.
+    evidence:
+    - source: schwartz
+      section: '28.1'
+      pages:
+      - 562
+      - 563
+    - source: weinberg-2
+      section: '19.6'
+      pages:
+      - 216
+      - 223
+      - 224
+    - source: weinberg-2
+      section: 20.1–20.2 and Appendix
+      pages:
+      - 254
+      - 255
+      - 257
+      - 288
+      - 289
+    affected_records:
+    - kind: edges
+      id: qft.align068.discrete-breaking-core-to-nonlinear-z2-residual
+    - kind: edges
+      id: qft.align068.general-goldstone-counting-to-chiral-core
+    - kind: edges
+      id: qft.align068.landau-scalar-residual-to-common-core
+    - kind: edges
+      id: qft.align068.shared-power-counting-to-imported-boundary
+    - kind: edges
+      id: qft.align068.weinberg-2.imported-power-counting-to-ope-core
+    - kind: edges
+      id: qft.align068.weinberg-2.locality-to-ope-core
+  - finding: 2
+    issue: Two locality ledger rows conflate immutable source owners with a scientifically
+      reversed shared relation.
+    alternatives:
+    - Rewrite the book direction and owner arrays to match the shared graph.
+    - Preserve original book fields and owners, then record the reversed shared realization
+      separately.
+    resolution: Keep the exact locality-to-generalized row and record locality-to-common
+      as a separate justified reversal of the OPE-to-locality book edge.
+    rationale: The immutable locality-to-generalized edge maps exactly between its
+      source owners. The separate book edge runs from the short-distance OPE statement
+      to the locality discussion as textual sequencing; logical entailment in the
+      shared graph runs from the locality construction to the common OPE. The ledger
+      therefore preserves the original prerequisite fields and owner arrays while
+      explicitly recording the reversed shared endpoint. The remaining 16 source identities
+      map exactly.
+    evidence:
+    - source: weinberg-2
+      section: '20.1'
+      pages:
+      - 254
+      - 255
+    affected_records:
+    - kind: edges
+      id: qft.align068.weinberg-2.locality-to-ope-core
