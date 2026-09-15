@@ -1622,9 +1622,15 @@ nodes:
   notation: []
 - id: qft.align006.u1-problem-axial-u1-not-a-symmetry
   label: 'U(1) problem: axial U(1) is not a symmetry'
-  summary: Three-flavor U(3)_LxU(3)_R breaking would predict nine Goldstones and eta-prime
-    below sqrt(3)m_pi0, contrary to 957 MeV. Diagonal U(1)_A has SU(3)_color^2U(1)_A
-    anomaly, so no symmetry requires its Goldstone.
+  summary: Three-flavor U(3)_L×U(3)_R breaking would predict nine Goldstones and an
+    η′ below √3mπ⁰, contrary to its 957 MeV mass. Diagonal U(1)_A has the SU(3)_color²U(1)_A
+    anomaly, so no symmetry requires that Goldstone; this anomaly resolution is the
+    accepted Schwartz route. Weinberg II independently frames the phenomenological
+    dilemma—an unbroken axial U(1) would give parity doubling, while a broken one
+    would give an extra isoscalar pseudoscalar—and, under the hypothetical broken
+    symmetry, constructs the π⁰–η–ζ mass matrix and obtains an extra-state mass no
+    greater than √3mπ. That route points ahead to nonperturbative U(1)_A violation
+    without deriving the color anomaly.
   kind: result
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -1632,11 +1638,23 @@ nodes:
     node: schwartz.u1-problem-axial-u1-not-a-symmetry
     note: Retains this reviewed book-specific treatment, including its stated conditions,
       conventions, and proof or task boundary.
+  - project: weinberg-2
+    node: weinberg-2.u1a-problem-extra-pseudoscalar-prediction
+    note: Adds the parity-doubling and neutral-mass-matrix route only; anomaly attribution
+      remains exclusively Schwartz.
   evidence:
   - source: schwartz
     section: 30.5.2
     pages:
     - 637
+  - source: weinberg-2
+    section: '19.10'
+    pages:
+    - 244
+    - 245
+    - 246
+    note: The source gives the parity-doubling alternative, neutral mass matrix, extra
+      light-state bound, and nonperturbative-resolution pointer.
   notation: []
 - id: qft.align006.un-unitary-group-semisimplicity-task
   label: U(N) semisimplicity task
@@ -5211,37 +5229,48 @@ nodes:
       alignment does not assert a broader equivalence.
 - id: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
   label: Operator product expansion and state-independent coefficients
-  summary: At short separation, O1(x)O2(y) expands in local operators allowed by the
-    product symmetries, with c-number Wilson coefficients independent of the external
-    state. This state independence permits matching in a convenient matrix element
-    and reuse in all matrix elements. Peskin-Schroeder retains the Wilson/symmetry
-    and separated-external-field framing; Schwartz retains the DIS consequence that
-    infinitely many twist-2 operators can remain relevant.
+  summary: At short separation, a product of local operators expands in local operators
+    with c-number coefficients independent of the external state, so coefficients
+    may be fixed in a convenient matrix element and reused. Schwartz retains the DIS
+    consequence that infinitely many twist-two operators can matter; Peskin–Schroeder
+    retains the product-symmetry and separated-external-field formulation. Weinberg
+    II separately constructs the hard-flow coefficient functions through an N-cutoff
+    induction, with its proof limitation retained in the hard-flow qualification residual.
   kind: method
+  group: qft.align013.dis-ope-routes
+  origins:
+  - project: schwartz
+    node: schwartz.operator-product-expansion-state-independent-coefficients
+    note: Retains the reviewed Schwartz treatment with its source-specific conditions,
+      normalizations, notation, and stated proof boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.ope-local-expansion-and-universality
+    note: Retains the Peskin–Schroeder common core while its source-specific formulas
+      and applications remain explicit in its source route.
+  - project: weinberg-2
+    node: weinberg-2.general-hard-flow-ope-power-counting
+    note: Corresponds only to the shared state-independent coefficient-function role;
+      the N cutoff, induction, normalization construction, and proof caveat remain
+      in the Weinberg II residuals.
   evidence:
   - source: schwartz
     section: 32.4.1 The operator product expansion
     pages:
     - 686
   - source: peskin-schroeder
-    section: 18.3 Operator Product Expansions
+    section: '18.3'
     pages:
     - 612
     - 613
-    note: Supports the added common physical core; source-specific formulas, proof
-      limits, and applications remain in the align028 residual.
-  group: qft.align013.dis-ope-routes
-  origins:
-  - project: schwartz
-    node: schwartz.operator-product-expansion-state-independent-coefficients
-    note: Retains the reviewed schwartz treatment with its source-specific conditions,
-      normalizations, notation, and stated proof or task boundary; this source-scoped
-      alignment does not assert a broader equivalence.
-  - project: peskin-schroeder
-    node: peskin-schroeder.ope-local-expansion-and-universality
-    note: Adds the packet-supported Peskin-Schroeder common core while retaining its
-      source-specific method, conventions, qualifications, and applications in the
-      align028 residual record.
+  - source: weinberg-2
+    section: Appendix Momentum Flow
+    pages:
+    - 289
+    - 290
+    - 291
+    - 292
+    note: Equations (20.A.4)–(20.A.12) construct the general coefficient functions;
+      the cutoff and induction are source-specific.
 - id: qft.align013.schwartz.parton-distribution-convolution
   label: Parton distributions and the DIS convolution
   summary: At leading parton-model order, an inclusive DIS rate is a sum over parton
@@ -9832,7 +9861,9 @@ nodes:
     and ℓ′_z=ℓ_g+ℓ_i+ℓ_j=0. This decoupling condition can fail across phase transitions.
     The stronger persistent-mass condition imposes the same constraints for any constituent
     mass but is conjectural and fails in nonrealistic models with composite Goldstone
-    bosons from massive fermions.
+    bosons from massive fermions. The earlier Weinberg II discussion uses that same
+    conjecture only as a heuristic against spontaneous breaking of equal-mass nonchiral
+    isospin or SU(3); it remains separate from the Vafa–Witten proof.
   kind: assumption
   group: qft.anomaly-regularization-and-matching
   origins:
@@ -9841,6 +9872,10 @@ nodes:
     note: This origin retains the source-specific statement, normalization, hypotheses,
       and proof or task boundary; correspondence is only the scope stated by this
       shared record.
+  - project: weinberg-2
+    node: weinberg-2.persistent-mass-condition-conjecture
+    note: Adds the reviewed persistent-mass conjecture as the common heuristic; the
+      older decoupling equations and qualifications remain an explicit residual.
   evidence:
   - source: weinberg-2
     section: '22.5'
@@ -9850,6 +9885,12 @@ nodes:
     - 396
     note: Rendered Eqs. (22.5.9) and surrounding text give all five multiplicity constraints,
       the phase-transition objection, and the persistent-mass qualification.
+  - source: weinberg-2
+    section: '19.9'
+    pages:
+    - 238
+    - 239
+    note: States the persistent-mass conjecture and its massive-quark-composite motivation.
 - id: qft.align017.theta-induced-pion-nucleon-coupling-and-neutron-edm
   label: Theta-induced pion–nucleon coupling and neutron EDM
   summary: 'A CP-odd piNN coupling proportional to bar-theta enters pion loops. The
@@ -18259,41 +18300,83 @@ nodes:
   summary: 'When operators mix, anomalous dimensions are matrices: the two factors
     in the original product act on the OPE coefficient from the left and the final
     operator matrix acts from the right. For a product of conserved currents the two
-    left matrices vanish, leaving (M partial_M+beta partial_g)C_12n-C_12k gamma_kn=0.'
+    left matrices vanish, leaving (M partial_M+beta partial_g)C_12n-C_12k gamma_kn=0.
+    Weinberg II independently treats a general hard set of elementary or composite
+    factors: their direct-product anomalous-dimension matrix acts on the input indices
+    while the renormalized output-operator matrix acts on the output index, with the
+    stated left/right ordering.'
   kind: method
   group: qft.align028.operator-rg-and-weak
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.ope-operator-mixing-matrix-equation
-    note: Retains Peskin–Schroeder's source-specific matrix rg equation for mixed
-      ope operators with its stated normalization, hypotheses, and task or proof boundary.
+    note: Retains the conserved-current specialization and its stated matrix equation.
+  - project: weinberg-2
+    node: weinberg-2.rg-matrix-equation-for-ope-coefficients
+    note: Corresponds to the general mixed-coefficient equation; its external field/composite
+      factors and ordering remain source-specific.
   evidence:
   - source: peskin-schroeder
     section: '18.3'
     pages:
     - 615
-    note: States the matrix generalization required in the subsequent DIS analysis.
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 263
+    - 264
+    note: Equations (20.3.1)–(20.3.5) derive the general field/composite renormalization
+      factors and ordered matrix solution.
+  notation:
+  - source: peskin-schroeder
+    note: For a product of conserved currents the two left anomalous-dimension matrices
+      vanish.
+  - source: weinberg-2
+    note: The coefficient transforms with the direct product of the field-or-composite
+      factors for the hard set and the renormalized output operator factor.
 - id: qft.align028.peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
-  label: RG equation and scaling of OPE coefficients
+  label: RG evolution and fixed-point scaling of OPE coefficients
   summary: With all operators normalized at M, the coefficient obeys (M partial_M+beta
     partial_g+gamma_1+gamma_2-gamma_n)C_12n=0. Dimensional analysis gives C_12n=x^(-(d_1+d_2-d_n))
     C(xM); at a fixed point its exponent uses the true dimension d'_j=d_j+gamma_j(g_*).
     In an asymptotically free theory the leading form carries the additional factor
-    [log(1/(x^2 Lambda^2))/log(M^2/Lambda^2)]^((a_n-a_1-a_2)/(2b_0)).
+    [log(1/(x^2 Lambda^2))/log(M^2/Lambda^2)]^((a_n-a_1-a_2)/(2b_0)). Weinberg II
+    gives the corresponding general matrix solution with μ-ordered exponentials, nonperturbative
+    constant matrices, the finite-fixed-point factor ordered on the left, and the
+    qualification that the asymptotic form need not reduce to a single eigenvector.
   kind: result
   group: qft.align028.operator-rg-and-weak
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
-    note: Retains Peskin–Schroeder's source-specific rg equation and scaling of ope
-      coefficients with its stated normalization, hypotheses, and task or proof boundary.
+    note: Retains Peskin–Schroeder’s normalization, scalar formula, fixed-point dimensions,
+      and leading-log route.
+  - project: weinberg-2
+    node: weinberg-2.asymptotically-free-ope-logarithmic-coefficients
+    note: Corresponds to the asymptotically-free logarithmic member of the common
+      RG scaling role; its matrix constants and eigenvector qualification remain residual.
+  - project: weinberg-2
+    node: weinberg-2.finite-uv-fixed-point-ope-coefficients
+    note: Corresponds to the finite-UV-fixed-point member of the common RG scaling
+      role; its μ ordering and left matrix factor remain residual.
   evidence:
   - source: peskin-schroeder
     section: '18.3'
     pages:
     - 614
-    note: Derives the OPE Callan-Symanzik equation, dimension rule, and fixed-point/asymptotically-free
-      solutions.
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    - 265
+    note: Equations (20.3.5)–(20.3.10) give the ordered solution, fixed-point factor,
+      logarithmic limit, constants, and no-single-eigenvector qualification.
+  notation:
+  - source: peskin-schroeder
+    note: Peskin–Schroeder uses M, x, and true dimensions d′j=dj+γj(g*).
+  - source: weinberg-2
+    note: Weinberg II uses μ-ordered matrix products; the finite-fixed-point matrix
+      factor occurs on the left.
 - id: qft.align028.peskin-schroeder.problem-17-1-scheme-independent-two-loop-asymptotics
   label: 'Problem 17.1(b): scheme independence of the first two beta coefficients'
   summary: Combine the two-loop running expression with the perturbative e+e−→hadrons
@@ -25259,6 +25342,452 @@ nodes:
     - 299
     - 300
   notation: []
+- id: qft.align040.asymptotically-free-ope-logarithmic-coefficients
+  label: Asymptotically free logarithmic OPE coefficients
+  summary: Near the g=0 ultraviolet fixed point, canonical dimension determines the
+    power of the hard scale while anomalous-dimension matrices supply powers of the
+    running coupling, equivalently powers of ln K. This perturbative form requires
+    weak coupling, but it need not be reduced to a single anomalous-dimension eigenvector.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.asymptotically-free-ope-logarithmic-coefficients
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    - 265
+    note: Equations (20.3.7)–(20.3.10) give the asymptotically-free coefficient behavior
+      and its validity condition.
+  notation: []
+- id: qft.align040.borel-transform-asymptotic-series-method
+  label: Borel transform for factorial perturbative growth
+  summary: For a series whose coefficients grow factorially, divide the nth coefficient
+    by n! to form a Borel transform and formally reconstruct the original function
+    by a Laplace integral. Singularities away from the positive real axis limit convergence
+    but need not obstruct that integral; positive-axis singularities make the contour
+    prescription ambiguous.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.borel-transform-asymptotic-series-method
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 283
+    - 284
+    note: Equations (20.7.1)–(20.7.3) define the Borel construction and the text distinguishes
+      off-axis from positive-axis singularities.
+  notation: []
+- id: qft.align040.chiral-current-operator-selection-for-sum-rules
+  label: Chiral selection of spectral sum rules
+  summary: For non-Abelian chiral SU(N)L×SU(N)R with N light equivalent fermions,
+    unbroken vector SU(N), and unbroken parity constrain left/right current products.
+    The vector U(1) is set aside and axial U(1) is excluded because quantum effects
+    break it. Like chirality contains the identity and yields no sum rules; unlike
+    chirality excludes singlet and low-dimension bilinear terms and satisfies the
+    first two.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.chiral-current-operator-selection-for-sum-rules
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 269
+    - 270
+    - 271
+    note: The chiral-current representations, vacuum-symmetry assumptions, and like/unlike
+      chirality selection are discussed through (20.5.19).
+  notation: []
+- id: qft.align040.composite-operator-normalization-by-matrix-element
+  label: Composite-operator normalization from a finite matrix element
+  summary: Choose the finite renormalization of φ² so its two-particle matrix element
+    equals one at specified renormalization momenta. The compensating constant cancels
+    the divergent integrals, and the resulting Z_{φ²} defines the finite composite
+    operator used in the OPE factorization.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.composite-operator-normalization-by-matrix-element
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.2'
+    pages:
+    - 260
+    - 261
+    note: Equations (20.2.10)–(20.2.16) define the normalization point and finite
+      composite operator.
+  notation: []
+- id: qft.align040.current-spectral-functions-positivity-and-symmetry
+  label: Current spectral-function positivity and symmetry
+  summary: For Hermitian Lorentz-vector currents, the spectral-density matrices obtained
+    by inserting complete states are positive Hermitian. At spacelike separation,
+    translation invariance and causality also make the two spectral-density structures
+    symmetric.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.current-spectral-functions-positivity-and-symmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 267
+    note: Equations (20.5.1)–(20.5.3) define the spectral representation and the text
+      states these matrix properties.
+  notation: []
+- id: qft.align040.finite-uv-fixed-point-ope-coefficients
+  label: Finite-UV-fixed-point scaling of OPE coefficients
+  summary: When the running coupling approaches a finite ultraviolet fixed point,
+    the OPE coefficient solution has left- and right-acting anomalous-dimension matrix
+    powers of the hard scale. The residual factor is constant or a sum of logarithmic
+    powers according to the approach rate; this is distinct from the g*=0 asymptotically-free
+    case.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.finite-uv-fixed-point-ope-coefficients
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    note: Equation (20.3.6) gives the finite-fixed-point matrix-power result and residual-factor
+      qualification.
+  notation: []
+- id: qft.align040.general-hard-flow-ope-power-counting
+  label: General hard-flow OPE from power counting
+  summary: Using the Chapter 12.1 theorem as an imported assumption, the appendix
+    orders hard subgraphs by total cut-line dimension; s_i=0 for scalar and massless
+    gauge fields and s_i=1/2 for Dirac fields. Homogeneous soft-momentum polynomials
+    of the N-irreducible kernel then match local operators with the corresponding
+    fields and derivatives through a chosen dimension cutoff.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-hard-flow-ope-power-counting
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix Momentum Flow
+    pages:
+    - 289
+    - 290
+    - 291
+    - 292
+    note: Equations (20.A.1)–(20.A.12) give the dimension count, N-irreducible kernel,
+      polynomial expansion, and recursive normalization.
+  notation: []
+- id: qft.align040.general-hard-flow-ope-rigor-qualification
+  label: Qualification of the general hard-flow argument
+  summary: 'The appendix does not prove the fully general OPE: subintegrations can
+    diverge when the intermediate cut-line set has three or more lines, even when
+    the displayed overall power count converges. It proves only the simple scalar
+    case with two large external momenta and terms associated with operators quadratic
+    in fields.'
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-hard-flow-ope-rigor-qualification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix Momentum Flow
+    pages:
+    - 291
+    note: The footnote states that cut sets of three or more lines can leave divergent
+      subintegrations and therefore limits the appendix's proof claim.
+  notation: []
+- id: qft.align040.infrared-renormalons-from-ope-power-corrections
+  label: Infrared renormalons from OPE power corrections
+  summary: For QCD current-current vacuum polarization with αs=g²/(4π), a dimension-d
+    OPE correction implies a Borel singularity, not necessarily a pole, at z=6πd/(33−2nf)
+    on the positive axis. It arises from small virtual momenta, makes Borel summation
+    ambiguous, and separates perturbative hard flow from nonperturbative soft flow.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.infrared-renormalons-from-ope-power-corrections
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 287
+    - 288
+    note: Equations (20.7.18)-(20.7.22) give the dimensional-transmutation dependence,
+      the dimension-d Borel location, its positive-axis ambiguity, and the hard/soft
+      interpretation.
+  notation: []
+- id: qft.align040.instanton-negative-borel-singularity-example
+  label: Instanton origin of a negative-axis Borel singularity
+  summary: For Euclidean massless scalar theory normalized by −gφ⁴/24, the large-order
+    saddle produces a localized solution and a leading Borel pole at z=−16π². The
+    source states g is much less than 16π² for direct Borel use; this negative-axis
+    pole does not obstruct the positive-axis integral.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.instanton-negative-borel-singularity-example
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 285
+    - 286
+    note: Equations (20.7.4)–(20.7.17) connect the saddle, instanton solution, and
+      negative pole.
+  notation: []
+- id: qft.align040.ope-coefficients-preserve-broken-symmetry
+  label: OPE coefficients preserve the full underlying symmetry
+  summary: For linearly transforming renormalized operators, current conservation
+    and the soft Goldstone pole show that the OPE coefficient tensor obeys the same
+    invariance relation it would obey if the symmetry were unbroken. Spontaneous breaking
+    therefore changes matrix elements, not the symmetry carried by coefficient functions.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.ope-coefficients-preserve-broken-symmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.4'
+    pages:
+    - 265
+    - 266
+    note: The current commutator, Goldstone matrix element, and coefficient invariance
+      condition are derived in (20.4.1)–(20.4.8).
+  notation: []
+- id: qft.align040.peskin-schroeder.scalar-spectral-pole-threshold-residual
+  label: Scalar spectral pole and multiparticle threshold residual
+  summary: For the scalar two-point function, the complete-state spectral density
+    has an isolated one-particle delta term with coefficient Z, while multiparticle
+    states form a continuum beginning at threshold; these scalar pole and threshold
+    details are retained separately from the common complete-state positivity core.
+  kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.kallen-lehmann-spectral-representation
+    note: Retains Peskin–Schroeder’s scalar-field pole, field-strength Z, and multiparticle-threshold
+      specialization after the shared record is narrowed to the complete-state positivity
+      core.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 212
+    - 213
+    - 214
+    note: The complete-state construction is specialized to a scalar field; page 214
+      states the positive density, isolated delta term, and threshold.
+  notation:
+  - source: peskin-schroeder
+    note: The scalar spectral density is rho(M^2); Z is the squared one-particle matrix
+      element and m is the physical mass.
+- id: qft.align040.problem-derive-parton-dis-cross-section
+  label: 'Problem: derive the parton-model DIS cross section'
+  summary: Problem 3 assigns a derivation of Eq. (20.6.8), the parton-model deep-inelastic
+    cross section, from the specified Compton-scattering formulas (8.7.7) and (8.7.38).
+    The source poses this as a derivation task.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-derive-parton-dis-cross-section
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 293
+    note: Problem 3 explicitly directs the derivation of Eq. (20.6.8) in the parton
+      model from Eqs. (8.7.7) and (8.7.38).
+  notation: []
+- id: qft.align040.problem-list-twist-four-qcd-tensors
+  label: 'Problem: list twist-four QCD tensors'
+  summary: List the gauge-invariant symmetric traceless tensors of twist four in quantum
+    chromodynamics.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-list-twist-four-qcd-tensors
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 4
+    pages:
+    - 293
+    note: Problem 4 states the requested tensor classification.
+  notation: []
+- id: qft.align040.problem-scalar-pseudoscalar-spectral-sum-rules
+  label: 'Problem: scalar–pseudoscalar spectral sum rules'
+  summary: For N-massless-quark QCD with traceless Hermitian flavor matrices normalized
+    by Tr(λaλb)=2δab, determine which spectral sum rules hold for linear combinations
+    of scalar and pseudoscalar bilinear spectral functions.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-scalar-pseudoscalar-spectral-sum-rules
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 2
+    pages:
+    - 292
+    - 293
+    note: Problem 2 defines the bilinears and normalization, then asks the sum-rule
+      question across the page break.
+  notation: []
+- id: qft.align040.problem-scalar-renormalon-singularity-loci
+  label: 'Problem: scalar-theory renormalon singularity loci'
+  summary: For massless scalar theory with interaction −gφ⁴/24 and g>0, determine
+    where the Borel-integral function has renormalon singularities in the complex
+    plane.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-scalar-renormalon-singularity-loci
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 5
+    pages:
+    - 293
+    note: Problem 5 specifies the interaction, sign condition, and requested complex-plane
+      loci.
+  notation: []
+- id: qft.align040.problem-yukawa-ope-operators-and-one-loop-coefficients
+  label: 'Problem: Yukawa OPE operators and one-loop coefficients'
+  summary: Given a fermion coupled to a scalar through ψ̄ψφ and φ⁴ interactions, list
+    the operators with singular nonzero coefficients in the ψ(x)ψ̄(0) OPE and describe
+    a one-loop coefficient calculation.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-yukawa-ope-operators-and-one-loop-coefficients
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 292
+    note: Problem 1 gives the field content, interactions, OPE, and requested one-loop
+      task.
+  notation: []
+- id: qft.align040.rg-matrix-equation-for-ope-coefficients
+  label: RG matrix evolution of OPE coefficient functions
+  summary: OPE coefficients inherit renormalization factors from both the colliding
+    fields and the renormalized local operator. Their scale dependence is a matrix
+    renormalization-group equation; its solution uses μ-ordered exponentials because
+    the anomalous-dimension matrices at different scales need not commute.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.rg-matrix-equation-for-ope-coefficients
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 263
+    - 264
+    note: Equations (20.3.1)–(20.3.5) derive the coefficient equation and its μ-ordered
+      solution.
+  notation: []
+- id: qft.align040.scalar-one-loop-ope-factorization-check
+  label: One-loop off-shell check of scalar OPE factorization
+  summary: At one loop, calculate the off-shell scalar four-point amplitude using
+    the stated definition of g, choose a compatible φ² operator normalization point,
+    and read off Uφ² and Fφ² by comparison with the factorized asymptotic form. This
+    verifies the scalar route and is not a premise of the general appendix construction.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.scalar-one-loop-ope-factorization-check
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.2'
+    pages:
+    - 260
+    - 261
+    note: Equations (20.2.13)–(20.2.16) give the off-shell one-loop amplitude and
+      compatible normalization point.
+  notation: []
+- id: qft.align040.short-distance-spectral-sum-rule-criterion
+  label: Short-distance criterion for spectral-function sum rules
+  summary: A linear combination of current correlators whose short-distance singularity
+    is weaker than 1/x⁴ obeys the first spectral sum rule; if it is also weaker than
+    1/x², it obeys the second and third. For conserved currents the third rule holds
+    automatically, while its longitudinal massless contribution can only come from
+    spin-zero massless states such as Goldstone bosons.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.short-distance-spectral-sum-rule-criterion
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 267
+    - 268
+    note: The small-x expansion and the first through third rules are given in (20.5.4)–(20.5.10).
+  notation: []
+- id: qft.align040.vector-axial-spectral-sum-rules
+  label: Vector–axial spectral sum rules
+  summary: Under the stated chiral assumptions, the unlike-chirality selection rules
+    become the first vector–axial sum rule, whose integral equals F², and the second,
+    whose corresponding integral vanishes. Narrow-resonance saturation was a historical
+    approximation; the source treats measured resonance information as an input rather
+    than a derivation of the axial mass.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.vector-axial-spectral-sum-rules
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 271
+    - 272
+    note: Equations (20.5.18)–(20.5.19), the resonance discussion, and the empirical
+      consistency qualification appear here.
+  notation:
+  - source: weinberg-2
+    note: With SU(2) generators taken as Pauli matrices, the source uses F=Fπ=184
+      MeV.
 - id: qft.align041.born-rule-complete-orthogonal-rays
   label: Born rule for a complete orthogonal set of rays
   summary: For tests that distinguish mutually orthogonal rays, the transition probability
@@ -25937,6 +26466,507 @@ nodes:
     pages:
     - 223
     note: States the bilinear-commutator task and its purpose.
+  notation: []
+- id: qft.align044.anomalous-goldstone-action-terms-and-h5
+  label: Anomalous Goldstone action terms from H⁵(G/H; R)
+  summary: When π4(G/H)=0, action terms can be represented by invariant five-forms
+    on an extension ball. The genuinely anomalous terms are closed invariant five-forms
+    that are not exterior derivatives of invariant four-forms, so their independent
+    classes are the generators of H⁵(G/H;R). For the stated SU(N) coset there is one
+    generator, the Wess-Zumino form; this topology does not determine its integer
+    coefficient.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.anomalous-goldstone-action-terms-and-h5
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.8'
+    pages:
+    - 237
+    - 238
+    note: The source distinguishes exact four-forms from anomalous forms and identifies
+      the cohomology classification and SU(N) example.
+  notation: []
+- id: qft.align044.general-explicit-breaking-operator-construction
+  label: Constructing explicit-breaking operators from their H components
+  summary: If an explicit-breaking term belongs to a G representation, its nonlinear
+    EFT operators can be generated from operators at ξ=0 that transform under H as
+    the restricted G representation, followed by the coset rotation. Their relative
+    H-representation normalizations are not fixed by this construction; in the pion-only
+    SO(4) example it leaves one nonderivative chiral-breaking operator.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-explicit-breaking-operator-construction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 221
+    - 222
+    - 223
+    note: Equations (19.6.39)–(19.6.44) reduce the transformation condition to H,
+      and the SO(4) example applies it.
+  notation: []
+- id: qft.align044.general-goldstone-kinetic-metric-and-canonical-fields
+  label: Goldstone kinetic metric and canonical normalization
+  summary: Without intrinsic breaking, the two-derivative Goldstone Lagrangian is
+    controlled by a real positive-definite matrix F²_ab multiplying D_aμD_b^μ. If
+    F is its matrix square root, the canonically normalized fields are π_a=Σ_b F_ab
+    ξ_b; F⁻¹ is used only when solving back for ξ from π. Within an irreducible H
+    representation the relevant diagonal entries agree, but different irreducible
+    H sectors can have different scales.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.general-goldstone-kinetic-metric-and-canonical-fields
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 224
+    note: Equations (19.6.46)–(19.6.47) give the positive metric and canonical fields,
+      followed by the irreducible-H qualification.
+  notation: []
+- id: qft.align044.order-parameter-at-continuous-symmetry-restoration
+  label: Order parameter at a continuous symmetry-restoring transition
+  summary: Near a continuous transition between broken and unbroken phases, the Goldstone
+    boson joins a complete nearly massless linear multiplet; absent accidental structure,
+    that irreducible multiplet is the order parameter. This is more restrictive than
+    calling any field with a symmetry-breaking expectation value an order parameter,
+    and the source says the chiral-QCD order parameter is not known to be a four-vector.
+  kind: concept
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.order-parameter-at-continuous-symmetry-restoration
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 224
+    - 225
+    note: The transition argument defines the order parameter and gives the chiral-QCD
+      qualification.
+  notation: []
+- id: qft.align044.persistent-mass-condition-conjecture
+  label: Persistent-mass condition as a heuristic for unbroken vector symmetries
+  summary: The source presents, as a conjecture, the persistent-mass condition that
+    composites of massive constituents are not massless. If equal quark masses made
+    nonchiral isospin or SU(3) spontaneously broken, their Goldstone bosons would
+    be massless composites of massive quarks, yielding a heuristic contradiction.
+    This is an intuitive motivation, separate from the Vafa-Witten proof.
+  kind: assumption
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.persistent-mass-condition-conjecture
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.9'
+    pages:
+    - 238
+    - 239
+    note: The conjectural condition and its application to massive-quark composites
+      span these two pages.
+  notation: []
+- id: qft.align044.problem-adler-sum-rule-pion-scattering
+  label: 'Problem: Adler sum rule for pion-pion scattering'
+  summary: Derive the Adler sum rule for pion-pion scattering as the analogue of the
+    Adler-Weisberger sum rule.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-adler-sum-rule-pion-scattering
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 4 specifies the pion-pion Adler-sum-rule derivation.
+  notation: []
+- id: qft.align044.problem-derive-su3-nucleon-mass-relation
+  label: 'Problem: derive the SU(3) nucleon mass relation'
+  summary: Use the first-order quark-mass perturbation formula and SU(3) symmetry
+    to derive the stated nucleon mass-splitting relation.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-derive-su3-nucleon-mass-relation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 6 explicitly names Eq. (19.7.31), SU(3), and the target relation
+      (19.7.32).
+  notation: []
+- id: qft.align044.problem-exponential-su2-coset-pion-transformations
+  label: 'Problem: pion transformations in exponential SU(2) coset coordinates'
+  summary: Calculate the SU(2)×SU(2) transformation law of pion coordinates when SU(2)×SU(2)/SU(2)
+    cosets are represented by exp(iξ_a x_a).
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-exponential-su2-coset-pion-transformations
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 5 gives the exponential coset representative and requested transformation
+      calculation.
+  notation: []
+- id: qft.align044.problem-one-loop-massive-pion-scattering
+  label: 'Problem: one-loop pion-pion scattering with finite pion mass'
+  summary: Calculate the pion-pion scattering amplitude to one-loop order while retaining
+    a finite pion mass.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-one-loop-massive-pion-scattering
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 3 states the one-loop massive-pion scattering task.
+  notation: []
+- id: qft.align044.problem-so3-to-so2-goldstone-eft
+  label: 'Problem: SO(3) to SO(2) Goldstone EFT and scattering'
+  summary: Derive the infinitesimal Goldstone transformation, Goldstone and charged-matter
+    covariant derivatives, and the most general low-derivative SO(3)-invariant Lagrangians
+    for SO(3) broken to SO(2). Use them to obtain the leading elastic Goldstone scattering
+    amplitude, then add an explicit-breaking vector component giving mass m and recalculate
+    the amplitude.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-so3-to-so2-goldstone-eft
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 246
+    - 247
+    note: Problem 1 specifies the coset, requested covariants and Lagrangians, explicit
+      mass term, and amplitudes.
+  notation: []
+- id: qft.align044.problem-sun-vacuum-alignment-residual-symmetry
+  label: 'Problem: vacuum alignment and residual symmetry for SU(N)'
+  summary: Determine the fully unbroken group after an SU(N)→SU(N−1) theory receives
+    a small breaking perturbation in either the defining or adjoint representation,
+    taking vacuum alignment into account.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-sun-vacuum-alignment-residual-symmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 2 explicitly asks for both representation cases with vacuum alignment.
+  notation: []
+- id: qft.align044.su3-aligned-chiral-lagrangian-mass-route
+  label: Aligned SU(3) chiral-Lagrangian route to pseudoscalar masses
+  summary: Start from the constrained SU(3) field U and its F=Fπ-normalized leading
+    two-derivative term. With the diagonal quark-mass matrix, the aligned parity-
+    and SU(3)-invariant condensate <qbar_n gamma5 q_m>=0 and <qbar_n q_m>=-v delta_nm
+    gives the quadratic mass term. Expanding it yields the pion, kaon, and eta squared
+    masses and the pi0–eta mixing term. This is one derivation route; it does not
+    make the chiral Lagrangian a prerequisite of the independent double-commutator
+    route.
+  kind: method
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 228
+    - 229
+    note: Equations (19.7.9)–(19.7.17) give U, F normalization, the aligned condensate,
+      mass term, and resulting masses.
+  notation:
+  - source: weinberg-2
+    note: U=exp(2i xi^a lambda_a), F=Fπ≈184 MeV, and v is defined by <qbar_n q_m>=-v
+      delta_nm.
+- id: qft.align044.su3-double-commutator-pseudoscalar-mass-route
+  label: SU(3) double-commutator route to pseudoscalar masses
+  summary: 'In the real pseudoscalar basis π_a, specialize the accepted first-order
+    pseudo-Goldstone formula to the broken SU(3) charges: M²_ab=−Fπ⁻²⟨q̄{λ_a,{λ_b,M_q}}q⟩₀.
+    The aligned SU(3)- and parity-invariant condensate and F_ab=Fπδ_ab then evaluate
+    this operator formula to the pion, kaon, and eta squared masses and π⁰–η mixing.
+    This operator calculation is independent of expanding the constrained-U chiral
+    Lagrangian.'
+  kind: method
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    - 230
+    note: Equations (19.7.18)–(19.7.19) specialize the aligned-vacuum double commutator
+      and reproduce the pseudoscalar mass matrix.
+  notation:
+  - source: weinberg-2
+    note: λ_a are normalized by Tr(λ_aλ_b)=2δ_ab; F_ab=Fπδ_ab in the unbroken SU(3)
+      limit.
+- id: qft.align044.su3-first-order-nonpseudoscalar-multiplet-mass-shift
+  label: First-order quark-mass shift of a non-pseudoscalar SU(3) multiplet
+  summary: For a multiplet other than the pseudoscalar octet, the quark mass Hamiltonian
+    is treated as a first-order perturbation, giving the generic mass-matrix shift
+    δm_ij=⟨i|q̄M_q q|j⟩. This is an input formula rather than the nucleon-splitting
+    relation that the source subsequently derives from it.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.su3-first-order-nonpseudoscalar-multiplet-mass-shift
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 233
+    note: Equation (19.7.31) states the generic first-order perturbative mass shift
+      before the nucleon relation.
+  notation: []
+- id: qft.align044.su3-leading-meson-lagrangian-and-fpi-normalization
+  label: SU(3) leading meson Lagrangian and Fπ normalization
+  summary: The unique two-derivative SU(3)_L×SU(3)_R Goldstone term is −F² Tr(∂μU∂^μU†)/16.
+    Writing its coordinates as canonically normalized π, K, and η fields identifies
+    its F with the earlier source convention Fπ≈184 MeV. The source notes that symbols
+    fπ in other conventions may denote Fπ, Fπ/√2, or Fπ/2.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.su3-leading-meson-lagrangian-and-fpi-normalization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 228
+    note: Equations (19.7.9)–(19.7.11) give U and the kinetic term, then explicitly
+      identify F with Fπ=184 MeV.
+  notation:
+  - source: weinberg-2
+    note: This source uses F=Fπ≈184 MeV in the SU(3) kinetic term. Elsewhere fπ can
+      denote Fπ, Fπ/√2, or Fπ/2.
+- id: qft.align044.su3-matrix-element-reduction-for-multiplet-mass-shifts
+  label: SU(3) matrix-element reduction for multiplet mass shifts
+  summary: After inserting the first-order quark-mass operator in a non-pseudoscalar
+    SU(3) multiplet, SU(3) symmetry relates its matrix elements. This representation-theoretic
+    reduction is the source's route from the generic shift to particular hadron mass
+    relations.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.su3-matrix-element-reduction-for-multiplet-mass-shifts
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 233
+    note: Immediately after Eq. (19.7.31), the source invokes SU(3) to relate the
+      matrix elements ⟨i|q̄_rq_s|j⟩.
+  notation: []
+- id: qft.align044.su3-nucleon-quark-mass-splitting-relation
+  label: SU(3) relation for the quark-mass nucleon splitting
+  summary: Applying the SU(3) matrix-element relations to the first-order mass shift
+    gives Eq. (19.7.32), relating the quark-mass part of the proton-neutron splitting
+    to the Ξ−Σ splitting and the light-quark mass ratio. Combining it with the pseudoscalar
+    mass-ratio result produces only the source's approximate −2.5 MeV quark-mass estimate.
+    It is not the full observed proton-neutron difference, which has an important
+    electromagnetic contribution.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.su3-nucleon-quark-mass-splitting-relation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 233
+    - 234
+    note: Equation (19.7.32) follows the generic shift and SU(3) reduction; the numerical
+      estimate uses Eq. (19.7.22), and the next page separates the electromagnetic
+      contribution.
+  notation: []
+- id: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  label: SU(3) pseudoscalar masses, electromagnetic shift, and Gell-Mann-Okubo relation
+  summary: Using the aligned condensate, the diagonal quark-mass matrix gives the
+    leading pion, kaon, and eta squared masses and π0–η mixing. In the massless-quark
+    limit electromagnetism leaves neutral pseudo-Goldstones massless and gives a common
+    squared-mass correction to K+ and π+. The corrected formulas yield the displayed
+    Gell-Mann-Okubo relation and light-quark mass ratios, while individual renormalized
+    quark masses remain prescription dependent.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.su3-pseudoscalar-masses-electromagnetism-and-gmo
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    - 230
+    - 231
+    note: Equations (19.7.15)–(19.7.22) provide the mass terms, electromagnetic qualification,
+      relation, and ratios.
+  notation: []
+- id: qft.align044.su3-spurion-construction-and-q4-meson-eft
+  label: SU(3) spurion construction and fourth-order meson EFT
+  summary: Promoting the quark-mass matrix to an external field χ with a formal chiral
+    transformation law lets one enumerate invariant, parity-even mass operators before
+    setting χ=χ†=M_q. The fourth-order meson Lagrangian has low-energy constants L1
+    through L8; amplitudes through fourth order require tree graphs from the leading
+    terms and one insertion of the fourth-order terms, plus one-loop graphs from the
+    leading Lagrangian.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.su3-spurion-construction-and-q4-meson-eft
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 232
+    - 233
+    note: The external-field procedure constructs the mass operators, and the next
+      page states the fourth-order Lagrangian and graph content.
+  notation: []
+- id: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  label: Three-flavor chiral symmetry and constrained U field
+  summary: For light u, d, and s quarks, approximate SU(3)_L×SU(3)_R is broken to
+    diagonal SU(3). The eight Goldstone coordinates can be assembled into a unitary
+    unimodular matrix U=exp(2iξ^aλ_a), which transforms linearly as (3̄,3) even though
+    its constrained components realize the chiral group nonlinearly.
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.three-flavor-chiral-symmetry-and-u-field
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 226
+    - 227
+    - 228
+    note: The source specifies the three-flavor group, coset transformation, and constrained
+      U representation.
+  notation: []
+- id: qft.align044.u1a-problem-extra-pseudoscalar-prediction
+  label: U(1)A problem and the missing extra pseudoscalar
+  summary: Small quark masses make the QCD Lagrangian appear to have an axial U(1)
+    symmetry in addition to nonabelian chiral symmetry. If that symmetry were unbroken
+    it would predict parity doubling; if broken it would require an additional neutral
+    pseudoscalar Goldstone boson. The three-flavor mass analysis bounds that extra
+    state below √3mπ, but no such strongly interacting particle exists, presenting
+    the U(1)A problem later resolved by nonperturbative U(1)A violation.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.u1a-problem-extra-pseudoscalar-prediction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.10'
+    pages:
+    - 244
+    - 245
+    - 246
+    note: The source states the symmetry dilemma, constructs the neutral mass matrix,
+      and obtains the absent-state bound and resolution pointer.
+  notation: []
+- id: qft.align044.vafa-witten-unbroken-vector-flavor-symmetry
+  label: Vafa-Witten result for massive vector flavor symmetries
+  summary: For a QCD-like theory of vector-coupled Dirac flavors in identical gauge
+    representations, any unitary nonchiral flavor symmetry commuting with a Hermitian
+    mass matrix with no zero eigenvalue is unbroken when the Euclidean combined gauge-plus-fermion
+    measure is positive. The proof bounds smeared propagators uniformly and then uses
+    positivity to prevent a small symmetry-breaking mass perturbation from producing
+    a singular cancellation. The continuum argument has an infinite-gauge-volume caveat;
+    a finite lattice removes gauge fixing and ghosts. Exact vector U(1) charges remain
+    unbroken; isospin and SU(3) are useful only where small quark masses are insensitive,
+    with first-order pion degeneracy but potentially large SU(3) deviations in one-meson-pole
+    processes.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.vafa-witten-unbroken-vector-flavor-symmetry
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.9'
+    pages:
+    - 239
+    - 240
+    - 241
+    - 242
+    - 243
+    note: The source gives the identical-representation and massive-flavor setup,
+      its gauge-volume caveat, the Euclidean bounded positive-weight proof, and the
+      vector-U(1), isospin, and SU(3) applications.
+  notation: []
+- id: qft.align044.wess-zumino-witten-term-and-integer-coefficient
+  label: Wess-Zumino-Witten action term and integer coefficient
+  summary: For SU(3)_L×SU(3)_R/SU(3), trivial π4 permits extending U from compactified
+    spacetime into a five-ball. The integral of the invariant five-form is a chiral-invariant
+    action term even though it has no four-dimensional chiral-invariant density; it
+    removes the false parity selection rule excluding processes such as K+K−→3π. Independence
+    of the path-integral phase under inequivalent extensions quantizes its coefficient
+    to an integer.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.wess-zumino-witten-term-and-integer-coefficient
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '19.8'
+    pages:
+    - 234
+    - 235
+    - 236
+    - 237
+    note: The section introduces anomalous action terms, constructs the five-ball
+      functional, shows its phenomenological role, and derives coefficient quantization.
   notation: []
 - id: qft.align048.casimir-fermion-statistics-sign-problem
   label: Fermionic Casimir-sign problem
@@ -29027,13 +30057,26 @@ nodes:
       proof route, or task status. Its correspondence is limited to the stated source
       scope.
 - id: qft.align055.kallen-lehmann-spectral-representation
-  label: Kallen-Lehmann spectral representation
-  summary: Insert a complete set of exact energy-momentum eigenstates into a scalar
-    two-point function to express it as an integral of free propagators weighted by
-    a positive spectral density. An isolated one-particle state contributes a delta
-    term whose coefficient is the field-strength factor Z, while multiparticle states
-    begin at their threshold.
+  label: Complete-state spectral representation and positivity
+  summary: Inserting a complete set of exact states gives a spectral representation
+    with nonnegative spectral weights. In the Peskin–Schroeder scalar specialization,
+    an isolated one-particle state contributes a delta term with coefficient Z and
+    multiparticle states form a continuum beginning at threshold; these details remain
+    explicit in the scalar residual. Weinberg II instead decomposes Lorentz-vector
+    current correlators into positive Hermitian spectral matrices, which become symmetric
+    by translation invariance and spacelike causality; that vector-current structure
+    remains in its own residual.
   kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.kallen-lehmann-spectral-representation
+    note: Corresponds to the complete-state and positive-spectral-weight core; scalar
+      pole, Z, and threshold details remain in the scalar residual.
+  - project: weinberg-2
+    node: weinberg-2.current-spectral-functions-positivity-and-symmetry
+    note: Corresponds to the complete-state and positivity core; Lorentz-vector decomposition
+      and Hermitian/symmetric current spectral matrices remain in the Weinberg II
+      residual.
   evidence:
   - source: peskin-schroeder
     section: '7.1'
@@ -29041,12 +30084,19 @@ nodes:
     - 212
     - 213
     - 214
-  origins:
-  - project: peskin-schroeder
-    node: peskin-schroeder.kallen-lehmann-spectral-representation
-    note: Retains the assigned Peskin–Schroeder result, normalization, regulator,
-      proof route, or task status. Its correspondence is limited to the stated source
-      scope.
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 267
+    note: Equations (20.5.1)–(20.5.3) use completeness for current spectral functions
+      and state positivity, Hermiticity, and symmetry.
+  notation:
+  - source: peskin-schroeder
+    note: The scalar residual uses rho(M²), a one-particle delta term, Z, and the
+      multiparticle threshold.
+  - source: weinberg-2
+    note: The current residual uses rho^R_ab(μ²) and rho^S_ab(μ²), with Lorentz-vector
+      tensor structures.
 - id: qft.align055.lsz-field-strength-correction-to-form-factor
   label: LSZ field-strength correction justifies charge subtraction
   summary: Adding the two external-electron LSZ factors shifts the Dirac form factor
@@ -31649,12 +32699,14 @@ nodes:
     excitations rather than acting through a conserved charge within one vacuum sector;
     at a smooth second-order transition the unique massless linear G multiplet containing
     the Goldstones defines the order parameter. Weinberg supplies the compatible G/H
-    realization machinery: right-coset representatives transform by gy(xi)=y(xi-prime)h(xi,g),
+    realization machinery: right-coset representatives transform by gy(ξ)=y(ξ′)h(ξ,g),
     so H acts linearly on Goldstone coordinates and retained fields while general
-    G acts nonlinearly through the compensator. This adds no smooth-transition order-parameter
-    claim to Weinberg. The Cartan decomposition, exponential representative, Maurer-Cartan
-    D/E construction, and heavy-field EFT building blocks remain source-specific residual
-    material.'
+    G acts nonlinearly through the compensator. The assigned later Weinberg II passage
+    independently states the smooth-transition criterion: barring accidents or other
+    symmetries the nearly massless multiplet is irreducible, while the chiral-QCD
+    order parameter is not known to be a four-vector. The Cartan decomposition, exponential
+    representative, Maurer–Cartan D/E construction, and heavy-field EFT building blocks
+    remain source-specific residual material.'
   kind: concept
   group: qft.spontaneously-broken-symmetries
   origins:
@@ -31675,6 +32727,10 @@ nodes:
     node: weinberg-2.ccwz-compensator-and-h-covariants
     note: Retains the compatible compensator realization and H covariance; Maurer-Cartan,
       covariant heavy-field, and finite-neighborhood construction details remain source-specific.
+  - project: weinberg-2
+    node: weinberg-2.order-parameter-at-continuous-symmetry-restoration
+    note: Adds the packet-supported continuous-transition/order-parameter statement;
+      the chiral-QCD and four-vector caveat remains explicit.
   evidence:
   - source: schwartz
     section: 28.2.4
@@ -31700,6 +32756,13 @@ nodes:
     - 217
     note: Derives the compensator realization, H-linear transformation, and finite-neighborhood
       qualification.
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 224
+    - 225
+    note: The source identifies the nearly massless linear multiplet at a continuous
+      transition and states the chiral-QCD/four-vector qualification.
   notation:
   - source: schwartz
     note: G/H denotes the coset of broken transformations; it is explicitly not a
@@ -33634,23 +34697,44 @@ nodes:
     - 429
 - id: qft.peskin-local-operator-insertion-renormalization
   label: Renormalization of local-operator insertions
-  summary: A composite local operator requires its own normalization in insertion
-    Green functions, whose anomalous dimension enters the Callan–Symanzik equation.
-    Equal-quantum-number operators can mix; conserved currents and the energy-momentum
-    tensor are protected cases.
+  summary: 'A composite local operator needs a normalization convention that makes
+    its insertion matrix elements finite; its renormalization contributes an anomalous
+    dimension, and equal-quantum-number operators can mix. Peskin–Schroeder retains
+    insertion Green functions and the conserved-current and energy-momentum protected
+    cases. Weinberg II retains the point-normalized φ² construction: Zφ²φ² is fixed
+    by a finite two-particle matrix element set to unity at its chosen normalization
+    point.'
   kind: method
   group: qft.renormalization-group
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.renormalization-of-local-operator-insertions
-    note: This is the insertion-Green-function method with its source-specific mixing
-      and protection qualifications.
+    note: Retains the insertion-Green-function method, mixing conditions, and protected-current
+      cases.
+  - project: weinberg-2
+    node: weinberg-2.composite-operator-normalization-by-matrix-element
+    note: Corresponds to the finite-matrix-element normalization role; the φ² point-normalization
+      construction remains source-specific.
   evidence:
   - source: peskin-schroeder
     section: '12.4'
     pages:
     - 429
     - 430
+  - source: weinberg-2
+    section: '20.2'
+    pages:
+    - 260
+    - 261
+    note: Equations (20.2.10)–(20.2.16) define the finite Zφ²φ² matrix element and
+      compatible normalization point.
+  notation:
+  - source: peskin-schroeder
+    note: Oi=ZijOj and the anomalous dimension become matrices for equal-quantum-number
+      operators.
+  - source: weinberg-2
+    note: The renormalized operator is Zφ²φ², normalized through F²(k,p−k) at the
+      stated momentum point.
 - id: qft.peskin-massless-phi4-one-loop-beta
   label: Massless phi-four one-loop beta function
   summary: In Peskin and Schroeder’s lambda phi-four convention, one-loop vertex subtraction
@@ -61798,6 +62882,642 @@ edges:
     - 315
     note: Scalar-doublet Yukawa masses followed by the polar-decomposition mass-basis
       construction.
+- id: qft.align040.af-residual-to-common-rg-scaling
+  from: qft.align040.asymptotically-free-ope-logarithmic-coefficients
+  to: qft.align028.peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II’s asymptotically-free matrix logarithmic result is one route
+    to the common RG-scaling core.
+  failure_mode: Making it a prerequisite would require this matrix specialization
+    for the Peskin–Schroeder route.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    - 265
+    note: Equations (20.3.7)–(20.3.10) provide the asymptotically-free residual.
+- id: qft.align040.composite-normalization-residual-to-common-insertion
+  from: qft.align040.composite-operator-normalization-by-matrix-element
+  to: qft.peskin-local-operator-insertion-renormalization
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II’s finite φ² matrix-element normalization realizes the same
+    local-insertion normalization role by a source-specific route.
+  failure_mode: Making it compulsory would require the φ² construction for the insertion-Green-function
+    route.
+  evidence:
+  - source: weinberg-2
+    section: '20.2'
+    pages:
+    - 260
+    - 261
+    note: The text fixes Zφ² through the finite two-particle matrix element.
+- id: qft.align040.composite-normalization-to-scalar-one-loop-check
+  from: qft.align040.composite-operator-normalization-by-matrix-element
+  to: qft.align040.scalar-one-loop-ope-factorization-check
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The one-loop factorization check compares its amplitude with the finite,
+    point-normalized composite-operator matrix element.
+  failure_mode: Without the normalization condition for Zφ²φ², the comparison cannot
+    identify the coefficient and matrix-element factors.
+  evidence:
+  - source: weinberg-2
+    section: '20.2'
+    pages:
+    - 260
+    - 261
+    note: The text defines the normalization and then checks the one-loop amplitude
+      against the OPE form.
+- id: qft.align040.current-spectral-residual-to-common-kallen-lehmann
+  from: qft.align040.current-spectral-functions-positivity-and-symmetry
+  to: qft.align055.kallen-lehmann-spectral-representation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II’s vector-current spectral matrices realize the common complete-state
+    positivity role with additional Lorentz and symmetry structure.
+  failure_mode: Making it compulsory would force vector-current tensor structure into
+    the scalar route.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 267
+    note: Completeness gives the current spectral representation and the text states
+      positive Hermitian symmetric matrices.
+- id: qft.align040.dimension-d-power-corrections-to-renormalons
+  from: qft.align028.peskin-schroeder.eplus-eminus-ope-vacuum-power-corrections
+  to: qft.align040.infrared-renormalons-from-ope-power-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The dimension of an OPE power correction supplies the d used to locate
+    its Borel singularity.
+  failure_mode: Without a dimension-d power correction, the renormalon location cannot
+    be tied to an OPE contribution.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 287
+    - 288
+    note: The source turns dimension-d OPE terms into positive-axis Borel singularities.
+- id: qft.align040.fixed-point-residual-to-common-rg-scaling
+  from: qft.align040.finite-uv-fixed-point-ope-coefficients
+  to: qft.align028.peskin-schroeder.ope-rg-coefficients-and-fixed-point-scaling
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II’s finite-fixed-point ordered-matrix result is an independent
+    source route to the common scaling role.
+  failure_mode: Making it compulsory would erase the distinction between the finite-fixed-point
+    and Peskin–Schroeder treatments.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    note: Equation (20.3.6) supplies the fixed-point residual.
+- id: qft.align040.hard-flow-residual-to-common-ope
+  from: qft.align040.general-hard-flow-ope-power-counting
+  to: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II supplies an independent hard-flow construction of the common
+    state-independent coefficient role.
+  failure_mode: Treating the routes as cumulative prerequisites would incorrectly
+    require the N-cutoff induction for every OPE use.
+  evidence:
+  - source: weinberg-2
+    section: Appendix Momentum Flow
+    pages:
+    - 289
+    - 290
+    - 291
+    - 292
+    note: The appendix constructs coefficient functions through its own hard-flow
+      route.
+- id: qft.align040.hard-flow-to-rigor-qualification
+  from: qft.align040.general-hard-flow-ope-power-counting
+  to: qft.align040.general-hard-flow-ope-rigor-qualification
+  relation: pedagogical
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The caveat qualifies the same N-cutoff induction and hard-flow construction,
+    so it is best read immediately with that method.
+  failure_mode: Without the connection, a learner may overstate the appendix as a
+    general proof.
+  evidence:
+  - source: weinberg-2
+    section: Appendix Momentum Flow
+    pages:
+    - 290
+    - 291
+    note: The footnote limits the immediately preceding induction argument when subintegrations
+      can diverge.
+- id: qft.align040.imported-power-counting-to-general-hard-flow
+  from: qft.align024.qed-superficial-divergence-power-counting
+  to: qft.align040.general-hard-flow-ope-power-counting
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The general hard-flow construction applies superficial power counting
+    to hard subgraphs before its N-irreducible recursion.
+  failure_mode: Without a superficial degree count, the stated orders of hard subgraphs
+    and bridges cannot be selected.
+  evidence:
+  - source: weinberg-2
+    section: Appendix Momentum Flow
+    pages:
+    - 288
+    - 289
+    note: The appendix invokes the power-counting theorem and displays the general
+      dimension formula.
+- id: qft.align040.ope-to-coefficient-symmetry
+  from: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+  to: qft.align040.ope-coefficients-preserve-broken-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The symmetry argument inserts the short-distance OPE before equating
+    the current-generated transformations of its coefficients.
+  failure_mode: Without the OPE relation, the coefficient invariance conclusion has
+    no expansion to constrain.
+  evidence:
+  - source: weinberg-2
+    section: '20.4'
+    pages:
+    - 265
+    - 266
+    note: The proof applies the OPE to both sides of the broken-current relation.
+- id: qft.align040.ope-to-infrared-renormalons
+  from: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+  to: qft.align040.infrared-renormalons-from-ope-power-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The renormalon locations are inferred from the dimension-d terms in a
+    short-distance OPE.
+  failure_mode: Without the OPE power-correction structure, dimensions cannot identify
+    the nonanalytic Borel contributions.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 287
+    - 288
+    note: The text uses dimension-0, 4, 6, and higher OPE contributions to locate
+      renormalons.
+- id: qft.align040.ope-to-yukawa-problem
+  from: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+  to: qft.align040.problem-yukawa-ope-operators-and-one-loop-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks which local operators occur in an OPE and how to determine
+    their one-loop coefficients.
+  failure_mode: Without the OPE relation, the requested operator list and coefficient
+    calculation lack their object.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 292
+    note: Problem 1 explicitly asks for operators in an OPE and their one-loop coefficient
+      functions.
+- id: qft.align040.renormalons-to-scalar-renormalon-problem
+  from: qft.align040.infrared-renormalons-from-ope-power-corrections
+  to: qft.align040.problem-scalar-renormalon-singularity-loci
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Together with the Borel definition, the renormalon method supplies the
+    relation between power corrections and singularity loci requested by the exercise.
+  failure_mode: Without the renormalon mechanism, the Borel construction alone does
+    not determine the loci.
+  evidence:
+  - source: weinberg-2
+    section: 20.7; Problems 5
+    pages:
+    - 287
+    - 288
+    - 293
+    note: The method locates renormalons and Problem 5 asks for the scalar-theory
+      loci.
+- id: qft.align040.rg-matrix-residual-to-common-mixing
+  from: qft.align040.rg-matrix-equation-for-ope-coefficients
+  to: qft.align028.peskin-schroeder.ope-operator-mixing-matrix-equation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II’s field/composite matrix equation is an independent route
+    to the shared mixed-operator role.
+  failure_mode: Making it compulsory would conflate the general field/composite treatment
+    with the conserved-current specialization.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 263
+    - 264
+    note: The source derives the general coefficient equation and ordered solution.
+- id: qft.align040.scalar-spectral-residual-to-common-kallen-lehmann
+  from: qft.align040.peskin-schroeder.scalar-spectral-pole-threshold-residual
+  to: qft.align055.kallen-lehmann-spectral-representation
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar pole, field-strength Z, and threshold route specializes the
+    shared complete-state positivity core.
+  failure_mode: Treating it as compulsory would force scalar spectral details into
+    every current-spectral use.
+  evidence:
+  - source: peskin-schroeder
+    section: '7.1'
+    pages:
+    - 212
+    - 213
+    - 214
+    note: The scalar construction culminates in a positive density with a one-particle
+      delta term and multiparticle threshold.
+- id: qft.align040.spectral-short-distance-to-sum-rule
+  from: qft.align013.schwartz.operator-product-expansion-state-independent-coefficients
+  to: qft.align040.short-distance-spectral-sum-rule-criterion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The sum-rule criterion reads the small-distance singularity of the current
+    product, which is supplied by the OPE.
+  failure_mode: Without the OPE small-distance expansion, no operator content fixes
+    which spectral moments vanish.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 267
+    - 268
+    note: The source expands the current product at x→0 before deriving the moment
+      constraints.
+- id: qft.align040.weinberg-2-accepted-af-to-af-ope-coefficients
+  from: qft.align012.asymptotic-freedom-logarithmic-scaling
+  to: qft.align040.asymptotically-free-ope-logarithmic-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The specialization uses g*=0 asymptotic freedom and its logarithmic running.
+  failure_mode: Without the asymptotically-free scaling input, the logarithmic coefficient
+    behavior cannot be specialized from the fixed-point solution.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    - 265
+    note: The source identifies asymptotic freedom as the g*=0 fixed-point case and
+      rewrites the result using ln K.
+- id: qft.align040.weinberg-2-af-ope-to-qcd-corrected-scaling
+  from: qft.align040.asymptotically-free-ope-logarithmic-coefficients
+  to: qft.align013.weinberg-2.qcd-corrected-scaling-and-callan-gross
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The DIS moments use the asymptotically-free coefficient evolution of
+    Eq. (20.3.9).
+  failure_mode: Without coefficient evolution, the displayed logarithmic scaling corrections
+    and evolving moments cannot be obtained.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 278
+    - 280
+    note: The source invokes Eq. (20.3.9) and derives the evolved moment equations.
+- id: qft.align040.weinberg-2-borel-to-infrared-renormalons
+  from: qft.align040.borel-transform-asymptotic-series-method
+  to: qft.align040.infrared-renormalons-from-ope-power-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The renormalon conclusion is specifically that positive-real Borel singularities
+    make the Borel integral ambiguous.
+  failure_mode: Without the Borel prescription, the positive-axis locations do not
+    imply a resummation obstruction.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 284
+    - 288
+    note: The general positive-axis ambiguity is applied to the QCD singularities.
+- id: qft.align040.weinberg-2-borel-to-instanton-example
+  from: qft.align040.borel-transform-asymptotic-series-method
+  to: qft.align040.instanton-negative-borel-singularity-example
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The saddle analysis locates a singularity of the Borel transform defined
+    by the factorial-growth method.
+  failure_mode: Without the Borel transform and inverse integral, the sign and consequence
+    of the saddle singularity have no resummation interpretation.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 284
+    - 285
+    - 286
+    note: The source applies the Borel discussion to the large-order Euclidean saddle.
+- id: qft.align040.weinberg-2-borel-to-scalar-renormalon-problem
+  from: qft.align040.borel-transform-asymptotic-series-method
+  to: qft.align040.problem-scalar-renormalon-singularity-loci
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for singularities of the function used in the Borel inverse
+    integral.
+  failure_mode: Without the Borel construction, the requested complex-plane loci lack
+    their definition.
+  evidence:
+  - source: weinberg-2
+    section: Problems 5
+    pages:
+    - 293
+    note: Problem 5 explicitly refers to function (20.7.3).
+- id: qft.align040.weinberg-2-chiral-selection-to-vector-axial-rules
+  from: qft.align040.chiral-current-operator-selection-for-sum-rules
+  to: qft.align040.vector-axial-spectral-sum-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector–axial integrals are the unlike-chirality first and second
+    rules in the stated symmetry-breaking pattern.
+  failure_mode: Without the unlike-chirality selection, the displayed vector–axial
+    rules lack their OPE justification.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 270
+    - 271
+    note: The unlike-chirality conclusion is immediately written as the vector–axial
+      rules.
+- id: qft.align040.weinberg-2-dimensional-transmutation-to-ir-renormalons
+  from: qft.align014.qcd-dimensional-transmutation-and-threshold-matching
+  to: qft.align040.infrared-renormalons-from-ope-power-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Locating the Borel singularity converts a Λ^d OPE correction into its
+    exponential weak-coupling dependence.
+  failure_mode: Without dimensional transmutation, the operator dimension does not
+    fix the nonanalytic coupling dependence signaling the renormalon.
+  evidence:
+  - source: weinberg-2
+    section: '20.7'
+    pages:
+    - 287
+    - 288
+    note: The source substitutes the QCD dimensional scale into the positive-dimension
+      OPE terms to infer Borel singularities.
+- id: qft.align040.weinberg-2-fixed-point-input-to-finite-fixed-point-ope
+  from: qft.weinberg2-fixed-point-anomalous-power
+  to: qft.align040.finite-uv-fixed-point-ope-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The result assumes ultraviolet approach to a finite fixed point and interprets
+    anomalous powers there.
+  failure_mode: Without fixed-point scaling, the limiting anomalous-dimension matrix
+    powers have no RG premise.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    note: The source explicitly assumes gμ approaches a fixed point g* as μ tends
+      to infinity.
+- id: qft.align040.weinberg-2-goldstone-current-to-coefficient-symmetry
+  from: qft.goldstone-current-matrices-and-decay-constant
+  to: qft.align040.ope-coefficients-preserve-broken-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The soft Goldstone pole and its current matrix element turn the broken-current
+    Ward identity into the needed relation.
+  failure_mode: Without the Goldstone-pole normalization, the additional-soft-Goldstone
+    matrix element cannot be related to the current insertion.
+  evidence:
+  - source: weinberg-2
+    section: '20.4'
+    pages:
+    - 265
+    - 266
+    note: Equation (20.4.3) supplies the Goldstone current matrix element used in
+      the proof.
+- id: qft.align040.weinberg-2-parton-dis-polarization-sum-to-cross-section-problem
+  from: qft.align013.weinberg-2.parton-dis-compton-polarization-sum-input
+  to: qft.align040.problem-derive-parton-dis-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source explicitly supplies the polarization sum, with its gauge and
+    normalization hypotheses, as useful for deriving Eq. (20.6.8) from the Compton
+    formulas.
+  failure_mode: Without this sum, the polarization factor retained in the imported
+    Compton amplitude square cannot be converted to the unpolarized expression required
+    in the assigned derivation.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The footnote gives the polarization sum immediately after stating that it
+      is useful for the derivation from Eqs. (8.7.7) and (8.7.38).
+- id: qft.align040.weinberg-2-parton-model-pre-cross-section-to-dis-cross-section-problem
+  from: qft.align013.weinberg-2.parton-model-pre-cross-section-kinematic-inputs
+  to: qft.align040.problem-derive-parton-dis-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task is expressly a parton-model derivation, and the pre-result xp
+    kinematics, distribution, charge, and Dirac-parton qualification determine how
+    the cited Compton inputs are applied before the target cross-section expression
+    is obtained.
+  failure_mode: Without the pre-result parton momentum fraction, elastic relation,
+    charge, and Dirac-parton qualification, the Compton formulas do not specify the
+    momentum-fraction dependence or charged parton contribution of the requested model
+    calculation.
+  evidence:
+  - source: weinberg-2
+    section: '20.6'
+    pages:
+    - 274
+    note: The page states the parton-model ingredients immediately before presenting
+      the cross-section to be derived, while this prerequisite record excludes that
+      result.
+- id: qft.align040.weinberg-2-rg-coefficients-to-af-ope
+  from: qft.align040.rg-matrix-equation-for-ope-coefficients
+  to: qft.align040.asymptotically-free-ope-logarithmic-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The logarithmic ultraviolet formula is the asymptotically-free limit
+    of the matrix solution.
+  failure_mode: Without the matrix RG solution, the coupling and anomalous-dimension
+    powers have no derivation.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    - 265
+    note: The source substitutes the asymptotically-free beta behavior into the general
+      solution.
+- id: qft.align040.weinberg-2-rg-matrix-to-finite-fixed-point-ope
+  from: qft.align040.rg-matrix-equation-for-ope-coefficients
+  to: qft.align040.finite-uv-fixed-point-ope-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finite-fixed-point behavior is evaluated from the μ-ordered matrix
+    solution.
+  failure_mode: Without that matrix solution, left/right anomalous-dimension powers
+    cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 264
+    note: Equation (20.3.6) is the fixed-point limit of the preceding solution.
+- id: qft.align040.weinberg-2-rg-operator-flow-to-ope-coefficients
+  from: qft.weinberg2-sliding-operator-anomalous-dimension
+  to: qft.align040.rg-matrix-equation-for-ope-coefficients
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The coefficient equation follows from the scale-dependent renormalizations
+    of fields and composite operators.
+  failure_mode: Without operator renormalization flow, the scale-dependent matrices
+    in the coefficient equation cannot be interpreted or evolved.
+  evidence:
+  - source: weinberg-2
+    section: '20.3'
+    pages:
+    - 263
+    note: The source derives coefficient scale dependence from renormalization matrix
+      factors.
+- id: qft.align040.weinberg-2-spectral-criterion-to-chiral-selection
+  from: qft.align040.short-distance-spectral-sum-rule-criterion
+  to: qft.align040.chiral-current-operator-selection-for-sum-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chiral classification determines the lowest-dimensional allowed operators,
+    which the criterion translates into sum rules.
+  failure_mode: Without the singularity-to-moment criterion, the representation selection
+    does not establish which integrals vanish.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 269
+    - 270
+    - 271
+    note: The source classifies operator representations and concludes the first two
+      rules for unlike chirality.
+- id: qft.align040.weinberg-2-spectral-criterion-to-scalar-pseudoscalar-problem
+  from: qft.align040.short-distance-spectral-sum-rule-criterion
+  to: qft.align040.problem-scalar-pseudoscalar-spectral-sum-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks which spectral integrals follow from the short-distance
+    operator content of scalar and pseudoscalar correlators.
+  failure_mode: Without the singularity criterion, the requested sum rules cannot
+    be selected from the correlators.
+  evidence:
+  - source: weinberg-2
+    section: Problems 2
+    pages:
+    - 292
+    - 293
+    note: Problem 2 asks for spectral sum rules for the defined bilinear spectral
+      functions.
+- id: qft.align040.weinberg-2-spectral-representation-to-sum-rule
+  from: qft.align040.current-spectral-functions-positivity-and-symmetry
+  to: qft.align040.short-distance-spectral-sum-rule-criterion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The sum rules are moments of the spectral representation, jointly with
+    the OPE short-distance test.
+  failure_mode: Without the spectral densities and their representation, the asserted
+    moments have no defined integrands.
+  evidence:
+  - source: weinberg-2
+    section: '20.5'
+    pages:
+    - 267
+    - 268
+    note: The source defines the spectral functions before deriving their moment constraints.
+- id: qft.align040.weinberg-2-twist-to-twist-four-problem
+  from: qft.align013.shared.dis-leading-twist-operator-basis-and-power-counting
+  to: qft.align040.problem-list-twist-four-qcd-tensors
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requires the same twist, gauge invariance, symmetry, and trace-subtraction
+    classification introduced for DIS operators.
+  failure_mode: Without the twist definition and tensor conventions, the requested
+    twist-four list has no specified classification rule.
+  evidence:
+  - source: weinberg-2
+    section: Problems 4
+    pages:
+    - 293
+    note: Problem 4 asks for gauge-invariant symmetric traceless tensors of a specified
+      twist.
 - id: qft.align041.edge.ray-symmetry-to-continuous-unitary
   from: qft.align041.symmetry-as-transition-probability-invariance
   to: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables
@@ -63224,6 +64944,583 @@ edges:
     - 249
     note: Poses vector/axial couplings, their chiral form, and the parity-violation
       inference.
+- id: qft.align044.adler-weisberger-to-adler-problem
+  from: qft.align034.adler-weisberger-sum-rule-exact-chiral-limit
+  to: qft.align044.problem-adler-sum-rule-pion-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The assigned task explicitly asks for the pion-scattering analogue of
+    the Adler-Weisberger relation.
+  failure_mode: Without the reference relation, the requested analogy has no stated
+    sum-rule target.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 4 names the Adler-Weisberger sum rule as the analogue.
+- id: qft.align044.aligned-su3-mass-route-to-result
+  from: qft.align044.su3-aligned-chiral-lagrangian-mass-route
+  to: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The aligned chiral-Lagrangian expansion is one complete derivation of
+    the leading mass matrix.
+  failure_mode: Treating this route as universal would erase the independent operator
+    derivation.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+- id: qft.align044.alignment-to-aligned-su3-mass-route
+  from: qft.align011.vacuum-alignment-for-approximate-symmetry
+  to: qft.align044.su3-aligned-chiral-lagrangian-mass-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Vacuum alignment licenses the condensate symmetry and sign used in the
+    quadratic mass expansion.
+  failure_mode: Without alignment, the condensate/mass-matrix compatibility is not
+    established.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+- id: qft.align044.alignment-to-su3-operator-route
+  from: qft.align011.vacuum-alignment-for-approximate-symmetry
+  to: qft.align044.su3-double-commutator-pseudoscalar-mass-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The operator route evaluates the double commutator in the aligned SU(3)-
+    and parity-preserving condensate.
+  failure_mode: Without alignment, the condensate orientation and positivity of the
+    resulting pseudo-Goldstone mass matrix are not fixed.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    - 230
+    note: The source states the aligned vacuum conditions and then evaluates the double
+      commutator with the unbroken-SU(3) condensate.
+- id: qft.align044.ccwz-covariants-to-kinetic-metric
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align044.general-goldstone-kinetic-metric-and-canonical-fields
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The kinetic metric is built from the Goldstone covariants in the shared
+    nonlinear-realization construction.
+  failure_mode: Without the nonlinear H/G transformation structure, the covariant
+    kinetic construction has no source role.
+  evidence:
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 224
+    note: The leading term is built from D_aμ after the preceding coset construction.
+- id: qft.align044.ccwz-covariants-to-so3-problem
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align044.problem-so3-to-so2-goldstone-eft
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SO(3)/SO(2) task requests Goldstone covariant derivatives and invariant
+    Lagrangians from the nonlinear coset construction.
+  failure_mode: Without the coset transformation framework, the requested covariant
+    objects are unspecified.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 246
+    - 247
+    note: Problem 1 specifies the coset, covariant derivative, and invariant Lagrangians.
+- id: qft.align044.coset-representatives-to-explicit-breaking-operators
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align044.general-explicit-breaking-operator-construction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The explicit-breaking construction rotates an H component by a coset
+    representative.
+  failure_mode: Without the representative/compensator realization, the construction
+    cannot lift the H operator to G.
+  evidence:
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 221
+    note: Equation (19.6.43) constructs the full operator from y(ξ) and its value
+      at ξ=0.
+- id: qft.align044.coset-representatives-to-exponential-su2-problem
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align044.problem-exponential-su2-coset-pion-transformations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task asks for transformations of exponential coset coordinates.
+  failure_mode: Without the coset-representative transformation rule, the requested
+    pion law cannot be calculated.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 5 specifies the exponential SU(2)×SU(2)/SU(2) parametrization.
+- id: qft.align044.coset-representatives-to-three-flavor-u
+  from: qft.goldstone-coset-transformations-and-order-parameter
+  to: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The constrained three-flavor U field is the SU(3) chiral coset realization.
+  failure_mode: Without the coset construction, U’s nonlinear/linear transformation
+    role is not derived.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 226
+    - 227
+    note: The source applies the general coset construction to SU(3)×SU(3)/SU(3).
+- id: qft.align044.double-commutator-to-su3-operator-route
+  from: qft.align018.pseudo-goldstone-mass-double-commutator
+  to: qft.align044.su3-double-commutator-pseudoscalar-mass-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The operator route specializes the accepted aligned-vacuum double-commutator
+    mass formula to three flavors.
+  failure_mode: Without the double-commutator formula, the route has no first-order
+    operator expression for the pseudo-Goldstone mass matrix.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    - 230
+    note: The source explicitly applies Eq. (19.3.20) to the three-flavor charges.
+- id: qft.align044.su3-operator-route-to-pseudoscalar-mass-result
+  from: qft.align044.su3-double-commutator-pseudoscalar-mass-route
+  to: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(3) operator calculation independently reproduces the leading pseudoscalar
+    mass matrix before the electromagnetic and GMO consequences.
+  failure_mode: Omitting this route would make the constrained-U expansion appear
+    to be the only derivation explicitly supplied by the source.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    - 230
+    note: The source says the same results follow by operator methods and evaluates
+      Eq. (19.7.19).
+- id: qft.align044.three-flavor-u-to-su3-operator-route
+  from: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  to: qft.align044.su3-double-commutator-pseudoscalar-mass-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The three-flavor symmetry supplies the SU(3) generators, Goldstone basis,
+    and diagonal quark-mass setting used by the operator route.
+  failure_mode: Without the three-flavor SU(3) setup, the general double commutator
+    cannot yield the displayed pion, kaon, eta, and mixing entries.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    - 230
+    note: The source writes the real octet basis, SU(3) generators, and diagonal quark-mass
+      operator before evaluating the mass matrix.
+- id: qft.align044.u-to-aligned-su3-mass-route
+  from: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  to: qft.align044.su3-aligned-chiral-lagrangian-mass-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The aligned route expands the constrained three-flavor U field.
+  failure_mode: Without U, the chiral-Lagrangian mass term has no field representation.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 228
+    - 229
+- id: qft.align044.weinberg-2-explicit-breaking-to-so3-problem
+  from: qft.align044.general-explicit-breaking-operator-construction
+  to: qft.align044.problem-so3-to-so2-goldstone-eft
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The final part of the problem asks for a derivative-free Goldstone function
+    transforming as an SO(3) vector component and uses it as an explicit mass perturbation.
+  failure_mode: Without the explicit-breaking operator construction, the required
+    vector-transforming mass term cannot be derived from the EFT symmetry rules.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 1 requests the vector-transforming Goldstone function and its mass-generating
+      addition.
+- id: qft.align044.weinberg-2-fpi-convention-to-su3-leading-lagrangian
+  from: qft.align018.pion-decay-constant-from-axial-current
+  to: qft.align044.su3-leading-meson-lagrangian-and-fpi-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The SU(3) expansion fixes F by comparison to the previously defined pion
+    decay constant in the source's normalization.
+  failure_mode: Without the established Fπ convention, the SU(3) kinetic coefficient
+    could be confused with a differently normalized fπ.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 228
+    note: The source compares the infinitesimal SU(3) coordinates with the pion variables
+      and identifies F as Fπ=184 MeV.
+- id: qft.align044.weinberg-2-goldstone-theorem-to-u1a-problem
+  from: qft.global-goldstone-theorem
+  to: qft.align044.u1a-problem-extra-pseudoscalar-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The missing-particle dilemma follows from applying the Goldstone conclusion
+    to a hypothesized broken axial U(1).
+  failure_mode: Without the Goldstone implication of spontaneous breaking, the extra-pseudoscalar
+    prediction is unsupported.
+  evidence:
+  - source: weinberg-2
+    section: '19.10'
+    pages:
+    - 244
+    note: The source states that broken U(1)A would imply an isoscalar pseudoscalar
+      Goldstone boson.
+- id: qft.align044.weinberg-2-leading-lagrangian-to-pseudoscalar-masses
+  from: qft.align044.su3-leading-meson-lagrangian-and-fpi-normalization
+  to: qft.align044.su3-aligned-chiral-lagrangian-mass-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The leading SU(3) Lagrangian supplies one complete aligned-condensate
+    derivation route.
+  failure_mode: Without U and F-normalized leading Lagrangian, this particular expansion
+    route cannot form its quadratic mass term.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 228
+    - 229
+    note: The source defines the leading Lagrangian and expands its aligned-condensate
+      mass term.
+- id: qft.align044.weinberg-2-pion-mass-to-one-loop-pion-problem
+  from: qft.align018.pion-pseudo-goldstone-mass-from-explicit-chiral-breaking
+  to: qft.align044.problem-one-loop-massive-pion-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested amplitude retains a finite pion mass supplied by the explicit
+    two-flavor chiral-breaking term.
+  failure_mode: Without the finite-mass input, the calculation reduces to the massless
+    pion limit instead of the stated problem.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 3 explicitly requires taking account of a finite pion mass.
+- id: qft.align044.weinberg-2-q4-pion-eft-to-one-loop-pion-problem
+  from: qft.align018.q4-pion-eft-renormalization-and-fpi-matching
+  to: qft.align044.problem-one-loop-massive-pion-scattering
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task requires a finite-mass one-loop amplitude, for which the established
+    fourth-order pion EFT organizes loop and counterterm contributions.
+  failure_mode: Without the one-loop EFT organization, the calculation lacks the source's
+    renormalized finite-mass framework.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 3 asks specifically for a one-loop pion-pion amplitude with finite
+      mass.
+- id: qft.align044.weinberg-2-su3-first-order-shift-to-nucleon-relation
+  from: qft.align044.su3-first-order-nonpseudoscalar-multiplet-mass-shift
+  to: qft.align044.su3-nucleon-quark-mass-splitting-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Equation (19.7.32) is obtained by applying the generic first-order shift
+    to the relevant baryon multiplet.
+  failure_mode: Without the first-order shift formula, the nucleon relation has no
+    perturbative mass-operator input.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 233
+    note: The source gives Eq. (19.7.31) immediately before deriving Eq. (19.7.32).
+- id: qft.align044.weinberg-2-su3-first-order-shift-to-problem
+  from: qft.align044.su3-first-order-nonpseudoscalar-multiplet-mass-shift
+  to: qft.align044.problem-derive-su3-nucleon-mass-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 6 names the generic first-order shift formula as an input to
+    its derivation.
+  failure_mode: Without Eq. (19.7.31), the problem lacks its prescribed mass-perturbation
+    starting point.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 6 explicitly directs the reader to use Eq. (19.7.31).
+- id: qft.align044.weinberg-2-su3-matrix-reduction-to-nucleon-relation
+  from: qft.align044.su3-matrix-element-reduction-for-multiplet-mass-shifts
+  to: qft.align044.su3-nucleon-quark-mass-splitting-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The relation follows by using SU(3) to reduce the mass-operator matrix
+    elements.
+  failure_mode: Without the SU(3) matrix-element reasoning, the generic perturbative
+    shift does not yield the stated relation among hadron splittings.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 233
+    note: The text explicitly uses SU(3) to relate matrix elements before stating
+      Eq. (19.7.32).
+- id: qft.align044.weinberg-2-su3-matrix-reduction-to-problem
+  from: qft.align044.su3-matrix-element-reduction-for-multiplet-mass-shifts
+  to: qft.align044.problem-derive-su3-nucleon-mass-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 6 also requires the SU(3) matrix-element argument that converts
+    the generic shift into the nucleon relation.
+  failure_mode: Without the SU(3) reduction, the named shift formula cannot determine
+    the requested relation.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 6 explicitly requires SU(3) symmetry in addition to Eq. (19.7.31).
+- id: qft.align044.weinberg-2-su3-pseudoscalar-mass-ratios-to-nucleon-estimate
+  from: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  to: qft.align044.su3-nucleon-quark-mass-splitting-relation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The approximate numerical nucleon estimate combines the symbolic SU(3)
+    relation with the previously obtained light-quark mass ratios.
+  failure_mode: Without the light-quark mass ratios, Eq. (19.7.32) remains symbolic
+    and does not yield the approximate -2.5 MeV estimate.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 233
+    note: After stating the symbolic relation, the source combines it with the earlier
+      quark-mass ratios to obtain the numerical estimate.
+- id: qft.align044.weinberg-2-su3-pseudoscalar-masses-to-u1a-problem
+  from: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  to: qft.align044.u1a-problem-extra-pseudoscalar-prediction
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The U(1)A analysis compares its neutral mass eigenstate to the established
+    three-flavor pion mass formula.
+  failure_mode: Without the SU(3) pseudoscalar mass analysis, the identification of
+    one eigenvector as π0 and the extra-state bound cannot be derived.
+  evidence:
+  - source: weinberg-2
+    section: '19.10'
+    pages:
+    - 246
+    note: The source compares Eq. (19.10.9) with Eq. (19.7.16) before deriving the
+      bound.
+- id: qft.align044.weinberg-2-three-flavor-u-to-leading-lagrangian
+  from: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  to: qft.align044.su3-leading-meson-lagrangian-and-fpi-normalization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The leading Lagrangian is the invariant derivative expression of the
+    constrained U field.
+  failure_mode: Without U and its constraints, the SU(3)-invariant term and meson
+    normalization cannot be established.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 228
+    note: The page defines U before presenting the unique invariant two-derivative
+      term.
+- id: qft.align044.weinberg-2-three-flavor-u-to-spurion-q4-eft
+  from: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  to: qft.align044.su3-spurion-construction-and-q4-meson-eft
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spurion method enumerates chiral invariants made from U and the formally
+    transforming mass field.
+  failure_mode: Without the U transformation law, formal invariance cannot constrain
+    the allowed operators.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 232
+    note: The external field is introduced precisely to form SU(3)×SU(3) invariants
+      with U.
+- id: qft.align044.weinberg-2-three-flavor-u-to-wzw
+  from: qft.align044.three-flavor-chiral-symmetry-and-u-field
+  to: qft.align044.wess-zumino-witten-term-and-integer-coefficient
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The WZW functional is constructed from the SU(3) constrained U field
+    and its chiral transformation.
+  failure_mode: Without U, neither the five-form functional nor its chiral invariance
+    can be stated.
+  evidence:
+  - source: weinberg-2
+    section: '19.8'
+    pages:
+    - 235
+    note: The five-dimensional construction explicitly extends the U of Eq. (19.7.9).
+- id: qft.align044.weinberg-2-vacuum-alignment-to-su3-pseudoscalar-masses
+  from: qft.align011.vacuum-alignment-for-approximate-symmetry
+  to: qft.align044.su3-pseudoscalar-masses-electromagnetism-and-gmo
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The meson mass expansion uses an aligned, unbroken-SU(3)- and parity-preserving
+    quark condensate.
+  failure_mode: Without vacuum alignment, the condensate form and the sign of the
+    pseudo-Goldstone mass terms are not justified.
+  evidence:
+  - source: weinberg-2
+    section: '19.7'
+    pages:
+    - 229
+    note: The source specifies the vacuum symmetries and notes that their agreement
+      with the mass matrix follows from vacuum alignment.
+- id: qft.align044.weinberg-2-vacuum-alignment-to-sun-problem
+  from: qft.align011.vacuum-alignment-for-approximate-symmetry
+  to: qft.align044.problem-sun-vacuum-alignment-residual-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested residual group must be found after applying vacuum alignment
+    to the explicit perturbation.
+  failure_mode: Without vacuum alignment, the perturbation representation alone does
+    not select the source's intended unbroken symmetry.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 247
+    note: Problem 2 makes vacuum alignment an explicit condition of the task.
+- id: qft.align044.wii-order-parameter-residual-to-core
+  from: qft.align044.order-parameter-at-continuous-symmetry-restoration
+  to: qft.goldstone-coset-transformations-and-order-parameter
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Weinberg II supplies an independently stated continuous-transition order-parameter
+    route.
+  failure_mode: Making it a prerequisite would require its chiral-QCD specialization
+    for all coset uses.
+  evidence:
+  - source: weinberg-2
+    section: '19.6'
+    pages:
+    - 224
+    - 225
+- id: qft.align044.wii-persistent-residual-to-core
+  from: qft.align044.persistent-mass-condition-conjecture
+  to: qft.align017.t-hooft-decoupling-and-persistent-mass-qualifications
+  relation: alternative
+  source_level: recognize
+  target_level: recognize
+  necessity: necessary
+  rationale: The assigned persistent-mass conjecture supplies the common heuristic
+    while old decoupling equations remain residual.
+  failure_mode: Making it a derivational prerequisite would turn a conjectural motivation
+    into a proof requirement.
+  evidence:
+  - source: weinberg-2
+    section: '19.9'
+    pages:
+    - 238
+    - 239
+- id: qft.align044.wii-u1a-residual-to-core
+  from: qft.align044.u1a-problem-extra-pseudoscalar-prediction
+  to: qft.align006.u1-problem-axial-u1-not-a-symmetry
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The parity-doubling and neutral-mass-matrix analysis is an independent
+    phenomenological route to the U(1) problem.
+  failure_mode: Making it compulsory would conflate it with Schwartz’s anomaly explanation.
+  evidence:
+  - source: weinberg-2
+    section: '19.10'
+    pages:
+    - 244
+    - 245
+    - 246
 - id: qft.align048.peskin-schroeder-edge-crossing-to-pole-log-cancellation
   from: qft.align024.phi4-two-loop-crossing-groups-and-factorized-subtraction
   to: qft.align048.two-loop-counterterm-pole-log-cancellation
