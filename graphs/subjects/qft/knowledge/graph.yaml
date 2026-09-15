@@ -3414,13 +3414,20 @@ nodes:
   summary: Coupling classical currents to fields defines the vacuum functional Z[J].
     Its logarithm W[J] generates connected vacuum diagrams, while functional derivatives
     with respect to a source give expectation values of the coupled operator in the
-    presence of that source.
+    presence of that source. Peskin–Schroeder supplies the fermionic external-source
+    route with independent Grassmann sources and ordered derivatives; it extends the
+    common source-functional representation without importing its signs into bosonic
+    sources.
   kind: representation
   origins:
   - project: weinberg-2
     node: weinberg-2.external-source-generating-functional
     note: Preserves this book-specific treatment, including its stated conditions,
       notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-generating-functional-grassmann-sources
+    note: Retains PS’s independent Grassmann eta and eta-bar source construction,
+      left/right derivative convention, and spinor-correlation signs.
   evidence:
   - source: weinberg-2
     section: '16.1'
@@ -3430,6 +3437,13 @@ nodes:
     - 65
     note: Equations (16.1.1)–(16.1.5) introduce sources, connected diagrams, and the
       source derivative.
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+    - 303
+    note: Introduces the independent Grassmann sources and derives correlations by
+      their ordered derivatives.
   notation:
   - source: weinberg-2
     note: The fields and currents may be fermionic; the initial discussion suppresses
@@ -4318,7 +4332,9 @@ nodes:
   summary: After amputating the off-shell current-insertion Green function with full
     inverse fermion propagators, the Ward–Takahashi relation becomes G⁻¹(q+p)−G⁻¹(q)=pμΓμ(p,q,q+p).
     This shared identity feeds the formal soft-limit proof and the effective matching
-    route.
+    route. Peskin–Schroeder supplies a functional QED Ward route. It meets the common
+    Ward identity at its stated correlator scope and remains an alternative to the
+    retained off-shell-amputation derivation.
   kind: result
   group: qft.renormalization-group
   evidence:
@@ -4327,11 +4343,22 @@ nodes:
     pages:
     - 352
     note: Derives the full inverse-propagator identity by off-shell amputation.
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 311
+    note: Derives the QED current contact identity and identifies its Fourier transform
+      with the two-external-fermion Ward–Takahashi relation.
   origins:
   - project: schwartz
     node: schwartz.qed-full-vertex-inverse-propagator-ward-identity
     note: This shared record retains the assigned schwartz treatment, including its
       source-specific scope, notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.functional-qed-ward-takahashi-identity
+    note: Retains PS’s local fermion-variable functional derivation and its n-fermion
+      extension; it is an alternative derivation, not a prerequisite to the earlier
+      diagrammatic Ward proof.
 - id: qft.align012.qed-gauge-preserving-renormalization-assumption
   label: Gauge-preserving QED renormalization assumption
   summary: The direct gauge-invariance argument assumes the regulator preserves the
@@ -13666,19 +13693,33 @@ nodes:
   label: Free scalar generating functional
   summary: For a real free scalar, the source-dependent quadratic functional integral
     is solved by the Gaussian formula. The inverse Klein–Gordon kernel is the propagator
-    subject to boundary conditions.
+    subject to boundary conditions. Peskin–Schroeder supplies the same free real-scalar
+    Gaussian result by completing the square; its explicit source-functional and pairing
+    route remains independently available below.
   kind: result
   group: qft.free-scalar-quantization
   origins:
   - project: schwartz
     node: schwartz.free-scalar-generating-functional
     note: Retains the source kernel, propagator, and boundary-condition qualification.
+  - project: peskin-schroeder
+    node: peskin-schroeder.free-scalar-generating-functional
+    note: Retains the completed-square PS functional route, its Feynman kernel convention,
+      and its all-pairings conclusion as a source-specific derivation of the compatible
+      free-scalar core.
   evidence:
   - source: schwartz
     section: 14.3.1
     pages:
     - 262
     - 263
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 291
+    - 292
+    note: Completes the square and obtains the source functional whose derivatives
+      give all pairings.
 - id: qft.align021.gauge-invariant-correlator-xi-independence
   label: Xi independence of gauge-invariant correlators
   summary: Under the stated Abelian assumptions, gauge-invariant operator correlators
@@ -13717,19 +13758,32 @@ nodes:
   label: Grassmann algebra and grading
   summary: Grassmann generators anticommute and square to zero. Their even products
     form a commuting sector and their odd products the fermionic sector; classical
-    fermion fields are modeled by infinitely many generators.
+    fermion fields are modeled by infinitely many generators. Peskin–Schroeder adds
+    the functional-integration conventions needed for its spinor route; those conventions
+    refine rather than replace the common anticommutation and grading core.
   kind: representation
   group: qft.free-scalar-quantization
   origins:
   - project: schwartz
     node: schwartz.grassmann-algebra-and-grading
     note: Retains anticommutation, nilpotence, and even/odd grading.
+  - project: peskin-schroeder
+    node: peskin-schroeder.grassmann-algebra-and-shift-invariant-integration
+    note: Retains PS’s shift-invariant integral, ordered multiple integration, and
+      order-reversing conjugation conventions in addition to the compatible algebraic
+      grading.
   evidence:
   - source: schwartz
     section: '14.6'
     pages:
     - 269
     - 270
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 299
+    - 300
+    note: Defines the anticommuting algebra and fixes the integral and ordering conventions.
 - id: qft.align021.interacting-path-integral-existence-qualification
   label: Interacting path-integral existence qualification
   summary: Formal path-integral manipulations do not establish a mathematically precise
@@ -15741,7 +15795,9 @@ nodes:
     resolution and derivation. Schwartz gives the covariant-ξ photon propagator, specializes
     to Feynman gauge ξ=1, and states the external-polarization, spinor-arrow, and
     vertex conventions; the accepted Peskin–Schroeder negative-norm and proof deferrals
-    remain intact.
+    remain intact. Peskin–Schroeder supplies a functional-rule derivation and a separately
+    qualified physical-S-matrix projection. Both complement the retained diagrammatic/polarization
+    record without turning the projection into a supplied tree-rule result.
   kind: result
   group: qft.particle-representations-and-gauge-polarizations
   origins:
@@ -15754,6 +15810,14 @@ nodes:
     node: schwartz.qed-momentum-space-feynman-rules
     note: Adds Schwartz’s covariant-ξ/Feynman-gauge rules and external-line conventions;
       it does not erase Peskin–Schroeder’s gauge-quantization qualifications.
+  - project: peskin-schroeder
+    node: peskin-schroeder.physical-qed-s-matrix-projection
+    note: Retains PS’s adiabatic asymptotic-state projection, transverse-photon physical
+      subspace, and Ward-based unitarity/gauge-parameter qualification.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-functional-feynman-rules
+    note: Retains PS’s functional-integral derivation of QED propagators and vertex,
+      including Grassmann reordering signs.
   evidence:
   - source: peskin-schroeder
     section: '4.8'
@@ -15767,6 +15831,16 @@ nodes:
     - 226
     note: Displays the covariant-ξ and ξ=1 propagators, external factors, arrows,
       and QED vertex.
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 298
+    note: Projects the gauge-fixed S-prime matrix to the physical asymptotic subspace.
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 303
+    note: Derives the QED functional rules from the split free and interaction action.
 - id: qft.align023.peskin.qed-from-yukawa-analogy
   label: Yukawa-to-QED Feynman-rule analogy
   summary: The chapter develops QED by retaining the fermion-line rules of Yukawa
@@ -18956,13 +19030,19 @@ nodes:
   summary: Fourier inversion of the Dirac operator gives the momentum-space numerator
     (p̸+m)/(p²−m²) with a boundary-condition pole prescription. The Feynman prescription
     yields the time-ordered fermion propagator, whose definition carries a minus sign
-    when ψ fields are interchanged.
+    when ψ fields are interchanged. Peskin–Schroeder reaches the same Feynman Dirac
+    propagator by a Grassmann functional integral rather than by the retained momentum-space
+    Fourier inversion; the two derivations stay independent.
   kind: method
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.dirac-momentum-space-and-feynman-propagator
     note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
       or task boundary for Momentum-space and Feynman Dirac propagator.
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-grassmann-functional-propagator
+    note: Retains PS’s independent Grassmann-functional derivation, independent psi
+      and psi-bar integration variables, and inherited +i epsilon prescription.
   evidence:
   - source: peskin-schroeder
     section: 3.5, The Dirac Propagator
@@ -18970,6 +19050,13 @@ nodes:
     - 63
     note: Equations (3.119)–(3.121) obtain the Fourier inverse and define the Feynman
       time-ordered result.
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+    - 303
+    note: Obtains the free Dirac propagator from the Grassmann functional and gives
+      the source-based correlations.
   notation: []
 - id: qft.align029.dirac-noether-angular-momentum-spin
   label: Noether angular momentum and spin one-half
@@ -20094,13 +20181,23 @@ nodes:
     terms through equal-time commutators. Combining these terms with the interacting
     Euler–Lagrange equation gives the Schwinger–Dyson equations; their contact terms
     distinguish quantum correlation functions from their classical counterparts and
-    enable loop contractions.
+    enable loop contractions. Peskin–Schroeder supplies field-shift and localized-symmetry
+    functional derivations of contact identities. The symmetry identity assumes invariance
+    of both action and measure; possible anomalous Jacobians are deliberately excluded.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.schwinger-dyson-contact-equations
     note: Retains the reviewed source-specific statement, hypotheses, notation, derivation
       or task boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.general-noether-schwinger-dyson-identity
+    note: Retains the PS localized global-symmetry derivation only when both the action
+      and functional measure are invariant; anomalous Jacobians are outside this claim.
+  - project: peskin-schroeder
+    node: peskin-schroeder.schwinger-dyson-equations-from-field-shifts
+    note: Retains PS’s shift-invariant functional-measure change-of-variables derivation
+      and its general contact equation.
   evidence:
   - source: schwartz
     section: 7.1 Lagrangian derivation
@@ -20110,6 +20207,16 @@ nodes:
     - 81
     note: Derives contact terms and identifies the Schwinger–Dyson equations and their
       quantum role.
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 306
+    - 307
+    - 308
+    - 309
+    - 310
+    note: Derives field-shift contact equations and the localized symmetry identity,
+      including the measure-preserving change of variables.
   notation: []
 - id: qft.align030.spin-projection-annihilation-angular-distribution
   label: Spin projections in e⁺e⁻→μ⁺μ⁻
@@ -20236,6 +20343,461 @@ nodes:
     note: α abbreviates the full collection of individual momenta, spin components
       or helicities, and particle-type labels; δ(β−α) includes momentum delta functions
       and Kronecker deltas with allowed identical-particle permutations.
+- id: qft.align032.background-determinant-nonabelian-beta-coefficients
+  label: Background determinants and non-Abelian one-loop beta coefficients
+  summary: 'Background-field one-loop calculations determine the F² divergence and
+    the non-Abelian beta coefficient. In the massless-fermion Peskin--Schroeder route,
+    background splitting and gauge, ghost, and matter determinants expose the g-factor-two
+    magnetic term: matter screens while gauge plus ghost contributions antiscreen.
+    Weinberg independently uses a constant background, three trace-logs, simple-group
+    C1/C2 contractions, and a regulated common integral for irreducible spin-1/2 matter.
+    The two complete routes remain alternatives with distinct normalizations.'
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.background-determinants-magnetic-moment-and-beta-coefficients
+    note: Retains the reviewed source-specific regulator, field-content, normalization,
+      derivation and proof/task boundary; the correspondence is only the compatible
+      core stated here.
+  - project: weinberg-2
+    node: weinberg-2.one-loop-nonabelian-coupling-divergence-group-factors
+    note: Retains the reviewed source-specific regulator, field-content, normalization,
+      derivation and proof/task boundary; the correspondence is only the compatible
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 536
+    - 537
+    - 538
+    - 539
+    - 540
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 105
+    - 106
+    - 107
+    - 108
+    note: Equations (17.5.24)–(17.5.40) combine the three loops, define C₁ and C₂,
+      and interpret the coupling shift.
+  notation:
+  - source: peskin-schroeder
+    note: Rescales gA→A, so D=∂−iA and g appears in the coefficient −F²/(4g²); fermions
+      are set massless for the determinant calculation.
+  - source: weinberg-2
+    note: Keeps the gauge kinetic term canonically normalized and the common g inside
+      C^{abc} and t^a, with C C=g²C1 and tr(t t)=g²C2.
+- id: qft.align032.background-field-formal-invariant-effective-action
+  label: Background-field formal invariance and gauge-invariant effective action
+  summary: A background-field split with a background-covariant gauge condition preserves
+    a formal simultaneous gauge transformation of the prescribed background and quantum
+    fields. Consequently, after the quantum fields and ghosts are integrated out,
+    the background effective action is invariant under that formal transformation.
+    Weinberg distinguishes this formal symmetry from a true gauge transformation that
+    fixes the prescribed background; Peskin–Schroeder retains its rescaled-field and
+    background-covariant Faddeev–Popov setup. The formal background-gauge invariance
+    presumes an invariant functional measure.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.background-field-gauge-invariant-effective-action-route
+    note: Retains the reviewed source-specific regulator, field-content, normalization,
+      derivation and proof/task boundary; the correspondence is only the compatible
+      core stated here.
+  - project: weinberg-2
+    node: weinberg-2.background-field-gauge-formal-invariance
+    note: Retains the reviewed source-specific regulator, field-content, normalization,
+      derivation and proof/task boundary; the correspondence is only the compatible
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 533
+    - 534
+    - 535
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 95
+    - 96
+    - 97
+    - 98
+    note: Equations (17.4.1)–(17.4.28) construct the background split, gauge functional,
+      and invariant ghost action.
+  notation: []
+- id: qft.align032.background-formal-versus-true-gauge-transformations
+  label: Formal background transformations differ from true gauge transformations
+  summary: The formal background transformation changes the prescribed background
+    and rotates fluctuations homogeneously, preserving the chosen background gauge-fixing
+    term. A true gauge transformation leaves prescribed backgrounds fixed and transforms
+    the total field; it preserves the original Lagrangian but generally does not preserve
+    that gauge-fixing term.
+  kind: concept
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.background-formal-versus-true-gauge-transformations
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 97
+    - 98
+    note: Equations (17.4.16)–(17.4.20) make the distinction and its gauge-fixing
+      consequence.
+  notation: []
+- id: qft.align032.background-gauge-coupling-renormalization-constraints
+  label: Background gauge symmetry constrains coupling renormalization
+  summary: For one simple group or one simple factor, gauge symmetry makes a single
+    non-Abelian coupling consistent across vertices. Peskin--Schroeder obtains this
+    through ordinary counterterm relations, distinct from QED Z1=Z2. Weinberg obtains
+    g_R=g(1+L_A)^(-1/2) from the background-F² coefficient under the invariant-measure
+    premise, with irreducible spin-1/2 matter and ghost-number assumptions. These
+    are independent routes to the common constraint.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gauge-symmetry-counterterm-relations-and-coupling-universality
+    note: Retains the reviewed source-specific regulator, field-content, normalization,
+      derivation and proof/task boundary; the correspondence is only the compatible
+      core stated here.
+  - project: weinberg-2
+    node: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+    note: Retains the reviewed source-specific regulator, field-content, normalization,
+      derivation and proof/task boundary; the correspondence is only the compatible
+      core stated here.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.5-16.6
+    pages:
+    - 532
+    - 533
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 98
+    - 99
+    - 100
+    note: Equations (17.4.29)–(17.4.48) classify divergences and derive g_R=g(1+L_A)^−1/2.
+  notation:
+  - source: peskin-schroeder
+    note: Uses ordinary field and vertex Z factors and their one-loop counterterm
+      relations; this is not the background-field rescaling used in the later determinant
+      route.
+  - source: weinberg-2
+    note: The common unrenormalized g is a factor in C^{abc} and t^a, and background-field
+      renormalization gives g_R=g(1+L_A)^(-1/2).
+- id: qft.align032.constant-background-one-loop-gauge-coupling-method
+  label: Constant-background determinant method for one-loop gauge coupling renormalization
+  summary: In background-field gauge a constant non-Abelian background has a nonzero
+    quartic field-strength contribution. Expanding the gauge, ghost, and fermion quadratic
+    operators in zero-, one-, and two-background-field pieces, taking their trace-logs,
+    and extracting the quartic term gives the logarithmically divergent coefficient
+    of F² through finite-matrix algebra in momentum space.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.constant-background-one-loop-gauge-coupling-method
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    - 102
+    - 103
+    - 104
+    note: The section sets the constant background, obtains determinant factors, and
+      derives the quartic trace-log expansion.
+  notation: []
+- id: qft.align032.nonabelian-coulomb-antiscreening-explanation
+  label: Qualitative non-Abelian Coulomb antiscreening
+  summary: In Coulomb gauge, non-Abelian Gauss law is covariant. For an SU(2) point
+    charge, a vacuum vector-potential fluctuation in a perpendicular group direction
+    and the original electric field source a second group component; their induced
+    configuration makes a dipole aligned to amplify the original field at large distance.
+    This antiscreening competes with ordinary pair screening and explains qualitatively
+    the negative beta function; within four-dimensional renormalizable theories the
+    text states asymptotic freedom is unique to non-Abelian gauge theories.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nonabelian-coulomb-antiscreening-explanation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.7 Asymptotic Freedom: A Qualitative Explanation'
+    pages:
+    - 541
+    - 542
+    - 543
+  notation: []
+- id: qft.align032.peskin-background-determinant-beta-route
+  label: Peskin–Schroeder background-determinant beta route
+  kind: method
+  group: qft.renormalization-group
+  summary: With gA rescaled to A and massless fermions, the background-covariant gauge
+    split reduces gauge, ghost, and fermion fluctuations to Gaussian determinants.
+    Their convective and g-factor-two magnetic terms yield the scalar, Dirac, and
+    vector coefficients and hence the non-Abelian one-loop beta coefficient.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.background-determinants-magnetic-moment-and-beta-coefficients
+    note: Retains the PS background split, massless-fermion condition, determinant
+      signs, magnetic-moment calculation, and rescaled-field convention as one complete
+      route.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6'
+    pages:
+    - 533
+    - 534
+    - 535
+    - 536
+    - 537
+    - 538
+    - 539
+    - 540
+    note: Builds the background method, evaluates the determinants, and extracts the
+      one-loop coefficient.
+  notation:
+  - source: peskin-schroeder
+    note: After gA→A, the coupling is in −F²/(4g²), and the determinant operator has
+      the source’s spin-j magnetic term.
+- id: qft.align032.peskin-ordinary-counterterm-coupling-route
+  label: Peskin–Schroeder ordinary-counterterm coupling route
+  kind: method
+  group: qft.renormalization-group
+  summary: Starting from field, ghost, and vertex renormalization constants, Peskin–Schroeder
+    derives three one-loop relations among eight counterterms. These relations preserve
+    one universal non-Abelian coupling across fermion, three-gauge, four-gauge, and
+    ghost vertices, while remaining weaker than the QED identity Z1=Z2.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gauge-symmetry-counterterm-relations-and-coupling-universality
+    note: Retains the ordinary-counterterm derivation and its distinction from the
+      QED Ward identity as one route to the common coupling constraint.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.5–16.6
+    pages:
+    - 532
+    - 533
+    note: States the counterterm relations and their universal-coupling consequence.
+  notation:
+  - source: peskin-schroeder
+    note: Uses the source’s delta_i and Z_i counterterm conventions for ordinary quantum
+      fields and vertices.
+- id: qft.align032.problem-arnowitt-fickler-gauge-quantization
+  label: 'Problem: Arnowitt-Fickler gauge quantization'
+  summary: Problem asks for Faddeev–Popov quantization, rules, absence of propagating
+    ghosts, and two positive-metric modes. Lorentz invariance of gauge-invariant S-matrix
+    elements is supplied parenthetical context, not a requested task.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-arnowitt-fickler-gauge-quantization
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.1
+    pages:
+    - 544
+  notation: []
+- id: qft.align032.problem-background-field-brst-quantization
+  label: 'Problem prompt: BRST quantization in background-field gauge'
+  summary: Quantize a non-Abelian gauge theory in background-field gauge using the
+    BRST quantization method discussed at the end of Section 17.2.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-background-field-brst-quantization
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 2 states the background-gauge BRST task.
+  notation: []
+- id: qft.align032.problem-direct-renormalizability-with-elementary-scalars
+  label: 'Problem prompt: extend the direct renormalizability proof to scalars'
+  summary: Carry out the Section 17.2 renormalizability proof while including elementary
+    scalar fields in the Lagrangian.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-direct-renormalizability-with-elementary-scalars
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 1 requests this extension.
+  notation: []
+- id: qft.align032.problem-nonabelian-charged-scalar-beta-function
+  label: 'Problem: non-Abelian charged scalar and beta function'
+  summary: Couple one complex scalar in representation r to a gauge theory with group
+    G, derive its modified scalar-QED Feynman rules, and compute its loop contribution.
+    The displayed check is beta(g)=-g-cubed[11 C2(G)/3-C(r)/3]/(4 pi)-squared for
+    the gauge field plus this scalar.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-nonabelian-charged-scalar-beta-function
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.2
+    pages:
+    - 544
+  notation: []
+- id: qft.align032.problem-nonabelian-counterterm-relations
+  label: 'Problem: non-Abelian counterterm relations'
+  summary: 'At one loop in Feynman-''t Hooft gauge, compute the remaining counterterms
+    and verify the counterterm relations: first the ghost-field and ghost-vertex branch,
+    then the three-gauge-boson-vertex branch, and finally the four-gauge-boson-vertex
+    branch. Each requested computation tests cancellation of ultraviolet divergences
+    rather than assuming the relation as an input.'
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-nonabelian-counterterm-relations
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.3
+    pages:
+    - 544
+  notation: []
+- id: qft.align032.problem-one-loop-gauge-coupling-with-elementary-scalars
+  label: 'Problem prompt: one-loop gauge coupling relation with scalars'
+  summary: Calculate the one-loop relation between renormalized and unrenormalized
+    gauge couplings when the gauge theory contains elementary scalar fields.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-one-loop-gauge-coupling-with-elementary-scalars
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 requests the scalar-matter extension.
+  notation: []
+- id: qft.align032.problem-spacetime-dependent-background-coupling-relation
+  label: 'Problem prompt: derive coupling relation from a spacetime-dependent background'
+  summary: Derive the dimensional-regularization relation between renormalized and
+    unrenormalized gauge couplings by calculating the one-loop effective-action terms
+    quadratic in a spacetime-dependent gauge background.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-spacetime-dependent-background-coupling-relation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 requests the quadratic-background derivation of Eq. (17.5.44).
+  notation: []
+- id: qft.align032.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  label: Ultraviolet and infrared regulation of the one-loop gauge integral
+  summary: After Wick rotation, the logarithmically divergent loop integral needs
+    both an ultraviolet regulator and an infrared scale. External momenta or a finite
+    background provide the infrared cutoff; a momentum cutoff gives a logarithm of
+    their ratio, while dimensional regularization yields a pole with the same infrared-scale
+    dependence but a different ultraviolet representation.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 108
+    - 109
+    note: Equations (17.5.38)–(17.5.44) give cutoff and dimensional-regularization
+      treatments.
+  notation: []
+- id: qft.align032.weinberg-background-f2-coupling-route
+  label: Weinberg background-F² coupling route
+  kind: method
+  group: qft.renormalization-group
+  summary: Assuming an invariant functional measure, background gauge symmetry restricts
+    divergent terms to invariant background operators. For a simple group with irreducible
+    spin-1/2 matter and conserved ghost number, the background F² coefficient fixes
+    g_R=g(1+L_A)^(-1/2), without an independent vertex-amplitude calculation.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.background-gauge-coupling-renormalization-from-field-strength
+    note: Retains Weinberg’s background-F² derivation, simple-group scope, irreducible-spinor
+      condition, ghost-number assumption, and coupling convention.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 98
+    - 99
+    - 100
+    note: Uses formal background invariance to classify divergences and relate the
+      F² coefficient to g_R.
+  notation:
+  - source: weinberg-2
+    note: C^{abc} and t^a contain one common g for the simple group; g_R=g(1+L_A)^(-1/2).
+- id: qft.align032.weinberg-constant-background-beta-route
+  label: Weinberg constant-background trace-log beta route
+  kind: method
+  group: qft.renormalization-group
+  summary: In background gauge, a constant field turns the one-loop gauge, ghost,
+    and irreducible spin-1/2 matter contributions into three trace-logs. Their quartic
+    terms reduce to simple-group C1/C2 factors multiplying one regulated integral;
+    its F² divergence gives the coupling shift and one-loop non-Abelian coefficient.
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.one-loop-nonabelian-coupling-divergence-group-factors
+    note: Retains the constant-background trace-log calculation, group-factor assumptions,
+      regulator treatment, and Weinberg coupling normalization as one complete route.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    - 102
+    - 103
+    - 104
+    - 105
+    - 106
+    - 107
+    - 108
+    - 109
+    note: Constructs and evaluates the three trace-logs, reduces the group factors,
+      and regulates their common integral.
+  notation:
+  - source: weinberg-2
+    note: The common g is included in C^{abc} and t^a; the calculation assumes a simple
+      group and irreducible spinor multiplet.
 - id: qft.align033.antiparticles-from-charge-eigenfields
   label: Antiparticles from charge-eigenfield causality
   summary: To make a causal field have a definite conserved charge, its annihilation
@@ -21392,6 +21954,334 @@ nodes:
     note: These pages define right cosets, give the adapted generator commutators,
       and select the exponential representative.
   notation: []
+- id: qft.align035.complex-scalar-current-contact-identity
+  label: PS complex-scalar functional contact route
+  summary: PS localizes the free complex-scalar phase variation to obtain its charge-weighted
+    current contact identity. This worked functional route remains distinct from the
+    fermionic QED vertex and amputation identity.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 309
+  notation: []
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.complex-scalar-current-contact-identity
+    note: Retains the PS free-complex-scalar U(1) fields, current, charge signs, contact
+      terms, and localized functional derivation.
+- id: qft.align035.covariant-photon-propagator-and-gauge-parameter
+  label: PS covariant-photon gauge-fixing route
+  summary: PS obtains the covariant xi-dependent photon propagator after gauge fixing,
+    with Landau and Feynman specializations. This is a source-specific route to the
+    amended common xi-gauge propagator.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+  notation: []
+- id: qft.align035.dirac-generating-functional-grassmann-sources
+  label: PS Grassmann-source correlation route
+  summary: PS uses independent eta and eta-bar sources with ordered left/right derivatives
+    to generate spinor correlations. This is an independent fermionic external-source
+    route.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+    - 303
+  notation: []
+- id: qft.align035.dirac-grassmann-functional-propagator
+  label: PS Grassmann-functional Dirac-propagator route
+  summary: PS treats psi and psi-bar as independent integration variables and obtains
+    the free Feynman propagator from the Grassmann Gaussian. This route remains independent
+    of Fourier inversion.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+  notation:
+  - source: peskin-schroeder
+    note: Dψ is used in place of Dψ*; ψ and ψbar are independent integration variables.
+- id: qft.align035.euclidean-correlation-length-compton-wavelength
+  label: PS Euclidean correlation-length route
+  summary: PS derives the large-separation Euclidean decay and identifies the inverse
+    mass with the statistical correlation length. This is the free-field route to
+    the amended common mass-extraction result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
+    pages:
+    - 293
+    - 294
+  notation: []
+- id: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  label: Euclidean QFT–statistical-mechanics correspondence
+  summary: For the stable scalar phi-four theory displayed after the permitted Wick
+    rotation t→-ix⁰, the Euclidean action has positive gradient, mass, and stabilizing
+    quartic terms and is bounded below. Its exp[-∫(LE-Jφ)] weight is therefore a statistical
+    weight; φ and J correspond to spin density and external field in a four-dimensional
+    Landau model.
+  kind: representation
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.euclidean-qft-statistical-mechanics-correspondence
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
+    pages:
+    - 292
+    - 293
+  notation:
+  - source: peskin-schroeder
+    note: This is the displayed stable scalar phi-four continuation, not a claim that
+      every Minkowski action produces a positive statistical measure.
+- id: qft.align035.faddeev-popov-gauge-fixing-abelian
+  label: PS Abelian Faddeev–Popov determinant route
+  summary: PS inserts the Abelian orbit integral, gauge-condition delta functional,
+    and A-independent determinant before Gaussian xi averaging. The route keeps its
+    gauge-invariant-operator qualification.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 295
+    - 296
+  notation:
+  - source: peskin-schroeder
+    note: The change-of-variables argument for correlation-function numerators is
+      restricted to gauge-invariant O(A).
+- id: qft.align035.fermion-determinant-as-closed-loop-series
+  label: PS determinant-series closed-loop route
+  summary: PS expands the normalized Dirac determinant as Tr log and matches its terms
+    to connected closed fermion loops, retaining the loop sign and cyclic 1/n factor.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 304
+    - 305
+  notation: []
+- id: qft.align035.free-scalar-generating-functional
+  label: PS completed-square free-scalar functional derivation
+  summary: Completing the PS free-scalar functional square gives its Feynman source
+    functional and the all-pairings result. This is the source-specific derivation
+    route to the amended common free-scalar generating-functional result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 291
+    - 292
+  notation: []
+- id: qft.align035.functional-qed-ward-takahashi-identity
+  label: PS functional QED Ward route
+  summary: PS changes fermion variables locally to obtain the QED Ward–Takahashi identity
+    and its n-fermion extension. It is an alternative to the earlier diagrammatic
+    Ward derivation.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 311
+  notation: []
+- id: qft.align035.gauge-invariant-correlator-xi-independence
+  label: PS Ward-based xi-independence route
+  summary: PS removes the longitudinal xi-dependent contribution for gauge-invariant
+    QED correlators using Ward identities. This remains the narrow QED route to the
+    amended qualified gauge-fixing-independence result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+  notation: []
+- id: qft.align035.gauge-redundancy-obstructs-photon-gaussian
+  label: PS Maxwell zero-mode diagnostic
+  summary: PS diagnoses the longitudinal Maxwell zero mode and the consequent absence
+    of an unfixed inverse. This is the diagnostic route that motivates the amended
+    common xi-gauge propagator method.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 294
+    - 295
+  notation: []
+- id: qft.align035.general-noether-schwinger-dyson-identity
+  label: PS measure-invariant Noether functional route
+  summary: Localizing a global field variation gives the current contact identity
+    only when both the action and functional measure are invariant. Possible anomalous
+    Jacobians are outside this route.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 309
+    - 310
+  notation: []
+- id: qft.align035.grassmann-algebra-and-shift-invariant-integration
+  label: PS Grassmann integration-convention route
+  summary: PS fixes shift-invariant Grassmann integration, multiple-integral ordering,
+    and conjugation conventions. This supplies its own functional derivations without
+    duplicating ownership of the common algebraic core.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 299
+    - 300
+  notation: []
+- id: qft.align035.grassmann-gaussian-determinants-and-pairings
+  label: PS Grassmann Gaussian determinant and pairing route
+  summary: PS derives determinant Gaussian integrals, inverse insertions, and signed
+    pairings for independent complex Grassmann variables. This is an independent route
+    to the amended common fermionic-sign result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 301
+  notation:
+  - source: peskin-schroeder
+    note: The derivation uses independent complex Grassmann coordinates and Hermitian
+      B with eigenvalues bi.
+- id: qft.align035.physical-qed-s-matrix-projection
+  label: PS physical-QED S-matrix projection route
+  summary: PS projects the gauge-fixed S-prime matrix to electrons, positrons, and
+    transverse photons under its adiabatic and Ward-identity qualifications. It is
+    a separate physical-state route.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 298
+  notation: []
+- id: qft.align035.problem-scalar-qed-pair-production-cross-section
+  label: 'Problem: scalar-QED pair-production cross section'
+  summary: At lowest order, compute e+e−→φφ* with zero electron mass but nonzero scalar
+    mass, average initial polarizations, extract angular and total high-energy behavior,
+    and compare with muon-pair production.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-scalar-qed-pair-production-cross-section
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(b)
+    pages:
+    - 312
+  notation: []
+- id: qft.align035.problem-scalar-qed-propagator-and-vertices
+  label: 'Problem: scalar-QED propagator and photon vertices'
+  summary: Derive by the scalar functional method the complex-scalar propagator and
+    its photon interaction Feynman rules from scalar QED with Dμ=∂μ+ieAμ.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-scalar-qed-propagator-and-vertices
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(a)
+    pages:
+    - 312
+  notation: []
+- id: qft.align035.problem-scalar-qed-vacuum-polarization
+  label: 'Problem: scalar-QED vacuum polarization'
+  summary: Using dimensional regularization, combine both charged-scalar photon-vacuum-polarization
+    diagrams before Feynman parametrization, establish transverse form, and show the
+    deep-Euclidean scalar contribution is one quarter of the electron-pair contribution.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-scalar-qed-vacuum-polarization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(c)
+    pages:
+    - 312
+  notation: []
+- id: qft.align035.problem-thermal-photon-gauge-fixed-partition
+  label: 'Problem: thermal photon gauge-fixed partition function'
+  summary: For β-periodic photon fields, gauge-fix the gauge-invariant Euclidean partition
+    integral, evaluate determinants, and verify the quantum statistical result includes
+    the correct physical polarization count.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-thermal-photon-gauge-fixed-partition
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(e)
+    pages:
+    - 314
+  notation: []
+- id: qft.align035.qed-functional-feynman-rules
+  label: PS functional QED-rule derivation
+  summary: PS derives QED propagators and the vertex from the functional integral,
+    with Grassmann reordering signs. This is a source-specific route to the amended
+    QED-rules core.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 303
+  notation: []
+- id: qft.align035.schwinger-dyson-equations-from-field-shifts
+  label: PS field-shift Schwinger–Dyson route
+  summary: An infinitesimal shift of a shift-invariant functional measure produces
+    the quantum equation-of-motion contact identity. This remains independent of the
+    equal-time-commutator derivation.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 306
+    - 307
+    - 308
+  notation: []
+- id: qft.align035.translation-schwinger-dyson-stress-tensor
+  label: PS functional translation-stress route
+  summary: PS localizes a translation change of variables to identify the canonical
+    stress tensor in a functional identity. It is an alternative derivation of the
+    amended translation-symmetry result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 310
+  notation: []
 - id: qft.align041.born-rule-complete-orthogonal-rays
   label: Born rule for a complete orthogonal set of rays
   summary: For tests that distinguish mutually orthogonal rays, the transition probability
@@ -21841,15 +22731,26 @@ nodes:
   notation: []
 - id: qft.align043.qed-fermion-exchange-and-loop-signs
   label: Fermion exchange and loop signs in QED
-  summary: Anticommuting time-ordered spinors give a relative minus sign between diagrams
-    related by exchange of identical external fermions and one additional minus sign
-    for each closed fermion loop.
+  summary: 'Anticommuting time-ordered spinors give a relative minus sign between
+    diagrams related by exchange of identical external fermions and one additional
+    minus sign for each closed fermion loop. Peskin–Schroeder supplies two functional
+    routes to the fermionic sign structure: finite-dimensional Grassmann Gaussian
+    pairings and the external-background determinant series. Neither makes the other
+    a compulsory prerequisite.'
   kind: result
   origins:
   - project: schwartz
     node: schwartz.qed-fermion-exchange-and-loop-signs
     note: Retains the assigned Schwartz construction, formula qualification, or problem
       boundary at its stated scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.grassmann-gaussian-determinants-and-pairings
+    note: Retains PS’s determinant-versus-reciprocal Gaussian derivation, inverse
+      insertions, and signed pairings.
+  - project: peskin-schroeder
+    node: peskin-schroeder.fermion-determinant-as-closed-loop-series
+    note: Retains PS’s Tr log determinant-series route, including its closed-loop
+      minus sign and cyclic 1/n factor.
   evidence:
   - source: schwartz
     section: 13.1.1
@@ -21858,6 +22759,14 @@ nodes:
     - 228
     - 229
     note: Derives the Møller relative sign and states the loop-sign rule.
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 301
+    - 304
+    - 305
+    note: Derives Grassmann determinants and pairings, then matches Tr log terms to
+      closed-loop signs and symmetry factors.
   notation: []
 - id: qft.align043.qed-fermion-line-and-loop-evaluation
   label: QED fermion-line and loop evaluation
@@ -26895,18 +27804,32 @@ nodes:
     integral is independent of the gauge-fixing functional and depends on its weight
     only through normalization. The cancellation of the formally infinite gauge-orbit
     volume is explicitly qualified, including a finite-lattice regularization discussion.
+    Peskin–Schroeder supplies a QED, gauge-invariant-correlator route to the same
+    qualified gauge-fixing independence; it remains narrower than the retained general
+    group-and-Jacobian formulation.
   kind: result
   group: qft.gauge-quantization
   origins:
   - project: weinberg-2
     node: weinberg-2.faddeev-popov-gauge-fixing-independence
     note: Preserves the theorem's group, Jacobian, and formal-volume qualifications.
+  - project: peskin-schroeder
+    node: peskin-schroeder.gauge-invariant-correlator-xi-independence
+    note: Retains PS’s QED cancellation argument for gauge-invariant correlators and
+      its Ward-identity use; it is not an unrestricted statement about gauge-variant
+      insertions.
   evidence:
   - source: weinberg-2
     section: '15.5'
     pages:
     - 21
     - 22
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+    note: States the xi independence of gauge-invariant correlation functions and
+      the longitudinal cancellation.
   notation: []
 - id: qft.faddeev-popov-gauge-orbit-functional-integral
   label: Faddeev–Popov gauge-orbit functional integral
@@ -26914,7 +27837,10 @@ nodes:
     and the determinant of its gauge variation. In a non-Abelian theory the determinant
     is field dependent; the general De Witt formulation also states the gauge-invariant
     measure, gauge-fixing functional, and weight assumptions. This construction does
-    not by itself establish the later BRST or physical-state conclusions.
+    not by itself establish the later BRST or physical-state conclusions. Peskin–Schroeder’s
+    Abelian construction is an independently complete special-case route to the common
+    orbit-factorization method; its A-independent determinant and gauge-invariant-operator
+    condition remain explicit.
   kind: method
   group: qft.gauge-quantization
   origins:
@@ -26930,6 +27856,10 @@ nodes:
     node: weinberg-2.faddeev-popov-gauge-fixed-functional-integral
     note: Retains the De Witt weighted-functional formulation and axial-gauge special
       case.
+  - project: peskin-schroeder
+    node: peskin-schroeder.faddeev-popov-gauge-fixing-abelian
+    note: Retains PS’s Abelian delta-functional insertion, A-independent determinant,
+      Gaussian xi averaging, and gauge-invariant-operator qualification.
   evidence:
   - source: peskin-schroeder
     section: 16.2 The Faddeev-Popov Lagrangian
@@ -26948,6 +27878,12 @@ nodes:
     pages:
     - 19
     - 20
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 295
+    - 296
+    note: Derives the Abelian orbit factorization and Gaussian gauge-fixing weight.
   notation:
   - source: peskin-schroeder
     note: Peskin and Schroeder use G(A) and an adjoint covariant derivative; Weinberg
@@ -27547,7 +28483,10 @@ nodes:
   summary: A Gaussian covariant gauge-fixing weight with f=∂·A removes the Maxwell
     or Yang–Mills kinetic zero mode and yields a vector propagator whose longitudinal
     part depends on ξ. ξ=1 gives Feynman gauge, while ξ→0 gives Landau gauge only
-    after the kernel is inverted.
+    after the kernel is inverted. Peskin–Schroeder provides both the Maxwell-kernel
+    zero-mode obstruction and the covariant xi-dependent result, so those two source
+    records share this common gauge-fixed-propagator core without erasing the separate
+    diagnostic route.
   kind: method
   group: qft.gauge-quantization
   origins:
@@ -27558,6 +28497,14 @@ nodes:
     node: schwartz.covariant-rxi-photon-propagator
     note: Retains the massless-Maxwell inverse-kernel derivation, its noninvertible
       ungauge-fixed operator, and its ξ limits.
+  - project: peskin-schroeder
+    node: peskin-schroeder.gauge-redundancy-obstructs-photon-gaussian
+    note: 'Retains PS’s zero-mode diagnosis: the unfixed Maxwell quadratic form has
+      no inverse before gauge fixing.'
+  - project: peskin-schroeder
+    node: peskin-schroeder.covariant-photon-propagator-and-gauge-parameter
+    note: Retains PS’s covariant photon propagator and its xi=0 Landau and xi=1 Feynman
+      specializations.
   evidence:
   - source: weinberg-2
     section: '15.5'
@@ -27571,6 +28518,14 @@ nodes:
     - 130
     note: Adds −(∂·A)²/(2ξ), inverts the Maxwell kernel, and takes the Feynman and
       Landau limits.
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 294
+    - 295
+    - 297
+    note: Shows the gauge zero mode, the need for a gauge condition, and the resulting
+      covariant propagator.
   notation: []
 - id: qft.ghost-loop-compensation-of-unphysical-gauge-modes
   label: Ghost-loop compensation of unphysical gauge modes
@@ -28286,17 +29241,31 @@ nodes:
   label: Lattice correlator mass extraction
   summary: At large Euclidean separation, a two-point correlator falls exponentially
     with the lightest mass in its channel, allowing mass extraction from its scaling.
+    Peskin–Schroeder supplies the free Euclidean decay interpretation that is the
+    compatible limiting route behind large-distance mass extraction; the lattice target
+    retains its channel and scaling qualification.
   kind: method
   origins:
   - project: schwartz
     node: schwartz.lattice-correlator-mass-extraction
     note: Retains the reviewed book treatment with its source-specific conditions
       and notation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.euclidean-correlation-length-compton-wavelength
+    note: Retains PS’s free Euclidean decay formula and its correlation-length/Compton-wavelength
+      interpretation.
   evidence:
   - source: schwartz
     section: '25.5'
     pages:
     - 505
+  - source: peskin-schroeder
+    section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
+    pages:
+    - 293
+    - 294
+    note: Gives the Euclidean large-separation decay and identifies the inverse mass
+      with the correlation length.
   notation: []
 - id: qft.lattice-gauge-links-plaquettes-and-action
   label: Lattice links, plaquettes, continuum curvature, and Wilson action
@@ -30929,7 +31898,9 @@ nodes:
   summary: Applying Noether’s construction to spacetime translations gives a conserved
     energy-momentum tensor whose charges are energy and spatial momentum. The shared
     record retains the sources’ canonical construction and their stated improvement
-    context separately.
+    context separately. Peskin–Schroeder supplies both its canonical translation-current
+    presentation and a later localized-functional derivation; the latter is an alternative
+    route and does not erase the retained canonical construction.
   kind: result
   group: qft.field-symmetry-and-charge
   origins:
@@ -30941,6 +31912,10 @@ nodes:
     node: schwartz.translation-symmetry-and-canonical-energy-momentum-tensor
     note: Matches the canonical energy-momentum tensor derived from translation symmetry,
       including its source-specific presentation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.translation-schwinger-dyson-stress-tensor
+    note: Retains PS’s localized functional translation variation and canonical stress-tensor
+      identity as an independent functional route.
   evidence:
   - source: peskin-schroeder
     section: '2.2 Elements of Classical Field Theory: Noether’s Theorem'
@@ -30955,6 +31930,17 @@ nodes:
     - 35
     note: Derives the canonical tensor from translations and identifies energy and
       momentum charges.
+  - source: peskin-schroeder
+    section: '2.2 Elements of Classical Field Theory: Noether’s Theorem'
+    pages:
+    - 18
+    - 19
+    note: Gives the translation currents and their energy-momentum charges.
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 310
+    note: Obtains the translation stress-tensor identity by local functional variation.
   notation:
   - source: peskin-schroeder
     note: T^{mu nu} supplies one conserved current for each translation direction
@@ -50763,6 +51749,657 @@ edges:
     - 108
     note: The source begins from direct products of the one-particle states discussed
       previously and spells out their labels and transformations.
+- id: qft.align032.peskin-counterterm-route-to-common-coupling
+  from: qft.align032.peskin-ordinary-counterterm-coupling-route
+  to: qft.align032.background-gauge-coupling-renormalization-constraints
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The PS ordinary-counterterm calculation independently establishes the
+    common one-coupling constraint.
+  failure_mode: The common result retains the WII background route but loses its PS
+    counterterm derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: 16.5–16.6
+    pages:
+    - 532
+    - 533
+- id: qft.align032.peskin-determinant-route-to-common-beta
+  from: qft.align032.peskin-background-determinant-beta-route
+  to: qft.align032.background-determinant-nonabelian-beta-coefficients
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The PS Gaussian-determinant and magnetic-moment calculation independently
+    derives the common one-loop coefficient.
+  failure_mode: The common result retains the WII route but loses the PS determinant
+    derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6'
+    pages:
+    - 533
+    - 534
+    - 535
+    - 536
+    - 537
+    - 538
+    - 539
+    - 540
+- id: qft.align032.ps10-background-determinants-to-beta-alternative
+  from: qft.align032.peskin-background-determinant-beta-route
+  to: qft.align014.qcd-one-loop-beta-and-active-flavors
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Evaluating the background determinants supplies the coefficients that
+    reproduce the leading beta function.
+  failure_mode: The beta function can still be derived from counterterms but the determinant
+    route is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 536
+    - 537
+    - 538
+    - 539
+    - 540
+- id: qft.align032.ps10-background-setup-to-determinants
+  from: qft.align032.background-field-formal-invariant-effective-action
+  to: qft.align032.peskin-background-determinant-beta-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant calculation requires the rescaled background/quantum
+    split and background-covariant gauge fixing that define its quadratic operators.
+  failure_mode: There is no background-covariant fluctuation operator to integrate
+    or expand.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 533
+    - 534
+    - 535
+    - 536
+- id: qft.align032.ps10-beta-to-scalar-beta-problem
+  from: qft.align014.qcd-one-loop-beta-and-active-flavors
+  to: qft.align032.problem-nonabelian-charged-scalar-beta-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The supplied full beta function is the stated check after adding the
+    scalar contribution.
+  failure_mode: There is no baseline gauge-and-fermion beta coefficient to extend.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.2
+    pages:
+    - 544
+- id: qft.align032.ps10-bosonic-determinant-to-background-determinants
+  from: qft.align021.bosonic-functional-determinant
+  to: qft.align032.peskin-background-determinant-beta-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The background gauge-field Gaussian produces its functional determinant
+    when the quadratic fluctuation operator is integrated.
+  failure_mode: The bosonic determinant factor in the effective action cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 536
+    - 537
+- id: qft.align032.ps10-counterterms-to-beta
+  from: qft.align032.peskin-ordinary-counterterm-coupling-route
+  to: qft.align051.peskin-one-loop-nonabelian-beta-counterterm-route
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The relations provide a consistency check that different gauge vertices
+    produce the same one-loop beta function.
+  failure_mode: The beta result remains derivable from the selected vertex but lacks
+    this universality check.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.5'
+    pages:
+    - 532
+- id: qft.align032.ps10-counterterms-to-counterterm-problem
+  from: qft.align032.peskin-ordinary-counterterm-coupling-route
+  to: qft.align032.problem-nonabelian-counterterm-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to compute the omitted counterterms and verify the displayed
+    relations.
+  failure_mode: The relations and the counterterms to be checked are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.3
+    pages:
+    - 544
+- id: qft.align032.ps10-effective-action-to-background-determinants
+  from: qft.align011.effective-action-background-field-expansion
+  to: qft.align032.peskin-background-determinant-beta-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Section 16.6 explicitly evaluates the background-field effective action
+    by the Section 11.4 fluctuation expansion.
+  failure_mode: The one-loop quadratic expansion has no effective-action construction
+    or background-field prescription.
+  evidence:
+  - source: peskin-schroeder
+    section: '16.6 Asymptotic Freedom: The Background Field Method'
+    pages:
+    - 535
+    - 536
+    - 537
+- id: qft.align032.ps10-fp-to-arnowitt-fickler-problem
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.align032.problem-arnowitt-fickler-gauge-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly requests Faddeev-Popov quantization in a different
+    gauge.
+  failure_mode: The procedure requested by the task is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.1
+    pages:
+    - 544
+- id: qft.align032.ps10-general-gauge-to-scalar-beta-problem
+  from: qft.general-nonabelian-gauge-construction
+  to: qft.align032.problem-nonabelian-charged-scalar-beta-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task couples a scalar in a specified representation to the general
+    non-Abelian gauge theory.
+  failure_mode: The covariant representation coupling and gauge vertices cannot be
+    formulated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 16.2
+    pages:
+    - 544
+- id: qft.align032.weinberg-2-adjoint-representation-prerequisite-background-gauge
+  from: qft.adjoint-representation
+  to: qft.align032.background-field-formal-invariant-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quantum gauge fluctuation and ghosts transform homogeneously in the
+    adjoint representation.
+  failure_mode: The formal transformation of A′ and the covariance of the gauge function
+    cannot be interpreted.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 96
+    - 98
+    note: The construction states that A′ and ghost fields transform as adjoint matter
+      fields.
+- id: qft.align032.weinberg-2-background-coupling-prerequisite-constant-background-gauge
+  from: qft.align032.weinberg-background-f2-coupling-route
+  to: qft.align032.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The constant-background quartic coefficient determines the coupling factor
+    only because background invariance ties it to the field-strength coefficient.
+  failure_mode: A quartic term alone cannot identify the gauge-coupling renormalization
+    in a general gauge.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    note: The transition explains that the background-field relation makes the constant-field
+      calculation sufficient.
+- id: qft.align032.weinberg-2-background-coupling-prerequisite-scalar-loop-problem
+  from: qft.align032.weinberg-background-f2-coupling-route
+  to: qft.align032.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The target is a renormalized/unrenormalized gauge-coupling relation.
+  failure_mode: The scalar loop coefficient has no connection to the coupling normalization
+    it must renormalize.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 asks for the gauge-coupling relation.
+- id: qft.align032.weinberg-2-background-coupling-prerequisite-spacetime-problem
+  from: qft.align032.weinberg-background-f2-coupling-route
+  to: qft.align032.problem-spacetime-dependent-background-coupling-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task derives the renormalized/unrenormalized coupling relation from
+    the background-field effective action.
+  failure_mode: The quadratic amplitude has no established connection to the gauge-coupling
+    renormalization factor.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 requests the coupling relation from a spacetime-dependent background.
+- id: qft.align032.weinberg-2-background-gauge-prerequisite-background-brst-problem
+  from: qft.align032.background-field-formal-invariant-effective-action
+  to: qft.align032.problem-background-field-brst-quantization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task quantizes specifically in background field gauge.
+  failure_mode: The background split and gauge-fixing functional to be quantized are
+    absent.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 2 specifies background field gauge.
+- id: qft.align032.weinberg-2-background-gauge-prerequisite-background-coupling
+  from: qft.align032.background-field-formal-invariant-effective-action
+  to: qft.align032.weinberg-background-f2-coupling-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The coupling-field relation follows from the background invariance of
+    divergent terms.
+  failure_mode: Without the symmetry, the F² coefficient would not be constrained
+    to tie gauge-field and coupling renormalization.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 98
+    - 99
+    - 100
+    note: The invariant effective action is used to restrict divergences and derive
+      the coupling relation.
+- id: qft.align032.weinberg-2-background-gauge-prerequisite-constant-background-method
+  from: qft.align032.background-field-formal-invariant-effective-action
+  to: qft.align032.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Only background gauge invariance lets a constant-background quartic term
+    determine the coupling factor.
+  failure_mode: In a general gauge, independent quadratic and quartic divergences
+    make the constant-background extraction insufficient.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    note: The opening of Section 17.5 states why the constant-field procedure only
+      works in background field gauge.
+- id: qft.align032.weinberg-2-brst-field-prerequisite-background-brst-problem
+  from: qft.brst-auxiliary-field-transformations-and-nilpotence
+  to: qft.align032.problem-background-field-brst-quantization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly calls for BRST quantization.
+  failure_mode: The BRST transformations and auxiliary-field formulation needed to
+    set up the quantization are unavailable.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 2 calls for the BRST method of quantization.
+- id: qft.align032.weinberg-2-constant-background-prerequisite-one-loop-group-factors
+  from: qft.align032.constant-background-one-loop-gauge-coupling-method
+  to: qft.align032.weinberg-constant-background-beta-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge, ghost, and matter group factors are extracted from the three
+    trace-log contributions of the determinant calculation.
+  failure_mode: The combined F² divergence and its group constants have no derivation
+    route without the operator expansion.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 105
+    - 106
+    - 107
+    note: The pages evaluate the separate loops and combine them into the group-factor
+      result.
+- id: qft.align032.weinberg-2-constant-background-prerequisite-regulation
+  from: qft.align032.constant-background-one-loop-gauge-coupling-method
+  to: qft.align032.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The constant-background trace-log supplies the source's particular integral
+    J, but the Wick-rotation and regulator method is also usable in the independent
+    spacetime-dependent calculation.
+  failure_mode: Without this connection, the origin of J in the displayed constant-background
+    calculation is less explicit; the regulator method and the spacetime-dependent
+    route remain available.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 105
+    - 108
+    note: The trace-log calculation defines J, and the later passage regulates that
+      integral.
+- id: qft.align032.weinberg-2-coupling-normalization-prerequisite-background-coupling
+  from: qft.yang-mills-coupling-normalization
+  to: qft.align032.weinberg-background-f2-coupling-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: For a simple algebra, the field-strength coefficient is interpreted as
+    renormalization of the common coupling normalization.
+  failure_mode: The relation between the field-strength coefficient and g_R is not
+    obtained without the source's coupling convention.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 100
+    note: The derivation uses the single common factor in structure constants and
+      generators to identify g_R.
+- id: qft.align032.weinberg-2-covariant-derivative-prerequisite-background-gauge
+  from: qft.covariant-derivative
+  to: qft.align032.background-field-formal-invariant-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The background gauge functional and formal invariance are written with
+    the background-covariant derivative.
+  failure_mode: The covariant transformation of fᵃ and the gauge-fixing invariance
+    cannot be established without D_μ[A].
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 96
+    - 97
+    note: Equations (17.4.4)–(17.4.15) define and use the background-covariant derivative.
+- id: qft.align032.weinberg-2-direct-proof-prerequisite-scalar-extension-problem
+  from: qft.direct-brst-renormalizability-induction
+  to: qft.align032.problem-direct-renormalizability-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The task is to extend the displayed Section 17.2 proof, not reproduce
+    an already supplied scalar result.
+  failure_mode: The required changes to the original proof cannot be identified.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 1 explicitly asks to carry out the proof given in Section 17.2 with
+      scalars.
+- id: qft.align032.weinberg-2-effective-potential-determinant-prerequisite-constant-background-gauge
+  from: qft.align011.one-loop-effective-potential-determinant-method
+  to: qft.align032.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The gauge calculation applies the earlier one-loop quadratic-determinant
+    and trace-log method to gauge, ghost, and fermion operators.
+  failure_mode: The determinant factors and trace-log evaluation have no established
+    one-loop route.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 101
+    - 102
+    - 103
+    note: The section explicitly invokes the Section 16.2 one-loop determinant form
+      and evaluates trace-logs.
+- id: qft.align032.weinberg-2-faddeev-popov-prerequisite-background-gauge
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.align032.background-field-formal-invariant-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Background field gauge changes the gauge-fixing functional in the gauge-fixed
+    path integral.
+  failure_mode: The role of the chosen fᵃ, ghosts, and integrated fluctuations is
+    unspecified without the Faddeev–Popov setup.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 95
+    - 96
+    note: The section returns to the Gaussian gauge-fixing functional and chooses
+      a new fᵃ.
+- id: qft.align032.weinberg-2-field-strength-prerequisite-background-gauge
+  from: qft.nonabelian-field-strength
+  to: qft.align032.background-field-formal-invariant-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rewritten action displays the background field strength as the covariant
+    background object.
+  failure_mode: The formal invariance of the gauge sector cannot be checked without
+    the non-Abelian field strength.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 97
+    note: Equation (17.4.15) gives the background field strength used in the invariant
+      action.
+- id: qft.align032.weinberg-2-gauge-lagrangian-prerequisite-scalar-extension-problem
+  from: qft.gauge-invariant-lagrangian-ingredients
+  to: qft.align032.problem-direct-renormalizability-with-elementary-scalars
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Including elementary scalars requires identifying their gauge-covariant
+    renormalizable Lagrangian ingredients.
+  failure_mode: The extension has no gauge-invariant scalar interactions or kinetic
+    structures to classify.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 1 requires elementary scalar fields to be included in the Lagrangian.
+- id: qft.align032.weinberg-2-gauge-lagrangian-prerequisite-scalar-loop-problem
+  from: qft.gauge-invariant-lagrangian-ingredients
+  to: qft.align032.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar loop must be built from the scalar representation's gauge-covariant
+    interactions.
+  failure_mode: The scalar field's coupling to the background gauge field is unspecified.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 changes the theory by adding elementary scalar fields.
+- id: qft.align032.weinberg-2-general-brst-prerequisite-background-brst-problem
+  from: qft.brst-general-action-and-yang-mills-unitarity-result
+  to: qft.align032.problem-background-field-brst-quantization
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The referenced end-of-Section-17.2 method permits the general BRST-invariant
+    gauge-fixing functional needed in background gauge.
+  failure_mode: The background-gauge BRST action is not connected to the general-gauge-fixing
+    justification requested by the prompt.
+  evidence:
+  - source: weinberg-2
+    section: 17.2 and Problems for Chapter 17
+    pages:
+    - 91
+    - 109
+    note: Section 17.2 gives the general BRST action remedy and Problem 2 points to
+      that BRST method.
+- id: qft.align032.weinberg-2-regulation-prerequisite-one-loop-group-factors
+  from: qft.align032.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  to: qft.align032.weinberg-constant-background-beta-route
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The group contractions are obtained before regulation, but the target's
+    retained physical coupling shift requires evaluating their common divergent integral
+    and relating it to g_R.
+  failure_mode: The group coefficients alone do not yield the cutoff/dimensional coupling
+    relation or its physical interpretation.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 107
+    - 108
+    - 109
+    note: The group factors multiply J; the following regulator calculation supplies
+      the coupling relation and Eq. (17.5.44).
+- id: qft.align032.weinberg-2-regulation-prerequisite-scalar-loop-problem
+  from: qft.align032.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  to: qft.align032.problem-one-loop-gauge-coupling-with-elementary-scalars
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: A relation between bare and renormalized couplings requires regulating
+    and interpreting the scalar loop divergence.
+  failure_mode: The scalar-loop integral remains divergent and cannot yield a renormalization
+    relation.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 4 requests the renormalized/unrenormalized relation.
+- id: qft.align032.weinberg-2-regulation-prerequisite-spacetime-problem
+  from: qft.align032.ultraviolet-and-infrared-regulation-of-one-loop-gauge-integral
+  to: qft.align032.problem-spacetime-dependent-background-coupling-relation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested Eq. (17.5.44) is the dimensional-regularization relation.
+  failure_mode: The target relation cannot be produced without the dimensional regulator
+    and infrared scale.
+  evidence:
+  - source: weinberg-2
+    section: Problems for Chapter 17
+    pages:
+    - 109
+    note: Problem 3 explicitly asks for Eq. (17.5.44).
+- id: qft.align032.weinberg-2-spacetime-dirac-notation-prerequisite-constant-background-method
+  from: qft.align054.spacetime-index-and-dirac-notation
+  to: qft.align032.constant-background-one-loop-gauge-coupling-method
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quadratic fermion operator and its trace calculation use the source's
+    spacetime and Dirac conventions.
+  failure_mode: The fermion determinant and later gamma-matrix trace cannot be interpreted
+    under the source's notation without this convention record.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 101
+    - 102
+    note: The quadratic operator includes spinor and spacetime-index structure before
+      its determinant is evaluated.
+- id: qft.align032.weinberg-background-f2-route-to-common-coupling
+  from: qft.align032.weinberg-background-f2-coupling-route
+  to: qft.align032.background-gauge-coupling-renormalization-constraints
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The WII invariant background-F² calculation independently establishes
+    the common coupling relation.
+  failure_mode: The common result retains the PS route but loses its WII background-field
+    derivation.
+  evidence:
+  - source: weinberg-2
+    section: '17.4'
+    pages:
+    - 98
+    - 99
+    - 100
+- id: qft.align032.weinberg-tracelog-route-to-common-beta
+  from: qft.align032.weinberg-constant-background-beta-route
+  to: qft.align032.background-determinant-nonabelian-beta-coefficients
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The WII constant-background trace-log and regulated-integral calculation
+    independently derives the common one-loop coefficient.
+  failure_mode: The common result retains the PS route but loses the WII trace-log
+    derivation.
+  evidence:
+  - source: weinberg-2
+    section: '17.5'
+    pages:
+    - 100
+    - 101
+    - 102
+    - 103
+    - 104
+    - 105
+    - 106
+    - 107
+    - 108
+    - 109
 - id: qft.align033.e-causal-spin-statistics-evidence
   from: qft.align033.general-causal-fields-spin-statistics-and-phase
   to: qft.align015.spin-statistics-connection
@@ -52281,6 +53918,1030 @@ edges:
     pages:
     - 212
     note: Imports the mass-matrix zero eigenvectors into the Goldstone-free constraint.
+- id: qft.align035.abelian-fp-to-common-orbit
+  from: qft.align035.faddeev-popov-gauge-fixing-abelian
+  to: qft.faddeev-popov-gauge-orbit-functional-integral
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 295
+    - 296
+- id: qft.align035.completed-square-to-common-free-z
+  from: qft.align035.free-scalar-generating-functional
+  to: qft.align021.free-scalar-generating-functional
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 291
+    - 292
+- id: qft.align035.determinant-series-to-common-signs
+  from: qft.align035.fermion-determinant-as-closed-loop-series
+  to: qft.align043.qed-fermion-exchange-and-loop-signs
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 304
+    - 305
+- id: qft.align035.dirac-gaussian-to-common-propagator
+  from: qft.align035.dirac-grassmann-functional-propagator
+  to: qft.align029.dirac-momentum-space-and-feynman-propagator
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 302
+    - 303
+- id: qft.align035.dirac-sources-to-common-source-z
+  from: qft.align035.dirac-generating-functional-grassmann-sources
+  to: qft.align011.external-source-generating-functional
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 302
+    - 303
+- id: qft.align035.field-shift-to-common-sd
+  from: qft.align035.schwinger-dyson-equations-from-field-shifts
+  to: qft.align030.schwinger-dyson-contact-equations
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 306
+    - 307
+    - 308
+- id: qft.align035.functional-rules-to-common-qed-rules
+  from: qft.align035.qed-functional-feynman-rules
+  to: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 303
+- id: qft.align035.functional-ward-to-common-ward
+  from: qft.align035.functional-qed-ward-takahashi-identity
+  to: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 311
+- id: qft.align035.gaussian-signs-to-common-signs
+  from: qft.align035.grassmann-gaussian-determinants-and-pairings
+  to: qft.align043.qed-fermion-exchange-and-loop-signs
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 301
+- id: qft.align035.grassmann-to-common-grading
+  from: qft.align035.grassmann-algebra-and-shift-invariant-integration
+  to: qft.align021.grassmann-algebra-and-grading
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 299
+    - 300
+- id: qft.align035.noether-to-common-sd
+  from: qft.align035.general-noether-schwinger-dyson-identity
+  to: qft.align030.schwinger-dyson-contact-equations
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 309
+    - 310
+- id: qft.align035.peskin-schroeder-bosonic-thermal-to-euclidean
+  from: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  to: qft.align021.task-thermal-trace-periodic-euclidean-path-integral
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task’s Euclidean weight is the finite-period version of the Wick-rotated
+    statistical functional integral.
+  failure_mode: The appearance of Euclidean time and statistical weight would be unexplained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(a)
+    pages:
+    - 313
+- id: qft.align035.peskin-schroeder-complex-current-illustrates-general-noether
+  from: qft.align035.complex-scalar-current-contact-identity
+  to: qft.align035.general-noether-schwinger-dyson-identity
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The free complex-scalar U(1) calculation is the worked illustration before
+    the general local-symmetry construction.
+  failure_mode: Without the example, the general derivation is less concrete, but
+    no step of its derivation requires the example.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 309
+- id: qft.align035.peskin-schroeder-covariant-propagator-to-physical-smatrix
+  from: qft.align035.covariant-photon-propagator-and-gauge-parameter
+  to: qft.align035.physical-qed-s-matrix-projection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The projected S-matrix construction starts from the gauge-fixed S′ calculation.
+  failure_mode: The relation between gauge-fixed amplitudes and the physical S matrix
+    would be missing.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 298
+- id: qft.align035.peskin-schroeder-covariant-propagator-to-qed-functional-rules
+  from: qft.align035.covariant-photon-propagator-and-gauge-parameter
+  to: qft.align035.qed-functional-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED free electromagnetic term supplies the photon propagator used
+    in the expansion.
+  failure_mode: The stated set of QED propagators would be incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 303
+- id: qft.align035.peskin-schroeder-covariant-propagator-to-xi-independence
+  from: qft.align035.covariant-photon-propagator-and-gauge-parameter
+  to: qft.align035.gauge-invariant-correlator-xi-independence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: ξ occurs only in the longitudinal propagator term whose contribution
+    is tested by Ward identities.
+  failure_mode: The relevant gauge-parameter dependence would not be identifiable.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+- id: qft.align035.peskin-schroeder-dirac-free-lagrangian-to-dirac-propagator
+  from: qft.align020.dirac-adjoint-free-lagrangian-and-equation
+  to: qft.align035.dirac-grassmann-functional-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The free Dirac operator in the action determines the inverse whose kernel
+    is the propagator.
+  failure_mode: The operator to invert would be unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+- id: qft.align035.peskin-schroeder-dirac-propagator-to-dirac-z
+  from: qft.align035.dirac-grassmann-functional-propagator
+  to: qft.align035.dirac-generating-functional-grassmann-sources
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Completing the square expresses the source functional in terms of the
+    Dirac propagator.
+  failure_mode: The explicit generating functional could not be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+- id: qft.align035.peskin-schroeder-dirac-z-to-qed-functional-rules
+  from: qft.align035.dirac-generating-functional-grassmann-sources
+  to: qft.align035.qed-functional-feynman-rules
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED functional expansion uses the spinor free functional and its
+    contraction rules.
+  failure_mode: The fermion propagator and signs in the QED expansion would be unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 303
+- id: qft.align035.peskin-schroeder-euclidean-to-compton-correlation
+  from: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  to: qft.align035.euclidean-correlation-length-compton-wavelength
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Euclidean free correlation function makes the decay length identification.
+  failure_mode: The Compton-to-correlation interpretation would lack the Euclidean
+    statistical setting.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
+    pages:
+    - 294
+- id: qft.align035.peskin-schroeder-euler-to-schwinger-dyson
+  from: qft.field-euler-lagrange-equation
+  to: qft.align035.schwinger-dyson-equations-from-field-shifts
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Schwinger–Dyson identity promotes the classical Euler–Lagrange equation
+    to Green functions with contact terms.
+  failure_mode: The quantum equation would not have its classical equation-of-motion
+    reference.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 308
+- id: qft.align035.peskin-schroeder-faddeev-popov-to-covariant-propagator
+  from: qft.align035.faddeev-popov-gauge-fixing-abelian
+  to: qft.align035.covariant-photon-propagator-and-gauge-parameter
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The added ξ term makes the quadratic photon kernel invertible.
+  failure_mode: The stated propagator would be incorrectly derived from a singular
+    un-fixed kernel.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+- id: qft.align035.peskin-schroeder-free-z-to-gaussian-wick
+  from: qft.align035.free-scalar-generating-functional
+  to: qft.align021.gaussian-functional-wick-contractions
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Repeated source differentiation provides an alternative route to the
+    same pairing pattern.
+  failure_mode: Without it, this alternative generating-functional derivation cannot
+    be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 292
+- id: qft.align035.peskin-schroeder-functional-derivative-to-free-scalar-z
+  from: qft.align021.source-generating-functional-and-functional-derivatives
+  to: qft.align035.free-scalar-generating-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The completed-square Z[J] is built to be differentiated by the declared
+    functional-derivative rule.
+  failure_mode: The source-dependent exponential would not be connected to correlation
+    extraction.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2 Functional Quantization of Scalar Fields
+    pages:
+    - 291
+- id: qft.align035.peskin-schroeder-gauge-redundancy-to-faddeev-popov
+  from: qft.align035.gauge-redundancy-obstructs-photon-gaussian
+  to: qft.align035.faddeev-popov-gauge-fixing-abelian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge zero modes motivate insertion of a condition that counts each physical
+    configuration once.
+  failure_mode: Gauge fixing would look arbitrary rather than resolving the divergent
+    orbit volume.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 295
+- id: qft.align035.peskin-schroeder-general-noether-to-functional-qed-ward
+  from: qft.align035.general-noether-schwinger-dyson-identity
+  to: qft.align035.functional-qed-ward-takahashi-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED phase variation is a concrete functional symmetry identity with
+    charged fermion insertions.
+  failure_mode: The QED identity’s contact terms would have no general symmetry derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 311
+- id: qft.align035.peskin-schroeder-general-noether-to-translation
+  from: qft.align035.general-noether-schwinger-dyson-identity
+  to: qft.align035.translation-schwinger-dyson-stress-tensor
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Translations are the displayed symmetry variation used to obtain the
+    stress tensor.
+  failure_mode: The stress-tensor result would be disconnected from the localized-symmetry
+    method.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 310
+- id: qft.align035.peskin-schroeder-grassmann-algebra-to-dirac-z
+  from: qft.align035.grassmann-algebra-and-shift-invariant-integration
+  to: qft.align035.dirac-generating-functional-grassmann-sources
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source construction requires Grassmann-valued variables and derivative
+    signs.
+  failure_mode: The fermionic source calculus would be replaced by invalid commuting
+    derivatives.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+- id: qft.align035.peskin-schroeder-grassmann-algebra-to-gaussian
+  from: qft.align035.grassmann-algebra-and-shift-invariant-integration
+  to: qft.align035.grassmann-gaussian-determinants-and-pairings
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant computation relies on the ordered integration and complex-variable
+    conventions.
+  failure_mode: The numerator determinant and pairing signs would be undefined.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 301
+- id: qft.align035.peskin-schroeder-grassmann-gaussian-to-dirac-propagator
+  from: qft.align035.grassmann-gaussian-determinants-and-pairings
+  to: qft.align035.dirac-grassmann-functional-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Dirac two-point integral is evaluated by the Grassmann determinant
+    and inverse identity.
+  failure_mode: The functional derivation of the spinor propagator cannot proceed.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 302
+- id: qft.align035.peskin-schroeder-grassmann-shift-to-schwinger-dyson
+  from: qft.align035.grassmann-algebra-and-shift-invariant-integration
+  to: qft.align035.schwinger-dyson-equations-from-field-shifts
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The text identifies Grassmann shift invariance as what extends the argument
+    to spinors.
+  failure_mode: The scalar/vector/spinor scope would be overclaimed.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 308
+- id: qft.align035.peskin-schroeder-lsz-to-physical-smatrix
+  from: qft.align016.lsz-reduction-pole-projection
+  to: qft.align035.physical-qed-s-matrix-projection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The physical S-matrix claim concerns the same correlation-to-asymptotic-amplitude
+    bridge supplied by LSZ.
+  failure_mode: The relationship between projected gauge-fixed correlators and observable
+    S-matrix elements would be incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 298
+- id: qft.align035.peskin-schroeder-noether-current-to-complex-current-contact
+  from: qft.noether-current-and-conserved-charge
+  to: qft.align035.complex-scalar-current-contact-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local functional variation identifies the same complex-scalar Noether
+    current inside a correlator.
+  failure_mode: The current contact identity would not be tied to its conserved current.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 309
+- id: qft.align035.peskin-schroeder-qed-gauge-symmetry-to-faddeev-popov
+  from: qft.align029.qed-minimal-coupling-and-local-gauge-symmetry
+  to: qft.align035.faddeev-popov-gauge-fixing-abelian
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Faddeev–Popov change of variables uses the local gauge transformation
+    of the electromagnetic field.
+  failure_mode: The gauge orbit and its redundancy would be unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 295
+- id: qft.align035.peskin-schroeder-qed-rules-to-fermion-determinant
+  from: qft.align035.qed-functional-feynman-rules
+  to: qft.align035.fermion-determinant-as-closed-loop-series
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant expansion identifies each term with QED vertices and
+    free Dirac propagators.
+  failure_mode: The diagrammatic interpretation of Tr log would be unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.5 Functional Quantization of Spinor Fields
+    pages:
+    - 304
+- id: qft.align035.peskin-schroeder-qed-ward-existing-to-functional-qed-ward
+  from: qft.align012.ward-takahashi-proof-of-z1-equals-z2
+  to: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: Fourier transformation is shown to reproduce the previously derived diagrammatic
+    Ward–Takahashi relation.
+  failure_mode: The functional result could not be checked against the established
+    QED identity.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 311
+- id: qft.align035.peskin-schroeder-scalar-functional-to-euclidean
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The correspondence rotates the time contour of the scalar generating
+    functional.
+  failure_mode: The Euclidean statistical weight would not have a Minkowski functional
+    origin.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
+    pages:
+    - 292
+- id: qft.align035.peskin-schroeder-scalar-pair-to-invariant-phase-space
+  from: qft.align016.lorentz-invariant-phase-space-cross-section
+  to: qft.align035.problem-scalar-qed-pair-production-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The differential and total cross sections require invariant two-body
+    phase space.
+  failure_mode: An amplitude would not yield the requested observable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(b)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-pair-to-muon-comparison
+  from: qft.align023.peskin.massive-muon-pair-cross-section
+  to: qft.align035.problem-scalar-qed-pair-production-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly asks for comparison with the corresponding muon-pair
+    formula.
+  failure_mode: The requested comparison cannot be made.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(b)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-pair-to-spin-sums
+  from: qft.align020.dirac-spin-sum-completeness
+  to: qft.align035.problem-scalar-qed-pair-production-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The electron and positron polarization average uses external-spinor completeness.
+  failure_mode: The squared amplitude cannot be reduced.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(b)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-pair-to-unpolarized-traces
+  from: qft.unpolarized-trace-technology
+  to: qft.align035.problem-scalar-qed-pair-production-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Polarization averaging in the requested cross section requires the accepted
+    unpolarized trace method.
+  failure_mode: The requested average cannot be evaluated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(b)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-qed-cross-section-to-scalar-qed-rules
+  from: qft.align035.problem-scalar-qed-propagator-and-vertices
+  to: qft.align035.problem-scalar-qed-pair-production-cross-section
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The production calculation needs the scalar-QED interaction rules derived
+    in the preceding part.
+  failure_mode: The amplitude cannot be constructed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(b)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-qed-task-to-scalar-path
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align035.problem-scalar-qed-propagator-and-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise explicitly asks for the functional method of Section 9.2.
+  failure_mode: The requested propagator and vertex derivation would lack its stated
+    method.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(a)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-qed-vacpol-to-dimreg
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align035.problem-scalar-qed-vacuum-polarization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly requires dimensional regularization.
+  failure_mode: The specified regulated comparison cannot be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(c)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-qed-vacpol-to-rules
+  from: qft.align035.problem-scalar-qed-propagator-and-vertices
+  to: qft.align035.problem-scalar-qed-vacuum-polarization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two required diagrams use the scalar-QED photon vertices.
+  failure_mode: The loop diagrams and their relative contribution would be incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(c)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-shift-to-schwinger-dyson
+  from: qft.align021.real-scalar-configuration-functional-integral
+  to: qft.align035.schwinger-dyson-equations-from-field-shifts
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The change-of-variables derivation acts on the scalar functional integral.
+  failure_mode: The quantum equation-of-motion identity would lack its integral representation.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 306
+- id: qft.align035.peskin-schroeder-scalar-vacpol-to-electron-loop-comparison
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align035.problem-scalar-qed-vacuum-polarization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested one-quarter result compares the scalar loop with the virtual
+    electron-positron contribution.
+  failure_mode: The stated comparison baseline would be unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(c)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-vacpol-to-feynman-parameters
+  from: qft.align019.feynman-parameter-denominator-combination
+  to: qft.align035.problem-scalar-qed-vacuum-polarization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly combines denominators before introducing a Feynman
+    parameter.
+  failure_mode: The specified loop-evaluation route cannot be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(c)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-scalar-vacpol-to-transversality
+  from: qft.align025.effective-charge-vacuum-polarization-matching
+  to: qft.align035.problem-scalar-qed-vacuum-polarization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The required form (gμνq²-qμqν)H(q²) is the transverse vacuum-polarization
+    structure.
+  failure_mode: The target tensor structure would be unmotivated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(c)
+    pages:
+    - 312
+- id: qft.align035.peskin-schroeder-schwinger-dyson-to-complex-current-contact
+  from: qft.align035.schwinger-dyson-equations-from-field-shifts
+  to: qft.align035.complex-scalar-current-contact-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current relation is the symmetry-direction version of the change-of-variables
+    identity.
+  failure_mode: The contact terms would be mistaken for an ordinary classical conservation
+    law.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 309
+- id: qft.align035.peskin-schroeder-thermal-fermion-to-grassmann
+  from: qft.align035.grassmann-algebra-and-shift-invariant-integration
+  to: qft.align021.task-thermal-fermion-antiperiodic-boundary
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-level oscillator uses Grassmann-valued coordinates in its Euclidean
+    functional integral.
+  failure_mode: The integral and antiperiodic fermion variables could not be manipulated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(c–d)
+    pages:
+    - 313
+- id: qft.align035.peskin-schroeder-thermal-fermion-to-grassmann-gaussian
+  from: qft.align035.grassmann-gaussian-determinants-and-pairings
+  to: qft.align021.task-thermal-fermion-antiperiodic-boundary
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The two-level path integral is a Grassmann Gaussian evaluation.
+  failure_mode: The fermionic functional integral cannot be evaluated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(d)
+    pages:
+    - 313
+- id: qft.align035.peskin-schroeder-thermal-photon-to-faddeev-popov
+  from: qft.align035.faddeev-popov-gauge-fixing-abelian
+  to: qft.align035.problem-thermal-photon-gauge-fixed-partition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly asks to apply the gauge-fixing procedure.
+  failure_mode: The gauge-invariant photon integral remains overcounted.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(e)
+    pages:
+    - 314
+- id: qft.align035.peskin-schroeder-thermal-photon-to-physical-polarizations
+  from: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+  to: qft.align035.problem-thermal-photon-gauge-fixed-partition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The final check is the correct counting of physical photon polarization
+    states.
+  failure_mode: The determinant result could not be assessed for its physical degree-of-freedom
+    count.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(e)
+    pages:
+    - 314
+- id: qft.align035.peskin-schroeder-thermal-photon-to-thermal-scalar
+  from: qft.align021.task-thermal-free-scalar-determinant
+  to: qft.align035.problem-thermal-photon-gauge-fixed-partition
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon task explicitly evaluates its determinants using the free-scalar
+    determinant result.
+  failure_mode: The required determinant evaluation route is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.2(e)
+    pages:
+    - 314
+- id: qft.align035.peskin-schroeder-translation-stress-to-functional-translation
+  from: qft.align035.translation-schwinger-dyson-stress-tensor
+  to: qft.translation-symmetry-and-energy-momentum-tensor
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The localized functional variation independently recovers the accepted
+    translation stress tensor.
+  failure_mode: Requiring the earlier Noether result would confuse a consistency check
+    with an input to the functional derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 310
+- id: qft.align035.peskin-schroeder-u1-current-to-complex-current-contact
+  from: qft.complex-scalar-u1-current
+  to: qft.align035.complex-scalar-current-contact-identity
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The functional variation identifies the accepted complex-scalar U(1)
+    Noether current inside a correlator.
+  failure_mode: The current entering the contact identity would not be defined.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.6 Symmetries in the Functional Formalism
+    pages:
+    - 309
+- id: qft.align035.peskin-schroeder-ward-correlation-to-xi-independence
+  from: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
+  to: qft.align035.gauge-invariant-correlator-xi-independence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The PS QED cancellation needs the Ward identity for the longitudinal
+    propagator insertion.
+  failure_mode: The source-specific ξ-dependent contribution would not be shown to
+    vanish.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+- id: qft.align035.peskin-schroeder-ward-polarization-to-physical-smatrix
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.align035.physical-qed-s-matrix-projection
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The transverse-polarization Ward argument proves unitarity after projection.
+  failure_mode: The projected S matrix would not be shown unitary.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 298
+- id: qft.align035.peskin-schroeder-wick-rotation-to-euclidean
+  from: qft.align019.wick-rotation-for-convergent-loop-integrals
+  to: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The source explicitly identifies the time-contour rotation as the configuration-space
+    analogue of Wick rotation.
+  failure_mode: The analytic continuation would be treated as an unsupported substitution.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.3 The Analogy Between Quantum Field Theory and Statistical Mechanics
+    pages:
+    - 293
+- id: qft.align035.ps-covariant-to-common-xi
+  from: qft.align035.covariant-photon-propagator-and-gauge-parameter
+  to: qft.generalized-xi-gauge-propagator
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 297
+- id: qft.align035.qed-xi-route-to-common-fp-independence
+  from: qft.align035.gauge-invariant-correlator-xi-independence
+  to: qft.faddeev-popov-gauge-fixing-independence
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The PS Ward cancellation independently establishes ξ independence for
+    gauge-invariant QED correlators, a narrow case of the qualified common result.
+  failure_mode: Making this edge necessary would impose QED-specific Ward assumptions
+    on the independent general group-and-Jacobian proof.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.4 Quantization of the Electromagnetic Field
+    pages:
+    - 297
+- id: qft.align035.scalar-task-to-existing-propagator
+  from: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  to: qft.align035.problem-scalar-qed-propagator-and-vertices
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The accepted scalar-QED result can help check the requested functional
+    derivation without supplying it as the task answer.
+  failure_mode: Using the supplied result as a prerequisite would erase the problem’s
+    requested derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(a)
+    pages:
+    - 312
+- id: qft.align035.scalar-task-to-existing-seagull
+  from: qft.align054.scalar-qed-seagull-contact-vertex
+  to: qft.align035.problem-scalar-qed-propagator-and-vertices
+  relation: pedagogical
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The accepted scalar-QED result can help check the requested functional
+    derivation without supplying it as the task answer.
+  failure_mode: Using the supplied result as a prerequisite would erase the problem’s
+    requested derivation.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 9.1(a)
+    pages:
+    - 312
+- id: qft.align035.translation-to-common-stress
+  from: qft.align035.translation-schwinger-dyson-stress-tensor
+  to: qft.translation-symmetry-and-energy-momentum-tensor
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 310
+- id: qft.align035.zero-mode-to-common-xi
+  from: qft.align035.gauge-redundancy-obstructs-photon-gaussian
+  to: qft.generalized-xi-gauge-propagator
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: This PS functional route independently establishes the compatible common
+    result at its stated scope.
+  failure_mode: Treating this route as compulsory would incorrectly make independent
+    derivations cumulative.
+  evidence:
+  - source: peskin-schroeder
+    section: 9.2–9.6 Functional Methods
+    pages:
+    - 294
+    - 295
 - id: qft.align041.edge.ray-symmetry-to-continuous-unitary
   from: qft.align041.symmetry-as-transition-probability-invariance
   to: qft.align010.weinberg-1.symmetry-generators-as-hermitian-observables

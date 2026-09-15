@@ -2562,6 +2562,184 @@ units:
     affected_records:
     - kind: nodes
       id: qft.align016.lorentz-invariant-phase-space-cross-section
+- id: full-align-032
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: Independent PS and WII derivations were encoded as cumulative inputs, and
+      two p.109 tasks inherited an unrelated scalar trick.
+    alternatives:
+    - Create four source-route nodes with internal joint inputs and alternative result
+      edges.
+    - Keep every source input compulsory across both book derivations.
+    - Defer the supported common results and all associated tasks.
+    resolution: Separate both coupling and beta routes, remove the two scalar-trick
+      edges, and retain exact assumptions and normalizations.
+    rationale: PS532–540 supplies ordinary-counterterm and rescaled-field determinant
+      routes. WII98–109 supplies invariant-background-F² and constant-field trace-log
+      routes. Route nodes keep each input set joint internally, while alternative
+      edges prevent cross-route compulsion. The p.109 prompts do not invoke the scalar-potential
+      differentiation trick; BV cohomological renormalization remains a distinct accepted
+      record.
+    evidence:
+    - source: peskin-schroeder
+      section: 16.5–16.6
+      pages:
+      - 532
+      - 533
+      - 534
+      - 535
+      - 536
+      - 537
+      - 538
+      - 539
+      - 540
+    - source: weinberg-2
+      section: 17.4–17.5 and Problems
+      pages:
+      - 98
+      - 99
+      - 100
+      - 101
+      - 102
+      - 103
+      - 104
+      - 105
+      - 106
+      - 107
+      - 108
+      - 109
+    affected_records:
+    - kind: nodes
+      id: qft.align032.background-determinant-nonabelian-beta-coefficients
+    - kind: nodes
+      id: qft.align032.background-gauge-coupling-renormalization-constraints
+    - kind: nodes
+      id: qft.align032.peskin-background-determinant-beta-route
+    - kind: nodes
+      id: qft.align032.peskin-ordinary-counterterm-coupling-route
+    - kind: nodes
+      id: qft.align032.weinberg-background-f2-coupling-route
+    - kind: nodes
+      id: qft.align032.weinberg-constant-background-beta-route
+    - kind: edges
+      id: qft.align032.peskin-counterterm-route-to-common-coupling
+    - kind: edges
+      id: qft.align032.peskin-determinant-route-to-common-beta
+    - kind: edges
+      id: qft.align032.ps10-background-determinants-to-beta-alternative
+    - kind: edges
+      id: qft.align032.ps10-background-setup-to-determinants
+    - kind: edges
+      id: qft.align032.ps10-beta-to-scalar-beta-problem
+    - kind: edges
+      id: qft.align032.ps10-bosonic-determinant-to-background-determinants
+    - kind: edges
+      id: qft.align032.ps10-counterterms-to-beta
+    - kind: edges
+      id: qft.align032.ps10-counterterms-to-counterterm-problem
+    - kind: edges
+      id: qft.align032.ps10-effective-action-to-background-determinants
+    - kind: edges
+      id: qft.align032.weinberg-2-background-coupling-prerequisite-constant-background-gauge
+    - kind: edges
+      id: qft.align032.weinberg-2-background-coupling-prerequisite-scalar-loop-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-background-coupling-prerequisite-spacetime-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-background-gauge-prerequisite-background-coupling
+    - kind: edges
+      id: qft.align032.weinberg-2-constant-background-prerequisite-one-loop-group-factors
+    - kind: edges
+      id: qft.align032.weinberg-2-coupling-normalization-prerequisite-background-coupling
+    - kind: edges
+      id: qft.align032.weinberg-2-determinant-prerequisite-scalar-loop-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-determinant-prerequisite-spacetime-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-regulation-prerequisite-one-loop-group-factors
+    - kind: edges
+      id: qft.align032.weinberg-2-spacetime-dirac-notation-prerequisite-constant-background-method
+    - kind: edges
+      id: qft.align032.weinberg-background-f2-route-to-common-coupling
+    - kind: edges
+      id: qft.align032.weinberg-tracelog-route-to-common-beta
+  - finding: 1
+    issue: The companion used placeholders and omitted four fresh packet-supported
+      relations while misclassifying current endpoints.
+    alternatives:
+    - Rebuild all 39 identities from exact origins and packet evidence.
+    - Retain the stale placeholder ledger.
+    - Emit the three later-source relations without their cited pages.
+    resolution: Emit 32 supported identities, omit two unsound task edges, retain
+      three mapped-later and two genuine future gaps.
+    rationale: The 1,345-node graph maps PS beta and WII notation endpoints, so the
+      three PS relations and the WII notation relation now emit with packet evidence.
+      The p.152 and p.158–159 WII relations remain later because their evidence is
+      outside this packet. Exact source IDs, endpoints, contexts, and dispositions
+      replace every placeholder.
+    evidence:
+    - source: peskin-schroeder
+      section: 16.5–16.6 and Problems
+      pages:
+      - 532
+      - 533
+      - 536
+      - 537
+      - 538
+      - 539
+      - 540
+      - 544
+    - source: weinberg-2
+      section: 17.4–17.5
+      pages:
+      - 100
+      - 101
+      - 102
+    affected_records:
+    - kind: edges
+      id: qft.align032.peskin-counterterm-route-to-common-coupling
+    - kind: edges
+      id: qft.align032.peskin-determinant-route-to-common-beta
+    - kind: edges
+      id: qft.align032.ps10-background-determinants-to-beta-alternative
+    - kind: edges
+      id: qft.align032.ps10-background-setup-to-determinants
+    - kind: edges
+      id: qft.align032.ps10-beta-to-scalar-beta-problem
+    - kind: edges
+      id: qft.align032.ps10-bosonic-determinant-to-background-determinants
+    - kind: edges
+      id: qft.align032.ps10-counterterms-to-beta
+    - kind: edges
+      id: qft.align032.ps10-counterterms-to-counterterm-problem
+    - kind: edges
+      id: qft.align032.ps10-effective-action-to-background-determinants
+    - kind: edges
+      id: qft.align032.weinberg-2-background-coupling-prerequisite-constant-background-gauge
+    - kind: edges
+      id: qft.align032.weinberg-2-background-coupling-prerequisite-scalar-loop-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-background-coupling-prerequisite-spacetime-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-background-gauge-prerequisite-background-coupling
+    - kind: edges
+      id: qft.align032.weinberg-2-constant-background-prerequisite-one-loop-group-factors
+    - kind: edges
+      id: qft.align032.weinberg-2-coupling-normalization-prerequisite-background-coupling
+    - kind: edges
+      id: qft.align032.weinberg-2-determinant-prerequisite-scalar-loop-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-determinant-prerequisite-spacetime-problem
+    - kind: edges
+      id: qft.align032.weinberg-2-regulation-prerequisite-one-loop-group-factors
+    - kind: edges
+      id: qft.align032.weinberg-2-spacetime-dirac-notation-prerequisite-constant-background-method
+    - kind: edges
+      id: qft.align032.weinberg-background-f2-route-to-common-coupling
+    - kind: edges
+      id: qft.align032.weinberg-tracelog-route-to-common-beta
 - id: full-align-033
   model_verdict: accept
   outcome: promoted
@@ -2848,6 +3026,98 @@ units:
       id: qft.align034.weinberg-2-coset-representatives-to-ccwz-covariants
     - kind: edges
       id: qft.align034.weinberg-2-goldstone-theorem-to-general-coordinate-separation
+- id: full-align-035-extended
+  model_verdict: accept
+  outcome: promoted
+  decisions:
+  - finding: 0
+    issue: The scalar U(1) contact identity was merged into a fermionic QED vertex
+      identity without spinor or amputation support.
+    alternatives:
+    - Keep the scalar identity in its worked residual and amend the QED core only
+      with the PS311 functional QED route.
+    - Retain the scalar origin on the QED vertex identity despite the absent spinor
+      and amputation steps.
+    - Defer every otherwise supported common-core amendment.
+    resolution: Keep the scalar worked route distinct; remove its QED-core origin,
+      evidence, and bridge, and authorize the corrected amendments.
+    rationale: PS309 derives charge-weighted contact terms for a free complex scalar
+      and contains no Dirac vertex or amputation. PS311 supplies the functional QED
+      Ward route. The other replacements preserve accepted fields and retain their
+      source-specific methods.
+    evidence:
+    - source: peskin-schroeder
+      section: 9.6 complex-scalar current identity
+      pages:
+      - 309
+    - source: peskin-schroeder
+      section: 9.6 QED Ward–Takahashi identity
+      pages:
+      - 311
+    - source: schwartz
+      section: 19.5.1
+      pages:
+      - 352
+    affected_records:
+    - kind: nodes
+      id: qft.align021.free-scalar-generating-functional
+    - kind: nodes
+      id: qft.generalized-xi-gauge-propagator
+    - kind: nodes
+      id: qft.faddeev-popov-gauge-orbit-functional-integral
+    - kind: nodes
+      id: qft.align021.grassmann-algebra-and-grading
+    - kind: nodes
+      id: qft.align029.dirac-momentum-space-and-feynman-propagator
+    - kind: nodes
+      id: qft.align011.external-source-generating-functional
+    - kind: nodes
+      id: qft.align043.qed-fermion-exchange-and-loop-signs
+    - kind: nodes
+      id: qft.align012.qed-full-vertex-inverse-propagator-ward-identity
+    - kind: nodes
+      id: qft.align030.schwinger-dyson-contact-equations
+    - kind: nodes
+      id: qft.translation-symmetry-and-energy-momentum-tensor
+    - kind: nodes
+      id: qft.lattice-correlator-mass-extraction
+    - kind: nodes
+      id: qft.align023.peskin.qed-feynman-rules-and-physical-polarizations
+    - kind: edges
+      id: qft.align035.complex-current-to-common-ward
+    - kind: nodes
+      id: qft.align035.complex-scalar-current-contact-identity
+  - finding: 1
+    issue: The ξ route made the full Z1=Z2 proof compulsory for the independent general
+      Faddeev–Popov theorem.
+    alternatives:
+    - Feed the narrow PS ξ-cancellation residual from the common Ward identity, then
+      join the general result as an alternative.
+    - Keep the on-shell/MS Z1=Z2 proof as a necessary premise of the general Faddeev–Popov
+      theorem.
+    - Omit the supported PS ξ-independence route.
+    resolution: Route the common Ward identity into the PS QED residual, then connect
+      that residual to general gauge independence as helpful.
+    rationale: PS297 uses only the Ward identity to cancel the longitudinal ξ term
+      for gauge-invariant QED combinations. Weinberg II 21–22 proves general gauge-fixing
+      independence from separate group, measure, and Jacobian assumptions.
+    evidence:
+    - source: peskin-schroeder
+      section: 9.4 Quantization of the Electromagnetic Field
+      pages:
+      - 297
+    - source: weinberg-2
+      section: '15.5'
+      pages:
+      - 21
+      - 22
+    affected_records:
+    - kind: nodes
+      id: qft.faddeev-popov-gauge-fixing-independence
+    - kind: edges
+      id: qft.align035.peskin-schroeder-ward-correlation-to-xi-independence
+    - kind: edges
+      id: qft.align035.qed-xi-route-to-common-fp-independence
 - id: full-align-041
   model_verdict: accept
   outcome: promoted
