@@ -8,13 +8,13 @@ goal are not included in its token or elapsed-time counters.
 |---|---:|
 | Goal tracker tokens | 59,502,458 |
 | Goal tracker elapsed hours | 23.29 |
-| Recorded dispatches in this interval | 606 |
-| Recorded native results | 588 |
-| Distinct worker sessions confirmed in results | 217 |
+| Recorded dispatches in this interval | 614 |
+| Recorded native results | 596 |
+| Distinct worker sessions confirmed in results | 218 |
 | Dispatches with failure records | 17 |
 
 Goal counters were observed through 2026-09-15T03:50:25+00:00; dispatch and
-graph totals were collected at 2026-09-15T17:23:39.344634+00:00. These are cumulative
+graph totals were collected at 2026-09-15T18:21:17.538864+00:00. These are cumulative
 observations; do not add successive snapshots together.
 
 The host token and elapsed-time counter stopped during an interruption. The displayed counter values cover work only through their stated timestamp; resumed work is tracked by dispatch records. A complete-run token total is not available from this counter.
@@ -30,7 +30,7 @@ A separate reconstruction from local session metadata extends the token measurem
 
 This reconstruction covers the orchestrator and its descendant sessions with token events (225 sessions), including support and failed work. Cached traffic includes repeated input processing. Reasoning output is already included in output. Do not add this total to the frozen goal counter or to earlier snapshots. These measurements do not establish billing or active compute hours.
 
-The observed wall-clock span from goal start to this cutoff is **35.94 hours**, including pauses, interruptions, and idle time. It is not summed worker time.
+The observed wall-clock span from goal start to report generation is **37.81 hours**, including pauses, interruptions, and idle time. It is not summed worker time.
 
 | Observed runtime model / effort | Input excluding cache | Output | Comparable total |
 |---|---:|---:|---:|
@@ -44,8 +44,8 @@ The latest token refresh stopped at a counter-continuity check in local session 
 
 | Requested model and effort | Recorded dispatches | Recorded results |
 |---|---:|---:|
-| `gpt-5.6-sol` / high | 351 | 339 |
-| `gpt-5.6-terra` / high | 255 | 249 |
+| `gpt-5.6-sol` / high | 357 | 345 |
+| `gpt-5.6-terra` / high | 257 | 251 |
 
 The current host allows one orchestrator and up to three workers. This run now
 uses one worker at a time. Historical
@@ -55,8 +55,8 @@ Failures can also have recorded results, so those columns overlap too.
 
 At this snapshot, 4 textbook graphs have completed model review,
 with 2,351 nodes and 2,857 relationships.
-The shared graph has 1901 nodes and 2652 relationships,
-representing 2098 book concepts. Shared construction and its
+The shared graph has 1988 nodes and 2786 relationships,
+representing 2185 book concepts. Shared construction and its
 combined audit remain in progress; the end human audit is pending.
 
 The goal tracker's interface does not expose input, cached-input, output or per-model
