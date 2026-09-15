@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 1140 concepts and 1278 relationships, mapping 1292 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 1180 concepts and 1331 relationships, mapping 1335 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -21,11 +21,11 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 87 |
+| Peskin–Schroeder / Schwartz | 89 |
 | Peskin–Schroeder / Weinberg I | 9 |
 | Peskin–Schroeder / Weinberg II | 29 |
-| Schwartz / Weinberg I | 12 |
-| Schwartz / Weinberg II | 23 |
+| Schwartz / Weinberg I | 14 |
+| Schwartz / Weinberg II | 24 |
 | Weinberg I / Weinberg II | 0 |
 
 **These numbers are not whole-book overlap estimates.** The reviewed inputs cover different portions of the subject. A zero means no shared-node mapping in the aligned inputs; it does not mean either book omits the topic.

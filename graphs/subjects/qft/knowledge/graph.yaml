@@ -1677,11 +1677,10 @@ nodes:
   notation: []
 - id: qft.align010.schwartz.gauge-current-minimal-coupling
   label: Gauge-current minimal coupling and scalar contact term
-  summary: For the complex scalar, the locally covariant derivative D_μφ=(∂_μ+ieA_μ)φ
-    defines scalar QED. Its e=0 global Noether current is J_0^μ=−i(φ∂^μφ*−φ*∂^μφ);
-    expanding the locally invariant Lagrangian gives J^μ=J_0^μ−2eA^μ|φ|², the linear
-    coupling −eA_μJ_0^μ, and the separate e²A²|φ|² completion required to cancel the
-    scalar variation.
+  summary: For a complex scalar, D_μφ=(∂_μ+ieA_μ)φ defines scalar QED. Its e=0 current
+    is J₀^μ=−i(φ∂^μφ*−φ*∂^μφ); expanding |Dφ|² gives J^μ=J₀^μ−2eA^μ|φ|², the linear
+    −eA_μJ₀^μ coupling, and the required e²A²|φ|² contact term. The same completion
+    follows independently by demanding longitudinal-mode decoupling.
   kind: result
   group: qft.particle-representations-and-gauge-polarizations
   origins:
@@ -1690,6 +1689,15 @@ nodes:
     note: Retains the source record ‘Gauge-current minimal coupling and scalar contact
       term’ with its stated scope, assumptions, and notation; this source-scoped alignment
       does not assert a broader equivalence.
+  - project: schwartz
+    node: schwartz.scalar-qed-local-u1-lagrangian
+    note: Retains the local-U(1) covariant-derivative construction and scalar-QED
+      Lagrangian.
+  - project: schwartz
+    node: schwartz.gauge-invariance-from-longitudinal-decoupling
+    note: Retains the same scalar-QED completion reached by requiring the massless
+      longitudinal mode to decouple; the strong-coupling derivation remains a distinct
+      method.
   evidence:
   - source: schwartz
     section: 8.3.1 and 8.4
@@ -1698,6 +1706,20 @@ nodes:
     - 123
     note: Constructs scalar QED from the covariant derivative, then derives the A-dependent
       current, generic linear Noether-current coupling, and scalar quadratic completion.
+  - source: schwartz
+    section: 8.3 and Chapter 9 introduction
+    pages:
+    - 121
+    - 140
+    note: Defines the local scalar transformation, oppositely charged covariant derivatives,
+      and scalar-QED Lagrangian.
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 134
+    - 135
+    note: Independently reconstructs conserved-current coupling, the nonlinear phase
+      transformation, and the scalar contact term from longitudinal decoupling.
   notation: []
 - id: qft.align010.schwartz.little-group-induced-vector-representations
   label: Little-group induced vector representations
@@ -1867,6 +1889,11 @@ nodes:
     note: Retains the source record ‘Massless Maxwell gauge redundancy and two modes’
       with its stated scope, assumptions, and notation; this source-scoped alignment
       does not assert a broader equivalence.
+  - project: schwartz
+    node: schwartz.gauge-redundancy-locality-and-global-data
+    note: Retains the compatible statement that gauge redundancy leaves two physical
+      massless spin-one polarizations; its locality and Wilson-loop content remains
+      in a source-specific residual.
   evidence:
   - source: schwartz
     section: 8.2.3–8.2.4
@@ -1876,6 +1903,14 @@ nodes:
     - 120
     note: Derives gauge invariance, fixes Coulomb gauge, counts two modes, and identifies
       pure-gauge/unphysical modes.
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 130
+    - 131
+    - 132
+    note: Reaffirms gauge redundancy and two physical modes while separately motivating
+      Aμ by locality and global Wilson-loop data.
   notation: []
 - id: qft.align010.schwartz.particle-as-unitary-poincare-irrep
   label: Particle as an irreducible unitary Poincaré representation
@@ -6615,11 +6650,10 @@ nodes:
     note: j(x) is an external classical function rather than a dynamical quantum field.
 - id: qft.align015.complex-scalar-canonical-particles-and-charge
   label: 'Free complex-scalar quantization: two charged species'
-  summary: A Peskin–Schroeder task and Weinberg’s worked historical construction both
-    canonically quantize a free complex scalar into two equal-mass particle species
-    with opposite charge when charged. Peskin–Schroeder asks the learner to diagonalize
-    its supplied continuum Hamiltonian and charge; Weinberg works through discrete
-    normal modes and identifies the two operator families as particles and antiparticles.
+  summary: A free complex scalar quantizes into two equal-mass particle species of
+    opposite charge. Peskin–Schroeder poses the continuum Hamiltonian and charge diagonalization
+    as a task; Weinberg works discrete normal modes; Schwartz explicitly expands φ
+    with a and b† and identifies the b sector as antiparticles.
   kind: method
   group: qft.align015-peskin-free-fields
   origins:
@@ -6633,6 +6667,10 @@ nodes:
     note: Preserves this reviewed weinberg-1 treatment at the stated scope; it does
       not import a different derivation, historical framing, or later proof beyond
       this correspondence.
+  - project: schwartz
+    node: schwartz.complex-scalar-antiparticle-quantization
+    note: 'Retains Schwartz’s worked operator expansion: φ contains a and b†, φ* contains
+      a† and b, and the b sector carries the opposite charge.'
   evidence:
   - source: peskin-schroeder
     section: Problem 2.2(a)-(c)
@@ -6650,6 +6688,13 @@ nodes:
       in a finite volume, introduces two operator families, obtains their Hamiltonian,
       and identifies equal-mass particle and antiparticle species; it is distinct
       from the Peskin–Schroeder task.
+  - source: schwartz
+    section: '9.1'
+    pages:
+    - 140
+    - 141
+    note: Derives the independent particle and antiparticle operators and their opposite
+      couplings.
   notation:
   - source: peskin-schroeder
     note: H=integral d^3x [pi-star pi + grad phi-star dot grad phi + m^2 phi-star
@@ -11406,23 +11451,35 @@ nodes:
   notation: []
 - id: qft.align019.soft-photon-emission-factorization
   label: Soft-photon emission factorization
-  summary: When the emitted photon momentum is small compared with the hard momentum
-    transfer, neglect it in the hard elastic amplitude and propagator numerators.
-    The one-photon amplitude then factors into the elastic amplitude times the eikonal
-    difference p-prime dot epsilon divided by p-prime dot k minus p dot epsilon divided
-    by p dot k; its phase-space factor reproduces the classical soft spectrum.
+  summary: When the emitted photon is soft relative to the hard invariants, emission
+    from on-shell external legs factors into the hard amplitude times signed eikonal
+    factors proportional to p·ε/(p·q); for one charged line this is the outgoing-minus-incoming
+    difference. Hard subgraphs and numerators may be evaluated at zero soft momentum,
+    nonsingular off-shell attachments are subleading, and the phase-space factor reproduces
+    the classical soft spectrum.
   kind: method
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.soft-photon-emission-factorization
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: schwartz
+    node: schwartz.soft-photon-external-leg-factorization
+    note: Retains the general external-leg derivation, signed incoming/outgoing factors,
+      and the suppression of off-shell loop attachments.
   evidence:
   - source: peskin-schroeder
     section: 6.1 Soft Bremsstrahlung
     pages:
     - 182
     - 183
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 150
+    - 151
+    note: Derives the leading signed eikonal sum over external legs and explains why
+      off-shell attachments are subleading.
   notation: []
 - id: qft.align019.soft-photon-poisson-multiplicity
   label: Poisson multiplicity of emitted soft photons
@@ -19247,18 +19304,28 @@ nodes:
   notation: []
 - id: qft.align033.long-range-graviton-coupling-and-general-covariance
   label: Long-range graviton coupling and general covariance
-  summary: A covariant helicity-two curvature tensor can be formed directly, but inverse-square
-    gravitational interactions require a symmetric potential that transforms up to
-    a gauge transformation. Apart from total-derivative terms that do not affect long-range
-    behavior, the available conserved two-index source is the energy-momentum tensor;
-    the analogous lack of higher-rank sources excludes long-range forces from massless
-    spin above two on the same qualification.
+  summary: A covariant helicity-two curvature exists, but an inverse-square interaction
+    uses a symmetric potential defined up to gauge transformation. Apart from total
+    derivatives irrelevant to long-range behavior, its conserved source is the energy-momentum
+    tensor and its coupling is universal. A soft little-group route fixes universality;
+    a local perturbative longitudinal route completes general covariance. The lack
+    of higher-rank conserved sources excludes analogous long-range forces above spin
+    two on the same qualification.
   kind: result
   origins:
   - project: weinberg-1
     node: weinberg-1.long-range-graviton-coupling-and-general-covariance
     note: Retains the reviewed source-specific normalization, hypotheses, derivation,
       external-proof limit or task boundary; no broader correspondence is asserted.
+  - project: schwartz
+    node: schwartz.massless-spin-two-to-general-relativity-route
+    note: Retains the compatible conserved-tensor coupling and general-covariance
+      conclusion; its local perturbative longitudinal-decoupling construction remains
+      a distinct method.
+  - project: schwartz
+    node: schwartz.soft-spin-two-universal-gravity
+    note: Retains the compatible universal massless-spin-two coupling conclusion;
+      its soft little-group derivation remains a distinct route.
   evidence:
   - source: weinberg-1
     section: '5.9'
@@ -19267,6 +19334,20 @@ nodes:
     - 253
     note: The text compares curvature and potential descriptions and states the conserved-source
       restriction with its total-derivative exception.
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 136
+    - 137
+    note: Constructs the conserved stress-tensor coupling and perturbative generally
+      covariant completion.
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 153
+    - 154
+    note: Uses the soft spin-two Ward condition to require one universal coupling
+      for all species.
   notation: []
 - id: qft.align033.lorentz-field-intertwining-conditions
   label: Lorentz field transformation and coefficient intertwining conditions
@@ -20032,6 +20113,849 @@ nodes:
     - 218
     note: Computes scalar and fermion energies for each statistics choice and identifies
       the instability.
+  notation: []
+- id: qft.align054.appendix-a-proof-of-compact-algebra-criterion
+  label: Appendix proof of the positive-metric compact-algebra criterion
+  summary: 'Appendix A supplies a proof route for the earlier stated equivalence:
+    a real symmetric positive-definite invariant Lie-algebra metric is equivalent
+    to a basis with totally antisymmetric structure constants and to a direct sum
+    of compact simple and U(1) subalgebras. The route constructs a real inverse square
+    root of the metric to prove total antisymmetry, uses the Hermitian adjoint representation
+    to reduce into simple and Abelian blocks, proves each simple block compact because
+    -C^c_ad C^d_bc is a positive sum of squares whose kernel would define an invariant
+    Abelian subalgebra, and reconstructs an invariant positive metric from compact
+    blocks using the Jacobi identity.'
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.appendix-a-proof-of-compact-algebra-criterion
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 51
+    - 52
+    - 53
+    note: The appendix explicitly organizes the proof as a implies b, b implies c,
+      and c implies a.
+  notation: []
+- id: qft.align054.axial-gauge-path-integral-to-covariant-action
+  label: Deriving the covariant gauge-field path integral from axial gauge
+  summary: Starting with the Gauss-law solution for A^a_0, the source instead introduces
+    A^a_0 as an independent Gaussian integration variable, whose stationary point
+    is that solution. Provided the matter momentum integration is also Gaussian under
+    the stated restriction on the matter Lagrangian, integrating the canonical momenta
+    yields a configuration-space integral over matter and all four A^a_μ components
+    with the original covariant Lagrangian and an axial-gauge delta functional δ(A^a_3).
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.axial-gauge-path-integral-to-covariant-action
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '15.4'
+    pages:
+    - 17
+    - 18
+    note: The source replaces the constrained A_0 solution by independent integration,
+      then integrates the canonical momenta under its Gaussian assumption and retains
+      all four gauge-field components.
+  notation: []
+- id: qft.align054.axial-photon-propagator-problem
+  label: Axial-gauge photon propagator problem
+  summary: Problem 8.4 asks for a photon propagator in axial gauge A_0=0. It is a
+    requested gauge-fixed Maxwell inversion independent of the massive-Proca propagator
+    task.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.axial-photon-propagator-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.4
+    pages:
+    - 138
+    note: Requests the photon propagator in axial gauge.
+  notation: []
+- id: qft.align054.cartan-catalog-compact-classical-families
+  label: Cartan catalog of compact classical families
+  summary: 'The appendix presents compact forms of the classical families: A_n=su(n+1),
+    the traceless Hermitian (n+1)-by-(n+1) matrices, has rank n and d=n(n+2); B_n,
+    imaginary antisymmetric (2n+1)-by-(2n+1) matrices, has rank n and d=n(2n+1); C_n=usp(2n),
+    derived from the symplectic block constraint, has rank n and d=n(2n+1); and D_n,
+    the even-dimensional orthogonal family, has rank n and d=n(2n-1). The source states
+    A_n, B_n, and C_n are simple, while D_1 is Abelian and D_2 is B_1+B_1.'
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cartan-catalog-compact-classical-families
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 54
+    - 55
+    - 56
+    - 57
+    note: The catalog introduces the compact convention, then describes A_n, B_n,
+      C_n, and D_n by their defining matrix groups, ranks, dimensions, and simplicity
+      qualifications.
+  notation:
+  - source: weinberg-2
+    note: The subscript n denotes rank, not dimension; Appendix B uses compact Hermitian-generator
+      conventions.
+- id: qft.align054.cartan-exceptional-algebras-and-low-rank-isomorphisms
+  label: Exceptional algebras, low-rank isomorphisms, and covering-group qualification
+  summary: 'Beyond the classical families, the source lists the five exceptional simple
+    algebras G_2, F_4, E_6, E_7, and E_8 with dimensions 14, 52, 78, 133, and 248.
+    Its four low-rank algebra isomorphisms are A_1=B_1, B_1=C_1, C_2=B_2, and A_3=D_3.
+    These do not identify the corresponding groups: SU(2), USp(4), and SU(4) are simply
+    connected covers of the cited orthogonal groups. The source also gives SO(4)=SO(3)xSO(3),
+    hence its double-valued spinor representation from SU(2)xSU(2), and says higher-dimensional
+    SO(d) spinors require other constructions such as Clifford algebras.'
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cartan-exceptional-algebras-and-low-rank-isomorphisms
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 57
+    - 58
+    note: The final catalog page lists the exceptional algebras; the following page
+      states the four isomorphisms and distinguishes algebra isomorphism from group
+      isomorphism.
+  notation: []
+- id: qft.align054.external-photon-lsz-polarizations
+  label: External photon polarizations in LSZ rules
+  summary: For scalar external states LSZ supplies factor one; each external photon
+    supplies its polarization vector, ε_μ for an incoming photon and ε*_μ for an outgoing
+    one. A diagram contracts those vectors with the derivative-vertex momenta.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.external-photon-lsz-polarizations
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 9.2.1
+    pages:
+    - 145
+    - 146
+    note: States the external-state prescription and works a two-photon diagram.
+  notation: []
+- id: qft.align054.fierz-pauli-massive-spin-two
+  label: Fierz–Pauli massive spin-2 Lagrangian
+  summary: Within a local quadratic Lorentz-invariant dimension-four ansatz for a
+    symmetric tensor, eliminating the four-derivative longitudinal scalar uniquely
+    fixes the mass combination h_μν²−h². The resulting Fierz–Pauli kinetic and mass
+    terms describe a physical massive spin-two field; the massless kinetic limit matches
+    the leading Einstein–Hilbert expansion.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.fierz-pauli-massive-spin-two
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 135
+    note: Derives the unique mass term and displays the Fierz–Pauli Lagrangian.
+  notation: []
+- id: qft.align054.gauge-invariance-from-longitudinal-decoupling
+  label: Gauge invariance from longitudinal decoupling
+  summary: In the massless limit the longitudinal mode has no kinetic term, so any
+    interaction containing it becomes strongly coupled. Requiring it to disappear
+    forces coupling to a conserved current and, for complex scalar matter, the nonlinear
+    phase transformation and A²|φ|² term that complete the scalar-QED gauge-invariant
+    interaction.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-invariance-from-longitudinal-decoupling
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 134
+    - 135
+    note: Derives current conservation and constructs the scalar-QED completion from
+      longitudinal decoupling.
+  notation: []
+- id: qft.align054.gauge-parameter-independence-from-transversality
+  label: Gauge-parameter independence from transverse contractions
+  summary: Because the ξ-dependent photon-propagator term is proportional to p_μp_ν,
+    a Lorentz-invariant physical result must annihilate that longitudinal structure.
+    This is the internal-photon counterpart of replacing an external polarization
+    by momentum in the Ward identity.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-parameter-independence-from-transversality
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 8.5.1
+    pages:
+    - 130
+    note: Explicitly relates ξ independence to the Ward-identity condition.
+  notation: []
+- id: qft.align054.gauge-redundancy-locality-and-global-data
+  label: Gauge potentials preserve locality and global gauge data
+  summary: Keeping A_μ makes local matter couplings manifest even though gauge transformations
+    are descriptive redundancies. Replacing A_μ everywhere by F_μν is generally nonlocal,
+    and F_μν alone can miss gauge-invariant global information carried by Wilson loops.
+  kind: concept
+  origins:
+  - project: schwartz
+    node: schwartz.gauge-redundancy-locality-and-global-data
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 130
+    - 131
+    - 132
+    note: Distinguishes gauge from global symmetry and explains locality and global-field
+      reasons to retain Aμ.
+  notation: []
+- id: qft.align054.invariant-metric-block-form-on-simple-factors
+  label: Block form of an invariant metric on simple factors
+  summary: In a basis with totally antisymmetric structure constants, invariance makes
+    the gauge-algebra metric commute with every adjoint generator. After reducing
+    the adjoint representation, the metric is block diagonal and each irreducible
+    block is proportional to the identity, up to a stated basis adjustment for equivalent
+    blocks; this yields one positive constant for each simple or U(1) factor in the
+    appendix's factorized form.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.invariant-metric-block-form-on-simple-factors
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 54
+    note: Equation (15.A.14) and the following reduction argument derive the block
+      form and recover equation (15.A.2).
+  notation: []
+- id: qft.align054.longitudinal-stueckelberg-ghost-test
+  label: Longitudinal decomposition and ghost test
+  summary: Writing A_μ=A^T_μ+∂_μπ exposes nontransverse dynamics. Unless a+b=0, the
+    longitudinal propagator from the generic vector Lagrangian has a four-derivative
+    structure decomposing into opposite-sign poles, so one mode is a ghost; higher-than-two-derivative
+    kinetic terms similarly conflict with unitarity.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.longitudinal-stueckelberg-ghost-test
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 133
+    - 134
+    note: Performs the decomposition, propagator partial fraction, and ghost diagnosis.
+  notation: []
+- id: qft.align054.massive-spin-three-kinetic-action-problem
+  label: Massive spin-3 kinetic-action construction problem
+  summary: Problem 8.8 asks for a free massive spin-3 kinetic Lagrangian by embedding
+    the field in Z_μνα. It is a requested higher-spin construction, not a result supplied
+    on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.massive-spin-three-kinetic-action-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.8
+    pages:
+    - 139
+    note: States the massive spin-three embedding and free-action task.
+  notation: []
+- id: qft.align054.massive-vector-propagator-problem
+  label: Massive-vector propagator inversion problem
+  summary: Problem 8.3 asks for the classical massive spin-1 propagator by inverting
+    the sourced Proca equations into A_μ=Π_μνJ^ν. It is a requested massive-vector
+    application, not a result derived on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.massive-vector-propagator-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.3
+    pages:
+    - 138
+    note: Requests inversion of the massive spin-1 equations.
+  notation: []
+- id: qft.align054.massless-higher-spin-no-interaction-result
+  label: No interacting massless integer spin above two
+  summary: The source states that gauge invariance required for massless integer spin
+    greater than two is too restrictive to permit interactions, although massive higher-spin
+    particles can have free Lagrangians. The following chapter’s soft-limit argument
+    supplies a sharper version of this conclusion.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.massless-higher-spin-no-interaction-result
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 8.7.3
+    pages:
+    - 138
+    note: States the interacting massless higher-spin obstruction and massive exception.
+  notation: []
+- id: qft.align054.massless-spin-two-cubic-interactions-problem
+  label: Massless spin-2 cubic-interaction construction problem
+  summary: Problem 8.7 requests the two-derivative cubic interactions of a massless
+    h_μν field using the Section 8.7.2 method, and comparison with the cubic Einstein–Hilbert
+    expansion. It is a requested continuation of that staged completion, not a result
+    proved on the problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.massless-spin-two-cubic-interactions-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.7
+    pages:
+    - 139
+    note: Explicitly directs use of Section 8.7.2 and the cubic Einstein–Hilbert comparison.
+  notation: []
+- id: qft.align054.massless-spin-two-to-general-relativity-route
+  label: Massless spin-2 longitudinal-decoupling route to general relativity
+  summary: Assume a local, two-derivative, Lorentz-invariant perturbative completion
+    coupled to matter. Decoupling the longitudinal transformation of h_μν forces a
+    conserved tensor source and iteratively yields general-coordinate transformations,
+    √−g matter coupling, and the Einstein–Hilbert action. This bottom-up route is
+    not a background-independent, nonperturbative construction of general relativity.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.massless-spin-two-to-general-relativity-route
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 136
+    - 137
+    note: Builds the nonlinear transformation and identifies the completed matter
+      and gravitational actions.
+  notation: []
+- id: qft.align054.matrix-spinor-and-antifield-notation
+  label: Matrix, spinor, and antifield notation
+  summary: For a matrix or vector A, the companion writes complex conjugation A*,
+    transpose A^T, and Hermitian adjoint A-dagger=A*^T. It writes an operator adjoint
+    O-dagger, except when an asterisk emphasizes that a vector or matrix of operators
+    is not transposed; +H.c. and +c.c. append the corresponding adjoint or conjugate
+    terms. A barred spinor is bar(u)=u-dagger beta. In the Batalin-Vilkovisky formalism
+    an antifield is chi^‡, rather than chi*, to avoid confusing it with complex conjugation
+    or an antiparticle field.
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.matrix-spinor-and-antifield-notation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2-notation
+    section: Notation
+    pages:
+    - 21
+    note: The companion's roman page xxi defines matrix and operator adjoints, the
+      barred spinor, and the distinct antifield notation.
+  notation:
+  - source: weinberg-2-notation
+    note: The source reserves its antifield glyph chi^‡ for the Batalin-Vilkovisky
+      variable; it is distinct from the ordinary asterisk.
+- id: qft.align054.maxwell-energy-positivity-problem
+  label: Maxwell energy-positivity derivation problem
+  summary: Problem 8.2 asks for the Maxwell energy-momentum tensor and a demonstration
+    that its energy density is positive up to a total spatial divergence. It is a
+    requested check distinct from the Proca positive-energy derivation in the text.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.maxwell-energy-positivity-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.2
+    pages:
+    - 138
+    note: States the energy-momentum and positivity-up-to-divergence task.
+  notation: []
+- id: qft.align054.natural-unit-charge-and-uncertainty-conventions
+  label: Natural-unit, charge, and uncertainty conventions
+  summary: The companion usually sets hbar=c=1, takes -e to be the rationalized electron
+    charge, and writes alpha=e^2/(4 pi) approximately 1/137. Parenthesized trailing
+    digits on numerical data give the uncertainty in those digits. Unless another
+    source is indicated, experimental data are taken from the 1994 Review of Particle
+    Properties. These are source-specific reading conventions rather than independent
+    physical claims.
+  kind: assumption
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.natural-unit-charge-and-uncertainty-conventions
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2-notation
+    section: Notation
+    pages:
+    - 21
+    note: The companion's roman page xxi states the natural-unit and electron-charge
+      choices and defines the uncertainty notation for quoted data.
+  notation:
+  - source: weinberg-2-notation
+    note: Citation page 21 is printed roman page xxi; the fine-structure constant
+      is written alpha=e^2/(4 pi) in these units.
+- id: qft.align054.positive-norm-probability-problem
+  label: Positive-norm probability proof problem
+  summary: Problem 8.1 asks for a proof that interpreting transition probabilities
+    within 0≤P≤1 requires all states to have one norm sign. It is a requested proof
+    extending the displayed vector-norm conflict, not a derivation supplied on the
+    problem page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.positive-norm-probability-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.1
+    pages:
+    - 138
+    note: Explicitly requests the positive- or negative-norm proof.
+  notation: []
+- id: qft.align054.problem-brst-and-bv-algebra-exercises
+  label: 'Problem prompt: BRST classification and BV identities'
+  summary: Problems 7 through 9 ask for a classification of dimension-at-most-four
+    BRST-invariant local Lagrangians under the listed Lorentz, ghost-number, global-gauge,
+    and BRST symmetries; a proof of antibracket symmetry and Jacobi identities; and
+    a gauge-fixing-independence proof under a specified relation (O,S)=i Delta S and
+    the quantum master equation. They are exercise prompts, not established derivations
+    in this section.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-brst-and-bv-algebra-exercises
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: The p. 59 problem list explicitly asks these three BRST/BV derivations and
+      states their premises.
+  notation: []
+- id: qft.align054.problem-gauge-fixing-propagator-and-ghost-calculations
+  label: 'Problem prompt: gauge-fixing propagator and ghost calculations'
+  summary: 'Problems 2, 3, and 6 ask for derivations under specified gauge-fixing
+    functionals: generalized-Coulomb non-Abelian and nonlinear electrodynamic ghost
+    Lagrangians and propagators; and, for the non-Abelian f_alpha=n^mu A_alpha_mu
+    choice, the gauge-field propagator as well as ghost Lagrangian, propagator, and
+    interaction vertex. These are assigned derivations, not results proved in the
+    source text.'
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-gauge-fixing-propagator-and-ghost-calculations
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problems 2 and 3 are on p. 58, while problem 6's gauge-field, ghost, and
+      vertex requests are on p. 59.
+  notation: []
+- id: qft.align054.problem-holonomy-curvature-and-local-pure-gauge
+  label: 'Problem prompt: holonomy, curvature, and local pure gauge'
+  summary: Problem 5 asks the reader to solve the parallel-transport equation for
+    a classical representation-valued field around a small closed path, determine
+    the proportionality to the field strength, and use it to show locally that vanishing
+    F^a_munu permits a gauge transformation setting A^a_mu to zero in at least a finite
+    region. This is a problem prompt, not a proof supplied in the source text.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-holonomy-curvature-and-local-pure-gauge
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problem 5 begins on p. 58 and completes on p. 59 with the requested local-flatness
+      derivation.
+  notation: []
+- id: qft.align054.problem-no-four-generator-simple-lie-algebra
+  label: 'Problem prompt: exclude a four-generator simple Lie algebra'
+  summary: Problem 4 asks for a proof that no simple Lie algebra has exactly four
+    generators. This is an exercise prompt, distinct from the earlier classification
+    result that reports the absence of simple algebras with four through seven generators.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-no-four-generator-simple-lie-algebra
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 4 explicitly asks the reader to show the four-generator exclusion.
+  notation: []
+- id: qft.align054.problem-nonabelian-bianchi-identity
+  label: 'Problem prompt: derive the non-Abelian Bianchi identity'
+  summary: Problem 1 asks the reader to derive the cyclic covariant-derivative identity
+    for the non-Abelian field strength. This is an exercise prompt, not an additional
+    derivation supplied on the problem page.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-nonabelian-bianchi-identity
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 1 explicitly requests the derivation of the displayed Bianchi identity.
+  notation: []
+- id: qft.align054.scalar-four-derivative-ghost-proof-problem
+  label: Scalar four-derivative ghost proof problem
+  summary: Problem 8.9 asks for a proof that no Lorentz-invariant single-scalar four-derivative
+    kinetic Lagrangian, such as −φ□²φ, yields nonnegative energy. It is a requested
+    higher-derivative consistency proof rather than a result demonstrated on the problem
+    page.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-four-derivative-ghost-proof-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.9
+    pages:
+    - 139
+    note: States the scalar four-derivative nonnegative-energy proof task.
+  notation: []
+- id: qft.align054.scalar-moller-scattering-and-xi-cancellation
+  label: Scalar Møller scattering and ξ cancellation
+  summary: Tree-level scalar e⁻e⁻ scattering has t- and u-channel photon-exchange
+    amplitudes. At each exchange vertex k·(p_in+p_out)=p_out²−p_in²=0 for equal on-shell
+    masses, eliminating the ξ-dependent propagator term; inserting the summed amplitude
+    into the CM 2→2 formula gives the displayed scalar-Møller cross section.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-moller-scattering-and-xi-cancellation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.3'
+    pages:
+    - 146
+    - 147
+    note: Calculates both channels, cancels ξ, and reports the cross section.
+  notation: []
+- id: qft.align054.scalar-qed-loop-gauge-cancellation-route
+  label: Scalar-QED internal-photon gauge-cancellation route
+  summary: For a graph with virtual photons contracted into an arbitrary tensor X,
+    replacing one propagator by its longitudinal q_μq_α part does not vanish diagram
+    by diagram. Adding the same-order t, u, and seagull contributions produces an
+    integrand whose longitudinal replacement vanishes by momentum conservation, illustrating
+    the route to ξ independence at loop level.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-loop-gauge-cancellation-route
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 149
+    - 150
+    note: Sets up Xαβ and shows the summed longitudinal contribution vanishes.
+  notation: []
+- id: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  label: Scalar-QED propagators and derivative three-point vertices
+  summary: Expanding scalar QED gives a complex-scalar propagator i/(p²−m²+iε), the
+    covariant-gauge photon propagator, and a three-point Aφ*φ interaction. Acting
+    derivatives on the charged-field expansion supplies signed momentum factors; a
+    single particle-flow rule reproduces scattering, pair-annihilation, and pair-creation
+    vertices while making charge conservation manifest.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-propagators-and-derivative-vertices
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 142
+    - 143
+    - 144
+    note: Lists propagators, derives signed derivative momenta, and states the particle-flow
+      rule.
+  notation: []
+- id: qft.align054.scalar-qed-seagull-contact-vertex
+  label: Scalar-QED seagull contact vertex
+  summary: The e²A²|φ|² term forced by |Dφ|² gives a four-point two-photon/two-scalar
+    vertex 2ie²g_μν. The factor two is the symmetry factor for the identical A fields,
+    and this contact interaction is essential to Ward-identity cancellations.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-seagull-contact-vertex
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 145
+    note: Derives the seagull rule and explains its origin.
+  notation: []
+- id: qft.align054.scalar-qed-ward-cancellation-complete-diagram-set
+  label: Scalar-QED Ward identity from the complete tree diagram set
+  summary: For e⁺e⁻→γγ, replacing one photon polarization by its momentum leaves the
+    t- and crossed-u diagrams nonzero; the seagull graph cancels their remainder by
+    momentum conservation. The cancellation does not require the photon legs to be
+    physical, allowing the same structure to establish internal gauge-parameter independence.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.scalar-qed-ward-cancellation-complete-diagram-set
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 147
+    - 148
+    note: Performs the two-diagram replacement, adds the four-point graph, and notes
+      off-shell applicability.
+  notation: []
+- id: qft.align054.soft-form-factor-charge-definition
+  label: Soft form factor and charge definition
+  summary: For a general Lorentz-covariant scalar–photon vertex, transversality removes
+    the q_μ form factor and the soft on-shell limit leaves F_i(0). Finiteness of that
+    limit permits the general charge definition Q_i=−F_i(0), while the p·ε/(p·q) soft
+    interaction is universal and spin independent.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.soft-form-factor-charge-definition
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    - 153
+    note: Reduces the general vertex and identifies Q_i from its soft form factor.
+  notation: []
+- id: qft.align054.soft-photon-external-leg-factorization
+  label: General external-leg soft-photon derivation
+  summary: For an outgoing photon q soft relative to every hard invariant, each on-shell
+    external leg supplies a signed eQ_i(p_i·ε)/(p_i·q) factor multiplying M₀. Off-shell
+    loop attachments lack the soft pole and are subleading; this gives the general
+    many-leg route beyond the single charged-line core example.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.soft-photon-external-leg-factorization
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 150
+    - 151
+    note: Derives a leg factor, defines the soft limit, and sums incoming/outgoing
+      charges.
+  notation: []
+- id: qft.align054.soft-spin-one-lorentz-implies-charge-conservation
+  label: Soft massless spin-1 Lorentz invariance implies charge conservation
+  summary: A massless spin-1 little-group transformation shifts ε_μ by q_μ. Applying
+    that shift to the leading soft external-leg sum changes the amplitude by eM₀ times
+    total incoming charge minus total outgoing charge; Lorentz invariance therefore
+    requires charge conservation for every hard process, without assuming a Lagrangian
+    or gauge invariance.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.soft-spin-one-lorentz-implies-charge-conservation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    - 153
+    note: Applies the little-group shift to the soft sum and states the general conclusion.
+  notation: []
+- id: qft.align054.soft-spin-two-universal-gravity
+  label: Soft massless spin-2 implies universal gravity
+  summary: The massless spin-2 little-group Ward condition applied to the soft emission
+    sum requires conservation of Σκ_ip_i^ν. Since ordinary momentum is already conserved,
+    nontrivial scattering requires a common κ for every particle; the source identifies
+    this universal coupling with gravity.
+  kind: result
+  origins:
+  - project: schwartz
+    node: schwartz.soft-spin-two-universal-gravity
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 153
+    - 154
+    note: Derives the spin-2 soft constraint and universal κ conclusion.
+  notation: []
+- id: qft.align054.spacetime-index-and-dirac-notation
+  label: Spacetime, index, and Dirac notation
+  summary: The companion normally uses i, j, k for spatial labels 1,2,3 and mu, nu
+    for spacetime labels 1,2,3,0, with x^0 time; alpha, beta label symmetry generators
+    and repeated indices are summed. When specified, Latin indices run 1,2,3,4 with
+    x^4=it. It sets eta_11=eta_22=eta_33=1, eta_00=-1, box=nabla^2-partial_t^2, and
+    epsilon^0123=+1; bold denotes spatial vectors, arrows isospin vectors, hats unit
+    vectors, and dots time derivatives. Its Dirac convention is {gamma_mu,gamma_nu}=2
+    eta_munu, gamma_5=i gamma^0 gamma^1 gamma^2 gamma^3, beta=i gamma^0=gamma_4; theta(s)
+    is +1 for s>0 and 0 for s<0.
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.spacetime-index-and-dirac-notation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2-notation
+    section: Notation
+    pages:
+    - 20
+    note: The companion's roman page xx defines the index ranges, summation, metric,
+      differential, vector, Dirac, and step-function conventions.
+  notation:
+  - source: weinberg-2-notation
+    note: Citation page 20 is printed roman page xx. The displayed box convention
+      is eta^munu partial_mu partial_nu=nabla^2-partial_t^2.
+- id: qft.align054.stueckelberg-massive-vector-representation
+  label: Stueckelberg representation of a massive vector
+  summary: The gauge-invariant toy action −F²/4+m²(A_μ+∂_μπ)²/2 has A_μ→A_μ+∂_μα and
+    π→π−α. Gauge fixing π=0 recovers a massive three-polarization vector, while retaining
+    π distributes the physical longitudinal degree of freedom between fields; integrating
+    π out makes the action nonlocal and exposes why the missing mode remains physical.
+  kind: representation
+  origins:
+  - project: schwartz
+    node: schwartz.stueckelberg-massive-vector-representation
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 131
+    note: Presents the Stueckelberg action, its gauge fixing, degree count, and nonlocal
+      integrated-out form.
+  notation: []
+- id: qft.align054.tensor-polarization-sums-problem
+  label: Tensor polarization-sum and degree-counting problem
+  summary: Problem 8.6 asks for transverse symmetric tensor polarization counting,
+    explicit massive spin-2 bases, spin decomposition conditions, the massless limit,
+    and an embedding/constraint proposal for massive spin three. It is a requested
+    representation analysis, not a text-derived result.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.tensor-polarization-sums-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.6
+    pages:
+    - 139
+    note: Lists the tensor polarization, massive/massless, and spin-three embedding
+      tasks.
+  notation: []
+- id: qft.align054.vector-polarization-sums-problem
+  label: Vector polarization-sum derivation problem
+  summary: Problem 8.5 asks for massive and massless physical-polarization outer products,
+    including a covariant massless expression using p and a reference vector r, and
+    for comparison with propagator numerators and a Lagrangian realizing the result.
+    It is a requested derivation, not a result proved on the problem pages.
+  kind: method
+  origins:
+  - project: schwartz
+    node: schwartz.vector-polarization-sums-problem
+    note: Retains the reviewed source-specific statement, normalization, derivation
+      or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Lists the polarization-sum, propagator, and reference-vector tasks.
   notation: []
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
@@ -21040,6 +21964,16 @@ nodes:
     node: weinberg-2.positive-invariant-lie-algebra-metric
     note: Retains the reviewed book treatment with its source-specific conditions
       and notation.
+  - project: weinberg-2
+    node: weinberg-2.cartan-catalog-compact-classical-families
+    note: Retains the classical compact Cartan families at the shared classification
+      level; detailed ranks, dimensions, and low-rank exceptions remain in a source-specific
+      catalog record.
+  - project: weinberg-2
+    node: weinberg-2.cartan-exceptional-algebras-and-low-rank-isomorphisms
+    note: Retains the five exceptional algebras at the shared classification level;
+      detailed dimensions, isomorphisms, and covering-group qualifications remain
+      explicit separately.
   evidence:
   - source: peskin-schroeder
     section: 15.4 Classification of Lie Algebras
@@ -21074,6 +22008,21 @@ nodes:
     - 9
     note: Pages 8–9 state the invariance and positivity requirements and the three
       equivalent algebraic conditions.
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 54
+    - 55
+    - 56
+    - 57
+    note: Catalogs the compact classical families with their defining matrix realizations.
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 57
+    - 58
+    note: Lists the exceptional cases and qualifies low-rank algebra isomorphisms
+      versus group coverings.
   notation: []
 - id: qft.complex-causal-scalar-field
   label: Complex causal scalar field from particle and antiparticle
@@ -22255,20 +23204,33 @@ nodes:
     note: A subscript L denotes left differentiation for fermionic variables.
 - id: qft.generalized-xi-gauge-propagator
   label: Generalized xi-gauge propagator
-  summary: Choosing f^a=partial^mu A^a_mu with a Gaussian xi weight yields a covariant
-    vector propagator whose longitudinal part depends on xi; xi=0 and xi=1 recover
-    Landau and Feynman gauges.
+  summary: A Gaussian covariant gauge-fixing weight with f=∂·A removes the Maxwell
+    or Yang–Mills kinetic zero mode and yields a vector propagator whose longitudinal
+    part depends on ξ. ξ=1 gives Feynman gauge, while ξ→0 gives Landau gauge only
+    after the kernel is inverted.
   kind: method
   group: qft.gauge-quantization
   origins:
   - project: weinberg-2
     node: weinberg-2.generalized-feynman-gauge-propagator
     note: Retains the xi-gauge construction and parameter-dependent propagator.
+  - project: schwartz
+    node: schwartz.covariant-rxi-photon-propagator
+    note: Retains the massless-Maxwell inverse-kernel derivation, its noninvertible
+      ungauge-fixed operator, and its ξ limits.
   evidence:
   - source: weinberg-2
     section: '15.5'
     pages:
     - 23
+  - source: schwartz
+    section: 8.5–8.5.1
+    pages:
+    - 128
+    - 129
+    - 130
+    note: Adds −(∂·A)²/(2ξ), inverts the Maxwell kernel, and takes the Feynman and
+      Landau limits.
   notation: []
 - id: qft.ghost-loop-compensation-of-unphysical-gauge-modes
   label: Ghost-loop compensation of unphysical gauge modes
@@ -46381,6 +47343,942 @@ edges:
     pages:
     - 210
     note: Applies the 2pi rotation sign in the three-dimensional exchange-path argument.
+- id: qft.align054.scalar-propagator-to-scalar-qed-rules
+  from: qft.align015.feynman-scalar-propagator
+  to: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-QED rule set jointly specializes the charged scalar propagator
+    and the covariant photon propagator before deriving derivative vertices.
+  failure_mode: Without the scalar inverse kernel, the charged internal line in the
+    displayed rule set is undefined.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 142
+    note: Displays the complex-scalar propagator as part of the scalar-QED rule set.
+- id: qft.align054.scalar-qed-rules-to-tree-ward
+  from: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  to: qft.align054.scalar-qed-ward-cancellation-complete-diagram-set
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The t- and u-channel Ward replacements use the derivative vertices and
+    scalar propagators jointly with the separately required seagull graph.
+  failure_mode: The seagull alone cannot produce or cancel the two exchange-diagram
+    remainders.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 147
+    - 148
+    note: Evaluates the exchange diagrams with the scalar-QED rules before the seagull
+      cancellation.
+- id: qft.align054.schwartz-e-antiparticles-to-scalar-rules
+  from: qft.align015.complex-scalar-canonical-particles-and-charge
+  to: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The four signed vertex cases follow from which a/b operator each φ or
+    φ* field creates or annihilates.
+  failure_mode: Particle-flow arrows and signs become a memorized convention.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 143
+    - 144
+    note: Uses the complex-field mode expansion to derive all charged vertex cases.
+- id: qft.align054.schwartz-e-cm-cross-section-to-moller
+  from: qft.align030.cm-two-to-two-cross-section
+  to: qft.align054.scalar-moller-scattering-and-xi-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The reported scalar-Møller result converts the summed matrix element
+    into dσ/dΩ in the center-of-mass frame.
+  failure_mode: The amplitude cannot be turned into the displayed observable.
+  evidence:
+  - source: schwartz
+    section: '9.3'
+    pages:
+    - 147
+    note: Reports dσ/dΩ after the channel amplitudes.
+- id: qft.align054.schwartz-e-complex-global-to-antiparticles
+  from: qft.complex-scalar-u1-current
+  to: qft.align015.complex-scalar-canonical-particles-and-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation requires a field distinct from its conjugate, i.e. the
+    accepted complex-scalar structure.
+  failure_mode: There is no reason to introduce independent a and b sectors rather
+    than the real-scalar expansion.
+  evidence:
+  - source: schwartz
+    section: '9.1'
+    pages:
+    - 140
+    - 141
+    note: Moves from the complex charged field to the non-self-conjugate quantum expansion.
+- id: qft.align054.schwartz-e-current-to-seagull
+  from: qft.align010.schwartz.gauge-current-minimal-coupling
+  to: qft.align054.scalar-qed-seagull-contact-vertex
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The same covariant-derivative expansion that gives the current coupling
+    fixes the required A²φ*φ term and its vertex.
+  failure_mode: The contact graph is incorrectly treated as optional.
+  evidence:
+  - source: schwartz
+    section: 8.3.1 and 9.2
+    pages:
+    - 123
+    - 145
+    note: Explains the quadratic completion and derives its Feynman rule.
+- id: qft.align054.schwartz-e-energy-momentum-to-maxwell-energy-problem
+  from: qft.translation-symmetry-and-energy-momentum-tensor
+  to: qft.align054.maxwell-energy-positivity-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exercise asks to calculate the energy-momentum tensor before assessing
+    its energy density and total divergence.
+  failure_mode: The energy density is asserted without the tensor construction it
+    asks the learner to perform.
+  evidence:
+  - source: schwartz
+    section: Problem 8.2
+    pages:
+    - 138
+    note: Requests the Maxwell energy-momentum tensor and positivity check.
+- id: qft.align054.schwartz-e-fierz-to-gr-route
+  from: qft.align054.fierz-pauli-massive-spin-two
+  to: qft.align054.massless-spin-two-to-general-relativity-route
+  relation: alternative
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The massless kinetic limit motivates the longitudinal-decoupling construction,
+    but the latter can start directly from a massless tensor gauge transformation.
+  failure_mode: The source’s massive-to-massless comparison is omitted, though the
+    nonlinear completion remains derivable.
+  evidence:
+  - source: schwartz
+    section: 8.7.2
+    pages:
+    - 135
+    - 136
+    note: Takes the Fierz–Pauli massless limit then begins the massless interaction
+      analysis.
+- id: qft.align054.schwartz-e-free-scalar-to-antiparticles
+  from: qft.free-scalar-field-mode-expansion
+  to: qft.align015.complex-scalar-canonical-particles-and-charge
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The page explicitly recalls the real scalar mode expansion before generalizing
+    it to distinct a and b operators.
+  failure_mode: The complex expansion has no reference form whose self-conjugacy is
+    being relaxed.
+  evidence:
+  - source: schwartz
+    section: '9.1'
+    pages:
+    - 141
+    note: Begins the derivation by recalling the quantized real scalar field.
+- id: qft.align054.schwartz-e-global-u1-to-scalar-qed
+  from: qft.complex-scalar-u1-current
+  to: qft.align010.schwartz.gauge-current-minimal-coupling
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Local phase covariance extends the accepted complex-scalar global U(1)
+    transformation.
+  failure_mode: The charged field transformation and its two-real-component content
+    have no starting point.
+  evidence:
+  - source: schwartz
+    section: '8.3'
+    pages:
+    - 121
+    note: Builds the local transformation from the complex scalar doublet.
+- id: qft.align054.schwartz-e-gr-route-to-cubic-gravity-problem
+  from: qft.align054.massless-spin-two-to-general-relativity-route
+  to: qft.align054.massless-spin-two-cubic-interactions-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.7 explicitly directs the learner to continue the Section 8.7.2
+    iterative massless-spin-two construction.
+  failure_mode: The stipulated construction method and Einstein–Hilbert expansion
+    target are unavailable.
+  evidence:
+  - source: schwartz
+    section: Problem 8.7
+    pages:
+    - 139
+    note: Explicitly instructs use of Section 8.7.2.
+- id: qft.align054.schwartz-e-green-kernel-to-axial-propagator-problem
+  from: qft.green-function-propagator-kernel
+  to: qft.align054.axial-photon-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: A gauge-specific photon propagator is the Green-function inverse after
+    the axial condition removes the degeneracy.
+  failure_mode: The requested axial result is not understood as an inverse propagator
+    kernel.
+  evidence:
+  - source: schwartz
+    section: 8.5 and Problem 8.4
+    pages:
+    - 128
+    - 138
+    note: Defines the photon Green function and assigns the axial-gauge calculation.
+- id: qft.align054.schwartz-e-green-kernel-to-massive-propagator-problem
+  from: qft.green-function-propagator-kernel
+  to: qft.align054.massive-vector-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Writing Aμ=ΠμνJν is precisely the requested Green-function inverse-kernel
+    construction.
+  failure_mode: The desired propagator has no source-to-field inverse interpretation.
+  evidence:
+  - source: schwartz
+    section: Problem 8.3
+    pages:
+    - 138
+    note: Specifies the sourced inverse form Aμ=ΠμνJν.
+- id: qft.align054.schwartz-e-green-kernel-to-rxi
+  from: qft.green-function-propagator-kernel
+  to: qft.generalized-xi-gauge-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The derivation defines the photon propagator as the Green-function kernel
+    inverse of the gauge-fixed kinetic operator.
+  failure_mode: The matrix inverse is detached from the propagator/Green-function
+    construction.
+  evidence:
+  - source: schwartz
+    section: '8.5'
+    pages:
+    - 128
+    - 129
+    note: Defines Πμν through the time-ordered Green function and constructs its inverse.
+- id: qft.align054.schwartz-e-higher-derivative-to-scalar-4derivative-problem
+  from: qft.higher-derivative-effective-interactions-and-instability
+  to: qft.align054.scalar-four-derivative-ghost-proof-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The requested four-derivative scalar consistency proof uses the accepted
+    distinction between higher-derivative effective terms and unstable kinetic propagation.
+  failure_mode: The exercise lacks the prior higher-derivative stability framework
+    it must specialize.
+  evidence:
+  - source: schwartz
+    section: Problem 8.9
+    pages:
+    - 139
+    note: Requests the nonnegative-energy proof for a fourth-derivative kinetic term.
+- id: qft.align054.schwartz-e-little-ward-to-formfactor
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.align054.soft-form-factor-charge-definition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The general form factor is inserted into the preceding soft little-group
+    ε→ε+q Lorentz-invariance argument.
+  failure_mode: F_i(0) is identified algebraically but does not acquire the charge-conservation
+    constraint defining it.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    - 153
+    note: Uses the little-group shift before and after replacing the scalar-QED vertex
+      by form factors.
+- id: qft.align054.schwartz-e-little-ward-to-soft-charge
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.align054.soft-spin-one-lorentz-implies-charge-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The soft proof applies the same little-group ε→ε+q shift that underlies
+    the massless Ward identity.
+  failure_mode: The source of the Lorentz-invariance constraint on the soft amplitude
+    is missing.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 152
+    note: Explicitly invokes the Section 8.4.2 little-group transformation.
+- id: qft.align054.schwartz-e-longitudinal-to-gauge-completion
+  from: qft.align054.longitudinal-stueckelberg-ghost-test
+  to: qft.align054.gauge-invariance-from-longitudinal-decoupling
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The zero kinetic term in the massless longitudinal sector is the diagnosis
+    that makes its absence from interactions necessary.
+  failure_mode: Gauge invariance is asserted without the strong-coupling failure mode.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 134
+    note: Explains Z→0 strong coupling and the requirement that π never appear.
+- id: qft.align054.schwartz-e-longitudinal-to-massive-spin3-problem
+  from: qft.align054.longitudinal-stueckelberg-ghost-test
+  to: qft.align054.massive-spin-three-kinetic-action-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The chapter’s higher-spin construction extends the longitudinal-mode/ghost
+    diagnostic used to select viable free kinetic terms.
+  failure_mode: The spin-three construction lacks a criterion for rejecting dangerous
+    longitudinal higher derivatives.
+  evidence:
+  - source: schwartz
+    section: 8.7.1, 8.7.3, and Problem 8.8
+    pages:
+    - 133
+    - 138
+    - 139
+    note: Develops the diagnostic, says higher spins use the same trick, and assigns
+      the spin-three action.
+- id: qft.align054.schwartz-e-longitudinal-to-proca
+  from: qft.align054.longitudinal-stueckelberg-ghost-test
+  to: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Stueckelberg decomposition independently recovers the same unique
+    massive vector kinetic structure by excluding ghosts.
+  failure_mode: The earlier positive-energy derivation remains a complete route.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 133
+    - 134
+    note: Uses the decomposition to recover the Proca form.
+- id: qft.align054.schwartz-e-longitudinal-to-scalar-4derivative-problem
+  from: qft.align054.longitudinal-stueckelberg-ghost-test
+  to: qft.align054.scalar-four-derivative-ghost-proof-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The requested scalar proof applies the chapter’s wrong-sign-pole and
+    higher-derivative ghost analysis.
+  failure_mode: The exercise has no established mechanism connecting fourth derivatives
+    to nonunitarity or instability.
+  evidence:
+  - source: schwartz
+    section: 8.7.1 and Problem 8.9
+    pages:
+    - 133
+    - 139
+    note: Derives the higher-derivative ghost diagnostic and assigns the scalar proof.
+- id: qft.align054.schwartz-e-lorentz-fields-to-tensor-polarization-problem
+  from: qft.lorentz-transformation-laws-for-fields
+  to: qft.align054.tensor-polarization-sums-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The tensor exercise imposes Lorentz-covariant transverse and symmetry
+    conditions on hμν polarizations.
+  failure_mode: The index conditions and their degree counts lack their tensor transformation
+    meaning.
+  evidence:
+  - source: schwartz
+    section: Problem 8.6
+    pages:
+    - 139
+    note: Defines the tensor polarizations and requests Lorentz-invariant conditions.
+- id: qft.align054.schwartz-e-lsz-to-external-photons
+  from: qft.align016.lsz-reduction-pole-projection
+  to: qft.align054.external-photon-lsz-polarizations
+  relation: prerequisite
+  source_level: derive
+  target_level: use
+  necessity: necessary
+  rationale: The external-photon rule is explicitly a modification of LSZ by polarization
+    factors.
+  failure_mode: The polarization insertion appears as an isolated rule.
+  evidence:
+  - source: schwartz
+    section: 9.2.1
+    pages:
+    - 145
+    note: States that LSZ is modified by one polarization factor per external photon.
+- id: qft.align054.schwartz-e-massive-basis-to-vector-polarization-problem
+  from: qft.align010.schwartz.massive-vector-polarization-basis
+  to: qft.align054.vector-polarization-sums-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.5(a) begins by summing the physical massive-vector polarization
+    basis.
+  failure_mode: The first requested outer product has no specified physical vectors
+    to sum.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Requests the sum over physical massive spin-one polarizations.
+- id: qft.align054.schwartz-e-massive-propagator-to-vector-polarization-problem
+  from: qft.align054.massive-vector-propagator-problem
+  to: qft.align054.vector-polarization-sums-problem
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.5(b) explicitly compares the massive-vector propagator numerator
+    from Problem 8.3 with the polarization sum.
+  failure_mode: The requested comparison lacks one of its two objects.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Part (b) explicitly invokes Problem 8.3.
+- id: qft.align054.schwartz-e-momentum-rules-to-scalar-rules
+  from: qft.align016.phi4-momentum-space-feynman-rules
+  to: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Scalar-QED rules instantiate the accepted momentum-space prescription
+    with its new propagators and derivative vertex.
+  failure_mode: The factors of i, momentum conservation, and diagram interpretation
+    are ungrounded.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 142
+    - 143
+    note: Reads scalar-QED Feynman rules from the expanded Lagrangian and derivatives.
+- id: qft.align054.schwartz-e-normalization-to-seagull
+  from: qft.align030.general-interaction-normalization-and-symmetry-residual
+  to: qft.align054.scalar-qed-seagull-contact-vertex
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The factor two in the seagull rule is the identical-photon symmetry factor,
+    using the accepted interaction-normalization convention.
+  failure_mode: The four-point vertex is assigned the wrong factor of two.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 145
+    note: Explains that the factor two comes from the symmetry factor for the two
+      A fields.
+- id: qft.align054.schwartz-e-proca-to-massive-propagator-problem
+  from: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  to: qft.align054.massive-vector-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.3 inverts the sourced equations generated by the Proca action.
+  failure_mode: There is no massive-vector kinetic operator to invert.
+  evidence:
+  - source: schwartz
+    section: Problem 8.3
+    pages:
+    - 138
+    note: Requests the massive spin-one propagator by inversion.
+- id: qft.align054.schwartz-e-proca-to-stueckelberg-rep
+  from: qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint
+  to: qft.align054.stueckelberg-massive-vector-representation
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The Stueckelberg action is a gauge-redundant representation of the same
+    massive three-polarization physics.
+  failure_mode: The Proca description remains complete, but its gauge-redundant reformulation
+    and nonlocality lesson are absent.
+  evidence:
+  - source: schwartz
+    section: '8.6'
+    pages:
+    - 131
+    note: Gauge fixing π=0 reduces the toy model to a massive gauge boson.
+- id: qft.align054.schwartz-e-rxi-to-gauge-independence
+  from: qft.generalized-xi-gauge-propagator
+  to: qft.align054.gauge-parameter-independence-from-transversality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The ξ-dependent pμpν numerator identifies precisely the structure that
+    physical contractions must kill.
+  failure_mode: There is no explicit gauge-dependent term to test.
+  evidence:
+  - source: schwartz
+    section: 8.5.1
+    pages:
+    - 130
+    note: Writes the Rξ propagator and states the ξ-independence requirement.
+- id: qft.align054.schwartz-e-rxi-to-vector-polarization-problem
+  from: qft.generalized-xi-gauge-propagator
+  to: qft.align054.vector-polarization-sums-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8.5(e) compares the reference-vector numerator to the Rξ photon
+    propagator.
+  failure_mode: The requested final comparison cannot be made.
+  evidence:
+  - source: schwartz
+    section: Problem 8.5
+    pages:
+    - 138
+    note: Part (e) explicitly asks for comparison with Rξ-gauge numerators.
+- id: qft.align054.schwartz-e-scalar-rules-to-moller
+  from: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  to: qft.align054.scalar-moller-scattering-and-xi-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The t and u amplitudes use the derivative vertex factors and photon propagator.
+  failure_mode: Neither channel numerator nor gauge-parameter cancellation can be
+    calculated.
+  evidence:
+  - source: schwartz
+    section: '9.3'
+    pages:
+    - 146
+    - 147
+    note: Writes both diagrams directly from the rules.
+- id: qft.align054.schwartz-e-seagull-to-tree-ward
+  from: qft.align054.scalar-qed-seagull-contact-vertex
+  to: qft.align054.scalar-qed-ward-cancellation-complete-diagram-set
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The seagull amplitude supplies the exact remainder that t and u channels
+    alone fail to cancel.
+  failure_mode: The Ward replacement remains nonzero and the claimed identity fails.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 148
+    note: Identifies the missing four-point graph and shows its cancellation.
+- id: qft.align054.schwartz-e-soft-charge-to-spin2
+  from: qft.align054.soft-spin-one-lorentz-implies-charge-conservation
+  to: qft.align054.soft-spin-two-universal-gravity
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Spin two repeats the soft/little-group method with an additional momentum
+    factor; familiarity transfers the route but is not logically required.
+  failure_mode: The spin-two calculation can be derived independently from its tensor
+    soft amplitude.
+  evidence:
+  - source: schwartz
+    section: 9.5.1
+    pages:
+    - 153
+    - 154
+    note: Introduces spin two as the next application of the soft-limit argument.
+- id: qft.align054.schwartz-e-soft-factor-to-charge
+  from: qft.align054.soft-photon-external-leg-factorization
+  to: qft.align054.soft-spin-one-lorentz-implies-charge-conservation
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The Lorentz shift is evaluated on the leading external-leg soft sum.
+  failure_mode: There is no amplitude whose qμ shift yields the incoming-minus-outgoing
+    charge sum.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 151
+    - 152
+    note: Derives the soft sum then applies the little-group shift.
+- id: qft.align054.schwartz-e-soft-factor-to-formfactor
+  from: qft.align054.soft-photon-external-leg-factorization
+  to: qft.align054.soft-form-factor-charge-definition
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The form-factor vertex is put into the preceding leading external-leg
+    soft factorization, not offered as a separate route.
+  failure_mode: The p·ε/(p·q) soft expression used to define F_i(0) is unavailable.
+  evidence:
+  - source: schwartz
+    section: '9.5'
+    pages:
+    - 151
+    - 152
+    - 153
+    note: Derives the external-leg soft sum and then generalizes its vertex to form
+      factors.
+- id: qft.align054.schwartz-e-sourced-maxwell-to-axial-propagator-problem
+  from: qft.sourced-maxwell-equations-from-action
+  to: qft.align054.axial-photon-propagator-problem
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The axial-gauge task begins from the sourced Maxwell field equations
+    before imposing A0=0 and inverting.
+  failure_mode: The photon kinetic operator and source equation to be gauge-fixed
+    are missing.
+  evidence:
+  - source: schwartz
+    section: 8.5 and Problem 8.4
+    pages:
+    - 128
+    - 138
+    note: Introduces the sourced Maxwell inversion and asks for its axial-gauge version.
+- id: qft.align054.schwartz-e-sourced-maxwell-to-rxi
+  from: qft.sourced-maxwell-equations-from-action
+  to: qft.generalized-xi-gauge-propagator
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The covariant propagator derivation starts from the sourced Maxwell equations
+    and their momentum-space kinetic operator.
+  failure_mode: There is no field equation whose gauge-fixed inverse is Πμν.
+  evidence:
+  - source: schwartz
+    section: '8.5'
+    pages:
+    - 128
+    - 129
+    note: Writes the sourced Maxwell equation before adding the Rξ gauge-fixing term
+      and inverting.
+- id: qft.align054.schwartz-e-ward-to-loop-cancellation
+  from: qft.align054.scalar-qed-ward-cancellation-complete-diagram-set
+  to: qft.align054.scalar-qed-loop-gauge-cancellation-route
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The internal-photon demonstration reuses the same complete t/u/contact
+    cancellation with polarization vectors replaced by propagator contractions.
+  failure_mode: The external Ward check remains valid but its internal-propagator
+    extension is absent.
+  evidence:
+  - source: schwartz
+    section: '9.4'
+    pages:
+    - 148
+    - 149
+    - 150
+    note: Explains the off-shell extension and performs it with virtual propagators.
+- id: qft.align054.schwartz-e-ward-to-rxi
+  from: qft.align010.schwartz.massless-little-group-ward-identity
+  to: qft.generalized-xi-gauge-propagator
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The Ward identity explains why longitudinal gauge directions in a covariant
+    propagator cannot affect physical amplitudes.
+  failure_mode: The propagator remains usable but its unphysical longitudinal content
+    lacks interpretation.
+  evidence:
+  - source: schwartz
+    section: 8.4.2 and 8.5.1
+    pages:
+    - 128
+    - 130
+    note: Connects the identity to gauge shifts and discusses longitudinal propagator
+      terms.
+- id: qft.align054.schwartz-longitudinal-route-to-scalar-qed-core
+  from: qft.align054.gauge-invariance-from-longitudinal-decoupling
+  to: qft.align010.schwartz.gauge-current-minimal-coupling
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Longitudinal decoupling independently reconstructs the conserved-current
+    coupling, local scalar phase law, and contact completion represented by the common
+    scalar-QED result.
+  failure_mode: The direct covariant-derivative construction remains complete, but
+    the independent strong-coupling route is lost.
+  evidence:
+  - source: schwartz
+    section: 8.7.1
+    pages:
+    - 134
+    - 135
+    note: Derives the scalar-QED completion by requiring the longitudinal mode to
+      decouple.
+- id: qft.align054.weinberg-2-adjoint-prerequisite-appendix-a-proof
+  from: qft.adjoint-representation
+  to: qft.align054.appendix-a-proof-of-compact-algebra-criterion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The b-to-c proof identifies the totally antisymmetric structure constants
+    with imaginary antisymmetric Hermitian adjoint matrices, then reduces that representation
+    into blocks.
+  failure_mode: The route from total antisymmetry to simple and Abelian subalgebras
+    lacks the representation whose reducibility is analyzed.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 51
+    - 52
+    note: The appendix constructs the adjoint matrices from structure constants and
+      uses their Hermiticity and reducibility to identify simple blocks.
+- id: qft.align054.weinberg-2-antibracket-evidence-bv-problem-prompt
+  from: qft.bv-antibracket-classical-master-equation
+  to: qft.align054.problem-brst-and-bv-algebra-exercises
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 8 asks for the symmetry and Jacobi properties of the antibracket
+    represented earlier in the section.
+  failure_mode: The exercise prompt is disconnected from the defined bracket whose
+    identities it asks the reader to prove.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: Problem 8 names equations (15.9.15) and (15.9.21), the antibracket identities.
+- id: qft.align054.weinberg-2-appendix-proof-evidence-metric-block-form
+  from: qft.align054.appendix-a-proof-of-compact-algebra-criterion
+  to: qft.align054.invariant-metric-block-form-on-simple-factors
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: helpful
+  rationale: The block form follows after the appendix has obtained a totally antisymmetric
+    basis and reduced the adjoint representation into its irreducible blocks.
+  failure_mode: The conclusion that the invariant metric is factorwise scalar lacks
+    the reduced-representation setting used by the source.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 51
+    - 54
+    note: The proof develops the block decomposition on p. 51 and applies it to the
+      commuting metric on p. 54.
+- id: qft.align054.weinberg-2-bianchi-evidence-problem-prompt
+  from: qft.covariant-yang-mills-equation-and-bianchi
+  to: qft.align054.problem-nonabelian-bianchi-identity
+  relation: evidence
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks for a derivation of the established Bianchi identity;
+    this edge records correspondence without claiming that the problem page supplies
+    the proof.
+  failure_mode: The prompt can be mistaken for a separate proved result rather than
+    an exercise on the chapter's identity.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 1 asks the reader to derive the cyclic identity previously represented
+      as the non-Abelian Bianchi result.
+- id: qft.align054.weinberg-2-cartan-classical-evidence-exceptional-covering
+  from: qft.align054.cartan-catalog-compact-classical-families
+  to: qft.align054.cartan-exceptional-algebras-and-low-rank-isomorphisms
+  relation: evidence
+  source_level: recognize
+  target_level: recognize
+  necessity: helpful
+  rationale: The low-rank identities and exceptional list close the catalog introduced
+    by the classical families and use the same compact Lie-algebra convention.
+  failure_mode: The named isomorphisms can be mistaken for arbitrary group identities
+    without the catalog's algebra-level setting.
+  evidence:
+  - source: weinberg-2
+    section: Appendix B
+    pages:
+    - 54
+    - 57
+    - 58
+    note: Appendix B establishes the compact catalog convention, completes the classical
+      families, then gives exceptional cases and the low-rank qualification.
+- id: qft.align054.weinberg-2-classification-evidence-four-generator-problem
+  from: qft.compact-simple-lie-algebra-classification
+  to: qft.align054.problem-no-four-generator-simple-lie-algebra
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests a proof of the four-generator exclusion that the
+    earlier classification reports as a result.
+  failure_mode: The exercise is conflated with the established classification statement
+    rather than recognized as a separate proof task.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    note: Problem 4 asks for the four-generator proof; the accepted classification
+      record identifies the same exclusion as a chapter result.
+- id: qft.align054.weinberg-2-faddeev-popov-evidence-gauge-fixing-problems
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.align054.problem-gauge-fixing-propagator-and-ghost-calculations
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The three exercise prompts specify gauge-fixing functions and B[f], so
+    they apply the chapter's gauge-fixed functional-integral construction.
+  failure_mode: The specified B[f] inputs and gauge conditions have no stated relation
+    to the functional-integral method used for the requested propagators and ghosts.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problems 2, 3, and 6 supply f and B[f] and ask for propagator or ghost consequences.
+- id: qft.align054.weinberg-2-field-strength-evidence-holonomy-problem
+  from: qft.nonabelian-field-strength
+  to: qft.align054.problem-holonomy-curvature-and-local-pure-gauge
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 5 asks the reader to relate small-loop transport to the field
+    strength before using that relation in the local-flatness argument.
+  failure_mode: The curvature quantity whose small-loop proportionality is requested
+    is not identified.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 58
+    - 59
+    note: Problem 5 specifies the small closed path and asks for its proportionality
+      to the field strength.
+- id: qft.align054.weinberg-2-positive-metric-prerequisite-appendix-proof
+  from: qft.compact-simple-lie-algebra-classification
+  to: qft.align054.appendix-a-proof-of-compact-algebra-criterion
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: Appendix A proves the equivalence whose positive-invariant-metric statement
+    is already established earlier in the chapter.
+  failure_mode: The appendix's three propositions lack their physical and algebraic
+    starting condition if the invariant metric criterion is not known.
+  evidence:
+  - source: weinberg-2
+    section: Appendix A
+    pages:
+    - 50
+    - 51
+    note: The appendix labels statement a as the positive-definite invariant-metric
+      condition previously identified as equation (15.2.4).
+- id: qft.align054.weinberg-2-pure-gauge-evidence-holonomy-problem
+  from: qft.pure-gauge-flatness
+  to: qft.align054.problem-holonomy-curvature-and-local-pure-gauge
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem's requested consequence is the local pure-gauge direction
+    of the previously established flatness criterion.
+  failure_mode: The final request to gauge A to zero is disconnected from the chapter's
+    pure-gauge notion.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: Problem 5 explicitly asks the reader to use F=0 to gauge the connection
+      to zero in a finite region.
+- id: qft.align054.weinberg-2-quantum-master-evidence-bv-problem-prompt
+  from: qft.bv-quantum-master-equation
+  to: qft.align054.problem-brst-and-bv-algebra-exercises
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 9 asks for a gauge-fixing-independence proof under the quantum
+    master equation, while problem 7 poses the preceding BRST-invariant classification
+    task.
+  failure_mode: The premise required for the problem-9 proof is detached from the
+    source result that states it.
+  evidence:
+  - source: weinberg-2
+    section: Problems
+    pages:
+    - 59
+    note: Problem 9 explicitly assumes the quantum master equation and asks for the
+      gauge-fixing-independence conclusion.
+- id: qft.align054.xi-photon-propagator-to-scalar-qed-rules
+  from: qft.generalized-xi-gauge-propagator
+  to: qft.align054.scalar-qed-propagators-and-derivative-vertices
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scalar-QED rule set jointly uses the covariant ξ-gauge photon propagator
+    and the charged scalar propagator before adding derivative vertices.
+  failure_mode: Without the photon inverse kernel, internal scalar-QED exchange rules
+    and their ξ dependence are incomplete.
+  evidence:
+  - source: schwartz
+    section: '9.2'
+    pages:
+    - 142
+    note: Includes the covariant photon propagator in the scalar-QED rule set.
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation
