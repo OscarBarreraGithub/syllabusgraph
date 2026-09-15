@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Allow an explicit source-page budget when preparing a packet, with 80 pages
+  as the default. Freeze the allowance with its evidence ranges and retain the
+  existing concept, correction, dispatch, and independent-review requirements.
 - Allow extraction drafts to finish while other accepted units are promoted.
   Keep immutable source/runtime contracts and require independent review and
   promotion against the current graph, including newly introduced conflicts.

@@ -68,9 +68,12 @@ def prepare(
     scope: str,
     budget: int = 15,
     context: list[dict] | None = None,
+    page_budget: int = 80,
 ) -> dict:
-    if first < 1 or last < first or last - first >= 80:
-        raise ProjectError("Choose an ordered print-page range of 1–80 pages.")
+    if type(page_budget) is not int or page_budget < 1:
+        raise ProjectError("Page budget must be a positive integer.")
+    if first < 1 or last < first or last - first >= page_budget:
+        raise ProjectError(f"Choose an ordered print-page range of 1–{page_budget} pages.")
     if budget < 1 or budget > 100:
         raise ProjectError("Concept budget must be between 1 and 100.")
     entry, pages = source_pages(project, source)
@@ -99,6 +102,7 @@ def prepare(
         "source_sha256": entry["sha256"],
         "scope": scope,
         "node_budget": budget,
+        "page_budget": page_budget,
         "page_offset": entry["page_offset"],
         "mastery_levels": project.config["mastery_levels"],
         "pages": selected,
@@ -111,8 +115,12 @@ def prepare(
     }
     for item in context or []:
         context_source, first_page, last_page = item["source"], item["first"], item["last"]
-        if first_page < 1 or last_page < first_page or last_page - first_page >= 80:
-            raise ProjectError("Context needs an ordered range of 1–80 pages.")
+        if first_page < 1 or last_page < first_page or last_page - first_page >= page_budget:
+            raise ProjectError(f"Context needs an ordered range of 1–{page_budget} pages.")
+        if len(selected) + len(packet["context_pages"]) + last_page - first_page + 1 > page_budget:
+            raise ProjectError(
+                f"Primary and context pages together must not exceed {page_budget} pages."
+            )
         binding, text_pages = source_pages(project, context_source)
         for page in range(first_page, last_page + 1):
             physical = page + binding["page_offset"]
@@ -128,8 +136,6 @@ def prepare(
                     "page_offset": binding["page_offset"],
                 }
             )
-    if len(packet["context_pages"]) + len(selected) > 80:
-        raise ProjectError("Primary and context pages together must not exceed 80 pages.")
     packet["packet_digest"] = digest(packet)
     with project_lock(project):
         directory = unit_dir(project, unit)

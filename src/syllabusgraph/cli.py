@@ -183,10 +183,14 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--scope", required=True)
     p.add_argument("--budget", type=int, default=15)
     p.add_argument(
+        "--page-budget", type=int, default=80,
+        help="Maximum primary and context pages in this packet (default: 80).",
+    )
+    p.add_argument(
         "--context",
         action="append",
         default=[],
-        help="Additional evidence pages, SOURCE:FIRST:LAST; repeat for cross-source comparison. Total packet limit: 80 pages.",
+        help="Additional evidence pages, SOURCE:FIRST:LAST; repeat within --page-budget.",
     )
     p = project_command("run", "Run an explicit JSON-in/JSON-out extraction or critic command.")
     p.add_argument("--unit", required=True)
@@ -407,6 +411,7 @@ def execute(args) -> int:
             args.last,
             scope=args.scope,
             budget=args.budget,
+            page_budget=args.page_budget,
             context=context,
         )
         result = {

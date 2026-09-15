@@ -185,6 +185,7 @@ class Handler(BaseHTTPRequestHandler):
                     int(data["first"]),
                     int(data["last"]),
                     scope=data["scope"],
+                    page_budget=data.get("page_budget", 80),
                 )
                 return self.respond(
                     {"unit": packet["unit"], "packet_digest": packet["packet_digest"]}

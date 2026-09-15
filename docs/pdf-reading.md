@@ -50,7 +50,9 @@ Registration copies the source and its page text into the ignored
 `.syllabusgraph/sources/` workspace. Treat both as private: do not commit them,
 paste them into public graph data, or send them to a service that the course's
 privacy policy does not permit. Prepare small packets after the page mapping
-checks out; primary and explicit context pages together are capped at 80 pages.
+checks out; primary and explicit context pages share an 80-page default budget.
+The orchestrator can choose `prepare --page-budget N` for the required evidence
+and current model context before freezing a packet.
 Workers and reviewers may use only the packet pages, and reviewers should check
 the original rendered page when the text is ambiguous.
 

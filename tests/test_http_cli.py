@@ -141,6 +141,39 @@ def test_cli_blank_init_and_sample_rebuild(tmp_path):
     assert cli("plan", "-p", blank, "--plan", "next-course", "--strict").returncode == 2
 
 
+@pytest.mark.parametrize("interface", ["cli", "http"])
+def test_prepare_interfaces_forward_explicit_page_budget(blank, tmp_path, interface):
+    from syllabusgraph.io import write_yaml
+    from syllabusgraph.sources import register
+
+    config = deepcopy(blank.config)
+    config["sources"] = [{"id": "primer", "title": "Original primer",
+                          "authors": [], "status": "expected"}]
+    write_yaml(blank.root / "project.yaml", config)
+    project = load_project(blank.root)
+    source = tmp_path / "original-primer.txt"
+    source.write_text("\f".join(f"Original source page {page}." for page in range(1, 82)))
+    register(project, "primer", source)
+    if interface == "cli":
+        result = subprocess.run(
+            [sys.executable, "-m", "syllabusgraph", "prepare", "-p", str(project.root),
+             "--unit", "expanded", "--source", "primer", "--first", "1", "--last", "81",
+             "--scope", "Complete comparison evidence.", "--page-budget", "81"],
+            text=True, capture_output=True, check=False,
+        )
+        assert result.returncode == 0, result.stderr
+    else:
+        with serving(project) as (server, base):
+            headers = {"X-SyllabusGraph-Token": server.token, "Origin": base}
+            body = {"unit": "expanded", "source": "primer", "first": 1, "last": 81,
+                    "scope": "Complete comparison evidence.", "page_budget": 81}
+            with request(base, "/api/prepare", body, headers) as response:
+                assert response.status == 200
+    packet = json.loads((project.local / "runs/expanded/packet.json").read_text())
+    assert packet["page_budget"] == 81
+    assert len(packet["pages"]) == 81
+
+
 def test_notation_and_non_json_input_rejected(sample):
     from syllabusgraph.io import ProjectError, read_yaml
 

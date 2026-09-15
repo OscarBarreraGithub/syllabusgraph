@@ -101,6 +101,61 @@ def test_complete_manual_workflow_and_idempotent_promotion(unit):
     assert workflow.status(fresh)["units"][0]["status"] == "merged"
 
 
+@pytest.fixture
+def long_source(unit, tmp_path):
+    project, _, proposal = unit
+    pages = [f"Original synthetic source page {number}." for number in range(1, 102)]
+    path = tmp_path / "long-primer.txt"
+    path.write_text("\f".join(pages))
+    register(project, "primer", path, replace=True)
+    return project, proposal, pages
+
+
+@pytest.mark.parametrize("last,context", [
+    (81, []),
+    (40, [{"source": "primer", "first": 41, "last": 81}]),
+    (1, [{"source": "primer", "first": 2, "last": 82}]),
+])
+def test_explicit_page_budget_covers_primary_and_context_ranges(long_source, last, context):
+    project, _, _ = long_source
+    with pytest.raises(ProjectError, match="80"):
+        workflow.prepare(project, "default-limit", "primer", 1, last,
+                         scope="Bounded comparison.", context=context)
+    packet = workflow.prepare(project, "larger-packet", "primer", 1, last,
+                              scope="Bounded comparison.", context=context, page_budget=82)
+    assert packet["page_budget"] == 82
+    assert len(packet["pages"]) + len(packet["context_pages"]) in {81, 82}
+
+
+@pytest.mark.parametrize("page_budget", [0, -1, True, "81", 81.5])
+def test_page_budget_requires_positive_integer(unit, page_budget):
+    project, _, _ = unit
+    with pytest.raises(ProjectError, match="positive integer"):
+        workflow.prepare(project, "bad-budget", "primer", 1, 1,
+                         scope="Invalid allowance.", page_budget=page_budget)
+
+
+def test_page_budget_is_immutable_and_does_not_expand_evidence_scope(long_source):
+    project, proposal, pages = long_source
+    kwargs = {"scope": "Compare explicit source ranges.", "page_budget": 90,
+              "context": [{"source": "primer", "first": 41, "last": 81}]}
+    packet = workflow.prepare(project, "expanded", "primer", 1, 40, **kwargs)
+    assert workflow.prepare(project, "expanded", "primer", 1, 40, **kwargs) == packet
+    with pytest.raises(ProjectError, match="inputs changed"):
+        workflow.prepare(project, "expanded", "primer", 1, 40,
+                         **{**kwargs, "page_budget": 91})
+    proposal["packet_digest"] = packet["packet_digest"]
+    proposal["pages_read"] = list(range(1, 41))
+    proposal["graph"]["nodes"][0]["evidence"][0]["pages"] = [81]
+    proposal["quote_checks"] = [{"source": "primer", "page": 81, "quote": pages[80]}]
+    workflow.import_proposal(project, "expanded", proposal)
+    assert workflow.check(project, "expanded")["ok"]
+    proposal["graph"]["nodes"][0]["evidence"][0]["pages"] = [82]
+    proposal["quote_checks"] = [{"source": "primer", "page": 82, "quote": pages[81]}]
+    workflow.import_proposal(project, "expanded", proposal)
+    assert not workflow.check(project, "expanded")["ok"]
+
+
 def test_pdf_import_preserves_printed_page_mapping(blank, tmp_path):
     from pypdf import PdfWriter
     from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject

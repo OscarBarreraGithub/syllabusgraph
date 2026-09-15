@@ -81,8 +81,12 @@ syllabusgraph prepare --unit chapter-01 --source reference-one --first 1 --last 
 ```
 
 The optional `--context` range becomes immutable packet evidence alongside the
-primary source. Primary and context pages total at most 80 pages; workers may
-not quote or cite material outside those recorded ranges.
+primary source. Primary and context pages share a budget of 80 pages by default.
+Use `--page-budget N` when the necessary comparison evidence needs a different
+bounded allowance, chosen for the sources and current model context. The budget
+is recorded in the immutable packet; workers may not change it or quote or cite
+material outside the recorded ranges. Changing a budget needs a new packet and
+does not reset a work family's correction or dispatch limits.
 
 ```bash
 syllabusgraph agent dispatch chapter-01 --stage extract --orchestrator SESSION_ID
