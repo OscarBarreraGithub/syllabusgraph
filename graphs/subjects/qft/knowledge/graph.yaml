@@ -28948,16 +28948,26 @@ nodes:
   notation: []
 - id: qft.align048.scalar-bubble-renormalization-condition
   label: One-renormalization-condition-per-parameter rule
-  summary: Define the dimensionless scalar φ³ exchange strength at one momentum Q0
-    by a renormalization condition, invert the perturbative relation, and predict
+  summary: The common role is to choose one independent renormalization condition
+    for each independent renormalized parameter; it does not identify the source-specific
+    schemes. Define the dimensionless scalar φ³ exchange strength at one momentum
+    Q0 by a renormalization condition, invert the perturbative relation, and predict
     the exchange amplitude at Q. A parameter has one renormalization condition, which
-    is what leaves predictions at other scales.
+    is what leaves predictions at other scales. In the Peskin--Schroeder O(N) residual
+    method, the three conditions cancel the one-sigma tadpole to retain the chosen
+    vacuum, fix sigma field strength, and fix the threshold four-sigma amplitude;
+    the mass relation can consequently receive finite corrections.
   kind: result
   origins:
   - project: schwartz
     node: schwartz.scalar-bubble-renormalization-condition
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-sigma-renormalization-conditions
+    note: Corresponds only to the one-independent-condition-per-parameter role; the
+      tadpole, sigma-field-strength, and threshold-four-sigma O(N) scheme remains
+      a source-specific residual method.
   evidence:
   - source: schwartz
     section: 16.1.1
@@ -28965,6 +28975,12 @@ nodes:
     - 303
     - 304
     note: Defines the Q0 condition and obtains the finite prediction at Q.
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 355
+    note: Three adjustable counterterm parameters are fixed by a tadpole convention,
+      sigma field strength, and threshold four-sigma amplitude.
   notation: []
 - id: qft.align048.scalar-bubble-scale-separation-method
   label: Scalar bubble loop and UV–IR scale separation
@@ -29102,6 +29118,139 @@ nodes:
     pages:
     - 295
     note: Introduces ρc and cancels the regulator-dependent energy density.
+  notation: []
+- id: qft.align049.broken-on-sigma-counterterms
+  label: Symmetry-linked counterterms in the broken O(N) model
+  summary: Although the shifted linear sigma model has eight superficially divergent
+    amplitude types, rewriting the original symmetric Lagrangian supplies only three
+    independent counterterms, delta-Z, delta-mu, and delta-lambda. Their many shifted
+    vertices are linked, so adding independent symmetry-breaking counterterms would
+    be necessary only if quantum theory failed to preserve O(N).
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.broken-on-sigma-counterterms
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 353
+    - 354
+  notation: []
+- id: qft.align049.on-sigma-one-loop-four-point-cancellations
+  label: One-loop O(N) four- and three-point cancellation
+  summary: Dimensional power counting makes loops with enough propagators or mass-dimension
+    cubic vertices finite. The divergent sigma and pion four-point diagrams have the
+    symmetry-linked index structure canceled by the one delta-lambda, and the corresponding
+    three-point divergences are the same structures with an external leg replaced
+    by v.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-sigma-one-loop-four-point-cancellations
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 356
+    - 357
+    - 358
+    - 359
+    - 360
+  notation: []
+- id: qft.align049.on-sigma-renormalization-conditions
+  label: Linear sigma renormalization conditions with a tadpole convention
+  summary: 'Use three conditions: cancel the one-sigma tadpole so the chosen v is
+    retained, fix the sigma field strength, and fix the threshold four-sigma amplitude.
+    The physical sigma mass can then differ finitely from its classical relation to
+    mu and lambda.'
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-sigma-renormalization-conditions
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 355
+  notation: []
+- id: qft.align050.magnet-cutoff-and-critical-tuning
+  label: Magnetic cutoff analogy and critical tuning
+  summary: The Euclidean phi-four integral models a magnet whose atomic spacing supplies
+    a short-distance cutoff. Long correlations require tuning near the phase transition,
+    just as a scalar mass much smaller than the cutoff requires a tuned field-theory
+    parameter.
+  kind: concept
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.magnet-cutoff-and-critical-tuning
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 395
+  notation: []
+- id: qft.align050.momentum-shell-mode-split
+  label: Momentum-shell split of scalar modes
+  summary: Choose b<1, separate the cutoff field into slow modes |k|<b Lambda and
+    shell modes b Lambda<|k|<Lambda, and integrate the shell variables while treating
+    the quartic and small mass terms perturbatively.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.momentum-shell-mode-split
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 396
+    - 397
+  notation: []
+- id: qft.align050.shell-induced-effective-interactions
+  label: Shell integration induces an effective local action
+  summary: Contracting shell fields corrects the mass and quartic terms, and retaining
+    external-momentum dependence produces derivative and higher-field operators. The
+    effective action is the exponential of connected shell diagrams and compensates
+    the lowered loop cutoff.
+  kind: result
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.shell-induced-effective-interactions
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 398
+    - 399
+  notation: []
+- id: qft.align050.wilson-euclidean-sharp-cutoff
+  label: Wilson's Euclidean sharp-cutoff setup
+  summary: For the Wilson analysis of scalar phi-four theory, impose a sharp bound
+    |k|<Lambda on Euclidean rather than Minkowski momentum after Wick rotation; a
+    Minkowski k-squared cutoff leaves arbitrarily large lightlike components uncontrolled.
+  kind: method
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.wilson-euclidean-sharp-cutoff
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 394
   notation: []
 - id: qft.align051.classical-qcd-current-potential-failure
   label: Failure of a classical-current QCD potential
@@ -29701,6 +29850,394 @@ nodes:
     pages:
     - 531
     - 532
+  notation: []
+- id: qft.align052.appendix-general-unitarity-gauge-construction
+  label: Appendix construction of general unitarity gauge
+  summary: Near the identity, factor a group element into gauge, constrained broken-direction,
+    and unbroken factors. Minimizing the positive Goldstone quadratic form along the
+    gauge orbit imposes the constraint, and continuity then constructs the desired
+    local unitarity gauge.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.appendix-general-unitarity-gauge-construction
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Appendix General Unitarity Gauge
+    pages:
+    - 352
+    - 353
+  notation: []
+- id: qft.align052.bcs-effective-electron-theory-near-fermi-surface
+  label: BCS effective electron theory near a Fermi surface
+  summary: After ionic degrees of freedom are integrated out under the stated low-energy
+    qualification, retain electrons in a thin shell around a Fermi surface. Their
+    dispersion linearizes normal to that surface and supplies the propagator used
+    for the effective-theory scaling analysis.
+  kind: assumption
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.bcs-effective-electron-theory-near-fermi-surface
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 342
+    - 343
+  notation: []
+- id: qft.align052.cooper-channel-marginality
+  label: Cooper-channel exception to Fermi-surface irrelevance
+  summary: Generic interactions with more than two electron fields are irrelevant
+    as the shell shrinks, but a pair with opposite momenta can both remain near the
+    Fermi surface. Four-electron interactions in this vacuum-pair channel are therefore
+    marginal, which is the exception driving pairing.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.cooper-channel-marginality
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 343
+    - 344
+  notation: []
+- id: qft.align052.ginzburg-landau-order-parameter-and-length-scales
+  label: Ginzburg–Landau order parameter and superconducting length scales
+  summary: Near the transition, a local charged two-component order parameter is approximated
+    by the Ginzburg–Landau Lagrangian. Its field equations identify the broken phase,
+    penetration depth, correlation length, condensation energy, and their approximate
+    observable relation.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.ginzburg-landau-order-parameter-and-length-scales
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 336
+    - 337
+    - 338
+  notation: []
+- id: qft.align052.hubbard-stratonovich-pair-field-effective-action
+  label: Hubbard–Stratonovich pair field and exact effective action
+  summary: Introduce a slowly varying pair field so its stationary integration reproduces
+    the original quartic interaction while leaving electrons quadratic. Keeping only
+    diagrams compatible with the pairing-channel irrelevance argument lets the effective
+    action be written as a pair-field term plus an electron determinant, without assuming
+    a weak interaction.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.hubbard-stratonovich-pair-field-effective-action
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 345
+    - 346
+  notation: []
+- id: qft.align052.meissner-critical-field-and-flux-quantization
+  label: Meissner effect, critical field, and flux quantization
+  summary: Stability favors A=∇φ deep in a large superconductor, so magnetic fields
+    are expelled over the penetration depth. Energy comparison defines a critical
+    field, while phase periodicity around a thick ring quantizes enclosed flux in
+    units of πℏ/e.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.meissner-critical-field-and-flux-quantization
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 334
+    - 335
+  notation: []
+- id: qft.align052.microscopic-superconductor-goldstone-electromagnetic-effective-action
+  label: Microscopic reduction to phase–electromagnetic effective action
+  summary: Writing the pair or gap field as a phase transformation and integrating
+    its gauge-invariant modes far from the transition yields an effective action in
+    A₀−φdot and A−∇φ. Expanding it supplies quantitative superconducting properties
+    such as penetration depth.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.microscopic-superconductor-goldstone-electromagnetic-effective-action
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 351
+    - 352
+  notation: []
+- id: qft.align052.pairing-instability-attractive-channel-debye-qualification
+  label: Pairing instability and the Debye-scale qualification
+  summary: The effective potential has a nonzero-gap minimum in the formal analysis,
+    but the shell-based derivation is valid only when the gap is far below the Debye
+    frequency. For isotropic s-wave pairing this requires an attractive s-wave potential
+    renormalized at low scale; the Fermi surface permits breaking for arbitrarily
+    weak such attraction.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.pairing-instability-attractive-channel-debye-qualification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 351
+  notation: []
+- id: qft.align052.problem-fourth-generation-unification-predictions
+  label: 'Problem: fourth generation and unification predictions'
+  summary: Determine the effect of discovering a fourth quark-and-lepton generation
+    on the strong–electroweak unification predictions discussed in Section 21.5. This
+    is an independent assigned task, not a result established in the text.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-fourth-generation-unification-predictions
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 5
+    pages:
+    - 354
+  notation: []
+- id: qft.align052.problem-generalized-unitarity-gauge-ghost
+  label: 'Problem: generalized unitarity-gauge ghost calculation'
+  summary: Calculate the effective ghost Lagrangian and propagator for the specified
+    generalized unitarity gauge and decide whether that sector is renormalizable.
+    This is an assigned task, not a result established in the text.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-generalized-unitarity-gauge-ghost
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 353
+  notation: []
+- id: qft.align052.problem-incommensurate-condensate-charges
+  label: 'Problem: incommensurate condensate charges in a superconductor'
+  summary: Determine how nonzero vacuum expectation values with incommensurate electric
+    charges affect the superconducting properties derived in the section. This is
+    an assigned task, not a supplied result.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-incommensurate-condensate-charges
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 6
+    pages:
+    - 354
+  notation: []
+- id: qft.align052.problem-lowest-order-w-z-magnetic-moments
+  label: 'Problem: lowest-order W and Z magnetic moments'
+  summary: Calculate the lowest-order magnetic moments of W⁺ and Z° particles in the
+    standard electroweak theory. This is an independent assigned task, not a result
+    established in the text.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-lowest-order-w-z-magnetic-moments
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 4
+    pages:
+    - 354
+  notation: []
+- id: qft.align052.problem-muon-anomalous-moment-z-neutral-scalar
+  label: 'Problem: one-loop Z and neutral-scalar muon anomalous moment'
+  summary: In the single-scalar-doublet standard electroweak theory, calculate at
+    one loop the Z°-exchange and neutral-scalar-exchange contributions to the muon
+    anomalous magnetic moment. This is an assigned task, not a result established
+    in the text.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-muon-anomalous-moment-z-neutral-scalar
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 354
+  notation: []
+- id: qft.align052.problem-triplet-higgs-electroweak-breaking
+  label: 'Problem: electroweak breaking by a real triplet'
+  summary: Determine the effect of replacing the usual complex scalar doublet with
+    a real scalar triplet vacuum expectation value in the SU(2) × U(1) electroweak
+    theory. This is an assigned task, not a derived conclusion.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.problem-triplet-higgs-electroweak-breaking
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: Problems 2
+    pages:
+    - 353
+    - 354
+  notation: []
+- id: qft.align052.renormalized-cooper-kernel-rg-and-eigenchannels
+  label: Renormalized Cooper kernel, RG flow, and eigenchannels
+  summary: Demanding cutoff independence introduces a sliding renormalized electron-electron
+    potential. Its Hermitian rescaled kernel obeys an RG equation, with scale-independent
+    eigenvectors and logarithmic eigenvalue running; the construction does not require
+    rotational invariance.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.renormalized-cooper-kernel-rg-and-eigenchannels
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 349
+    - 350
+  notation: []
+- id: qft.align052.spin-singlet-gap-effective-potential-and-gap-equation
+  label: Spin-singlet gap effective potential and stationary gap equation
+  summary: For a spin-singlet pair field, rotational spin invariance reduces the gap
+    components and the translationally invariant determinant yields an effective potential.
+    Its stationary condition is the equilibrium gap equation, initially with momenta
+    restricted to the Fermi-surface shell.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.spin-singlet-gap-effective-potential-and-gap-equation
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 347
+    - 348
+  notation: []
+- id: qft.align052.superconductor-u1-over-z2-goldstone-effective-action
+  label: Superconductor U(1)/Z₂ Goldstone effective action
+  summary: Charge-2e condensates leave a Z₂ gauge subgroup, so the superconducting
+    phase is periodic by πℏ/e. After gauge-invariant matter is integrated out, the
+    effective action depends on the phase and electromagnetic field through the gauge-invariant
+    combination, and its phase equation is charge conservation.
+  kind: representation
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.superconductor-u1-over-z2-goldstone-effective-action
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 332
+    - 333
+  notation: []
+- id: qft.align052.vortex-core-cylindrical-asymptotics
+  label: Cylindrical vortex-core asymptotics
+  summary: Near a vortex center, cylindrical symmetry reduces the Ginzburg–Landau
+    equations to coupled radial equations. For r much less than both ξ and λ, smoothness
+    makes the winding ℓ a nonzero integer, with C=±ℓ, ρ proportional to r^|ℓ|, and
+    φ=±ℓ times the azimuth/(2e). The flux is ±πℓℏ/e; ±πℏ/e is the unit-flux case |ℓ|=1.
+  kind: method
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.vortex-core-cylindrical-asymptotics
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 341
+    - 342
+  notation: []
+- id: qft.align052.vortex-flux-core-stability-and-type-classification
+  label: Vortex flux, core, stability, and type-I/type-II classification
+  summary: Flux quantization forces a nonzero-flux vortex to contain a locus where
+    the modulus vanishes. Minimum-flux vortices are stable; higher flux splits when
+    λ>ξ. The comparison of penetration and correlation lengths defines type I and
+    type II and determines the distinct radial core structures.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.vortex-flux-core-stability-and-type-classification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 338
+    - 339
+  notation: []
+- id: qft.align052.vortex-state-field-ranges-and-flux-qualification
+  label: Vortex-state field ranges and close-vortex flux qualification
+  summary: The energy estimates yield no vortex state in type I material, but an intermediate
+    vortex phase B_c1<B<B_c2 in type II material. The source qualifies the isolated-vortex
+    flux argument for close vortices and replaces it with a continuity argument.
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.vortex-state-field-ranges-and-flux-qualification
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 340
+  notation: []
+- id: qft.align052.zero-resistance-and-ac-josephson-effect
+  label: Zero resistance and ac Josephson effect
+  summary: The phase is conjugate to minus charge density, making its time derivative
+    equal to minus voltage. A steady current then has zero voltage drop, while a junction's
+    periodic phase-dependent energy gives an alternating current with frequency e|ΔV|/(πℏ).
+  kind: result
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.zero-resistance-and-ac-josephson-effect
+    note: Retains the reviewed source-specific hypothesis, normalization, functional
+      route, sign convention or problem boundary; no broader equivalence is asserted.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 335
+    - 336
   notation: []
 - id: qft.align053.action-at-a-distance-electrodynamics
   label: Action-at-a-distance alternative to the electromagnetic field
@@ -34805,11 +35342,11 @@ nodes:
       product form.
 - id: qft.higgs-mechanism-superconducting-meissner-screening
   label: Higgs mechanism, superconducting photon mass, and Meissner screening
-  summary: In the Ginzburg–Landau/Abelian-Higgs description of a superconductor, the
-    broken phase gives the electromagnetic field a mass. Magnetic fields are consequently
-    excluded or screened over the inverse photon-mass scale; this is the Meissner
-    effect. The statement concerns the effective superconducting description, not
-    a general claim about all media.
+  summary: 'For the superconducting broken-U(1) effective description, the condensate
+    gives the electromagnetic field a mass or screening scale, so magnetic fields
+    are excluded or screened over the penetration depth: the Meissner effect. The
+    common core is limited to the broken-phase phase EFT, field exclusion, and penetration;
+    it is not a claim about arbitrary media.'
   kind: result
   group: qft.spontaneously-broken-symmetries
   origins:
@@ -34821,6 +35358,11 @@ nodes:
     node: schwartz.superconducting-photon-mass-and-meissner-screening
     note: Retains the temperature-dependent Ginzburg–Landau setting and penetration-depth
       interpretation.
+  - project: weinberg-2
+    node: weinberg-2.meissner-critical-field-and-flux-quantization
+    note: Retains the Goldstone-mode U(1)/Z2 phase EFT, its local-stability condition,
+      field exclusion, and penetration-depth conclusion. The B_c formula and thick-ring
+      flux derivation remain in the WII residual record.
   evidence:
   - source: peskin-schroeder
     section: '20.1'
@@ -34830,6 +35372,12 @@ nodes:
     section: 28.3.2
     pages:
     - 577
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 332
+    - 333
+    - 334
 - id: qft.higgs-radial-mode-and-renormalizability-limit
   label: Higgs radial mode and renormalizability limit
   summary: At low energy, massive-vector behavior by itself does not distinguish explicit
@@ -37972,23 +38520,57 @@ nodes:
   notation: []
 - id: qft.type-two-vortices-and-cooper-pair-order-parameter
   label: Type-II vortices and Cooper-pair order parameter
-  summary: In the Ginzburg–Landau description, the comparison between correlation
-    length xi=1/m and penetration depth R=1/m_A distinguishes type-II flux-tube formation
-    from the type-I regime. The same effective order parameter is connected microscopically
-    to Cooper pairs formed through phonon-mediated attraction. These are superconducting-model
-    claims, not a generic consequence of every Higgs phase.
+  summary: For the superconducting Ginzburg–Landau description, comparison of penetration
+    and correlation lengths distinguishes type-II flux-tube formation from the type-I
+    regime. Schwartz identifies the microscopic order parameter with electron Cooper
+    pairs formed through phonon exchange. WII instead starts from an effective electron
+    interaction after integrating ionic degrees subject to its long-wavelength phonon
+    caveat, then introduces a Hubbard–Stratonovich pair field; its determinant calculation
+    does not assume a weak interaction. This shared scope is limited to superconducting
+    models, not every Higgs phase.
   kind: concept
   group: qft.spontaneously-broken-symmetries
   origins:
   - project: schwartz
     node: schwartz.type-two-vortices-and-cooper-pair-order-parameter
     note: Retains the xi/R type classification and the Cooper-pair microscopic identification.
+  - project: weinberg-2
+    node: weinberg-2.ginzburg-landau-order-parameter-and-length-scales
+    note: Retains the near-transition local order-parameter route and WII lambda/xi
+      convention; its formulas and observable relation remain in the WII residual
+      record.
+  - project: weinberg-2
+    node: weinberg-2.vortex-flux-core-stability-and-type-classification
+    note: Retains WII vortex classification as a source-specific route; its exact
+      core and stability argument remains in the WII residual record.
+  - project: weinberg-2
+    node: weinberg-2.hubbard-stratonovich-pair-field-effective-action
+    note: Retains the microscopic pair-field construction as source-specific support;
+      its determinant construction and no-weak-coupling qualification remain in the
+      WII residual record.
   evidence:
   - source: schwartz
     section: 28.3.2
     pages:
     - 577
     - 578
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 336
+    - 337
+    - 338
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 338
+    - 339
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 342
+    - 345
+    - 346
 - id: qft.ultraviolet-catastrophe
   label: Ultraviolet catastrophe
   summary: The equipartition spectrum rises with frequency, whereas the observed blackbody
@@ -69765,6 +70347,246 @@ edges:
     - 296
     - 297
     note: Writes the s-channel graph and its loop integral before evaluation.
+- id: qft.align049.broken-on-counterterms-evidence-symmetric-effective-action
+  from: qft.align049.broken-on-sigma-counterterms
+  to: qft.align011.symmetric-counterterms-general-effective-action
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The one-loop broken-O(N) calculation supplies a concrete example of symmetry-linked
+    counterterms, supporting the later general effective-action conclusion without
+    replacing its BPHZ argument.
+  failure_mode: Treating this example as the whole general proof would overstate the
+    scope of the PS353--354 calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 353
+    - 354
+- id: qft.align049.on-sigma-conditions-evidence-common-renormalization-condition
+  from: qft.align049.on-sigma-renormalization-conditions
+  to: qft.align048.scalar-bubble-renormalization-condition
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The broken-O(N) tadpole, field-strength, and threshold conditions instantiate
+    the common count of one independent condition per parameter while retaining their
+    own finite-part convention.
+  failure_mode: Treating the Peskin--Schroeder convention as the Schwartz scalar-bubble
+    formula would erase both source-specific methods.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 355
+- id: qft.align049.peskin-schroeder-edge-counterterms-to-on-conditions
+  from: qft.align049.broken-on-sigma-counterterms
+  to: qft.align049.on-sigma-renormalization-conditions
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Three independent counterterms require three renormalization conditions.
+  failure_mode: The finite parts and vacuum convention would remain unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 354
+    - 355
+- id: qft.align049.peskin-schroeder-edge-fourpoint-to-twopoint
+  from: qft.align049.on-sigma-one-loop-four-point-cancellations
+  to: qft.align011.on-sigma-tadpole-and-goldstone-one-loop
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The already fixed delta-lambda enters the linked two-point and tadpole
+    cancellations.
+  failure_mode: The claimed all-amplitude cancellation would treat a shared counterterm
+    as adjustable again.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 360
+    - 361
+- id: qft.align049.peskin-schroeder-edge-on-conditions-to-four-point
+  from: qft.align049.on-sigma-renormalization-conditions
+  to: qft.align049.on-sigma-one-loop-four-point-cancellations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vertex cancellation determines delta-lambda from the threshold condition.
+  failure_mode: The counterterm value would be unavailable for the cancellation.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 355
+    - 357
+- id: qft.align049.peskin-schroeder-edge-on-sigma-to-counterterms
+  from: qft.on-linear-sigma-model-broken-vacuum
+  to: qft.align049.broken-on-sigma-counterterms
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The counterterm linkage is obtained by expanding the broken O(N) model.
+  failure_mode: The origin of the correlated shifted counterterm vertices is lost.
+  evidence:
+  - source: peskin-schroeder
+    section: '11.2'
+    pages:
+    - 353
+- id: qft.align050.euclidean-statistical-to-magnet-cutoff
+  from: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  to: qft.align050.magnet-cutoff-and-critical-tuning
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The magnet interpretation uses the Euclidean scalar functional integral
+    as a statistical weight before identifying atomic spacing with the cutoff.
+  failure_mode: Without the Euclidean statistical correspondence, the magnet analogy
+    has no functional-integral basis.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 395
+- id: qft.align050.euclidean-statistical-to-sharp-cutoff
+  from: qft.align035.euclidean-qft-statistical-mechanics-correspondence
+  to: qft.align050.wilson-euclidean-sharp-cutoff
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The regulator is imposed on the Euclidean scalar functional integral
+    because a Minkowski invariant cutoff leaves lightlike components uncontrolled.
+  failure_mode: Without the Euclidean continuation and stable functional weight, the
+    stated sharp shell is not the source construction.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 394
+- id: qft.align050.functional-phi4-to-euclidean-sharp-cutoff
+  from: qft.align021.peskin-functional-phi4-expansion
+  to: qft.align050.wilson-euclidean-sharp-cutoff
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The sharp-cutoff construction starts from the scalar phi-four generating
+    functional and its Fourier-mode integration variables.
+  failure_mode: Without the functional representation, there are no field modes on
+    which to impose the cutoff.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 394
+- id: qft.align050.magnet-tuning-evidence-scalar-fine-tuning
+  from: qft.align050.magnet-cutoff-and-critical-tuning
+  to: qft.align014.scalar-mass-relevance-and-fine-tuning
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The near-critical magnet gives a concrete physical illustration of why
+    a scalar correlation length far above the cutoff scale requires parameter adjustment.
+  failure_mode: The later relevance result remains valid, but loses this source-specific
+    critical-phenomena illustration.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 395
+- id: qft.align050.peskin-schroeder-effective-action-prereq-rescaling
+  from: qft.align050.shell-induced-effective-interactions
+  to: qft.align014.wilsonian-shell-rescaling-and-relevance
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The rescaling acts on the shell-integrated effective Lagrangian and its
+    coefficients.
+  failure_mode: Rescaling the original action would omit the corrections that define
+    the Wilson transformation.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 399
+    - 400
+- id: qft.align050.peskin-schroeder-functional-vertices-prereq-shell-action
+  from: qft.align021.peskin-functional-phi4-expansion
+  to: qft.align050.shell-induced-effective-interactions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shell diagrams expand the phi-four interaction vertices.
+  failure_mode: There is no vertex combinatorics for mass and quartic corrections.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 397
+    - 399
+- id: qft.align050.peskin-schroeder-gaussian-wick-prereq-shell-action
+  from: qft.align021.gaussian-functional-wick-contractions
+  to: qft.align050.shell-induced-effective-interactions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Shell contractions are evaluated with Wick contractions.
+  failure_mode: The diagrammatic corrections cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 397
+    - 398
+- id: qft.align050.peskin-schroeder-sharp-cutoff-prereq-shell-split
+  from: qft.align050.wilson-euclidean-sharp-cutoff
+  to: qft.align050.momentum-shell-mode-split
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shell split is defined relative to the Euclidean cutoff.
+  failure_mode: A Minkowski cutoff fails to control the intended high modes.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 394
+    - 396
+- id: qft.align050.peskin-schroeder-shell-split-prereq-effective-action
+  from: qft.align050.momentum-shell-mode-split
+  to: qft.align050.shell-induced-effective-interactions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The effective action is obtained by integrating precisely the shell modes
+    defined by the split.
+  failure_mode: Without the slow/shell decomposition, there is no specified integral
+    whose contractions produce the induced interactions.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.1'
+    pages:
+    - 396
+    - 397
+    - 398
 - id: qft.align051.bare-charge-route-to-amended-beta
   from: qft.align051.qcd-beta-function-from-bare-charge
   to: qft.align014.qcd-one-loop-beta-and-active-flavors
@@ -70319,6 +71141,476 @@ edges:
     - 525
     - 526
     - 527
+- id: qft.align052.effective-potential-to-spin-singlet-gap
+  from: qft.align011.effective-potential-constant-background
+  to: qft.align052.spin-singlet-gap-effective-potential-and-gap-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The stationary homogeneous gap equation is obtained by extremizing the
+    effective potential for a constant pair field.
+  failure_mode: The gap equation would be used without the effective-potential stationarity
+    construction.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 347
+    - 348
+- id: qft.align052.form-factors-to-muon-moment
+  from: qft.align019.form-factors-charge-and-magnetic-moment
+  to: qft.align052.problem-muon-anomalous-moment-z-neutral-scalar
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The assigned calculation asks for an anomalous magnetic moment, which
+    uses the magnetic-moment form-factor observable.
+  failure_mode: The task’s requested observable would be undefined.
+  evidence:
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 354
+- id: qft.align052.general-unitarity-to-appendix-unitarity
+  from: qft.align039.general-unitarity-gauge-and-universal-vector-mass-formula
+  to: qft.align052.appendix-general-unitarity-gauge-construction
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The appendix supplies the local construction asserted for the general
+    unitarity gauge.
+  failure_mode: The existence claim would be used as an unexamined construction.
+  evidence:
+  - source: weinberg-2
+    section: Appendix General Unitarity Gauge
+    pages:
+    - 352
+    - 353
+- id: qft.align052.higgs-mechanism-to-superconductor-action
+  from: qft.higgs-mechanism-and-abelian-higgs-lagrangian
+  to: qft.align052.superconductor-u1-over-z2-goldstone-effective-action
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: Superconductivity is an application of broken electromagnetic gauge symmetry,
+    rather than an alternative derivation of the Higgs mechanism.
+  failure_mode: An alternative relation would misstate the source’s application/analogy.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 332
+    - 333
+- id: qft.align052.hs-residual-evidence-to-common-type-two
+  from: qft.align052.hubbard-stratonovich-pair-field-effective-action
+  to: qft.type-two-vortices-and-cooper-pair-order-parameter
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The determinant pair-field construction is microscopic support for the
+    order-parameter identification, but by itself is not a complete alternative derivation
+    of type-II vortices.
+  failure_mode: Labelling this partial ingredient an alternative would overstate what
+    it establishes.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 345
+    - 346
+- id: qft.align052.meissner-residual-to-common-meissner
+  from: qft.align052.meissner-critical-field-and-flux-quantization
+  to: qft.higgs-mechanism-superconducting-meissner-screening
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The WII Goldstone-phase derivation is a complete source-specific route
+    to the shared screening result; its critical-field and ring-flux portions remain
+    residual.
+  failure_mode: Treating the WII residual as compulsory would make its extra critical-field
+    and ring-flux derivations prerequisites for the common core.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 334
+    - 335
+- id: qft.align052.microscopic-phase-action-to-common-meissner
+  from: qft.align052.microscopic-superconductor-goldstone-electromagnetic-effective-action
+  to: qft.higgs-mechanism-superconducting-meissner-screening
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The completed microscopic branch supplies a separate phase–electromagnetic
+    route to penetration properties, with both the HS construction and equilibrium-gap
+    condition already required upstream.
+  failure_mode: Calling an isolated microscopic ingredient an alternative would omit
+    a joint input needed by this route.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 351
+    - 352
+- id: qft.align052.pairing-to-microscopic-phase-action
+  from: qft.align052.pairing-instability-attractive-channel-debye-qualification
+  to: qft.align052.microscopic-superconductor-goldstone-electromagnetic-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The phase reduction assumes an equilibrium superconducting gap far from
+    the transition; together with the Hubbard–Stratonovich effective action it supplies
+    the microscopic route.
+  failure_mode: The phase action would be detached from the superconducting equilibrium
+    and its stated far-from-transition condition.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 351
+    - 352
+- id: qft.align052.rg-running-to-renormalized-cooper-kernel
+  from: qft.continuum-rg-running-coupling-large-log-method
+  to: qft.align052.renormalized-cooper-kernel-rg-and-eigenchannels
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cutoff-independent Cooper kernel is a sliding-coupling construction
+    whose eigenvalues run logarithmically.
+  failure_mode: The renormalized kernel flow would lack its running-coupling and cutoff-independence
+    rationale.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 349
+    - 350
+- id: qft.align052.rxi-gauge-to-problem-ghost
+  from: qft.rxi-gauge-fixing-with-faddeev-popov-ghosts
+  to: qft.align052.problem-generalized-unitarity-gauge-ghost
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The prompt changes the broken-theory gauge choice, so xi gauge is a useful
+    comparison rather than its required construction.
+  failure_mode: The modified gauge cannot be compared to the renormalizable xi formulation.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 353
+- id: qft.align052.scalar-doublet-to-problem-triplet
+  from: qft.align039.standard-model-scalar-doublet-yukawa-breaking
+  to: qft.align052.problem-triplet-higgs-electroweak-breaking
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The task explicitly substitutes a real triplet for the usual complex
+    doublet.
+  failure_mode: There is no baseline electroweak representation to alter.
+  evidence:
+  - source: weinberg-2
+    section: Problems 2
+    pages:
+    - 353
+    - 354
+- id: qft.align052.tree-electroweak-to-problem-muon-moment
+  from: qft.align039.tree-electroweak-masses-and-fermi-scale
+  to: qft.align052.problem-muon-anomalous-moment-z-neutral-scalar
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The one-loop task uses the standard electroweak Z and scalar sector.
+  failure_mode: The exchange particles and couplings are not identified.
+  evidence:
+  - source: weinberg-2
+    section: Problems 3
+    pages:
+    - 354
+- id: qft.align052.tree-electroweak-to-problem-vector-moments
+  from: qft.align039.tree-electroweak-masses-and-fermi-scale
+  to: qft.align052.problem-lowest-order-w-z-magnetic-moments
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: typical
+  rationale: The task concerns the standard electroweak W and Z vector particles.
+  failure_mode: The requested particles are not connected to their model context.
+  evidence:
+  - source: weinberg-2
+    section: Problems 4
+    pages:
+    - 354
+- id: qft.align052.vortex-residual-to-common-type-two
+  from: qft.align052.vortex-flux-core-stability-and-type-classification
+  to: qft.type-two-vortices-and-cooper-pair-order-parameter
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The WII Ginzburg–Landau vortex route is a complete phenomenological treatment
+    of the shared type classification, while retaining its own lambda/xi and core/stability
+    details.
+  failure_mode: Treating the residual route as cumulative would impose its full core
+    and stability derivation on every use of the common core.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 338
+    - 339
+- id: qft.align052.weinberg-2-edge-cooper-to-hs
+  from: qft.align052.cooper-channel-marginality
+  to: qft.align052.hubbard-stratonovich-pair-field-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The restriction on surviving pair-field diagrams follows from the Cooper-channel
+    exception.
+  failure_mode: Dropping other internal pair-field diagrams lacks the source’s EFT
+    rationale.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 345
+    - 346
+- id: qft.align052.weinberg-2-edge-faddeev-popov-functional-to-problem-ghost
+  from: qft.faddeev-popov-gauge-orbit-functional-integral
+  to: qft.align052.problem-generalized-unitarity-gauge-ghost
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Problem 1 explicitly specifies B[f] and asks for its effective ghost
+    Lagrangian.
+  failure_mode: The requested calculation has no Faddeev–Popov starting construction.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 353
+- id: qft.align052.weinberg-2-edge-faddeev-popov-ghost-to-problem-ghost
+  from: qft.faddeev-popov-ghost-determinant
+  to: qft.align052.problem-generalized-unitarity-gauge-ghost
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Problem 1 asks for the effective ghost Lagrangian and propagator, which
+    represent the Faddeev–Popov determinant.
+  failure_mode: The word 'ghost' would be treated as an unexplained extra field.
+  evidence:
+  - source: weinberg-2
+    section: Problems 1
+    pages:
+    - 353
+- id: qft.align052.weinberg-2-edge-fermi-theory-to-cooper
+  from: qft.align052.bcs-effective-electron-theory-near-fermi-surface
+  to: qft.align052.cooper-channel-marginality
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The shell parametrization and linearized propagator enter the scaling
+    count and its pair-channel exception.
+  failure_mode: Marginality would be stated without the Fermi-surface power count.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 343
+    - 344
+- id: qft.align052.weinberg-2-edge-gap-to-rg-kernel
+  from: qft.align052.spin-singlet-gap-effective-potential-and-gap-equation
+  to: qft.align052.renormalized-cooper-kernel-rg-and-eigenchannels
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cutoff-dependent gap potential is the quantity held invariant while
+    defining the renormalized kernel flow.
+  failure_mode: The RG equation would lack the cutoff-independence criterion.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 349
+    - 350
+- id: qft.align052.weinberg-2-edge-gl-to-vortex
+  from: qft.align052.ginzburg-landau-order-parameter-and-length-scales
+  to: qft.align052.vortex-flux-core-stability-and-type-classification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The penetration depth, correlation length, and modulus field determine
+    vortex cores, stability condition, and type classification.
+  failure_mode: The core and λ/ξ criteria cannot be established.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 338
+    - 339
+- id: qft.align052.weinberg-2-edge-gl-to-vortex-asymptotics
+  from: qft.align052.ginzburg-landau-order-parameter-and-length-scales
+  to: qft.align052.vortex-core-cylindrical-asymptotics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The radial equations and length-scale approximation are specializations
+    of the Ginzburg–Landau equations.
+  failure_mode: The core asymptotics have no governing field equations.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 341
+    - 342
+- id: qft.align052.weinberg-2-edge-hs-to-gap
+  from: qft.align052.hubbard-stratonovich-pair-field-effective-action
+  to: qft.align052.spin-singlet-gap-effective-potential-and-gap-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The determinant effective action is specialized to spin singlet and stationary
+    homogeneous configurations.
+  failure_mode: The gap potential and equation lack their functional-integral origin.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 347
+    - 348
+- id: qft.align052.weinberg-2-edge-hs-to-microscopic-phase-action
+  from: qft.align052.hubbard-stratonovich-pair-field-effective-action
+  to: qft.align052.microscopic-superconductor-goldstone-electromagnetic-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The pair/gap field from the microscopic effective action is decomposed
+    into phase and invariant modes.
+  failure_mode: The microscopic connection to the phase action is absent.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 351
+    - 352
+- id: qft.align052.weinberg-2-edge-rg-kernel-to-pairing
+  from: qft.align052.renormalized-cooper-kernel-rg-and-eigenchannels
+  to: qft.align052.pairing-instability-attractive-channel-debye-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The eigenchannel effective potential is used to identify the gap minimum
+    and its low-energy validity condition.
+  failure_mode: The attraction criterion and Debye qualification would be unsupported.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 351
+- id: qft.align052.weinberg-2-edge-superconductor-action-to-gl
+  from: qft.align052.superconductor-u1-over-z2-goldstone-effective-action
+  to: qft.align052.ginzburg-landau-order-parameter-and-length-scales
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: typical
+  rationale: The order-parameter description refines the Goldstone-only EFT near symmetry
+    restoration.
+  failure_mode: The need for modulus dynamics near the transition is unexplained.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 336
+    - 337
+    - 338
+- id: qft.align052.weinberg-2-edge-superconductor-action-to-josephson
+  from: qft.align052.superconductor-u1-over-z2-goldstone-effective-action
+  to: qft.align052.zero-resistance-and-ac-josephson-effect
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The current definitions, phase periodicity, and phase equation are used
+    to derive resistance-free steady current and junction oscillation.
+  failure_mode: The voltage-phase relation and periodic-junction conclusion cannot
+    be derived.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 335
+    - 336
+- id: qft.align052.weinberg-2-edge-superconductor-action-to-meissner
+  from: qft.align052.superconductor-u1-over-z2-goldstone-effective-action
+  to: qft.align052.meissner-critical-field-and-flux-quantization
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Gauge-invariant phase periodicity and stability yield both flux quantization
+    and field expulsion.
+  failure_mode: The effects would be disconnected phenomenological assertions.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 334
+    - 335
+- id: qft.align052.weinberg-2-edge-superconductor-action-to-problem-incommensurate
+  from: qft.align052.superconductor-u1-over-z2-goldstone-effective-action
+  to: qft.align052.problem-incommensurate-condensate-charges
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The task changes the charged-condensate periodicity underlying the derived
+    superconducting properties.
+  failure_mode: The effect of incommensurate charges cannot be assessed without the
+    compact phase construction.
+  evidence:
+  - source: weinberg-2
+    section: Problems 6
+    pages:
+    - 354
+- id: qft.align052.weinberg-2-edge-vortex-classification-to-field-ranges
+  from: qft.align052.vortex-flux-core-stability-and-type-classification
+  to: qft.align052.vortex-state-field-ranges-and-flux-qualification
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The energy comparison is evaluated separately for the two λ/ξ types and
+    stable minimum-flux vortices.
+  failure_mode: The intermediate type-II state and the no-vortex type-I conclusion
+    cannot be classified.
+  evidence:
+  - source: weinberg-2
+    section: '21.6'
+    pages:
+    - 340
 - id: qft.align053.covariant-method-to-equivalence
   from: qft.align053.feynman-rules-covariant-perturbation
   to: qft.align053.old-fashioned-perturbation-covariant-equivalence
