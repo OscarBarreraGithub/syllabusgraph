@@ -1823,6 +1823,11 @@ nodes:
     note: Retains the source record ‘Massive-vector longitudinal high-energy perturbative
       breakdown’ with its stated scope, assumptions, and notation; this source-scoped
       alignment does not assert a broader equivalence.
+  - project: peskin-schroeder
+    node: peskin-schroeder.massive-vector-high-energy-consistency
+    note: Contributes the conditional high-energy diagnostic through explicit gauge
+      cancellations; the e+e− argument and external systematic proof remain in the
+      PS residual.
   evidence:
   - source: schwartz
     section: 8.2.2
@@ -1830,6 +1835,18 @@ nodes:
     - 117
     note: Gives the longitudinal scaling, illustrative cross-section growth, and perturbative-breakdown
       scale.
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 750
+    - 751
+    - 752
+    - 753
+    - 754
+    - 755
+    - 756
+    - 757
+    - 758
   notation: []
 - id: qft.align010.schwartz.massive-vector-polarization-basis
   label: Massive vector transverse and longitudinal polarization basis
@@ -1851,6 +1868,11 @@ nodes:
     node: peskin-schroeder.problem-massive-vector-polarization-sum
     note: Corresponds only to the compatible physical core. The source-specific derivation,
       signs, exercise status, and warnings remain in qft.align023.peskin.residual.problem-massive-vector-polarization-sum.
+  - project: peskin-schroeder
+    node: peskin-schroeder.longitudinal-vector-polarization-kinematics
+    note: Contributes ε_L=k/m+O(m/E) for the displayed high-energy vector vertex;
+      normalization, replacement scope, and the complete polarization exercise remain
+      in the PS residual.
   evidence:
   - source: schwartz
     section: 8.2.2
@@ -1864,6 +1886,11 @@ nodes:
     - 173
     note: The exercise defines the massive-vector basis, conserved-current simplification,
       and its non-Abelian qualification.
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 745
+    - 746
   notation: []
 - id: qft.align010.schwartz.massless-little-group-ward-identity
   label: Massless little-group derivation of the Ward identity
@@ -3890,6 +3917,10 @@ nodes:
     - 34
     note: The source explains mass redefinition, charge renormalization, and the question
       whether all divergences can be handled this way.
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 265
   origins:
   - project: peskin-schroeder
     node: peskin-schroeder.bare-to-renormalized-parameter-elimination
@@ -3899,6 +3930,10 @@ nodes:
     node: weinberg-1.renormalization-physical-parameters
     note: Adds this packet-reviewed source treatment while retaining the accepted
       record’s formulas, conditions, notation, and proof boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalizable-qft-fixed-physical-parameters
+    note: Adds the Chapter 8 preview using measured QED mass and charge; the all-orders
+      argument is deferred in that source and remains supported by the retained pages.
 - id: qft.align012.beta-function-first-two-coefficients-scheme-invariant
   label: Scheme invariance of the first two beta coefficients
   summary: For two running-coupling definitions built from the same unrenormalized
@@ -3981,11 +4016,23 @@ nodes:
     note: The source distinguishes a parameter artifact from a finite-scale physical
       propagator singularity, preserves the separate infinite-scale growth case, discusses
       triviality claims, and qualifies low-energy use.
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 423
+    - 424
+    - 425
+    - 426
   origins:
   - project: weinberg-2
     node: weinberg-2.landau-pole-physicality-and-triviality-qualification
     note: This shared record retains the assigned weinberg-2 treatment, including
       its source-specific scope, notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-running-charge-and-landau-pole
+    note: Adds only the leading-QED formal finite-scale pole and the warning that
+      perturbation theory fails there; Weinberg's physicality and triviality analysis
+      remains distinct.
 - id: qft.align012.local-operator-counterterm-criterion
   label: Local-operator criterion for new counterterms
   summary: Counterterms must be numbers rather than derivative- or momentum-dependent
@@ -4502,6 +4549,11 @@ nodes:
     - 127
     note: Defines the sliding charge by photon normalization, states beta(e)=e-cubed/(12
       pi-squared)+O(e-fifth), and qualifies the perturbative matching regime.
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 416
+    - 417
   origins:
   - project: schwartz
     node: schwartz.qed-running-charge-beta-function
@@ -4512,6 +4564,10 @@ nodes:
     note: The photon-normalization definition, mu much greater than m matching regime,
       and displayed higher-order term are retained as a source-specific presentation
       of the common one-electron one-loop QED flow.
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-beta-from-renormalization-constants
+    note: Adds the one-electron counterterm and Ward-identity derivation of beta(e)=e^3/(12pi^2),
+      independently of the retained effective-charge routes.
 - id: qft.align012.qed-two-point-counterterm-renormalization
   label: QED two-point counterterm renormalization
   summary: At order eR², the electron 1PI self-energy is Σ2 plus its electron counterterm,
@@ -4651,11 +4707,21 @@ nodes:
     - 130
     note: The Coleman–Weinberg example selects a scale of field strength and explicitly
       qualifies inferences near or across the singularity.
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 452
+    - 453
   origins:
   - project: weinberg-2
     node: weinberg-2.rg-improved-effective-potential-and-validity
     note: This shared record retains the assigned weinberg-2 treatment, including
       its source-specific scope, notation, and proof or task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.rg-improved-effective-potential
+    note: Adds the massless four-dimensional O(N) phi-four fixed-order matching route
+      and its small-field accuracy; the retained flow-singularity qualification is
+      Weinberg's.
 - id: qft.align012.scalar-qed-onshell-counterterms-problem
   label: Scalar-QED on-shell counterterms problem
   summary: Problem 19.1 asks for all four one-loop scalar-QED counterterms in the
@@ -6153,6 +6219,10 @@ nodes:
     node: weinberg-2.correlation-length-critical-exponent-from-rg
     note: The correspondence retains Weinberg's one-relevant-direction stability-eigenvalue
       derivation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.correlation-length-critical-divergence
+    note: Adds the three-dimensional Landau mean-field special case xi=[2b(T-Tc)]^-1/2
+      above Tc; it does not supply the retained fixed-point eigenvalue derivations.
   evidence:
   - source: peskin-schroeder
     section: '12.5'
@@ -6163,6 +6233,10 @@ nodes:
     pages:
     - 146
     - 147
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 272
 - id: qft.align014.coupling-redefinition-third-beta-coefficient-task
   label: Coupling-redefinition third-beta-coefficient task
   summary: Show that a coupling redefinition can set the third coefficient of a beta
@@ -6190,6 +6264,10 @@ nodes:
   - project: peskin-schroeder
     node: peskin-schroeder.critical-correlation-exponents-definition
     note: Retains the source's magnet language and the collection of exponent definitions.
+  - project: peskin-schroeder
+    node: peskin-schroeder.nontrivial-critical-exponents
+    note: Adds the early class-dependent eta and beta examples and the meaning of
+      critical exponents; the retained later pages define the full six-exponent set.
   evidence:
   - source: peskin-schroeder
     section: '13.1'
@@ -6197,6 +6275,10 @@ nodes:
     - 439
     - 440
     - 441
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 274
 - id: qft.align014.critical-two-point-scaling-and-eta
   label: Critical two-point scaling and eta
   summary: At the critical fixed point, the source's coordinate-space spin correlation
@@ -6210,12 +6292,20 @@ nodes:
     node: peskin-schroeder.critical-two-point-scaling-anomalous-dimension
     note: The eta-to-field-anomalous-dimension factor is retained in Peskin and Schroeder's
       convention only.
+  - project: peskin-schroeder
+    node: peskin-schroeder.critical-two-point-scaling-and-qft-mass
+    note: Adds the early d=3 form A r^-(1+eta) f(r/xi), field-normalization observation,
+      and xi^-1 mass identification; the later fixed-point derivation remains distinct.
   evidence:
   - source: peskin-schroeder
     section: '13.1'
     pages:
     - 443
     - 444
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 273
 - id: qft.align014.effective-charge-at-100-gev-task
   label: Effective electric charge at 100 GeV task
   summary: Calculate the effective QED charge for a 100 GeV process after including
@@ -6608,6 +6698,10 @@ nodes:
     node: schwartz.wilsonian-operator-mixing-irrelevance-and-fine-tuning
     note: Schwartz supplies the fixed-point mixing calculation and the stated high-to-low-scale
       sensitivity comparison.
+  - project: peskin-schroeder
+    node: peskin-schroeder.natural-light-particles-and-cutoff-hierarchy
+    note: Adds the contrast between protected massless particles and a scalar mass
+      tuned below the cutoff; it does not supply the retained operator-mixing analysis.
   evidence:
   - source: peskin-schroeder
     section: '12.1'
@@ -6621,6 +6715,10 @@ nodes:
     - 448
     - 449
     - 450
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 267
 - id: qft.align014.sun-scalar-loop-gauge-beta-task
   label: SU(N) scalar-loop gauge-beta task
   summary: Calculate the one-loop gauge beta function for an SU(N) theory with a defining-representation
@@ -6654,6 +6752,14 @@ nodes:
   - project: weinberg-2
     node: weinberg-2.universality-class-from-long-wavelength-content
     note: Retains the long-wavelength-field criterion for second-order transitions.
+  - project: peskin-schroeder
+    node: peskin-schroeder.landau-universality-from-symmetry
+    note: Adds the Landau symmetry-based illustration and its limited perturbative
+      universality-class claim.
+  - project: peskin-schroeder
+    node: peskin-schroeder.experimental-universality-critical-exponents
+    note: Adds the QFT, lattice, and experimental comparison by N, including the source's
+      stated discrepancies.
   evidence:
   - source: peskin-schroeder
     section: '12.5'
@@ -6663,6 +6769,15 @@ nodes:
     section: '18.5'
     pages:
     - 148
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 273
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 450
+    - 451
 - id: qft.align014.wilson-fisher-scheme-independence-task
   label: Wilson–Fisher regulator and scheme-independence task
   summary: As a one-loop task, derive hard-cutoff and shell-integration flows, compare
@@ -9521,8 +9636,12 @@ nodes:
     note: Problem 1 states the full decay-rate task and its quark-mass conditions.
 - id: qft.align017.problem-higgs-decay-rates-and-branching-plots-task
   label: 'Task: Higgs decay rates and branching-ratio plots'
-  summary: Calculate H→bb̄, H→gg through the top triangle, and H→γγ through top and
-    W loops, then plot their branching ratios against Higgs mass.
+  summary: Calculate Higgs partial widths in fermion, gluon-loop, photon-loop, and
+    massive-vector channels, then synthesize or plot branching fractions versus Higgs
+    mass. Schwartz specifically asks for H→bb̄, H→gg through a top triangle, and H→γγ
+    through top and W loops. Peskin–Schroeder separately asks for bb̄, τ+τ−, gg, W+W−,
+    and ZZ branching fractions using its source-era inputs and approximations; each
+    book-specific channel set remains an explicit task route.
   kind: method
   group: qft.align017.source-specific-methods
   origins:
@@ -9531,11 +9650,21 @@ nodes:
     note: This origin retains the source-specific statement, normalization, hypotheses,
       and proof or task boundary; correspondence is only the scope stated by this
       shared record.
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-decay-branching-fraction-synthesis-task
+    note: Contributes the common branching-fraction synthesis only; PS channel choices,
+      source-era inputs, and approximations remain in the PS task residual.
   evidence:
   - source: schwartz
     section: Problem 29.3
     pages:
     - 614
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 775
+    - 776
+    - 777
 - id: qft.align017.problem-integrating-out-right-handed-neutrinos-task
   label: 'Task: integrate out right-handed neutrinos'
   summary: Integrate out the right-handed neutrinos of Eq. (29.63) to derive the dimension-five
@@ -10365,6 +10494,10 @@ nodes:
     node: schwartz.goldstone-boson-equivalence-theorem
     note: Retains the source-specific result, normalization, conditions, and task
       or proof boundary within this shared core.
+  - project: peskin-schroeder
+    node: peskin-schroeder.goldstone-equivalence-theorem
+    note: Contributes the high-energy equivalence statement; its single-emission Ward
+      argument, cut check, correction scope, and proof limit remain in PS residuals.
   evidence:
   - source: schwartz
     section: 29.2.1
@@ -10374,6 +10507,14 @@ nodes:
     section: 29.2.1
     pages:
     - 591
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 743
+    - 744
+    - 745
+    - 746
+    - 747
   notation: []
 - id: qft.align018.goldstone-equivalence-explicit-linear-sigma-calculation
   label: Goldstone equivalence explicit linear-sigma calculation
@@ -17586,12 +17727,23 @@ nodes:
     node: schwartz.chiral-fermion-vacuum-polarization-integrals
     note: Retains unequal-mass chiral decomposition, dimensional-regularization expressions,
       and equal-mass QED check.
+  - project: peskin-schroeder
+    node: peskin-schroeder.chiral-fermion-vacuum-polarization-route
+    note: Contributes the unequal-mass chiral integral method; PS b_i functions, dimensional
+      convention, and divergence check remain in the residual.
   evidence:
   - source: schwartz
     section: 31.1.2
     pages:
     - 649
     - 650
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 766
+    - 767
+    - 768
+    - 769
   notation: []
 - id: qft.align025.ckm-unitarity-cancels-oblique-divergences
   label: CKM unitarity cancels oblique divergences
@@ -17708,6 +17860,10 @@ nodes:
   - project: peskin-schroeder
     node: peskin-schroeder.transverse-photon-vacuum-polarization
     note: Retains the four-dimensional transverse-polarization and massless-pole conditions.
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-vacuum-polarization-observable-map
+    note: Contributes only the matching role of the relevant self-energy in this observable;
+      PS bare couplings, momentum choice, and angle convention remain in its residual.
   evidence:
   - source: schwartz
     section: 31.1.1
@@ -17727,13 +17883,22 @@ nodes:
     - 246
     note: States the transverse tensor form, regularity qualification, and photon
       pole.
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 761
+    - 762
+    - 763
+    - 764
   notation: []
 - id: qft.align025.fiducial-input-scheme-and-tree-level-tension
   label: Fiducial input scheme and tree-level tension
-  summary: With hat-alpha_e(m_Z), hat-G_F, and hat-m_Z as fiducial inputs, hat-s satisfies
-    hat-s-squared(1-hat-s-squared)=pi hat-alpha_e(m_Z)/(sqrt(2) hat-G_F hat-m_Z-squared).
-    The resulting tree m_W and A_e miss the data, so this mismatch calls for loop
-    corrections and parameter renormalization rather than a tree-level contradiction.
+  summary: Electroweak precision predictions choose three measured inputs, derive
+    the remaining tree quantities, and use disagreement among observable definitions
+    to expose loop corrections. Schwartz uses hatted α_e(m_Z), G_F, and m_Z with ŝ²(1−ŝ²)=π
+    α̂_e(m_Z)/(√2 Ĝ_F m̂_Z²), and records the tree m_W and A_e tension. Peskin–Schroeder
+    uses α* at Q²=m_Z², G_F, and m_Z to define θ_0 through its natural relation; its
+    bare-input route does not assert Schwartz’s numerical hatted-scheme mismatch.
   kind: assumption
   group: qft.align025.precision-electroweak
   origins:
@@ -17741,12 +17906,21 @@ nodes:
     node: schwartz.fiducial-input-scheme-and-tree-level-tension
     note: Retains the particular hatted input scheme, root choice, numerical tree-level
       tension, and interpretation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-natural-relations-from-observables
+    note: Contributes the α*, G_F, m_Z natural-relation route; the bare-input convention
+      and source-specific observable definitions remain in the PS residual.
   evidence:
   - source: schwartz
     section: 31.1.1
     pages:
     - 643
     - 644
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 759
+    - 760
   notation: []
 - id: qft.align025.four-fermi-eigenoperators-and-leading-log-running
   label: Four-Fermi eigenoperators and leading-log running
@@ -17831,10 +18005,11 @@ nodes:
       its m_W cutoff and hadronic lower scale remain source-specific.
 - id: qft.align025.leading-top-and-higgs-oblique-dependence
   label: Leading top and Higgs oblique dependence
-  summary: For m_b tending to zero and m_Z much less than m_t, the leading top contribution
-    grows as m_t-squared/m_Z-squared. The source's leading Higgs corrections to m_W
-    and s_eff-squared are logarithmic in m_h-squared/m_W-squared, and its numerical
-    table distinguishes tree, top-bottom one-loop, and top-bottom-plus-Higgs predictions.
+  summary: For m_b→0 and m_Z≪m_t, the leading top oblique contribution grows as m_t²/m_Z²;
+    both sources relate this enhancement to the top Yukawa sector. Schwartz additionally
+    derives logarithmic Higgs corrections to m_W and s_eff² and tabulates tree, top-bottom,
+    and top-bottom-plus-Higgs predictions. Peskin–Schroeder’s assigned contribution
+    here is the heavy-top result only; its separate problem carries its Higgs calculation.
   kind: result
   group: qft.align025.precision-electroweak
   origins:
@@ -17842,11 +18017,22 @@ nodes:
     node: schwartz.leading-top-and-higgs-oblique-dependence
     note: Retains the stated mass hierarchy, leading top scaling, logarithmic Higgs
       dependence, and table comparison.
+  - project: peskin-schroeder
+    node: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+    note: Contributes the top-bottom correlator or heavy-top result at V_tb=1; PS
+      divergence cancellation, angle definitions, and hierarchy remain in the residual.
   evidence:
   - source: schwartz
     section: 31.1.2
     pages:
     - 653
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 769
+    - 770
+    - 771
+    - 772
   notation: []
 - id: qft.align025.matching-ir-cancellation-consistency-test
   label: Infrared cancellation as a matching consistency test
@@ -17869,9 +18055,11 @@ nodes:
   notation: []
 - id: qft.align025.muon-decay-fermi-constant-oblique-matching
   label: Muon-decay Fermi matching
-  summary: Muon decay gives hat-G_F/sqrt(2)=e-squared[1-Pi_WW(0)/m_W-squared+ellipsis]/(8s-squared
-    c-squared m_Z-squared). At this order the formula uses the MS m_Z because Pi_ZZ
-    does not correct muon decay.
+  summary: The zero-momentum W self-energy supplies the oblique correction to the
+    Fermi constant extracted from muon decay. In Schwartz’s MS convention, Ĝ_F/√2=e²[1−Π_WW(0)/m_W²+…]/(8s²c²m_Z²),
+    with MS m_Z because Π_ZZ does not enter the decay. Peskin–Schroeder obtains the
+    corresponding Π_WW(0) shift through its bare-v relation; the two parameter conventions
+    remain distinct.
   kind: result
   group: qft.align025.precision-electroweak
   origins:
@@ -17879,11 +18067,22 @@ nodes:
     node: schwartz.muon-decay-fermi-constant-oblique-matching
     note: Retains the muon-decay observable, zero-momentum W self-energy, MS-mass
       qualification, and perturbative scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-vacuum-polarization-observable-map
+    note: Contributes only the matching role of the relevant self-energy in this observable;
+      PS bare couplings, momentum choice, and angle convention remain in its residual.
   evidence:
   - source: schwartz
     section: 31.1.1
     pages:
     - 646
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 761
+    - 762
+    - 763
+    - 764
   notation: []
 - id: qft.align025.new-fermion-doublet-stu-constraints
   label: New fermion-doublet S and T constraints
@@ -17905,21 +18104,32 @@ nodes:
   notation: []
 - id: qft.align025.oblique-corrections-strategy-and-scope
   label: Oblique-correction strategy and scope
-  summary: Express the fiducial inputs through MS e, m_Z, and s; invert those relations;
-    compute other observables in MS parameters; then substitute. In this treatment
-    the retained leading finite, gauge-invariant oblique loops are top-bottom and
-    Higgs contributions.
+  summary: Oblique precision calculations organize leading radiative effects through
+    gauge-boson two-point functions before expressing predictions in measured inputs.
+    Schwartz uses an MS inversion route and retains top-bottom and Higgs loops. Peskin–Schroeder
+    instead evaluates a heavy fermion doublet in bare g, g′,v variables and forms
+    finite differences of observable weak-angle definitions. These are alternative
+    source methods for the shared self-energy strategy.
   kind: method
   group: qft.align025.precision-electroweak
   origins:
   - project: schwartz
     node: schwartz.oblique-corrections-strategy-and-scope
     note: Retains the inversion route and the source's stated oblique-loop scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.heavy-doublet-oblique-approximation
+    note: Contributes the heavy-doublet two-point-function strategy; the bare-parameter
+      method and approximation remain in the PS residual.
   evidence:
   - source: schwartz
     section: 31.1.1
     pages:
     - 644
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 760
+    - 761
   notation: []
 - id: qft.align025.oblique-inversion-and-mw-prediction
   label: Oblique inversion and W-mass prediction
@@ -17991,11 +18201,22 @@ nodes:
     node: schwartz.pole-mass-self-energy-relation
     note: Retains conserved-current scope, transverse projection, real-part convention,
       and unstable-pole qualification.
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-vacuum-polarization-observable-map
+    note: Contributes only the matching role of the relevant self-energy in this observable;
+      PS bare couplings, momentum choice, and angle convention remain in its residual.
   evidence:
   - source: schwartz
     section: 31.1.1
     pages:
     - 645
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 761
+    - 762
+    - 763
+    - 764
   notation: []
 - id: qft.align025.precision-electroweak-input-observables
   label: Precision electroweak input observables
@@ -18099,8 +18320,12 @@ nodes:
   notation: []
 - id: qft.align025.problem-31-3-higgs-vacuum-polarizations
   label: 'Problem 31.3: Higgs vacuum polarizations'
-  summary: Calculate the Higgs contributions to the vacuum-polarization graphs exactly
-    and verify the leading behavior in Eqs. (31.68) and (31.69).
+  summary: Compute physical-Higgs one-loop vacuum-polarization contributions and extract
+    their leading large-m_h dependence. Schwartz asks for the exact contributions
+    and verification of Eqs. (31.68) and (31.69). Peskin–Schroeder Problem 21.4 asks
+    for Feynman–’t Hooft-gauge diagrams, gauge invariance of the Higgs-mass-dependent
+    terms, and its own asymptotic weak-angle formulas. The two equation targets remain
+    separate task residuals.
   kind: method
   group: qft.align025.precision-electroweak
   origins:
@@ -18108,11 +18333,19 @@ nodes:
     node: schwartz.problem-31-3-higgs-vacuum-polarizations
     note: Retains exact-Higgs-loop calculation, specified leading-behavior verification,
       and task boundary.
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-21-4-higgs-mass-oblique-corrections
+    note: Contributes the shared Higgs vacuum-polarization task; the PS gauge choice
+      and its own asymptotic formulas remain in the Problem 21.4 residual.
   evidence:
   - source: schwartz
     section: Problems 31.1-31.4
     pages:
     - 666
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 774
   notation: []
 - id: qft.align025.problem-31-4a-bsgamma-rate
   label: 'Problem 31.4(a): Standard-Model b to s gamma rate'
@@ -18254,9 +18487,12 @@ nodes:
   notation: []
 - id: qft.align025.top-bottom-oblique-self-energies
   label: Top-bottom oblique self energies
-  summary: Using the chiral vacuum-polarization functions, the source constructs Pi_gamma-gamma,
-    Pi_gammaZ, Pi_WW, and Pi_ZZ for a top-bottom doublet, including N=3, charge/isospin
-    factors, the W-generator normalization, and V_tb dependence.
+  summary: Top-bottom current correlators determine Π_γγ, Π_γZ, Π_WW, and Π_ZZ with
+    color and electroweak charge factors. Schwartz retains the displayed W-generator
+    normalization and explicit V_tb dependence. Peskin–Schroeder specializes to negligible
+    intergenerational mixing, effectively V_tb=1, and uses the divergence pattern
+    and heavy-top limit. The common core does not transfer either convention to the
+    other route.
   kind: representation
   group: qft.align025.precision-electroweak
   origins:
@@ -18264,12 +18500,23 @@ nodes:
     node: schwartz.top-bottom-oblique-self-energies
     note: Retains the displayed gamma, Z, and W self-energy construction and all normalization
       qualifications.
+  - project: peskin-schroeder
+    node: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+    note: Contributes the top-bottom correlator or heavy-top result at V_tb=1; PS
+      divergence cancellation, angle definitions, and hierarchy remain in the residual.
   evidence:
   - source: schwartz
     section: 31.1.2
     pages:
     - 650
     - 651
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 769
+    - 770
+    - 771
+    - 772
   notation: []
 - id: qft.align025.top-ms-mass-and-one-loop-precision-prediction
   label: MS top mass and one-loop precision prediction
@@ -18327,6 +18574,10 @@ nodes:
     node: peskin-schroeder.electroweak-precision-observables-and-radiative-corrections
     note: Adds the packet-supported Peskin–Schroeder correspondence while retaining
       all prior equations, conventions, hypotheses, and source-specific residual treatment.
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-natural-relations-from-observables
+    note: Contributes the α*, G_F, m_Z natural-relation route; the bare-input convention
+      and source-specific observable definitions remain in the PS residual.
   evidence:
   - source: schwartz
     section: '31.1'
@@ -18342,6 +18593,11 @@ nodes:
     - 713
     - 714
     note: Operative source passage for the added common correspondence.
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 759
+    - 760
   notation:
   - source: schwartz
     note: Circumflexes denote values defined from the stated measurements, rather
@@ -18427,9 +18683,11 @@ nodes:
   notation: []
 - id: qft.align025.zgamma-mixing-effective-angle-and-ae
   label: Z-photon mixing and effective electron asymmetry
-  summary: Z-photon vacuum polarization changes the effective weak angle, s_eff-squared=s-squared-sc
-    Pi_gammaZ(m_Z-squared)/m_Z-squared, and hence the chiral Z-electron couplings
-    entering A_e. This is a one-loop correction to the MS-Lagrangian tree expression.
+  summary: Photon–Z vacuum polarization changes an effective weak mixing angle and
+    therefore neutral-current asymmetries. Schwartz uses s_eff²=s²−sc Π_γZ(m_Z²)/m_Z²
+    in an MS-Lagrangian expansion and applies it to A_e. Peskin–Schroeder defines
+    s_*² from the Z-pole asymmetry in its bare-coupling convention. The shared result
+    is mixing-induced angle displacement, while the definitions remain source-specific.
   kind: result
   group: qft.align025.precision-electroweak
   origins:
@@ -18437,11 +18695,22 @@ nodes:
     node: schwartz.zgamma-mixing-effective-angle-and-ae
     note: Retains the effective-angle definition, A_e application, and one-loop MS
       convention.
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-vacuum-polarization-observable-map
+    note: Contributes only the matching role of the relevant self-energy in this observable;
+      PS bare couplings, momentum choice, and angle convention remain in its residual.
   evidence:
   - source: schwartz
     section: 31.1.1
     pages:
     - 647
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 761
+    - 762
+    - 763
+    - 764
   notation: []
 - id: qft.align028.peskin-schroeder.delta-i-half-weak-eigenoperator-rescaling
   label: Isospin eigenoperators and hard-QCD Delta-I enhancement
@@ -25196,11 +25465,21 @@ nodes:
     node: weinberg-2.electroweak-precision-inputs-and-one-loop-mass-sensitivity
     note: Retains the reviewed source-specific statement, normalization, derivation
       or problem boundary; no broader equivalence is asserted.
+  - project: peskin-schroeder
+    node: peskin-schroeder.source-era-top-mass-precision-comparison
+    note: Contributes the PS historical mass-sensitivity comparison; its fit values
+      and data-era interpretation remain in the PS residual.
   evidence:
   - source: weinberg-2
     section: '21.3'
     pages:
     - 316
+  - source: peskin-schroeder
+    section: Chapter 21
+    pages:
+    - 759
+    - 771
+    - 772
   notation: []
 - id: qft.align039.electroweak-running-charge-neutral-current-tests
   label: Running-charge correction and neutral-current tests of electroweak theory
@@ -32503,6 +32782,1171 @@ nodes:
     note: Retains the assigned Peskin–Schroeder result, normalization, regulator,
       proof route, or task status. Its correspondence is limited to the stated source
       scope.
+- id: qft.align056.correlation-length-critical-divergence
+  label: Correlation length and critical divergence
+  summary: The linearized three-dimensional response has Yukawa form exp(-r/ξ)/(4πr),
+    with ξ=[2b(T-Tc)]^-½; the correlation length diverges as T approaches Tc from
+    above. This record retains its source-specific approximation or route rather than
+    asserting an unqualified equivalence to a broader shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.correlation-length-critical-divergence
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.critical-exponent-scaling-relations
+  label: Critical-exponent scaling relations
+  summary: The fixed-point analysis yields alpha=2-d nu, beta=one-half(d-2+eta)nu,
+    and gamma=(delta-1)beta. These relations show that thermodynamic and correlation
+    exponents are controlled by the field and mass-operator anomalous dimensions.
+    This record retains its source-specific approximation or route rather than asserting
+    an unqualified equivalence to a broader shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 447
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.critical-exponent-scaling-relations
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.critical-fluctuation-qft-correspondence
+  label: Critical fluctuations and quantum field theory
+  summary: Near a second-order transition, long-wavelength statistical fluctuations
+    admit a continuum-field description whose associated QFT mass tends to zero at
+    the transition. This record retains its source-specific approximation or route
+    rather than asserting an unqualified equivalence to a broader shared result.
+  kind: concept
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 268
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.critical-fluctuation-qft-correspondence
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.critical-two-point-scaling-and-qft-mass
+  label: Critical two-point scaling, field normalization, and QFT mass
+  summary: Beyond Landau theory, the critical two-point function has scaling form
+    A/r^(1+η) f(r/ξ). The amplitude is absorbable into field-strength renormalization;
+    ξ is a cutoff-independent physical parameter controlling large distances and ξ^-1
+    is the associated QFT physical mass. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 273
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.critical-two-point-scaling-and-qft-mass
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.cs-dimensional-scaling-of-greens-functions
+  label: RG-improved dimensional scaling of Green functions
+  summary: Combining a Callan-Symanzik solution with dimensional analysis expresses
+    a Green function at momentum p through a running coupling at scale p and an anomalous-dimension
+    factor accumulated between M and p. The matching function is computed perturbatively
+    where its arguments are order one. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 421
+    - 422
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.cs-dimensional-scaling-of-greens-functions
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.cs-running-coupling-characteristics
+  label: Running coupling from characteristic curves
+  summary: Solve the Callan-Symanzik equation along a characteristic running coupling
+    lambda(t), with t the logarithm of the scale change; Green functions acquire a
+    multiplicative exponential from the anomalous dimension evaluated along that route.
+    This record retains its source-specific approximation or route rather than asserting
+    an unqualified equivalence to a broader shared result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 418
+    - 419
+    - 420
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.cs-running-coupling-characteristics
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.effective-theory-relevant-parameters-and-degrees-of-freedom
+  label: Effective-theory parameters and long-distance degrees of freedom
+  summary: Writing a large-distance effective theory requires identifying both the
+    short-distance parameters that remain relevant and the underlying degrees of freedom
+    that survive at large distances. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: concept
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 266
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-theory-relevant-parameters-and-degrees-of-freedom
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.experimental-universality-critical-exponents
+  label: Experimental and lattice tests of critical universality
+  summary: Resummed QFT and lattice estimates of three-dimensional critical exponents
+    agree broadly with measurements across fluids, alloys, helium, and magnets grouped
+    by N. The source notes meaningful discrepancies but treats the overall agreement
+    as evidence for the field-theoretic account. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 450
+    - 451
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.experimental-universality-critical-exponents
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.four-dimensional-marginal-logarithms
+  label: Four-dimensional marginal logarithms
+  summary: At d=4 the phi-four coupling is marginal and approaches the zero fixed
+    point only logarithmically at large distance. Consequently, terms lambda log(lambda
+    phi-squared/M-squared) can invalidate a fixed-order effective-potential expansion
+    even when lambda is small. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '13.2'
+    pages:
+    - 451
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.four-dimensional-marginal-logarithms
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.gibbs-free-energy-scaling-equation
+  label: Gibbs free-energy scaling equation
+  summary: For d<4 in the Wilson-Fisher scaling window, after retaining the one small
+    temperature/mass perturbation and neglecting irrelevant couplings, identify the
+    scalar source with H and the effective potential with Gibbs free energy. The Callan-Symanzik
+    equation gives G(M,t)=t^[beta(1+delta)] f(M t^-beta). This record retains its
+    source-specific approximation or route rather than asserting an unqualified equivalence
+    to a broader shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 444
+    - 445
+    - 446
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gibbs-free-energy-scaling-equation
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.landau-correlation-green-function
+  label: Landau correlation Green function
+  summary: Above Tc, linearizing the Landau equation gives (-∇²+2b(T-Tc))s=H. A point
+    source defines a Green function proportional to the zero-field spin-spin correlation.
+    This record retains its source-specific approximation or route rather than asserting
+    an unqualified equivalence to a broader shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.landau-correlation-green-function
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.landau-gibbs-free-energy-expansion
+  label: Landau Gibbs-free-energy expansion
+  summary: For a uniaxial magnet near its critical point, reflection symmetry permits
+    an even expansion G(M)=A+B M²+C M⁴+…; an external field is incorporated by G(M,H)=G(M)-HM.
+    This record retains its source-specific approximation or route rather than asserting
+    an unqualified equivalence to a broader shared result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 270
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.landau-gibbs-free-energy-expansion
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.landau-mean-field-magnetization-scaling
+  label: Landau mean-field magnetization scaling
+  summary: With B(T)=b(T-Tc) and positive quartic coefficient c, minimizing the Landau
+    potential gives M=0 above Tc and two minima M=±[b(Tc-T)/(2c)]½ below Tc at zero
+    field. This record retains its source-specific approximation or route rather than
+    asserting an unqualified equivalence to a broader shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 270
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.landau-mean-field-magnetization-scaling
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.landau-universality-from-symmetry
+  label: Landau universality from order-parameter symmetry
+  summary: Landau’s power laws do not depend on microscopic constants, and the perturbative
+    large-distance description is shared by systems whose order parameters have the
+    same symmetry; these define universality classes. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: concept
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 273
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.landau-universality-from-symmetry
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.local-landau-free-energy-functional
+  label: Local Landau free-energy functional
+  summary: A local spin density s(x) gives a three-dimensional free-energy functional
+    with gradient, quadratic, quartic, and source terms. Its variational equation
+    determines the preferred field configuration. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 271
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.local-landau-free-energy-functional
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.natural-light-particles-and-cutoff-hierarchy
+  label: Natural light particles relative to a cutoff
+  summary: Long-distance quantum physics contains particles with masses far below
+    the cutoff; photons and chiral fermions give naturally massless examples, while
+    a scalar mass can instead be tuned small. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 267
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.natural-light-particles-and-cutoff-hierarchy
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.nontrivial-critical-exponents
+  label: Nontrivial critical exponents
+  summary: Experiment replaces Landau’s zero correlation exponent and mean-field magnetization
+    exponent with fixed, class-dependent critical exponents, for example β=0.313 for
+    three-dimensional single-axis magnets and fluids. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 274
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.nontrivial-critical-exponents
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.on-epsilon-expansion-critical-exponents
+  label: O(N) epsilon expansion for critical exponents
+  summary: For O(N) phi-four theory in 4-epsilon dimensions, the one-loop beta function
+    has lambda-star=8 pi-squared epsilon/(N+8), while gamma-phi-squared and the two-loop
+    field anomalous dimension determine the critical-exponent expansion, including
+    nu inverse=2-(N+2)epsilon/(N+8)+higher terms. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 448
+    - 449
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-epsilon-expansion-critical-exponents
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.order-parameter-and-critical-point
+  label: Order parameter and critical point
+  summary: The order parameter distinguishes competing phases. A critical point is
+    the endpoint where a first-order discontinuity disappears, or equivalently where
+    one state bifurcates into two macroscopic states. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: concept
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 269
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.order-parameter-and-critical-point
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.problem-gross-neveu-determinant-minimum-large-n
+  label: 'Problem: Gross-Neveu determinant, broken minimum, and large-N suppression'
+  summary: Problem 11.3(d-f) asks to diagonalize the Dirac determinant for the one-loop
+    effective potential, minimally subtract its sigma-squared renormalization, establish
+    a scheme-independent broken minimum at this order, and show higher contributions
+    are suppressed by N inverse at fixed g-squared N. Each part is a requested derivation,
+    not an established result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d–f)
+    pages:
+    - 391
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-gross-neveu-determinant-minimum-large-n
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.problem-gross-neveu-symmetry-and-auxiliary-field
+  label: 'Problem: Gross-Neveu discrete chiral symmetry and auxiliary field'
+  summary: Problem 11.3 asks to establish the two-dimensional discrete chiral symmetry
+    that forbids a fermion mass, verify renormalizability by dimensional analysis,
+    and represent the four-fermion functional integral with an auxiliary scalar field.
+    This record retains its source-specific approximation or route rather than asserting
+    an unqualified equivalence to a broader shared result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(a–c)
+    pages:
+    - 390
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-gross-neveu-symmetry-and-auxiliary-field
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.problem-natural-relation-with-fermions
+  label: 'Problem: finite natural relation in a broken fermion model'
+  summary: Problem 11.2 asks to show a global symmetry and its spontaneous breaking,
+    shift to the broken variables, derive the fermion mass relation, and show its
+    one-loop correction is nonzero but finite under conditions fixing v and the zero-transfer
+    Yukawa coupling. This record retains its source-specific approximation or route
+    rather than asserting an unqualified equivalence to a broader shared result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.2
+    pages:
+    - 389
+    - 390
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-natural-relation-with-fermions
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.problem-spin-wave-theory
+  label: 'Problem: spin-wave theory and low-dimensional order'
+  summary: Problem 11.1 asks to derive an exponential free-field correlator identity,
+    formulate the U(1) spin-wave effective theory, and compute its correlation behavior
+    for dimensions one through four. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.1
+    pages:
+    - 389
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-spin-wave-theory
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.qed-beta-from-renormalization-constants
+  label: QED beta function from renormalization constants
+  summary: Applying the Callan-Symanzik equation to QED relates the charge beta function
+    to counterterms and, using the Ward identity, yields positive beta(e)=e-cubed/(12
+    pi-squared) at leading order. The positive sign describes charge screening and
+    growth toward short distances. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 416
+    - 417
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-beta-from-renormalization-constants
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.qed-running-charge-and-landau-pole
+  label: QED running charge and Landau-pole limitation
+  summary: The positive QED beta function gives a charge that decreases at large distances
+    and grows at short distances. Its leading solution has a formal ultraviolet singularity,
+    signaling breakdown of perturbation theory rather than a reliable finite prediction
+    at that scale. This record retains its source-specific approximation or route
+    rather than asserting an unqualified equivalence to a broader shared result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 423
+    - 424
+    - 425
+    - 426
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.qed-running-charge-and-landau-pole
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.renormalizable-qft-fixed-physical-parameters
+  label: Renormalizable QFT and fixed physical parameters
+  summary: The chapter previews renormalizable QFT as the class in which all ultraviolet
+    divergences can be removed after taking a fixed small number of physical parameters
+    from experiment; QED perturbative predictions are then divergence-free when mass
+    and charge are measured inputs. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Invitation
+    pages:
+    - 265
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.renormalizable-qft-fixed-physical-parameters
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.rg-improved-effective-potential
+  label: Renormalization-group-improved effective potential
+  summary: Solve the effective-potential Callan-Symanzik equation with dimensional
+    analysis, determine the undetermined matching function from ordinary one-loop
+    perturbation theory, and replace dangerous logarithms by a running coupling. In
+    massless four-dimensional phi-four theory this removes the spurious one-loop symmetry-breaking
+    minimum and becomes accurate toward small fields. This record retains its source-specific
+    approximation or route rather than asserting an unqualified equivalence to a broader
+    shared result.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '13.2'
+    pages:
+    - 452
+    - 453
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.rg-improved-effective-potential
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align056.ultraviolet-cutoff-as-short-distance-dependence
+  label: Ultraviolet cutoff as short-distance dependence
+  summary: An ultraviolet divergence marks dependence on a large momentum cutoff,
+    equivalently a small-distance scale; bare-to-physical parameter relations encode
+    unknown short-distance physics. This record retains its source-specific approximation
+    or route rather than asserting an unqualified equivalence to a broader shared
+    result.
+  kind: concept
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 266
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.ultraviolet-cutoff-as-short-distance-dependence
+    note: Retains the assigned Peskin–Schroeder approximation, cutoff convention,
+      physical limit, derivation, or problem status at its stated scope.
+- id: qft.align057.chiral-fermion-vacuum-polarization-route
+  label: Chiral fermion vacuum-polarization calculation
+  summary: For two fermion propagators of masses m_1 and m_2 linked by chiral currents,
+    reduce all current combinations to LL and LR amplitudes, use anticommuting gamma_5
+    in dimensional regularization, combine denominators with a Feynman parameter,
+    and integrate. The source gives LL=RR and LR=RL form factors, then defines b_0,
+    b_1, and b_2 parameter integrals to separate the pole E from finite mass- and
+    momentum-dependent terms. This source record keeps its stated approximation and
+    method as a residual where a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 766
+    - 767
+    - 768
+    - 769
+  notation:
+  - source: peskin-schroeder
+    note: E denotes the dimensional-regularization pole combination after introducing
+      the subtraction scale M; b_i are the source's finite parameter integrals.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.chiral-fermion-vacuum-polarization-route
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.eeww-left-handed-unitarity-cancellation
+  label: Left-handed e-plus e-minus to longitudinal W-pair cancellation
+  summary: For a left-handed electron, add neutrino t-channel exchange to the photon
+    and Z s-channel diagrams. Its Ward-identity manipulation cancels the dangerous
+    high-energy longitudinal contribution. Keeping the O(m_W^2/s) correction to the
+    polarization approximation is necessary to recover the scalar-reference amplitude,
+    so merely cancelling the leading growth is insufficient. This source record keeps
+    its stated approximation and method as a residual where a broader shared core
+    has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 755
+    - 756
+    - 757
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.eeww-left-handed-unitarity-cancellation
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.eeww-right-handed-longitudinal-cancellation
+  label: Right-handed e-plus e-minus to longitudinal W-pair limit
+  summary: For a right-handed initial electron, only the photon and Z s-channel W-pair
+    diagrams contribute. Their leading longitudinal-vector terms combine, using m_W=m_Z
+    cos(theta_W), into the same high-energy amplitude as charged-Goldstone production;
+    this is an explicit equivalence-theorem check. This source record keeps its stated
+    approximation and method as a residual where a broader shared core has retained
+    external context.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 754
+    - 755
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.eeww-right-handed-longitudinal-cancellation
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.eeww-scalar-reference-amplitudes
+  label: Scalar reference amplitudes for e-plus e-minus to phi-plus phi-minus
+  summary: Compute charged-Goldstone pair production through photon and Z exchange
+    using the electron chirality charges and the scalar gauge vertices. At high energy
+    the right-handed amplitude reduces to hypercharge exchange because e_R has no
+    direct SU(2) coupling; the left-handed result is the coherent U(1) and SU(2) contribution.
+    These scalar amplitudes fall as 1/s in cross section and are the equivalence-theorem
+    reference for longitudinal W-pair production. This source record keeps its stated
+    approximation and method as a residual where a broader shared core has retained
+    external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 750
+    - 751
+    - 752
+    - 753
+    - 754
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.eeww-scalar-reference-amplitudes
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.electroweak-natural-relations-from-observables
+  label: Electroweak natural relations and observable weak angles
+  summary: With underlying g, g-prime, and v, the tree-level quantities m_W, m_Z,
+    e, and G_F obey parameter-independent natural relations. The chapter contrasts
+    sin-squared(theta_W) defined by 1-m_W^2/m_Z^2 with an observable reference angle
+    theta_0 defined from alpha-star at Q^2=m_Z^2, G_F, and m_Z; a natural relation
+    is finite after one-loop correction because counterterms only shift existing parameters.
+    This source record keeps its stated approximation and method as a residual where
+    a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 758
+    - 759
+    - 760
+  notation:
+  - source: peskin-schroeder
+    note: alpha-star is the running QED coupling evaluated at the Z scale in the source
+      convention.
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.electroweak-natural-relations-from-observables
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.gluon-fusion-higgs-production-project-task
+  label: 'Final project (d): gluon-fusion Higgs production from the decay width'
+  summary: 'Use the inverse g+g to h process and the parton model to derive the relation
+    between Gamma(h to g g) and the inclusive pp to h+X cross section. For the specified
+    30 GeV Higgs and 1--40 TeV pp energy range, make the problem''s stated approximations:
+    ignore Q-squared dependence, use f_g(x)=8(1-x)^7/x, and set the loop form factor
+    to one with its stated roughly 10 percent qualification. This source record keeps
+    its stated approximation and method as a residual where a broader shared core
+    has retained external context. The exercise explicitly warns that taking the gluon
+    distribution independent of Q² is not a good approximation; that simplification
+    is part of the task rather than a reliable phenomenological assumption.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 777
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gluon-fusion-higgs-production-project-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.goldstone-equivalence-cut-cancellation-route
+  label: Cut-state cancellation route to equivalence
+  summary: In Feynman-'t Hooft gauge, decompose the -g_mu_nu propagator numerator
+    into three physical massive-vector polarizations and one timelike contribution.
+    Cutkosky unitarity requires the timelike cut to cancel the Goldstone cut; applying
+    the high-energy longitudinal replacement turns that cancellation into the squared
+    equivalence relation. The chapter presents this as a tree-level, single-emission
+    illustration rather than a general proof. This source record keeps its stated
+    approximation and method as a residual where a broader shared core has retained
+    external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.goldstone-equivalence-cut-cancellation-route
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.goldstone-equivalence-theorem
+  label: Goldstone-boson equivalence theorem
+  summary: At energies large compared with a massive gauge boson's mass, an amplitude
+    with an external longitudinal vector equals the amplitude with the Goldstone boson
+    eaten by that vector, up to corrections of order m^2/E^2 in the displayed single-emission
+    argument. The statement concerns high-energy longitudinal external states; it
+    does not identify Goldstones as physical asymptotic particles. This source record
+    keeps its stated approximation and method as a residual where a broader shared
+    core has retained external context. The general theorem is stated here, but the
+    displayed Ward argument treats single emission; the complete proof is external.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 743
+    - 744
+    - 746
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.goldstone-equivalence-theorem
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.goldstone-equivalence-ward-route
+  label: Single-emission Ward-identity route to equivalence
+  summary: In Lorentz gauge, decompose a gauge-current matrix element into a one-particle-irreducible
+    vector vertex Gamma_mu and a current-created Goldstone pole attached to a scalar
+    vertex T. Current conservation and m=gF imply k_mu Gamma^mu=m T; substituting
+    the high-energy longitudinal polarization proves epsilon_L dot Gamma=T for single
+    emission or absorption. This source record keeps its stated approximation and
+    method as a residual where a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.goldstone-equivalence-ward-route
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.heavy-doublet-oblique-approximation
+  label: Heavy-doublet oblique approximation
+  summary: For the (t,b) doublet and light external fermions, heavy quarks enter the
+    selected weak observables only through gauge-boson propagator corrections, a separately
+    gauge-invariant class. The extension to light-quark external processes additionally
+    neglects CKM angles mixing t and b with other species. The analogous Higgs-sector
+    simplification applies when its direct coupling to a light external fermion is
+    neglected; such indirect propagator effects are called oblique corrections. This
+    source record keeps its stated approximation and method as a residual where a
+    broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 761
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.heavy-doublet-oblique-approximation
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-decay-branching-fraction-synthesis-task
+  label: 'Final project (h): Higgs branching-fraction synthesis'
+  summary: 'Combine the calculated partial widths to obtain branching fractions into
+    b anti-b, tau-plus tau-minus, g g, W-plus W-minus, and Z Z across 50--500 GeV
+    Higgs masses. This is a synthesis task: it uses the independently calculated partial
+    widths and does not make any one unsolved channel result a prerequisite of another
+    channel''s derivation. This source record keeps its stated approximation and method
+    as a residual where a broader shared core has retained external context.'
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-decay-branching-fraction-synthesis-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-decay-form-factors-numerical-project-task
+  label: 'Final project (g): numerical Higgs-decay form factors'
+  summary: Reduce I(x) to a one-parameter integral, evaluate it numerically, plot
+    I(m_h^2/m_q^2) for 50 GeV less than m_h less than 500 GeV, and compute the h to
+    g g width in keV over that range. Numerically compute the additional form factor
+    introduced by the W-loop calculation in the same way. This source record keeps
+    its stated approximation and method as a residual where a broader shared core
+    has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 777
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-decay-form-factors-numerical-project-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-decay-project-model-and-source-era-inputs
+  label: 'Final project: Higgs-decay model and numerical inputs'
+  summary: Within the minimal one-doublet GWS model, treat m_h as a free parameter
+    and use the source-era suggested inputs m_b=5 GeV, m_t=175 GeV, m_W=80 GeV, m_Z=91
+    GeV, sin-squared(theta_W)=0.23, and alpha_s(m_Z)=0.12. The project asks for decay
+    amplitudes to quark, lepton, and gauge-boson pairs and notes that different modes
+    dominate in different m_h ranges. This source record keeps its stated approximation
+    and method as a residual where a broader shared core has retained external context.
+  kind: assumption
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project, Decays of the Higgs Boson
+    pages:
+    - 775
+    - 776
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-decay-project-model-and-source-era-inputs
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-to-diphoton-fermion-loop-task
+  label: 'Final project (e): fermion-loop h to two photons'
+  summary: Express the quark and lepton loop contribution to h to two photons using
+    the same I(m_h^2/m_f^2) form factor derived for h to two gluons. This source record
+    keeps its stated approximation and method as a residual where a broader shared
+    core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 777
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-to-diphoton-fermion-loop-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-to-diphoton-w-loop-task
+  label: 'Final project (f): W-loop h to two photons'
+  summary: In Feynman-'t Hooft gauge, compute the W-loop contribution to h0 to two
+    photons together with the additional diagrams required for a gauge-invariant amplitude,
+    then add very-heavy charged-fermion loops. In the m_h much less than m_W limit,
+    the displayed result is Gamma(h0 to 2gamma)=[alpha m_h/(8 sin-squared(theta_W))][m_h-squared/m_W-squared][alpha-squared/(18
+    pi-squared)] times absolute-value-squared(sum over f of Q_f-squared N_c(f)-21/4),
+    where the sum is over very heavy quarks and leptons of charge Q_f. This source
+    record keeps its stated approximation and method as a residual where a broader
+    shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 777
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-to-diphoton-w-loop-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  label: 'Final project (a): h to fermion pairs and leading-log QCD'
+  summary: Derive Gamma(h0 to f f-bar)=[alpha m_h/(8 sin-squared(theta_W))][m_f-squared/m_W-squared](1-4m_f-squared/m_h-squared)^(3/2)
+    N_c(f), where N_c=1 for leptons and 3 for quarks. For a quark and m_h much greater
+    than m_q, optionally improve it by leading-log QCD corrections, with m_q determined
+    at threshold M-squared approximately m_q-squared. This source record keeps its
+    stated approximation and method as a residual where a broader shared core has
+    retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (a)
+    pages:
+    - 776
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-to-fermion-pairs-and-leading-log-qcd-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  label: 'Final project (c): h to two gluons from quark loops'
+  summary: Compute the finite quark-loop h0 to g g amplitude with dimensional regularization,
+    resolve its apparently regulator-dependent subtle term by checking gauge invariance,
+    square it, and form the rate. The displayed result is Gamma(h0 to 2g)=[alpha m_h/(8
+    sin-squared(theta_W))][m_h-squared/m_W-squared][alpha_s-squared/(9 pi-squared)]
+    times absolute-value-squared(sum over q of I(m_h-squared/m_q-squared)). Leave
+    I as a Feynman-parameter integral at this stage; I(x) tends to 1 as x tends to
+    0 and to 0 as x tends to infinity, so heavy quarks dominate. This source record
+    keeps its stated approximation and method as a residual where a broader shared
+    core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 776
+    - 777
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-to-gluons-loop-and-form-factor-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.higgs-to-vector-pairs-goldstone-check-task
+  label: 'Final project (b): h to W-pair and Z-pair Goldstone check'
+  summary: For m_h above the W-pair threshold, and then the Z-pair threshold, calculate
+    the h to W-plus W-minus and h to Z Z widths. In the m_h much greater than m_W
+    regime, explain and explicitly verify their dominant longitudinal contributions
+    by comparing with h decay to the corresponding charged or neutral Goldstones in
+    the ungauged Higgs theory. This source record keeps its stated approximation and
+    method as a residual where a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (b)
+    pages:
+    - 776
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.higgs-to-vector-pairs-goldstone-check-task
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.longitudinal-vector-polarization-kinematics
+  label: High-energy longitudinal-vector polarization
+  summary: A massive vector boosted along its momentum has a longitudinal polarization
+    vector that remains normalized and orthogonal to k_mu, while componentwise epsilon_L^mu(k)=k^mu/m+O(m/E)
+    at large energy. This replacement is valid for the one-particle-irreducible vector
+    vertex used in the theorem, not automatically for every term containing k_mu.
+    This source record keeps its stated approximation and method as a residual where
+    a broader shared core has retained external context.
+  kind: representation
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.longitudinal-vector-polarization-kinematics
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.massive-vector-high-energy-consistency
+  label: Gauge origin of good high-energy massive-vector behavior
+  summary: The gauge-theory Ward identities make the tree diagrams for longitudinal
+    W-pair production cancel to a weakly coupled high-energy result. In the chapter's
+    stated converse, massive-vector theories without violent high-energy behavior
+    arise from spontaneously broken gauge theories. This source record keeps its stated
+    approximation and method as a residual where a broader shared core has retained
+    external context. The e+e− cancellation gives the converse argument here; its
+    systematic proof is external.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 757
+    - 758
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.massive-vector-high-energy-consistency
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.problem-21-1-weak-muon-anomalous-moment
+  label: 'Problem 21.1: weak contribution to the muon anomalous moment'
+  summary: Compute the W-neutrino and associated Goldstone diagrams for the muon electromagnetic
+    vertex in Feynman-'t Hooft gauge in the m_mu much less than m_W limit, then repeat
+    in general R-xi gauge and explicitly show xi independence. The displayed W-neutrino
+    result is a_mu(nu)=G_F m_mu^2/(8 pi^2 sqrt(2)) times 10/3. Compute separately
+    the Z-muon plus Goldstone contribution; the displayed result is a_mu(Z)=-G_F m_mu^2/(8
+    pi^2 sqrt(2)) times [4/3+(8/3)sin-squared(theta_W)-(16/3)sin-to-the-fourth(theta_W)].
+    This source record keeps its stated approximation and method as a residual where
+    a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.1
+    pages:
+    - 773
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-21-1-weak-muon-anomalous-moment
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.problem-21-2-ww-helicity-amplitudes
+  label: 'Problem 21.2: complete W-pair helicity analysis'
+  summary: Using explicit polarization vectors, derive e-plus e-minus to W-plus W-minus
+    helicity amplitudes for left- and right-handed electrons. Check the specified
+    high-energy and full longitudinal results, show that one-longitudinal-one-transverse
+    individual diagrams grow as square-root(s) while complete amplitudes fall as 1/square-root(s),
+    and turn the amplitudes into the requested differential cross sections. Part (b)
+    states that the right-handed-electron W-pair differential cross section is about
+    thirty times smaller than the left-handed case. This source record keeps its stated
+    approximation and method as a residual where a broader shared core has retained
+    external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-21-2-ww-helicity-amplitudes
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.problem-21-3-dubar-to-wgamma-radiation-zero
+  label: 'Problem 21.3: d anti-u to W-minus photon radiation zero'
+  summary: For massless quarks, calculate d anti-u to W-minus photon helicity amplitudes,
+    identify the sole nonzero initial annihilation channel in that approximation,
+    prove the common zero at cos(theta)=-1/3 for every final-helicity scattering amplitude,
+    and compute d-sigma/d-cos(theta). This source record keeps its stated approximation
+    and method as a residual where a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-21-3-dubar-to-wgamma-radiation-zero
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.problem-21-4-higgs-mass-oblique-corrections
+  label: 'Problem 21.4: Higgs-mass dependence of radiative corrections'
+  summary: Neglect light-fermion-mass terms to show that physical-Higgs one-loop contributions
+    to the Section 21.3 processes enter only through vacuum polarization and that
+    the Higgs-mass-dependent parts are gauge invariant. Draw the Feynman-'t Hooft-gauge
+    Higgs diagrams and compute their mass dependence. For m_h much greater than m_W,
+    part (c) gives s-star-squared-s_0-squared=alpha(1+9 sin-squared(theta_W)) log(m_h-squared/m_W-squared)/[48
+    pi(cos-squared(theta_W)-sin-squared(theta_W))] and s_W-squared-s-star-squared=5
+    alpha log(m_h-squared/m_W-squared)/(24 pi). This source record keeps its stated
+    approximation and method as a residual where a broader shared core has retained
+    external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.problem-21-4-higgs-mass-oblique-corrections
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.source-era-top-mass-precision-comparison
+  label: Source-era precision top-mass comparison
+  summary: The source's plotted one-loop comparison holds alpha, G_F, and m_Z fixed
+    and varies Higgs masses 100, 300, and 1000 GeV. It quotes a then-current neutral-current
+    fit m_t=169 plus-or-minus 24 GeV and the 1995 CDF/D0 kinematic result m_t=180
+    plus-or-minus 13 GeV. These values are historical source-era numerical evidence,
+    not current measurements. This source record keeps its stated approximation and
+    method as a residual where a broader shared core has retained external context.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 771
+    - 772
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.source-era-top-mass-precision-comparison
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.top-bottom-divergence-check-and-heavy-top-effect
+  label: Top-bottom divergence check and heavy-top precision effect
+  summary: Assemble the t,b current correlators from the chiral building blocks. Their
+    divergent pieces obey the symmetry pattern required for finite weak-angle differences.
+    For m_t much greater than m_b and m_Z, Eq. (21.157) gives s-star-squared-sin-squared(theta_0)=-[3
+    alpha/(16 pi (cos-squared(theta_W)-sin-squared(theta_W)))] m_t-squared/m_Z-squared
+    plus omitted order-alpha terms without enhancement, and s_W-squared-s-star-squared=-[3
+    alpha/(16 pi sin-squared(theta_W))] m_t-squared/m_Z-squared plus such terms. The
+    enhancement reflects the top Yukawa coupling rather than only the weak gauge coupling.
+    This source record keeps its stated approximation and method as a residual where
+    a broader shared core has retained external context.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 770
+    - 771
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.top-bottom-divergence-check-and-heavy-top-effect
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.top-to-goldstone-b-route
+  label: Goldstone route for the heavy-top decay limit
+  summary: Expand the Higgs doublet into charged Goldstone fields and use the top
+    Yukawa interaction to compute t to phi-plus b. For a massless Goldstone, equivalently
+    m_t much greater than m_W, Eq. (21.83) gives Gamma(t to phi-plus b)=lambda_t^2
+    m_t/(32 pi)=g^2 m_t^3/(64 pi m_W^2), agreeing with the leading longitudinal-W
+    term. This source record keeps its stated approximation and method as a residual
+    where a broader shared core has retained external context.
+  kind: method
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+    - 750
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.top-to-goldstone-b-route
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.top-to-wb-width-and-longitudinal-enhancement
+  label: Top decay t to W b and longitudinal enhancement
+  summary: With the relevant CKM factor set to one and m_b=0, calculate t to W-plus
+    b using the charged-current vertex, the physical massive-vector polarization sum,
+    spin sums, and two-body phase space. Eq. (21.76) is Gamma(t to W-plus b)=g^2 m_t^3/(64
+    pi m_W^2) (1-m_W^2/m_t^2)^2 (1+2m_W^2/m_t^2). It is enhanced relative to a naive
+    g^2 m_t estimate by (m_t/m_W)^2, carried by longitudinal W production. This source
+    record keeps its stated approximation and method as a residual where a broader
+    shared core has retained external context.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 747
+    - 748
+    - 749
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.top-to-wb-width-and-longitudinal-enhancement
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.weak-angle-scheme-differences-and-finiteness
+  label: Weak-angle scheme differences as finite predictions
+  summary: The asymmetry angle s-star-squared, the mass-ratio angle s_W-squared, and
+    the alpha-star--G_F--m_Z reference angle s_0-squared coincide at tree level but
+    receive different oblique corrections. The value inferred from Z asymmetries has
+    small species-dependent vertex corrections; subtracting them systematically defines
+    a universal s-star-squared. After separating self-energies by SU(2) and electric-charge
+    currents, symmetry fixes their ultraviolet-divergence pattern; differences of
+    the natural relations are ultraviolet finite even though each individual angle
+    formula is divergent. This source record keeps its stated approximation and method
+    as a residual where a broader shared core has retained external context.
+  kind: result
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 764
+    - 765
+    - 766
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-angle-scheme-differences-and-finiteness
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
+- id: qft.align057.weak-vacuum-polarization-observable-map
+  label: Vacuum-polarization map for weak observables
+  summary: Decompose a gauge-boson two-point function as Pi_IJ(q^2) g_mu_nu minus
+    A(q^2) q_mu q_nu. For light conserved external currents the A term drops out.
+    Pole self-energies shift m_Z and m_W, Pi-gamma-gamma prime at zero shifts alpha,
+    Pi_WW(0) shifts G_F, and gamma-Z mixing at m_Z shifts the Z asymmetry weak angle
+    s-star-squared. Photon Ward identities impose Pi-gamma-gamma(0)=Pi-gamma-Z(0)=0.
+    This source record keeps its stated approximation and method as a residual where
+    a broader shared core has retained external context.
+  kind: representation
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 761
+    - 762
+    - 763
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.weak-vacuum-polarization-observable-map
+    note: Retains the assigned Peskin–Schroeder high-energy hypothesis, approximation,
+      numerical-project task, or derivation route at its stated scope.
 - id: qft.anomaly-su4-ten-calculation-task
   label: Anomaly SU(4) ten calculation task
   summary: The assigned task asks for A(10) for SU(4), using 4 tensor 4 equals 6 plus
@@ -33689,6 +35133,14 @@ nodes:
     node: weinberg-2.sliding-scale-coupling-callan-symanzik-method
     note: Weinberg’s sliding-scale route includes perturbative matching, small-running-coupling,
       and no-intervening-beta-zero conditions.
+  - project: peskin-schroeder
+    node: peskin-schroeder.cs-running-coupling-characteristics
+    note: Adds the independent Callan-Symanzik characteristic-curve stage with its
+      anomalous-dimension exponential.
+  - project: peskin-schroeder
+    node: peskin-schroeder.cs-dimensional-scaling-of-greens-functions
+    note: Completes the Peskin route by dimensional scaling and perturbative matching
+      at order-one kinematics; Wilsonian shell integration remains distinct.
   evidence:
   - source: schwartz
     section: 23.1.1
@@ -33710,6 +35162,17 @@ nodes:
     - 313
     - 314
     note: Sums the geometric series and differentiates the arbitrary-scale expression.
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 418
+    - 419
+    - 420
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 421
+    - 422
 - id: qft.coulomb-potential-from-field-propagation
   label: Coulomb potential from field propagation
   summary: For a static point source J⁰=eδ³(x⃗), Lorenz-gauge Maxwell theory gives
@@ -36911,6 +38374,11 @@ nodes:
     node: weinberg-2.wilson-fisher-epsilon-expansion
     note: Adds the independent continuum Z2 scalar beta-function and stability calculation,
       including approximate-exponent scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.on-epsilon-expansion-critical-exponents
+    note: Adds the independently normalized O(N) continuum epsilon-expansion route
+      and its exponent formulas; it is distinct from the cutoff-shell and Weinberg
+      routes.
   evidence:
   - source: peskin-schroeder
     section: '12.1'
@@ -36929,6 +38397,11 @@ nodes:
     - 148
     note: The scalar effective theory, fixed point, stability eigenvalues, and approximate
       exponent are displayed here.
+  - source: peskin-schroeder
+    section: Chapter 8 / 12.3 / 13.1
+    pages:
+    - 448
+    - 449
 - id: qft.peskin-general-perturbation-rg-flow
   label: General perturbation RG flow
   summary: For a mass-independent scheme, adding coefficients C_i O_i to a massless
@@ -74335,6 +75808,2068 @@ edges:
     section: '7.3'
     pages:
     - 237
+- id: qft.align056.assigned-epsilon-to-wilson-fisher
+  from: qft.align056.on-epsilon-expansion-critical-exponents
+  to: qft.peskin-epsilon-wilson-fisher-beta
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The exact assigned Peskin origin provides a complete epsilon-expansion
+    route to the amended Wilson–Fisher core.
+  failure_mode: Substituting the common ID for the assigned source origin would erase
+    provenance.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 448
+    - 449
+- id: qft.align056.auxiliary-to-gross-neveu-determinant
+  from: qft.align056.problem-gross-neveu-symmetry-and-auxiliary-field
+  to: qft.align056.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Parts (a-c) construct the auxiliary-field representation used by the
+    determinant/minimum tasks in parts (d-f).
+  failure_mode: The determinant task would lose its requested auxiliary-field starting
+    point.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3
+    pages:
+    - 390
+    - 391
+- id: qft.align056.correlation-length-mean-field-evidence-to-core
+  from: qft.align056.correlation-length-critical-divergence
+  to: qft.align014.correlation-length-exponent-from-relevant-flow
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The Landau calculation supplies the mean-field nu=1/2 special case of
+    correlation-length divergence.
+  failure_mode: Treating this special case as the general fixed-point derivation would
+    erase the anomalous mass-flow result.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+- id: qft.align056.critical-two-point-residual-to-core
+  from: qft.align056.critical-two-point-scaling-and-qft-mass
+  to: qft.align014.critical-two-point-scaling-and-eta
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The early d=3 scaling form and xi^-1 mass identification supply a source-specific
+    realization of the later fixed-point two-point result.
+  failure_mode: Without the residual, the physical-mass identification and field-normalization
+    observation would be lost.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 273
+- id: qft.align056.cs-scaling-route-to-continuum-core
+  from: qft.align056.cs-dimensional-scaling-of-greens-functions
+  to: qft.continuum-rg-running-coupling-large-log-method
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Together with its Callan-Symanzik and characteristic prerequisites, dimensional
+    scaling and perturbative matching complete an independent continuum-RG route.
+  failure_mode: Making this route compulsory would erase the independent Schwartz
+    and Weinberg constructions retained by the common core.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 421
+    - 422
+- id: qft.align056.cs-scaling-to-rg-potential
+  from: qft.align056.cs-dimensional-scaling-of-greens-functions
+  to: qft.align056.rg-improved-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The improved potential uses the CS/dimensional-scaling solution.
+  failure_mode: The RG improvement lacks its running solution.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 452
+    - 453
+- id: qft.align056.cs-to-gibbs-scaling
+  from: qft.align014.callan-symanzik-massless-green-functions
+  to: qft.align056.gibbs-free-energy-scaling-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scaling equation is derived with the Callan–Symanzik equation.
+  failure_mode: The Gibbs scaling form lacks its RG equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 445
+    - 446
+    - 447
+- id: qft.align056.cs-to-qed-beta
+  from: qft.align014.callan-symanzik-massless-green-functions
+  to: qft.align056.qed-beta-from-renormalization-constants
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED route applies the Callan–Symanzik relation to charge renormalization.
+  failure_mode: The route has no RG equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 416
+    - 417
+- id: qft.align056.dimreg-to-problem-11-3-df
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align056.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task explicitly requires dimensional regularization and minimal subtraction
+    of the sigma-squared term after the fermion determinant is evaluated.
+  failure_mode: Without the dimensionally regulated loop method, the requested pole
+    subtraction and renormalized potential cannot be obtained.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d-f)
+    pages:
+    - 391
+- id: qft.align056.dirac-functional-to-problem-11-3-ac
+  from: qft.align011.external-source-generating-functional
+  to: qft.align056.problem-gross-neveu-symmetry-and-auxiliary-field
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The auxiliary-field representation is a fermionic functional integral,
+    so the established Grassmann functional construction supplies its integration
+    rules.
+  failure_mode: Without the fermionic functional construction, the requested Hubbard-Stratonovich
+    representation has no controlled Grassmann integration step.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(a-c)
+    pages:
+    - 390
+- id: qft.align056.effective-action-to-problem-gross-neveu
+  from: qft.align011.legendre-quantum-effective-action
+  to: qft.align056.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task constructs and minimizes a renormalized one-loop effective potential
+    for the auxiliary field.
+  failure_mode: Without the effective-action/potential framework, the determinant
+    cannot be interpreted as the requested vacuum potential and stationary condition.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d-f)
+    pages:
+    - 391
+- id: qft.align056.effective-potential-to-gibbs-scaling
+  from: qft.align011.effective-potential-constant-background
+  to: qft.align056.gibbs-free-energy-scaling-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Gibbs route identifies the effective potential with the thermodynamic
+    free energy.
+  failure_mode: The Gibbs scaling identification is unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 445
+    - 446
+    - 447
+- id: qft.align056.experimental-universality-evidence-to-core
+  from: qft.align056.experimental-universality-critical-exponents
+  to: qft.align014.universality-class-from-long-wavelength-content
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The QFT, lattice, and experimental comparison supplies empirical support,
+    including the source's noted discrepancies, for class universality.
+  failure_mode: Without the qualification, the table would be represented as exact
+    agreement rather than broad evidence.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 450
+    - 451
+- id: qft.align056.exponent-definitions-to-relations
+  from: qft.align014.critical-exponent-definitions
+  to: qft.align056.critical-exponent-scaling-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exponent relations require the definitions of the exponents they
+    relate.
+  failure_mode: The relations would use undefined exponents.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 446
+    - 447
+- id: qft.align056.fermion-determinant-to-problem-11-3-df
+  from: qft.align043.qed-fermion-exchange-and-loop-signs
+  to: qft.align056.problem-gross-neveu-determinant-minimum-large-n
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Integrating out the N fermions gives the Dirac determinant whose Fourier-mode
+    eigenvalues produce the one-loop potential and its N counting.
+  failure_mode: Without the determinant/closed-loop rule, the sign, trace-log, and
+    overall N dependence of the requested potential are unavailable.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.3(d-f)
+    pages:
+    - 391
+- id: qft.align056.free-scalar-functional-to-problem-11-1
+  from: qft.align021.free-scalar-generating-functional
+  to: qft.align056.problem-spin-wave-theory
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The spin-wave task begins with a Gaussian free-scalar exponential identity
+    and then applies its propagator to the U(1) correlation function.
+  failure_mode: Without Gaussian free-field contractions, the exponential correlator
+    and its dimension-dependent large-distance behavior cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.1
+    pages:
+    - 389
+- id: qft.align056.landau-universality-evidence-to-core
+  from: qft.align056.landau-universality-from-symmetry
+  to: qft.align014.universality-class-from-long-wavelength-content
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The symmetry-based Landau comparison supplies the source's early restricted
+    universality-class illustration.
+  failure_mode: Without its restriction, Landau mean-field powers could be mistaken
+    for exact exponents in every class.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 273
+- id: qft.align056.mass-renormalization-to-renormalizable-preview
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align056.renormalizable-qft-fixed-physical-parameters
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Chapter 8 preview explicitly relies on replacing the bare electron
+    mass by its measured physical value.
+  failure_mode: Without the mass-renormalization input, the preview's joint measured-mass-and-charge
+    premise is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Invitation
+    pages:
+    - 265
+- id: qft.align056.msbar-large-log-to-rg-potential
+  from: qft.align011.msbar-scale-and-large-log-qualification
+  to: qft.align056.rg-improved-effective-potential
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Fixed-order MS-bar matching identifies the large logarithms that require
+    improvement.
+  failure_mode: The matching and large-log condition are omitted.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 452
+    - 453
+- id: qft.align056.natural-light-particles-evidence-to-scalar-mass-core
+  from: qft.align056.natural-light-particles-and-cutoff-hierarchy
+  to: qft.align014.scalar-mass-relevance-and-fine-tuning
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The source contrasts protected massless particles with the tuning needed
+    to keep a scalar mass far below its cutoff.
+  failure_mode: This early comparison alone does not supply the accepted Wilsonian
+    operator-mixing analysis.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 267
+- id: qft.align056.natural-relation-to-problem-11-2
+  from: qft.align011.zeroth-order-natural-relations
+  to: qft.align056.problem-natural-relation-with-fermions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The task tests the criterion that a symmetry-independent classical mass
+    relation receives a nonzero but ultraviolet-finite one-loop correction after v
+    and g are fixed.
+  failure_mode: Without the zeroth-order-natural-relation criterion, the requested
+    finiteness conclusion is disconnected from the stated renormalization conditions.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 11.2
+    pages:
+    - 390
+- id: qft.align056.nontrivial-exponent-examples-to-definitions
+  from: qft.align056.nontrivial-critical-exponents
+  to: qft.align014.critical-exponent-definitions
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The measured eta and beta examples instantiate the later general definition
+    of critical exponents without deriving all six definitions.
+  failure_mode: Treating two examples as the full definition set would overstate the
+    early discussion.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 274
+- id: qft.align056.on-sigma-to-assigned-epsilon
+  from: qft.align049.on-sigma-one-loop-four-point-cancellations
+  to: qft.align056.on-epsilon-expansion-critical-exponents
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The assigned O(N) epsilon calculation uses the one-loop four-point counterterm
+    cancellation.
+  failure_mode: The assigned epsilon expansion lacks its counterterm input.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 448
+    - 449
+- id: qft.align056.peskin-schroeder.characteristics-prereq-scaling
+  from: qft.align056.cs-running-coupling-characteristics
+  to: qft.align056.cs-dimensional-scaling-of-greens-functions
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Green-function scaling formula inserts the characteristic running
+    coupling.
+  failure_mode: The scale-to-momentum evolution is absent.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 421
+    - 422
+- id: qft.align056.peskin-schroeder.correlation-green-to-length
+  from: qft.align056.landau-correlation-green-function
+  to: qft.align056.correlation-length-critical-divergence
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Fourier-solving the Green-function equation identifies the exponential
+    range ξ.
+  failure_mode: The divergence claim would be disconnected from the response solution.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+- id: qft.align056.peskin-schroeder.correlation-length-to-universality
+  from: qft.align056.correlation-length-critical-divergence
+  to: qft.align056.landau-universality-from-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The source’s microscopic-independent correlation-length power law is
+    one of the two displayed Landau results generalized by universality.
+  failure_mode: Universality would be based only on magnetization while omitting the
+    correlation-length branch.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+- id: qft.align056.peskin-schroeder.critical-scaling-to-critical-exponents
+  from: qft.align056.critical-two-point-scaling-and-qft-mass
+  to: qft.align056.nontrivial-critical-exponents
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The class-dependent η scaling form and β magnetization law are both examples
+    of the nontrivial critical exponents discussed across the two pages.
+  failure_mode: The listed exponents would be detached from the correlation scaling
+    they qualify.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 274
+- id: qft.align056.peskin-schroeder.cs-prereq-characteristics
+  from: qft.align014.callan-symanzik-massless-green-functions
+  to: qft.align056.cs-running-coupling-characteristics
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Characteristic curves solve the Callan-Symanzik PDE.
+  failure_mode: There is no equation to solve along a running coupling.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 418
+    - 420
+- id: qft.align056.peskin-schroeder.cutoff-to-effective-theory
+  from: qft.align056.ultraviolet-cutoff-as-short-distance-dependence
+  to: qft.align056.effective-theory-relevant-parameters-and-degrees-of-freedom
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The cutoff discussion specifies why surviving parameters and degrees
+    of freedom must be identified.
+  failure_mode: Without this scale dependence, an effective theory cannot distinguish
+    inherited inputs from long-distance variables.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 266
+- id: qft.align056.peskin-schroeder.effective-theory-to-natural-light-particles
+  from: qft.align056.effective-theory-relevant-parameters-and-degrees-of-freedom
+  to: qft.align056.natural-light-particles-and-cutoff-hierarchy
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The text identifies light particles as the degrees of freedom relevant
+    at scales far below the cutoff.
+  failure_mode: One cannot explain the stated hierarchy without selecting long-distance
+    degrees of freedom.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 267
+- id: qft.align056.peskin-schroeder.gibbs-scaling-prereq-exponent-relations
+  from: qft.align056.gibbs-free-energy-scaling-equation
+  to: qft.align056.critical-exponent-scaling-relations
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The exponent identities follow by differentiating and minimizing the
+    Gibbs free-energy scaling form.
+  failure_mode: Without that scaling form, the stated thermodynamic identities have
+    no derivation in the source route.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 445
+    - 446
+    - 447
+- id: qft.align056.peskin-schroeder.gross-neveu-large-n-prereq-rg-problem
+  from: qft.align056.problem-gross-neveu-determinant-minimum-large-n
+  to: qft.align012.problem-gross-neveu-asymptotic-freedom
+  relation: prerequisite
+  source_level: recognize
+  target_level: derive
+  necessity: necessary
+  rationale: The problem explicitly asks how asymptotic freedom appeared in the earlier
+    large-N solution.
+  failure_mode: The requested comparison to the earlier solution cannot be made.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 12.2
+    pages:
+    - 438
+- id: qft.align056.peskin-schroeder.landau-expansion-to-local-functional
+  from: qft.align056.landau-gibbs-free-energy-expansion
+  to: qft.align056.local-landau-free-energy-functional
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The local model extends the order-parameter free energy to a spin-density
+    field with the same potential terms.
+  failure_mode: The local functional’s potential and source term would have no thermodynamic
+    construction.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 271
+- id: qft.align056.peskin-schroeder.landau-expansion-to-magnetization-scaling
+  from: qft.align056.landau-gibbs-free-energy-expansion
+  to: qft.align056.landau-mean-field-magnetization-scaling
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Stationary points of the stated Gibbs potential produce the two magnetized
+    minima.
+  failure_mode: The square-root law would be asserted without its minimization argument.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 270
+- id: qft.align056.peskin-schroeder.landau-scaling-to-universality
+  from: qft.align056.landau-mean-field-magnetization-scaling
+  to: qft.align056.landau-universality-from-symmetry
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The source compares the Landau power laws with microscopic-independent
+    long-distance behavior.
+  failure_mode: Universality would lose the specific common behavior it generalizes.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 273
+- id: qft.align056.peskin-schroeder.local-functional-to-correlation-green
+  from: qft.align056.local-landau-free-energy-functional
+  to: qft.align056.landau-correlation-green-function
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Linearizing its variational equation and applying a point source defines
+    the response Green function.
+  failure_mode: The correlation response would lack its differential operator and
+    source.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+- id: qft.align056.peskin-schroeder.order-parameter-to-critical-qft
+  from: qft.align056.order-parameter-and-critical-point
+  to: qft.align056.critical-fluctuation-qft-correspondence
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The correspondence interprets the continuum field precisely for the second-order-transition
+    structure defined by an order parameter and critical point.
+  failure_mode: Without the critical-point structure, the field mass going to zero
+    has no specified thermodynamic meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Formal and Physical Cutoffs
+    pages:
+    - 268
+- id: qft.align056.peskin-schroeder.order-parameter-to-landau-expansion
+  from: qft.align056.order-parameter-and-critical-point
+  to: qft.align056.landau-gibbs-free-energy-expansion
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The expansion is an approximation in the small order parameter near the
+    critical point.
+  failure_mode: One cannot justify the symmetry-constrained small-M expansion.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 270
+- id: qft.align056.peskin-schroeder.qed-beta-prereq-running-charge
+  from: qft.align056.qed-beta-from-renormalization-constants
+  to: qft.align056.qed-running-charge-and-landau-pole
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The running-charge solution integrates the QED beta function.
+  failure_mode: Its logarithmic flow and pole cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 423
+    - 424
+- id: qft.align056.peskin-schroeder.qed-counterterm-prereq-beta
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align056.qed-beta-from-renormalization-constants
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The QED beta derivation evaluates the photon counterterm.
+  failure_mode: The charge-scale dependence cannot be extracted.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 416
+- id: qft.align056.peskin-schroeder.universality-to-critical-exponents
+  from: qft.align056.landau-universality-from-symmetry
+  to: qft.align056.nontrivial-critical-exponents
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: Class-dependent exponents qualify the symmetry-defined universality classes.
+  failure_mode: The fixed exponents would be mistaken for universal across all order-parameter
+    symmetries.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Critical Exponents
+    pages:
+    - 274
+- id: qft.align056.peskin-schroeder.ward-prereq-qed-beta
+  from: qft.align012.qed-z1-equals-z2-charge-ratio-result
+  to: qft.align056.qed-beta-from-renormalization-constants
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward identity relates the QED renormalization constants used in beta(e).
+  failure_mode: The simplification from charge renormalization to the photon counterterm
+    fails.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 416
+- id: qft.align056.peskin-schroeder.yukawa-to-landau-green-function
+  from: qft.yukawa-potential-and-massive-vector-constraint
+  to: qft.align056.landau-correlation-green-function
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The response Green function is Fourier-evaluated by the same Yukawa integral
+    explicitly invoked in the text.
+  failure_mode: The spatial Green-function evaluation would not yield the stated response
+    form.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Landau Theory of Phase Transitions
+    pages:
+    - 272
+- id: qft.align056.qed-beta-to-common-flow
+  from: qft.align056.qed-beta-from-renormalization-constants
+  to: qft.align012.qed-running-charge-one-loop-flow
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The completed QED counterterm, CS, and Ward-identity route is an independent
+    derivation of the common one-loop flow.
+  failure_mode: A partial QED ingredient would be overstated as a complete alternative.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 416
+    - 417
+- id: qft.align056.qed-leading-counterterm-to-beta
+  from: qft.align012.counterterms-determine-leading-cs-functions
+  to: qft.align056.qed-beta-from-renormalization-constants
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The leading counterterm determines the CS beta-function coefficient.
+  failure_mode: The beta coefficient cannot be extracted from the QED counterterm.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.2'
+    pages:
+    - 416
+    - 417
+- id: qft.align056.qed-leading-pole-evidence-to-qualified-core
+  from: qft.align056.qed-running-charge-and-landau-pole
+  to: qft.align012.landau-pole-physicality-and-triviality-qualification
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The leading QED solution supplies the formal finite-scale pole and immediately
+    warns that strong coupling invalidates that approximation.
+  failure_mode: It does not by itself establish the retained matrix-element physicality
+    or lattice-triviality qualifications.
+  evidence:
+  - source: peskin-schroeder
+    section: '12.3'
+    pages:
+    - 423
+    - 424
+    - 425
+    - 426
+- id: qft.align056.relevant-eigendirection-to-gibbs-scaling
+  from: qft.align014.fixed-point-relevant-eigendirection
+  to: qft.align056.gibbs-free-energy-scaling-equation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The scaling solution specializes to a flow near the Wilson-Fisher point,
+    neglects irrelevant couplings, and retains the single temperature/mass perturbation.
+  failure_mode: Without the one-relevant-direction restriction, the one-variable Gibbs
+    scaling form does not follow from the multicoupling Callan-Symanzik equation.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 445
+    - 446
+- id: qft.align056.renormalizable-preview-evidence-to-core
+  from: qft.align056.renormalizable-qft-fixed-physical-parameters
+  to: qft.align012.bare-to-renormalized-parameter-elimination
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The Chapter 8 preview restates the measured-parameter program for QED
+    while deferring its all-orders proof to Chapter 10.
+  failure_mode: Treating the preview as the proof would erase its explicit forward-reference
+    boundary.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Invitation
+    pages:
+    - 265
+- id: qft.align056.renormalizable-preview-to-charge-renormalization
+  from: qft.align025.effective-charge-vacuum-polarization-matching
+  to: qft.align056.renormalizable-qft-fixed-physical-parameters
+  relation: prerequisite
+  source_level: use
+  target_level: use
+  necessity: necessary
+  rationale: The Chapter 8 preview relies on the earlier replacement of bare charge
+    by a measured physical charge alongside the measured electron mass.
+  failure_mode: Without the charge-renormalization input, the preview's fixed physical-parameter
+    claim lacks one of its two stated QED examples.
+  evidence:
+  - source: peskin-schroeder
+    section: Chapter 8, Invitation
+    pages:
+    - 265
+- id: qft.align056.rg-potential-to-common-potential
+  from: qft.align056.rg-improved-effective-potential
+  to: qft.align012.rg-improved-effective-potential-and-validity
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The completed Peskin fixed-order-matched RG-potential route is an alternative
+    source method.
+  failure_mode: Its matching condition would be lost if treated as an isolated assertion.
+  evidence:
+  - source: peskin-schroeder
+    section: '13.1'
+    pages:
+    - 452
+    - 453
+- id: qft.align057.charged-w-electromagnetism-to-diphoton-w-loop-task
+  from: qft.align018.charged-w-bosons-and-electromagnetic-coupling
+  to: qft.align057.higgs-to-diphoton-w-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charged-W loop contribution needs the electromagnetic W couplings
+    as well as the Higgs-vector interaction.
+  failure_mode: Without this route-local input, the stated diagram or normalization
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.2, Problems 21.1–21.4, and Final Project
+    pages:
+    - 777
+- id: qft.align057.dimensional-regularization-to-chiral-polarization-route
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align057.chiral-fermion-vacuum-polarization-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The chiral two-point calculation uses dimensional continuation and its
+    pole bookkeeping.
+  failure_mode: Without this route-local input, the stated diagram or normalization
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.2, Problems 21.1–21.4, and Final Project
+    pages:
+    - 766
+    - 767
+    - 768
+    - 769
+- id: qft.align057.electroweak-currents-to-problem-21-1
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align057.problem-21-1-weak-muon-anomalous-moment
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 21.1 needs the weak charged and neutral current couplings before
+    evaluating the one-loop contribution.
+  failure_mode: Without this route-local input, the stated diagram or normalization
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.2, Problems 21.1–21.4, and Final Project
+    pages:
+    - 773
+- id: qft.align057.hvv-couplings-to-vector-decay-task
+  from: qft.align018.higgs-mass-and-hvv-couplings
+  to: qft.align057.higgs-to-vector-pairs-goldstone-check-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The vector-pair decay task needs the Higgs coupling to massive vector
+    bosons in addition to its Goldstone comparison.
+  failure_mode: Without this route-local input, the stated diagram or normalization
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.2, Problems 21.1–21.4, and Final Project
+    pages:
+    - 776
+- id: qft.align057.longitudinal-kinematics-to-left-handed-ww-route
+  from: qft.align057.longitudinal-vector-polarization-kinematics
+  to: qft.align057.eeww-left-handed-unitarity-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The left-handed calculation uses the same high-energy longitudinal polarization
+    in each gauge diagram.
+  failure_mode: Without this route-local input, the stated diagram or normalization
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.2, Problems 21.1–21.4, and Final Project
+    pages:
+    - 745
+    - 746
+    - 755
+    - 756
+    - 757
+- id: qft.align057.longitudinal-kinematics-to-right-handed-ww-route
+  from: qft.align057.longitudinal-vector-polarization-kinematics
+  to: qft.align057.eeww-right-handed-longitudinal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The right-handed calculation uses the high-energy longitudinal polarization
+    for its external W states.
+  failure_mode: Without this route-local input, the stated diagram or normalization
+    is not fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.2, Problems 21.1–21.4, and Final Project
+    pages:
+    - 745
+    - 746
+    - 754
+    - 755
+- id: qft.align057.peskin-schroeder.e-ps014-08
+  from: qft.align057.longitudinal-vector-polarization-kinematics
+  to: qft.align057.goldstone-equivalence-ward-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Ward route replaces k/m by epsilon_L only after establishing its
+    high-energy kinematics.
+  failure_mode: Without that relation, k dot Gamma=mT does not yield a longitudinal-vector
+    amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
+- id: qft.align057.peskin-schroeder.e-ps014-09
+  from: qft.align057.goldstone-equivalence-ward-route
+  to: qft.align057.goldstone-equivalence-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: This is the current-conservation derivation for the single-emission form
+    of the theorem.
+  failure_mode: Without it, that formal route is unavailable, while the cut-cancellation
+    route remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 744
+    - 745
+    - 746
+- id: qft.align057.peskin-schroeder.e-ps014-10
+  from: qft.align057.goldstone-equivalence-cut-cancellation-route
+  to: qft.align057.goldstone-equivalence-theorem
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: The Cutkosky-state cancellation supplies an independent tree-level route
+    to the same relation.
+  failure_mode: Without it, the unitarity-based route is unavailable, while the Ward
+    route remains available.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: qft.align057.peskin-schroeder.e-ps014-11
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align057.top-to-wb-width-and-longitudinal-enhancement
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The decay amplitude is read from the charged-current t-b-W vertex.
+  failure_mode: Without that vertex, neither the spin-summed amplitude nor width is
+    fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 747
+- id: qft.align057.peskin-schroeder.e-ps014-12
+  from: qft.align057.goldstone-equivalence-theorem
+  to: qft.align057.top-to-goldstone-b-route
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The theorem is a comparison for the direct top-to-Goldstone calculation,
+    which is derived from the Yukawa coupling.
+  failure_mode: The direct Goldstone amplitude remains derivable without first invoking
+    the general theorem.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+- id: qft.align057.peskin-schroeder.e-ps014-13
+  from: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  to: qft.align057.top-to-goldstone-b-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The charged-Goldstone t-b interaction is obtained by expanding the top
+    Yukawa coupling.
+  failure_mode: Without the Yukawa interaction, the Goldstone decay amplitude and
+    its mass enhancement cannot be calculated.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+- id: qft.align057.peskin-schroeder.e-ps014-14
+  from: qft.align057.goldstone-equivalence-theorem
+  to: qft.align057.eeww-scalar-reference-amplitudes
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The theorem explains why the scalar calculation is the required high-energy
+    reference for longitudinal W pairs.
+  failure_mode: Without it, the scalar amplitudes can still be derived but their comparison
+    purpose is lost.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 751
+    - 752
+    - 753
+- id: qft.align057.peskin-schroeder.e-ps014-15
+  from: qft.align045.electroweak-su2-u1-hypercharge-assignments
+  to: qft.align057.eeww-scalar-reference-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon/Z scalar amplitudes use the electron and charged-Goldstone
+    SU(2) and hypercharge assignments.
+  failure_mode: Without them, the chirality-dependent exchange coefficients cannot
+    be determined.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: qft.align057.peskin-schroeder.e-ps014-16
+  from: qft.align057.eeww-scalar-reference-amplitudes
+  to: qft.align057.eeww-right-handed-longitudinal-cancellation
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The scalar reference checks the right-handed W cancellation but is not
+    an input to the gauge-diagram calculation.
+  failure_mode: Without the comparison, the right-handed calculation is still complete
+    but loses a useful high-energy check.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 754
+    - 755
+- id: qft.align057.peskin-schroeder.e-ps014-17
+  from: qft.align057.eeww-scalar-reference-amplitudes
+  to: qft.align057.eeww-left-handed-unitarity-cancellation
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The scalar reference checks the left-handed W cancellation but is not
+    an input to the gauge-diagram calculation.
+  failure_mode: Without the comparison, the left-handed calculation is still complete
+    but loses a useful high-energy check.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 755
+    - 756
+- id: qft.align057.peskin-schroeder.e-ps014-18
+  from: qft.align057.eeww-left-handed-unitarity-cancellation
+  to: qft.align057.massive-vector-high-energy-consistency
+  relation: evidence
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The left-handed W-pair calculation is the chapter's detailed evidence
+    for the general high-energy conclusion.
+  failure_mode: Without it, the conclusion remains stated but lacks its principal
+    explicit cancellation example.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 757
+    - 758
+- id: qft.align057.peskin-schroeder.e-ps014-19
+  from: qft.align011.zeroth-order-natural-relations
+  to: qft.align057.electroweak-natural-relations-from-observables
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The weak calculation specializes the existing natural-relation principle
+    to electroweak observables.
+  failure_mode: Without that principle, finiteness of the corrected observable relations
+    is not justified.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 758
+    - 759
+- id: qft.align057.peskin-schroeder.e-ps014-20
+  from: qft.align057.electroweak-natural-relations-from-observables
+  to: qft.align057.weak-angle-scheme-differences-and-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The finite quantities are the differences among the observable weak-angle
+    definitions and their natural relations.
+  failure_mode: Without the definitions, the corrected differences have no specified
+    observables.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 759
+    - 764
+    - 765
+- id: qft.align057.peskin-schroeder.e-ps014-21
+  from: qft.align057.heavy-doublet-oblique-approximation
+  to: qft.align057.weak-vacuum-polarization-observable-map
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The observable map is used after restricting the heavy-doublet contribution
+    to propagator insertions.
+  failure_mode: Without the approximation, vertex, box, and real-emission corrections
+    cannot be excluded from the calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 761
+    - 762
+- id: qft.align057.peskin-schroeder.e-ps014-22
+  from: qft.align057.weak-vacuum-polarization-observable-map
+  to: qft.align057.weak-angle-scheme-differences-and-finiteness
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The angle shifts and finite differences are expressed in terms of the
+    mapped self-energies.
+  failure_mode: Without the observable-to-self-energy relations, the one-loop angle
+    corrections cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 762
+    - 763
+    - 764
+- id: qft.align057.peskin-schroeder.e-ps014-23
+  from: qft.align057.chiral-fermion-vacuum-polarization-route
+  to: qft.align057.top-bottom-divergence-check-and-heavy-top-effect
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The top-bottom current correlators and their finite leading heavy-top
+    term are assembled from the general chiral loop form factors.
+  failure_mode: Without those building blocks, the divergence check and m_t-squared
+    enhancement cannot be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 767
+    - 768
+    - 769
+    - 770
+- id: qft.align057.peskin-schroeder.e-ps014-24
+  from: qft.align057.weak-angle-scheme-differences-and-finiteness
+  to: qft.align057.top-bottom-divergence-check-and-heavy-top-effect
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The t,b correlators are inserted into the finite differences of weak-angle
+    definitions.
+  failure_mode: Without those target relations, there is no specified precision quantity
+    for the loop calculation.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 765
+    - 766
+    - 770
+    - 771
+- id: qft.align057.peskin-schroeder.e-ps014-25
+  from: qft.align057.top-bottom-divergence-check-and-heavy-top-effect
+  to: qft.align057.source-era-top-mass-precision-comparison
+  relation: evidence
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: The historical graph compares the one-loop top-mass correction with precision
+    observables.
+  failure_mode: Without the correction, the numerical comparison has no stated theoretical
+    dependence.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 771
+    - 772
+- id: qft.align057.peskin-schroeder.e-ps014-26
+  from: qft.nonabelian-rxi-ghost-matrix-and-gws-mass-specialization
+  to: qft.align057.problem-21-1-weak-muon-anomalous-moment
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 21.1 uses GWS W, Z, Goldstone, and R-xi rules, supplied by the
+    non-Abelian GWS specialization.
+  failure_mode: Without the GWS gauge-fixed rules, the required W/Z and Goldstone
+    diagrams and their xi cancellation are not defined.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.1
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-27
+  from: qft.align057.eeww-left-handed-unitarity-cancellation
+  to: qft.align057.problem-21-2-ww-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem asks to verify the chapter's right- and left-handed longitudinal
+    amplitudes and extend them to all helicities.
+  failure_mode: Without the demonstrated cancellation structure, the specified checks
+    cannot be performed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-28
+  from: qft.align057.heavy-doublet-oblique-approximation
+  to: qft.align057.problem-21-4-higgs-mass-oblique-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Problem 21.4 applies the stated light-fermion approximation to isolate
+    Higgs-sector vacuum polarization.
+  failure_mode: Without it, the assertion that only propagator diagrams contribute
+    is unsupported.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
+- id: qft.align057.peskin-schroeder.e-ps014-29
+  from: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  to: qft.align057.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The h-f-f coupling sets the tree-level fermion-pair amplitude.
+  failure_mode: Without it, the partial width and its mass dependence cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (a)
+    pages:
+    - 775
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-30
+  from: qft.align057.goldstone-equivalence-theorem
+  to: qft.align057.higgs-to-vector-pairs-goldstone-check-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (b) asks for the high-mass longitudinal-vector result to be checked
+    against ungauged Goldstones.
+  failure_mode: Without the equivalence principle, the requested comparison cannot
+    be justified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (b)
+    pages:
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-31
+  from: qft.align024.qed-oneloop-dimreg-selfenergy-and-vacuum-polarization-counterterms
+  to: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) explicitly requires dimensional regularization for the quark-loop
+    amplitude.
+  failure_mode: Without the regulated loop method, the finite amplitude and regulator
+    subtlety cannot be computed.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-32
+  from: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  to: qft.align057.gluon-fusion-higgs-production-project-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) derives production from the partial width calculated in part
+    (c).
+  failure_mode: Without Gamma(h to gg), the requested production relation has no input
+    width.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-33
+  from: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  to: qft.align057.higgs-to-diphoton-fermion-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (e) explicitly reuses the form factor derived in part (c).
+  failure_mode: Without I(m_h-squared/m_f-squared), the fermion-loop diphoton expression
+    cannot be written as requested.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (e)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-34
+  from: qft.nonabelian-rxi-ghost-matrix-and-gws-mass-specialization
+  to: qft.align057.higgs-to-diphoton-w-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) requires Feynman-'t Hooft rules for the broken non-Abelian GWS
+    theory.
+  failure_mode: Without the GWS R-xi rules, the required gauge-invariant W-loop diagram
+    set cannot be assembled.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-35
+  from: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  to: qft.align057.higgs-decay-form-factors-numerical-project-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: Part (g) numerically evaluates the parameter-integral form factor introduced
+    in part (c).
+  failure_mode: Without its integral expression, there is no function to reduce, plot,
+    or use in the width.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-36
+  from: qft.align057.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  to: qft.align057.higgs-decay-branching-fraction-synthesis-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The final branching fractions require the fermion partial widths as one
+    independent input class.
+  failure_mode: Without them, b-anti-b and tau-pair fractions and the total width
+    are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-37
+  from: qft.align057.higgs-to-vector-pairs-goldstone-check-task
+  to: qft.align057.higgs-decay-branching-fraction-synthesis-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The final fractions require the independently calculated W-pair and Z-pair
+    widths.
+  failure_mode: Without them, the vector-boson channels and total width are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-38
+  from: qft.align057.higgs-decay-form-factors-numerical-project-task
+  to: qft.align057.higgs-decay-branching-fraction-synthesis-task
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The final fractions require the numerically evaluated gluon-pair width
+    across the requested mass range.
+  failure_mode: Without it, the gg branch and total width are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (h)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-40
+  from: qft.align057.longitudinal-vector-polarization-kinematics
+  to: qft.align057.goldstone-equivalence-cut-cancellation-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The cut route turns the timelike/Goldstone cancellation into the squared
+    high-energy longitudinal relation.
+  failure_mode: Without epsilon_L approximately k/m at high energy, the cut cancellation
+    cannot be related to the longitudinal amplitude.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: qft.align057.peskin-schroeder.e-ps014-41
+  from: qft.align016.conditional-s-matrix-unitarity
+  to: qft.align057.goldstone-equivalence-cut-cancellation-route
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The route explicitly invokes a Cutkosky cut through vector and Goldstone
+    lines.
+  failure_mode: Without the cutting rules, the stated unitarity cancellation has no
+    calculational meaning.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 746
+    - 747
+- id: qft.align057.peskin-schroeder.e-ps014-42
+  from: qft.tree-level-xi-cancellation-in-broken-abelian-chiral-scattering
+  to: qft.align057.goldstone-equivalence-cut-cancellation-route
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The earlier explicit vector--Goldstone cancellation illustrates the analogous
+    removal of unphysical cut states in the unitarity route.
+  failure_mode: Without the earlier example, the cut route remains derivable from
+    longitudinal kinematics and Cutkosky rules but loses a useful analogy.
+  evidence:
+  - source: peskin-schroeder
+    section: 21.1 and 21.2
+    pages:
+    - 736
+    - 737
+    - 746
+- id: qft.align057.peskin-schroeder.e-ps014-43
+  from: qft.align057.top-to-wb-width-and-longitudinal-enhancement
+  to: qft.align057.top-to-goldstone-b-route
+  relation: evidence
+  source_level: use
+  target_level: derive
+  necessity: helpful
+  rationale: The W-width result and direct Goldstone result are independent calculations
+    compared at high energy.
+  failure_mode: Either width remains derivable without making the other calculation
+    compulsory.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 748
+    - 749
+- id: qft.align057.peskin-schroeder.e-ps014-44
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align057.eeww-right-handed-longitudinal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The s-channel electron and W couplings enter the cancellation amplitude.
+  failure_mode: Without the charged and neutral current couplings, the diagram coefficients
+    cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: qft.align057.peskin-schroeder.e-ps014-45
+  from: qft.yang-mills-universal-coupling
+  to: qft.align057.eeww-right-handed-longitudinal-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon/Z to W-plus-W-minus vertex is a Yang-Mills three-boson rule
+    used in the s-channel diagrams.
+  failure_mode: Without that vertex, the s-channel amplitude and its cancellation
+    are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: qft.align057.peskin-schroeder.e-ps014-46
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align057.eeww-left-handed-unitarity-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The s-channel electron and W couplings enter the cancellation amplitude.
+  failure_mode: Without the charged and neutral current couplings, the diagram coefficients
+    cannot be formed.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: qft.align057.peskin-schroeder.e-ps014-47
+  from: qft.yang-mills-universal-coupling
+  to: qft.align057.eeww-left-handed-unitarity-cancellation
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The photon/Z to W-plus-W-minus vertex is a Yang-Mills three-boson rule
+    used in the s-channel diagrams.
+  failure_mode: Without that vertex, the s-channel amplitude and its cancellation
+    are incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 752
+    - 753
+    - 754
+- id: qft.align057.peskin-schroeder.e-ps014-48
+  from: qft.align057.eeww-right-handed-longitudinal-cancellation
+  to: qft.align057.problem-21-2-ww-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (a) explicitly asks to verify the right-handed high-energy longitudinal
+    result.
+  failure_mode: Without that result, one requested helicity-sector check is missing.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-49
+  from: qft.align045.electroweak-charged-neutral-current-couplings
+  to: qft.align057.problem-21-3-dubar-to-wgamma-radiation-zero
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The d anti-u charged-current annihilation amplitude uses the electroweak
+    charged-current coupling.
+  failure_mode: Without it, the nonzero initial channel and its amplitude are not
+    fixed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-50
+  from: qft.yang-mills-universal-coupling
+  to: qft.align057.problem-21-3-dubar-to-wgamma-radiation-zero
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The W-W-photon interaction is required among the diagrams whose helicity
+    amplitudes cancel at the radiation zero.
+  failure_mode: Without it, the complete scattering amplitude and common zero are
+    incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-51
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align057.problem-21-3-dubar-to-wgamma-radiation-zero
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requests all initial and final helicity amplitudes.
+  failure_mode: Without a helicity-amplitude method, the all-helicity radiation-zero
+    proof cannot be carried out.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.3
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-52
+  from: qft.align057.weak-angle-scheme-differences-and-finiteness
+  to: qft.align057.problem-21-4-higgs-mass-oblique-corrections
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (c) computes corrections to the Section 21.3 natural weak-angle
+    relations.
+  failure_mode: Without those relations, the displayed Higgs-mass shifts have no defined
+    targets.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
+- id: qft.align057.peskin-schroeder.e-ps014-53
+  from: qft.align057.higgs-decay-project-model-and-source-era-inputs
+  to: qft.align057.higgs-to-fermion-pairs-and-leading-log-qcd-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The project fixes the one-doublet GWS model, m_h treatment, and stated
+    source-era numerical inputs for this independent partial-width branch.
+  failure_mode: Without that project model, the branch coupling conventions and requested
+    numerical assumptions are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 775
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-54
+  from: qft.align057.higgs-decay-project-model-and-source-era-inputs
+  to: qft.align057.higgs-to-vector-pairs-goldstone-check-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The project fixes the one-doublet GWS model, m_h treatment, and stated
+    source-era numerical inputs for this independent partial-width branch.
+  failure_mode: Without that project model, the branch coupling conventions and requested
+    numerical assumptions are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 775
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-55
+  from: qft.align057.higgs-decay-project-model-and-source-era-inputs
+  to: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The project fixes the one-doublet GWS model, m_h treatment, and stated
+    source-era numerical inputs for this independent partial-width branch.
+  failure_mode: Without that project model, the branch coupling conventions and requested
+    numerical assumptions are unspecified.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project
+    pages:
+    - 775
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-56
+  from: qft.align045.standard-model-yukawa-masses-and-higgs-couplings
+  to: qft.align057.higgs-to-gluons-loop-and-form-factor-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The quark-loop h0-to-gg amplitude uses the Higgs-quark Yukawa coupling.
+  failure_mode: Without it, the loop amplitude normalization and quark-mass dependence
+    cannot be derived.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (c)
+    pages:
+    - 776
+- id: qft.align057.peskin-schroeder.e-ps014-57
+  from: qft.align028.peskin-schroeder.qcd-hadron-collision-factorization
+  to: qft.align057.gluon-fusion-higgs-production-project-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (d) convolves a short-distance gg-to-h process with proton gluon
+    distributions.
+  failure_mode: Without hadron-collision factorization, the pp cross section cannot
+    be related to the partonic process.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (d)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-58
+  from: qft.align057.higgs-to-diphoton-fermion-loop-task
+  to: qft.align057.higgs-to-diphoton-w-loop-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (f) adds the W-loop contribution to the fermion-loop amplitude of
+    part (e).
+  failure_mode: Without the fermion-loop contribution, the requested combined diphoton
+    expression is incomplete.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (f)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-60
+  from: qft.align057.higgs-to-diphoton-w-loop-task
+  to: qft.align057.higgs-decay-form-factors-numerical-project-task
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: Part (g) numerically computes the additional form factor introduced in
+    part (f).
+  failure_mode: Without the W-loop form factor, the second requested numerical form-factor
+    calculation has no definition.
+  evidence:
+  - source: peskin-schroeder
+    section: Final Project (g)
+    pages:
+    - 777
+- id: qft.align057.peskin-schroeder.e-ps014-61
+  from: qft.align019.one-loop-vertex-form-factor-evaluation
+  to: qft.align057.problem-21-1-weak-muon-anomalous-moment
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The anomalous moment is extracted from the loop-corrected electromagnetic
+    vertex form factor.
+  failure_mode: Without vertex form-factor reduction, the requested a_mu contributions
+    cannot be isolated.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.1
+    pages:
+    - 773
+- id: qft.align057.peskin-schroeder.e-ps014-62
+  from: qft.align023.peskin.explicit-helicity-spinor-amplitude-method
+  to: qft.align057.problem-21-2-ww-helicity-amplitudes
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The problem requires amplitudes with definite initial electron and final
+    W helicities.
+  failure_mode: Without a helicity-amplitude method, the requested all-helicity calculation
+    cannot be executed.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.2
+    pages:
+    - 773
+- id: qft.align057.residual-chiral-polarization-route-to-core
+  from: qft.align057.chiral-fermion-vacuum-polarization-route
+  to: qft.align025.chiral-fermion-vacuum-polarization-integrals
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 766
+    - 767
+    - 768
+    - 769
+- id: qft.align057.residual-electroweak-natural-relations-to-fiducial-core
+  from: qft.align057.electroweak-natural-relations-from-observables
+  to: qft.align025.fiducial-input-scheme-and-tree-level-tension
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 759
+    - 760
+- id: qft.align057.residual-electroweak-natural-relations-to-tree-level-core
+  from: qft.align057.electroweak-natural-relations-from-observables
+  to: qft.align025.tree-level-electroweak-observable-formulas
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 758
+    - 759
+    - 760
+- id: qft.align057.residual-goldstone-equivalence-theorem-to-core
+  from: qft.align057.goldstone-equivalence-theorem
+  to: qft.align018.goldstone-boson-equivalence-theorem
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: This preserves the source-specific route as evidence or a helpful comparison
+    without imposing it on every common-core treatment.
+  failure_mode: Treating this partial or comparison route as compulsory would overstate
+    the source dependency.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 743
+    - 747
+- id: qft.align057.residual-heavy-doublet-oblique-approximation-to-core
+  from: qft.align057.heavy-doublet-oblique-approximation
+  to: qft.align025.oblique-corrections-strategy-and-scope
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 760
+    - 761
+- id: qft.align057.residual-heavy-top-route-to-leading-mass-core
+  from: qft.align057.top-bottom-divergence-check-and-heavy-top-effect
+  to: qft.align025.leading-top-and-higgs-oblique-dependence
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 770
+    - 771
+- id: qft.align057.residual-higgs-decay-branching-fraction-synthesis-task-to-core
+  from: qft.align057.higgs-decay-branching-fraction-synthesis-task
+  to: qft.align017.problem-higgs-decay-rates-and-branching-plots-task
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: This preserves the source-specific route as evidence or a helpful comparison
+    without imposing it on every common-core treatment.
+  failure_mode: Treating this partial or comparison route as compulsory would overstate
+    the source dependency.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 775
+    - 777
+- id: qft.align057.residual-longitudinal-vector-polarization-kinematics-to-core
+  from: qft.align057.longitudinal-vector-polarization-kinematics
+  to: qft.align010.schwartz.massive-vector-polarization-basis
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: This preserves the source-specific route as evidence or a helpful comparison
+    without imposing it on every common-core treatment.
+  failure_mode: Treating this partial or comparison route as compulsory would overstate
+    the source dependency.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 745
+    - 746
+- id: qft.align057.residual-massive-vector-high-energy-consistency-to-core
+  from: qft.align057.massive-vector-high-energy-consistency
+  to: qft.align010.schwartz.massive-vector-longitudinal-perturbative-breakdown
+  relation: alternative
+  source_level: use
+  target_level: use
+  necessity: helpful
+  rationale: This preserves the source-specific route as evidence or a helpful comparison
+    without imposing it on every common-core treatment.
+  failure_mode: Treating this partial or comparison route as compulsory would overstate
+    the source dependency.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.2'
+    pages:
+    - 750
+    - 758
+- id: qft.align057.residual-problem-21-4-to-higgs-oblique-task-core
+  from: qft.align057.problem-21-4-higgs-mass-oblique-corrections
+  to: qft.align025.problem-31-3-higgs-vacuum-polarizations
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: Problem 21.4
+    pages:
+    - 774
+- id: qft.align057.residual-source-era-fit-to-precision-core
+  from: qft.align057.source-era-top-mass-precision-comparison
+  to: qft.align039.electroweak-precision-inputs-and-one-loop-mass-sensitivity
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 771
+    - 772
+- id: qft.align057.residual-top-bottom-route-to-self-energy-core
+  from: qft.align057.top-bottom-divergence-check-and-heavy-top-effect
+  to: qft.align025.top-bottom-oblique-self-energies
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 769
+    - 770
+    - 771
+- id: qft.align057.residual-weak-map-to-effective-charge-core
+  from: qft.align057.weak-vacuum-polarization-observable-map
+  to: qft.align025.effective-charge-vacuum-polarization-matching
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 761
+    - 762
+    - 763
+- id: qft.align057.residual-weak-map-to-fermi-constant-core
+  from: qft.align057.weak-vacuum-polarization-observable-map
+  to: qft.align025.muon-decay-fermi-constant-oblique-matching
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 762
+    - 763
+- id: qft.align057.residual-weak-map-to-pole-mass-core
+  from: qft.align057.weak-vacuum-polarization-observable-map
+  to: qft.align025.pole-mass-self-energy-relation
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 761
+    - 762
+- id: qft.align057.residual-weak-map-to-zgamma-angle-core
+  from: qft.align057.weak-vacuum-polarization-observable-map
+  to: qft.align025.zgamma-mixing-effective-angle-and-ae
+  relation: alternative
+  source_level: derive
+  target_level: use
+  necessity: helpful
+  rationale: The PS calculation supplies a source-specific route to the shared physical
+    result while retaining its own variables, approximations, and task boundary.
+  failure_mode: Omitting this link would hide a supported common result; making it
+    compulsory would erase the independent retained route.
+  evidence:
+  - source: peskin-schroeder
+    section: '21.3'
+    pages:
+    - 762
+    - 763
 - id: qft.bosonic-factors-to-field-einstein-route
   from: qft.bosonic-spontaneous-and-stimulated-emission-factor
   to: qft.field-theoretic-einstein-coefficient-derivation

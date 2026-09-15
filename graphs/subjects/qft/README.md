@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 1660 concepts and 2154 relationships, mapping 1864 distinct book concepts through explicit origins.
+**Construction in progress:** four independent textbook graphs currently contain 2351 reviewed concepts. The shared graph contains 1718 concepts and 2279 relationships, mapping 1922 distinct book concepts through explicit origins.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph is partial**, and the end human audit is pending. Shared alignment covers the bounded book inputs recorded in review.yaml; other accepted book additions remain to be aligned. Shared alignment and its combined dependency audit must finish before calling this collection complete.
 
@@ -21,9 +21,9 @@ A shared node's `origins` identify the book concepts it represents and explain t
 
 | Book pair | Shared concepts in extracted portions |
 |---|---:|
-| Peskin–Schroeder / Schwartz | 150 |
+| Peskin–Schroeder / Schwartz | 164 |
 | Peskin–Schroeder / Weinberg I | 49 |
-| Peskin–Schroeder / Weinberg II | 50 |
+| Peskin–Schroeder / Weinberg II | 55 |
 | Schwartz / Weinberg I | 55 |
 | Schwartz / Weinberg II | 37 |
 | Weinberg I / Weinberg II | 4 |
@@ -41,11 +41,11 @@ Examples of the mapped concepts (the YAML contains every correspondence):
 | Strong-CP anomalous rotation relation (`qft.align006.strong-cp-anomalous-rotation-relation`) | Schwartz: `schwartz.strong-cp-anomalous-rotation-relation`; Schwartz: `schwartz.anomalous-chiral-rotations-and-theta-terms`; Schwartz: `schwartz.electroweak-theta-unphysical-and-qcd-total-derivative-limit`; Schwartz: `schwartz.strong-cp-bar-theta-basis-invariant-phase`; Weinberg II: `weinberg-2.theta-term-chiral-rephasing-invariant`; Peskin–Schroeder: `peskin-schroeder.theta-terms-chiral-rotations-and-strong-cp` |
 | U(1) problem: axial U(1) is not a symmetry (`qft.align006.u1-problem-axial-u1-not-a-symmetry`) | Schwartz: `schwartz.u1-problem-axial-u1-not-a-symmetry`; Weinberg II: `weinberg-2.u1a-problem-extra-pseudoscalar-prediction` |
 | Little-group induced vector representations (`qft.align010.schwartz.little-group-induced-vector-representations`) | Schwartz: `schwartz.little-group-induced-vector-representations`; Weinberg I: `weinberg-1.induced-representations-and-little-groups` |
-| Massive vector transverse and longitudinal polarization basis (`qft.align010.schwartz.massive-vector-polarization-basis`) | Schwartz: `schwartz.massive-vector-polarization-basis`; Peskin–Schroeder: `peskin-schroeder.problem-massive-vector-polarization-sum` |
+| Massive-vector longitudinal high-energy perturbative breakdown (`qft.align010.schwartz.massive-vector-longitudinal-perturbative-breakdown`) | Schwartz: `schwartz.massive-vector-longitudinal-perturbative-breakdown`; Peskin–Schroeder: `peskin-schroeder.massive-vector-high-energy-consistency` |
+| Massive vector transverse and longitudinal polarization basis (`qft.align010.schwartz.massive-vector-polarization-basis`) | Schwartz: `schwartz.massive-vector-polarization-basis`; Peskin–Schroeder: `peskin-schroeder.problem-massive-vector-polarization-sum`; Peskin–Schroeder: `peskin-schroeder.longitudinal-vector-polarization-kinematics` |
 | Massless little-group derivation of the Ward identity (`qft.align010.schwartz.massless-little-group-ward-identity`) | Schwartz: `schwartz.massless-little-group-ward-identity`; Peskin–Schroeder: `peskin-schroeder.ward-identity-external-photon-polarization-sum`; Schwartz: `schwartz.physical-photon-polarization-sum` |
 | Particle as an irreducible unitary Poincaré representation (`qft.align010.schwartz.particle-as-unitary-poincare-irrep`) | Schwartz: `schwartz.particle-as-unitary-poincare-irrep`; Weinberg I: `weinberg-1.one-particle-irreducible-poincare-states` |
 | Proca Lagrangian and massive spin-1 constraint (`qft.align010.schwartz.proca-lagrangian-and-spin-one-constraint`) | Schwartz: `schwartz.proca-lagrangian-and-spin-one-constraint`; Weinberg I: `weinberg-1.proca-lagrangian-spin-one-selection` |
-| Proper-orthochronous Lorentz topology and representations up to a sign (`qft.align010.weinberg-1.lorentz-topology-sign-projective-representations`) | Weinberg I: `weinberg-1.lorentz-topology-sign-projective-representations`; Schwartz: `schwartz.spinor-two-pi-rotation-and-projective-representations` |
 
 Each book README includes a diagram. The YAML retains equations/notation, evidence, mastery requirements, necessity, and source-specific route qualifications. The shared graph is a synthesis; book graphs retain their own organizing groups and motivations.
 
