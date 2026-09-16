@@ -1,3 +1,14 @@
+For clone-first setup, read [SETUP.md](SETUP.md). A setup request does not
+start extraction. For large work, read [the run lessons](docs/qft-run-retrospective.md).
+Before dispatching, inspect `work status` and start an explicitly authorized
+bounded session. Default: two calls, one worker, 20-minute admission window,
+750 KB request allowance. Stop at the boundary; never auto-renew, raise limits,
+or use manual runners to evade it. Save returned results and accepted work.
+Resume only on a new user request. Link evidence recoveries with
+`work link CHILD --parent PARENT` before dispatch so the six-call family budget
+includes all prior attempts. A ten-minute outstanding-call flag calls for one
+progress inspection, not a polling loop or a new monitoring agent.
+
 SyllabusGraph separates its engine, subject knowledge, and course plans.
 
 A project can contain a textbook graph or a shared subject graph with no course

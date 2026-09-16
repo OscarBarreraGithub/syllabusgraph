@@ -16,7 +16,7 @@ from .io import ProjectError, bundled, read_yaml, write_json, write_text, write_
 from .planner import build_plan, compare_plans
 from .project import load_project, validate_shape
 from .server import serve
-from . import agents, sources, workflow
+from . import agents, sources, workflow, site, pacing
 
 
 def create_workspace_guides(destination: Path):
@@ -118,7 +118,29 @@ def parser() -> argparse.ArgumentParser:
     p = project_command("serve", "Open the local course-design interface.")
     p.add_argument("--port", type=int, default=8766)
     p.add_argument("--open", action="store_true")
+    p = project_command("explore", "Browse a graph without requiring a course plan.")
+    p.add_argument("--port", type=int, default=8767)
+    p.add_argument("--open", action="store_true")
+    p = commands.add_parser("site", help="Build or serve an explicit public graph catalog.")
+    p.add_argument("site_action", choices=["build", "serve"])
+    p.add_argument("--catalog", type=Path, default=Path("site/catalog.json"))
+    p.add_argument("--out", type=Path, default=Path(".syllabusgraph/site"))
+    p.add_argument("--port", type=int, default=8767)
+    p.add_argument("--open", action="store_true")
     project_command("status", "Show resumable extraction work units.")
+    p = project_command("work", "Start, pause, or inspect a checkpointed work session.")
+    subs = p.add_subparsers(dest="work_action", required=True)
+    sub = subs.add_parser("start")
+    sub.add_argument("--dispatches", type=int, default=2)
+    sub.add_argument("--minutes", type=int, default=20)
+    sub.add_argument("--workers", type=int, default=1)
+    sub.add_argument("--request-kb", type=int, default=750)
+    sub.add_argument("--resume", action="store_true")
+    subs.add_parser("status")
+    subs.add_parser("pause")
+    sub = subs.add_parser("link")
+    sub.add_argument("unit")
+    sub.add_argument("--parent", required=True)
     p = project_command("agent", "Configure native agents, dispatch work, and inspect the audit.")
     subs = p.add_subparsers(dest="agent_action", required=True)
     sub = subs.add_parser("configure")
@@ -252,6 +274,12 @@ def _coverage(project, source, first, last):
 
 
 def execute(args) -> int:
+    if args.action == "site":
+        result = site.build_catalog(args.catalog, args.out)
+        print(f"Built {len(result['graphs'])} graphs in {args.out}")
+        if args.site_action == "serve":
+            site.serve_site(args.out, args.port, open_browser=args.open)
+        return 0
     if args.action == "init":
         project = initialize(args.destination, args.template, title=args.title)
         print(f"Created {project.config['title']} in {args.destination}")
@@ -276,6 +304,11 @@ def execute(args) -> int:
             "plans": list(project.plans),
             "digest": project.content_digest,
         }
+    elif args.action == "explore":
+        destination = project.local / "explorer"
+        site.build_site([{"path": project.root}], destination)
+        site.serve_site(destination, args.port, open_browser=args.open)
+        return 0
     elif args.action == "serve":
         serve(project.root, args.port, open_browser=args.open)
         return 0
@@ -320,6 +353,17 @@ def execute(args) -> int:
         result = compare_plans(build_plan(project, args.first), build_plan(project, args.second))
     elif args.action == "status":
         result = workflow.status(project)
+    elif args.action == "work":
+        if args.work_action == "start":
+            result = pacing.start(project, dispatches=args.dispatches, minutes=args.minutes,
+                                  resume=args.resume, workers=args.workers,
+                                  request_kb=args.request_kb)
+        elif args.work_action == "pause":
+            result = pacing.pause(project)
+        elif args.work_action == "link":
+            result = pacing.family(project, args.unit, args.parent)
+        else:
+            result = pacing.status(project)
     elif args.action == "agent":
         if args.agent_action == "configure":
             overrides = {

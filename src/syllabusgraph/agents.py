@@ -12,6 +12,7 @@ from uuid import uuid4
 from .io import ProjectError, bundled, digest, write_json
 from .project import load_project, validate_shape
 from . import workflow as wf
+from . import pacing
 
 KINDS = ("nodes", "edges", "groups", "motivations")
 
@@ -79,6 +80,7 @@ def configure(project, provider="codex", **overrides):
             value[role][field] = setting
     validate_policy(value)
     with wf.project_lock(project):
+        pacing.initialize(project)
         write_json(project.local / "agent-policy.json", value)
         write_json(project.local / "policies" / (digest(value)[7:] + ".json"), value)
     return value
@@ -163,6 +165,7 @@ def dispatch(
                 raise ProjectError(
                     "Revision limit reached or critic rejected; dispatch the adjudicator to decide and document the outcome."
                 )
+        work_session = pacing.guard(project, unit)
         packet = wf._ensure_packet(project, directory)
         role = "extractor" if stage == "extract" else "critic"
         request = deepcopy(packet)
@@ -230,6 +233,7 @@ def dispatch(
             )
         ticket = {
             "id": uuid4().hex,
+            "work_session": work_session,
             "unit": unit,
             "stage": stage,
             "orchestrator": orchestrator,
@@ -246,6 +250,7 @@ def dispatch(
             "at": wf.timestamp(),
         }
         request["dispatch"] = ticket
+        pacing.check_request(project, request)
         path = directory / "dispatches" / ticket["id"]
         write_json(path / "request.json", request)
         ticket["request_digest"] = digest(request)
@@ -584,6 +589,9 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
                     "recorded": True,
                     "status": "reviewed",
                 }
+        summary["completed_at"] = wf.timestamp()
+        if summary.get("status") == "deferred":
+            write_json(directory / "deferral.json", summary)
         write_json(path / "done.json", summary)
         return summary
     if ticket["stage"] == "critique" and value["verdict"] == "accept":
@@ -597,6 +605,7 @@ def complete(project, unit, dispatch_id, value, *, agent_id, model, effort):
             )
             raise
     summary = {"unit": unit, "stage": ticket["stage"], "dispatch_id": dispatch_id, "recorded": True}
+    summary["completed_at"] = wf.timestamp()
     write_json(path / "done.json", summary)
     return summary
 

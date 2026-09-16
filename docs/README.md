@@ -1,41 +1,31 @@
-# Documentation
+# Field guide
 
-SyllabusGraph separates reusable software, locally supplied sources, and reviewed
-course data. These pages are maintained alongside the implementation. They are
-the source for a future documentation site or wiki; no separate wiki is maintained.
+Start with your materials. Build a reviewed graph. Design a course when you're
+ready. The website explains this visually; these pages keep the details close
+to the implementation. This is the maintained documentation home, rather than
+a second, drifting GitHub wiki.
 
-## Start a course
+**Want your agent to guide you?** Paste:
 
-| Guide | What it answers |
+```text
+Read https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/README.md
+and explain the next step for my SyllabusGraph project. Inspect saved work first;
+do not start extraction or renew a work budget just to answer.
+```
+
+| Where you are | Read this |
 |---|---|
-| [Quickstart](../README.md#try-it) | How to install and run the included example |
-| [File locations](file-locations.md) | Where books, guidance, prior work, graphs, and outputs belong |
-| [Source workflow](source-workflow.md) | How to prepare, extract, check, review, promote, and resume |
-| [PDF reading](pdf-reading.md) | Set up and diagnose private, page-faithful PDF reading without fixing one tool stack |
-| [Project format](project-format.md) | How bibliography, concepts, evidence, and course plans are represented |
-| [Sharing a course](sharing.md) | Which reviewed results can be published and which files stay local |
-| [Native agent setup](agent-setup.md) | Configure and audit bounded Codex or Claude source work |
-| [Time and usage](usage-estimates.md) | Record model calls, elapsed time, available token counters, and their measurement limits |
-| [Graph bank](../graphs/README.md) | Reuse or contribute independent textbook graphs and compare reviewed correspondences |
+| Starting from nothing | [Agent setup prompt and full bootstrap](../SETUP.md) |
+| Wondering where files go | [Materials, private work, and public results](file-locations.md) |
+| Choosing how much to run | [Slow sessions, usage, and resuming](usage-estimates.md) |
+| Reading PDFs | [Reading quality, page mapping, and tool choices](pdf-reading.md) |
+| Building a graph | [Source workflow](source-workflow.md) · [Native agents](agent-setup.md) |
+| Running a large extraction | [What the QFT run taught us](qft-run-retrospective.md) |
+| Exploring results | [Graph explorer and website](website.md) · [Graph library](../graphs/README.md) |
+| Shaping a course | [Project and plan format](project-format.md) |
+| Sharing or contributing | [Sharing](sharing.md) · [Contributing](../CONTRIBUTING.md) |
 
-## Understand and maintain the tool
-
-| Record | Purpose |
-|---|---|
-| [Capability register](capabilities.md) | Current functionality, interfaces, evidence, and limits |
-| [Architecture](architecture.md) | Engine boundaries, planning behavior, and storage design |
-| [Roadmap](roadmap.md) | Proposed work, kept separate from working features |
-| [Changelog](../CHANGELOG.md) | Changes to behavior and project setup |
-| [Release checks](releasing.md) | Tests, package checks, and publication audit |
-| [Contributing](../CONTRIBUTING.md) | How changes are proposed and documented |
-
-## Examples
-
-The [sampling example](../examples/sampling/project.yaml) includes original source
-text and a runnable graph. The [QFT graph collection](../graphs/subjects/qft/README.md)
-contains separate textbook projects and a shared graph, with bounded coverage
-and review records; course plans are a later step. Source books are supplied
-privately. Examples are separate from
-the blank project created for a new subject.
-
-- [Agent setup](agent-setup.md): clone-first onboarding, configurable native roles, mandatory critique, and final audit.
+For maintainers: [capabilities](capabilities.md), [architecture](architecture.md),
+[development and release checks](releasing.md), [roadmap](roadmap.md), and
+[changelog](../CHANGELOG.md). Proposed features live in the roadmap, not in the
+list of working capabilities.

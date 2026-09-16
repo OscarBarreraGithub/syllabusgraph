@@ -15,7 +15,7 @@ particular source and current environment; the examples here may change.
 The normal project installation already includes `pypdf`; no separate PDF
 engine is required to register an ordinary, text-based book. Confirm the
 project environment, then register one source. These commands assume you have
-followed the [installation and project setup](../README.md#create-your-own-course)
+followed the [installation and project setup](../SETUP.md)
 and placed the file in its private material folder. Skip `source add` if the
 bibliography entry already exists:
 

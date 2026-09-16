@@ -6,6 +6,21 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Add a graph-only website with book switching, search, directional neighborhood
+  views, source evidence, origin links, overlap comparisons excluding imported
+  inputs, graph downloads, and mobile layout. Export only an explicit catalog;
+  provide a validated assets-only Cloudflare configuration.
+- Replace installation-heavy onboarding with one agent prompt and complete
+  `SETUP.md`. Keep the maintained field guide linked from both website and README.
+- Require an explicit bounded work session for native dispatches. Default to two
+  calls, one worker, a 20-minute admission window, and 750 KB request content.
+  Preserve checkpoints across sessions; link recovery units to share a six-call
+  budget. Record completion timestamps and flag long-outstanding calls.
+  These limits do not meter tokens, quota, spending, or orchestrator usage.
+- Publish a QFT construction retrospective with measured context sizes,
+  evidence-scope recovery costs, progress-reporting errors, and concrete
+  orchestrator responses. Keep public graphs and their scientific digests unchanged.
+
 - Allow an explicit source-page budget when preparing a packet, with 80 pages
   as the default. Freeze the allowance with its evidence ranges and retain the
   existing concept, correction, dispatch, and independent-review requirements.

@@ -14,6 +14,7 @@ Before release:
 python -m pytest
 ruff check .
 python scripts/test_browser.py
+python scripts/test_explorer.py
 python -m build
 python scripts/audit_public.py
 ```
@@ -37,3 +38,12 @@ be suitable for publication. Do not copy old Git directories, branches, tags,
 operational notes, or private fixtures. File deletion in a later commit does
 not erase earlier history. Audit all intended refs and commit messages, not
 only the working tree.
+
+## Development setup
+
+Follow [SETUP.md](../SETUP.md), then install development dependencies with
+`.venv/bin/python -m pip install -e '.[dev,browser]'` (Windows: use the venv's
+`Scripts/python.exe`). For a locked environment use `uv sync --locked --all-extras`.
+Install the test browser with `python -m playwright install chromium` inside
+that environment. The browser tests use disposable projects and no model calls.
+For the optional Cloudflare build, run `npm ci` and `npm run deploy:check`.

@@ -1,0 +1,11 @@
+{
+  "name": "syllabusgraph-site",
+  "private": true,
+  "scripts": {
+    "site:build": "node scripts/build-site.mjs",
+    "preview": "npm run site:build && wrangler dev --ip 127.0.0.1 --port 8787",
+    "deploy:check": "npm run site:build && wrangler deploy --dry-run",
+    "deploy": "npm run site:build && wrangler deploy"
+  },
+  "devDependencies": { "wrangler": "4.132.0" }
+}

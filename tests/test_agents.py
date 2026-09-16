@@ -4,7 +4,7 @@ import sys
 
 import pytest
 
-from syllabusgraph import agents, workflow as wf
+from syllabusgraph import agents, pacing, workflow as wf
 from syllabusgraph.cli import main
 from syllabusgraph.io import ProjectError, digest, write_json, write_yaml
 from syllabusgraph.project import load_project
@@ -13,22 +13,31 @@ from test_workflow import unit  # shared original, two-page source fixture
 __all__ = ["unit"]
 
 
+def configure(project, *args, **kwargs):
+    """Existing review tests explicitly opt into a large session budget."""
+    result = agents.configure(project, *args, **kwargs)
+    if pacing.read(project)['session'] is None:
+        pacing.start(project, dispatches=100, minutes=60, workers=2)
+    return result
+
+
 def send(project, stage, value, *, identity=None):
     task = agents.dispatch(project, "unit-one", stage=stage, orchestrator="host-session")
-    return agents.complete(
-        project,
-        "unit-one",
-        task["id"],
-        value,
-        agent_id=identity or "worker-" + task["id"],
-        model=task["model"],
-        effort=task["effort"],
-    )
+    try:
+        return agents.complete(
+            project, "unit-one", task["id"], value,
+            agent_id=identity or "worker-" + task["id"],
+            model=task["model"], effort=task["effort"],
+        )
+    except ProjectError:
+        agents.fail(project, "unit-one", task["id"], reason="Rejected test response.")
+        raise
+
 
 
 def extracted(unit):
     project, _, proposal = unit
-    agents.configure(project)
+    configure(project)
     send(project, "extract", proposal, identity="extractor-session")
     return project, proposal
 
@@ -84,13 +93,13 @@ def test_provider_defaults_custom_roles_and_cli(blank, capsys):
     )
     assert agents.policy(blank)["extractor"] == {"model": "sonnet", "effort": "high"}
     assert agents.policy(blank)["critic"]["model"] == "opus"
-    custom = agents.configure(
+    custom = configure(
         blank, extractor_model="gpt-5.6-luna", orchestrator_model="gpt-6-astra", audit_mode="trust"
     )
     assert custom["critic"] == {"model": "gpt-5.6-sol", "effort": "high"}
     assert custom["extractor"]["model"] == "gpt-5.6-luna"
     with pytest.raises(ProjectError, match="explicit models"):
-        agents.configure(blank, extractor_model="inherit")
+        configure(blank, extractor_model="inherit")
 
 
 def test_manual_draft_cannot_bypass_mandatory_critic(unit):
@@ -104,7 +113,7 @@ def test_dispatch_requires_accepted_policy_and_runtime_roles(unit):
     project, _, proposal = unit
     with pytest.raises(ProjectError, match="Accept an agent policy"):
         agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
-    agents.configure(project, orchestrator_model="gpt-6-astra")
+    configure(project, orchestrator_model="gpt-6-astra")
     with pytest.raises(ProjectError, match="Configured orchestrator"):
         agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
     task = agents.dispatch(
@@ -150,6 +159,7 @@ def test_independent_critic_and_latest_rejection_gate_promotion(unit):
             model="gpt-5.6-sol",
             effort="high",
         )
+    agents.fail(project, "unit-one", task["id"], reason="Non-independent critic rejected.")
     critique(project, proposal)
     critique(project, proposal, "reject")
     with pytest.raises(ProjectError, match="critic requested"):
@@ -159,10 +169,10 @@ def test_independent_critic_and_latest_rejection_gate_promotion(unit):
 def test_policy_and_proposal_changes_invalidate_review(unit):
     project, proposal = extracted(unit)
     critique(project, proposal)
-    agents.configure(project, critic_model="custom-reviewer")
+    configure(project, critic_model="custom-reviewer")
     with pytest.raises(ProjectError, match="policy changed"):
         wf.promote(project, "unit-one")
-    agents.configure(project)
+    configure(project)
     changed = deepcopy(proposal)
     changed["graph"]["nodes"][0]["summary"] = "A changed definition."
     wf.import_proposal(project, "unit-one", changed)
@@ -236,7 +246,7 @@ def advance_graph(project, node=None):
 
 def test_extraction_can_finish_after_graph_update_but_needs_current_review(unit):
     project, packet, proposal = unit
-    agents.configure(project)
+    configure(project)
     task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
     other_packet = wf.prepare(project, "unit-two", "primer", 2, 2, scope="Define frequency.")
     other = deepcopy(proposal)
@@ -281,7 +291,7 @@ def test_extraction_can_finish_after_graph_update_but_needs_current_review(unit)
 
 def test_stale_extraction_cannot_overwrite_a_concurrently_added_record(unit):
     project, _, proposal = unit
-    agents.configure(project)
+    configure(project)
     task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
     accepted = deepcopy(proposal["graph"]["nodes"][0])
     accepted["summary"] = "An accepted, differently scoped event definition."
@@ -478,13 +488,13 @@ def test_human_audit_is_final_optional_and_snapshot_bound(unit):
     changed.config["title"] = "A revised course"
     write_yaml(project.root / "project.yaml", changed.config)
     assert agents.audit(project)["audit_status"] == "pending-human-audit"
-    agents.configure(project, audit_mode="trust")
+    configure(project, audit_mode="trust")
     assert agents.audit(project)["audit_status"] == "trusted-critic"
 
 
 def test_tampered_dispatch_is_rejected(unit):
     project, _, proposal = unit
-    agents.configure(project)
+    configure(project)
     task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
     path = wf.unit_dir(project, "unit-one") / "dispatches" / task["id"] / "request.json"
     request = wf.read_json(path)
@@ -542,8 +552,9 @@ def test_pending_new_critic_and_superseded_result_block_old_acceptance(unit):
     task = agents.dispatch(project, "unit-one", stage="critique", orchestrator="host-session")
     with pytest.raises(ProjectError, match="latest critic"):
         wf.promote(project, "unit-one")
+    agents.fail(project, "unit-one", task["id"], reason="Superseded critic stopped.")
     critique(project, proposal, "reject")
-    with pytest.raises(ProjectError, match="superseded"):
+    with pytest.raises(ProjectError, match="failed"):
         agents.complete(
             project,
             "unit-one",
@@ -674,14 +685,14 @@ def test_final_deferral_is_visible_and_does_not_block_other_units(unit):
 
 def test_retry_budget_closes_unit_even_when_runtime_never_completes(unit):
     project, _, _ = unit
-    agents.configure(project)
+    configure(project)
     for attempt in range(6):
         task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
         agents.fail(
             project, "unit-one", task["id"], reason=f"Runtime failed on attempt {attempt + 1}."
         )
     # Reconfiguration cannot reset a work unit's original budget.
-    agents.configure(project, revision_limit=10)
+    configure(project, revision_limit=10)
     record = agents.dispatch(project, "unit-one", stage="extract", orchestrator="host-session")
     assert record["status"] == "deferred"
     assert "6 calls" in record["reason"]

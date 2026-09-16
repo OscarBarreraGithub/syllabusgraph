@@ -7,7 +7,7 @@ import pytest
 from syllabusgraph.io import ProjectError, digest, within, write_json, write_yaml
 from syllabusgraph.project import load_project
 from syllabusgraph.sources import register, source_pages
-from syllabusgraph import agents, workflow
+from syllabusgraph import agents, pacing, workflow
 
 
 @pytest.fixture
@@ -51,6 +51,8 @@ def accept(project):
     directory = workflow.unit_dir(project, "unit-one")
     proposal = workflow.read_json(directory / "proposal.json")
     agents.configure(project)
+    if pacing.read(project)['session'] is None:
+        pacing.start(project, dispatches=20)
     task = agents.dispatch(project, "unit-one", stage="extract", orchestrator="test-orchestrator")
     agents.complete(
         project,

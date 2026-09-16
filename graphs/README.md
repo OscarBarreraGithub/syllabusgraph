@@ -51,11 +51,11 @@ but do not count as an independent treatment by the importing book in that table
 It describes only the extracted portions, not total textbook
 overlap; zero can simply mean the relevant section has not been extracted.
 The correspondence notes explain narrower scopes and alternative treatments.
-This is a data bank and a command-line check; a dedicated comparison UI is
-future work. Existing `compare` compares course plans, not textbooks.
-Use the README diagrams, YAML, and CLI for these graph-only projects. The
-current course-design web app expects a course plan; graph construction does
-not require creating one just to use that interface.
+Browse the collection with `syllabusgraph site serve`, or one project with
+`syllabusgraph explore -p graphs/subjects/qft`. The read-only explorer includes
+book comparison, concept search, source evidence, and neighborhood views without
+creating a course plan. See [the website guide](../docs/website.md). Existing
+`compare` continues to compare course plans, not textbooks.
 
 To contribute, use a new book directory or extend an existing one through a
 focused pull request. State the exact source edition, section scope, node

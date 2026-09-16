@@ -106,3 +106,24 @@ Cross-course overlap/depth comparison is implemented. External syllabus
 alignment, institutional corpus collection, automatic OCR, timed teaching
 studies, collaborative hosted accounts, and generation of complete lecture
 prose are separate extensions. They do not gate the basic course workflow.
+
+## Read-only graph website
+
+`site.py` exports explicitly selected projects into static assets. It never
+copies project directories. `explorer/` contains dependency-free HTML, CSS, and
+canvas/DOM JavaScript shared by local browsing and Cloudflare hosting. The
+payload preserves graph records and selected bibliography fields; derived
+`direct_books` comparison metadata excludes imported textbook nodes. Public
+exports have no endpoints for uploading or editing private sources.
+
+## Session pacing
+
+`pacing.py` gates native ticket creation under the existing project write lock.
+Work-session identity is bound into the immutable dispatch. Counts come from
+tickets, including failures, rather than a counter reset by model configuration.
+Admission time, request size, and worker concurrency are independently bounded.
+Recovery families flatten to an immutable root and count historical tickets.
+Completion and promotion remain possible after a session pauses or expires.
+`work status` reads metadata only; it never launches a worker or infers quota.
+Manual command adapters are outside these gates and must not be used to bypass
+the user's limits. See [usage boundaries](usage-estimates.md).

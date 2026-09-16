@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore the ideas behind a subject. Trace concepts to textbooks, compare treatments, and build a course with your own materials."
+    />
+    <title>SyllabusGraph · An atlas of ideas</title>
+    <link rel="icon" href="mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="explorer.css" />
+    <script src="explorer.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#explorer">Skip to graph explorer</a>
+    <header>
+      <a class="brand" href="#"
+        ><img src="mark.svg" alt="" width="28" height="28" />SyllabusGraph<span
+          class="brand-note"
+          >AN OPEN KNOWLEDGE ATLAS</span
+        ></a
+      >
+      <nav aria-label="Main">
+        <a href="#explorer">Explore</a><a href="#how-it-works">How it works</a
+        ><a
+          href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/README.md"
+          >Field guide ↗</a
+        ><a class="nav-start" href="#start">Make your own <span>↗</span></a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <div class="eyebrow">
+            <span class="status-dot"></span> FROM THE GRAPH LIBRARY
+            <span class="edition">/ 001</span>
+          </div>
+          <h1>Ideas are connected.<br /><em>Follow the thread.</em></h1>
+          <p>
+            See how a subject fits together. Explore a concept, trace its
+            dependencies, and compare the books that explain it.
+          </p>
+        </div>
+        <div class="intro-aside">
+          <span class="tiny">THE COLLECTION</span>
+          <h2 id="collection-title">Loading the atlas…</h2>
+          <div id="stats" class="stats" aria-live="polite"></div>
+          <p class="review-note" id="review-status">
+            Reading public graph records.
+          </p>
+        </div>
+      </section>
+      <section id="explorer" class="explorer" aria-label="Graph explorer">
+        <div class="toolbar">
+          <div class="toolbar-title">
+            <span class="status-dot"></span> THE ATLAS
+          </div>
+          <div class="view-tabs" role="group" aria-label="Explorer view">
+            <button id="map-tab" class="active" aria-pressed="true">
+              Concept map</button
+            ><button id="overlap-tab" aria-pressed="false">Book overlap</button>
+          </div>
+          <a id="download" download>Download graph ↓</a>
+        </div>
+        <div class="workspace">
+          <aside class="library">
+            <label class="tiny" for="graph-select">GRAPH</label
+            ><select id="graph-select" aria-label="Choose graph"></select
+            ><label class="search-label" for="search">Find an idea</label>
+            <div class="search-wrap">
+              <span aria-hidden="true">⌕</span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Try symmetry, scattering…"
+                autocomplete="off"
+              />
+            </div>
+            <label class="tiny" for="source-select">SOURCE TREATMENT</label
+            ><select id="source-select">
+              <option value="">All books</option></select
+            ><label class="tiny" for="kind-select">CONCEPT TYPE</label
+            ><select id="kind-select">
+              <option value="">All types</option>
+            </select>
+            <div class="list-heading">
+              <span id="result-count" aria-live="polite"></span
+              ><button id="clear" class="text-button">Reset</button>
+            </div>
+            <div id="results" class="results" aria-label="Concepts"></div>
+            <button id="more" class="more" hidden>Show more concepts</button>
+          </aside>
+          <div class="map-region">
+            <div id="map-view">
+              <div class="map-caption">
+                <span id="map-mode">THE WHOLE PICTURE</span>
+                <h3 id="map-heading">
+                  Choose a concept to explore its neighborhood.
+                </h3>
+              </div>
+              <canvas
+                id="map"
+                aria-label="Interactive concept network. Use the concept list to select nodes with a keyboard."
+              ></canvas>
+              <div id="tooltip" hidden></div>
+              <div class="map-bottom">
+                <span id="map-count"></span>
+                <div class="map-actions">
+                  <button id="zoom-out" aria-label="Zoom out">−</button
+                  ><button id="zoom-in" aria-label="Zoom in">+</button
+                  ><button id="fit">Fit</button
+                  ><button id="overview">Overview</button>
+                </div>
+              </div>
+              <div class="legend">
+                <span><i class="dot green"></i>Selected</span
+                ><span><i class="dot orange"></i>Prerequisite</span
+                ><span><i class="dot blue"></i>Depends on this</span
+                ><span><i class="dot gray"></i>Other relation</span>
+              </div>
+            </div>
+            <div id="overlap-view" hidden>
+              <div class="tiny">REVIEWED CORRESPONDENCES</div>
+              <h3>Different books.<br />Shared ideas.</h3>
+              <p>
+                Counts are shared concepts with direct treatments in both books.
+                Imported prerequisites are excluded. A correspondence preserves
+                each book’s qualifications; it does not mean identical
+                treatments.
+              </p>
+              <div id="overlap-grid"></div>
+              <p class="overlap-foot">
+                Choose a pair to browse its shared concepts. Missing
+                correspondences are not proof that a book omits a topic.
+              </p>
+            </div>
+          </div>
+          <aside id="detail" class="detail" aria-label="Concept details">
+            <div class="tiny">A PLACE TO BEGIN</div>
+            <h2>Pick an idea.<br />See what it rests on.</h2>
+            <p>
+              Each point is a concept. Each line is a recorded relationship.
+            </p>
+            <div class="detail-rule"></div>
+            <p>
+              Search on the left or select a point on the map. You’ll find the
+              explanation, connected ideas, and exact section and page
+              references here.
+            </p>
+            <div class="detail-note">
+              The layout is a browsing aid, not a proposed teaching order.
+            </div>
+          </aside>
+        </div>
+      </section>
+      <div class="atlas-footer">
+        <span>PUBLIC GRAPHS · PRIVATE SOURCE BOOKS</span
+        ><span>Browse freely. No account, model calls, or tracking.</span>
+      </div>
+      <section id="how-it-works" class="how">
+        <div class="section-kicker">A REUSABLE WORKFLOW</div>
+        <h2>Your material.<br /><em>Your course.</em></h2>
+        <p class="section-intro">
+          The graph describes the subject. The course describes a journey
+          through it. Keep them separate, and the same knowledge can support
+          many ways of teaching.
+        </p>
+        <div class="steps">
+          <article>
+            <span>01 / GATHER</span>
+            <h3>Bring your sources.</h3>
+            <p>
+              Drop references into your private materials folder, or give your
+              agent a file path. Together, set the scope.
+            </p>
+          </article>
+          <article>
+            <span>02 / CONNECT</span>
+            <h3>Build the graph.</h3>
+            <p>
+              An extractor proposes concepts and dependencies. A separate critic
+              checks them against the source. Decisions keep their evidence.
+            </p>
+          </article>
+          <article>
+            <span>03 / SHAPE</span>
+            <h3>Design a course.</h3>
+            <p>
+              Then choose goals, student background, and available time. Explore
+              a sequence, adjust it, and export a teaching plan.
+            </p>
+          </article>
+          <article>
+            <span>04 / SHARE</span>
+            <h3>Pass it on.</h3>
+            <p>
+              Share reviewed graphs and course plans. Keep textbooks, working
+              extracts, and private guidance on your computer.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="start" class="start">
+        <div>
+          <div class="section-kicker">LET YOUR AGENT HANDLE THE SETUP</div>
+          <h2>One prompt.<br />A place to start.</h2>
+          <p>
+            Open a coding agent such as Codex or Claude Code and paste this. It
+            installs the tool, opens a local preview, and tells you where to put
+            your material.
+          </p>
+          <a
+            href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/README.md"
+            >Read the field guide ↗</a
+          >
+        </div>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <span>PASTE INTO YOUR CODING AGENT</span
+            ><button id="copy-prompt">Copy prompt</button>
+          </div>
+          <pre id="setup-prompt">
+Get me set up with SyllabusGraph. Read and follow
+https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/SETUP.md
+Handle the technical setup for me, then show me where to put my materials.
+Use the slow, checkpointed mode. Ask about scope and model choices before extraction.</pre>
+          <div class="usage-warning">
+            <strong>Creating a graph uses your model allowance.</strong>
+            <p>
+              A whole textbook can be expensive. Start with a few pages. Slow
+              mode allows two worker dispatches per session, then pauses. Resume
+              when you choose, even weeks later. This limits calls, not tokens;
+              one call and the orchestrator can still use substantial allowance.
+            </p>
+            <a
+              href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/usage-estimates.md"
+              >Usage, checkpoints & the QFT run report ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#">SyllabusGraph</a
+      ><span>Knowledge worth building on.</span
+      ><a href="https://github.com/OscarBarreraGithub/syllabusgraph">GitHub ↗</a
+      ><a
+        href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/CONTRIBUTING.md"
+        >Contribute a graph ↗</a
+      >
+    </footer>
+    <div id="notice" role="status" aria-live="polite"></div>
+  </body>
+</html>

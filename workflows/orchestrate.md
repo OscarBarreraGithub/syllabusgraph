@@ -1,5 +1,14 @@
 # Native agent orchestration
 
+Start with [the agent bootstrap](../SETUP.md) for installation and onboarding.
+Before dispatch, run `syllabusgraph work -p PROJECT status`, then `work start`
+only for authorized work. Defaults: two dispatches, one worker, 20 minutes for
+admitting new work, 750 KB request content. Save returned results and pause at
+a limit; never auto-renew. A later user request permits `work start --resume`.
+Link recovery units with `work link CHILD --parent PARENT` before issuing a
+ticket. Read [usage limits](../docs/usage-estimates.md) and
+[the run lessons](../docs/qft-run-retrospective.md) before large extraction.
+
 Use this workflow for a bounded source unit when a course project's local agent
 policy is configured. The policy lives in ignored
 `.syllabusgraph/agent-policy.json`; it contains provider, model, effort, and
