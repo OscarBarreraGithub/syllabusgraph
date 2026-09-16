@@ -8,6 +8,13 @@ scaling. Do not call an exact-record intersection the backbone or interpret
 missing matches as absent topic coverage. This checkpoint must not become a
 repeated plan-review gate. Keep the existing dispatch and review limits.
 
+Establish stable cross-source concept identities before treating mappings as a
+subject overview. Record whether a treatment is equivalent, narrower, or an
+alternative route; do not force all distinctions into separate overview nodes.
+Define the backbone's selection rule and retain relevant boundary context.
+Check recognizable subject coverage as well as preservation of input records.
+Statistics from a small pilot must never stand in for full-collection overlap.
+
 Start with [the agent bootstrap](../SETUP.md) for installation and onboarding.
 Before dispatch, run `syllabusgraph work -p PROJECT status`, then `work start`
 only for authorized work. Defaults: two dispatches, one worker, 20 minutes for

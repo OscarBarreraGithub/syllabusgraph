@@ -20,6 +20,23 @@ an orchestrator should take while the work is still small.
 
 ## A checkpoint before scaling
 
+First define what a shared concept means across the sources. Use stable,
+source-neutral identities and inspect existing labels and synonyms before
+adding another concept. Decide explicitly whether an incoming record supports
+an existing idea, specializes it, supplies a different derivation, or is a new
+idea. Preserve assumptions, notation, proof depth, and exercises in the linked
+treatments. Differences in a derivation need not imply different parent ideas;
+common terminology alone is not enough to identify them either. A node budget
+can expose granularity drift, but no universal count is appropriate for every
+subject or chapter.
+
+Define the overview's selection rule separately. A union of source coverage,
+an exact record intersection, a set of widely covered concepts, and a path
+ranked by external course evidence answer different questions. State the
+population, denominator, and supporting evidence. A highlighted presentation
+rail is not automatically a chain of prerequisite edges. A course-consensus
+path requires course evidence; it cannot be inferred from textbook overlap.
+
 Select one representative topic with more than one treatment. Prefer a topic
 that exercises the real distinctions in the material, rather than the easiest
 possible match. Agree on the output level in the immutable packet: detailed
@@ -37,6 +54,17 @@ Use the configured producer and independent critic. At the checkpoint, record:
    inspection tasks. Preserve disconnected pieces when the evidence requires it.
 5. Calls, elapsed time, available usage counters, review outcome, and what would
    change before scaling. Unknown token usage stays unknown.
+
+Inspect relationships crossing the selected topic's boundary before preparing
+its packet. A bundle containing only internal edges can produce disconnected
+pieces even when the original graph has relevant connections. Record omitted
+context and include the reviewed boundary material needed for the pilot's
+question; do not invent replacement arrows. A small topical pilot cannot
+establish whole-subject coverage or replace the subject overview.
+
+Compare recognizable ideas across sources at the chosen level. Finding every
+input record in the output checks preservation; it does not check whether
+related treatments are organized under a useful common concept. Check both.
 
 This is a small deliverable checkpoint, not a plan-approval loop or a request
 for a person to supervise every unit. Stop according to the authorized session
@@ -56,6 +84,12 @@ from selected record IDs; it checks the input project's content digest. This is 
 available preparation method, not a universal reader or extraction requirement.
 
 ## Report completion precisely
+
+Every comparison screen must name the selected graph and scope. Counts from a
+nine-concept sample describe that sample, not overlap between entire books.
+Distinguish concept coverage from equivalent-record matches and keep source
+volume grouping consistent across views. Missing mappings mean unknown coverage
+unless an absence has actually been established.
 
 Track source coverage, record-level scientific review, cross-source mappings,
 conceptual organization, visual usability, and human audit separately. Passing

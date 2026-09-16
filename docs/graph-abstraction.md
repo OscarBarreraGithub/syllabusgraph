@@ -91,3 +91,28 @@ inspection. It tests an abstraction approach; it does not finish the subject map
 Inspect the concept boundaries and visual navigation before choosing further
 topics. The original shared graph and exact-overlap view remain available.
 Future orchestrators should follow the [troubleshooting checkpoint](graph-troubleshooting.md).
+
+## Why the pilot did not resolve the whole-subject problem
+
+The pilot reorganized 14 of 2,156 detailed records. Its selection contains only
+internal relationships; links to unselected records are outside that bundle.
+The resulting nine concepts and three components test a local abstraction,
+not a subject-wide skeleton. Moving this small graph to the main entry point
+did not create the missing whole-subject organization.
+
+The pilot's pairwise comparison also counts only its nine concepts: for example,
+three are mapped to both Peskin–Schroeder and Weinberg I, whereas the full shared
+record graph has 68 explicit matches for that pair. Neither number estimates
+every topic those books have in common. The comparison interface needs explicit
+scope and consistent work/volume grouping, beyond the graph selector.
+
+The missing deliverable is a subject-wide inventory of stable concepts, mapped
+to the reviewed book treatments, with supported dependencies and a stated rule
+for highlighting its central structure. Preserve source-specific detail beneath
+that inventory. Reuse the accepted evidence and review new mappings in bounded
+units; do not rerun whole-book extraction just to impose a new display.
+
+An external course-consensus path would be a separate analysis with its own
+corpus and selection rule. The current graph-only task does not require an
+audience, a semester length, or a course sequence. Source coverage and dependency
+structure can organize the subject before any course is chosen.
