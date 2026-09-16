@@ -6,11 +6,12 @@
     <meta name="theme-color" content="#0b1118" />
     <meta
       name="description"
-      content="Browse textbook concepts in reading order, then follow their dependencies and compare source treatments."
+      content="Explore the shared core of textbook graphs, compare overlap, and follow source-backed connections."
     />
     <title>SyllabusGraph · Explore the connections</title>
     <link rel="icon" href="mark.svg" />
     <link rel="stylesheet" href="explorer.css" />
+    <script src="backbone.js" defer></script>
     <script src="explorer.js" defer></script>
   </head>
   <body>
@@ -41,8 +42,9 @@
     </header>
     <div class="controlbar">
       <div class="view-tabs" role="group" aria-label="View">
+        <button id="core-tab" aria-pressed="false" hidden>Shared core</button>
         <button id="chapters-tab" class="active" aria-pressed="true">
-          Chapters</button
+          Book index</button
         ><button id="graph-tab" aria-pressed="false">Connections</button
         ><button id="overlap-tab" aria-pressed="false">Book overlap</button>
       </div>
@@ -53,6 +55,80 @@
       <span id="graph-count"></span><a id="download" download>Graph JSON ↓</a>
     </div>
     <main id="workspace">
+      <section id="core-view" hidden aria-label="Shared graph backbone">
+        <div class="core-heading">
+          <div>
+            <span class="eyebrow">THE SHARED KNOWLEDGE GRAPH</span>
+            <h1>The common backbone.</h1>
+            <p id="core-description"></p>
+          </div>
+          <div class="core-controls">
+            <label
+              >Compare<select id="comparison-mode">
+                <option value="textbooks">Textbooks</option>
+                <option value="volumes">Individual volumes</option>
+              </select></label
+            ><label>Include<select id="core-threshold"></select></label>
+          </div>
+        </div>
+        <div
+          id="core-stats"
+          class="core-stats"
+          aria-label="Core statistics"
+        ></div>
+        <div class="core-body">
+          <div class="core-map">
+            <div class="core-map-heading">
+              <span id="core-map-caption"></span>
+              <label class="sr-only" for="core-jump"
+                >Jump to a connected component</label
+              >
+              <select id="core-jump"></select>
+              <span>Drag or swipe to explore ↔</span>
+            </div>
+            <div
+              id="core-scroll"
+              tabindex="0"
+              aria-label="Shared concepts and recorded connections; scroll or drag to explore"
+            >
+              <div id="core-sizer">
+                <div id="core-world">
+                  <svg
+                    id="core-edges"
+                    aria-label="Connections inside the shared core"
+                  ></svg>
+                  <div id="core-cards"></div>
+                </div>
+              </div>
+            </div>
+            <div class="core-map-bottom">
+              <span>Arrows: prerequisites · Dashed: other relations</span>
+              <div class="zoom-controls">
+                <button id="core-zoom-out" aria-label="Zoom core out">−</button
+                ><span id="core-zoom-label">100%</span
+                ><button id="core-zoom-in" aria-label="Zoom core in">+</button
+                ><button id="core-center">Reset view</button>
+              </div>
+            </div>
+          </div>
+          <aside class="core-aside" aria-label="Overlap and structure">
+            <h2>How much is shared?</h2>
+            <p id="core-agreement-caption"></p>
+            <div id="agreement-bars"></div>
+            <h2>Connected components</h2>
+            <p>
+              Separate pieces inside this overlap. Select one to jump to it.
+            </p>
+            <div id="component-links"></div>
+            <p class="core-caveat">
+              Nodes have independent treatments in the compared books.
+              Connections retain their source-specific evidence; they are not
+              claims of agreement by every book. Counts describe recorded
+              matches, not completeness of overlap. No course has been selected.
+            </p>
+          </aside>
+        </div>
+      </section>
       <section id="browse-view" aria-label="Chapter browser">
         <div class="view-heading">
           <div>
@@ -92,7 +168,7 @@
             <label class="sr-only" for="kind-select">Concept type</label
             ><select id="kind-select">
               <option value="">All types</option></select
-            ><button id="clear">Back to chapters</button>
+            ><button id="clear">Back to overview</button>
           </div>
         </div>
         <div id="results" class="result-grid"></div>
@@ -190,9 +266,10 @@
       </div>
       <h2>A graph you can read.</h2>
       <p>
-        Start with a book’s chapters. Open a concept, follow the arrows, and
-        inspect its source evidence. The shared graph connects treatments across
-        books; each textbook graph keeps its own account.
+        Start with the concepts shared across books and the connections between
+        them. Open a concept to inspect its source evidence. The shared graph
+        connects treatments across books; each textbook graph keeps its own
+        account.
       </p>
       <ol class="steps">
         <li>

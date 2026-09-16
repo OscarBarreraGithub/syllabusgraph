@@ -1,4 +1,4 @@
-/* A reading map and a progressively revealed dependency graph. No model calls. */
+/* Shared knowledge, source browsing, and readable connections. No model calls. */
 "use strict";
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => n.toLocaleString();
@@ -60,9 +60,10 @@ function options(select, entries) {
 }
 function show(view) {
   mode = view;
-  for (const name of ["browse", "search", "network", "overlap"])
+  for (const name of ["core", "browse", "search", "network", "overlap"])
     $(name + "-view").hidden = name !== view;
   for (const [id, name] of [
+    ["core", "core"],
     ["chapters", "browse"],
     ["graph", "network"],
     ["overlap", "overlap"],
@@ -78,6 +79,11 @@ function saveURL(replace = false) {
   if (reading) params.set("reader", reading.id);
   if (mode === "network" && selected) params.set("node", selected);
   if (mode === "overlap") params.set("view", "overlap");
+  if (mode === "browse") params.set("view", "browse");
+  if (hasCore()) {
+    params.set("compare", corePerspective);
+    params.set("minimum", String(coreMinimum));
+  }
   if (mode === "search") {
     params.set("view", "search");
     if ($("search").value) params.set("q", $("search").value);
@@ -139,6 +145,8 @@ async function loadGraph(id, params = new URLSearchParams()) {
   resultLimit = 60;
   renderBoard();
   renderOverlap();
+  prepareCore(params);
+  returnView = hasCore() ? "core" : "browse";
   if (params.get("node") && byId.has(params.get("node"))) {
     openNode(params.get("node"), false);
   } else if (params.get("view") === "overlap") show("overlap");
@@ -155,7 +163,8 @@ async function loadGraph(id, params = new URLSearchParams()) {
         chapter: chapter.id,
       };
     renderSearch();
-  } else show("browse");
+  } else if (hasCore() && params.get("view") !== "browse") renderCore();
+  else show("browse");
   saveURL(true);
 }
 function conceptCard(node, summary = false) {
@@ -170,7 +179,7 @@ function conceptCard(node, summary = false) {
     el(
       "span",
       books > 1
-        ? `${books} books · ${incident.get(node.id).length} links`
+        ? `${books} book graphs · ${incident.get(node.id).length} links`
         : `${incident.get(node.id).length} links →`,
     ),
   );
@@ -300,7 +309,7 @@ function renderSearch() {
 function openNode(id, updateURL = true, remember = true) {
   if (!byId.has(id)) return;
   if (mode !== "network") {
-    returnView = mode;
+    returnView = updateURL ? mode : hasCore() ? "core" : "browse";
     nodeTrail = [];
   } else if (remember && selected && selected !== id) nodeTrail.push(selected);
   selected = id;
@@ -796,7 +805,13 @@ $("more").onclick = () => {
   resultLimit += 60;
   renderSearch();
 };
-$("clear").onclick = $("chapters-tab").onclick = () => {
+$("clear").onclick = () => {
+  $("search").value = "";
+  if (hasCore()) renderCore(false);
+  else show("browse");
+  saveURL();
+};
+$("chapters-tab").onclick = () => {
   $("search").value = "";
   show("browse");
   saveURL();
@@ -817,7 +832,8 @@ $("back").onclick = () => {
     openNode(nodeTrail.pop(), true, false);
     return;
   }
-  show(returnView === "network" ? "browse" : returnView);
+  if (returnView === "core") renderCore(false);
+  else show(returnView === "network" ? "browse" : returnView);
   saveURL();
 };
 $("trace").onclick = () => {
@@ -907,6 +923,7 @@ async function boot() {
   const params = new URLSearchParams(location.hash.slice(1));
   await loadGraph(params.get("graph"), params);
 }
+bindCoreControls();
 boot().catch((error) => {
   $("reading-title").textContent = "Unable to open this graph";
   $("reading-description").textContent = error.message;

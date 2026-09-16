@@ -21,14 +21,41 @@ Paths are relative to the catalog file.
 
 ## Reading the map
 
-Start with **Chapters**. Each column contains readable concept cards, in source
-page order. Change **Read through** to browse a different book without leaving
-the shared graph. Use the chapter selector or arrows to move across the book.
-**All concepts** and the search box cover the whole selected graph, including
-concepts outside the current book. Search labels, summaries, or IDs and narrow
-results by concept type.
+A shared graph opens on **Shared core**: concepts independently treated in every
+compared textbook, with their recorded connections and basic statistics. This
+is a view of the knowledge graph. It does not choose a course, reading sequence,
+audience, or timetable.
 
-![Concepts arranged in chapter columns](explorer.png)
+![The shared core and overlap statistics](explorer.png)
+
+The QFT catalog compares Peskin–Schroeder, Schwartz, and Weinberg I + II by
+default. **Compare → Individual volumes** treats the four book graphs separately.
+**Include** widens the intersection to concepts matched in at least two books.
+The graph displays every qualifying concept and every shared-graph relation
+whose endpoints qualify. Hover to highlight connections; click a concept for
+its wider neighborhood and source evidence. Pan or scroll to explore; jump to
+separate components from the sidebar or the mobile selector.
+
+The counts distinguish exact book membership, prerequisite relations, connected
+components, isolated concepts, and the fraction of the whole shared graph.
+Components use all relation types, ignoring direction only when measuring
+connectivity. Layout ranks use prerequisite arrows. Nodes shared by all books
+do **not** imply that every connecting relationship is asserted in every book.
+Imported prerequisites are excluded from independent treatments. These are
+recorded correspondences, not proof of exhaustive overlap. Paths through
+nonqualifying concepts are not silently replaced by new edges.
+
+Grouping is explicit catalog data: use `comparison_group: {"id": "work-id",
+"title": "Work title"}` on book entries that should count as one work. No author
+names or project-name prefixes are inferred by the engine. A core comparison
+requires the book graphs named by the shared graph's origins to be in the
+catalog; missing exports cannot silently lower the comparison denominator.
+
+**Book index** is a secondary way to find concepts using source chapter/page
+order. It is not a course. Change **Read through** to browse another book without
+leaving the shared graph. **All concepts** and the search box cover the whole
+selected graph, including concepts outside the current book or common core.
+Standalone textbook and example graphs still open on their own index.
 
 Open a card to follow its **Connections**. Prerequisites are on the left,
 dependents on the right, and other connections in a separate column. Arrows

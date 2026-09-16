@@ -11,6 +11,7 @@ import webbrowser
 from .io import ProjectError, read_yaml, write_json
 from .project import load_project
 from .navigation import reading_views, chapter_index
+from .backbone import shared_backbone
 
 ASSETS = Path(__file__).parent / "explorer"
 
@@ -49,6 +50,14 @@ def build_site(projects, destination: Path):
         coverage_path = project.root / "coverage.yaml"
         if coverage_path.exists():
             chapter_indexes[project.config["id"]] = chapter_index(read_yaml(coverage_path))
+        comparison_group = entry.get("comparison_group")
+        if comparison_group is not None:
+            if not isinstance(comparison_group, dict) or any(
+                not isinstance(comparison_group.get(key), str) or not comparison_group[key].strip()
+                for key in ("id", "title")
+            ):
+                raise ProjectError("A comparison_group needs nonempty id and title strings.")
+            comparison_group = {key: comparison_group[key] for key in ("id", "title")}
         payloads.append((slug, payload))
         manifest["graphs"].append(
             {
@@ -56,6 +65,7 @@ def build_site(projects, destination: Path):
                 "project_id": payload["project_id"],
                 "title": payload["title"],
                 "kind": entry.get("kind", "graph"),
+                **({"comparison_group": comparison_group} if comparison_group else {}),
                 "nodes": len(project.nodes),
                 "edges": len(project.knowledge["edges"]),
                 "review": review,
@@ -81,6 +91,12 @@ def build_site(projects, destination: Path):
                         books.add(origin["project"])
             direct[node["id"]] = sorted(books)
         payload["direct_books"] = direct
+        if kinds[slug] == "shared":
+            payload["backbone"] = shared_backbone(
+                payload["knowledge"],
+                direct,
+                [e for e in manifest["graphs"] if e["kind"] == "textbook"],
+            )
         payload["reading_views"] = reading_views(
             payload, textbook_payloads if kinds[slug] == "shared" else [payload], chapter_indexes
         )

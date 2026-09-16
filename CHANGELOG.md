@@ -6,6 +6,12 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Make the shared graph’s common backbone the opening view, with overlap counts,
+  recorded connections, connected components, and adjustable overlap thresholds.
+  Compare explicitly grouped textbooks or individual volumes. Keep source chapter
+  browsing secondary; preserve knowledge records and defer course design. Report
+  disconnected overlap honestly without inventing shortcut edges or consensus.
+
 - Replace the dot overview with a full-screen chapter browser and readable
   dependency cards. Browse by book, expand neighbors, trace prerequisites, and
   reveal every record in dense columns. Preserve source evidence, book links,

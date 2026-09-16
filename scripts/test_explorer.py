@@ -68,6 +68,48 @@ def main():
                 page.on("pageerror", lambda e: errors.append(str(e)))
                 page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
                 page.goto(url)
+                page.wait_for_selector("#core-cards .core-card")
+                # Independently compute the intersection from exact book matches.
+                grouped = {
+                    n: {"weinberg" if b in {"weinberg-1", "weinberg-2"} else b for b in books}
+                    for n, books in payload["direct_books"].items()
+                }
+                common = {id for id, books in grouped.items() if len(books) == 3}
+                expected_edges = {
+                    e["id"] for e in edges if e["from"] in common and e["to"] in common
+                }
+                assert len(common) == 78 and len(expected_edges) == 72
+                assert (
+                    set(page.locator(".core-card").evaluate_all("cs=>cs.map(c=>c.dataset.node)"))
+                    == common
+                )
+                assert (
+                    set(page.locator(".core-edge").evaluate_all("es=>es.map(e=>e.dataset.edge)"))
+                    == expected_edges
+                )
+                expect(page.locator("#core-stats")).to_contain_text("25")
+                expect(page.locator("#core-stats")).to_contain_text("Largest: 34 concepts")
+                assert not page.locator("#browse-view").is_visible()
+                page.locator(".core-card").first.click()
+                expect(page.locator("#network-view")).to_be_visible()
+                page.locator("#back").click()
+                expect(page.locator("#core-view")).to_be_visible()
+                page.locator("#comparison-mode").select_option("volumes")
+                assert page.locator(".core-card").count() == 2
+                assert page.locator(".core-edge").count() == 0
+                page.reload()
+                expect(page.locator("#comparison-mode")).to_have_value("volumes")
+                expect(page.locator(".core-card")).to_have_count(2)
+                page.locator("#comparison-mode").select_option("textbooks")
+                page.locator("#core-threshold").select_option("2")
+                assert page.locator(".core-card").count() == 305
+                assert page.locator(".core-edge").count() == 335
+                page.locator("#core-threshold").select_option("3")
+                page.locator("#core-zoom-in").click()
+                expect(page.locator("#core-zoom-label")).to_have_text("110%")
+                page.locator("#core-center").click()
+                expect(page.locator("#core-zoom-label")).to_have_text("100%")
+                page.locator("#chapters-tab").click()
                 page.wait_for_selector("#board .concept-card")
                 assert (
                     page.locator("#review-status").inner_text()
@@ -183,6 +225,7 @@ def main():
                     expect(page.locator("#graph-count")).to_have_text(
                         f"{entry['nodes']:,} concepts · {entry['edges']:,} connections"
                     )
+                    page.locator("#chapters-tab").click()
                     page.locator("#all-concepts").click()
                     expect(page.locator("#result-count")).to_contain_text(
                         f"{entry['nodes']:,} concepts"
@@ -190,6 +233,13 @@ def main():
 
                 for width in (390, 768, 1440):
                     page.set_viewport_size({"width": width, "height": 900})
+                    page.goto(url + "?core-mobile=" + str(width))
+                    expect(page.locator("#core-view")).to_be_visible()
+                    assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+                    expect(page.locator("#core-stats")).to_contain_text("78")
+                    if width == 390:
+                        page.locator("#core-jump").select_option("isolated")
+                        expect(page.locator(".core-component-title").last).to_be_in_viewport()
                     page.goto(node_url)
                     expect(page.locator("#network-title")).to_have_text(label)
                     assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
@@ -215,7 +265,7 @@ def main():
                 assert not errors, errors
                 browser.close()
             print(
-                "Explorer passed: chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 5 graphs, generic/blank projects, mobile, CSP and private paths."
+                "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 5 graphs, generic/blank projects, mobile, CSP and private paths."
             )
         finally:
             server.shutdown()
