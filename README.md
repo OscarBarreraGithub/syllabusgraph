@@ -2,7 +2,7 @@
 
 **Turn source material into a map of ideas, then shape a course around it.**
 
-![The collection overview: individual books, the shared graph, and their common backbone](docs/overview.png)
+![SyllabusGraph: bring your own material and copy one setup prompt](docs/home.png)
 
 Bring your references. Your coding agent handles installation, extraction, and
 independent review. You decide what to cover and, later, what to teach.
@@ -40,9 +40,10 @@ one slow session. Read its saved state first.”**
 
 The [QFT collection](graphs/subjects/qft/README.md) has four textbook graphs and
 one shared graph: **2,156 concepts and 3,319 relationships**, with book
-correspondences and page references. The website opens with an **overview** of
-the collection, its overlap, and how to explore it. Open the **shared backbone**
-to follow common concepts and their connections in a scrollable, expandable map.
+correspondences and page references. Choose **Explore the demo** from the
+homepage to browse the collection. **Exact overlap** shows detailed records
+explicitly matched across books; it does not count every shared topic or define
+a conceptual backbone. That higher-level map is [unfinished work](docs/graph-abstraction.md).
 Select a concept to inspect evidence or explore its wider dependencies.
 The book index is available separately. No course has been chosen; browsing makes
 no model calls.

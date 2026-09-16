@@ -4,6 +4,11 @@
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph has completed model review**, and the end human audit is pending. All accepted textbook concepts and all 2,857 source relationship identities have reviewed shared realizations or explicit source-scope dispositions.
 
+These checks cover the extracted records and recorded correspondences. A
+consistent concept-level map above those detailed treatments is still missing.
+The website's exact-overlap filter is not that backbone and does not measure
+every topic the books share. See the [abstraction audit](../../../docs/graph-abstraction.md).
+
 | Book graph | Printed pages in accepted units | Concepts | Relationships |
 |---|---|---:|---:|
 | [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–263, 265–345, 347–391, 393–471, 473–649, 651–777, 779, 781–810 | 634 | 844 |

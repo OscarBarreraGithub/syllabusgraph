@@ -41,10 +41,11 @@ def check_navigation(engine, url):
     page.on("pageerror", lambda error: errors.append(str(error)))
     try:
         page.goto(url)
-        expect(page.locator("#overview-title")).to_contain_text("books have in common")
+        expect(page.locator("#home-view")).to_be_visible()
         page.mouse.move(500, 600)
         page.mouse.wheel(0, 600)
         expect(page.locator("html")).not_to_have_js_property("scrollTop", 0)
+        page.locator("#home-demo").click()
         page.locator("#overview-explore").click()
         scroll = page.locator("#core-scroll")
         expect(scroll).to_be_visible()
@@ -113,6 +114,9 @@ def check_navigation(engine, url):
         for width, height in ((390, 844), (768, 900), (1280, 600)):
             page.set_viewport_size({"width": width, "height": height})
             page.goto(url + "?navigation=" + str(width))
+            expect(page.locator("#home-view")).to_be_visible()
+            assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+            page.locator("#home-demo").click()
             expect(page.locator("#overview-view")).to_be_visible()
             assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
             page.locator("#overview-explore").click()
@@ -128,6 +132,7 @@ def check_navigation(engine, url):
             )
             touch_page = touch_context.new_page()
             touch_page.goto(url)
+            touch_page.locator("#home-demo").tap()
             touch_page.locator("#overview-explore").tap()
             touch_scroll = touch_page.locator("#core-scroll")
             box = touch_scroll.bounding_box()
@@ -190,8 +195,14 @@ def main():
                 page.on("pageerror", lambda e: errors.append(str(e)))
                 page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
                 page.goto(url)
+                expect(page.locator("#home-view")).to_be_visible()
+                expect(page.locator("#graph-select")).not_to_be_visible()
+                page.locator("#home-copy").click()
+                assert "SETUP.md" in page.evaluate("navigator.clipboard.readText()")
+                assert "slow, checkpointed mode" in page.evaluate("navigator.clipboard.readText()")
+                page.locator("#home-demo").click()
                 expect(page.locator("#overview-title")).to_have_text(
-                    "What do these books have in common?"
+                    "Explore the example collection."
                 )
                 expect(page.locator("#overview-facts")).to_contain_text("78")
                 expect(page.locator("#overview-books .overview-book")).to_have_count(4)
@@ -364,6 +375,7 @@ def main():
                 for width in (390, 768, 1440):
                     page.set_viewport_size({"width": width, "height": 900})
                     page.goto(url + "?core-mobile=" + str(width))
+                    page.locator("#home-demo").click()
                     expect(page.locator("#overview-view")).to_be_visible()
                     assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
                     page.locator("#overview-explore").click()
@@ -390,6 +402,8 @@ def main():
                     project = initialize(Path(temp) / template, template)
                     build_site([{"path": project.root}], output)
                     page.goto(url + "?example=" + template)
+                    expect(page.locator("#home-view")).to_be_visible()
+                    page.locator("#home-demo").click()
                     expect(page.locator("#overview-view")).to_be_visible()
                     expect(page.locator("#overview-facts")).to_contain_text(str(len(project.nodes)))
                     page.goto(url + "?example=" + template + "#view=browse")

@@ -62,10 +62,13 @@ function show(view) {
   const changed = mode !== view;
   mode = view;
   document.body.dataset.view = view;
-  document.querySelector(".controlbar").hidden = view === "overview";
+  document.querySelector(".controlbar").hidden = ["home", "overview"].includes(
+    view,
+  );
   if (view !== "core") setCoreExpanded(false);
   if (changed) window.scrollTo(0, 0);
   for (const name of [
+    "home",
     "overview",
     "core",
     "browse",
@@ -91,7 +94,8 @@ function saveURL(replace = false) {
   const params = new URLSearchParams({ graph: data.id });
   if (reading) params.set("reader", reading.id);
   if (mode === "network" && selected) params.set("node", selected);
-  if (["overview", "core", "overlap"].includes(mode)) params.set("view", mode);
+  if (["home", "overview", "core", "overlap"].includes(mode))
+    params.set("view", mode);
   if (mode === "browse") params.set("view", "browse");
   if (hasCore()) {
     params.set("compare", corePerspective);
@@ -178,6 +182,8 @@ async function loadGraph(id, params = new URLSearchParams()) {
     renderSearch();
   } else if (hasCore() && params.get("view") === "core") renderCore();
   else if (params.get("view") === "browse") show("browse");
+  else if (params.get("view") === "home" || (!id && !params.get("view")))
+    renderHome();
   else renderOverview();
   saveURL(true);
 }

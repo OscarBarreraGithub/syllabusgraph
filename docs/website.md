@@ -21,18 +21,25 @@ Paths are relative to the catalog file.
 
 ## Reading the map
 
-A graph opens on a scrollable **Overview**. It explains the collection, shows
-its actual counts, and provides a short guide to reading the map. For shared
-graphs, the diagram distinguishes the individual book graphs, the combined
-graph, and their common backbone. Choose **Explore the shared backbone** to
-open concepts independently treated in every compared textbook. **Overview**
-returns to the introduction; the brand link returns to the catalog's first graph.
+The homepage explains **SyllabusGraph**, its workflow, and how to reuse it with
+your own references. Copy the setup prompt directly from the page. The prompt
+selects slow, checkpointed mode and points the coding agent to the full setup
+guide. Usage limits are explained before the example.
+
+![The reusable tool and copyable setup prompt](home.png)
+
+Choose **Explore the demo** to open the collection's **Overview**. It explains
+the book graphs, shared graph, and exact record matches. The example is separate
+from the product homepage. **Overview** returns to the collection introduction;
+the brand link returns to the product homepage.
 
 ![The collection overview and starting point](overview.png)
 
-The **Shared core** workspace shows those concepts with their recorded
-connections and basic statistics. This is a view of the knowledge graph. It
-does not choose a course, reading sequence, audience, or timetable.
+The **Exact overlap** workspace shows records explicitly matched across the
+compared works, with their connections and basic statistics. It is not an
+established conceptual backbone or a count of every shared topic. See the
+[abstraction audit](graph-abstraction.md) for the distinction and missing work.
+It does not choose a course, reading sequence, audience, or timetable.
 
 ![The shared core and overlap statistics](explorer.png)
 

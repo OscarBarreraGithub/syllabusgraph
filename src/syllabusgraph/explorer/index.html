@@ -6,16 +6,16 @@
     <meta name="theme-color" content="#0b1118" />
     <meta
       name="description"
-      content="Explore the shared core of textbook graphs, compare overlap, and follow source-backed connections."
+      content="Turn your source material into reviewed knowledge graphs, then shape a course. Copy one setup prompt to get started with your coding agent."
     />
-    <title>SyllabusGraph · Explore the connections</title>
+    <title>SyllabusGraph · Build your own map of ideas</title>
     <link rel="icon" href="mark.svg" />
     <link rel="stylesheet" href="explorer.css" />
     <script src="overview.js" defer></script>
     <script src="backbone.js" defer></script>
     <script src="explorer.js" defer></script>
   </head>
-  <body data-view="overview">
+  <body data-view="home">
     <a class="skip" href="#workspace">Skip to concepts</a>
     <header class="topbar">
       <a class="brand" href="./"
@@ -23,6 +23,12 @@
       ><span class="top-divider"></span
       ><label class="sr-only" for="graph-select">Choose graph</label
       ><select id="graph-select"></select>
+      <nav class="home-nav" aria-label="SyllabusGraph">
+        <button id="home-demo-nav" class="quiet">Explore the demo</button>
+        <a href="https://github.com/OscarBarreraGithub/syllabusgraph"
+          >GitHub ↗</a
+        >
+      </nav>
       <div class="search-wrap">
         <span aria-hidden="true">⌕</span
         ><label class="sr-only" for="search"
@@ -44,7 +50,7 @@
     <div class="controlbar" hidden>
       <div class="view-tabs" role="group" aria-label="View">
         <button id="overview-tab" aria-pressed="true">Overview</button>
-        <button id="core-tab" aria-pressed="false" hidden>Shared core</button>
+        <button id="core-tab" aria-pressed="false" hidden>Exact overlap</button>
         <button id="chapters-tab" class="active" aria-pressed="true">
           Book index</button
         ><button id="graph-tab" aria-pressed="false">Connections</button
@@ -57,7 +63,146 @@
       <span id="graph-count"></span><a id="download" download>Graph JSON ↓</a>
     </div>
     <main id="workspace">
-      <section id="overview-view" aria-label="Collection overview">
+      <section id="home-view" aria-label="About SyllabusGraph">
+        <div class="overview-hero">
+          <div class="overview-copy">
+            <span class="eyebrow">FROM REFERENCES TO UNDERSTANDING</span>
+            <h1>Your material.<br />A map of ideas.</h1>
+            <p class="overview-intro">
+              Build a knowledge graph from your books and notes. See how ideas
+              connect, compare sources, and use the result to design a course.
+            </p>
+            <div class="overview-actions">
+              <button id="home-copy" class="primary-action">
+                Copy the setup prompt
+              </button>
+              <button id="home-demo" class="secondary-action">
+                Explore the demo →
+              </button>
+            </div>
+            <p class="overview-caption">
+              Paste the prompt into Codex or Claude Code. Your agent handles
+              installation and shows you where your material goes.
+            </p>
+          </div>
+          <div
+            class="collection-diagram"
+            aria-label="From private references to reusable graphs"
+          >
+            <div class="diagram-label">
+              YOUR SOURCES. YOUR SUBJECT. YOUR COURSE.
+            </div>
+            <div class="diagram-book">
+              <span>Books · Papers · Notes</span
+              ><small>Original material stays in your private workspace.</small>
+            </div>
+            <div class="diagram-connector" aria-hidden="true">↓</div>
+            <div class="diagram-shared">
+              <span>Extract and independently review</span
+              ><strong>Knowledge graphs</strong
+              ><small>Concepts, relationships, and source references</small>
+            </div>
+            <div class="diagram-connector" aria-hidden="true">↓</div>
+            <div class="diagram-core">
+              <span>When you are ready to teach</span
+              ><strong>Course plans</strong
+              ><small>Your goals, student background, and available time</small>
+            </div>
+          </div>
+        </div>
+        <section
+          class="overview-section home-workflow"
+          aria-labelledby="home-workflow-title"
+        >
+          <div class="overview-section-heading">
+            <span class="eyebrow">HOW IT WORKS</span>
+            <h2 id="home-workflow-title">
+              Bring the material. Keep the result.
+            </h2>
+          </div>
+          <div class="reading-guide">
+            <article>
+              <span class="guide-number">01</span>
+              <h3>Set up your workspace</h3>
+              <p>
+                Your agent installs the tool and creates a private materials
+                folder. Drop files there or point the agent to them. Agree on
+                scope and models before extraction starts.
+              </p>
+            </article>
+            <article>
+              <span class="guide-number">02</span>
+              <h3>Build and review</h3>
+              <p>
+                Extract concepts and relationships with source references. An
+                independent critic checks the work. Save checkpoints so you can
+                continue another day.
+              </p>
+            </article>
+            <article>
+              <span class="guide-number">03</span>
+              <h3>Explore and reuse</h3>
+              <p>
+                Keep a graph for each source and compare them in a shared graph.
+                Later, choose teaching goals and build a course. Share your
+                derived graphs while keeping source books private.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section
+          class="overview-section home-start"
+          aria-labelledby="home-start-title"
+        >
+          <div>
+            <span class="eyebrow">GET STARTED</span>
+            <h2 id="home-start-title">One prompt for your coding agent.</h2>
+            <p>
+              You provide the references and direction. The linked guide
+              contains the technical setup.
+            </p>
+          </div>
+          <div class="home-prompt-wrap">
+            <pre id="home-prompt"></pre>
+            <button id="home-copy-secondary">Copy prompt</button>
+          </div>
+          <aside class="home-usage">
+            <strong
+              >Start small. Graph creation can use substantial model
+              allowance.</strong
+            >
+            <p>
+              The prompt selects slow mode: up to two worker calls per session,
+              one worker at a time, then a checkpoint. Resume when you have
+              allowance—even weeks later. These are call limits, not a token or
+              spending cap. Browsing existing graphs makes no model calls.
+            </p>
+            <a
+              href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/usage-estimates.md"
+              >Read the usage guide ↗</a
+            >
+          </aside>
+        </section>
+        <section class="overview-next">
+          <div>
+            <span class="eyebrow">TRY IT FIRST</span>
+            <h2 id="home-demo-title">Explore a worked example.</h2>
+            <p id="home-demo-caption">
+              The included collection demonstrates source graphs and their
+              recorded correspondences. Your own project starts with your
+              subject and references.
+            </p>
+          </div>
+          <div class="overview-next-actions">
+            <button id="home-demo-bottom">Open the demo →</button
+            ><a
+              href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/README.md"
+              >Read the field guide ↗</a
+            ><span>Open source · MIT licensed</span>
+          </div>
+        </section>
+      </section>
+      <section id="overview-view" hidden aria-label="Collection overview">
         <div class="overview-hero">
           <div class="overview-copy">
             <span class="eyebrow" id="overview-eyebrow"
@@ -69,7 +214,7 @@
             </p>
             <div class="overview-actions">
               <button class="primary-action" id="overview-explore">
-                Explore the shared backbone
+                Explore recorded overlap
                 <span aria-hidden="true">→</span></button
               ><button class="secondary-action" id="overview-all">
                 Browse all concepts
@@ -94,7 +239,7 @@
             <div id="diagram-core-wrap">
               <div class="diagram-connector" aria-hidden="true">↓</div>
               <div class="diagram-core">
-                <span>Common backbone</span
+                <span>Exact record overlap</span
                 ><strong id="diagram-core-count"></strong
                 ><small id="diagram-core-note"></small>
               </div>
@@ -118,7 +263,7 @@
           <div class="reading-guide">
             <article>
               <span class="guide-number">01</span>
-              <h3>Start with the overlap</h3>
+              <h3>Inspect recorded overlap</h3>
               <p>
                 Each card is a concept. The common backbone keeps ideas
                 independently treated in every compared textbook. Widen the
@@ -189,11 +334,11 @@
           </div>
         </section>
       </section>
-      <section id="core-view" hidden aria-label="Shared graph backbone">
+      <section id="core-view" hidden aria-label="Exact record overlap">
         <div class="core-heading">
           <div>
             <span class="eyebrow">THE SHARED KNOWLEDGE GRAPH</span>
-            <h1>The shared backbone</h1>
+            <h1>Exact record overlap</h1>
             <p id="core-description"></p>
           </div>
           <div class="core-controls">

@@ -1,5 +1,11 @@
 /* A scrollable introduction. Every count comes from the selected public graph. */
 "use strict";
+function renderHome() {
+  show("home");
+  $("home-demo-title").textContent = `${data.title}: a worked example.`;
+  $("home-demo-caption").textContent =
+    `${fmt(nodes.length)} graph records with source references. Explore the included collection, then build your own from your subject and references. The demo is separate from your workspace.`;
+}
 function overviewCore() {
   if (!hasCore()) return null;
   const perspectives = data.backbone.perspectives;
@@ -17,7 +23,7 @@ function renderOverview() {
   const books = catalog.graphs.filter((g) => bookIDs.has(g.project_id));
   $("overview-eyebrow").textContent = data.title.toLocaleUpperCase();
   $("overview-title").textContent = core
-    ? "What do these books have in common?"
+    ? "Explore the example collection."
     : nodes.length
       ? "Get to know this graph."
       : "Your map of ideas starts here.";
@@ -27,7 +33,7 @@ function renderOverview() {
       ? `Explore ${fmt(nodes.length)} concepts and ${fmt(edges.length)} recorded relationships. Start with the concept index or search for an idea, then follow its connections back to the sources.`
       : "Bring your material and work with your coding agent to build a source-backed knowledge graph. The guide walks you through setup, scope, extraction, and independent review.";
   $("overview-explore").textContent = core
-    ? "Explore the shared backbone →"
+    ? "Inspect exact record overlap →"
     : nodes.length
       ? "Explore the concepts →"
       : "Get set up →";
@@ -68,9 +74,9 @@ function renderOverview() {
   $("diagram-core-wrap").hidden = !core;
   if (core) {
     $("diagram-core-count").textContent =
-      `${fmt(core.level.nodes.length)} concepts in common`;
+      `${fmt(core.level.nodes.length)} records matched`;
     $("diagram-core-note").textContent =
-      `Independently treated in all ${core.scope.units.length} compared textbooks`;
+      `Explicit matches across all ${core.scope.units.length} works; not a count of shared topics`;
   }
   const facts = $("overview-facts");
   facts.replaceChildren();
@@ -78,7 +84,7 @@ function renderOverview() {
     ? [
         [
           fmt(core.level.nodes.length),
-          "Concepts in the common backbone",
+          "Records matched across every work",
           `Matched across all ${core.scope.units.length} textbooks`,
         ],
         [
@@ -107,7 +113,7 @@ function renderOverview() {
     facts.append(stat);
   }
   $("overview-structure").textContent = core
-    ? `The common backbone is a subset of the shared graph. It has ${core.level.components.length} separate connected pieces, rather than one continuous chain. Some paths run through ideas outside this overlap. Connections keep their source-specific evidence; their presence does not mean every book asserts the same relationship.`
+    ? `This count measures explicit matches between detailed records: concepts, results, methods, and assumptions. It does not measure all topics the books share. Different treatments of one topic can remain separate. Filtering to these records leaves ${core.level.components.length} connected pieces and removes paths through other records. This intersection is not yet a conceptual backbone.`
     : "Concepts and relationships retain their evidence. The index helps you find an idea; its neighborhood shows where that idea fits.";
   $("overview-wider").hidden = !core || core.scope.units.length <= 2;
   if (core && core.scope.units.length > 2) {
@@ -121,10 +127,10 @@ function renderOverview() {
     };
   }
   document.querySelector(".reading-guide article:first-child h3").textContent =
-    core ? "Start with the overlap" : "Find a concept";
+    core ? "Inspect exact matches" : "Find a concept";
   document.querySelector(".reading-guide article:first-child p").textContent =
     core
-      ? "Each card is a concept. The common backbone keeps ideas independently treated in every compared textbook. Widen the overlap to include ideas shared by fewer books."
+      ? "Each card is an extracted record. This filter keeps records explicitly matched to independent treatments in every compared work. A topic can appear in all the books through distinct records and therefore be absent here."
       : "Open the index to browse concepts, or use search to find an idea by name. You can explore a knowledge graph before deciding how to teach it.";
   $("overview-books-heading").textContent = core
     ? "The individual book graphs."
@@ -156,6 +162,16 @@ function renderOverview() {
   $("overview-review").textContent = $("review-status").textContent;
 }
 function bindOverviewControls() {
+  $("home-prompt").textContent = $("setup-prompt").textContent.trim();
+  for (const id of ["home-copy", "home-copy-secondary"])
+    $(id).onclick = () => copy($("home-prompt").textContent);
+  for (const id of ["home-demo", "home-demo-nav", "home-demo-bottom"])
+    $(id).onclick = () => {
+      if (!data)
+        return say("The demo is still loading. Please try again shortly.");
+      renderOverview();
+      saveURL();
+    };
   $("overview-tab").onclick = () => {
     renderOverview();
     saveURL();

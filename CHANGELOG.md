@@ -6,6 +6,11 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Separate the reusable tool homepage and copyable setup prompt from the example
+  collection. Label the intersection as exact record overlap and document why
+  it is not a conceptual backbone or a measure of all shared textbook topics.
+  Record the missing conceptual layer as future work.
+
 - Open with a scrollable collection overview, real graph statistics, a visual
   explanation of book/shared/core graphs, and clear exploration choices. Give
   the graph more space, with an expanded view, visible scrollbars, pan buttons,

@@ -59,14 +59,14 @@ function renderCore(reset = true) {
   for (const [value, label, note] of [
     [
       fmt(count),
-      "Common concepts",
+      "Matched records",
       coreMinimum === total
         ? `Independently treated in all ${total}`
         : `Independently treated in ${coreMinimum}+`,
     ],
     [
       fmt(level.edges.length),
-      "Connections within the core",
+      "Connections in this filter",
       `${level.relations.prerequisite || 0} prerequisite relations`,
     ],
     [
@@ -146,7 +146,7 @@ function renderCore(reset = true) {
       : []),
   ]);
   $("core-map-caption").textContent =
-    `${count} concepts · ${level.edges.length} recorded connections · Click a concept to inspect it`;
+    `${count} matched records · ${level.edges.length} connections · Exact matches, not all shared topics`;
   renderCoreGraph(level, connected);
   if (reset) {
     $("core-scroll").scrollTop = 0;
