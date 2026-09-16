@@ -32,7 +32,7 @@ def reveal_lanes(page):
     raise AssertionError("Lane expansion did not terminate")
 
 
-def check_navigation(engine, url):
+def check_navigation(engine, url, pilot):
     """Use browser input, not assigned scroll offsets, to verify the workspace."""
     browser = engine.launch()
     context = browser.new_context(viewport={"width": 1440, "height": 900})
@@ -126,6 +126,62 @@ def check_navigation(engine, url):
             assert scroll.bounding_box()["height"] > height * 0.55
             assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
             page.keyboard.press("Escape")
+        # A concept layer must show exactly its reviewed records, fit the desktop,
+        # and lead to the underlying evidence without losing the return route.
+        page.set_viewport_size({"width": 1440, "height": 900})
+        page.goto(url)
+        page.locator("#home-demo").click()
+        page.locator("#overview-pilot").click()
+        points = page.locator(".concept-point")
+        expect(points).to_have_count(len(pilot["nodes"]))
+        assert set(points.evaluate_all("ps => ps.map(p => p.dataset.node)")) == {
+            n["id"] for n in pilot["nodes"]
+        }
+        assert set(page.locator(".concept-link").evaluate_all(
+            "ps => ps.map(p => p.dataset.edge)"
+        )) == {e["id"] for e in pilot["edges"]}
+        map_scroll = page.locator("#concept-map-scroll")
+        assert map_scroll.evaluate(
+            "s => s.scrollHeight <= s.clientHeight + 1 && s.scrollWidth <= s.clientWidth + 1"
+        )
+        assert points.evaluate_all("""ps => {
+            const v = document.getElementById('concept-map-scroll').getBoundingClientRect();
+            const boxes = ps.map(p => p.getBoundingClientRect());
+            return boxes.every(b => b.top >= v.top && b.bottom <= v.bottom &&
+                b.left >= v.left && b.right <= v.right) && boxes.every((a, i) =>
+                boxes.slice(i + 1).every(b => a.right <= b.left || b.right <= a.left ||
+                    a.bottom <= b.top || b.bottom <= a.top));
+        }""")
+        points.first.focus()
+        page.keyboard.press("Enter")
+        expect(points.first).to_have_attribute("aria-pressed", "true")
+        expect(page.locator("#concept-map-detail h2")).to_have_text(
+            points.first.get_attribute("aria-label")
+        )
+        page.locator("#concept-map-detail > button").click()
+        expect(page.locator("#network-view")).to_be_visible()
+        page.reload()
+        page.locator("#back").click()
+        expect(page.locator("#map-view")).to_be_visible()
+        points.first.click()
+        page.locator(".concept-treatment button").first.click()
+        expect(page.locator("#graph-select")).not_to_have_value("qft-path-integrals")
+        expect(page.locator("#network-view")).to_be_visible()
+        page.go_back()
+        expect(page.locator("#map-view")).to_be_visible()
+        fitted = page.locator("#concept-map-svg").bounding_box()["width"]
+        page.locator("#concept-map-in").click()
+        assert page.locator("#concept-map-svg").bounding_box()["width"] > fitted
+        page.locator("#concept-map-fit").click()
+        assert abs(page.locator("#concept-map-svg").bounding_box()["width"] - fitted) < 1
+        page.set_viewport_size({"width": 390, "height": 844})
+        assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+        map_scroll.focus()
+        page.keyboard.press("ArrowRight")
+        expect(map_scroll).not_to_have_js_property("scrollLeft", 0)
+        page.keyboard.press("ArrowDown")
+        expect(map_scroll).not_to_have_js_property("scrollTop", 0)
+
         if engine.name == "chromium":
             touch_context = browser.new_context(
                 viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True
@@ -366,6 +422,9 @@ def main():
                     expect(page.locator("#graph-count")).to_have_text(
                         f"{entry['nodes']:,} concepts · {entry['edges']:,} connections"
                     )
+                    if entry.get("kind") == "concept-map":
+                        expect(page.locator("#map-view")).to_be_visible()
+                        page.locator("#overview-tab").click()
                     expect(page.locator("#overview-view")).to_be_visible()
                     page.locator("#overview-all").click()
                     expect(page.locator("#result-count")).to_contain_text(
@@ -415,10 +474,11 @@ def main():
                 assert not errors, errors
                 browser.close()
                 build_catalog(ROOT / "site/catalog.json", output)
+                pilot = json.loads((output / "data/qft-path-integrals.json").read_text())["knowledge"]
                 for engine in (p.chromium, p.webkit):
-                    check_navigation(engine, url)
+                    check_navigation(engine, url, pilot)
             print(
-                "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 5 graphs, generic/blank projects, mobile, CSP and private paths; actual wheel/drag/keyboard navigation in Chromium and WebKit."
+                "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 6 graphs, generic/blank projects, mobile, CSP and private paths; compact concept map and actual wheel/drag/keyboard navigation in Chromium and WebKit."
             )
         finally:
             server.shutdown()

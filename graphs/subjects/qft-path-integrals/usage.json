@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "scope": "Two worker calls for a 14-record concept-layer pilot; excludes UI implementation and orchestrator usage.",
+  "dispatches": 2,
+  "workers": 2,
+  "max_concurrent_workers": 1,
+  "corrections": 0,
+  "model_workflow_elapsed_seconds": 424.83,
+  "time_basis": "First dispatch ticket to accepted graph promotion; includes orchestration between calls, not active worker time.",
+  "tokens": null,
+  "tokens_note": "The host did not expose verified per-call token counters. Request bytes are not tokens or cost.",
+  "requests": [
+    {
+      "stage": "extract",
+      "model": "gpt-5.6-terra",
+      "effort": "high",
+      "issued_at": "2026-09-16T20:48:27.254978+00:00",
+      "completed_at": "2026-09-16T20:53:43.574418+00:00",
+      "request_json_bytes": 62169,
+      "result_json_bytes": 18844
+    },
+    {
+      "stage": "critique",
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "issued_at": "2026-09-16T20:53:55.935527+00:00",
+      "completed_at": "2026-09-16T20:55:31.897019+00:00",
+      "request_json_bytes": 83270,
+      "result_json_bytes": 1476
+    }
+  ],
+  "outcome": "accepted and promoted; human inspection pending",
+  "input_records": 14,
+  "output_concepts": 9,
+  "output_relationships": 6
+}

@@ -43,7 +43,9 @@ one shared graph: **2,156 concepts and 3,319 relationships**, with book
 correspondences and page references. Choose **Explore the demo** from the
 homepage to browse the collection. **Exact overlap** shows detailed records
 explicitly matched across books; it does not count every shared topic or define
-a conceptual backbone. That higher-level map is [unfinished work](docs/graph-abstraction.md).
+a conceptual backbone. Try **Explore the concept pilot** for a compact
+[nine-concept example](graphs/subjects/qft-path-integrals/README.md) with book
+treatments on selection. The full subject map is [unfinished work](docs/graph-abstraction.md).
 Select a concept to inspect evidence or explore its wider dependencies.
 The book index is available separately. No course has been chosen; browsing makes
 no model calls.

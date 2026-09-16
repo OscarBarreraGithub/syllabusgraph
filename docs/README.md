@@ -20,6 +20,7 @@ do not start extraction or renew a work budget just to answer.
 | Choosing how much to run | [Slow sessions, usage, and resuming](usage-estimates.md) |
 | Reading PDFs | [Reading quality, page mapping, and tool choices](pdf-reading.md) |
 | Building a graph | [Source workflow](source-workflow.md) · [Native agents](agent-setup.md) |
+| Many nodes, weak overlap, or an unreadable map | [Graph troubleshooting for the orchestrator](graph-troubleshooting.md) |
 | Running a large extraction | [What the QFT run taught us](qft-run-retrospective.md) |
 | Exploring results | [Graph explorer and website](website.md) · [Graph library](../graphs/README.md) |
 | Shaping a course | [Project and plan format](project-format.md) |

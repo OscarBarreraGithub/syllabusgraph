@@ -1,0 +1,383 @@
+nodes:
+- id: qft.pilot.1pi-tree-reconstruction
+  label: 1PI tree reconstruction
+  summary: The quantum effective action generates one-particle-irreducible vertices,
+    and connected amplitudes are reconstructed as trees of 1PI subgraphs. External-field
+    conventions remain specific to the contributing source treatments.
+  kind: method
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.effective-action-1pi-tree-reconstruction
+    note: Contributes the 1PI and tree-reconstruction treatment with its stated conditions
+      and notation.
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-1pi-generating-functional
+    note: Contributes the 1PI generating-functional interpretation and connected reconstruction
+      from full propagators.
+  - project: schwartz
+    node: schwartz.one-particle-irreducible-effective-action
+    note: Contributes its 1PI tree-reconstruction method.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.effective-action-1pi-tree-reconstruction
+    pages:
+    - 13
+- id: qft.pilot.classical-stationary-phase
+  label: Classical stationary phase
+  summary: In the hbar-to-zero limit, rapidly varying nonstationary phases cancel,
+    leaving action extrema and the classical Euler–Lagrange solutions.
+  kind: result
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: schwartz
+    node: schwartz.path-integral-classical-stationary-phase-limit
+    note: Contributes the hbar-to-zero phase-cancellation and action-extremum argument.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.classical-stationary-phase-limit
+    pages:
+    - 8
+- id: qft.pilot.connected-source-functional
+  label: Connected source functional
+  summary: Coupling classical currents defines Z[J]; W[J] generates connected vacuum
+    diagrams and source derivatives give expectation values in the sourced theory.
+    The Peskin–Schroeder Grassmann-source construction remains a fermionic extension
+    with independent sources and ordered derivatives, without importing its signs
+    into bosonic source conventions.
+  kind: representation
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.external-source-generating-functional
+    note: Contributes the source functional, connected diagrams, and source-derivative
+      treatment.
+  - project: peskin-schroeder
+    node: peskin-schroeder.dirac-generating-functional-grassmann-sources
+    note: Contributes independent Grassmann eta and eta-bar sources with ordered derivative
+      and spinor-sign conventions.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.external-source-generating-functional
+    pages:
+    - 11
+- id: qft.pilot.correlators-and-sources
+  label: Correlators and sources
+  summary: Normalized path integrals with field insertions represent vacuum time-ordered
+    correlators. A scalar source functional generates those insertions by functional
+    differentiation, with division by Z[0] and its delta-function convention retained.
+    The Weinberg I external-source theorem remains a separate in/out route with its
+    fermionic source-parity and antisymmetry qualifications.
+  kind: representation
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.vacuum-correlators-from-scalar-path-integral
+    note: Contributes the vacuum projection and zero-insertion normalization route.
+  - project: schwartz
+    node: schwartz.path-integral-correlator-representation
+    note: Contributes the normalized time-ordered correlator representation.
+  - project: schwartz
+    node: schwartz.path-integral-time-ordering-result
+    note: Contributes the time-slice insertion route to ordering.
+  - project: peskin-schroeder
+    node: peskin-schroeder.functional-derivative-and-scalar-source
+    note: Contributes the scalar-source and functional-derivative convention.
+  - project: schwartz
+    node: schwartz.source-generating-functional-method
+    note: Contributes the source-to-insertions route for time-ordered correlators.
+  - project: weinberg-1
+    node: weinberg-1.external-source-functional-derivative-method
+    note: Contributes the distinct in/out external-source theorem, including its fermionic-current
+      parity and antisymmetry scope.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.normalized-vacuum-correlators-from-path-integrals
+    pages:
+    - 5
+  - source: reviewed-qft-records
+    section: qft.align021.source-generating-functional-and-functional-derivatives
+    pages:
+    - 6
+- id: qft.pilot.free-field-contractions
+  label: Free-field contractions
+  summary: The free scalar Feynman propagator is the time-ordered two-point Green
+    function and supplies the analytic value of contractions. Gaussian functional
+    integrals yield the pairing structure through inverse kernels, while the operator
+    Wick theorem gives time ordering as normal ordering plus all pair contractions;
+    these are retained as distinct functional and operator routes. Propagator conventions
+    and the bosonic-ordering qualification remain source-specific.
+  kind: method
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.gaussian-functional-wick-contractions
+    note: Contributes the direct scalar Fourier/Gaussian pairing calculation.
+  - project: weinberg-1
+    node: weinberg-1.gaussian-pairing-wick-formula-proof
+    note: Contributes the finite-dimensional pairing theorem used in its functional
+      route.
+  - project: weinberg-1
+    node: weinberg-1.path-integral-bosonic-gaussian-pairing-route
+    note: Contributes the bosonic functional-integral application of Gaussian pairings.
+  - project: peskin-schroeder
+    node: peskin-schroeder.scalar-wick-theorem
+    note: Contributes the free-field normal-ordering theorem and fully contracted
+      vacuum consequence.
+  - project: schwartz
+    node: schwartz.normal-ordering-and-wicks-theorem
+    note: Contributes its normal-ordering statement and induction-proof treatment.
+  - project: peskin-schroeder
+    node: peskin-schroeder.feynman-scalar-propagator
+    note: Contributes the i-epsilon scalar Green-function and internal-line treatment.
+  - project: schwartz
+    node: schwartz.feynman-propagator-time-ordering
+    note: Contributes the free time-ordered two-point derivation.
+  - project: schwartz
+    node: schwartz.feynman-propagator-iepsilon-contour
+    note: Contributes the opposite-side poles and off-shell energy-integral treatment.
+  - project: schwartz
+    node: schwartz.scalar-propagator-requires-bosonic-ordering
+    note: Contributes the comparison showing the scalar covariant propagator's bosonic-ordering
+      condition.
+  - project: weinberg-1
+    node: weinberg-1.feynman-propagator-fourier-green-function
+    note: Contributes the compatible scalar Fourier Green function with its metric
+      and differential-equation conventions.
+  - project: schwartz
+    node: schwartz.appendix-sign-propagator-and-covariant-derivative-conventions
+    note: Contributes the bounded scalar propagator formula and mostly-minus convention.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.gaussian-functional-wick-contractions
+    pages:
+    - 4
+  - source: reviewed-qft-records
+    section: qft.align016.scalar-wick-theorem
+    pages:
+    - 9
+  - source: reviewed-qft-records
+    section: qft.align015.feynman-scalar-propagator
+    pages:
+    - 10
+- id: qft.pilot.inverse-1pi-kernel
+  label: Inverse 1PI kernel
+  summary: Differentiating the Legendre identities relates the full two-point function
+    to the inverse effective-action two-point kernel, subject to source conventions.
+    The inverse-kernel zeroes determine mass poles; the Peskin–Schroeder and Schwartz
+    contributions retain their scoped inverse-propagator and inverse-two-point interpretations
+    without notation-level identity with Weinberg II.
+  kind: result
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: weinberg-2
+    node: weinberg-2.full-two-point-function-is-inverse-1pi-kernel
+    note: Contributes the Legendre-identity inverse-kernel relation and its source
+      conventions.
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-1pi-generating-functional
+    note: Contributes the second-functional-derivative inverse-propagator and mass-pole
+      interpretation; it does not identify notation with Weinberg II.
+  - project: schwartz
+    node: schwartz.1pi-action-vacuum-minimum-and-inverse-two-point-function
+    note: Contributes the inverse-two-point portion only.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.full-two-point-function-is-inverse-1pi-kernel
+    pages:
+    - 14
+- id: qft.pilot.legendre-effective-action
+  label: Legendre effective action
+  summary: The source functional defines an expectation-value field, and its functional
+    Legendre transform defines the quantum effective action with derivative fixed
+    by the source. At zero source, stationary configurations give the quantum field
+    equation. The Peskin–Schroeder vacuum-energy convention and Weinberg II connected-functional
+    convention are retained without identifying their notation.
+  kind: result
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.effective-action-legendre-transform
+    note: Contributes the vacuum-energy Legendre construction, sign convention, and
+      zero-source stationary-state interpretation.
+  - project: weinberg-2
+    node: weinberg-2.legendre-quantum-effective-action
+    note: Contributes the connected-functional Legendre construction and its source-derivative
+      convention.
+  - project: schwartz
+    node: schwartz.legendre-transform-connected-functional-and-1pi-action
+    note: Contributes its Legendre-transform proof direction and conventions.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.legendre-quantum-effective-action
+    pages:
+    - 12
+- id: qft.pilot.path-integral-constructions
+  label: Path-integral constructions
+  summary: 'Time slicing gives an endpoint-fixed quantum-mechanical path sum and also
+    supports phase-space and field-theory constructions. The phase-space Hamiltonian
+    symbol remains prescription-dependent: the Peskin–Schroeder Weyl treatment and
+    Weinberg I Q-left/P-right treatment are retained as distinct conventions. The
+    field reduction retains both Schwartz''s scalar constant-kernel route and Weinberg
+    I''s qualified general quadratic-kernel route.'
+  kind: method
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: peskin-schroeder
+    node: peskin-schroeder.configuration-space-path-integral
+    note: Contributes the endpoint-fixed configuration-path construction and stationary-phase
+      scope.
+  - project: peskin-schroeder
+    node: peskin-schroeder.time-sliced-path-integral-normalization
+    note: Contributes the discrete normalization and initial-condition check.
+  - project: schwartz
+    node: schwartz.quantum-mechanical-path-integral-derivation
+    note: Contributes the position/momentum time-slicing and Gaussian derivation route.
+  - project: peskin-schroeder
+    node: peskin-schroeder.phase-space-path-integral-and-weyl-ordering
+    note: Contributes the Weyl-ordering correction specific to its phase-space construction.
+  - project: weinberg-1
+    node: weinberg-1.bosonic-phase-space-path-integral
+    note: Contributes a canonical-slice phase-space route with Q-left/P-right ordering;
+      it is not identified with the Weyl prescription.
+  - project: weinberg-1
+    node: weinberg-1.path-integral-measure-ordering-and-euclidean-qualification
+    note: Contributes the ordering, measure, and Euclidean-continuation qualifications
+      for the Weinberg I route.
+  - project: schwartz
+    node: schwartz.field-theory-path-integral-from-hamiltonian
+    note: Contributes the scalar-Hamiltonian Gaussian-momentum specialization.
+  - project: weinberg-1
+    node: weinberg-1.quadratic-momentum-lagrangian-path-integral-reduction
+    note: Contributes the quadratic momentum-integration route under its kernel and
+      insertion conditions.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.time-sliced-quantum-mechanical-path-integral
+    pages:
+    - 1
+  - source: reviewed-qft-records
+    section: qft.align021.phase-space-path-integral-weyl-ordering
+    pages:
+    - 2
+  - source: reviewed-qft-records
+    section: qft.align021.field-theory-path-integral-from-hamiltonian
+    pages:
+    - 3
+- id: qft.pilot.path-integral-perturbation-series
+  label: Path-integral perturbation series
+  summary: For the stated interaction, expanding Z[J] turns interaction fields into
+    free-theory source derivatives; normalized derivatives reproduce the canonical
+    Feynman-rule perturbation series.
+  kind: method
+  group: qft.pilot.path-integrals-effective-actions
+  origins:
+  - project: schwartz
+    node: schwartz.interacting-path-integral-perturbation-series
+    note: Contributes the Z0[J]-derivative expansion for the stated interaction.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.schwartz-interacting-path-integral-series
+    pages:
+    - 7
+edges:
+- id: qft.pilot.e-connected-source-legendre
+  from: qft.pilot.connected-source-functional
+  to: qft.pilot.legendre-effective-action
+  relation: prerequisite
+  source_level: use
+  target_level: derive
+  necessity: necessary
+  rationale: The Legendre definition inverts the source-to-mean-field map generated
+    by W[J].
+  failure_mode: The source J_phi and the Legendre transform are undefined.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.external-source-generating-functional
+    pages:
+    - 11
+- id: qft.pilot.e-constructions-correlator-route
+  from: qft.pilot.path-integral-constructions
+  to: qft.pilot.correlators-and-sources
+  relation: alternative
+  source_level: derive
+  target_level: derive
+  necessity: typical
+  rationale: Schwartz's time-slicing and insertion route establishes the normalized-correlator
+    representation independently of the source-derivative route retained in the target.
+  failure_mode: Making this construction compulsory would discard the independently
+    supported Peskin–Schroeder correlator route.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.field-theory-path-integral-from-hamiltonian
+    pages:
+    - 3
+- id: qft.pilot.e-constructions-stationary-phase
+  from: qft.pilot.path-integral-constructions
+  to: qft.pilot.classical-stationary-phase
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The retained stationary-phase argument is applied to the field functional
+    integral constructed by the Schwartz route.
+  failure_mode: The limit has no derived functional-integral object to which the argument
+    can be applied.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.field-theory-path-integral-from-hamiltonian
+    pages:
+    - 3
+- id: qft.pilot.e-correlators-perturbation-series
+  from: qft.pilot.correlators-and-sources
+  to: qft.pilot.path-integral-perturbation-series
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The interaction expansion represents interaction fields by functional
+    source derivatives.
+  failure_mode: The source-derivative expansion cannot be constructed.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align021.source-generating-functional-and-functional-derivatives
+    pages:
+    - 6
+- id: qft.pilot.e-legendre-1pi-trees
+  from: qft.pilot.legendre-effective-action
+  to: qft.pilot.1pi-tree-reconstruction
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The tree reconstruction uses the Legendre identity to identify its stationary
+    point with the expectation-value field.
+  failure_mode: The stationary point cannot be identified with the source-defined
+    field.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.legendre-quantum-effective-action
+    pages:
+    - 12
+- id: qft.pilot.e-legendre-inverse-kernel
+  from: qft.pilot.legendre-effective-action
+  to: qft.pilot.inverse-1pi-kernel
+  relation: prerequisite
+  source_level: derive
+  target_level: derive
+  necessity: necessary
+  rationale: The inverse-kernel relation follows by differentiating the two Legendre
+    identities.
+  failure_mode: The full two-point function and 1PI kernel have no derived inverse
+    relation.
+  evidence:
+  - source: reviewed-qft-records
+    section: qft.align011.legendre-quantum-effective-action
+    pages:
+    - 12
+groups:
+- id: qft.pilot.path-integrals-effective-actions
+  title: Path integrals and effective actions
+  question: How do path-integral constructions represent quantum fields and lead to
+    effective-action relations?
+motivations: []

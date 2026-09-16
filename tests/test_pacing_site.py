@@ -158,10 +158,14 @@ def test_site_overlap_excludes_imported_textbook_inputs(tmp_path):
 
     root = Path(__file__).resolve().parents[1]
     manifest = site.build_catalog(root / "site/catalog.json", tmp_path / "site")
-    assert len(manifest["graphs"]) == 5
-    payload = json.loads((tmp_path / "site/data/qft.json").read_text(encoding="utf-8"))
+    assert len(manifest["graphs"]) == len(json.loads((root / "site/catalog.json").read_text())["graphs"])
+    payloads = {
+        entry["project_id"]: json.loads((tmp_path / "site" / entry["file"]).read_text(encoding="utf-8"))
+        for entry in manifest["graphs"]
+    }
     bank = inspect_bank(root / "graphs")
     for row in bank["overlap"]:
+        payload = payloads[row["shared_graph"]]
         expected = set(row["shared_nodes"])
         actual = {
             n for n, books in payload["direct_books"].items() if set(row["books"]) <= set(books)

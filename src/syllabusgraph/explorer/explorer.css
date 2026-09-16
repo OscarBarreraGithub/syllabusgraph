@@ -2188,3 +2188,185 @@ body[data-view="home"] .statusbar {
     font-size: 11px;
   }
 }
+/* A concept layer is a spatial map; treatments stay in the selection panel. */
+.concept-heading {
+  padding: 14px 28px;
+}
+.concept-heading h1 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+.concept-component-label {
+  fill: #7895a5;
+  font: 10px var(--sans);
+  letter-spacing: 1px;
+}
+#concept-map-count {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.concept-map-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.concept-map-main {
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#concept-map-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  touch-action: pan-x pan-y;
+  cursor: grab;
+  background: radial-gradient(ellipse at 45% 45%, #11283299, transparent 70%);
+}
+#concept-map-svg {
+  display: block;
+  margin: auto;
+}
+.concept-link {
+  fill: none;
+  stroke: #5b7988;
+  stroke-width: 1.6;
+  opacity: 0.75;
+}
+.concept-link.other {
+  stroke-dasharray: 6 5;
+}
+.concept-link.lit {
+  stroke: var(--cyan);
+  stroke-width: 2.5;
+  opacity: 1;
+}
+.concept-link.dim {
+  opacity: 0.16;
+}
+.concept-point {
+  cursor: pointer;
+  outline: none;
+}
+.concept-point.dim {
+  opacity: 0.35;
+}
+.concept-point text {
+  fill: #dbeaf2;
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 500;
+}
+.concept-point .concept-treatments {
+  font-size: 13px;
+  fill: #7895a5;
+  font-weight: 400;
+}
+.concept-halo {
+  fill: #14333c;
+  stroke: #306372;
+  stroke-width: 1;
+}
+.concept-dot {
+  fill: var(--cyan);
+  stroke: #b9f6f7;
+  stroke-width: 1.5;
+}
+.concept-point:hover .concept-halo,
+.concept-point:focus .concept-halo,
+.concept-point.selected .concept-halo {
+  fill: #205864;
+  stroke: var(--cyan);
+  stroke-width: 2;
+}
+.concept-map-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--line);
+}
+.concept-map-tools span {
+  font-size: 10px;
+  color: var(--muted);
+  margin-right: auto;
+}
+.concept-map-tools button {
+  padding: 5px 10px;
+}
+.concept-map-detail {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 25px;
+  overflow: auto;
+  border-left: 1px solid var(--line);
+  background: #0e1922;
+}
+.concept-map-detail h2 {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 15px 0;
+}
+.concept-map-detail h3 {
+  font-size: 13px;
+  margin-top: 25px;
+}
+.concept-map-detail p {
+  color: #9eb3bf;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.concept-map-detail small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.concept-treatment {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.concept-treatment button {
+  text-align: left;
+  color: var(--cyan);
+}
+.concept-treatment p {
+  font-size: 11px;
+  margin: 10px 0 0;
+}
+@media (max-width: 760px) {
+  body[data-view="map"] {
+    height: auto;
+    min-height: 100dvh;
+  }
+  body[data-view="map"] main {
+    flex: none;
+  }
+  .concept-heading {
+    display: block;
+    padding: 18px;
+  }
+  .concept-heading h1 {
+    font-size: 23px;
+  }
+  .concept-heading p {
+    margin: 8px 0;
+  }
+  .concept-map-body {
+    display: block;
+  }
+  #concept-map-scroll {
+    height: 460px;
+    flex: none;
+  }
+  .concept-map-tools span {
+    max-width: 210px;
+  }
+  .concept-map-detail {
+    width: 100%;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}

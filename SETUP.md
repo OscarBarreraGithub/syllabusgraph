@@ -63,6 +63,10 @@ For the editable, self-authored course example, use `syllabusgraph demo` (8766).
 
 ## 3. Create or resume their workspace
 
+Before expanding a graph, read [graph troubleshooting](docs/graph-troubleshooting.md).
+Begin with a bounded, inspectable pilot. Source coverage, conceptual organization,
+cross-source correspondence, and visual usability need separate checks.
+
 Look for an existing user project and inspect its `project.yaml`, generated
 `AGENTS.md`, `COURSE_GUIDANCE.md`, `syllabusgraph status`, `agent policy`, and
 `work status`. Preserve accepted settings and completed work. If no project

@@ -16,6 +16,9 @@ function overviewCore() {
 }
 function renderOverview() {
   show("overview");
+  const pilot = catalog.graphs.find((g) => g.kind === "concept-map");
+  $("overview-pilot").hidden = !pilot || isConceptMap();
+  if (pilot) $("overview-pilot").onclick = () => navigateGraph(pilot.id);
   const core = overviewCore();
   const bookIDs = core
     ? new Set(core.scope.units.flatMap((u) => u.projects))
@@ -43,7 +46,8 @@ function renderOverview() {
       renderCore();
       saveURL();
     } else if (nodes.length) {
-      show("browse");
+      if (isConceptMap()) renderConceptMap();
+      else show("browse");
       saveURL();
     } else $("about-dialog").showModal();
   };

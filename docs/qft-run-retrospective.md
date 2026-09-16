@@ -132,6 +132,19 @@ review path; stylistic preferences do not block completion.
 
 ## What the next orchestrator should do
 
+The later visualization work exposed a separate failure: complete source
+coverage and record-level review had been treated as sufficient for a usable
+conceptual map. Detailed methods, qualifications, and results appeared as large
+text cards, while a strict all-book intersection was mislabeled a backbone.
+It removed connecting context and understated broader topic coverage. The
+homepage also centered the example instead of explaining the reusable tool.
+
+Improvement: use the [graph troubleshooting guide](graph-troubleshooting.md)
+before scaling or redesigning. First inspect one bounded concept layer with
+explicit book treatments and a working visual. Keep conceptual readiness and
+visual usability separate from extraction and review completion. Reuse existing
+evidence; a presentation failure does not justify another whole-book extraction.
+
 1. At session start, inspect saved state and select one bounded next action.
    Recover returned results before issuing anything new. Start with a small
    pilot; report its calls, elapsed time, and available usage counter before

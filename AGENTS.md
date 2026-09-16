@@ -1,5 +1,11 @@
 For clone-first setup, read [SETUP.md](SETUP.md). A setup request does not
 start extraction. For large work, read [the run lessons](docs/qft-run-retrospective.md).
+Before expanding or reconciling a graph, or redesigning its visualization, read
+[graph troubleshooting](docs/graph-troubleshooting.md). Distinguish detailed
+records, shared concepts, source-specific treatments, and course plans. Verify
+a bounded conceptual/visual pilot before scaling. Exact record intersection is
+not automatically a conceptual backbone. Report source coverage, concept
+organization, usable navigation, and human audit as separate completion states.
 Before dispatching, inspect `work status` and start an explicitly authorized
 bounded session. Default: two calls, one worker, 20-minute admission window,
 750 KB request allowance. Stop at the boundary; never auto-renew, raise limits,

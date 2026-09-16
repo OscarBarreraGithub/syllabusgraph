@@ -11,6 +11,11 @@ The first collection is [quantum field theory](subjects/qft/README.md), with
 [volume I](textbooks/weinberg-1/README.md) and
 [volume II](textbooks/weinberg-2/README.md).
 
+The [path-integral concept pilot](subjects/qft-path-integrals/README.md) adds a
+small layer above selected detailed records, preserving their distinct book
+treatments. Its manifest, review outcome, and usage record show a bounded
+checkpoint before expanding a subject map.
+
 ```text
 graphs/
   textbooks/<book-id>/

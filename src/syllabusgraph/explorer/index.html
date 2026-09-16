@@ -12,6 +12,7 @@
     <link rel="icon" href="mark.svg" />
     <link rel="stylesheet" href="explorer.css" />
     <script src="overview.js" defer></script>
+    <script src="concept-map.js" defer></script>
     <script src="backbone.js" defer></script>
     <script src="explorer.js" defer></script>
   </head>
@@ -50,6 +51,7 @@
     <div class="controlbar" hidden>
       <div class="view-tabs" role="group" aria-label="View">
         <button id="overview-tab" aria-pressed="true">Overview</button>
+        <button id="map-tab" aria-pressed="false" hidden>Concept map</button>
         <button id="core-tab" aria-pressed="false" hidden>Exact overlap</button>
         <button id="chapters-tab" class="active" aria-pressed="true">
           Book index</button
@@ -63,6 +65,49 @@
       <span id="graph-count"></span><a id="download" download>Graph JSON ↓</a>
     </div>
     <main id="workspace">
+      <section id="map-view" hidden aria-label="Concept map">
+        <div class="view-heading concept-heading">
+          <div>
+            <span class="eyebrow">CONCEPT LAYER</span>
+            <h1 id="concept-map-title"></h1>
+            <p>
+              Shared ideas first. Select one to see the distinct book treatments
+              behind it.
+            </p>
+          </div>
+          <span id="concept-map-count"></span>
+        </div>
+        <div class="concept-map-body">
+          <div class="concept-map-main">
+            <div
+              id="concept-map-scroll"
+              tabindex="0"
+              aria-label="Concept map; scroll or drag to move"
+            >
+              <svg
+                id="concept-map-svg"
+                aria-label="Concepts and their recorded relationships"
+              ></svg>
+            </div>
+            <div class="concept-map-tools">
+              <span
+                >Arrows: prerequisites · Dashed: other relations · Placement is
+                not a course order</span
+              ><button id="concept-map-out" aria-label="Zoom concept map out">
+                −</button
+              ><button id="concept-map-fit">Fit</button
+              ><button id="concept-map-in" aria-label="Zoom concept map in">
+                +
+              </button>
+            </div>
+          </div>
+          <aside
+            id="concept-map-detail"
+            class="concept-map-detail"
+            aria-label="Selected concept and book treatments"
+          ></aside>
+        </div>
+      </section>
       <section id="home-view" aria-label="About SyllabusGraph">
         <div class="overview-hero">
           <div class="overview-copy">
@@ -218,6 +263,9 @@
                 <span aria-hidden="true">→</span></button
               ><button class="secondary-action" id="overview-all">
                 Browse all concepts
+              </button>
+              <button class="secondary-action" id="overview-pilot" hidden>
+                Explore the concept pilot →
               </button>
             </div>
             <p class="overview-caption" id="overview-caption"></p>

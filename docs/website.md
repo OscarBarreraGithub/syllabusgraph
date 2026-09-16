@@ -35,6 +35,22 @@ the brand link returns to the product homepage.
 
 ![The collection overview and starting point](overview.png)
 
+**Explore the concept pilot** opens a small map of nine path-integral concepts.
+Select a point to see its summary and distinct book treatments; follow a
+treatment to its original record and citations. **Inspect relationships and
+evidence** opens the detailed neighborhood. **Back** returns to the map.
+Use +/− and **Fit** to change scale, or scroll, drag, swipe, or focus the map
+and use arrow keys to move. Disconnected pieces stay visible.
+
+![The bounded concept pilot](concept-pilot.png)
+
+This is a model-reviewed reorganization of 14 existing records, not a fresh
+textbook audit or the complete subject backbone. The [pilot record](../graphs/subjects/qft-path-integrals/README.md)
+contains its exact scope, review and usage. Other small, authored concept layers
+can opt into this view with catalog `kind: concept-map`; ordinary graph data and
+review rules apply. Map placement is not a course order. Book counts name
+supporting graph projects; they do not assert identical derivations.
+
 The **Exact overlap** workspace shows records explicitly matched across the
 compared works, with their connections and basic statistics. It is not an
 established conceptual backbone or a count of every shared topic. See the

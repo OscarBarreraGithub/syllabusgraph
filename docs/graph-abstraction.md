@@ -1,7 +1,7 @@
 # From extracted records to a conceptual map
 
 The example's extraction and correspondence reviews are complete, with a human
-audit pending. A useful conceptual overview is a separate, unfinished task.
+audit pending. A whole-subject conceptual overview is a separate, unfinished task.
 Source coverage and valid records do not establish that a graph communicates
 the subject well or captures every cross-book correspondence.
 
@@ -77,6 +77,17 @@ Do not rerun whole-book extraction merely to change presentation.
 - Evaluation must include recognizable concepts, understandable paths,
   traceable book coverage, and useful navigation, alongside mechanical tests.
 
-The current exact-overlap view remains available as an inspection tool. The
-conceptual layer and corresponding visual map are proposed work, not completed
-capabilities.
+## First bounded pilot
+
+The [path-integral pilot](../graphs/subjects/qft-path-integrals/README.md) now
+provides nine concepts and six relationships from 14 existing reviewed records.
+Terra/high produced it and Sol/high accepted it on the first independent review.
+Its compact map shows book treatments on selection. Input records, scientific
+scope, review outcome, and measured usage are published with the graph.
+
+The selection has three separate components. It does not establish every
+connecting dependency or exhaust the topic, and it has not undergone human
+inspection. It tests an abstraction approach; it does not finish the subject map.
+Inspect the concept boundaries and visual navigation before choosing further
+topics. The original shared graph and exact-overlap view remain available.
+Future orchestrators should follow the [troubleshooting checkpoint](graph-troubleshooting.md).

@@ -6,6 +6,15 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Add a bounded, independently reviewed path-integral concept pilot: nine
+  concepts from 14 existing records, with preserved book treatments, an input
+  manifest, and measured two-call usage. Provide an opt-in compact SVG map with
+  selection details, evidence links, zoom, and scrolling. The full subject map
+  remains unfinished; disconnected pieces are retained without invented edges.
+- Put graph troubleshooting in the orchestrator's required reading. Separate
+  coverage, correspondence, conceptual organization, visual usability, and human
+  audit; inspect a bounded concept-and-visual pilot before scaling up.
+
 - Separate the reusable tool homepage and copyable setup prompt from the example
   collection. Label the intersection as exact record overlap and document why
   it is not a conceptual backbone or a measure of all shared textbook topics.

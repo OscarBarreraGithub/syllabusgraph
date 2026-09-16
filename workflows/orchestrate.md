@@ -1,5 +1,13 @@
 # Native agent orchestration
 
+Read [graph troubleshooting](../docs/graph-troubleshooting.md) before expanding
+or reconciling a collection. A completed extraction can still lack a coherent
+concept map. Define the intended level in the packet, preserve source-specific
+treatments under shared concepts, and inspect one bounded visual pilot before
+scaling. Do not call an exact-record intersection the backbone or interpret
+missing matches as absent topic coverage. This checkpoint must not become a
+repeated plan-review gate. Keep the existing dispatch and review limits.
+
 Start with [the agent bootstrap](../SETUP.md) for installation and onboarding.
 Before dispatch, run `syllabusgraph work -p PROJECT status`, then `work start`
 only for authorized work. Defaults: two dispatches, one worker, 20 minutes for

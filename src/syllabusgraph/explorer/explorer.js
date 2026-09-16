@@ -70,6 +70,7 @@ function show(view) {
   for (const name of [
     "home",
     "overview",
+    "map",
     "core",
     "browse",
     "search",
@@ -79,6 +80,7 @@ function show(view) {
     $(name + "-view").hidden = name !== view;
   for (const [id, name] of [
     ["overview", "overview"],
+    ["map", "map"],
     ["core", "core"],
     ["chapters", "browse"],
     ["graph", "network"],
@@ -94,7 +96,7 @@ function saveURL(replace = false) {
   const params = new URLSearchParams({ graph: data.id });
   if (reading) params.set("reader", reading.id);
   if (mode === "network" && selected) params.set("node", selected);
-  if (["home", "overview", "core", "overlap"].includes(mode))
+  if (["home", "overview", "map", "core", "overlap"].includes(mode))
     params.set("view", mode);
   if (mode === "browse") params.set("view", "browse");
   if (hasCore()) {
@@ -163,7 +165,8 @@ async function loadGraph(id, params = new URLSearchParams()) {
   renderBoard();
   renderOverlap();
   prepareCore(params);
-  returnView = hasCore() ? "core" : "browse";
+  $("map-tab").hidden = !isConceptMap();
+  returnView = isConceptMap() ? "map" : hasCore() ? "core" : "browse";
   if (params.get("node") && byId.has(params.get("node"))) {
     openNode(params.get("node"), false);
   } else if (params.get("view") === "overlap") show("overlap");
@@ -180,7 +183,12 @@ async function loadGraph(id, params = new URLSearchParams()) {
         chapter: chapter.id,
       };
     renderSearch();
-  } else if (hasCore() && params.get("view") === "core") renderCore();
+  } else if (
+    isConceptMap() &&
+    (params.get("view") === "map" || (!params.get("view") && id))
+  )
+    renderConceptMap();
+  else if (hasCore() && params.get("view") === "core") renderCore();
   else if (params.get("view") === "browse") show("browse");
   else if (params.get("view") === "home" || (!id && !params.get("view")))
     renderHome();
@@ -329,7 +337,13 @@ function renderSearch() {
 function openNode(id, updateURL = true, remember = true) {
   if (!byId.has(id)) return;
   if (mode !== "network") {
-    returnView = updateURL ? mode : hasCore() ? "core" : "browse";
+    returnView = updateURL
+      ? mode
+      : isConceptMap()
+        ? "map"
+        : hasCore()
+          ? "core"
+          : "browse";
     nodeTrail = [];
   } else if (remember && selected && selected !== id) nodeTrail.push(selected);
   selected = id;
@@ -852,6 +866,7 @@ $("back").onclick = () => {
     return;
   }
   if (returnView === "core") renderCore(false);
+  else if (returnView === "map") renderConceptMap();
   else show(returnView === "network" ? "browse" : returnView);
   saveURL();
 };
@@ -944,6 +959,7 @@ async function boot() {
 }
 bindCoreControls();
 bindOverviewControls();
+bindConceptMapControls();
 boot().catch((error) => {
   $("overview-title").textContent = "Unable to open this graph";
   $("overview-intro").textContent = error.message;
