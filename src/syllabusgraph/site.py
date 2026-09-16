@@ -10,6 +10,7 @@ import webbrowser
 
 from .io import ProjectError, read_yaml, write_json
 from .project import load_project
+from .navigation import reading_views, chapter_index
 
 ASSETS = Path(__file__).parent / "explorer"
 
@@ -19,6 +20,7 @@ def build_site(projects, destination: Path):
     destination = destination.resolve()
     manifest = {"version": 1, "graphs": []}
     payloads = []
+    chapter_indexes = {}
     for entry in projects:
         project = load_project(Path(entry["path"]))
         slug = entry.get("id", project.config["id"])
@@ -44,6 +46,9 @@ def build_site(projects, destination: Path):
             ],
             "review": review,
         }
+        coverage_path = project.root / "coverage.yaml"
+        if coverage_path.exists():
+            chapter_indexes[project.config["id"]] = chapter_index(read_yaml(coverage_path))
         payloads.append((slug, payload))
         manifest["graphs"].append(
             {
@@ -60,7 +65,9 @@ def build_site(projects, destination: Path):
     # Imported textbook nodes are dependencies, not an independent treatment.
     # Match the graph-bank overlap definition without changing scientific records.
     projects_by_id = {payload["project_id"]: payload for _, payload in payloads}
-    for _, payload in payloads:
+    kinds = {e["id"]: e["kind"] for e in manifest["graphs"]}
+    textbook_payloads = [p for slug, p in payloads if kinds[slug] == "textbook"]
+    for slug, payload in payloads:
         direct = {}
         for node in payload["knowledge"]["nodes"]:
             books = set()
@@ -74,6 +81,9 @@ def build_site(projects, destination: Path):
                         books.add(origin["project"])
             direct[node["id"]] = sorted(books)
         payload["direct_books"] = direct
+        payload["reading_views"] = reading_views(
+            payload, textbook_payloads if kinds[slug] == "shared" else [payload], chapter_indexes
+        )
     if not payloads:
         raise ProjectError("Choose at least one graph for the site.")
     # A reused output directory must contain only our generated allowlist. Fail closed
@@ -130,7 +140,8 @@ class SiteHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Referrer-Policy", "no-referrer")
-        self.send_header("Cache-Control", "no-cache")
+        # Local rebuilds can happen within HTTP Last-Modified’s one-second resolution.
+        self.send_header("Cache-Control", "no-store")
         self.send_header(
             "Content-Security-Policy",
             "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",

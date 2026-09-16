@@ -6,6 +6,12 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Replace the dot overview with a full-screen chapter browser and readable
+  dependency cards. Browse by book, expand neighbors, trace prerequisites, and
+  reveal every record in dense columns. Preserve source evidence, book links,
+  comparison counts, and graph contents. Derive chapter membership from exact
+  origins and source pagination; provide group-based navigation for other projects.
+
 - Add a graph-only website with book switching, search, directional neighborhood
   views, source evidence, origin links, overlap comparisons excluding imported
   inputs, graph downloads, and mobile layout. Export only an explicit catalog;

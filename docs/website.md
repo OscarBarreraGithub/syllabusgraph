@@ -21,29 +21,61 @@ Paths are relative to the catalog file.
 
 ## Reading the map
 
-- Search labels, summaries, or IDs; filter by book treatment or concept type.
-- Select a concept to show its immediate neighbors. Arrows preserve the recorded
-  relationship direction. Prerequisites entering the selection are ochre;
-  dependent concepts are blue; other relationships are gray and dashed.
-- The detail panel retains summaries, notation, book origins, section/page
-  evidence, relationship rationale, necessity, and mastery levels. Follow a
-  book treatment to its original node. Copy a link to the selected concept.
-- Book overlap counts shared nodes with independent treatments in both books.
-  Imported textbook inputs are excluded, matching the graph-bank checker.
-  The relevant book graphs must be included in the catalog to resolve overlap;
-  a single exported subject graph retains origin links but cannot compute it.
-- The overview shows every filtered concept and relationship. Its positions and
-  colors are visual grouping aids, not a scientific embedding or teaching order.
-  Dense neighborhoods show up to 60 nodes per relation category; the full
-  connection list and JSON download retain every relationship.
-- Drag to pan, use zoom buttons, or Ctrl/Command-scroll. Keyboard users can
-  select concepts and relationships through ordinary buttons in the list.
+Start with **Chapters**. Each column contains readable concept cards, in source
+page order. Change **Read through** to browse a different book without leaving
+the shared graph. Use the chapter selector or arrows to move across the book.
+**All concepts** and the search box cover the whole selected graph, including
+concepts outside the current book. Search labels, summaries, or IDs and narrow
+results by concept type.
 
-The graph JSON includes the complete knowledge graph and selected bibliography
-fields, review status, digest, and derived comparison metadata. It does not
-include sources, PDFs, private workflows, quotations, credentials, or local file
-paths. This export is **not a redaction service**: never put private material in
-public graph fields. Review new catalog entries before publication.
+![Concepts arranged in chapter columns](explorer.png)
+
+Open a card to follow its **Connections**. Prerequisites are on the left,
+dependents on the right, and other connections in a separate column. Arrows
+preserve the recorded direction; dashed arrows denote other relation types.
+Full concept names remain visible. Click a neighbor to make it the selection,
+or use **Reveal** to add its neighbors to the current diagram. **Back** retraces
+concepts you have opened. Hover or keyboard focus highlights connected cards.
+
+![A selected concept with readable prerequisites and dependents](explorer-connections.png)
+
+**Trace prerequisites** follows only recorded prerequisite edges, recursively.
+**One step** restores the immediate neighborhood. Large columns initially show
+eight concepts with explicit totals and **Show more** buttons; every remaining
+concept can be revealed. Drag empty space, use the scrollbars, or swipe to pan.
+Zoom buttons adjust card size; **Center** returns to the selection at 100%.
+This is a reading interface, not a proposed course sequence or a whole-graph
+force layout.
+
+**Evidence** opens the summary, notation, qualifications, source sections and
+pages, and the complete list of connections. Expand a relationship to read its
+rationale, necessity, mastery levels, and evidence. Follow a book treatment to
+its original node, or copy a link to the selected concept. **Book overlap**
+opens pairwise comparisons based on independent treatments; imported textbook
+inputs are excluded, matching the graph-bank checker. Include the relevant book
+graphs in the catalog to resolve those comparisons.
+
+### Where chapter columns come from
+
+The exporter reads chapter page ranges from a project's public `coverage.yaml`,
+when present. For a shared graph, it follows exact book origins before assigning
+chapter membership. Companion pagination and imported evidence are not treated
+as pages in the primary book. A concept with citations in several chapters can
+appear in several columns; the reading-view total counts it once. Shared concept
+counts can differ from the original book's node count.
+
+Chapter topic captions summarize existing graph groups; they are **not official
+chapter titles**. Unmapped records remain in an **Other concepts** column. Without
+a chapter inventory, the interface uses existing groups and an ungrouped column.
+Blank projects need no chapter configuration. In a multi-book catalog, mark the
+combined graph `kind: shared` and the individual books `kind: textbook` to create
+book reading views. A standalone export still works without the other books.
+
+The graph JSON retains the complete, unchanged knowledge graph. It adds selected
+bibliography fields, review status, digest, and derived reading/comparison
+metadata. It does not include source files, PDFs, private workflows, credentials,
+or local paths. This export is **not a redaction service**: never put private
+material in public graph fields. Review new catalog entries before publication.
 
 ## Cloudflare handoff
 

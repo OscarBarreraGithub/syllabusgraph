@@ -2,7 +2,7 @@
 
 **Turn source material into a map of ideas, then shape a course around it.**
 
-![The graph explorer: search concepts, follow dependencies, and compare textbook treatments](docs/explorer.png)
+![Browse concepts chapter by chapter, then open their connections](docs/explorer.png)
 
 Bring your references. Your coding agent handles installation, extraction, and
 independent review. You decide what to cover and, later, what to teach.
@@ -40,8 +40,9 @@ one slow session. Read its saved state first.”**
 
 The [QFT collection](graphs/subjects/qft/README.md) has four textbook graphs and
 one shared graph: **2,156 concepts and 3,319 relationships**, with book
-correspondences and page references. The website supports search, neighborhood
-views, book comparison, and graph downloads. Browsing makes no model calls.
+correspondences and page references. Browse readable chapter columns, open a
+concept’s dependency diagram, and follow connections across books. Search,
+compare treatments, or download the graph. Browsing makes no model calls.
 The graphs are model-reviewed; human audit is pending.
 
 [Field guide / docs](docs/README.md) · [Graph library](graphs/README.md) ·

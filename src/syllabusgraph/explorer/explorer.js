@@ -1,592 +1,735 @@
+/* A reading map and a progressively revealed dependency graph. No model calls. */
 "use strict";
 const $ = (id) => document.getElementById(id);
-const colors = {
-  selected: "#285747",
-  before: "#b87842",
-  after: "#627f98",
-  other: "#929b8c",
-};
-let catalog,
-  graph,
-  nodes,
-  edges,
-  byId,
-  neighbors,
-  selected = null,
-  pair = null,
-  visible = [],
-  limit = 60;
-let points = [],
-  lines = [],
-  zoom = 1,
-  offset = { x: 0, y: 0 },
-  drag = null,
-  moved = false,
-  version = 0;
-const cache = new Map();
-const canvas = $("map"),
-  ctx = canvas.getContext("2d");
 const fmt = (n) => n.toLocaleString();
-function el(tag, text, cls) {
+const el = (tag, text, cls) => {
   const e = document.createElement(tag);
   if (text !== undefined) e.textContent = text;
   if (cls) e.className = cls;
   return e;
-}
-function say(text) {
-  $("notice").textContent = text;
-  $("notice").style.display = "block";
-  setTimeout(() => ($("notice").style.display = "none"), 3500);
-}
-function books(n) {
-  return graph.direct_books?.[n.id] || [];
-}
-function originBooks(n) {
-  return [...new Set((n.origins || []).map((o) => o.project))];
+};
+const svgEl = (tag) =>
+  document.createElementNS("http://www.w3.org/2000/svg", tag);
+const human = (s) => String(s || "concept").replaceAll("_", " ");
+let catalog,
+  data,
+  nodes = [],
+  edges = [],
+  byId,
+  incident,
+  incoming;
+let reading,
+  mode = "browse",
+  selected = null,
+  returnView = "browse";
+let searchScope = null,
+  resultLimit = 60,
+  expanded = new Set(),
+  traced = false;
+let laneLimits = new Map(),
+  geometry = new Map(),
+  zoom = 1,
+  world = { width: 0, height: 0 };
+let loadSequence = 0,
+  noticeTimer;
+let nodeTrail = [];
+function say(message) {
+  $("notice").textContent = message;
+  $("notice").hidden = false;
+  clearTimeout(noticeTimer);
+  noticeTimer = setTimeout(() => ($("notice").hidden = true), 4500);
 }
 function bookTitle(id) {
   return (
     catalog.graphs.find((g) => g.project_id === id)?.title ||
-    graph.sources.find((s) => s.id === id)?.title ||
+    data.sources.find((s) => s.id === id)?.title ||
     id
   );
 }
-function showEvidence(parent, evidence) {
-  for (const e of evidence || []) {
-    const box = el("div", undefined, "evidence");
-    box.append(
-      el("strong", bookTitle(e.source)),
+function directBooks(node) {
+  return data.direct_books[node.id] || [];
+}
+function options(select, entries) {
+  select.replaceChildren(
+    ...entries.map(([id, label]) => {
+      const o = el("option", label);
+      o.value = id;
+      return o;
+    }),
+  );
+}
+function show(view) {
+  mode = view;
+  for (const name of ["browse", "search", "network", "overlap"])
+    $(name + "-view").hidden = name !== view;
+  for (const [id, name] of [
+    ["chapters", "browse"],
+    ["graph", "network"],
+    ["overlap", "overlap"],
+  ]) {
+    const active = view === name;
+    $(id + "-tab").classList.toggle("active", active);
+    $(id + "-tab").setAttribute("aria-pressed", String(active));
+  }
+  document.querySelector(".lens").hidden = view !== "browse";
+}
+function saveURL(replace = false) {
+  const params = new URLSearchParams({ graph: data.id });
+  if (reading) params.set("reader", reading.id);
+  if (mode === "network" && selected) params.set("node", selected);
+  if (mode === "overlap") params.set("view", "overlap");
+  if (mode === "search") {
+    params.set("view", "search");
+    if ($("search").value) params.set("q", $("search").value);
+    if ($("kind-select").value) params.set("kind", $("kind-select").value);
+    if (searchScope?.pair) params.set("books", searchScope.pair.join(","));
+    if (searchScope?.chapter) params.set("chapter", searchScope.chapter);
+  }
+  const url = "#" + params.toString();
+  if (location.hash !== url)
+    history[replace ? "replaceState" : "pushState"]({}, "", url);
+}
+async function loadGraph(id, params = new URLSearchParams()) {
+  const seq = ++loadSequence;
+  const graph = catalog.graphs.find((g) => g.id === id) || catalog.graphs[0];
+  const response = await fetch(graph.file);
+  if (!response.ok) throw new Error("This graph could not be loaded.");
+  const payload = await response.json();
+  if (seq !== loadSequence) return;
+  data = payload;
+  nodes = data.knowledge.nodes;
+  edges = data.knowledge.edges;
+  byId = new Map(nodes.map((n) => [n.id, n]));
+  incident = new Map(nodes.map((n) => [n.id, []]));
+  incoming = new Map(nodes.map((n) => [n.id, []]));
+  for (const e of edges) {
+    incident.get(e.from)?.push(e);
+    if (e.from !== e.to) incident.get(e.to)?.push(e);
+    if (e.relation === "prerequisite") incoming.get(e.to)?.push(e);
+  }
+  selected = null;
+  nodeTrail = [];
+  returnView = "browse";
+  $("graph-tab").disabled = true;
+  $("graph-tab").title = "Choose a concept first";
+  $("graph-select").value = data.id;
+  $("graph-count").textContent =
+    `${fmt(nodes.length)} concepts · ${fmt(edges.length)} connections`;
+  $("download").href = graph.file;
+  $("download").download = graph.id + "-graph.json";
+  const review = data.review || {};
+  $("review-status").textContent = review.status
+    ? `${human(review.status).replace(/^./, (c) => c.toUpperCase())}${review.human_audit ? " · Human audit " + human(review.human_audit) : ""}`
+    : "Public graph · Review status unrecorded";
+  options(
+    $("reading-select"),
+    data.reading_views.map((v) => [v.id, v.title]),
+  );
+  reading =
+    data.reading_views.find((v) => v.id === params.get("reader")) ||
+    data.reading_views[0];
+  $("reading-select").value = reading.id;
+  options($("kind-select"), [
+    ["", "All types"],
+    ...[...new Set(nodes.map((n) => n.kind))].sort().map((k) => [k, human(k)]),
+  ]);
+  $("kind-select").value = params.get("kind") || "";
+  $("search").value = params.get("q") || "";
+  searchScope = null;
+  resultLimit = 60;
+  renderBoard();
+  renderOverlap();
+  if (params.get("node") && byId.has(params.get("node"))) {
+    openNode(params.get("node"), false);
+  } else if (params.get("view") === "overlap") show("overlap");
+  else if (params.get("view") === "search") {
+    if (params.get("books"))
+      searchScope = { pair: params.get("books").split(",") };
+    const chapter = reading.chapters.find(
+      (c) => c.id === params.get("chapter"),
+    );
+    if (chapter)
+      searchScope = {
+        ids: new Set(chapter.nodes),
+        title: chapter.label,
+        chapter: chapter.id,
+      };
+    renderSearch();
+  } else show("browse");
+  saveURL(true);
+}
+function conceptCard(node, summary = false) {
+  const card = el("button", undefined, "concept-card");
+  card.dataset.node = node.id;
+  card.append(el("span", node.label, "card-label"));
+  if (summary) card.append(el("p", node.summary, "result-summary"));
+  const meta = el("span", undefined, "card-meta");
+  const books = directBooks(node).length;
+  meta.append(
+    el("span", human(node.kind)),
+    el(
+      "span",
+      books > 1
+        ? `${books} books · ${incident.get(node.id).length} links`
+        : `${incident.get(node.id).length} links →`,
+    ),
+  );
+  card.append(meta);
+  card.onclick = () => openNode(node.id);
+  return card;
+}
+function renderBoard() {
+  $("reading-title").textContent = reading.title;
+  const hasChapters = reading.chapters.some((c) => c.first !== undefined);
+  $("reading-caption").textContent = hasChapters
+    ? "THE READING MAP"
+    : "THE CONCEPT MAP";
+  $("reading-description").textContent =
+    `${fmt(reading.node_count)} concepts in this reading view. ${hasChapters ? "Chapter topics summarize the graph’s groups. " : ""}Choose an idea to follow its connections.`;
+  options(
+    $("chapter-jump"),
+    reading.chapters.map((c) => [c.id, c.label]),
+  );
+  const board = $("board");
+  board.replaceChildren();
+  for (const chapter of reading.chapters) {
+    const col = el("section", undefined, "chapter");
+    col.dataset.chapter = chapter.id;
+    const head = el("div", undefined, "chapter-head");
+    const meta = el("div", undefined, "chapter-meta");
+    meta.append(
+      el("span", chapter.label, "chapter-number"),
+      el("span", `${chapter.nodes.length} concepts`),
+    );
+    head.append(meta);
+    head.append(
       el(
-        "span",
-        `${e.section || "Source"} · pp. ${(e.pages || []).join(", ")}`,
+        "h2",
+        chapter.topics[0] ||
+          (hasChapters ? "Explore the concepts" : chapter.label),
       ),
     );
-    parent.append(box);
-  }
-}
-function hash(s) {
-  let h = 2166136261;
-  for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
-  return (h >>> 0) / 4294967296;
-}
-function setURL() {
-  const p = new URLSearchParams({ graph: graph.id });
-  if (selected) p.set("node", selected);
-  history.replaceState(null, "", "#" + p);
-}
-async function loadGraph(id, node = null) {
-  const v = ++version;
-  const entry = catalog.graphs.find((g) => g.id === id) || catalog.graphs[0];
-  try {
-    if (!cache.has(entry.id)) {
-      const r = await fetch(entry.file);
-      if (!r.ok) throw Error("Graph download failed");
-      cache.set(entry.id, await r.json());
-    }
-    if (v !== version) return;
-    graph = cache.get(entry.id);
-    nodes = graph.knowledge.nodes;
-    edges = graph.knowledge.edges;
-    byId = new Map(nodes.map((n) => [n.id, n]));
-    neighbors = new Map(nodes.map((n) => [n.id, []]));
-    for (const e of edges) {
-      neighbors.get(e.from)?.push(e);
-      neighbors.get(e.to)?.push(e);
-    }
-    selected = null;
-    pair = null;
-    limit = 60;
-    $("search").value = "";
-    $("graph-select").value = entry.id;
-    $("collection-title").textContent = entry.title;
-    $("stats").replaceChildren(
-      ...[
-        [nodes.length, "concepts"],
-        [edges.length, "relationships"],
-        [
-          new Set(
-            graph.sources
-              .filter((s) => !s.id.endsWith("-notation"))
-              .map((s) => s.id),
-          ).size,
-          "sources",
-        ],
-      ].map(([n, label]) => {
-        const d = el("div", undefined, "stat");
-        d.append(el("strong", fmt(n)), el("span", label));
-        return d;
-      }),
+    head.append(
+      el(
+        "p",
+        chapter.topics.slice(1).join(" · ") ||
+          (chapter.first !== undefined
+            ? `Source pages ${chapter.first}–${chapter.last}`
+            : "Every concept remains searchable"),
+      ),
     );
-    $("review-status").textContent =
-      graph.review.status === "model-reviewed"
-        ? `Model-reviewed · Human audit ${graph.review.human_audit || "not recorded"}`
-        : "Review status is recorded with the source project.";
-    $("download").href = entry.file;
-    $("download").setAttribute("download", `${entry.id}-graph.json`);
-    const b = [...new Set(nodes.flatMap(originBooks))];
-    $("source-select").replaceChildren(
-      new Option(b.length ? "All books" : "All sources", ""),
-      ...b.map((id) => new Option(bookTitle(id), id)),
-    );
-    $("source-select").disabled = !b.length;
-    $("kind-select").replaceChildren(
-      new Option("All types", ""),
-      ...[...new Set(nodes.map((n) => n.kind))]
-        .sort()
-        .map((k) => new Option(k.replaceAll("_", " "), k)),
-    );
-    $("overlap-tab").disabled = entry.kind !== "shared" || b.length < 2;
-    switchView(false);
-    filter();
-    if (node && byId.has(node)) selectNode(node);
-    else {
-      emptyDetail();
-      setURL();
-    }
-  } catch (err) {
-    say(err.message);
-    $("review-status").textContent =
-      "Could not load this graph. Refresh to try again.";
-  }
-}
-function emptyDetail() {
-  const d = $("detail");
-  d.replaceChildren(
-    el("div", "A PLACE TO BEGIN", "tiny"),
-    el("h2", "Pick an idea. See what it rests on."),
-    el("p", "Each point is a concept. Each line is a recorded relationship."),
-    el("div", undefined, "detail-rule"),
-    el(
-      "p",
-      "Search on the left or select a point on the map. You’ll find the explanation, connected ideas, and section and page references here.",
-    ),
-    el(
-      "div",
-      "The layout is a browsing aid, not a proposed teaching order.",
-      "detail-note",
-    ),
-  );
-}
-function filter() {
-  const q = $("search").value.toLowerCase().trim(),
-    b = $("source-select").value,
-    k = $("kind-select").value;
-  visible = nodes.filter(
-    (n) =>
-      (!q || `${n.label} ${n.summary} ${n.id}`.toLowerCase().includes(q)) &&
-      (!b || originBooks(n).includes(b)) &&
-      (!k || n.kind === k) &&
-      (!pair || pair.every((id) => books(n).includes(id))),
-  );
-  if (q)
-    visible.sort(
-      (a, b) =>
-        Number(b.label.toLowerCase().includes(q)) -
-        Number(a.label.toLowerCase().includes(q)),
-    );
-  renderList();
-  if (!selected) layout();
-}
-function renderList() {
-  $("result-count").textContent =
-    `${fmt(visible.length)} concepts${pair ? " · overlap" : ""}`;
-  $("results").replaceChildren();
-  for (const n of visible.slice(0, limit)) {
-    const b = el(
+    const cards = el("div", undefined, "chapter-nodes");
+    for (const id of chapter.nodes)
+      if (byId.has(id)) cards.append(conceptCard(byId.get(id)));
+    const browse = el(
       "button",
-      undefined,
-      "result" + (selected === n.id ? " active" : ""),
+      `Browse all ${chapter.nodes.length} concepts ↗`,
+      "chapter-link",
     );
-    b.append(
-      el("span", n.label),
-      el("small", `${n.kind} · ${neighbors.get(n.id).length} connections`),
-    );
-    b.onclick = () => selectNode(n.id);
-    b.setAttribute("aria-pressed", selected === n.id ? "true" : "false");
-    $("results").append(b);
+    browse.onclick = () => {
+      searchScope = {
+        ids: new Set(chapter.nodes),
+        title: chapter.label,
+        chapter: chapter.id,
+      };
+      $("search").value = "";
+      $("kind-select").value = "";
+      resultLimit = 60;
+      renderSearch();
+      saveURL();
+    };
+    col.append(head, cards, browse);
+    board.append(col);
   }
-  if (!visible.length)
-    $("results").append(
-      el("p", "No matches. Try another term or reset the filters.", "empty"),
-    );
-  $("more").hidden = visible.length <= limit;
-}
-function selectNode(id) {
-  if (!byId.has(id)) return;
-  selected = id;
-  switchView(false);
-  renderList();
-  layout();
-  setURL();
-  const n = byId.get(id),
-    d = $("detail");
-  d.replaceChildren(
-    el("span", n.kind, "badge"),
-    el("h2", n.label),
-    el("p", n.summary),
-  );
-  const share = el("button", "Copy link", "text-button");
-  share.onclick = () => copy(location.href);
-  d.append(share);
-  const origins = n.origins || [];
-  if (origins.length) {
-    d.append(el("h4", "BOOK TREATMENTS"));
-    for (const o of origins) {
-      const block = el("div", undefined, "origin");
-      const target = catalog.graphs.find((g) => g.project_id === o.project);
-      if (target) {
-        const b = el("button", `${bookTitle(o.project)} ↗`);
-        b.onclick = () => loadGraph(target.id, o.node);
-        block.append(b);
-      } else block.append(el("strong", bookTitle(o.project)));
-      if (o.note) block.append(el("p", o.note));
-      d.append(block);
-    }
-  }
-  d.append(el("h4", "SOURCE EVIDENCE"));
-  showEvidence(d, n.evidence);
-  if (!n.evidence?.length)
-    d.append(el("p", "No page evidence recorded on this concept."));
-  if (n.notation?.length) {
-    d.append(el("h4", "NOTATION & QUALIFICATIONS"));
-    for (const item of n.notation)
-      d.append(el("p", `${bookTitle(item.source)}: ${item.note}`));
-  }
-  const adjacent = neighbors.get(id);
-  d.append(el("h4", `CONNECTED IDEAS · ${adjacent.length}`));
-  for (const e of adjacent) {
-    const other = byId.get(e.from === id ? e.to : e.from);
-    if (!other) continue;
-    const row = el("div", undefined, "connection");
-    const b = el("button", other.label);
-    b.onclick = () => selectNode(other.id);
-    const direction = e.to === id ? "Into this concept" : "From this concept";
-    row.append(
-      b,
+  if (!reading.chapters.length)
+    board.append(
       el(
-        "small",
-        `${direction} · ${e.relation}${e.necessity ? " · " + e.necessity : ""}`,
+        "p",
+        "This graph has no concepts yet. Open the guide to begin with your own materials.",
+        "empty",
       ),
     );
-    const details = el("details");
-    details.append(el("summary", "Relationship evidence"));
-    if (e.rationale) details.append(el("p", e.rationale));
-    if (e.failure_mode)
-      details.append(el("p", `Without it: ${e.failure_mode}`));
-    if (e.source_level || e.target_level)
-      details.append(
-        el("p", `Mastery: ${e.source_level || "—"} → ${e.target_level || "—"}`),
-      );
-    showEvidence(details, e.evidence);
-    row.append(details);
-    d.append(row);
-  }
-  d.append(el("div", n.id, "detail-note"));
-  d.scrollTop = 0;
+  board.scrollLeft = 0;
 }
-function layout() {
-  if (!graph) return;
-  zoom = 1;
-  offset = { x: 0, y: 0 };
-  points = [];
-  lines = [];
-  if (selected) {
-    const incident = neighbors.get(selected);
-    const ids = [
-      ...new Set(incident.map((e) => (e.from === selected ? e.to : e.from))),
-    ];
-    const before = new Set(
-        incident
-          .filter((e) => e.to === selected && e.relation === "prerequisite")
-          .map((e) => e.from),
+function renderSearch() {
+  show("search");
+  const q = $("search").value.trim().toLocaleLowerCase();
+  const kind = $("kind-select").value;
+  const matches = nodes.filter(
+    (n) =>
+      (!kind || n.kind === kind) &&
+      (!searchScope?.ids || searchScope.ids.has(n.id)) &&
+      (!searchScope?.pair ||
+        searchScope.pair.every((b) => directBooks(n).includes(b))) &&
+      (!q || `${n.label} ${n.summary} ${n.id}`.toLocaleLowerCase().includes(q)),
+  );
+  matches.sort((a, b) => {
+    if (q) {
+      const rank = (n) =>
+        n.label.toLocaleLowerCase().startsWith(q)
+          ? 0
+          : n.label.toLocaleLowerCase().includes(q)
+            ? 1
+            : 2;
+      const d = rank(a) - rank(b);
+      if (d) return d;
+    }
+    return a.label.localeCompare(b.label);
+  });
+  $("search-title").textContent = searchScope?.pair
+    ? searchScope.pair.map(bookTitle).join(" × ")
+    : searchScope?.title ||
+      (q
+        ? `Results for “${$("search").value.trim()}”`
+        : "Every concept, in one place.");
+  $("result-count").textContent =
+    `${fmt(matches.length)} concepts${matches.length > resultLimit ? ` · Showing ${fmt(resultLimit)}` : ""}${searchScope ? " · Type to search across the whole graph" : ""}`;
+  $("results").replaceChildren(
+    ...matches.slice(0, resultLimit).map((n) => conceptCard(n, true)),
+  );
+  if (!matches.length)
+    $("results").append(
+      el(
+        "p",
+        "No concepts match. Try another term or clear the type filter.",
+        "empty",
       ),
-      after = new Set(
-        incident
-          .filter((e) => e.from === selected && e.relation === "prerequisite")
-          .map((e) => e.to),
-      );
-    const groups = [
-      ids.filter((id) => before.has(id)),
-      ids.filter((id) => !before.has(id) && after.has(id)),
-      ids.filter((id) => !before.has(id) && !after.has(id)),
-    ];
-    points.push({ id: selected, x: 0, y: 0, r: 8, color: colors.selected });
-    groups.forEach((list, g) =>
-      list.slice(0, 60).forEach((id, i) => {
-        const angle =
-          (g === 0 ? Math.PI : g === 1 ? 0 : Math.PI / 2) +
-          (i - (Math.min(list.length, 60) - 1) / 2) *
-            Math.min(0.22, 2.0 / Math.max(1, list.length));
-        const radius = 165 + Math.floor(i / 12) * 38;
-        points.push({
-          id,
-          x: Math.cos(angle) * radius,
-          y: Math.sin(angle) * radius,
-          r: 5,
-          color: [colors.before, colors.after, colors.other][g],
-        });
-      }),
     );
-    const present = new Set(points.map((p) => p.id));
-    lines = incident.filter((e) => present.has(e.from) && present.has(e.to));
-    $("map-mode").textContent = "ONE CONCEPT, ITS CONNECTIONS";
-    $("map-heading").textContent = byId.get(selected).label;
-    $("map-count").textContent =
-      `${points.length - 1} of ${ids.length} neighbors shown`;
-  } else {
-    const buckets = new Map();
-    for (const n of visible) {
-      const key = n.group || `other-${books(n)[0] || "concepts"}-${n.kind}`;
-      if (!buckets.has(key)) buckets.set(key, []);
-      buckets.get(key).push(n);
+  $("more").hidden = matches.length <= resultLimit;
+}
+function openNode(id, updateURL = true, remember = true) {
+  if (!byId.has(id)) return;
+  if (mode !== "network") {
+    returnView = mode;
+    nodeTrail = [];
+  } else if (remember && selected && selected !== id) nodeTrail.push(selected);
+  selected = id;
+  expanded = new Set([id]);
+  traced = false;
+  laneLimits = new Map();
+  zoom = 1;
+  $("network-title").textContent = byId.get(id).label;
+  $("detail").hidden = true;
+  $("graph-tab").disabled = false;
+  $("graph-tab").title = "Return to the selected concept";
+  show("network");
+  renderNetwork(true);
+  $("graph-cards")
+    .querySelector(".selected .graph-node")
+    ?.focus({ preventScroll: true });
+  if (updateURL) saveURL();
+}
+function neighborhood() {
+  const positions = new Map([[selected, 0]]);
+  if (traced) {
+    const queue = [selected];
+    for (let i = 0; i < queue.length; i++) {
+      const id = queue[i];
+      for (const edge of incoming.get(id))
+        if (!positions.has(edge.from)) {
+          positions.set(edge.from, positions.get(id) - 1);
+          queue.push(edge.from);
+        }
     }
-    const sets = [...buckets.values()].sort((a, b) => b.length - a.length);
-    sets.forEach((list, g) => {
-      const angle = g * 2.399963,
-        rad = 48 * Math.sqrt(g),
-        cx = Math.cos(angle) * rad,
-        cy = Math.sin(angle) * rad;
-      list.forEach((n, i) => {
-        const a = i * 2.399963 + hash(n.id) * 0.3,
-          r = 5.2 * Math.sqrt(i);
-        points.push({
-          id: n.id,
-          x: cx + Math.cos(a) * r,
-          y: cy + Math.sin(a) * r,
-          r: 2.3,
-          color: ["#527768", "#8b9980", "#a89473", "#6e8790"][g % 4],
-        });
-      });
-    });
-    const present = new Set(points.map((p) => p.id));
-    lines = edges.filter((e) => present.has(e.from) && present.has(e.to));
-    $("map-mode").textContent = "THE WHOLE PICTURE";
-    $("map-heading").textContent = pair
-      ? "Concepts with origins in both selected books."
-      : "Choose a concept to explore its neighborhood.";
-    $("map-count").textContent =
-      `${fmt(points.length)} concepts · ${fmt(lines.length)} links`;
+    return positions;
   }
-  const legend = document.querySelector(".legend");
-  legend.replaceChildren();
-  if (selected) {
-    for (const [key, label] of [
-      ["selected", "Selected"],
-      ["before", "Prerequisite"],
-      ["after", "Depends on this"],
-      ["other", "Other relation"],
-    ]) {
-      const span = el("span");
-      const dot = el("i", undefined, "dot");
-      dot.style.background = colors[key];
-      span.append(dot, document.createTextNode(label));
-      legend.append(span);
+  const included = new Set([selected]);
+  for (const id of expanded)
+    for (const edge of incident.get(id)) {
+      included.add(edge.from);
+      included.add(edge.to);
     }
-  } else
-    legend.append(
+  const visibleEdges = edges.filter(
+    (e) =>
+      e.relation === "prerequisite" &&
+      (expanded.has(e.from) || expanded.has(e.to)),
+  );
+  // Classify by an actual directed path to/from the selection. A prerequisite
+  // of a dependent is not necessarily a prerequisite of the selected concept.
+  for (const upstream of [true, false]) {
+    const queue = [[selected, 0]],
+      visited = new Set([selected]);
+    for (let i = 0; i < queue.length; i++) {
+      const [id, depth] = queue[i];
+      for (const e of visibleEdges) {
+        if ((upstream ? e.to : e.from) !== id) continue;
+        const next = upstream ? e.from : e.to;
+        if (visited.has(next)) continue;
+        visited.add(next);
+        queue.push([next, depth + 1]);
+        const lane = upstream ? -depth - 1 : depth === 0 ? 1 : depth + 2;
+        if (!positions.has(next)) positions.set(next, lane);
+      }
+    }
+  }
+  for (const id of included) if (!positions.has(id)) positions.set(id, 2);
+  return positions;
+}
+function laneTitle(lane) {
+  if (lane === 0) return "SELECTED CONCEPT";
+  if (traced)
+    return Math.abs(lane) === 1
+      ? "DIRECT PREREQUISITES"
+      : `${Math.abs(lane)} LINKS UPSTREAM`;
+  if (lane === -1) return "PREREQUISITES";
+  if (lane === 1) return "DEPENDS ON THIS";
+  if (lane === 2) return "OTHER CONNECTIONS";
+  return lane < 0 ? `${-lane} LINKS UPSTREAM` : `${lane - 1} LINKS DOWNSTREAM`;
+}
+function renderNetwork(center = false) {
+  if (!selected) return;
+  const positions = neighborhood(),
+    lanes = new Map();
+  for (const [id, lane] of positions) {
+    if (!lanes.has(lane)) lanes.set(lane, []);
+    lanes.get(lane).push(id);
+  }
+  const cards = $("graph-cards");
+  cards.replaceChildren();
+  geometry = new Map();
+  let maxBottom = 400;
+  const ordered = [...lanes.keys()].sort((a, b) => a - b);
+  for (const [column, lane] of ordered.entries()) {
+    const ids = lanes
+      .get(lane)
+      .sort((a, b) => byId.get(a).label.localeCompare(byId.get(b).label));
+    const limit = laneLimits.get(lane) || 8;
+    const left = 38 + column * 334;
+    const heading = el(
+      "div",
+      `${laneTitle(lane)} · ${ids.length}`,
+      "lane-title",
+    );
+    heading.style.left = left + "px";
+    heading.style.top = "22px";
+    cards.append(heading);
+    let top = 76;
+    for (const id of ids.slice(0, limit)) {
+      const node = byId.get(id);
+      const cls =
+        id === selected
+          ? "selected"
+          : lane < 0
+            ? "prereq"
+            : lane === 2 && !traced
+              ? "other"
+              : "dependent";
+      const card = el("article", undefined, "graph-card " + cls);
+      card.dataset.node = id;
+      card.style.left = left + "px";
+      card.style.top = top + "px";
+      const open = el("button", undefined, "graph-node");
+      open.append(
+        el("span", node.label, "card-label"),
+        el("span", human(node.kind), "card-meta"),
+      );
+      open.title =
+        id === selected
+          ? "Read this concept’s evidence"
+          : "Make this the selected concept";
+      open.onclick = () => (id === selected ? renderDetail() : openNode(id));
+      card.append(open);
+      if (!traced && id !== selected) {
+        const undisplayed = incident
+          .get(id)
+          .filter((e) => !positions.has(e.from) || !positions.has(e.to));
+        if (undisplayed.length) {
+          const expand = el(
+            "button",
+            `+ Reveal ${new Set(undisplayed.map((e) => (e.from === id ? e.to : e.from))).size} nearby concepts`,
+            "expand-node",
+          );
+          expand.onclick = () => {
+            expanded.add(id);
+            renderNetwork();
+          };
+          card.append(expand);
+        } else
+          card.append(
+            el("span", "All adjacent concepts are in this view", "card-meta"),
+          );
+      } else if (id === selected) {
+        const inspect = el(
+          "button",
+          "Read summary & evidence ↗",
+          "expand-node",
+        );
+        inspect.onclick = () => renderDetail();
+        card.append(inspect);
+      }
+      card.onpointerenter = () => highlight(id);
+      card.onpointerleave = () => highlight(null);
+      card.onfocusin = () => highlight(id);
+      card.onfocusout = () => highlight(null);
+      cards.append(card);
+      const height = card.offsetHeight;
+      geometry.set(id, { x: left, y: top, w: 244, h: height });
+      top += height + 26;
+    }
+    if (ids.length > limit) {
+      const more = el(
+        "button",
+        `Show ${Math.min(12, ids.length - limit)} more (${ids.length - limit} remaining)`,
+        "lane-more",
+      );
+      more.style.left = left + "px";
+      more.style.top = top + "px";
+      more.onclick = () => {
+        laneLimits.set(lane, limit + 12);
+        renderNetwork();
+      };
+      cards.append(more);
+      top += 65;
+    }
+    maxBottom = Math.max(maxBottom, top + 60);
+  }
+  world = {
+    width: Math.max(480, ordered.length * 334 + 20),
+    height: maxBottom,
+  };
+  drawEdges();
+  applyZoom();
+  $("map-count").textContent =
+    `${geometry.size} of ${positions.size} concepts in ${traced ? "the prerequisite trace" : "this neighborhood"} · Arrows follow recorded relations`;
+  $("trace").classList.toggle("active", traced);
+  $("trace").setAttribute("aria-pressed", String(traced));
+  if (center) centerSelected();
+}
+function drawEdges() {
+  const svg = $("edges");
+  svg.replaceChildren();
+  svg.setAttribute("width", world.width);
+  svg.setAttribute("height", world.height);
+  const defs = svgEl("defs"),
+    marker = svgEl("marker"),
+    tip = svgEl("path");
+  marker.id = "arrow";
+  marker.setAttribute("viewBox", "0 0 10 10");
+  marker.setAttribute("refX", "9");
+  marker.setAttribute("refY", "5");
+  marker.setAttribute("markerWidth", "6");
+  marker.setAttribute("markerHeight", "6");
+  marker.setAttribute("orient", "auto");
+  tip.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+  tip.setAttribute("fill", "#83a4b5");
+  marker.append(tip);
+  defs.append(marker);
+  svg.append(defs);
+  for (const edge of edges) {
+    if (traced && edge.relation !== "prerequisite") continue;
+    if (!traced && !expanded.has(edge.from) && !expanded.has(edge.to)) continue;
+    const a = geometry.get(edge.from),
+      b = geometry.get(edge.to);
+    if (!a || !b) continue;
+    const path = svgEl("path");
+    const right = b.x > a.x,
+      same = a.x === b.x;
+    const x1 = a.x + (right || same ? a.w : 0),
+      y1 = a.y + a.h / 2;
+    const x2 = b.x + (right ? 0 : b.w),
+      y2 = b.y + b.h / 2;
+    const bend = same ? 70 : Math.max(40, Math.abs(x2 - x1) * 0.45);
+    const d = same
+      ? `M${x1},${y1} C${x1 + bend},${y1} ${x2 + bend},${y2} ${x2},${y2}`
+      : `M${x1},${y1} C${x1 + (right ? bend : -bend)},${y1} ${x2 + (right ? -bend : bend)},${y2} ${x2},${y2}`;
+    path.setAttribute("d", d);
+    path.setAttribute(
+      "class",
+      "graph-edge " +
+        (edge.relation === "prerequisite" ? "prerequisite" : "other"),
+    );
+    path.setAttribute("marker-end", "url(#arrow)");
+    path.dataset.from = edge.from;
+    path.dataset.to = edge.to;
+    const title = svgEl("title");
+    title.textContent = `${byId.get(edge.from).label} → ${byId.get(edge.to).label}: ${human(edge.relation)}`;
+    path.append(title);
+    svg.append(path);
+  }
+}
+function highlight(id) {
+  const neighbors = new Set([id]);
+  for (const path of $("edges").querySelectorAll(".graph-edge")) {
+    const lit = path.dataset.from === id || path.dataset.to === id;
+    path.classList.toggle("lit", Boolean(id) && lit);
+    path.classList.toggle("dim", Boolean(id) && !lit);
+    if (lit) {
+      neighbors.add(path.dataset.from);
+      neighbors.add(path.dataset.to);
+    }
+  }
+  for (const card of $("graph-cards").querySelectorAll(".graph-card")) {
+    card.classList.toggle(
+      "lit",
+      Boolean(id) && neighbors.has(card.dataset.node),
+    );
+    card.classList.toggle(
+      "dim",
+      Boolean(id) && !neighbors.has(card.dataset.node),
+    );
+  }
+}
+function applyZoom() {
+  $("graph-world").style.width = world.width + "px";
+  $("graph-world").style.height = world.height + "px";
+  $("graph-world").style.transform = `scale(${zoom})`;
+  const viewportWidth = $("graph-scroll").clientWidth;
+  $("graph-world").style.marginLeft =
+    Math.max(0, (viewportWidth - world.width * zoom) / 2) + "px";
+  $("graph-sizer").style.width =
+    Math.max(viewportWidth, world.width * zoom) + "px";
+  $("graph-sizer").style.height = world.height * zoom + "px";
+  $("zoom-label").textContent = Math.round(zoom * 100) + "%";
+  $("zoom-out").disabled = zoom <= 0.6;
+  $("zoom-in").disabled = zoom >= 1.6;
+}
+function changeZoom(delta) {
+  const scroll = $("graph-scroll"),
+    old = zoom;
+  zoom = Math.max(0.6, Math.min(1.6, Math.round((zoom + delta) * 10) / 10));
+  const x = (scroll.scrollLeft + scroll.clientWidth / 2) / old;
+  const y = (scroll.scrollTop + scroll.clientHeight / 2) / old;
+  applyZoom();
+  scroll.scrollLeft = x * zoom - scroll.clientWidth / 2;
+  scroll.scrollTop = y * zoom - scroll.clientHeight / 2;
+}
+function centerSelected() {
+  const root = geometry.get(selected),
+    scroll = $("graph-scroll");
+  if (!root) return;
+  scroll.scrollLeft = Math.max(
+    0,
+    (root.x + root.w / 2) * zoom - scroll.clientWidth / 2,
+  );
+  scroll.scrollTop = Math.max(0, root.y * zoom - 85);
+}
+function evidence(refs) {
+  const frag = document.createDocumentFragment();
+  for (const ref of refs || []) {
+    const e = el("div", undefined, "evidence");
+    e.append(
+      el("strong", bookTitle(ref.source)),
       el(
         "span",
-        "Colors separate visual groups · Drag to pan · Select a point to explore",
+        [ref.section, ref.pages?.length ? `pages ${ref.pages.join(", ")}` : ""]
+          .filter(Boolean)
+          .join(" · "),
       ),
     );
-  draw();
+    frag.append(e);
+  }
+  return frag;
 }
-function geometry() {
-  const box = canvas.getBoundingClientRect();
-  const xs = points.map((p) => Math.abs(p.x)),
-    ys = points.map((p) => Math.abs(p.y));
-  const scale =
-    Math.min(
-      (box.width - 80) / (2 * Math.max(120, ...xs)),
-      (box.height - 165) / (2 * Math.max(110, ...ys)),
-    ) * zoom;
-  return {
-    w: box.width,
-    h: box.height,
-    scale,
-    cx: box.width / 2 + offset.x,
-    cy: box.height / 2 + 35 + offset.y,
+function renderDetail() {
+  const node = byId.get(selected),
+    panel = $("detail");
+  panel.replaceChildren();
+  panel.hidden = false;
+  const top = el("div", undefined, "detail-top"),
+    close = el("button", "×");
+  close.setAttribute("aria-label", "Close evidence");
+  close.onclick = () => {
+    panel.hidden = true;
+    $("detail-open").focus();
   };
-}
-function draw() {
-  if (!ctx || canvas.getBoundingClientRect().width === 0) return;
-  const geo = geometry(),
-    dpr = Math.min(devicePixelRatio || 1, 2);
-  canvas.width = geo.w * dpr;
-  canvas.height = geo.h * dpr;
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.clearRect(0, 0, geo.w, geo.h);
-  const at = new Map();
-  for (const p of points) {
-    p.sx = geo.cx + p.x * geo.scale;
-    p.sy = geo.cy + p.y * geo.scale;
-    at.set(p.id, p);
+  top.append(el("span", human(node.kind), "badge"), close);
+  panel.append(top, el("h2", node.label), el("p", node.summary));
+  const link = el("button", "Copy link to this concept", "text-button");
+  link.onclick = () => copy(location.href);
+  panel.append(link);
+  if (node.evidence?.length)
+    panel.append(el("h4", "SOURCE EVIDENCE"), evidence(node.evidence));
+  if (node.notation?.length) {
+    panel.append(el("h4", "NOTATION & QUALIFICATIONS"));
+    for (const item of node.notation)
+      panel.append(el("p", `${bookTitle(item.source)}: ${item.note}`));
   }
-  ctx.lineWidth = selected ? 1 : 0.6;
-  for (const e of lines) {
-    const a = at.get(e.from),
-      b = at.get(e.to);
-    if (!a || !b) continue;
-    ctx.strokeStyle = selected
-      ? e.relation === "prerequisite"
-        ? "#9cab98aa"
-        : "#a9b1a777"
-      : "#85978026";
-    ctx.setLineDash(selected && e.relation !== "prerequisite" ? [3, 4] : []);
-    ctx.beginPath();
-    ctx.moveTo(a.sx, a.sy);
-    ctx.lineTo(b.sx, b.sy);
-    ctx.stroke();
-    if (selected) {
-      const angle = Math.atan2(b.sy - a.sy, b.sx - a.sx),
-        x = b.sx - Math.cos(angle) * 9,
-        y = b.sy - Math.sin(angle) * 9;
-      ctx.setLineDash([]);
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(x - Math.cos(angle - 0.5) * 5, y - Math.sin(angle - 0.5) * 5);
-      ctx.moveTo(x, y);
-      ctx.lineTo(x - Math.cos(angle + 0.5) * 5, y - Math.sin(angle + 0.5) * 5);
-      ctx.stroke();
+  if (node.origins?.length) {
+    panel.append(el("h4", "BOOK TREATMENTS"));
+    for (const origin of node.origins) {
+      const row = el("div", undefined, "origin");
+      const graph = catalog.graphs.find((g) => g.project_id === origin.project);
+      const button = el(
+        graph ? "button" : "span",
+        bookTitle(origin.project) + (graph ? " ↗" : ""),
+      );
+      if (graph)
+        button.onclick = () => {
+          const params = new URLSearchParams({ node: origin.node });
+          navigateGraph(graph.id, params);
+        };
+      row.append(button);
+      if (origin.note) row.append(el("p", origin.note));
+      panel.append(row);
     }
   }
-  ctx.setLineDash([]);
-  for (const p of points) {
-    ctx.fillStyle = p.color;
-    ctx.beginPath();
-    ctx.arc(
-      p.sx,
-      p.sy,
-      p.r * (selected ? 1 : Math.min(1.8, zoom)),
-      0,
-      Math.PI * 2,
-    );
-    ctx.fill();
-    if (p.id === selected) {
-      ctx.strokeStyle = "#28574730";
-      ctx.lineWidth = 7;
-      ctx.stroke();
-    }
+  panel.append(el("h4", `CONNECTIONS · ${incident.get(node.id).length}`));
+  if (!incident.get(node.id).length)
+    panel.append(el("p", "No connections are recorded for this concept."));
+  for (const edge of incident.get(node.id)) {
+    const other = edge.from === node.id ? edge.to : edge.from;
+    const row = el("div", undefined, "connection"),
+      button = el("button", byId.get(other).label);
+    button.onclick = () => openNode(other);
+    let relationship = human(edge.relation);
+    if (edge.relation === "prerequisite")
+      relationship =
+        edge.to === node.id
+          ? "Needed before this concept"
+          : "Depends on this concept";
+    else relationship += edge.from === node.id ? " · outgoing" : " · incoming";
+    if (edge.necessity) relationship += " · " + human(edge.necessity);
+    row.append(button, el("small", relationship));
+    const detail = el("details"),
+      summary = el("summary", "Why this connection?");
+    detail.append(summary);
+    if (edge.rationale) detail.append(el("p", edge.rationale));
+    if (edge.failure_mode)
+      detail.append(el("p", "Without it: " + edge.failure_mode));
+    if (edge.source_level || edge.target_level)
+      detail.append(
+        el(
+          "p",
+          `Mastery: ${edge.source_level || "—"} → ${edge.target_level || "—"}`,
+        ),
+      );
+    detail.append(evidence(edge.evidence));
+    row.append(detail);
+    panel.append(row);
   }
-  if (selected) {
-    ctx.font = "11px system-ui";
-    for (const p of points) {
-      if ((points.length > 20 || geo.w < 440) && p.id !== selected) continue;
-      const label = byId.get(p.id).label;
-      const maxWidth = Math.min(180, (geo.w - 48) / (geo.w < 440 ? 1.5 : 3));
-      let text = label;
-      while (ctx.measureText(text).width > maxWidth && text.length > 4) text = text.slice(0, -1);
-      if (text !== label) text = text.slice(0, -1) + "…";
-      const width = ctx.measureText(text).width;
-      const x = Math.max(width / 2 + 12, Math.min(geo.w - width / 2 - 12, p.sx));
-      ctx.textAlign = "center";
-      ctx.fillStyle = "#f5f7f1ee";
-      ctx.fillRect(x - width / 2 - 3, p.sy + p.r + 6, width + 6, 16);
-      ctx.fillStyle = "#37493e";
-      ctx.fillText(text, x, p.sy + p.r + 18);
-    }
-  }
-}
-function hit(event) {
-  const r = canvas.getBoundingClientRect(),
-    x = event.clientX - r.left,
-    y = event.clientY - r.top;
-  let nearest = null,
-    dist = 144;
-  for (const p of points) {
-    const d = (p.sx - x) ** 2 + (p.sy - y) ** 2;
-    if (d < dist) {
-      dist = d;
-      nearest = p;
-    }
-  }
-  return nearest;
-}
-canvas.addEventListener("pointerdown", (e) => {
-  drag = { x: e.clientX, y: e.clientY, ox: offset.x, oy: offset.y };
-  moved = false;
-  canvas.setPointerCapture(e.pointerId);
-});
-canvas.addEventListener("pointermove", (e) => {
-  if (drag) {
-    const dx = e.clientX - drag.x,
-      dy = e.clientY - drag.y;
-    if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
-    offset = { x: drag.ox + dx, y: drag.oy + dy };
-    draw();
-    return;
-  }
-  const p = hit(e),
-    tip = $("tooltip");
-  tip.hidden = !p;
-  if (p) {
-    tip.textContent = byId.get(p.id).label;
-    const r = canvas.getBoundingClientRect();
-    tip.style.left = Math.min(e.clientX - r.left + 12, r.width - 240) + "px";
-    tip.style.top = Math.max(80, e.clientY - r.top - 40) + "px";
-  }
-});
-canvas.addEventListener("pointerup", (e) => {
-  if (!moved) {
-    const p = hit(e);
-    if (p) selectNode(p.id);
-  }
-  drag = null;
-  $("tooltip").hidden = true;
-});
-canvas.addEventListener("pointercancel", () => {
-  drag = null;
-});
-canvas.addEventListener("pointerleave", () => {
-  $("tooltip").hidden = true;
-});
-canvas.addEventListener(
-  "wheel",
-  (e) => {
-    if (e.ctrlKey || e.metaKey) {
-      e.preventDefault();
-      zoom = Math.max(0.35, Math.min(8, zoom * (e.deltaY < 0 ? 1.12 : 0.89)));
-      draw();
-    }
-  },
-  { passive: false },
-);
-new ResizeObserver(() => draw()).observe(canvas);
-function switchView(overlap) {
-  $("map-view").hidden = overlap;
-  $("overlap-view").hidden = !overlap;
-  $("map-tab").classList.toggle("active", !overlap);
-  $("overlap-tab").classList.toggle("active", overlap);
-  $("map-tab").setAttribute("aria-pressed", String(!overlap));
-  $("overlap-tab").setAttribute("aria-pressed", String(overlap));
-  if (overlap) renderOverlap();
-  else requestAnimationFrame(draw);
+  panel.append(el("div", node.id, "detail-id"));
+  panel.scrollTop = 0;
+  close.focus();
 }
 function renderOverlap() {
-  const ids = [...new Set(nodes.flatMap(books))].sort();
+  const ids = [...new Set(nodes.flatMap(directBooks))].sort();
   const grid = $("overlap-grid");
   grid.replaceChildren();
+  $("overlap-tab").disabled = ids.length < 2;
+  $("overlap-tab").title =
+    ids.length < 2
+      ? "Available in a shared graph with book correspondences"
+      : "Browse shared concepts";
   for (let i = 0; i < ids.length; i++)
     for (let j = i + 1; j < ids.length; j++) {
-      const count = nodes.filter(
-        (n) => books(n).includes(ids[i]) && books(n).includes(ids[j]),
-      ).length;
+      const pair = [ids[i], ids[j]],
+        count = nodes.filter((n) =>
+          pair.every((id) => directBooks(n).includes(id)),
+        ).length;
       const b = el("button", undefined, "pair");
+      b.dataset.books = pair.join(",");
       b.append(
         el("strong", fmt(count)),
-        el("span", `${bookTitle(ids[i])} × ${bookTitle(ids[j])}`),
+        el("span", pair.map(bookTitle).join(" × ")),
+        el("small", "shared concepts · Open the comparison →"),
       );
       b.onclick = () => {
-        pair = [ids[i], ids[j]];
-        selected = null;
+        searchScope = { pair };
         $("search").value = "";
-        $("source-select").value = "";
         $("kind-select").value = "";
-        limit = 60;
-        switchView(false);
-        filter();
-        emptyDetail();
-        setURL();
+        resultLimit = 60;
+        renderSearch();
+        saveURL();
       };
       grid.append(b);
     }
@@ -594,7 +737,8 @@ function renderOverlap() {
     grid.append(
       el(
         "p",
-        "Book comparison becomes available in a shared graph with recorded origins.",
+        "Book comparison needs a shared graph with recorded book correspondences.",
+        "empty",
       ),
     );
 }
@@ -603,87 +747,168 @@ async function copy(value) {
     await navigator.clipboard.writeText(value);
     say("Copied.");
   } catch {
-    say("Select and copy the prompt below. Clipboard access is unavailable.");
+    say("Clipboard access is unavailable. Select the text and copy it.");
   }
 }
-$("graph-select").onchange = (e) => loadGraph(e.target.value);
-$("search").oninput = () => {
-  limit = 60;
-  selected = null;
-  filter();
-  emptyDetail();
-  setURL();
+function navigateGraph(id, params = new URLSearchParams()) {
+  params.set("graph", id);
+  history.pushState({}, "", "#" + params.toString());
+  loadGraph(id, params).catch((error) => say(error.message));
+}
+$("graph-select").onchange = (e) => navigateGraph(e.target.value);
+$("reading-select").onchange = (e) => {
+  reading = data.reading_views.find((v) => v.id === e.target.value);
+  renderBoard();
+  show("browse");
+  saveURL();
 };
-$("source-select").onchange = $("kind-select").onchange = () => {
-  selected = null;
-  limit = 60;
-  filter();
-  emptyDetail();
-  setURL();
+$("chapter-jump").onchange = (e) => {
+  const column = [...$("board").children].find(
+    (c) => c.dataset.chapter === e.target.value,
+  );
+  if (column)
+    $("board").scrollTo({ left: column.offsetLeft - 30, behavior: "smooth" });
 };
-$("clear").onclick = () => {
-  pair = null;
-  selected = null;
+$("scroll-left").onclick = () =>
+  $("board").scrollBy({ left: -608, behavior: "smooth" });
+$("scroll-right").onclick = () =>
+  $("board").scrollBy({ left: 608, behavior: "smooth" });
+$("all-concepts").onclick = () => {
+  searchScope = null;
   $("search").value = "";
-  $("source-select").value = "";
   $("kind-select").value = "";
-  limit = 60;
-  filter();
-  emptyDetail();
-  setURL();
+  resultLimit = 60;
+  renderSearch();
+  saveURL();
+};
+$("search").oninput = () => {
+  searchScope = null;
+  resultLimit = 60;
+  renderSearch();
+  saveURL(true);
+};
+$("kind-select").onchange = () => {
+  resultLimit = 60;
+  renderSearch();
+  saveURL(true);
 };
 $("more").onclick = () => {
-  limit += 60;
-  renderList();
+  resultLimit += 60;
+  renderSearch();
 };
-$("map-tab").onclick = () => switchView(false);
-$("overlap-tab").onclick = () => switchView(true);
-$("overview").onclick = () => {
-  selected = null;
-  layout();
-  renderList();
-  emptyDetail();
-  setURL();
+$("clear").onclick = $("chapters-tab").onclick = () => {
+  $("search").value = "";
+  show("browse");
+  saveURL();
 };
-$("zoom-in").onclick = () => {
-  zoom = Math.min(8, zoom * 1.3);
-  draw();
+$("graph-tab").onclick = () => {
+  if (selected) {
+    show("network");
+    renderNetwork(true);
+    saveURL();
+  }
 };
-$("zoom-out").onclick = () => {
-  zoom = Math.max(0.35, zoom / 1.3);
-  draw();
+$("overlap-tab").onclick = () => {
+  show("overlap");
+  saveURL();
 };
+$("back").onclick = () => {
+  if (nodeTrail.length) {
+    openNode(nodeTrail.pop(), true, false);
+    return;
+  }
+  show(returnView === "network" ? "browse" : returnView);
+  saveURL();
+};
+$("trace").onclick = () => {
+  traced = true;
+  laneLimits = new Map();
+  renderNetwork(true);
+};
+$("reset-network").onclick = () => {
+  traced = false;
+  expanded = new Set([selected]);
+  laneLimits = new Map();
+  renderNetwork(true);
+};
+$("detail-open").onclick = () => {
+  if ($("detail").hidden) renderDetail();
+  else $("detail").hidden = true;
+};
+$("zoom-out").onclick = () => changeZoom(-0.1);
+$("zoom-in").onclick = () => changeZoom(0.1);
 $("fit").onclick = () => {
   zoom = 1;
-  offset = { x: 0, y: 0 };
-  draw();
+  applyZoom();
+  centerSelected();
 };
+const scroll = $("graph-scroll");
+let drag;
+scroll.onpointerdown = (e) => {
+  if (
+    e.pointerType !== "mouse" ||
+    e.button !== 0 ||
+    e.target.closest("button, article")
+  )
+    return;
+  drag = {
+    x: e.clientX,
+    y: e.clientY,
+    left: scroll.scrollLeft,
+    top: scroll.scrollTop,
+  };
+  scroll.setPointerCapture(e.pointerId);
+  scroll.classList.add("dragging");
+};
+scroll.onpointermove = (e) => {
+  if (!drag) return;
+  scroll.scrollLeft = drag.left + drag.x - e.clientX;
+  scroll.scrollTop = drag.top + drag.y - e.clientY;
+};
+scroll.onpointerup = scroll.onpointercancel = () => {
+  drag = null;
+  scroll.classList.remove("dragging");
+};
+new ResizeObserver(() => {
+  if (selected && mode === "network") applyZoom();
+}).observe(scroll);
+for (const id of ["about-open", "setup-open"])
+  $(id).onclick = () => $("about-dialog").showModal();
+$("about-close").onclick = () => $("about-dialog").close();
 $("copy-prompt").onclick = () => copy($("setup-prompt").textContent);
-(async () => {
-  try {
-    const r = await fetch("catalog.json");
-    if (!r.ok) throw Error("Catalog unavailable");
-    catalog = await r.json();
-    $("graph-select").replaceChildren(
-      ...catalog.graphs.map(
-        (g) =>
-          new Option(
-            `${g.title}${g.kind === "shared" ? " · shared" : ""}`,
-            g.id,
-          ),
-      ),
-    );
-    const p = new URLSearchParams(location.hash.slice(1));
-    await loadGraph(p.get("graph"), p.get("node"));
-  } catch (e) {
-    $("collection-title").textContent = "The atlas could not be loaded.";
-    $("review-status").textContent =
-      "Serve the built website over localhost; opening the HTML file directly is not supported.";
-    say(e.message);
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "/" &&
+    !e.target.closest("input, select, textarea") &&
+    !$("about-dialog").open
+  ) {
+    e.preventDefault();
+    $("search").focus();
   }
-})();
-
-window.addEventListener("hashchange", () => {
-  const p = new URLSearchParams(location.hash.slice(1));
-  if (catalog && p.get("graph")) loadGraph(p.get("graph"), p.get("node"));
+  if (e.key === "Escape" && !$("detail").hidden) {
+    $("detail").hidden = true;
+    $("detail-open").focus();
+  }
+});
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(location.hash.slice(1));
+  loadGraph(params.get("graph"), params).catch((error) => say(error.message));
+});
+async function boot() {
+  const response = await fetch("catalog.json");
+  if (!response.ok) throw new Error("The graph catalog could not be loaded.");
+  catalog = await response.json();
+  if (!catalog.graphs.length)
+    throw new Error("No graphs have been published yet.");
+  options(
+    $("graph-select"),
+    catalog.graphs.map((g) => [g.id, g.title]),
+  );
+  const params = new URLSearchParams(location.hash.slice(1));
+  await loadGraph(params.get("graph"), params);
+}
+boot().catch((error) => {
+  $("reading-title").textContent = "Unable to open this graph";
+  $("reading-description").textContent = error.message;
+  say(error.message);
 });
