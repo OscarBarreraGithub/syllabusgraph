@@ -152,6 +152,20 @@ def test_graph_only_export_and_cli(blank, tmp_path):
     assert not payload["knowledge"]["nodes"]
 
 
+def test_catalog_concept_map_link_is_explicit_and_resolves(sample, tmp_path):
+    entries = [
+        {"id": "records", "path": sample.root, "concept_map": "concepts"},
+        {"id": "concepts", "path": sample.root, "kind": "concept-map"},
+    ]
+    manifest = site.build_site(entries, tmp_path / "site")
+    assert manifest["graphs"][0]["concept_map"] == "concepts"
+    assert "concept_map" not in manifest["graphs"][1]
+    for invalid in ("missing", "records", None, ["concepts"]):
+        entries[0]["concept_map"] = invalid
+        with pytest.raises(ProjectError, match="concept_map must name"):
+            site.build_site(entries, tmp_path / "invalid")
+
+
 def test_site_overlap_excludes_imported_textbook_inputs(tmp_path):
     # Compare independently against the bank checker on the real public collection.
     from scripts.check_graph_bank import inspect_bank

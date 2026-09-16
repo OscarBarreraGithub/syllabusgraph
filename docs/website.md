@@ -28,14 +28,15 @@ guide. Usage limits are explained before the example.
 
 ![The reusable tool and copyable setup prompt](home.png)
 
-Choose **Explore the demo** to open the collection's **Overview**. It explains
-the book graphs, shared graph, and exact record matches. The example is separate
+Choose **Explore the demo** to open the collection's **Overview**. It starts
+with the bounded concept pilot and distinguishes its counts from the full
+shared-record inventory. The example is separate
 from the product homepage. **Overview** returns to the collection introduction;
 the brand link returns to the product homepage.
 
 ![The collection overview and starting point](overview.png)
 
-**Explore the concept pilot** opens a small map of nine path-integral concepts.
+The primary **Open the concept map** button opens nine path-integral concepts.
 Select a point to see its summary and distinct book treatments; follow a
 treatment to its original record and citations. **Inspect relationships and
 evidence** opens the detailed neighborhood. **Back** returns to the map.
@@ -48,14 +49,20 @@ This is a model-reviewed reorganization of 14 existing records, not a fresh
 textbook audit or the complete subject backbone. The [pilot record](../graphs/subjects/qft-path-integrals/README.md)
 contains its exact scope, review and usage. Other small, authored concept layers
 can opt into this view with catalog `kind: concept-map`; ordinary graph data and
-review rules apply. Map placement is not a course order. Book counts name
+review rules apply. Add `concept_map: "<map-entry-id>"` to its collection's
+catalog entry to make it the main entry point. The build checks that the target
+is a concept-map entry in the same catalog. No association is guessed from
+subject names or catalog order. Map placement is not a course order. Book counts name
 supporting graph projects; they do not assert identical derivations.
 
-The **Exact overlap** workspace shows records explicitly matched across the
+The secondary **Exact overlap** workspace shows records explicitly matched across the
 compared works, with their connections and basic statistics. It is not an
 established conceptual backbone or a count of every shared topic. See the
 [abstraction audit](graph-abstraction.md) for the distinction and missing work.
 It does not choose a course, reading sequence, audience, or timetable.
+Previously shared exact-overlap links still open that diagnostic, with a button
+to the collection's concept map when configured. The example's 78 exact matches
+remain unchanged; adding the concept pilot did not realign the full record graph.
 
 ![The shared core and overlap statistics](explorer.png)
 

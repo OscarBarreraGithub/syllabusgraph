@@ -264,8 +264,8 @@
               ><button class="secondary-action" id="overview-all">
                 Browse all concepts
               </button>
-              <button class="secondary-action" id="overview-pilot" hidden>
-                Explore the concept pilot →
+              <button class="secondary-action" id="overview-overlap" hidden>
+                Inspect exact record matches →
               </button>
             </div>
             <p class="overview-caption" id="overview-caption"></p>
@@ -287,7 +287,7 @@
             <div id="diagram-core-wrap">
               <div class="diagram-connector" aria-hidden="true">↓</div>
               <div class="diagram-core">
-                <span>Exact record overlap</span
+                <span id="diagram-core-title">Exact record overlap</span
                 ><strong id="diagram-core-count"></strong
                 ><small id="diagram-core-note"></small>
               </div>
@@ -313,9 +313,8 @@
               <span class="guide-number">01</span>
               <h3>Inspect recorded overlap</h3>
               <p>
-                Each card is a concept. The common backbone keeps ideas
-                independently treated in every compared textbook. Widen the
-                overlap to include ideas shared by fewer books.
+                Find a concept, follow its recorded relationships, and inspect
+                the source treatments behind it.
               </p>
               <button id="overview-wider" class="text-button">
                 Explore the wider overlap →
@@ -385,11 +384,12 @@
       <section id="core-view" hidden aria-label="Exact record overlap">
         <div class="core-heading">
           <div>
-            <span class="eyebrow">THE SHARED KNOWLEDGE GRAPH</span>
+            <span class="eyebrow">DETAILED RECORD DIAGNOSTIC</span>
             <h1>Exact record overlap</h1>
             <p id="core-description"></p>
           </div>
           <div class="core-controls">
+            <button id="core-concept-map" hidden>Open the concept map →</button>
             <label
               >Compare<select id="comparison-mode">
                 <option value="textbooks">Textbooks</option>

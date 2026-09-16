@@ -6,6 +6,11 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Make the concept pilot the primary entry from the collection overview.
+  Distinguish its counts from the detailed record inventory and keep exact
+  overlap as a secondary diagnostic. Explicit catalog links connect collections
+  to their maps; test the homepage journey as well as direct graph URLs.
+
 - Add a bounded, independently reviewed path-integral concept pilot: nine
   concepts from 14 existing records, with preserved book treatments, an input
   manifest, and measured two-call usage. Provide an opt-in compact SVG map with

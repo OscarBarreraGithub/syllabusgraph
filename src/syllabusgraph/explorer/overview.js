@@ -14,34 +14,49 @@ function overviewCore() {
     : perspectives.volumes;
   return { scope, level: scope.levels.at(-1) };
 }
+function linkedConceptMap() {
+  const target = catalog.graphs.find((g) => g.id === data.id)?.concept_map;
+  return catalog.graphs.find((g) => g.id === target);
+}
 function renderOverview() {
   show("overview");
-  const pilot = catalog.graphs.find((g) => g.kind === "concept-map");
-  $("overview-pilot").hidden = !pilot || isConceptMap();
-  if (pilot) $("overview-pilot").onclick = () => navigateGraph(pilot.id);
+  const pilot = linkedConceptMap();
+  $("overview-overlap").hidden = !pilot || !hasCore();
+  $("overview-overlap").onclick = () => {
+    prepareCore(new URLSearchParams());
+    renderCore();
+    saveURL();
+  };
   const core = overviewCore();
   const bookIDs = core
     ? new Set(core.scope.units.flatMap((u) => u.projects))
     : new Set([data.project_id]);
   const books = catalog.graphs.filter((g) => bookIDs.has(g.project_id));
   $("overview-eyebrow").textContent = data.title.toLocaleUpperCase();
-  $("overview-title").textContent = core
-    ? "Explore the example collection."
-    : nodes.length
-      ? "Get to know this graph."
-      : "Your map of ideas starts here.";
-  $("overview-intro").textContent = core
-    ? `${books.length} textbook graphs, connected in one shared map. Explore the ideas they share, follow their prerequisites, and look at the evidence behind each connection.`
-    : nodes.length
-      ? `Explore ${fmt(nodes.length)} concepts and ${fmt(edges.length)} recorded relationships. Start with the concept index or search for an idea, then follow its connections back to the sources.`
-      : "Bring your material and work with your coding agent to build a source-backed knowledge graph. The guide walks you through setup, scope, extraction, and independent review.";
-  $("overview-explore").textContent = core
-    ? "Inspect exact record overlap →"
-    : nodes.length
-      ? "Explore the concepts →"
-      : "Get set up →";
+  $("overview-title").textContent = pilot
+    ? "Start with a concept map."
+    : core
+      ? "Explore the example collection."
+      : nodes.length
+        ? "Get to know this graph."
+        : "Your map of ideas starts here.";
+  $("overview-intro").textContent = pilot
+    ? `${pilot.title} organizes selected records into ${fmt(pilot.nodes)} concepts, with distinct book treatments behind each one. It is a bounded starting point; the full subject concept map is still unfinished.`
+    : core
+      ? `${books.length} textbook graphs, connected in one shared map. Explore the ideas they share, follow their prerequisites, and look at the evidence behind each connection.`
+      : nodes.length
+        ? `Explore ${fmt(nodes.length)} concepts and ${fmt(edges.length)} recorded relationships. Start with the concept index or search for an idea, then follow its connections back to the sources.`
+        : "Bring your material and work with your coding agent to build a source-backed knowledge graph. The guide walks you through setup, scope, extraction, and independent review.";
+  $("overview-explore").textContent = pilot
+    ? "Open the concept map →"
+    : core
+      ? "Inspect exact record overlap →"
+      : nodes.length
+        ? "Explore the concepts →"
+        : "Get set up →";
   $("overview-explore").onclick = () => {
-    if (core) {
+    if (pilot) navigateGraph(pilot.id);
+    else if (core) {
       prepareCore(new URLSearchParams());
       renderCore();
       saveURL();
@@ -52,10 +67,13 @@ function renderOverview() {
     } else $("about-dialog").showModal();
   };
   $("overview-all").hidden = !nodes.length;
-  $("overview-all").textContent = `Browse all ${fmt(nodes.length)} concepts`;
-  $("overview-caption").textContent = core
-    ? `The starting view compares ${core.scope.units.map((u) => u.title).join(", ")}. Course design comes later.`
-    : "This is a knowledge map. Course design is a separate step.";
+  $("overview-all").textContent =
+    `Browse all ${fmt(nodes.length)} ${core ? "records" : "concepts"}`;
+  $("overview-caption").textContent = pilot
+    ? "The concept map and the detailed record inventory are different layers. No course has been chosen."
+    : core
+      ? `The starting view compares ${core.scope.units.map((u) => u.title).join(", ")}. Course design comes later.`
+      : "This is a knowledge map. Course design is a separate step.";
   const bookList = $("diagram-books");
   bookList.replaceChildren();
   for (const book of books) {
@@ -70,13 +88,21 @@ function renderOverview() {
     ? `${books.length} BOOK GRAPHS → ONE SHARED MAP`
     : "YOUR KNOWLEDGE GRAPH";
   $("diagram-shared-title").textContent = core
-    ? "Shared knowledge graph"
+    ? "Shared record inventory"
     : "Knowledge graph";
-  $("diagram-shared-count").textContent = `${fmt(nodes.length)} concepts`;
+  $("diagram-shared-count").textContent =
+    `${fmt(nodes.length)} ${core ? "records" : "concepts"}`;
   $("diagram-shared-note").textContent =
     `${fmt(edges.length)} recorded relationships`;
-  $("diagram-core-wrap").hidden = !core;
-  if (core) {
+  $("diagram-core-wrap").hidden = !core && !pilot;
+  $("diagram-core-title").textContent = pilot
+    ? pilot.title
+    : "Exact record overlap";
+  if (pilot) {
+    $("diagram-core-count").textContent = `${fmt(pilot.nodes)} concepts`;
+    $("diagram-core-note").textContent =
+      `${fmt(pilot.edges)} relationships · A bounded concept layer, not the complete subject map`;
+  } else if (core) {
     $("diagram-core-count").textContent =
       `${fmt(core.level.nodes.length)} records matched`;
     $("diagram-core-note").textContent =
@@ -84,45 +110,70 @@ function renderOverview() {
   }
   const facts = $("overview-facts");
   facts.replaceChildren();
-  const values = core
+  const values = pilot
     ? [
+        [fmt(pilot.nodes), "Concepts in the pilot", pilot.title],
         [
-          fmt(core.level.nodes.length),
-          "Records matched across every work",
-          `Matched across all ${core.scope.units.length} textbooks`,
+          fmt(pilot.edges),
+          "Relationships in the pilot",
+          "Only reviewed connections are drawn",
         ],
         [
-          fmt(core.level.edges.length),
-          "Connections between those concepts",
-          `${core.level.relations.prerequisite || 0} prerequisite relations`,
-        ],
-        [
-          fmt(core.level.components.length),
-          "Separate connected pieces",
-          `The largest contains ${core.level.components[0]?.nodes.length || 0} concepts`,
+          fmt(books.length),
+          "Textbook graphs",
+          "Original treatments remain available",
         ],
         [
           fmt(nodes.length),
-          "Concepts in the full shared graph",
-          "The whole collection remains searchable",
+          "Detailed shared records",
+          "The full inventory remains searchable",
         ],
       ]
-    : [
-        [fmt(nodes.length), "Concepts", "Each retains its source evidence"],
-        [fmt(edges.length), "Connections", "Follow the recorded relationships"],
-      ];
+    : core
+      ? [
+          [
+            fmt(core.level.nodes.length),
+            "Records matched across every work",
+            `Matched across all ${core.scope.units.length} textbooks`,
+          ],
+          [
+            fmt(core.level.edges.length),
+            "Connections between those concepts",
+            `${core.level.relations.prerequisite || 0} prerequisite relations`,
+          ],
+          [
+            fmt(core.level.components.length),
+            "Separate connected pieces",
+            `The largest contains ${core.level.components[0]?.nodes.length || 0} concepts`,
+          ],
+          [
+            fmt(nodes.length),
+            "Concepts in the full shared graph",
+            "The whole collection remains searchable",
+          ],
+        ]
+      : [
+          [fmt(nodes.length), "Concepts", "Each retains its source evidence"],
+          [
+            fmt(edges.length),
+            "Connections",
+            "Follow the recorded relationships",
+          ],
+        ];
   for (const [value, title, caption] of values) {
     const stat = el("div", undefined, "overview-fact");
     stat.append(el("strong", value), el("span", title), el("small", caption));
     facts.append(stat);
   }
-  $("overview-structure").textContent = core
-    ? `This count measures explicit matches between detailed records: concepts, results, methods, and assumptions. It does not measure all topics the books share. Different treatments of one topic can remain separate. Filtering to these records leaves ${core.level.components.length} connected pieces and removes paths through other records. This intersection is not yet a conceptual backbone.`
-    : "Concepts and relationships retain their evidence. The index helps you find an idea; its neighborhood shows where that idea fits.";
+  $("overview-structure").textContent = pilot
+    ? "Start with the concept map and select an idea to reveal its book treatments. The full shared graph retains the detailed records underneath. Exact overlap is a separate diagnostic of record matching; its count does not measure how many topics the books share."
+    : core
+      ? `This count measures explicit matches between detailed records: concepts, results, methods, and assumptions. It does not measure all topics the books share. Different treatments of one topic can remain separate. Filtering to these records leaves ${core.level.components.length} connected pieces and removes paths through other records. This intersection is not yet a conceptual backbone.`
+      : "Concepts and relationships retain their evidence. The index helps you find an idea; its neighborhood shows where that idea fits.";
   $("overview-wider").hidden = !core || core.scope.units.length <= 2;
   if (core && core.scope.units.length > 2) {
     $("overview-wider").textContent =
-      `See the wider overlap (${core.scope.levels[0].nodes.length} concepts) →`;
+      `Diagnostic: wider record overlap (${core.scope.levels[0].nodes.length}) →`;
     $("overview-wider").onclick = () => {
       prepareCore(new URLSearchParams());
       coreMinimum = 2;
@@ -130,10 +181,18 @@ function renderOverview() {
       saveURL();
     };
   }
-  document.querySelector(".reading-guide article:first-child h3").textContent =
-    core ? "Inspect exact matches" : "Find a concept";
-  document.querySelector(".reading-guide article:first-child p").textContent =
-    core
+  document.querySelector(
+    "#overview-view .reading-guide article:first-child h3",
+  ).textContent = pilot
+    ? "Start with the concept map"
+    : core
+      ? "Inspect exact matches"
+      : "Find a concept";
+  document.querySelector(
+    "#overview-view .reading-guide article:first-child p",
+  ).textContent = pilot
+    ? "Each point is a concept with supporting book treatments. The pilot covers a selected topic; it does not replace the complete record inventory or establish every connection in the subject."
+    : core
       ? "Each card is an extracted record. This filter keeps records explicitly matched to independent treatments in every compared work. A topic can appear in all the books through distinct records and therefore be absent here."
       : "Open the index to browse concepts, or use search to find an idea by name. You can explore a knowledge graph before deciding how to teach it.";
   $("overview-books-heading").textContent = core

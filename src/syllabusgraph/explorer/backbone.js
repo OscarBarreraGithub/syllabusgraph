@@ -33,6 +33,10 @@ function prepareCore(params) {
 function renderCore(reset = true) {
   if (!hasCore()) return;
   show("core");
+  const conceptMap = linkedConceptMap();
+  $("core-concept-map").hidden = !conceptMap;
+  if (conceptMap)
+    $("core-concept-map").onclick = () => navigateGraph(conceptMap.id);
   const scope = coreScope(),
     level = coreLevel(),
     total = scope.units.length;

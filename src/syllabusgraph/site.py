@@ -65,6 +65,7 @@ def build_site(projects, destination: Path):
                 "project_id": payload["project_id"],
                 "title": payload["title"],
                 "kind": entry.get("kind", "graph"),
+                **({"concept_map": entry["concept_map"]} if "concept_map" in entry else {}),
                 **({"comparison_group": comparison_group} if comparison_group else {}),
                 "nodes": len(project.nodes),
                 "edges": len(project.knowledge["edges"]),
@@ -72,6 +73,12 @@ def build_site(projects, destination: Path):
                 "file": f"data/{slug}.json",
             }
         )
+    by_slug = {entry["id"]: entry for entry in manifest["graphs"]}
+    for entry in manifest["graphs"]:
+        if "concept_map" in entry:
+            target = entry["concept_map"]
+            if not isinstance(target, str) or by_slug.get(target, {}).get("kind") != "concept-map":
+                raise ProjectError("concept_map must name a concept-map entry in this catalog.")
     # Imported textbook nodes are dependencies, not an independent treatment.
     # Match the graph-bank overlap definition without changing scientific records.
     projects_by_id = {payload["project_id"]: payload for _, payload in payloads}

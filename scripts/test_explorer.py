@@ -46,7 +46,7 @@ def check_navigation(engine, url, pilot):
         page.mouse.wheel(0, 600)
         expect(page.locator("html")).not_to_have_js_property("scrollTop", 0)
         page.locator("#home-demo").click()
-        page.locator("#overview-explore").click()
+        page.locator("#overview-overlap").click()
         scroll = page.locator("#core-scroll")
         expect(scroll).to_be_visible()
         assert scroll.bounding_box()["height"] > 480
@@ -119,7 +119,7 @@ def check_navigation(engine, url, pilot):
             page.locator("#home-demo").click()
             expect(page.locator("#overview-view")).to_be_visible()
             assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
-            page.locator("#overview-explore").click()
+            page.locator("#overview-overlap").click()
             page.locator("#core-pan-down").click()
             expect(scroll).not_to_have_js_property("scrollTop", 0)
             page.locator("#core-expand").click()
@@ -131,7 +131,7 @@ def check_navigation(engine, url, pilot):
         page.set_viewport_size({"width": 1440, "height": 900})
         page.goto(url)
         page.locator("#home-demo").click()
-        page.locator("#overview-pilot").click()
+        page.locator("#overview-explore").click()
         points = page.locator(".concept-point")
         expect(points).to_have_count(len(pilot["nodes"]))
         assert set(points.evaluate_all("ps => ps.map(p => p.dataset.node)")) == {
@@ -174,6 +174,10 @@ def check_navigation(engine, url, pilot):
         assert page.locator("#concept-map-svg").bounding_box()["width"] > fitted
         page.locator("#concept-map-fit").click()
         assert abs(page.locator("#concept-map-svg").bounding_box()["width"] - fitted) < 1
+        page.goto(url + "#graph=qft&view=core")
+        expect(page.locator("#core-stats")).to_contain_text("78")
+        page.locator("#core-concept-map").click()
+        expect(page.locator("#map-view")).to_be_visible()
         page.set_viewport_size({"width": 390, "height": 844})
         assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
         map_scroll.focus()
@@ -189,7 +193,7 @@ def check_navigation(engine, url, pilot):
             touch_page = touch_context.new_page()
             touch_page.goto(url)
             touch_page.locator("#home-demo").tap()
-            touch_page.locator("#overview-explore").tap()
+            touch_page.locator("#overview-overlap").tap()
             touch_scroll = touch_page.locator("#core-scroll")
             box = touch_scroll.bounding_box()
             session = touch_context.new_cdp_session(touch_page)
@@ -258,11 +262,17 @@ def main():
                 assert "slow, checkpointed mode" in page.evaluate("navigator.clipboard.readText()")
                 page.locator("#home-demo").click()
                 expect(page.locator("#overview-title")).to_have_text(
-                    "Explore the example collection."
+                    "Start with a concept map."
                 )
-                expect(page.locator("#overview-facts")).to_contain_text("78")
+                expect(page.locator("#diagram-core-title")).to_have_text("Path integrals: concept pilot")
+                expect(page.locator("#diagram-core-count")).to_have_text("9 concepts")
+                expect(page.locator("#overview-facts")).not_to_contain_text("78")
+                expect(page.locator("#overview-intro")).to_contain_text("still unfinished")
+                expect(page.locator("#overview-view .reading-guide h3").first).to_have_text(
+                    "Start with the concept map"
+                )
                 expect(page.locator("#overview-books .overview-book")).to_have_count(4)
-                page.locator("#overview-explore").click()
+                page.locator("#overview-overlap").click()
                 page.wait_for_selector("#core-cards .core-card")
                 # Independently compute the intersection from exact book matches.
                 grouped = {
@@ -408,7 +418,7 @@ def main():
                 expect(page.locator("#result-count")).to_have_text("0 concepts")
                 page.locator("#clear").click()
                 expect(page.locator("#overview-view")).to_be_visible()
-                page.locator("#overview-explore").click()
+                page.locator("#overview-overlap").click()
                 with page.expect_download() as dl:
                     page.locator("#download").click()
                 downloaded = json.loads(Path(dl.value.path()).read_text(encoding="utf-8"))
@@ -437,7 +447,7 @@ def main():
                     page.locator("#home-demo").click()
                     expect(page.locator("#overview-view")).to_be_visible()
                     assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
-                    page.locator("#overview-explore").click()
+                    page.locator("#overview-overlap").click()
                     expect(page.locator("#core-view")).to_be_visible()
                     assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
                     expect(page.locator("#core-stats")).to_contain_text("78")
