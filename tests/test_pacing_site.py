@@ -128,10 +128,10 @@ def test_static_export_is_source_free_and_preserves_graph(sample, tmp_path):
     write_json(sample.local / "private.json", {"secret": "PRIVATE MARKER"})
     out = tmp_path / "site"
     manifest = site.build_site([{"path": sample.root}], out)
-    payload = json.loads((out / manifest["graphs"][0]["file"]).read_text())
+    payload = json.loads((out / manifest["graphs"][0]["file"]).read_text(encoding="utf-8"))
     assert payload["knowledge"] == sample.knowledge
     assert payload["digest"] == sample.content_digest
-    assert "PRIVATE MARKER" not in "\n".join(p.read_text() for p in out.rglob("*") if p.is_file())
+    assert "PRIVATE MARKER" not in "\n".join(p.read_text(encoding="utf-8") for p in out.rglob("*") if p.is_file())
     assert not list(out.rglob("*.pdf"))
     (out / "accidental-private.txt").write_text("private")
     with pytest.raises(ProjectError, match="unexpected"):
@@ -148,7 +148,7 @@ def test_graph_only_export_and_cli(blank, tmp_path):
     write_json(catalog, {"graphs": [{"id": "blank", "path": str(blank.root)}]})
     assert main(["site", "build", "--catalog", str(catalog), "--out", str(tmp_path / "web")]) == 0
     assert (tmp_path / "web/data/blank.json").exists()
-    payload = json.loads((tmp_path / "web/data/blank.json").read_text())
+    payload = json.loads((tmp_path / "web/data/blank.json").read_text(encoding="utf-8"))
     assert not payload["knowledge"]["nodes"]
 
 
@@ -159,7 +159,7 @@ def test_site_overlap_excludes_imported_textbook_inputs(tmp_path):
     root = Path(__file__).resolve().parents[1]
     manifest = site.build_catalog(root / "site/catalog.json", tmp_path / "site")
     assert len(manifest["graphs"]) == 5
-    payload = json.loads((tmp_path / "site/data/qft.json").read_text())
+    payload = json.loads((tmp_path / "site/data/qft.json").read_text(encoding="utf-8"))
     bank = inspect_bank(root / "graphs")
     for row in bank["overlap"]:
         expected = set(row["shared_nodes"])

@@ -80,7 +80,7 @@ def main():
                 page.locator("#fit").click()
                 with page.expect_download() as dl:
                     page.locator("#download").click()
-                data = json.loads(Path(dl.value.path()).read_text())
+                data = json.loads(Path(dl.value.path()).read_text(encoding="utf-8"))
                 assert len(data["knowledge"]["nodes"]) == 2156
                 assert len(data["knowledge"]["edges"]) == 3319
                 page.locator("#copy-prompt").click()
