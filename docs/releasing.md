@@ -44,6 +44,6 @@ only the working tree.
 Follow [SETUP.md](../SETUP.md), then install development dependencies with
 `.venv/bin/python -m pip install -e '.[dev,browser]'` (Windows: use the venv's
 `Scripts/python.exe`). For a locked environment use `uv sync --locked --all-extras`.
-Install the test browser with `python -m playwright install chromium` inside
+Install the test browsers with `python -m playwright install chromium webkit` inside
 that environment. The browser tests use disposable projects and no model calls.
 For the optional Cloudflare build, run `npm ci` and `npm run deploy:check`.

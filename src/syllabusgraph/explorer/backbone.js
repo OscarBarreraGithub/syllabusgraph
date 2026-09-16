@@ -6,6 +6,7 @@ let corePerspective = "textbooks",
 let coreWorld = { width: 0, height: 0 },
   corePositions = new Map(),
   coreJumps = new Map();
+let coreOffset = { x: 0, y: 0 };
 function hasCore() {
   return Boolean(data?.backbone?.available);
 }
@@ -191,7 +192,7 @@ function coreCard(id, x, y) {
   card.onpointerleave = card.onblur = () => highlightCore(null);
   $("core-cards").append(card);
   const height = card.offsetHeight;
-  corePositions.set(id, { x, y, w: 222, h: height });
+  corePositions.set(id, { x, y, w: 244, h: height });
   return height;
 }
 function renderCoreGraph(level, components) {
@@ -240,10 +241,10 @@ function renderCoreGraph(level, components) {
       let y = top + 45;
       for (const [row, id] of ids.entries()) {
         order.set(id, row);
-        y += coreCard(id, 30 + rank * 282, y) + 21;
+        y += coreCard(id, 30 + rank * 306, y) + 21;
       }
       bottom = Math.max(bottom, y);
-      maxWidth = Math.max(maxWidth, 282 * rank + 290);
+      maxWidth = Math.max(maxWidth, 306 * rank + 304);
     }
     top = bottom + 55;
   }
@@ -268,13 +269,13 @@ function renderCoreGraph(level, components) {
       for (let col = 0; col < columns && i + col < isolated.length; col++)
         height = Math.max(
           height,
-          coreCard(isolated[i + col], 30 + col * 252, top),
+          coreCard(isolated[i + col], 30 + col * 276, top),
         );
       top += height + 21;
     }
     maxWidth = Math.max(
       maxWidth,
-      Math.min(columns, isolated.length) * 252 + 30,
+      Math.min(columns, isolated.length) * 276 + 30,
     );
   }
   if (!level.nodes.length) {
@@ -358,11 +359,20 @@ function highlightCore(id) {
   }
 }
 function applyCoreZoom() {
+  const viewport = $("core-scroll");
+  coreOffset = {
+    x: Math.max(0, (viewport.clientWidth - coreWorld.width * coreZoom) / 2),
+    y: Math.max(0, (viewport.clientHeight - coreWorld.height * coreZoom) / 2),
+  };
+  $("core-world").style.left = coreOffset.x + "px";
+  $("core-world").style.top = coreOffset.y + "px";
   $("core-world").style.width = coreWorld.width + "px";
   $("core-world").style.height = coreWorld.height + "px";
   $("core-world").style.transform = `scale(${coreZoom})`;
-  $("core-sizer").style.width = coreWorld.width * coreZoom + "px";
-  $("core-sizer").style.height = coreWorld.height * coreZoom + "px";
+  $("core-sizer").style.width =
+    Math.max(viewport.clientWidth, coreWorld.width * coreZoom) + "px";
+  $("core-sizer").style.height =
+    Math.max(viewport.clientHeight, coreWorld.height * coreZoom) + "px";
   $("core-zoom-label").textContent = Math.round(coreZoom * 100) + "%";
   $("core-zoom-out").disabled = coreZoom <= 0.6;
   $("core-zoom-in").disabled = coreZoom >= 1.4;
@@ -370,9 +380,16 @@ function applyCoreZoom() {
 function jumpCore(id) {
   $("core-scroll").scrollTo({
     left: 0,
-    top: Math.max(0, coreJumps.get(id) * coreZoom - 15),
+    top: Math.max(0, coreOffset.y + coreJumps.get(id) * coreZoom - 15),
     behavior: "smooth",
   });
+}
+function setCoreExpanded(expanded) {
+  $("core-view").classList.toggle("core-view-expanded", expanded);
+  $("core-expand").textContent = expanded
+    ? "Exit expanded view ×"
+    : "Expand graph ⛶";
+  $("core-expand").setAttribute("aria-pressed", String(expanded));
 }
 function bindCoreControls() {
   $("core-jump").onchange = (e) =>
@@ -416,25 +433,69 @@ function bindCoreControls() {
     $("core-scroll").scrollTo({ left: 0, top: 0 });
   };
   const scroll = $("core-scroll");
-  let drag;
+  scroll.addEventListener("keydown", (e) => {
+    if (e.target !== scroll || e.altKey || e.ctrlKey || e.metaKey) return;
+    const movement = {
+      ArrowLeft: [-60, 0],
+      ArrowRight: [60, 0],
+      ArrowUp: [0, -60],
+      ArrowDown: [0, 60],
+      PageUp: [0, -scroll.clientHeight * 0.8],
+      PageDown: [0, scroll.clientHeight * 0.8],
+    }[e.key];
+    if (!movement) return;
+    e.preventDefault();
+    scroll.scrollBy({ left: movement[0], top: movement[1] });
+  });
+  $("core-expand").onclick = () =>
+    setCoreExpanded(!$("core-view").classList.contains("core-view-expanded"));
+  for (const [id, dx, dy] of [
+    ["left", -1, 0],
+    ["right", 1, 0],
+    ["up", 0, -1],
+    ["down", 0, 1],
+  ]) {
+    $("core-pan-" + id).onclick = () =>
+      scroll.scrollBy({
+        left: dx * scroll.clientWidth * 0.65,
+        top: dy * scroll.clientHeight * 0.65,
+        behavior: "smooth",
+      });
+  }
+  scroll.addEventListener(
+    "wheel",
+    (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        change(e.deltaY < 0 ? 0.1 : -0.1);
+      }
+    },
+    { passive: false },
+  );
+  let drag,
+    moved = false;
   scroll.onpointerdown = (e) => {
-    if (
-      e.pointerType !== "mouse" ||
-      e.button !== 0 ||
-      e.target.closest("button")
-    )
-      return;
+    moved = false;
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
     drag = {
       x: e.clientX,
       y: e.clientY,
       left: scroll.scrollLeft,
       top: scroll.scrollTop,
+      pointer: e.pointerId,
     };
-    scroll.setPointerCapture(e.pointerId);
-    scroll.classList.add("dragging");
   };
   scroll.onpointermove = (e) => {
-    if (drag) {
+    if (!drag) return;
+    if (
+      !moved &&
+      Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 5
+    ) {
+      moved = true;
+      scroll.setPointerCapture(drag.pointer);
+      scroll.classList.add("dragging");
+    }
+    if (moved) {
       scroll.scrollLeft = drag.left + drag.x - e.clientX;
       scroll.scrollTop = drag.top + drag.y - e.clientY;
     }
@@ -443,4 +504,28 @@ function bindCoreControls() {
     drag = null;
     scroll.classList.remove("dragging");
   };
+  scroll.addEventListener(
+    "click",
+    (e) => {
+      if (moved && e.detail !== 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        moved = false;
+      }
+    },
+    true,
+  );
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      !$("about-dialog").open &&
+      $("core-view").classList.contains("core-view-expanded")
+    ) {
+      setCoreExpanded(false);
+      $("core-expand").focus();
+    }
+  });
+  new ResizeObserver(() => {
+    if (mode === "core") applyCoreZoom();
+  }).observe(scroll);
 }

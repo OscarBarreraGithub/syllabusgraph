@@ -21,10 +21,18 @@ Paths are relative to the catalog file.
 
 ## Reading the map
 
-A shared graph opens on **Shared core**: concepts independently treated in every
-compared textbook, with their recorded connections and basic statistics. This
-is a view of the knowledge graph. It does not choose a course, reading sequence,
-audience, or timetable.
+A graph opens on a scrollable **Overview**. It explains the collection, shows
+its actual counts, and provides a short guide to reading the map. For shared
+graphs, the diagram distinguishes the individual book graphs, the combined
+graph, and their common backbone. Choose **Explore the shared backbone** to
+open concepts independently treated in every compared textbook. **Overview**
+returns to the introduction; the brand link returns to the catalog's first graph.
+
+![The collection overview and starting point](overview.png)
+
+The **Shared core** workspace shows those concepts with their recorded
+connections and basic statistics. This is a view of the knowledge graph. It
+does not choose a course, reading sequence, audience, or timetable.
 
 ![The shared core and overlap statistics](explorer.png)
 
@@ -33,8 +41,14 @@ default. **Compare → Individual volumes** treats the four book graphs separate
 **Include** widens the intersection to concepts matched in at least two books.
 The graph displays every qualifying concept and every shared-graph relation
 whose endpoints qualify. Hover to highlight connections; click a concept for
-its wider neighborhood and source evidence. Pan or scroll to explore; jump to
-separate components from the sidebar or the mobile selector.
+its wider neighborhood and source evidence. Scroll in either direction, drag
+the map (including from a card), or use the arrow buttons to move. A focused
+map also accepts arrow keys. **Expand graph** gives it the window; the exit
+button or Escape returns to the normal workspace. Zoom with +/− or Ctrl/Command
+and the wheel; **Reset** returns to the start at 100%. Jump to separate
+components from the sidebar or the selector above the map. On touch screens,
+swipe to move. The overview scrolls as a normal page; the map scrolls within its
+own viewport. Short windows can also scroll the page to reach the controls.
 
 The counts distinguish exact book membership, prerequisite relations, connected
 components, isolated concepts, and the fraction of the whole shared graph.
@@ -55,7 +69,8 @@ catalog; missing exports cannot silently lower the comparison denominator.
 order. It is not a course. Change **Read through** to browse another book without
 leaving the shared graph. **All concepts** and the search box cover the whole
 selected graph, including concepts outside the current book or common core.
-Standalone textbook and example graphs still open on their own index.
+Standalone textbook and example graphs have their own overview and a direct
+button to their concept index. Empty projects offer the setup guide.
 
 Open a card to follow its **Connections**. Prerequisites are on the left,
 dependents on the right, and other connections in a separate column. Arrows

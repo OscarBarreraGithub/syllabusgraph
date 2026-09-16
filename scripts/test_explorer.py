@@ -32,6 +32,128 @@ def reveal_lanes(page):
     raise AssertionError("Lane expansion did not terminate")
 
 
+def check_navigation(engine, url):
+    """Use browser input, not assigned scroll offsets, to verify the workspace."""
+    browser = engine.launch()
+    context = browser.new_context(viewport={"width": 1440, "height": 900})
+    page = context.new_page()
+    errors = []
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    try:
+        page.goto(url)
+        expect(page.locator("#overview-title")).to_contain_text("books have in common")
+        page.mouse.move(500, 600)
+        page.mouse.wheel(0, 600)
+        expect(page.locator("html")).not_to_have_js_property("scrollTop", 0)
+        page.locator("#overview-explore").click()
+        scroll = page.locator("#core-scroll")
+        expect(scroll).to_be_visible()
+        assert scroll.bounding_box()["height"] > 480
+        box = scroll.bounding_box()
+        page.mouse.move(box["x"] + 400, box["y"] + 200)
+        page.mouse.wheel(0, 400)
+        expect(scroll).not_to_have_js_property("scrollTop", 0)
+        page.mouse.wheel(400, 0)
+        expect(scroll).not_to_have_js_property("scrollLeft", 0)
+        page.locator("#core-center").click()
+        expect(scroll).to_have_js_property("scrollTop", 0)
+        expect(scroll).to_have_js_property("scrollLeft", 0)
+
+        # Dragging can begin on a card; releasing must not open that concept.
+        card = page.locator(".core-card").first
+        card.scroll_into_view_if_needed()
+        box = card.bounding_box()
+        page.mouse.move(box["x"] + 150, box["y"] + 25)
+        page.mouse.down()
+        page.mouse.move(box["x"] + 50, box["y"] - 35, steps=12)
+        page.mouse.up()
+        expect(scroll).to_be_visible()
+        expect(scroll).not_to_have_js_property("scrollLeft", 0)
+        expect(scroll).not_to_have_js_property("scrollTop", 0)
+        for key, prop in (("ArrowDown", "scrollTop"), ("ArrowRight", "scrollLeft")):
+            page.locator("#core-center").click()
+            scroll.focus()
+            page.keyboard.press(key)
+            expect(scroll).not_to_have_js_property(prop, 0)
+        for direction, prop in (("down", "scrollTop"), ("right", "scrollLeft")):
+            page.locator("#core-center").click()
+            page.locator("#core-pan-" + direction).click()
+            expect(scroll).not_to_have_js_property(prop, 0)
+
+        page.locator("#core-expand").click()
+        expect(page.locator("#core-expand")).to_have_attribute("aria-pressed", "true")
+        assert scroll.bounding_box()["height"] > 680
+        assert scroll.bounding_box()["width"] == 1440
+        page.keyboard.press("Escape")
+        expect(page.locator("#core-expand")).to_have_attribute("aria-pressed", "false")
+        page.locator("#core-center").click()
+        for _ in range(4):
+            page.locator("#core-zoom-out").click()
+        expect(page.locator("#core-zoom-label")).to_have_text("60%")
+        # At reduced zoom there must be no scrollable blank unscaled world.
+        assert scroll.evaluate(
+            "s => Math.abs(s.scrollWidth - document.getElementById('core-sizer').offsetWidth) <= 1"
+        )
+        page.locator("#core-jump").select_option("isolated")
+        expect(page.locator(".core-component-title").last).to_be_in_viewport()
+        page.locator("#comparison-mode").select_option("volumes")
+        expect(page.locator(".core-card")).to_have_count(2)
+        assert scroll.evaluate("s => s.scrollWidth <= s.clientWidth + 1")
+        expect(page.locator(".core-card").first).to_be_in_viewport()
+        page.locator("#overview-tab").click()
+        page.reload()
+        expect(page.locator("#overview-view")).to_be_visible()
+        page.locator("#overview-wider").click()
+        expect(page.locator(".core-card")).to_have_count(305)
+        page.locator("#overview-tab").click()
+        page.locator(".overview-book").first.click()
+        expect(page.locator("#graph-select")).not_to_have_value("qft")
+        expect(page.locator("#browse-view")).to_be_visible()
+
+        for width, height in ((390, 844), (768, 900), (1280, 600)):
+            page.set_viewport_size({"width": width, "height": height})
+            page.goto(url + "?navigation=" + str(width))
+            expect(page.locator("#overview-view")).to_be_visible()
+            assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+            page.locator("#overview-explore").click()
+            page.locator("#core-pan-down").click()
+            expect(scroll).not_to_have_js_property("scrollTop", 0)
+            page.locator("#core-expand").click()
+            assert scroll.bounding_box()["height"] > height * 0.55
+            assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+            page.keyboard.press("Escape")
+        if engine.name == "chromium":
+            touch_context = browser.new_context(
+                viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True
+            )
+            touch_page = touch_context.new_page()
+            touch_page.goto(url)
+            touch_page.locator("#overview-explore").tap()
+            touch_scroll = touch_page.locator("#core-scroll")
+            box = touch_scroll.bounding_box()
+            session = touch_context.new_cdp_session(touch_page)
+            # Native touch sequences, starting on a card, in each direction.
+            for dx, dy, prop in ((0, 15, "scrollTop"), (12, 0, "scrollLeft")):
+                x, y = 220, box["y"] + 180
+                session.send("Input.dispatchTouchEvent", {
+                    "type": "touchStart", "touchPoints": [{"x": x, "y": y}]
+                })
+                for step in range(1, 11):
+                    session.send("Input.dispatchTouchEvent", {
+                        "type": "touchMove",
+                        "touchPoints": [{"x": x - step * dx, "y": y - step * dy}],
+                    })
+                    touch_page.wait_for_timeout(20)  # Pace the finger movement.
+                session.send("Input.dispatchTouchEvent", {"type": "touchEnd", "touchPoints": []})
+                expect(touch_scroll).not_to_have_js_property(prop, 0)
+                expect(touch_page.locator("#core-view")).to_be_visible()
+            touch_context.close()
+        assert not errors, errors
+        print(f"{engine.name}: overview scroll, graph wheel/drag/keyboard, pan buttons, zoom, expanded view, small screens passed.")
+    finally:
+        browser.close()
+
+
 def main():
     with tempfile.TemporaryDirectory() as temp:
         output = Path(temp) / "web"
@@ -68,6 +190,12 @@ def main():
                 page.on("pageerror", lambda e: errors.append(str(e)))
                 page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
                 page.goto(url)
+                expect(page.locator("#overview-title")).to_have_text(
+                    "What do these books have in common?"
+                )
+                expect(page.locator("#overview-facts")).to_contain_text("78")
+                expect(page.locator("#overview-books .overview-book")).to_have_count(4)
+                page.locator("#overview-explore").click()
                 page.wait_for_selector("#core-cards .core-card")
                 # Independently compute the intersection from exact book matches.
                 grouped = {
@@ -212,6 +340,8 @@ def main():
                 page.locator("#search").fill("zzzyyy-no-matching-concept")
                 expect(page.locator("#result-count")).to_have_text("0 concepts")
                 page.locator("#clear").click()
+                expect(page.locator("#overview-view")).to_be_visible()
+                page.locator("#overview-explore").click()
                 with page.expect_download() as dl:
                     page.locator("#download").click()
                 downloaded = json.loads(Path(dl.value.path()).read_text(encoding="utf-8"))
@@ -225,8 +355,8 @@ def main():
                     expect(page.locator("#graph-count")).to_have_text(
                         f"{entry['nodes']:,} concepts · {entry['edges']:,} connections"
                     )
-                    page.locator("#chapters-tab").click()
-                    page.locator("#all-concepts").click()
+                    expect(page.locator("#overview-view")).to_be_visible()
+                    page.locator("#overview-all").click()
                     expect(page.locator("#result-count")).to_contain_text(
                         f"{entry['nodes']:,} concepts"
                     )
@@ -234,6 +364,9 @@ def main():
                 for width in (390, 768, 1440):
                     page.set_viewport_size({"width": width, "height": 900})
                     page.goto(url + "?core-mobile=" + str(width))
+                    expect(page.locator("#overview-view")).to_be_visible()
+                    assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+                    page.locator("#overview-explore").click()
                     expect(page.locator("#core-view")).to_be_visible()
                     assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
                     expect(page.locator("#core-stats")).to_contain_text("78")
@@ -257,6 +390,9 @@ def main():
                     project = initialize(Path(temp) / template, template)
                     build_site([{"path": project.root}], output)
                     page.goto(url + "?example=" + template)
+                    expect(page.locator("#overview-view")).to_be_visible()
+                    expect(page.locator("#overview-facts")).to_contain_text(str(len(project.nodes)))
+                    page.goto(url + "?example=" + template + "#view=browse")
                     expect(page.locator("#reading-title")).to_have_text(project.config["title"])
                     page.locator("#all-concepts").click()
                     expect(page.locator("#result-count")).to_have_text(
@@ -264,8 +400,11 @@ def main():
                     )
                 assert not errors, errors
                 browser.close()
+                build_catalog(ROOT / "site/catalog.json", output)
+                for engine in (p.chromium, p.webkit):
+                    check_navigation(engine, url)
             print(
-                "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 5 graphs, generic/blank projects, mobile, CSP and private paths."
+                "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 5 graphs, generic/blank projects, mobile, CSP and private paths; actual wheel/drag/keyboard navigation in Chromium and WebKit."
             )
         finally:
             server.shutdown()

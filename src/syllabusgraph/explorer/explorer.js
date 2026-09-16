@@ -59,10 +59,23 @@ function options(select, entries) {
   );
 }
 function show(view) {
+  const changed = mode !== view;
   mode = view;
-  for (const name of ["core", "browse", "search", "network", "overlap"])
+  document.body.dataset.view = view;
+  document.querySelector(".controlbar").hidden = view === "overview";
+  if (view !== "core") setCoreExpanded(false);
+  if (changed) window.scrollTo(0, 0);
+  for (const name of [
+    "overview",
+    "core",
+    "browse",
+    "search",
+    "network",
+    "overlap",
+  ])
     $(name + "-view").hidden = name !== view;
   for (const [id, name] of [
+    ["overview", "overview"],
     ["core", "core"],
     ["chapters", "browse"],
     ["graph", "network"],
@@ -78,7 +91,7 @@ function saveURL(replace = false) {
   const params = new URLSearchParams({ graph: data.id });
   if (reading) params.set("reader", reading.id);
   if (mode === "network" && selected) params.set("node", selected);
-  if (mode === "overlap") params.set("view", "overlap");
+  if (["overview", "core", "overlap"].includes(mode)) params.set("view", mode);
   if (mode === "browse") params.set("view", "browse");
   if (hasCore()) {
     params.set("compare", corePerspective);
@@ -163,8 +176,9 @@ async function loadGraph(id, params = new URLSearchParams()) {
         chapter: chapter.id,
       };
     renderSearch();
-  } else if (hasCore() && params.get("view") !== "browse") renderCore();
-  else show("browse");
+  } else if (hasCore() && params.get("view") === "core") renderCore();
+  else if (params.get("view") === "browse") show("browse");
+  else renderOverview();
   saveURL(true);
 }
 function conceptCard(node, summary = false) {
@@ -807,8 +821,7 @@ $("more").onclick = () => {
 };
 $("clear").onclick = () => {
   $("search").value = "";
-  if (hasCore()) renderCore(false);
-  else show("browse");
+  renderOverview();
   saveURL();
 };
 $("chapters-tab").onclick = () => {
@@ -924,7 +937,10 @@ async function boot() {
   await loadGraph(params.get("graph"), params);
 }
 bindCoreControls();
+bindOverviewControls();
 boot().catch((error) => {
+  $("overview-title").textContent = "Unable to open this graph";
+  $("overview-intro").textContent = error.message;
   $("reading-title").textContent = "Unable to open this graph";
   $("reading-description").textContent = error.message;
   say(error.message);

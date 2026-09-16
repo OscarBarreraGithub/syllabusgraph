@@ -6,7 +6,13 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
-- Make the shared graph’s common backbone the opening view, with overlap counts,
+- Open with a scrollable collection overview, real graph statistics, a visual
+  explanation of book/shared/core graphs, and clear exploration choices. Give
+  the graph more space, with an expanded view, visible scrollbars, pan buttons,
+  and dragging from cards. Verify actual wheel, drag, and keyboard movement in
+  Chromium and WebKit, including smaller windows.
+
+- Add the shared graph’s common backbone view, with overlap counts,
   recorded connections, connected components, and adjustable overlap thresholds.
   Compare explicitly grouped textbooks or individual volumes. Keep source chapter
   browsing secondary; preserve knowledge records and defer course design. Report

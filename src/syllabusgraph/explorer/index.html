@@ -11,10 +11,11 @@
     <title>SyllabusGraph · Explore the connections</title>
     <link rel="icon" href="mark.svg" />
     <link rel="stylesheet" href="explorer.css" />
+    <script src="overview.js" defer></script>
     <script src="backbone.js" defer></script>
     <script src="explorer.js" defer></script>
   </head>
-  <body>
+  <body data-view="overview">
     <a class="skip" href="#workspace">Skip to concepts</a>
     <header class="topbar">
       <a class="brand" href="./"
@@ -40,8 +41,9 @@
         >Guide ↗</a
       >
     </header>
-    <div class="controlbar">
+    <div class="controlbar" hidden>
       <div class="view-tabs" role="group" aria-label="View">
+        <button id="overview-tab" aria-pressed="true">Overview</button>
         <button id="core-tab" aria-pressed="false" hidden>Shared core</button>
         <button id="chapters-tab" class="active" aria-pressed="true">
           Book index</button
@@ -55,11 +57,143 @@
       <span id="graph-count"></span><a id="download" download>Graph JSON ↓</a>
     </div>
     <main id="workspace">
+      <section id="overview-view" aria-label="Collection overview">
+        <div class="overview-hero">
+          <div class="overview-copy">
+            <span class="eyebrow" id="overview-eyebrow"
+              >WELCOME TO SYLLABUSGRAPH</span
+            >
+            <h1 id="overview-title">A map of ideas.<br />A place to begin.</h1>
+            <p class="overview-intro" id="overview-intro">
+              Loading the graph collection…
+            </p>
+            <div class="overview-actions">
+              <button class="primary-action" id="overview-explore">
+                Explore the shared backbone
+                <span aria-hidden="true">→</span></button
+              ><button class="secondary-action" id="overview-all">
+                Browse all concepts
+              </button>
+            </div>
+            <p class="overview-caption" id="overview-caption"></p>
+          </div>
+          <div
+            class="collection-diagram"
+            aria-label="How the collection fits together"
+          >
+            <div class="diagram-label" id="diagram-label">
+              THE COLLECTION, AT A GLANCE
+            </div>
+            <div id="diagram-books"></div>
+            <div class="diagram-connector" aria-hidden="true">↓</div>
+            <div class="diagram-shared">
+              <span id="diagram-shared-title">One shared knowledge graph</span
+              ><strong id="diagram-shared-count">—</strong
+              ><small id="diagram-shared-note"></small>
+            </div>
+            <div id="diagram-core-wrap">
+              <div class="diagram-connector" aria-hidden="true">↓</div>
+              <div class="diagram-core">
+                <span>Common backbone</span
+                ><strong id="diagram-core-count"></strong
+                ><small id="diagram-core-note"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="overview-facts"
+          id="overview-facts"
+          aria-label="Collection statistics"
+        ></div>
+        <section
+          class="overview-section"
+          aria-labelledby="overview-read-heading"
+        >
+          <div class="overview-section-heading">
+            <span class="eyebrow">YOUR FIRST LOOK</span>
+            <h2 id="overview-read-heading">How to read this map.</h2>
+            <p id="overview-structure"></p>
+          </div>
+          <div class="reading-guide">
+            <article>
+              <span class="guide-number">01</span>
+              <h3>Start with the overlap</h3>
+              <p>
+                Each card is a concept. The common backbone keeps ideas
+                independently treated in every compared textbook. Widen the
+                overlap to include ideas shared by fewer books.
+              </p>
+              <button id="overview-wider" class="text-button">
+                Explore the wider overlap →
+              </button>
+            </article>
+            <article>
+              <span class="guide-number">02</span>
+              <h3>Follow the connections</h3>
+              <p>
+                Arrows lead from prerequisites to the ideas that use them.
+                Dashed lines show other relationships. Scroll or drag the graph
+                to move; use + and − to zoom.
+              </p>
+              <span class="mini-connection" aria-hidden="true"
+                ><i>Prerequisite</i><b>→</b><i>Uses it</i></span
+              >
+            </article>
+            <article>
+              <span class="guide-number">03</span>
+              <h3>Look at the evidence</h3>
+              <p>
+                Select a concept to explore its neighborhood. Open Evidence to
+                read the summary, book treatments, page references, and the
+                reasoning behind each connection.
+              </p>
+              <span class="guide-footnote">Browsing makes no model calls.</span>
+            </article>
+          </div>
+        </section>
+        <section
+          class="overview-section"
+          aria-labelledby="overview-books-heading"
+        >
+          <div class="overview-section-heading">
+            <span class="eyebrow">KEEPING THE SOURCES IN VIEW</span>
+            <h2 id="overview-books-heading">The individual book graphs.</h2>
+            <p id="overview-books-caption">
+              Each book keeps its own concepts, qualifications, and source
+              references. The shared graph records how those treatments connect.
+            </p>
+          </div>
+          <div id="overview-books" class="overview-books"></div>
+        </section>
+        <section class="overview-next">
+          <div>
+            <span class="eyebrow">WHERE WE ARE IN THE PROCESS</span>
+            <h2>
+              Understand the knowledge first.<br />Shape a course when you’re
+              ready.
+            </h2>
+            <p>
+              These views describe concepts and their relationships. Choosing an
+              audience, learning goals, and a teaching schedule is a separate
+              step.
+            </p>
+          </div>
+          <div class="overview-next-actions">
+            <button id="overview-setup">
+              Build a graph from your own material ↗</button
+            ><a
+              href="https://github.com/OscarBarreraGithub/syllabusgraph/blob/main/docs/README.md"
+              >Read the field guide ↗</a
+            ><span id="overview-review"></span>
+          </div>
+        </section>
+      </section>
       <section id="core-view" hidden aria-label="Shared graph backbone">
         <div class="core-heading">
           <div>
             <span class="eyebrow">THE SHARED KNOWLEDGE GRAPH</span>
-            <h1>The common backbone.</h1>
+            <h1>The shared backbone</h1>
             <p id="core-description"></p>
           </div>
           <div class="core-controls">
@@ -71,11 +205,6 @@
             ><label>Include<select id="core-threshold"></select></label>
           </div>
         </div>
-        <div
-          id="core-stats"
-          class="core-stats"
-          aria-label="Core statistics"
-        ></div>
         <div class="core-body">
           <div class="core-map">
             <div class="core-map-heading">
@@ -84,7 +213,9 @@
                 >Jump to a connected component</label
               >
               <select id="core-jump"></select>
-              <span>Drag or swipe to explore ↔</span>
+              <button id="core-expand" aria-pressed="false">
+                Expand graph ⛶
+              </button>
             </div>
             <div
               id="core-scroll"
@@ -102,16 +233,31 @@
               </div>
             </div>
             <div class="core-map-bottom">
-              <span>Arrows: prerequisites · Dashed: other relations</span>
+              <div class="pan-controls" aria-label="Move around the graph">
+                <button id="core-pan-left" aria-label="Move graph left">
+                  ←</button
+                ><button id="core-pan-up" aria-label="Move graph up">↑</button
+                ><button id="core-pan-down" aria-label="Move graph down">
+                  ↓</button
+                ><button id="core-pan-right" aria-label="Move graph right">
+                  →
+                </button>
+              </div>
+              <span>Scroll or drag to move · Select a card to explore</span>
               <div class="zoom-controls">
                 <button id="core-zoom-out" aria-label="Zoom core out">−</button
                 ><span id="core-zoom-label">100%</span
                 ><button id="core-zoom-in" aria-label="Zoom core in">+</button
-                ><button id="core-center">Reset view</button>
+                ><button id="core-center">Reset</button>
               </div>
             </div>
           </div>
           <aside class="core-aside" aria-label="Overlap and structure">
+            <div
+              id="core-stats"
+              class="core-stats"
+              aria-label="Core statistics"
+            ></div>
             <h2>How much is shared?</h2>
             <p id="core-agreement-caption"></p>
             <div id="agreement-bars"></div>
@@ -129,7 +275,7 @@
           </aside>
         </div>
       </section>
-      <section id="browse-view" aria-label="Chapter browser">
+      <section id="browse-view" hidden aria-label="Chapter browser">
         <div class="view-heading">
           <div>
             <span class="eyebrow" id="reading-caption">THE READING MAP</span>

@@ -2,7 +2,7 @@
 
 **Turn source material into a map of ideas, then shape a course around it.**
 
-![The common backbone: shared concepts, their connections, and overlap statistics](docs/explorer.png)
+![The collection overview: individual books, the shared graph, and their common backbone](docs/overview.png)
 
 Bring your references. Your coding agent handles installation, extraction, and
 independent review. You decide what to cover and, later, what to teach.
@@ -40,9 +40,10 @@ one slow session. Read its saved state first.”**
 
 The [QFT collection](graphs/subjects/qft/README.md) has four textbook graphs and
 one shared graph: **2,156 concepts and 3,319 relationships**, with book
-correspondences and page references. Start with the **shared backbone**: concepts
-independently treated across the textbooks, their connections, and overlap
-statistics. Open a concept to inspect evidence or explore its wider dependencies.
+correspondences and page references. The website opens with an **overview** of
+the collection, its overlap, and how to explore it. Open the **shared backbone**
+to follow common concepts and their connections in a scrollable, expandable map.
+Select a concept to inspect evidence or explore its wider dependencies.
 The book index is available separately. No course has been chosen; browsing makes
 no model calls.
 The graphs are model-reviewed; human audit is pending.
