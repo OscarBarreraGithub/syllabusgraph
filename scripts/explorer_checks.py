@@ -102,7 +102,12 @@ def check_atlas_transition(engine, url):
         page.locator("#atlas-toggle-view").click()
         assert not page.evaluate("document.getAnimations().some(a=>a.playState==='running')")
         page.set_viewport_size({"width": 390, "height": 844})
-        expect(page.locator("#atlas-scroll")).to_have_js_property("clientWidth", 390)
+        # Linux reserves scrollbar width; macOS normally overlays scrollbars.
+        page.wait_for_function("""() => {
+            const width = document.getElementById('atlas-scroll').clientWidth;
+            return width >= 350 && width <= 390;
+        }""")
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
         page.locator("#atlas-compare").click()
         expect(page.locator("#atlas-detail h2")).to_be_in_viewport()
         page.locator(".atlas-return").click()
