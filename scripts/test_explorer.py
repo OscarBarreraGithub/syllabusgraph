@@ -418,7 +418,7 @@ def main():
                 page.locator("#reading-select").select_option(payload["reading_views"][1]["id"])
                 expect(page.locator("#reading-title")).to_have_text("Schwartz")
                 page.locator("#all-concepts").click()
-                expect(page.locator(".record-point")).to_have_count(2156)
+                page.wait_for_function("() => recordPoints.size === 2156")
                 page.locator("#chapters-tab").click()
                 page.locator("#search").fill("a")
                 page.locator("#search").fill("")

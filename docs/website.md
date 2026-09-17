@@ -100,6 +100,22 @@ color, and position do not establish equivalence or a prerequisite. Only recorde
 edges are drawn. The map uses a finite layout and camera transitions, with no
 ongoing simulation or model calls.
 
+The background connections are drawn once into a bounded bitmap and moved
+with the camera. Points, labels, and selected connections stay sharp; the faint
+background lines can soften at high magnification. Pointer events share one
+render per frame, and nothing animates while idle. This keeps the complete
+graph available without thousands of interactive SVG elements.
+
+For performance comparisons, run `python scripts/profile_record_graph.py`
+against a served site (use `--url` for a different address). It exercises hover,
+selection, animated focus/overview, pan, and zoom in Chromium at a 1440×1000
+viewport, 2× pixel density, and 4× CPU slowdown. Reports stay under ignored
+`.syllabusgraph/performance/`. Measure the same graph and interactions before
+and after a change; frame times depend on the machine and browser. The initial
+QFT comparison reduced the 95th-percentile frame interval from 33.4 ms to
+16.8 ms and recorded no interaction long tasks after the change. This measures
+interaction after loading, not download or startup time.
+
 The navigation row stays available throughout the demo, including the overview
 and shared-concept atlas. It wraps when browser zoom reduces the available
 width. Statistics and evidence move below the graph on smaller screens instead
@@ -152,7 +168,9 @@ selected graph, including concepts outside the current book or common core.
 Standalone textbook and example graphs have their own overview and a direct
 button to their concept index. Empty projects offer the setup guide.
 
-Open a card to follow its **Connections**. Prerequisites are on the left,
+**Connections** explores one selected record. Choose a point in **Record graph**
+and open the tab, or open a card from another view. With no selection, the tab
+explains its purpose and offers **Find a record**. Prerequisites are on the left,
 dependents on the right, and other connections in a separate column. Arrows
 preserve the recorded direction; dashed arrows denote other relation types.
 Full concept names remain visible. Click a neighbor to make it the selection,

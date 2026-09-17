@@ -100,7 +100,10 @@
               <button id="records-expand" aria-pressed="false">Full screen ⛶</button>
             </div>
             <div class="records-viewport">
-              <svg id="records-svg" role="group" tabindex="0" aria-label="Record graph. Drag to pan, use plus and minus to zoom, and search to select a record with the keyboard."></svg>
+              <canvas id="records-links" aria-hidden="true"></canvas>
+              <canvas id="records-canvas" role="group" tabindex="0" aria-label="Record graph. Drag to pan, use plus and minus to zoom, and search to select a record with the keyboard.">Search for a record above to explore its connections and evidence.</canvas>
+              <canvas id="records-overlay" aria-hidden="true"></canvas>
+              <svg id="records-labels" aria-hidden="true"></svg>
             </div>
             <p class="records-caption">Drag to move · + / − to zoom · Select a point to follow its connections. Placement groups related records; it is not a course order.</p>
           </div>
@@ -621,12 +624,13 @@
         <div id="results" class="result-grid"></div>
         <button id="more" class="more" hidden>Show more concepts</button>
       </section>
-      <section id="network-view" hidden aria-label="Concept dependency graph">
+      <section id="network-view" hidden aria-label="Connections around a selected record">
         <div class="network-heading">
           <button id="back" class="quiet">← Back</button>
           <div class="network-context">
-            <span class="eyebrow">FOLLOW THE CONNECTIONS</span>
+            <span class="eyebrow">CONNECTIONS · ONE RECORD AT A TIME</span>
             <h1 id="network-title"></h1>
+            <p class="connections-description">What this record builds on, what depends on it, and other recorded relationships. Open Evidence for source references.</p>
           </div>
           <div class="network-tools">
             <button
@@ -637,6 +641,11 @@
             ><button id="reset-network">One step</button
             ><button id="detail-open">Evidence ↗</button>
           </div>
+        </div>
+        <div id="connections-empty" hidden>
+          <h2>Choose a record to see its connections.</h2>
+          <p>Select a point in Record graph, then open this tab. You’ll see prerequisites on the left, dependents on the right, and other relationships alongside them.</p>
+          <button id="connections-choose">Find a record →</button>
         </div>
         <div class="network-body">
           <div class="graph-frame">

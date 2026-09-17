@@ -4,11 +4,16 @@ let recordPoints = new Map(), recordGroups = [], recordVisible = [], recordEdges
 let recordSelection = null, recordFilter = "", recordScope = null, recordHover = null;
 let recordCamera = { x: 0, y: 0, k: 1 }, recordFrame = 0, recordFitted = true;
 let recordLayers, recordExtent, recordLayoutKey = null, recordLabelPriority = [];
+let recordSize = { w: 800, h: 560, ratio: 1 }, recordPaintFrame = 0;
+let recordBackgroundKey = null, recordEdgePaths = [], recordEdgeScale = 1;
+let recordNear = new Set(), recordActiveEdges = [], recordHighlighted = null;
 const recordColors = ["#78d6cb", "#a6b8ff", "#eaba78", "#df99ba", "#8fc9eb", "#b6cf87"];
 
 function stopRecordAnimation() {
   cancelAnimationFrame(recordFrame);
   recordFrame = 0;
+  cancelAnimationFrame(recordPaintFrame);
+  recordPaintFrame = 0;
 }
 function prepareRecords(params) {
   stopRecordAnimation();
@@ -39,9 +44,27 @@ function openRecordGraph(scope = null) {
   renderRecords();
   saveURL();
 }
-function recordDimensions() {
-  const svg = $("records-svg");
-  return { w: svg.clientWidth || 800, h: svg.clientHeight || 560 };
+function recordDimensions() { return recordSize; }
+function measureRecords() {
+  const canvas = $("records-canvas");
+  recordSize = { w: canvas.clientWidth || 800, h: canvas.clientHeight || 560,
+    ratio: Math.min(devicePixelRatio || 1, 2) };
+}
+// Coalesce pointer events into one render per display frame. No idle loop.
+function requestRecordPaint() {
+  if (recordPaintFrame || recordFrame || mode !== "records") return;
+  recordPaintFrame = requestAnimationFrame(() => { recordPaintFrame = 0; paintRecordCamera(); });
+}
+function recordAt(clientX, clientY) {
+  const box = $("records-canvas").getBoundingClientRect(), { x, y, k } = recordCamera;
+  const wx = x + (clientX - box.left - recordSize.w / 2) / k;
+  const wy = y + (clientY - box.top - recordSize.h / 2) / k;
+  let distance = (7 / k) ** 2, nearest = null;
+  for (const p of recordPoints.values()) {
+    const d = (p.x - wx) ** 2 + (p.y - wy) ** 2;
+    if (d <= distance) { distance = d; nearest = p.id; }
+  }
+  return nearest;
 }
 function layoutRecords() {
   const source = data.reading_views.find(v => v.id === recordFilter);
@@ -104,11 +127,33 @@ function layoutRecords() {
     x2: Math.max(...points.map(p => p.x)) + 70,
     y2: Math.max(...points.map(p => p.y)) + 70,
   } : { x1: 0, y1: 0, x2: 800, y2: 500 };
+  // Separate paths avoid tessellating a large self-crossing polygon.
+  recordEdgePaths = recordEdges.map(e => {
+    const path = new Path2D(), a = recordPoints.get(e.from), b = recordPoints.get(e.to);
+    path.moveTo(a.x, a.y); path.lineTo(b.x, b.y); return path;
+  });
+  recordBackgroundKey = null;
+}
+// The complete edge backdrop is static. Move its bitmap with the camera;
+// redraw only the selected relationships at full screen resolution.
+function rasterRecordEdges() {
+  const canvas = $("records-links"), width = recordExtent.x2 - recordExtent.x1;
+  const height = recordExtent.y2 - recordExtent.y1;
+  recordEdgeScale = Math.min(3072 / Math.max(width, height), 2);
+  canvas.width = Math.ceil(width * recordEdgeScale);
+  canvas.height = Math.ceil(height * recordEdgeScale);
+  canvas.style.width = canvas.width + "px"; canvas.style.height = canvas.height + "px";
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(recordEdgeScale, 0, 0, recordEdgeScale, -recordExtent.x1 * recordEdgeScale, -recordExtent.y1 * recordEdgeScale);
+  ctx.strokeStyle = "rgba(134,170,167,.1)";
+  ctx.lineWidth = .65 / recordTarget(recordExtent).k;
+  for (const path of recordEdgePaths) ctx.stroke(path);
 }
 function renderRecords(reset = true) {
   show("records");
   const key = JSON.stringify([data.id, recordFilter, recordScope, reading.id]);
-  if (key !== recordLayoutKey) {
+  const changed = key !== recordLayoutKey;
+  if (changed) {
     layoutRecords();
     recordLayoutKey = key;
     reset = true;
@@ -122,41 +167,18 @@ function renderRecords(reset = true) {
     : "Explore the original records behind the concepts. Select a point or search for an idea to see its evidence and connections.";
   $("records-count").textContent = `${fmt(recordVisible.length)} ${recordLabel()} · ${fmt(recordEdges.length)} connections`;
   $("records-all").hidden = !recordScope && !recordFilter;
-  const svg = $("records-svg");
-  svg.replaceChildren();
-  const defs = svgEl("defs"), marker = svgEl("marker"), arrow = svgEl("path");
-  marker.id = "record-arrow";
-  for (const [key, value] of Object.entries({ viewBox: "0 0 10 10", refX: 14, refY: 5,
-    markerWidth: 5, markerHeight: 5, orient: "auto-start-reverse" })) marker.setAttribute(key, value);
-  arrow.setAttribute("d", "M 0 0 L 10 5 L 0 10 z"); arrow.setAttribute("fill", "#c8e9e4");
-  marker.append(arrow); defs.append(marker); svg.append(defs);
-  const world = svgEl("g"), links = svgEl("g"), points = svgEl("g"), labels = svgEl("g");
-  world.append(links, points); svg.append(world, labels);
-  recordLayers = { world, links, points, labels };
-  for (const e of recordEdges) {
-    const a = recordPoints.get(e.from), b = recordPoints.get(e.to), line = svgEl("line");
-    line.setAttribute("x1", a.x); line.setAttribute("y1", a.y);
-    line.setAttribute("x2", b.x); line.setAttribute("y2", b.y);
-    line.dataset.from = e.from; line.dataset.to = e.to; line.dataset.relation = e.relation;
-    line.dataset.edge = e.id;
-    line.setAttribute("vector-effect", "non-scaling-stroke");
-    links.append(line);
-  }
-  for (const p of recordPoints.values()) {
-    const circle = svgEl("circle");
-    circle.dataset.node = p.id; circle.setAttribute("cx", p.x); circle.setAttribute("cy", p.y);
-    circle.setAttribute("fill", p.color); circle.setAttribute("class", "record-point");
-    circle.setAttribute("aria-label", byId.get(p.id).label);
-    const title = svgEl("title"); title.textContent = byId.get(p.id).label; circle.append(title);
-    points.append(circle);
-  }
+  measureRecords();
+  if (changed) rasterRecordEdges();
+  recordLayers = { labels: $("records-labels") };
+  recordHighlighted = null;
+  recordBackgroundKey = null;
+  highlightRecord(recordSelection);
   renderRecordDetail();
   searchRecords();
   if (reset) {
     fitRecords(false);
     if (recordSelection) focusRecordConnections(false);
   } else paintRecordCamera();
-  highlightRecord(recordSelection);
 }
 function recordTarget(extent) {
   const { w, h } = recordDimensions();
@@ -199,11 +221,53 @@ function focusRecordConnections(animate = true) {
 }
 function paintRecordCamera() {
   if (!recordLayers || mode !== "records") return;
-  const { w, h } = recordDimensions(), { x, y, k } = recordCamera;
-  recordLayers.world.setAttribute("transform", `translate(${w / 2} ${h / 2}) scale(${k}) translate(${-x} ${-y})`);
-  for (const c of recordLayers.points.children)
-    c.setAttribute("r", (c.dataset.node === recordSelection ? 6 : Math.max(2, Math.min(4, k * 5))) / k);
-  $("records-zoom").textContent = Math.round(k / recordTarget(recordExtent).k * 100) + "%";
+  const { w, h, ratio } = recordSize, { x, y, k } = recordCamera;
+  const canvas = $("records-canvas"), overlay = $("records-overlay"), ctx = overlay.getContext("2d");
+  const pw = Math.round(w * ratio), ph = Math.round(h * ratio);
+  if (canvas.width !== pw || canvas.height !== ph) {
+    canvas.width = overlay.width = pw; canvas.height = overlay.height = ph;
+  }
+  const key = [x, y, k, w, h, ratio].join(":");
+  if (recordBackgroundKey !== key) {
+    const bg = canvas.getContext("2d");
+    bg.setTransform(1, 0, 0, 1, 0, 0); bg.clearRect(0, 0, pw, ph);
+    bg.setTransform(ratio * k, 0, 0, ratio * k, ratio * (w / 2 - x * k), ratio * (h / 2 - y * k));
+    // Batch points by color. All records, including isolated ones, are drawn.
+    const radius = Math.max(2, Math.min(4, k * 5)) / k;
+    bg.globalAlpha = .9;
+    for (const color of recordColors) {
+      bg.beginPath(); bg.fillStyle = color;
+      for (const p of recordPoints.values()) if (p.color === color) {
+        bg.moveTo(p.x + radius, p.y); bg.arc(p.x, p.y, radius, 0, Math.PI * 2);
+      }
+      bg.fill();
+    }
+    recordBackgroundKey = key;
+  }
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, pw, ph);
+  const links = $("records-links");
+  links.style.transform = `translate(${w / 2 + (recordExtent.x1 - x) * k}px, ${h / 2 + (recordExtent.y1 - y) * k}px) scale(${k / recordEdgeScale})`;
+  links.style.opacity = canvas.style.opacity = recordHighlighted ? .17 : 1;
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  const screen = p => ({ x: w / 2 + (p.x - x) * k, y: h / 2 + (p.y - y) * k });
+  ctx.strokeStyle = "#c8e9e4"; ctx.fillStyle = "#c8e9e4"; ctx.lineWidth = 1.15;
+  for (const e of recordActiveEdges) {
+    const a = screen(recordPoints.get(e.from)), b = screen(recordPoints.get(e.to));
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    const angle = Math.atan2(b.y - a.y, b.x - a.x), tip = { x: b.x - 7 * Math.cos(angle), y: b.y - 7 * Math.sin(angle) };
+    ctx.beginPath(); ctx.moveTo(tip.x, tip.y);
+    for (const d of [-.5, .5]) ctx.lineTo(tip.x - 6 * Math.cos(angle + d), tip.y - 6 * Math.sin(angle + d));
+    ctx.closePath(); ctx.fill();
+  }
+  for (const id of new Set([...recordNear, recordSelection].filter(Boolean))) {
+    const p = recordPoints.get(id); if (!p) continue;
+    const s = screen(p), selected = id === recordSelection;
+    ctx.beginPath(); ctx.arc(s.x, s.y, selected ? 6 : Math.max(2, Math.min(4, k * 5)), 0, Math.PI * 2);
+    ctx.fillStyle = p.color; ctx.fill();
+    if (selected) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.5; ctx.stroke(); }
+  }
+  const percent = Math.round(k / recordTarget(recordExtent).k * 100) + "%";
+  if ($("records-zoom").textContent !== percent) $("records-zoom").textContent = percent;
   labelRecords();
 }
 function labelRecords() {
@@ -247,22 +311,15 @@ function labelRecords() {
   }
 }
 function highlightRecord(id) {
-  const near = new Set(id ? [id] : []);
-  for (const line of recordLayers.links.children) {
-    const active = id && (line.dataset.from === id || line.dataset.to === id);
-    line.classList.toggle("active", Boolean(active));
-    if (active) { near.add(line.dataset.from); near.add(line.dataset.to); }
-    if (active) line.setAttribute("marker-end", "url(#record-arrow)");
-    else line.removeAttribute("marker-end");
-  }
-  recordLayers.world.classList.toggle("has-selection", Boolean(id));
-  for (const c of recordLayers.points.children) {
-    c.classList.toggle("near", near.has(c.dataset.node));
-    c.classList.toggle("selected", c.dataset.node === recordSelection);
-  }
+  recordHighlighted = id;
+  recordNear = new Set(id ? [id] : []);
+  recordActiveEdges = id ? incident.get(id).filter(e => recordPoints.has(e.from) && recordPoints.has(e.to)) : [];
+  for (const e of recordActiveEdges) { recordNear.add(e.from); recordNear.add(e.to); }
   $("records-focus").disabled = !recordSelection;
   $("records-inspect").disabled = !recordSelection;
-  labelRecords();
+  $("records-canvas").style.cursor = recordHover ? "pointer" : "grab";
+  $("records-canvas").title = recordHover ? byId.get(recordHover).label : "";
+  requestRecordPaint();
 }
 function selectRecord(id, animate = true) {
   if (!recordPoints.has(id)) return;
@@ -319,7 +376,7 @@ function searchRecords() {
   results.append(el("p", `${fmt(matches.length)} matches${matches.length > 8 ? " · showing the first 8; refine your search" : ""}`));
   for (const n of matches.slice(0, 8)) {
     const b = el("button", n.label); b.onclick = () => {
-      selectRecord(n.id); $("records-svg").scrollIntoView({ block: "nearest" });
+      selectRecord(n.id); $("records-canvas").scrollIntoView({ block: "nearest" });
     }; results.append(b);
   }
 }
@@ -352,38 +409,40 @@ function bindRecordsControls() {
   $("records-in").onclick = () => zoomRecords(1.35);
   $("records-out").onclick = () => zoomRecords(1 / 1.35);
   $("records-expand").onclick = () => setRecordsExpanded(!$("records-view").classList.contains("records-expanded"));
-  const svg = $("records-svg"); let drag = null, moved = false;
-  svg.addEventListener("pointerdown", e => {
+  const canvas = $("records-canvas"); let drag = null, moved = false;
+  canvas.addEventListener("pointerdown", e => {
     if (e.button !== 0) return;
     stopRecordAnimation(); moved = false;
-    drag = { x: e.clientX, y: e.clientY, camera: { ...recordCamera }, node: e.target.closest("[data-node]")?.dataset.node };
-    svg.setPointerCapture(e.pointerId);
+    drag = { x: e.clientX, y: e.clientY, camera: { ...recordCamera }, node: recordAt(e.clientX, e.clientY) };
+    canvas.setPointerCapture(e.pointerId);
   });
-  svg.addEventListener("pointermove", e => {
+  canvas.addEventListener("pointermove", e => {
     if (drag) {
       if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) < 4 && !moved) return;
       moved = true; recordFitted = false;
       recordCamera.x = drag.camera.x - (e.clientX - drag.x) / recordCamera.k;
       recordCamera.y = drag.camera.y - (e.clientY - drag.y) / recordCamera.k;
-      paintRecordCamera();
+      requestRecordPaint();
     } else {
-      const id = e.target.closest("[data-node]")?.dataset.node || null;
+      const id = recordAt(e.clientX, e.clientY);
       if (id !== recordHover) { recordHover = id; highlightRecord(id || recordSelection); }
     }
   });
-  svg.addEventListener("pointerup", () => {
+  canvas.addEventListener("pointerup", () => {
     const id = drag?.node; drag = null;
     if (!moved && id) selectRecord(id);
   });
-  svg.addEventListener("pointercancel", () => { drag = null; });
-  svg.addEventListener("pointerleave", () => { recordHover = null; highlightRecord(recordSelection); });
-  svg.addEventListener("wheel", e => {
+  canvas.addEventListener("pointercancel", () => { drag = null; });
+  canvas.addEventListener("pointerleave", () => {
+    if (recordHover) { recordHover = null; highlightRecord(recordSelection); }
+  });
+  canvas.addEventListener("wheel", e => {
     // Keep native browser zoom and ordinary page scrolling. Alt-wheel zooms the map.
     if (!e.altKey || e.ctrlKey || e.metaKey) return;
-    e.preventDefault(); const box = svg.getBoundingClientRect();
+    e.preventDefault(); const box = canvas.getBoundingClientRect();
     zoomRecords(Math.exp(-e.deltaY * .002), { x: e.clientX - box.left, y: e.clientY - box.top });
   }, { passive: false });
-  svg.addEventListener("keydown", e => {
+  canvas.addEventListener("keydown", e => {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const delta = { ArrowLeft: [-70, 0], ArrowRight: [70, 0], ArrowUp: [0, -70], ArrowDown: [0, 70] }[e.key];
     if (delta) {
@@ -400,6 +459,8 @@ function bindRecordsControls() {
   });
   new ResizeObserver(() => {
     if (mode !== "records" || !recordExtent) return;
+    measureRecords();
+    recordBackgroundKey = null;
     if (recordFitted) fitRecords(false); else paintRecordCamera();
-  }).observe(svg);
+  }).observe(canvas);
 }

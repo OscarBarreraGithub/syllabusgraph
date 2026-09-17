@@ -6,6 +6,11 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Make the full record graph responsive with a cached edge backdrop, canvas
+  points, and one hover/pan update per frame. Preserve every record and edge;
+  redraw selected connections sharply. Add a reproducible interaction profiler.
+  Make **Connections** open the point selected in Record graph, with an
+  explanation and search entry when no record is selected.
 - Keep graph navigation visible across views, including shared concepts and
   the collection overview. Wrap controls at browser zoom and move statistics
   and evidence below the drawing on smaller screens.

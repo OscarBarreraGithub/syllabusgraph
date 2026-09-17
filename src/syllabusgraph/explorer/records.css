@@ -26,15 +26,11 @@ body[data-view="records"] .search-wrap { display: none; }
 .records-spacer { flex: 1; }
 #records-zoom { color: var(--muted); font-size: 11px; min-width: 38px; text-align: center; }
 .records-viewport { position: relative; overflow: hidden; height: clamp(480px, 68dvh, 800px); }
-#records-svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
-#records-svg:active { cursor: grabbing; }
-#records-svg line { stroke: #86aaa7; stroke-width: .65; opacity: .1; pointer-events: none; }
-#records-svg .has-selection line { opacity: .035; }
-#records-svg line.active { stroke: #c8e9e4; opacity: .8; stroke-width: 1.15; }
-.record-point { cursor: pointer; opacity: .9; }
-.has-selection .record-point { opacity: .15; }
-.has-selection .record-point.near { opacity: 1; }
-.record-point.selected { stroke: #fff; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+#records-canvas, #records-overlay, #records-labels { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+#records-links { position: absolute; top: 0; left: 0; transform-origin: 0 0; pointer-events: none; will-change: transform; }
+#records-canvas { cursor: grab; touch-action: none; }
+#records-canvas:active { cursor: grabbing; }
+#records-overlay, #records-labels { pointer-events: none; }
 .record-group-label, .record-label { fill: #a7babf; font-size: 11px; paint-order: stroke; stroke: #0b141d; stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
 .record-group-label { fill: #d4e4e7; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; font-weight: 500; }
 .record-label.selected { fill: #fff; font-weight: 600; }
@@ -48,7 +44,7 @@ body[data-view="records"] .search-wrap { display: none; }
 .record-neighbor { display: flex; flex-direction: column; width: 100%; gap: 5px; margin: 7px 0; font-size: 12px; line-height: 1.5; }
 .record-neighbor small { color: var(--cyan); }
 .record-group-button { display: flex; align-items: center; gap: 9px; width: 100%; margin: 5px 0; font-size: 11px; background: transparent; border-color: transparent; }
-.record-group-button small { margin-left: auto; color: var(--muted); }
+.record-group-button small { margin-left: auto; color: var(--muted); flex-shrink: 0; white-space: nowrap; }
 #records-results { padding: 0 32px 18px; display: flex; flex-wrap: wrap; gap: 6px; }
 #records-results p { width: 100%; margin: 0 0 5px; color: var(--muted); font-size: 12px; }
 #records-results button { font-size: 12px; max-width: 100%; text-align: left; white-space: normal; overflow-wrap: anywhere; }
@@ -71,6 +67,10 @@ body[data-view="records"] .search-wrap { display: none; }
 #network-view .network-body { align-items: stretch; }
 #network-view .detail { max-height: 800px; }
 .network-tools { flex-wrap: wrap; }
+.connections-description { color: var(--muted); font-size: 12px; line-height: 1.6; max-width: 680px; }
+#connections-empty { padding: 32px; max-width: 700px; }
+#connections-empty h2 { font-size: 22px; font-weight: 500; }
+#connections-empty p { color: var(--muted); line-height: 1.75; }
 @media (max-width: 1100px) {
   .records-body { grid-template-columns: minmax(0, 1fr); }
   #records-detail { max-height: none; overflow: visible; border-left: 0; border-top: 1px solid var(--line); }

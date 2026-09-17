@@ -113,7 +113,7 @@ function saveURL(replace = false) {
     params.set("from", "records");
     saveRecordsURL(params);
   }
-  if (["home", "overview", "atlas", "map", "records", "core", "overlap"].includes(mode))
+  if (["home", "overview", "atlas", "map", "records", "core", "overlap", "network"].includes(mode))
     params.set("view", mode);
   if (mode === "atlas") saveAtlasURL(params);
   if (mode === "records") saveRecordsURL(params);
@@ -154,8 +154,7 @@ async function loadGraph(id, params = new URLSearchParams()) {
   selected = null;
   nodeTrail = [];
   returnView = "browse";
-  $("graph-tab").disabled = true;
-  $("graph-tab").title = "Choose a concept first";
+  $("graph-tab").title = "Prerequisites, dependents, and evidence for one selected record";
   $("graph-select").value = data.id;
   $("graph-count").textContent =
     `${fmt(nodes.length)} records · ${fmt(edges.length)} connections`;
@@ -198,6 +197,7 @@ async function loadGraph(id, params = new URLSearchParams()) {
   )
     renderAtlas();
   else if (params.get("view") === "records") renderRecords();
+  else if (params.get("view") === "network") openConnections();
   else if (params.get("view") === "overlap") show("overlap");
   else if (params.get("view") === "search" && !params.get("q") && !params.get("kind")) renderRecords();
   else if (params.get("view") === "search") {
@@ -372,14 +372,28 @@ function openNode(id, updateURL = true, remember = true) {
   zoom = .8;
   $("network-title").textContent = byId.get(id).label;
   $("detail").hidden = true;
-  $("graph-tab").disabled = false;
-  $("graph-tab").title = "Return to the selected concept";
+  $("connections-empty").hidden = true;
+  document.querySelector("#network-view .network-body").hidden = false;
+  document.querySelector("#network-view .network-tools").hidden = false;
   show("network");
   renderNetwork(true);
   $("graph-cards")
     .querySelector(".selected .graph-node")
     ?.focus({ preventScroll: true });
   if (updateURL) saveURL();
+}
+function openConnections() {
+  const id = mode === "records" ? recordSelection : selected;
+  if (id) { openNode(id); return; }
+  returnView = mode === "network" ? "records" : mode;
+  // A blank selection is a useful explanation, not an inert navigation tab.
+  selected = null;
+  $("network-title").textContent = "The neighborhood of one record";
+  $("connections-empty").hidden = false;
+  document.querySelector("#network-view .network-body").hidden = true;
+  document.querySelector("#network-view .network-tools").hidden = true;
+  show("network");
+  saveURL();
 }
 function neighborhood() {
   const positions = new Map([[selected, 0]]);
@@ -876,12 +890,9 @@ $("chapters-tab").onclick = () => {
   show("browse");
   saveURL();
 };
-$("graph-tab").onclick = () => {
-  if (selected) {
-    show("network");
-    renderNetwork(true);
-    saveURL();
-  }
+$("graph-tab").onclick = openConnections;
+$("connections-choose").onclick = () => {
+  renderRecords(false); saveURL(); $("records-query").focus();
 };
 $("overlap-tab").onclick = () => {
   show("overlap");

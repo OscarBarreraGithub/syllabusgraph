@@ -10,7 +10,7 @@ from playwright.sync_api import expect
 def check_record_map(engine, url, payload):
     """Verify the useful journeys, the displayed graph, and finite camera motion."""
     browser = engine.launch()
-    page = browser.new_page(viewport={"width": 1440, "height": 1000})
+    page = browser.new_page(viewport={"width": 1440, "height": 1000}, device_scale_factor=2)
     errors = []
     page.on("pageerror", lambda error: errors.append(str(error)))
     try:
@@ -24,20 +24,41 @@ def check_record_map(engine, url, payload):
         page.keyboard.press("Enter")
         expect(page.locator("#workspace")).to_be_focused()
         assert page.url == route
-        points = page.locator(".record-point")
-        expect(points).to_have_count(len(payload["knowledge"]["nodes"]))
-        assert set(points.evaluate_all("ps=>ps.map(p=>p.dataset.node)")) == {
+        # No inert tab: an empty Connections view explains how to choose a record.
+        page.locator("#graph-tab").click()
+        expect(page.locator("#connections-empty")).to_be_visible()
+        page.reload()
+        expect(page.locator("#connections-empty")).to_be_visible()
+        page.locator("#connections-choose").click()
+        expect(page.locator("#records-query")).to_be_focused()
+        assert set(page.evaluate("[...recordPoints.keys()]")) == {
             n["id"] for n in payload["knowledge"]["nodes"]
         }
-        assert set(page.locator("#records-svg line").evaluate_all("es=>es.map(e=>e.dataset.edge)")) == {
+        assert set(page.evaluate("recordEdges.map(e=>e.id)")) == {
             e["id"] for e in payload["knowledge"]["edges"]
         }
-        # All points start inside the drawing, including isolated records.
-        assert points.evaluate_all("""ps=>{
-            const r=document.getElementById('records-svg').getBoundingClientRect();
-            return ps.every(p=>{const b=p.getBoundingClientRect();
-                return b.left>=r.left && b.right<=r.right && b.top>=r.top && b.bottom<=r.bottom;});
+        # Canvas keeps the full graph without thousands of interactive DOM objects.
+        assert page.locator(".records-viewport *").count() < 100
+        assert page.evaluate("""() => {
+            const {w,h}=recordDimensions(),{x,y,k}=recordCamera;
+            return [...recordPoints.values()].every(p=>{
+                const sx=w/2+(p.x-x)*k,sy=h/2+(p.y-y)*k;
+                return sx>=2 && sx<=w-2 && sy>=2 && sy<=h-2;
+            });
         }""")
+        # Use real hit testing (including a high-density display), not injected selection.
+        page.locator("#records-canvas").scroll_into_view_if_needed()
+        point = page.evaluate("""() => {
+            const r=document.getElementById('records-canvas').getBoundingClientRect();
+            const p=[...recordPoints.values()][0],{x,y,k}=recordCamera;
+            return {x:r.x+r.width/2+(p.x-x)*k,y:r.y+r.height/2+(p.y-y)*k,id:p.id};
+        }""")
+        page.mouse.click(point["x"], point["y"])
+        assert page.evaluate("recordSelection") == point["id"]
+        page.locator("#graph-tab").click()
+        expect(page.locator("#connections-empty")).to_be_hidden()
+        assert page.evaluate("selected") == point["id"]
+        page.locator("#back").click()
         page.locator("#records-query").fill("Abelian curvature")
         match = page.locator("#records-results button").first
         label = match.inner_text()
@@ -45,10 +66,15 @@ def check_record_map(engine, url, payload):
         page.keyboard.press("Enter")
         expect(page.locator("#records-detail h2")).to_have_text(label)
         page.wait_for_function("() => recordFrame === 0")
-        assert page.locator("#records-svg line.active").count() > 0
-        selection = page.locator(".record-point.selected").get_attribute("data-node")
-        assert all(selection in (edge["from"], edge["to"]) for edge in page.locator(
-            "#records-svg line.active").evaluate_all("es=>es.map(e=>({from:e.dataset.from,to:e.dataset.to}))"))
+        assert page.evaluate("recordActiveEdges.length") > 0
+        selection = page.evaluate("recordSelection")
+        assert all(selection in (edge["from"], edge["to"]) for edge in page.evaluate("recordActiveEdges"))
+        # The actual raster has visible pixels, and render/animation loops stop at rest.
+        assert page.evaluate("""() => {
+            const c=document.getElementById('records-canvas');
+            return c.getContext('2d').getImageData(0,0,c.width,c.height).data.some((v,i)=>i%4===3 && v>0);
+        }""")
+        page.wait_for_function("() => recordFrame === 0 && recordPaintFrame === 0")
         page.locator("#records-fit").click()
         page.wait_for_function("() => recordFrame === 0")
         expect(page.locator("#records-zoom")).to_have_text("100%")
@@ -58,7 +84,7 @@ def check_record_map(engine, url, payload):
         expect(page.locator("#records-zoom")).to_have_text("100%")
         page.locator("#records-in").click()
         expect(page.locator("#records-zoom")).to_have_text("135%")
-        svg = page.locator("#records-svg")
+        svg = page.locator("#records-canvas")
         svg.scroll_into_view_if_needed()
         svg.focus()
         before = page.evaluate("recordCamera.x")
@@ -84,21 +110,21 @@ def check_record_map(engine, url, payload):
         expect(page.locator("#records-detail h2")).to_have_text(label)
         page.locator("#records-filter").select_option("schwartz")
         expected = {n for v in payload["reading_views"] if v["id"] == "schwartz" for c in v["chapters"] for n in c["nodes"]}
-        assert set(points.evaluate_all("ps=>ps.map(p=>p.dataset.node)")) == expected
+        assert set(page.evaluate("[...recordPoints.keys()]")) == expected
         page.reload()
-        expect(points).to_have_count(len(expected))
+        page.wait_for_function("n => recordPoints.size === n", arg=len(expected))
         page.locator("#records-all").click()
-        expect(points).to_have_count(len(payload["knowledge"]["nodes"]))
+        page.wait_for_function("n => recordPoints.size === n", arg=len(payload["knowledge"]["nodes"]))
         # Old list links remain useful and retain their exact record scope.
         pair = ["peskin-schroeder", "schwartz"]
         page.goto(url + "#graph=qft&view=search&books=" + ",".join(pair))
         expect(page.locator("body")).to_have_attribute("data-view", "records")
-        expect(points).to_have_count(sum(set(pair) <= set(v) for v in payload["direct_books"].values()))
+        page.wait_for_function("n => recordPoints.size === n", arg=sum(set(pair) <= set(v) for v in payload["direct_books"].values()))
         page.locator("#chapters-tab").click()
         page.locator(".chapter-link").first.click()
-        expect(points).to_have_count(len(payload["reading_views"][0]["chapters"][0]["nodes"]))
+        page.wait_for_function("n => recordPoints.size === n", arg=len(payload["reading_views"][0]["chapters"][0]["nodes"]))
         page.reload()
-        expect(points).to_have_count(len(payload["reading_views"][0]["chapters"][0]["nodes"]))
+        page.wait_for_function("n => recordPoints.size === n", arg=len(payload["reading_views"][0]["chapters"][0]["nodes"]))
         page.emulate_media(reduced_motion="reduce")
         page.locator("#records-query").fill("amplitude")
         page.locator("#records-results button").first.click()
@@ -194,7 +220,7 @@ def check_browser_zoom(engine, url):
                     assert page.locator("button,input,select").evaluate_all("""es => es
                         .filter(e => e.getClientRects().length && !e.closest('svg,dialog,#board,#core-world,#graph-world'))
                         .every(e => { const r=e.getBoundingClientRect(); return r.left>=-1 && r.right<=innerWidth+1; })"""), (scale, view)
-                    for identity in ("board", "core-scroll", "graph-scroll", "concept-map-scroll", "atlas-scroll", "records-svg"):
+                    for identity in ("board", "core-scroll", "graph-scroll", "concept-map-scroll", "atlas-scroll", "records-canvas"):
                         target = page.locator("#" + identity)
                         if target.is_visible():
                             assert target.bounding_box()["height"] >= 120, (scale, view, identity)
@@ -208,9 +234,9 @@ def check_browser_zoom(engine, url):
                         page.keyboard.press("Escape")
                         expect(page.locator("#core-expand")).to_have_attribute("aria-pressed", "false")
                     if view == "records":
-                        expect(page.locator(".record-point")).to_have_count(2156)
+                        page.wait_for_function("() => recordPoints.size === 2156")
                         page.locator("#records-expand").click()
-                        assert page.locator("#records-svg").bounding_box()["height"] >= 140
+                        assert page.locator("#records-canvas").bounding_box()["height"] >= 140
                         page.keyboard.press("Escape")
                     if view == "atlas":
                         page.locator("#atlas-expand").click()
