@@ -6,6 +6,11 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Add reproducible concept-inventory indexes, exact membership checks, and
+  coverage resolution that excludes imported prerequisites. Preserve underlying
+  records and distinguish topic association from equivalence. Allow an explicit
+  concept ceiling up to 1,000 (default 15) without changing work-session limits.
+
 - Make the concept pilot the primary entry from the collection overview.
   Distinguish its counts from the detailed record inventory and keep exact
   overlap as a secondary diagnostic. Explicit catalog links connect collections

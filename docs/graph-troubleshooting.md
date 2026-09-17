@@ -10,6 +10,7 @@ an orchestrator should take while the work is still small.
 |---|---|---|
 | Thousands of nodes, but familiar ideas are hard to find | Are nodes broad concepts, results, methods, exercises, qualifications, or a mixture? Is that level explicit? | Keep detailed records as treatments. Build a small, reviewed concept layer that points to them before expanding it. Do not delete detail to make a smaller picture. |
 | Surprisingly little overlap between similar references | Does the number count exact matched records, topic coverage, or identical derivations? Are complementary volumes counted as separate works? | Label the measure precisely. Inspect a recognizable topic across the sources. Separate missed mappings from valid differences in scope or method. Do not infer absence from a missing match. |
+| Every record is assigned, but the concept bins are incoherent | Did an ordered keyword rule choose the first match? Are exercises grouped by format instead of the physics they develop? | Use automated matches as candidates. Inspect semantic outliers, broad fallback bins, and competing nearby concepts before publishing coverage. Exact accounting cannot certify the assignments. |
 | A supposed backbone falls into isolated pieces | Does filtering discard connecting nodes? Was a spine actually defined, or was intersection/centrality/chapter order used as a substitute? | Keep context visible and distinguish conceptual dependencies from display placement. Define and review any claimed spine. Never invent shortcut prerequisites to make a line. |
 | Many records lack a group, or groups refer to work batches | Can someone navigate the subject without understanding extraction history? | Establish a consistent subject-level organization. Missing groups are a diagnostic, not automatic scientific invalidity; choose the appropriate hierarchy case by case. |
 | The graph looks like a page of paragraphs | Are full labels, explanations, and evidence competing with structure? | Show compact nodes and a few meaningful labels first. Reveal treatments, qualifications, and evidence on selection. Inspect an actual browser image. |
@@ -65,6 +66,19 @@ establish whole-subject coverage or replace the subject overview.
 Compare recognizable ideas across sources at the chosen level. Finding every
 input record in the output checks preservation; it does not check whether
 related treatments are organized under a useful common concept. Check both.
+
+The [first full-inventory review](qft-inventory-review.md) supplies concrete
+examples of this failure: complete accounting alongside systematically wrong
+topic assignments. Its rejection prevented those counts becoming public claims.
+
+After the bounded pilot, use a [subject-wide inventory](concept-inventories.md)
+to establish coverage before reconstructing dependencies. Give each detailed
+record a traceable home, keep volume/work denominators explicit, and exclude
+imported prerequisites from independent book coverage. A primary-topic mapping
+is an organizational association, not equivalence. Summary excerpts can support
+that limited pass; later scientific dependency review needs the full relevant
+records and boundary context. Do not turn another small topical pilot into the
+default subject overview while the whole-subject organization is still missing.
 
 This is a small deliverable checkpoint, not a plan-approval loop or a request
 for a person to supervise every unit. Stop according to the authorized session

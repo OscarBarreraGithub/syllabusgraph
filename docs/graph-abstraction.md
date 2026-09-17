@@ -5,6 +5,11 @@ audit pending. A whole-subject conceptual overview is a separate, unfinished tas
 Source coverage and valid records do not establish that a graph communicates
 the subject well or captures every cross-book correspondence.
 
+The [first whole-subject inventory review](qft-inventory-review.md) rejected a
+120-concept candidate because its memberships contained systematic keyword
+collisions and unrelated bins. The source records remain intact. The inventory
+and its conceptual coverage counts are not yet accepted.
+
 ## What the overlap count measures
 
 At shared graph digest

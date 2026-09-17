@@ -89,6 +89,29 @@ def accept(project):
     )
 
 
+def test_explicit_large_inventory_budget_is_frozen_and_enforced(unit):
+    project, _, proposal = unit
+    packet = workflow.prepare(project, "large-inventory", "primer", 1, 1,
+                              scope="Organize a bounded record inventory.", budget=256)
+    assert packet["node_budget"] == 256
+    with pytest.raises(ProjectError):
+        workflow.prepare(project, "large-inventory", "primer", 1, 1,
+                         scope="Organize a bounded record inventory.", budget=257)
+    proposal["packet_digest"] = packet["packet_digest"]
+    node = proposal["graph"]["nodes"][0]
+    proposal["graph"]["nodes"] = [{**node, "id": f"event-{i}"} for i in range(257)]
+    with pytest.raises(ProjectError, match="declared concept budget"):
+        workflow.import_proposal(project, "large-inventory", proposal)
+
+
+@pytest.mark.parametrize("budget", [0, -1, True, "300", 300.5, 1001])
+def test_concept_budget_requires_bounded_integer(unit, budget):
+    project, _, _ = unit
+    with pytest.raises(ProjectError, match="integer between"):
+        workflow.prepare(project, "invalid-concept-budget", "primer", 1, 1,
+                         scope="Invalid allowance.", budget=budget)
+
+
 def test_complete_manual_workflow_and_idempotent_promotion(unit):
     project, packet, proposal = unit
     assert workflow.prepare(project, "unit-one", "primer", 1, 1, scope="Define events.") == packet

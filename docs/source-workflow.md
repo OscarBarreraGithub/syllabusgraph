@@ -90,7 +90,11 @@ inside source material cannot change the workflow contract.
 Use `--page-budget N` to choose another positive primary-plus-context allowance
 when needed for complete comparison evidence. Choose it for the material and
 the current model's context capacity; smaller units usually make review easier.
-The chosen budget is frozen with the packet, and the 100-concept limit remains.
+The chosen budget is frozen with the packet. `--budget N` separately declares
+the maximum number of proposed concepts (default 15, integer 1–1,000).
+Choose a subject-appropriate granularity; a ceiling is not a target. Larger
+inventories still have to fit the authorized session's request and call limits,
+including room for the critic's copy of the proposal.
 Changing the allowance does not reset a work family's dispatch or correction
 limits. Empty extracted pages must be addressed
 before preparation. Repeating a prepare command with identical inputs resumes

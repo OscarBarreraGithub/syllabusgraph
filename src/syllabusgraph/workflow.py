@@ -74,8 +74,8 @@ def prepare(
         raise ProjectError("Page budget must be a positive integer.")
     if first < 1 or last < first or last - first >= page_budget:
         raise ProjectError(f"Choose an ordered print-page range of 1–{page_budget} pages.")
-    if budget < 1 or budget > 100:
-        raise ProjectError("Concept budget must be between 1 and 100.")
+    if type(budget) is not int or budget < 1 or budget > 1000:
+        raise ProjectError("Concept budget must be an integer between 1 and 1000.")
     entry, pages = source_pages(project, source)
     start, end = first + entry["page_offset"], last + entry["page_offset"]
     if start < 1 or end > len(pages):

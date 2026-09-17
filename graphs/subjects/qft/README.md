@@ -1,6 +1,6 @@
 # Quantum field theory graph collection
 
-**Model-reviewed graph collection:** four independent textbook graphs contain 2351 reviewed concepts. The shared graph contains 2156 concepts and 3319 relationships, mapping 2351 distinct book concepts through explicit origins.
+**Model-reviewed record collection:** four textbook graphs contain 2,351 detailed records. The shared graph contains 2,156 records and 3,319 relationships, mapping the book records through explicit origins. Records include concepts, results, methods, assumptions, and representations; these counts are not the size of a subject-level concept inventory.
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph has completed model review**, and the end human audit is pending. All accepted textbook concepts and all 2,857 source relationship identities have reviewed shared realizations or explicit source-scope dispositions.
 
@@ -9,7 +9,12 @@ consistent concept-level map above those detailed treatments is still missing.
 The website's exact-overlap filter is not that backbone and does not measure
 every topic the books share. See the [abstraction audit](../../../docs/graph-abstraction.md).
 
-| Book graph | Printed pages in accepted units | Concepts | Relationships |
+The [first whole-subject inventory candidate](../../../docs/qft-inventory-review.md)
+was rejected for material classification errors. Its 120 proposed concepts are
+not an accepted replacement for this collection; the review findings and usage
+checkpoint are recorded for the next pass.
+
+| Book graph | Printed pages in accepted units | Records | Relationships |
 |---|---|---:|---:|
 | [Peskin–Schroeder](../../textbooks/peskin-schroeder/README.md) | 3–263, 265–345, 347–391, 393–471, 473–649, 651–777, 779, 781–810 | 634 | 844 |
 | [Schwartz](../../textbooks/schwartz/README.md) | 3–105, 109–284, 287–477, 481–699, 703–811, 813, 815–833 | 875 | 972 |
@@ -85,4 +90,4 @@ python scripts/check_graph_bank.py
 
 These commands work from a clone without textbooks, private caches, or a model account. Extending the graphs requires access to the cited material and the usual independent review. Put references in a project's ignored `materials/` directory; extraction records and quote witnesses stay in `.syllabusgraph/`. See the [PDF reading guide](../../../docs/pdf-reading.md) for adaptable setup.
 
-Graph construction and model review are complete. The end human audit and subsequent course-design choices remain separate next steps. Coleman and Weinberg III are outside this initial scope. QFT I/II course design follows graph construction; the [roadmap](../../../docs/roadmap.md) records the task of identifying the right questions about goals, background, depth, time, and assessment.
+Detailed-record extraction and its model review are complete. The subject-level concept organization, conceptual backbone, end human audit, and subsequent course-design choices remain separate steps. Coleman and Weinberg III are outside this initial scope. The [roadmap](../../../docs/roadmap.md) records the task of identifying the right course-design questions about goals, background, depth, time, and assessment.
