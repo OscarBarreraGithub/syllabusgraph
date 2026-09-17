@@ -106,7 +106,18 @@ def check_record_map(engine, url, payload):
         for width in (320, 390, 768, 1100, 1440):
             page.set_viewport_size({"width": width, "height": 720})
             page.locator("#records-fit").click()
-            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
+            # WebKit can acknowledge the new viewport before its reflow and
+            # ResizeObserver camera update. Require the actual layout invariant.
+            try:
+                page.wait_for_function("() => document.documentElement.scrollWidth <= innerWidth + 1", timeout=5000)
+            except Exception:
+                print("Record map overflow:", engine.name, width, page.evaluate("""() => ({
+                    width: innerWidth, scroll: document.documentElement.scrollWidth,
+                    elements: [...document.querySelectorAll('body *')].filter(e =>
+                        !e.closest('svg,[hidden]') && e.getBoundingClientRect().right > innerWidth + 1
+                    ).map(e => ({tag:e.tagName,id:e.id,cls:e.className,right:e.getBoundingClientRect().right}))
+                })"""))
+                raise
             assert svg.bounding_box()["height"] >= 480
             expect(page.locator("#core-tab")).to_be_visible()
             expect(page.locator("#overlap-tab")).to_be_visible()
