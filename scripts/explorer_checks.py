@@ -111,8 +111,14 @@ def check_record_map(engine, url, payload):
             try:
                 page.wait_for_function("() => document.documentElement.scrollWidth <= innerWidth + 1", timeout=5000)
             except Exception:
+                screenshots = Path(".syllabusgraph/browser-qa")
+                screenshots.mkdir(parents=True, exist_ok=True)
+                page.screenshot(path=str(screenshots / f"records-{engine.name}-{width}.png"), full_page=True)
                 print("Record map overflow:", engine.name, width, page.evaluate("""() => ({
                     width: innerWidth, scroll: document.documentElement.scrollWidth,
+                    text: [...document.querySelectorAll('body *')].filter(e =>
+                        !e.closest('svg,[hidden]') && e.scrollWidth > e.clientWidth + 1
+                    ).slice(0, 20).map(e => ({tag:e.tagName,id:e.id,cls:e.className,client:e.clientWidth,scroll:e.scrollWidth})),
                     elements: [...document.querySelectorAll('body *')].filter(e =>
                         !e.closest('svg,[hidden]') && e.getBoundingClientRect().right > innerWidth + 1
                     ).map(e => ({tag:e.tagName,id:e.id,cls:e.className,right:e.getBoundingClientRect().right}))

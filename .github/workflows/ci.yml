@@ -55,3 +55,9 @@ jobs:
         with:
           name: distributions
           path: dist/*
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: failure()
+        with:
+          name: browser-failure-screenshots
+          path: .syllabusgraph/browser-qa/*.png
+          include-hidden-files: true

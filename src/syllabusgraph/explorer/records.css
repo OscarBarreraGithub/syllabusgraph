@@ -25,7 +25,8 @@ body[data-view="records"] .search-wrap { display: none; }
 .records-toolbar button { font-size: 11px; }
 .records-spacer { flex: 1; }
 #records-zoom { color: var(--muted); font-size: 11px; min-width: 38px; text-align: center; }
-#records-svg { display: block; width: 100%; height: clamp(480px, 68dvh, 800px); cursor: grab; touch-action: none; }
+.records-viewport { position: relative; overflow: hidden; height: clamp(480px, 68dvh, 800px); }
+#records-svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
 #records-svg:active { cursor: grabbing; }
 #records-svg line { stroke: #86aaa7; stroke-width: .65; opacity: .1; pointer-events: none; }
 #records-svg .has-selection line { opacity: .035; }
@@ -38,7 +39,7 @@ body[data-view="records"] .search-wrap { display: none; }
 .record-group-label { fill: #d4e4e7; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; font-weight: 500; }
 .record-label.selected { fill: #fff; font-weight: 600; }
 .records-caption { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0; padding: 12px 18px; border-top: 1px solid var(--line); }
-#records-detail { padding: 24px; border-left: 1px solid var(--line); background: #0e1821; min-width: 0; max-height: calc(clamp(480px, 68dvh, 800px) + 110px); overflow: auto; }
+#records-detail { padding: 24px; border-left: 1px solid var(--line); background: #0e1821; min-width: 0; max-height: calc(clamp(480px, 68dvh, 800px) + 110px); overflow: auto; overflow-wrap: anywhere; }
 #records-detail .eyebrow { display: block; margin-top: 16px; }
 #records-detail h2 { font-size: 22px; font-weight: 500; line-height: 1.35; margin: 14px 0; overflow-wrap: anywhere; }
 #records-detail h3 { font-size: 13px; margin: 26px 0 12px; }
@@ -50,13 +51,13 @@ body[data-view="records"] .search-wrap { display: none; }
 .record-group-button small { margin-left: auto; color: var(--muted); }
 #records-results { padding: 0 32px 18px; display: flex; flex-wrap: wrap; gap: 6px; }
 #records-results p { width: 100%; margin: 0 0 5px; color: var(--muted); font-size: 12px; }
-#records-results button { font-size: 12px; max-width: 100%; text-align: left; white-space: normal; }
+#records-results button { font-size: 12px; max-width: 100%; text-align: left; white-space: normal; overflow-wrap: anywhere; }
 .records-expanded { position: fixed; inset: 0; z-index: 20; background: var(--bg); overflow: auto; }
 .records-expanded .records-heading, .records-expanded .records-controls,
 .records-expanded #records-results, .records-expanded #records-detail { display: none; }
 .records-expanded .records-body { display: block; border: 0; height: 100dvh; }
 .records-expanded .records-map { display: flex; flex-direction: column; min-height: 100%; height: 100%; }
-.records-expanded #records-svg { flex: 1; min-height: 140px; height: auto; }
+.records-expanded .records-viewport { flex: 1; min-height: 140px; height: auto; }
 .records-expanded .records-toolbar, .records-expanded .records-caption { flex-shrink: 0; }
 /* Diagnostics and evidence get the same usable canvas as the main maps. */
 #core-view:not(.core-view-expanded) #core-scroll { min-height: 540px; height: 68dvh; flex: auto; }
@@ -88,7 +89,7 @@ body[data-view="records"] .search-wrap { display: none; }
   #records-results { padding: 0 16px 16px; }
   .records-toolbar { padding: 10px; }
   .records-toolbar button { padding: 7px 9px; }
-  #records-svg { height: 520px; }
+  .records-viewport { height: 520px; }
   .records-caption { padding: 12px; }
   .core-map-bottom { flex-wrap: wrap; }
   .view-tabs button { padding: 7px 9px; }
