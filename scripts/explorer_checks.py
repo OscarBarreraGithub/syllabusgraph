@@ -116,12 +116,23 @@ def check_record_map(engine, url, payload):
                 page.screenshot(path=str(screenshots / f"records-{engine.name}-{width}.png"), full_page=True)
                 print("Record map overflow:", engine.name, width, page.evaluate("""() => ({
                     width: innerWidth, scroll: document.documentElement.scrollWidth,
+                    header: [...document.querySelector('.topbar').children].map(e => ({
+                        tag:e.tagName,id:e.id,cls:e.className,rect:e.getBoundingClientRect().toJSON(),
+                        display:getComputedStyle(e).display,margin:getComputedStyle(e).margin
+                    })),
                     text: [...document.querySelectorAll('body *')].filter(e =>
                         !e.closest('svg,[hidden]') && e.scrollWidth > e.clientWidth + 1
                     ).slice(0, 20).map(e => ({tag:e.tagName,id:e.id,cls:e.className,client:e.clientWidth,scroll:e.scrollWidth})),
                     elements: [...document.querySelectorAll('body *')].filter(e =>
                         !e.closest('svg,[hidden]') && e.getBoundingClientRect().right > innerWidth + 1
                     ).map(e => ({tag:e.tagName,id:e.id,cls:e.className,right:e.getBoundingClientRect().right}))
+                })"""))
+                print("Header isolation:", page.evaluate("""() => [...document.querySelector('.topbar').children].map(e => {
+                    const original=e.getAttribute('style');
+                    e.style.setProperty('display','none','important');
+                    const width=document.documentElement.scrollWidth;
+                    original === null ? e.removeAttribute('style') : e.setAttribute('style',original);
+                    return {id:e.id,cls:e.className,width};
                 })"""))
                 raise
             assert svg.bounding_box()["height"] >= 480
