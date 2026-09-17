@@ -49,9 +49,10 @@ that appear disconnected inside it.
 
 ## What the record graph was missing
 
-The current shared graph has 1,143 records with no `group`. Existing groups
-mix subject areas with source-specific routes and extraction-batch groupings.
-They do not yet provide a consistent hierarchy for a subject-level map.
+The original shared record graph had 1,143 records with no `group`. Its groups
+mixed subject areas with source-specific routes and extraction batches. That
+organization was insufficient for a subject-level map; the separate inventory
+now supplies the reviewed topic homes.
 
 The repair required defining a reusable concept layer above the
 existing records, with explicit mappings from book treatments to concepts.
@@ -81,10 +82,9 @@ Do not rerun whole-book extraction merely to change presentation.
 - Evaluation must include recognizable concepts, understandable paths,
   traceable book coverage, and useful navigation, alongside mechanical tests.
 
-## First bounded pilot
+## Historical checkpoint: the bounded pilot
 
-The [path-integral pilot](../graphs/subjects/qft-path-integrals/README.md) now
-provides nine concepts and six relationships from 14 existing reviewed records.
+The [path-integral pilot](../graphs/subjects/qft-path-integrals/README.md) provided nine concepts and six relationships from 14 existing reviewed records.
 Terra/high produced it and Sol/high accepted it on the first independent review.
 Its compact map shows book treatments on selection. Input records, scientific
 scope, review outcome, and measured usage are published with the graph.
@@ -92,8 +92,8 @@ scope, review outcome, and measured usage are published with the graph.
 The selection has three separate components. It does not establish every
 connecting dependency or exhaust the topic, and it has not undergone human
 inspection. It tests an abstraction approach; it does not finish the subject map.
-Inspect the concept boundaries and visual navigation before choosing further
-topics. The original shared graph and exact-overlap view remain available.
+It is retained as a workflow example, not the current starting point. The original
+shared graph and exact-overlap diagnostic also remain available.
 Future orchestrators should follow the [troubleshooting checkpoint](graph-troubleshooting.md).
 
 ## Why the pilot did not resolve the whole-subject problem

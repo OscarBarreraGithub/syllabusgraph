@@ -3,6 +3,7 @@
 let atlasMinimum = 3,
   atlasSelected = null,
   atlasScale = 1;
+let atlasAutoFit = true, atlasAnimations = [];
 let atlasPositions = new Map(),
   atlasSize = { width: 1000, height: 800 };
 const atlasBooks = new Map();
@@ -24,6 +25,7 @@ const atlasColors = [
   "#acc796",
 ];
 function prepareAtlas(params) {
+  atlasAutoFit = true;
   atlasSelected = params.get("concept");
   atlasMinimum = Number(
     params.get("coverage") ?? data.atlas?.works.length ?? 0,
@@ -120,7 +122,9 @@ function renderAtlas() {
     focusAtlasPoint(atlasSelected);
   } else atlasWelcome();
 }
-function drawAtlas() {
+function drawAtlas(animate = false) {
+  const previous = animate ? atlasSnapshot() : new Map();
+  stopAtlasAnimation();
   const atlas = data.atlas,
     query = $("atlas-query").value.trim().toLowerCase();
   const emphasized = new Set(
@@ -171,20 +175,21 @@ function drawAtlas() {
   const identities = new Set(visible.map((n) => n.id));
   const svg = $("atlas-svg");
   svg.replaceChildren();
-  const width = Math.max(990, $("atlas-scroll").clientWidth),
-    column = width / 3;
-  const bottoms = [25, 25, 25];
+  const width = Math.max(280, $("atlas-scroll").clientWidth - 12),
+    groupColumns = Math.max(1, Math.min(3, Math.floor(width / 330))),
+    column = width / groupColumns;
+  const bottoms = Array(groupColumns).fill(25);
   atlasPositions = new Map();
   const regions = mapSVG("g"),
     lines = mapSVG("g"),
     points = mapSVG("g");
   svg.append(regions, lines, points);
   if (landmarks) {
-    const columns = 5;
+    const columns = Math.max(2, Math.min(6, Math.floor(width / 180)));
     visible.forEach((node, i) =>
       atlasPositions.set(node.id, {
         x: (((i % columns) + 0.5) * width) / columns,
-        y: 50 + Math.floor(i / columns) * 124,
+        y: 40 + Math.floor(i / columns) * 108,
         color:
           atlasColors[
             atlas.groups.findIndex((g) => g.id === node.group) %
@@ -192,7 +197,7 @@ function drawAtlas() {
           ],
       }),
     );
-    bottoms[0] = Math.ceil(visible.length / columns) * 124 + 50;
+    bottoms[0] = Math.ceil(visible.length / columns) * 108 + 25;
   } else
     for (const [index, group] of atlas.groups.entries()) {
       const members = visible
@@ -276,9 +281,13 @@ function drawAtlas() {
     };
     points.append(point);
   }
-  atlasSize = { width, height: Math.max(500, ...bottoms) };
+  atlasSize = { width, height: Math.max(200, ...bottoms) };
   svg.setAttribute("viewBox", `0 0 ${width} ${atlasSize.height}`);
+  if (atlasAutoFit) atlasScale = atlasFitScale();
   resizeAtlas();
+  $("atlas-toggle-view").textContent = landmarks ? "Expand concepts ↗" : "← Overview";
+  $("atlas-toggle-view").setAttribute("aria-expanded", String(!landmarks));
+  if (previous.size) animateAtlas(previous);
   $("atlas-map-caption").textContent =
     `${emphasized.size} concepts match · ${visible.length} ${landmarks ? "overview points" : "shown"} · Scroll or drag. Select a point to explore its source connections.`;
   if (query && !emphasized.size)
@@ -288,6 +297,83 @@ function drawAtlas() {
 function resizeAtlas() {
   $("atlas-svg").style.width = atlasSize.width * atlasScale + "px";
   $("atlas-svg").style.height = atlasSize.height * atlasScale + "px";
+  $("atlas-zoom-label").textContent = Math.round(atlasScale * 100) + "%";
+  $("atlas-zoom-out").disabled = atlasScale <= 0.35;
+  $("atlas-zoom-in").disabled = atlasScale >= 2.4;
+}
+function atlasFitScale() {
+  const scroll = $("atlas-scroll");
+  // Keep labels readable on narrow screens; a long map can still scroll vertically.
+  const floor = scroll.clientWidth < 600 ? 0.95 : 0.8;
+  return Math.min(1, (scroll.clientWidth - 12) / atlasSize.width,
+    Math.max(floor, (scroll.clientHeight - 16) / atlasSize.height));
+}
+function zoomAtlas(value, fit = false) {
+  stopAtlasAnimation();
+  const scroll = $("atlas-scroll"), svg = $("atlas-svg");
+  const oldOffset = Math.max(0, (scroll.clientWidth - atlasSize.width * atlasScale) / 2);
+  const x = (scroll.scrollLeft + scroll.clientWidth / 2 - oldOffset) / atlasScale;
+  const y = (scroll.scrollTop + scroll.clientHeight / 2) / atlasScale;
+  atlasAutoFit = fit;
+  atlasScale = fit ? atlasFitScale() : Math.max(0.35, Math.min(2.4, value));
+  resizeAtlas();
+  const offset = Math.max(0, (scroll.clientWidth - svg.getBoundingClientRect().width) / 2);
+  scroll.scrollTo(fit ? 0 : x * atlasScale + offset - scroll.clientWidth / 2,
+    fit ? 0 : y * atlasScale - scroll.clientHeight / 2);
+}
+function stopAtlasAnimation() {
+  for (const animation of atlasAnimations) animation.cancel();
+  atlasAnimations = [];
+}
+function atlasSnapshot() {
+  return new Map([...$("atlas-svg").querySelectorAll(".atlas-point")].map(point => {
+    const box = point.querySelector("circle").getBoundingClientRect();
+    return [point.dataset.concept, {x: box.x + box.width / 2, y: box.y + box.height / 2,
+      element: point.cloneNode(true)}];
+  }));
+}
+function animateAtlas(previous) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const svg = $("atlas-svg"), bounds = svg.getBoundingClientRect();
+  const concepts = new Map(data.atlas.concepts.map(n => [n.id, n]));
+  const anchor = (id, candidates) => [...candidates.keys()].find(key =>
+    concepts.get(key)?.group === concepts.get(id)?.group) || candidates.keys().next().value;
+  const timing = {duration: 540, easing: "cubic-bezier(.2,.7,.2,1)"};
+  for (const point of svg.querySelectorAll(".atlas-point")) {
+    const id = point.dataset.concept, target = atlasPositions.get(id);
+    const start = previous.get(id) || previous.get(anchor(id, previous));
+    if (!start) continue;
+    atlasAnimations.push(point.animate([
+      {transform: `translate(${(start.x - bounds.x) / atlasScale}px, ${(start.y - bounds.y) / atlasScale}px)`, opacity: previous.has(id) ? 1 : 0},
+      {transform: `translate(${target.x}px, ${target.y}px)`, opacity: point.classList.contains("context") ? 0.28 : 1},
+    ], timing));
+  }
+  for (const [id, start] of previous) {
+    if (atlasPositions.has(id)) continue;
+    const target = atlasPositions.get(anchor(id, atlasPositions));
+    if (!target) continue;
+    const ghost = start.element;
+    ghost.setAttribute("class", "atlas-departing");
+    ghost.removeAttribute("role"); ghost.removeAttribute("tabindex");
+    ghost.setAttribute("aria-hidden", "true");
+    svg.append(ghost);
+    const animation = ghost.animate([
+      {transform: `translate(${(start.x - bounds.x) / atlasScale}px, ${(start.y - bounds.y) / atlasScale}px)`, opacity: 0.65},
+      {transform: `translate(${target.x}px, ${target.y}px)`, opacity: 0},
+    ], timing);
+    animation.finished.then(() => ghost.remove(), () => ghost.remove());
+    atlasAnimations.push(animation);
+  }
+  for (const layer of svg.querySelectorAll(":scope > g:not(.atlas-departing)")) {
+    if (layer.querySelector(".atlas-point")) continue;
+    atlasAnimations.push(layer.animate([{opacity: 0}, {opacity: 1}], timing));
+  }
+}
+function setAtlasExpanded(expanded) {
+  $("atlas-view").classList.toggle("atlas-expanded", expanded);
+  document.body.classList.toggle("atlas-is-expanded", expanded);
+  $("atlas-expand").setAttribute("aria-pressed", String(expanded));
+  $("atlas-expand").textContent = expanded ? "Exit full screen" : "Full screen ⛶";
 }
 function atlasWelcome() {
   const detail = $("atlas-detail");
@@ -338,7 +424,7 @@ function atlasOpenRecord(project, node) {
   const graph = catalog.graphs.find((g) => g.project_id === project);
   navigateGraph(graph.id, new URLSearchParams({ node }));
 }
-function selectAtlasConcept(id, save = true) {
+function selectAtlasConcept(id, save = true, paintOnly = false) {
   const atlas = data.atlas,
     node = atlas.concepts.find((n) => n.id === id);
   if (!node) return;
@@ -368,6 +454,7 @@ function selectAtlasConcept(id, save = true) {
     point.classList.toggle("unrelated", !nearby.has(point.dataset.concept));
     point.setAttribute("aria-pressed", String(point.dataset.concept === id));
   }
+  if (paintOnly) return;
   const detail = $("atlas-detail");
   detail.replaceChildren();
   detail.append(
@@ -455,15 +542,30 @@ function selectAtlasConcept(id, save = true) {
     ),
   );
   detail.scrollTop = 0;
-  if (save) saveURL();
+  if (save) {
+    saveURL();
+    revealAtlasDetail();
+  }
+}
+function revealAtlasDetail() {
+  if (innerWidth > 1100) return;
+  const detail = $("atlas-detail");
+  if (!detail.querySelector(".atlas-return")) {
+    const back = el("button", "↑ Back to map", "atlas-return");
+    back.onclick = () => document.querySelector(".atlas-canvas").scrollIntoView({block: "start"});
+    detail.prepend(back);
+  }
+  if (innerHeight < 500) setAtlasExpanded(false);
+  if (!$("atlas-view").classList.contains("atlas-expanded"))
+    detail.scrollIntoView({block: "start"});
 }
 function focusAtlasPoint(id) {
   const p = atlasPositions.get(id);
   if (!p) return;
   $("atlas-scroll").scrollTo({
     left: Math.max(0, p.x * atlasScale - $("atlas-scroll").clientWidth / 2),
-    top: Math.max(0, p.y * atlasScale - 180),
-    behavior: "smooth",
+    top: Math.max(0, p.y * atlasScale - $("atlas-scroll").clientHeight / 2),
+    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
   });
 }
 async function showAtlasConnection(link, from, to) {
@@ -508,6 +610,7 @@ async function showAtlasConnection(link, from, to) {
     detail.append(section);
   }
   detail.scrollTop = 0;
+  revealAtlasDetail();
 }
 function atlasComparison() {
   const atlas = data.atlas,
@@ -550,6 +653,7 @@ function atlasComparison() {
       "The headline combines explicitly grouped volumes into works. This comparison keeps every volume separate.",
     ),
   );
+  revealAtlasDetail();
 }
 function bindAtlasControls() {
   $("atlas-tab").onclick = () => {
@@ -564,9 +668,11 @@ function bindAtlasControls() {
   ])
     $(id).oninput = () => {
       atlasMinimum = Number($("atlas-coverage").value);
-      atlasSelected = null;
-      drawAtlas();
-      atlasWelcome();
+      if (id !== "atlas-detail-level") atlasSelected = null;
+      atlasAutoFit = true;
+      drawAtlas(id === "atlas-detail-level");
+      if (atlasSelected) selectAtlasConcept(atlasSelected, false, true);
+      else atlasWelcome();
       saveURL(true);
       if ($("atlas-query").value) {
         const first = $("atlas-svg").querySelector(
@@ -576,20 +682,45 @@ function bindAtlasControls() {
       }
     };
   $("atlas-compare").onclick = atlasComparison;
+  $("atlas-toggle-view").onclick = () => {
+    const select = $("atlas-detail-level");
+    select.value = select.value === "landmarks" ? "all" : "landmarks";
+    select.dispatchEvent(new Event("input"));
+  };
+  $("atlas-expand").onclick = () =>
+    setAtlasExpanded(!$("atlas-view").classList.contains("atlas-expanded"));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") setAtlasExpanded(false);
+  });
+  matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", stopAtlasAnimation);
   for (const [id, delta] of [
     ["in", 0.15],
     ["out", -0.15],
     ["reset", 0],
   ])
     $(id === "reset" ? "atlas-reset" : "atlas-zoom-" + id).onclick = () => {
-      atlasScale = delta ? Math.max(0.65, Math.min(2, atlasScale + delta)) : 1;
-      resizeAtlas();
-      if (!delta) $("atlas-scroll").scrollTo(0, 0);
+      zoomAtlas(atlasScale + delta, !delta);
     };
   const scroll = $("atlas-scroll");
+  let lastSize = "", resizeFrame;
+  new ResizeObserver(() => {
+    const size = `${scroll.clientWidth}:${scroll.clientHeight}`;
+    if (mode !== "atlas" || !data.atlas || lastSize === size) return;
+    lastSize = size;
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      if (mode !== "atlas") return;
+      drawAtlas();
+      if (atlasSelected) {
+        selectAtlasConcept(atlasSelected, false, true);
+        focusAtlasPoint(atlasSelected);
+      }
+    });
+  }).observe(scroll);
   let drag = null,
     moved = false;
   scroll.onpointerdown = (e) => {
+    stopAtlasAnimation();
     moved = false;
     if (e.pointerType === "mouse" && e.button === 0)
       drag = {

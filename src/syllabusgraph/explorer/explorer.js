@@ -46,6 +46,9 @@ function bookTitle(id) {
     id
   );
 }
+function recordLabel() {
+  return isConceptMap() ? "concepts" : "records";
+}
 function directBooks(node) {
   return data.direct_books[node.id] || [];
 }
@@ -66,6 +69,10 @@ function show(view) {
     view,
   );
   if (view !== "core") setCoreExpanded(false);
+  if (view !== "atlas") {
+    setAtlasExpanded(false);
+    stopAtlasAnimation();
+  }
   if (changed) window.scrollTo(0, 0);
   for (const name of [
     "home",
@@ -232,7 +239,7 @@ function renderBoard() {
     ? "THE READING MAP"
     : "THE CONCEPT MAP";
   $("reading-description").textContent =
-    `${fmt(reading.node_count)} concepts in this reading view. ${hasChapters ? "Chapter topics summarize the graph’s groups. " : ""}Choose an idea to follow its connections.`;
+    `${fmt(reading.node_count)} ${recordLabel()} in this reading view. ${hasChapters ? "Chapter topics summarize the graph’s groups. " : ""}Choose an idea to follow its connections.`;
   options(
     $("chapter-jump"),
     reading.chapters.map((c) => [c.id, c.label]),
@@ -246,7 +253,7 @@ function renderBoard() {
     const meta = el("div", undefined, "chapter-meta");
     meta.append(
       el("span", chapter.label, "chapter-number"),
-      el("span", `${chapter.nodes.length} concepts`),
+      el("span", `${chapter.nodes.length} ${recordLabel()}`),
     );
     head.append(meta);
     head.append(
@@ -270,7 +277,7 @@ function renderBoard() {
       if (byId.has(id)) cards.append(conceptCard(byId.get(id)));
     const browse = el(
       "button",
-      `Browse all ${chapter.nodes.length} concepts ↗`,
+      `Browse all ${chapter.nodes.length} ${recordLabel()} ↗`,
       "chapter-link",
     );
     browse.onclick = () => {
@@ -330,7 +337,7 @@ function renderSearch() {
         ? `Results for “${$("search").value.trim()}”`
         : "Every concept, in one place.");
   $("result-count").textContent =
-    `${fmt(matches.length)} concepts${matches.length > resultLimit ? ` · Showing ${fmt(resultLimit)}` : ""}${searchScope ? " · Type to search across the whole graph" : ""}`;
+    `${fmt(matches.length)} ${recordLabel()}${matches.length > resultLimit ? ` · Showing ${fmt(resultLimit)}` : ""}${searchScope ? " · Type to search across the whole graph" : ""}`;
   $("results").replaceChildren(
     ...matches.slice(0, resultLimit).map((n) => conceptCard(n, true)),
   );
@@ -543,7 +550,7 @@ function renderNetwork(center = false) {
   drawEdges();
   applyZoom();
   $("map-count").textContent =
-    `${geometry.size} of ${positions.size} concepts in ${traced ? "the prerequisite trace" : "this neighborhood"} · Arrows follow recorded relations`;
+    `${geometry.size} of ${positions.size} ${recordLabel()} in ${traced ? "the prerequisite trace" : "this neighborhood"} · Arrows follow recorded relations`;
   $("trace").classList.toggle("active", traced);
   $("trace").setAttribute("aria-pressed", String(traced));
   if (center) centerSelected();

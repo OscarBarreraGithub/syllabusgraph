@@ -76,12 +76,12 @@ function renderCore(reset = true) {
     [
       nodes.length ? ((count / nodes.length) * 100).toFixed(1) + "%" : "0%",
       "Of the shared graph",
-      `${fmt(nodes.length)} concepts in total`,
+      `${fmt(nodes.length)} records in total`,
     ],
     [
       fmt(level.components.length),
       "Separate components",
-      `Largest: ${level.components[0]?.nodes.length || 0} concepts · ${level.isolated} isolated`,
+      `Largest: ${level.components[0]?.nodes.length || 0} records · ${level.isolated} isolated`,
     ],
   ]) {
     const stat = el("div", undefined, "core-stat");
@@ -121,7 +121,7 @@ function renderCore(reset = true) {
       el("strong", `Component ${i + 1}`),
       el(
         "span",
-        `${component.nodes.length} concepts · ${component.edges.length} links`,
+        `${component.nodes.length} records · ${component.edges.length} links`,
       ),
     );
     button.onclick = () => jumpCore(String(i));
@@ -133,7 +133,7 @@ function renderCore(reset = true) {
       el("strong", "Isolated within this core"),
       el(
         "span",
-        `${level.isolated} concepts · May connect through the wider graph`,
+        `${level.isolated} records · May connect through the wider graph`,
       ),
     );
     button.onclick = () => jumpCore("isolated");
@@ -143,10 +143,10 @@ function renderCore(reset = true) {
     ["top", "Jump to a component…"],
     ...connected.map((c, i) => [
       String(i),
-      `Component ${i + 1} · ${c.nodes.length} concepts`,
+      `Component ${i + 1} · ${c.nodes.length} records`,
     ]),
     ...(level.isolated
-      ? [["isolated", `${level.isolated} isolated concepts`]]
+      ? [["isolated", `${level.isolated} isolated records`]]
       : []),
   ]);
   $("core-map-caption").textContent =
@@ -211,7 +211,7 @@ function renderCoreGraph(level, components) {
     coreJumps.set(String(index), top);
     const heading = el(
       "div",
-      `COMPONENT ${index + 1} · ${c.nodes.length} CONCEPTS · ${c.edges.length} CONNECTIONS`,
+      `COMPONENT ${index + 1} · ${c.nodes.length} RECORDS · ${c.edges.length} CONNECTIONS`,
       "core-component-title",
     );
     heading.style.top = top + "px";
@@ -259,7 +259,7 @@ function renderCoreGraph(level, components) {
     coreJumps.set("isolated", top);
     const heading = el(
       "div",
-      `ISOLATED IN THIS CORE · ${isolated.length} CONCEPTS`,
+      `ISOLATED IN THIS CORE · ${isolated.length} RECORDS`,
       "core-component-title",
     );
     heading.style.top = top + "px";
@@ -286,7 +286,7 @@ function renderCoreGraph(level, components) {
     cards.append(
       el(
         "p",
-        "No concepts have recorded independent treatments at this threshold. Choose a broader overlap above.",
+        "No records have recorded independent treatments at this threshold. Choose a broader overlap above.",
         "core-empty",
       ),
     );
@@ -466,16 +466,6 @@ function bindCoreControls() {
         behavior: "smooth",
       });
   }
-  scroll.addEventListener(
-    "wheel",
-    (e) => {
-      if (e.ctrlKey || e.metaKey) {
-        e.preventDefault();
-        change(e.deltaY < 0 ? 0.1 : -0.1);
-      }
-    },
-    { passive: false },
-  );
   let drag,
     moved = false;
   scroll.onpointerdown = (e) => {

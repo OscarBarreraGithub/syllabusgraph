@@ -54,7 +54,7 @@ function renderLegacyOverview() {
         ? "Get to know this graph."
         : "Your map of ideas starts here.";
   $("overview-intro").textContent = pilot
-    ? `${pilot.title} organizes selected records into ${fmt(pilot.nodes)} concepts, with distinct book treatments behind each one. It is a bounded starting point; the full subject concept map is still unfinished.`
+    ? `${pilot.title} organizes selected records into ${fmt(pilot.nodes)} concepts, with distinct book treatments behind each one. Its scope is the selected topic; the collection retains the original records.`
     : core
       ? `${books.length} textbook graphs, connected in one shared map. Explore the ideas they share, follow their prerequisites, and look at the evidence behind each connection.`
       : nodes.length

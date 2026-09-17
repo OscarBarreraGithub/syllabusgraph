@@ -6,6 +6,14 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Adapt the concept map to available space and browser zoom. Start with a fitted
+  overview, keep zoom controls visible, support full-screen exploration, and
+  preserve selection across an animated overview/full-graph transition. Respect
+  reduced motion and stop animation after each transition. Check actual browser
+  zoom from 100% to 400%, small screens, and every explorer view.
+- Clarify historical measurement snapshots and superseded prototypes; remove
+  unused screenshots. Keep current instructions separate from run history.
+
 - Publish the reviewed whole-subject QFT inventory and shared-concept atlas.
   Preserve book treatments, compare conceptual coverage with explicit volume
   grouping, and trace displayed connections to exact source relationships.
@@ -19,7 +27,8 @@ imply a package has been published to a package index.
   records and distinguish topic association from equivalence. Allow an explicit
   concept ceiling up to 1,000 (default 15) without changing work-session limits.
 
-- Make the concept pilot the primary entry from the collection overview.
+- Initially link the bounded concept pilot from the collection overview (later
+  superseded by the whole-subject atlas above).
   Distinguish its counts from the detailed record inventory and keep exact
   overlap as a secondary diagnostic. Explicit catalog links connect collections
   to their maps; test the homepage journey as well as direct graph URLs.
@@ -36,7 +45,7 @@ imply a package has been published to a package index.
 - Separate the reusable tool homepage and copyable setup prompt from the example
   collection. Label the intersection as exact record overlap and document why
   it is not a conceptual backbone or a measure of all shared textbook topics.
-  Record the missing conceptual layer as future work.
+  Record the missing conceptual layer, subsequently delivered by the atlas.
 
 - Open with a scrollable collection overview, real graph statistics, a visual
   explanation of book/shared/core graphs, and clear exploration choices. Give
@@ -44,7 +53,7 @@ imply a package has been published to a package index.
   and dragging from cards. Verify actual wheel, drag, and keyboard movement in
   Chromium and WebKit, including smaller windows.
 
-- Add the shared graph’s common backbone view, with overlap counts,
+- Add the shared graph’s exact-record intersection diagnostic, with overlap counts,
   recorded connections, connected components, and adjustable overlap thresholds.
   Compare explicitly grouped textbooks or individual volumes. Keep source chapter
   browsing secondary; preserve knowledge records and defer course design. Report

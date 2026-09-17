@@ -107,6 +107,15 @@
         </div>
         <div class="atlas-body">
           <div class="atlas-canvas">
+            <div class="atlas-tools">
+              <button id="atlas-toggle-view" aria-expanded="false">Expand concepts ↗</button>
+              <span class="atlas-tool-spacer"></span>
+              <button id="atlas-zoom-out" aria-label="Zoom out">−</button>
+              <output id="atlas-zoom-label" aria-label="Graph zoom">100%</output>
+              <button id="atlas-zoom-in" aria-label="Zoom in">+</button>
+              <button id="atlas-reset" title="Fit the map while keeping labels readable">Fit view</button>
+              <button id="atlas-expand" aria-pressed="false">Full screen ⛶</button>
+            </div>
             <div
               id="atlas-scroll"
               tabindex="0"
@@ -118,12 +127,7 @@
                 aria-label="Concepts grouped by subject"
               ></svg>
             </div>
-            <div class="atlas-tools">
-              <span id="atlas-map-caption"></span
-              ><button id="atlas-zoom-out" aria-label="Zoom out">−</button
-              ><button id="atlas-reset">Reset</button
-              ><button id="atlas-zoom-in" aria-label="Zoom in">+</button>
-            </div>
+            <p id="atlas-map-caption" class="atlas-map-caption" aria-live="polite"></p>
           </div>
           <aside
             id="atlas-detail"

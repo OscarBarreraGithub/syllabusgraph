@@ -1,6 +1,7 @@
 # QFT construction: time and usage
 
-**Work in progress.** These observations cover the graph-construction goal that
+**Historical measurement snapshot.** Graph construction and model review are
+complete; human audit is pending. These observations cover the earlier goal that
 started at 2026-09-14T04:32:54+00:00. Earlier repository setup and work before that
 goal are not included in its token or elapsed-time counters.
 
@@ -40,15 +41,16 @@ The observed wall-clock span from goal start to report generation is **42.00 hou
 
 Model attribution follows recorded session contexts. Mixed or missing profiles remain separate; the table includes orchestration and support work as well as source units.
 
-The latest token refresh stopped at a counter-continuity check in local session history. The last verified token snapshot above is retained; newer token usage remains unverified. Graph and dispatch counts continue to update.
+The latest token refresh stopped at a counter-continuity check in local session history. The last verified token snapshot above is retained; newer token usage remains unverified. These counters are retained at their stated cutoff. Later concept-organization
+work has a separate [usage record](concepts/usage.json).
 
 | Requested model and effort | Recorded dispatches | Recorded results |
 |---|---:|---:|
 | `gpt-5.6-sol` / high | 382 | 371 |
 | `gpt-5.6-terra` / high | 270 | 264 |
 
-The current host allows one orchestrator and up to three workers. This run now
-uses one worker at a time. Historical
+The host used for this snapshot allowed one orchestrator and up to three workers.
+The final phase used one worker at a time. Historical
 peak concurrency and active worker hours were not measured. A worker can handle
 several calls; session counts across stages overlap and must not be summed.
 Failures can also have recorded results, so those columns overlap too.
@@ -57,7 +59,8 @@ At this snapshot, 4 textbook graphs have completed model review,
 with 2,351 nodes and 2,857 relationships.
 The shared graph has 2156 nodes and 3319 relationships,
 representing 2351 book concepts. Shared construction and its
-combined audit remain in progress; the end human audit is pending.
+combined audit were still in progress at that cutoff. Both have since completed
+model review; the end human audit remains pending.
 
 The goal tracker's interface does not expose input, cached-input, output or per-model
 breakdowns, and does not specify child-agent inclusion. Any local reconstruction
@@ -68,7 +71,7 @@ workflow and supplemental ledgers; orchestration and unlogged support work are
 outside those counts.
 
 This first construction includes corrections and development overhead. Its
-unfinished totals are observations, not a promised cost or runtime for another
+partial accounting totals are observations, not a promised cost or runtime for another
 course. [Machine-readable measurements](usage.json) include the stage breakdown
 and explicit accounting limits. [Recording guide](../../../docs/usage-estimates.md)
 explains how to collect comparable measurements with the host available to you.

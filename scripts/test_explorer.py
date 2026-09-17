@@ -12,6 +12,7 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 
 from playwright.sync_api import sync_playwright, expect
+from explorer_checks import check_atlas_transition, check_browser_zoom
 
 from syllabusgraph.cli import initialize
 from syllabusgraph.site import SiteHandler, build_catalog, build_site
@@ -271,6 +272,7 @@ def check_atlas(engine, url, atlas):
         page.locator("#atlas-reset").click()
         expect(scroll).to_have_js_property("scrollTop", 0)
         page.locator("#atlas-zoom-in").click()
+        page.locator("#atlas-zoom-in").click()
         scroll.focus()
         page.keyboard.press("ArrowRight")
         expect(scroll).not_to_have_js_property("scrollLeft", 0)
@@ -375,7 +377,7 @@ def main():
                     == expected_edges
                 )
                 expect(page.locator("#core-stats")).to_contain_text("25")
-                expect(page.locator("#core-stats")).to_contain_text("Largest: 34 concepts")
+                expect(page.locator("#core-stats")).to_contain_text("Largest: 34 records")
                 assert not page.locator("#browse-view").is_visible()
                 page.locator(".core-card").first.click()
                 expect(page.locator("#network-view")).to_be_visible()
@@ -416,7 +418,7 @@ def main():
                 page.locator("#reading-select").select_option(payload["reading_views"][1]["id"])
                 expect(page.locator("#reading-title")).to_have_text("Schwartz")
                 page.locator("#all-concepts").click()
-                expect(page.locator("#result-count")).to_contain_text("2,156 concepts")
+                expect(page.locator("#result-count")).to_contain_text("2,156 records")
                 assert page.locator("#results .concept-card").count() == 60
                 page.locator("#more").click()
                 assert page.locator("#results .concept-card").count() == 120
@@ -495,9 +497,9 @@ def main():
                 count = sum(set(pair) <= set(books) for books in payload["direct_books"].values())
                 expect(page.locator(".pair strong").first).to_have_text(f"{count:,}")
                 page.locator(".pair").first.click()
-                expect(page.locator("#result-count")).to_contain_text(f"{count:,} concepts")
+                expect(page.locator("#result-count")).to_contain_text(f"{count:,} records")
                 page.locator("#search").fill("zzzyyy-no-matching-concept")
-                expect(page.locator("#result-count")).to_have_text("0 concepts")
+                expect(page.locator("#result-count")).to_have_text("0 records")
                 page.locator("#clear").click()
                 expect(page.locator("#overview-view")).to_be_visible()
                 page.locator("#overview-overlap").click()
@@ -523,7 +525,7 @@ def main():
                     expect(page.locator("#overview-view")).to_be_visible()
                     page.locator("#overview-all").click()
                     expect(page.locator("#result-count")).to_contain_text(
-                        f"{entry['nodes']:,} concepts"
+                        f"{entry['nodes']:,} {'concepts' if entry['kind'] == 'concept-map' else 'records'}"
                     )
 
                 for width in (390, 768, 1440):
@@ -564,7 +566,7 @@ def main():
                     expect(page.locator("#reading-title")).to_have_text(project.config["title"])
                     page.locator("#all-concepts").click()
                     expect(page.locator("#result-count")).to_have_text(
-                        f"{len(project.nodes)} concepts"
+                        f"{len(project.nodes)} records"
                     )
                 assert not errors, errors
                 browser.close()
@@ -573,6 +575,8 @@ def main():
                 for engine in (p.chromium, p.webkit):
                     check_navigation(engine, url, pilot)
                     check_atlas(engine, url, payload["atlas"])
+                    check_atlas_transition(engine, url)
+                check_browser_zoom(p.chromium, url)
             print(
                 "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 6 graphs, generic/blank projects, mobile, CSP and private paths; compact concept map and actual wheel/drag/keyboard navigation in Chromium and WebKit."
             )

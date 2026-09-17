@@ -143,5 +143,6 @@ records provide the appropriate billing context. [Official pricing and usage
 documentation](https://learn.chatgpt.com/docs/pricing)
 
 The [QFT measurements](../graphs/subjects/qft/usage.md) are a worked example.
-They include development and review overhead and remain provisional until the
-shared graph is complete; they are not a promised runtime for another course.
+They include development and review overhead. Construction and its model review
+are complete, but the historical token counter ends before completion; the
+measurements are not a promised runtime or complete billed cost for another course.

@@ -47,3 +47,18 @@ Follow [SETUP.md](../SETUP.md), then install development dependencies with
 Install the test browsers with `python -m playwright install chromium webkit` inside
 that environment. The browser tests use disposable projects and no model calls.
 For the optional Cloudflare build, run `npm ci` and `npm run deploy:check`.
+
+## Repository housekeeping
+
+Keep current setup instructions in `SETUP.md`, workflow rules in `AGENTS.md` and
+`workflows/`, and implemented behavior in `docs/capabilities.md`. Label past run
+measurements and rejected proposals as historical records; do not present old
+checkpoints as current blockers. Preserve scientific review evidence. Remove
+unreferenced generated previews when replacing them. Never delete private source
+material or resumable checkpoints merely to make a working directory smaller.
+
+For this repository, `main` is the sole maintained branch. Fetch with pruning,
+check remote heads and open pull requests, and push reviewed changes to `main`.
+Do not force-delete unmerged contributor work to enforce that convention.
+The explorer checks include native Chromium tab zoom (100–400%) in a disposable
+profile and Chromium/WebKit motion, scrolling, and small-screen checks.

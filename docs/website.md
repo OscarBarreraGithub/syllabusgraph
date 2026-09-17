@@ -42,8 +42,15 @@ Open a source link for the original relationship and citations; follow a
 treatment into the detailed graph. Browser Back returns to the concept.
 Switch **Landmarks → All concepts** for the complete eligible set, widen the
 coverage filter, add surrounding context, or search concept and treatment labels.
-Scroll, drag, swipe, or focus the map and use arrow keys. Zoom and reset controls
-remain accessible on smaller screens. Selection and filters are shareable URLs,
+The map opens at a fitted scale and adapts its columns to the available space.
+Use **Expand concepts** to animate between landmarks and the full eligible
+inventory; the coverage filter still applies. Selection is preserved, rapid
+reversals are safe, and reduced-motion settings skip the transition.
+
+Scroll, drag, swipe, or focus the map and use arrow keys. **Fit view**, zoom
+percentage, +/−, and **Full screen** stay above the map. Escape exits full screen.
+On narrow screens the details move below the canvas; **Back to map** returns
+you to it. Browser zoom stays independent of graph zoom. Selection and filters are shareable URLs,
 for example `#graph=qft&view=atlas`.
 
 The lines project exact existing book relationships through reviewed primary
@@ -84,8 +91,8 @@ whose endpoints qualify. Hover to highlight connections; click a concept for
 its wider neighborhood and source evidence. Scroll in either direction, drag
 the map (including from a card), or use the arrow buttons to move. A focused
 map also accepts arrow keys. **Expand graph** gives it the window; the exit
-button or Escape returns to the normal workspace. Zoom with +/− or Ctrl/Command
-and the wheel; **Reset** returns to the start at 100%. Jump to separate
+button or Escape returns to the normal workspace. Zoom this diagnostic with +/−; **Reset** returns to the start at 100%.
+Ctrl/Command browser zoom retains its normal behavior. Jump to separate
 components from the sidebar or the selector above the map. On touch screens,
 swipe to move. The overview scrolls as a normal page; the map scrolls within its
 own viewport. Short windows can also scroll the page to reach the controls.
