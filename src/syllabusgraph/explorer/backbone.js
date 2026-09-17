@@ -2,7 +2,7 @@
 "use strict";
 let corePerspective = "textbooks",
   coreMinimum = null,
-  coreZoom = 1;
+  coreZoom = .8;
 let coreWorld = { width: 0, height: 0 },
   corePositions = new Map(),
   coreJumps = new Map();
@@ -28,7 +28,7 @@ function prepareCore(params) {
   coreMinimum = Number(params.get("minimum")) || coreScope().units.length;
   if (!coreScope().levels.some((l) => l.minimum === coreMinimum))
     coreMinimum = coreScope().units.length;
-  coreZoom = 1;
+  coreZoom = .8;
 }
 function renderCore(reset = true) {
   if (!hasCore()) return;
@@ -382,6 +382,9 @@ function applyCoreZoom() {
   $("core-zoom-in").disabled = coreZoom >= 1.4;
 }
 function jumpCore(id) {
+  const viewport = $("core-scroll"), bounds = viewport.getBoundingClientRect();
+  if (bounds.top < 0 || bounds.bottom > innerHeight)
+    viewport.scrollIntoView({ block: "center" });
   $("core-scroll").scrollTo({
     left: 0,
     top: Math.max(0, coreOffset.y + coreJumps.get(id) * coreZoom - 15),
@@ -407,13 +410,13 @@ function bindCoreControls() {
   $("comparison-mode").onchange = (e) => {
     corePerspective = e.target.value;
     coreMinimum = coreScope().units.length;
-    coreZoom = 1;
+    coreZoom = .8;
     renderCore();
     saveURL();
   };
   $("core-threshold").onchange = (e) => {
     coreMinimum = Number(e.target.value);
-    coreZoom = 1;
+    coreZoom = .8;
     renderCore();
     saveURL();
   };
@@ -432,7 +435,7 @@ function bindCoreControls() {
   $("core-zoom-out").onclick = () => change(-0.1);
   $("core-zoom-in").onclick = () => change(0.1);
   $("core-center").onclick = () => {
-    coreZoom = 1;
+    coreZoom = .8;
     applyCoreZoom();
     $("core-scroll").scrollTo({ left: 0, top: 0 });
   };

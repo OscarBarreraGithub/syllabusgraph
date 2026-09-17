@@ -81,7 +81,7 @@ function renderLegacyOverview() {
   };
   $("overview-all").hidden = !nodes.length;
   $("overview-all").textContent =
-    `Browse all ${fmt(nodes.length)} ${core ? "records" : "concepts"}`;
+    `Map all ${fmt(nodes.length)} ${core ? "records" : "concepts"}`;
   $("overview-caption").textContent = pilot
     ? "The concept map and the detailed record inventory are different layers. No course has been chosen."
     : core

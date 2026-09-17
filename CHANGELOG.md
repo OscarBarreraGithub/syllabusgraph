@@ -6,6 +6,16 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Keep graph navigation visible across views, including shared concepts and
+  the collection overview. Wrap controls at browser zoom and move statistics
+  and evidence below the drawing on smaller screens.
+- Add a full-record point map with existing relationships, selective labels,
+  source filters, search, and smooth overview/focus transitions. All-record,
+  chapter, and record-pair links now open the graph; saved list links retain
+  their scope. Keep source evidence and return navigation intact across reloads.
+  Start card-based diagnostics at a wider scale. Check all views at 100–400%
+  browser zoom and verify the new journeys in Chromium and WebKit.
+
 - Publish SyllabusGraph at Science with Agents, with root and www custom
   domains, production deployment configuration, and public links in the README.
   Serve only the generated site; disable production workers.dev and preview URLs.

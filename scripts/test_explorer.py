@@ -12,7 +12,7 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 
 from playwright.sync_api import sync_playwright, expect
-from explorer_checks import check_atlas_transition, check_browser_zoom
+from explorer_checks import check_atlas_transition, check_browser_zoom, check_record_map
 
 from syllabusgraph.cli import initialize
 from syllabusgraph.site import SiteHandler, build_catalog, build_site
@@ -89,7 +89,7 @@ def check_navigation(engine, url, pilot):
         page.keyboard.press("Escape")
         expect(page.locator("#core-expand")).to_have_attribute("aria-pressed", "false")
         page.locator("#core-center").click()
-        for _ in range(4):
+        for _ in range(2):
             page.locator("#core-zoom-out").click()
         expect(page.locator("#core-zoom-label")).to_have_text("60%")
         # At reduced zoom there must be no scrollable blank unscaled world.
@@ -395,9 +395,9 @@ def main():
                 assert page.locator(".core-edge").count() == 335
                 page.locator("#core-threshold").select_option("3")
                 page.locator("#core-zoom-in").click()
-                expect(page.locator("#core-zoom-label")).to_have_text("110%")
+                expect(page.locator("#core-zoom-label")).to_have_text("90%")
                 page.locator("#core-center").click()
-                expect(page.locator("#core-zoom-label")).to_have_text("100%")
+                expect(page.locator("#core-zoom-label")).to_have_text("80%")
                 page.locator("#chapters-tab").click()
                 page.wait_for_selector("#board .concept-card")
                 assert (
@@ -418,6 +418,10 @@ def main():
                 page.locator("#reading-select").select_option(payload["reading_views"][1]["id"])
                 expect(page.locator("#reading-title")).to_have_text("Schwartz")
                 page.locator("#all-concepts").click()
+                expect(page.locator(".record-point")).to_have_count(2156)
+                page.locator("#chapters-tab").click()
+                page.locator("#search").fill("a")
+                page.locator("#search").fill("")
                 expect(page.locator("#result-count")).to_contain_text("2,156 records")
                 assert page.locator("#results .concept-card").count() == 60
                 page.locator("#more").click()
@@ -442,9 +446,9 @@ def main():
                 page.locator("#back").click()
                 expect(page.locator("#network-title")).to_have_text(label)
                 page.locator("#zoom-in").click()
-                expect(page.locator("#zoom-label")).to_have_text("110%")
+                expect(page.locator("#zoom-label")).to_have_text("90%")
                 page.locator("#fit").click()
-                expect(page.locator("#zoom-label")).to_have_text("100%")
+                expect(page.locator("#zoom-label")).to_have_text("80%")
                 page.reload()
                 expect(page.locator("#network-title")).to_have_text(label)
                 page.locator("#detail-open").click()
@@ -497,10 +501,10 @@ def main():
                 count = sum(set(pair) <= set(books) for books in payload["direct_books"].values())
                 expect(page.locator(".pair strong").first).to_have_text(f"{count:,}")
                 page.locator(".pair").first.click()
-                expect(page.locator("#result-count")).to_contain_text(f"{count:,} records")
-                page.locator("#search").fill("zzzyyy-no-matching-concept")
-                expect(page.locator("#result-count")).to_have_text("0 records")
-                page.locator("#clear").click()
+                expect(page.locator("#records-count")).to_contain_text(f"{count:,} records")
+                page.locator("#records-query").fill("zzzyyy-no-matching-concept")
+                expect(page.locator("#records-results")).to_have_text("0 matches")
+                page.locator("#overview-tab").click()
                 expect(page.locator("#overview-view")).to_be_visible()
                 page.locator("#overview-overlap").click()
                 with page.expect_download() as dl:
@@ -524,7 +528,7 @@ def main():
                         page.locator("#overview-tab").click()
                     expect(page.locator("#overview-view")).to_be_visible()
                     page.locator("#overview-all").click()
-                    expect(page.locator("#result-count")).to_contain_text(
+                    expect(page.locator("#records-count")).to_contain_text(
                         f"{entry['nodes']:,} {'concepts' if entry['kind'] == 'concept-map' else 'records'}"
                     )
 
@@ -565,7 +569,7 @@ def main():
                     page.goto(url + "?example=" + template + "#view=browse")
                     expect(page.locator("#reading-title")).to_have_text(project.config["title"])
                     page.locator("#all-concepts").click()
-                    expect(page.locator("#result-count")).to_have_text(
+                    expect(page.locator("#records-count")).to_contain_text(
                         f"{len(project.nodes)} records"
                     )
                 assert not errors, errors
@@ -576,6 +580,7 @@ def main():
                     check_navigation(engine, url, pilot)
                     check_atlas(engine, url, payload["atlas"])
                     check_atlas_transition(engine, url)
+                    check_record_map(engine, url, payload)
                 check_browser_zoom(p.chromium, url)
             print(
                 "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 6 graphs, generic/blank projects, mobile, CSP and private paths; compact concept map and actual wheel/drag/keyboard navigation in Chromium and WebKit."

@@ -39,6 +39,8 @@ the [roadmap](roadmap.md), not implied by a working interface.
 
 | C28 | **Implemented:** subject-wide concept atlas over preserved book treatments | Catalog `inventory`, [atlas projection](../src/syllabusgraph/atlas.py), [inventory checks](../tests/test_atlas.py), [browser checks](../scripts/test_explorer.py), [QFT inventory](../graphs/subjects/qft/concepts/README.md) | Digest-bound review declaration and pinned inputs; exact source witnesses; explicit work/volume coverage; responsive landmarks, fitted starting scale, full-screen map, finite overview/full-inventory transitions, search, comparisons, context, and source drilldown. Chromium/WebKit transitions, reduced motion and small screens checked; native Chromium browser zoom from 100–400% covers every explorer screen. Primary topic assignments do not imply equivalent derivations, exhaustive secondary coverage, universal concept prerequisites, or human scientific approval. |
 
+| C29 | **Implemented:** full-record point map and consistent navigation | [Website guide](website.md), [browser checks](../scripts/explorer_checks.py) | Original nodes/edges, deterministic grouping, selective labels, source/chapter/pair filters, finite overview/focus transitions, evidence drilldown, saved return routes. All-record and pair links open the map. Navigation wraps across views; statistics/evidence reflow below maps. Chromium/WebKit journeys and 100–400% native Chromium zoom checked. Layout does not establish correspondence or prerequisites. |
+
 ## What is not implemented
 
 - Universal concept prerequisites or an external course-consensus spine inferred from the new concept inventory. Current links retain the narrower meaning of their original book treatments; see the [abstraction audit](graph-abstraction.md).

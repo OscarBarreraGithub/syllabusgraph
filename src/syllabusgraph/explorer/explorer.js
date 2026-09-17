@@ -65,9 +65,11 @@ function show(view) {
   const changed = mode !== view;
   mode = view;
   document.body.dataset.view = view;
-  document.querySelector(".controlbar").hidden = ["home", "overview"].includes(
-    view,
-  );
+  document.querySelector(".controlbar").hidden = view === "home";
+  if (view !== "records") {
+    setRecordsExpanded(false);
+    stopRecordAnimation();
+  }
   if (view !== "core") setCoreExpanded(false);
   if (view !== "atlas") {
     setAtlasExpanded(false);
@@ -79,6 +81,7 @@ function show(view) {
     "overview",
     "atlas",
     "map",
+    "records",
     "core",
     "browse",
     "search",
@@ -90,6 +93,7 @@ function show(view) {
     ["overview", "overview"],
     ["atlas", "atlas"],
     ["map", "map"],
+    ["records", "records"],
     ["core", "core"],
     ["chapters", "browse"],
     ["graph", "network"],
@@ -105,9 +109,14 @@ function saveURL(replace = false) {
   const params = new URLSearchParams({ graph: data.id });
   if (reading) params.set("reader", reading.id);
   if (mode === "network" && selected) params.set("node", selected);
-  if (["home", "overview", "atlas", "map", "core", "overlap"].includes(mode))
+  if (mode === "network" && returnView === "records") {
+    params.set("from", "records");
+    saveRecordsURL(params);
+  }
+  if (["home", "overview", "atlas", "map", "records", "core", "overlap"].includes(mode))
     params.set("view", mode);
   if (mode === "atlas") saveAtlasURL(params);
+  if (mode === "records") saveRecordsURL(params);
   if (mode === "browse") params.set("view", "browse");
   if (hasCore()) {
     params.set("compare", corePerspective);
@@ -177,16 +186,20 @@ async function loadGraph(id, params = new URLSearchParams()) {
   prepareCore(params);
   $("atlas-tab").hidden = !data.atlas;
   prepareAtlas(params);
+  prepareRecords(params);
   $("map-tab").hidden = !isConceptMap();
   returnView = isConceptMap() ? "map" : hasCore() ? "core" : "browse";
   if (params.get("node") && byId.has(params.get("node"))) {
     openNode(params.get("node"), false);
+    if (params.get("from") === "records") returnView = "records";
   } else if (
     data.atlas &&
     (params.get("view") === "atlas" || (!params.get("view") && id))
   )
     renderAtlas();
+  else if (params.get("view") === "records") renderRecords();
   else if (params.get("view") === "overlap") show("overlap");
+  else if (params.get("view") === "search" && !params.get("q") && !params.get("kind")) renderRecords();
   else if (params.get("view") === "search") {
     if (params.get("books"))
       searchScope = { pair: params.get("books").split(",") };
@@ -277,21 +290,10 @@ function renderBoard() {
       if (byId.has(id)) cards.append(conceptCard(byId.get(id)));
     const browse = el(
       "button",
-      `Browse all ${chapter.nodes.length} ${recordLabel()} ↗`,
+      `Map ${chapter.nodes.length} ${recordLabel()} ↗`,
       "chapter-link",
     );
-    browse.onclick = () => {
-      searchScope = {
-        ids: new Set(chapter.nodes),
-        title: chapter.label,
-        chapter: chapter.id,
-      };
-      $("search").value = "";
-      $("kind-select").value = "";
-      resultLimit = 60;
-      renderSearch();
-      saveURL();
-    };
+    browse.onclick = () => openRecordGraph({ chapter: chapter.id });
     col.append(head, cards, browse);
     board.append(col);
   }
@@ -367,7 +369,7 @@ function openNode(id, updateURL = true, remember = true) {
   expanded = new Set([id]);
   traced = false;
   laneLimits = new Map();
-  zoom = 1;
+  zoom = .8;
   $("network-title").textContent = byId.get(id).label;
   $("detail").hidden = true;
   $("graph-tab").disabled = false;
@@ -781,16 +783,9 @@ function renderOverlap() {
       b.append(
         el("strong", fmt(count)),
         el("span", pair.map(bookTitle).join(" × ")),
-        el("small", "matched records · Open the comparison →"),
+        el("small", "matched records · Open their graph →"),
       );
-      b.onclick = () => {
-        searchScope = { pair };
-        $("search").value = "";
-        $("kind-select").value = "";
-        resultLimit = 60;
-        renderSearch();
-        saveURL();
-      };
+      b.onclick = () => openRecordGraph({ pair });
       grid.append(b);
     }
   if (ids.length < 2)
@@ -816,6 +811,11 @@ function navigateGraph(id, params = new URLSearchParams()) {
   loadGraph(id, params).catch((error) => say(error.message));
 }
 $("graph-select").onchange = (e) => navigateGraph(e.target.value);
+document.querySelector(".skip").onclick = (e) => {
+  e.preventDefault();
+  $("workspace").focus();
+  $("workspace").scrollIntoView({ block: "start" });
+};
 $("reading-select").onchange = (e) => {
   reading = data.reading_views.find((v) => v.id === e.target.value);
   renderBoard();
@@ -838,10 +838,15 @@ $("all-concepts").onclick = () => {
   $("search").value = "";
   $("kind-select").value = "";
   resultLimit = 60;
-  renderSearch();
+  openRecordGraph();
   saveURL();
 };
 $("search").oninput = () => {
+  if (mode === "records") {
+    $("records-query").value = $("search").value;
+    $("records-query").dispatchEvent(new Event("input"));
+    return;
+  }
   if (mode === "atlas") {
     $("atlas-query").value = $("search").value;
     $("atlas-query").dispatchEvent(new Event("input"));
@@ -889,6 +894,7 @@ $("back").onclick = () => {
   }
   if (returnView === "core") renderCore(false);
   else if (returnView === "map") renderConceptMap();
+  else if (returnView === "records") renderRecords(false);
   else show(returnView === "network" ? "browse" : returnView);
   saveURL();
 };
@@ -910,7 +916,7 @@ $("detail-open").onclick = () => {
 $("zoom-out").onclick = () => changeZoom(-0.1);
 $("zoom-in").onclick = () => changeZoom(0.1);
 $("fit").onclick = () => {
-  zoom = 1;
+  zoom = .8;
   applyZoom();
   centerSelected();
 };
@@ -955,7 +961,8 @@ document.addEventListener("keydown", (e) => {
     !$("about-dialog").open
   ) {
     e.preventDefault();
-    $(mode === "atlas" ? "atlas-query" : "search").focus();
+    if (mode === "records") setRecordsExpanded(false);
+    $(mode === "atlas" ? "atlas-query" : mode === "records" ? "records-query" : "search").focus();
   }
   if (e.key === "Escape" && !$("detail").hidden) {
     $("detail").hidden = true;
@@ -983,6 +990,7 @@ bindCoreControls();
 bindOverviewControls();
 bindConceptMapControls();
 bindAtlasControls();
+bindRecordsControls();
 boot().catch((error) => {
   $("overview-title").textContent = "Unable to open this graph";
   $("overview-intro").textContent = error.message;

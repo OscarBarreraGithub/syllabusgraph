@@ -72,6 +72,39 @@ remains available separately. Other small authored concept maps can use catalog
 `kind: concept-map`; an optional `concept_map: "<entry-id>"` links a collection
 to one. A full inventory takes precedence when both are configured.
 
+**Record graph** opens the detailed graph as compact points with the original
+connections. **Map all records**, chapter links, and **Record pairs** open this
+view directly instead of a long list. Search selects a point on the map; the
+source filter limits it to one reading view. The opening camera fits every
+record, including isolated ones. Select a point to highlight its neighbors,
+then use **Focus connections** or **Overview** to move smoothly between detail
+and the full graph. **Details** brings its summary and evidence link into view.
+The overview can show thousands of points; use search or a topic-group button
+when individual labels are too small to pick out.
+
+![The full record graph](records.png)
+
+Drag to pan, use +/− to zoom, or use Alt-wheel over the map. Ordinary scrolling
+and browser zoom keep their normal behavior. The focused map accepts arrow
+keys and Home; search results are keyboard accessible. Full screen and reduced
+motion are supported. Selection, source, chapter, and pair filters survive a
+reload; old list URLs open the corresponding graph. The **Evidence & full
+connections** action opens the original record, and Back returns to the map.
+
+Positions use existing topic groups, or source groups when no inventory exists.
+When a merged record has several topic homes, a deterministic choice places it
+in one display group; its original treatments remain unchanged. Records without
+a direct match to the inventory stay visible under **Other records**, with
+their evidence intact. Distance,
+color, and position do not establish equivalence or a prerequisite. Only recorded
+edges are drawn. The map uses a finite layout and camera transitions, with no
+ongoing simulation or model calls.
+
+The navigation row stays available throughout the demo, including the overview
+and shared-concept atlas. It wraps when browser zoom reduces the available
+width. Statistics and evidence move below the graph on smaller screens instead
+of disappearing or covering the drawing.
+
 The secondary **Exact record overlap** diagnostic shows records explicitly matched across the
 compared works, with their connections and basic statistics. It is not an
 established conceptual backbone or a count of every shared topic. See the
@@ -91,7 +124,7 @@ whose endpoints qualify. Hover to highlight connections; click a concept for
 its wider neighborhood and source evidence. Scroll in either direction, drag
 the map (including from a card), or use the arrow buttons to move. A focused
 map also accepts arrow keys. **Expand graph** gives it the window; the exit
-button or Escape returns to the normal workspace. Zoom this diagnostic with +/−; **Reset** returns to the start at 100%.
+button or Escape returns to the normal workspace. Zoom this diagnostic with +/−; **Reset** returns to the wider starting scale of 80%.
 Ctrl/Command browser zoom retains its normal behavior. Jump to separate
 components from the sidebar or the selector above the map. On touch screens,
 swipe to move. The overview scrolls as a normal page; the map scrolls within its
@@ -114,7 +147,7 @@ catalog; missing exports cannot silently lower the comparison denominator.
 
 **Book index** is a secondary way to find concepts using source chapter/page
 order. It is not a course. Change **Read through** to browse another book without
-leaving the shared graph. **All concepts** and the search box cover the whole
+leaving the shared graph. **Full record graph** and the search box cover the whole
 selected graph, including concepts outside the current book or common core.
 Standalone textbook and example graphs have their own overview and a direct
 button to their concept index. Empty projects offer the setup guide.
@@ -132,7 +165,7 @@ concepts you have opened. Hover or keyboard focus highlights connected cards.
 **One step** restores the immediate neighborhood. Large columns initially show
 eight concepts with explicit totals and **Show more** buttons; every remaining
 concept can be revealed. Drag empty space, use the scrollbars, or swipe to pan.
-Zoom buttons adjust card size; **Center** returns to the selection at 100%.
+Zoom buttons adjust card size; **Center** returns to the selection at 80%.
 This is a reading interface, not a proposed course sequence or a whole-graph
 force layout.
 

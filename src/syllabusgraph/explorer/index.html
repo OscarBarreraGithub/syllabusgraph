@@ -12,14 +12,16 @@
     <link rel="icon" href="mark.svg" />
     <link rel="stylesheet" href="explorer.css" />
     <link rel="stylesheet" href="atlas.css" />
+    <link rel="stylesheet" href="records.css" />
     <script src="overview.js" defer></script>
     <script src="concept-map.js" defer></script>
     <script src="atlas.js" defer></script>
     <script src="backbone.js" defer></script>
+    <script src="records.js" defer></script>
     <script src="explorer.js" defer></script>
   </head>
   <body data-view="home">
-    <a class="skip" href="#workspace">Skip to concepts</a>
+    <a class="skip" href="#workspace">Skip to main content</a>
     <header class="topbar">
       <a class="brand" href="./"
         ><img src="mark.svg" width="27" height="27" alt="" />SyllabusGraph</a
@@ -57,6 +59,7 @@
           Shared concepts
         </button>
         <button id="map-tab" aria-pressed="false" hidden>Concept map</button>
+        <button id="records-tab" aria-pressed="false">Record graph</button>
         <button id="core-tab" aria-pressed="false" hidden>Exact overlap</button>
         <button id="chapters-tab" class="active" aria-pressed="true">
           Book index</button
@@ -69,7 +72,39 @@
       </div>
       <span id="graph-count"></span><a id="download" download>Graph JSON ↓</a>
     </div>
-    <main id="workspace">
+    <main id="workspace" tabindex="-1">
+      <section id="records-view" hidden aria-label="Full record graph">
+        <header class="records-heading">
+          <div><span class="eyebrow">THE DETAILED GRAPH</span>
+            <h1>Every record. Every connection.</h1>
+            <p id="records-description"></p>
+          </div>
+          <strong id="records-count" aria-live="polite"></strong>
+        </header>
+        <div class="records-controls">
+          <label>Find a record<input id="records-query" type="search" placeholder="Search labels and summaries…" autocomplete="off" /></label>
+          <label>Show<select id="records-filter"></select></label>
+          <button id="records-all">Show all records</button>
+        </div>
+        <div id="records-results" aria-label="Matching records" hidden></div>
+        <div class="records-body">
+          <div class="records-map">
+            <div class="records-toolbar">
+              <button id="records-fit">Overview ↗</button>
+              <button id="records-focus" disabled>Focus connections</button>
+              <button id="records-inspect" disabled>Details ↓</button>
+              <span class="records-spacer"></span>
+              <button id="records-out" aria-label="Zoom record graph out">−</button>
+              <output id="records-zoom" aria-label="Record graph zoom"></output>
+              <button id="records-in" aria-label="Zoom record graph in">+</button>
+              <button id="records-expand" aria-pressed="false">Full screen ⛶</button>
+            </div>
+            <svg id="records-svg" role="group" tabindex="0" aria-label="Record graph. Drag to pan, use plus and minus to zoom, and search to select a record with the keyboard."></svg>
+            <p class="records-caption">Drag to move · + / − to zoom · Select a point to follow its connections. Placement groups related records; it is not a course order.</p>
+          </div>
+          <aside id="records-detail" aria-label="Selected record"></aside>
+        </div>
+      </section>
       <section id="atlas-view" hidden aria-label="Shared concept atlas">
         <header class="atlas-heading">
           <div>
@@ -551,7 +586,7 @@
           <div class="browse-tools">
             <label class="sr-only" for="chapter-jump">Jump to chapter</label
             ><select id="chapter-jump"></select
-            ><button id="all-concepts">All concepts</button
+            ><button id="all-concepts">Full record graph</button
             ><button id="scroll-left" aria-label="Previous chapters">←</button
             ><button id="scroll-right" aria-label="Next chapters">→</button>
           </div>

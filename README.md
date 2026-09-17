@@ -48,7 +48,8 @@ Peskin–Schroeder, Schwartz, and Weinberg I + II. Each book keeps its own graph
 
 Choose **Explore the demo → Open the concept map**. Start with 27 landmarks,
 show the full inventory, compare the books, or follow a connection to its source
-evidence. The original records and detailed shared graph remain accessible.
+evidence. **Record graph** shows the detailed shared graph as points and
+connections, with search and a smooth overview-to-detail transition.
 No course has been chosen; browsing makes no model calls.
 
 The concept assignments are model-reviewed; human audit is pending. Coverage
