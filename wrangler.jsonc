@@ -7,5 +7,16 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
-  "workers_dev": true
+  "workers_dev": true,
+  "env": {
+    "production": {
+      "name": "syllabusgraph",
+      "workers_dev": false,
+      "preview_urls": false,
+      "routes": [
+        { "pattern": "sciencewithagents.com", "custom_domain": true },
+        { "pattern": "www.sciencewithagents.com", "custom_domain": true }
+      ]
+    }
+  }
 }

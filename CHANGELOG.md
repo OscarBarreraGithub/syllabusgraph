@@ -6,6 +6,9 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Publish SyllabusGraph at Science with Agents, with root and www custom
+  domains, production deployment configuration, and public links in the README.
+  Serve only the generated site; disable production workers.dev and preview URLs.
 - Adapt the concept map to available space and browser zoom. Start with a fitted
   overview, keep zoom controls visible, support full-screen exploration, and
   preserve selection across an animated overview/full-graph transition. Respect

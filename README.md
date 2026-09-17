@@ -2,6 +2,8 @@
 
 **Turn source material into a map of ideas, then shape a course around it.**
 
+[Explore SyllabusGraph](https://sciencewithagents.com) · [Open the QFT demo](https://sciencewithagents.com/#graph=qft&view=atlas)
+
 ![SyllabusGraph: bring your own material and copy one setup prompt](docs/home.png)
 
 Bring your references. Your coding agent handles installation, extraction, and

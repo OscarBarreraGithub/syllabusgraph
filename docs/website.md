@@ -166,7 +166,12 @@ metadata. It does not include source files, PDFs, private workflows, credentials
 or local paths. This export is **not a redaction service**: never put private
 material in public graph fields. Review new catalog entries before publication.
 
-## Cloudflare handoff
+## Public website and deployment
+
+[Science with Agents](https://sciencewithagents.com) hosts SyllabusGraph as the
+entire site. Both `sciencewithagents.com` and `www.sciencewithagents.com` serve
+the same generated application. The homepage introduces the reusable tool;
+QFT is the included demo. Unknown paths return the SyllabusGraph 404 page.
 
 The site is an assets-only Cloudflare Worker. It has no runtime model calls,
 account system, database, upload endpoint, or public access to your local server.
@@ -185,14 +190,17 @@ npm run preview
 locally at port 8787; `deploy:check` validates the actual build without deploying.
 Node and Wrangler are needed only for this hosting path, not the local app.
 
-When the owner chooses a hostname and authorizes publication, the deploying
-agent checks `npx wrangler whoami`, chooses the correct account, and configures
-an explicit custom-domain route or an agreed path integration. Do not replace an
-existing Science with Agents worker. For a standalone custom domain, add a
-route of the form `{"pattern":"<chosen-hostname>","custom_domain":true}` and
-verify ownership/account in Cloudflare. Do not commit personal account IDs or
-automatically create a guessed domain. All asset URLs are relative, so the
-export can also be mounted under a prefix by the parent site.
+The `production` environment in `wrangler.jsonc` names the `syllabusgraph`
+Worker and its two custom domains. Production `workers.dev` and version preview
+URLs are disabled. `npm run deploy:check` and `npm run deploy` select this
+environment; `npm run preview` stays local. Check `npx wrangler whoami` before
+publishing and use the account that owns the domain. No account IDs or
+credentials belong in the repository.
+
+For a collaborator's own deployment, change the production Worker name and
+custom-domain routes to their explicitly chosen hostname before publishing.
+Local setup never deploys or asks them to configure Cloudflare. All application
+assets use relative URLs and can also be hosted as static files elsewhere.
 
 ```bash
 npm run deploy
@@ -201,4 +209,8 @@ npm run deploy
 That command rebuilds the catalog before publishing. Deploy only the generated
 site directory. A rebuild rejects unexpected files in the output directory.
 Never upload the repository root or use the writable course server as a public
-service. A collaborator can host the same static output elsewhere.
+service. Publication is an explicit maintainer step: pushing to GitHub runs
+checks but does not deploy. After a release, verify both hosts, a direct graph
+link, setup-prompt copying, source drilldown, and a missing path against the
+live site. Keep the README and repository website link pointed at the public
+homepage.
