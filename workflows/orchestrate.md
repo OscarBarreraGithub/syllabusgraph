@@ -14,6 +14,12 @@ alternative route; do not force all distinctions into separate overview nodes.
 Define the backbone's selection rule and retain relevant boundary context.
 Check recognizable subject coverage as well as preservation of input records.
 Statistics from a small pilot must never stand in for full-collection overlap.
+For a subject inventory, verify all memberships and native-source coverage before
+publishing counts. A source-relationship projection can support navigation without
+asserting new universal prerequisites; label that meaning and retain exact source
+witnesses. Test a real path from overview to concept to original treatment and
+back. Newly observed material errors need bounded new evidence and the linked
+family budget; they do not justify an unrestricted review of the adjudicator.
 
 Start with [the agent bootstrap](../SETUP.md) for installation and onboarding.
 Before dispatch, run `syllabusgraph work -p PROJECT status`, then `work start`

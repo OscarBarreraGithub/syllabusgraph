@@ -129,9 +129,7 @@ def check_navigation(engine, url, pilot):
         # A concept layer must show exactly its reviewed records, fit the desktop,
         # and lead to the underlying evidence without losing the return route.
         page.set_viewport_size({"width": 1440, "height": 900})
-        page.goto(url)
-        page.locator("#home-demo").click()
-        page.locator("#overview-explore").click()
+        page.goto(url + "#graph=qft-path-integrals&view=map")
         points = page.locator(".concept-point")
         expect(points).to_have_count(len(pilot["nodes"]))
         assert set(points.evaluate_all("ps => ps.map(p => p.dataset.node)")) == {
@@ -177,6 +175,8 @@ def check_navigation(engine, url, pilot):
         page.goto(url + "#graph=qft&view=core")
         expect(page.locator("#core-stats")).to_contain_text("78")
         page.locator("#core-concept-map").click()
+        expect(page.locator("#atlas-view")).to_be_visible()
+        page.goto(url + "#graph=qft-path-integrals&view=map")
         expect(page.locator("#map-view")).to_be_visible()
         page.set_viewport_size({"width": 390, "height": 844})
         assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
@@ -215,6 +215,88 @@ def check_navigation(engine, url, pilot):
             touch_context.close()
         assert not errors, errors
         print(f"{engine.name}: overview scroll, graph wheel/drag/keyboard, pan buttons, zoom, expanded view, small screens passed.")
+    finally:
+        browser.close()
+
+
+def check_atlas(engine, url, atlas):
+    browser = engine.launch()
+    page = browser.new_page(viewport={"width": 1440, "height": 1000})
+    errors = []
+    page.on("pageerror", lambda error: errors.append(str(error)))
+    try:
+        page.goto(url)
+        page.locator("#home-demo").click()
+        page.locator("#overview-explore").click()
+        expect(page.locator("#atlas-view")).to_be_visible()
+        points = page.locator(".atlas-point")
+        actual = points.evaluate_all("ps=>ps.map(p=>p.dataset.concept)")
+        by_id = {n["id"]: n for n in atlas["concepts"]}
+        assert 0 < len(actual) <= 2 * len(atlas["groups"])
+        assert all(len(by_id[id]["works"]) == len(atlas["works"]) for id in actual)
+        assert points.evaluate_all("""ps=>{const boxes=ps.map(p=>p.getBoundingClientRect());
+            return boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.right<=b.left||b.right<=a.left||a.bottom<=b.top||b.bottom<=a.top));}""")
+        valid = {(e["from"], e["to"]) for e in atlas["links"]}
+        for edge in page.locator(".atlas-link").evaluate_all("es=>es.map(e=>[e.dataset.from,e.dataset.to])"):
+            assert tuple(edge) in valid
+        selected = actual[0]
+        points.first.focus()
+        page.keyboard.press("Enter")
+        expect(points.first).to_have_attribute("aria-pressed", "true")
+        expect(page.locator("#atlas-detail h2")).to_have_text(by_id[selected]["label"])
+        neighbors = [e for e in atlas["links"] if selected in (e["from"], e["to"])]
+        expect(page.locator(".atlas-neighbor")).to_have_count(len(neighbors))
+        page.locator(".atlas-treatments summary").first.click()
+        page.locator(".atlas-treatments button").first.click()
+        expect(page.locator("#network-view")).to_be_visible()
+        page.go_back()
+        expect(page.locator("#atlas-detail h2")).to_have_text(by_id[selected]["label"])
+        page.locator(".atlas-evidence-button").first.click()
+        expect(page.locator("#atlas-detail h2")).to_contain_text("↔")
+        expect(page.locator("#atlas-detail .atlas-treatments").first).to_be_visible()
+        page.locator("#atlas-compare").click()
+        expect(page.locator("#atlas-detail h2")).to_have_text("Compare the books")
+        book_count = sum(len(w["projects"]) for w in atlas["works"])
+        expect(page.locator("#atlas-detail .atlas-treatments")).to_have_count(book_count * (book_count - 1) // 2)
+        page.locator("#atlas-detail-level").select_option("all")
+        page.locator("#atlas-coverage").select_option("0")
+        expect(points).to_have_count(len(atlas["concepts"]))
+        assert set(points.evaluate_all("ps=>ps.map(p=>p.dataset.concept)")) == set(by_id)
+        scroll = page.locator("#atlas-scroll")
+        scroll.scroll_into_view_if_needed()
+        box = scroll.bounding_box()
+        page.mouse.move(box["x"] + 300, box["y"] + 250)
+        page.mouse.wheel(0, 500)
+        expect(scroll).not_to_have_js_property("scrollTop", 0)
+        page.locator("#atlas-reset").click()
+        expect(scroll).to_have_js_property("scrollTop", 0)
+        page.locator("#atlas-zoom-in").click()
+        scroll.focus()
+        page.keyboard.press("ArrowRight")
+        expect(scroll).not_to_have_js_property("scrollLeft", 0)
+        page.locator("#atlas-reset").click()
+        scroll.scroll_into_view_if_needed()
+        box = scroll.bounding_box()
+        page.mouse.move(box["x"] + 280, box["y"] + 250)
+        page.mouse.down()
+        page.mouse.move(box["x"] + 240, box["y"] + 100, steps=10)
+        page.mouse.up()
+        expect(scroll).not_to_have_js_property("scrollTop", 0)
+        page.locator("#atlas-query").fill("no-such-concept-in-this-fixture")
+        expect(page.locator("#atlas-map-caption")).to_contain_text("No matching")
+        page.locator("#atlas-query").fill("")
+        page.reload()
+        expect(points).to_have_count(len(atlas["concepts"]))
+        for width, height in [(390, 844), (768, 900), (1280, 600)]:
+            page.set_viewport_size({"width": width, "height": height})
+            page.goto(url + "#graph=qft&view=atlas")
+            expect(page.locator("#atlas-view")).to_be_visible()
+            assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+            scroll.focus()
+            page.keyboard.press("ArrowDown")
+            expect(scroll).not_to_have_js_property("scrollTop", 0)
+        assert not errors, errors
+        print(f"{engine.name}: shared-concept overview, exact source links, coverage, search, history, wheel/drag/keyboard and narrow screens passed.")
     finally:
         browser.close()
 
@@ -262,12 +344,12 @@ def main():
                 assert "slow, checkpointed mode" in page.evaluate("navigator.clipboard.readText()")
                 page.locator("#home-demo").click()
                 expect(page.locator("#overview-title")).to_have_text(
-                    "Start with a concept map."
+                    "The ideas the books share."
                 )
-                expect(page.locator("#diagram-core-title")).to_have_text("Path integrals: concept pilot")
-                expect(page.locator("#diagram-core-count")).to_have_text("9 concepts")
+                expect(page.locator("#diagram-core-title")).to_have_text("Shared concepts")
+                expect(page.locator("#diagram-core-count")).to_have_text(f"{payload['atlas']['counts']['all_works']} in every work")
                 expect(page.locator("#overview-facts")).not_to_contain_text("78")
-                expect(page.locator("#overview-intro")).to_contain_text("still unfinished")
+                expect(page.locator("#overview-intro")).to_contain_text("recognizable concepts")
                 expect(page.locator("#overview-view .reading-guide h3").first).to_have_text(
                     "Start with the concept map"
                 )
@@ -430,10 +512,13 @@ def main():
                 for entry in catalog["graphs"]:
                     page.locator("#graph-select").select_option(entry["id"])
                     expect(page.locator("#graph-count")).to_have_text(
-                        f"{entry['nodes']:,} concepts · {entry['edges']:,} connections"
+                        f"{entry['nodes']:,} records · {entry['edges']:,} connections"
                     )
                     if entry.get("kind") == "concept-map":
                         expect(page.locator("#map-view")).to_be_visible()
+                        page.locator("#overview-tab").click()
+                    elif entry.get("atlas"):
+                        expect(page.locator("#atlas-view")).to_be_visible()
                         page.locator("#overview-tab").click()
                     expect(page.locator("#overview-view")).to_be_visible()
                     page.locator("#overview-all").click()
@@ -487,6 +572,7 @@ def main():
                 pilot = json.loads((output / "data/qft-path-integrals.json").read_text())["knowledge"]
                 for engine in (p.chromium, p.webkit):
                     check_navigation(engine, url, pilot)
+                    check_atlas(engine, url, payload["atlas"])
             print(
                 "Explorer passed: exact shared core, volume grouping, threshold controls, components, chapter browsing, full labels, search, expansion, exact prerequisite trace, evidence, book links/overlap, sharing, 6 graphs, generic/blank projects, mobile, CSP and private paths; compact concept map and actual wheel/drag/keyboard navigation in Chromium and WebKit."
             )

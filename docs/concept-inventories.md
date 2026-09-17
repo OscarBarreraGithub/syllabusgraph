@@ -61,7 +61,7 @@ save the draft and findings; do not silently renew the session.
 
 ## Coverage needs its own definition
 
-The script's `inventory()` resolves compact memberships to exact project/node
+The package's `inventory()` resolves compact memberships to exact project/node
 IDs. `resolve_coverage()` checks the pinned graphs and an explicit per-project
 list of native source IDs. Imported prerequisites stay in the inventory but
 do not count as independent treatment by the importing book. This choice is
@@ -88,7 +88,44 @@ python scripts/concept_inventory.py verify path/to/inputs.json \
 This verifies identities, input versions, full record accounting, and derived
 counts. Substantive concept review remains a separate recorded assessment.
 
-The next pass needs full supporting records and relevant boundary relationships
-to assess conceptual dependencies. Define a backbone's selection rule separately
-from its layout. Neither an inventory nor a coverage threshold establishes a
-scientific chain or a course sequence.
+## Publish a browsable map
+
+The preparation functions live in `syllabusgraph.inventory`; the script is a
+CLI wrapper. After promotion, resolve the accepted proposal with `inventory()`
+and `resolve_coverage()`, then publish these files in a directory of your choice:
+
+| File | Contents |
+|---|---|
+| `inventory.json` | Concepts, groups, exact treatment identities, native-source coverage rules and derived counts |
+| `inputs.json` | The pinned record-index manifest |
+| `review.yaml` | `status: model-reviewed`, `human_audit`, and `inventory_digest` calculated by `syllabusgraph.io.digest`; record the review scope and model decisions too |
+| `README.md` | Meaning of membership, coverage, connections, and remaining limitations |
+| Review and usage records | Public decisions and aggregate measurements, with unavailable token counts left unknown |
+
+Add `inventory: "relative/path/to/directory"` to a collection entry in your site
+catalog. Include all its book graphs as `kind: textbook`. Optional
+`comparison_group: {"id": "work-id", "title": "Work title"}` explicitly combines
+volumes for headline coverage. The builder verifies identities, digests, exact
+record accounting, and coverage before attaching the concept atlas. A status
+declaration is not cryptographic proof of scientific review; preserve its audit.
+
+The atlas deterministically projects original book relationships through the
+accepted primary homes. It retains exact source witnesses and displays those
+links without universal prerequisite arrows. It shows a reduced landmark view
+first; all concepts and every selected concept's neighbors remain accessible.
+See the [worked example](../graphs/subjects/qft/concepts/README.md) and
+[website guide](website.md). Building and browsing use no models.
+
+To infer universal conceptual dependencies instead, use full supporting records
+and relevant boundary relationships in a separate scientific review. Define a
+backbone's selection rule separately from its layout. Neither an inventory nor
+a coverage threshold establishes a scientific chain or a course sequence.
+
+## Check the meaning at the source
+
+Test actual treatment paths, including easily confused terms. The QFT repair
+still had atomic spontaneous emission under spontaneous symmetry breaking and
+BV antifields under spin statistics after its index-only adjudication. Full
+records supported a narrow amendment. Record the new evidence, link the recovery
+to the original call budget, and review the changed memberships only. Do not
+restart the entire inventory or silently edit accepted scientific assignments.

@@ -4,15 +4,18 @@
 
 Terra/high performs extraction and alignment; independent Sol/high review precedes promotion. All four textbook graphs have completed their source scopes and whole-book audits. The **shared graph has completed model review**, and the end human audit is pending. All accepted textbook concepts and all 2,857 source relationship identities have reviewed shared realizations or explicit source-scope dispositions.
 
-These checks cover the extracted records and recorded correspondences. A
-consistent concept-level map above those detailed treatments is still missing.
-The website's exact-overlap filter is not that backbone and does not measure
-every topic the books share. See the [abstraction audit](../../../docs/graph-abstraction.md).
+The [shared concept map](concepts/README.md) organizes all 2,351 book records
+into **117 concepts in 15 subject groups**. **82** have native-source treatments
+in all three works (Weinberg I + II grouped); **107** occur in at least two.
+The website opens a compact selection of 27 landmarks, with the full inventory,
+book comparisons, and source relationships available on selection.
 
-The [first whole-subject inventory candidate](../../../docs/qft-inventory-review.md)
-was rejected for material classification errors. Its 120 proposed concepts are
-not an accepted replacement for this collection; the review findings and usage
-checkpoint are recorded for the next pass.
+The first inventory was rejected. Sol/high's final adjudication changed 988
+primary assignments and accepted the revised inventory, with five recorded
+[decisions](concepts/decisions.json). This organizes treatments by topic; it
+does not merge distinct derivations or create universal prerequisites.
+See the [coverage table](concepts/coverage.md) and
+[explanation of the earlier overlap counts](../../../docs/graph-abstraction.md).
 
 | Book graph | Printed pages in accepted units | Records | Relationships |
 |---|---|---:|---:|
@@ -29,7 +32,7 @@ The reviewed inventories account for 2,646 numbered pages and 605 section entrie
 
 A shared node's `origins` identify the book concepts it represents and explain the scope of the match. Related treatments can remain distinct: these counts measure explicit shared-node correspondences, not every conceptual similarity. Imported textbook inputs remain traceable in origins but do not count as independent treatments by the importing book.
 
-| Book pair | Shared concepts in extracted portions |
+| Book pair | Explicit matched records in extracted portions |
 |---|---:|
 | Peskin–Schroeder / Schwartz | 203 |
 | Peskin–Schroeder / Weinberg I | 68 |
@@ -90,4 +93,9 @@ python scripts/check_graph_bank.py
 
 These commands work from a clone without textbooks, private caches, or a model account. Extending the graphs requires access to the cited material and the usual independent review. Put references in a project's ignored `materials/` directory; extraction records and quote witnesses stay in `.syllabusgraph/`. See the [PDF reading guide](../../../docs/pdf-reading.md) for adaptable setup.
 
-Detailed-record extraction and its model review are complete. The subject-level concept organization, conceptual backbone, end human audit, and subsequent course-design choices remain separate steps. Coleman and Weinberg III are outside this initial scope. The [roadmap](../../../docs/roadmap.md) records the task of identifying the right course-design questions about goals, background, depth, time, and assessment.
+Detailed-record extraction, concept organization, and their model reviews are
+complete for the stated scopes. The shared-concept network is browsable;
+universal concept prerequisites, secondary topic assignments, human audit,
+and course design remain separate work. Coleman and Weinberg III are outside
+this scope. The [roadmap](../../../docs/roadmap.md) records the task of identifying
+the right course-design questions about goals, background, depth, time, and assessment.

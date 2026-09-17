@@ -11,10 +11,11 @@ The first collection is [quantum field theory](subjects/qft/README.md), with
 [volume I](textbooks/weinberg-1/README.md) and
 [volume II](textbooks/weinberg-2/README.md).
 
-The [path-integral concept pilot](subjects/qft-path-integrals/README.md) adds a
-small layer above selected detailed records, preserving their distinct book
-treatments. Its manifest, review outcome, and usage record show a bounded
-checkpoint before expanding a subject map.
+The [shared concept inventory](subjects/qft/concepts/README.md) organizes all
+2,351 book records into 117 concepts, with 82 represented in all three works.
+It includes coverage, original source connections, review decisions, and usage.
+The earlier [path-integral pilot](subjects/qft-path-integrals/README.md) remains
+available as a bounded example of the workflow.
 
 ```text
 graphs/

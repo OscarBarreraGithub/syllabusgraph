@@ -1,14 +1,13 @@
 # From extracted records to a conceptual map
 
-The example's extraction and correspondence reviews are complete, with a human
-audit pending. A whole-subject conceptual overview is a separate, unfinished task.
-Source coverage and valid records do not establish that a graph communicates
-the subject well or captures every cross-book correspondence.
+The current [subject map](../graphs/subjects/qft/concepts/README.md) organizes
+2,351 book records into 117 concepts. Of those, 82 have native-source treatments
+in all three works and 107 in at least two. The organizational review is complete;
+human audit remains pending. Connections project existing book relationships
+onto the accepted memberships, preserving the original treatments and evidence.
 
-The [first whole-subject inventory review](qft-inventory-review.md) rejected a
-120-concept candidate because its memberships contained systematic keyword
-collisions and unrelated bins. The source records remain intact. The inventory
-and its conceptual coverage counts are not yet accepted.
+The earlier exact-match graph and bounded pilot answer different questions.
+This page preserves the diagnosis that led to the concept layer.
 
 ## What the overlap count measures
 
@@ -48,13 +47,13 @@ components, and 17 isolated records. It is an induced intersection, not an
 established conceptual backbone. A node outside the filter may connect pieces
 that appear disconnected inside it.
 
-## What is missing
+## What the record graph was missing
 
 The current shared graph has 1,143 records with no `group`. Existing groups
 mix subject areas with source-specific routes and extraction-batch groupings.
 They do not yet provide a consistent hierarchy for a subject-level map.
 
-The next scientific task is to define a reusable concept layer above the
+The repair required defining a reusable concept layer above the
 existing records, with explicit mappings from book treatments to concepts.
 Keep conceptual coverage, equivalence of results, and alternative derivations
 distinct. A book's presence in a topic must come from reviewed supporting
@@ -111,7 +110,7 @@ record graph has 68 explicit matches for that pair. Neither number estimates
 every topic those books have in common. The comparison interface needs explicit
 scope and consistent work/volume grouping, beyond the graph selector.
 
-The missing deliverable is a subject-wide inventory of stable concepts, mapped
+The missing deliverable was a subject-wide inventory of stable concepts, mapped
 to the reviewed book treatments, with supported dependencies and a stated rule
 for highlighting its central structure. Preserve source-specific detail beneath
 that inventory. Reuse the accepted evidence and review new mappings in bounded
@@ -121,3 +120,17 @@ An external course-consensus path would be a separate analysis with its own
 corpus and selection rule. The current graph-only task does not require an
 audience, a semester length, or a course sequence. Source coverage and dependency
 structure can organize the subject before any course is chosen.
+
+## Current resolution
+
+The whole-subject inventory now supplies stable primary homes, a per-book
+coverage table, and a browsable shared network. It retains all original records.
+The first keyword-driven candidate was rejected; the configured final adjudicator
+resolved its material findings. See the [review history](qft-inventory-review.md).
+
+The opening 27 landmarks are a display selection from the 82 shared concepts.
+Every displayed line is supported by an existing book relationship; the complete
+projected network remains inspectable. This projection does not promote a
+qualified source prerequisite into a universal concept prerequisite. Establishing
+such prerequisites or an external course-consensus path needs a separate evidence
+contract. The graph is ready to explore before choosing an audience or course.

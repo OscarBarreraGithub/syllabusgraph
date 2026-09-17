@@ -70,6 +70,7 @@ function show(view) {
   for (const name of [
     "home",
     "overview",
+    "atlas",
     "map",
     "core",
     "browse",
@@ -80,6 +81,7 @@ function show(view) {
     $(name + "-view").hidden = name !== view;
   for (const [id, name] of [
     ["overview", "overview"],
+    ["atlas", "atlas"],
     ["map", "map"],
     ["core", "core"],
     ["chapters", "browse"],
@@ -96,8 +98,9 @@ function saveURL(replace = false) {
   const params = new URLSearchParams({ graph: data.id });
   if (reading) params.set("reader", reading.id);
   if (mode === "network" && selected) params.set("node", selected);
-  if (["home", "overview", "map", "core", "overlap"].includes(mode))
+  if (["home", "overview", "atlas", "map", "core", "overlap"].includes(mode))
     params.set("view", mode);
+  if (mode === "atlas") saveAtlasURL(params);
   if (mode === "browse") params.set("view", "browse");
   if (hasCore()) {
     params.set("compare", corePerspective);
@@ -139,7 +142,7 @@ async function loadGraph(id, params = new URLSearchParams()) {
   $("graph-tab").title = "Choose a concept first";
   $("graph-select").value = data.id;
   $("graph-count").textContent =
-    `${fmt(nodes.length)} concepts · ${fmt(edges.length)} connections`;
+    `${fmt(nodes.length)} records · ${fmt(edges.length)} connections`;
   $("download").href = graph.file;
   $("download").download = graph.id + "-graph.json";
   const review = data.review || {};
@@ -165,11 +168,18 @@ async function loadGraph(id, params = new URLSearchParams()) {
   renderBoard();
   renderOverlap();
   prepareCore(params);
+  $("atlas-tab").hidden = !data.atlas;
+  prepareAtlas(params);
   $("map-tab").hidden = !isConceptMap();
   returnView = isConceptMap() ? "map" : hasCore() ? "core" : "browse";
   if (params.get("node") && byId.has(params.get("node"))) {
     openNode(params.get("node"), false);
-  } else if (params.get("view") === "overlap") show("overlap");
+  } else if (
+    data.atlas &&
+    (params.get("view") === "atlas" || (!params.get("view") && id))
+  )
+    renderAtlas();
+  else if (params.get("view") === "overlap") show("overlap");
   else if (params.get("view") === "search") {
     if (params.get("books"))
       searchScope = { pair: params.get("books").split(",") };
@@ -752,7 +762,7 @@ function renderOverlap() {
   $("overlap-tab").title =
     ids.length < 2
       ? "Available in a shared graph with book correspondences"
-      : "Browse shared concepts";
+      : "Browse exact record correspondences";
   for (let i = 0; i < ids.length; i++)
     for (let j = i + 1; j < ids.length; j++) {
       const pair = [ids[i], ids[j]],
@@ -764,7 +774,7 @@ function renderOverlap() {
       b.append(
         el("strong", fmt(count)),
         el("span", pair.map(bookTitle).join(" × ")),
-        el("small", "shared concepts · Open the comparison →"),
+        el("small", "matched records · Open the comparison →"),
       );
       b.onclick = () => {
         searchScope = { pair };
@@ -825,6 +835,11 @@ $("all-concepts").onclick = () => {
   saveURL();
 };
 $("search").oninput = () => {
+  if (mode === "atlas") {
+    $("atlas-query").value = $("search").value;
+    $("atlas-query").dispatchEvent(new Event("input"));
+    return;
+  }
   searchScope = null;
   resultLimit = 60;
   renderSearch();
@@ -933,7 +948,7 @@ document.addEventListener("keydown", (e) => {
     !$("about-dialog").open
   ) {
     e.preventDefault();
-    $("search").focus();
+    $(mode === "atlas" ? "atlas-query" : "search").focus();
   }
   if (e.key === "Escape" && !$("detail").hidden) {
     $("detail").hidden = true;
@@ -960,6 +975,7 @@ async function boot() {
 bindCoreControls();
 bindOverviewControls();
 bindConceptMapControls();
+bindAtlasControls();
 boot().catch((error) => {
   $("overview-title").textContent = "Unable to open this graph";
   $("overview-intro").textContent = error.message;

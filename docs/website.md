@@ -28,41 +28,51 @@ guide. Usage limits are explained before the example.
 
 ![The reusable tool and copyable setup prompt](home.png)
 
-Choose **Explore the demo** to open the collection's **Overview**. It starts
-with the bounded concept pilot and distinguishes its counts from the full
-shared-record inventory. The example is separate
-from the product homepage. **Overview** returns to the collection introduction;
-the brand link returns to the product homepage.
+Choose **Explore the demo** to open the collection's **Overview**, then
+**Open the concept map**. The QFT example starts with 27 landmarks from its
+82 shared concepts. Headline counts distinguish all-three-work coverage,
+at-least-two-work coverage, the complete 117-concept inventory, and its 2,351
+source records. Weinberg I + II count as one work; book comparisons keep volumes
+separate. The homepage stays about the reusable tool.
 
-![The collection overview and starting point](overview.png)
+![The shared concepts and their source treatments](atlas.png)
 
-The primary **Open the concept map** button opens nine path-integral concepts.
-Select a point to see its summary and distinct book treatments; follow a
-treatment to its original record and citations. **Inspect relationships and
-evidence** opens the detailed neighborhood. **Back** returns to the map.
-Use +/− and **Fit** to change scale, or scroll, drag, swipe, or focus the map
-and use arrow keys to move. Disconnected pieces stay visible.
+Select a concept to see its treatments by book and every connected concept.
+Open a source link for the original relationship and citations; follow a
+treatment into the detailed graph. Browser Back returns to the concept.
+Switch **Landmarks → All concepts** for the complete eligible set, widen the
+coverage filter, add surrounding context, or search concept and treatment labels.
+Scroll, drag, swipe, or focus the map and use arrow keys. Zoom and reset controls
+remain accessible on smaller screens. Selection and filters are shareable URLs,
+for example `#graph=qft&view=atlas`.
 
-![The bounded concept pilot](concept-pilot.png)
+The lines project exact existing book relationships through reviewed primary
+topic assignments. They do not assert universal prerequisites or a course
+order. The reduced opening view is editorial; its
+[selection rule, coverage, and review scope](../graphs/subjects/qft/concepts/README.md)
+are published. All underlying relationships remain inspectable on selection.
 
-This is a model-reviewed reorganization of 14 existing records, not a fresh
-textbook audit or the complete subject backbone. The [pilot record](../graphs/subjects/qft-path-integrals/README.md)
-contains its exact scope, review and usage. Other small, authored concept layers
-can opt into this view with catalog `kind: concept-map`; ordinary graph data and
-review rules apply. Add `concept_map: "<map-entry-id>"` to its collection's
-catalog entry to make it the main entry point. The build checks that the target
-is a concept-map entry in the same catalog. No association is guessed from
-subject names or catalog order. Map placement is not a course order. Book counts name
-supporting graph projects; they do not assert identical derivations.
+For another subject, add `inventory: "path/to/concepts"` to a collection's
+catalog entry. That directory contains `inventory.json`, `inputs.json`, and
+`review.yaml`; paths are relative to the catalog file. The build requires a
+model-reviewed declaration bound to the inventory digest, verifies pinned book
+versions and memberships, and derives connections from the book graphs in the
+same catalog. See the [inventory workflow](concept-inventories.md). No model
+calls or original textbooks are needed to rebuild an accepted inventory.
 
-The secondary **Exact overlap** workspace shows records explicitly matched across the
+The earlier [nine-concept pilot](../graphs/subjects/qft-path-integrals/README.md)
+remains available separately. Other small authored concept maps can use catalog
+`kind: concept-map`; an optional `concept_map: "<entry-id>"` links a collection
+to one. A full inventory takes precedence when both are configured.
+
+The secondary **Exact record overlap** diagnostic shows records explicitly matched across the
 compared works, with their connections and basic statistics. It is not an
 established conceptual backbone or a count of every shared topic. See the
-[abstraction audit](graph-abstraction.md) for the distinction and missing work.
+[abstraction audit](graph-abstraction.md) for the distinction and review history.
 It does not choose a course, reading sequence, audience, or timetable.
 Previously shared exact-overlap links still open that diagnostic, with a button
 to the collection's concept map when configured. The example's 78 exact matches
-remain unchanged; adding the concept pilot did not realign the full record graph.
+remain unchanged; adding the subject inventory did not realign the full record graph.
 
 ![The shared core and overlap statistics](explorer.png)
 
@@ -122,7 +132,7 @@ force layout.
 **Evidence** opens the summary, notation, qualifications, source sections and
 pages, and the complete list of connections. Expand a relationship to read its
 rationale, necessity, mastery levels, and evidence. Follow a book treatment to
-its original node, or copy a link to the selected concept. **Book overlap**
+its original node, or copy a link to the selected concept. **Record pairs**
 opens pairwise comparisons based on independent treatments; imported textbook
 inputs are excluded, matching the graph-bank checker. Include the relevant book
 graphs in the catalog to resolve those comparisons.

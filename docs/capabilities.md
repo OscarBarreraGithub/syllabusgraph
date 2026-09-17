@@ -37,9 +37,11 @@ the [roadmap](roadmap.md), not implied by a working interface.
 | C26 | **Implemented:** deterministic bundles of selected reviewed records | [Preparation script](../scripts/build_record_bundle.py), [tests](../tests/test_record_bundle.py), [troubleshooting](graph-troubleshooting.md) | Pins the input project's content digest and record order; retains only relationships within the selection. Bundle entries are derived records, not textbook pages. New scientific mappings still need independent review. |
 | C27 | **Implemented:** compact concept-inventory preparation and coverage checks | [Guide](concept-inventories.md), [script](../scripts/concept_inventory.py), [tests](../tests/test_concept_inventory.py) | Pins all input records; checks an exact primary-topic partition and resolves coverage from explicit native source IDs, excluding imported prerequisites. Index summaries are excerpts. Requires substantive independent review; does not infer equivalence, secondary associations, dependencies, or certified absence. |
 
+| C28 | **Implemented:** subject-wide concept atlas over preserved book treatments | Catalog `inventory`, [atlas projection](../src/syllabusgraph/atlas.py), [inventory checks](../tests/test_atlas.py), [browser checks](../scripts/test_explorer.py), [QFT inventory](../graphs/subjects/qft/concepts/README.md) | Digest-bound review declaration and pinned inputs; exact source witnesses; explicit work/volume coverage; compact landmarks, full inventory, search, comparisons, context, and source drilldown. Chromium/WebKit navigation and small screens checked. Primary topic assignments do not imply equivalent derivations, exhaustive secondary coverage, universal concept prerequisites, or human scientific approval. |
+
 ## What is not implemented
 
-- A complete subject-level concept hierarchy and visual backbone above the detailed QFT records. A nine-concept pilot is available; see the [abstraction audit](graph-abstraction.md).
+- Universal concept prerequisites or an external course-consensus spine inferred from the new concept inventory. Current links retain the narrower meaning of their original book treatments; see the [abstraction audit](graph-abstraction.md).
 - A built-in AI extraction provider or autonomous textbook-to-course button.
 - Integrated OCR or reliable automatic reconstruction of mathematical notation.
 - In-app proposal editing, substantive critique, and promotion controls.

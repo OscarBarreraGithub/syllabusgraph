@@ -1,0 +1,77 @@
+schema_version: 1
+status: model-reviewed
+human_audit: pending
+inventory_digest: sha256:4e1ac95371602d640b2f99c52ed19f089b67605da15315fc2aa3f709fa3b14d0
+proposal_digest: sha256:eca319c7c02f0a9872df6b5c03c327669ffce792a384cb1f52d268df1c8b698a
+scope: Primary topic associations over labels and first-sentence summary excerpts
+  from all 2351 existing book records. No fresh textbook audit, scientific equivalence,
+  secondary mappings, or universal prerequisites are asserted. A bounded amendment
+  uses four full original graph records to correct emission and BV-antifield primary
+  homes.
+input_records: 2351
+concepts: 117
+groups: 15
+producer:
+  model: gpt-5.6-terra
+  effort: high
+critic:
+  model: gpt-5.6-sol
+  effort: high
+  initial_verdict: reject
+final_adjudication:
+  model: gpt-5.6-sol
+  effort: high
+  verdict: accept
+  decisions: 5
+assessment:
+- The index labels and excerpts identify physics topics for every row. A format label
+  adds no navigational value, while topical homes preserve the required single-primary
+  association without asserting equivalence.
+- Across all four books, the labels distinguish Maxwell or U(1) material from Yang-Mills
+  curvature, ghosts, background gauges, anomalies, and broken-gauge mass matrices.
+  Preserving those distinctions makes the primary homes cross-book consistent.
+- Källén-Lehmann representations organize correlators, Lorentz representations organize
+  particle fields, and Casimir forces arise from vacuum modes. The revised homes follow
+  those meanings rather than shared vocabulary.
+- The moved rows explicitly concern Majorana quantization, mode algebras, normal ordering,
+  hole reinterpretation, or beta-function scheme invariance. Their revised homes align
+  equivalent treatments across books.
+- A full label-and-excerpt review found the same failure in anomaly, gravity, chiral,
+  QED, renormalization, and symmetry nodes. The revision keeps supported homes, explicitly
+  moves mismatches, splits supersymmetry from unification, and adds coherent homes
+  for Casimir, large-N, and Wick-ordering material.
+initial_proposal_digest: sha256:ebd7e1d57e1f1621ff9bdfaec26ef2d947123ce9b088e5879a76f42aebc95b3b
+amendment:
+  reason: Four concrete residual classification errors exposed by full source-record
+    inspection. New evidence, linked to the original six-call family.
+  producer:
+    model: gpt-5.6-terra
+    effort: high
+  critic:
+    model: gpt-5.6-sol
+    effort: high
+    verdict: revise
+    assessment: Scientific corrections supported; replacing accepted assignments requires
+      adjudicator authority.
+  final_adjudication:
+    model: gpt-5.6-sol
+    effort: high
+    verdict: accept
+    decisions: 1
+  changes:
+  - project: weinberg-2
+    record: weinberg-2.bv-antifields-and-graded-master-action
+    from: spin-statistics-and-particle-exchange
+    to: brst-bv-and-zinn-justin
+  - project: schwartz
+    record: schwartz.bosonic-spontaneous-and-stimulated-emission-factor
+    from: spontaneous-symmetry-breaking
+    to: free-fields-and-fock-space
+  - project: schwartz
+    record: schwartz.einstein-emission-and-absorption-coefficients
+    from: spontaneous-symmetry-breaking
+    to: free-fields-and-fock-space
+  - project: weinberg-1
+    record: weinberg-1.quantum-spontaneous-emission
+    from: spontaneous-symmetry-breaking
+    to: free-fields-and-fock-space

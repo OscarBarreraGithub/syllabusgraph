@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "scope": "Whole-subject organizational inventory and a four-record amendment over 2351 reviewed book records. Excludes preparation, software, prior textbook extraction, and orchestrator usage.",
+  "dispatches": 6,
+  "workers": 2,
+  "max_concurrent_workers": 1,
+  "linked_family_limit": 6,
+  "workflow_elapsed_seconds": 5503.21,
+  "summed_dispatch_to_completion_seconds": 2246.69,
+  "time_basis": "Timestamps include queues and orchestration. Workflow span includes a pause between user turns; summed call intervals are not measured active inference time.",
+  "tokens": null,
+  "tokens_note": "Verified per-call token counters unavailable. Request/result bytes are not tokens or billing.",
+  "requests": [
+    {
+      "unit": "whole-subject-inventory",
+      "stage": "extract",
+      "model": "gpt-5.6-terra",
+      "effort": "high",
+      "issued_at": "2026-09-17T02:16:21.150589+00:00",
+      "completed_at": "2026-09-17T02:23:24.558825+00:00",
+      "request_json_bytes": 580187,
+      "result_json_bytes": 112731
+    },
+    {
+      "unit": "whole-subject-inventory",
+      "stage": "critique",
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "issued_at": "2026-09-17T02:23:24.633045+00:00",
+      "completed_at": "2026-09-17T02:29:21.213849+00:00",
+      "request_json_bytes": 699357,
+      "result_json_bytes": 5933
+    },
+    {
+      "unit": "whole-subject-inventory",
+      "stage": "adjudicate",
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "issued_at": "2026-09-17T03:03:00.081271+00:00",
+      "completed_at": "2026-09-17T03:20:37.705600+00:00",
+      "request_json_bytes": 706099,
+      "result_json_bytes": 146790
+    },
+    {
+      "unit": "full-record-topic-corrections",
+      "stage": "extract",
+      "model": "gpt-5.6-terra",
+      "effort": "high",
+      "issued_at": "2026-09-17T03:41:14.736611+00:00",
+      "completed_at": "2026-09-17T03:43:20.399449+00:00",
+      "request_json_bytes": 770717,
+      "result_json_bytes": 110113
+    },
+    {
+      "unit": "full-record-topic-corrections",
+      "stage": "critique",
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "issued_at": "2026-09-17T03:43:20.663767+00:00",
+      "completed_at": "2026-09-17T03:45:43.167038+00:00",
+      "request_json_bytes": 887787,
+      "result_json_bytes": 1400
+    },
+    {
+      "unit": "full-record-topic-corrections",
+      "stage": "adjudicate",
+      "model": "gpt-5.6-sol",
+      "effort": "high",
+      "issued_at": "2026-09-17T03:45:43.446416+00:00",
+      "completed_at": "2026-09-17T03:48:04.359855+00:00",
+      "request_json_bytes": 890008,
+      "result_json_bytes": 119387
+    }
+  ],
+  "input_records": 2351,
+  "accepted_concepts": 117,
+  "accepted_groups": 15,
+  "initial_outcome": "120-concept keyword candidate rejected; 988 primary assignments changed in final adjudication.",
+  "amendment_outcome": "Four additional full-record-supported corrections accepted through independent review and final replacement authority.",
+  "human_audit": "pending"
+}

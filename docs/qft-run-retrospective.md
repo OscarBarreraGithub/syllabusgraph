@@ -5,6 +5,17 @@ but cost too much to be a sensible default onboarding experience. The reusable
 workflow now starts with small, explicitly resumed sessions. The lesson is to
 bound work and prepare evidence better, while keeping substantive review.
 
+The later concept-map repair exposed a different bottleneck: repeated display
+changes could not supply missing subject organization. A tiny pilot and exact
+record intersections were both mistaken for whole-subject coverage. The
+[abstraction history](graph-abstraction.md) and
+[inventory review](qft-inventory-review.md) record the correction. The reusable
+response is to define the unit of comparison, preserve book treatments, review
+the full membership inventory, and test real source drilldowns before publishing
+counts. A model acceptance still needs an honest scope; shortened summaries can
+miss distinctions. Repair observed errors with bounded new evidence, not an
+open-ended review of reviews.
+
 This audit covers the public creation history from the initial bank commit
 [`4def5cf`](https://github.com/OscarBarreraGithub/syllabusgraph/commit/4def5cf)
 through completion at

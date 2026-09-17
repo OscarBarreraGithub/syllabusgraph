@@ -38,18 +38,20 @@ one slow session. Read its saved state first.”**
 
 ## Explore the example
 
-The [QFT collection](graphs/subjects/qft/README.md) has four textbook graphs and
-one shared graph: **2,156 concepts and 3,319 relationships**, with book
-correspondences and page references. Choose **Explore the demo** from the
-homepage to browse the collection. **Exact overlap** shows detailed records
-explicitly matched across books; it does not count every shared topic or define
-a conceptual backbone. The overview's **Open the concept map** button leads to a compact
-[nine-concept example](graphs/subjects/qft-path-integrals/README.md) with book
-treatments on selection. The full subject map is [unfinished work](docs/graph-abstraction.md).
-Select a concept to inspect evidence or explore its wider dependencies.
-The book index is available separately. No course has been chosen; browsing makes
-no model calls.
-The graphs are model-reviewed; human audit is pending.
+The [QFT demo](graphs/subjects/qft/concepts/README.md) organizes **2,351 book
+records into 117 concepts**. **82 concepts have treatments in all three works**:
+Peskin–Schroeder, Schwartz, and Weinberg I + II. Each book keeps its own graph.
+
+![The shared QFT concepts, with book treatments one click away](docs/atlas.png)
+
+Choose **Explore the demo → Open the concept map**. Start with 27 landmarks,
+show the full inventory, compare the books, or follow a connection to its source
+evidence. The original records and detailed shared graph remain accessible.
+No course has been chosen; browsing makes no model calls.
+
+The concept assignments are model-reviewed; human audit is pending. Coverage
+means a book has an associated treatment, not that its derivation is identical.
+[Review, scope, and reproducible counts](graphs/subjects/qft/concepts/README.md).
 
 [Field guide / docs](docs/README.md) · [Graph library](graphs/README.md) ·
 [Usage & run history](docs/usage-estimates.md) · [Contribute](CONTRIBUTING.md)

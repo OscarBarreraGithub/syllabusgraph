@@ -6,6 +6,14 @@ imply a package has been published to a package index.
 
 ## Unreleased
 
+- Publish the reviewed whole-subject QFT inventory and shared-concept atlas.
+  Preserve book treatments, compare conceptual coverage with explicit volume
+  grouping, and trace displayed connections to exact source relationships.
+  Lead with compact landmarks; offer the full inventory, search, context, and
+  book comparisons. Recheck pinned inputs and review digests on site builds.
+  Record the rejected candidate, final decisions, bounded amendment, and usage.
+  Keep exact-record diagnostics and the earlier pilot as separate views.
+
 - Add reproducible concept-inventory indexes, exact membership checks, and
   coverage resolution that excludes imported prerequisites. Preserve underlying
   records and distinguish topic association from equivalence. Allow an explicit
@@ -19,8 +27,8 @@ imply a package has been published to a package index.
 - Add a bounded, independently reviewed path-integral concept pilot: nine
   concepts from 14 existing records, with preserved book treatments, an input
   manifest, and measured two-call usage. Provide an opt-in compact SVG map with
-  selection details, evidence links, zoom, and scrolling. The full subject map
-  remains unfinished; disconnected pieces are retained without invented edges.
+  selection details, evidence links, zoom, and scrolling. The pilot retains disconnected pieces without invented edges; the later
+  whole-subject atlas is a separate reviewed inventory.
 - Put graph troubleshooting in the orchestrator's required reading. Separate
   coverage, correspondence, conceptual organization, visual usability, and human
   audit; inspect a bounded concept-and-visual pilot before scaling up.

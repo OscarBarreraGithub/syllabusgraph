@@ -11,8 +11,10 @@
     <title>SyllabusGraph · Build your own map of ideas</title>
     <link rel="icon" href="mark.svg" />
     <link rel="stylesheet" href="explorer.css" />
+    <link rel="stylesheet" href="atlas.css" />
     <script src="overview.js" defer></script>
     <script src="concept-map.js" defer></script>
+    <script src="atlas.js" defer></script>
     <script src="backbone.js" defer></script>
     <script src="explorer.js" defer></script>
   </head>
@@ -51,12 +53,15 @@
     <div class="controlbar" hidden>
       <div class="view-tabs" role="group" aria-label="View">
         <button id="overview-tab" aria-pressed="true">Overview</button>
+        <button id="atlas-tab" aria-pressed="false" hidden>
+          Shared concepts
+        </button>
         <button id="map-tab" aria-pressed="false" hidden>Concept map</button>
         <button id="core-tab" aria-pressed="false" hidden>Exact overlap</button>
         <button id="chapters-tab" class="active" aria-pressed="true">
           Book index</button
         ><button id="graph-tab" aria-pressed="false">Connections</button
-        ><button id="overlap-tab" aria-pressed="false">Book overlap</button>
+        ><button id="overlap-tab" aria-pressed="false">Record pairs</button>
       </div>
       <div class="lens">
         <label for="reading-select">Read through</label
@@ -65,6 +70,68 @@
       <span id="graph-count"></span><a id="download" download>Graph JSON ↓</a>
     </div>
     <main id="workspace">
+      <section id="atlas-view" hidden aria-label="Shared concept atlas">
+        <header class="atlas-heading">
+          <div>
+            <span class="eyebrow">THE SHARED CONCEPTS</span>
+            <h1 id="atlas-title">A map of the subject.</h1>
+            <p id="atlas-intro"></p>
+          </div>
+          <div id="atlas-stats" class="atlas-stats"></div>
+        </header>
+        <div class="atlas-controls">
+          <label
+            >View
+            <select id="atlas-detail-level">
+              <option value="landmarks">Overview landmarks</option>
+              <option value="all">All concepts</option>
+            </select></label
+          >
+          <label
+            >Highlight
+            <select id="atlas-coverage"></select
+          ></label>
+          <label class="atlas-query-label"
+            >Find an idea
+            <input
+              id="atlas-query"
+              type="search"
+              placeholder="Try a concept or a treatment…"
+              autocomplete="off"
+          /></label>
+          <label
+            ><input id="atlas-context" type="checkbox" /> Surrounding
+            concepts</label
+          >
+          <button id="atlas-compare">Compare books</button>
+        </div>
+        <div class="atlas-body">
+          <div class="atlas-canvas">
+            <div
+              id="atlas-scroll"
+              tabindex="0"
+              aria-label="Concept map. Scroll or drag to move; select a concept to inspect its book treatments."
+            >
+              <svg
+                id="atlas-svg"
+                role="group"
+                aria-label="Concepts grouped by subject"
+              ></svg>
+            </div>
+            <div class="atlas-tools">
+              <span id="atlas-map-caption"></span
+              ><button id="atlas-zoom-out" aria-label="Zoom out">−</button
+              ><button id="atlas-reset">Reset</button
+              ><button id="atlas-zoom-in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+          <aside
+            id="atlas-detail"
+            aria-live="polite"
+            aria-label="Concept details"
+          ></aside>
+        </div>
+      </section>
       <section id="map-view" hidden aria-label="Concept map">
         <div class="view-heading concept-heading">
           <div>
@@ -577,10 +644,10 @@
         <div class="view-heading">
           <div>
             <span class="eyebrow">REVIEWED CORRESPONDENCES</span>
-            <h1>How the books connect.</h1>
+            <h1>Exact record correspondences.</h1>
             <p>
-              Choose a pair to browse concepts with independent treatments in
-              both books.
+              Choose a pair to browse detailed records explicitly matched across
+              both books. Use Shared concepts for the subject-level comparison.
             </p>
           </div>
         </div>

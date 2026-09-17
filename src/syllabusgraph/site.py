@@ -8,10 +8,12 @@ import re
 import shutil
 import webbrowser
 
-from .io import ProjectError, read_yaml, write_json
+from .io import ProjectError, digest, read_yaml, write_json
 from .project import load_project
 from .navigation import reading_views, chapter_index
 from .backbone import shared_backbone
+from .inventory import verify_inventory
+from .atlas import concept_atlas
 
 ASSETS = Path(__file__).parent / "explorer"
 
@@ -22,8 +24,11 @@ def build_site(projects, destination: Path):
     manifest = {"version": 1, "graphs": []}
     payloads = []
     chapter_indexes = {}
+    loaded_projects = {}
+    inventories = {}
     for entry in projects:
         project = load_project(Path(entry["path"]))
+        loaded_projects[project.config["id"]] = project
         slug = entry.get("id", project.config["id"])
         if not re.fullmatch(r"[a-zA-Z][a-zA-Z0-9_-]*", slug):
             raise ProjectError("Site graph IDs must be simple URL-safe identifiers.")
@@ -59,6 +64,11 @@ def build_site(projects, destination: Path):
                 raise ProjectError("A comparison_group needs nonempty id and title strings.")
             comparison_group = {key: comparison_group[key] for key in ("id", "title")}
         payloads.append((slug, payload))
+        if "inventory" in entry:
+            location = Path(entry["inventory"])
+            if not location.is_absolute():
+                location = project.root / location
+            inventories[slug] = location
         manifest["graphs"].append(
             {
                 "id": slug,
@@ -107,6 +117,22 @@ def build_site(projects, destination: Path):
         payload["reading_views"] = reading_views(
             payload, textbook_payloads if kinds[slug] == "shared" else [payload], chapter_indexes
         )
+        if slug in inventories:
+            directory = inventories[slug]
+            inventory = json.loads((directory / "inventory.json").read_text(encoding="utf-8"))
+            inputs = json.loads((directory / "inputs.json").read_text(encoding="utf-8"))
+            review = read_yaml(directory / "review.yaml")
+            if (review.get("status") != "model-reviewed"
+                    or review.get("inventory_digest") != digest(inventory)):
+                raise ProjectError("Publish only an accepted inventory with a matching review digest.")
+            try:
+                input_projects = [loaded_projects[p["id"]] for p in inventory["projects"]]
+            except KeyError as exc:
+                raise ProjectError("The inventory's input books must be in the site catalog.") from exc
+            verify_inventory(inventory, inputs, input_projects)
+            payload["atlas"] = concept_atlas(inventory, textbook_payloads, manifest["graphs"])
+            payload["atlas"]["review"] = {k: review[k] for k in ("status", "human_audit") if k in review}
+            by_slug[slug]["atlas"] = payload["atlas"]["counts"]
     if not payloads:
         raise ProjectError("Choose at least one graph for the site.")
     # A reused output directory must contain only our generated allowlist. Fail closed
@@ -141,7 +167,9 @@ def build_site(projects, destination: Path):
 
 def build_catalog(catalog: Path, destination: Path):
     entries = json.loads(catalog.read_text(encoding="utf-8"))["graphs"]
-    return build_site([{**e, "path": catalog.parent / e["path"]} for e in entries], destination)
+    return build_site([{**e, "path": catalog.parent / e["path"],
+                        **({"inventory": (catalog.parent / e["inventory"]).resolve()}
+                           if "inventory" in e else {})} for e in entries], destination)
 
 
 class SiteHandler(SimpleHTTPRequestHandler):

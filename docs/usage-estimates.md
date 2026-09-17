@@ -88,6 +88,13 @@ before completion. There is no trustworthy final token total or billed cost.
 Treat this as a cautionary first run, not a price quote or a target for your
 course. Reusing a reviewed graph is much cheaper than extracting it again.
 
+The later [concept-inventory repair](../graphs/subjects/qft/concepts/README.md)
+used six sequential worker calls across two units in the same bounded family.
+It publishes dispatch intervals separately from the
+[completion-work host counter](qft-share-ready-usage.json), which also covers
+orchestration, website work, and verification up to its stated cutoff. These
+are different scopes; do not add their counters or infer a billed total.
+
 ## Recording your own measurements
 
 

@@ -1,10 +1,14 @@
-# QFT inventory checkpoint
+# QFT inventory review history
 
-**The first whole-subject candidate was rejected.** It proposed 120 concepts
+**The revised inventory is accepted; human audit is pending.** See the
+[published concept map](../graphs/subjects/qft/concepts/README.md) for its current
+counts, scope, decisions, and usage. The rejection below is retained as history.
+
+The first whole-subject candidate was rejected. It proposed 120 concepts
 in 15 subject groups and assigned all 2,351 book records exactly once. That
 accounting passed, but the assignments were not reliable enough to publish as
-conceptual coverage. No candidate concepts were promoted. The four book graphs,
-shared record graph, and website data are unchanged.
+conceptual coverage. No concepts from that candidate were promoted at that checkpoint. The four
+book graphs and shared record graph were preserved throughout the repair.
 
 Terra/high produced the candidate; independent Sol/high rejected it. This was
 one production call and one review call, sequentially, with no correction or
@@ -37,7 +41,7 @@ This is a failure of the candidate organization. It does not establish errors
 in the underlying reviewed physics records. Nor does it show that the books
 have little in common: these candidate overlap counts must not be used.
 
-## Resume from the checkpoint
+## How the checkpoint was resumed
 
 The local immutable packet, candidate, exact critique, draft coverage table,
 and runtime records remain in ignored storage. The input index is reproducible
@@ -49,16 +53,22 @@ python scripts/concept_inventory.py index .syllabusgraph/inventory-inputs \
   graphs/textbooks/weinberg-1 graphs/textbooks/weinberg-2
 ```
 
-On the next authorized session, retain the existing unit and findings. A
-`reject` routes to the configured final adjudicator under the normal workflow;
-it does not justify a fresh unit that resets the call allowance. Reassess each
-primary association by meaning, inspect competing concepts and cross-book
-consistency, and resolve or defer every material finding. Applying only the
-listed examples or changing keyword priority is insufficient. Do not dispatch
-a new reviewer after final adjudication.
+The next user instruction authorized work through publication. The orchestrator
+resumed the same unit, retaining its original packet and three-call history.
+Sol/high's final adjudication changed 988 primary homes and accepted 117 concepts
+with five decisions. No reviewer was dispatched to review that adjudication.
 
-The reusable [inventory tools](concept-inventories.md) now check exact record
-accounting, pinned input versions, and coverage from explicit native source
-IDs. Two imported prerequisites in Weinberg II are retained but excluded from
-independent coverage by that volume. Those safeguards do not replace semantic
-review. Dependencies, backbone selection, and visualization remain later work.
+A later source-link check exposed four residual mistakes: three atomic-emission
+records were still assigned to symmetry breaking, and a BV-antifield record was
+assigned to spin statistics. Full original records were added as new evidence
+for a narrowly scoped amendment, linked to the same six-call recovery family.
+This is a reason to inspect actual treatments when testing a map, not to treat
+complete accounting or a model verdict as a guarantee. Sol/high accepted the four corrections and
+recorded final replacement authority. The linked family ended at six calls;
+no further reviewer followed. The published review records both decisions.
+
+The reusable [inventory tools](concept-inventories.md) check exact record
+accounting, pinned input versions, and coverage from explicit native source IDs.
+Two imported prerequisites in Weinberg II remain accessible but are excluded
+from independent coverage. The website projects existing book relationships;
+universal conceptual prerequisites and human audit remain separate work.
